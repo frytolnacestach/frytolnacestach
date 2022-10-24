@@ -1,0 +1,88 @@
+.o-hero {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background-image: url('../../images/_base/hero.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+
+    &__outer {
+        width: 100%;
+        max-width: 1200px;   
+        margin: 0 auto; 
+        height: auto;
+        padding: 50px 0;
+
+        @media only screen and (min-width: $lg) {
+            padding: 60px 0 0 0;
+        }
+    }
+
+    &__inner {
+        padding: 0 15px;
+        width: 100%;
+        max-width: 640px;
+        text-align: center;
+        margin: 0 auto;
+        z-index: 2;
+        position: relative;
+    }
+
+    &__headline {
+        color: $white;
+        margin: 0 0 5px;
+        font-size: $fs-40;
+    }
+
+    &__perex {
+        color: $white;
+        margin: 0;
+        font-size: $fs-normal-ssss;
+    }
+
+    &__date {
+        color: $gray3;
+        font-size: $fs-small-ssss;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+    &--small {
+        height: auto;
+        min-height: 200px;
+        background-position: top center;
+
+        @media only screen and (min-width: $lg) {
+            min-height: 300px;
+        }
+    }
+
+    &--article {
+        height: auto;
+        min-height: 200px;
+        background-position: top center;
+
+        @media only screen and (min-width: $lg) {
+            min-height: 300px;
+        }
+
+        &:after {
+			background-color: $black-3;
+			content: '';
+            position: absolute;
+			z-index: 1;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+    }
+}

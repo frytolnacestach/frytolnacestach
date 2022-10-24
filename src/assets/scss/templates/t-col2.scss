@@ -1,0 +1,23 @@
+.t-col2 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1230px;
+    margin: 0 auto;
+
+    @media only screen and (min-width: $lg) {
+        flex-wrap: nowrap;
+    }
+
+    &__content {
+        display: inline-block;
+    }
+
+    &__sidebar {
+        display: inline-block;
+        
+        @media only screen and (min-width: $lg) {
+            flex: 0 0 330px;
+        }
+    }
+}

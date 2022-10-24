@@ -1,0 +1,18 @@
+.m-headline {
+    display: inline-block;
+    width: 100%;
+
+    &__title {
+        display: inline-block;
+        font-size: $fs-large;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    &__perex {
+        width: 100%;
+        max-width: 640px;
+        margin: 0 auto;
+    }
+}

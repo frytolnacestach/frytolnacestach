@@ -1,0 +1,10 @@
+.o-opener-text {
+    width: 100%;
+
+    &__perex {
+        font-size: $fs-normal;
+        margin-top: 0;
+        margin-bottom: 20px;
+        letter-spacing: .1px;
+    }
+}

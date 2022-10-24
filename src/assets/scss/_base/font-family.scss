@@ -1,0 +1,30 @@
+//Icomoon
+@font-face {
+	font-family: 'icomoon-default';
+	src:url('../fonts/icomoon/default/icomoon.eot?ver=1.2');
+	src:url('../fonts/icomoon/default/icomoon.eot?ver=1.2#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon/default/icomoon.woff?ver=1.2') format('woff'),
+		url('../fonts/icomoon/default/icomoon.ttf?ver=1.2') format('truetype'),
+		url('../fonts/icomoon/default/icomoon.svg?ver=1.2#icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+$ff-icomoon-default: 'icomoon-default';
+
+@font-face {
+	font-family: 'icomoon-social';
+	src:url('../fonts/icomoon/social/icomoon.eot?ver=1.0');
+	src:url('../fonts/icomoon/social/icomoon.eot?ver=1.0#iefix') format('embedded-opentype'),
+	url('../fonts/icomoon/social/icomoon.woff?ver=1.0') format('woff'),
+	url('../fonts/icomoon/social/icomoon.ttf?ver=1.0') format('truetype'),
+	url('../fonts/icomoon/social/icomoon.svg?ver=1.0#icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+$ff-icomoon-social: 'icomoon-social';
+
+
+//Google Fonts
+@import url(https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600;700&display=swap);
+
+$ff1: 'Barlow', sans-serif;

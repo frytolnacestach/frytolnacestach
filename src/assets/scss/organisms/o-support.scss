@@ -1,0 +1,75 @@
+.o-support {
+    &__outer {
+        width: 100%;
+    }
+
+    &__inner {
+        width: 100%;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    &__item {
+        width: 80px;
+        height: 80px;
+
+        &:after {
+            font-size: $fs-icon-60;
+            font-family: $ff-icomoon-social;
+            width: 60px;
+            height: 60px;
+            top: 10px;
+            left: 10px;
+            bottom: 10px;
+            right: 10px;
+            position: absolute;
+            color: $black;
+        }
+
+        &--patreon {
+            &:after {
+                content: map-get($icomoon-social, 'patreon');
+                color: $patreon;
+            }
+        }
+    }
+
+    &__logo {
+        width: 80px;
+        height: 80px;
+        display: block;
+        position: relative;
+    }
+
+    &__logo-file {
+        width: 80px;
+        height: 80px;
+
+        &:after {
+            font-size: $fs-icon-60;
+            font-family: $ff-icomoon-social;
+            width: 60px;
+            height: 60px;
+            top: 10px;
+            left: 10px;
+            bottom: 10px;
+            right: 10px;
+            position: absolute;
+            color: $black;
+        }
+
+        &--patreon {
+            &:after {
+                content: map-get($icomoon-social, 'patreon');
+                color: $patreon;
+            }
+        }
+    }
+
+}

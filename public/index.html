@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="cs" data-html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="Michal Fryč">
+    <meta name="description" content="Frytol na cestách">
+    <meta name="keywords" content="Frytol na cestách, youtube, cestování, blog">
+    <meta property="og:image" content="/images/og/og-default.png">
+
+    <meta name="robots" content="index, follow">
+
+    <!--favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicons/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Frytol na cestách</title>
+
+    <!-- CSS -->
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- Cookies -->
+    <script>
+        // Define dataLayer and the gtag function.
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Default ad_storage to 'denied' as a placeholder
+        // Determine actual values based on your own requirements
+        if (document.cookie.indexOf("cookiesDialog=1") == -1) {
+            gtag('consent', 'default', {
+                'functionality_storage': 'granted',
+                'security_storage': 'granted',
+                'personalization_storage': 'denied',
+                'analytics_storage': 'denied',
+                'ad_storage': 'denied'
+            });
+        }
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N8LPFHN');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5217753750259737" crossorigin="anonymous"></script>
+    <!-- End Google AdSense -->
+
+    <!-- Javascripts -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous">
+    </script>
+    <script src="js/js_o-cookies-dialog.js"></script>
+    <script src="js/js_m-hamburger.js"></script>
+    <!-- End Javascripts -->
+  </head>
+  <body data-body class="p-index">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8LPFHN" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <noscript>
+      <strong>Omlouvám se ale stránka <%= htmlWebpackPlugin.options.title %> nefunguje správně bez JavaSriptu. Nejdříve ho prosím povolte</strong>
+    </noscript>
+
+    <div id="app"></div>
+
+  </body>
+</html>

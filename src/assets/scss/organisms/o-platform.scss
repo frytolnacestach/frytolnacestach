@@ -1,0 +1,131 @@
+.o-platform {
+    &__outer {
+        width: 100%;
+    }
+
+    &__inner {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 30px 20px;
+        max-width: 640px;
+        margin: 0 auto;
+
+        @media only screen and (min-width: $md) {
+			flex-wrap: nowrap;
+		}
+    }
+
+    &__items {
+        width: 100%;
+        text-align: left;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__item {
+        width: 100px;
+        padding: 10px;
+    }
+
+    &__icon {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: flex-end;
+
+        @media only screen and (min-width: $md) {
+            width: 100%;
+		}
+    }
+
+    &__icon-file {
+        width: 80px;
+        height: 80px;
+        position: relative;
+
+        &:after {
+            font-size: $fs-icon-60;
+            font-family: $ff-icomoon-social; 
+            width: 60px;
+            height: 60px;
+            top: 10px;
+            left: 10px;
+            bottom: 10px;
+            right: 10px;
+            position: absolute; 
+            color: $black;
+        }
+
+        &--youtube {
+            &:after {
+                content: map-get($icomoon-social, 'youtube');
+                color: $youtube;
+            }
+        }
+
+        &--instagram {
+            &:after {
+                content: map-get($icomoon-social, 'instagram');
+                color: $instagram;
+            }
+        }
+
+        &--facebook {
+            &:after {
+                content: map-get($icomoon-social, 'facebook');
+                color: $facebook;
+            }
+        }
+
+        &--tiktok {
+            &:after {
+                content: map-get($icomoon-social, 'tiktok');
+                color: $tiktok;
+            }
+        }
+
+        &--twitter {
+            &:after {
+                content: map-get($icomoon-social, 'twitter');
+                color: $twitter;
+            }
+        }
+
+        &--twitch {
+            &:after {
+                content: map-get($icomoon-social, 'twitch');
+                color: $twitch;
+            }
+        }
+
+        &--reddit {
+            &:after {
+                content: map-get($icomoon-social, 'reddit');
+                color: $reddit;
+            }
+        }
+
+        &--pinterest {
+            &:after {
+                content: map-get($icomoon-social, 'pinterest');
+                color: $pinterest;
+            }
+        }
+
+        &--discord {
+            &:after {
+                content: map-get($icomoon-social, 'discord');
+                color: $discord;
+            }
+        }
+
+        &--patreon {
+            &:after {
+                content: map-get($icomoon-social, 'patreon');
+                color: $patreon;
+            }
+        }
+    }
+}

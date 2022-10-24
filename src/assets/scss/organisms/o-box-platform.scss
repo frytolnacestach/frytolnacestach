@@ -1,0 +1,225 @@
+.o-box-platform {
+    $self: &;
+
+    background-color: $white;
+
+    &__outer {
+        width: 100%;
+    }
+
+    &__inner {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 30px 20px;
+        max-width: 640px;
+        margin: 0 auto;
+
+        @media only screen and (min-width: $md) {
+			flex-wrap: nowrap;
+		}
+    }
+
+    &__intro {
+        width: 100%;
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+
+        @media only screen and (min-width: $md) {
+			width: 40%;
+            min-width: 200px;
+            max-width: 200px;
+            text-align: right;
+            flex-wrap: wrap;;
+		}
+    }
+
+    &__platform {
+        width: 100%;
+    }
+
+    &__icon {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: flex-end;
+
+        @media only screen and (min-width: $md) {
+            width: 100%;
+		}
+    }
+
+    &__icon-file {
+        width: 80px;
+        height: 80px;
+        position: relative;
+
+        &:after {
+            font-size: $fs-icon-60;
+            font-family: $ff-icomoon-social; 
+            width: 60px;
+            height: 60px;
+            top: 10px;
+            left: 10px;
+            bottom: 10px;
+            right: 10px;
+            position: absolute; 
+            color: $black;
+        }
+
+        &--youtube {
+            &:after {
+                content: map-get($icomoon-social, 'youtube');
+                color: $youtube;
+            }
+        }
+
+        &--instagram {
+            &:after {
+                content: map-get($icomoon-social, 'instagram');
+                color: $instagram;
+            }
+        }
+
+        &--facebook {
+            &:after {
+                content: map-get($icomoon-social, 'facebook');
+                color: $facebook;
+            }
+        }
+
+        &--tiktok {
+            &:after {
+                content: map-get($icomoon-social, 'tiktok');
+                color: $tiktok;
+            }
+        }
+
+        &--twitter {
+            &:after {
+                content: map-get($icomoon-social, 'twitter');
+                color: $twitter;
+            }
+        }
+
+        &--twitch {
+            &:after {
+                content: map-get($icomoon-social, 'twitch');
+                color: $twitch;
+            }
+        }
+
+        &--reddit {
+            &:after {
+                content: map-get($icomoon-social, 'reddit');
+                color: $reddit;
+            }
+        }
+
+        &--pinterest {
+            &:after {
+                content: map-get($icomoon-social, 'pinterest');
+                color: $pinterest;
+            }
+        }
+
+        &--discord {
+            &:after {
+                content: map-get($icomoon-social, 'discord');
+                color: $discord;
+            }
+        }
+
+        &--patreon {
+            &:after {
+                content: map-get($icomoon-social, 'patreon');
+                color: $patreon;
+            }
+        }
+    }
+
+    &__statistic {
+        width: auto;
+        padding: 0 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+
+        @media only screen and (min-width: $md) {
+			width: 100%;
+            align-items: inherit;
+		}
+    }
+
+    &__statistic-items {
+        width: 100%;
+    }
+
+    &__statistic-item {
+        width: 100%;
+    }
+
+    &__statistic-name {
+        font-weight: 300;
+        font-size: $fs-small;
+    }
+
+    &__statistic-value {
+        font-weight: 600;
+        font-size: $fs-normal-s;
+    }
+
+    &__statistic-info {
+        font-weight: 100;
+        font-style: italic;
+        font-size: $fs-small-sss;
+    }
+
+    &__text {
+        width: 100%;
+        text-align: left;
+        padding: 10px 5px;
+
+        @media only screen and (min-width: $md) {
+			width: auto;
+		}
+    }
+
+    &__headline {
+        margin: 0 0 10px;
+        font-size: $fs-normal-ll;
+    }
+
+    &__perex {
+        letter-spacing: 0.2px;
+        line-height: $lh-x-normal;
+        margin: 0 0 10px;
+    }
+
+    &__button {
+        width: 100%;
+    }
+
+    &:nth-of-type(2n + 2) {
+        background-color: $gray2;
+
+        #{$self}__intro {
+            text-align: left;
+        }
+        
+        #{$self}__icon {
+            @media only screen and (min-width: $md) {
+                justify-content: flex-start;
+            }
+        }
+
+        #{$self}__text {
+
+            @media only screen and (min-width: $md) {
+                text-align: right;
+                order: -1;
+            }
+        }
+    }
+}

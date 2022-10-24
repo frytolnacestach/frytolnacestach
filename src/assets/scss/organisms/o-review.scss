@@ -1,0 +1,34 @@
+.o-review {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: $brand3-a;
+    border-radius: $large;
+
+    &__outer {
+        width: 100%;
+        padding: 20px 40px;
+    }
+
+    &__inner {
+        width: 100%;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: $fs-normal-ll;
+        margin: 0 15px 10px;
+        text-align: center;
+    }
+
+    &__perex {
+        display: inline-block;
+        margin: 0;
+    }
+
+    &__number {
+        font-size: $fs-40;
+        margin-top: 10px;
+        display: block;
+    }
+}

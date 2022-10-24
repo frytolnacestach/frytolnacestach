@@ -1,0 +1,14 @@
+.m-author {
+    display: inline-block;
+    width: 100%;
+    font-size: $fs-small;
+    color: $gray7;
+
+    &__link {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

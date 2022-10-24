@@ -1,0 +1,25 @@
+.o-build {
+    width: 100%;
+    max-width: 480px;
+    margin: 50px auto;
+
+    &__outer {
+        width: auto;
+        margin: 0 15px;
+    }
+
+    &__inner {
+        width: 100%;
+        background-color: $white;
+        border: 1px solid $gray2;
+        border-radius: 8px;
+        padding: 30px 40px;
+    }
+
+    &__text {
+        font-size: $fs-large;
+        font-weight: 600;
+        text-align: center;
+        color: $black;
+    }
+}
