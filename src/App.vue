@@ -3,7 +3,7 @@
   <LogotypeHeader />
   <ControlHamburger />
 
-  <router-view></router-view>
+  <router-view />
 
   <ComponentFooter />
   <PopupCookies />

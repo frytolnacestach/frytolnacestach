@@ -2,7 +2,7 @@
     <div class="m-logotype">
         <div class="m-logotype__image">
             <div class="m-logotype__image-file">
-                <a class="m-logotype__image-link" href="index.html"></a>
+                <router-link class="m-logotype__image-link" to="/"></router-link>
             </div>
         </div>
     </div>

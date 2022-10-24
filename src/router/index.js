@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 function lazyLoad(view){
-    return import(`./views/${view}.vue`)
+    return import(`../views/${view}.vue`)
 }
 
 const routes = [
@@ -57,7 +57,7 @@ const routes = [
 ];
 
 const router = createRouter({ 
-    history: createWebHistory(), 
+    history: createWebHistory(process.env.BASE_URL), 
     routes,
     scrollBehavior() {
         document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
