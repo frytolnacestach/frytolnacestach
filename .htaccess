@@ -12,6 +12,12 @@ RewriteCond %{HTTP_USER_AGENT} !(Windows\sNT\s5\.[12])
 
 RewriteCond %{HTTP_HOST} ^(www\.)?frytolnacestach.cz
 
-Redirect 301 https://www.frytolnacestach.cz/blog-tri-krize.html https://www.frytolnacestach.cz/blog-trikrizovy-vrch.html
+RewriteBase /
 
-ErrorDocument 404 https://www.frytolnacestach.cz/404.html
+RewriteRule ^index\.html$ - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule . /index.html [L]
