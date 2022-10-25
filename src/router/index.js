@@ -15,51 +15,81 @@ const routes = [
     {
         path: '/',
         name: 'pageHome',
-        component: pageHome
+        component: pageHome,
+        meta: {
+            title: 'Úvod'
+        }
     },
     {
         path: '/blog',
         name: 'pageBlog',
-        component: pageBlog
+        component: pageBlog,
+        meta: {
+            title: 'Články'
+        }
     },
     {
         path: '/clanky/trikrizovy-vrch',
         name: 'pageBlogTrikrizovyvrch',
-        component: PageBlogTrikrizovyvrch
+        component: PageBlogTrikrizovyvrch,
+        meta: {
+            title: 'Tříkřížový vrch'
+        }
     },
     {
         path: '/social',
         name: 'pageSocial',
-        component: pageSocial
+        component: pageSocial,
+        meta: {
+            title: 'Kde mě najdete'
+        }
     },
     {
         path: '/iam',
         name: 'pageIam',
-        component: pageIam
+        component: pageIam,
+        meta: {
+            title: 'Kdo jsem'
+        }
     },
     {
         path: '/donate',
         name: 'pageDonate',
-        component: pageDonate
+        component: pageDonate,
+        meta: {
+            title: 'Podpořit'
+        }
     },
     {
         path: '/cookies',
         name: 'pageCookies',
-        component: pageCookies
+        component: pageCookies,
+        meta: {
+            title: 'Zásady Cookies'
+        }
     },
     {
         path: '/conditions',
         name: 'pageConditions',
-        component: pageConditions
+        component: pageConditions,
+        meta: {
+            title: 'Obchodní podmínky a zásady ochrany osobních údajů'
+        }
     },
     {
         path: '/styleguide',
         name: 'pageStyleguide',
-        component: pageStyleguide
+        component: pageStyleguide,
+        meta: {
+            title: 'Styleguide'
+        }
     },
     {
         path: '/:pathMatch(.*)*',
-        component: pageNotfound
+        component: pageNotfound,
+        meta: {
+            title: 'Stránka nenalezena'
+        }
     }
 ];
 
@@ -72,7 +102,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    document.title = `${ process.env.VUE_APP_TITLE } - ${ to.name }`
+    document.title = `${ process.env.VUE_APP_TITLE } - ${ to.meta.title }`
     next()
 })
 

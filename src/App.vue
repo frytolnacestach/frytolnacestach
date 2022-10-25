@@ -24,6 +24,11 @@
       ControlHamburger,
       ComponentFooter,
       PopupCookies
+    },
+    metaInfo: {
+      meta: [
+        { name: 'description', content: 'An example Vue application with vue-meta.' }
+      ]
     }
   }
 </script>
