@@ -107,7 +107,7 @@
                 </div>
                 
                 <div class="flex flex-center mb-4">
-                    <a class="a-button-fill a-button-fill--big a-button-fill--blue" href="kde-me-najdes.html">Více informací</a>
+                    <router-link class="a-button-fill a-button-fill--big a-button-fill--blue" to="/social">Více informací</router-link>
                 </div>
             </div>
         </section>
