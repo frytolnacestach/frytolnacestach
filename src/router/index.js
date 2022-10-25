@@ -1,58 +1,65 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-function lazyLoad(view){
-    return import(`../views/${view}.vue`)
-}
+import pageHome from '../views/PageHome.vue'
+import pageBlog from '../views/PageBlog.vue'
+import PageBlogTrikrizovyvrch from '../views/PageBlogTrikrizovyvrch.vue'
+import pageSocial from '../views/PageSocial.vue'
+import pageIam from '../views/PageIam.vue'
+import pageDonate from '../views/PageDonate.vue'
+import pageCookies from '../views/PageCookies.vue'
+import pageConditions from '../views/PageConditions.vue'
+import pageStyleguide from '../views/PageStyleguide.vue'
+import pageNotfound from '../views/PageNotfound.vue'
 
 const routes = [
     {
         path: '/',
         name: 'pageHome',
-        component: lazyLoad('PageHome')
+        component: pageHome
     },
     {
         path: '/blog',
         name: 'pageBlog',
-        component: lazyLoad('PageBlog')
+        component: pageBlog
     },
     {
         path: '/clanky/trikrizovy-vrch',
         name: 'pageBlogTrikrizovyvrch',
-        component: lazyLoad('PageBlogTrikrizovyvrch')
+        component: PageBlogTrikrizovyvrch
     },
     {
         path: '/social',
         name: 'pageSocial',
-        component: lazyLoad('PageSocial')
+        component: pageSocial
     },
     {
         path: '/iam',
         name: 'pageIam',
-        component: lazyLoad('PageIam')
+        component: pageIam
     },
     {
         path: '/donate',
         name: 'pageDonate',
-        component: lazyLoad('PageDonate')
+        component: pageDonate
     },
     {
         path: '/cookies',
         name: 'pageCookies',
-        component: lazyLoad('PageCookies')
+        component: pageCookies
     },
     {
         path: '/conditions',
         name: 'pageConditions',
-        component: lazyLoad('PageConditions')
+        component: pageConditions
     },
     {
         path: '/styleguide',
         name: 'pageStyleguide',
-        component: lazyLoad('PageStyleguide')
+        component: pageStyleguide
     },
     {
         path: '/:pathMatch(.*)*',
-        component: lazyLoad('PageNotfound')
+        component: pageNotfound
     }
 ];
 
