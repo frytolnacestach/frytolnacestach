@@ -1,13 +1,7 @@
 <template>
     <main class="t-main">
-        <section>
-            <div class="o-hero o-hero--small">
-                <div class="o-hero__outer">
-                    <div class="o-hero__inner">
-                        <h1 class="o-hero__headline">Blog</h1>
-                    </div>
-                </div>
-            </div>
+        <section class="t-section">
+            <SectionHero :headline="headline" />
         </section>
 
         <section class="t-section my-4">
@@ -53,12 +47,19 @@
 </template>
 
 <script>
+    import SectionHero from '../components/SectionHero.vue'
     import SectionPlatform from '../components/SectionPlatform.vue'
 
     export default {
         name: 'PageBlog',
         components: {
+            SectionHero,
             SectionPlatform
+        },
+        data() {
+            return {
+                headline: "Články"
+            }
         }
     }
 </script>

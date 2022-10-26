@@ -1,13 +1,7 @@
 <template>
     <main class="t-main">
-        <section>
-            <div class="o-hero o-hero--small">
-                <div class="o-hero__outer">
-                    <div class="o-hero__inner">
-                        <h1 class="o-hero__headline">Obchodní podmínky a zásady ochrany osobních údajů</h1>
-                    </div>
-                </div>
-            </div>
+        <section class="t-section">
+            <SectionHero :headline="headline" />
         </section>
 
         <section class="t-section t-section--wysiwyg py-4">
@@ -65,3 +59,19 @@
         </section>
     </main>
 </template>
+
+<script>
+    import SectionHero from '../components/SectionHero.vue'
+
+    export default {
+        name: 'PageConditions',
+        components: {
+            SectionHero
+        },
+        data() {
+            return {
+                headline: "Obchodní podmínky a zásady ochrany osobních údajů"
+            }
+        }
+    }
+</script>

@@ -1,17 +1,13 @@
 <template>
     <main class="t-main">
-        <section>
-            <div class="o-hero o-hero--small">
-                <div class="o-hero__outer">
-                    <div class="o-hero__inner">
-                        <h1 class="o-hero__headline">Error 404</h1>
-                        <p class="o-hero__perex">Je mi to líto ale tato stránka neexistuje</p>
-                    </div>
-                </div>
-            </div>
+        <section class="t-section">
+            <SectionHero 
+                :headline="headline"
+                :perex="perex"
+            />
         </section>
 
-        <section>
+        <section class="t-section">
             <div class="o-build">
                 <div class="o-build__outer">
                     <div class="o-build__inner">
@@ -24,3 +20,20 @@
         </section>
     </main>
 </template>
+
+<script>
+    import SectionHero from '../components/SectionHero.vue'
+
+    export default {
+        name: 'PageNotfound',
+        components: {
+            SectionHero
+        },
+        data() {
+            return {
+                headline: "Error 404",
+                perex: "Je mi to líto ale tato stránka neexistuje"
+            }
+        }
+    }
+</script>

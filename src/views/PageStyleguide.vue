@@ -1,13 +1,7 @@
 <template>
     <main class="t-main">
         <section class="t-section">
-            <div class="o-hero o-hero--small">
-                <div class="o-hero__outer">
-                    <div class="o-hero__inner">
-                        <h1 class="o-hero__headline">Styleguide</h1>
-                    </div>
-                </div>
-            </div>
+            <SectionHero :headline="headline" />
         </section>
 
         <section class="t-section">
@@ -25,3 +19,19 @@
         </section>
     </main>
 </template>
+
+<script>
+    import SectionHero from '../components/SectionHero.vue'
+
+    export default {
+        name: 'PageStyleguide',
+        components: {
+            SectionHero
+        },
+        data() {
+            return {
+                headline: "Styleguide"
+            }
+        }
+    }
+</script>
