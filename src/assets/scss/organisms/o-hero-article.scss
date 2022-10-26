@@ -1,4 +1,4 @@
-.o-hero {
+.o-hero-article {
     width: 100%;
     height: auto;
     min-height: 200px;
@@ -13,6 +13,17 @@
 
     @media only screen and (min-width: $lg) {
         min-height: 300px;
+    }
+
+    &:after {
+        background-color: $black-3;
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
     }
 
     &__outer {
@@ -52,10 +63,5 @@
     &__date {
         color: $gray3;
         font-size: $fs-small-ssss;
-    }
-
-    &__buttons {
-        display: flex;
-        justify-content: center;
     }
 }

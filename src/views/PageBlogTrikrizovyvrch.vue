@@ -1,12 +1,12 @@
 <template>
     <main class="t-main">
         <section>
-            <div class="o-hero o-hero--article" style="background-image: url('/images/articles/trikrizovy-vrch/hero-trikrizovy-vrch.jpg');">
-                <div class="o-hero__outer">
-                    <div class="o-hero__inner">
-                        <h1 class="o-hero__headline">Tříkřížový vrch</h1>
-                        <p class="o-hero__perex">Tři křížě, tři panny a jeden rytíř</p>
-                        <span class="o-hero__date">18. října 2022 (aktualizace 22. října 2022)</span>
+            <div class="o-hero-article" style="background-image: url('/images/articles/trikrizovy-vrch/hero-trikrizovy-vrch.jpg');">
+                <div class="o-hero-article__outer">
+                    <div class="o-hero-article__inner">
+                        <h1 class="o-hero-article__headline">Tříkřížový vrch</h1>
+                        <p class="o-hero-article__perex">Tři křížě, tři panny a jeden rytíř</p>
+                        <span class="o-hero-article__date">18. října 2022 (aktualizace 22. října 2022)</span>
                     </div>
                 </div>
             </div>

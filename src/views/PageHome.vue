@@ -1,18 +1,7 @@
 <template>
     <main class="t-main">
         <section>
-            <div class="o-hero">
-                <div class="o-hero__outer">
-                    <div class="o-hero__inner">
-                        <h1 class="o-hero__headline">Frytol na cestách</h1>
-                        <p class="o-hero__perex">Cestování a natáčení</p>
-                        <div class="o-hero__buttons mt-2">
-                            <a class="a-button-fill a-button-fill--big" href="https://youtube.com/@frytolnacestach" target="_blank">Youtube</a>
-                            <router-link class="a-button-fill a-button-fill--big a-button-fill--blue" to="/iam">Kdo jsem</router-link>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <SectionHerobig />
         </section>
 
         <section class="t-section py-4">
@@ -90,6 +79,7 @@
 
 <script>
 
+    import SectionHerobig from '../components/SectionHerobig.vue'
     import SectionWhoiam from '../components/SectionWhoiam.vue'
     import SectionPlatform from '../components/SectionPlatform.vue'
     import SectionArticlelisthp from '../components/SectionArticlelisthp.vue'
@@ -99,6 +89,7 @@
     export default {
         name: 'PageHome',
         components: {
+            SectionHerobig,
             SectionWhoiam,
             SectionPlatform,
             SectionArticlelisthp,

@@ -1,19 +1,15 @@
-.o-hero {
+.o-hero-big {
     width: 100%;
     height: auto;
-    min-height: 200px;
+    min-height: 100vh;
     background-image: url('../../images/_base/hero.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: center;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     position: relative;
-
-    @media only screen and (min-width: $lg) {
-        min-height: 300px;
-    }
 
     &__outer {
         width: 100%;
@@ -47,11 +43,6 @@
         color: $white;
         margin: 0;
         font-size: $fs-normal-ssss;
-    }
-
-    &__date {
-        color: $gray3;
-        font-size: $fs-small-ssss;
     }
 
     &__buttons {
