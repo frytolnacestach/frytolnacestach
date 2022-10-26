@@ -29,7 +29,3 @@
         name: 'SectionArticlelisthp'
     }
 </script>
-
-<style scoped>
-
-</style>

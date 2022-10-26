@@ -15,7 +15,3 @@
         name: 'SectionYoutube'
     }
 </script>
-
-<style scoped>
-
-</style>

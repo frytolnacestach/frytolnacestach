@@ -13,7 +13,3 @@
         name: 'LogotypeHeader'
     }
 </script>
-
-<style scoped>
-
-</style>

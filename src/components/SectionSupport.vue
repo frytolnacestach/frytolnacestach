@@ -19,7 +19,3 @@
         name: 'SectionSupport'
     }
 </script>
-
-<style scoped>
-
-</style>

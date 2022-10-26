@@ -323,7 +323,3 @@
         name: 'SectionBoxplatform'
     }
 </script>
-
-<style scoped>
-
-</style>

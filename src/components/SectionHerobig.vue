@@ -18,7 +18,3 @@
         name: 'SectionHerobig'
     }
 </script>
-
-<style scoped>
-
-</style>

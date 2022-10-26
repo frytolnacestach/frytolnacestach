@@ -17,7 +17,3 @@
         name: 'ControlHamburger'
     }
 </script>
-
-<style scoped>
-
-</style>

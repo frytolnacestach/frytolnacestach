@@ -37,7 +37,3 @@
         name: 'MenuMain'
     }
 </script>
-
-<style scoped>
-
-</style>

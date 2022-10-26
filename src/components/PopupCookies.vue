@@ -64,7 +64,3 @@
         name: 'PopupCookies'
     }
 </script>
-
-<style scoped>
-
-</style>

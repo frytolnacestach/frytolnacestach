@@ -73,7 +73,3 @@
         name: 'SectionPlatform'
     }
 </script>
-
-<style scoped>
-
-</style>

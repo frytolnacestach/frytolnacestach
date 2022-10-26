@@ -53,7 +53,3 @@
         name: 'ComponentFooter'
     }
 </script>
-
-<style scoped>
-
-</style>
