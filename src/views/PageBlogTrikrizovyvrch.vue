@@ -368,7 +368,14 @@
 </template>
 
 <script>
+    import axios from 'axios'
+
     export default {
+        data() {
+            return {
+                posts: []
+            }
+        },
 
         props: {
             adStyle: {
@@ -414,6 +421,16 @@
 
         mounted() {
             this.adsenseAddLoad();
+        }, 
+
+        created() {
+            axios.get('https://api.npoint.io/043202fb7002160460f2')
+            .then(response => {
+                this.posts = response.data
+            })
+            .catch(error => {
+                console.log(error)
+            })
         }
     }
 </script>
