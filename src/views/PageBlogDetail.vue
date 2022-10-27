@@ -66,7 +66,7 @@
                                 <div class="o-map-mapy__outer">
                                     <div class="o-map-mapy__inner">
                                         <div class="o-map-mapy__map">
-                                            <a class="o-map-mapy__map-link" href="{{ post.urlmap }}" target="_blank">
+                                            <a class="o-map-mapy__map-link" :href="post.urlMap" target="_blank">
                                                 <img class="o-map-mapy__map-image" :src="post.imagemap">
                                             </a>
                                         </div>
@@ -215,7 +215,7 @@
                                 <div class="o-sidebar-map-mapy__outer">
                                     <div class="o-sidebar-map-mapy__inner">
                                         <div class="o-sidebar-map-mapy__map">
-                                            <a class="o-sidebar-map-mapy__map-link" href="{{ post.urlMap }}" target="_blank">
+                                            <a class="o-sidebar-map-mapy__map-link" :href="post.urlMap" target="_blank">
                                                 <img class="o-sidebar-map-mapy__map-image" :src="post.imageMap">
                                             </a>
                                         </div>
