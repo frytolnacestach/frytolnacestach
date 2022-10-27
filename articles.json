@@ -26,7 +26,76 @@
       "textwiki": "<p>Kalvárie (239 m, též Tříkřížový vrch) je zdaleka viditelný, výrazný rulový skalní ostroh v místě nazývaném Porta Bohemica (Brána Čech) v CHKO České středohoří. V roce 1993 zde byla na rozloze 8,71 ha vyhlášena stejnojmenná přírodní rezervace. Tato rezervace se nachází na katastrálním území obcí Libochovany a Velké Žernoseky. Jako hradiště tvořílo dvojdílný celek se sousedním Hrádkem. Hradiště v dominantní poloze nad Labem v místech průchodu obchodních cest nad tzv. Českou branou (Porta Bohemica). Dvoudílná lokalita s oddělenou akropolí ztotožňována s bájným územím kmene Lučanů a někdy spojována s hradištěm Canburg. Akropole se rozkládala na Tříkřížovém vrchu, kde od novověku stojí trojice křížů – kalvárie. Větší část hradiště leží na vedlejším kopci Hrádek, od akropole odděleném strží.</p>",
       "urlYoutube":"https://www.youtube.com/embed/n20az-dLhQM",
       "ulrwiki": "https://cs.wikipedia.org/wiki/Kalv%C3%A1rie_(Porta_Bohemica)",
-      "urlmap": "https://mapy.cz/s/megovemuba"
+      "urlmap": "https://mapy.cz/s/megovemuba",
+      "reviewtext": "Cesta rozhodně není pro méné pohyblivé jedince. To samé platí pro Kočarky. Počítejte s tím že poslední část cesty je po nezpevněném terénu. Jinak za mě rozhodně tu zažijete super výhled na podřipskou pánev a řeku Labe.",
+      "revuevalue": "85%",
+      "dateinformation": "21. řijnu 2022",
+      "travelicon":[
+        "car",
+        "train",
+        "bus",
+        "boat-ferry",
+        "boat-ferry"
+      ],
+      "travelname":[
+        "Auto",
+        "Vlak",
+        "Autobus",
+        "Přívoz",
+        "Loď"
+      ],
+      "traveltext":[
+        "Auto lze zaparkovat bezplatně v obci u silniční komunikace",
+        "Vlaková stanice se nachází o další 2km dále",
+        "Autobusová zastávka se nachází v centru obce tedy ve výchozím bodu.",
+        "Přívoz tu jezdí mezi Velké Žernoseky a Malé Žernoseky, kde se nachází v blízkosti přívozu železniční stanice.",
+        "V obci se nachází přístav."
+      ],
+      "priceperex":"Platné k datu 21. Říjen 2022",
+      "priceitemsname":[
+        "Vstupné",
+        "Parkovné"
+      ],
+      "priceitemssubname":[
+        "",
+        ""
+      ],
+      "priceitemsvalue":[
+        "zdarma",
+        "zdarma"
+      ],
+      "triplengthperex":"",
+      "triplengthname": [
+        "Chůze",
+        "Převýšení",
+        "Převýšení"
+      ],
+      "triplengthsubname": [
+        "",
+        "(stoupání)",
+        "(klesání)"
+      ],
+      "triplengthvalue": [
+        "3.8 km",
+        "100m",
+        "100m"
+      ],
+      "timeperex":"",
+      "timename": [
+        "Na otočku",
+        "Užít si to",
+        "Odpočinout si"
+      ],
+      "timesubname": [
+        "",
+        "",
+        ""
+      ],
+      "timevalue": [
+        "60 minut",
+        "90 minut",
+        "2 hodiny"
+      ]
     }
   ]
   
