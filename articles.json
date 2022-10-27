@@ -120,6 +120,111 @@
           "value":"2 hodiny"
         }
       ]
+    },
+    {
+      "id":"2",
+      "idname":"svet-meduz",
+      "name":"Svět medúz",
+      "perex":"Opravdu je to tady tak úžasné?",
+      "date":"28. října 2022",
+      "dateUpdate":"",
+      "dateInformation":"28. řijnu 2022",
+      "tags":[
+        "Česká Republika", 
+        "Praha",
+        "Zoo",
+        "Vodní svět",
+        "Medúzy" 
+      ],
+      "imageList":"/images/articles/svet-meduz/hero-svet-meduz.jpg",
+      "imageHero":"/images/articles/svet-meduz/hero-svet-meduz.jpg",
+      "imageMap":"/images/maps/svet-meduz.jpg",
+      "urlYoutube":"https://www.youtube.com/embed/Kl6pnTbGG4U",
+      "ulrWiki":"",
+      "urlMap":"https://mapy.cz/s/pupuladopu",
+      "textOpener":"",
+      "textAuthor":"",
+      "textWiki":"",
+      "reviewText":"",
+      "reviewValue":"25%",
+      "perexPrice":"Platné k datu 28. Říjen 2022",
+      "perexTriplength":"",
+      "perexTime":"V sezoně počítejte s čekáním ve frontě cca 60 minut",
+      "locations": [
+        {
+          "type":"Země",
+          "name":"Česká Republika"
+        },
+        {
+          "type":"Město",
+          "name":"Praha"
+        },
+        {
+          "type":"Lokace",
+          "name":"Obchodní centrum Arkády Pankrác"
+        }
+      ],
+      "travels": [
+        {
+          "icon":"car",
+          "name":"Auto",
+          "text":"Placené parkoviště"
+        },
+        {
+          "icon":"train",
+          "name":"Metro",
+          "text":"Metro se nachází hned u obchodního centra"
+        },
+        {
+          "icon":"bus",
+          "name":"MHD",
+          "text":"Autobusová zastávka se nachází hned před centrem"
+        }
+      ],
+      "prices": [
+        {
+          "name":"Vstupné - Dospělí",
+          "subname":"",
+          "value":"260 Kč"
+        },
+        {
+          "name":"Vstupné - Děti 2-15 + ZTP a ZTP+P",
+          "subname":"",
+          "value":"170 Kč"
+        },
+        {
+          "name":"Vstupné - Děti do 2 let",
+          "subname":"",
+          "value":"zdarma"
+        },
+        {
+          "name":"Vstupné - Studenti a senioři 65+",
+          "subname":"",
+          "value":"200 Kč"
+        },
+        {
+          "name":"Parkovné",
+          "subname":"(2 hodiny zdarma)",
+          "value":"40 Kč/hod"
+        }
+      ],
+      "times":[
+        {
+          "name":"Na otočku",
+          "subname":"",
+          "value":"15 minut"
+        },
+        {
+          "name":"Prohlédnout si",
+          "subname":"",
+          "value":"30 minut"
+        },
+        {
+          "name":"Studovat a pozorovat",
+          "subname":"",
+          "value":"1 hodina"
+        }
+      ]
     }
   ]
   
