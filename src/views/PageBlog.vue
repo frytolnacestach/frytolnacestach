@@ -6,29 +6,7 @@
 
         <section class="t-section my-4">
             <div class="t-section__inner">
-                <div class="o-article-list">
-                    <div class="o-article-list__outer">
-                        <div class="o-article-list__items">
-                            <div class="o-article-list__item">
-                                <div class="o-article-list__item-inner">
-                                    <div class="o-article-list__image">
-                                        <div class="o-article-list__image-file" style="background-image: url('/images/articles/trikrizovy-vrch/hero-trikrizovy-vrch.jpg');">
-                                            <router-link class="o-article-list__image-link" to="/clanky/trikrizovy-vrch"></router-link>
-                                        </div>
-                                    </div>
-                                    <div class="o-article-list__text">
-                                        <h3 class="o-article-list__title">
-                                            <router-link class="o-article-list__title-link" to="/clanky/trikrizovy-vrch">Tříkřížový vrch</router-link>
-                                        </h3>
-                                        <p class="o-article-list__perex">
-                                            <router-link class="o-article-list__perex-link" to="/clanky/trikrizovy-vrch">Tři křížě, tři panny a jeden rytíř</router-link>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <SectionArticlelist />
             </div>
         </section>
 
@@ -48,12 +26,14 @@
 
 <script>
     import SectionHero from '../components/SectionHero.vue'
+    import SectionArticlelist from '../components/SectionArticlelist.vue'
     import SectionPlatform from '../components/SectionPlatform.vue'
 
     export default {
         name: 'PageBlog',
         components: {
             SectionHero,
+            SectionArticlelist,
             SectionPlatform
         },
         data() {
