@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import pageHome from '../views/PageHome.vue'
 import pageBlog from '../views/PageBlog.vue'
-import PageBlogTrikrizovyvrch from '../views/PageBlogTrikrizovyvrch.vue'
+import PageBlogDetail from '../views/PageBlogDetail.vue'
 import pageSocial from '../views/PageSocial.vue'
 import pageIam from '../views/PageIam.vue'
 import pageDonate from '../views/PageDonate.vue'
@@ -29,9 +29,9 @@ const routes = [
         }
     },
     {
-        path: '/clanky/trikrizovy-vrch',
-        name: 'pageBlogTrikrizovyvrch',
-        component: PageBlogTrikrizovyvrch,
+        path: '/clanky/:idname',
+        name: 'pageBlogDetail',
+        component: PageBlogDetail,
         meta: {
             title: 'Tříkřížový vrch'
         }

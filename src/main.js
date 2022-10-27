@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
-import meta from 'vue-meta'
 import App from './App.vue'
 import router from './router'
+import meta from 'vue-meta'
 
 createApp(App)
     .use(router)

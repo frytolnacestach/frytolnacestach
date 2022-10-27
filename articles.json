@@ -1,14 +1,12 @@
 [
     {
-      "id": "1",
-      "idname": "trikrizovy-vrch",
-      "name": "Tříkřížový vrch",
-      "perex": "Tři křížě, tři panny a jeden rytíř",
-      "date": "18. října 2022",
-      "update": "22. října 2022",
-      "imagelist": "/images/articles/trikrizovy-vrch/hero-trikrizovy-vrch.jpg",
-      "imagehero": "/images/articles/trikrizovy-vrch/hero-trikrizovy-vrch.jpg",
-      "imagemap": "/images/maps/trikrizovy-vrch.jpg",
+      "id":"1",
+      "idname":"trikrizovy-vrch",
+      "name":"Tříkřížový vrch",
+      "perex":"Tři křížě, tři panny a jeden rytíř",
+      "date":"18. října 2022",
+      "dateUpdate":"22. října 2022",
+      "dateInformation":"21. řijnu 2022",
       "tags":[
         "Česká Republika", 
         "Ústecký kraj", 
@@ -21,80 +19,106 @@
         "Porta Bohemica",
         "Pověst"
       ],
-      "textopener":"Vrch Kalvarie, též zvaní Tříkřížový vrch se nachází 239 metrů nad mořem a na jeho vrcholu jak již název napovídá stojí 3 kříže, které tam jsou již od začátku novověku tedy někdy od 16 století. Ke křížům se také váže několik různých pověstí. Ta nejznámější je o třech pannách, které milovaly jednoho rytíře, ty se zde svázali copy k sobě a spáchali nežití skokem ze skály.",
-      "textauthor":"<p>Ještě  dříve bylo v okolí obrovské hradiště, které zde bylo již před 3mi tisíci lety.Celé toto území se ale začalo formovat mnohemdříve a to přibližně před 2mi miliony let kdy se zde řeka začala zakousávat do skály.</p><p>Vrch se nachází na územÍ Porta Bohemica, tedy brána Čech, která symbolizuje vstup do české země a rovinatého území.</p><p>Od roku 1993 je zde přírodní rezervace o rozloze 8,71 ha, která je součástí Chráněné krajinné oblast České středohoří.</p><h3>Naše cesta</h3><p>Naše cesta začala v obci Velké Žernoseky, kde jsem nechal zaparkované auto u hlavní ulice. Tato obec leží na pravém břehu řeky Labe, najdete tu přístav a také zde v sezoně jezdí přívoz. Odtud nás čekala necelé 2 kilometry dlouhá cesta kolem Labe směrem na Ústí nad Labem a na jejímž konci nás čekalo přibližně 100 metrové převýšení po lesní cestě která je určená pouze pro pěší. Není to však jediná cesta, která sem vede a můžete také zvolit cestu, která je přibližně o kilometr delší za to má průběžné stoupání.</p>",
-      "textwiki": "<p>Kalvárie (239 m, též Tříkřížový vrch) je zdaleka viditelný, výrazný rulový skalní ostroh v místě nazývaném Porta Bohemica (Brána Čech) v CHKO České středohoří. V roce 1993 zde byla na rozloze 8,71 ha vyhlášena stejnojmenná přírodní rezervace. Tato rezervace se nachází na katastrálním území obcí Libochovany a Velké Žernoseky. Jako hradiště tvořílo dvojdílný celek se sousedním Hrádkem. Hradiště v dominantní poloze nad Labem v místech průchodu obchodních cest nad tzv. Českou branou (Porta Bohemica). Dvoudílná lokalita s oddělenou akropolí ztotožňována s bájným územím kmene Lučanů a někdy spojována s hradištěm Canburg. Akropole se rozkládala na Tříkřížovém vrchu, kde od novověku stojí trojice křížů – kalvárie. Větší část hradiště leží na vedlejším kopci Hrádek, od akropole odděleném strží.</p>",
+      "imageList":"/images/articles/trikrizovy-vrch/hero-trikrizovy-vrch.jpg",
+      "imageHero":"/images/articles/trikrizovy-vrch/hero-trikrizovy-vrch.jpg",
+      "imageMap":"/images/maps/trikrizovy-vrch.jpg",
       "urlYoutube":"https://www.youtube.com/embed/n20az-dLhQM",
-      "ulrwiki": "https://cs.wikipedia.org/wiki/Kalv%C3%A1rie_(Porta_Bohemica)",
-      "urlmap": "https://mapy.cz/s/megovemuba",
-      "reviewtext": "Cesta rozhodně není pro méné pohyblivé jedince. To samé platí pro Kočarky. Počítejte s tím že poslední část cesty je po nezpevněném terénu. Jinak za mě rozhodně tu zažijete super výhled na podřipskou pánev a řeku Labe.",
-      "revuevalue": "85%",
-      "dateinformation": "21. řijnu 2022",
-      "travelicon":[
-        "car",
-        "train",
-        "bus",
-        "boat-ferry",
-        "boat-ferry"
+      "ulrWiki":"https://cs.wikipedia.org/wiki/Kalv%C3%A1rie_(Porta_Bohemica)",
+      "urlMap":"https://mapy.cz/s/megovemuba",
+      "textOpener":"Vrch Kalvarie, též zvaní Tříkřížový vrch se nachází 239 metrů nad mořem a na jeho vrcholu jak již název napovídá stojí 3 kříže, které tam jsou již od začátku novověku tedy někdy od 16 století. Ke křížům se také váže několik různých pověstí. Ta nejznámější je o třech pannách, které milovaly jednoho rytíře, ty se zde svázali copy k sobě a spáchali nežití skokem ze skály.",
+      "textAuthor":"<p>Ještě  dříve bylo v okolí obrovské hradiště, které zde bylo již před 3mi tisíci lety.Celé toto území se ale začalo formovat mnohemdříve a to přibližně před 2mi miliony let kdy se zde řeka začala zakousávat do skály.</p><p>Vrch se nachází na územÍ Porta Bohemica, tedy brána Čech, která symbolizuje vstup do české země a rovinatého území.</p><p>Od roku 1993 je zde přírodní rezervace o rozloze 8,71 ha, která je součástí Chráněné krajinné oblast České středohoří.</p><h3>Naše cesta</h3><p>Naše cesta začala v obci Velké Žernoseky, kde jsem nechal zaparkované auto u hlavní ulice. Tato obec leží na pravém břehu řeky Labe, najdete tu přístav a také zde v sezoně jezdí přívoz. Odtud nás čekala necelé 2 kilometry dlouhá cesta kolem Labe směrem na Ústí nad Labem a na jejímž konci nás čekalo přibližně 100 metrové převýšení po lesní cestě která je určená pouze pro pěší. Není to však jediná cesta, která sem vede a můžete také zvolit cestu, která je přibližně o kilometr delší za to má průběžné stoupání.</p>",
+      "textWiki":"<p>Kalvárie (239 m, též Tříkřížový vrch) je zdaleka viditelný, výrazný rulový skalní ostroh v místě nazývaném Porta Bohemica (Brána Čech) v CHKO České středohoří. V roce 1993 zde byla na rozloze 8,71 ha vyhlášena stejnojmenná přírodní rezervace. Tato rezervace se nachází na katastrálním území obcí Libochovany a Velké Žernoseky. Jako hradiště tvořílo dvojdílný celek se sousedním Hrádkem. Hradiště v dominantní poloze nad Labem v místech průchodu obchodních cest nad tzv. Českou branou (Porta Bohemica). Dvoudílná lokalita s oddělenou akropolí ztotožňována s bájným územím kmene Lučanů a někdy spojována s hradištěm Canburg. Akropole se rozkládala na Tříkřížovém vrchu, kde od novověku stojí trojice křížů – kalvárie. Větší část hradiště leží na vedlejším kopci Hrádek, od akropole odděleném strží.</p>",
+      "reviewText":"Cesta rozhodně není pro méné pohyblivé jedince. To samé platí pro Kočarky. Počítejte s tím že poslední část cesty je po nezpevněném terénu. Jinak za mě rozhodně tu zažijete super výhled na podřipskou pánev a řeku Labe.",
+      "reviewValue":"85%",
+      "perexPrice":"Platné k datu 21. Říjen 2022",
+      "perexTriplength":"",
+      "perexTime":"",
+      "locations": [
+        {
+          "type":"Země",
+          "name":"Česká Republika"
+        },
+        {
+          "type":"Oblast",
+          "name":"Ústecký kraj"
+        },
+        {
+          "type":"Obec",
+          "name":"Velké Žernoseky"
+        }
       ],
-      "travelname":[
-        "Auto",
-        "Vlak",
-        "Autobus",
-        "Přívoz",
-        "Loď"
+      "travels": [
+        {
+          "icon":"car",
+          "name":"Auto",
+          "text":"Auto lze zaparkovat bezplatně v obci u silniční komunikace."
+        },
+        {
+          "icon":"train",
+          "name":"Vlak",
+          "text":"Vlaková stanice se nachází o další 2km dále."
+        },
+        {
+          "icon":"bus",
+          "name":"Autobus",
+          "text":"Autobusová zastávka se nachází v centru obce tedy ve výchozím bodu."
+        },
+        {
+          "icon":"boat-ferry",
+          "name":"Přívoz",
+          "text":"Přívoz tu jezdí mezi Velké Žernoseky a Malé Žernoseky, kde se nachází v blízkosti přívozu železniční stanice."
+        },
+        {
+          "icon":"boat-ferry",
+          "name":"Loď",
+          "text":"V obci se nachází přístav."
+        }
       ],
-      "traveltext":[
-        "Auto lze zaparkovat bezplatně v obci u silniční komunikace",
-        "Vlaková stanice se nachází o další 2km dále",
-        "Autobusová zastávka se nachází v centru obce tedy ve výchozím bodu.",
-        "Přívoz tu jezdí mezi Velké Žernoseky a Malé Žernoseky, kde se nachází v blízkosti přívozu železniční stanice.",
-        "V obci se nachází přístav."
+      "prices": [
+        {
+          "name":"Vstupné",
+          "subname":"",
+          "value":"zdarma"
+        },
+        {
+          "name":"Parkovné",
+          "subname":"",
+          "value":"zdarma"
+        }
       ],
-      "priceperex":"Platné k datu 21. Říjen 2022",
-      "priceitemsname":[
-        "Vstupné",
-        "Parkovné"
+      "triplengths":[
+        {
+          "name":"Chůze",
+          "subname":"",
+          "value":"3.8 km"
+        },
+        {
+          "name":"Převýšení",
+          "subname":"(stoupání)",
+          "value":"100m"
+        },
+        {
+          "name":"Převýšení",
+          "subname":"(klesání)",
+          "value":"100m"
+        }
       ],
-      "priceitemssubname":[
-        "",
-        ""
-      ],
-      "priceitemsvalue":[
-        "zdarma",
-        "zdarma"
-      ],
-      "triplengthperex":"",
-      "triplengthname": [
-        "Chůze",
-        "Převýšení",
-        "Převýšení"
-      ],
-      "triplengthsubname": [
-        "",
-        "(stoupání)",
-        "(klesání)"
-      ],
-      "triplengthvalue": [
-        "3.8 km",
-        "100m",
-        "100m"
-      ],
-      "timeperex":"",
-      "timename": [
-        "Na otočku",
-        "Užít si to",
-        "Odpočinout si"
-      ],
-      "timesubname": [
-        "",
-        "",
-        ""
-      ],
-      "timevalue": [
-        "60 minut",
-        "90 minut",
-        "2 hodiny"
+      "times":[
+        {
+          "name":"Na otočku",
+          "subname":"",
+          "value":"60 minut"
+        },
+        {
+          "name":"Užít si to",
+          "subname":"",
+          "value":"90 minut"
+        },
+        {
+          "name":"Odpočinout si",
+          "subname":"",
+          "value":"2 hodiny"
+        }
       ]
     }
   ]

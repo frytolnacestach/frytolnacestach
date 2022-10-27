@@ -5,7 +5,7 @@
                 <div v-for="post in posts" :key="post.id" class="o-article-list__item">
                     <div class="o-article-list__item-inner">
                         <div class="o-article-list__image">
-                            <div class="o-article-list__image-file" v-bind:style="{ 'background-image': 'url(' + post.imagelist + ')'}">
+                            <div class="o-article-list__image-file" v-bind:style="{ 'background-image': 'url(' + post.imageList + ')'}">
                                 <router-link class="o-article-list__image-link" :to="'/clanky/' + post.idname"></router-link>
                             </div>
                         </div>
