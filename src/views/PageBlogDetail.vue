@@ -90,7 +90,7 @@
                                                 {{ post.textWiki }}
                                             </div>
                                             <div class="o-wiki__author">
-                                                <i class="m-author">zdroj. <a class="m-author__link" :href="post.urlwiki" target="_blank">Wikipedia</a></i>
+                                                <i class="m-author">zdroj. <a class="m-author__link" :href="post.urlWiki" target="_blank">Wikipedia</a></i>
                                             </div>
                                         </div>
                                     </div>
