@@ -42,9 +42,7 @@
 
                     <section class="t-section pb-2">
                         <div class="t-section__inner">
-                            <div class="o-wysiwyg">
-                                {{ post.textAuthor }}
-                            </div>
+                            <div class="o-wysiwyg" v-html="post.textAuthor"></div>
                         </div>
                     </section>
 
@@ -86,9 +84,7 @@
                                     <div class="o-wiki__inner">
                                         <h2 class="o-wiki__title">Wikipedia</h2>
                                         <div class="o-wiki__perex text-align-center-mobile text-align-left-desktop">
-                                            <div class="o-wysiwyg">
-                                                {{ post.textWiki }}
-                                            </div>
+                                            <div class="o-wysiwyg" v-html="post.textWiki"></div>
                                             <div class="o-wiki__author">
                                                 <i class="m-author">zdroj. <a class="m-author__link" :href="post.urlWiki" target="_blank">Wikipedia</a></i>
                                             </div>
