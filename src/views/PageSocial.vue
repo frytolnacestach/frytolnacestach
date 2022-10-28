@@ -22,7 +22,7 @@
         },
         data() {
             return {
-                headline: "Error 404"
+                headline: "Kde mě najdete"
             }
         }
     }

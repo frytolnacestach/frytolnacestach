@@ -5,15 +5,15 @@
                 <div class="o-hero-article" v-bind:style="{ 'background-image': 'url(' + post.imageHero + ')'}">
                     <div class="o-hero-article__outer">
                         <div class="o-hero-article__inner">
-                            <h1 class="o-hero-article__headline">{{ post.name }}</h1>
-                            <p class="o-hero-article__perex">{{ post.perex }}</p>
-                            <span class="o-hero-article__date">{{ post.date }} <span>(aktualizace {{ post.dateUpdate }})</span></span>
+                            <h1 class="o-hero-article__headline" v-if="post.name">{{ post.name }}</h1>
+                            <p class="o-hero-article__perex" v-if="post.perex">{{ post.perex }}</p>
+                            <span class="o-hero-article__date" v-if="post.date">{{ post.date }} <span v-if="post.dateUpdate">(aktualizace {{ post.dateUpdate }})</span></span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section>
+            <section v-if="post.locations">
                 <div class="o-hot-info">
                     <div class="o-hot-info__outer">
                         <div class="o-hot-info__inner">
@@ -30,7 +30,8 @@
 
             <div class="t-col2">
                 <div class="t-col2__content my-2">
-                    <section class="t-section pt-2">
+
+                    <section class="t-section pt-2" v-if="post.textOpener">
                         <div class="t-section__inner">
                             <div class="o-opener-text">
                                 <p class="o-opener-text__perex">
@@ -40,13 +41,13 @@
                         </div>
                     </section>
 
-                    <section class="t-section pb-2">
+                    <section class="t-section pb-2" v-if="post.textAuthor">
                         <div class="t-section__inner">
                             <div class="o-wysiwyg" v-html="post.textAuthor"></div>
                         </div>
                     </section>
 
-                    <section class="t-section py-2">
+                    <section class="t-section py-2" v-if="post.urlYoutube">
                         <div class="t-section__inner">
                             <div class="o-youtube">
                                 <div class="o-youtube__outer">
@@ -60,14 +61,14 @@
                         </div>
                     </section>
 
-                    <section class="t-section t-section--hidden-desktop my-2">
+                    <section class="t-section t-section--hidden-desktop my-2" v-if="post.urlMap">
                         <div class="t-section__inner">
                             <div class="o-map-mapy">
                                 <div class="o-map-mapy__outer">
                                     <div class="o-map-mapy__inner">
                                         <div class="o-map-mapy__map">
                                             <a class="o-map-mapy__map-link" :href="post.urlMap" target="_blank">
-                                                <img class="o-map-mapy__map-image" :src="post.imagemap">
+                                                <img class="o-map-mapy__map-image" :src="post.imageMap">
                                             </a>
                                         </div>
                                         <a class="o-map-mapy__link" :href="post.urlMap" target="_blank">zobrazit mapu na mapy.cz</a>
@@ -77,7 +78,7 @@
                         </div>
                     </section>
 
-                    <section class="t-section py-2">
+                    <section class="t-section py-2" v-if="post.textWiki">
                         <div class="t-section__inner">
                             <div class="o-wiki">
                                 <div class="o-wiki__outer">
@@ -95,7 +96,7 @@
                         </div>
                     </section>
 
-                    <section class="t-section py-2">
+                    <section class="t-section py-2" v-if="post.travels">
                         <div class="t-section__inner">
                             <div class="o-transport">
                                 <div class="o-transport__outer">
@@ -118,7 +119,7 @@
                         </div>
                     </section>
 
-                    <section class="t-section py-2">
+                    <section class="t-section py-2" v-if="post.prices">
                         <div class="t-section__inner">
                             <div class="o-trip-information o-trip-information--bg-brand1-a">
                                 <div class="o-trip-information__outer">
@@ -137,7 +138,7 @@
                         </div>
                     </section>
 
-                    <section class="t-section py-2">
+                    <section class="t-section py-2" v-if="post.triplengths">
                         <div class="t-section__inner">
                             <div class="o-trip-information o-trip-information--bg-brand2-a">
                                 <div class="o-trip-information__outer">
@@ -156,7 +157,7 @@
                         </div>
                     </section>
 
-                    <section class="t-section py-2">
+                    <section class="t-section py-2" v-if="post.times">
                         <div class="t-section__inner">
                             <div class="o-trip-information o-trip-information--bg-brand2-a">
                                 <div class="o-trip-information__outer">
@@ -175,7 +176,7 @@
                         </div>
                     </section>
 
-                    <section class="t-section py-2">
+                    <section class="t-section py-2" v-if="post.reviewText">
                         <div class="t-section__inner">
                             <div class="o-review">
                                 <div class="o-review__outer">
@@ -191,7 +192,7 @@
                         </div>
                     </section>
 
-                    <section class="t-section py-2">
+                    <section class="t-section py-2" v-if="post.dateInformation">
                         <div class="t-section__inner">
                             <div class="o-information">
                                 <div class="o-information__outer">
@@ -207,9 +208,10 @@
                         </div>
                     </section>
                 </div>
-                <div class="t-col2__sidebar my-2">
 
-                    <section class="t-section t-section--hidden-mobile my-2">
+                <div class="t-col2__sidebar my-2">
+ 
+                    <section class="t-section t-section--hidden-mobile my-2" v-if="post.urlMap">
                         <div class="t-section__inner">
                             <div class="o-sidebar-map-mapy">
                                 <div class="o-sidebar-map-mapy__outer">
@@ -226,7 +228,7 @@
                         </div>
                     </section>
 
-                    <section class="t-section my-2">
+                    <section class="t-section my-2" v-if="post.tags">
                         <div class="t-section__inner">
                             <div class="o-sidebar-tag__outer">
                                 <div class="o-sidebar-tag__inner">

@@ -29,22 +29,6 @@
         @media only screen and (min-width: $md) {
             width: 33.3%;
         }
-
-        &:nth-of-type(2) {
-            display: none;
-
-            @media only screen and (min-width: $sm) {
-                display: block;
-            }
-        }
-
-        &:nth-of-type(3) {
-            display: none;
-
-            @media only screen and (min-width: $md) {
-                display: block;
-            }
-        }
     }
 
     &__item-inner {

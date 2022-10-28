@@ -1293,22 +1293,6 @@ a:hover {
     width: 33.3%;
   }
 }
-.o-article-list__item:nth-of-type(2) {
-  display: none;
-}
-@media only screen and (min-width: 576px) {
-  .o-article-list__item:nth-of-type(2) {
-    display: block;
-  }
-}
-.o-article-list__item:nth-of-type(3) {
-  display: none;
-}
-@media only screen and (min-width: 768px) {
-  .o-article-list__item:nth-of-type(3) {
-    display: block;
-  }
-}
 .o-article-list__item-inner {
   margin: 7px;
   display: flex;
