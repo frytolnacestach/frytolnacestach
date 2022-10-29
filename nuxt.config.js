@@ -30,9 +30,9 @@ export default {
       { src: '/js/cookies-default.js', type: 'text/javascript' },
       { src: '/js/gtm.js', type: 'text/javascript' },
       { src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5217753750259737', async: true},
-      { src: 'https://code.jquery.com/jquery-3.6.1.min.js', async: true, crossorigin: 'anonymous'},
-      { src: '/js/js_m-hamburger.js', type: 'text/javascript' },
-      { src: '/js/js_o-cookies-dialog.js', type: 'text/javascript' }
+      { src: 'https://code.jquery.com/jquery-3.6.1.min.js', crossorigin: 'anonymous'},
+      { src: '/js/js_m-hamburger.js', type: 'text/javascript', defer: 'defer' },
+      { src: '/js/js_o-cookies-dialog.js', type: 'text/javascript', defer: 'defer' }
     ]
   },
 
