@@ -14,13 +14,25 @@ export default {
       { hid: 'description', name: 'description', content: 'Web Frytol na cestách' },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'msapplication-TileColor', content: '#da532c' },
-      { name: 'theme-color', content: '#ffffff' }
+      { name: 'theme-color', content: '#ffffff' },
+      { name: 'author', content: 'Michal Fryč' },
+      { name: 'keywords', content: 'Frytol na cestách, youtube, cestování, blog' },
+      { name: 'robots', content: 'index, follow' },
+      { property: 'og:image', content: '/images/og/og-default.png' }
     ],
     link: [
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/favicons/apple-touch-icon.png' },
       { rel: 'icon', type:'image/png', sizes: '32x32', href: '/images/favicons/favicon-32x32.png' },
       { rel: 'icon', type:'image/png', sizes: '16x16', href: '/images/favicons/favicon-16x16.png' },
       { rel: 'manifest', sizes: '180x180', href: '/images/favicons/site.webmanifest' }
+    ],
+    script: [
+      { src: '/js/cookies-default.js', type: 'text/javascript' },
+      { src: '/js/gtm.js', type: 'text/javascript' },
+      { src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5217753750259737', async: true},
+      { src: 'https://code.jquery.com/jquery-3.6.1.min.js', async: true, crossorigin: 'anonymous'},
+      { src: '/js/js_m-hamburger.js', type: 'text/javascript' },
+      { src: '/js/js_o-cookies-dialog.js', type: 'text/javascript' }
     ]
   },
 
