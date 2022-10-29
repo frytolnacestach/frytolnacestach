@@ -11,7 +11,7 @@
                                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/">Úvod</NuxtLink>
                                     </li>
                                     <li class="m-nav-main__item">
-                                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/blog">Články</NuxtLink>
+                                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/clanky">Články</NuxtLink>
                                     </li>
                                     <li class="m-nav-main__item">
                                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/social">Kde mě najdeš</NuxtLink>

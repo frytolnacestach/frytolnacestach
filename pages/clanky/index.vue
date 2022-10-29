@@ -25,12 +25,12 @@
 </template>
 
 <script>
-    import SectionHero from '../components/SectionHero.vue'
-    import SectionArticlelist from '../components/SectionArticlelist.vue'
-    import SectionPlatform from '../components/SectionPlatform.vue'
+    import SectionHero from '../../components/SectionHero.vue'
+    import SectionArticlelist from '../../components/SectionArticlelist.vue'
+    import SectionPlatform from '../../components/SectionPlatform.vue'
 
     export default {
-        name: 'PageBlog',
+        name: 'PageClanky',
 
         components: {
             SectionHero,

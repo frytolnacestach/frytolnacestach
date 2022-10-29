@@ -10,7 +10,7 @@
                                     <NuxtLink class="m-nav-footer__link" to="/">Úvod</NuxtLink>
                                 </li>
                                 <li class="m-nav-footer__item">
-                                    <NuxtLink class="m-nav-footer__link" to="/blog">Blog</NuxtLink>
+                                    <NuxtLink class="m-nav-footer__link" to="/clanky">Články</NuxtLink>
                                 </li>
                                 <li class="m-nav-footer__item">
                                     <NuxtLink class="m-nav-footer__link" to="/social">Kde mě najdeš</NuxtLink>
