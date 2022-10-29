@@ -1,55 +1,25 @@
 {
   "name": "frytolnacestach",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "gulp": "gulp"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^3.2.13",
-    "vue-axios": "^3.5.0",
-    "vue-meta": "^2.4.0",
-    "vue-router": "^4.1.5",
-    "vuex": "^4.0.2"
+    "@nuxtjs/axios": "^5.13.6",
+    "core-js": "^3.25.3",
+    "nuxt": "^2.15.8",
+    "vue": "^2.7.10",
+    "vue-server-renderer": "^2.7.10",
+    "vue-template-compiler": "^2.7.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "browser-sync": "^2.27.9",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3",
-    "gulp": "^4.0.2",
-    "gulp-livereload": "^4.0.2",
-    "gulp-order": "^1.2.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "sass": "^1.50.0"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ]
+    "@nuxt/types": "^2.15.8",
+    "@nuxt/typescript-build": "^2.1.0",
+    "sass": "^1.55.0",
+    "sass-loader": "^10.3.1"
+  }
 }

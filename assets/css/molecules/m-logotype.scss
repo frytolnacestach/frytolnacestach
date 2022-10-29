@@ -1,0 +1,29 @@
+.m-logotype {
+    position: absolute;
+    z-index: 1001;
+    left: 15px;
+    top: 10px;
+
+    &__image {
+        width: 40px;
+        height: 40px;
+        position: relative;
+    }
+
+    &__image-file {
+        background-image: url('../images/_base/logotype.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+    }
+
+    &__image-link {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
