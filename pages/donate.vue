@@ -34,15 +34,24 @@
 
     export default {
         name: 'PageDonate',
+
         components: {
             SectionHero,
             SectionSupport,
             SectionPlatform
         },
+
         data() {
             return {
                 headline: "Podpořit"
             }
+        },
+
+        head: {
+            title: 'Podpořit | Frytol na cestách',
+            meta: [
+                { hid: 'description', name: 'description', content: 'Podpořit web Frytol na cestách' }
+            ]
         }
     }
 </script>

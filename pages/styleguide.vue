@@ -25,13 +25,22 @@
 
     export default {
         name: 'PageStyleguide',
+        
         components: {
             SectionHero
         },
+
         data() {
             return {
                 headline: "Styleguide"
             }
+        },
+
+        head: {
+            title: 'Styleguide | Frytol na cestách',
+            meta: [
+                { hid: 'description', name: 'description', content: 'Styleguide webu Frytol na cestách' }
+            ]
         }
     }
 </script>

@@ -16,14 +16,23 @@
 
     export default {
         name: 'PageSocial',
+        
         components: {
             SectionHero,
             SectionBoxplatform
         },
+
         data() {
             return {
                 headline: "Kde mě najdete"
             }
+        },
+
+        head: {
+            title: 'Kde mě najdeš | Frytol na cestách',
+            meta: [
+                { hid: 'description', name: 'description', content: 'Sociální síťě kde jsem jako Frytol na cestách' }
+            ]
         }
     }
 </script>

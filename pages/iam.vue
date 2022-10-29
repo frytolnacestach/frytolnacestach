@@ -29,15 +29,24 @@
 
     export default {
         name: 'PageIam',
+
         components: {
             SectionHero,
             SectionWhoiam,
             SectionPlatform
         },
+
         data() {
             return {
                 headline: "Kdo jsem"
             }
+        },
+
+        head: {
+            title: 'Kdo jsem | Frytol na cestách',
+            meta: [
+                { hid: 'description', name: 'description', content: 'Kdo je Frytol na cestách?' }
+            ]
         }
     }
 </script>

@@ -87,59 +87,68 @@
   import SectionSupport from '../components/SectionSupport.vue'
 
   export default {
-      name: 'IndexPage',
-      components: {
-          SectionHerobig,
-          SectionWhoiam,
-          SectionPlatform,
-          SectionArticlelisthp,
-          SectionYoutube,
-          SectionSupport
-      },
-      props: {
-          adStyle: {
-              type: String,
-              requred: false,
-              default: "display:block"
-          },
+    name: 'IndexPage',
+    
+    components: {
+        SectionHerobig,
+        SectionWhoiam,
+        SectionPlatform,
+        SectionArticlelisthp,
+        SectionYoutube,
+        SectionSupport
+    },
 
-          adClient: {
-              type: String,
-              requred: false,
-              default: "ca-pub-5217753750259737"
-          },
+    props: {
+        adStyle: {
+            type: String,
+            requred: false,
+            default: "display:block"
+        },
 
-          adSlot: {
-              type: String,
-              requred: false,
-              default: "9966412055"
-          },
+        adClient: {
+            type: String,
+            requred: false,
+            default: "ca-pub-5217753750259737"
+        },
 
-          adFormat: {
-              type: String,
-              requred: false,
-              default: "auto"
-          },
+        adSlot: {
+            type: String,
+            requred: false,
+            default: "9966412055"
+        },
 
-          adResponsive: {
-              type: String,
-              requred: false,
-              default: "true"
-          }
-          
-      },
+        adFormat: {
+            type: String,
+            requred: false,
+            default: "auto"
+        },
 
-      methods:{
-        adsenseAddLoad(){
-          let inlineScript   = document.createElement("script");
-          inlineScript.type  = "text/javascript";
-          inlineScript.text  = '(adsbygoogle = window.adsbygoogle || []).push({});'
-          document.getElementsByTagName('body')[0].appendChild(inlineScript);
+        adResponsive: {
+            type: String,
+            requred: false,
+            default: "true"
         }
-      },
 
-      mounted() {
-          this.adsenseAddLoad();
-      }
+    },
+
+    methods:{
+        adsenseAddLoad(){
+            let inlineScript   = document.createElement("script");
+            inlineScript.type  = "text/javascript";
+            inlineScript.text  = '(adsbygoogle = window.adsbygoogle || []).push({});'
+            document.getElementsByTagName('body')[0].appendChild(inlineScript);
+        }
+    },
+
+    mounted() {
+        this.adsenseAddLoad();
+    },
+
+    head: {
+        title: 'Frytol na cestách',
+        meta: [
+            { hid: 'description', name: 'description', content: 'Úvodní stránka webu Frytol na cestách' }
+        ]
+    }
   }
 </script>

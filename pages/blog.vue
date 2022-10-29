@@ -31,15 +31,24 @@
 
     export default {
         name: 'PageBlog',
+
         components: {
             SectionHero,
             SectionArticlelist,
             SectionPlatform
         },
+
         data() {
             return {
                 headline: "Články"
             }
+        },
+
+        head: {
+            title: 'Články | Frytol na cestách',
+            meta: [
+                { hid: 'description', name: 'description', content: 'Članky z webu Frytol na cestách' }
+            ]
         }
     }
 </script>

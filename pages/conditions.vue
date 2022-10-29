@@ -65,13 +65,22 @@
 
     export default {
         name: 'PageConditions',
+
         components: {
             SectionHero
         },
+
         data() {
             return {
                 headline: "Obchodní podmínky a zásady ochrany osobních údajů"
             }
+        },
+
+        head: {
+            title: 'Obchodní podmínky a zásady ochrany osobních údajů | Frytol na cestách',
+            meta: [
+                { hid: 'description', name: 'description', content: 'Obchodní podmínky a zásady ochrany osobních údajů pro web Frytol na cestách' }
+            ]
         }
     }
 </script>

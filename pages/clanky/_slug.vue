@@ -268,11 +268,13 @@
 
     export default {
         name: 'PageBlogSlug',
+
         data() {
             return {
                 posts: []
             }
         },
+
         async asyncData({ params }) {
             const slug = params.slug // When calling /abc the slug will be "abc"
             return { slug }
@@ -332,6 +334,13 @@
             .catch(error => {
                 console.log(error)
             })
+        },
+
+        head: {
+            title: 'Článek | Frytol na cestách',
+            meta: [
+                { hid: 'description', name: 'description', content: 'Članek z webu Frytol na cestách' }
+            ]
         }
     }
 </script>

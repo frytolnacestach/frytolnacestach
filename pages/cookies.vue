@@ -83,13 +83,22 @@
 
     export default {
         name: 'PageConditions',
+
         components: {
             SectionHero
         },
+
         data() {
             return {
                 headline: "Zásady Cookies"
             }
+        },
+
+        head: {
+            title: 'Zásady Cookies | Frytol na cestách',
+            meta: [
+                { hid: 'description', name: 'description', content: 'Zásady Cookies pro web Frytol na cestách' }
+            ]
         }
     }
 </script>
