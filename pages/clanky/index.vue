@@ -34,12 +34,6 @@
 
         <section class="t-section t-section--gray">
             <div class="m-headline mt-4 text-align-center">
-                <h2 class="m-headline__title">Test Axios</h2>
-            </div>
-        </section>
-
-        <section class="t-section t-section--gray">
-            <div class="m-headline mt-4 text-align-center">
                 <h2 class="m-headline__title">Další obsah</h2>
             </div>
 
