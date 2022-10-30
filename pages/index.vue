@@ -52,7 +52,7 @@
                 </div>
             </div>
               <div class="flex flex-center mt-2">
-                  <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/blog">Všechny články</NuxtLink>
+                  <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/clanky">Všechny články</NuxtLink>
               </div>
           </div>
       </section>
