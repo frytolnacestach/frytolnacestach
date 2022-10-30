@@ -1,12 +1,12 @@
 <template>
     <main>
         <div class="t-main" v-for="post in posts" :key="post.id">
-            <div v-if="post.idname === slug">
+            <div v-if="post.slug === slug">
                 <section>
                     <div class="o-hero-article" v-bind:style="{ 'background-image': 'url(' + post.imageHero + ')'}">
                         <div class="o-hero-article__outer">
                             <div class="o-hero-article__inner">
-                                <h1 class="o-hero-article__headline" v-if="post.name">{{ post.name }}</h1>
+                                <h1 class="o-hero-article__headline" v-if="post.title">{{ post.title }}</h1>
                                 <p class="o-hero-article__perex" v-if="post.perex">{{ post.perex }}</p>
                                 <span class="o-hero-article__date" v-if="post.date">{{ post.date }} <span v-if="post.dateUpdate">(aktualizace {{ post.dateUpdate }})</span></span>
                             </div>
@@ -269,17 +269,6 @@
     export default {
         name: 'PageBlogSlug',
 
-        data() {
-            return {
-                posts: []
-            }
-        },
-
-        async asyncData({ params }) {
-            const slug = params.slug // When calling /abc the slug will be "abc"
-            return { slug }
-        },
-
         props: {
             adStyle: {
                 type: String,
@@ -313,6 +302,13 @@
             
         },
 
+        head: {
+            title: 'Článek | Frytol na cestách',
+            meta: [
+                { hid: 'description', name: 'description', content: 'Članek z webu Frytol na cestách' }
+            ]
+        },
+
         methods:{
           adsenseAddLoad(){
             let inlineScript   = document.createElement("script");
@@ -325,6 +321,24 @@
         mounted() {
             this.adsenseAddLoad();
         }, 
+        /*
+        async asyncData({ $axios, params }) {
+            const post = await $axios.$get(
+            `https://api.npoint.io/043202fb7002160460f2/${params.slug}`
+            )
+            return { post }
+        }*/
+
+        data() {
+            return {
+                posts: []
+            }
+        },
+
+        async asyncData({ params }) {
+            const slug = params.slug // When calling /abc the slug will be "abc"
+            return { slug }
+        },
 
         created() {
             axios.get('https://api.npoint.io/043202fb7002160460f2')
@@ -334,13 +348,6 @@
             .catch(error => {
                 console.log(error)
             })
-        },
-
-        head: {
-            title: 'Článek | Frytol na cestách',
-            meta: [
-                { hid: 'description', name: 'description', content: 'Članek z webu Frytol na cestách' }
-            ]
         }
     }
 </script>

@@ -28,7 +28,29 @@
               <div class="m-headline mb-2 text-align-center">
                   <h2 class="m-headline__title">Nejnovější články</h2>
               </div>
-              <SectionArticlelisthp />
+              <div class="o-article-list-hp">
+                <div class="o-article-list-hp__outer">
+                    <div class="o-article-list-hp__items">
+                        <div v-for="post in posts" :key="post.id" class="o-article-list-hp__item">
+                            <div class="o-article-list-hp__item-inner">
+                                <div class="o-article-list-hp__image">
+                                    <div class="o-article-list-hp__image-file" v-bind:style="{ 'background-image': 'url(' + post.imageList + ')'}">
+                                        <NuxtLink class="o-article-list-hp__image-link" :to="`clanky/${post.slug}`"></NuxtLink>
+                                    </div>
+                                </div>
+                                <div class="o-article-list-hp__text">
+                                    <h3 class="o-article-list-hp__title">
+                                        <NuxtLink class="o-article-list-hp__title-link" :to="`clanky/${post.slug}`">{{ post.title }}</NuxtLink>
+                                    </h3>
+                                    <p class="o-article-list-hp__perex">
+                                        <NuxtLink class="o-article-list-hp__perex-link" :to="`clanky/${post.slug}`">{{ post.perex }}</NuxtLink>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
               <div class="flex flex-center mt-2">
                   <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/blog">Všechny články</NuxtLink>
               </div>
@@ -82,22 +104,19 @@
   import SectionHerobig from '../components/SectionHerobig.vue'
   import SectionWhoiam from '../components/SectionWhoiam.vue'
   import SectionPlatform from '../components/SectionPlatform.vue'
-  import SectionArticlelisthp from '../components/SectionArticlelisthp.vue'
   import SectionYoutube from '../components/SectionYoutube.vue'
   import SectionSupport from '../components/SectionSupport.vue'
 
   export default {
     name: 'IndexPage',
-    
     components: {
         SectionHerobig,
         SectionWhoiam,
         SectionPlatform,
-        SectionArticlelisthp,
         SectionYoutube,
         SectionSupport
     },
-
+    
     props: {
         adStyle: {
             type: String,
@@ -149,6 +168,11 @@
         meta: [
             { hid: 'description', name: 'description', content: 'Úvodní stránka webu Frytol na cestách' }
         ]
+    },
+
+    async asyncData({ $axios }) {
+        const posts = await $axios.$get(`https://api.npoint.io/043202fb7002160460f2`)
+        return { posts }
     }
   }
 </script>

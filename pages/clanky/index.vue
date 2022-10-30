@@ -6,7 +6,35 @@
 
         <section class="t-section my-4">
             <div class="t-section__inner">
-                <SectionArticlelist />
+                <div class="o-article-list">
+                    <div class="o-article-list__outer">
+                        <div class="o-article-list__items">
+                            <div v-for="post in posts" :key="post.id" class="o-article-list__item">
+                                <div class="o-article-list__item-inner">
+                                    <div class="o-article-list__image">
+                                        <div class="o-article-list__image-file" v-bind:style="{ 'background-image': 'url(' + post.imageList + ')'}">
+                                            <NuxtLink class="o-article-list__image-link" :to="`clanky/${post.slug}`"></NuxtLink>
+                                        </div>
+                                    </div>
+                                    <div class="o-article-list__text">
+                                        <h3 class="o-article-list__title">
+                                            <NuxtLink class="o-article-list__title-link" :to="`clanky/${post.slug}`">{{ post.title }}</NuxtLink>
+                                        </h3>
+                                        <p class="o-article-list__perex">
+                                            <NuxtLink class="o-article-list__perex-link" :to="`clanky/${post.slug}`">{{ post.perex }}</NuxtLink>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="t-section t-section--gray">
+            <div class="m-headline mt-4 text-align-center">
+                <h2 class="m-headline__title">Test Axios</h2>
             </div>
         </section>
 
@@ -26,7 +54,6 @@
 
 <script>
     import SectionHero from '../../components/SectionHero.vue'
-    import SectionArticlelist from '../../components/SectionArticlelist.vue'
     import SectionPlatform from '../../components/SectionPlatform.vue'
 
     export default {
@@ -34,7 +61,6 @@
 
         components: {
             SectionHero,
-            SectionArticlelist,
             SectionPlatform
         },
 
@@ -49,6 +75,11 @@
             meta: [
                 { hid: 'description', name: 'description', content: 'Članky z webu Frytol na cestách' }
             ]
+        },
+
+        async asyncData({ $axios }) {
+            const posts = await $axios.$get(`https://api.npoint.io/043202fb7002160460f2`)
+            return { posts }
         }
     }
 </script>
