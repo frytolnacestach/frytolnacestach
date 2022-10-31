@@ -341,7 +341,7 @@
         },
 
         created() {
-            axios.get('https://api.npoint.io/043202fb7002160460f2')
+            axios.get('https://main--helpful-nougat-109dab.netlify.app/.netlify/functions/clanky')
             .then(response => {
                 this.posts = response.data
             })

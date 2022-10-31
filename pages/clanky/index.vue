@@ -72,7 +72,7 @@
         },
 
         async asyncData({ $axios }) {
-            const posts = await $axios.$get(`https://api.npoint.io/043202fb7002160460f2`)
+            const posts = await $axios.$get(`https://main--helpful-nougat-109dab.netlify.app/.netlify/functions/clanky`)
             return { posts }
         }
     }
