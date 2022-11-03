@@ -235,7 +235,7 @@
                                     <div class="o-sidebar-tag__inner">
                                         <div class="o-sidebar-tag__items">
                                             <div class="o-sidebar-tag__item" v-for="tag in post.tags" v-bind:key="tag">
-                                                <a class="o-sidebar-tag__link">{{ tag }}</a>
+                                                <a class="o-sidebar-tag__link">{{ tag.name }}</a>
                                             </div>
                                         </div>
                                     </div>
