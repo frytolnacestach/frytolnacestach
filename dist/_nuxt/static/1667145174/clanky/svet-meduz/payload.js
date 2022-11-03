@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/clanky/svet-meduz", {data:[{slug:"svet-meduz"}],fetch:{},mutations:void 0});

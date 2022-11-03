@@ -1,7 +1,8 @@
 <template>
     <main>
         <div class="t-main" v-for="post in posts" :key="post.id">
-            <div v-if="post.slug === slug">
+
+            <div v-if="post.slug === $route.params.slug">
                 <section>
                     <div class="o-hero-article" v-bind:style="{ 'background-image': 'url(' + post.imageHero + ')'}">
                         <div class="o-hero-article__outer">
@@ -264,7 +265,6 @@
 </template>
 
 <script>
-    import axios from 'axios'
 
     export default {
         name: 'PageBlogSlug',
@@ -321,33 +321,10 @@
         mounted() {
             this.adsenseAddLoad();
         }, 
-        /*
-        async asyncData({ $axios, params }) {
-            const post = await $axios.$get(
-            `https://api.npoint.io/043202fb7002160460f2/${params.slug}`
-            )
-            return { post }
-        }*/
 
-        data() {
-            return {
-                posts: []
-            }
-        },
-
-        async asyncData({ params }) {
-            const slug = params.slug // When calling /abc the slug will be "abc"
-            return { slug }
-        },
-
-        created() {
-            axios.get('https://main--helpful-nougat-109dab.netlify.app/.netlify/functions/clanky')
-            .then(response => {
-                this.posts = response.data
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        async asyncData({ $axios }) {
+            const posts = await $axios.$get(`https://main--helpful-nougat-109dab.netlify.app/.netlify/functions/clanky`)
+            return { posts }
         }
     }
 </script>
