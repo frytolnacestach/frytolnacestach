@@ -72,7 +72,7 @@
         },
 
         async asyncData({ $axios }) {
-            const posts = await $axios.$get(`https://main--helpful-nougat-109dab.netlify.app/.netlify/functions/clanky`)
+            const posts = await $axios.$get(`https://main--helpful-nougat-109dab.netlify.app/.netlify/functions/posts`)
             return { posts }
         }
     }
