@@ -171,7 +171,7 @@
     },
 
     async asyncData({ $axios }) {
-        const posts = await $axios.$get(`https://main--helpful-nougat-109dab.netlify.app/.netlify/functions/posts`)
+        const posts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/posts`)
         return { posts }
     }
   }
