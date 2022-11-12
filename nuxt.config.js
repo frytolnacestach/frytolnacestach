@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'Frytol na cestách',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'cs'
     },
     meta: [
       { charset: 'utf-8' },
@@ -41,7 +41,6 @@ export default {
     '@/assets/css/main.scss',
   ],
 
-
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ['~/plugins/axios.js'],
 
@@ -53,11 +52,6 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
   ],
-
-  /*
-  axios: {
-    baseURL: 'https://api.nuxtjs.dev'
-  },*/
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
