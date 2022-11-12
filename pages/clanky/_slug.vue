@@ -1,6 +1,5 @@
 <template>
     <main>
-        
         <div class="t-main">
 
             <section>
@@ -9,7 +8,7 @@
                         <div class="o-hero-article__inner">
                             <h1 class="o-hero-article__headline" v-if="post[0].title">{{ post[0].title }}</h1>
                             <p class="o-hero-article__perex" v-if="post[0].perex">{{ post[0].perex }}</p>
-                            <span class="o-hero-article__date" v-if="post[0].date">{{ post[0].date }} <span v-if="post[0].dateUpdate">(aktualizace {{ post[0].dateUpdate }})</span></span>
+                            <span class="o-hero-article__date" v-if="post[0].date">{{ formatDate(post[0].date) }} <span v-if="post[0].dateUpdate">(aktualizace {{ formatDate(post[0].dateUpdate) }})</span></span>
                         </div>
                     </div>
                 </div>
@@ -201,7 +200,7 @@
                                     <div class="o-information__inner">
                                         <div class="o-information__text">
                                             <p class="o-information__perex">
-                                                Informace jsou platné k {{ post[0].dateInformation }}. Jestli tu najdete informaci, která již není platná budu rád za nahlašení na email <a href="mailto:frytolnacestach@gmail.com" target="_blank">frytolnacestach@gmail.com</a>
+                                                Informace jsou platné k {{ formatDate(post[0].dateInformation) }}. Jestli tu najdete informaci, která již není platná budu rád za nahlašení na email <a href="mailto:frytolnacestach@gmail.com" target="_blank">frytolnacestach@gmail.com</a>
                                             </p>
                                         </div>
                                     </div>
@@ -302,12 +301,16 @@
         },
 
         methods:{
-          adsenseAddLoad(){
-            let inlineScript   = document.createElement("script");
-            inlineScript.type  = "text/javascript";
-            inlineScript.text  = '(adsbygoogle = window.adsbygoogle || []).push({});'
-            document.getElementsByTagName('body')[0].appendChild(inlineScript);
-          }
+            adsenseAddLoad(){
+                let inlineScript   = document.createElement("script");
+                inlineScript.type  = "text/javascript";
+                inlineScript.text  = '(adsbygoogle = window.adsbygoogle || []).push({});'
+                document.getElementsByTagName('body')[0].appendChild(inlineScript);
+            },
+            formatDate(date) {
+                const options = { year: 'numeric', month: 'long', day: 'numeric' }
+                return new Date(date).toLocaleDateString('cs', options)
+            }
         },
 
         data() {
@@ -320,7 +323,8 @@
             return {
                 title: `${this.post[0].title} | Frytol na cestách`,
                 meta: [
-                    { hid: 'description', name: 'description', content: 'Članek z webu Frytol na cestách' }
+                    { hid: 'description', name: 'description', content: `${this.post[0].perex}` },
+                    {property: 'og:image', content: `/images/og/og-${this.post[0].slug}.jpg`}
                 ]
             }
         },
