@@ -31,7 +31,8 @@
         head: {
             title: 'Kde mě najdeš | Frytol na cestách',
             meta: [
-                { hid: 'description', name: 'description', content: 'Sociální síťě kde jsem jako Frytol na cestách' }
+                { hid: 'description', name: 'description', content: 'Sociální síťě kde jsem jako Frytol na cestách' },
+                { property: 'og:image', content: '/images/og/og-default.png' }
             ]
         }
     }

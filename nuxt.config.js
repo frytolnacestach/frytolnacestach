@@ -18,7 +18,6 @@ export default {
       { name: 'author', content: 'Michal Fryč' },
       { name: 'keywords', content: 'Frytol na cestách, youtube, cestování, blog' },
       { name: 'robots', content: 'index, follow' },
-      { property: 'og:image', content: '/images/og/og-default.png' }
     ],
     link: [
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/favicons/apple-touch-icon.png' },

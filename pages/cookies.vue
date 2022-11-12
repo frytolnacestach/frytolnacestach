@@ -97,7 +97,8 @@
         head: {
             title: 'Zásady Cookies | Frytol na cestách',
             meta: [
-                { hid: 'description', name: 'description', content: 'Zásady Cookies pro web Frytol na cestách' }
+                { hid: 'description', name: 'description', content: 'Zásady Cookies pro web Frytol na cestách' },
+                { property: 'og:image', content: '/images/og/og-default.png' }
             ]
         }
     }

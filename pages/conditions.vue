@@ -79,7 +79,8 @@
         head: {
             title: 'Obchodní podmínky a zásady ochrany osobních údajů | Frytol na cestách',
             meta: [
-                { hid: 'description', name: 'description', content: 'Obchodní podmínky a zásady ochrany osobních údajů pro web Frytol na cestách' }
+                { hid: 'description', name: 'description', content: 'Obchodní podmínky a zásady ochrany osobních údajů pro web Frytol na cestách' },
+                { property: 'og:image', content: '/images/og/og-default.png' }
             ]
         }
     }
