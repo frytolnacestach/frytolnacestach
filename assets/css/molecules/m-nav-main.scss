@@ -1,8 +1,8 @@
 .m-nav-main {
     $self: &;
 
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
 
     &__outer {
@@ -20,7 +20,7 @@
         list-style: none;
         margin: 0;
         padding: 0;
-        justify-content: center;
+        justify-content: flex-end;
         position: relative;
 
         @media only screen and (min-width: $lg) {
@@ -39,12 +39,6 @@
         }
 
         &--special {
-
-            @media only screen and (min-width: $lg) {
-                position: absolute;
-                top: 0;
-                right: -40px;
-            }
 
             #{$self}__link {
                 background-color: $brand3;

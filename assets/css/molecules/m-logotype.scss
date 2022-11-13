@@ -1,8 +1,16 @@
 .m-logotype {
     position: absolute;
+    display: flex;
     z-index: 1001;
     left: 15px;
     top: 10px;
+    background-color: white;
+    border-radius: 30px;
+
+    @media only screen and (min-width: $lg) {
+        background-color: transparent;
+        border-radius: inherit;
+    }
 
     &__image {
         width: 40px;
@@ -25,5 +33,25 @@
         right: 0;
         bottom: 0;
         left: 0;
+    }
+
+    &__text {
+        height: 40px;
+        position: relative;
+        padding-right: 15px;
+        display: none;
+        
+        @media only screen and (min-width: $lg) {
+            display: block;
+        }
+    }
+
+    &__text-main {
+        display: inline-block;
+        font-size: $fs-normal;
+        font-weight: 700;
+        color: $brand1;
+        line-height: 30px;
+        padding: 5px 0 5px 10px;
     }
 }
