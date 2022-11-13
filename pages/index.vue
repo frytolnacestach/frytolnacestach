@@ -81,21 +81,6 @@
               </div>
           </div>
       </section>
-
-      <section class="t-section pb-2">
-          <div class="flex flex-center">
-              <div class="o-ad-homepage-1">
-                  <!-- Homepage - 1 -->
-                  <ins class="adsbygoogle"
-                      :style="adStyle"
-                      :data-ad-client="adClient"
-                      :data-ad-slot="adSlot"
-                      :data-ad-format="adFormat"
-                      :data-full-width-responsive="adResponsive">
-                  </ins>
-              </div>
-          </div>
-      </section>
   </main>
 </template>
 
@@ -115,48 +100,6 @@
         SectionPlatform,
         SectionYoutube,
         SectionSupport
-    },
-    
-    props: {
-        adStyle: {
-            type: String,
-            requred: false,
-            default: "display:block"
-        },
-
-        adClient: {
-            type: String,
-            requred: false,
-            default: "ca-pub-5217753750259737"
-        },
-
-        adSlot: {
-            type: String,
-            requred: false,
-            default: "9966412055"
-        },
-
-        adFormat: {
-            type: String,
-            requred: false,
-            default: "auto"
-        },
-
-        adResponsive: {
-            type: String,
-            requred: false,
-            default: "true"
-        }
-
-    },
-
-    methods:{
-        adsenseAddLoad(){
-            let inlineScript   = document.createElement("script");
-            inlineScript.type  = "text/javascript";
-            inlineScript.text  = '(adsbygoogle = window.adsbygoogle || []).push({});'
-            document.getElementsByTagName('body')[0].appendChild(inlineScript);
-        }
     },
 
     mounted() {
