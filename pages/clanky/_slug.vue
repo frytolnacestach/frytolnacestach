@@ -19,7 +19,7 @@
                     <div class="o-hot-info__outer">
                         <div class="o-hot-info__inner">
                             <div class="o-hot-info__items">
-                                <div class="o-hot-info__item" v-for="location in post[0].locations" v-bind:key="location">
+                                <div class="o-hot-info__item" v-for="location in post[0].locations" v-bind:key="location.type">
                                     <h4 class="o-hot-info__title">{{ location.type }}</h4>
                                     <span class="o-hot-info__value">{{ location.name }}</span>
                                 </div>
@@ -104,7 +104,7 @@
                                     <div class="o-transport__inner">
                                         <h2 class="o-transport__title">Jak se sem dostat</h2>
                                         <div class="o-transport__items">
-                                            <div class="o-transport__item" v-for="travel in post[0].travels" v-bind:key="travel">
+                                            <div class="o-transport__item" v-for="travel in post[0].travels" v-bind:key="travel.name">
                                                 <div class="o-transport__icon">
                                                     <div :class="'o-transport__icon-file o-transport__icon-file--' + travel.icon"></div>
                                                 </div>
@@ -128,7 +128,7 @@
                                         <h2 class="o-trip-information__title">Ceny</h2>
                                         <p class="o-trip-information__perex">{{ post[0].perexPrice }}</p>
                                         <div class="o-trip-information__items">
-                                            <div class="o-trip-information__item" v-for="price in post[0].prices" v-bind:key="price">
+                                            <div class="o-trip-information__item" v-for="price in post[0].prices" v-bind:key="price.name">
                                                 <h4 class="o-trip-information__name">{{ price.name }}<span class="o-trip-information__name-sub"> {{ price.subname }}</span></h4>
                                                 <span class="o-trip-information__value">{{ price.value }}</span>
                                             </div>
@@ -147,7 +147,7 @@
                                         <h2 class="o-trip-information__title">Délka výletu</h2>
                                         <p class="o-trip-information__perex">{{ post[0].perexTriplength }}</p>
                                         <div class="o-trip-information__items">
-                                            <div class="o-trip-information__item" v-for="triplength in post[0].triplengths" v-bind:key="triplength">
+                                            <div class="o-trip-information__item" v-for="triplength in post[0].triplengths" v-bind:key="triplength.name">
                                                 <h4 class="o-trip-information__name">{{ triplength.name }}<span class="o-trip-information__name-sub"> {{ triplength.subname }}</span></h4>
                                                 <span class="o-trip-information__value">{{ triplength.value }}</span>
                                             </div>
@@ -166,7 +166,7 @@
                                         <h2 class="o-trip-information__title">Časová náročnost</h2>
                                         <p class="o-trip-information__perex">{{ post[0].perexTime }}</p>
                                         <div class="o-trip-information__items">
-                                            <div class="o-trip-information__item" v-for="time in post[0].times" v-bind:key="time">
+                                            <div class="o-trip-information__item" v-for="time in post[0].times" v-bind:key="time.name">
                                                 <h4 class="o-trip-information__name">{{ time.name }}<span class="o-trip-information__name-sub"> {{ time.subname }}</span></h4>
                                                 <span class="o-trip-information__value">{{ time.value }}</span>
                                             </div>
@@ -234,7 +234,7 @@
                             <div class="o-sidebar-tag__outer">
                                 <div class="o-sidebar-tag__inner">
                                     <div class="o-sidebar-tag__items">
-                                        <div class="o-sidebar-tag__item" v-for="tag in post[0].tags" v-bind:key="tag">
+                                        <div class="o-sidebar-tag__item" v-for="tag in post[0].tags" v-bind:key="tag.name">
                                             <a class="o-sidebar-tag__link">{{ tag.name }}</a>
                                         </div>
                                     </div>

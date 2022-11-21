@@ -1,24 +1,16 @@
 <template>
-  <v-app>
-
-    <MenuMain />
-    <LogotypeHeader />
-    <ControlHamburger />
-
-    <v-main>
-      <v-container>
-        <Nuxt />
-      </v-container>
-    </v-main>
-
-    <ComponentFooter />
-    <PopupCookies />
-    
-  </v-app>
+	<div>
+		<MenuMain />
+		<LogotypeHeader />
+		<ControlHamburger />
+		<Nuxt />
+		<ComponentFooter />
+		<PopupCookies />
+	</div>
 </template>
 
 <script>
-export default {
-  name: 'DefaultLayout'
-}
+	export default {
+		name: 'DefaultLayout'
+	}
 </script>
