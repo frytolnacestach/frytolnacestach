@@ -248,11 +248,12 @@
                             <div class="o-ad-sidebar-article-detail">
                                 <!-- sidebar-article-detail -->
                                 <ins class="adsbygoogle"
-                                    style="display:block"
-                                    data-ad-client="ca-pub-5217753750259737"
-                                    data-ad-slot="5043852899"
-                                    data-ad-format="auto"
-                                    data-full-width-responsive="true"></ins>
+                                    :style="adStyle"
+                                    :data-ad-client="adClient"
+                                    :data-ad-slot="adSlot"
+                                    :data-ad-format="adFormat"
+                                    :data-full-width-responsive="adResponsive">
+                                </ins>
                             </div>
                         </div>
                     </section>
@@ -332,6 +333,10 @@
         async asyncData({ $axios, params }) {
             const post = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/post/${params.slug}`)
             return { post: post }
+        },
+
+        mounted() {
+            this.adsenseAddLoad();
         }
     }
 </script>
