@@ -324,7 +324,7 @@
                 title: `${this.post[0].title} | Frytol na cestách`,
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.post[0].perex}` },
-                    { property: 'og:image', content: `/images/og/og-${this.post[0].slug}.jpg`} 
+                    { property: 'og:image', content: `https://image.frytolnacestach.cz/storage/og/og-${this.post[0].slug}.jpg`} 
                 ]
             }
         },
