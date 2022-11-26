@@ -68,7 +68,7 @@ export default {
     ],
     sitemaps: [
       {
-        path: '/sitemap.xml'
+        path: '/sitemap-main.xml'
       },
       {
         path: '/sitemap-posts.xml',
@@ -86,15 +86,7 @@ export default {
         },
         exclude: ['/**']
       }
-    ],
-    /*routes: async () => {
-      let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/posts')
-      return data.map(v => `/clanky/${v.slug}`)
-    },
-    routes: async () => {
-      let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/videos')
-      return data.map(v => `/videa/${v.slug}`)
-    }*/
+    ]
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
