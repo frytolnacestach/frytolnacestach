@@ -1,3 +1,5 @@
+const axios = require('axios')
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -55,8 +57,24 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/sitemap'
   ],
+
+  sitemap: {
+    hostname: process.env.BASE_URL,
+    exclude: [
+      '/styleguide'
+    ],
+    routes: async () => {
+      let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/posts')
+      return data.map(v => `/clanky/${v.slug}`)
+    },
+    routes: async () => {
+      let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/videos')
+      return data.map(v => `/videa/${v.slug}`)
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
