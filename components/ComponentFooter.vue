@@ -13,6 +13,9 @@
                                     <NuxtLink class="m-nav-footer__link" to="/clanky">Články</NuxtLink>
                                 </li>
                                 <li class="m-nav-footer__item">
+                                    <NuxtLink class="m-nav-footer__link" to="/videa">Videa</NuxtLink>
+                                </li>
+                                <li class="m-nav-footer__item">
                                     <NuxtLink class="m-nav-footer__link" to="/social">Kde mě najdeš</NuxtLink>
                                 </li>
                                 <li class="m-nav-footer__item">

@@ -9,20 +9,17 @@
                 <div class="o-article-list">
                     <div class="o-article-list__outer">
                         <div class="o-article-list__items">
-                            <div v-for="post in posts" :key="post.id" class="o-article-list__item">
+                            <div v-for="video in videos" :key="video.id" class="o-article-list__item">
                                 <div class="o-article-list__item-inner">
                                     <div class="o-article-list__image">
-                                        <div class="o-article-list__image-file" v-bind:style="{ 'background-image': 'url(' + post.imageList + ')'}">
-                                            <NuxtLink class="o-article-list__image-link" :to="`clanky/${post.slug}`"></NuxtLink>
+                                        <div class="o-article-list__image-file" v-bind:style="{ 'background-image': 'url(https://img.youtube.com/vi/' + getSlugURL(video.url) + '/0.jpg)'}">
+                                            <NuxtLink class="o-article-list__image-link" :to="`videa/${video.slug}`"></NuxtLink>
                                         </div>
                                     </div>
                                     <div class="o-article-list__text">
                                         <h3 class="o-article-list__title">
-                                            <NuxtLink class="o-article-list__title-link" :to="`/clanky/${post.slug}`">{{ post.title }}</NuxtLink>
+                                            <NuxtLink class="o-article-list__title-link" :to="`videa/${video.slug}`">{{ video.title }}</NuxtLink>
                                         </h3>
-                                        <p class="o-article-list__perex">
-                                            <NuxtLink class="o-article-list__perex-link" :to="`/clanky/${post.slug}`">{{ post.perex }}</NuxtLink>
-                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -58,14 +55,21 @@
             SectionPlatform
         },
 
+        methods:{
+            getSlugURL(url) {
+                url = url.replace("https://youtu.be/", "");
+                return url.replace(" ", "");
+            }
+        },
+
         data() {
             return {
-                headline: "Články"
+                headline: "Videa"
             }
         },
 
         head: {
-            title: 'Články | Frytol na cestách',
+            title: 'Videa | Frytol na cestách',
             meta: [
                 { hid: 'description', name: 'description', content: 'Članky z webu Frytol na cestách' },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/og/og-default.png' }
@@ -73,8 +77,8 @@
         },
 
         async asyncData({ $axios }) {
-            const posts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/posts`)
-            return { posts }
+            const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos`)
+            return { videos }
         }
     }
 </script>
