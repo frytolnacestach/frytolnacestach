@@ -71,7 +71,7 @@
 
       <section class="t-section py-4">
           <div class="t-section__inner">
-                <SectionDonate :headline="1" />
+                <SectionDonate :showHeadline="1" />
                 <SectionSupport />
                 <div class="flex flex-center">
                     <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/donate">Podpora</NuxtLink>
