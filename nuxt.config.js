@@ -66,14 +66,35 @@ export default {
     exclude: [
       '/styleguide'
     ],
-    routes: async () => {
+    sitemaps: [
+      {
+        path: '/sitemap.xml'
+      },
+      {
+        path: '/sitemap-posts.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/posts')
+          return data.map(v => `/clanky/${v.slug}`)
+        },
+        exclude: ['/**']
+      },
+      {
+        path: '/sitemap-videos.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/videos')
+          return data.map(v => `/videa/${v.slug}`)
+        },
+        exclude: ['/**']
+      }
+    ],
+    /*routes: async () => {
       let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/posts')
       return data.map(v => `/clanky/${v.slug}`)
     },
     routes: async () => {
       let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/videos')
       return data.map(v => `/videa/${v.slug}`)
-    }
+    }*/
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
