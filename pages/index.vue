@@ -71,14 +71,11 @@
 
       <section class="t-section py-4">
           <div class="t-section__inner">
-              <div class="m-headline text-align-center">
-                  <h2 class="m-headline__title">Jak mě podpořit</h2>
-                  <p class="m-headline__perex pt-1">Podpořit mě můžetě samotním sledování, odběrem a sdílením mé tvorby. Každa reakce v podobě lajku nebo komentáře je dúležitá a uspokoji algoritmus YouTube nebo jiné platformy. Pro ty ostatní co by mě chtěli podpořit finančně jsem založil Patreon.</p>
-              </div>
-              <SectionSupport />
-              <div class="flex flex-center">
-                  <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/donate">Podpora</NuxtLink>
-              </div>
+                <SectionDonate :headline="1" />
+                <SectionSupport />
+                <div class="flex flex-center">
+                    <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/donate">Podpora</NuxtLink>
+                </div>
           </div>
       </section>
   </main>
@@ -90,6 +87,7 @@
   import SectionWhoiam from '../components/SectionWhoiam.vue'
   import SectionPlatform from '../components/SectionPlatform.vue'
   import SectionYoutube from '../components/SectionYoutube.vue'
+  import SectionDonate from '../components/SectionDonate.vue'
   import SectionSupport from '../components/SectionSupport.vue'
 
   export default {
@@ -99,11 +97,8 @@
         SectionWhoiam,
         SectionPlatform,
         SectionYoutube,
+        SectionDonate,
         SectionSupport
-    },
-
-    mounted() {
-        this.adsenseAddLoad();
     },
 
     head: {
