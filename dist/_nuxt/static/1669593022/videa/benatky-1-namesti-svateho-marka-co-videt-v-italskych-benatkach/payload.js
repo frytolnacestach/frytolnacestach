@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/benatky-1-namesti-svateho-marka-co-videt-v-italskych-benatkach", {data:[{video:[{id:90,title:"BENÁTKY #1 | Náměstí Svatého Marka | Co vidět v Italských Benátkách?",url:"https:\u002F\u002Fyoutu.be\u002Fd2JpoX58tBY",platform:2,slug:"benatky-1-namesti-svateho-marka-co-videt-v-italskych-benatkach"}]}],fetch:{},mutations:void 0});

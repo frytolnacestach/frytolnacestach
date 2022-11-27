@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/doksanska-cesta-kudy-se-cestovalo-pred-850-lety-trashtag", {data:[{video:[{id:46,title:"DOKSANSKÁ CESTA | Kudy se cestovalo před 850 lety - #TrashTag",url:"https:\u002F\u002Fyoutu.be\u002Fx4oYGvXHpyQ",platform:2,slug:"doksanska-cesta-kudy-se-cestovalo-pred-850-lety-trashtag"}]}],fetch:{},mutations:void 0});

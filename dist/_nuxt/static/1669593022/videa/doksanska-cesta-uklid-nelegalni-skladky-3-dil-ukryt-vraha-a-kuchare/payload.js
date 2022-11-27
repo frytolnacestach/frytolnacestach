@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/doksanska-cesta-uklid-nelegalni-skladky-3-dil-ukryt-vraha-a-kuchare", {data:[{video:[{id:50,title:"DOKSANSKÁ CESTA - Úklid nelegální skládky | 3. Díl (Úkryt Vraha a Kuchaře)",url:" https:\u002F\u002Fyoutu.be\u002FI8cqgAHP_M8",platform:2,slug:"doksanska-cesta-uklid-nelegalni-skladky-3-dil-ukryt-vraha-a-kuchare"}]}],fetch:{},mutations:void 0});

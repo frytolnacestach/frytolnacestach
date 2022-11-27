@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/benatky-3-kolik-stoji-plavba-na-gondole-vikend-v-benatkach", {data:[{video:[{id:102,title:"BENÁTKY #3 | Kolik stojí plavba na Gondole? | Víkend v Benátkách",url:"https:\u002F\u002Fyoutu.be\u002FFZJFSQSNDfg",platform:2,slug:"benatky-3-kolik-stoji-plavba-na-gondole-vikend-v-benatkach"}]}],fetch:{},mutations:void 0});

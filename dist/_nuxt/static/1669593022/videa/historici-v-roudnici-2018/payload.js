@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/historici-v-roudnici-2018", {data:[{video:[{id:10,title:"HISTORICI V ROUDNICI 2018",url:"https:\u002F\u002Fyoutu.be\u002FanWglcZq8-I",platform:2,slug:"historici-v-roudnici-2018"}]}],fetch:{},mutations:void 0});

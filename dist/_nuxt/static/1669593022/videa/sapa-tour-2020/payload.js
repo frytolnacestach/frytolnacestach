@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/sapa-tour-2020", {data:[{video:[{id:117,title:"SAPA TOUR 2020",url:"https:\u002F\u002Fyoutu.be\u002F3D_dUy9oW4U",platform:2,slug:"sapa-tour-2020"}]}],fetch:{},mutations:void 0});

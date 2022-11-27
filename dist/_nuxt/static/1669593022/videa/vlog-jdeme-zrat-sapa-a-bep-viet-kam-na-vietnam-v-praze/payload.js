@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/vlog-jdeme-zrat-sapa-a-bep-viet-kam-na-vietnam-v-praze", {data:[{video:[{id:33,title:"VLOG |  Jdeme žrát - SAPA a Bêp Viêt. Kam na Vietnam v Praze?",url:"https:\u002F\u002Fyoutu.be\u002FG6XwDwOoQu0",platform:2,slug:"vlog-jdeme-zrat-sapa-a-bep-viet-kam-na-vietnam-v-praze"}]}],fetch:{},mutations:void 0});

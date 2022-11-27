@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/mallorca-8-katedrala-panny-marie-v-palme", {data:[{video:[{id:93,title:"MALLORCA #8 | Katedrála Panny Marie v Palmě",url:"https:\u002F\u002Fyoutu.be\u002FHpYJOLbk-I0",platform:2,slug:"mallorca-8-katedrala-panny-marie-v-palme"}]}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/novorocni-ohnostroj-2019-vrbicany", {data:[{video:[{id:35,title:"Novoroční ohňostroj 2019 - Vrbičany",url:"https:\u002F\u002Fyoutu.be\u002FTUzWXPPwUn0",platform:2,slug:"novorocni-ohnostroj-2019-vrbicany"}]}],fetch:{},mutations:void 0});

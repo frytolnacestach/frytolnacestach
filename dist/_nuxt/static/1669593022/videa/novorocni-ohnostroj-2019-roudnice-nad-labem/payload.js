@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/novorocni-ohnostroj-2019-roudnice-nad-labem", {data:[{video:[{id:36,title:"Novoroční ohňostroj 2019 - Roudnice nad Labem",url:"https:\u002F\u002Fyoutu.be\u002FEEvzp2CKa4w",platform:2,slug:"novorocni-ohnostroj-2019-roudnice-nad-labem"}]}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/vylet-na-jested-lanovkou-a-dolu-pesky-jak-chutna-jidlo-na-jestedu", {data:[{video:[{id:11,title:"VÝLET NA JEŠTĚD LANOVKOU A DOLŮ PĚŠKY | Jak chutná jídlo na Ještědu?",url:"https:\u002F\u002Fyoutu.be\u002FQCJ8GpYKl24",platform:2,slug:"vylet-na-jested-lanovkou-a-dolu-pesky-jak-chutna-jidlo-na-jestedu"}]}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/chlumec-bitva-u-chlumce-a-lavka-kocici-oci", {data:[{video:[{id:146,title:"CHLUMEC | Bitva u Chlumce a lávka Kočičí oči",url:"https:\u002F\u002Fyoutu.be\u002FhxEnM9aQu1k",platform:2,slug:"chlumec-bitva-u-chlumce-a-lavka-kocici-oci"}]}],fetch:{},mutations:void 0});

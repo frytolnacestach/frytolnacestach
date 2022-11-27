@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/mallorca-1-poprve-v-letadle-let-na-majorku-pres-curych", {data:[{video:[{id:80,title:"MALLORCA #1 | Poprvé v letadle | Let na Majorku přes Curych",url:"https:\u002F\u002Fyoutu.be\u002Fok-EaA58ouM",platform:2,slug:"mallorca-1-poprve-v-letadle-let-na-majorku-pres-curych"}]}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/die-antwoord-prague-2018", {data:[{video:[{id:4,title:"DIE ANTWOORD | Prague 2018",url:"https:\u002F\u002Fyoutu.be\u002FbW3uPn566gA",platform:2,slug:"die-antwoord-prague-2018"}]}],fetch:{},mutations:void 0});

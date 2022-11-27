@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/jake-ceny-jsou-ve-spanelskem-lidlu-cesko-vs-spanelsko-mallorca-bonus-2", {data:[{video:[{id:88,title:"Jaké ceny jsou ve Španělském Lidlu? | ČESKO vs. ŠPANĚLSKO | MALLORCA BONUS #2",url:"https:\u002F\u002Fyoutu.be\u002FIOnLhI7rsZs",platform:2,slug:"jake-ceny-jsou-ve-spanelskem-lidlu-cesko-vs-spanelsko-mallorca-bonus-2"}]}],fetch:{},mutations:void 0});

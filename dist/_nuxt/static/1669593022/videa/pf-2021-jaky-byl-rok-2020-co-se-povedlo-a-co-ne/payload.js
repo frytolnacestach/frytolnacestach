@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/pf-2021-jaky-byl-rok-2020-co-se-povedlo-a-co-ne", {data:[{video:[{id:151,title:"PF 2021 | Jaký byl rok 2020? Co se povedlo a co ne?",url:"https:\u002F\u002Fyoutu.be\u002FxYqV1U9fLSc",platform:2,slug:"pf-2021-jaky-byl-rok-2020-co-se-povedlo-a-co-ne"}]}],fetch:{},mutations:void 0});

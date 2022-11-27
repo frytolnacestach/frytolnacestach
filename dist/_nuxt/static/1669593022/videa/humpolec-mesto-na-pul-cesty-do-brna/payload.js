@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/humpolec-mesto-na-pul-cesty-do-brna", {data:[{video:[{id:123,title:"HUMPOLEC | Město na půl cesty do Brna",url:"https:\u002F\u002Fyoutu.be\u002F1eYrM4t1pz0",platform:2,slug:"humpolec-mesto-na-pul-cesty-do-brna"}]}],fetch:{},mutations:void 0});

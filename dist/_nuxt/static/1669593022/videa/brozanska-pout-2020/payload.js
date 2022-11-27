@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/brozanska-pout-2020", {data:[{video:[{id:125,title:"BROZANSKÁ POUŤ 2020",url:"https:\u002F\u002Fyoutu.be\u002FWIWPsvKn_Dc",platform:2,slug:"brozanska-pout-2020"}]}],fetch:{},mutations:void 0});

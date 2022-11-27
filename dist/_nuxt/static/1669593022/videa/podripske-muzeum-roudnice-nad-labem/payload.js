@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/podripske-muzeum-roudnice-nad-labem", {data:[{video:[{id:9,title:"PODŘIPSKÉ MUZEUM - Roudnice nad Labem",url:" https:\u002F\u002Fyoutu.be\u002FkQIRxIol9w8",platform:2,slug:"podripske-muzeum-roudnice-nad-labem"}]}],fetch:{},mutations:void 0});

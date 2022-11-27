@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/turistika-za-doby-koronaviru-polepy-a-rozhledna-horidla", {data:[{video:[{id:108,title:"TURISTIKA ZA DOBY KORONAVIRU | Polepy a rozhledna Hořidla",url:"https:\u002F\u002Fyoutu.be\u002FmIteZGmHlI0",platform:2,slug:"turistika-za-doby-koronaviru-polepy-a-rozhledna-horidla"}]}],fetch:{},mutations:void 0});

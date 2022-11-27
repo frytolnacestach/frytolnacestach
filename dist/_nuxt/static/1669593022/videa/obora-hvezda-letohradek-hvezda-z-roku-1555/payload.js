@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/obora-hvezda-letohradek-hvezda-z-roku-1555", {data:[{video:[{id:143,title:"OBORA HVĚZDA | LETOHRÁDEK HVĚZDA Z ROKU 1555",url:"https:\u002F\u002Fyoutu.be\u002FPxnAcdxujeI",platform:2,slug:"obora-hvezda-letohradek-hvezda-z-roku-1555"}]}],fetch:{},mutations:void 0});

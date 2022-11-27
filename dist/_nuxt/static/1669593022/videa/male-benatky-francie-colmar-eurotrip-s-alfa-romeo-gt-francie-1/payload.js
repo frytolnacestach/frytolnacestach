@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/male-benatky-francie-colmar-eurotrip-s-alfa-romeo-gt-francie-1", {data:[{video:[{id:135,title:"MALÉ BENÁTKY | Francie - Colmar | Eurotrip s Alfa Romeo GT | FRANCIE #1",url:"https:\u002F\u002Fyoutu.be\u002F0GaZijBba2o",platform:2,slug:"male-benatky-francie-colmar-eurotrip-s-alfa-romeo-gt-francie-1"}]}],fetch:{},mutations:void 0});

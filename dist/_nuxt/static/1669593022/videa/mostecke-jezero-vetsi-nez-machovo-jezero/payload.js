@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/mostecke-jezero-vetsi-nez-machovo-jezero", {data:[{video:[{id:138,title:"MOSTECKÉ JEZERO | Větší než Máchovo jezero",url:"https:\u002F\u002Fyoutu.be\u002FdLpa0Mro2fM",platform:2,slug:"mostecke-jezero-vetsi-nez-machovo-jezero"}]}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/modelova-zeleznice-kurort-rathen", {data:[{video:[{id:16,title:"Modelová železnice - Kurort Rathen",url:"https:\u002F\u002Fyoutu.be\u002F03xJIIjrIRo",platform:2,slug:"modelova-zeleznice-kurort-rathen"}]}],fetch:{},mutations:void 0});

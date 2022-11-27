@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/letohradek-windsor-a-humensky-vrch", {data:[{video:[{id:59,title:"LETOHRÁDEK WINDSOR a HUMENSKÝ VRCH",url:" https:\u002F\u002Fyoutu.be\u002FqbwxmdYFIKE",platform:2,slug:"letohradek-windsor-a-humensky-vrch"}]}],fetch:{},mutations:void 0});

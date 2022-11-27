@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/mallorca-3-draci-jeskyne-porto-cristo", {data:[{video:[{id:82,title:"MALLORCA #3 | Dračí jeskyně | Porto Cristo",url:"https:\u002F\u002Fyoutu.be\u002F6UeDkIxpf6A",platform:2,slug:"mallorca-3-draci-jeskyne-porto-cristo"}]}],fetch:{},mutations:void 0});

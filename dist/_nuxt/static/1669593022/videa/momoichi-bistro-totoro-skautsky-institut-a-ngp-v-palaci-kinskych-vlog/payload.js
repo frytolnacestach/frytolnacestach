@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/momoichi-bistro-totoro-skautsky-institut-a-ngp-v-palaci-kinskych-vlog", {data:[{video:[{id:37,title:"MOMOICHI BISTRO (Totoro), Skautský institut a NGP v Paláci Kinských | VLOG",url:"https:\u002F\u002Fyoutu.be\u002FMVGKSdPc1Pg",platform:2,slug:"momoichi-bistro-totoro-skautsky-institut-a-ngp-v-palaci-kinskych-vlog"}]}],fetch:{},mutations:void 0});

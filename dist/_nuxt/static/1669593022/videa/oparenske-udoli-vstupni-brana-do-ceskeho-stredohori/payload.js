@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/oparenske-udoli-vstupni-brana-do-ceskeho-stredohori", {data:[{video:[{id:154,title:"OPARENSKÉ ÚDOLÍ | Vstupní brána do Českého středohoří",url:"https:\u002F\u002Fyoutu.be\u002FbbBGm-i9QoM",platform:2,slug:"oparenske-udoli-vstupni-brana-do-ceskeho-stredohori"}]}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/na-skok-v-drazdanech-vlog", {data:[{video:[{id:39,title:"NA SKOK v DRÁŽĎANECH [VLOG]",url:"https:\u002F\u002Fyoutu.be\u002Fled2A8K1HaQ",platform:2,slug:"na-skok-v-drazdanech-vlog"}]}],fetch:{},mutations:void 0});

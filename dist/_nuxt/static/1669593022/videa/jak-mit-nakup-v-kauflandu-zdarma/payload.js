@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/jak-mit-nakup-v-kauflandu-zdarma", {data:[{video:[{id:65,title:"JAK MÍT NÁKUP V KAUFLANDU ZDARMA?",url:"https:\u002F\u002Fyoutu.be\u002Fs0aLyibsnrQ",platform:2,slug:"jak-mit-nakup-v-kauflandu-zdarma"}]}],fetch:{},mutations:void 0});

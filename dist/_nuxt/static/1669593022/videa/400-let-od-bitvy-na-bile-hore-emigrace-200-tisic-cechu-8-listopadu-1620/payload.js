@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/400-let-od-bitvy-na-bile-hore-emigrace-200-tisic-cechu-8-listopadu-1620", {data:[{video:[{id:145,title:"400 let od bitvy na Bílé hoře | EMIGRACE 200 TISÍC ČECHŮ | 8. listopadu 1620",url:"https:\u002F\u002Fyoutu.be\u002F_6m0UTOne6A",platform:2,slug:"400-let-od-bitvy-na-bile-hore-emigrace-200-tisic-cechu-8-listopadu-1620"}]}],fetch:{},mutations:void 0});

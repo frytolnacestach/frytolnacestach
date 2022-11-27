@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/milesovka-tady-jeste-zije-mlok-skvrnity", {data:[{video:[{id:67,title:"MILEŠOVKA | Tady ještě žije Mlok skvrnitý",url:"https:\u002F\u002Fyoutu.be\u002FIZJarPaJAGA",platform:2,slug:"milesovka-tady-jeste-zije-mlok-skvrnity"}]}],fetch:{},mutations:void 0});

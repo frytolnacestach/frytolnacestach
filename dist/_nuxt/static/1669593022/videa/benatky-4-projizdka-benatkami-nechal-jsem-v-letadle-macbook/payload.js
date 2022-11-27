@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/benatky-4-projizdka-benatkami-nechal-jsem-v-letadle-macbook", {data:[{video:[{id:105,title:"BENÁTKY #4 | PROJÍŽĎKA BENÁTKAMI | Nechal jsem v letadle macBook",url:"https:\u002F\u002Fyoutu.be\u002Fi0PfvkTd3Fw",platform:2,slug:"benatky-4-projizdka-benatkami-nechal-jsem-v-letadle-macbook"}]}],fetch:{},mutations:void 0});

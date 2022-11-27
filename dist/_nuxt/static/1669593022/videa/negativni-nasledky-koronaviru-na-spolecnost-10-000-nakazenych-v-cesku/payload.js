@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/negativni-nasledky-koronaviru-na-spolecnost-10-000-nakazenych-v-cesku", {data:[{video:[{id:120,title:"NEGATIVNÍ NÁSLEDKY KORONAVIRU NA SPOLEČNOST | 10 000 nakažených v Česku",url:"https:\u002F\u002Fyoutu.be\u002FxdqkRR73Uh4",platform:2,slug:"negativni-nasledky-koronaviru-na-spolecnost-10-000-nakazenych-v-cesku"}]}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/vlog-svet-pixaru-v-praze-vystava-pixar-30-let-animace", {data:[{video:[{id:49,title:"VLOG | SVĚT PIXARU V PRAZE - Výstava Pixar 30 let animace",url:" https:\u002F\u002Fyoutu.be\u002FHkk1nSXHI_I",platform:2,slug:"vlog-svet-pixaru-v-praze-vystava-pixar-30-let-animace"}]}],fetch:{},mutations:void 0});

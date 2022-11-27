@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/vylet-po-litomericku-2-skryta-vyhlidka-a-kostel-sv-petra-a-pavla", {data:[{video:[{id:133,title:"VÝLET PO LITOMĚŘICKU #2 | Skrytá vyhlídka a Kostel sv  Petra a Pavla",url:"https:\u002F\u002Fyoutu.be\u002FS8HTKwupWo8",platform:2,slug:"vylet-po-litomericku-2-skryta-vyhlidka-a-kostel-sv-petra-a-pavla"}]}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/sapa-nejlepsi-kachna-vlog-3dil", {data:[{video:[{id:63,title:"SAPA | Nejlepší kachna [VLOG] 3.díl",url:"https:\u002F\u002Fyoutu.be\u002FN4SKm2q51BQ",platform:2,slug:"sapa-nejlepsi-kachna-vlog-3dil"}]}],fetch:{},mutations:void 0});

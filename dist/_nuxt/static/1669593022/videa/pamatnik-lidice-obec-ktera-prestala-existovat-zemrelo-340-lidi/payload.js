@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/pamatnik-lidice-obec-ktera-prestala-existovat-zemrelo-340-lidi", {data:[{video:[{id:77,title:"PAMÁTNÍK LIDICE | Obec která přestala existovat - zemřelo 340 lidí",url:"https:\u002F\u002Fyoutu.be\u002F0uG7A1dAsMA",platform:2,slug:"pamatnik-lidice-obec-ktera-prestala-existovat-zemrelo-340-lidi"}]}],fetch:{},mutations:void 0});

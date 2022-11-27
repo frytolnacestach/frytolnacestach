@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/svatovavrinecka-pout-2018-libochovice", {data:[{video:[{id:20,title:"Svatovavřinecká pouť 2018 - Libochovice",url:"https:\u002F\u002Fyoutu.be\u002FVAJZ3Rxwd5Y",platform:2,slug:"svatovavrinecka-pout-2018-libochovice"}]}],fetch:{},mutations:void 0});

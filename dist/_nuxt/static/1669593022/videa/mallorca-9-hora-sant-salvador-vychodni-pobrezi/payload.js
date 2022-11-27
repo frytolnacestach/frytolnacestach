@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/mallorca-9-hora-sant-salvador-vychodni-pobrezi", {data:[{video:[{id:94,title:"MALLORCA #9 | Hora Sant Salvador | Východní pobřeží",url:"https:\u002F\u002Fyoutu.be\u002F4SD8iVzKSSk",platform:2,slug:"mallorca-9-hora-sant-salvador-vychodni-pobrezi"}]}],fetch:{},mutations:void 0});

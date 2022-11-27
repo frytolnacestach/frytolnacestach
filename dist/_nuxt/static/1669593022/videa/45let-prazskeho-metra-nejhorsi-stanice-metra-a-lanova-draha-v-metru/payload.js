@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/45let-prazskeho-metra-nejhorsi-stanice-metra-a-lanova-draha-v-metru", {data:[{video:[{id:62,title:"45LET PRAŽSKÉHO METRA | Nejhorší stanice metra a lanová dráha v metru",url:"https:\u002F\u002Fyoutu.be\u002FKGnlWULuK3o",platform:2,slug:"45let-prazskeho-metra-nejhorsi-stanice-metra-a-lanova-draha-v-metru"}]}],fetch:{},mutations:void 0});

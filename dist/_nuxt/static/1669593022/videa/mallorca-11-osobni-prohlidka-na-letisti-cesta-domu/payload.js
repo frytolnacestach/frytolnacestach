@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/mallorca-11-osobni-prohlidka-na-letisti-cesta-domu", {data:[{video:[{id:99,title:"MALLORCA #11 | Osobní prohlídka na letišti | Cesta domů",url:"https:\u002F\u002Fyoutu.be\u002FBRHP9OVk70E",platform:2,slug:"mallorca-11-osobni-prohlidka-na-letisti-cesta-domu"}]}],fetch:{},mutations:void 0});

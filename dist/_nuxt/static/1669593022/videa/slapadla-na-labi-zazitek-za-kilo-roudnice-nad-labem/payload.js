@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/slapadla-na-labi-zazitek-za-kilo-roudnice-nad-labem", {data:[{video:[{id:139,title:"ŠLAPADLA NA LABI | Zážitek za kilo - Roudnice nad Labem",url:"https:\u002F\u002Fyoutu.be\u002FIJVwSq64i98",platform:2,slug:"slapadla-na-labi-zazitek-za-kilo-roudnice-nad-labem"}]}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/legendy-2019-nejvetsi-vystava-aut-v-cesku-vlog", {data:[{video:[{id:61,title:"LEGENDY 2019 | Největší výstava aut v česku. [VLOG]",url:"https:\u002F\u002Fyoutu.be\u002FEaT6Pk9UbwQ",platform:2,slug:"legendy-2019-nejvetsi-vystava-aut-v-cesku-vlog"}]}],fetch:{},mutations:void 0});

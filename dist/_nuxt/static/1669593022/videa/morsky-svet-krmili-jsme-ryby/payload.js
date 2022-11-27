@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/morsky-svet-krmili-jsme-ryby", {data:[{video:[{id:8,title:"MOŘSKÝ SVĚT | Krmili jsme ryby",url:"https:\u002F\u002Fyoutu.be\u002Fx7Eof6bRw5s",platform:2,slug:"morsky-svet-krmili-jsme-ryby"}]}],fetch:{},mutations:void 0});

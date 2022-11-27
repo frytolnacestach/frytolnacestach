@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/mallorca-7-majak-cap-de-formentor-nejsevernejsi-cast-mallorky", {data:[{video:[{id:89,title:"MALLORCA #7 | Maják Cap de Formentor | Nejsevernejší část Mallorky",url:"https:\u002F\u002Fyoutu.be\u002FEEm89TbJt5Q",platform:2,slug:"mallorca-7-majak-cap-de-formentor-nejsevernejsi-cast-mallorky"}]}],fetch:{},mutations:void 0});

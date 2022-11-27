@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/koronavirus-je-v-cesku-zachovejte-paniku-karantena-a-zavrene-skoly", {data:[{video:[{id:101,title:"Koronavirus je v Česku | Zachovejte paniku! (KARANTÉNA A ZAVŘENÉ ŠKOLY)",url:"https:\u002F\u002Fyoutu.be\u002F3S_TYUjk3gk",platform:2,slug:"koronavirus-je-v-cesku-zachovejte-paniku-karantena-a-zavrene-skoly"}]}],fetch:{},mutations:void 0});

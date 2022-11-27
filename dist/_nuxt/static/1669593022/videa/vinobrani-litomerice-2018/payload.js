@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/vinobrani-litomerice-2018", {data:[{video:[{id:14,title:"VINOBRANÍ LITOMĚŘICE 2018",url:"https:\u002F\u002Fyoutu.be\u002FrqIfdQt_JTY",platform:2,slug:"vinobrani-litomerice-2018"}]}],fetch:{},mutations:void 0});

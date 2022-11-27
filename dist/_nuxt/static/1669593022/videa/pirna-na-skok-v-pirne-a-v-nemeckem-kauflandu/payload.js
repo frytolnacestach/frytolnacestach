@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/pirna-na-skok-v-pirne-a-v-nemeckem-kauflandu", {data:[{video:[{id:130,title:"PIRNA | Na skok v Pirně a v německém Kauflandu",url:"https:\u002F\u002Fyoutu.be\u002F5Vg39sEiNrw",platform:2,slug:"pirna-na-skok-v-pirne-a-v-nemeckem-kauflandu"}]}],fetch:{},mutations:void 0});

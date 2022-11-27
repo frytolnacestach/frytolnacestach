@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/psychiatricka-nemocnice-bohnice", {data:[{video:[{id:79,title:"PSYCHIATRICKÁ NEMOCNICE BOHNICE",url:"https:\u002F\u002Fyoutu.be\u002FD8EuhUkzI6k",platform:2,slug:"psychiatricka-nemocnice-bohnice"}]}],fetch:{},mutations:void 0});

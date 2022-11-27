@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/slanska-hora-slany-hora-znicena-tezbou", {data:[{video:[{id:119,title:"SLÁNSKÁ HORA - SLANÝ | Hora zničená těžbou",url:"https:\u002F\u002Fyoutu.be\u002F6mcSLtzC3Ho",platform:2,slug:"slanska-hora-slany-hora-znicena-tezbou"}]}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/motyli-dum-v-prazskem-hamleys-papilonia", {data:[{video:[{id:78,title:"MOTÝLÍ DŮM v PRAŽSKÉM HAMLEYS | Papilonia",url:" https:\u002F\u002Fyoutu.be\u002FmRQc69EPS6Q",platform:2,slug:"motyli-dum-v-prazskem-hamleys-papilonia"}]}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/radovic-u-velvar-nejkrasnejsi-pozorovatelna", {data:[{video:[{id:110,title:"RADOVIČ U VELVAR | Nejkrásnější pozorovatelna",url:"https:\u002F\u002Fyoutu.be\u002FovfM8iuSBCE",platform:2,slug:"radovic-u-velvar-nejkrasnejsi-pozorovatelna"}]}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/proc-by-nemel-byt-ortel-na-ripske-pouti-v-roce-2020-ortel-na-ripu-nebude", {data:[{video:[{id:44,title:"Proč by neměl být ORTEL na Řipské pouti? (V roce 2020 ORTEL na Řípu nebude)",url:"https:\u002F\u002Fyoutu.be\u002Fese3IWHJM2o",platform:2,slug:"proc-by-nemel-byt-ortel-na-ripske-pouti-v-roce-2020-ortel-na-ripu-nebude"}]}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/karlovy-vary-2den-k-snidani-becherovka-a-bagel", {data:[{video:[{id:157,title:"KARLOVY VARY 2.den - K snídani Becherovka a Bagel.",url:"https:\u002F\u002Fyoutu.be\u002F9Qmf5TrdDCs",platform:2,slug:"karlovy-vary-2den-k-snidani-becherovka-a-bagel"}]}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/rozhledna-radejcin-a-vodopady-dalnice-d8", {data:[{video:[{id:121,title:"ROZHLEDNA RADEJČÍN A VODOPÁDY | Dálnice D8",url:"https:\u002F\u002Fyoutu.be\u002Fgcl09E-5h9M",platform:2,slug:"rozhledna-radejcin-a-vodopady-dalnice-d8"}]}],fetch:{},mutations:void 0});

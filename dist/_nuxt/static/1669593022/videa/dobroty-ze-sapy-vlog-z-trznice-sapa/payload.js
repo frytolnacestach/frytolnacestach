@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/dobroty-ze-sapy-vlog-z-trznice-sapa", {data:[{video:[{id:3,title:"DOBROTY ze SAPY [Vlog z tržnice SAPA]",url:" https:\u002F\u002Fyoutu.be\u002FFUgpbsXpt1c",platform:2,slug:"dobroty-ze-sapy-vlog-z-trznice-sapa"}]}],fetch:{},mutations:void 0});

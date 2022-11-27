@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/lego-75194-first-order-tie-fightertm-microfighter-lego-star-wars", {data:[{video:[{id:48,title:"LEGO 75194 | First Order TIE Fighter™ Microfighter (Lego Star Wars)",url:"https:\u002F\u002Fyoutu.be\u002Fx6BO8MLeJDs",platform:2,slug:"lego-75194-first-order-tie-fightertm-microfighter-lego-star-wars"}]}],fetch:{},mutations:void 0});

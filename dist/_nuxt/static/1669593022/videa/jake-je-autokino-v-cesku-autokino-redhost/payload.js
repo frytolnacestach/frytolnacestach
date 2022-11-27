@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/jake-je-autokino-v-cesku-autokino-redhost", {data:[{video:[{id:60,title:"JAKÉ JE AUTOKINO V ČESKU? - Autokino Ředhošť",url:"https:\u002F\u002Fyoutu.be\u002F85dKgi7Ga_0",platform:2,slug:"jake-je-autokino-v-cesku-autokino-redhost"}]}],fetch:{},mutations:void 0});

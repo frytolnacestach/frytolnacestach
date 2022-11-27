@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/nejlepsi-upoutavka-kanalu-muj-kanal-ma-konecne-uvodni-video", {data:[{video:[{id:167,title:"NEJLEPŠÍ UPOUTÁVKA KANÁLU | Můj kanál má konečně úvodní video",url:"https:\u002F\u002Fyoutu.be\u002FSMFt9Yy8QyU",platform:2,slug:"nejlepsi-upoutavka-kanalu-muj-kanal-ma-konecne-uvodni-video"}]}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/druha-vlna-jak-je-to-mozne-hoaxy-o-koronaviru", {data:[{video:[{id:142,title:"DRUHÁ VLNA | Jak je to možné? HOAXY O KORONAVIRU.",url:"https:\u002F\u002Fyoutu.be\u002Fad8ZGT2HhT4",platform:2,slug:"druha-vlna-jak-je-to-mozne-hoaxy-o-koronaviru"}]}],fetch:{},mutations:void 0});

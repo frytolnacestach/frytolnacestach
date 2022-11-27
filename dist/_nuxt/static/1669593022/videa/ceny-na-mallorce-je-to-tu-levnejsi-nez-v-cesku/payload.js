@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/ceny-na-mallorce-je-to-tu-levnejsi-nez-v-cesku", {data:[{video:[{id:98,title:"CENY NA MALLORCE | Je to tu levnejší než v Česku?",url:"https:\u002F\u002Fyoutu.be\u002F3L9aJZYXWLQ",platform:2,slug:"ceny-na-mallorce-je-to-tu-levnejsi-nez-v-cesku"}]}],fetch:{},mutations:void 0});

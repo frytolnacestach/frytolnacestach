@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/tyrsuv-vrch-praha-michle", {data:[{video:[{id:19,title:"TYRŠŮV VRCH - Praha Michle",url:"https:\u002F\u002Fyoutu.be\u002FvOnFA4ZVYro",platform:2,slug:"tyrsuv-vrch-praha-michle"}]}],fetch:{},mutations:void 0});

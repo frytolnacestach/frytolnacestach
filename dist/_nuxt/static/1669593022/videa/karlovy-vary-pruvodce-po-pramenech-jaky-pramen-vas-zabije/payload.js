@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/karlovy-vary-pruvodce-po-pramenech-jaky-pramen-vas-zabije", {data:[{video:[{id:158,title:"KARLOVY VARY | Průvodce po pramenech. Jaký pramen vás zabije?",url:"https:\u002F\u002Fyoutu.be\u002FvSaYmpM0MRk",platform:2,slug:"karlovy-vary-pruvodce-po-pramenech-jaky-pramen-vas-zabije"}]}],fetch:{},mutations:void 0});

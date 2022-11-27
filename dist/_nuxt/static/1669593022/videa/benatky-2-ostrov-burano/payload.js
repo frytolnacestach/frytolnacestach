@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/benatky-2-ostrov-burano", {data:[{video:[{id:91,title:"BENÁTKY #2 | Ostrov Burano",url:"https:\u002F\u002Fyoutu.be\u002FZ4nFiCmTFhM",platform:2,slug:"benatky-2-ostrov-burano"}]}],fetch:{},mutations:void 0});

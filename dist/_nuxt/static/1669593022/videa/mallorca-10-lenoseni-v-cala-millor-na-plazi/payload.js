@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/mallorca-10-lenoseni-v-cala-millor-na-plazi", {data:[{video:[{id:96,title:"MALLORCA #10 | Lenošení v Cala Millor na pláži",url:"https:\u002F\u002Fyoutu.be\u002FF9y5lkjt34U",platform:2,slug:"mallorca-10-lenoseni-v-cala-millor-na-plazi"}]}],fetch:{},mutations:void 0});

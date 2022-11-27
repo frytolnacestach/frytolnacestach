@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/27-zahradni-slavnost-v-mecholupech-u-zatce-logopedicka-zakladni-skola", {data:[{video:[{id:76,title:"27. ZAHRADNÍ SLAVNOST v MĚCHOLUPECH u ŽATCE | Logopedická základní škola",url:"https:\u002F\u002Fyoutu.be\u002FWaiiyHQ13W8",platform:2,slug:"27-zahradni-slavnost-v-mecholupech-u-zatce-logopedicka-zakladni-skola"}]}],fetch:{},mutations:void 0});

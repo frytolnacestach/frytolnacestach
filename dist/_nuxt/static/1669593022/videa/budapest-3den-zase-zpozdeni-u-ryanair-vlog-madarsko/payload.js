@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/budapest-3den-zase-zpozdeni-u-ryanair-vlog-madarsko", {data:[{video:[{id:118,title:"BUDAPEŠŤ - 3.DEN | Zase zpoždění u Ryanair (VLOG Maďarsko)",url:"https:\u002F\u002Fyoutu.be\u002Fx5VOiAs8AI4",platform:2,slug:"budapest-3den-zase-zpozdeni-u-ryanair-vlog-madarsko"}]}],fetch:{},mutations:void 0});
