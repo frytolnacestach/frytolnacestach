@@ -13,12 +13,12 @@
                                 <div class="o-article-list__item-inner">
                                     <div class="o-article-list__image">
                                         <div class="o-article-list__image-file" v-bind:style="{ 'background-image': 'url(https://img.youtube.com/vi/' + getSlugURL(video.url) + '/0.jpg)'}">
-                                            <NuxtLink class="o-article-list__image-link" :to="`videa/${video.slug}`"></NuxtLink>
+                                            <NuxtLink class="o-article-list__image-link" :to="`/videa/${video.slug}`"></NuxtLink>
                                         </div>
                                     </div>
                                     <div class="o-article-list__text">
                                         <h3 class="o-article-list__title">
-                                            <NuxtLink class="o-article-list__title-link" :to="`videa/${video.slug}`">{{ video.title }}</NuxtLink>
+                                            <NuxtLink class="o-article-list__title-link" :to="`/videa/${video.slug}`">{{ video.title }}</NuxtLink>
                                         </h3>
                                     </div>
                                 </div>
