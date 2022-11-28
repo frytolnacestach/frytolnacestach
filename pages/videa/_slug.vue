@@ -96,7 +96,7 @@
                 document.getElementsByTagName('body')[0].appendChild(inlineScript);
             },
             getSlugURL(url) {
-                url = url.replace("https://youtu.be/", "");
+                url = url.replace("https://youtu.be/", "").replace("https://youtube.com/shorts/", "");
                 return url.replace(" ", "");
             }
         },

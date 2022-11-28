@@ -57,7 +57,7 @@
 
         methods:{
             getSlugURL(url) {
-                url = url.replace("https://youtu.be/", "");
+                url = url.replace("https://youtu.be/", "").replace("https://youtube.com/shorts/", "");
                 return url.replace(" ", "");
             }
         },
@@ -71,7 +71,7 @@
         head: {
             title: 'Videa | Frytol na cestách',
             meta: [
-                { hid: 'description', name: 'description', content: 'Članky z webu Frytol na cestách' },
+                { hid: 'description', name: 'description', content: 'Videa z webu Frytol na cestách' },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/og/og-default.png' }
             ]
         },
