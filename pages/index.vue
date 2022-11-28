@@ -35,15 +35,15 @@
                             <div class="o-article-list-hp__item-inner">
                                 <div class="o-article-list-hp__image">
                                     <div class="o-article-list-hp__image-file" v-bind:style="{ 'background-image': 'url(' + post.imageList + ')'}">
-                                        <NuxtLink class="o-article-list-hp__image-link" :to="`clanky/${post.slug}`"></NuxtLink>
+                                        <NuxtLink class="o-article-list-hp__image-link" :to="`/clanky/${post.slug}`"></NuxtLink>
                                     </div>
                                 </div>
                                 <div class="o-article-list-hp__text">
                                     <h3 class="o-article-list-hp__title">
-                                        <NuxtLink class="o-article-list-hp__title-link" :to="`clanky/${post.slug}`">{{ post.title }}</NuxtLink>
+                                        <NuxtLink class="o-article-list-hp__title-link" :to="`/clanky/${post.slug}`">{{ post.title }}</NuxtLink>
                                     </h3>
                                     <p class="o-article-list-hp__perex">
-                                        <NuxtLink class="o-article-list-hp__perex-link" :to="`clanky/${post.slug}`">{{ post.perex }}</NuxtLink>
+                                        <NuxtLink class="o-article-list-hp__perex-link" :to="`/clanky/${post.slug}`">{{ post.perex }}</NuxtLink>
                                     </p>
                                 </div>
                             </div>

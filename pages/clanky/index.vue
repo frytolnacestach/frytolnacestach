@@ -13,7 +13,7 @@
                                 <div class="o-article-list__item-inner">
                                     <div class="o-article-list__image">
                                         <div class="o-article-list__image-file" v-bind:style="{ 'background-image': 'url(' + post.imageList + ')'}">
-                                            <NuxtLink class="o-article-list__image-link" :to="`clanky/${post.slug}`"></NuxtLink>
+                                            <NuxtLink class="o-article-list__image-link" :to="`/clanky/${post.slug}`"></NuxtLink>
                                         </div>
                                     </div>
                                     <div class="o-article-list__text">
