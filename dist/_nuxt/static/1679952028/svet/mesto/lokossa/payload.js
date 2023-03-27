@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/lokossa", (function(a){return {data:[{place:[{id:238,id_state:25,name:"Lokossa",population:181895,area:60,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lokossa"}]}],fetch:{},mutations:void 0}}(null)));

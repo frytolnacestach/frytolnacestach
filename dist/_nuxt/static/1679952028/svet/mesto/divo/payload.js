@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/divo", (function(a){return {data:[{place:[{id:416,id_state:44,name:"Divo",population:137897,area:20,altitude:165,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"divo"}]}],fetch:{},mutations:void 0}}(null)));

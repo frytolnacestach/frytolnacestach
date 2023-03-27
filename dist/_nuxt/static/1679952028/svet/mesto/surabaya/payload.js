@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/surabaya", (function(a){return {data:[{place:[{id:979,id_state:101,name:"Surabaya",population:2964578,area:350.54,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"surabaya"}]}],fetch:{},mutations:void 0}}(null)));

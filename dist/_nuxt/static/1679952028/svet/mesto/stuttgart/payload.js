@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/stuttgart", (function(a){return {data:[{place:[{id:543,id_state:57,name:"Stuttgart",population:634830,area:207.36,altitude:265,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"stuttgart"}]}],fetch:{},mutations:void 0}}(null)));

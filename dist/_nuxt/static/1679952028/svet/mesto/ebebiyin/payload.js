@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ebebiyin", (function(a){return {data:[{place:[{id:850,id_state:88,name:"Ebebiyin",population:38403,area:64.1,altitude:650,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ebebiyin"}]}],fetch:{},mutations:void 0}}(null)));

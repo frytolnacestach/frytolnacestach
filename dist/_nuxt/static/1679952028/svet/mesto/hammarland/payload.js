@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/hammarland", (function(a){return {data:[{place:[{id:136,id_state:15,name:"Hammarland",population:1759,area:146.58,altitude:26,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hammarland"}]}],fetch:{},mutations:void 0}}(null)));

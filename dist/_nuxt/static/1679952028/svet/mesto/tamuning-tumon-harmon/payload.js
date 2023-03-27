@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tamuning-tumon-harmon", (function(a){return {data:[{place:[{id:889,id_state:92,name:"Tamuning-Tumon-Harmon",population:19485,area:3.98,altitude:30,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tamuning-tumon-harmon"}]}],fetch:{},mutations:void 0}}(null)));

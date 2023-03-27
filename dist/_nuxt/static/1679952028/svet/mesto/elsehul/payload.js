@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/elsehul", (function(a,b){return {data:[{place:[{id:873,id_state:90,name:"Elsehul",population:12,area:b,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"elsehul"}]}],fetch:{},mutations:void 0}}(null,0)));

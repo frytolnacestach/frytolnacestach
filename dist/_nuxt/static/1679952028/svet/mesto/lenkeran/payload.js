@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/lenkeran", (function(a){return {data:[{place:[{id:144,id_state:16,name:"Lənkəran",population:223950,area:210.36,altitude:-10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lenkeran"}]}],fetch:{},mutations:void 0}}(null)));

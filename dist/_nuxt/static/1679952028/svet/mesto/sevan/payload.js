@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sevan", (function(a){return {data:[{place:[{id:70,id_state:7,name:"Sevan",population:19263,area:3.62,altitude:1903,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sevan"}]}],fetch:{},mutations:void 0}}(null)));

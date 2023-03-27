@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/lugano", (function(a){return {data:[{place:[{id:406,id_state:43,name:"Lugano",population:63754,area:32.42,altitude:273,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lugano"}]}],fetch:{},mutations:void 0}}(null)));

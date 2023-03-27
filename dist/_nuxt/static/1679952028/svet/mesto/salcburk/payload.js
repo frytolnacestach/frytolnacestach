@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/salcburk", (function(a){return {data:[{place:[{id:104,id_state:12,name:"Salcburk",population:156872,area:65.69,altitude:424,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"salcburk"}]}],fetch:{},mutations:void 0}}(null)));

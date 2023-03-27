@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/nsok", (function(a){return {data:[{place:[{id:853,id_state:88,name:"Nsok",population:10906,area:8.8,altitude:370,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nsok"}]}],fetch:{},mutations:void 0}}(null)));

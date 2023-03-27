@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/liberec", (function(a){return {data:[{place:[{id:532,id_state:56,name:"Liberec",population:103854,area:106.09,altitude:408,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"liberec"}]}],fetch:{},mutations:void 0}}(null)));

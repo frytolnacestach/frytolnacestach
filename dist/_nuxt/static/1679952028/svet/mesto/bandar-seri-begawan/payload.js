@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bandar-seri-begawan", (function(a){return {data:[{place:[{id:261,id_state:28,name:"Bandar Seri Begawan",population:218250,area:100,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bandar-seri-begawan"}]}],fetch:{},mutations:void 0}}(null)));

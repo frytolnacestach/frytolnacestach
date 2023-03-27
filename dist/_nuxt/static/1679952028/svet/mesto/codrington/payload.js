@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/codrington", (function(a){return {data:[{place:[{id:39,id_state:4,name:"Codrington",population:1000,area:.09,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"codrington"}]}],fetch:{},mutations:void 0}}(null)));

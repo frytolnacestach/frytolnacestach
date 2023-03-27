@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/dorp-sint-willebrordus", (function(a){return {data:[{place:[{id:503,id_state:53,name:"Dorp Sint Willebrordus",population:2630,area:4.52,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dorp-sint-willebrordus"}]}],fetch:{},mutations:void 0}}(null)));

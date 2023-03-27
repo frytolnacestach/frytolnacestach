@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/klagenfurt", (function(a){return {data:[{place:[{id:106,id_state:12,name:"Klagenfurt",population:100316,area:120.04,altitude:447,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"klagenfurt"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tchien-tin", (function(a){return {data:[{place:[{id:451,id_state:48,name:"Tchien-ťin",population:15595000,area:11786,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tchien-tin"}]}],fetch:{},mutations:void 0}}(null)));

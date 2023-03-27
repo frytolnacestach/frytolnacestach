@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/petapa", (function(a){return {data:[{place:[{id:881,id_state:91,name:"Petapa",population:318595,area:90.09,altitude:1343,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"petapa"}]}],fetch:{},mutations:void 0}}(null)));

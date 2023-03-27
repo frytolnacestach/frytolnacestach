@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bilbao", (function(a){return {data:[{place:[{id:657,id_state:68,name:"Bilbao",population:346574,area:40.77,altitude:19,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bilbao"}]}],fetch:{},mutations:void 0}}(null)));

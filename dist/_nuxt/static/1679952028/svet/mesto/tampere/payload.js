@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tampere", (function(a){return {data:[{place:[{id:670,id_state:70,name:"Tampere",population:239495,area:689.59,altitude:110,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tampere"}]}],fetch:{},mutations:void 0}}(null)));

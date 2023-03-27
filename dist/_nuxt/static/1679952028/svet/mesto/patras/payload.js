@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/patras", (function(a){return {data:[{place:[{id:860,id_state:89,name:"Patras",population:214580,area:334.82,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"patras"}]}],fetch:{},mutations:void 0}}(null)));

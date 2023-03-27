@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/saint-jean", (function(a){return {data:[{place:[{id:243,id_state:26,name:"Saint Jean",population:2795,area:2.85,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saint-jean"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/qaqortoq", (function(a){return {data:[{place:[{id:811,id_state:84,name:"Qaqortoq",population:3186,area:717,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"qaqortoq"}]}],fetch:{},mutations:void 0}}(null)));

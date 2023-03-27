@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/gold-coast-tweed-heads", (function(a){return {data:[{place:[{id:116,id_state:13,name:"Gold Coast-Tweed Heads",population:714018,area:1514.9,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gold-coast-tweed-heads"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/edmonton", (function(a){return {data:[{place:[{id:355,id_state:38,name:"Edmonton",population:1062643,area:684.37,altitude:668,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"edmonton"}]}],fetch:{},mutations:void 0}}(null)));

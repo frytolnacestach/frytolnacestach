@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kianggeh", (function(a){return {data:[{place:[{id:268,id_state:28,name:"Kianggeh",population:2000,area:1.12,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kianggeh"}]}],fetch:{},mutations:void 0}}(null)));

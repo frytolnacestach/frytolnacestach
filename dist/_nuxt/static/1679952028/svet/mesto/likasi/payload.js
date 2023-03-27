@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/likasi", (function(a){return {data:[{place:[{id:396,id_state:42,name:"Likasi",population:954132,area:3.81,altitude:1320,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"likasi"}]}],fetch:{},mutations:void 0}}(null)));

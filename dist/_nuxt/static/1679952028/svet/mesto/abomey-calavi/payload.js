@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/abomey-calavi", (function(a){return {data:[{place:[{id:232,id_state:25,name:"Abomey-Calavi",population:835745,area:650,altitude:22,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"abomey-calavi"}]}],fetch:{},mutations:void 0}}(null)));

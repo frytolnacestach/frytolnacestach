@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/cape-rosa", (function(a,b){return {data:[{place:[{id:877,id_state:90,name:"Cape Rosa",population:2,area:b,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cape-rosa"}]}],fetch:{},mutations:void 0}}(null,0)));

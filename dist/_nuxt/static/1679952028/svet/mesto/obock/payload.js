@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/obock", (function(a){return {data:[{place:[{id:551,id_state:58,name:"Obock",population:17499,area:800,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"obock"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/san-miguel-de-tucuman", (function(a){return {data:[{place:[{id:85,id_state:10,name:"San Miguel de Tucumán",population:919681,area:88,altitude:450,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"san-miguel-de-tucuman"}]}],fetch:{},mutations:void 0}}(null)));

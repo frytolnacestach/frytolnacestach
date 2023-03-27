@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bir-moghrein", (function(a){return {data:[{place:[{id:637,id_state:66,name:"Bir Moghrein",population:9557,area:8.2,altitude:181,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bir-moghrein"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/manama", (function(a){return {data:[{place:[{id:211,id_state:23,name:"Manama",population:154431,area:30.16,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"manama"}]}],fetch:{},mutations:void 0}}(null)));

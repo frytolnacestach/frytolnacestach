@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/oyem", (function(a){return {data:[{place:[{id:731,id_state:76,name:"Oyem",population:37370,area:55.4,altitude:489,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"oyem"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/wollongong", (function(a){return {data:[{place:[{id:120,id_state:13,name:"Wollongong",population:301983,area:763.7,altitude:11,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"wollongong"}]}],fetch:{},mutations:void 0}}(null)));

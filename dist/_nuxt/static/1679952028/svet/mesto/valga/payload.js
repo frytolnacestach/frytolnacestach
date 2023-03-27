@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/valga", (function(a){return {data:[{place:[{id:617,id_state:64,name:"Valga",population:12425,area:16.35,altitude:60,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"valga"}]}],fetch:{},mutations:void 0}}(null)));

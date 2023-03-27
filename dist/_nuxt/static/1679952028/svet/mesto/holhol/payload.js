@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/holhol", (function(a){return {data:[{place:[{id:555,id_state:58,name:"Holhol",population:8000,area:.7,altitude:980,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"holhol"}]}],fetch:{},mutations:void 0}}(null)));

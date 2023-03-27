@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/semarang", (function(a){return {data:[{place:[{id:986,id_state:101,name:"Semarang",population:1313645,area:373.7,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"semarang"}]}],fetch:{},mutations:void 0}}(null)));

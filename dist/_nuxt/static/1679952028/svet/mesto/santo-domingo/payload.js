@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/santo-domingo", (function(a){return {data:[{place:[{id:578,id_state:61,name:"Santo Domingo",population:2907801,area:1600.25,altitude:14,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"santo-domingo"}]}],fetch:{},mutations:void 0}}(null)));

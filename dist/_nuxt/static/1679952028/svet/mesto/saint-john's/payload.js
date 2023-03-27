@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/saint-john's", (function(a){return {data:[{place:[{id:31,id_state:4,name:"Saint John's",population:22505,area:10,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saint-john's"}]}],fetch:{},mutations:void 0}}(null)));

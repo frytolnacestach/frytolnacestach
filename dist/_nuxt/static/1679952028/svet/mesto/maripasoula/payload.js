@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/maripasoula", (function(a){return {data:[{place:[{id:775,id_state:80,name:"Maripasoula",population:10500,area:18300,altitude:100,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"maripasoula"}]}],fetch:{},mutations:void 0}}(null)));

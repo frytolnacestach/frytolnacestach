@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/korhogo", (function(a){return {data:[{place:[{id:411,id_state:44,name:"Korhogo",population:233250,area:80,altitude:380,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"korhogo"}]}],fetch:{},mutations:void 0}}(null)));

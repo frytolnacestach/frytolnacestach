@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/elbasan", (function(a){return {data:[{place:[{id:53,id_state:6,name:"Elbasan",population:100903,area:15.54,altitude:89,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"elbasan"}]}],fetch:{},mutations:void 0}}(null)));

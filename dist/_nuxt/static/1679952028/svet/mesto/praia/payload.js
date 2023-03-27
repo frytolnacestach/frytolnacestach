@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/praia", (function(a){return {data:[{place:[{id:488,id_state:52,name:"Praia",population:136835,area:100.28,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"praia"}]}],fetch:{},mutations:void 0}}(null)));

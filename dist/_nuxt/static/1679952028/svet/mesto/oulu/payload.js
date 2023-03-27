@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/oulu", (function(a){return {data:[{place:[{id:672,id_state:70,name:"Oulu",population:202567,area:381.96,altitude:14,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"oulu"}]}],fetch:{},mutations:void 0}}(null)));

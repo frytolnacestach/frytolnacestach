@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mana", (function(a){return {data:[{place:[{id:773,id_state:80,name:"Mana",population:11400,area:6,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mana"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/canberra-queanbeyan", (function(a){return {data:[{place:[{id:118,id_state:13,name:"Canberra-Queanbeyan",population:449306,area:814.2,altitude:550,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"canberra-queanbeyan"}]}],fetch:{},mutations:void 0}}(null)));

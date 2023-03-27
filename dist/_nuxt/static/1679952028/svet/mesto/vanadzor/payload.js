@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/vanadzor", (function(a){return {data:[{place:[{id:63,id_state:7,name:"Vanadzor",population:75590,area:32.43,altitude:1350,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"vanadzor"}]}],fetch:{},mutations:void 0}}(null)));

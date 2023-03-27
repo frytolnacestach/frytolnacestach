@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/shepherdsville", (function(a){return {data:[{place:[{id:517,id_state:54,name:"Shepherdsville",population:145,area:.01,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"shepherdsville"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sumqayit", (function(a){return {data:[{place:[{id:143,id_state:16,name:"Sumqayıt",population:289049,area:283.14,altitude:-10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sumqayit"}]}],fetch:{},mutations:void 0}}(null)));

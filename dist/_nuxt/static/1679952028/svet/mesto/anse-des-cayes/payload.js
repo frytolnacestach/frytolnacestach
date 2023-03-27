@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/anse-des-cayes", (function(a){return {data:[{place:[{id:242,id_state:26,name:"Anse des Cayes",population:2972,area:2.92,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"anse-des-cayes"}]}],fetch:{},mutations:void 0}}(null)));

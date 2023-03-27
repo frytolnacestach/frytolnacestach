@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/telavi", (function(a){return {data:[{place:[{id:765,id_state:79,name:"Telavi",population:38700,area:27,altitude:500,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"telavi"}]}],fetch:{},mutations:void 0}}(null)));

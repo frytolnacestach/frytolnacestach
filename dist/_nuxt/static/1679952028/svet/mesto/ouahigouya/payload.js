@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ouahigouya", (function(a){return {data:[{place:[{id:194,id_state:21,name:"Ouahigouya",population:122336,area:125.24,altitude:306,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ouahigouya"}]}],fetch:{},mutations:void 0}}(null)));

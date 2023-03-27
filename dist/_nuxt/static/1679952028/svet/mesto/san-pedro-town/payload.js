@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/san-pedro-town", (function(a){return {data:[{place:[{id:347,id_state:37,name:"San Pedro Town",population:16554,area:7.44,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"san-pedro-town"}]}],fetch:{},mutations:void 0}}(null)));

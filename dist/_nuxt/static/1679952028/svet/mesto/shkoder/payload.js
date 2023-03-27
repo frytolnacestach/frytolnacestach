@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/shkoder", (function(a){return {data:[{place:[{id:55,id_state:6,name:"Shkodër",population:77452,area:17.2,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"shkoder"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/swords", (function(a){return {data:[{place:[{id:996,id_state:102,name:"Swords",population:31724,area:14.98,altitude:85,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"swords"}]}],fetch:{},mutations:void 0}}(null)));

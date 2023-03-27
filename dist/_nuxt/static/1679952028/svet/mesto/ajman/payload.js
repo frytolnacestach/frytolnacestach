@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ajman", (function(a){return {data:[{place:[{id:15,id_state:2,name:"Ajman",population:259846,area:259,altitude:16,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ajman"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/parham", (function(a){return {data:[{place:[{id:36,id_state:4,name:"Parham",population:1965,area:.61,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"parham"}]}],fetch:{},mutations:void 0}}(null)));

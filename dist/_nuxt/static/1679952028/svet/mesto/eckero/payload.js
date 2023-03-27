@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/eckero", (function(a){return {data:[{place:[{id:137,id_state:15,name:"Eckerö",population:1543,area:73.74,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"eckero"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/atlas-cove", (function(a,b){return {data:[{place:[{id:935,id_state:96,name:"Atlas Cove",population:a,area:a,altitude:a,id_continent:b,id_administrative_unit:b,id_districts:b,slug:"atlas-cove"}]}],fetch:{},mutations:void 0}}(0,null)));

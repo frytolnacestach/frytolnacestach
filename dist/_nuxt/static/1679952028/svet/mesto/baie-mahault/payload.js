@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/baie-mahault", (function(a){return {data:[{place:[{id:839,id_state:87,name:"Baie-Mahault",population:29729,area:22.21,altitude:20,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"baie-mahault"}]}],fetch:{},mutations:void 0}}(null)));

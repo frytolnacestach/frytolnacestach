@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/catio", (function(a){return {data:[{place:[{id:906,id_state:93,name:"Catió",population:7325,area:11.8,altitude:31,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"catio"}]}],fetch:{},mutations:void 0}}(null)));

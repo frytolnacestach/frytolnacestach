@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kohtla-jarve", (function(a){return {data:[{place:[{id:612,id_state:64,name:"Kohtla-Järve",population:35758,area:47.36,altitude:44,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kohtla-jarve"}]}],fetch:{},mutations:void 0}}(null)));

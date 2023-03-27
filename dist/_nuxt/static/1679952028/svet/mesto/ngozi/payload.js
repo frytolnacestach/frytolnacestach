@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ngozi", (function(a){return {data:[{place:[{id:225,id_state:24,name:"Ngozi",population:63061,area:68.61,altitude:1795,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ngozi"}]}],fetch:{},mutations:void 0}}(null)));

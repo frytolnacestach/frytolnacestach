@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/petionville", (function(a){return {data:[{place:[{id:960,id_state:99,name:"Pétionville",population:320742,area:32.37,altitude:250,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"petionville"}]}],fetch:{},mutations:void 0}}(null)));

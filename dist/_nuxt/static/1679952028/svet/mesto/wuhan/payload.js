@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/wuhan", (function(a){return {data:[{place:[{id:454,id_state:48,name:"Wuhan",population:8764000,area:8494,altitude:23,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"wuhan"}]}],fetch:{},mutations:void 0}}(null)));

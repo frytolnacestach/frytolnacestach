@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/runavik", (function(a){return {data:[{place:[{id:710,id_state:74,name:"Runavík",population:3145,area:8.2,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"runavik"}]}],fetch:{},mutations:void 0}}(null)));

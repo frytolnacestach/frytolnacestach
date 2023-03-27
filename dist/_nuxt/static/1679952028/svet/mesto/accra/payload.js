@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/accra", (function(a){return {data:[{place:[{id:788,id_state:82,name:"Accra",population:2295285,area:173.13,altitude:61,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"accra"}]}],fetch:{},mutations:void 0}}(null)));

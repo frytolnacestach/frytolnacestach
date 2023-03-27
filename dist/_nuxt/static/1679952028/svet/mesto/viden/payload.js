@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/viden", (function(a){return {data:[{place:[{id:101,id_state:12,name:"Vídeň",population:1911728,area:414.78,altitude:171,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"viden"}]}],fetch:{},mutations:void 0}}(null)));

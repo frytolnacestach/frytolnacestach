@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/paro", (function(a){return {data:[{place:[{id:319,id_state:33,name:"Paro",population:1596,area:5.15,altitude:2200,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"paro"}]}],fetch:{},mutations:void 0}}(null)));

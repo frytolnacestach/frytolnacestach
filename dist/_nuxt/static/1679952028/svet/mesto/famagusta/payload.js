@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/famagusta", (function(a){return {data:[{place:[{id:521,id_state:55,name:"Famagusta",population:41332,area:110.97,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"famagusta"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/medan", (function(a){return {data:[{place:[{id:980,id_state:101,name:"Medan",population:2552445,area:265.1,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"medan"}]}],fetch:{},mutations:void 0}}(null)));

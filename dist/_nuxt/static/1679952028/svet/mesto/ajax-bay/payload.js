@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ajax-bay", (function(a){return {data:[{place:[{id:872,id_state:90,name:"Ajax Bay",population:14,area:0,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ajax-bay"}]}],fetch:{},mutations:void 0}}(null)));

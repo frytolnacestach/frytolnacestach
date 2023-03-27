@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/san-pedro", (function(a){return {data:[{place:[{id:413,id_state:44,name:"San-Pédro",population:209157,area:15.8,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"san-pedro"}]}],fetch:{},mutations:void 0}}(null)));

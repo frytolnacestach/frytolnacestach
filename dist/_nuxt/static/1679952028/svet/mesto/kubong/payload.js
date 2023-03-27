@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kubong", (function(a){return {data:[{place:[{id:269,id_state:28,name:"Kubong",population:2000,area:.56,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kubong"}]}],fetch:{},mutations:void 0}}(null)));

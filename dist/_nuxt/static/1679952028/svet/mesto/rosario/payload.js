@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/rosario", (function(a){return {data:[{place:[{id:83,id_state:10,name:"Rosario",population:1444496,area:178.69,altitude:26,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rosario"}]}],fetch:{},mutations:void 0}}(null)));

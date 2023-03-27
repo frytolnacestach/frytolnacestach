@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/dessie", (function(a){return {data:[{place:[{id:664,id_state:69,name:"Dessie",population:238091,area:24.18,altitude:2470,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dessie"}]}],fetch:{},mutations:void 0}}(null)));

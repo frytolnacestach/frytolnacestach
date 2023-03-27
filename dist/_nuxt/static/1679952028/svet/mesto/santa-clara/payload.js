@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/santa-clara", (function(a){return {data:[{place:[{id:483,id_state:51,name:"Santa Clara",population:250512,area:230.32,altitude:126,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"santa-clara"}]}],fetch:{},mutations:void 0}}(null)));

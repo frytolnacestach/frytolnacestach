@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/belize-city", (function(a){return {data:[{place:[{id:342,id_state:37,name:"Belize City",population:62410,area:35.76,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"belize-city"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tenkodogo", (function(a){return {data:[{place:[{id:198,id_state:21,name:"Tenkodogo",population:74900,area:34.97,altitude:304,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tenkodogo"}]}],fetch:{},mutations:void 0}}(null)));

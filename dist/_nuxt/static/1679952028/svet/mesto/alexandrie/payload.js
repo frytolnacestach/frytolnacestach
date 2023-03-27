@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/alexandrie", (function(a){return {data:[{place:[{id:620,id_state:65,name:"Alexandrie",population:3941993,area:46.42,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"alexandrie"}]}],fetch:{},mutations:void 0}}(null)));

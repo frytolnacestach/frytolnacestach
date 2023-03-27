@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/winnipeg", (function(a){return {data:[{place:[{id:357,id_state:38,name:"Winnipeg",population:793400,area:464.08,altitude:238,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"winnipeg"}]}],fetch:{},mutations:void 0}}(null)));

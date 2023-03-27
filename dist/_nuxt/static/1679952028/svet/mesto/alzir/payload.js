@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/alzir", (function(a){return {data:[{place:[{id:588,id_state:62,name:"Alžír",population:2901418,area:273,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"alzir"}]}],fetch:{},mutations:void 0}}(null)));

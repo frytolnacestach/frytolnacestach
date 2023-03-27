@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sirvan", (function(a){return {data:[{place:[{id:146,id_state:16,name:"Şirvan",population:95071,area:44.16,altitude:-24,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sirvan"}]}],fetch:{},mutations:void 0}}(null)));

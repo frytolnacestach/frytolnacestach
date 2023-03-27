@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bern", (function(a){return {data:[{place:[{id:401,id_state:43,name:"Bern",population:132017,area:51.62,altitude:542,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bern"}]}],fetch:{},mutations:void 0}}(null)));

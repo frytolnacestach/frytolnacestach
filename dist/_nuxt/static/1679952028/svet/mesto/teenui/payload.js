@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/teenui", (function(a){return {data:[{place:[{id:421,id_state:45,name:"Teenui",population:363,area:.45,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"teenui"}]}],fetch:{},mutations:void 0}}(null)));

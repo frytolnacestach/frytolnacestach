@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/barranquilla", (function(a){return {data:[{place:[{id:461,id_state:49,name:"Barranquilla",population:1223261,area:1542,altitude:8,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"barranquilla"}]}],fetch:{},mutations:void 0}}(null)));

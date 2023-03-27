@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/chalcis", (function(a){return {data:[{place:[{id:866,id_state:89,name:"Chalcis",population:102398,area:24.05,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chalcis"}]}],fetch:{},mutations:void 0}}(null)));

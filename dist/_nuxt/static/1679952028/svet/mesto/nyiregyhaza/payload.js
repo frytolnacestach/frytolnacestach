@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/nyiregyhaza", (function(a){return {data:[{place:[{id:974,id_state:100,name:"Nyíregyháza",population:118918,area:188.73,altitude:106,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nyiregyhaza"}]}],fetch:{},mutations:void 0}}(null)));

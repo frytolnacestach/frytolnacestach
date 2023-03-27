@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/depok", (function(a){return {data:[{place:[{id:987,id_state:101,name:"Depok",population:1298158,area:200.29,altitude:89,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"depok"}]}],fetch:{},mutations:void 0}}(null)));

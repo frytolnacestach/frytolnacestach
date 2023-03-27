@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/jimma", (function(a){return {data:[{place:[{id:666,id_state:69,name:"Jimma",population:204571,area:46.22,altitude:1755,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"jimma"}]}],fetch:{},mutations:void 0}}(null)));

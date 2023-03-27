@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/oistins", (function(a){return {data:[{place:[{id:163,id_state:18,name:"Oistins",population:2552,area:1.29,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"oistins"}]}],fetch:{},mutations:void 0}}(null)));

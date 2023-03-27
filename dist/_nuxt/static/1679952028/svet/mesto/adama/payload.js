@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/adama", (function(a){return {data:[{place:[{id:661,id_state:69,name:"Adama",population:279550,area:111.54,altitude:1712,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"adama"}]}],fetch:{},mutations:void 0}}(null)));

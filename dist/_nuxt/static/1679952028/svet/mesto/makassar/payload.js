@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/makassar", (function(a){return {data:[{place:[{id:985,id_state:101,name:"Makassar",population:1318953,area:175.77,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"makassar"}]}],fetch:{},mutations:void 0}}(null)));

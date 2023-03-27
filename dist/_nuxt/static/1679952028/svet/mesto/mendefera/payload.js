@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mendefera", (function(a){return {data:[{place:[{id:642,id_state:67,name:"Mendefera",population:104486,area:600,altitude:2000,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mendefera"}]}],fetch:{},mutations:void 0}}(null)));

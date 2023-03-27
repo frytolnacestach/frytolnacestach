@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/andorra-la-vella", (function(a,b){return {data:[{place:[{id:b,id_state:b,name:"Andorra la Vella",population:22151,area:12.86,altitude:1023,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"andorra-la-vella"}]}],fetch:{},mutations:void 0}}(null,1)));

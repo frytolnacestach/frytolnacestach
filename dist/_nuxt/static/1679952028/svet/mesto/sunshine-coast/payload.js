@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sunshine-coast", (function(a){return {data:[{place:[{id:119,id_state:13,name:"Sunshine Coast",population:341077,area:2826.2,altitude:8,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sunshine-coast"}]}],fetch:{},mutations:void 0}}(null)));

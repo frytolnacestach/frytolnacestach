@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/arta", (function(a){return {data:[{place:[{id:553,id_state:58,name:"Arta",population:12511,area:200,altitude:750,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"arta"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/blida", (function(a){return {data:[{place:[{id:592,id_state:62,name:"Blida",population:516826,area:57.97,altitude:225,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"blida"}]}],fetch:{},mutations:void 0}}(null)));
