@@ -75,4 +75,10 @@
             }
         }
     }
+
+    &__link-subfix {
+        color: $brand3;
+        font-size: $fs-small-s;
+        line-height: 14px;
+    }
 }
