@@ -15,7 +15,7 @@
                             <div v-for="placesContinent in placesContinents" :key="placesContinent.id" class="o-cover-place__item">
                                 <div class="o-cover-place__content">
                                     <div class="o-cover-place__image">
-                                        <div class="o-cover-place__image-file" v-bind:style="{ 'background-image': 'url(' + (placesContinent.image_hero ? placesContinent.image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
+                                        <div class="o-cover-place__image-file" v-bind:style="{ 'background-image': 'url(' + (placesContinent.image_cover ? placesContinent.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
                                     </div>
                                     <h3 class="o-cover-place__name">
                                         {{ placesContinent.name }}
@@ -40,7 +40,7 @@
                             <div v-for="placesState in placesStates" :key="placesState.id" class="o-cover-place__item">
                                 <div class="o-cover-place__content">
                                     <div class="o-cover-place__image">
-                                        <div class="o-cover-place__image-file" v-bind:style="{ 'background-image': 'url(' + (placesState.image_hero ? placesState.image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
+                                        <div class="o-cover-place__image-file" v-bind:style="{ 'background-image': 'url(' + (placesState.image_cover ? placesState.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
                                     </div>
                                     <h3 class="o-cover-place__name">
                                         {{ placesState.name }}
@@ -65,12 +65,12 @@
                             <div v-for="placesCity in placesCities" :key="placesCity.id" class="o-cover-place__item">
                                 <div class="o-cover-place__content">
                                     <div class="o-cover-place__image">
-                                        <div class="o-cover-place__image-file" v-bind:style="{ 'background-image': 'url(' + (placesCity.image_hero ? placesState.image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
+                                        <div class="o-cover-place__image-file" v-bind:style="{ 'background-image': 'url(' + (placesCity.image_cover ? placesCity.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
                                     </div>
                                     <h3 class="o-cover-place__name">
                                         {{ placesCity.name }}
                                     </h3>
-                                    <NuxtLink class="o-cover-place__link" :to="`/svet/stat/${placesCity.slug}`"></NuxtLink>
+                                    <NuxtLink class="o-cover-place__link" :to="`/svet/mesto/${placesCity.slug}`"></NuxtLink>
                                 </div>
                             </div>
                         </div>
