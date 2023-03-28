@@ -77,8 +77,12 @@
     }
 
     &__link-subfix {
-        color: $brand3;
+        color: $white;
         font-size: $fs-small-s;
         line-height: 14px;
+
+        @media only screen and (min-width: $lg) {
+            color: $brand3;
+        }
     }
 }

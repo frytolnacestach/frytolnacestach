@@ -4,7 +4,7 @@
             
             <!-- SECTION - hero -->
             <section>
-                <div class="o-hero-article" v-bind:style="{ 'background-image': 'url(' + (place[0].imageHero ? place[0].imageHero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
+                <div class="o-hero-article" v-bind:style="{ 'background-image': 'url(' + (place[0].image_hero ? place[0].image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
                     <div class="o-hero-article__outer">
                         <div class="o-hero-article__inner">
                             <h1 class="o-hero-article__headline" v-if="place[0].name">{{ place[0].name }}</h1>
