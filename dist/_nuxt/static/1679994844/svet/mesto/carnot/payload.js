@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/carnot", (function(a){return {data:[{place:[{id:384,id_state:41,name:"Carnot",population:78802,area:67.93,altitude:508,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"carnot"}]}],fetch:{},mutations:void 0}}(null)));
