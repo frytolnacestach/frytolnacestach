@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nekemte", (function(a){return {data:[{place:[{id:667,id_state:69,name:"Nekemte",population:134402,area:3.84,altitude:1914,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nekemte"}]}],fetch:{},mutations:void 0}}(null)));

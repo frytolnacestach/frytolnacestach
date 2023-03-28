@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/buba", (function(a){return {data:[{place:[{id:903,id_state:93,name:"Buba",population:9628,area:36.5,altitude:20,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"buba",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

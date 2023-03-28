@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/shanghai", (function(a){return {data:[{place:[{id:448,id_state:48,name:"Shanghai",population:24183300,area:6341,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"shanghai"}]}],fetch:{},mutations:void 0}}(null)));

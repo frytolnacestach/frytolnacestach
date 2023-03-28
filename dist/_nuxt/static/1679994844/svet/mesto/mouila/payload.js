@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mouila", (function(a){return {data:[{place:[{id:733,id_state:76,name:"Mouila",population:22400,area:74,altitude:127,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mouila"}]}],fetch:{},mutations:void 0}}(null)));

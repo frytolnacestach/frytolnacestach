@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/aarhus", (function(a){return {data:[{place:[{id:559,id_state:59,name:"Aarhus",population:273557,area:91.8,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"aarhus",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

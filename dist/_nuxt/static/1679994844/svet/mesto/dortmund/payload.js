@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/dortmund", (function(a){return {data:[{place:[{id:545,id_state:57,name:"Dortmund",population:588460,area:280.71,altitude:86,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dortmund"}]}],fetch:{},mutations:void 0}}(null)));

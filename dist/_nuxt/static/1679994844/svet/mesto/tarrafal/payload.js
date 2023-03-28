@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tarrafal", (function(a){return {data:[{place:[{id:494,id_state:52,name:"Tarrafal",population:10626,area:58.57,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tarrafal"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/garoua", (function(a){return {data:[{place:[{id:440,id_state:47,name:"Garoua",population:52492,area:57.64,altitude:181,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"garoua"}]}],fetch:{},mutations:void 0}}(null)));

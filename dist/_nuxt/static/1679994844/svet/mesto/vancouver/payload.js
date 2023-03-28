@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/vancouver", (function(a){return {data:[{place:[{id:353,id_state:38,name:"Vancouver",population:1153995,area:114.97,altitude:22,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"vancouver"}]}],fetch:{},mutations:void 0}}(null)));

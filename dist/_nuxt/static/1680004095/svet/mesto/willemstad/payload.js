@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/willemstad", (function(a){return {data:[{place:[{id:498,id_state:53,name:"Willemstad",population:150563,area:444.12,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"willemstad",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

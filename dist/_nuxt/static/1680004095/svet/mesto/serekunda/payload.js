@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/serekunda", (function(a){return {data:[{place:[{id:819,id_state:85,name:"Serekunda",population:357767,area:61.2,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"serekunda",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

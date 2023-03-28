@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/cucuta", (function(a){return {data:[{place:[{id:463,id_state:49,name:"Cúcuta",population:682870,area:310,altitude:320,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cucuta",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

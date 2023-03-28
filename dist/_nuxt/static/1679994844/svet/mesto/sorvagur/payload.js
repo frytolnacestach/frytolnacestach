@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sorvagur", (function(a){return {data:[{place:[{id:714,id_state:74,name:"Sørvágur",population:1279,area:3.85,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sorvagur"}]}],fetch:{},mutations:void 0}}(null)));

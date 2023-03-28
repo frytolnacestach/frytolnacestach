@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/colombier", (function(a){return {data:[{place:[{id:248,id_state:26,name:"Colombier",population:1221,area:1.47,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"colombier",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

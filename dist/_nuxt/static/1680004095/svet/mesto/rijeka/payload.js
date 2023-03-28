@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/rijeka", (function(a){return {data:[{place:[{id:950,id_state:98,name:"Rijeka",population:128384,area:44.15,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rijeka",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

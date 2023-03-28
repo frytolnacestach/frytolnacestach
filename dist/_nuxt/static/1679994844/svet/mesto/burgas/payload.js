@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/burgas", (function(a){return {data:[{place:[{id:204,id_state:22,name:"Burgas",population:203897,area:216.04,altitude:33,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"burgas"}]}],fetch:{},mutations:void 0}}(null)));

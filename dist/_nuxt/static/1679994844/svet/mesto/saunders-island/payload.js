@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/saunders-island", (function(a){return {data:[{place:[{id:697,id_state:72,name:"Saunders Island",population:60,area:.17,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saunders-island"}]}],fetch:{},mutations:void 0}}(null)));

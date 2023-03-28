@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/savaneta", (function(a){return {data:[{place:[{id:125,id_state:14,name:"Savaneta",population:9231,area:7.49,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"savaneta"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/horsens", (function(a){return {data:[{place:[{id:565,id_state:59,name:"Horsens",population:58747,area:52.82,altitude:17,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"horsens"}]}],fetch:{},mutations:void 0}}(null)));

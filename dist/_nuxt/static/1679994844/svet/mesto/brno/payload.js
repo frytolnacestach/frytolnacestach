@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/brno", (function(a){return {data:[{place:[{id:529,id_state:56,name:"Brno",population:379527,area:230.18,altitude:237,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"brno"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mochudi", (function(a){return {data:[{place:[{id:329,id_state:35,name:"Mochudi",population:41834,area:18.42,altitude:1157,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mochudi",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

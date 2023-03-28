@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/polis", (function(a){return {data:[{place:[{id:527,id_state:55,name:"Polis",population:5446,area:31.15,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"polis"}]}],fetch:{},mutations:void 0}}(null)));

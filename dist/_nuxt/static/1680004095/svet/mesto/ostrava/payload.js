@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ostrava", (function(a){return {data:[{place:[{id:530,id_state:56,name:"Ostrava",population:290450,area:214.23,altitude:210,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ostrava",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

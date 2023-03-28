@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/herat", (function(a){return {data:[{place:[{id:22,id_state:3,name:"Herát",population:4833720,area:120,altitude:927,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"herat"}]}],fetch:{},mutations:void 0}}(null)));

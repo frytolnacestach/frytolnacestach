@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ambato", (function(a){return {data:[{place:[{id:607,id_state:63,name:"Ambato",population:174328,area:81.49,altitude:2580,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ambato"}]}],fetch:{},mutations:void 0}}(null)));

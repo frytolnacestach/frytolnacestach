@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/pariz", (function(a){return {data:[{place:[{id:718,id_state:75,name:"Paříž",population:2148271,area:105.4,altitude:34,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pariz",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

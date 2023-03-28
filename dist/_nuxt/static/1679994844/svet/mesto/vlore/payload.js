@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/vlore", (function(a){return {data:[{place:[{id:54,id_state:6,name:"Vlorë",population:79513,area:16.76,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"vlore"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/toulouse", (function(a){return {data:[{place:[{id:721,id_state:75,name:"Toulouse",population:479553,area:118.3,altitude:146,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"toulouse"}]}],fetch:{},mutations:void 0}}(null)));

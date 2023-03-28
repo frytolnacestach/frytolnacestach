@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/plovdiv", (function(a){return {data:[{place:[{id:202,id_state:22,name:"Plovdiv",population:346893,area:101.98,altitude:164,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"plovdiv"}]}],fetch:{},mutations:void 0}}(null)));

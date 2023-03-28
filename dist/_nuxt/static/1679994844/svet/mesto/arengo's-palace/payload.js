@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/arengo's-palace", (function(a){return {data:[{place:[{id:806,id_state:83,name:"Arengo's Palace",population:19704,area:.22,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"arengo's-palace"}]}],fetch:{},mutations:void 0}}(null)));

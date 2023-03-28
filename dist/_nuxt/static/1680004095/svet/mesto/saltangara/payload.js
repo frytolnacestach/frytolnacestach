@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/saltangara", (function(a){return {data:[{place:[{id:716,id_state:74,name:"Saltangará",population:953,area:.75,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saltangara",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

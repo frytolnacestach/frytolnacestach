@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/cape-coast", (function(a){return {data:[{place:[{id:795,id_state:82,name:"Cape Coast",population:143015,area:16.88,altitude:18,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cape-coast",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

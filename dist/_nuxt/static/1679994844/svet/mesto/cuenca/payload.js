@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/cuenca", (function(a){return {data:[{place:[{id:600,id_state:63,name:"Cuenca",population:333597,area:70.82,altitude:2560,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cuenca"}]}],fetch:{},mutations:void 0}}(null)));

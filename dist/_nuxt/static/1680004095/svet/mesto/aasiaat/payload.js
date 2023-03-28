@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/aasiaat", (function(a){return {data:[{place:[{id:812,id_state:84,name:"Aasiaat",population:3117,area:1196,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"aasiaat",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

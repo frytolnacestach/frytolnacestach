@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/dedougou", (function(a){return {data:[{place:[{id:196,id_state:21,name:"Dédougou",population:93201,area:152.26,altitude:305,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dedougou",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

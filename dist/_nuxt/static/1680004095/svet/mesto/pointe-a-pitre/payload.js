@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/pointe-a-pitre", (function(a){return {data:[{place:[{id:844,id_state:87,name:"Pointe-à-Pitre",population:19011,area:6.9,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pointe-a-pitre",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

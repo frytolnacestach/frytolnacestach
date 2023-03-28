@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/saint-peter-port", (function(a){return {data:[{place:[{id:778,id_state:81,name:"Saint Peter Port",population:19955,area:25,altitude:36,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saint-peter-port",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

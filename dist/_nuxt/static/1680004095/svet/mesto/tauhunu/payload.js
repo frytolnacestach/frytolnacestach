@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tauhunu", (function(a){return {data:[{place:[{id:422,id_state:45,name:"Tauhunu",population:309,area:.27,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tauhunu",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/man", (function(a){return {data:[{place:[{id:415,id_state:44,name:"Man",population:139341,area:11,altitude:461,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"man",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

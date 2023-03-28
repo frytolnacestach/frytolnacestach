@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/omoka", (function(a){return {data:[{place:[{id:420,id_state:45,name:"Omoka",population:526,area:.93,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"omoka"}]}],fetch:{},mutations:void 0}}(null)));

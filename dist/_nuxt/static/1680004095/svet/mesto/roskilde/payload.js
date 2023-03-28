@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/roskilde", (function(a){return {data:[{place:[{id:567,id_state:59,name:"Roskilde",population:54590,area:210.88,altitude:36,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"roskilde",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

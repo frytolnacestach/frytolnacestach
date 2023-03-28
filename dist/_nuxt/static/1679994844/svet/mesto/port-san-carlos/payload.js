@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/port-san-carlos", (function(a){return {data:[{place:[{id:693,id_state:72,name:"Port San Carlos",population:125,area:.13,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"port-san-carlos"}]}],fetch:{},mutations:void 0}}(null)));

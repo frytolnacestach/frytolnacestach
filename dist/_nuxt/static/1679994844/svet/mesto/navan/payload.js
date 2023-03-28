@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/navan", (function(a){return {data:[{place:[{id:997,id_state:102,name:"Navan",population:30456,area:11.44,altitude:61,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"navan"}]}],fetch:{},mutations:void 0}}(null)));

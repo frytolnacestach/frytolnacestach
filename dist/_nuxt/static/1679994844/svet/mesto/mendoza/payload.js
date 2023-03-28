@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mendoza", (function(a){return {data:[{place:[{id:84,id_state:10,name:"Mendoza",population:1161469,area:54.9,altitude:705,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mendoza"}]}],fetch:{},mutations:void 0}}(null)));

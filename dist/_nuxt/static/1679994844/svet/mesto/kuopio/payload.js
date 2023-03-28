@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kuopio", (function(a){return {data:[{place:[{id:676,id_state:70,name:"Kuopio",population:119741,area:528.3,altitude:75,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kuopio"}]}],fetch:{},mutations:void 0}}(null)));

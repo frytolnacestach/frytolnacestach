@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tutong", (function(a){return {data:[{place:[{id:264,id_state:28,name:"Tutong",population:19900,area:.61,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tutong"}]}],fetch:{},mutations:void 0}}(null)));

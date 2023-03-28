@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/les-cayes", (function(a){return {data:[{place:[{id:965,id_state:99,name:"Les Cayes",population:173756,area:18.03,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"les-cayes"}]}],fetch:{},mutations:void 0}}(null)));

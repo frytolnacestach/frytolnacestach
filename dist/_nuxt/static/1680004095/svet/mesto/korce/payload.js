@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/korce", (function(a){return {data:[{place:[{id:58,id_state:6,name:"Korçë",population:51019,area:10.6,altitude:850,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"korce",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

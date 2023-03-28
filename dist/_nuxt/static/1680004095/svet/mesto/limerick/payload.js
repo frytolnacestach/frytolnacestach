@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/limerick", (function(a){return {data:[{place:[{id:990,id_state:102,name:"Limerick",population:110083,area:58.09,altitude:11,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"limerick",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

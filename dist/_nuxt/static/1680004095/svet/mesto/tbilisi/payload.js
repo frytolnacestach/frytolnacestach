@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tbilisi", (function(a){return {data:[{place:[{id:758,id_state:79,name:"Tbilisi",population:1118000,area:726,altitude:380,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tbilisi",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

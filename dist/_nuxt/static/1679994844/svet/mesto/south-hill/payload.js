@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/south-hill", (function(a){return {data:[{place:[{id:48,id_state:5,name:"South Hill",population:498,area:1.36,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"south-hill"}]}],fetch:{},mutations:void 0}}(null)));

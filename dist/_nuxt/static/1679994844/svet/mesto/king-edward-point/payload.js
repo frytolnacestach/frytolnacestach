@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/king-edward-point", (function(a){return {data:[{place:[{id:868,id_state:90,name:"King Edward Point",population:22,area:0,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"king-edward-point"}]}],fetch:{},mutations:void 0}}(null)));

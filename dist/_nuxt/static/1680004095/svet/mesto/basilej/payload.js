@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/basilej", (function(a){return {data:[{place:[{id:400,id_state:43,name:"Basilej",population:172639,area:37.6,altitude:244,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"basilej",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

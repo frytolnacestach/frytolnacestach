@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/remire-montjoly", (function(a){return {data:[{place:[{id:772,id_state:80,name:"Remire-Montjoly",population:21900,area:28,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"remire-montjoly",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

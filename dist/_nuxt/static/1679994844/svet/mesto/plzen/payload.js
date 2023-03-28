@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/plzen", (function(a){return {data:[{place:[{id:531,id_state:56,name:"Plzeň",population:175333,area:137.67,altitude:313,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"plzen"}]}],fetch:{},mutations:void 0}}(null)));

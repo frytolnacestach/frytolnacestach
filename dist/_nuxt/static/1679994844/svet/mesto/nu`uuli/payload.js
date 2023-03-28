@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nu%60uuli", (function(a){return {data:[{place:[{id:92,id_state:11,name:"Nu`uuli",population:12505,area:4.87,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nu`uuli"}]}],fetch:{},mutations:void 0}}(null)));

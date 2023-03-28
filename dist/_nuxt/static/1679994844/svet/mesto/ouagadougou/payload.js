@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ouagadougou", (function(a){return {data:[{place:[{id:191,id_state:21,name:"Ouagadougou",population:2107200,area:52.47,altitude:305,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ouagadougou"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/montagu-gardens", (function(a){return {data:[{place:[{id:807,id_state:83,name:"Montagu Gardens",population:21675,area:.33,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"montagu-gardens",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

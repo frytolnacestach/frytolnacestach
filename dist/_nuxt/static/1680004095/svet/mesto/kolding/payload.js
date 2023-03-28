@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kolding", (function(a){return {data:[{place:[{id:564,id_state:59,name:"Kolding",population:62686,area:14.65,altitude:44,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kolding",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

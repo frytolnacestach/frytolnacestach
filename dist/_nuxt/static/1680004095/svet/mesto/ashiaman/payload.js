@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ashiaman", (function(a){return {data:[{place:[{id:792,id_state:82,name:"Ashiaman",population:326245,area:108.78,altitude:24,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ashiaman",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

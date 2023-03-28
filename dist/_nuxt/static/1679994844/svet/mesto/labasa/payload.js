@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/labasa", (function(a){return {data:[{place:[{id:682,id_state:71,name:"Labasa",population:28380,area:4.9,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"labasa"}]}],fetch:{},mutations:void 0}}(null)));

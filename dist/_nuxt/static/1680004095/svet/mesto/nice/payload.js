@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/nice", (function(a){return {data:[{place:[{id:722,id_state:75,name:"Nice",population:341522,area:71.92,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nice",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

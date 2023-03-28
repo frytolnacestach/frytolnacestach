@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/chichicastenango", (function(a){return {data:[{place:[{id:887,id_state:91,name:"Chichicastenango",population:100489,area:37.42,altitude:2000,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chichicastenango",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

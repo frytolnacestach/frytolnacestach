@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bordeaux", (function(a){return {data:[{place:[{id:726,id_state:75,name:"Bordeaux",population:254436,area:49.36,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bordeaux",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

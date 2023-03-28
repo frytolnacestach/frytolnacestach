@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/szombathely", (function(a){return {data:[{place:[{id:977,id_state:100,name:"Szombathely",population:77157,area:100.97,altitude:216,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"szombathely"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/rancagua", (function(a){return {data:[{place:[{id:433,id_state:46,name:"Rancagua",population:246337,area:261.5,altitude:573,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rancagua"}]}],fetch:{},mutations:void 0}}(null)));

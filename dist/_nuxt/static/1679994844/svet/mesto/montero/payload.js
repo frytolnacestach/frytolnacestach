@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/montero", (function(a){return {data:[{place:[{id:279,id_state:29,name:"Montero",population:133709,area:15.31,altitude:350,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"montero"}]}],fetch:{},mutations:void 0}}(null)));

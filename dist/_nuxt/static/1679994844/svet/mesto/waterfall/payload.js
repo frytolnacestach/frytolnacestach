@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/waterfall", (function(a){return {data:[{place:[{id:513,id_state:54,name:"Waterfall",population:294,area:.01,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"waterfall"}]}],fetch:{},mutations:void 0}}(null)));

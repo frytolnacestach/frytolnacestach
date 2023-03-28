@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/praha", (function(a){return {data:[{place:[{id:528,id_state:56,name:"Praha",population:1324277,area:496.11,altitude:177,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"praha",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

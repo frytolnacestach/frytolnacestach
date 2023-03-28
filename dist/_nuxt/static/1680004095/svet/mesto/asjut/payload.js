@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/asjut", (function(a){return {data:[{place:[{id:625,id_state:65,name:"Asjut",population:475387,area:25.7,altitude:80,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"asjut",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/melbourne", (function(a){return {data:[{place:[{id:112,id_state:13,name:"Melbourne",population:5142174,area:9992.5,altitude:31,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"melbourne",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

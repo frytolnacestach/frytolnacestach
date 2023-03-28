@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/huambo", (function(a){return {data:[{place:[{id:72,id_state:8,name:"Huambo",population:226145,area:109.27,altitude:1703,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"huambo",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

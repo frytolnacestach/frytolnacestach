@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bamenda", (function(a){return {data:[{place:[{id:441,id_state:47,name:"Bamenda",population:410085,area:107.66,altitude:1500,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bamenda"}]}],fetch:{},mutations:void 0}}(null)));

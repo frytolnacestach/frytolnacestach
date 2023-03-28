@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/nassau", (function(a){return {data:[{place:[{id:301,id_state:32,name:"Nassau",population:248948,area:21.83,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nassau",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

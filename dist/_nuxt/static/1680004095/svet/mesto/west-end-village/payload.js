@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/west-end-village", (function(a){return {data:[{place:[{id:47,id_state:5,name:"West End Village",population:595,area:4.25,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"west-end-village",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

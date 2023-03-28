@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/berlin", (function(a){return {data:[{place:[{id:538,id_state:57,name:"Berlín",population:3769000,area:891.68,altitude:34,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"berlin",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

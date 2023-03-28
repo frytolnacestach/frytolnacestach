@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/brando", (function(a){return {data:[{place:[{id:140,id_state:15,name:"Brändö",population:373,area:75.42,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"brando",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

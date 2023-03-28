@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sharjah", (function(a){return {data:[{place:[{id:13,id_state:2,name:"Sharjah",population:1236093,area:235.54,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sharjah"}]}],fetch:{},mutations:void 0}}(null)));

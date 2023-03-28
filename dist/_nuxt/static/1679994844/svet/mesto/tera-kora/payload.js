@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tera-kora", (function(a){return {data:[{place:[{id:502,id_state:53,name:"Tera Kora",population:2997,area:5.42,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tera-kora"}]}],fetch:{},mutations:void 0}}(null)));

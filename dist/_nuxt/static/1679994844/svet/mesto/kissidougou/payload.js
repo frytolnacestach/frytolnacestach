@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kissidougou", (function(a){return {data:[{place:[{id:835,id_state:86,name:"Kissidougou",population:93143,area:9.3,altitude:370,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kissidougou"}]}],fetch:{},mutations:void 0}}(null)));

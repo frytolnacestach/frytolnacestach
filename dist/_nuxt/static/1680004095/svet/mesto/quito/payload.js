@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/quito", (function(a){return {data:[{place:[{id:599,id_state:63,name:"Quito",population:1834305,area:324.23,altitude:2850,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"quito",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

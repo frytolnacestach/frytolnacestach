@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/peking", (function(a){return {data:[{place:[{id:449,id_state:48,name:"Peking",population:21707000,area:16411,altitude:43,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"peking",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

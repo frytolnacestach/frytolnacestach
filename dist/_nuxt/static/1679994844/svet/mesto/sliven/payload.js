@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sliven", (function(a){return {data:[{place:[{id:208,id_state:22,name:"Sliven",population:88354,area:142.38,altitude:243,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sliven"}]}],fetch:{},mutations:void 0}}(null)));

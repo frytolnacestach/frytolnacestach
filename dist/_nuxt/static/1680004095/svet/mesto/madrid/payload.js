@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/madrid", (function(a){return {data:[{place:[{id:648,id_state:68,name:"Madrid",population:6685471,area:604.3,altitude:667,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"madrid",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

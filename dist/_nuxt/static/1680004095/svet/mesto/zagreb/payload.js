@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/zagreb", (function(a){return {data:[{place:[{id:948,id_state:98,name:"Zagreb",population:685571,area:641.36,altitude:122,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zagreb",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

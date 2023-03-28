@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bathsheba", (function(a){return {data:[{place:[{id:164,id_state:18,name:"Bathsheba",population:1075,area:1.03,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bathsheba",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

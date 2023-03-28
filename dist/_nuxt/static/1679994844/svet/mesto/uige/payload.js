@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/uige", (function(a){return {data:[{place:[{id:80,id_state:8,name:"Uíge",population:104808,area:8.95,altitude:944,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"uige"}]}],fetch:{},mutations:void 0}}(null)));

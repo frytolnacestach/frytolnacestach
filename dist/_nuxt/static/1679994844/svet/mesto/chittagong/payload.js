@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/chittagong", (function(a){return {data:[{place:[{id:172,id_state:19,name:"Chittagong",population:5280832,area:168.07,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chittagong"}]}],fetch:{},mutations:void 0}}(null)));

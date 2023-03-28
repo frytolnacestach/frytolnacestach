@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/yaounde", (function(a){return {data:[{place:[{id:439,id_state:47,name:"Yaoundé",population:2173529,area:304.55,altitude:726,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"yaounde",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

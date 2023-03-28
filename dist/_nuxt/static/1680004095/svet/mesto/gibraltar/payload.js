@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/gibraltar", (function(a){return {data:[{place:[{id:798,id_state:83,name:"Gibraltar",population:33701,area:6.7,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gibraltar",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

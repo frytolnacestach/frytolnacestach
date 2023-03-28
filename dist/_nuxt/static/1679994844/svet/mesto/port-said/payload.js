@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/port-said", (function(a){return {data:[{place:[{id:622,id_state:65,name:"Port Said",population:660726,area:30.05,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"port-said"}]}],fetch:{},mutations:void 0}}(null)));

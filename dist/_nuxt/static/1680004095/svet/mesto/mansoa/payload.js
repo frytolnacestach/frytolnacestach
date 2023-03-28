@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mansoa", (function(a){return {data:[{place:[{id:905,id_state:93,name:"Mansôa",population:7995,area:31.2,altitude:32,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mansoa",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

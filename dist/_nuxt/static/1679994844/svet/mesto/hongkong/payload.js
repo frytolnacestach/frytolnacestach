@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/hongkong", (function(a){return {data:[{place:[{id:918,id_state:95,name:"Hongkong",population:7451000,area:1106,altitude:29,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hongkong"}]}],fetch:{},mutations:void 0}}(null)));

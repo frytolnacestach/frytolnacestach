@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sillamae", (function(a){return {data:[{place:[{id:616,id_state:64,name:"Sillamäe",population:13532,area:10.54,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sillamae"}]}],fetch:{},mutations:void 0}}(null)));

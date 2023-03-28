@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/antverpy", (function(a){return {data:[{place:[{id:182,id_state:20,name:"Antverpy",population:523248,area:204.51,altitude:13,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"antverpy"}]}],fetch:{},mutations:void 0}}(null)));

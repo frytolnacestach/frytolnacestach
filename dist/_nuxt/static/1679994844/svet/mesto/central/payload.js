@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/central", (function(a){return {data:[{place:[{id:927,id_state:95,name:"Central",population:250000,area:.79,altitude:14,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"central"}]}],fetch:{},mutations:void 0}}(null)));

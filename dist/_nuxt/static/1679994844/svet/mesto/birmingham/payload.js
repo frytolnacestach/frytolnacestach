@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/birmingham", (function(a){return {data:[{place:[{id:739,id_state:77,name:"Birmingham",population:1141816,area:267.77,altitude:140,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"birmingham"}]}],fetch:{},mutations:void 0}}(null)));

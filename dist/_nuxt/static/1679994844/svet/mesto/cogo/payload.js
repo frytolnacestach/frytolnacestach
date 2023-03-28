@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/cogo", (function(a){return {data:[{place:[{id:857,id_state:88,name:"Cogo",population:8106,area:16.6,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cogo"}]}],fetch:{},mutations:void 0}}(null)));

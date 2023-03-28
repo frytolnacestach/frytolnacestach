@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bissau", (function(a){return {data:[{place:[{id:898,id_state:93,name:"Bissau",population:395370,area:77.5,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bissau",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

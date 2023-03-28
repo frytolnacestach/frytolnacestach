@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/antofagasta", (function(a){return {data:[{place:[{id:430,id_state:46,name:"Antofagasta",population:432418,area:307.5,altitude:39,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"antofagasta"}]}],fetch:{},mutations:void 0}}(null)));

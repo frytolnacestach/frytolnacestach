@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mariehamn", (function(a){return {data:[{place:[{id:131,id_state:15,name:"Mariehamn",population:11551,area:11.5,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mariehamn"}]}],fetch:{},mutations:void 0}}(null)));

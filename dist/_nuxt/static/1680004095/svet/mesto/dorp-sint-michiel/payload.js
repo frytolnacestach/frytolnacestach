@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/dorp-sint-michiel", (function(a){return {data:[{place:[{id:506,id_state:53,name:"Dorp Sint Michiel",population:2050,area:3.56,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dorp-sint-michiel",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

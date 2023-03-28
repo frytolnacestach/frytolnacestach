@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/akka", (function(a){return {data:[{place:[{id:635,id_state:66,name:"Akka",population:11154,area:14.71,altitude:43,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"akka",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

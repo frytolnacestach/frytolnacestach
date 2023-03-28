@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/dobrich", (function(a){return {data:[{place:[{id:209,id_state:22,name:"Dobrich",population:83423,area:112.79,altitude:200,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dobrich"}]}],fetch:{},mutations:void 0}}(null)));

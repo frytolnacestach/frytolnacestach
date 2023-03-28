@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sitrah", (function(a){return {data:[{place:[{id:218,id_state:23,name:"Sitrah",population:3725,area:4.07,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sitrah"}]}],fetch:{},mutations:void 0}}(null)));

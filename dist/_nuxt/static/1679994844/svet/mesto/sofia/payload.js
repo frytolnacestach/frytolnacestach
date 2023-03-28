@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sofia", (function(a){return {data:[{place:[{id:201,id_state:22,name:"Sofia",population:1240192,area:492,altitude:550,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sofia"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/liberta", (function(a){return {data:[{place:[{id:33,id_state:4,name:"Liberta",population:3117,area:.55,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"liberta"}]}],fetch:{},mutations:void 0}}(null)));

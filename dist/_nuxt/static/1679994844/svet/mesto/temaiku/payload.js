@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/temaiku", (function(a){return {data:[{place:[{id:425,id_state:45,name:"Temaiku",population:113,area:.54,altitude:8,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"temaiku"}]}],fetch:{},mutations:void 0}}(null)));

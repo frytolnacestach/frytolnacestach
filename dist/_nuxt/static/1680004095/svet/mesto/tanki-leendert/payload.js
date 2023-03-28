@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tanki-leendert", (function(a){return {data:[{place:[{id:129,id_state:14,name:"Tanki Leendert",population:2453,area:3.12,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tanki-leendert",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

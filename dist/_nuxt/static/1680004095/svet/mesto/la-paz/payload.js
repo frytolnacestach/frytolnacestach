@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/la-paz", (function(a){return {data:[{place:[{id:273,id_state:29,name:"La Paz",population:1158959,area:472.33,altitude:3640,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"la-paz",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

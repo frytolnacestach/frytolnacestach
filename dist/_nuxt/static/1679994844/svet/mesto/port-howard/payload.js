@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/port-howard", (function(a){return {data:[{place:[{id:691,id_state:72,name:"Port Howard",population:137,area:.21,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"port-howard"}]}],fetch:{},mutations:void 0}}(null)));

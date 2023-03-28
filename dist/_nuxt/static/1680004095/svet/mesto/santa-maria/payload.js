@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/santa-maria", (function(a){return {data:[{place:[{id:490,id_state:52,name:"Santa Maria",population:33537,area:201.63,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"santa-maria",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/oran", (function(a){return {data:[{place:[{id:589,id_state:62,name:"Oran",population:1073295,area:211.64,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"oran",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

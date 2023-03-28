@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sucre", (function(a){return {data:[{place:[{id:276,id_state:29,name:"Sucre",population:263954,area:28.94,altitude:2810,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sucre",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

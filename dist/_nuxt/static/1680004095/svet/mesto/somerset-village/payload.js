@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/somerset-village", (function(a){return {data:[{place:[{id:253,id_state:27,name:"Somerset Village",population:3279,area:.22,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"somerset-village",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

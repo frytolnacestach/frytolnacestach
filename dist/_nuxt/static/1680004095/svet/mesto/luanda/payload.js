@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/luanda", (function(a){return {data:[{place:[{id:71,id_state:8,name:"Luanda",population:8416951,area:113.46,altitude:74,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"luanda",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

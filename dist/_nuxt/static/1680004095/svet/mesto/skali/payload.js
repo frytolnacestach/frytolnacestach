@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/skali", (function(a){return {data:[{place:[{id:717,id_state:74,name:"Skáli",population:958,area:1.4,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"skali",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

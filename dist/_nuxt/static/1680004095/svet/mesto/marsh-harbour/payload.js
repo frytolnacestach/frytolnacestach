@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/marsh-harbour", (function(a){return {data:[{place:[{id:305,id_state:32,name:"Marsh Harbour",population:6996,area:20.91,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"marsh-harbour",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

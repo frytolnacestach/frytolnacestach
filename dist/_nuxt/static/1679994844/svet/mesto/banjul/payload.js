@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/banjul", (function(a){return {data:[{place:[{id:818,id_state:85,name:"Banjul",population:54646,area:12.5,altitude:9,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"banjul"}]}],fetch:{},mutations:void 0}}(null)));

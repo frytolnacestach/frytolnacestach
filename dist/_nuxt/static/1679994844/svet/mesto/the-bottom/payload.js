@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/the-bottom", (function(a){return {data:[{place:[{id:285,id_state:30,name:"The Bottom",population:491,area:1.17,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"the-bottom"}]}],fetch:{},mutations:void 0}}(null)));

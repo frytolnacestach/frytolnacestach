@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/saint-marc", (function(a){return {data:[{place:[{id:964,id_state:99,name:"Saint-Marc",population:198029,area:8.44,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saint-marc",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

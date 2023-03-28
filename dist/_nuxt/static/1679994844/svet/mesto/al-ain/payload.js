@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/al-ain", (function(a){return {data:[{place:[{id:14,id_state:2,name:"Al Ain",population:766936,area:15.71,altitude:265,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"al-ain"}]}],fetch:{},mutations:void 0}}(null)));

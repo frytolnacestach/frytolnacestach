@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/wels", (function(a){return {data:[{place:[{id:108,id_state:12,name:"Wels",population:60648,area:44.82,altitude:317,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"wels"}]}],fetch:{},mutations:void 0}}(null)));

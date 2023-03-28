@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/fuglafjorour", (function(a){return {data:[{place:[{id:712,id_state:74,name:"Fuglafjørður",population:1373,area:3.5,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"fuglafjorour",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

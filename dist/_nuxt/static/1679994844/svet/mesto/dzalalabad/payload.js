@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/dzalalabad", (function(a){return {data:[{place:[{id:26,id_state:3,name:"Džalálábád",population:2399711,area:30,altitude:597,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dzalalabad"}]}],fetch:{},mutations:void 0}}(null)));

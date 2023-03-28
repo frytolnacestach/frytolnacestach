@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/portsmouth", (function(a){return {data:[{place:[{id:569,id_state:60,name:"Portsmouth",population:2734,area:1.94,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"portsmouth"}]}],fetch:{},mutations:void 0}}(null)));

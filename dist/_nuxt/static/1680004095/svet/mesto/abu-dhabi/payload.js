@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/abu-dhabi", (function(a){return {data:[{place:[{id:12,id_state:2,name:"Abu Dhabi",population:1639084,area:974.2,altitude:27,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"abu-dhabi",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

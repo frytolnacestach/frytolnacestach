@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/gagnoa", (function(a){return {data:[{place:[{id:414,id_state:44,name:"Gagnoa",population:175678,area:19.6,altitude:186,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gagnoa"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/esbjerg", (function(a){return {data:[{place:[{id:562,id_state:59,name:"Esbjerg",population:71927,area:14.73,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"esbjerg",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

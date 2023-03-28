@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/gonder", (function(a){return {data:[{place:[{id:662,id_state:69,name:"Gonder",population:247570,area:61.84,altitude:2133,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gonder",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

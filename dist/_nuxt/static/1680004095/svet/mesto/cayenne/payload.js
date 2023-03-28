@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/cayenne", (function(a){return {data:[{place:[{id:768,id_state:80,name:"Cayenne",population:61800,area:23,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cayenne",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

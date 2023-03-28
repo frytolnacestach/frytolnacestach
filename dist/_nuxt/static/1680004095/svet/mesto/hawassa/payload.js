@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/hawassa", (function(a){return {data:[{place:[{id:663,id_state:69,name:"Hawassa",population:239435,area:48.16,altitude:1708,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hawassa",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

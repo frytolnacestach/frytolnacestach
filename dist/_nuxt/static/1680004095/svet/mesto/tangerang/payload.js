@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tangerang", (function(a){return {data:[{place:[{id:984,id_state:101,name:"Tangerang",population:1561226,area:153.93,altitude:20,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tangerang",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

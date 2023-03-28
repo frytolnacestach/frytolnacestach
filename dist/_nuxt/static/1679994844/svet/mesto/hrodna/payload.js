@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/hrodna", (function(a){return {data:[{place:[{id:335,id_state:36,name:"Hrodna",population:308745,area:142.11,altitude:139,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hrodna"}]}],fetch:{},mutations:void 0}}(null)));

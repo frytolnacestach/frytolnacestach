@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/cheng-tu", (function(a){return {data:[{place:[{id:455,id_state:48,name:"Cheng-tu",population:8423000,area:12316,altitude:505,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cheng-tu",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

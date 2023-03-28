@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/talca", (function(a){return {data:[{place:[{id:434,id_state:46,name:"Talca",population:243850,area:231.5,altitude:102,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"talca"}]}],fetch:{},mutations:void 0}}(null)));

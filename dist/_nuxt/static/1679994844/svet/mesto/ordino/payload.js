@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ordino", (function(a){return {data:[{place:[{id:7,id_state:1,name:"Ordino",population:3450,area:85.11,altitude:1300,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ordino"}]}],fetch:{},mutations:void 0}}(null)));

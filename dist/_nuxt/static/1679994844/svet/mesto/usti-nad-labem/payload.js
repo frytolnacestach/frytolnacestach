@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/usti-nad-labem", (function(a){return {data:[{place:[{id:534,id_state:56,name:"Ústí nad Labem",population:93234,area:93.97,altitude:150,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"usti-nad-labem"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mbaiki", (function(a){return {data:[{place:[{id:380,id_state:41,name:"Mbaïki",population:109192,area:67.94,altitude:446,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mbaiki"}]}],fetch:{},mutations:void 0}}(null)));

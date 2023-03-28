@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/namur", (function(a){return {data:[{place:[{id:187,id_state:20,name:"Namur",population:111939,area:175.69,altitude:120,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"namur",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

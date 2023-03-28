@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sukuta", (function(a){return {data:[{place:[{id:824,id_state:85,name:"Sukuta",population:16538,area:4.4,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sukuta"}]}],fetch:{},mutations:void 0}}(null)));

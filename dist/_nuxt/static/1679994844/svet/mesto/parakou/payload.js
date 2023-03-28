@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/parakou", (function(a){return {data:[{place:[{id:234,id_state:25,name:"Parakou",population:254644,area:59.31,altitude:358,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"parakou"}]}],fetch:{},mutations:void 0}}(null)));

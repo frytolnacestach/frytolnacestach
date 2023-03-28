@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/franceville", (function(a){return {data:[{place:[{id:730,id_state:76,name:"Franceville",population:42976,area:237.7,altitude:418,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"franceville",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

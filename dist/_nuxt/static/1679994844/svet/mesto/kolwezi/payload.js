@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kolwezi", (function(a){return {data:[{place:[{id:397,id_state:42,name:"Kolwezi",population:832165,area:2.18,altitude:1347,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kolwezi"}]}],fetch:{},mutations:void 0}}(null)));

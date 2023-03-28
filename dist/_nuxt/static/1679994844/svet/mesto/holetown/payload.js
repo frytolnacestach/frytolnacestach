@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/holetown", (function(a){return {data:[{place:[{id:165,id_state:18,name:"Holetown",population:1000,area:1,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"holetown"}]}],fetch:{},mutations:void 0}}(null)));

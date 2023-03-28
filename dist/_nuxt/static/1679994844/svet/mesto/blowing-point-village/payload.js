@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/blowing-point-village", (function(a){return {data:[{place:[{id:44,id_state:5,name:"Blowing Point Village",population:809,area:1.06,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"blowing-point-village"}]}],fetch:{},mutations:void 0}}(null)));

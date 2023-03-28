@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tafuna", (function(a){return {data:[{place:[{id:91,id_state:11,name:"Tafuna",population:11532,area:2.64,altitude:23,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tafuna"}]}],fetch:{},mutations:void 0}}(null)));

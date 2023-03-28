@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/grytviken", (function(a){return {data:[{place:[{id:869,id_state:90,name:"Grytviken",population:99,area:0,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"grytviken"}]}],fetch:{},mutations:void 0}}(null)));

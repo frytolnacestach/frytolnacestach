@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/hounde", (function(a){return {data:[{place:[{id:200,id_state:21,name:"Houndé",population:69205,area:161.47,altitude:309,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hounde",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

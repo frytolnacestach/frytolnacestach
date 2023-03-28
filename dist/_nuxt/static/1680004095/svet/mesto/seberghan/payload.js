@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/seberghan", (function(a,b){return {data:[{place:[{id:b,id_state:3,name:"Šéberghán",population:1782928,area:b,altitude:380,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"seberghan",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null,30)));

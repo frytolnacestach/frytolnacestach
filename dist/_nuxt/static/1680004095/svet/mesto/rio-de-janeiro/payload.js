@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/rio-de-janeiro", (function(a){return {data:[{place:[{id:292,id_state:31,name:"Rio de Janeiro",population:6747815,area:1260.2,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rio-de-janeiro",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

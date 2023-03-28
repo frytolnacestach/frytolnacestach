@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tchibanga", (function(a){return {data:[{place:[{id:735,id_state:76,name:"Tchibanga",population:17700,area:55,altitude:256,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tchibanga",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

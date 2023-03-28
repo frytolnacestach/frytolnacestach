@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nuuk", (function(a){return {data:[{place:[{id:808,id_state:84,name:"Nuuk",population:17996,area:4658,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nuuk"}]}],fetch:{},mutations:void 0}}(null)));

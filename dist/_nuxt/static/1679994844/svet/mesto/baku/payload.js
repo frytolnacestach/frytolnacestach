@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/baku", (function(a){return {data:[{place:[{id:141,id_state:16,name:"Baku",population:2263295,area:2199.59,altitude:-28,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"baku"}]}],fetch:{},mutations:void 0}}(null)));

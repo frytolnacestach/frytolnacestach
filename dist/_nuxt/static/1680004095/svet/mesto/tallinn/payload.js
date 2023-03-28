@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tallinn", (function(a){return {data:[{place:[{id:608,id_state:64,name:"Tallinn",population:427258,area:159.22,altitude:40,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tallinn",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

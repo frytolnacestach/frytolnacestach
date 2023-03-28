@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/taloqan", (function(a){return {data:[{place:[{id:29,id_state:3,name:"Taloqan",population:1986900,area:17,altitude:877,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"taloqan",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/keren", (function(a){return {data:[{place:[{id:639,id_state:67,name:"Keren",population:160766,area:40,altitude:1390,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"keren",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

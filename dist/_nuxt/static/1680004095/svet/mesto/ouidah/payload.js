@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ouidah", (function(a){return {data:[{place:[{id:239,id_state:25,name:"Ouidah",population:164283,area:364,altitude:17,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ouidah",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

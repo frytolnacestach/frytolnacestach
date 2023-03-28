@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/aconibe", (function(a){return {data:[{place:[{id:851,id_state:88,name:"Aconibe",population:13432,area:72,altitude:475,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"aconibe"}]}],fetch:{},mutations:void 0}}(null)));

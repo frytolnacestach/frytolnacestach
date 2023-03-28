@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/santiago-de-cuba", (function(a){return {data:[{place:[{id:479,id_state:51,name:"Santiago de Cuba",population:423392,area:551.28,altitude:76,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"santiago-de-cuba"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/zadar", (function(a){return {data:[{place:[{id:952,id_state:98,name:"Zadar",population:75878,area:25.05,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zadar"}]}],fetch:{},mutations:void 0}}(null)));

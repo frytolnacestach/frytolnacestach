@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/poon-saan", (function(a){return {data:[{place:[{id:509,id_state:54,name:"Poon Saan",population:743,area:1.56,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"poon-saan",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

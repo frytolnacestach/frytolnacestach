@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kayanza", (function(a){return {data:[{place:[{id:226,id_state:24,name:"Kayanza",population:60466,area:71.37,altitude:1750,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kayanza",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

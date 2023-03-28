@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/nan-ting", (function(a){return {data:[{place:[{id:456,id_state:48,name:"Nan-ťing",population:8277000,area:6582,altitude:8,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nan-ting",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/lyon", (function(a){return {data:[{place:[{id:720,id_state:75,name:"Lyon",population:515695,area:47.87,altitude:173,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lyon",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

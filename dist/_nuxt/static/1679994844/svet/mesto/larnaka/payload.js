@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/larnaka", (function(a){return {data:[{place:[{id:520,id_state:55,name:"Lárnaka",population:82,area:5.79,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"larnaka"}]}],fetch:{},mutations:void 0}}(null)));

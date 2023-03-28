@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/arinsal", (function(a){return {data:[{place:[{id:9,id_state:1,name:"Arinsal",population:1279,area:3.4,altitude:1419,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"arinsal"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/danli", (function(a){return {data:[{place:[{id:947,id_state:97,name:"Danlí",population:97690,area:583,altitude:577,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"danli",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

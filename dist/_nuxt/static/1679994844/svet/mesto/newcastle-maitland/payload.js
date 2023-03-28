@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/newcastle-maitland", (function(a){return {data:[{place:[{id:117,id_state:13,name:"Newcastle-Maitland",population:487315,area:2383.9,altitude:9,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"newcastle-maitland"}]}],fetch:{},mutations:void 0}}(null)));

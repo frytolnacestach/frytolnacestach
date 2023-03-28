@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kuala-belait", (function(a){return {data:[{place:[{id:262,id_state:28,name:"Kuala Belait",population:31466,area:.55,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kuala-belait",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

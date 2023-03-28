@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tirane", (function(a){return {data:[{place:[{id:51,id_state:6,name:"Tiranë",population:421286,area:41.8,altitude:110,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tirane"}]}],fetch:{},mutations:void 0}}(null)));

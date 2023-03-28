@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/westside", (function(a){return {data:[{place:[{id:804,id_state:83,name:"Westside",population:33470,area:.79,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"westside"}]}],fetch:{},mutations:void 0}}(null)));

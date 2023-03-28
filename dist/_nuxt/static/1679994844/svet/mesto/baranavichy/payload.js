@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/baranavichy", (function(a){return {data:[{place:[{id:337,id_state:36,name:"Baranavichy",population:167366,area:52.52,altitude:148,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"baranavichy"}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/santo-domingo-de-los-colorados", (function(a){return {data:[{place:[{id:601,id_state:63,name:"Santo Domingo de los Colorados",population:301518,area:890.82,altitude:597,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"santo-domingo-de-los-colorados",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

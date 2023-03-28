@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/brusel", (function(a){return {data:[{place:[{id:181,id_state:20,name:"Brusel",population:1218255,area:32.61,altitude:57,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"brusel",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

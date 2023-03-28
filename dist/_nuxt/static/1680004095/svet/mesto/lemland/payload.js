@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/lemland", (function(a){return {data:[{place:[{id:134,id_state:15,name:"Lemland",population:2174,area:142.64,altitude:20,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lemland",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/stara-zagora", (function(a){return {data:[{place:[{id:206,id_state:22,name:"Stara Zagora",population:138272,area:109.13,altitude:194,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"stara-zagora",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

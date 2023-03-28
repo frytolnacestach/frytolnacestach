@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/parnu", (function(a){return {data:[{place:[{id:611,id_state:64,name:"Pärnu",population:50781,area:32.41,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"parnu",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

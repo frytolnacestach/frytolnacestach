@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/guang-cou", (function(a){return {data:[{place:[{id:452,id_state:48,name:"Guang-čou",population:11132000,area:7434,altitude:40,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"guang-cou",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

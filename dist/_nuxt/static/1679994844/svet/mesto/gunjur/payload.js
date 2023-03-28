@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/gunjur", (function(a){return {data:[{place:[{id:825,id_state:85,name:"Gunjur",population:13980,area:2.2,altitude:20,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gunjur"}]}],fetch:{},mutations:void 0}}(null)));

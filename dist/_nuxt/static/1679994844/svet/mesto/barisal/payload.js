@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/barisal", (function(a){return {data:[{place:[{id:179,id_state:19,name:"Barisal",population:202242,area:16.37,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"barisal"}]}],fetch:{},mutations:void 0}}(null)));

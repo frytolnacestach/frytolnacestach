@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/poti", (function(a){return {data:[{place:[{id:763,id_state:79,name:"Poti",population:67800,area:67,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"poti",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

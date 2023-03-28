@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/serowe", (function(a){return {data:[{place:[{id:324,id_state:35,name:"Serowe",population:60844,area:25.15,altitude:1275,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"serowe",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

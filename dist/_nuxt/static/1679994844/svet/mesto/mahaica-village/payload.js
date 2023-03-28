@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mahaica-village", (function(a){return {data:[{place:[{id:914,id_state:94,name:"Mahaica Village",population:4230,area:1.1,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mahaica-village"}]}],fetch:{},mutations:void 0}}(null)));

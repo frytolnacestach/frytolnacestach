@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nadi", (function(a){return {data:[{place:[{id:680,id_state:71,name:"Nadi",population:42170,area:4.32,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nadi"}]}],fetch:{},mutations:void 0}}(null)));

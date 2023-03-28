@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/homyel", (function(a){return {data:[{place:[{id:332,id_state:36,name:"Homyel",population:481252,area:135.29,altitude:130,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"homyel"}]}],fetch:{},mutations:void 0}}(null)));

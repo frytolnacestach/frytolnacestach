@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/santa-cruz-de-la-sierra", (function(a){return {data:[{place:[{id:271,id_state:29,name:"Santa Cruz de la Sierra",population:1754305,area:370.66,altitude:416,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"santa-cruz-de-la-sierra",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

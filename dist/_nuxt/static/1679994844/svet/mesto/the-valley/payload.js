@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/the-valley", (function(a){return {data:[{place:[{id:41,id_state:5,name:"The Valley",population:1970,area:5.38,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"the-valley"}]}],fetch:{},mutations:void 0}}(null)));

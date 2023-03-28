@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/djelfa", (function(a){return {data:[{place:[{id:594,id_state:62,name:"Djelfa",population:264900,area:131.63,altitude:1100,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"djelfa",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

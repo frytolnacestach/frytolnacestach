@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/palma-de-mallorca", (function(a){return {data:[{place:[{id:655,id_state:68,name:"Palma de Mallorca",population:401270,area:208.64,altitude:13,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"palma-de-mallorca"}]}],fetch:{},mutations:void 0}}(null)));

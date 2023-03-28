@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/havana", (function(a){return {data:[{place:[{id:478,id_state:51,name:"Havana",population:2135498,area:728.26,altitude:59,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"havana"}]}],fetch:{},mutations:void 0}}(null)));

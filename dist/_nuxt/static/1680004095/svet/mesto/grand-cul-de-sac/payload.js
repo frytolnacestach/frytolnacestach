@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/grand-cul-de-sac", (function(a){return {data:[{place:[{id:246,id_state:26,name:"Grand Cul-de-Sac",population:1535,area:2.67,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"grand-cul-de-sac",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

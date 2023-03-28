@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/la-romana", (function(a){return {data:[{place:[{id:580,id_state:61,name:"La Romana",population:282394,area:185.47,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"la-romana"}]}],fetch:{},mutations:void 0}}(null)));
