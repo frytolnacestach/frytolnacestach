@@ -67,7 +67,7 @@
                             <div class="o-information-block">
                                 <div class="o-information-block__outer">
                                     <div class="o-information-block__inner">
-                                        <h2 class="o-information-block__title">O kontinentu {{ place[0].name }}</h2>
+                                        <h2 class="o-information-block__title">O městě {{ place[0].name }}</h2>
                                         <div class="o-information-block__perex text-align-center-mobile text-align-left-desktop">
                                             <div class="o-information-block_wysiwyg" v-html="place[0].information_chatgpt"></div>
                                             <div class="o-information-block__author">

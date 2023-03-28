@@ -34,16 +34,18 @@
                 <div class="m-headline mb-2 text-align-center">
                     <h2 class="m-headline__title">Státy</h2>
                 </div>
-                <div class="o-place-list">
-                    <div class="o-place-list__outer">
-                        <div class="o-place-list__items">
-                            <div v-for="placesState in placesStates" :key="placesState.id" class="o-place-list__item">
-                                <div class="o-place-list__item-inner">
-                                    <div class="o-place-list__text">
-                                        <h3 class="o-place-list__title">
-                                            <NuxtLink class="o-place-list__title-link" :to="`/svet/stat/${placesState.slug}`">{{ placesState.name }}</NuxtLink>
-                                        </h3>
+                <div class="o-cover-place o-cover-place--smaller">
+                    <div class="o-cover-place__outer">
+                        <div class="o-cover-place__items">
+                            <div v-for="placesState in placesStates" :key="placesState.id" class="o-cover-place__item">
+                                <div class="o-cover-place__content">
+                                    <div class="o-cover-place__image">
+                                        <div class="o-cover-place__image-file" v-bind:style="{ 'background-image': 'url(' + (placesState.image_hero ? placesState.image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
                                     </div>
+                                    <h3 class="o-cover-place__name">
+                                        {{ placesState.name }}
+                                    </h3>
+                                    <NuxtLink class="o-cover-place__link" :to="`/svet/stat/${placesState.slug}`"></NuxtLink>
                                 </div>
                             </div>
                         </div>
@@ -57,16 +59,18 @@
                 <div class="m-headline mb-2 text-align-center">
                     <h2 class="m-headline__title">Města</h2>
                 </div>
-                <div class="o-place-list">
-                    <div class="o-place-list__outer">
-                        <div class="o-place-list__items">
-                            <div v-for="placesCity in placesCities" :key="placesCity.id" class="o-place-list__item">
-                                <div class="o-place-list__item-inner">
-                                    <div class="o-place-list__text">
-                                        <h3 class="o-place-list__title">
-                                            <NuxtLink class="o-place-list__title-link" :to="`/svet/mesto/${placesCity.slug}`">{{ placesCity.name }}</NuxtLink>
-                                        </h3>
+                <div class="o-cover-place o-cover-place--smallest">
+                    <div class="o-cover-place__outer">
+                        <div class="o-cover-place__items">
+                            <div v-for="placesCity in placesCities" :key="placesCity.id" class="o-cover-place__item">
+                                <div class="o-cover-place__content">
+                                    <div class="o-cover-place__image">
+                                        <div class="o-cover-place__image-file" v-bind:style="{ 'background-image': 'url(' + (placesCity.image_hero ? placesState.image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
                                     </div>
+                                    <h3 class="o-cover-place__name">
+                                        {{ placesCity.name }}
+                                    </h3>
+                                    <NuxtLink class="o-cover-place__link" :to="`/svet/stat/${placesCity.slug}`"></NuxtLink>
                                 </div>
                             </div>
                         </div>

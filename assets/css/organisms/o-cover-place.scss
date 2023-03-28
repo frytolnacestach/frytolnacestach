@@ -91,7 +91,8 @@
         text-align: center;
         z-index: 2;
         position: absolute;
-        font-size: $fs-normal-ll;
+        font-size: $fs-normal-lll;
+        padding: 0 15px;
     }
 
     //Link
@@ -106,5 +107,77 @@
         color: white;
         text-decoration: none;
         z-index: 3;
+    }
+
+    &--smaller {
+        #{$self}__item {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+    
+            @media only screen and (min-width: $sm) {
+                width: 33.333%;
+                padding-bottom: 33.333%;
+            }
+    
+            @media only screen and (min-width: $md) {
+                width: 25%;
+                padding-bottom: 25%;
+            }
+    
+            @media only screen and (min-width: $lg) {
+                width: 20%;
+                padding-bottom: 20%;
+            }
+    
+            &:hover {
+                #{$self}__image-file {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        //Name
+        &__name {
+            font-size: $fs-normal-l;
+        }
+    }
+
+    &--smallest {
+        #{$self}__item {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 150%;
+    
+            @media only screen and (min-width: $sm) {
+                width: 33.333%;
+                padding-bottom: 50%;
+            }
+    
+            @media only screen and (min-width: $md) {
+                width: 25%;
+                padding-bottom: 37.5%;
+            }
+    
+            @media only screen and (min-width: $lg) {
+                width: 16.666%;
+                padding-bottom: 25%;
+            }
+    
+            &:hover {
+                #{$self}__image-file {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        //Name
+        &__name {
+            font-size: $fs-normal-ssss;
+        }
     }
 }
