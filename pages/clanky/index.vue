@@ -12,7 +12,7 @@
                             <div v-for="post in posts" :key="post.id" class="o-article-list__item">
                                 <div class="o-article-list__item-inner">
                                     <div class="o-article-list__image">
-                                        <div class="o-article-list__image-file" v-bind:style="{ 'background-image': 'url(' + post.imageList + ')'}">
+                                        <div class="o-article-list__image-file" v-bind:style="{ 'background-image': 'url(' + (post.imageList ? post.imageList : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
                                             <NuxtLink class="o-article-list__image-link" :to="`/clanky/${post.slug}`"></NuxtLink>
                                         </div>
                                     </div>

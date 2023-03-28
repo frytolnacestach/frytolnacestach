@@ -1,0 +1,42 @@
+/*
+NAME: o-information-block
+BLOCKS: 
+- Title: static + api
+- Wysiwyg: api
+- Author: static
+*/
+
+.o-information-block {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    &__outer {
+        width: 100%;
+    }
+
+    &__inner {
+        width: auto;
+        background-color: $gray6;
+        padding: 20px 15px;
+        margin: 0;
+        border-radius: $large;
+    }
+
+    &__title {
+        width: 100%;
+        font-size: $fs-large-ssss;
+        margin: 0 15px 20px;
+        text-align: center;
+    }
+
+    &__perex {
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+    }
+
+    &__author {
+        margin-top: 10px;
+    }
+}

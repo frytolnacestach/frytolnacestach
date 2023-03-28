@@ -4,7 +4,7 @@
             
             <!-- SECTION - hero -->
             <section>
-                <div class="o-hero-article" v-bind:style="{ 'background-image': 'url(' + place[0].imageHero + ')'}">
+                <div class="o-hero-article" v-bind:style="{ 'background-image': 'url(' + (place[0].imageHero ? place[0].imageHero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
                     <div class="o-hero-article__outer">
                         <div class="o-hero-article__inner">
                             <h1 class="o-hero-article__headline" v-if="place[0].name">{{ place[0].name }}</h1>
@@ -28,6 +28,7 @@
                                     <h4 class="o-hot-info__title">Stát</h4>
                                     <span class="o-hot-info__value">{{ place[0].id_state }}</span>
                                 </div>
+                                <!--
                                 <div class="o-hot-info__item">
                                     <h4 class="o-hot-info__title">Administrativní celek</h4>
                                     <span class="o-hot-info__value">{{ place[0].id_administrative_unit }}</span>
@@ -36,6 +37,7 @@
                                     <h4 class="o-hot-info__title">Kraj</h4>
                                     <span class="o-hot-info__value">{{ place[0].id_districts }}</span>
                                 </div>
+                                -->
                                 <div class="o-hot-info__item">
                                     <h4 class="o-hot-info__title">Nadmořská výška</h4>
                                     <span class="o-hot-info__value">{{ place[0].altitude }} m n. m.</span>
@@ -58,6 +60,26 @@
             <!-- SECTION -->
             <div class="t-col2">
                 <div class="t-col2__content my-2">
+
+                    <!-- SECTION - information by ChatGPT -->
+                    <section class="t-section py-2" v-if="place[0].information_chatgpt">
+                        <div class="t-section__inner">
+                            <div class="o-information-block">
+                                <div class="o-information-block__outer">
+                                    <div class="o-information-block__inner">
+                                        <h2 class="o-information-block__title">O kontinentu {{ place[0].name }}</h2>
+                                        <div class="o-information-block__perex text-align-center-mobile text-align-left-desktop">
+                                            <div class="o-information-block_wysiwyg" v-html="place[0].information_chatgpt"></div>
+                                            <div class="o-information-block__author">
+                                                <i class="m-author">zdroj. <a class="m-author__link" href="https://chat.openai.com/chat" target="_blank">ChatGPT</a></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - information by ChatGPT END -->
                     
                 </div>
 

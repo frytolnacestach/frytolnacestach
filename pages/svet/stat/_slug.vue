@@ -4,7 +4,7 @@
             
             <!-- SECTION - hero -->
             <section>
-                <div class="o-hero-article" v-bind:style="{ 'background-image': 'url(' + place[0].imageHero + ')'}">
+                <div class="o-hero-article" v-bind:style="{ 'background-image': 'url(' + (place[0].imageHero ? place[0].imageHero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
                     <div class="o-hero-article__outer">
                         <div class="o-hero-article__inner">
                             <h1 class="o-hero-article__headline" v-if="place[0].name">{{ place[0].name }}</h1>
@@ -54,12 +54,32 @@
             <!-- SECTION -->
             <div class="t-col2">
                 <div class="t-col2__content my-2">
+
+                    <!-- SECTION - information by ChatGPT -->
+                    <section class="t-section py-2" v-if="place[0].information_chatgpt">
+                        <div class="t-section__inner">
+                            <div class="o-information-block">
+                                <div class="o-information-block__outer">
+                                    <div class="o-information-block__inner">
+                                        <h2 class="o-information-block__title">O kontinentu {{ place[0].name }}</h2>
+                                        <div class="o-information-block__perex text-align-center-mobile text-align-left-desktop">
+                                            <div class="o-information-block_wysiwyg" v-html="place[0].information_chatgpt"></div>
+                                            <div class="o-information-block__author">
+                                                <i class="m-author">zdroj. <a class="m-author__link" href="https://chat.openai.com/chat" target="_blank">ChatGPT</a></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - information by ChatGPT END -->
                     
                     <!-- SECTION - města -->
                     <section class="t-section my-4">
                         <div class="t-section__inner">
                             <div class="m-headline mb-2 text-align-center">
-                                <h2 class="m-headline__title">Města</h2>
+                                <h2 class="m-headline__title">Největší města ve státě {{ place[0].name }}</h2>
                             </div>
                             <div class="o-place-list">
                                 <div class="o-place-list__outer">
