@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/pravcicka-brana-hrensko-nejvetsi-skalni-brana-v-evrope", {data:[{video:[{id:131,title:"PRAVČICKÁ BRÁNA - HŘENSKO | Největší skalní brána v Evropě",url:"https:\u002F\u002Fyoutu.be\u002F-x9Isvx6EFA",platform:2,slug:"pravcicka-brana-hrensko-nejvetsi-skalni-brana-v-evrope"}]}],fetch:{},mutations:void 0});
