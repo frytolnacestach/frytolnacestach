@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mangarei", (function(a){return {data:[{place:[{id:426,id_state:45,name:"Mangarei",population:111,area:.2,altitude:17,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mangarei",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

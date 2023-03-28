@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/greenland", (function(a){return {data:[{place:[{id:167,id_state:18,name:"Greenland",population:842,area:1,altitude:210,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"greenland",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/cienfuegos", (function(a){return {data:[{place:[{id:486,id_state:51,name:"Cienfuegos",population:152806,area:333.97,altitude:32,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cienfuegos",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

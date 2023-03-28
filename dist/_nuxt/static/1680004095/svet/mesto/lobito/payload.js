@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/lobito", (function(a){return {data:[{place:[{id:73,id_state:8,name:"Lobito",population:205065,area:34.4,altitude:13,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lobito",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

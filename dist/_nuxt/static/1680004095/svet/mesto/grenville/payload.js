@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/grenville", (function(a){return {data:[{place:[{id:751,id_state:78,name:"Grenville",population:2288,area:2.27,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"grenville",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

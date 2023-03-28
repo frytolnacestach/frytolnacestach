@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bimbo", (function(a){return {data:[{place:[{id:379,id_state:41,name:"Bimbo",population:267859,area:67.96,altitude:365,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bimbo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

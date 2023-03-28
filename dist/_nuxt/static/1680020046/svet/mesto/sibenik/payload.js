@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sibenik", (function(a){return {data:[{place:[{id:957,id_state:98,name:"Šibenik",population:35360,area:51.06,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sibenik",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

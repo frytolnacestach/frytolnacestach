@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/muramvya", (function(a){return {data:[{place:[{id:227,id_state:24,name:"Muramvya",population:47875,area:51.72,altitude:1582,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"muramvya",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

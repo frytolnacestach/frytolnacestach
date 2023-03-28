@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/cape-denison", (function(a,b){return {data:[{place:[{id:936,id_state:96,name:"Cape Denison",population:b,area:b,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cape-denison",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null,0)));

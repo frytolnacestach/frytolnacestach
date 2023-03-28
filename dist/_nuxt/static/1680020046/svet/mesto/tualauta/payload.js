@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tualauta", (function(a){return {data:[{place:[{id:100,id_state:11,name:"Tualauta",population:8386,area:5.12,altitude:73,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tualauta",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

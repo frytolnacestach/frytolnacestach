@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/annaba", (function(a){return {data:[{place:[{id:591,id_state:62,name:"Annaba",population:520589,area:31.04,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"annaba",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

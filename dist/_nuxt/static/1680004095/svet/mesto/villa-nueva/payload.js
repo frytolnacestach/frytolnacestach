@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/villa-nueva", (function(a){return {data:[{place:[{id:880,id_state:91,name:"Villa Nueva",population:406830,area:142.57,altitude:1315,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"villa-nueva",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

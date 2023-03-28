@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/goiania", (function(a){return {data:[{place:[{id:300,id_state:31,name:"Goiânia",population:1516113,area:739.49,altitude:749,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"goiania",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

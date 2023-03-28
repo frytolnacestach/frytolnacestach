@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/olomouc", (function(a){return {data:[{place:[{id:533,id_state:56,name:"Olomouc",population:100663,area:103.33,altitude:219,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"olomouc",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

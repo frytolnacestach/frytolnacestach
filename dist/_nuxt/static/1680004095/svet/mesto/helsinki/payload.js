@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/helsinki", (function(a){return {data:[{place:[{id:668,id_state:70,name:"Helsinki",population:656229,area:213.75,altitude:17,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"helsinki",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

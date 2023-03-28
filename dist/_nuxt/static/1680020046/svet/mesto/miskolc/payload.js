@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/miskolc", (function(a){return {data:[{place:[{id:971,id_state:100,name:"Miskolc",population:153230,area:236.68,altitude:137,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"miskolc",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

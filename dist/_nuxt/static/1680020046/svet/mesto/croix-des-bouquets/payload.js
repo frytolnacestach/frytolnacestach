@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/croix-des-bouquets", (function(a){return {data:[{place:[{id:962,id_state:99,name:"Croix-des-Bouquets",population:246025,area:60.9,altitude:55,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"croix-des-bouquets",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

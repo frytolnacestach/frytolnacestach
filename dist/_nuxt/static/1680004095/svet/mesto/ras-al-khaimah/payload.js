@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ras-al-khaimah", (function(a){return {data:[{place:[{id:16,id_state:2,name:"Ras Al Khaimah",population:198128,area:1684,altitude:31,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ras-al-khaimah",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

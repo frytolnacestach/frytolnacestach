@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/stoney-ground", (function(a){return {data:[{place:[{id:42,id_state:5,name:"Stoney Ground",population:1192,area:1.26,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"stoney-ground",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

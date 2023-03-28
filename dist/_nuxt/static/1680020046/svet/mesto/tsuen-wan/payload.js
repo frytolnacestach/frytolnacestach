@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tsuen-wan", (function(a){return {data:[{place:[{id:920,id_state:95,name:"Tsuen Wan",population:316800,area:61.71,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tsuen-wan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

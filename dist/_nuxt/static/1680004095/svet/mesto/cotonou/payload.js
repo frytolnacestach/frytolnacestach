@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/cotonou", (function(a){return {data:[{place:[{id:231,id_state:25,name:"Cotonou",population:1027450,area:79.17,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cotonou",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

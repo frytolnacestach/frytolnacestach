@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sevilla", (function(a){return {data:[{place:[{id:651,id_state:68,name:"Sevilla",population:1499578,area:140.81,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sevilla",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

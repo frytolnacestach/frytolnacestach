@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/lobatse", (function(a){return {data:[{place:[{id:330,id_state:35,name:"Lobatse",population:38144,area:4.8,altitude:1237,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lobatse",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/torteval", (function(a){return {data:[{place:[{id:785,id_state:81,name:"Torteval",population:691,area:4.03,altitude:71,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"torteval",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

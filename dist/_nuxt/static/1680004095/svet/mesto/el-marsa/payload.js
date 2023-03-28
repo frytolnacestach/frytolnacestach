@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/el-marsa", (function(a){return {data:[{place:[{id:634,id_state:66,name:"El-Marsa",population:12394,area:10.06,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"el-marsa",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

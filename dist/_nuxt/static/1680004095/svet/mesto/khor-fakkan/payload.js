@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/khor-fakkan", (function(a){return {data:[{place:[{id:19,id_state:2,name:"Khor Fakkan",population:33000,area:10,altitude:30,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"khor-fakkan",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

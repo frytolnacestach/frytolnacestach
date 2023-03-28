@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mahaut", (function(a){return {data:[{place:[{id:572,id_state:60,name:"Mahaut",population:2077,area:2.22,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mahaut",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

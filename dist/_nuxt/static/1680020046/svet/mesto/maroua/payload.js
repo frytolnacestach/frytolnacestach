@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/maroua", (function(a){return {data:[{place:[{id:442,id_state:47,name:"Maroua",population:279936,area:89.49,altitude:413,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"maroua",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

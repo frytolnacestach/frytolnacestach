@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/maniitsoq", (function(a){return {data:[{place:[{id:813,id_state:84,name:"Maniitsoq",population:2785,area:4422,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"maniitsoq",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

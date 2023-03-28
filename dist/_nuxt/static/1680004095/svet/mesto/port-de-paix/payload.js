@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/port-de-paix", (function(a){return {data:[{place:[{id:961,id_state:99,name:"Port-de-Paix",population:282604,area:16.14,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"port-de-paix",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

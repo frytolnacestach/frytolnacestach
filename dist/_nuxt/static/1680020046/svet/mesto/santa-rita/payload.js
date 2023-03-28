@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/santa-rita", (function(a){return {data:[{place:[{id:893,id_state:92,name:"Santa Rita",population:7319,area:9.57,altitude:28,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"santa-rita",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/matoury", (function(a){return {data:[{place:[{id:771,id_state:80,name:"Matoury",population:25600,area:150,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"matoury",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

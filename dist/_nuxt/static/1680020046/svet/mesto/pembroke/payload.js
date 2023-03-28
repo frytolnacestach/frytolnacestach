@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/pembroke", (function(a){return {data:[{place:[{id:260,id_state:27,name:"Pembroke",population:10849,area:3.51,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pembroke",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

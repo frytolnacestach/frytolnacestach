@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/la-serena", (function(a){return {data:[{place:[{id:437,id_state:46,name:"La Serena",population:198164,area:189.3,altitude:55,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"la-serena",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

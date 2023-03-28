@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/swetes", (function(a){return {data:[{place:[{id:37,id_state:4,name:"Swetes",population:1557,area:.28,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"swetes",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

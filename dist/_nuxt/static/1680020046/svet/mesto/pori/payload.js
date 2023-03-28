@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/pori", (function(a){return {data:[{place:[{id:677,id_state:70,name:"Pori",population:84415,area:831.28,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pori",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

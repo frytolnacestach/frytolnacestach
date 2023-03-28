@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/fujairah", (function(a){return {data:[{place:[{id:17,id_state:2,name:"Fujairah",population:102878,area:1164,altitude:61,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"fujairah",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

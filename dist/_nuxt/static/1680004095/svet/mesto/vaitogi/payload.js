@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/vaitogi", (function(a){return {data:[{place:[{id:97,id_state:11,name:"Vaitogi",population:8895,area:4.09,altitude:109,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"vaitogi",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

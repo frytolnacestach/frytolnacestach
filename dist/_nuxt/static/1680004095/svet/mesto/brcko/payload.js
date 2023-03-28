@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/brcko", (function(a){return {data:[{place:[{id:157,id_state:17,name:"Brcko",population:57388,area:8.19,altitude:80,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"brcko",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

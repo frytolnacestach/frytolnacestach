@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/perth", (function(a){return {data:[{place:[{id:114,id_state:13,name:"Perth",population:2072906,area:5386.9,altitude:48,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"perth",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

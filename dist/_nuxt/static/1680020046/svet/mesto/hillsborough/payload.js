@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/hillsborough", (function(a){return {data:[{place:[{id:753,id_state:78,name:"Hillsborough",population:1819,area:2,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hillsborough",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

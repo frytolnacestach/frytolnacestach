@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/les-escaldes", (function(a){return {data:[{place:[{id:8,id_state:1,name:"Les Escaldes",population:2898,area:.5,altitude:1000,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"les-escaldes",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

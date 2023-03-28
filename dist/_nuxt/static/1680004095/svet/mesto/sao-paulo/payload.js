@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sao-paulo", (function(a){return {data:[{place:[{id:291,id_state:31,name:"São Paulo",population:12252023,area:1523,altitude:760,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sao-paulo",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

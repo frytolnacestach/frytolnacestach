@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/la-massana", (function(a){return {data:[{place:[{id:5,id_state:1,name:"La Massana",population:7211,area:61.63,altitude:1230,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"la-massana",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/jacmel", (function(a){return {data:[{place:[{id:963,id_state:99,name:"Jacmel",population:219222,area:9.91,altitude:17,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"jacmel",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

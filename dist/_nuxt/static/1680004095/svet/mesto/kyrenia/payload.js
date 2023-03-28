@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kyrenia", (function(a){return {data:[{place:[{id:523,id_state:55,name:"Kyrenia",population:26937,area:78.08,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kyrenia",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

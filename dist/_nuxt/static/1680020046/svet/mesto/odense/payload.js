@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/odense", (function(a){return {data:[{place:[{id:560,id_state:59,name:"Odense",population:205881,area:304.35,altitude:18,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"odense",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

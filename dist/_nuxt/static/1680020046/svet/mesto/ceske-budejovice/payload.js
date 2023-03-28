@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ceske-budejovice", (function(a){return {data:[{place:[{id:536,id_state:56,name:"České Budějovice",population:93230,area:55.18,altitude:381,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ceske-budejovice",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mindelo", (function(a){return {data:[{place:[{id:489,id_state:52,name:"Mindelo",population:70218,area:68.37,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mindelo",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

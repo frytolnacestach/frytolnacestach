@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/lambarene", (function(a){return {data:[{place:[{id:734,id_state:76,name:"Lambaréné",population:20700,area:26,altitude:22,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lambarene",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

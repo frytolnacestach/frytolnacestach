@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bria", (function(a){return {data:[{place:[{id:386,id_state:41,name:"Bria",population:65600,area:67.94,altitude:487,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bria",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

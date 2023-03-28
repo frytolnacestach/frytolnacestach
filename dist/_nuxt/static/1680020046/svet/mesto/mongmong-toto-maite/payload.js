@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mongmong-toto-maite", (function(a){return {data:[{place:[{id:895,id_state:92,name:"Mongmong-Toto-Maite",population:5115,area:1.42,altitude:79,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mongmong-toto-maite",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

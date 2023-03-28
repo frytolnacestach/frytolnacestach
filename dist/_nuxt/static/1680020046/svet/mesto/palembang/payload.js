@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/palembang", (function(a){return {data:[{place:[{id:983,id_state:101,name:"Palembang",population:1631257,area:369.22,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"palembang",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

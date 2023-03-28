@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/fier", (function(a){return {data:[{place:[{id:56,id_state:6,name:"Fier",population:59719,area:15.33,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"fier",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

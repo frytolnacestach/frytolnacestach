@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bangui", (function(a){return {data:[{place:[{id:378,id_state:41,name:"Bangui",population:542393,area:67.94,altitude:369,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bangui",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

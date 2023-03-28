@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bissora", (function(a){return {data:[{place:[{id:902,id_state:93,name:"Bissorã",population:10211,area:87.4,altitude:25,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bissora",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

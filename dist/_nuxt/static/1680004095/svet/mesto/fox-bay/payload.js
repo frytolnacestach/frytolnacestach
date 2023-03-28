@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/fox-bay", (function(a){return {data:[{place:[{id:690,id_state:72,name:"Fox Bay",population:139,area:.19,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"fox-bay",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

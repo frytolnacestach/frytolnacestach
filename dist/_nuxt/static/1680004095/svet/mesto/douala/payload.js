@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/douala", (function(a){return {data:[{place:[{id:438,id_state:47,name:"Douala",population:2844300,area:193.3,altitude:13,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"douala",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

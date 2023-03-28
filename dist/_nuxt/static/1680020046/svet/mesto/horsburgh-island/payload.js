@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/horsburgh-island", (function(a){return {data:[{place:[{id:365,id_state:39,name:"Horsburgh Island",population:51,area:.64,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"horsburgh-island",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

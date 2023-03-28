@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/saint-laurent-du-maroni", (function(a){return {data:[{place:[{id:769,id_state:80,name:"Saint-Laurent-du-Maroni",population:45700,area:4,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saint-laurent-du-maroni",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

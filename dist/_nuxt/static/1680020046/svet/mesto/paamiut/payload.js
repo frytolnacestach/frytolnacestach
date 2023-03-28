@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/paamiut", (function(a){return {data:[{place:[{id:815,id_state:84,name:"Paamiut",population:1868,area:2.02,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"paamiut",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

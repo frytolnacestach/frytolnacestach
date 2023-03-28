@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sauteurs", (function(a){return {data:[{place:[{id:752,id_state:78,name:"Sauteurs",population:1914,area:1.69,altitude:80,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sauteurs",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

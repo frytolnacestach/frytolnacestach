@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/jerevan", (function(a){return {data:[{place:[{id:61,id_state:7,name:"Jerevan",population:1075800,area:223,altitude:989,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"jerevan",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

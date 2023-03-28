@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/essen", (function(a){return {data:[{place:[{id:546,id_state:57,name:"Essen",population:582760,area:210.34,altitude:116,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"essen",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

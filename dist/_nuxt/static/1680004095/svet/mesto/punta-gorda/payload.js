@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/punta-gorda", (function(a){return {data:[{place:[{id:349,id_state:37,name:"Punta Gorda",population:6794,area:6.62,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"punta-gorda",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

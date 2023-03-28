@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bray", (function(a){return {data:[{place:[{id:995,id_state:102,name:"Bray",population:32811,area:10.49,altitude:24,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bray",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bonao", (function(a){return {data:[{place:[{id:586,id_state:61,name:"Bonao",population:139081,area:82.36,altitude:202,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bonao",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

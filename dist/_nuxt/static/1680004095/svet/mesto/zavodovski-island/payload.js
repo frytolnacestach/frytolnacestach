@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/zavodovski-island", (function(a){return {data:[{place:[{id:874,id_state:90,name:"Zavodovski Island",population:10,area:0,altitude:551,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zavodovski-island",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/la-ceiba", (function(a){return {data:[{place:[{id:941,id_state:97,name:"La Ceiba",population:183052,area:11.5,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"la-ceiba",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

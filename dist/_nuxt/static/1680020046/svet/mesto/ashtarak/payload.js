@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ashtarak", (function(a){return {data:[{place:[{id:69,id_state:7,name:"Ashtarak",population:19462,area:4.5,altitude:1150,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ashtarak",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

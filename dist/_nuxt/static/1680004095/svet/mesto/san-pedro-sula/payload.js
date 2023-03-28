@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/san-pedro-sula", (function(a){return {data:[{place:[{id:939,id_state:97,name:"San Pedro Sula",population:698503,area:138.83,altitude:28,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"san-pedro-sula",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

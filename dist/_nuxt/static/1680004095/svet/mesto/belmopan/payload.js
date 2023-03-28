@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/belmopan", (function(a){return {data:[{place:[{id:341,id_state:37,name:"Belmopan",population:13381,area:22.61,altitude:76,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"belmopan",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

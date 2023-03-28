@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/obuasi", (function(a){return {data:[{place:[{id:796,id_state:82,name:"Obuasi",population:131057,area:162.04,altitude:228,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"obuasi",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

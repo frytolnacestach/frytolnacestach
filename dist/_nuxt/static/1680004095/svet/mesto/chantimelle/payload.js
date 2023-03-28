@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/chantimelle", (function(a){return {data:[{place:[{id:755,id_state:78,name:"Chantimelle",population:1283,area:1.2,altitude:65,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chantimelle",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/manaus", (function(a){return {data:[{place:[{id:297,id_state:31,name:"Manaus",population:2195923,area:11401.05,altitude:92,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"manaus",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/barentu", (function(a){return {data:[{place:[{id:643,id_state:67,name:"Barentu",population:90441,area:244,altitude:800,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"barentu",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

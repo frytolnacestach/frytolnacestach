@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sint-michiel-liber", (function(a){return {data:[{place:[{id:499,id_state:53,name:"Sint Michiel Liber",population:52006,area:6.53,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sint-michiel-liber",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

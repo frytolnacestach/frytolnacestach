@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/seki", (function(a){return {data:[{place:[{id:149,id_state:16,name:"Şəki",population:63887,area:48.34,altitude:747,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"seki",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

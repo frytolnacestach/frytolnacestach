@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/dekemhare", (function(a){return {data:[{place:[{id:645,id_state:67,name:"Dekemhare",population:70000,area:5,altitude:1500,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dekemhare",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

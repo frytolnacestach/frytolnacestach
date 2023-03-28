@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kitti", (function(a){return {data:[{place:[{id:700,id_state:73,name:"Kitti",population:6377,area:94.57,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kitti",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

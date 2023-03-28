@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/flying-fish-cove", (function(a,b){return {data:[{place:[{id:508,id_state:54,name:"Flying Fish Cove",population:2071,area:b,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"flying-fish-cove",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null,10)));

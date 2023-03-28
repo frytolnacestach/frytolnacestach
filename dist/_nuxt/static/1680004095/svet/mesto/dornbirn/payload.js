@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/dornbirn", (function(a){return {data:[{place:[{id:110,id_state:12,name:"Dornbirn",population:48210,area:120.29,altitude:437,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dornbirn",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

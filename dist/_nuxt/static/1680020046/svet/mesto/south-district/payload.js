@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/south-district", (function(a){return {data:[{place:[{id:799,id_state:83,name:"South District",population:29694,area:1.3,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"south-district",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/charleroi", (function(a){return {data:[{place:[{id:184,id_state:20,name:"Charleroi",population:201051,area:102.08,altitude:143,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"charleroi",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

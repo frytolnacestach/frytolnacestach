@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/limassol", (function(a){return {data:[{place:[{id:519,id_state:55,name:"Limassol",population:239842,area:34.87,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"limassol",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

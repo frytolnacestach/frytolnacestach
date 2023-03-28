@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/rustavi", (function(a){return {data:[{place:[{id:761,id_state:79,name:"Rustavi",population:126100,area:60,altitude:370,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rustavi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/smith-s", (function(a){return {data:[{place:[{id:259,id_state:27,name:"Smith’s",population:6363,area:6.03,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"smith-s",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/apatou", (function(a){return {data:[{place:[{id:777,id_state:80,name:"Apatou",population:7900,area:4250,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"apatou",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

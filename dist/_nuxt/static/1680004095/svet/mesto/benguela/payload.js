@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/benguela", (function(a){return {data:[{place:[{id:74,id_state:8,name:"Benguela",population:161060,area:39.4,altitude:13,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"benguela",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

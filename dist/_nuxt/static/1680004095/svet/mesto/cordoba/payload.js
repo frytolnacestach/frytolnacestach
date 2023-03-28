@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/cordoba", (function(a){return {data:[{place:[{id:82,id_state:10,name:"Córdoba",population:1579820,area:576,altitude:390,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cordoba",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/malaeimi", (function(a){return {data:[{place:[{id:96,id_state:11,name:"Malaeimi",population:9424,area:1.14,altitude:37,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"malaeimi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

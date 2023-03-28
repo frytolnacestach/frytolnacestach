@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/fria", (function(a){return {data:[{place:[{id:836,id_state:86,name:"Fria",population:84244,area:11.45,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"fria",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

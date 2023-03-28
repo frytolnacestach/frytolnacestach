@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nan-madol", (function(a){return {data:[{place:[{id:701,id_state:73,name:"Nan Madol",population:900,area:.18,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nan-madol",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

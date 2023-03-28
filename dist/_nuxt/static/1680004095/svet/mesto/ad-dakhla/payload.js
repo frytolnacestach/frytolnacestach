@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ad-dakhla", (function(a){return {data:[{place:[{id:629,id_state:66,name:"Ad-Dakhla",population:106277,area:16.47,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ad-dakhla",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

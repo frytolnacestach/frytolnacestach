@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/darwin", (function(a){return {data:[{place:[{id:694,id_state:72,name:"Darwin",population:100,area:.36,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"darwin",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

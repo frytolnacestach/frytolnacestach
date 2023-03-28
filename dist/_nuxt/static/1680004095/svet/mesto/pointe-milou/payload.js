@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/pointe-milou", (function(a){return {data:[{place:[{id:245,id_state:26,name:"Pointe Milou",population:1776,area:3.15,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pointe-milou",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

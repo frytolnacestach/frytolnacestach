@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mixco", (function(a){return {data:[{place:[{id:879,id_state:91,name:"Mixco",population:475604,area:112.73,altitude:1495,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mixco",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/phon-mi", (function(a,b){return {data:[{place:[{id:928,id_state:96,name:"Phon Mi",population:2,area:b,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"phon-mi",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null,0)));

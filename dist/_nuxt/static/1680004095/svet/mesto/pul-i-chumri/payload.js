@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/pul-i-chumri", (function(a){return {data:[{place:[{id:27,id_state:3,name:"Pul-i-Chumri",population:2350000,area:46,altitude:985,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pul-i-chumri",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

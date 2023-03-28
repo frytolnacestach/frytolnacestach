@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tuen-mun", (function(a){return {data:[{place:[{id:925,id_state:95,name:"Tuen Mun",population:495900,area:82.89,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tuen-mun",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

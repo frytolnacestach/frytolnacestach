@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/andros-town", (function(a){return {data:[{place:[{id:308,id_state:32,name:"Andros Town",population:1804,area:4.94,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"andros-town",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

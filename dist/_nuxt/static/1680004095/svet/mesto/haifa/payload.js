@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/haifa", (function(a){return {data:[{place:[{id:1000,id_state:103,name:"Haifa",population:285316,area:63.7,altitude:26,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"haifa",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

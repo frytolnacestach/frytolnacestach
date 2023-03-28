@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/loja", (function(a){return {data:[{place:[{id:606,id_state:63,name:"Loja",population:187441,area:285.06,altitude:2060,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"loja",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

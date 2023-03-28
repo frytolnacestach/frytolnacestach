@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/madinat-khalifa-south", (function(a){return {data:[{place:[{id:220,id_state:23,name:"Madinat Khalifa South",population:2283,area:1.61,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"madinat-khalifa-south",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

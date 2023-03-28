@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/smara", (function(a){return {data:[{place:[{id:630,id_state:66,name:"Smara",population:56394,area:42.38,altitude:256,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"smara",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

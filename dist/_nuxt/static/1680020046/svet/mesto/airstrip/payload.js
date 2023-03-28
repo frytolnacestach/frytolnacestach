@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/airstrip", (function(a,b){return {data:[{place:[{id:934,id_state:96,name:"Airstrip",population:b,area:b,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"airstrip",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null,0)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/butembo", (function(a){return {data:[{place:[{id:377,id_state:40,name:"Butembo",population:613370,area:117,altitude:1763,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"butembo",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

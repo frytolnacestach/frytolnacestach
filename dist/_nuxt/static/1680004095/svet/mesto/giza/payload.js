@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/giza", (function(a){return {data:[{place:[{id:619,id_state:65,name:"Gíza",population:3851965,area:87.34,altitude:19,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"giza",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

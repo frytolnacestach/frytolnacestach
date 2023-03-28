@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/amuri", (function(a){return {data:[{place:[{id:423,id_state:45,name:"Amuri",population:277,area:.17,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"amuri",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

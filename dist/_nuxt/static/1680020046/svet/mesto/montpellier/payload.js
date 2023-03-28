@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/montpellier", (function(a){return {data:[{place:[{id:725,id_state:75,name:"Montpellier",population:281613,area:56.88,altitude:17,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"montpellier",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

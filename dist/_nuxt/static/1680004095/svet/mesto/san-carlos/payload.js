@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/san-carlos", (function(a){return {data:[{place:[{id:696,id_state:72,name:"San Carlos",population:100,area:.07,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"san-carlos",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

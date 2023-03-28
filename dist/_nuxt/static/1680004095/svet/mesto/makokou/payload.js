@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/makokou", (function(a){return {data:[{place:[{id:737,id_state:76,name:"Makokou",population:14000,area:35,altitude:560,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"makokou",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

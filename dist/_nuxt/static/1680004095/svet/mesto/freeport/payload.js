@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/freeport", (function(a){return {data:[{place:[{id:302,id_state:32,name:"Freeport",population:26919,area:47.5,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"freeport",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

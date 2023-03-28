@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/chongqing", (function(a){return {data:[{place:[{id:450,id_state:48,name:"Chongqing",population:16550000,area:8240,altitude:261,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chongqing",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

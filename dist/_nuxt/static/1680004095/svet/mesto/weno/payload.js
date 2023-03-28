@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/weno", (function(a){return {data:[{place:[{id:699,id_state:73,name:"Weno",population:2669,area:5.93,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"weno",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/malem", (function(a){return {data:[{place:[{id:704,id_state:73,name:"Malem",population:778,area:.25,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"malem",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

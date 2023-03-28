@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bahir-dar", (function(a){return {data:[{place:[{id:665,id_state:69,name:"Bahir Dar",population:215546,area:18.6,altitude:1842,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bahir-dar",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

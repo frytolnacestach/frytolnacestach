@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/hradec-kralove", (function(a){return {data:[{place:[{id:535,id_state:56,name:"Hradec Králové",population:92431,area:105.69,altitude:235,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hradec-kralove",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

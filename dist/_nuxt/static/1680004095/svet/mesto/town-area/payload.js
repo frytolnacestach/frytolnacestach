@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/town-area", (function(a){return {data:[{place:[{id:802,id_state:83,name:"Town Area",population:33011,area:.43,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"town-area",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

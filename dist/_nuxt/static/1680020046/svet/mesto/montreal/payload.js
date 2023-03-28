@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/montreal", (function(a){return {data:[{place:[{id:352,id_state:38,name:"Montreal",population:1744485,area:431.5,altitude:233,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"montreal",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

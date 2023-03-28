@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/lushnje", (function(a){return {data:[{place:[{id:60,id_state:6,name:"Lushnjë",population:41469,area:10.16,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lushnje",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

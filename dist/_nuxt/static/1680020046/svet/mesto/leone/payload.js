@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/leone", (function(a,b){return {data:[{place:[{id:99,id_state:b,name:"Leone",population:8539,area:3.33,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"leone",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null,11)));

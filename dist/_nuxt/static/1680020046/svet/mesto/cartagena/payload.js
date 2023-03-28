@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/cartagena", (function(a){return {data:[{place:[{id:462,id_state:49,name:"Cartagena",population:952024,area:609,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cartagena",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

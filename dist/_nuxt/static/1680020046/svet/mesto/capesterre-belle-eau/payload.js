@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/capesterre-belle-eau", (function(a){return {data:[{place:[{id:847,id_state:87,name:"Capesterre-Belle-Eau",population:15205,area:77.3,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"capesterre-belle-eau",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

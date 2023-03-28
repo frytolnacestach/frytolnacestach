@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kabul", (function(a){return {data:[{place:[{id:21,id_state:3,name:"Kábul",population:4886484,area:275,altitude:1791,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kabul",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

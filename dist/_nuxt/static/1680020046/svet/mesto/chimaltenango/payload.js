@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/chimaltenango", (function(a){return {data:[{place:[{id:886,id_state:91,name:"Chimaltenango",population:105386,area:16.34,altitude:1865,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chimaltenango",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/cove", (function(a){return {data:[{place:[{id:240,id_state:25,name:"Cové",population:157740,area:58.27,altitude:88,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cove",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

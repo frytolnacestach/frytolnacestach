@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kalba", (function(a){return {data:[{place:[{id:20,id_state:2,name:"Kalba",population:20000,area:100,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kalba",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

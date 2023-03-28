@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/lille", (function(a){return {data:[{place:[{id:727,id_state:75,name:"Lille",population:232787,area:34.83,altitude:20,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lille",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

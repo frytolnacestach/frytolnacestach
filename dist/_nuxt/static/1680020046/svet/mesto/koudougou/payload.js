@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/koudougou", (function(a){return {data:[{place:[{id:193,id_state:21,name:"Koudougou",population:147579,area:80.95,altitude:305,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"koudougou",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

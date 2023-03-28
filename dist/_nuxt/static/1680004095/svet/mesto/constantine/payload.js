@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/constantine", (function(a){return {data:[{place:[{id:590,id_state:62,name:"Constantine",population:571100,area:157,altitude:640,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"constantine",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

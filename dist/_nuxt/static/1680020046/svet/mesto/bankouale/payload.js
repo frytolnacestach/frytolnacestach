@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bankouale", (function(a){return {data:[{place:[{id:557,id_state:58,name:"Bankoualé",population:6000,area:10,altitude:1486,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bankouale",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

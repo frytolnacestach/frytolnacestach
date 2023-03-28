@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/punakha", (function(a){return {data:[{place:[{id:313,id_state:33,name:"Punakha",population:6050,area:4.9,altitude:1200,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"punakha",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

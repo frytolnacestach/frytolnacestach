@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ituni", (function(a){return {data:[{place:[{id:915,id_state:94,name:"Ituni",population:3928,area:.2,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ituni",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

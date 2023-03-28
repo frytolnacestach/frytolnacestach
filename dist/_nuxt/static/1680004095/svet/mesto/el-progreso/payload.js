@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/el-progreso", (function(a){return {data:[{place:[{id:942,id_state:97,name:"El Progreso",population:164535,area:236.07,altitude:36,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"el-progreso",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

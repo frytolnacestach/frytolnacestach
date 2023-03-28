@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mar-del-plata", (function(a){return {data:[{place:[{id:87,id_state:10,name:"Mar del Plata",population:614350,area:79.48,altitude:38,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mar-del-plata",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

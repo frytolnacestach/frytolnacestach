@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/split", (function(a){return {data:[{place:[{id:949,id_state:98,name:"Split",population:165893,area:63.21,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"split",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

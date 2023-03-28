@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/drogheda", (function(a){return {data:[{place:[{id:993,id_state:102,name:"Drogheda",population:41294,area:38.56,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"drogheda",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

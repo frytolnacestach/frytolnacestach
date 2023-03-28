@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/quebec-city", (function(a){return {data:[{place:[{id:358,id_state:38,name:"Quebec City",population:705103,area:484.08,altitude:98,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"quebec-city",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/macouria", (function(a){return {data:[{place:[{id:774,id_state:80,name:"Macouria",population:10800,area:265,altitude:18,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"macouria",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

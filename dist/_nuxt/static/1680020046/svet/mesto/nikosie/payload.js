@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/nikosie", (function(a){return {data:[{place:[{id:518,id_state:55,name:"Nikósie",population:310355,area:111.95,altitude:149,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nikosie",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

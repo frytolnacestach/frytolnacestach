@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/liberia", (function(a){return {data:[{place:[{id:473,id_state:50,name:"Liberia",population:114454,area:16,altitude:148,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"liberia",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

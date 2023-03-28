@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/agat", (function(a){return {data:[{place:[{id:894,id_state:92,name:"Agat",population:5543,area:5.7,altitude:77,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"agat",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

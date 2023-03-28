@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/dusseldorf", (function(a){return {data:[{place:[{id:544,id_state:57,name:"Düsseldorf",population:617280,area:217.22,altitude:38,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dusseldorf",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

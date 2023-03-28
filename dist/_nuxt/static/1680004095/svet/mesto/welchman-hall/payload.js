@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/welchman-hall", (function(a){return {data:[{place:[{id:170,id_state:18,name:"Welchman Hall",population:729,area:1,altitude:260,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"welchman-hall",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

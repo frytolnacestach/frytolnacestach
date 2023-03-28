@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sint-eustatius", (function(a){return {data:[{place:[{id:283,id_state:30,name:"Sint Eustatius",population:3186,area:21.06,altitude:300,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sint-eustatius",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/upper-town", (function(a){return {data:[{place:[{id:801,id_state:83,name:"Upper Town",population:20304,area:.19,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"upper-town",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

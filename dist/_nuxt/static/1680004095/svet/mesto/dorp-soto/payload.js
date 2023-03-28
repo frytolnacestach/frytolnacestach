@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/dorp-soto", (function(a){return {data:[{place:[{id:500,id_state:53,name:"Dorp Soto",population:4792,area:19.56,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dorp-soto",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/zahla", (function(a){return {data:[{place:[{id:627,id_state:65,name:"Záhla",population:388738,area:42.07,altitude:82,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zahla",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

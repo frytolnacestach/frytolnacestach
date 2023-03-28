@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/lomas-de-zamora", (function(a,b){return {data:[{place:[{id:b,id_state:10,name:"Lomas de Zamora",population:574835,area:b,altitude:17,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lomas-de-zamora",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null,89)));

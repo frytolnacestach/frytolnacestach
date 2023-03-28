@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/adi-quala", (function(a){return {data:[{place:[{id:646,id_state:67,name:"Adi Quala",population:62184,area:72,altitude:1800,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"adi-quala",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

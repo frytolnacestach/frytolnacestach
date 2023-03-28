@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kolonia-town", (function(a){return {data:[{place:[{id:706,id_state:73,name:"Kolonia Town",population:7160,area:3.58,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kolonia-town",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

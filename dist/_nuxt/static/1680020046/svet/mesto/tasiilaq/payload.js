@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tasiilaq", (function(a){return {data:[{place:[{id:814,id_state:84,name:"Tasiilaq",population:2109,area:12.6,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tasiilaq",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

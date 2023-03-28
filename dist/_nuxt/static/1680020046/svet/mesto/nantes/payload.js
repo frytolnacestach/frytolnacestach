@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/nantes", (function(a){return {data:[{place:[{id:723,id_state:75,name:"Nantes",population:314138,area:65.19,altitude:16,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nantes",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

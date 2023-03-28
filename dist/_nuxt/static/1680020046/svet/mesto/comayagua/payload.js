@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/comayagua", (function(a){return {data:[{place:[{id:944,id_state:97,name:"Comayagua",population:152051,area:928.13,altitude:594,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"comayagua",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/shumen", (function(a,b){return {data:[{place:[{id:b,id_state:22,name:"Shumen",population:76610,area:39.02,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"shumen",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null,210)));

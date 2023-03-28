@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/yevlax", (function(a){return {data:[{place:[{id:148,id_state:16,name:"Yevlax",population:82955,area:80.71,altitude:21,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"yevlax",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

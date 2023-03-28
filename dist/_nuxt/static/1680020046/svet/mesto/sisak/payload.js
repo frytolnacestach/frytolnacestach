@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sisak", (function(a){return {data:[{place:[{id:956,id_state:98,name:"Sisak",population:47591,area:68.79,altitude:94,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sisak",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

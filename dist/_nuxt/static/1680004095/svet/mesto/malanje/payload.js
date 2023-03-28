@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/malanje", (function(a){return {data:[{place:[{id:76,id_state:8,name:"Malanje",population:147443,area:9.97,altitude:1180,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"malanje",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

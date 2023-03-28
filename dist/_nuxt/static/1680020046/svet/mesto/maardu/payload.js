@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/maardu", (function(a){return {data:[{place:[{id:615,id_state:64,name:"Maardu",population:15544,area:22.42,altitude:43,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"maardu",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

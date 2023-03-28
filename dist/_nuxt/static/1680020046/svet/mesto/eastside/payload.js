@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/eastside", (function(a){return {data:[{place:[{id:803,id_state:83,name:"Eastside",population:19814,area:.9,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"eastside",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

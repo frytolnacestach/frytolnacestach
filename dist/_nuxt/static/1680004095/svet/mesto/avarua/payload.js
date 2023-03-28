@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/avarua", (function(a){return {data:[{place:[{id:418,id_state:45,name:"Avarua",population:13887,area:17.53,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"avarua",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

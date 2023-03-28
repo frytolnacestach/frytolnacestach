@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/jerudong", (function(a){return {data:[{place:[{id:266,id_state:28,name:"Jerudong",population:4495,area:2.52,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"jerudong",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

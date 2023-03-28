@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/marseille", (function(a){return {data:[{place:[{id:719,id_state:75,name:"Marseille",population:861635,area:240.62,altitude:20,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"marseille",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

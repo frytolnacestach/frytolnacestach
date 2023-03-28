@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/gonaives", (function(a){return {data:[{place:[{id:967,id_state:99,name:"Gonaïves",population:106500,area:11.08,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gonaives",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

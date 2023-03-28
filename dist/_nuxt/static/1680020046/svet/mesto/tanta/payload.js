@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tanta", (function(a){return {data:[{place:[{id:626,id_state:65,name:"Tanta",population:427057,area:17.11,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tanta",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

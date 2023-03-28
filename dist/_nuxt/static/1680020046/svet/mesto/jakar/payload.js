@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/jakar", (function(a){return {data:[{place:[{id:316,id_state:33,name:"Jakar",population:2780,area:7.5,altitude:2580,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"jakar",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

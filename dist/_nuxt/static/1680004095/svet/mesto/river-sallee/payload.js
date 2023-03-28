@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/river-sallee", (function(a){return {data:[{place:[{id:757,id_state:78,name:"River Sallee",population:1200,area:.89,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"river-sallee",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

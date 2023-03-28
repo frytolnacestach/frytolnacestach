@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/rutana", (function(a){return {data:[{place:[{id:228,id_state:24,name:"Rutana",population:38316,area:32.44,altitude:1645,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rutana",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

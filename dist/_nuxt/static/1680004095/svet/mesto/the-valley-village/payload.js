@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/the-valley-village", (function(a){return {data:[{place:[{id:49,id_state:5,name:"The Valley Village",population:382,area:.58,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"the-valley-village",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/oruro", (function(a){return {data:[{place:[{id:275,id_state:29,name:"Oruro",population:272146,area:123.02,altitude:3737,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"oruro",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

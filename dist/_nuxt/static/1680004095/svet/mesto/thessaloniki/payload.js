@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/thessaloniki", (function(a){return {data:[{place:[{id:859,id_state:89,name:"Thessaloniki",population:1077873,area:246.7,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"thessaloniki",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/leeds", (function(a){return {data:[{place:[{id:744,id_state:77,name:"Leeds",population:364263,area:562.38,altitude:21,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"leeds",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

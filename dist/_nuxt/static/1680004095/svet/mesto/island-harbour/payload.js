@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/island-harbour", (function(a){return {data:[{place:[{id:43,id_state:5,name:"Island Harbour",population:915,area:1.64,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"island-harbour",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

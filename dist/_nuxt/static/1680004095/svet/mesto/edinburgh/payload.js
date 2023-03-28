@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/edinburgh", (function(a){return {data:[{place:[{id:746,id_state:77,name:"Edinburgh",population:488050,area:264.1,altitude:47,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"edinburgh",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

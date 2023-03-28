@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sandy-ground-village", (function(a){return {data:[{place:[{id:46,id_state:5,name:"Sandy Ground Village",population:643,area:.72,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sandy-ground-village",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null)));

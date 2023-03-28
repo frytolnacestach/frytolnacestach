@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/batna", (function(a){return {data:[{place:[{id:593,id_state:62,name:"Batna",population:290645,area:141.92,altitude:1038,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"batna",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

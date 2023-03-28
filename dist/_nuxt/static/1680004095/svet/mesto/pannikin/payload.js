@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/pannikin", (function(a,b){return {data:[{place:[{id:931,id_state:96,name:"Pannikin",population:1,area:b,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pannikin",information_chatgpt:a}]}],fetch:{},mutations:void 0}}(null,0)));

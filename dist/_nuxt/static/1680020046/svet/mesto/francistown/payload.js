@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/francistown", (function(a){return {data:[{place:[{id:322,id_state:35,name:"Francistown",population:101805,area:70.76,altitude:1011,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"francistown",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));
