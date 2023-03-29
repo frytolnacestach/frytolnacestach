@@ -69,16 +69,18 @@
                             <div class="m-headline mb-2 text-align-center">
                                 <h2 class="m-headline__title">Všechny státy na kontinentu {{ place[0].name }}</h2>
                             </div>
-                            <div class="o-place-list">
-                                <div class="o-place-list__outer">
-                                    <div class="o-place-list__items">
-                                        <div v-for="placesState in placesStates" :key="placesState.id" class="o-place-list__item">
-                                            <div class="o-place-list__item-inner">
-                                                <div class="o-place-list__text">
-                                                    <h3 class="o-place-list__title">
-                                                        <NuxtLink class="o-place-list__title-link" :to="`/svet/stat/${placesState.slug}`">{{ placesState.name }}</NuxtLink>
-                                                    </h3>
+                            <div class="o-cover-place-detail">
+                                <div class="o-cover-place-detail__outer">
+                                    <div class="o-cover-place-detail__items">
+                                        <div v-for="placesState in placesStates" :key="placesState.id" class="o-cover-place-detail__item">
+                                            <div class="o-cover-place-detail__content">
+                                                <div class="o-cover-place-detail__image">
+                                                    <div class="o-cover-place-detail__image-file" v-bind:style="{ 'background-image': 'url(' + (placesState.image_cover ? placesState.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
                                                 </div>
+                                                <h3 class="o-cover-place-detail__name">
+                                                    {{ placesState.name }}
+                                                </h3>
+                                                <NuxtLink class="o-cover-place-detail__link" :to="`/svet/stat/${placesState.slug}`"></NuxtLink>
                                             </div>
                                         </div>
                                     </div>
@@ -181,11 +183,17 @@
         },
 
         async asyncData({ $axios, params }) {
-            const [place, placesStates] = await Promise.all([
-                $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent/${params.slug}`),
-                $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-states`)
-            ]);
-            return { place, placesStates };
+            try {
+                // Načtení místa přes API podle slug
+                const place = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent/${params.slug}`)
+
+                // Načtení státu  podle jeho id
+                const placesStates = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-states-continent/${place[0].id}`)
+
+                return { place, placesStates }
+            } catch (error) {
+                console.error(error)
+            }
         },
 
         mounted() {
