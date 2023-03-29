@@ -18,7 +18,7 @@ export default {
       { name: 'msapplication-TileColor', content: '#da532c' },
       { name: 'theme-color', content: '#ffffff' },
       { name: 'author', content: 'Michal Fryč' },
-      { name: 'keywords', content: 'Frytol na cestách, youtube, cestování, blog' },
+      { name: 'keywords', content: 'Frytol na cestách, youtube, cestování, blog, mapa světa' },
       { name: 'robots', content: 'index, follow' },
     ],
     link: [
