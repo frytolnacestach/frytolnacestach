@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ogre", (function(a){return {data:[{place:[{id:1326,id_state:135,name:"Ogre",population:25262,area:11.5,altitude:32,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ogre",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/trondheim", (function(a){return {data:[{place:[{id:1640,id_state:167,name:"Trondheim",population:199469,area:342.03,altitude:11,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"trondheim",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

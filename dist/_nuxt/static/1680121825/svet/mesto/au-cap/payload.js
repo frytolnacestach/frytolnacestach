@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/au-cap", (function(a){return {data:[{place:[{id:1920,id_state:195,name:"Au Cap",population:2106,area:5.28,altitude:11,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"au-cap",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

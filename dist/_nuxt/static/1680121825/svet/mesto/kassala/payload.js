@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kassala", (function(a){return {data:[{place:[{id:1925,id_state:196,name:"Kassala",population:419030,area:75.38,altitude:424,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kassala",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

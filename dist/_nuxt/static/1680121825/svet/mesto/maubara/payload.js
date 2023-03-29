@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/maubara", (function(a){return {data:[{place:[{id:2191,id_state:221,name:"Maubara",population:12524,area:79.1,altitude:35,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"maubara",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

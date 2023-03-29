@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/norsup", (function(a){return {data:[{place:[{id:2386,id_state:242,name:"Norsup",population:2988,area:10,altitude:42,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"norsup",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

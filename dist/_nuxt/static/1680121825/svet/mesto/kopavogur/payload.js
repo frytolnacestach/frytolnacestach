@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kopavogur", (function(a){return {data:[{place:[{id:1059,id_state:109,name:"Kopavogur",population:37133,area:10.84,altitude:39,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kopavogur",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

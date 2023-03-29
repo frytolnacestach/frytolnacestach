@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/chingola", (function(a){return {data:[{place:[{id:2448,id_state:248,name:"Chingola",population:174246,area:117.48,altitude:1329,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chingola",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tsevie", (function(a){return {data:[{place:[{id:2149,id_state:217,name:"Tsévié",population:70400,area:20.1,altitude:30,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tsevie",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/patan", (function(a){return {data:[{place:[{id:1650,id_state:168,name:"Patan",population:183310,area:15.43,altitude:1340,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"patan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

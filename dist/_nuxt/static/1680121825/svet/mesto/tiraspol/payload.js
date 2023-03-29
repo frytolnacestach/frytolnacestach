@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tiraspol", (function(a){return {data:[{place:[{id:1360,id_state:139,name:"Tiraspol",population:139100,area:44,altitude:25,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tiraspol",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

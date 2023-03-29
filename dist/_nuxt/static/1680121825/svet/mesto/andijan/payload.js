@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/andijan", (function(a){return {data:[{place:[{id:2326,id_state:235,name:"Andijan",population:484900,area:74,altitude:447,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"andijan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

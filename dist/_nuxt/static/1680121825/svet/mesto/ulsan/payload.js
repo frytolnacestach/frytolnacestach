@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ulsan", (function(a){return {data:[{place:[{id:1194,id_state:122,name:"Ulsan",population:1162639,area:1061.25,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ulsan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/rongelap", (function(a){return {data:[{place:[{id:1407,id_state:143,name:"Rongelap",population:413,area:2.11,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rongelap",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

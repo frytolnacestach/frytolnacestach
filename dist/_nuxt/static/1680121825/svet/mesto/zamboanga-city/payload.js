@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/zamboanga-city", (function(a){return {data:[{place:[{id:1743,id_state:177,name:"Zamboanga City",population:917477,area:1421.44,altitude:9,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zamboanga-city",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

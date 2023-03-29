@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/l'eau-blanche", (function(a,b){return {data:[{place:[{id:2139,id_state:216,name:"L'Eau Blanche",population:b,area:25,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"l'eau-blanche",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null,0)));

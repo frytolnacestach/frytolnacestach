@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sana'a", (function(a){return {data:[{place:[{id:2414,id_state:245,name:"Sana'a",population:3056000,area:47,altitude:2250,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sana'a",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

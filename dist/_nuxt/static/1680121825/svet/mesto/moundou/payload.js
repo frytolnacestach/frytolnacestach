@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/moundou", (function(a){return {data:[{place:[{id:2124,id_state:215,name:"Moundou",population:207710,area:50.92,altitude:421,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"moundou",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

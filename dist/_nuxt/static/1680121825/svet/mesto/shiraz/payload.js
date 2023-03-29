@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/shiraz", (function(a){return {data:[{place:[{id:1053,id_state:108,name:"Shiraz",population:1327197,area:240,altitude:1486,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"shiraz",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

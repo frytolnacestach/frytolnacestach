@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/le-port", (function(a){return {data:[{place:[{id:1847,id_state:188,name:"Le Port",population:40026,area:16.1,altitude:25,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"le-port",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

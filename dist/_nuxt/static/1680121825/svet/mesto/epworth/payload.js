@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/epworth", (function(a){return {data:[{place:[{id:2459,id_state:249,name:"Epworth",population:123250,area:47,altitude:1450,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"epworth",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

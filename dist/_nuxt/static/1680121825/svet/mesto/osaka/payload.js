@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/osaka", (function(a){return {data:[{place:[{id:1110,id_state:114,name:"Osaka",population:2689286,area:223,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"osaka",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kalmunai", (function(a){return {data:[{place:[{id:1277,id_state:130,name:"Kalmunai",population:40069,area:6.49,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kalmunai",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

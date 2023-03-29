@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ipoh", (function(a){return {data:[{place:[{id:1551,id_state:158,name:"Ipoh",population:657892,area:643,altitude:51,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ipoh",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

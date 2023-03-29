@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/gujranwala", (function(a){return {data:[{place:[{id:1753,id_state:178,name:"Gujranwala",population:1683472,area:319.15,altitude:221,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gujranwala",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

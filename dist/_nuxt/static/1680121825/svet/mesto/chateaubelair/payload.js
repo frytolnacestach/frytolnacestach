@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/chateaubelair", (function(a){return {data:[{place:[{id:2337,id_state:237,name:"Chateaubelair",population:938,area:2.68,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chateaubelair",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

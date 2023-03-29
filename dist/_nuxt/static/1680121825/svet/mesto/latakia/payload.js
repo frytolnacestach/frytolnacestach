@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/latakia", (function(a){return {data:[{place:[{id:2097,id_state:212,name:"Latakia",population:383786,area:33.99,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"latakia",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

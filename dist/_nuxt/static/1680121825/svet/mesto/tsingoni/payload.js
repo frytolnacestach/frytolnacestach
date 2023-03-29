@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tsingoni", (function(a){return {data:[{place:[{id:2430,id_state:246,name:"Tsingoni",population:12974,area:17.12,altitude:30,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tsingoni",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

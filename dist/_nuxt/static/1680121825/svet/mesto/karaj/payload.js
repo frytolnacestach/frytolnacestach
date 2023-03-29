@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/karaj", (function(a){return {data:[{place:[{id:1051,id_state:108,name:"Karaj",population:1592495,area:484,altitude:1367,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"karaj",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

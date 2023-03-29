@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/istaravsan", (function(a){return {data:[{place:[{id:2166,id_state:219,name:"Istaravšan",population:55800,area:8,altitude:380,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"istaravsan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ambilobe", (function(a){return {data:[{place:[{id:1396,id_state:142,name:"Ambilobe",population:122000,area:16.72,altitude:40,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ambilobe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

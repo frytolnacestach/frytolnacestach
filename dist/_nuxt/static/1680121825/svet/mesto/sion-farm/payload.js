@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sion-farm", (function(a){return {data:[{place:[{id:2371,id_state:240,name:"Sion Farm",population:2981,area:1.44,altitude:126,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sion-farm",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

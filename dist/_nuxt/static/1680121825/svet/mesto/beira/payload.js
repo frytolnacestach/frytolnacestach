@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/beira", (function(a){return {data:[{place:[{id:1560,id_state:159,name:"Beira",population:570939,area:534.05,altitude:34,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"beira",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

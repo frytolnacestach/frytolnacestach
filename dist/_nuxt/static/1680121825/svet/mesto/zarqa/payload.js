@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/zarqa", (function(a){return {data:[{place:[{id:1099,id_state:113,name:"Zarqa",population:1242818,area:323,altitude:619,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zarqa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

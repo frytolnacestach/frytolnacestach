@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/capiata", (function(a){return {data:[{place:[{id:1824,id_state:186,name:"Capiatá",population:243699,area:68.5,altitude:113,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"capiata",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

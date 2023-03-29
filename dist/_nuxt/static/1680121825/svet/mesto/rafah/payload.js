@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/rafah", (function(a){return {data:[{place:[{id:1795,id_state:183,name:"Rafáh",population:203960,area:31,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rafah",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/emfuleni", (function(a){return {data:[{place:[{id:2441,id_state:247,name:"Emfuleni",population:723328,area:424.97,altitude:1464,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"emfuleni",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

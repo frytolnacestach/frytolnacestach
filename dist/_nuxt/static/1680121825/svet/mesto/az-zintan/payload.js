@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/az-zintan", (function(a){return {data:[{place:[{id:1337,id_state:136,name:"Az Zintan",population:67430,area:6,altitude:660,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"az-zintan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

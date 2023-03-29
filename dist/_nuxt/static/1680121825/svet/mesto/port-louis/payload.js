@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/port-louis", (function(a){return {data:[{place:[{id:1508,id_state:154,name:"Port Louis",population:154676,area:46.7,altitude:13,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"port-louis",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

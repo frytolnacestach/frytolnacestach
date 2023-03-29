@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/os", (function(a){return {data:[{place:[{id:1129,id_state:116,name:"Oš",population:309600,area:182.6,altitude:1000,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"os",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

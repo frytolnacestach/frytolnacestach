@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/keelung", (function(a){return {data:[{place:[{id:2260,id_state:228,name:"Keelung",population:371878,area:132.76,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"keelung",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

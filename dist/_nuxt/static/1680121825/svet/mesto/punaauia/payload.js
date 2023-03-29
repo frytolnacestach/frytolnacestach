@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/punaauia", (function(a){return {data:[{place:[{id:1720,id_state:175,name:"Punaauia",population:29481,area:75.2,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"punaauia",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

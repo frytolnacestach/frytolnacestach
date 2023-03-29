@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/montegiardino", (function(a){return {data:[{place:[{id:2021,id_state:204,name:"Montegiardino",population:909,area:3.31,altitude:360,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"montegiardino",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

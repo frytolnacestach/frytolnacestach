@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/birni-nkonni", (function(a){return {data:[{place:[{id:1615,id_state:164,name:"Birni Nkonni",population:63493,area:27.6,altitude:377,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"birni-nkonni",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

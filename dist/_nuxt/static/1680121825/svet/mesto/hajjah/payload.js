@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/hajjah", (function(a){return {data:[{place:[{id:2423,id_state:245,name:"Hajjah",population:382000,area:168,altitude:1700,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hajjah",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/st-peter", (function(a){return {data:[{place:[{id:1087,id_state:111,name:"St Peter",population:2250,area:6.9,altitude:33,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"st-peter",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

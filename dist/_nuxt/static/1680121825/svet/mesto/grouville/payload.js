@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/grouville", (function(a){return {data:[{place:[{id:1082,id_state:111,name:"Grouville",population:4820,area:6.9,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"grouville",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

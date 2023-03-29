@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/linkoping", (function(a){return {data:[{place:[{id:1937,id_state:197,name:"Linköping",population:145422,area:42.04,altitude:38,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"linkoping",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

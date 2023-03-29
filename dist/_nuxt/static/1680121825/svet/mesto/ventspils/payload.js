@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ventspils", (function(a){return {data:[{place:[{id:1323,id_state:135,name:"Ventspils",population:39108,area:55.6,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ventspils",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/san-marino", (function(a){return {data:[{place:[{id:2015,id_state:204,name:"San Marino",population:4493,area:7.09,altitude:749,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"san-marino",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

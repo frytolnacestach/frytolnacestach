@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/gizo", (function(a){return {data:[{place:[{id:1902,id_state:194,name:"Gizo",population:6635,area:3,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gizo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/el-mourouj", (function(a){return {data:[{place:[{id:2212,id_state:223,name:"El Mourouj",population:92754,area:9.19,altitude:8,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"el-mourouj",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

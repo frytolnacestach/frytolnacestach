@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/caracas", (function(a){return {data:[{place:[{id:2344,id_state:238,name:"Caracas",population:2643241,area:783,altitude:920,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"caracas",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

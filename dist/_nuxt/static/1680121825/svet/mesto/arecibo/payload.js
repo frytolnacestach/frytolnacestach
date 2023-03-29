@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/arecibo", (function(a){return {data:[{place:[{id:1787,id_state:182,name:"Arecibo",population:66679,area:126.25,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"arecibo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kampong-cham", (function(a){return {data:[{place:[{id:1145,id_state:117,name:"Kampong Cham",population:93738,area:68.12,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kampong-cham",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

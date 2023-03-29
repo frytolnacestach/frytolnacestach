@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/trujillo-alto", (function(a){return {data:[{place:[{id:1790,id_state:182,name:"Trujillo Alto",population:54122,area:19.14,altitude:98,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"trujillo-alto",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

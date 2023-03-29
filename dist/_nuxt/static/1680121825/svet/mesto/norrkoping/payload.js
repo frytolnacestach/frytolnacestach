@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/norrkoping", (function(a){return {data:[{place:[{id:1940,id_state:197,name:"Norrköping",population:139345,area:35.43,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"norrkoping",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/san-roque", (function(a){return {data:[{place:[{id:1461,id_state:149,name:"San Roque",population:4178,area:9.95,altitude:68,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"san-roque",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

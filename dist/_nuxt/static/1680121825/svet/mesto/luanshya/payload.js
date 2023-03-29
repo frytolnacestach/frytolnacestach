@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/luanshya", (function(a){return {data:[{place:[{id:2451,id_state:248,name:"Luanshya",population:116618,area:71.04,altitude:1258,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"luanshya",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

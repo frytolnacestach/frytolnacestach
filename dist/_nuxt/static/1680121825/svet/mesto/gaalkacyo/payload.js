@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/gaalkacyo", (function(a){return {data:[{place:[{id:2039,id_state:206,name:"Gaalkacyo",population:106613,area:15,altitude:260,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gaalkacyo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

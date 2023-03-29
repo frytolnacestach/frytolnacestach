@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/udon-thani", (function(a){return {data:[{place:[{id:2159,id_state:218,name:"Udon Thani",population:120400,area:47,altitude:182,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"udon-thani",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

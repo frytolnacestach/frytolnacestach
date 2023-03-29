@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bukhara", (function(a){return {data:[{place:[{id:2327,id_state:235,name:"Bukhara",population:237900,area:39.4,altitude:225,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bukhara",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

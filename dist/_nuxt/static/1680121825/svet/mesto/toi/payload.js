@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/toi", (function(a){return {data:[{place:[{id:1677,id_state:170,name:"Toi",population:44,area:.41,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"toi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

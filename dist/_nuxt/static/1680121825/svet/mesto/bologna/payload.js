@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bologna", (function(a){return {data:[{place:[{id:1074,id_state:110,name:"Bologna",population:388884,area:140.7,altitude:54,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bologna",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

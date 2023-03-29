@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/miquelon-langlade-(village)", (function(a){return {data:[{place:[{id:1770,id_state:180,name:"Miquelon-Langlade (Village)",population:214,area:1.23,altitude:25,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"miquelon-langlade-(village)",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

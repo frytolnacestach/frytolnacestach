@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/liku", (function(a){return {data:[{place:[{id:2400,id_state:243,name:"Liku",population:136,area:.38,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"liku",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/goose-green", (function(a){return {data:[{place:[{id:692,id_state:72,name:"Goose Green",population:128,area:.28,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"goose-green",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

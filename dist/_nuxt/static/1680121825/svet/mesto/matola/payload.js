@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/matola", (function(a){return {data:[{place:[{id:1559,id_state:159,name:"Matola",population:675422,area:424.74,altitude:37,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"matola",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

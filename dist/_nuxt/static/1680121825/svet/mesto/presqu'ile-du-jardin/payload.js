@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/presqu'ile-du-jardin", (function(a,b){return {data:[{place:[{id:2140,id_state:216,name:"Presqu'ile du Jardin",population:b,area:25,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"presqu'ile-du-jardin",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null,0)));

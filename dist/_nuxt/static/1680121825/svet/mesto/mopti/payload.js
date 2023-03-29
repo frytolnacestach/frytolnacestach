@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mopti", (function(a){return {data:[{place:[{id:1424,id_state:145,name:"Mopti",population:107760,area:19.51,altitude:298,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mopti",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

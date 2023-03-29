@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/diego-garcia", (function(a){return {data:[{place:[{id:1028,id_state:106,name:"Diego Garcia",population:3340,area:30.2,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"diego-garcia",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

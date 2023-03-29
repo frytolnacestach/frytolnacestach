@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/craiova", (function(a){return {data:[{place:[{id:1856,id_state:189,name:"Craiova",population:269506,area:70.48,altitude:75,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"craiova",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/lobamba", (function(a){return {data:[{place:[{id:2105,id_state:213,name:"Lobamba",population:4694,area:.56,altitude:697,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lobamba",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

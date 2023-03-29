@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/maputo", (function(a){return {data:[{place:[{id:1558,id_state:159,name:"Maputo",population:1319471,area:347.26,altitude:44,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"maputo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

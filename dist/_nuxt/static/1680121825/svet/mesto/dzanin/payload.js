@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/dzanin", (function(a){return {data:[{place:[{id:1796,id_state:183,name:"Džanín",population:195643,area:24,altitude:135,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dzanin",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

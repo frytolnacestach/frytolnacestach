@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/cave-point", (function(a){return {data:[{place:[{id:1958,id_state:199,name:"Cave Point",population:119,area:.03,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cave-point",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

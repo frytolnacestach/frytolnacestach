@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/saint-lawrence", (function(a){return {data:[{place:[{id:1080,id_state:111,name:"Saint Lawrence",population:6060,area:3.3,altitude:110,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saint-lawrence",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

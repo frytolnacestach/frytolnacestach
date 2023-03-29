@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/les-revoires", (function(a){return {data:[{place:[{id:1354,id_state:138,name:"Les Révoires",population:2278,area:.16,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"les-revoires",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

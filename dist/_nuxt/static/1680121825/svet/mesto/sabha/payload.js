@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sabha", (function(a){return {data:[{place:[{id:1334,id_state:136,name:"Sabha",population:126386,area:430,altitude:390,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sabha",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

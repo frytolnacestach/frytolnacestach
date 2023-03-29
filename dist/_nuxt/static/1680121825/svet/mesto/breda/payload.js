@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/breda", (function(a){return {data:[{place:[{id:1635,id_state:166,name:"Breda",population:183873,area:129.11,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"breda",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

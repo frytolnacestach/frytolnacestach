@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/zapopan", (function(a){return {data:[{place:[{id:1544,id_state:157,name:"Zapopan",population:1286659,area:1181,altitude:1563,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zapopan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

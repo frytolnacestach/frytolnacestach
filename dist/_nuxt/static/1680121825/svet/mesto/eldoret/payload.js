@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/eldoret", (function(a){return {data:[{place:[{id:1121,id_state:115,name:"Eldoret",population:475716,area:125,altitude:2100,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"eldoret",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

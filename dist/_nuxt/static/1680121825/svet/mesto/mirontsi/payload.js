@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mirontsi", (function(a){return {data:[{place:[{id:1163,id_state:119,name:"Mirontsi",population:13838,area:19.29,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mirontsi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

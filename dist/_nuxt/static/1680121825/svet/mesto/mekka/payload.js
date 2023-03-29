@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mekka", (function(a){return {data:[{place:[{id:1893,id_state:193,name:"Mekka",population:1576804,area:850,altitude:277,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mekka",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

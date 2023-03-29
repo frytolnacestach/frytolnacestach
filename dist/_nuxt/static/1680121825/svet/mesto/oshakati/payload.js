@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/oshakati", (function(a){return {data:[{place:[{id:1571,id_state:160,name:"Oshakati",population:36273,area:8.8,altitude:1126,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"oshakati",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

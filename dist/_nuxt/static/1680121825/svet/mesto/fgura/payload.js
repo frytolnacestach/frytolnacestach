@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/fgura", (function(a){return {data:[{place:[{id:1503,id_state:153,name:"Fgura",population:12662,area:1.14,altitude:25,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"fgura",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

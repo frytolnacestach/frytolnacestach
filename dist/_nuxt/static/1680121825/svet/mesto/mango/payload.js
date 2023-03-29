@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mango", (function(a){return {data:[{place:[{id:2151,id_state:217,name:"Mango",population:56100,area:69.7,altitude:302,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mango",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

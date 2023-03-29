@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/katima-mulilo", (function(a){return {data:[{place:[{id:1573,id_state:160,name:"Katima Mulilo",population:31942,area:29.5,altitude:950,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"katima-mulilo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

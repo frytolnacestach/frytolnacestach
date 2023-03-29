@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kaneohe", (function(a){return {data:[{place:[{id:2298,id_state:232,name:"Kaneohe",population:15213,area:8,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kaneohe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kiffa", (function(a){return {data:[{place:[{id:1480,id_state:151,name:"Kiffa",population:109701,area:41,altitude:46,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kiffa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kostanay", (function(a){return {data:[{place:[{id:1227,id_state:125,name:"Kostanay",population:292000,area:207.22,altitude:132,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kostanay",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

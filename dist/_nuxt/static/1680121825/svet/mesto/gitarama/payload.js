@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/gitarama", (function(a){return {data:[{place:[{id:1883,id_state:192,name:"Gitarama",population:87613,area:116,altitude:1693,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gitarama",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ibb", (function(a){return {data:[{place:[{id:2418,id_state:245,name:"Ibb",population:561000,area:189,altitude:2028,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ibb",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

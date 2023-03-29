@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/istanbul", (function(a){return {data:[{place:[{id:2223,id_state:225,name:"Istanbul",population:15029231,area:5342,altitude:31,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"istanbul",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

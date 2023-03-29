@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/canaries", (function(a){return {data:[{place:[{id:1256,id_state:128,name:"Canaries",population:1703,area:1,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"canaries",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

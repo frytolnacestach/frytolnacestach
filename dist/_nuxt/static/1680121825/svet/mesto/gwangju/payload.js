@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/gwangju", (function(a){return {data:[{place:[{id:1193,id_state:122,name:"Gwangju",population:1447228,area:501.28,altitude:20,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gwangju",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/pasig-city", (function(a){return {data:[{place:[{id:1746,id_state:177,name:"Pasig City",population:755300,area:31.46,altitude:16,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pasig-city",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bejt-semes", (function(a){return {data:[{place:[{id:1005,id_state:103,name:"Bejt Šemeš",population:116913,area:34.23,altitude:610,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bejt-semes",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

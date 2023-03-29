@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/jonava", (function(a){return {data:[{place:[{id:1306,id_state:133,name:"Jonava",population:30522,area:16,altitude:51,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"jonava",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

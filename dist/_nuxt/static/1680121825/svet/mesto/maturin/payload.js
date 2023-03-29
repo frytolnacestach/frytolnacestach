@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/maturin", (function(a){return {data:[{place:[{id:2350,id_state:238,name:"Maturín",population:553384,area:826,altitude:67,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"maturin",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

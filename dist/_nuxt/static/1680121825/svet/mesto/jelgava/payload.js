@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/jelgava", (function(a){return {data:[{place:[{id:1321,id_state:135,name:"Jelgava",population:58973,area:60.05,altitude:23,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"jelgava",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

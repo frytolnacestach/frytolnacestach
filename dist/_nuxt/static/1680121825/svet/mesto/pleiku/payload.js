@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/pleiku", (function(a){return {data:[{place:[{id:2382,id_state:241,name:"Pleiku",population:326236,area:261.4,altitude:795,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pleiku",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

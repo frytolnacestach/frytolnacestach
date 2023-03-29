@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tocumen", (function(a){return {data:[{place:[{id:1700,id_state:173,name:"Tocumen",population:130470,area:68.08,altitude:27,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tocumen",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

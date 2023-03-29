@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mahibadhoo", (function(a){return {data:[{place:[{id:1527,id_state:155,name:"Mahibadhoo",population:7163,area:.44,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mahibadhoo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

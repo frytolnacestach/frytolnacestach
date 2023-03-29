@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kenitra", (function(a){return {data:[{place:[{id:1346,id_state:137,name:"Kenitra",population:431282,area:38,altitude:35,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kenitra",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

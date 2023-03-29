@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/west-bay", (function(a){return {data:[{place:[{id:1209,id_state:124,name:"West Bay",population:11954,area:11,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"west-bay",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

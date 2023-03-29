@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ekurhuleni", (function(a){return {data:[{place:[{id:2437,id_state:247,name:"Ekurhuleni",population:3378281,area:1904.91,altitude:1707,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ekurhuleni",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

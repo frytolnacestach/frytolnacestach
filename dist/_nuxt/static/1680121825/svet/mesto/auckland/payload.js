@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/auckland", (function(a){return {data:[{place:[{id:1678,id_state:171,name:"Auckland",population:1705000,area:535,altitude:19,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"auckland",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

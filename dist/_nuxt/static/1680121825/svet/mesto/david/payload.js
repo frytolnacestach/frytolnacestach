@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/david", (function(a){return {data:[{place:[{id:1701,id_state:173,name:"David",population:125971,area:87.71,altitude:68,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"david",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

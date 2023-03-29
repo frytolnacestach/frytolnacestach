@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/aleg", (function(a){return {data:[{place:[{id:1486,id_state:151,name:"Aleg",population:22268,area:10.3,altitude:48,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"aleg",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

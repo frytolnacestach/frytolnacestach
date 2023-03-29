@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/rwamagana", (function(a){return {data:[{place:[{id:1890,id_state:192,name:"Rwamagana",population:53066,area:112,altitude:1484,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rwamagana",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

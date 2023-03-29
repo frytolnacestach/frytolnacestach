@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/rechovot", (function(a){return {data:[{place:[{id:1006,id_state:103,name:"Rechovot",population:116434,area:23.5,altitude:61,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rechovot",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

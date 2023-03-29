@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/asdod", (function(a){return {data:[{place:[{id:1003,id_state:103,name:"Ašdod",population:243711,area:47.2,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"asdod",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

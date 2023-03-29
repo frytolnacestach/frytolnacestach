@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/siteki", (function(a){return {data:[{place:[{id:2106,id_state:213,name:"Siteki",population:5474,area:4.28,altitude:685,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"siteki",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

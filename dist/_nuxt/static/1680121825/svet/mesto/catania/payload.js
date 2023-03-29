@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/catania", (function(a){return {data:[{place:[{id:1076,id_state:110,name:"Catania",population:313396,area:180.84,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"catania",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

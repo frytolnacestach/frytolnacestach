@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/pingtung", (function(a){return {data:[{place:[{id:2262,id_state:228,name:"Pingtung",population:198630,area:65.03,altitude:16,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pingtung",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

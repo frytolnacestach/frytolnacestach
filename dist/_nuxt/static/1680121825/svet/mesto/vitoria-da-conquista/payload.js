@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/vitoria-da-conquista", (function(a){return {data:[{place:[{id:2075,id_state:210,name:"Vitória da Conquista",population:348718,area:3409,altitude:930,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"vitoria-da-conquista",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

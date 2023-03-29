@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/teixeira-de-freitas", (function(a){return {data:[{place:[{id:2082,id_state:210,name:"Teixeira de Freitas",population:155542,area:1645,altitude:115,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"teixeira-de-freitas",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

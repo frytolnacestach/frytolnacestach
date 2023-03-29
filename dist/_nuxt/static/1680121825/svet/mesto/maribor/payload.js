@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/maribor", (function(a){return {data:[{place:[{id:1962,id_state:200,name:"Maribor",population:110668,area:147.2,altitude:269,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"maribor",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

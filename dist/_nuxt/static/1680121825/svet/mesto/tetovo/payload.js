@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tetovo", (function(a){return {data:[{place:[{id:1412,id_state:144,name:"Tetovo",population:51357,area:108.16,altitude:468,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tetovo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

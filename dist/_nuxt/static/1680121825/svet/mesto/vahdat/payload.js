@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/vahdat", (function(a){return {data:[{place:[{id:2167,id_state:219,name:"Vahdat",population:50100,area:2.17,altitude:806,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"vahdat",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

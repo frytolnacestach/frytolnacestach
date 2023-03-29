@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/five-cays-settlement", (function(a){return {data:[{place:[{id:2115,id_state:214,name:"Five Cays Settlement",population:2500,area:6.1,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"five-cays-settlement",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

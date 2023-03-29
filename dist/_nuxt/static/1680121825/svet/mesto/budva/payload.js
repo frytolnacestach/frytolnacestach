@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/budva", (function(a){return {data:[{place:[{id:1372,id_state:140,name:"Budva",population:13600,area:12,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"budva",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

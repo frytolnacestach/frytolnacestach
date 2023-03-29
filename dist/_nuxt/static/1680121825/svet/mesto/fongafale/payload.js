@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/fongafale", (function(a){return {data:[{place:[{id:2244,id_state:227,name:"Fongafale",population:4492,area:2.79,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"fongafale",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

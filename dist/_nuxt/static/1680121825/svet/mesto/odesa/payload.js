@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/odesa", (function(a){return {data:[{place:[{id:2275,id_state:230,name:"Oděsa",population:993120,area:162,altitude:50,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"odesa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

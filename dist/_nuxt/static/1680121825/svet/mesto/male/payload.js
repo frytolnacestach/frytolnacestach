@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/male", (function(a){return {data:[{place:[{id:1518,id_state:155,name:"Malé",population:164327,area:5.8,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"male",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

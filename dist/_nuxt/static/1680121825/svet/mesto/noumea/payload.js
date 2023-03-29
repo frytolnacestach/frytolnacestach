@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/noumea", (function(a){return {data:[{place:[{id:1578,id_state:161,name:"Nouméa",population:101579,area:45.73,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"noumea",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/brades", (function(a){return {data:[{place:[{id:1489,id_state:152,name:"Brades",population:1000,area:1.2,altitude:45,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"brades",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

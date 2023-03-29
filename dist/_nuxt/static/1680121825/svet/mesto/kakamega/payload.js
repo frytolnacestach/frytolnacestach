@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kakamega", (function(a){return {data:[{place:[{id:1127,id_state:115,name:"Kakamega",population:174149,area:30,altitude:1516,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kakamega",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

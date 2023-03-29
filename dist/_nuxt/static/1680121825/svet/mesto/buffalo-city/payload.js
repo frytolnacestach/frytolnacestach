@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/buffalo-city", (function(a){return {data:[{place:[{id:2440,id_state:247,name:"Buffalo City",population:755200,area:2957.23,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"buffalo-city",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

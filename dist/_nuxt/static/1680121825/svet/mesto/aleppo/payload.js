@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/aleppo", (function(a){return {data:[{place:[{id:2093,id_state:212,name:"Aleppo",population:2874038,area:190.94,altitude:379,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"aleppo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

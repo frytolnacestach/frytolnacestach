@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/triesenberg", (function(a){return {data:[{place:[{id:1262,id_state:129,name:"Triesenberg",population:2670,area:30.55,altitude:884,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"triesenberg",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/biskek", (function(a){return {data:[{place:[{id:1128,id_state:116,name:"Biškek",population:1008600,area:127.86,altitude:800,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"biskek",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

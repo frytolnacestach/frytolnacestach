@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/point-fortin", (function(a){return {data:[{place:[{id:2238,id_state:226,name:"Point Fortin",population:18800,area:1.88,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"point-fortin",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

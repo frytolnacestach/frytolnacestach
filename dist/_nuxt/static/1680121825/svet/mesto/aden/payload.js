@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/aden", (function(a){return {data:[{place:[{id:2417,id_state:245,name:"Aden",population:650000,area:760,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"aden",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

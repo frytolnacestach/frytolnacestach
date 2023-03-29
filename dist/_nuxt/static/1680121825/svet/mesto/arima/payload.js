@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/arima", (function(a){return {data:[{place:[{id:2236,id_state:226,name:"Arima",population:34992,area:11.29,altitude:41,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"arima",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

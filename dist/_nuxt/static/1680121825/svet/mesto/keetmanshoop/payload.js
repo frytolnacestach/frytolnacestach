@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/keetmanshoop", (function(a){return {data:[{place:[{id:1577,id_state:160,name:"Keetmanshoop",population:19680,area:30.31,altitude:1061,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"keetmanshoop",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/vacoas-phoenix", (function(a){return {data:[{place:[{id:1509,id_state:154,name:"Vacoas-Phoenix",population:110342,area:23.21,altitude:390,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"vacoas-phoenix",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/port-sudan", (function(a){return {data:[{place:[{id:1924,id_state:196,name:"Port Sudan",population:489725,area:64.79,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"port-sudan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

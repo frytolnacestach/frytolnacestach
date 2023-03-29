@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/malkerns", (function(a){return {data:[{place:[{id:2107,id_state:213,name:"Malkerns",population:3942,area:3.59,altitude:692,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"malkerns",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

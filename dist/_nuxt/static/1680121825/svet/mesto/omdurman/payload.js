@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/omdurman", (function(a){return {data:[{place:[{id:1922,id_state:196,name:"Omdurman",population:2526095,area:156.15,altitude:380,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"omdurman",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

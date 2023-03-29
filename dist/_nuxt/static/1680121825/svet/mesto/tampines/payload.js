@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tampines", (function(a){return {data:[{place:[{id:1944,id_state:198,name:"Tampines",population:257110,area:20.89,altitude:16,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tampines",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

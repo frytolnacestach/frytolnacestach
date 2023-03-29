@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/dzina", (function(a){return {data:[{place:[{id:1245,id_state:127,name:"Džína",population:33219,area:5,altitude:910,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dzina",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/vinnytsja", (function(a){return {data:[{place:[{id:2282,id_state:230,name:"Vinnytsja",population:371367,area:102,altitude:245,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"vinnytsja",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

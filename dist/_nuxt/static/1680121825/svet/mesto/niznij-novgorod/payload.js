@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/niznij-novgorod", (function(a){return {data:[{place:[{id:1875,id_state:191,name:"Nižnij Novgorod",population:1250615,area:408.5,altitude:78,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"niznij-novgorod",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

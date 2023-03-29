@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/garissa", (function(a){return {data:[{place:[{id:1126,id_state:115,name:"Garissa",population:183613,area:65,altitude:158,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"garissa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

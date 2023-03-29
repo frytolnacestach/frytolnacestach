@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/camacari", (function(a){return {data:[{place:[{id:2076,id_state:210,name:"Camaçari",population:299332,area:784.74,altitude:16,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"camacari",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

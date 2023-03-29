@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/dhamar", (function(a){return {data:[{place:[{id:2419,id_state:245,name:"Dhamar",population:463000,area:133,altitude:2500,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dhamar",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

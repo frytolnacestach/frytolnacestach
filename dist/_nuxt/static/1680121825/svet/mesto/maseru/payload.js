@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/maseru", (function(a){return {data:[{place:[{id:1288,id_state:132,name:"Maseru",population:226002,area:138,altitude:1603,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"maseru",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

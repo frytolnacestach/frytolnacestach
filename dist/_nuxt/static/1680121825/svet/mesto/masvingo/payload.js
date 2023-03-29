@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/masvingo", (function(a){return {data:[{place:[{id:2462,id_state:249,name:"Masvingo",population:101550,area:37.6,altitude:1096,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"masvingo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

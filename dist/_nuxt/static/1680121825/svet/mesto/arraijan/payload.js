@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/arraijan", (function(a){return {data:[{place:[{id:1702,id_state:173,name:"Arraiján",population:110674,area:56.13,altitude:20,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"arraijan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

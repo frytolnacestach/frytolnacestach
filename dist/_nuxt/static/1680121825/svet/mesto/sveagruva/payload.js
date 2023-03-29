@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sveagruva", (function(a){return {data:[{place:[{id:1986,id_state:201,name:"Sveagruva",population:237,area:1.17,altitude:61,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sveagruva",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

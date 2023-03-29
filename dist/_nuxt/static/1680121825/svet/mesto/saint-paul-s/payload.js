@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/saint-paul-s", (function(a){return {data:[{place:[{id:1173,id_state:120,name:"Saint Paul’s",population:1168,area:2.6,altitude:25,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saint-paul-s",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

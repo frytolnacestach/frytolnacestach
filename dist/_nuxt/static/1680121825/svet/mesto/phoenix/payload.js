@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/phoenix", (function(a){return {data:[{place:[{id:2307,id_state:233,name:"Phoenix",population:1680992,area:1343.03,altitude:331,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"phoenix",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/seremban", (function(a){return {data:[{place:[{id:1557,id_state:158,name:"Seremban",population:394084,area:236,altitude:39,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"seremban",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

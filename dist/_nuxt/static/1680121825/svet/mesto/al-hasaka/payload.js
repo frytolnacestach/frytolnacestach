@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/al-hasaka", (function(a){return {data:[{place:[{id:2099,id_state:212,name:"Al-Hasaka",population:188160,area:37.22,altitude:300,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"al-hasaka",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

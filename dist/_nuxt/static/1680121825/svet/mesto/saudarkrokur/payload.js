@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/saudarkrokur", (function(a){return {data:[{place:[{id:1067,id_state:109,name:"Saudárkrókur",population:2304,area:4.7,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saudarkrokur",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

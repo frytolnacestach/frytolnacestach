@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/anetan", (function(a){return {data:[{place:[{id:1664,id_state:169,name:"Anetan",population:452,area:1.04,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"anetan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

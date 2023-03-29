@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/frederiksted", (function(a){return {data:[{place:[{id:2367,id_state:240,name:"Frederiksted",population:7222,area:2.98,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"frederiksted",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

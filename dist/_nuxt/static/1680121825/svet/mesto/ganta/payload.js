@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ganta", (function(a){return {data:[{place:[{id:1286,id_state:131,name:"Ganta",population:14490,area:2.8,altitude:271,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ganta",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

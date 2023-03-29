@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/aiwo", (function(a){return {data:[{place:[{id:1658,id_state:169,name:"Aiwo",population:1621,area:1.21,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"aiwo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

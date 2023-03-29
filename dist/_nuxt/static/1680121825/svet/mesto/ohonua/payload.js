@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ohonua", (function(a){return {data:[{place:[{id:2218,id_state:224,name:"Ohonua",population:1325,area:.62,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ohonua",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/new-york", (function(a){return {data:[{place:[{id:2303,id_state:233,name:"New York",population:8336817,area:468.9,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"new-york",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kaunas", (function(a){return {data:[{place:[{id:1299,id_state:133,name:"Kaunas",population:289548,area:157,altitude:45,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kaunas",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

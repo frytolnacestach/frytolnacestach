@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kanggye", (function(a){return {data:[{place:[{id:1186,id_state:121,name:"Kanggye",population:209530,area:97.46,altitude:118,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kanggye",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

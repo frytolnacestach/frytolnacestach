@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sayyan", (function(a){return {data:[{place:[{id:2420,id_state:245,name:"Sayyan",population:411000,area:20,altitude:2130,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sayyan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

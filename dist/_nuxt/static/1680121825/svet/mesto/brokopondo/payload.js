@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/brokopondo", (function(a){return {data:[{place:[{id:2047,id_state:207,name:"Brokopondo",population:7994,area:2694,altitude:30,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"brokopondo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

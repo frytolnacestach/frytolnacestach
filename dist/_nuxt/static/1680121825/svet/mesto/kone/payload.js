@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kone", (function(a){return {data:[{place:[{id:1583,id_state:161,name:"Koné",population:5737,area:1983,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kone",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

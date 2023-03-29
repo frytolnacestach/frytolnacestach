@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/taipei", (function(a){return {data:[{place:[{id:2254,id_state:228,name:"Taipei",population:2601154,area:271.8,altitude:8,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"taipei",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

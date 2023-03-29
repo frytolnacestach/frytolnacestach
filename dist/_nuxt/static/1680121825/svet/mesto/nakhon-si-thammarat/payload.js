@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/nakhon-si-thammarat", (function(a){return {data:[{place:[{id:2162,id_state:218,name:"Nakhon Si Thammarat",population:105900,area:68.97,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nakhon-si-thammarat",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/hama", (function(a){return {data:[{place:[{id:2096,id_state:212,name:"Hama",population:79675,area:45.56,altitude:203,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hama",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/itabuna", (function(a){return {data:[{place:[{id:2077,id_state:210,name:"Itabuna",population:213799,area:443,altitude:72,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"itabuna",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

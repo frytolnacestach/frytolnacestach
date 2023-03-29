@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bamako", (function(a){return {data:[{place:[{id:1418,id_state:145,name:"Bamako",population:2272825,area:2670.8,altitude:350,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bamako",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

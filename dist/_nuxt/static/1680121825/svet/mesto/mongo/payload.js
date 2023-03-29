@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mongo", (function(a){return {data:[{place:[{id:2131,id_state:215,name:"Mongo",population:31699,area:19.05,altitude:418,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mongo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

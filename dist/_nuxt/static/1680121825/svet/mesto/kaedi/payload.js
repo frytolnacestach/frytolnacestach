@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kaedi", (function(a){return {data:[{place:[{id:1485,id_state:151,name:"Kaédi",population:22723,area:48.8,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kaedi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

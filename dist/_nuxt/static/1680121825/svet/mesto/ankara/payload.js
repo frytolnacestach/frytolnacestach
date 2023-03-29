@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ankara", (function(a){return {data:[{place:[{id:2224,id_state:225,name:"Ankara",population:5445026,area:2491,altitude:938,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ankara",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/monterrey", (function(a){return {data:[{place:[{id:1545,id_state:157,name:"Monterrey",population:1282847,area:443.3,altitude:538,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"monterrey",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

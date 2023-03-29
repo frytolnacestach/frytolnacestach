@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kara", (function(a){return {data:[{place:[{id:2145,id_state:217,name:"Kara",population:140000,area:110.3,altitude:440,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kara",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

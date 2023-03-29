@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bassar", (function(a){return {data:[{place:[{id:2148,id_state:217,name:"Bassar",population:73200,area:21.2,altitude:256,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bassar",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

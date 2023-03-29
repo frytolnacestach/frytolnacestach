@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ainaro", (function(a){return {data:[{place:[{id:2189,id_state:221,name:"Ainaro",population:9776,area:156.53,altitude:877,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ainaro",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

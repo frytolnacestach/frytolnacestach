@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kawasaki", (function(a){return {data:[{place:[{id:1116,id_state:114,name:"Kawasaki",population:1460906,area:142.7,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kawasaki",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

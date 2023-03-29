@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/karbala", (function(a){return {data:[{place:[{id:1045,id_state:107,name:"Karbala",population:780522,area:19,altitude:28,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"karbala",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

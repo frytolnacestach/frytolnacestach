@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/afega", (function(a){return {data:[{place:[{id:2408,id_state:244,name:"Afega",population:1665,area:2.74,altitude:48,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"afega",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

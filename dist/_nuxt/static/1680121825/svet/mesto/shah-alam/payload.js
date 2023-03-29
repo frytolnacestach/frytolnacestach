@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/shah-alam", (function(a){return {data:[{place:[{id:1552,id_state:158,name:"Shah Alam",population:650447,area:290.3,altitude:50,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"shah-alam",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

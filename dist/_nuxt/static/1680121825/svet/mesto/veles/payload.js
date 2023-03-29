@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/veles", (function(a){return {data:[{place:[{id:1413,id_state:144,name:"Veles",population:43364,area:104.13,altitude:157,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"veles",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

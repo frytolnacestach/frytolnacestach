@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/antanifotsy", (function(a){return {data:[{place:[{id:1394,id_state:142,name:"Antanifotsy",population:124000,area:66.5,altitude:1400,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"antanifotsy",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

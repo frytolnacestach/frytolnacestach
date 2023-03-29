@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/petah-tikva", (function(a){return {data:[{place:[{id:1002,id_state:103,name:"Petah Tikva",population:248934,area:35.86,altitude:23,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"petah-tikva",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

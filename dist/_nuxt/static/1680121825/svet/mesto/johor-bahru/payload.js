@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/johor-bahru", (function(a){return {data:[{place:[{id:1549,id_state:158,name:"Johor Bahru",population:1117191,area:185,altitude:29,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"johor-bahru",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ramallah", (function(a){return {data:[{place:[{id:1798,id_state:183,name:"Ramalláh",population:145650,area:16,altitude:850,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ramallah",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/subotica", (function(a){return {data:[{place:[{id:1866,id_state:190,name:"Subotica",population:141554,area:100,altitude:113,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"subotica",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

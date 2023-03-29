@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bydgoszcz", (function(a){return {data:[{place:[{id:1765,id_state:179,name:"Bydgoszcz",population:358614,area:175.98,altitude:70,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bydgoszcz",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

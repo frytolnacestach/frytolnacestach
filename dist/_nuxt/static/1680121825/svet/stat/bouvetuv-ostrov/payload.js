@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/stat/bouvetuv-ostrov", (function(a){return {data:[{place:[{id:34,mpz:"BV",tld:".bv",name:"Bouvetův ostrov",area:49,population:a,slug:"bouvetuv-ostrov",id_continent:7,number_cities:a,information_chatgpt:a,image_cover:a,image_hero:a}],placesCities:[]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/vila-nova-de-gaia", (function(a){return {data:[{place:[{id:1810,id_state:184,name:"Vila Nova de Gaia",population:88302,area:168.46,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"vila-nova-de-gaia",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

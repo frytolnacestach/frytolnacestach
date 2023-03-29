@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/scarborough", (function(a){return {data:[{place:[{id:2242,id_state:226,name:"Scarborough",population:12500,area:4.11,altitude:20,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"scarborough",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

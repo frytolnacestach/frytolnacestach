@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/siauliai", (function(a){return {data:[{place:[{id:1301,id_state:133,name:"Šiauliai",population:100156,area:81,altitude:123,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"siauliai",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/nablus", (function(a){return {data:[{place:[{id:1794,id_state:183,name:"Nablus",population:209903,area:28,altitude:570,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nablus",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

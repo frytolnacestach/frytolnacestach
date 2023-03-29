@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/rotorua", (function(a){return {data:[{place:[{id:1687,id_state:171,name:"Rotorua",population:56100,area:94,altitude:280,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rotorua",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

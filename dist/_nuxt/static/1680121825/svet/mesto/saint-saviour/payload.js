@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/saint-saviour", (function(a){return {data:[{place:[{id:1079,id_state:111,name:"Saint Saviour",population:18900,area:5.6,altitude:45,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saint-saviour",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

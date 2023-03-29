@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/cockburn-town", (function(a){return {data:[{place:[{id:2118,id_state:214,name:"Cockburn Town",population:1523,area:3.26,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cockburn-town",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

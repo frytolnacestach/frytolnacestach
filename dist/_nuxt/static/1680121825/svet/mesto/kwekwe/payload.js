@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kwekwe", (function(a){return {data:[{place:[{id:2460,id_state:249,name:"Kwekwe",population:118023,area:29.7,altitude:1132,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kwekwe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

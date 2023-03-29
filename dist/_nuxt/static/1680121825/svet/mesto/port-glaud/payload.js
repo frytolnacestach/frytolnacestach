@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/port-glaud", (function(a){return {data:[{place:[{id:1915,id_state:195,name:"Port Glaud",population:2499,area:6.55,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"port-glaud",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

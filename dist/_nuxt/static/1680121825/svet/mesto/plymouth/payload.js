@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/plymouth", (function(a){return {data:[{place:[{id:1488,id_state:152,name:"Plymouth",population:3000,area:1.44,altitude:30,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"plymouth",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

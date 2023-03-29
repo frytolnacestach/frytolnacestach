@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/taiarapu-ouest", (function(a){return {data:[{place:[{id:1726,id_state:175,name:"Taiarapu-Ouest",population:5163,area:118.6,altitude:8,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"taiarapu-ouest",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

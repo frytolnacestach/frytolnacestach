@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/cape-town", (function(a){return {data:[{place:[{id:2436,id_state:247,name:"Cape Town",population:4336883,area:2461.15,altitude:17,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cape-town",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mesopotamia", (function(a){return {data:[{place:[{id:2339,id_state:237,name:"Mesopotamia",population:510,area:1.6,altitude:200,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mesopotamia",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

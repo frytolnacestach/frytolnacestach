@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kapolei", (function(a){return {data:[{place:[{id:2296,id_state:232,name:"Kapolei",population:21706,area:15.39,altitude:11,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kapolei",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

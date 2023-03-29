@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sabah-as-salim", (function(a){return {data:[{place:[{id:1205,id_state:123,name:"Sabah as-Salim",population:139163,area:45,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sabah-as-salim",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

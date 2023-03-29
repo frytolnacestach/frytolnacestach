@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/san-lorenzo", (function(a){return {data:[{place:[{id:1823,id_state:186,name:"San Lorenzo",population:295351,area:69.6,altitude:71,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"san-lorenzo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kampong-chhnang", (function(a){return {data:[{place:[{id:1144,id_state:117,name:"Kampong Chhnang",population:97508,area:51.16,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kampong-chhnang",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ngatpang", (function(a){return {data:[{place:[{id:1818,id_state:185,name:"Ngatpang",population:156,area:43.2,altitude:38,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ngatpang",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/suwon", (function(a){return {data:[{place:[{id:1195,id_state:122,name:"Suwon",population:1078004,area:121.09,altitude:44,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"suwon",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

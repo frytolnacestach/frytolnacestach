@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sihanoukville", (function(a){return {data:[{place:[{id:1141,id_state:117,name:"Sihanoukville",population:144124,area:868.81,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sihanoukville",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

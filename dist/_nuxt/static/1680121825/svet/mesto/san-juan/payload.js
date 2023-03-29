@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/san-juan", (function(a){return {data:[{place:[{id:1781,id_state:182,name:"San Juan",population:395326,area:122.22,altitude:8,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"san-juan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

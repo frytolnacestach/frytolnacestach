@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/chindini", (function(a){return {data:[{place:[{id:1166,id_state:119,name:"Chindini",population:11785,area:19.1,altitude:45,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chindini",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

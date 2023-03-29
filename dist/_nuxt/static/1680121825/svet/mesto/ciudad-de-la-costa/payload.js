@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ciudad-de-la-costa", (function(a){return {data:[{place:[{id:2315,id_state:234,name:"Ciudad de la Costa",population:96587,area:54.48,altitude:17,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ciudad-de-la-costa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

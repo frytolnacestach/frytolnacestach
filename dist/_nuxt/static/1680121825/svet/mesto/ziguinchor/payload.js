@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ziguinchor", (function(a){return {data:[{place:[{id:2028,id_state:205,name:"Ziguinchor",population:162387,area:9.61,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ziguinchor",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

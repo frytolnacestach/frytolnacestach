@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/utrecht", (function(a){return {data:[{place:[{id:1631,id_state:166,name:"Utrecht",population:357578,area:99.32,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"utrecht",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

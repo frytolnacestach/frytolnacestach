@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mohale's-hoek", (function(a){return {data:[{place:[{id:1292,id_state:132,name:"Mohale's Hoek",population:15356,area:4.4,altitude:2097,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mohale's-hoek",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/hamar", (function(a){return {data:[{place:[{id:1645,id_state:167,name:"Hamar",population:30423,area:353.55,altitude:140,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hamar",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

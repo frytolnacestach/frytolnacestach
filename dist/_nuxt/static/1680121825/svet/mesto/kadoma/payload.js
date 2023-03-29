@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kadoma", (function(a){return {data:[{place:[{id:2461,id_state:249,name:"Kadoma",population:100149,area:14,altitude:1225,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kadoma",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

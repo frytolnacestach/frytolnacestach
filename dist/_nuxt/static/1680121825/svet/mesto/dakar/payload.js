@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/dakar", (function(a){return {data:[{place:[{id:2023,id_state:205,name:"Dakar",population:2701510,area:83.26,altitude:22,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dakar",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

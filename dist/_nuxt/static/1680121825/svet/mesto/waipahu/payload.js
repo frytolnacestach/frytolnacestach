@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/waipahu", (function(a){return {data:[{place:[{id:2301,id_state:232,name:"Waipahu",population:38145,area:7.46,altitude:90,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"waipahu",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

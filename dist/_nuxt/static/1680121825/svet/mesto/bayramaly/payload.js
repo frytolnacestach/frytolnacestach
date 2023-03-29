@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bayramaly", (function(a){return {data:[{place:[{id:2198,id_state:222,name:"Bayramaly",population:76648,area:42.3,altitude:201,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bayramaly",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/irbid", (function(a){return {data:[{place:[{id:1100,id_state:113,name:"Irbid",population:1111293,area:1462,altitude:619,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"irbid",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

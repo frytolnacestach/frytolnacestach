@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/le-tampon", (function(a){return {data:[{place:[{id:1844,id_state:188,name:"Le Tampon",population:78998,area:164.04,altitude:481,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"le-tampon",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

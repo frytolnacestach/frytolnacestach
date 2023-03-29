@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sainte-marie", (function(a){return {data:[{place:[{id:1471,id_state:150,name:"Sainte-Marie",population:20986,area:45.97,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sainte-marie",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

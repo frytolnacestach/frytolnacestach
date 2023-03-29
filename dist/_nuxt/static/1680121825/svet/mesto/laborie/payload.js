@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/laborie", (function(a){return {data:[{place:[{id:1254,id_state:128,name:"Laborie",population:2083,area:1,altitude:30,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"laborie",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

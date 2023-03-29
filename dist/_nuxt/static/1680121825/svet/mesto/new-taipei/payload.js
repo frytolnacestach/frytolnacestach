@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/new-taipei", (function(a){return {data:[{place:[{id:2253,id_state:228,name:"New Taipei",population:4020159,area:2052.57,altitude:13,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"new-taipei",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

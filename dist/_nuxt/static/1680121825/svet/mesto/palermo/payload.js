@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/palermo", (function(a){return {data:[{place:[{id:1072,id_state:110,name:"Palermo",population:655875,area:158.9,altitude:14,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"palermo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

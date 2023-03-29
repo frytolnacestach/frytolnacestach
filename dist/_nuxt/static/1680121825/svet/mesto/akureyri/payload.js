@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/akureyri", (function(a){return {data:[{place:[{id:1061,id_state:109,name:"Akureyri",population:19263,area:123.87,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"akureyri",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

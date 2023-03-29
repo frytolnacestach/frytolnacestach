@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/quatre-bornes", (function(a){return {data:[{place:[{id:1512,id_state:154,name:"Quatre Bornes",population:77449,area:10.21,altitude:430,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"quatre-bornes",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/lublin", (function(a){return {data:[{place:[{id:1766,id_state:179,name:"Lublin",population:339784,area:147.44,altitude:165,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lublin",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

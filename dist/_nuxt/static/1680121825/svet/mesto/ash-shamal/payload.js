@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ash-shamal", (function(a){return {data:[{place:[{id:1836,id_state:187,name:"Ash Shamal",population:12270,area:142.9,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ash-shamal",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

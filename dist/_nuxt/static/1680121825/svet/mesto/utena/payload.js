@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/utena", (function(a){return {data:[{place:[{id:1307,id_state:133,name:"Utena",population:28134,area:15,altitude:128,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"utena",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

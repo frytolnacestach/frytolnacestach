@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/velenje", (function(a){return {data:[{place:[{id:1965,id_state:200,name:"Velenje",population:23837,area:82.06,altitude:390,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"velenje",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

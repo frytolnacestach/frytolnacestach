@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/namangan", (function(a){return {data:[{place:[{id:2324,id_state:235,name:"Namangan",population:540600,area:109.5,altitude:475,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"namangan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

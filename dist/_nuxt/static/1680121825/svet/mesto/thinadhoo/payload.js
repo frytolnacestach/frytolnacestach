@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/thinadhoo", (function(a){return {data:[{place:[{id:1523,id_state:155,name:"Thinadhoo",population:8529,area:.87,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"thinadhoo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

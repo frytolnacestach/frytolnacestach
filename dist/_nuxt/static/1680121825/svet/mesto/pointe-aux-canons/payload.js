@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/pointe-aux-canons", (function(a,b){return {data:[{place:[{id:1776,id_state:180,name:"Pointe aux Canons",population:b,area:b,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pointe-aux-canons",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null,0)));

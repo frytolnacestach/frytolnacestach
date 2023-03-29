@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/lifou", (function(a){return {data:[{place:[{id:1582,id_state:161,name:"Lifou",population:9635,area:1175,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lifou",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

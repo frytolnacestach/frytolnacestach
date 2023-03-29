@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bensonville", (function(a){return {data:[{place:[{id:1280,id_state:131,name:"Bensonville",population:61449,area:8,altitude:51,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bensonville",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

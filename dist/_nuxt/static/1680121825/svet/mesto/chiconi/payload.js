@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/chiconi", (function(a){return {data:[{place:[{id:2429,id_state:246,name:"Chiconi",population:13043,area:4.26,altitude:95,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chiconi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

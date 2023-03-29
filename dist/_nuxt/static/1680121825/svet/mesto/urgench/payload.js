@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/urgench", (function(a){return {data:[{place:[{id:2331,id_state:235,name:"Urgench",population:195100,area:58,altitude:91,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"urgench",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/wahiawa", (function(a){return {data:[{place:[{id:2300,id_state:232,name:"Wahiawa",population:17160,area:3.94,altitude:282,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"wahiawa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

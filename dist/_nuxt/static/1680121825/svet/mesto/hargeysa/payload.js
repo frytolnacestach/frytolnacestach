@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/hargeysa", (function(a){return {data:[{place:[{id:2034,id_state:206,name:"Hargeysa",population:478723,area:29.15,altitude:1216,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hargeysa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

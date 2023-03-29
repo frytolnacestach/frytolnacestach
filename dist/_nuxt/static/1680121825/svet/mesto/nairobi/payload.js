@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/nairobi", (function(a){return {data:[{place:[{id:1118,id_state:115,name:"Nairobi",population:4397073,area:696,altitude:1661,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nairobi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mashhad", (function(a){return {data:[{place:[{id:1049,id_state:108,name:"Mashhad",population:3103992,area:431,altitude:985,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mashhad",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

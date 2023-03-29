@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/lahore", (function(a){return {data:[{place:[{id:1749,id_state:178,name:"Lahore",population:11126285,area:1772,altitude:217,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lahore",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

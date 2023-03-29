@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tripolis", (function(a){return {data:[{place:[{id:1328,id_state:136,name:"Tripolis",population:1150989,area:400,altitude:81,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tripolis",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tejen", (function(a){return {data:[{place:[{id:2200,id_state:222,name:"Tejen",population:75362,area:16.9,altitude:249,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tejen",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

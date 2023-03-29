@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/coral-bay", (function(a){return {data:[{place:[{id:2373,id_state:240,name:"Coral Bay",population:2379,area:3.97,altitude:48,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"coral-bay",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

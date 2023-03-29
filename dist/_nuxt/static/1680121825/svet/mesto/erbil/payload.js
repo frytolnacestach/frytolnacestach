@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/erbil", (function(a){return {data:[{place:[{id:1041,id_state:107,name:"Erbil",population:1190046,area:44,altitude:420,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"erbil",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

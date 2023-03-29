@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/thika", (function(a){return {data:[{place:[{id:1123,id_state:115,name:"Thika",population:281622,area:37,altitude:1530,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"thika",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

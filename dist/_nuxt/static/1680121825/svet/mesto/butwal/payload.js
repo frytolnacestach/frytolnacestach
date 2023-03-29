@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/butwal", (function(a){return {data:[{place:[{id:1657,id_state:168,name:"Butwal",population:91717,area:26.43,altitude:200,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"butwal",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

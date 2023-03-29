@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/al-hudaydah", (function(a){return {data:[{place:[{id:2415,id_state:245,name:"Al Hudaydah",population:1248000,area:97,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"al-hudaydah",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

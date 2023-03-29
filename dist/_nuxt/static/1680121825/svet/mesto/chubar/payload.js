@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/chubar", (function(a){return {data:[{place:[{id:1899,id_state:193,name:"Chubar",population:558274,area:116.67,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chubar",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

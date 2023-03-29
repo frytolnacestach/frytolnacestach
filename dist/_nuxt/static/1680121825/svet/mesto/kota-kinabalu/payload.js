@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kota-kinabalu", (function(a){return {data:[{place:[{id:1555,id_state:158,name:"Kota Kinabalu",population:462963,area:351,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kota-kinabalu",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

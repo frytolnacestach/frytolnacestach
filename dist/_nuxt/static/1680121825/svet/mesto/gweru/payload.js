@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/gweru", (function(a){return {data:[{place:[{id:2458,id_state:249,name:"Gweru",population:154825,area:57.7,altitude:1469,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gweru",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

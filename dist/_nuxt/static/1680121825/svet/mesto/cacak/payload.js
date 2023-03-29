@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/cacak", (function(a){return {data:[{place:[{id:1869,id_state:190,name:"Čačak",population:115337,area:636.92,altitude:204,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cacak",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

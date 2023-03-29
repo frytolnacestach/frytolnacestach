@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sandakan", (function(a){return {data:[{place:[{id:1556,id_state:158,name:"Sandakan",population:414972,area:212,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sandakan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

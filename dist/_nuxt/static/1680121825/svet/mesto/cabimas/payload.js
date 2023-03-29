@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/cabimas", (function(a){return {data:[{place:[{id:2352,id_state:238,name:"Cabimas",population:406722,area:536,altitude:11,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cabimas",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/prins-karls-forland", (function(a){return {data:[{place:[{id:1992,id_state:201,name:"Prins Karls Forland",population:0,area:a,altitude:a,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"prins-karls-forland",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

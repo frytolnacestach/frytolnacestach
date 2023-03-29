@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/dapaong", (function(a){return {data:[{place:[{id:2152,id_state:217,name:"Dapaong",population:51100,area:82,altitude:240,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dapaong",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

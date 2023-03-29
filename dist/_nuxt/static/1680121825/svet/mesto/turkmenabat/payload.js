@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/turkmenabat", (function(a){return {data:[{place:[{id:2196,id_state:222,name:"Türkmenabat",population:234817,area:154.9,altitude:162,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"turkmenabat",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

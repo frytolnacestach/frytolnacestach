@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kalabancoro", (function(a){return {data:[{place:[{id:1420,id_state:145,name:"Kalabancoro",population:147038,area:156,altitude:359,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kalabancoro",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

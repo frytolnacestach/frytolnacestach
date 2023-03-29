@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tul-karm", (function(a){return {data:[{place:[{id:1799,id_state:183,name:"Tul-Karm",population:128234,area:23,altitude:160,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tul-karm",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

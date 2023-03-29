@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kotor", (function(a){return {data:[{place:[{id:1377,id_state:140,name:"Kotor",population:8400,area:299,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kotor",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/raby-bay", (function(a){return {data:[{place:[{id:1607,id_state:163,name:"Raby Bay",population:327,area:.13,altitude:30,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"raby-bay",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

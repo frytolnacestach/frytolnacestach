@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/gisenyi", (function(a){return {data:[{place:[{id:1885,id_state:192,name:"Gisenyi",population:83728,area:120,altitude:1839,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gisenyi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

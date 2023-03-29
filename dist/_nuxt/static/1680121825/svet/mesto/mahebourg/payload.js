@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mahebourg", (function(a){return {data:[{place:[{id:1516,id_state:154,name:"Mahébourg",population:15953,area:1.94,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mahebourg",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

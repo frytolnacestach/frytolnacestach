@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/raqqa", (function(a){return {data:[{place:[{id:2100,id_state:212,name:"Raqqa",population:177636,area:19.12,altitude:245,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"raqqa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

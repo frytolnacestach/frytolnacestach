@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/tashkent", (function(a){return {data:[{place:[{id:2323,id_state:235,name:"Tashkent",population:2405200,area:334.8,altitude:487,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tashkent",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

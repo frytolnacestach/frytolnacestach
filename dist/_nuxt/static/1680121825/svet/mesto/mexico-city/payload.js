@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mexico-city", (function(a){return {data:[{place:[{id:1538,id_state:157,name:"Mexico City",population:21782378,area:1485,altitude:2240,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mexico-city",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/jabor", (function(a){return {data:[{place:[{id:1400,id_state:143,name:"Jabor",population:1358,area:.8,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"jabor",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

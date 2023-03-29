@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/grand-turk", (function(a){return {data:[{place:[{id:2117,id_state:214,name:"Grand Turk",population:3150,area:17.89,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"grand-turk",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

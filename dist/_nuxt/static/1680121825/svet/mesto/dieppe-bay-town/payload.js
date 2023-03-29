@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/dieppe-bay-town", (function(a){return {data:[{place:[{id:1172,id_state:120,name:"Dieppe Bay Town",population:1209,area:1,altitude:30,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dieppe-bay-town",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

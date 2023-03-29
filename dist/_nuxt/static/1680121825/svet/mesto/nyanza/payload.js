@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/nyanza", (function(a){return {data:[{place:[{id:1889,id_state:192,name:"Nyanza",population:58570,area:12,altitude:1750,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nyanza",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

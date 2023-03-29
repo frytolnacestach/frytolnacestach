@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ptuj", (function(a){return {data:[{place:[{id:1968,id_state:200,name:"Ptuj",population:18384,area:66.1,altitude:238,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ptuj",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/antananarivo", (function(a){return {data:[{place:[{id:1388,id_state:142,name:"Antananarivo",population:1438000,area:88.97,altitude:1285,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"antananarivo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

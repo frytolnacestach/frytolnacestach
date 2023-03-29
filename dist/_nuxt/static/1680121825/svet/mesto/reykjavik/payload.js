@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/reykjavik", (function(a){return {data:[{place:[{id:1058,id_state:109,name:"Reykjavik",population:131136,area:274.5,altitude:61,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"reykjavik",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

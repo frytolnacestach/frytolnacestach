@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/guadalupe", (function(a){return {data:[{place:[{id:2068,id_state:209,name:"Guadalupe",population:19478,area:7,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"guadalupe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/dharan", (function(a){return {data:[{place:[{id:1653,id_state:168,name:"Dharan",population:116244,area:14.06,altitude:600,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dharan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

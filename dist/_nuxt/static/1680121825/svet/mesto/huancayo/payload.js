@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/huancayo", (function(a){return {data:[{place:[{id:1716,id_state:174,name:"Huancayo",population:315597,area:279.46,altitude:3250,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"huancayo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

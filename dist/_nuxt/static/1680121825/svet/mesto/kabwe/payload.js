@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kabwe", (function(a){return {data:[{place:[{id:2447,id_state:248,name:"Kabwe",population:202914,area:159.24,altitude:1200,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kabwe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

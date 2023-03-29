@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/panama", (function(a){return {data:[{place:[{id:1698,id_state:173,name:"Panamá",population:880691,area:275,altitude:20,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"panama",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

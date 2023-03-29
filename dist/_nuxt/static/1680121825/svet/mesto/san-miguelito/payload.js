@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/san-miguelito", (function(a){return {data:[{place:[{id:1699,id_state:173,name:"San Miguelito",population:352238,area:56.1,altitude:49,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"san-miguelito",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

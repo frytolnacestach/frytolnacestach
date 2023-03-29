@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/omsk", (function(a){return {data:[{place:[{id:1878,id_state:191,name:"Omsk",population:1154006,area:572.91,altitude:87,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"omsk",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

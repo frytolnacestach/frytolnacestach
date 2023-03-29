@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/fuvahmulah", (function(a){return {data:[{place:[{id:1520,id_state:155,name:"Fuvahmulah",population:11687,area:3.41,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"fuvahmulah",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

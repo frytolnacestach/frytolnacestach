@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/balykci", (function(a){return {data:[{place:[{id:1136,id_state:116,name:"Balykči",population:17600,area:23,altitude:610,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"balykci",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

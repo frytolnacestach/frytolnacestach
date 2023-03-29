@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/toliara", (function(a){return {data:[{place:[{id:1393,id_state:142,name:"Toliara",population:140000,area:21.22,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"toliara",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

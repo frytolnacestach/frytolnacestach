@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/papeete", (function(a){return {data:[{place:[{id:1718,id_state:175,name:"Papeete",population:131695,area:17.4,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"papeete",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

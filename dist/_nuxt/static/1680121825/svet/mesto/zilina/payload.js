@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/zilina", (function(a){return {data:[{place:[{id:1996,id_state:202,name:"Žilina",population:78730,area:80.02,altitude:342,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zilina",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

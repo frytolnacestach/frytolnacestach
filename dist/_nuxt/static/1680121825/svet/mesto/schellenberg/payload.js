@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/schellenberg", (function(a){return {data:[{place:[{id:1267,id_state:129,name:"Schellenberg",population:1203,area:3.54,altitude:470,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"schellenberg",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

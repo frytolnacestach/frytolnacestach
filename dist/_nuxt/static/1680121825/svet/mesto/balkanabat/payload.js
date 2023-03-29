@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/balkanabat", (function(a){return {data:[{place:[{id:2197,id_state:222,name:"Balkanabat",population:145239,area:178.75,altitude:21,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"balkanabat",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

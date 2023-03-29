@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/barka", (function(a){return {data:[{place:[{id:1691,id_state:172,name:"Barka",population:100000,area:200,altitude:9,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"barka",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

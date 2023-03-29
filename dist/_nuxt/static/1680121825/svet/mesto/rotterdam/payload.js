@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/rotterdam", (function(a){return {data:[{place:[{id:1629,id_state:166,name:"Rotterdam",population:650100,area:319.35,altitude:-2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rotterdam",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

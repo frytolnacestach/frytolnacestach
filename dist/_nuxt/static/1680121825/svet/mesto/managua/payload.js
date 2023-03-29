@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/managua", (function(a){return {data:[{place:[{id:1618,id_state:165,name:"Managua",population:1134417,area:267.93,altitude:83,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"managua",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ta-khmau", (function(a){return {data:[{place:[{id:1143,id_state:117,name:"Ta Khmau",population:101488,area:29.61,altitude:11,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ta-khmau",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

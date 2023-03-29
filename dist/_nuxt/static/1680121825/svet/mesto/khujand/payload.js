@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/khujand", (function(a){return {data:[{place:[{id:2164,id_state:219,name:"Khujand",population:170865,area:100,altitude:300,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"khujand",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

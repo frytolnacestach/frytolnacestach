@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sabac", (function(a){return {data:[{place:[{id:1870,id_state:190,name:"Šabac",population:114815,area:411.1,altitude:73,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sabac",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bizerte", (function(a){return {data:[{place:[{id:2207,id_state:223,name:"Bizerte",population:115268,area:36.51,altitude:17,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bizerte",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

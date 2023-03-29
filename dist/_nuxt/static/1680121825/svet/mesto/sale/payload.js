@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sale", (function(a){return {data:[{place:[{id:1343,id_state:137,name:"Salé",population:1010586,area:86,altitude:40,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sale",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mariupol", (function(a){return {data:[{place:[{id:2281,id_state:230,name:"Mariupol",population:443541,area:236,altitude:36,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mariupol",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

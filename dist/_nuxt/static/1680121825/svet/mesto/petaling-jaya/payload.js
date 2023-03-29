@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/petaling-jaya", (function(a){return {data:[{place:[{id:1553,id_state:158,name:"Petaling Jaya",population:613977,area:97.2,altitude:42,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"petaling-jaya",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

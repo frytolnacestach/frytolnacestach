@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/port-moresby", (function(a){return {data:[{place:[{id:1728,id_state:176,name:"Port Moresby",population:328000,area:240,altitude:70,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"port-moresby",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

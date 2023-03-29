@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/saint-helier", (function(a){return {data:[{place:[{id:1078,id_state:111,name:"Saint Helier",population:33000,area:10.3,altitude:28,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saint-helier",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

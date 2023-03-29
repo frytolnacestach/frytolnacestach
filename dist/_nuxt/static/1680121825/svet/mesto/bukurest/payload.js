@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bukurest", (function(a){return {data:[{place:[{id:1851,id_state:189,name:"Bukurešť",population:1866000,area:228,altitude:96,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bukurest",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

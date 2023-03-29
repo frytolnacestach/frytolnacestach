@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/suhbaatar", (function(a){return {data:[{place:[{id:1445,id_state:147,name:"Sühbaatar",population:26000,area:4.7,altitude:2000,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"suhbaatar",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

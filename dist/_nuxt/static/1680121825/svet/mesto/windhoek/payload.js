@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/windhoek", (function(a){return {data:[{place:[{id:1568,id_state:160,name:"Windhoek",population:431000,area:645,altitude:1654,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"windhoek",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/san-fernando", (function(a){return {data:[{place:[{id:2234,id_state:226,name:"San Fernando",population:56844,area:17.6,altitude:9,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"san-fernando",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

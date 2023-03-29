@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/rijad", (function(a){return {data:[{place:[{id:1891,id_state:193,name:"Rijád",population:8154059,area:1560,altitude:612,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rijad",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/konibodom", (function(a){return {data:[{place:[{id:2168,id_state:219,name:"Konibodom",population:48700,area:5.86,altitude:350,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"konibodom",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

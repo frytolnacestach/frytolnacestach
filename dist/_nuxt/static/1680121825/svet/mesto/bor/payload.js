@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bor", (function(a){return {data:[{place:[{id:2057,id_state:208,name:"Bor",population:97212,area:92,altitude:425,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bor",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/saint-martin", (function(a){return {data:[{place:[{id:1084,id_state:111,name:"Saint Martin",population:5800,area:6.3,altitude:67,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saint-martin",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

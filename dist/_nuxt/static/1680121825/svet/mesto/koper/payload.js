@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/koper", (function(a){return {data:[{place:[{id:1966,id_state:200,name:"Koper",population:25214,area:20.63,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"koper",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

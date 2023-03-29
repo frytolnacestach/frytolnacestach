@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/south-tarawa", (function(a){return {data:[{place:[{id:1148,id_state:118,name:"South Tarawa",population:56207,area:15.17,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"south-tarawa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

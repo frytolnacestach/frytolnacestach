@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/las-cumbres", (function(a){return {data:[{place:[{id:1704,id_state:173,name:"Las Cumbres",population:102098,area:55.06,altitude:100,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"las-cumbres",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

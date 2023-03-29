@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/segou", (function(a){return {data:[{place:[{id:1421,id_state:145,name:"Segou",population:130690,area:18600,altitude:345,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"segou",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/kumanovo", (function(a){return {data:[{place:[{id:1409,id_state:144,name:"Kumanovo",population:105484,area:509.87,altitude:350,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kumanovo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

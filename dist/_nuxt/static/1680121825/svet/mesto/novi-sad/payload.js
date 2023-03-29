@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/novi-sad", (function(a){return {data:[{place:[{id:1863,id_state:190,name:"Novi Sad",population:231798,area:699.14,altitude:80,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"novi-sad",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/beau-vallon", (function(a){return {data:[{place:[{id:1917,id_state:195,name:"Beau Vallon",population:2348,area:1.31,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"beau-vallon",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

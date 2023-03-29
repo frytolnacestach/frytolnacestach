@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/khovd", (function(a){return {data:[{place:[{id:1442,id_state:147,name:"Khovd",population:30212,area:20.81,altitude:1371,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"khovd",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

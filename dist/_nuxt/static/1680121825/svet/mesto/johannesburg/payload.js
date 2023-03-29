@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/johannesburg", (function(a){return {data:[{place:[{id:2434,id_state:247,name:"Johannesburg",population:5870355,area:1645.92,altitude:1753,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"johannesburg",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

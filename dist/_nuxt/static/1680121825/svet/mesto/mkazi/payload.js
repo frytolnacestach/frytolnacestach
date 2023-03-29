@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/mkazi", (function(a){return {data:[{place:[{id:1165,id_state:119,name:"Mkazi",population:12000,area:14.31,altitude:61,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mkazi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/choibalsan", (function(a){return {data:[{place:[{id:1441,id_state:147,name:"Choibalsan",population:37608,area:87.3,altitude:747,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"choibalsan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

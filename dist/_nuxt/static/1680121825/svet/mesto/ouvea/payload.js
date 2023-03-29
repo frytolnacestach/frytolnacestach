@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ouvea", (function(a){return {data:[{place:[{id:1585,id_state:161,name:"Ouvéa",population:3918,area:132.3,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ouvea",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

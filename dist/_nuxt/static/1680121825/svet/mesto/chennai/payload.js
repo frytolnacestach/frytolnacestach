@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/chennai", (function(a){return {data:[{place:[{id:1023,id_state:105,name:"Chennai",population:7631396,area:426,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chennai",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

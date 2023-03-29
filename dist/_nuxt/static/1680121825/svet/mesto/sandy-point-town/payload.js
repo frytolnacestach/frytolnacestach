@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/sandy-point-town", (function(a){return {data:[{place:[{id:1170,id_state:120,name:"Sandy Point Town",population:1441,area:1.1,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sandy-point-town",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

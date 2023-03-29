@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/agadir", (function(a){return {data:[{place:[{id:1347,id_state:137,name:"Agadir",population:421844,area:160,altitude:25,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"agadir",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

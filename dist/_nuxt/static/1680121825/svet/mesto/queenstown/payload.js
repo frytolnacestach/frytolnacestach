@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/queenstown", (function(a){return {data:[{place:[{id:1950,id_state:198,name:"Queenstown",population:97870,area:20.43,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"queenstown",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

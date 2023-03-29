@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ruhengeri", (function(a){return {data:[{place:[{id:1884,id_state:192,name:"Ruhengeri",population:86568,area:77,altitude:1895,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ruhengeri",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

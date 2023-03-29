@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/grand-dakar", (function(a){return {data:[{place:[{id:2024,id_state:205,name:"Grand Dakar",population:1342114,area:19.8,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"grand-dakar",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));
