@@ -22,12 +22,18 @@
                             <div class="o-hot-info__items">
                                 <div class="o-hot-info__item">
                                     <h4 class="o-hot-info__title">Kontinent</h4>
-                                    <span class="o-hot-info__value">{{ place[0].id_continent }}</span>
+                                    <span class="o-hot-info__value">{{ placeContinent[0].name }}</span>
                                 </div>
+                                <div class="o-hot-info__item">
+                                    <h4 class="o-hot-info__title">Rozloha</h4>
+                                    <span class="o-hot-info__value">{{ place[0].area }} km2</span>
+                                </div>
+                                <!--
                                 <div class="o-hot-info__item">
                                     <h4 class="o-hot-info__title">Počet měst</h4>
                                     <span class="o-hot-info__value">{{ place[0].number_cities }}</span>
                                 </div>
+                                -->
                                 <div class="o-hot-info__item">
                                     <h4 class="o-hot-info__title">MPZ</h4>
                                     <span class="o-hot-info__value">{{ place[0].mpz }}</span>
@@ -35,10 +41,6 @@
                                 <div class="o-hot-info__item">
                                     <h4 class="o-hot-info__title">TLD</h4>
                                     <span class="o-hot-info__value">{{ place[0].tld }}</span>
-                                </div>
-                                <div class="o-hot-info__item">
-                                    <h4 class="o-hot-info__title">Rozloha</h4>
-                                    <span class="o-hot-info__value">{{ place[0].area }} km2</span>
                                 </div>
                                 <div class="o-hot-info__item">
                                     <h4 class="o-hot-info__title">Populace</h4>
@@ -224,7 +226,10 @@
                 // Načtení měst státu podle jeho id
                 const placesCities = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-state/${place[0].id}`)
 
-                return { place, placesCities }
+                // Načtení informací o continentu
+                const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${place[0].id_continent}`)
+
+                return { place, placesCities, placeContinent }
             } catch (error) {
                 console.error(error)
             }
