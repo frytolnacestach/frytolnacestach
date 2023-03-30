@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/la-chorrera", (function(a){return {data:[{place:[{id:1705,id_state:173,name:"La Chorrera",population:96827,area:59.06,altitude:22,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"la-chorrera",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

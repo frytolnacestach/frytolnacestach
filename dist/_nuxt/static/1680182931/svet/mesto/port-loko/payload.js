@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/port-loko", (function(a){return {data:[{place:[{id:2009,id_state:203,name:"Port Loko",population:27676,area:10.54,altitude:29,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"port-loko",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

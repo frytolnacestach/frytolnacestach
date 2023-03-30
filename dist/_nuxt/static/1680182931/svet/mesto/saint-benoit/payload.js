@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/saint-benoit", (function(a){return {data:[{place:[{id:1849,id_state:188,name:"Saint-Benoît",population:32553,area:229.85,altitude:21,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saint-benoit",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

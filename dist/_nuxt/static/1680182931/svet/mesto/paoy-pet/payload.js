@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/paoy-pet", (function(a){return {data:[{place:[{id:1142,id_state:117,name:"Paôy Pêt",population:107944,area:97.51,altitude:70,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"paoy-pet",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

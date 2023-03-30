@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/ile-des-pins", (function(a){return {data:[{place:[{id:1587,id_state:161,name:"Île des Pins",population:2333,area:15.3,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ile-des-pins",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

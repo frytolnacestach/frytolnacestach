@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet/mesto/bien-hoa", (function(a){return {data:[{place:[{id:2379,id_state:241,name:"Biên Hòa",population:1112581,area:264.1,altitude:18,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bien-hoa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));
