@@ -22,6 +22,11 @@
         height: 0;
         padding-bottom: 150%;
 
+        @media only screen and (min-width: $ti) {
+            width: 50%;
+            padding-bottom: 75%;
+        }
+
         @media only screen and (min-width: $sm) {
             width: 33.333%;
             padding-bottom: 50%;

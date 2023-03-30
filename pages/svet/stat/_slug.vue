@@ -74,6 +74,28 @@
                         </div>
                     </section>
                     <!-- SECTION - information by ChatGPT END -->
+
+                    <!-- SECTION - Měna -->
+                    <section class="t-section py-2" v-if="place[0].information_chatgpt">
+                        <div class="t-section__inner">
+                            <div class="o-information-block">
+                                <div class="o-information-block__outer">
+                                    <div class="o-information-block__inner">
+                                        <h2 class="o-information-block__title">PENÍZE</h2>
+                                        <div class="o-information-block__perex text-align-center-mobile text-align-left-desktop">
+                                            <div class="o-information-block_wysiwyg">{{ place[0].currency_name }} ({{ place[0].currency_code }})</div>
+                                            <!--
+                                            <div class="o-information-block__author">
+                                                <i class="m-author">zdroj. <a class="m-author__link" href="https://chat.openai.com/chat" target="_blank">ChatGPT</a></i>
+                                            </div>
+                                            -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - Měna END -->
                     
                     <!-- SECTION - města -->
                     <section class="t-section my-4">
