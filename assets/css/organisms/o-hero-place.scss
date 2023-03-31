@@ -48,6 +48,10 @@
         color: $white;
         margin: 0 0 5px;
         font-size: $fs-40;
+
+        @media only screen and (min-width: $md) {
+            font-size: $fs-50;
+        }
     }
 
     &__perex {
