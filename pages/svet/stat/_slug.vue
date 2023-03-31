@@ -3,55 +3,53 @@
         <div class="t-main">
             
             <!-- SECTION - hero -->
-            <section>
-                <div class="o-hero-article" v-bind:style="{ 'background-image': 'url(' + (place[0].image_hero ? place[0].image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
-                    <div class="o-hero-article__outer">
-                        <div class="o-hero-article__inner">
-                            <h1 class="o-hero-article__headline" v-if="place[0].name">{{ place[0].name }}</h1>
+            <section class="t-section">
+                <div class="o-hero-place" v-bind:style="{ 'background-image': 'url(' + (place[0].image_hero ? place[0].image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
+                    <div class="o-hero-place__outer">
+                        <div class="o-hero-place__inner">
+                            <h1 class="o-hero-place__headline" v-if="place[0].name">{{ place[0].name }}</h1>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- SECTION - hero - END -->
 
-            <!-- SECTION - hot info -->
-            <section>
-                <div class="o-hot-info">
-                    <div class="o-hot-info__outer">
-                        <div class="o-hot-info__inner">
-                            <div class="o-hot-info__items">
-                                <div class="o-hot-info__item">
-                                    <h4 class="o-hot-info__title">Kontinent</h4>
-                                    <span class="o-hot-info__value">{{ placeContinent[0].name }}</span>
+                <!-- SECTION - hot info -->
+                <div class="js_o-hot-info-hero o-hot-info-hero">
+                    <div class="o-hot-info-hero__outer">
+                        <div class="o-hot-info-hero__inner">
+                            <div class="o-hot-info-hero__items">
+                                <div class="o-hot-info-hero__item">
+                                    <h4 class="o-hot-info-hero__title">Kontinent</h4>
+                                    <span class="o-hot-info-hero__value">{{ placeContinent[0].name }}</span>
                                 </div>
-                                <div class="o-hot-info__item">
-                                    <h4 class="o-hot-info__title">Rozloha</h4>
-                                    <span class="o-hot-info__value">{{ place[0].area }} km2</span>
+                                <div class="o-hot-info-hero__item">
+                                    <h4 class="o-hot-info-hero__title">Rozloha</h4>
+                                    <span class="o-hot-info-hero__value">{{ place[0].area }} km2</span>
+                                </div>
+                                <div class="o-hot-info-hero__item">
+                                    <h4 class="o-hot-info-hero__title">Populace</h4>
+                                    <span class="o-hot-info-hero__value">{{ place[0].population }}</span>
                                 </div>
                                 <!--
-                                <div class="o-hot-info__item">
-                                    <h4 class="o-hot-info__title">Počet měst</h4>
-                                    <span class="o-hot-info__value">{{ place[0].number_cities }}</span>
+                                <div class="o-hot-info-hero__item">
+                                    <h4 class="o-hot-info-hero__title">Počet měst</h4>
+                                    <span class="o-hot-info-hero__value">{{ place[0].number_cities }}</span>
                                 </div>
                                 -->
-                                <div class="o-hot-info__item">
-                                    <h4 class="o-hot-info__title">MPZ</h4>
-                                    <span class="o-hot-info__value">{{ place[0].mpz }}</span>
+                                <div class="o-hot-info-hero__item">
+                                    <h4 class="o-hot-info-hero__title">MPZ</h4>
+                                    <span class="o-hot-info-hero__value">{{ place[0].mpz }}</span>
                                 </div>
-                                <div class="o-hot-info__item">
-                                    <h4 class="o-hot-info__title">TLD</h4>
-                                    <span class="o-hot-info__value">{{ place[0].tld }}</span>
-                                </div>
-                                <div class="o-hot-info__item">
-                                    <h4 class="o-hot-info__title">Populace</h4>
-                                    <span class="o-hot-info__value">{{ place[0].population }}</span>
+                                <div class="o-hot-info-hero__item">
+                                    <h4 class="o-hot-info-hero__title">TLD</h4>
+                                    <span class="o-hot-info-hero__value">{{ place[0].tld }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- SECTION - hot info - END -->
             </section>
-            <!-- SECTION - hot info - END -->
+            <!-- SECTION - hero - END -->
 
             <!-- SECTION -->
             <div class="t-col2">
@@ -64,7 +62,7 @@
                                 <div class="o-information-block__outer">
                                     <div class="o-information-block__inner">
                                         <h2 class="o-information-block__title">O státu {{ place[0].name }}</h2>
-                                        <div class="o-information-block__perex text-align-center-mobile text-align-left-desktop">
+                                        <div class="o-information-block__perex">
                                             <div class="o-information-block_wysiwyg" v-html="place[0].information_chatgpt"></div>
                                             <div class="o-information-block__author">
                                                 <i class="m-author">zdroj. <a class="m-author__link" href="https://chat.openai.com/chat" target="_blank">ChatGPT</a></i>
@@ -80,11 +78,11 @@
                     <!-- SECTION - Měna -->
                     <section class="t-section py-2" v-if="place[0].information_chatgpt">
                         <div class="t-section__inner">
-                            <div class="o-information-block">
+                            <div class="o-information-block -bg-gray">
                                 <div class="o-information-block__outer">
                                     <div class="o-information-block__inner">
                                         <h2 class="o-information-block__title">Měna</h2>
-                                        <div class="o-information-block__perex text-align-center-mobile text-align-left-desktop">
+                                        <div class="o-information-block__perex">
                                             <div class="o-information-block_wysiwyg">{{ place[0].currency_name }} ({{ place[0].currency_code }})</div>
                                         </div>
                                     </div>
@@ -97,11 +95,11 @@
                     <!-- SECTION - Ceny -->
                     <section class="t-section py-2" v-if="place[0].money_prices">
                         <div class="t-section__inner">
-                            <div class="o-information-block">
+                            <div class="o-information-block -bg-gray">
                                 <div class="o-information-block__outer">
                                     <div class="o-information-block__inner">
                                         <h2 class="o-information-block__title">Ceny</h2>
-                                        <div class="o-information-block__perex text-align-center-mobile text-align-left-desktop">
+                                        <div class="o-information-block__perex">
                                             <div class="o-information-block__list">
                                                 <ul class="o-information-block__list-ul">
                                                     <li class="o-information-block__list-li" v-for="money_price in place[0].money_prices" v-bind:key="money_price.name">
@@ -120,12 +118,12 @@
                     <!-- SECTION - Telefoní čísla(emergency) -->
                     <section class="t-section py-2" v-if="place[0].phone_numbers_emergency">
                         <div class="t-section__inner">
-                            <div class="o-information-block">
+                            <div class="o-information-block -bg-gray">
                                 <div class="o-information-block__outer">
                                     <div class="o-information-block__inner">
                                         <h2 class="o-information-block__title">Důležitá telefoní čísla</h2>
                                         <span class="o-information-block__subtitle">Telefonní předvolba {{ place[0].phone_prefix }}</span>
-                                        <div class="o-information-block__perex text-align-center-mobile text-align-left-desktop">
+                                        <div class="o-information-block__perex">
                                             <div class="o-information-block__list">
                                                 <ul class="o-information-block__list-ul">
                                                     <li class="o-information-block__list-li" v-for="phone_number_emergency in place[0].phone_numbers_emergency" v-bind:key="phone_number_emergency.name">

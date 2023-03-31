@@ -1,6 +1,8 @@
 .o-cover-place {
     $self: &;
 
+    margin: 0 -7px;
+
     &__outer {
         width: 100%;
     }

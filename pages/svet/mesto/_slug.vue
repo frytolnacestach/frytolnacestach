@@ -3,61 +3,59 @@
         <div class="t-main">
             
             <!-- SECTION - hero -->
-            <section>
-                <div class="o-hero-article" v-bind:style="{ 'background-image': 'url(' + (place[0].image_hero ? place[0].image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
-                    <div class="o-hero-article__outer">
-                        <div class="o-hero-article__inner">
-                            <h1 class="o-hero-article__headline" v-if="place[0].name">{{ place[0].name }}</h1>
+            <section class="t-section">
+                <div class="o-hero-place" v-bind:style="{ 'background-image': 'url(' + (place[0].image_hero ? place[0].image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
+                    <div class="o-hero-place__outer">
+                        <div class="o-hero-place__inner">
+                            <h1 class="o-hero-place__headline" v-if="place[0].name">{{ place[0].name }}</h1>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- SECTION - hero - END -->
 
-            <!-- SECTION - hot info -->
-            <section>
-                <div class="o-hot-info">
-                    <div class="o-hot-info__outer">
-                        <div class="o-hot-info__inner">
-                            <div class="o-hot-info__items">
+                <!-- SECTION - hot info -->
+                <div class="js_o-hot-info-hero o-hot-info-hero">
+                    <div class="o-hot-info-hero__outer">
+                        <div class="o-hot-info-hero__inner">
+                            <div class="o-hot-info-hero__items">
                                 <!--
-                                <div class="o-hot-info__item">
-                                    <h4 class="o-hot-info__title">Kontinent</h4>
-                                    <span class="o-hot-info__value">{{ placeContinent[0].name }}</span>
+                                <div class="o-hot-info-hero__item">
+                                    <h4 class="o-hot-info-hero__title">Kontinent</h4>
+                                    <span class="o-hot-info-hero__value">{{ placeContinent[0].name }}</span>
                                 </div>
                                 -->
-                                <div class="o-hot-info__item">
-                                    <h4 class="o-hot-info__title">Stát</h4>
-                                    <span class="o-hot-info__value">{{ placeState[0].name }}</span>
+                                <div class="o-hot-info-hero__item">
+                                    <h4 class="o-hot-info-hero__title">Stát</h4>
+                                    <span class="o-hot-info-hero__value">{{ placeState[0].name }}</span>
                                 </div>
                                 <!--
-                                <div class="o-hot-info__item">
-                                    <h4 class="o-hot-info__title">Administrativní celek</h4>
-                                    <span class="o-hot-info__value">{{ place[0].id_administrative_unit }}</span>
+                                <div class="o-hot-info-hero__item">
+                                    <h4 class="o-hot-info-hero__title">Administrativní celek</h4>
+                                    <span class="o-hot-info-hero__value">{{ place[0].id_administrative_unit }}</span>
                                 </div>
-                                <div class="o-hot-info__item">
-                                    <h4 class="o-hot-info__title">Kraj</h4>
-                                    <span class="o-hot-info__value">{{ place[0].id_districts }}</span>
+                                <div class="o-hot-info-hero__item">
+                                    <h4 class="o-hot-info-hero__title">Kraj</h4>
+                                    <span class="o-hot-info-hero__value">{{ place[0].id_districts }}</span>
                                 </div>
                                 -->
-                                <div class="o-hot-info__item">
-                                    <h4 class="o-hot-info__title">Rozloha</h4>
-                                    <span class="o-hot-info__value">{{ place[0].area }} km2</span>
+                                <div class="o-hot-info-hero__item">
+                                    <h4 class="o-hot-info-hero__title">Rozloha</h4>
+                                    <span class="o-hot-info-hero__value">{{ place[0].area }} km2</span>
                                 </div>
-                                <div class="o-hot-info__item">
-                                    <h4 class="o-hot-info__title">Nadmořská výška</h4>
-                                    <span class="o-hot-info__value">{{ place[0].altitude }} m n. m.</span>
+                                <div class="o-hot-info-hero__item">
+                                    <h4 class="o-hot-info-hero__title">Nadmořská výška</h4>
+                                    <span class="o-hot-info-hero__value">{{ place[0].altitude }} m n. m.</span>
                                 </div>
-                                <div class="o-hot-info__item">
-                                    <h4 class="o-hot-info__title">Populace</h4>
-                                    <span class="o-hot-info__value">{{ place[0].population }}</span>
+                                <div class="o-hot-info-hero__item">
+                                    <h4 class="o-hot-info-hero__title">Populace</h4>
+                                    <span class="o-hot-info-hero__value">{{ place[0].population }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- SECTION - hot info - END -->
             </section>
-            <!-- SECTION - hot info - END -->
+            <!-- SECTION - hero - END -->
 
             <!-- SECTION -->
             <div class="t-col2">

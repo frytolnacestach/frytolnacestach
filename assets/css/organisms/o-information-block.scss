@@ -3,13 +3,17 @@ NAME: o-information-block
 BLOCKS: 
 - Title: static + api
 - Wysiwyg: api
+- List: api (json)
 - Author: static
 */
 
 .o-information-block {
+    $self: &;
+
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    text-align: left;
 
     &__outer {
         width: 100%;
@@ -17,37 +21,38 @@ BLOCKS:
 
     &__inner {
         width: auto;
-        background-color: $gray6;
         padding: 20px 15px;
         margin: 0;
         border-radius: $large;
     }
 
     &__title {
-        width: auto;
+        width: 100%;
         font-size: $fs-large-ssss;
-        margin: 0 15px 20px;
-        text-align: center;
+        margin: 0 0 20px;
     }
 
     &__subtitle {
         width: auto;
         font-size: $fs-normal;
         margin: 0 15px 10px;
-        text-align: center;
         display: block;
     }
 
+
     &__perex {
-        width: 100%;
-        display: inline-block;
-        text-align: center;
+        width: auto;
+        display: block;
+        margin: 0 15px;
     }
 
+    //author
     &__author {
         margin-top: 10px;
     }
 
+
+    //CONTENT
 
     //wysiwyg
     &__wysiwyg {
@@ -58,7 +63,6 @@ BLOCKS:
     //list ul->li
     &__list {
         width: 100%;
-        text-align: left;
     }
 
     &__list-ul {
@@ -69,5 +73,11 @@ BLOCKS:
     &__list-li {
         width: 100%;
         padding: 5px 0;
+    }
+
+    &.-bg-gray {
+        #{$self}__inner {
+            background-color: $gray6;
+        }
     }
 }

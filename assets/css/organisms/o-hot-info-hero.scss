@@ -1,0 +1,57 @@
+.o-hot-info-hero {
+    background-color: $black-7;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    color: $white;
+
+    &__outer {
+        width: auto;
+        margin: 0;
+    }
+
+    &__inner {
+        width: 100%;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: 1200px;
+        padding: 7px 0;
+    }
+
+    &__item {
+        display: block;
+        width: 33.333%;
+        text-align: center;
+        padding: 13px 5px;
+
+        @media only screen and (min-width: $md) {
+            width: 20%;
+        }
+
+        &:nth-of-type(1n + 4) {
+            border-top: 1px solid $white;
+
+            @media only screen and (min-width: $md) {
+                border-top: 0;
+            }
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: $fs-normal-sss;
+        margin: 0 0 5px 0;
+        color: $white;
+    }
+
+    &__value {
+        font-weight: 300;
+        font-size: $fs-normal-s;
+    }
+}
