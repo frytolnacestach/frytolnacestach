@@ -83,14 +83,9 @@
                             <div class="o-information-block">
                                 <div class="o-information-block__outer">
                                     <div class="o-information-block__inner">
-                                        <h2 class="o-information-block__title">PENÍZE</h2>
+                                        <h2 class="o-information-block__title">Měna</h2>
                                         <div class="o-information-block__perex text-align-center-mobile text-align-left-desktop">
                                             <div class="o-information-block_wysiwyg">{{ place[0].currency_name }} ({{ place[0].currency_code }})</div>
-                                            <!--
-                                            <div class="o-information-block__author">
-                                                <i class="m-author">zdroj. <a class="m-author__link" href="https://chat.openai.com/chat" target="_blank">ChatGPT</a></i>
-                                            </div>
-                                            -->
                                         </div>
                                     </div>
                                 </div>
@@ -98,6 +93,53 @@
                         </div>
                     </section>
                     <!-- SECTION - Měna END -->
+
+                    <!-- SECTION - Ceny -->
+                    <section class="t-section py-2" v-if="place[0].money_prices">
+                        <div class="t-section__inner">
+                            <div class="o-information-block">
+                                <div class="o-information-block__outer">
+                                    <div class="o-information-block__inner">
+                                        <h2 class="o-information-block__title">Ceny</h2>
+                                        <div class="o-information-block__perex text-align-center-mobile text-align-left-desktop">
+                                            <div class="o-information-block__list">
+                                                <ul class="o-information-block__list-ul">
+                                                    <li class="o-information-block__list-li" v-for="money_price in place[0].money_prices" v-bind:key="money_price.name">
+                                                        <span><strong>{{ money_price.name }}</strong> {{ money_price.price }}</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - Ceny END -->
+
+                    <!-- SECTION - Telefoní čísla(emergency) -->
+                    <section class="t-section py-2" v-if="place[0].phone_numbers_emergency">
+                        <div class="t-section__inner">
+                            <div class="o-information-block">
+                                <div class="o-information-block__outer">
+                                    <div class="o-information-block__inner">
+                                        <h2 class="o-information-block__title">Důležitá telefoní čísla</h2>
+                                        <span class="o-information-block__subtitle">Telefonní předvolba {{ place[0].phone_prefix }}</span>
+                                        <div class="o-information-block__perex text-align-center-mobile text-align-left-desktop">
+                                            <div class="o-information-block__list">
+                                                <ul class="o-information-block__list-ul">
+                                                    <li class="o-information-block__list-li" v-for="phone_number_emergency in place[0].phone_numbers_emergency" v-bind:key="phone_number_emergency.name">
+                                                        <span><strong>{{ phone_number_emergency.name }}</strong> {{ phone_number_emergency.number }}</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - Telefoní čísla(emergency) END -->
                     
                     <!-- SECTION - města -->
                     <section class="t-section my-4">
@@ -129,10 +171,10 @@
                 </div>
 
                 <div class="t-col2__sidebar my-2">
+                    <!-- SECTION - ad - sidebar END -->
                     <section class="t-section my-2">
                         <div class="t-section__inner">
-                            <div class="o-ad-sidebar-article-detail">
-                                <!-- sidebar-article-detail -->
+                            <div class="o-ad-sidebar">
                                 <ins class="adsbygoogle"
                                     :style="adStyle"
                                     :data-ad-client="adClient"
@@ -143,6 +185,7 @@
                             </div>
                         </div>
                     </section>
+                    <!-- SECTION - ad - sidebar -->
                 </div>
             </div>
             <!-- SECTION END -->
@@ -154,7 +197,7 @@
 <script>
 
     export default {
-        name: 'PageBlogSlug',
+        name: 'PageStateSlug',
 
         props: {
             adStyle: {

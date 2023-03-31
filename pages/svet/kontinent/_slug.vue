@@ -93,10 +93,10 @@
                 </div>
 
                 <div class="t-col2__sidebar my-2">
+                    <!-- SECTION - ad - sidebar END -->
                     <section class="t-section my-2">
                         <div class="t-section__inner">
-                            <div class="o-ad-sidebar-article-detail">
-                                <!-- sidebar-article-detail -->
+                            <div class="o-ad-sidebar">
                                 <ins class="adsbygoogle"
                                     :style="adStyle"
                                     :data-ad-client="adClient"
@@ -107,6 +107,7 @@
                             </div>
                         </div>
                     </section>
+                    <!-- SECTION - ad - sidebar -->
                 </div>
             </div>
             <!-- SECTION END -->
@@ -118,7 +119,7 @@
 <script>
 
     export default {
-        name: 'PageBlogSlug',
+        name: 'PageContinentSlug',
 
         props: {
             adStyle: {

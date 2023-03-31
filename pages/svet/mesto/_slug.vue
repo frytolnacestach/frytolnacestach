@@ -20,13 +20,15 @@
                     <div class="o-hot-info__outer">
                         <div class="o-hot-info__inner">
                             <div class="o-hot-info__items">
+                                <!--
                                 <div class="o-hot-info__item">
                                     <h4 class="o-hot-info__title">Kontinent</h4>
-                                    <span class="o-hot-info__value">{{ place[0].id_continent }}</span>
+                                    <span class="o-hot-info__value">{{ placeContinent[0].name }}</span>
                                 </div>
+                                -->
                                 <div class="o-hot-info__item">
                                     <h4 class="o-hot-info__title">Stát</h4>
-                                    <span class="o-hot-info__value">{{ place[0].id_state }}</span>
+                                    <span class="o-hot-info__value">{{ placeState[0].name }}</span>
                                 </div>
                                 <!--
                                 <div class="o-hot-info__item">
@@ -39,12 +41,12 @@
                                 </div>
                                 -->
                                 <div class="o-hot-info__item">
-                                    <h4 class="o-hot-info__title">Nadmořská výška</h4>
-                                    <span class="o-hot-info__value">{{ place[0].altitude }} m n. m.</span>
-                                </div>
-                                <div class="o-hot-info__item">
                                     <h4 class="o-hot-info__title">Rozloha</h4>
                                     <span class="o-hot-info__value">{{ place[0].area }} km2</span>
+                                </div>
+                                <div class="o-hot-info__item">
+                                    <h4 class="o-hot-info__title">Nadmořská výška</h4>
+                                    <span class="o-hot-info__value">{{ place[0].altitude }} m n. m.</span>
                                 </div>
                                 <div class="o-hot-info__item">
                                     <h4 class="o-hot-info__title">Populace</h4>
@@ -84,10 +86,10 @@
                 </div>
 
                 <div class="t-col2__sidebar my-2">
+                    <!-- SECTION - ad - sidebar END -->
                     <section class="t-section my-2">
                         <div class="t-section__inner">
-                            <div class="o-ad-sidebar-article-detail">
-                                <!-- sidebar-article-detail -->
+                            <div class="o-ad-sidebar">
                                 <ins class="adsbygoogle"
                                     :style="adStyle"
                                     :data-ad-client="adClient"
@@ -98,6 +100,7 @@
                             </div>
                         </div>
                     </section>
+                    <!-- SECTION - ad - sidebar -->
                 </div>
             </div>
             <!-- SECTION END -->
@@ -109,7 +112,7 @@
 <script>
 
     export default {
-        name: 'PageBlogSlug',
+        name: 'PageCitySlug',
 
         props: {
             adStyle: {
@@ -174,8 +177,20 @@
         },
 
         async asyncData({ $axios, params }) {
-            const place = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city/${params.slug}`)
-            return { place: place }
+            try {
+                // Načtení místa přes API podle slug
+                const place = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city/${params.slug}`)
+
+                // Načtení informací o státu
+                const placeState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-state-id/${place[0].id_state}`)
+
+                // Načtení informací o continentu
+                const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${place[0].id_continent}`)
+
+                return { place, placeState, placeContinent }
+            } catch (error) {
+                console.error(error)
+            }
         },
 
         mounted() {
