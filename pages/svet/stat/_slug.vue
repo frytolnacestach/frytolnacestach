@@ -171,10 +171,10 @@
                 </div>
 
                 <div class="t-col2__sidebar my-2">
-                    <!-- SECTION - ad - sidebar END -->
+                    <!-- SECTION - ad-google - sidebar -->
                     <section class="t-section my-2">
                         <div class="t-section__inner">
-                            <div class="o-ad-sidebar">
+                            <div class="o-ad-google-sidebar">
                                 <ins class="adsbygoogle"
                                     :style="adStyle"
                                     :data-ad-client="adClient"
@@ -185,7 +185,7 @@
                             </div>
                         </div>
                     </section>
-                    <!-- SECTION - ad - sidebar -->
+                    <!-- SECTION - ad-google - sidebar - END -->
                 </div>
             </div>
             <!-- SECTION END -->
