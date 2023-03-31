@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mbeya", (function(a){return {data:[{place:[{id:2267,id_state:229,name:"Mbeya",population:385279,area:285,altitude:1708,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mbeya",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

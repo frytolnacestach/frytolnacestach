@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/goteborg", (function(a){return {data:[{place:[{id:1932,id_state:197,name:"Göteborg",population:583056,area:447.83,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"goteborg",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/la-possession", (function(a){return {data:[{place:[{id:1848,id_state:188,name:"La Possession",population:33467,area:118.08,altitude:310,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"la-possession",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

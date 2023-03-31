@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ouani", (function(a){return {data:[{place:[{id:1164,id_state:119,name:"Ouani",population:13000,area:21,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ouani",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

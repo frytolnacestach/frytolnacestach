@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/celjabinsk", (function(a){return {data:[{place:[{id:1880,id_state:191,name:"Čeljabinsk",population:1129674,area:517.4,altitude:223,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"celjabinsk",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kermanshah", (function(a){return {data:[{place:[{id:1056,id_state:108,name:"Kermanshah",population:862508,area:53,altitude:1350,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kermanshah",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

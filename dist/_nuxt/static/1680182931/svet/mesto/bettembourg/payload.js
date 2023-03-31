@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bettembourg", (function(a){return {data:[{place:[{id:1312,id_state:134,name:"Bettembourg",population:10707,area:7,altitude:296,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bettembourg",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

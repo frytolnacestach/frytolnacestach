@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/galway", (function(a){return {data:[{place:[{id:991,id_state:102,name:"Galway",population:79934,area:53.31,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"galway",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

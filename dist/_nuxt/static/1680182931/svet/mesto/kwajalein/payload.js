@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kwajalein", (function(a){return {data:[{place:[{id:1405,id_state:143,name:"Kwajalein",population:13114,area:17.41,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kwajalein",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

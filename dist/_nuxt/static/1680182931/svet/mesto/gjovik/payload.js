@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/gjovik", (function(a){return {data:[{place:[{id:1647,id_state:167,name:"Gjøvik",population:21635,area:13.72,altitude:123,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gjovik",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

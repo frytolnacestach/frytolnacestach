@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tiang-jin", (function(a){return {data:[{place:[{id:457,id_state:48,name:"Ťiang-jin",population:8044000,area:11927,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tiang-jin",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/serravalle", (function(a){return {data:[{place:[{id:2013,id_state:204,name:"Serravalle",population:10788,area:10.53,altitude:222,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"serravalle",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

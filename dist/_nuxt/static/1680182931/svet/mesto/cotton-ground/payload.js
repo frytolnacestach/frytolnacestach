@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/cotton-ground", (function(a){return {data:[{place:[{id:1176,id_state:120,name:"Cotton Ground",population:982,area:1.2,altitude:62,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cotton-ground",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

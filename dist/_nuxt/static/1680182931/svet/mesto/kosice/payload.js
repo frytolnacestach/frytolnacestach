@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kosice", (function(a){return {data:[{place:[{id:1994,id_state:202,name:"Košice",population:240688,area:242.85,altitude:206,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kosice",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

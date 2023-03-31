@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kolda", (function(a){return {data:[{place:[{id:2031,id_state:205,name:"Kolda",population:129535,area:22.75,altitude:36,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kolda",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/esteli", (function(a){return {data:[{place:[{id:1623,id_state:165,name:"Estelí",population:120000,area:731.57,altitude:858,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"esteli",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

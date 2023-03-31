@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ohrid", (function(a){return {data:[{place:[{id:1415,id_state:144,name:"Ohrid",population:41035,area:383.95,altitude:695,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ohrid",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

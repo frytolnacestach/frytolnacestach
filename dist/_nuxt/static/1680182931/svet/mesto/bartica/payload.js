@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bartica", (function(a){return {data:[{place:[{id:911,id_state:94,name:"Bartica",population:11800,area:3.3,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bartica",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

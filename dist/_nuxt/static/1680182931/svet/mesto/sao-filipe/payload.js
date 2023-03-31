@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sao-filipe", (function(a){return {data:[{place:[{id:492,id_state:52,name:"São Filipe",population:19960,area:225.59,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sao-filipe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

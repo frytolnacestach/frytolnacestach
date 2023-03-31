@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/naryn", (function(a){return {data:[{place:[{id:1137,id_state:116,name:"Naryn",population:16000,area:6.8,altitude:2020,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"naryn",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/zouerate", (function(a){return {data:[{place:[{id:1483,id_state:151,name:"Zouerate",population:27312,area:41.2,altitude:406,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zouerate",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

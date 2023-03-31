@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/khasab", (function(a){return {data:[{place:[{id:1694,id_state:172,name:"Khasab",population:18000,area:60,altitude:49,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"khasab",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

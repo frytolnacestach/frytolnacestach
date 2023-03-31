@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/can-tho", (function(a){return {data:[{place:[{id:2377,id_state:241,name:"Cần Thơ",population:1216215,area:1409,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"can-tho",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

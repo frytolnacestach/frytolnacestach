@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/segbwema", (function(a){return {data:[{place:[{id:2012,id_state:203,name:"Segbwema",population:17434,area:6.55,altitude:217,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"segbwema",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

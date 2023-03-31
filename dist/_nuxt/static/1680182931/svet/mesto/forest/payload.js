@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/forest", (function(a){return {data:[{place:[{id:787,id_state:81,name:"Forest",population:2562,area:5.32,altitude:73,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"forest",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

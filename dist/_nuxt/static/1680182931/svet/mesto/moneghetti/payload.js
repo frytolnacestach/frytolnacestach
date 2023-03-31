@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/moneghetti", (function(a){return {data:[{place:[{id:1352,id_state:138,name:"Moneghetti",population:3200,area:.29,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"moneghetti",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

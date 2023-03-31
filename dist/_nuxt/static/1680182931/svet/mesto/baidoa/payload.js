@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/baidoa", (function(a){return {data:[{place:[{id:2038,id_state:206,name:"Baidoa",population:129839,area:17.98,altitude:320,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"baidoa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

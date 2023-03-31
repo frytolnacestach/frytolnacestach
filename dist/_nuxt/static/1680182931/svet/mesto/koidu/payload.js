@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/koidu", (function(a){return {data:[{place:[{id:2007,id_state:203,name:"Koidu",population:125507,area:39.37,altitude:488,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"koidu",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

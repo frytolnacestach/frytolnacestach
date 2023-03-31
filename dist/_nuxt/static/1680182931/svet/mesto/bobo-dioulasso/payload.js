@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bobo-dioulasso", (function(a){return {data:[{place:[{id:192,id_state:21,name:"Bobo-Dioulasso",population:489298,area:169.62,altitude:457,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bobo-dioulasso",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ciudad-guayana", (function(a){return {data:[{place:[{id:2348,id_state:238,name:"Ciudad Guayana",population:1047607,area:1275,altitude:40,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ciudad-guayana",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

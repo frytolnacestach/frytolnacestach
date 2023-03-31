@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/santiago-de-los-caballeros", (function(a){return {data:[{place:[{id:579,id_state:61,name:"Santiago de los Caballeros",population:1203924,area:524.34,altitude:183,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"santiago-de-los-caballeros",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

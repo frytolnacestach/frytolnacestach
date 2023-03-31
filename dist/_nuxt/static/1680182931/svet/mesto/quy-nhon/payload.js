@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/quy-nhon", (function(a){return {data:[{place:[{id:2381,id_state:241,name:"Quy Nhơn",population:421195,area:286.7,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"quy-nhon",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

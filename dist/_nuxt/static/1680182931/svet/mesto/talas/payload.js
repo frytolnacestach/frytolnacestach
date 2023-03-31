@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/talas", (function(a){return {data:[{place:[{id:1132,id_state:116,name:"Talas",population:34300,area:12,altitude:1280,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"talas",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

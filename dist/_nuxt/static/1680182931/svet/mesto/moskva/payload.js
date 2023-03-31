@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/moskva", (function(a){return {data:[{place:[{id:1871,id_state:191,name:"Moskva",population:12692466,area:2561.5,altitude:156,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"moskva",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

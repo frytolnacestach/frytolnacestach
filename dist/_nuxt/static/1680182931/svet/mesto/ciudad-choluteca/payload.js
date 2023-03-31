@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ciudad-choluteca", (function(a){return {data:[{place:[{id:943,id_state:97,name:"Ciudad Choluteca",population:163620,area:551.96,altitude:35,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ciudad-choluteca",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

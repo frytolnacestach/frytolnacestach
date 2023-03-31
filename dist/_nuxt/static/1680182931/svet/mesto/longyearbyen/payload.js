@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/longyearbyen", (function(a){return {data:[{place:[{id:1983,id_state:201,name:"Longyearbyen",population:2147,area:13.17,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"longyearbyen",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/as-salt", (function(a){return {data:[{place:[{id:1106,id_state:113,name:"As Salt",population:151097,area:16.9,altitude:754,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"as-salt",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

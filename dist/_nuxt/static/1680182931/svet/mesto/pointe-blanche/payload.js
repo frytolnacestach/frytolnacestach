@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/pointe-blanche", (function(a){return {data:[{place:[{id:2092,id_state:211,name:"Pointe Blanche",population:2042,area:1.67,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pointe-blanche",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

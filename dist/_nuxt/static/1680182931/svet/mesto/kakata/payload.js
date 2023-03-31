@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kakata", (function(a){return {data:[{place:[{id:1283,id_state:131,name:"Kakata",population:22672,area:5.7,altitude:160,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kakata",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

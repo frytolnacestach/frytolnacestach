@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/makeni", (function(a){return {data:[{place:[{id:2006,id_state:203,name:"Makeni",population:126059,area:80.98,altitude:419,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"makeni",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

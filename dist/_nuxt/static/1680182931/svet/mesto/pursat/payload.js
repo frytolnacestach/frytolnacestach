@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/pursat", (function(a){return {data:[{place:[{id:1146,id_state:117,name:"Pursat",population:90525,area:25.97,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pursat",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

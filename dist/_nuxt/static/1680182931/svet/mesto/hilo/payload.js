@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/hilo", (function(a){return {data:[{place:[{id:2294,id_state:232,name:"Hilo",population:43737,area:150.05,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hilo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

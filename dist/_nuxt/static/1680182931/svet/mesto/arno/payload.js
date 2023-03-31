@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/arno", (function(a){return {data:[{place:[{id:1403,id_state:143,name:"Arno",population:2014,area:2.85,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"arno",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

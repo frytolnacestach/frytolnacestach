@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/manila", (function(a){return {data:[{place:[{id:1739,id_state:177,name:"Manila",population:1780148,area:38.55,altitude:16,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"manila",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/maldonado", (function(a){return {data:[{place:[{id:2319,id_state:234,name:"Maldonado",population:56705,area:54.57,altitude:24,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"maldonado",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

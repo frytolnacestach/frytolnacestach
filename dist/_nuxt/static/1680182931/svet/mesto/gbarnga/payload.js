@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/gbarnga", (function(a){return {data:[{place:[{id:1279,id_state:131,name:"Gbarnga",population:83750,area:3.3,altitude:289,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gbarnga",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

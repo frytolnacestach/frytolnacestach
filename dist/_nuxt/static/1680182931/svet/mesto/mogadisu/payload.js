@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mogadisu", (function(a){return {data:[{place:[{id:2033,id_state:206,name:"Mogadišu",population:2116797,area:660,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mogadisu",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

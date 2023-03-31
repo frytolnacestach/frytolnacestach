@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bobonaro", (function(a){return {data:[{place:[{id:2192,id_state:221,name:"Bobonaro",population:14984,area:669.45,altitude:559,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bobonaro",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

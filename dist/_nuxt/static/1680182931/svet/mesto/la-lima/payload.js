@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/la-lima", (function(a){return {data:[{place:[{id:946,id_state:97,name:"La Lima",population:100852,area:131.59,altitude:20,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"la-lima",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

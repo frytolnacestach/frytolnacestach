@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/surat-thani", (function(a){return {data:[{place:[{id:2160,id_state:218,name:"Surat Thani",population:117000,area:68.97,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"surat-thani",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

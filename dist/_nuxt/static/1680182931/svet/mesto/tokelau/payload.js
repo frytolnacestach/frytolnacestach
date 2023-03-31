@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tokelau", (function(a){return {data:[{place:[{id:2176,id_state:220,name:"Tokelau",population:1400,area:10.8,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tokelau",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

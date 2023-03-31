@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/louga", (function(a){return {data:[{place:[{id:2032,id_state:205,name:"Louga",population:124329,area:49.58,altitude:43,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"louga",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

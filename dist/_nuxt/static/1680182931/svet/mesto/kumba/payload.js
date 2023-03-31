@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kumba", (function(a){return {data:[{place:[{id:444,id_state:47,name:"Kumba",population:144413,area:20.12,altitude:178,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kumba",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

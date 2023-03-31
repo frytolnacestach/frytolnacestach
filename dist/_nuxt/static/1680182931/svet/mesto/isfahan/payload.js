@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/isfahan", (function(a){return {data:[{place:[{id:1050,id_state:108,name:"Isfahan",population:2051172,area:549,altitude:1570,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"isfahan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

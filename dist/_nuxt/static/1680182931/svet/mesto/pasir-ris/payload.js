@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/pasir-ris", (function(a){return {data:[{place:[{id:1946,id_state:198,name:"Pasir Ris",population:147110,area:15.02,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pasir-ris",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

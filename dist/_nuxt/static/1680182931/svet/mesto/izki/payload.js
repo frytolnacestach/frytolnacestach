@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/izki", (function(a){return {data:[{place:[{id:1692,id_state:172,name:"Izki",population:28000,area:342,altitude:360,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"izki",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

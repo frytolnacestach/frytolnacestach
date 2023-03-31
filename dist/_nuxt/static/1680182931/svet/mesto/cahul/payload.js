@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/cahul", (function(a){return {data:[{place:[{id:1363,id_state:139,name:"Cahul",population:29900,area:27.5,altitude:45,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cahul",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

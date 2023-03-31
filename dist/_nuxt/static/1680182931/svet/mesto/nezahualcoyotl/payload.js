@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nezahualcoyotl", (function(a){return {data:[{place:[{id:1546,id_state:157,name:"Nezahualcóyotl",population:1232220,area:63.4,altitude:2240,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nezahualcoyotl",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

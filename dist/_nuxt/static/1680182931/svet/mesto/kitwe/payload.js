@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kitwe", (function(a){return {data:[{place:[{id:2445,id_state:248,name:"Kitwe",population:562662,area:292.08,altitude:1274,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kitwe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

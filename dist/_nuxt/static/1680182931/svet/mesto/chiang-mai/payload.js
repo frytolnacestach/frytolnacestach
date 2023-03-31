@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/chiang-mai", (function(a){return {data:[{place:[{id:2158,id_state:218,name:"Chiang Mai",population:131700,area:40.22,altitude:310,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chiang-mai",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mercedes", (function(a){return {data:[{place:[{id:2322,id_state:234,name:"Mercedes",population:41977,area:6.69,altitude:53,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mercedes",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

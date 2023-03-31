@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/orange-walk-town", (function(a){return {data:[{place:[{id:344,id_state:37,name:"Orange Walk Town",population:18913,area:8.35,altitude:26,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"orange-walk-town",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

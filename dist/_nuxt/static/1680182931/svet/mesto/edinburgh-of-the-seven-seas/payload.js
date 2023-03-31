@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/edinburgh-of-the-seven-seas", (function(a){return {data:[{place:[{id:1952,id_state:199,name:"Edinburgh of the Seven Seas",population:271,area:1.67,altitude:20,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"edinburgh-of-the-seven-seas",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/povoacao", (function(a){return {data:[{place:[{id:2070,id_state:209,name:"Povoação",population:16007,area:5,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"povoacao",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

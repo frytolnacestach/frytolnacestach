@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/addis-abeba", (function(a){return {data:[{place:[{id:658,id_state:69,name:"Addis Abeba",population:3521075,area:530.14,altitude:2355,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"addis-abeba",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

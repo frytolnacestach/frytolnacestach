@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bejrut", (function(a){return {data:[{place:[{id:1238,id_state:127,name:"Bejrút",population:2103770,area:19,altitude:85,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bejrut",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

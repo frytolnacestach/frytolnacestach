@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tel-aviv-jaffa", (function(a){return {data:[{place:[{id:999,id_state:103,name:"Tel Aviv-Jaffa",population:462613,area:51.8,altitude:22,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tel-aviv-jaffa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

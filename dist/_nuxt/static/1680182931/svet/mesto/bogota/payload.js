@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bogota", (function(a){return {data:[{place:[{id:458,id_state:49,name:"Bogotá",population:7498590,area:1631,altitude:2640,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bogota",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

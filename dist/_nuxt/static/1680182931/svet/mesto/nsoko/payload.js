@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nsoko", (function(a){return {data:[{place:[{id:2112,id_state:213,name:"Nsoko",population:2565,area:.41,altitude:248,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nsoko",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

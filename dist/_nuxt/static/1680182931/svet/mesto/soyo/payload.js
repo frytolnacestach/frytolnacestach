@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/soyo", (function(a){return {data:[{place:[{id:78,id_state:8,name:"Soyo",population:126920,area:14.89,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"soyo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

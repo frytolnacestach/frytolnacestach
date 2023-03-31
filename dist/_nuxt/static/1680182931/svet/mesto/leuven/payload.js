@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/leuven", (function(a,b){return {data:[{place:[{id:188,id_state:b,name:"Leuven",population:101032,area:57.5,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"leuven",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null,20)));

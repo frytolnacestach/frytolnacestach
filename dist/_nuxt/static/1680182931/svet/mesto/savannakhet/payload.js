@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/savannakhet", (function(a){return {data:[{place:[{id:1229,id_state:126,name:"Savannakhet",population:120000,area:15.93,altitude:123,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"savannakhet",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

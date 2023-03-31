@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/al-khawr", (function(a){return {data:[{place:[{id:1835,id_state:187,name:"Al Khawr",population:12938,area:118.2,altitude:8,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"al-khawr",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

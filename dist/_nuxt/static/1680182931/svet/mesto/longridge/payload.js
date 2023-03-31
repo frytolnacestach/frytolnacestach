@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/longridge", (function(a){return {data:[{place:[{id:1604,id_state:163,name:"Longridge",population:412,area:3.18,altitude:77,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"longridge",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

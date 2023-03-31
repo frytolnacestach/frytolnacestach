@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/torshavn", (function(a){return {data:[{place:[{id:708,id_state:74,name:"Tórshavn",population:20194,area:178.8,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"torshavn",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

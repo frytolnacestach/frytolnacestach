@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ewa-gentry", (function(a){return {data:[{place:[{id:2299,id_state:232,name:"Ewa Gentry",population:15105,area:7.57,altitude:22,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ewa-gentry",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

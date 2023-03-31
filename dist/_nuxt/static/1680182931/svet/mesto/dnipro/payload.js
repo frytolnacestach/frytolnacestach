@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/dnipro", (function(a){return {data:[{place:[{id:2276,id_state:230,name:"Dnipro",population:993120,area:405,altitude:69,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dnipro",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

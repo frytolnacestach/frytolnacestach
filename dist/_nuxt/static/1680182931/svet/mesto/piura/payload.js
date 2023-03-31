@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/piura", (function(a){return {data:[{place:[{id:1712,id_state:174,name:"Piura",population:484475,area:606.2,altitude:29,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"piura",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

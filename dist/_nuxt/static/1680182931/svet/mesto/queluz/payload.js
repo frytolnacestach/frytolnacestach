@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/queluz", (function(a){return {data:[{place:[{id:1807,id_state:184,name:"Queluz",population:103399,area:2.78,altitude:122,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"queluz",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

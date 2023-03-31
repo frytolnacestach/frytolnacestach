@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/daejeon", (function(a){return {data:[{place:[{id:1192,id_state:122,name:"Daejeon",population:1459007,area:540.43,altitude:84,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"daejeon",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

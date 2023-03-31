@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/selfoss", (function(a){return {data:[{place:[{id:1065,id_state:109,name:"Selfoss",population:6998,area:2.38,altitude:35,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"selfoss",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

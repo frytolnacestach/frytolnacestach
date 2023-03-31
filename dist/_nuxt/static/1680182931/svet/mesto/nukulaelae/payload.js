@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nukulaelae", (function(a){return {data:[{place:[{id:2251,id_state:227,name:"Nukulaelae",population:349,area:.92,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nukulaelae",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

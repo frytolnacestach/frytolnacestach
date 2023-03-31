@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/buada", (function(a){return {data:[{place:[{id:1665,id_state:169,name:"Buada",population:411,area:1.21,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"buada",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

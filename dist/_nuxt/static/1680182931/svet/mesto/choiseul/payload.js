@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/choiseul", (function(a){return {data:[{place:[{id:1257,id_state:128,name:"Choiseul",population:1457,area:2,altitude:60,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"choiseul",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

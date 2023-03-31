@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/paysandu", (function(a){return {data:[{place:[{id:2316,id_state:234,name:"Paysandú",population:76439,area:18.1,altitude:55,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"paysandu",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

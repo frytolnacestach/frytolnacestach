@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/santiago", (function(a){return {data:[{place:[{id:428,id_state:46,name:"Santiago",population:6415060,area:641,altitude:520,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"santiago",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

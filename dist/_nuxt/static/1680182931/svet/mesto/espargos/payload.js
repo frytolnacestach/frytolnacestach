@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/espargos", (function(a){return {data:[{place:[{id:496,id_state:52,name:"Espargos",population:8250,area:34.98,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"espargos",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/abha", (function(a){return {data:[{place:[{id:1900,id_state:193,name:"Abhá",population:510346,area:1300,altitude:2270,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"abha",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

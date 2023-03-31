@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/daegu", (function(a){return {data:[{place:[{id:1191,id_state:122,name:"Daegu",population:2424534,area:883.54,altitude:35,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"daegu",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

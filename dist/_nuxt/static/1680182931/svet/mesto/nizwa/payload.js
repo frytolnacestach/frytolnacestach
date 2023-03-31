@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nizwa", (function(a){return {data:[{place:[{id:1693,id_state:172,name:"Nizwa",population:78000,area:271,altitude:512,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nizwa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/galle", (function(a){return {data:[{place:[{id:1270,id_state:130,name:"Galle",population:99482,area:16.52,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"galle",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

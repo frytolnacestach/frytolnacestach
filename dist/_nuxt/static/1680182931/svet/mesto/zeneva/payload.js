@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/zeneva", (function(a){return {data:[{place:[{id:399,id_state:43,name:"Ženeva",population:201818,area:15.93,altitude:375,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zeneva",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

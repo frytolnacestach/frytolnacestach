@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/recife", (function(a){return {data:[{place:[{id:299,id_state:31,name:"Recife",population:1635631,area:218.3,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"recife",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

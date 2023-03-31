@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/almaty", (function(a){return {data:[{place:[{id:1218,id_state:125,name:"Almaty",population:1954000,area:682.32,altitude:900,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"almaty",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

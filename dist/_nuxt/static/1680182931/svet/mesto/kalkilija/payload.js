@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kalkilija", (function(a){return {data:[{place:[{id:1800,id_state:183,name:"Kalkílija",population:109295,area:18,altitude:135,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kalkilija",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

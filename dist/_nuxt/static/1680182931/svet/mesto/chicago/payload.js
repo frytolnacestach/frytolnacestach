@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/chicago", (function(a){return {data:[{place:[{id:2305,id_state:233,name:"Chicago",population:2693976,area:606.1,altitude:182,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chicago",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

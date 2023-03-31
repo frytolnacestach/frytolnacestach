@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/lower-prince-s-quarter", (function(a){return {data:[{place:[{id:2086,id_state:211,name:"Lower Prince’s Quarter",population:3357,area:4.59,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lower-prince-s-quarter",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

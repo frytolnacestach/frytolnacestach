@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/chitungwiza", (function(a){return {data:[{place:[{id:2456,id_state:249,name:"Chitungwiza",population:356840,area:105,altitude:1432,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chitungwiza",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

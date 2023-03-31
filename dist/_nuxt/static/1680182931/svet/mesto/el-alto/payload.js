@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/el-alto", (function(a){return {data:[{place:[{id:272,id_state:29,name:"El Alto",population:1193618,area:164.44,altitude:4150,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"el-alto",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

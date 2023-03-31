@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ruyigi", (function(a){return {data:[{place:[{id:223,id_state:24,name:"Ruyigi",population:108106,area:119.84,altitude:1474,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ruyigi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

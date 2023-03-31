@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/betio-village", (function(a){return {data:[{place:[{id:1149,id_state:118,name:"Betio Village",population:13196,area:2.44,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"betio-village",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

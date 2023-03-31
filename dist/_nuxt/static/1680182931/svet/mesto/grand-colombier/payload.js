@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/grand-colombier", (function(a,b){return {data:[{place:[{id:1772,id_state:180,name:"Grand Colombier",population:b,area:b,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"grand-colombier",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null,0)));

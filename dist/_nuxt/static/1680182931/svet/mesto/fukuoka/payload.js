@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/fukuoka", (function(a){return {data:[{place:[{id:1115,id_state:114,name:"Fukuoka",population:1478400,area:341.3,altitude:9,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"fukuoka",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

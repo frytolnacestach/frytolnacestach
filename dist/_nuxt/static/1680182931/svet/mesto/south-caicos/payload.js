@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/south-caicos", (function(a){return {data:[{place:[{id:2119,id_state:214,name:"South Caicos",population:876,area:2.72,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"south-caicos",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

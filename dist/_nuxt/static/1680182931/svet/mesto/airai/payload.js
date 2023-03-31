@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/airai", (function(a){return {data:[{place:[{id:1815,id_state:185,name:"Airai",population:2125,area:44.3,altitude:77,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"airai",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

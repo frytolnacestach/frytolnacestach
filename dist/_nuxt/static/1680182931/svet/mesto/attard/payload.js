@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/attard", (function(a){return {data:[{place:[{id:1506,id_state:153,name:"Attard",population:10737,area:6.58,altitude:74,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"attard",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

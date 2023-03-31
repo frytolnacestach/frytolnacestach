@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tshwane", (function(a){return {data:[{place:[{id:2438,id_state:247,name:"Tshwane",population:3152621,area:6722.17,altitude:1357,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tshwane",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

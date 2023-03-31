@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nakhon-ratchasima", (function(a){return {data:[{place:[{id:2157,id_state:218,name:"Nakhon Ratchasima",population:148300,area:61.5,altitude:267,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nakhon-ratchasima",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

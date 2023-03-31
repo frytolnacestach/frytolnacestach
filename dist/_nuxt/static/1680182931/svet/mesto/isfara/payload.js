@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/isfara", (function(a){return {data:[{place:[{id:2171,id_state:219,name:"Isfara",population:38900,area:2.77,altitude:800,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"isfara",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

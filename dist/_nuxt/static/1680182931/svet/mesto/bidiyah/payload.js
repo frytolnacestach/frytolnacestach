@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bidiyah", (function(a){return {data:[{place:[{id:1696,id_state:172,name:"Bidiyah",population:3100,area:12,altitude:75,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bidiyah",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

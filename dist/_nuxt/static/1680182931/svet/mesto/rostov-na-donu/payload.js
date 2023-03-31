@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/rostov-na-donu", (function(a){return {data:[{place:[{id:1879,id_state:191,name:"Rostov-na-Donu",population:1130305,area:354.48,altitude:73,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rostov-na-donu",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

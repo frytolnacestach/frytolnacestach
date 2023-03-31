@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mutare", (function(a){return {data:[{place:[{id:2457,id_state:249,name:"Mutare",population:188243,area:23.4,altitude:1079,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mutare",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

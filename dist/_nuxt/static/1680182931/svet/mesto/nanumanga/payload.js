@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nanumanga", (function(a){return {data:[{place:[{id:2247,id_state:227,name:"Nanumanga",population:634,area:3.8,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nanumanga",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

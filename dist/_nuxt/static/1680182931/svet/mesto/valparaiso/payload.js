@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/valparaiso", (function(a){return {data:[{place:[{id:432,id_state:46,name:"Valparaíso",population:327753,area:401.1,altitude:70,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"valparaiso",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

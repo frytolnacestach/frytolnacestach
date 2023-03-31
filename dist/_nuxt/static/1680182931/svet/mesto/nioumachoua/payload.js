@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nioumachoua", (function(a){return {data:[{place:[{id:1167,id_state:119,name:"Nioumachoua",population:10200,area:17.13,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nioumachoua",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

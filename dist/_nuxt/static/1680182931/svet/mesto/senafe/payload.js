@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/senafe", (function(a){return {data:[{place:[{id:647,id_state:67,name:"Senafe",population:55339,area:155,altitude:2400,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"senafe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

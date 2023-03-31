@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kibuye", (function(a){return {data:[{place:[{id:1888,id_state:192,name:"Kibuye",population:58435,area:81,altitude:1468,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kibuye",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

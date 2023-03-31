@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/dusanbe", (function(a){return {data:[{place:[{id:2163,id_state:219,name:"Dušanbe",population:810404,area:126.58,altitude:802,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dusanbe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

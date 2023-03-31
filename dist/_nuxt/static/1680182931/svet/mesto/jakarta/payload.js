@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/jakarta", (function(a){return {data:[{place:[{id:978,id_state:101,name:"Jakarta",population:10770487,area:661.5,altitude:8,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"jakarta",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

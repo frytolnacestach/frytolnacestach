@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/madame-estate", (function(a){return {data:[{place:[{id:2090,id_state:211,name:"Madame Estate",population:2098,area:.99,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"madame-estate",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

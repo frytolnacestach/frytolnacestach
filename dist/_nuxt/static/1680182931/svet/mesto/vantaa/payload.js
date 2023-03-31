@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/vantaa", (function(a){return {data:[{place:[{id:671,id_state:70,name:"Vantaa",population:233383,area:240.35,altitude:37,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"vantaa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/quilmes", (function(a){return {data:[{place:[{id:88,id_state:10,name:"Quilmes",population:580829,area:125,altitude:20,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"quilmes",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

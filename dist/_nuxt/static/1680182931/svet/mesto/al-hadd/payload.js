@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/al-hadd", (function(a){return {data:[{place:[{id:217,id_state:23,name:"Al Ḩadd",population:7459,area:1.98,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"al-hadd",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

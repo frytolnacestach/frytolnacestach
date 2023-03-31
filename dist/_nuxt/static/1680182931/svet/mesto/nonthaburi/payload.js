@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nonthaburi", (function(a){return {data:[{place:[{id:2154,id_state:218,name:"Nonthaburi",population:288000,area:38.9,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nonthaburi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

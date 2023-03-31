@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nieuw-amsterdam", (function(a){return {data:[{place:[{id:2048,id_state:207,name:"Nieuw Amsterdam",population:4939,area:2,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nieuw-amsterdam",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sanliurfa", (function(a){return {data:[{place:[{id:2231,id_state:225,name:"Şanlıurfa",population:2146364,area:18928,altitude:464,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sanliurfa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

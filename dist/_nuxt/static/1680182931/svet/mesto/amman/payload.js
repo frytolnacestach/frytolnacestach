@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/amman", (function(a){return {data:[{place:[{id:1098,id_state:113,name:"Amman",population:2817441,area:1681.99,altitude:773,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"amman",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/qacha's-nek", (function(a){return {data:[{place:[{id:1293,id_state:132,name:"Qacha's Nek",population:14252,area:2.5,altitude:1842,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"qacha's-nek",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

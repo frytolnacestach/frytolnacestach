@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/hat-yai", (function(a){return {data:[{place:[{id:2156,id_state:218,name:"Hat Yai",population:154400,area:45.75,altitude:105,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hat-yai",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

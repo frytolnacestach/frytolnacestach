@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mafeteng", (function(a){return {data:[{place:[{id:1290,id_state:132,name:"Mafeteng",population:18329,area:2.2,altitude:1946,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mafeteng",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

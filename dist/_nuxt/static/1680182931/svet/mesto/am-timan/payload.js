@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/am-timan", (function(a){return {data:[{place:[{id:2130,id_state:215,name:"Am Timan",population:33194,area:8.07,altitude:489,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"am-timan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

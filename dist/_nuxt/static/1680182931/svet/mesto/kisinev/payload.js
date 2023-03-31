@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kisinev", (function(a){return {data:[{place:[{id:1358,id_state:139,name:"Kišiněv",population:789500,area:123.67,altitude:56,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kisinev",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

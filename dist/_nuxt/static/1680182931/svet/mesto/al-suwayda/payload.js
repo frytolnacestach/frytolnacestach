@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/al-suwayda", (function(a){return {data:[{place:[{id:2102,id_state:212,name:"Al-Suwayda",population:82894,area:4.55,altitude:1000,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"al-suwayda",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

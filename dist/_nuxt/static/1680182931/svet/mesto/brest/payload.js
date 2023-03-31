@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/brest", (function(a){return {data:[{place:[{id:336,id_state:36,name:"Brest",population:298291,area:146.03,altitude:156,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"brest",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

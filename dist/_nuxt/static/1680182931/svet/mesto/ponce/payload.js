@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ponce", (function(a){return {data:[{place:[{id:1784,id_state:182,name:"Ponce",population:133191,area:296.09,altitude:17,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ponce",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

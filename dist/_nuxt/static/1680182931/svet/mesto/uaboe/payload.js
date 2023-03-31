@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/uaboe", (function(a){return {data:[{place:[{id:1662,id_state:169,name:"Uaboe",population:515,area:.93,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"uaboe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

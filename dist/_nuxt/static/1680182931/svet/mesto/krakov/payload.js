@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/krakov", (function(a){return {data:[{place:[{id:1759,id_state:179,name:"Krakov",population:769498,area:327,altitude:219,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"krakov",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

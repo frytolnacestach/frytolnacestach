@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/chan-junis", (function(a){return {data:[{place:[{id:1792,id_state:183,name:"Chán Júnis",population:294378,area:34,altitude:70,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chan-junis",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

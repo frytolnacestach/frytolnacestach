@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bhimdatta", (function(a){return {data:[{place:[{id:1655,id_state:168,name:"Bhimdatta",population:100072,area:17.3,altitude:833,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bhimdatta",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

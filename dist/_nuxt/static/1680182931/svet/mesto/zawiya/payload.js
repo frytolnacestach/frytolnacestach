@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/zawiya", (function(a){return {data:[{place:[{id:1332,id_state:136,name:"Zawiya",population:200000,area:11,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zawiya",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

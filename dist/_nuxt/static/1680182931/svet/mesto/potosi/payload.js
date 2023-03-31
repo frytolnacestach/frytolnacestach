@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/potosi", (function(a){return {data:[{place:[{id:278,id_state:29,name:"Potosí",population:177740,area:118.22,altitude:4067,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"potosi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

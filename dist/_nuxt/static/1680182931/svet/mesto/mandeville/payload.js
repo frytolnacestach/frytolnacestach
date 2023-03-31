@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mandeville", (function(a){return {data:[{place:[{id:1092,id_state:112,name:"Mandeville",population:50200,area:8.8,altitude:629,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mandeville",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

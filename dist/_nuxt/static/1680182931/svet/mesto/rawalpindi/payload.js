@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/rawalpindi", (function(a){return {data:[{place:[{id:1751,id_state:178,name:"Rawalpindi",population:2377661,area:259.3,altitude:508,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rawalpindi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

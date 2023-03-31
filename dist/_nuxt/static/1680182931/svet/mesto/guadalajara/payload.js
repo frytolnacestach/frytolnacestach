@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/guadalajara", (function(a){return {data:[{place:[{id:1542,id_state:157,name:"Guadalajara",population:1495182,area:1141.9,altitude:1563,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"guadalajara",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

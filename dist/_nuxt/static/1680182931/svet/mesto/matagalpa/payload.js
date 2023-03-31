@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/matagalpa", (function(a){return {data:[{place:[{id:1622,id_state:165,name:"Matagalpa",population:130000,area:615.52,altitude:651,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"matagalpa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

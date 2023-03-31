@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/al-buraimi", (function(a){return {data:[{place:[{id:1697,id_state:172,name:"Al Buraimi",population:72000,area:68,altitude:258,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"al-buraimi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

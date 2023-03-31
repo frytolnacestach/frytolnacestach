@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/suhar", (function(a){return {data:[{place:[{id:1690,id_state:172,name:"Suhár",population:140000,area:130,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"suhar",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

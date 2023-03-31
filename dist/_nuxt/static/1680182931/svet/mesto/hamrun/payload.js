@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/hamrun", (function(a){return {data:[{place:[{id:1505,id_state:153,name:"Hamrun",population:10839,area:.9,altitude:60,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hamrun",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

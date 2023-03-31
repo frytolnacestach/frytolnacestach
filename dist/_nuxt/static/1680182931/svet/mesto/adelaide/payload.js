@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/adelaide", (function(a){return {data:[{place:[{id:115,id_state:13,name:"Adelaide",population:1328544,area:1826.9,altitude:50,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"adelaide",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

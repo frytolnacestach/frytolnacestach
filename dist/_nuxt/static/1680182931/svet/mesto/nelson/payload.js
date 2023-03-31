@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nelson", (function(a){return {data:[{place:[{id:1686,id_state:171,name:"Nelson",population:54700,area:445,altitude:48,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nelson",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

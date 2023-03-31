@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mahajanga", (function(a){return {data:[{place:[{id:1392,id_state:142,name:"Mahajanga",population:154000,area:48.38,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mahajanga",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

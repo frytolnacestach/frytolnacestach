@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/faleula", (function(a){return {data:[{place:[{id:2407,id_state:244,name:"Faleula",population:1739,area:1.74,altitude:76,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"faleula",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

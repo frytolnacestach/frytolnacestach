@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bajil", (function(a){return {data:[{place:[{id:2422,id_state:245,name:"Bajil",population:386000,area:20,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bajil",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

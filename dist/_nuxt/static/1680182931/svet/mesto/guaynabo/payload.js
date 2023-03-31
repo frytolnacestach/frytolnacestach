@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/guaynabo", (function(a){return {data:[{place:[{id:1786,id_state:182,name:"Guaynabo",population:88324,area:27.7,altitude:21,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"guaynabo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

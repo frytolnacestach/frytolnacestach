@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/brikama", (function(a){return {data:[{place:[{id:820,id_state:85,name:"Brikama",population:101805,area:20.7,altitude:31,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"brikama",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

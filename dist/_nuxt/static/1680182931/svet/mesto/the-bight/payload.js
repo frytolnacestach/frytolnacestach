@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/the-bight", (function(a){return {data:[{place:[{id:2113,id_state:214,name:"The Bight",population:7500,area:6.1,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"the-bight",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

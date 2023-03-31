@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kara-kol", (function(a){return {data:[{place:[{id:1133,id_state:116,name:"Kara-Kol",population:32300,area:44,altitude:1690,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kara-kol",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

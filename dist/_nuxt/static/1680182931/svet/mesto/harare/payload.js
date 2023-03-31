@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/harare", (function(a){return {data:[{place:[{id:2454,id_state:249,name:"Harare",population:2350000,area:960.6,altitude:1494,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"harare",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

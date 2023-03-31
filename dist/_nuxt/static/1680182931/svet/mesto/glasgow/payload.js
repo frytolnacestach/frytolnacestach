@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/glasgow", (function(a){return {data:[{place:[{id:740,id_state:77,name:"Glasgow",population:612040,area:175.3,altitude:25,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"glasgow",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

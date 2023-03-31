@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kuvajt", (function(a){return {data:[{place:[{id:1198,id_state:123,name:"Kuvajt",population:4220679,area:17.82,altitude:150,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kuvajt",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/jaipur", (function(a){return {data:[{place:[{id:1027,id_state:105,name:"Jaipur",population:3073350,area:484.64,altitude:431,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"jaipur",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

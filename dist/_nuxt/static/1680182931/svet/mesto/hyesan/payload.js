@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/hyesan", (function(a){return {data:[{place:[{id:1187,id_state:121,name:"Hyesan",population:192680,area:86.16,altitude:767,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hyesan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/pinsk", (function(a){return {data:[{place:[{id:338,id_state:36,name:"Pinsk",population:119490,area:28.68,altitude:141,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pinsk",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

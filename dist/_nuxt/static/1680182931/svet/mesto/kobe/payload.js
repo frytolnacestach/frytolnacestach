@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kobe", (function(a){return {data:[{place:[{id:1113,id_state:114,name:"Kobe",population:1549468,area:551.25,altitude:44,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kobe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

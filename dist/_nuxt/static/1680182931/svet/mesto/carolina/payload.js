@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/carolina", (function(a){return {data:[{place:[{id:1783,id_state:182,name:"Carolina",population:154361,area:16.06,altitude:9,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"carolina",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

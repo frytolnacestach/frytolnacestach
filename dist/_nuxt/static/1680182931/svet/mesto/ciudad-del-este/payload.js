@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ciudad-del-este", (function(a){return {data:[{place:[{id:1822,id_state:186,name:"Ciudad del Este",population:336442,area:107.1,altitude:299,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ciudad-del-este",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/milan", (function(a){return {data:[{place:[{id:1069,id_state:110,name:"Milán",population:1352102,area:181.67,altitude:122,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"milan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

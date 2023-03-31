@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/upper-prince-s-quarter", (function(a){return {data:[{place:[{id:2085,id_state:211,name:"Upper Prince’s Quarter",population:3646,area:3.19,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"upper-prince-s-quarter",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

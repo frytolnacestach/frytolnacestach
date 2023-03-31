@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/naifaru", (function(a){return {data:[{place:[{id:1524,id_state:155,name:"Naifaru",population:7933,area:.72,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"naifaru",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

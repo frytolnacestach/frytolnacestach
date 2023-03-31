@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/el-obeid", (function(a){return {data:[{place:[{id:1926,id_state:196,name:"El Obeid",population:296139,area:185.08,altitude:609,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"el-obeid",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

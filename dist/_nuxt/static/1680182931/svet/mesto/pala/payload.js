@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/pala", (function(a){return {data:[{place:[{id:2129,id_state:215,name:"Pala",population:35133,area:21.77,altitude:412,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pala",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

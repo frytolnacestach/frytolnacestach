@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/aqaba", (function(a){return {data:[{place:[{id:1105,id_state:113,name:"Aqaba",population:191940,area:144,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"aqaba",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

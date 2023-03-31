@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/lisabon", (function(a){return {data:[{place:[{id:1801,id_state:184,name:"Lisabon",population:507938,area:100.05,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lisabon",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

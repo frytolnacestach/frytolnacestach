@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/half-way-tree", (function(a){return {data:[{place:[{id:1096,id_state:112,name:"Half Way Tree",population:18600,area:2.8,altitude:105,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"half-way-tree",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

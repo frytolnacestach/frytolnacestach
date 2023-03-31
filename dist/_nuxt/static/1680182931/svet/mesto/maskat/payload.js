@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/maskat", (function(a){return {data:[{place:[{id:1688,id_state:172,name:"Maskat",population:1604000,area:370,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"maskat",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

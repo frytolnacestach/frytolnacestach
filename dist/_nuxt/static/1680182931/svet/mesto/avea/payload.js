@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/avea", (function(a){return {data:[{place:[{id:2399,id_state:243,name:"Avea",population:143,area:.64,altitude:52,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"avea",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

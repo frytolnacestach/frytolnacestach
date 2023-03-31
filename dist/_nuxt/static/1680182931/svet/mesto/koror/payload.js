@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/koror", (function(a){return {data:[{place:[{id:1811,id_state:185,name:"Koror",population:11711,area:22,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"koror",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

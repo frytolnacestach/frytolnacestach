@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/manta", (function(a){return {data:[{place:[{id:605,id_state:63,name:"Manta",population:217553,area:185.83,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"manta",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

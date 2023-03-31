@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/castle-bruce", (function(a){return {data:[{place:[{id:576,id_state:60,name:"Castle Bruce",population:1615,area:1.05,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"castle-bruce",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

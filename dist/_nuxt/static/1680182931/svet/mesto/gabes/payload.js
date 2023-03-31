@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/gabes", (function(a){return {data:[{place:[{id:2208,id_state:223,name:"Gabès",population:112339,area:29.12,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gabes",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

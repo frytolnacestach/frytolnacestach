@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/belehrad", (function(a){return {data:[{place:[{id:1861,id_state:190,name:"Bělehrad",population:1261582,area:360,altitude:116,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"belehrad",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

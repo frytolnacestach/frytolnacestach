@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/abidjan", (function(a){return {data:[{place:[{id:408,id_state:44,name:"Abidjan",population:4876822,area:2.51,altitude:18,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"abidjan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

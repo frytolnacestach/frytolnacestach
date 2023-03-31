@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/da-nang", (function(a){return {data:[{place:[{id:2378,id_state:241,name:"Đà Nẵng",population:1159915,area:1285.4,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"da-nang",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

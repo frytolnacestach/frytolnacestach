@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/goodlands", (function(a){return {data:[{place:[{id:1514,id_state:154,name:"Goodlands",population:21356,area:1.81,altitude:70,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"goodlands",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

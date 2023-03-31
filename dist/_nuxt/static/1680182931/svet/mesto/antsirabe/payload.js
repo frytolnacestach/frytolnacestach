@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/antsirabe", (function(a){return {data:[{place:[{id:1390,id_state:142,name:"Antsirabe",population:246000,area:47.18,altitude:1500,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"antsirabe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

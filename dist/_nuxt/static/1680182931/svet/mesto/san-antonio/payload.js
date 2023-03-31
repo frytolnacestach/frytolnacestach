@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/san-antonio", (function(a){return {data:[{place:[{id:2309,id_state:233,name:"San Antonio",population:1547253,area:1194,altitude:198,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"san-antonio",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

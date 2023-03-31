@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/pljevlja", (function(a){return {data:[{place:[{id:1370,id_state:140,name:"Pljevlja",population:18800,area:1349,altitude:810,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pljevlja",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

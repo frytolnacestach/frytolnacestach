@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/puebla", (function(a){return {data:[{place:[{id:1541,id_state:157,name:"Puebla",population:1683028,area:534.9,altitude:2160,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"puebla",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

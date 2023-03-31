@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/afaahiti", (function(a){return {data:[{place:[{id:1725,id_state:175,name:"Afaahiti",population:5247,area:22.9,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"afaahiti",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

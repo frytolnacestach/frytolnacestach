@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/faaa", (function(a){return {data:[{place:[{id:1719,id_state:175,name:"Faaa",population:30075,area:18.5,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"faaa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

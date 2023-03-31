@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/afio", (function(a){return {data:[{place:[{id:1909,id_state:194,name:"Afio",population:500,area:.5,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"afio",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

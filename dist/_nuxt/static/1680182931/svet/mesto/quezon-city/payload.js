@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/quezon-city", (function(a){return {data:[{place:[{id:1738,id_state:177,name:"Quezon City",population:2936116,area:166.2,altitude:17,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"quezon-city",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

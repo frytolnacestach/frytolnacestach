@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/al-quwaysimah", (function(a){return {data:[{place:[{id:1102,id_state:113,name:"Al Quwaysimah",population:291902,area:9.34,altitude:720,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"al-quwaysimah",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

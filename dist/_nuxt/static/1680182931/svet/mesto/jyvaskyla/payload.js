@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/jyvaskyla", (function(a){return {data:[{place:[{id:674,id_state:70,name:"Jyväskylä",population:141305,area:136.16,altitude:106,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"jyvaskyla",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

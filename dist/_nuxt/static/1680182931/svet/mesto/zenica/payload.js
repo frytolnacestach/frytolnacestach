@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/zenica", (function(a){return {data:[{place:[{id:154,id_state:17,name:"Zenica",population:102075,area:51.46,altitude:316,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zenica",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

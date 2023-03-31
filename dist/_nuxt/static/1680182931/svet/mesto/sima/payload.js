@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sima", (function(a){return {data:[{place:[{id:1162,id_state:119,name:"Sima",population:14000,area:14.48,altitude:53,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sima",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

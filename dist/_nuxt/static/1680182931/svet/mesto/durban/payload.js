@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/durban", (function(a){return {data:[{place:[{id:2435,id_state:247,name:"Durban",population:3442361,area:2292.57,altitude:8,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"durban",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

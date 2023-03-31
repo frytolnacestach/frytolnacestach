@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/calshot-harbour", (function(a){return {data:[{place:[{id:1957,id_state:199,name:"Calshot Harbour",population:133,area:.03,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"calshot-harbour",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

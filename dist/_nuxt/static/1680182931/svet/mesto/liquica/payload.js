@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/liquica", (function(a){return {data:[{place:[{id:2186,id_state:221,name:"Liquiça",population:8647,area:168.2,altitude:53,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"liquica",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

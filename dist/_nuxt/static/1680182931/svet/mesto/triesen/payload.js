@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/triesen", (function(a){return {data:[{place:[{id:1263,id_state:129,name:"Triesen",population:2585,area:7.67,altitude:480,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"triesen",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sousse", (function(a){return {data:[{place:[{id:2205,id_state:223,name:"Sousse",population:244518,area:45.18,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sousse",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

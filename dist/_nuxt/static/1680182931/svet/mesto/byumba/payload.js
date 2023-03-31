@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/byumba", (function(a){return {data:[{place:[{id:1886,id_state:192,name:"Byumba",population:70584,area:76,altitude:1728,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"byumba",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

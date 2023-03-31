@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nkhata-bay", (function(a){return {data:[{place:[{id:1536,id_state:156,name:"Nkhata Bay",population:15247,area:2,altitude:472,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nkhata-bay",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

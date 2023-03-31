@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/zabid", (function(a){return {data:[{place:[{id:2421,id_state:245,name:"Zabid",population:403000,area:20,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zabid",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

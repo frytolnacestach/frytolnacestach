@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/henderson", (function(a){return {data:[{place:[{id:1779,id_state:181,name:"Henderson",population:0,area:37.3,altitude:33,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"henderson",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

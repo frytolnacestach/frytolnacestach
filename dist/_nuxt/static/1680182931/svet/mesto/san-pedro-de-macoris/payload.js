@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/san-pedro-de-macoris", (function(a){return {data:[{place:[{id:581,id_state:61,name:"San Pedro de Macorís",population:253019,area:335.1,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"san-pedro-de-macoris",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

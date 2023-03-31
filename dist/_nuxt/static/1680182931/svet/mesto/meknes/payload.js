@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/meknes", (function(a){return {data:[{place:[{id:1344,id_state:137,name:"Meknes",population:632079,area:423,altitude:570,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"meknes",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

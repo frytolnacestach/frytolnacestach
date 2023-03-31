@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/delhi", (function(a){return {data:[{place:[{id:1019,id_state:105,name:"Delhi",population:16787941,area:1484,altitude:216,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"delhi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

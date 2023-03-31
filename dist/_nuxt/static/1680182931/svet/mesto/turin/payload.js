@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/turin", (function(a){return {data:[{place:[{id:1071,id_state:110,name:"Turín",population:883281,area:130.17,altitude:239,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"turin",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

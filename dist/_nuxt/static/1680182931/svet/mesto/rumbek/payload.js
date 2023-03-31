@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/rumbek", (function(a){return {data:[{place:[{id:2056,id_state:208,name:"Rumbek",population:120130,area:110,altitude:420,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rumbek",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

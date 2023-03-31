@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sonsorol-village", (function(a){return {data:[{place:[{id:1820,id_state:185,name:"Sonsorol Village",population:40,area:3.6,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sonsorol-village",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

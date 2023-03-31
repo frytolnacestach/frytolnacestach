@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/jurong-west", (function(a){return {data:[{place:[{id:1943,id_state:198,name:"Jurong West",population:264860,area:14.69,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"jurong-west",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bodden-town", (function(a){return {data:[{place:[{id:1210,id_state:124,name:"Bodden Town",population:10802,area:16,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bodden-town",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/cotai", (function(a){return {data:[{place:[{id:1451,id_state:148,name:"Cotai",population:2500,area:4,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cotai",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

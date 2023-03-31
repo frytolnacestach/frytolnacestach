@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sarh", (function(a){return {data:[{place:[{id:2125,id_state:215,name:"Sarh",population:177767,area:58.44,altitude:349,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sarh",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

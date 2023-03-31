@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/jekaterinburg", (function(a){return {data:[{place:[{id:1874,id_state:191,name:"Jekatěrinburg",population:1483119,area:489.09,altitude:247,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"jekaterinburg",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/molepolole", (function(a){return {data:[{place:[{id:323,id_state:35,name:"Molepolole",population:73596,area:12.94,altitude:1135,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"molepolole",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

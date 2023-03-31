@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/lucern", (function(a){return {data:[{place:[{id:404,id_state:43,name:"Lucern",population:81691,area:29.06,altitude:436,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lucern",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

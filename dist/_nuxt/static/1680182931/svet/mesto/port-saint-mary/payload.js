@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/port-saint-mary", (function(a){return {data:[{place:[{id:1016,id_state:104,name:"Port Saint Mary",population:1902,area:1.95,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"port-saint-mary",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

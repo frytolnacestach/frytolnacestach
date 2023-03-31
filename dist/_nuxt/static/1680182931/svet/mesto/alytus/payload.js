@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/alytus", (function(a){return {data:[{place:[{id:1303,id_state:133,name:"Alytus",population:51451,area:40,altitude:92,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"alytus",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

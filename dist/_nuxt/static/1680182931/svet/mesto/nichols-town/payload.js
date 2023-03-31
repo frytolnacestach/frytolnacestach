@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nichols-town", (function(a,b){return {data:[{place:[{id:1177,id_state:120,name:"Nichols Town",population:874,area:b,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nichols-town",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null,1)));

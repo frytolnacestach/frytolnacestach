@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/fond-du-port", (function(a,b){return {data:[{place:[{id:2135,id_state:216,name:"Fond du Port",population:b,area:25,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"fond-du-port",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null,0)));

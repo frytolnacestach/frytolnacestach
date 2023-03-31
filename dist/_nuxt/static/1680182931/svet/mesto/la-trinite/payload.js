@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/la-trinite", (function(a){return {data:[{place:[{id:1474,id_state:150,name:"La Trinité",population:12877,area:58.62,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"la-trinite",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

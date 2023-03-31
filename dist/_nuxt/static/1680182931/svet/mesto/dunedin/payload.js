@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/dunedin", (function(a){return {data:[{place:[{id:1684,id_state:171,name:"Dunedin",population:120200,area:331,altitude:25,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dunedin",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sarajevo", (function(a){return {data:[{place:[{id:151,id_state:17,name:"Sarajevo",population:275524,area:142.5,altitude:518,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sarajevo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

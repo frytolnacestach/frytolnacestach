@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/same", (function(a){return {data:[{place:[{id:2188,id_state:221,name:"Same",population:6845,area:186.59,altitude:802,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"same",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ngaremlengui", (function(a){return {data:[{place:[{id:1816,id_state:185,name:"Ngaremlengui",population:208,area:22.4,altitude:8,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ngaremlengui",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

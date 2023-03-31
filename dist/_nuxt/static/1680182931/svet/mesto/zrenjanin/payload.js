@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/zrenjanin", (function(a){return {data:[{place:[{id:1867,id_state:190,name:"Zrenjanin",population:132960,area:132,altitude:70,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zrenjanin",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/blue-hills", (function(a){return {data:[{place:[{id:2114,id_state:214,name:"Blue Hills",population:5526,area:1.66,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"blue-hills",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

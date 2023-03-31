@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/chaguanas", (function(a){return {data:[{place:[{id:2233,id_state:226,name:"Chaguanas",population:83000,area:16.07,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chaguanas",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

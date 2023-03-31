@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/karabalta", (function(a){return {data:[{place:[{id:1131,id_state:116,name:"Karabalta",population:56400,area:42,altitude:836,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"karabalta",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

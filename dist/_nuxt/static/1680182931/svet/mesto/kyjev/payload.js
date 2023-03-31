@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kyjev", (function(a){return {data:[{place:[{id:2273,id_state:230,name:"Kyjev",population:2884000,area:839,altitude:179,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kyjev",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

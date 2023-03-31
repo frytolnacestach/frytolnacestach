@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/middle-island", (function(a){return {data:[{place:[{id:1175,id_state:120,name:"Middle Island",population:1036,area:1.5,altitude:24,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"middle-island",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

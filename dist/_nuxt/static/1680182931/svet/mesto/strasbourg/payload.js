@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/strasbourg", (function(a){return {data:[{place:[{id:724,id_state:75,name:"Strasbourg",population:277270,area:78.26,altitude:151,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"strasbourg",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/narva", (function(a){return {data:[{place:[{id:610,id_state:64,name:"Narva",population:55695,area:82.6,altitude:28,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"narva",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

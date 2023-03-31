@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/pyramiden", (function(a){return {data:[{place:[{id:1987,id_state:201,name:"Pyramiden",population:4,area:.1,altitude:45,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pyramiden",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

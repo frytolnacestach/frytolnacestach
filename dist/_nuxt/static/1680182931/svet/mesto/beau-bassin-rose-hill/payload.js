@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/beau-bassin-rose-hill", (function(a){return {data:[{place:[{id:1510,id_state:154,name:"Beau Bassin-Rose Hill",population:104610,area:16.26,altitude:350,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"beau-bassin-rose-hill",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/vaitele", (function(a){return {data:[{place:[{id:2406,id_state:244,name:"Vaitele",population:1812,area:2.04,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"vaitele",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

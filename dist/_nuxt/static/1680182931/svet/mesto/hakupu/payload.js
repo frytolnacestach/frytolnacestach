@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/hakupu", (function(a){return {data:[{place:[{id:1670,id_state:170,name:"Hakupu",population:126,area:.68,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hakupu",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

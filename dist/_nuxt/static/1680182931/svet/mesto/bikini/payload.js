@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bikini", (function(a){return {data:[{place:[{id:1406,id_state:143,name:"Bikini",population:321,area:.5,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bikini",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

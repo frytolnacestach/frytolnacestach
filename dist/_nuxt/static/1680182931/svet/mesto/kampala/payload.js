@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kampala", (function(a){return {data:[{place:[{id:2283,id_state:231,name:"Kampala",population:1899793,area:189.71,altitude:1190,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kampala",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

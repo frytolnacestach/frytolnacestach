@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/fakaofo", (function(a){return {data:[{place:[{id:2173,id_state:220,name:"Fakaofo",population:300,area:3,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"fakaofo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

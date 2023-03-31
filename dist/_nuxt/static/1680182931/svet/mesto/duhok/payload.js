@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/duhok", (function(a){return {data:[{place:[{id:1043,id_state:107,name:"Duhok",population:946263,area:1.27,altitude:422,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"duhok",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

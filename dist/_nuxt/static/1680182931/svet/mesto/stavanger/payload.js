@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/stavanger", (function(a){return {data:[{place:[{id:1641,id_state:167,name:"Stavanger",population:143940,area:71.5,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"stavanger",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tunapuna", (function(a){return {data:[{place:[{id:2239,id_state:226,name:"Tunapuna",population:17700,area:4.92,altitude:19,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tunapuna",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

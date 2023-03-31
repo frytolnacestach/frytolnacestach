@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/fes", (function(a){return {data:[{place:[{id:1340,id_state:137,name:"Fes",population:1225907,area:485,altitude:405,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"fes",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

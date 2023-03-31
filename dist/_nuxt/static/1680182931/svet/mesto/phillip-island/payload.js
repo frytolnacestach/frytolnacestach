@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/phillip-island", (function(a){return {data:[{place:[{id:1606,id_state:163,name:"Phillip Island",population:358,area:.78,altitude:50,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"phillip-island",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/karagandy", (function(a){return {data:[{place:[{id:1221,id_state:125,name:"Karagandy",population:468000,area:451.96,altitude:535,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"karagandy",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/porsgrunn", (function(a){return {data:[{place:[{id:1644,id_state:167,name:"Porsgrunn",population:36870,area:163.87,altitude:14,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"porsgrunn",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

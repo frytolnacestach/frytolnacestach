@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/dikhil", (function(a){return {data:[{place:[{id:552,id_state:58,name:"Dikhil",population:14809,area:3100,altitude:775,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dikhil",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

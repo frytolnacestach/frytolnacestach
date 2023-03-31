@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/saint-andre", (function(a){return {data:[{place:[{id:1845,id_state:188,name:"Saint-André",population:54428,area:53.22,altitude:60,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saint-andre",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

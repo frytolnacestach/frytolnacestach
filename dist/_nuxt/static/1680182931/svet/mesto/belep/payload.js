@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/belep", (function(a){return {data:[{place:[{id:1586,id_state:161,name:"Bélep",population:914,area:69,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"belep",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/aweil", (function(a){return {data:[{place:[{id:2059,id_state:208,name:"Aweil",population:60715,area:56,altitude:406,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"aweil",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

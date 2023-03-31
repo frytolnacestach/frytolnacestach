@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/safotulafai", (function(a){return {data:[{place:[{id:2413,id_state:244,name:"Safotulafai",population:1313,area:3.13,altitude:38,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"safotulafai",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

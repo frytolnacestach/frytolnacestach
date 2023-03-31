@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/punggol", (function(a){return {data:[{place:[{id:1945,id_state:198,name:"Punggol",population:181630,area:9.57,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"punggol",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

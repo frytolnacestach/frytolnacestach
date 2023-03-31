@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mosta", (function(a){return {data:[{place:[{id:1500,id_state:153,name:"Mosta",population:17906,area:6.67,altitude:200,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mosta",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

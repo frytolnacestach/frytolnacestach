@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tauranga", (function(a){return {data:[{place:[{id:1682,id_state:171,name:"Tauranga",population:147500,area:125,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tauranga",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

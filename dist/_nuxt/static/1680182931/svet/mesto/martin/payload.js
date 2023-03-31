@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/martin", (function(a){return {data:[{place:[{id:2000,id_state:202,name:"Martin",population:60005,area:67.39,altitude:451,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"martin",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

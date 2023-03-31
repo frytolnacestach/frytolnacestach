@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/saint-mary", (function(a){return {data:[{place:[{id:1086,id_state:111,name:"Saint Mary",population:2000,area:5.2,altitude:50,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saint-mary",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

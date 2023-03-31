@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kumlinge", (function(a){return {data:[{place:[{id:139,id_state:15,name:"Kumlinge",population:423,area:99.46,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kumlinge",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

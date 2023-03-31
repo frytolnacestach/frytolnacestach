@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/amsterdam", (function(a){return {data:[{place:[{id:1628,id_state:166,name:"Amsterdam",population:821752,area:219.32,altitude:-2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"amsterdam",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/qormi", (function(a){return {data:[{place:[{id:1499,id_state:153,name:"Qormi",population:18032,area:5.86,altitude:80,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"qormi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

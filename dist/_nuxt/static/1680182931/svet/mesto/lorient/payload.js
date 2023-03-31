@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/lorient", (function(a){return {data:[{place:[{id:244,id_state:26,name:"Lorient",population:2397,area:5.1,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lorient",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/walvis-bay", (function(a){return {data:[{place:[{id:1570,id_state:160,name:"Walvis Bay",population:85607,area:29.82,altitude:8,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"walvis-bay",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

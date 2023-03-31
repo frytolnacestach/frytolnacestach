@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/barrouallie", (function(a){return {data:[{place:[{id:2342,id_state:237,name:"Barrouallie",population:276,area:1.2,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"barrouallie",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

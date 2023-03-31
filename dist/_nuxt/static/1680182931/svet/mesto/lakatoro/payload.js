@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/lakatoro", (function(a){return {data:[{place:[{id:2389,id_state:242,name:"Lakatoro",population:705,area:3,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lakatoro",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

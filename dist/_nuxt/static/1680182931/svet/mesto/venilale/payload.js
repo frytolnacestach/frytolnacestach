@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/venilale", (function(a){return {data:[{place:[{id:2185,id_state:221,name:"Venilale",population:6105,area:59.13,altitude:691,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"venilale",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

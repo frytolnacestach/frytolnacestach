@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/erdenet", (function(a){return {data:[{place:[{id:1439,id_state:147,name:"Erdenet",population:96238,area:77.2,altitude:1332,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"erdenet",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ngardmau", (function(a){return {data:[{place:[{id:1814,id_state:185,name:"Ngardmau",population:234,area:31.2,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ngardmau",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

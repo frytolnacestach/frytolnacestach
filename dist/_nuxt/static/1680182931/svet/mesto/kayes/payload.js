@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kayes", (function(a){return {data:[{place:[{id:1423,id_state:145,name:"Kayes",population:120000,area:37800,altitude:29,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kayes",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

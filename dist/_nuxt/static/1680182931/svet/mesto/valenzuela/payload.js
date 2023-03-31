@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/valenzuela", (function(a){return {data:[{place:[{id:1747,id_state:177,name:"Valenzuela",population:620422,area:47.02,altitude:21,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"valenzuela",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

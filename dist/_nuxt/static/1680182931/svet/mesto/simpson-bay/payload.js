@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/simpson-bay", (function(a){return {data:[{place:[{id:2084,id_state:211,name:"Simpson Bay",population:4131,area:5.2,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"simpson-bay",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

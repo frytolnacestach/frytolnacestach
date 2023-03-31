@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/khartoum", (function(a){return {data:[{place:[{id:1921,id_state:196,name:"Khartoum",population:5601721,area:22.14,altitude:380,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"khartoum",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

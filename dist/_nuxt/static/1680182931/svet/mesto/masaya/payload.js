@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/masaya", (function(a){return {data:[{place:[{id:1620,id_state:165,name:"Masaya",population:156142,area:28.18,altitude:520,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"masaya",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

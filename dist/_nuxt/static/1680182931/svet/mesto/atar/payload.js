@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/atar", (function(a){return {data:[{place:[{id:1484,id_state:151,name:"Atar",population:26026,area:20.6,altitude:259,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"atar",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

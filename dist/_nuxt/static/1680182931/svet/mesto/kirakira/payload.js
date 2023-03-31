@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kirakira", (function(a){return {data:[{place:[{id:1906,id_state:194,name:"Kirakira",population:1600,area:1.2,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kirakira",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

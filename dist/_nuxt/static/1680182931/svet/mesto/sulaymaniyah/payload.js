@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sulaymaniyah", (function(a){return {data:[{place:[{id:1046,id_state:107,name:"Sulaymaniyah",population:655215,area:25.6,altitude:830,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sulaymaniyah",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

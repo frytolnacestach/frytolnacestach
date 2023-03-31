@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/yokohama", (function(a){return {data:[{place:[{id:1109,id_state:114,name:"Yokohama",population:3725701,area:434.41,altitude:40,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"yokohama",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kolonia", (function(a){return {data:[{place:[{id:698,id_state:73,name:"Kolonia",population:6108,area:102.29,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kolonia",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

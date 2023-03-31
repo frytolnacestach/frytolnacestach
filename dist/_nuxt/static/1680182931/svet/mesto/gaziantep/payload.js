@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/gaziantep", (function(a){return {data:[{place:[{id:2228,id_state:225,name:"Gaziantep",population:1983459,area:7449,altitude:844,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"gaziantep",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

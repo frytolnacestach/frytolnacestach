@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/zuunkharaa", (function(a){return {data:[{place:[{id:1446,id_state:147,name:"Züünkharaa",population:21940,area:14.81,altitude:659,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zuunkharaa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

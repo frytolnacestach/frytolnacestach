@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/schaan", (function(a){return {data:[{place:[{id:1258,id_state:129,name:"Schaan",population:6033,area:26.81,altitude:458,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"schaan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

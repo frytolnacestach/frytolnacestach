@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ta'izz", (function(a){return {data:[{place:[{id:2416,id_state:245,name:"Ta'izz",population:834000,area:129,altitude:1400,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ta'izz",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

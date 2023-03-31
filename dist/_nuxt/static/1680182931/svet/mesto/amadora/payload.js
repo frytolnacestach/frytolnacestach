@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/amadora", (function(a){return {data:[{place:[{id:1803,id_state:184,name:"Amadora",population:175872,area:23.77,altitude:126,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"amadora",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

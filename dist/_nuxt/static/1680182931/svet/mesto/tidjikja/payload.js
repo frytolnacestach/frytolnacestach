@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tidjikja", (function(a){return {data:[{place:[{id:1482,id_state:151,name:"Tidjikja",population:28515,area:55,altitude:389,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tidjikja",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

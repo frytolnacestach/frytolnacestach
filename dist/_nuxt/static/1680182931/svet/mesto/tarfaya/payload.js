@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tarfaya", (function(a){return {data:[{place:[{id:632,id_state:66,name:"Tarfaya",population:14528,area:18.2,altitude:24,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tarfaya",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

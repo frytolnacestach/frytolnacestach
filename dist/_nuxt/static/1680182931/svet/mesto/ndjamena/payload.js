@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ndjamena", (function(a){return {data:[{place:[{id:2123,id_state:215,name:"Ndjamena",population:1291129,area:706.1,altitude:295,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ndjamena",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

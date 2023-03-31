@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ilha-verde", (function(a){return {data:[{place:[{id:1457,id_state:148,name:"Ilha Verde",population:50,area:.05,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ilha-verde",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

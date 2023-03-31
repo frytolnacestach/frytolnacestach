@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kaohsiung", (function(a){return {data:[{place:[{id:2255,id_state:228,name:"Kaohsiung",population:1538769,area:2949.97,altitude:9,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kaohsiung",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

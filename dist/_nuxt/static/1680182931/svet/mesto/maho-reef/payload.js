@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/maho-reef", (function(a){return {data:[{place:[{id:2088,id_state:211,name:"Maho Reef",population:2239,area:1.37,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"maho-reef",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

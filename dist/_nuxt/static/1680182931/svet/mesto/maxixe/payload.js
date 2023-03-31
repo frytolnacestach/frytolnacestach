@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/maxixe", (function(a){return {data:[{place:[{id:1566,id_state:159,name:"Maxixe",population:101993,area:9.6,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"maxixe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

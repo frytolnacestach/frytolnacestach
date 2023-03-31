@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/leskovac", (function(a){return {data:[{place:[{id:1865,id_state:190,name:"Leskovac",population:144206,area:1032,altitude:240,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"leskovac",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

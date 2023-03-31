@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nampula", (function(a){return {data:[{place:[{id:1561,id_state:159,name:"Nampula",population:476263,area:103.78,altitude:434,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nampula",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

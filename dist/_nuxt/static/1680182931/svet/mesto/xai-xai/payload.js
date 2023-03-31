@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/xai-xai", (function(a){return {data:[{place:[{id:1565,id_state:159,name:"Xai-Xai",population:115752,area:30.39,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"xai-xai",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/pangai", (function(a){return {data:[{place:[{id:2217,id_state:224,name:"Pangai",population:1694,area:.97,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pangai",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

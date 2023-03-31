@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nur-sultan", (function(a){return {data:[{place:[{id:1219,id_state:125,name:"Nur-Sultan",population:1166000,area:811.31,altitude:347,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nur-sultan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/jequie", (function(a){return {data:[{place:[{id:2081,id_state:210,name:"Jequié",population:159035,area:311.67,altitude:305,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"jequie",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/abdullah-al-salim", (function(a,b){return {data:[{place:[{id:1207,id_state:123,name:"Abdullah al-Salim",population:100191,area:b,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"abdullah-al-salim",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null,10)));

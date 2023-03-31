@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/adana", (function(a){return {data:[{place:[{id:2227,id_state:225,name:"Adana",population:1980414,area:1478,altitude:23,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"adana",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

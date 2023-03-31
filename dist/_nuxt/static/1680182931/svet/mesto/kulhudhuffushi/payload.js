@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kulhudhuffushi", (function(a){return {data:[{place:[{id:1522,id_state:155,name:"Kulhudhuffushi",population:9208,area:1.89,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kulhudhuffushi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

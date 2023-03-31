@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/changhua", (function(a){return {data:[{place:[{id:2261,id_state:228,name:"Changhua",population:233190,area:66.82,altitude:9,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"changhua",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

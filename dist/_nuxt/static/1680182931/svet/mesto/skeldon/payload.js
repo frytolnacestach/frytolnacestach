@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/skeldon", (function(a){return {data:[{place:[{id:912,id_state:94,name:"Skeldon",population:5429,area:5.5,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"skeldon",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

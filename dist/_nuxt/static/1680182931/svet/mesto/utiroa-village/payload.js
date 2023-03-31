@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/utiroa-village", (function(a){return {data:[{place:[{id:1155,id_state:118,name:"Utiroa Village",population:1804,area:.53,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"utiroa-village",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

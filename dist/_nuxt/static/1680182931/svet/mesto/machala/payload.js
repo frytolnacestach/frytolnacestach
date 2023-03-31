@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/machala", (function(a){return {data:[{place:[{id:602,id_state:63,name:"Machala",population:245671,area:221.98,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"machala",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

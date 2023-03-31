@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/damaskus", (function(a){return {data:[{place:[{id:2094,id_state:212,name:"Damaskus",population:2670432,area:105.03,altitude:700,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"damaskus",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

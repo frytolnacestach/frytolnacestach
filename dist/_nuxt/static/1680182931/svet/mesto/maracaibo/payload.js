@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/maracaibo", (function(a){return {data:[{place:[{id:2345,id_state:238,name:"Maracaibo",population:1778500,area:540,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"maracaibo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

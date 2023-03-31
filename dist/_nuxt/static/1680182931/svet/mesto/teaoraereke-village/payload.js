@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/teaoraereke-village", (function(a){return {data:[{place:[{id:1151,id_state:118,name:"Teaoraereke Village",population:3255,area:.66,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"teaoraereke-village",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

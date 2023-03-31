@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/vagur", (function(a){return {data:[{place:[{id:713,id_state:74,name:"Vágur",population:1430,area:1.5,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"vagur",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

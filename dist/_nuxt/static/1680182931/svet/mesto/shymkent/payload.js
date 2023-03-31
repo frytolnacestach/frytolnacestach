@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/shymkent", (function(a){return {data:[{place:[{id:1220,id_state:125,name:"Shymkent",population:1095000,area:169.21,altitude:472,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"shymkent",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

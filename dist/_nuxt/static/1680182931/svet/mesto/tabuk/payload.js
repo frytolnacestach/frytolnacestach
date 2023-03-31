@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tabuk", (function(a){return {data:[{place:[{id:1898,id_state:193,name:"Tabúk",population:571770,area:2354,altitude:834,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tabuk",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

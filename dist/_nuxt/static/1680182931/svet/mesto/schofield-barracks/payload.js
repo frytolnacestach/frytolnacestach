@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/schofield-barracks", (function(a){return {data:[{place:[{id:2302,id_state:232,name:"Schofield Barracks",population:16323,area:5.4,altitude:218,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"schofield-barracks",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

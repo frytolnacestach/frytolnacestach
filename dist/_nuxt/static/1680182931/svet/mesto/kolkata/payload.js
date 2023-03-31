@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kolkata", (function(a){return {data:[{place:[{id:1024,id_state:105,name:"Kolkata",population:7559825,area:185,altitude:9,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kolkata",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

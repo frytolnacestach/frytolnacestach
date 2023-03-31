@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/malindi", (function(a){return {data:[{place:[{id:1124,id_state:115,name:"Malindi",population:209994,area:17,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"malindi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

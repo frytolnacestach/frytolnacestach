@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kazan", (function(a){return {data:[{place:[{id:1877,id_state:191,name:"Kazan",population:1190173,area:425.16,altitude:107,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kazan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

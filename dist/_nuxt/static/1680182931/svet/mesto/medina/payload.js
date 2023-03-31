@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/medina", (function(a){return {data:[{place:[{id:1894,id_state:193,name:"Medína",population:1304730,area:589,altitude:624,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"medina",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

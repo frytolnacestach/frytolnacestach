@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bikenibeu-village", (function(a){return {data:[{place:[{id:1150,id_state:118,name:"Bikenibeu Village",population:6400,area:1.08,altitude:2,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bikenibeu-village",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

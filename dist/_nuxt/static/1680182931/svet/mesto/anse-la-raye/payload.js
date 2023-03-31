@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/anse-la-raye", (function(a){return {data:[{place:[{id:1255,id_state:128,name:"Anse la Raye",population:1988,area:2,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"anse-la-raye",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

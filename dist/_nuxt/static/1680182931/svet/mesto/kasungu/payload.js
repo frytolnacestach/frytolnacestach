@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kasungu", (function(a){return {data:[{place:[{id:1532,id_state:156,name:"Kasungu",population:98964,area:44,altitude:1209,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kasungu",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

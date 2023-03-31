@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kluz", (function(a){return {data:[{place:[{id:1852,id_state:189,name:"Kluž",population:316748,area:179.5,altitude:325,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kluz",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/waterford", (function(a){return {data:[{place:[{id:992,id_state:102,name:"Waterford",population:53681,area:41.55,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"waterford",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

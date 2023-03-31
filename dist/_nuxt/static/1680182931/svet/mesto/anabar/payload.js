@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/anabar", (function(a){return {data:[{place:[{id:1663,id_state:169,name:"Anabar",population:489,area:13.41,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"anabar",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

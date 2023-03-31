@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ha-noi", (function(a){return {data:[{place:[{id:2375,id_state:241,name:"Hà Nội",population:7264251,area:3323.6,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ha-noi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

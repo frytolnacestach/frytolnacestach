@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/saipan", (function(a){return {data:[{place:[{id:1459,id_state:149,name:"Saipan",population:48220,area:120.55,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"saipan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

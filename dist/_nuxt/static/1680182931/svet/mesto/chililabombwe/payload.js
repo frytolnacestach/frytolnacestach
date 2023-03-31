@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/chililabombwe", (function(a){return {data:[{place:[{id:2453,id_state:248,name:"Chililabombwe",population:79403,area:57.24,altitude:1333,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"chililabombwe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

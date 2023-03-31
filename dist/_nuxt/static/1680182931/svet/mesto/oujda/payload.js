@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/oujda", (function(a){return {data:[{place:[{id:1345,id_state:137,name:"Oujda",population:545635,area:81,altitude:450,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"oujda",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

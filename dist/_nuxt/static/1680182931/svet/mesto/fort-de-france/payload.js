@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/fort-de-france", (function(a){return {data:[{place:[{id:1468,id_state:150,name:"Fort-de-France",population:85856,area:44.21,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"fort-de-france",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

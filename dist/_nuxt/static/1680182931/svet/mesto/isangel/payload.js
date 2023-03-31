@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/isangel", (function(a){return {data:[{place:[{id:2387,id_state:242,name:"Isangel",population:1693,area:3,altitude:28,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"isangel",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

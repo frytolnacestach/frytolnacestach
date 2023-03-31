@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/talikoti", (function(a){return {data:[{place:[{id:2179,id_state:220,name:"Talikoti",population:300,area:1.29,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"talikoti",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

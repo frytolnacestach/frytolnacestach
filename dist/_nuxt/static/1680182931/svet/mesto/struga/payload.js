@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/struga", (function(a){return {data:[{place:[{id:1417,id_state:144,name:"Struga",population:34285,area:422.09,altitude:694,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"struga",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

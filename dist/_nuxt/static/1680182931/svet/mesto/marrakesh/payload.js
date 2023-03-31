@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/marrakesh", (function(a){return {data:[{place:[{id:1342,id_state:137,name:"Marrakesh",population:1031000,area:230,altitude:460,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"marrakesh",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

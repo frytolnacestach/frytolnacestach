@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mawlamyine", (function(a){return {data:[{place:[{id:1431,id_state:146,name:"Mawlamyine",population:304170,area:37.8,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mawlamyine",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

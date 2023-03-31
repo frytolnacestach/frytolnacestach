@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bari", (function(a){return {data:[{place:[{id:1077,id_state:110,name:"Bari",population:323658,area:117.26,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bari",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

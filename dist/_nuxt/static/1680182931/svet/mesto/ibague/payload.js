@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ibague", (function(a){return {data:[{place:[{id:465,id_state:49,name:"Ibagué",population:536673,area:1436,altitude:1261,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ibague",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

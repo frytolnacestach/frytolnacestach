@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/la-soukra", (function(a){return {data:[{place:[{id:2211,id_state:223,name:"La Soukra",population:99831,area:10.38,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"la-soukra",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

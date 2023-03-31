@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sikasso", (function(a){return {data:[{place:[{id:1419,id_state:145,name:"Sikasso",population:230497,area:5118,altitude:410,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sikasso",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

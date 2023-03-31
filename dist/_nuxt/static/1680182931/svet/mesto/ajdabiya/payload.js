@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ajdabiya", (function(a){return {data:[{place:[{id:1333,id_state:136,name:"Ajdabiya",population:129102,area:14,altitude:114,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ajdabiya",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

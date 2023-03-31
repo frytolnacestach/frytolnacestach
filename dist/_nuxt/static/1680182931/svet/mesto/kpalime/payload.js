@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kpalime", (function(a){return {data:[{place:[{id:2146,id_state:217,name:"Kpalimé",population:100900,area:28,altitude:250,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kpalime",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

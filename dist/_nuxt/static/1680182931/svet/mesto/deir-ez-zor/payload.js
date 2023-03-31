@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/deir-ez-zor", (function(a){return {data:[{place:[{id:2098,id_state:212,name:"Deir ez-Zor",population:242565,area:49.1,altitude:203,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"deir-ez-zor",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

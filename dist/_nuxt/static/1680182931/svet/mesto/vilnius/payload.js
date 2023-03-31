@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/vilnius", (function(a){return {data:[{place:[{id:1298,id_state:133,name:"Vilnius",population:536475,area:401,altitude:112,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"vilnius",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

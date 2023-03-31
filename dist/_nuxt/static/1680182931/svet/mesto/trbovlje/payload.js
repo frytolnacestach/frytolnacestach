@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/trbovlje", (function(a){return {data:[{place:[{id:1969,id_state:200,name:"Trbovlje",population:14126,area:18.64,altitude:268,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"trbovlje",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/yigo", (function(a){return {data:[{place:[{id:892,id_state:92,name:"Yigo",population:7818,area:52.02,altitude:84,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"yigo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/castletown", (function(a){return {data:[{place:[{id:1012,id_state:104,name:"Castletown",population:3260,area:2.23,altitude:14,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"castletown",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

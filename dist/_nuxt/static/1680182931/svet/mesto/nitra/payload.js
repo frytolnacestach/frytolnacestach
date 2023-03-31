@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nitra", (function(a){return {data:[{place:[{id:1997,id_state:202,name:"Nitra",population:77101,area:100.48,altitude:159,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nitra",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

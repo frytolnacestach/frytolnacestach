@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/oradea", (function(a){return {data:[{place:[{id:1860,id_state:189,name:"Oradea",population:175601,area:106.98,altitude:135,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"oradea",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

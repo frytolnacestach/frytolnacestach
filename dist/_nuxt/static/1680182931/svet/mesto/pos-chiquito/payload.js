@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/pos-chiquito", (function(a){return {data:[{place:[{id:127,id_state:14,name:"Pos Chiquito",population:4989,area:3.5,altitude:4,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pos-chiquito",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

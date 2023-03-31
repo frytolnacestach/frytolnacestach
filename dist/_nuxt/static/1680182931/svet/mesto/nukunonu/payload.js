@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nukunonu", (function(a){return {data:[{place:[{id:2175,id_state:220,name:"Nukunonu",population:550,area:4.74,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nukunonu",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

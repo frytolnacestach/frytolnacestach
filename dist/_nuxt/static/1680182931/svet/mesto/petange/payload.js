@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/petange", (function(a){return {data:[{place:[{id:1313,id_state:134,name:"Pétange",population:9853,area:3,altitude:307,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"petange",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

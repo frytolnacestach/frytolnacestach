@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/songea", (function(a){return {data:[{place:[{id:2272,id_state:229,name:"Songea",population:204046,area:39.4,altitude:1111,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"songea",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

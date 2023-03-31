@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/zomba", (function(a){return {data:[{place:[{id:1531,id_state:156,name:"Zomba",population:105017,area:33,altitude:1020,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zomba",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

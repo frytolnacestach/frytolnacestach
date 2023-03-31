@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/hirosima", (function(a){return {data:[{place:[{id:1117,id_state:114,name:"Hirošima",population:1193139,area:906.53,altitude:44,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hirosima",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

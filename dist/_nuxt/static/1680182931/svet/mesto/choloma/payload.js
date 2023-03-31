@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/choloma", (function(a){return {data:[{place:[{id:940,id_state:97,name:"Choloma",population:256042,area:545.61,altitude:33,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"choloma",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

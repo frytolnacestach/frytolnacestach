@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ust-kamenogorsk", (function(a){return {data:[{place:[{id:1225,id_state:125,name:"Ust-Kamenogorsk",population:335000,area:305.35,altitude:177,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ust-kamenogorsk",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

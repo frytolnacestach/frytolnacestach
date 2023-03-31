@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/birnin-konni", (function(a){return {data:[{place:[{id:1595,id_state:162,name:"Birnin Konni",population:52052,area:43,altitude:295,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"birnin-konni",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

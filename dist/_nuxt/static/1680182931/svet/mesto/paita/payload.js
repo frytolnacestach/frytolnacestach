@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/paita", (function(a){return {data:[{place:[{id:1581,id_state:161,name:"Païta",population:21419,area:469,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"paita",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

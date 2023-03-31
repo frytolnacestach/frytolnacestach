@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/grand-case", (function(a){return {data:[{place:[{id:1380,id_state:141,name:"Grand-Case",population:3200,area:5.49,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"grand-case",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

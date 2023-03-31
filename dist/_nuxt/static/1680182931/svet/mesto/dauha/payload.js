@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/dauha", (function(a){return {data:[{place:[{id:1831,id_state:187,name:"Dauhá",population:848050,area:132,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dauha",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

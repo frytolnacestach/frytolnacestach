@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mazeikiai", (function(a){return {data:[{place:[{id:1305,id_state:133,name:"Mažeikiai",population:31255,area:22,altitude:50,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mazeikiai",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

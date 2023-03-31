@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/speightstown", (function(a){return {data:[{place:[{id:162,id_state:18,name:"Speightstown",population:4298,area:2.13,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"speightstown",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ararat", (function(a){return {data:[{place:[{id:68,id_state:7,name:"Ararat",population:20175,area:4.56,altitude:801,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ararat",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

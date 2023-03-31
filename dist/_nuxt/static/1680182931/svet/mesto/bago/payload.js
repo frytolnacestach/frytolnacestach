@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bago", (function(a){return {data:[{place:[{id:1432,id_state:146,name:"Bago",population:239407,area:308.7,altitude:17,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bago",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

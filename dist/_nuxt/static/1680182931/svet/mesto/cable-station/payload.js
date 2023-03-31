@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/cable-station", (function(a,b){return {data:[{place:[{id:930,id_state:96,name:"Cable Station",population:1,area:b,altitude:b,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cable-station",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null,0)));

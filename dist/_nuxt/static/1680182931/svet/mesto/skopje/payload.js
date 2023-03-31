@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/skopje", (function(a){return {data:[{place:[{id:1408,id_state:144,name:"Skopje",population:518075,area:571.46,altitude:240,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"skopje",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

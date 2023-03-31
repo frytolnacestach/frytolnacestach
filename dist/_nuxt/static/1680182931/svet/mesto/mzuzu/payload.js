@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mzuzu", (function(a){return {data:[{place:[{id:1530,id_state:156,name:"Mzuzu",population:221272,area:29,altitude:1240,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mzuzu",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

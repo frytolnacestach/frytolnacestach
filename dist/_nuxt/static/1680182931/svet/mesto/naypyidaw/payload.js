@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/naypyidaw", (function(a){return {data:[{place:[{id:1430,id_state:146,name:"Naypyidaw",population:925000,area:7554,altitude:111,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"naypyidaw",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

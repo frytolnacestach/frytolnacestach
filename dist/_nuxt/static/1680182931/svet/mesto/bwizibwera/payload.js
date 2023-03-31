@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bwizibwera", (function(a){return {data:[{place:[{id:2288,id_state:231,name:"Bwizibwera",population:88942,area:17.46,altitude:1435,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bwizibwera",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

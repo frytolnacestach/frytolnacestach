@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/conakry", (function(a){return {data:[{place:[{id:828,id_state:86,name:"Conakry",population:2405225,area:450.05,altitude:24,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"conakry",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

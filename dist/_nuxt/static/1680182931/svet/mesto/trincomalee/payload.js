@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/trincomalee", (function(a){return {data:[{place:[{id:1274,id_state:130,name:"Trincomalee",population:34496,area:9.5,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"trincomalee",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

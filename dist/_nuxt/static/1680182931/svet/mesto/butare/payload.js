@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/butare", (function(a){return {data:[{place:[{id:1882,id_state:192,name:"Butare",population:99687,area:72,altitude:1772,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"butare",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

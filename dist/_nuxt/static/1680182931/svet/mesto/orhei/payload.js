@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/orhei", (function(a){return {data:[{place:[{id:1365,id_state:139,name:"Orhei",population:21700,area:10.11,altitude:55,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"orhei",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

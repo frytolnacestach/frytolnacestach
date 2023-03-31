@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/hac-sa", (function(a){return {data:[{place:[{id:1455,id_state:148,name:"Hac Sá",population:100,area:.09,altitude:60,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hac-sa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

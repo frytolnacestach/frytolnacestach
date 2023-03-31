@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/hithadhoo", (function(a){return {data:[{place:[{id:1521,id_state:155,name:"Hithadhoo",population:9657,area:1.7,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hithadhoo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

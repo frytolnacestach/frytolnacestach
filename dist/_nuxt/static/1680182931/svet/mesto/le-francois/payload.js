@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/le-francois", (function(a){return {data:[{place:[{id:1476,id_state:150,name:"Le François",population:19539,area:57.04,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"le-francois",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

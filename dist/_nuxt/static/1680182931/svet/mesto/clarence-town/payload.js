@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/clarence-town", (function(a){return {data:[{place:[{id:309,id_state:32,name:"Clarence Town",population:315,area:.98,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"clarence-town",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/incchon", (function(a){return {data:[{place:[{id:1190,id_state:122,name:"Inčchon",population:2932998,area:1032.57,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"incchon",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

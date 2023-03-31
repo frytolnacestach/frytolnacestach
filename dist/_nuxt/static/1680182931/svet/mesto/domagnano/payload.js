@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/domagnano", (function(a){return {data:[{place:[{id:2016,id_state:204,name:"Domagnano",population:3395,area:4.23,altitude:140,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"domagnano",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tema", (function(a){return {data:[{place:[{id:793,id_state:82,name:"Tema",population:313214,area:82.58,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tema",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

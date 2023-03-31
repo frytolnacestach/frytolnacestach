@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/eschen", (function(a){return {data:[{place:[{id:1261,id_state:129,name:"Eschen",population:4719,area:10.34,altitude:448,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"eschen",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

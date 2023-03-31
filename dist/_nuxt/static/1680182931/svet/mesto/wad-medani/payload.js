@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/wad-medani", (function(a){return {data:[{place:[{id:1930,id_state:196,name:"Wad Medani",population:217903,area:52.08,altitude:424,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"wad-medani",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

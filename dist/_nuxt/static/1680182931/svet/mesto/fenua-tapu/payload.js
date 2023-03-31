@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/fenua-tapu", (function(a){return {data:[{place:[{id:2182,id_state:220,name:"Fenua Tapu",population:300,area:1.28,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"fenua-tapu",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

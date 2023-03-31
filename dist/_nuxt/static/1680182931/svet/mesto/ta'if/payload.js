@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ta'if", (function(a){return {data:[{place:[{id:1896,id_state:193,name:"Ta'if",population:941358,area:350,altitude:1700,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ta'if",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

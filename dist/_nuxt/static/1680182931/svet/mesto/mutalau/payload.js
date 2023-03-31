@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mutalau", (function(a){return {data:[{place:[{id:1671,id_state:170,name:"Mutalau",population:115,area:.41,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mutalau",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/keflavik", (function(a){return {data:[{place:[{id:1063,id_state:109,name:"Keflavík",population:14905,area:9.65,altitude:44,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"keflavik",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

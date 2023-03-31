@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ny-alesund", (function(a){return {data:[{place:[{id:1985,id_state:201,name:"Ny-Ålesund",population:30,area:.07,altitude:11,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ny-alesund",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

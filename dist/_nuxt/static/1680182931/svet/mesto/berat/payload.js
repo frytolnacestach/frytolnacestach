@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/berat", (function(a){return {data:[{place:[{id:59,id_state:6,name:"Berat",population:47685,area:15.08,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"berat",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

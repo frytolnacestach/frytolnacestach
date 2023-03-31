@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ho-chi-minh-city", (function(a){return {data:[{place:[{id:2374,id_state:241,name:"Ho Chi Minh City",population:8481430,area:2095.6,altitude:19,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ho-chi-minh-city",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/popondetta", (function(a){return {data:[{place:[{id:1731,id_state:176,name:"Popondetta",population:28400,area:15,altitude:42,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"popondetta",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

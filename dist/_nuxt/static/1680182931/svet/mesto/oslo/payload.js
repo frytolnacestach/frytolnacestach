@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/oslo", (function(a){return {data:[{place:[{id:1638,id_state:167,name:"Oslo",population:693494,area:454.07,altitude:23,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"oslo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

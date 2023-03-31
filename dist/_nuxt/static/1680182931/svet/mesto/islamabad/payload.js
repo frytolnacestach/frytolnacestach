@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/islamabad", (function(a){return {data:[{place:[{id:1756,id_state:178,name:"Islamabad",population:1040735,area:906,altitude:507,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"islamabad",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

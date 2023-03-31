@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kuala-lumpur", (function(a){return {data:[{place:[{id:1548,id_state:158,name:"Kuala Lumpur",population:1774970,area:243.6,altitude:21,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kuala-lumpur",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

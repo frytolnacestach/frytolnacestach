@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mechelen", (function(a){return {data:[{place:[{id:189,id_state:20,name:"Mechelen",population:86443,area:65.19,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mechelen",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

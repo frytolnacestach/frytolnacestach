@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/riga", (function(a){return {data:[{place:[{id:1318,id_state:135,name:"Riga",population:632614,area:307.17,altitude:6,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"riga",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kihei", (function(a){return {data:[{place:[{id:2297,id_state:232,name:"Kihei",population:20785,area:11.92,altitude:1,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kihei",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

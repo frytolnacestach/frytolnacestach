@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mendi", (function(a){return {data:[{place:[{id:1732,id_state:176,name:"Mendi",population:24500,area:10,altitude:1861,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mendi",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/yangon", (function(a){return {data:[{place:[{id:1428,id_state:146,name:"Yangon",population:7446100,area:598.75,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"yangon",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

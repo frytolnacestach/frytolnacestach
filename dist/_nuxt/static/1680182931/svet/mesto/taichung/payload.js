@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/taichung", (function(a){return {data:[{place:[{id:2256,id_state:228,name:"Taichung",population:1148687,area:2214.9,altitude:87,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"taichung",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

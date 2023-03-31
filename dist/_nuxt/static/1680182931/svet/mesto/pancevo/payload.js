@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/pancevo", (function(a){return {data:[{place:[{id:1868,id_state:190,name:"Pančevo",population:127670,area:756.4,altitude:77,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pancevo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/leloaloa", (function(a){return {data:[{place:[{id:94,id_state:11,name:"Leloaloa",population:10687,area:1.83,altitude:24,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"leloaloa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

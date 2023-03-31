@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/rosso", (function(a){return {data:[{place:[{id:1481,id_state:151,name:"Rosso",population:66951,area:16.36,altitude:7,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"rosso",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/choa-chu-kang", (function(a){return {data:[{place:[{id:1948,id_state:198,name:"Choa Chu Kang",population:174330,area:6.11,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"choa-chu-kang",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

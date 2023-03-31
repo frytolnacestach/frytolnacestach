@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kimbe", (function(a){return {data:[{place:[{id:1735,id_state:176,name:"Kimbe",population:18800,area:16,altitude:20,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kimbe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

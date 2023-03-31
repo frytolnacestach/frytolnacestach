@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/xam-neua", (function(a){return {data:[{place:[{id:1233,id_state:126,name:"Xam Neua",population:49000,area:6.78,altitude:645,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"xam-neua",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

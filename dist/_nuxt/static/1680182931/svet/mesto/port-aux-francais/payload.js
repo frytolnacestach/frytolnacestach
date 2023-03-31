@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/port-aux-francais", (function(a){return {data:[{place:[{id:2133,id_state:216,name:"Port-aux-Français",population:45,area:170,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"port-aux-francais",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/hue", (function(a){return {data:[{place:[{id:2383,id_state:241,name:"Huế",population:297513,area:83.3,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"hue",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/yaren", (function(a){return {data:[{place:[{id:1659,id_state:169,name:"Yaren",population:1190,area:1.52,altitude:10,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"yaren",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

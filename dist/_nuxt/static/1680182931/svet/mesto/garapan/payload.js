@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/garapan", (function(a){return {data:[{place:[{id:1466,id_state:149,name:"Garapan",population:3613,area:4.16,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"garapan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

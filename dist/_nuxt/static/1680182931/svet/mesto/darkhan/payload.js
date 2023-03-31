@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/darkhan", (function(a){return {data:[{place:[{id:1440,id_state:147,name:"Darkhan",population:82252,area:94.42,altitude:625,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"darkhan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

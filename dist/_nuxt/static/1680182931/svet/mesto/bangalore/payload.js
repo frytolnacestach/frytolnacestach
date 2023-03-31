@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bangalore", (function(a){return {data:[{place:[{id:1020,id_state:105,name:"Bangalore",population:12539174,area:709.5,altitude:920,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bangalore",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

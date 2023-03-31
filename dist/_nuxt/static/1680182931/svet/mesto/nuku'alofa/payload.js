@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/nuku'alofa", (function(a){return {data:[{place:[{id:2213,id_state:224,name:"Nuku'alofa",population:23814,area:46.48,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"nuku'alofa",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

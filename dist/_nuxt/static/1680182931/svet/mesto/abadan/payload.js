@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/abadan", (function(a){return {data:[{place:[{id:2201,id_state:222,name:"Abadan",population:41002,area:6.58,altitude:78,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"abadan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

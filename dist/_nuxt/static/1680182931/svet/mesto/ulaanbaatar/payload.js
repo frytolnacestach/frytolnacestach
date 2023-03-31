@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ulaanbaatar", (function(a){return {data:[{place:[{id:1438,id_state:147,name:"Ulaanbaatar",population:1648653,area:4704.4,altitude:1350,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ulaanbaatar",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

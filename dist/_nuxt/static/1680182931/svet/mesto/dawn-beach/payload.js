@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/dawn-beach", (function(a){return {data:[{place:[{id:2089,id_state:211,name:"Dawn Beach",population:2133,area:3.1,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"dawn-beach",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/roura", (function(a){return {data:[{place:[{id:776,id_state:80,name:"Roura",population:9600,area:3600,altitude:50,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"roura",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

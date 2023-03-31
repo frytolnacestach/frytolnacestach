@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tainan", (function(a){return {data:[{place:[{id:2257,id_state:228,name:"Tainan",population:790021,area:2191.65,altitude:12,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tainan",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

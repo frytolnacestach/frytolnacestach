@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/puente-alto", (function(a){return {data:[{place:[{id:429,id_state:46,name:"Puente Alto",population:5104175,area:88.73,altitude:706,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"puente-alto",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

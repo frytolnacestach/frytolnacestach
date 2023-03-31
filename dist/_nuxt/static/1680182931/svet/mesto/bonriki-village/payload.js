@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bonriki-village", (function(a){return {data:[{place:[{id:1152,id_state:118,name:"Bonriki Village",population:2693,area:.64,altitude:3,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bonriki-village",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/zabbar", (function(a){return {data:[{place:[{id:1501,id_state:153,name:"Zabbar",population:15358,area:5.72,altitude:55,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"zabbar",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

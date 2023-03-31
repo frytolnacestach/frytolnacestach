@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/mosul", (function(a){return {data:[{place:[{id:1040,id_state:107,name:"Mosul",population:1476572,area:163,altitude:254,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"mosul",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

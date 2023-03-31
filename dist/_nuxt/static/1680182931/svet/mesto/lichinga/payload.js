@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/lichinga", (function(a){return {data:[{place:[{id:1567,id_state:159,name:"Lichinga",population:101056,area:13.34,altitude:1358,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"lichinga",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

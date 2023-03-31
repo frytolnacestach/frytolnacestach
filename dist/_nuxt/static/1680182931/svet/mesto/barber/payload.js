@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/barber", (function(a){return {data:[{place:[{id:501,id_state:53,name:"Barber",population:3645,area:35.47,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"barber",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

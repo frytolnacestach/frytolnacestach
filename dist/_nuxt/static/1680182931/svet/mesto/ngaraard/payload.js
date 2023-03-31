@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/ngaraard", (function(a){return {data:[{place:[{id:1819,id_state:185,name:"Ngaraard",population:144,area:17.9,altitude:9,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"ngaraard",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

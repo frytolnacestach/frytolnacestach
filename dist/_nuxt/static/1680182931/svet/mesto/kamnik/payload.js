@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/kamnik", (function(a){return {data:[{place:[{id:1970,id_state:200,name:"Kamnik",population:13547,area:16.35,altitude:382,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"kamnik",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

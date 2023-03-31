@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sfax", (function(a){return {data:[{place:[{id:2204,id_state:223,name:"Sfax",population:348500,area:225.17,altitude:5,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sfax",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

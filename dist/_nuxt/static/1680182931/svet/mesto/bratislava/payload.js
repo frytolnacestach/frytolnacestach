@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/bratislava", (function(a){return {data:[{place:[{id:1993,id_state:202,name:"Bratislava",population:429564,area:367.58,altitude:134,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"bratislava",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

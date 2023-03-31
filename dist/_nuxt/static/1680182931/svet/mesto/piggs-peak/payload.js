@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/piggs-peak", (function(a){return {data:[{place:[{id:2110,id_state:213,name:"Piggs Peak",population:3155,area:6.82,altitude:1070,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"piggs-peak",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

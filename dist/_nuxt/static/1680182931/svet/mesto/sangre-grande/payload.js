@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/sangre-grande", (function(a){return {data:[{place:[{id:2240,id_state:226,name:"Sangre Grande",population:15600,area:3.7,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"sangre-grande",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

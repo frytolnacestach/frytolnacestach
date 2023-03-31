@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/vaduz", (function(a){return {data:[{place:[{id:1259,id_state:129,name:"Vaduz",population:5585,area:17.39,altitude:455,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"vaduz",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

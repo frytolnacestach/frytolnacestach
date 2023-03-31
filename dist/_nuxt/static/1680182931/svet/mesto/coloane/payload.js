@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/coloane", (function(a){return {data:[{place:[{id:1450,id_state:148,name:"Coloane",population:19900,area:7.6,altitude:99,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"coloane",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

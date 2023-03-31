@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/manakara", (function(a){return {data:[{place:[{id:1397,id_state:142,name:"Manakara",population:120000,area:11.62,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"manakara",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

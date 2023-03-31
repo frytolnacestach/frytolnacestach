@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/cork-hill", (function(a){return {data:[{place:[{id:1494,id_state:152,name:"Cork Hill",population:100,area:.05,altitude:50,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"cork-hill",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

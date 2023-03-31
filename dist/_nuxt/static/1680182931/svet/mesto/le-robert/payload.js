@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/le-robert", (function(a){return {data:[{place:[{id:1470,id_state:150,name:"Le Robert",population:25321,area:47.47,altitude:0,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"le-robert",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

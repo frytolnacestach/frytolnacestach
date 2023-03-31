@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/pakse", (function(a){return {data:[{place:[{id:1230,id_state:126,name:"Pakse",population:100000,area:9.88,altitude:106,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"pakse",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

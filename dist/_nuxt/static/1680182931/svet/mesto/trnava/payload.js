@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/trnava", (function(a){return {data:[{place:[{id:1999,id_state:202,name:"Trnava",population:63236,area:70.03,altitude:146,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"trnava",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

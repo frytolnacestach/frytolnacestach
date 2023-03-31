@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/tacuarembo", (function(a){return {data:[{place:[{id:2320,id_state:234,name:"Tacuarembó",population:53982,area:13.75,altitude:139,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"tacuarembo",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

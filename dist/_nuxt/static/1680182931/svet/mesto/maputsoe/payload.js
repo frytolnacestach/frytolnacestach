@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/maputsoe", (function(a){return {data:[{place:[{id:1296,id_state:132,name:"Maputsoe",population:12070,area:3.1,altitude:1733,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"maputsoe",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

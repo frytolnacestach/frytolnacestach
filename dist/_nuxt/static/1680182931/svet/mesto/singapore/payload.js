@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/singapore", (function(a){return {data:[{place:[{id:1941,id_state:198,name:"Singapore",population:5850342,area:728.3,altitude:15,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"singapore",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));

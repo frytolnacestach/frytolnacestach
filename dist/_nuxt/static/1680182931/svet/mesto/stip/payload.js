@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto/stip", (function(a){return {data:[{place:[{id:1414,id_state:144,name:"Štip",population:44191,area:583.03,altitude:321,id_continent:a,id_administrative_unit:a,id_districts:a,slug:"stip",information_chatgpt:a,image_cover:a,image_hero:a}]}],fetch:{},mutations:void 0}}(null)));
