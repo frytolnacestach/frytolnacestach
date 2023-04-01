@@ -80,6 +80,31 @@
                         </div>
                     </section>
                     <!-- SECTION - information by ChatGPT END -->
+
+                    <!-- SECTION - Ubytování -->
+                    <section class="t-section py-2">
+                        <div class="t-section__inner">
+                            <div class="o-information-block">
+                                <div class="o-information-block__outer">
+                                    <div class="o-information-block__inner">
+                                        <h2 class="o-information-block__title">Ubytování</h2>
+                                        <div class="o-information-block__perex">
+                                            <div class="o-information-block__widget" v-for="coordinate in placeState[0].coordinates">
+                                                <booking-widget
+                                                    :landmarkName="`${ place[0].name }, ${ placeState[0].name }`"
+                                                    :address="`${ place[0].name }, ${ placeState[0].name }`"
+                                                    :latitude="`${ coordinate.latitude }`"
+                                                    :longitude="`${ coordinate.longitude }`"
+                                                    zoom="13"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - Ubytování END -->
                     
                 </div>
 
@@ -108,7 +133,6 @@
 </template>
 
 <script>
-
     export default {
         name: 'PageCitySlug',
 

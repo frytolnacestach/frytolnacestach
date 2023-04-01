@@ -138,6 +138,31 @@
                         </div>
                     </section>
                     <!-- SECTION - Telefoní čísla(emergency) END -->
+
+                    <!-- SECTION - Ubytování -->
+                    <section class="t-section py-2">
+                        <div class="t-section__inner">
+                            <div class="o-information-block">
+                                <div class="o-information-block__outer">
+                                    <div class="o-information-block__inner">
+                                        <h2 class="o-information-block__title">Ubytování</h2>
+                                        <div class="o-information-block__perex">
+                                            <div class="o-information-block__widget" v-for="coordinate in place[0].coordinates">
+                                               <booking-widget 
+                                                    :landmarkName="`${ place[0].name }`"
+                                                    :address="`${ place[0].name }`"
+                                                    :latitude="`${ coordinate.latitude }`"
+                                                    :longitude="`${ coordinate.longitude }`"
+                                                    zoom="8"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - Ubytování END -->
                     
                     <!-- SECTION - města -->
                     <section class="t-section my-4">
@@ -193,6 +218,8 @@
 </template>
 
 <script>
+
+    import BookingWidget from '../../../components/BookingWidget.vue'
 
     export default {
         name: 'PageStateSlug',
