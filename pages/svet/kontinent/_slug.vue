@@ -61,34 +61,6 @@
                         </div>
                     </section>
                     <!-- SECTION - information by ChatGPT END -->
-
-                    <!-- SECTION - státy -->
-                    <section class="t-section my-4">
-                        <div class="t-section__inner">
-                            <div class="m-headline mb-2 text-align-center">
-                                <h2 class="m-headline__title">Všechny státy na kontinentu {{ place[0].name }}</h2>
-                            </div>
-                            <div class="o-cover-place-detail">
-                                <div class="o-cover-place-detail__outer">
-                                    <div class="o-cover-place-detail__items">
-                                        <div v-for="placesState in placesStates" :key="placesState.id" class="o-cover-place-detail__item">
-                                            <div class="o-cover-place-detail__content">
-                                                <div class="o-cover-place-detail__image">
-                                                    <div class="o-cover-place-detail__image-file" v-bind:style="{ 'background-image': 'url(' + (placesState.image_cover ? placesState.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
-                                                </div>
-                                                <h3 class="o-cover-place-detail__name">
-                                                    {{ placesState.name }}
-                                                </h3>
-                                                <NuxtLink class="o-cover-place-detail__link" :to="`/svet/stat/${placesState.slug}`"></NuxtLink>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- SECTION - státy - END -->
-
                 </div>
 
                 <div class="t-col2__sidebar my-2">
@@ -110,6 +82,38 @@
                 </div>
             </div>
             <!-- SECTION END -->
+
+
+            <div class="t-layout-full">
+                <!-- SECTION - státy -->
+                <section class="t-section -bg-gray py-4">
+                    <div class="t-section__inner">
+                        <div class="m-headline mb-2">
+                            <h2 class="m-headline__title">Všechny státy na kontinentu {{ place[0].name }}</h2>
+                        </div>
+                        <div class="o-cover-place-detail">
+                            <div class="o-cover-place-detail__outer">
+                                <div class="o-cover-place-detail__inner">
+                                    <div class="o-cover-place-detail__items">
+                                        <div v-for="placesState in placesStates" :key="placesState.id" class="o-cover-place-detail__item">
+                                            <div class="o-cover-place-detail__content">
+                                                <div class="o-cover-place-detail__image">
+                                                    <div class="o-cover-place-detail__image-file" v-bind:style="{ 'background-image': 'url(' + (placesState.image_cover ? placesState.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
+                                                </div>
+                                                <h3 class="o-cover-place-detail__name">
+                                                    {{ placesState.name }}
+                                                </h3>
+                                                <NuxtLink class="o-cover-place-detail__link" :to="`/svet/stat/${placesState.slug}`"></NuxtLink>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - státy - END -->
+            </div>
 
         </div>
     </main>

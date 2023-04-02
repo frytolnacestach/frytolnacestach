@@ -88,16 +88,14 @@
                                 <div class="o-information-block__outer">
                                     <div class="o-information-block__inner">
                                         <h2 class="o-information-block__title">Ubytování</h2>
-                                        <div class="o-information-block__perex">
-                                            <div class="o-information-block__widget" v-for="coordinate in placeState[0].coordinates">
-                                                <booking-widget
-                                                    :landmarkName="`${ place[0].name }, ${ placeState[0].name }`"
-                                                    :address="`${ place[0].name }, ${ placeState[0].name }`"
-                                                    :latitude="`${ coordinate.latitude }`"
-                                                    :longitude="`${ coordinate.longitude }`"
-                                                    zoom="13"
-                                                />
-                                            </div>
+                                        <div class="o-information-block__widget" v-for="coordinate in placeState[0].coordinates">
+                                            <booking-widget
+                                                :landmarkName="`${ place[0].name }, ${ placeState[0].name }`"
+                                                :address="`${ place[0].name }, ${ placeState[0].name }`"
+                                                :latitude="`${ coordinate.latitude }`"
+                                                :longitude="`${ coordinate.longitude }`"
+                                                zoom="13"
+                                            />
                                         </div>
                                     </div>
                                 </div>

@@ -21,7 +21,7 @@ BLOCKS:
 
     &__inner {
         width: auto;
-        padding: 20px 15px;
+        padding: 0;
         margin: 0;
         border-radius: $large;
     }
@@ -59,6 +59,7 @@ BLOCKS:
         width: 100%;
     }
 
+
     //widget
     &__widget {
         width: 100%;
@@ -80,9 +81,13 @@ BLOCKS:
         padding: 5px 0;
     }
 
+
+    //MODIFICATION
+    //Background gray
     &.-bg-gray {
         #{$self}__inner {
             background-color: $gray6;
+            padding: 20px 15px;
         }
     }
 }

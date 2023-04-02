@@ -1,7 +1,7 @@
 .o-cover-place-detail {
     $self: &;
 
-    margin: 0 -7px;
+    margin: 0 -15px;
 
     &__outer {
         width: 100%;
@@ -9,39 +9,43 @@
 
     &__inner {
         width: 100%;
+        display: flex;
+        overflow-x: auto;
     }
 
     &__items {
         display: flex;
-        flex-wrap: wrap;
+        //flex-wrap: wrap;
         justify-content: center;
+        min-width: auto;
+        padding: 0 8px;
     }
 
     &__item {
         display: block;
         position: relative;
-        width: 100%;
+        width: 70vw;
         height: 0;
-        padding-bottom: 150%;
+        padding-bottom: 105vw;
 
         @media only screen and (min-width: $ti) {
-            width: 50%;
-            padding-bottom: 75%;
+            width: 40vw;
+            padding-bottom: 60vw;
         }
 
         @media only screen and (min-width: $sm) {
-            width: 33.333%;
-            padding-bottom: 50%;
+            width: 28vw;
+            padding-bottom: 42vw;
         }
 
         @media only screen and (min-width: $md) {
-            width: 25%;
-            padding-bottom: 37.5%;
+            width: 22vw;
+            padding-bottom: 33vw;
         }
 
         @media only screen and (min-width: $lg) {
-            width: 16.666%;
-            padding-bottom: 25%;
+            width: 15.2vw;
+            padding-bottom: 22.8vw;
         }
 
         &:hover {

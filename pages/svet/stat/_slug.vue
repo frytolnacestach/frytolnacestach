@@ -139,6 +139,75 @@
                     </section>
                     <!-- SECTION - Telefoní čísla(emergency) END -->
 
+                    <!-- SECTION - Lidé náboženství -->
+                    <section class="t-section py-2" v-if="place[0].people_religion">
+                        <div class="t-section__inner">
+                            <div class="o-information-block -bg-gray">
+                                <div class="o-information-block__outer">
+                                    <div class="o-information-block__inner">
+                                        <h2 class="o-information-block__title">Náboženství</h2>
+                                        <div class="o-information-block__perex">
+                                            <div class="o-information-block__list">
+                                                <ul class="o-information-block__list-ul">
+                                                    <li class="o-information-block__list-li" v-for="item in place[0].people_religion" v-bind:key="item.name">
+                                                        <span><strong>{{ item.name }}</strong> {{ item.representation }}</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - Lidé náboženství END -->
+
+                    <!-- SECTION - Lidé vzdělání -->
+                    <section class="t-section py-2" v-if="place[0].people_education">
+                        <div class="t-section__inner">
+                            <div class="o-information-block -bg-gray">
+                                <div class="o-information-block__outer">
+                                    <div class="o-information-block__inner">
+                                        <h2 class="o-information-block__title">Vzdělání</h2>
+                                        <div class="o-information-block__perex">
+                                            <div class="o-information-block__list">
+                                                <ul class="o-information-block__list-ul">
+                                                    <li class="o-information-block__list-li" v-for="item in place[0].people_education" v-bind:key="item.name">
+                                                        <span><strong>{{ item.name }}</strong> {{ item.representation }}</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - Lidé vzdělání END -->
+
+                    <!-- SECTION - Lidé národnost -->
+                    <section class="t-section py-2" v-if="place[0].people_nationality">
+                        <div class="t-section__inner">
+                            <div class="o-information-block -bg-gray">
+                                <div class="o-information-block__outer">
+                                    <div class="o-information-block__inner">
+                                        <h2 class="o-information-block__title">Národnost</h2>
+                                        <div class="o-information-block__perex">
+                                            <div class="o-information-block__list">
+                                                <ul class="o-information-block__list-ul">
+                                                    <li class="o-information-block__list-li" v-for="item in place[0].people_nationality" v-bind:key="item.name">
+                                                        <span><strong>{{ item.name }}</strong> {{ item.representation }}</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - Lidé národnost END -->
+
                     <!-- SECTION - Ubytování -->
                     <section class="t-section py-2">
                         <div class="t-section__inner">
@@ -146,16 +215,14 @@
                                 <div class="o-information-block__outer">
                                     <div class="o-information-block__inner">
                                         <h2 class="o-information-block__title">Ubytování</h2>
-                                        <div class="o-information-block__perex">
-                                            <div class="o-information-block__widget" v-for="coordinate in place[0].coordinates">
-                                               <booking-widget 
-                                                    :landmarkName="`${ place[0].name }`"
-                                                    :address="`${ place[0].name }`"
-                                                    :latitude="`${ coordinate.latitude }`"
-                                                    :longitude="`${ coordinate.longitude }`"
-                                                    zoom="8"
-                                                />
-                                            </div>
+                                        <div class="o-information-block__widget" v-for="coordinate in place[0].coordinates">
+                                            <booking-widget 
+                                                :landmarkName="`${ place[0].name }`"
+                                                :address="`${ place[0].name }`"
+                                                :latitude="`${ coordinate.latitude }`"
+                                                :longitude="`${ coordinate.longitude }`"
+                                                zoom="8"
+                                            />
                                         </div>
                                     </div>
                                 </div>
@@ -163,34 +230,7 @@
                         </div>
                     </section>
                     <!-- SECTION - Ubytování END -->
-                    
-                    <!-- SECTION - města -->
-                    <section class="t-section my-4">
-                        <div class="t-section__inner">
-                            <div class="m-headline mb-2 text-align-center">
-                                <h2 class="m-headline__title">Největší města ve státě {{ place[0].name }}</h2>
-                            </div>
-                            <div class="o-cover-place-detail">
-                                <div class="o-cover-place-detail__outer">
-                                    <div class="o-cover-place-detail__items">
-                                        <div v-for="placesCity in placesCities" :key="placesCity.id" class="o-cover-place-detail__item">
-                                            <div class="o-cover-place-detail__content">
-                                                <div class="o-cover-place-detail__image">
-                                                    <div class="o-cover-place-detail__image-file" v-bind:style="{ 'background-image': 'url(' + (placesCity.image_cover ? placesCity.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
-                                                </div>
-                                                <h3 class="o-cover-place-detail__name">
-                                                    {{ placesCity.name }}
-                                                </h3>
-                                                <NuxtLink class="o-cover-place-detail__link" :to="`/svet/mesto/${placesCity.slug}`"></NuxtLink>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- SECTION - města - END -->
-
+            
                 </div>
 
                 <div class="t-col2__sidebar my-2">
@@ -212,6 +252,38 @@
                 </div>
             </div>
             <!-- SECTION END -->
+
+
+            <div class="t-layout-full">
+                <!-- SECTION - města -->
+                <section class="t-section -bg-gray py-4">
+                    <div class="t-section__inner">
+                        <div class="m-headline mb-2">
+                            <h2 class="m-headline__title">Největší města ve státě {{ place[0].name }}</h2>
+                        </div>
+                        <div class="o-cover-place-detail">
+                            <div class="o-cover-place-detail__outer">
+                                <div class="o-cover-place-detail__inner">
+                                    <div class="o-cover-place-detail__items">
+                                        <div v-for="placesCity in placesCities" :key="placesCity.id" class="o-cover-place-detail__item">
+                                            <div class="o-cover-place-detail__content">
+                                                <div class="o-cover-place-detail__image">
+                                                    <div class="o-cover-place-detail__image-file" v-bind:style="{ 'background-image': 'url(' + (placesCity.image_cover ? placesCity.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
+                                                </div>
+                                                <h3 class="o-cover-place-detail__name">
+                                                    {{ placesCity.name }}
+                                                </h3>
+                                                <NuxtLink class="o-cover-place-detail__link" :to="`/svet/mesto/${placesCity.slug}`"></NuxtLink>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - města - END -->
+            </div>
 
         </div>
     </main>

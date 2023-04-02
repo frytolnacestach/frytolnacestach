@@ -1,7 +1,20 @@
 //templates
+
+//future delete
 @import "t-col2";
+
+//layout - basic component
 @import "t-footer";
 @import "t-header";
 @import "t-hero";
+
+//layout
+@import "t-layout-2col";
+@import "t-layout-full";
+@import "t-layout-grid";
+
+//main
 @import "t-main";
+
+//section (block, component..)
 @import "t-section";
