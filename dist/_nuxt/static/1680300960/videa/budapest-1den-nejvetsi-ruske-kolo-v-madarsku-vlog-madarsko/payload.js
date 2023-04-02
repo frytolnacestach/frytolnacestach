@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/budapest-1den-nejvetsi-ruske-kolo-v-madarsku-vlog-madarsko", {data:[{video:[{id:106,title:"BUDAPEŠŤ - 1.DEN | Největší ruské kolo v Maďarsku (VLOG MAĎARSKO)",url:"https:\u002F\u002Fyoutu.be\u002F8POTXr4kiyU",platform:2,slug:"budapest-1den-nejvetsi-ruske-kolo-v-madarsku-vlog-madarsko"}]}],fetch:{},mutations:void 0});

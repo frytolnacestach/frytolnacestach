@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/videa/lego-star-wars-casopis-prosinec-2018", {data:[{video:[{id:40,title:"Lego Star Wars časopis - Prosinec 2018",url:"https:\u002F\u002Fyoutu.be\u002F2nLPt5E3CME",platform:2,slug:"lego-star-wars-casopis-prosinec-2018"}]}],fetch:{},mutations:void 0});

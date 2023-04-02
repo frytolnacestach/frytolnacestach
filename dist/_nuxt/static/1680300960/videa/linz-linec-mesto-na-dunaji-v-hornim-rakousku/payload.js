@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/linz-linec-mesto-na-dunaji-v-hornim-rakousku", {data:[{video:[{id:141,title:"Linz (Linec) | Město na Dunaji v Horním Rakousku",url:"https:\u002F\u002Fyoutu.be\u002FpPZ3BLTfp7o",platform:2,slug:"linz-linec-mesto-na-dunaji-v-hornim-rakousku"}]}],fetch:{},mutations:void 0});
