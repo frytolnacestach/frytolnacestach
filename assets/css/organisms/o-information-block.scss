@@ -51,6 +51,11 @@ BLOCKS:
         margin-top: 10px;
     }
 
+    &__info {
+        color: $brand5;
+        font-size: $fs-small-sss;
+    }
+
 
     //CONTENT
 
@@ -79,6 +84,11 @@ BLOCKS:
     &__list-li {
         width: 100%;
         padding: 5px 0;
+    }
+
+    &__list-info {
+        color: $brand4;
+        font-size: $fs-small-ssss;
     }
 
 

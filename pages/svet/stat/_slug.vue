@@ -103,10 +103,11 @@
                                             <div class="o-information-block__list">
                                                 <ul class="o-information-block__list-ul">
                                                     <li class="o-information-block__list-li" v-for="money_price in place[0].money_prices" v-bind:key="money_price.name">
-                                                        <span><strong>{{ money_price.name }}</strong> {{ money_price.price }}</span>
+                                                        <span><strong>{{ money_price.name }}</strong> {{ money_price.value }} {{ place[0].currency_code }} <i class="o-information-block__list-info">({{ money_price.date_update }})</i></span>
                                                     </li>
                                                 </ul>
                                             </div>
+                                            <i class="o-information-block__info">Ceny se můžou lišit v rámci sézony, místa a nebo míry a rychosti infalce. uvedená cena dálniční známky je ta nejnižší nabízená a může se ve skutečnosti razantně lišit.</i>
                                         </div>
                                     </div>
                                 </div>
@@ -150,7 +151,7 @@
                                             <div class="o-information-block__list">
                                                 <ul class="o-information-block__list-ul">
                                                     <li class="o-information-block__list-li" v-for="item in place[0].people_religion" v-bind:key="item.name">
-                                                        <span><strong>{{ item.name }}</strong> {{ item.representation }}</span>
+                                                        <span><strong>{{ item.name }}</strong> {{ item.value }}</span>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -173,7 +174,7 @@
                                             <div class="o-information-block__list">
                                                 <ul class="o-information-block__list-ul">
                                                     <li class="o-information-block__list-li" v-for="item in place[0].people_education" v-bind:key="item.name">
-                                                        <span><strong>{{ item.name }}</strong> {{ item.representation }}</span>
+                                                        <span><strong>{{ item.name }}</strong> {{ item.value }}</span>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -196,7 +197,7 @@
                                             <div class="o-information-block__list">
                                                 <ul class="o-information-block__list-ul">
                                                     <li class="o-information-block__list-li" v-for="item in place[0].people_nationality" v-bind:key="item.name">
-                                                        <span><strong>{{ item.name }}</strong> {{ item.representation }}</span>
+                                                        <span><strong>{{ item.name }}</strong> {{ item.value }}</span>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -207,6 +208,29 @@
                         </div>
                     </section>
                     <!-- SECTION - Lidé národnost END -->
+
+                    <!-- SECTION - navštevníci - podmínky vstupu -->
+                    <section class="t-section py-2" v-if="place[0].visitors_entry">
+                        <div class="t-section__inner">
+                            <div class="o-information-block -bg-gray">
+                                <div class="o-information-block__outer">
+                                    <div class="o-information-block__inner">
+                                        <h2 class="o-information-block__title">Podmínky cesty do země</h2>
+                                        <div class="o-information-block__perex">
+                                            <div class="o-information-block__list">
+                                                <ul class="o-information-block__list-ul">
+                                                    <li class="o-information-block__list-li" v-for="item in place[0].visitors_entry" v-bind:key="item.name">
+                                                        <span><strong>{{ item.name }}</strong> {{ item.value }} <i class="o-information-block__list-info">({{ item.date_update }})</i></span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - navštevníci - podmínky vstupu END -->
 
                     <!-- SECTION - Ubytování -->
                     <section class="t-section py-2">
