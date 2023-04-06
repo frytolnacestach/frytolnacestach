@@ -7,7 +7,8 @@
     text-align: left;
 
     &__outer {
-        width: 100%;
+        width: auto;
+        padding: 0 5px 15px;
     }
 
     &__inner {
@@ -29,7 +30,7 @@
 
     &__image-file {
         width: 100%;
-        min-height: 100px;
+        min-height: 120px;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

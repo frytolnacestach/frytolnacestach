@@ -88,7 +88,7 @@
                 <!-- SECTION - nadpis END -->
 
                 <section class="t-section py-2">
-                    <div class="flex">
+                    <div class="flex px-1">
 
                     <!-- SECTION - place -->
                     <div class="o-place-block" v-if="video[0].id_continent">
