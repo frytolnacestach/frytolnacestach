@@ -14,6 +14,8 @@
 
             <div class="t-col2">
                 <div class="t-col2__content my-2">
+
+                    <!-- SECTION - video -->
                     <section class="t-section py-2" v-if="video[0].url">
                         <div class="t-section__inner">
                             <div class="o-youtube">
@@ -27,13 +29,87 @@
                             </div>
                         </div>
                     </section>
+                    <!-- SECTION - video END -->
+
+                    <!-- SECTION - place -->
+                    <section class="t-section py-2" v-if="video[0].id_continent">
+                        <div class="t-section__inner">
+                            <div class="o-place-block">
+                                <div class="o-place-block__outer">
+                                    <div class="o-place-block__inner">
+                                        <div class="o-place-block__content">
+                                            <div class="o-place-block__image">
+                                                <div class="o-place-block__image-file" v-bind:style="{ 'background-image': 'url(' + (placeContinent[0].image_hero ?placeContinent[0].image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
+                                                    <div class="o-place-block__name">{{ placeContinent[0].name }}</div>
+                                                </div>
+                                            </div>
+                                            <div class="o-place-block__text">
+                                                <div class="o-place-block__wysiwyg" v-html="placeContinent[0].information_chatgpt.slice(0, 200)"></div>
+                                                <NuxtLink class="o-place-block__more" :to="`/svet/kontinent/${placeContinent[0].slug}`">Číst více</NuxtLink>                                   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - place -->
+
+                    <!-- SECTION - place -->
+                    <section class="t-section py-2" v-if="video[0].id_state">
+                        <div class="t-section__inner">
+                            <div class="o-place-block">
+                                <div class="o-place-block__outer">
+                                    <div class="o-place-block__inner">
+                                        <div class="o-place-block__content">
+                                            <div class="o-place-block__image">
+                                                <div class="o-place-block__image-file" v-bind:style="{ 'background-image': 'url(' + (placeState[0].image_hero ?placeState[0].image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
+                                                    <div class="o-place-block__name">{{ placeState[0].name }}</div>
+                                                </div>
+                                            </div>
+                                            <div class="o-place-block__text">
+                                                <div class="o-place-block__wysiwyg" v-html="placeState[0].information_chatgpt.slice(0, 200)"></div>
+                                                <NuxtLink class="o-place-block__more" :to="`/svet/stat/${placeState[0].slug}`">Číst více</NuxtLink>                                   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - place -->
+
+                    <!-- SECTION - place -->
+                    <section class="t-section py-2" v-if="video[0].id_city">
+                        <div class="t-section__inner">
+                            <div class="o-place-block">
+                                <div class="o-place-block__outer">
+                                    <div class="o-place-block__inner">
+                                        <div class="o-place-block__content">
+                                            <div class="o-place-block__image">
+                                                <div class="o-place-block__image-file" v-bind:style="{ 'background-image': 'url(' + (placeCity[0].image_hero ?placeCity[0].image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
+                                                    <div class="o-place-block__name">{{ placeCity[0].name }}</div>
+                                                </div>
+                                            </div>
+                                            <div class="o-place-block__text">
+                                                <div class="o-place-block__wysiwyg" v-html="placeCity[0].information_chatgpt.slice(0, 200)"></div>
+                                                <NuxtLink class="o-place-block__more" :to="`/svet/mesto/${placeCity[0].slug}`">Číst více</NuxtLink>                                   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - place -->
                 </div>
 
+
                 <div class="t-col2__sidebar my-2">
+                    <!-- SECTION - ad-google - sidebar -->
                     <section class="t-section my-2">
                         <div class="t-section__inner">
-                            <div class="o-ad-sidebar-article-detail">
-                                <!-- sidebar-article-detail -->
+                            <div class="o-ad-google-sidebar">
                                 <ins class="adsbygoogle"
                                     :style="adStyle"
                                     :data-ad-client="adClient"
@@ -44,6 +120,7 @@
                             </div>
                         </div>
                     </section>
+                    <!-- SECTION - ad-google - sidebar - END -->
                 </div>
             </div>
         </div>
@@ -118,8 +195,23 @@
         },
 
         async asyncData({ $axios, params }) {
-            const video = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/video/${params.slug}`)
-            return { video: video }
+            try {
+                //video
+                const video = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/video/${params.slug}`)
+
+                // Načtení informací o městu
+                const placeCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city-id/${video[0].id_city}`)
+
+                // Načtení informací o státu
+                const placeState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-state-id/${video[0].id_state}`)
+
+                // Načtení informací o continentu
+                const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${video[0].id_continent}`)
+
+                return { video, placeCity, placeState, placeContinent }
+            } catch (error) {
+                console.error(error)
+            }
         },
 
         mounted() {

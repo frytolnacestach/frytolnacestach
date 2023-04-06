@@ -18,29 +18,29 @@
                         <div class="o-hot-info-hero__inner">
                             <div class="o-hot-info-hero__items">
                                 <div class="o-hot-info-hero__item">
-                                    <h4 class="o-hot-info-hero__title">Kontinent</h4>
+                                    <span class="o-hot-info-hero__title">Kontinent</span>
                                     <span class="o-hot-info-hero__value">{{ placeContinent[0].name }}</span>
                                 </div>
                                 <div class="o-hot-info-hero__item">
-                                    <h4 class="o-hot-info-hero__title">Rozloha</h4>
+                                    <span class="o-hot-info-hero__title">Rozloha</span>
                                     <span class="o-hot-info-hero__value">{{ place[0].area }} km2</span>
                                 </div>
                                 <div class="o-hot-info-hero__item">
-                                    <h4 class="o-hot-info-hero__title">Populace</h4>
+                                    <span class="o-hot-info-hero__title">Populace</span>
                                     <span class="o-hot-info-hero__value">{{ place[0].population }}</span>
                                 </div>
                                 <!--
                                 <div class="o-hot-info-hero__item">
-                                    <h4 class="o-hot-info-hero__title">Počet měst</h4>
+                                    <span class="o-hot-info-hero__title">Počet měst</span>
                                     <span class="o-hot-info-hero__value">{{ place[0].number_cities }}</span>
                                 </div>
                                 -->
                                 <div class="o-hot-info-hero__item">
-                                    <h4 class="o-hot-info-hero__title">MPZ</h4>
+                                    <span class="o-hot-info-hero__title">MPZ</span>
                                     <span class="o-hot-info-hero__value">{{ place[0].mpz }}</span>
                                 </div>
                                 <div class="o-hot-info-hero__item">
-                                    <h4 class="o-hot-info-hero__title">TLD</h4>
+                                    <span class="o-hot-info-hero__title">TLD</span>
                                     <span class="o-hot-info-hero__value">{{ place[0].tld }}</span>
                                 </div>
                             </div>
@@ -376,7 +376,7 @@
             return {
                 title: `${this.place[0].name} | Frytol na cestách`,
                 meta: [
-                    { hid: 'description', name: 'description', content: `${this.place[0].perex}` },
+                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt}` },
                     { property: 'og:image', content: `https://image.frytolnacestach.cz/storage/og/og-${this.place[0].slug}.jpg`} 
                 ]
             }

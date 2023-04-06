@@ -18,15 +18,15 @@
                         <div class="o-hot-info-hero__inner">
                             <div class="o-hot-info-hero__items">
                                 <div class="o-hot-info-hero__item">
-                                    <h4 class="o-hot-info-hero__title">Počet států</h4>
+                                    <span class="o-hot-info-hero__title">Počet států</span>
                                     <span class="o-hot-info-hero__value">{{ place[0].number_states }}</span>
                                 </div>
                                 <div class="o-hot-info-hero__item">
-                                    <h4 class="o-hot-info-hero__title">Rozloha</h4>
+                                    <span class="o-hot-info-hero__title">Rozloha</span>
                                     <span class="o-hot-info-hero__value">{{ place[0].area }} km2</span>
                                 </div>
                                 <div class="o-hot-info-hero__item">
-                                    <h4 class="o-hot-info-hero__title">Počet obyvatel na km2</h4>
+                                    <span class="o-hot-info-hero__title">Počet obyvatel na km2</span>
                                     <span class="o-hot-info-hero__value">{{ place[0].population_density }}</span>
                                 </div>
                             </div>
@@ -180,7 +180,7 @@
             return {
                 title: `${this.place[0].name} | Frytol na cestách`,
                 meta: [
-                    { hid: 'description', name: 'description', content: `${this.place[0].perex}` },
+                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt}` },
                     { property: 'og:image', content: `https://image.frytolnacestach.cz/storage/og/og-${this.place[0].slug}.jpg`} 
                 ]
             }
