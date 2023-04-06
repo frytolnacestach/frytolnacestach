@@ -126,6 +126,35 @@
             </div>
             <!-- SECTION END -->
 
+            <div class="t-layout-full">
+                <!-- SECTION - videos -->
+                <section class="t-section my-4" v-if="videos[0]">
+                    <div class="t-section__inner">
+                        <div class="o-article-list">
+                            <div class="o-article-list__outer">
+                                <div class="o-article-list__items">
+                                    <div v-for="video in videos" :key="video.id" class="o-article-list__item" v-if="video.type === 'travel'">
+                                       <div class="o-article-list__item-inner">
+                                            <div class="o-article-list__image">
+                                                <div class="o-article-list__image-file" v-bind:style="{ 'background-image': 'url(https://img.youtube.com/vi/' + getSlugURL(video.url) + '/0.jpg)'}">
+                                                    <NuxtLink class="o-article-list__image-link" :to="`/videa/${video.slug}`"></NuxtLink>
+                                                </div>
+                                            </div>
+                                            <div class="o-article-list__text">
+                                                <h3 class="o-article-list__title">
+                                                    <NuxtLink class="o-article-list__title-link" :to="`/videa/${video.slug}`">{{ video.title }}</NuxtLink>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - videos END -->
+            </div>
+
         </div>
     </main>
 </template>
@@ -177,6 +206,10 @@
             formatDate(date) {
                 const options = { year: 'numeric', month: 'long', day: 'numeric' }
                 return new Date(date).toLocaleDateString('cs', options)
+            },
+            getSlugURL(url) {
+                url = url.replace("https://youtu.be/", "").replace("https://youtube.com/shorts/", "");
+                return url.replace(" ", "");
             }
         },
 
@@ -207,7 +240,10 @@
                 // Načtení informací o continentu
                 const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${place[0].id_continent}`)
 
-                return { place, placeState, placeContinent }
+                // Načtení videi z místa
+                const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos-id-city/${place[0].id}`)
+
+                return { place, placeState, placeContinent, videos }
             } catch (error) {
                 console.error(error)
             }
