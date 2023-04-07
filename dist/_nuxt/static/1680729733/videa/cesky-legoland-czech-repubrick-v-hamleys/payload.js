@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/cesky-legoland-czech-repubrick-v-hamleys", {data:[{video:[{id:41,title:"ČESKÝ LEGOLAND - Czech Repubrick v Hamleys",url:" https:\u002F\u002Fyoutu.be\u002FTjkt13F9nI4",platform:2,slug:"cesky-legoland-czech-repubrick-v-hamleys"}]}],fetch:{},mutations:void 0});

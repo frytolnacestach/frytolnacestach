@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/vanocni-darek-pro-adelu-i-shopaholicadel-by-je-potrebovala", {data:[{video:[{id:166,title:"Vánoční dárek pro Adélu i Shopaholicadel by je potřebovala.",url:"https:\u002F\u002Fyoutube.com\u002Fshorts\u002FlHSII0FrEgE",platform:2,slug:"vanocni-darek-pro-adelu-i-shopaholicadel-by-je-potrebovala"}]}],fetch:{},mutations:void 0});

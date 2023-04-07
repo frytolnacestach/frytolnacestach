@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/rozhledna-doubravka-kousek-od-metra-rajska-zahrada", {data:[{video:[{id:25,title:"ROZHLEDNA DOUBRAVKA | kousek od metra Rajská zahrada",url:"https:\u002F\u002Fyoutu.be\u002FqGR06tuwqgM",platform:2,slug:"rozhledna-doubravka-kousek-od-metra-rajska-zahrada"}]}],fetch:{},mutations:void 0});

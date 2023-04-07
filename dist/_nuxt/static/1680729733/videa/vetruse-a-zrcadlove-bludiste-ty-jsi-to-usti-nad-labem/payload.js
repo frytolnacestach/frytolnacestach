@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/vetruse-a-zrcadlove-bludiste-ty-jsi-to-usti-nad-labem", {data:[{video:[{id:69,title:"VĚTRUŠE a ZRCADLOVÉ BLUDIŠTĚ | Ty jsi to Ústí nad Labem",url:"https:\u002F\u002Fyoutu.be\u002Feg0bMJ3T7xw",platform:2,slug:"vetruse-a-zrcadlove-bludiste-ty-jsi-to-usti-nad-labem"}]}],fetch:{},mutations:void 0});

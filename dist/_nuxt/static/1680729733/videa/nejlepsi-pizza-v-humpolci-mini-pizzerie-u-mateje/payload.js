@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/nejlepsi-pizza-v-humpolci-mini-pizzerie-u-mateje", {data:[{video:[{id:74,title:"NEJLEPŠÍ PIZZA V HUMPOLCI | Mini Pizzerie U Matěje",url:"https:\u002F\u002Fyoutu.be\u002FOgKHkmh9oXg",platform:2,slug:"nejlepsi-pizza-v-humpolci-mini-pizzerie-u-mateje"}]}],fetch:{},mutations:void 0});

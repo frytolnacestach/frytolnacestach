@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/ustek-masopust-2019", {data:[{video:[{id:42,title:"ÚŠTĚK - masopust 2019",url:"https:\u002F\u002Fyoutu.be\u002FvoXq0yBOTNU",platform:2,slug:"ustek-masopust-2019"}]}],fetch:{},mutations:void 0});

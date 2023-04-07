@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/mallorca-5-jeskyne-arta-nejlepsi-jeskyne-na-mallorce", {data:[{video:[{id:86,title:"MALLORCA #5 | JESKYNĚ ARTÁ | Nejlepší jeskyně na Mallorce?",url:"https:\u002F\u002Fyoutu.be\u002FQvao_w_abyg",platform:2,slug:"mallorca-5-jeskyne-arta-nejlepsi-jeskyne-na-mallorce"}]}],fetch:{},mutations:void 0});

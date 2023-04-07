@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/bile-strane-v-litomericich-tady-byvalo-more", {data:[{video:[{id:107,title:"BÍLÉ STRÁNĚ v LITOMĚŘICÍCH | Tady bývalo moře.",url:"https:\u002F\u002Fyoutu.be\u002FL0-1PRrIjtM",platform:2,slug:"bile-strane-v-litomericich-tady-byvalo-more"}]}],fetch:{},mutations:void 0});

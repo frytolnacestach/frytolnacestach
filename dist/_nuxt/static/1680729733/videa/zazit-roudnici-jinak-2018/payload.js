@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/zazit-roudnici-jinak-2018", {data:[{video:[{id:13,title:"ZAŽÍT ROUDNICI JINAK 2018",url:"https:\u002F\u002Fyoutu.be\u002F_xe0CAcpX58",platform:2,slug:"zazit-roudnici-jinak-2018"}]}],fetch:{},mutations:void 0});

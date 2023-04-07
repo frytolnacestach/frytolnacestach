@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/lego-hidden-side-70427-lego-ktere-ozije-vitej-v-hidden-side", {data:[{video:[{id:150,title:"LEGO Hidden Side 70427 | Lego které ožije | Vítej v Hidden Side",url:"https:\u002F\u002Fyoutu.be\u002FgvtdaF0k8o0",platform:2,slug:"lego-hidden-side-70427-lego-ktere-ozije-vitej-v-hidden-side"}]}],fetch:{},mutations:void 0});

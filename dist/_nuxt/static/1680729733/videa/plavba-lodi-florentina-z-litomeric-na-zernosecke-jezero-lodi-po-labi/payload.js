@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/plavba-lodi-florentina-z-litomeric-na-zernosecke-jezero-lodi-po-labi", {data:[{video:[{id:153,title:"Plavba lodí Florentina | Z Litoměřic na Žernosecké Jezero | Lodí po Labi",url:"https:\u002F\u002Fyoutu.be\u002FLrVAzQ5gP60",platform:2,slug:"plavba-lodi-florentina-z-litomeric-na-zernosecke-jezero-lodi-po-labi"}]}],fetch:{},mutations:void 0});

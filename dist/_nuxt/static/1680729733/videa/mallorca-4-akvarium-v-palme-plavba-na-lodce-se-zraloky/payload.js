@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/mallorca-4-akvarium-v-palme-plavba-na-lodce-se-zraloky", {data:[{video:[{id:85,title:"MALLORCA #4 | Akvárium v Palmě | Plavba na loďce se žraloky",url:"https:\u002F\u002Fyoutu.be\u002Fp3C64IdCDTg",platform:2,slug:"mallorca-4-akvarium-v-palme-plavba-na-lodce-se-zraloky"}]}],fetch:{},mutations:void 0});

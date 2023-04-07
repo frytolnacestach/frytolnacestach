@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/co-se-stane-kdyz-budes-venku-po-21-hodine-zakaz-vychazeni-ocista-v-cesku", {data:[{video:[{id:144,title:"CO SE STANE, KDYŽ BUDEŠ VENKU PO 21. HODINĚ? - ZÁKAZ VYCHÁZENÍ | Očista v Česku",url:"https:\u002F\u002Fyoutu.be\u002FefskmRfMorU",platform:2,slug:"co-se-stane-kdyz-budes-venku-po-21-hodine-zakaz-vychazeni-ocista-v-cesku"}]}],fetch:{},mutations:void 0});

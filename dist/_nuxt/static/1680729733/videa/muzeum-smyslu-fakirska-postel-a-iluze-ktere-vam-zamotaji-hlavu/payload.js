@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/muzeum-smyslu-fakirska-postel-a-iluze-ktere-vam-zamotaji-hlavu", {data:[{video:[{id:122,title:"MUZEUM SMYSLŮ | Fakírská postel a iluze, které vám zamotají hlavu",url:"https:\u002F\u002Fyoutu.be\u002FTuXcHVbgdD4",platform:2,slug:"muzeum-smyslu-fakirska-postel-a-iluze-ktere-vam-zamotaji-hlavu"}]}],fetch:{},mutations:void 0});

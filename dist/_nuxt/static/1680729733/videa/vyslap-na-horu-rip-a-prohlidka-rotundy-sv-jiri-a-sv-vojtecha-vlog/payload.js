@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/vyslap-na-horu-rip-a-prohlidka-rotundy-sv-jiri-a-sv-vojtecha-vlog", {data:[{video:[{id:23,title:"Výšlap na horu Říp a prohlídka rotundy sv. Jiří a sv. Vojtěcha | VLOG",url:"https:\u002F\u002Fyoutu.be\u002Fjtg6wSHpsXo",platform:2,slug:"vyslap-na-horu-rip-a-prohlidka-rotundy-sv-jiri-a-sv-vojtecha-vlog"}]}],fetch:{},mutations:void 0});

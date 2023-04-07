@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/vlog-muzeum-her-cibiens-corner-v-praze-neomezene-hrani", {data:[{video:[{id:45,title:"VLOG | MUZEUM HER Cibien's Corner v Praze - Neomezené hraní",url:"https:\u002F\u002Fyoutu.be\u002FTNSHh-8MnGA",platform:2,slug:"vlog-muzeum-her-cibiens-corner-v-praze-neomezene-hrani"}]}],fetch:{},mutations:void 0});

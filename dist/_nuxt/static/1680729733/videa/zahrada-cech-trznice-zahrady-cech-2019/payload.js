@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/zahrada-cech-trznice-zahrady-cech-2019", {data:[{video:[{id:56,title:"ZAHRADA ČECH - Tržnice Zahrady Čech 2019",url:"https:\u002F\u002Fyoutu.be\u002FBUCbwCXVIzQ",platform:2,slug:"zahrada-cech-trznice-zahrady-cech-2019"}]}],fetch:{},mutations:void 0});

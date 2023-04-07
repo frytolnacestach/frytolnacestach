@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/koronavirus-v-cesku-nouzovy-stav-v-cr-a-narizeni-vlady", {data:[{video:[{id:103,title:"KORONAVIRUS V ČESKU | Nouzový stáv v ČR a nařízení vlády",url:"https:\u002F\u002Fyoutu.be\u002FeTSoid5BkbY",platform:2,slug:"koronavirus-v-cesku-nouzovy-stav-v-cr-a-narizeni-vlady"}]}],fetch:{},mutations:void 0});

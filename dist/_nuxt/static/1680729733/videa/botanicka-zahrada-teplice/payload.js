@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/botanicka-zahrada-teplice", {data:[{video:[{id:129,title:"BOTANICKÁ ZAHRADA TEPLICE",url:"https:\u002F\u002Fyoutu.be\u002FShFUnieUGqc",platform:2,slug:"botanicka-zahrada-teplice"}]}],fetch:{},mutations:void 0});

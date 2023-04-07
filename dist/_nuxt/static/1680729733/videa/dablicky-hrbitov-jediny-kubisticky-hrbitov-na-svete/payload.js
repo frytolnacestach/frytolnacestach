@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/dablicky-hrbitov-jediny-kubisticky-hrbitov-na-svete", {data:[{video:[{id:113,title:"ĎÁBLICKÝ HŘBITOV | Jediný kubistický hřbitov na světě",url:"https:\u002F\u002Fyoutu.be\u002F2nl-hufZOqg",platform:2,slug:"dablicky-hrbitov-jediny-kubisticky-hrbitov-na-svete"}]}],fetch:{},mutations:void 0});

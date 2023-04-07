@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/ohnostroj-v-sillot-ohnostroj-na-mori-mallorca-bonus-1", {data:[{video:[{id:83,title:"Ohňostroj v S'Illot | Ohňostroj na moři | MALLORCA BONUS #1",url:"https:\u002F\u002Fyoutu.be\u002FECiNOW6NwYo",platform:2,slug:"ohnostroj-v-sillot-ohnostroj-na-mori-mallorca-bonus-1"}]}],fetch:{},mutations:void 0});

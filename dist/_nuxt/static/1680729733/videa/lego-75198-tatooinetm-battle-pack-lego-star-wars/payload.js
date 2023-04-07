@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/lego-75198-tatooinetm-battle-pack-lego-star-wars", {data:[{video:[{id:53,title:"LEGO 75198 | Tatooine™ Battle Pack (Lego Star Wars)",url:"https:\u002F\u002Fyoutu.be\u002FTsfuhsyTMBo",platform:2,slug:"lego-75198-tatooinetm-battle-pack-lego-star-wars"}]}],fetch:{},mutations:void 0});

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/lego-hidden-side-70418-j-b-a-jeji-laborator-plna-duchu", {data:[{video:[{id:115,title:"LEGO Hidden Side 70418 | J. B. a její laboratoř plná duchů",url:"https:\u002F\u002Fyoutu.be\u002FnpRqdVS47zg",platform:2,slug:"lego-hidden-side-70418-j-b-a-jeji-laborator-plna-duchu"}]}],fetch:{},mutations:void 0});

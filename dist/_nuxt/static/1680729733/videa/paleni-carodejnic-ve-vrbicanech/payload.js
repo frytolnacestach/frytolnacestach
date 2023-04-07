@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/paleni-carodejnic-ve-vrbicanech", {data:[{video:[{id:58,title:"PÁLENÍ ČARODĚJNIC ve VRBIČANECH",url:"https:\u002F\u002Fyoutu.be\u002FZXFRBPyL4RA",platform:2,slug:"paleni-carodejnic-ve-vrbicanech"}]}],fetch:{},mutations:void 0});

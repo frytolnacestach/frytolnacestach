@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/skutecny-hrbitov-zviratek-pod-ripem", {data:[{video:[{id:57,title:"SKUTEČNÝ HŘBITOV ZVÍŘÁTEK pod ŘÍPEM",url:"https:\u002F\u002Fyoutu.be\u002F3Wi_S96xDLE",platform:2,slug:"skutecny-hrbitov-zviratek-pod-ripem"}]}],fetch:{},mutations:void 0});

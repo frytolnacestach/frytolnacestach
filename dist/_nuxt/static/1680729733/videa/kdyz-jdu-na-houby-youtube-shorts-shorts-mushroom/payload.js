@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/kdyz-jdu-na-houby-youtube-shorts-shorts-mushroom", {data:[{video:[{id:155,title:"KDYŽ JDU NA HOUBY (YouTube Shorts) #Shorts #mushroom",url:"https:\u002F\u002Fyoutube.com\u002Fshorts\u002FGlKwd8NQQHk",platform:2,slug:"kdyz-jdu-na-houby-youtube-shorts-shorts-mushroom"}]}],fetch:{},mutations:void 0});

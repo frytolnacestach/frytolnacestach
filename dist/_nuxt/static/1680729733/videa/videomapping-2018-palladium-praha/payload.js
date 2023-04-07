@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/videomapping-2018-palladium-praha", {data:[{video:[{id:27,title:"Videomapping 2018 | PALLADIUM Praha",url:" https:\u002F\u002Fyoutu.be\u002F04G6teXzXKM",platform:2,slug:"videomapping-2018-palladium-praha"}]}],fetch:{},mutations:void 0});

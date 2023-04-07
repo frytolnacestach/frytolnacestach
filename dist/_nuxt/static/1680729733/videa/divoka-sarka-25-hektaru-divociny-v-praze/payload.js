@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/divoka-sarka-25-hektaru-divociny-v-praze", {data:[{video:[{id:73,title:"DIVOKÁ ŠÁRKA | 25 Hektarů divočiny v Praze",url:"https:\u002F\u002Fyoutu.be\u002FD0k1QmS0cJM",platform:2,slug:"divoka-sarka-25-hektaru-divociny-v-praze"}]}],fetch:{},mutations:void 0});

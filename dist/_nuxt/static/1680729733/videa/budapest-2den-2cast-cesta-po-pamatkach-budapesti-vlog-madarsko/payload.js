@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/budapest-2den-2cast-cesta-po-pamatkach-budapesti-vlog-madarsko", {data:[{video:[{id:116,title:"BUDAPEŠŤ - 2.DEN (2.část) | Cesta po památkách Budapešti  (VLOG Maďarsko)",url:"https:\u002F\u002Fyoutu.be\u002FkGHSIifNVNE",platform:2,slug:"budapest-2den-2cast-cesta-po-pamatkach-budapesti-vlog-madarsko"}]}],fetch:{},mutations:void 0});

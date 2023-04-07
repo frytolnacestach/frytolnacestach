@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/vylet-po-litomericku-dolanky-nad-ohri-a-okoli", {data:[{video:[{id:109,title:"VÝLET PO LITOMĚŘICKU | Dolánky nad Ohří a okolí",url:"https:\u002F\u002Fyoutu.be\u002F7hxLFC25je8",platform:2,slug:"vylet-po-litomericku-dolanky-nad-ohri-a-okoli"}]}],fetch:{},mutations:void 0});

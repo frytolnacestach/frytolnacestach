@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/rozsviceni-vanocniho-stromu-v-roudnici-nad-labem-2018", {data:[{video:[{id:32,title:"Rozsvícení vánočního stromu v Roudnici nad Labem | 2018",url:"https:\u002F\u002Fyoutu.be\u002F0mhCDE4FlnY",platform:2,slug:"rozsviceni-vanocniho-stromu-v-roudnici-nad-labem-2018"}]}],fetch:{},mutations:void 0});

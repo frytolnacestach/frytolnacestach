@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/shopaholicadel-a-jeji-haul-moje-adela-ne-ta-z-tiktoku-nakup-v-ikea", {data:[{video:[{id:165,title:"Shopaholicadel a její Haul (Moje Adéla, ne ta z TikToku) | Nákup v Ikea",url:"https:\u002F\u002Fyoutube.com\u002Fshorts\u002FUO3m0OHyu34",platform:2,slug:"shopaholicadel-a-jeji-haul-moje-adela-ne-ta-z-tiktoku-nakup-v-ikea"}]}],fetch:{},mutations:void 0});

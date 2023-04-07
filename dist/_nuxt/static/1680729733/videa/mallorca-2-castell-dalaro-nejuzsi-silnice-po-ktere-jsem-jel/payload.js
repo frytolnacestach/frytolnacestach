@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/mallorca-2-castell-dalaro-nejuzsi-silnice-po-ktere-jsem-jel", {data:[{video:[{id:81,title:"MALLORCA #2 | Castell d'Alaró | Nejužší silnice, po které jsem jel.",url:"https:\u002F\u002Fyoutu.be\u002F_YXEXJhWDLs",platform:2,slug:"mallorca-2-castell-dalaro-nejuzsi-silnice-po-ktere-jsem-jel"}]}],fetch:{},mutations:void 0});

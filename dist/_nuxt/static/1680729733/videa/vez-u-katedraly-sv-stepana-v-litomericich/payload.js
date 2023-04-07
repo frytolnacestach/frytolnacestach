@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/vez-u-katedraly-sv-stepana-v-litomericich", {data:[{video:[{id:75,title:"VĚŽ u KATEDRÁLY sv. ŠTĚPÁNA v LITOMĚŘICÍCH",url:"https:\u002F\u002Fyoutu.be\u002F4oASvvvI0tM",platform:2,slug:"vez-u-katedraly-sv-stepana-v-litomericich"}]}],fetch:{},mutations:void 0});

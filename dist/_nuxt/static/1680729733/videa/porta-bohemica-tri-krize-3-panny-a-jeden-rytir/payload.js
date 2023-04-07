@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/porta-bohemica-tri-krize-3-panny-a-jeden-rytir", {data:[{video:[{id:159,title:"PORTA BOHEMICA | Tři kříže - 3 panny a jeden rytíř",url:"https:\u002F\u002Fyoutu.be\u002Fn20az-dLhQM",platform:2,slug:"porta-bohemica-tri-krize-3-panny-a-jeden-rytir"}]}],fetch:{},mutations:void 0});

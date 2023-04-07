@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/karlovy-vary-1den-co-videt-ve-varech", {data:[{video:[{id:156,title:"KARLOVY VARY 1.den - Co vidět ve Varech?",url:"https:\u002F\u002Fyoutu.be\u002FncJoVUlumnc",platform:2,slug:"karlovy-vary-1den-co-videt-ve-varech"}]}],fetch:{},mutations:void 0});

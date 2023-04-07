@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/adela-me-vzala-na-skolni-vylet-narodni-technicke-muzeum-vlog", {data:[{video:[{id:66,title:"ADÉLA MĚ VZALA NA ŠKOLNÍ VÝLET! | Národní technické muzeum [VLOG]",url:"https:\u002F\u002Fyoutu.be\u002FVdWzGJN2RI8",platform:2,slug:"adela-me-vzala-na-skolni-vylet-narodni-technicke-muzeum-vlog"}]}],fetch:{},mutations:void 0});

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/josefinske-slavnosti-2018-v-terezine", {data:[{video:[{id:22,title:"Josefínské slavnosti 2018 v Terezíně",url:"https:\u002F\u002Fyoutu.be\u002Fy26n2p0MM58",platform:2,slug:"josefinske-slavnosti-2018-v-terezine"}]}],fetch:{},mutations:void 0});

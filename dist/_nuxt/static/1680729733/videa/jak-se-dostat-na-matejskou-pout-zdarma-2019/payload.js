@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/jak-se-dostat-na-matejskou-pout-zdarma-2019", {data:[{video:[{id:43,title:"Jak se dostat na Matějskou pouť zdarma? 2019",url:"https:\u002F\u002Fyoutu.be\u002F711Y5O5pOec",platform:2,slug:"jak-se-dostat-na-matejskou-pout-zdarma-2019"}]}],fetch:{},mutations:void 0});

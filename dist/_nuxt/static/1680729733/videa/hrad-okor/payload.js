@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/hrad-okor", {data:[{video:[{id:137,title:"HRAD OKOŘ",url:"https:\u002F\u002Fyoutu.be\u002F4VPXkzsxO68",platform:2,slug:"hrad-okor"}]}],fetch:{},mutations:void 0});

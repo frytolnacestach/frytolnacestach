@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/uklizime-nelegalni-skladku-v-roudnici-trashtag-challenge", {data:[{video:[{id:47,title:"UKLÍZÍME NELEGÁLNÍ SKLÁDKU V ROUDNICI - #TrashTag Challenge",url:"https:\u002F\u002Fyoutu.be\u002FTxFVPYwNmg0",platform:2,slug:"uklizime-nelegalni-skladku-v-roudnici-trashtag-challenge"}]}],fetch:{},mutations:void 0});

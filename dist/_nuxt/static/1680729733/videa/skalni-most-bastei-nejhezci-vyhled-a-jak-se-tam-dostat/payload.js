@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/skalni-most-bastei-nejhezci-vyhled-a-jak-se-tam-dostat", {data:[{video:[{id:12,title:"SKALNÍ MOST BASTEI - nejhezčí výhled a jak se tam dostat?",url:"https:\u002F\u002Fyoutu.be\u002FhzQgV9V2kKk",platform:2,slug:"skalni-most-bastei-nejhezci-vyhled-a-jak-se-tam-dostat"}]}],fetch:{},mutations:void 0});

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/nova-rozhledna-u-zamecku-lovosice", {data:[{video:[{id:68,title:"NOVÁ ROZHLEDNA U ZÁMEČKU | Lovosice",url:"https:\u002F\u002Fyoutu.be\u002Fgp3Kq-qS8pk",platform:2,slug:"nova-rozhledna-u-zamecku-lovosice"}]}],fetch:{},mutations:void 0});

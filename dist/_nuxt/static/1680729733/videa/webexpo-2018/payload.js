@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/webexpo-2018", {data:[{video:[{id:15,title:"WebExpo 2018",url:"https:\u002F\u002Fyoutu.be\u002FOTsQdTeB2K0",platform:2,slug:"webexpo-2018"}]}],fetch:{},mutations:void 0});

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/krokodyli-zoo-praha-holesovice", {data:[{video:[{id:148,title:"KROKODÝLÍ ZOO | Praha Holešovice",url:"https:\u002F\u002Fyoutu.be\u002FT_U944luovc",platform:2,slug:"krokodyli-zoo-praha-holesovice"}]}],fetch:{},mutations:void 0});

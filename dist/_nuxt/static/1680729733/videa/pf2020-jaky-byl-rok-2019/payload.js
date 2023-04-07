@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/pf2020-jaky-byl-rok-2019", {data:[{video:[{id:92,title:"PF2020 | Jaký byl rok 2019?",url:"https:\u002F\u002Fyoutu.be\u002FS3A_t3H_Ayk",platform:2,slug:"pf2020-jaky-byl-rok-2019"}]}],fetch:{},mutations:void 0});

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/prazdna-praha-den-pred-celostatni-karantenou", {data:[{video:[{id:104,title:"PRÁZDNÁ PRAHA | Den před celostátní karanténou",url:"https:\u002F\u002Fyoutu.be\u002FP4bcrzkE-7w",platform:2,slug:"prazdna-praha-den-pred-celostatni-karantenou"}]}],fetch:{},mutations:void 0});

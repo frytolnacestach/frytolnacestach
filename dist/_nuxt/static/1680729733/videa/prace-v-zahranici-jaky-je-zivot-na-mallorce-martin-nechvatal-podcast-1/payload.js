@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/prace-v-zahranici-jaky-je-zivot-na-mallorce-martin-nechvatal-podcast-1", {data:[{video:[{id:84,title:"PRÁCE V ZAHRANIČÍ - Jaký je život na Mallorce (Martin Nechvátal) | PODCAST #1",url:"https:\u002F\u002Fyoutu.be\u002FT06AwS3tnuI",platform:2,slug:"prace-v-zahranici-jaky-je-zivot-na-mallorce-martin-nechvatal-podcast-1"}]}],fetch:{},mutations:void 0});

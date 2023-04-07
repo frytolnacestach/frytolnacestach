@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/kratochvilova-rozhledna-v-roudnici-nad-labe", {data:[{video:[{id:17,title:"Kratochvílova rozhledna v Roudnici nad Labem",url:"https:\u002F\u002Fyoutu.be\u002FrCJRaaa9pXs",platform:2,slug:"kratochvilova-rozhledna-v-roudnici-nad-labe"}]}],fetch:{},mutations:void 0});

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/historici-2019-roudnice-nad-labem", {data:[{video:[{id:124,title:"HISTORICI 2019 | Roudnice nad Labem",url:"https:\u002F\u002Fyoutu.be\u002FveE2aHUmKWg",platform:2,slug:"historici-2019-roudnice-nad-labem"}]}],fetch:{},mutations:void 0});

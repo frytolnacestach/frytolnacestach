@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/vaclavska-pout-2018-lovosice", {data:[{video:[{id:18,title:"VÁCLAVSKÁ POUŤ 2018 - Lovosice",url:"https:\u002F\u002Fyoutu.be\u002FtvSyNJSEayg",platform:2,slug:"vaclavska-pout-2018-lovosice"}]}],fetch:{},mutations:void 0});

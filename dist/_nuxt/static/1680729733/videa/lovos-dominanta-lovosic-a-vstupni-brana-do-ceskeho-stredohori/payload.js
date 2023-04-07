@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/lovos-dominanta-lovosic-a-vstupni-brana-do-ceskeho-stredohori", {data:[{video:[{id:51,title:"LOVOŠ | Dominanta Lovosic a vstupní brána do českého středohoří.",url:"https:\u002F\u002Fyoutu.be\u002Fsk4OqESYZP8",platform:2,slug:"lovos-dominanta-lovosic-a-vstupni-brana-do-ceskeho-stredohori"}]}],fetch:{},mutations:void 0});

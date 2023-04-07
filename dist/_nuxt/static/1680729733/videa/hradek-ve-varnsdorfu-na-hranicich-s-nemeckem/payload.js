@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/hradek-ve-varnsdorfu-na-hranicich-s-nemeckem", {data:[{video:[{id:71,title:"HRÁDEK ve VARNSDORFU | Na hranicích s Německem",url:"https:\u002F\u002Fyoutu.be\u002FRQVB3g1YkIo",platform:2,slug:"hradek-ve-varnsdorfu-na-hranicich-s-nemeckem"}]}],fetch:{},mutations:void 0});

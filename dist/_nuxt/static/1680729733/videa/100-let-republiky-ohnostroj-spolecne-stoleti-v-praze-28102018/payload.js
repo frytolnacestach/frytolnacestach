@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/videa/100-let-republiky-ohnostroj-spolecne-stoleti-v-praze-28102018", {data:[{video:[{id:24,title:"100-let-republiky-ohňostroj-společné-století-v-praze-28102018",url:"https:\u002F\u002Fyoutu.be\u002FxI9X6-eM2qQ",platform:2,slug:"100-let-republiky-ohnostroj-spolecne-stoleti-v-praze-28102018"}]}],fetch:{},mutations:void 0});
