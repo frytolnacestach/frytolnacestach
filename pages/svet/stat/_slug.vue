@@ -279,7 +279,7 @@
 
 
             <div class="t-layout-full">
-                <!-- SECTION - města -->
+                <!-- SECTION - města - Biggest -->
                 <section class="t-section -bg-gray py-4">
                     <div class="t-section__inner">
                         <div class="m-headline mb-2">
@@ -289,7 +289,7 @@
                             <div class="o-cover-place-detail__outer">
                                 <div class="o-cover-place-detail__inner">
                                     <div class="o-cover-place-detail__items">
-                                        <div v-for="placesCity in placesCities" :key="placesCity.id" class="o-cover-place-detail__item">
+                                        <div v-for="placesCity in placesCities" :key="placesCity.id" class="o-cover-place-detail__item" v-if="placesCity.biggest === 'yes'">
                                             <div class="o-cover-place-detail__content">
                                                 <div class="o-cover-place-detail__image">
                                                     <div class="o-cover-place-detail__image-file" v-bind:style="{ 'background-image': 'url(' + (placesCity.image_cover ? placesCity.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
@@ -306,7 +306,7 @@
                         </div>
                     </div>
                 </section>
-                <!-- SECTION - města - END -->
+                <!-- SECTION - města - Biggest - END -->
 
                 <!-- SECTION - videos -->
                 <section class="t-section -bg-extra-dark-gray pt-4 py-2 px-2" v-if="videos[0]">
@@ -334,6 +334,35 @@
                     </div>
                 </section>
                 <!-- SECTION - videos END -->
+
+                <!-- SECTION - města - Biggest -->
+                <section v-if="hasCitiesToShow" class="t-section -bg-gray py-4">
+                    <div class="t-section__inner">
+                        <div class="m-headline mb-2">
+                            <h2 class="m-headline__title">Další města a obce ve státě {{ place[0].name }}</h2>
+                        </div>
+                        <div class="o-cover-place-detail">
+                            <div class="o-cover-place-detail__outer">
+                                <div class="o-cover-place-detail__inner">
+                                    <div class="o-cover-place-detail__items">
+                                        <div v-for="placesCity in placesCities" :key="placesCity.id" class="o-cover-place-detail__item" v-if="placesCity.biggest !== 'yes'">
+                                            <div class="o-cover-place-detail__content">
+                                                <div class="o-cover-place-detail__image">
+                                                    <div class="o-cover-place-detail__image-file" v-bind:style="{ 'background-image': 'url(' + (placesCity.image_cover ? placesCity.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
+                                                </div>
+                                                <h3 class="o-cover-place-detail__name">
+                                                    {{ placesCity.name }}
+                                                </h3>
+                                                <NuxtLink class="o-cover-place-detail__link" :to="`/svet/mesto/${placesCity.slug}`"></NuxtLink>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - města - Biggest - END -->
                 
             </div>
 
@@ -395,6 +424,12 @@
             getSlugURL(url) {
                 url = url.replace("https://youtu.be/", "").replace("https://youtube.com/shorts/", "");
                 return url.replace(" ", "");
+            }
+        },
+
+        computed: {
+            hasCitiesToShow() {
+                return this.placesCities.some(place => place.biggest !== 'yes');
             }
         },
 
