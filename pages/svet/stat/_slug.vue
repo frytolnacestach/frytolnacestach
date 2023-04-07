@@ -309,21 +309,21 @@
                 <!-- SECTION - města - END -->
 
                 <!-- SECTION - videos -->
-                <section class="t-section my-4" v-if="videos[0]">
+                <section class="t-section -bg-extra-dark-gray pt-4 py-2 px-2" v-if="videos[0]">
                     <div class="t-section__inner">
-                        <div class="o-article-list">
-                            <div class="o-article-list__outer">
-                                <div class="o-article-list__items">
-                                    <div v-for="video in videos" :key="video.id" class="o-article-list__item" v-if="video.type === 'travel'">
-                                       <div class="o-article-list__item-inner">
-                                            <div class="o-article-list__image">
-                                                <div class="o-article-list__image-file" v-bind:style="{ 'background-image': 'url(https://img.youtube.com/vi/' + getSlugURL(video.url) + '/0.jpg)'}">
-                                                    <NuxtLink class="o-article-list__image-link" :to="`/videa/${video.slug}`"></NuxtLink>
+                        <div class="o-video-list -dark">
+                            <div class="o-video-list__outer">
+                                <div class="o-video-list__items">
+                                    <div v-for="video in videos" :key="video.id" class="o-video-list__item" v-if="video.type === 'travel'">
+                                       <div class="o-video-list__item-inner">
+                                            <div class="o-video-list__image">
+                                                <div class="o-video-list__image-file" v-bind:style="{ 'background-image': 'url(https://img.youtube.com/vi/' + getSlugURL(video.url) + '/0.jpg)'}">
+                                                    <NuxtLink class="o-video-list__image-link" :to="`/videa/${video.slug}`"></NuxtLink>
                                                 </div>
                                             </div>
-                                            <div class="o-article-list__text">
-                                                <h3 class="o-article-list__title">
-                                                    <NuxtLink class="o-article-list__title-link" :to="`/videa/${video.slug}`">{{ video.title }}</NuxtLink>
+                                            <div class="o-video-list__text">
+                                                <h3 class="o-video-list__title">
+                                                    <NuxtLink class="o-video-list__title-link" :to="`/videa/${video.slug}`">{{ video.title }}</NuxtLink>
                                                 </h3>
                                             </div>
                                         </div>
@@ -334,6 +334,7 @@
                     </div>
                 </section>
                 <!-- SECTION - videos END -->
+                
             </div>
 
         </div>

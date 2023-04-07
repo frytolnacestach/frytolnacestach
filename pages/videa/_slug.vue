@@ -74,7 +74,7 @@
             <div class="t-layout-full" v-if="video[0].id_continent || video[0].id_state || video[0].id_city">
 
                 <!-- SECTION - napis -->
-                <section class="t-section pt-2">
+                <section class="t-section -bg-gray pt-4">
                     <div class="t-section__inner">
                         <div class="o-information-block">
                             <div class="o-information-block__outer">
@@ -87,7 +87,7 @@
                 </section>
                 <!-- SECTION - nadpis END -->
 
-                <section class="t-section py-2">
+                <section class="t-section -bg-gray pt-2 pb-1">
                     <div class="flex px-1">
 
                     <!-- SECTION - place -->
@@ -101,7 +101,7 @@
                                         </div>
                                     </div>
                                     <div class="o-place-block__text">
-                                        <div class="o-place-block__wysiwyg" v-html="placeContinent[0].information_chatgpt.slice(0, 200)"></div>
+                                        <div class="o-place-block__wysiwyg" v-html="placeContinent[0].information_chatgpt.slice(0, 220)"></div>
                                         <NuxtLink class="o-place-block__more" :to="`/svet/kontinent/${placeContinent[0].slug}`">Číst více</NuxtLink>                                   
                                     </div>
                                 </div>
@@ -121,7 +121,7 @@
                                         </div>
                                     </div>
                                     <div class="o-place-block__text">
-                                        <div class="o-place-block__wysiwyg" v-html="placeState[0].information_chatgpt.slice(0, 200)"></div>
+                                        <div class="o-place-block__wysiwyg" v-html="placeState[0].information_chatgpt.slice(0, 220)"></div>
                                         <NuxtLink class="o-place-block__more" :to="`/svet/stat/${placeState[0].slug}`">Číst více</NuxtLink>                                   
                                     </div>
                                 </div>
@@ -141,7 +141,7 @@
                                         </div>
                                     </div>
                                     <div class="o-place-block__text">
-                                        <div class="o-place-block__wysiwyg" v-html="placeCity[0].information_chatgpt.slice(0, 200)"></div>
+                                        <div class="o-place-block__wysiwyg" v-html="placeCity[0].information_chatgpt.slice(0, 220)"></div>
                                         <NuxtLink class="o-place-block__more" :to="`/svet/mesto/${placeCity[0].slug}`">Číst více</NuxtLink>                                   
                                     </div>
                                 </div>
