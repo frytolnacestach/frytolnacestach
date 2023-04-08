@@ -2,6 +2,13 @@
 $white: #ffffff;
 $black: #000000;
 
+//alert
+$green: green;
+$blue: blue;
+$yellow: yellow;
+$orange: orange;
+$red: #cc3300;
+
 //social
 $youtube: #ff0000;
 $instagram: #dd2a7b;
@@ -40,6 +47,9 @@ $brand3-a: #ace7e9;
 $white-7: rgba($white, .7);
 $black-3: rgba($black, .3);
 $black-7: rgba($black, .7);
+$brand3-a-3: rgba($brand3-a, .3);
+$brand2-a-3: rgba($brand2-a, .3);
+$brand1-a-3: rgba($brand1-a, .3);
 
 //hover
 $youtube-hover: lighten($youtube, 20%);

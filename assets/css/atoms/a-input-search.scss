@@ -1,0 +1,15 @@
+.a-input-search {
+    width: 100%;
+    max-width: 420px;
+    height: 56px;
+    padding: 4px 15px;
+    line-height: 40px;
+    border: 1px solid $brand2-a;
+    border-radius: 10px;
+    background-color: $brand2-a-3;
+    font-size: $fs-normal-ll;
+
+    &:focus{
+        outline: none;
+    }
+}

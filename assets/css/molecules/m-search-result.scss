@@ -1,0 +1,64 @@
+.m-search-result {
+    width: 100%;
+    max-width: 420px;
+    max-height: 40vh;
+    overflow: hidden;
+
+    &__items {
+        list-style-type: none;
+        padding: 0;
+        margin: 10px 0 0;
+        padding: 10px 5px;
+        overflow: scroll;
+        max-height: 40vh;
+        background-color: $brand2-a-3;
+    }
+
+    &__item {
+        position: relative;
+        width: 100%;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: $brand2-a;
+        }
+    }
+
+    &__link {
+        color: $black;
+        text-decoration: none;
+        width: 100%;
+        display: block;
+        padding: 5px 10px;
+        font-size: $fs-normal-sss;
+
+        &:hover {
+            color: $brand1;
+            background-color: $brand1-a-3;
+        }
+    }
+
+    &__name {
+        width: 100%;
+        display: block;
+    }
+
+    &__type {
+        width: 100%;
+        color: $gray1;
+        font-size: $fs-small-ssss;
+    }
+
+    &__no-result {
+        color: $red;
+        text-align: center;
+        width: 100%;
+        padding: 3px 5px 0;
+        display: block;
+    }
+}
