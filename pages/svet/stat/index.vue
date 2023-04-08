@@ -4,9 +4,9 @@
             <SectionHero :headline="headline" />
         </section>
 
-        <section class="t-section my-4">
+        <section class="t-section">
             <div class="t-section__inner">
-                <div class="o-cover-place o-cover-place--smaller">
+                <div class="o-cover-place">
                     <div class="o-cover-place__outer">
                         <div class="o-cover-place__items">
                             <div v-for="placesState in placesStates" :key="placesState.id" class="o-cover-place__item">

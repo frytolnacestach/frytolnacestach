@@ -1,7 +1,7 @@
 .o-cover-place {
     $self: &;
 
-    margin: 0 -7px;
+    margin: 3px -12px;
 
     &__outer {
         width: 100%;
@@ -14,7 +14,7 @@
     &__items {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     &__item {
@@ -25,18 +25,18 @@
         padding-bottom: 100%;
 
         @media only screen and (min-width: $sm) {
-            width: 50%;
-            padding-bottom: 50%;
+            width: 33.333%;
+            padding-bottom: 33.333%;
         }
 
         @media only screen and (min-width: $md) {
-            width: 33.3%;
-            padding-bottom: 33.3%;
+            width: 25%;
+            padding-bottom: 25%;
         }
 
         @media only screen and (min-width: $lg) {
-            width: 25%;
-            padding-bottom: 25%;
+            width: 20%;
+            padding-bottom: 20%;
         }
 
         &:hover {
@@ -49,7 +49,7 @@
     &__content {
         width: 100%;
         height: 100%;
-        padding: 7px;
+        padding: 3px;
         position: absolute;
         display: flex;
         flex-wrap: wrap;
@@ -109,77 +109,5 @@
         color: white;
         text-decoration: none;
         z-index: 3;
-    }
-
-    &--smaller {
-        #{$self}__item {
-            display: block;
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 100%;
-    
-            @media only screen and (min-width: $sm) {
-                width: 33.333%;
-                padding-bottom: 33.333%;
-            }
-    
-            @media only screen and (min-width: $md) {
-                width: 25%;
-                padding-bottom: 25%;
-            }
-    
-            @media only screen and (min-width: $lg) {
-                width: 20%;
-                padding-bottom: 20%;
-            }
-    
-            &:hover {
-                #{$self}__image-file {
-                    transform: scale(1.1);
-                }
-            }
-        }
-
-        //Name
-        &__name {
-            font-size: $fs-normal-l;
-        }
-    }
-
-    &--smallest {
-        #{$self}__item {
-            display: block;
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 150%;
-    
-            @media only screen and (min-width: $sm) {
-                width: 33.333%;
-                padding-bottom: 50%;
-            }
-    
-            @media only screen and (min-width: $md) {
-                width: 25%;
-                padding-bottom: 37.5%;
-            }
-    
-            @media only screen and (min-width: $lg) {
-                width: 16.666%;
-                padding-bottom: 25%;
-            }
-    
-            &:hover {
-                #{$self}__image-file {
-                    transform: scale(1.1);
-                }
-            }
-        }
-
-        //Name
-        &__name {
-            font-size: $fs-normal-ssss;
-        }
     }
 }

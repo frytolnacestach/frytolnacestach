@@ -4,7 +4,7 @@
             <SectionHero :headline="headline" />
         </section>
 
-        <section class="t-section my-4">
+        <section class="t-section">
             <div class="t-section__inner">
                 <div class="m-nav-alphabet">
                     <div class="m-nav-alphabet__outer">
@@ -22,9 +22,9 @@
             </div>
         </section>
 
-        <section class="t-section my-4">
+        <section class="t-section">
             <div class="t-section__inner">
-                <div class="o-cover-place o-cover-place--smallest">
+                <div class="o-cover-place">
                     <div class="o-cover-place__outer">
                         <div class="o-cover-place__items">
                             <div v-for="placesCity in placesCities" :key="placesCity.id" class="o-cover-place__item">

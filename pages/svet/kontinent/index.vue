@@ -4,7 +4,7 @@
             <SectionHero :headline="headline" />
         </section>
 
-        <section class="t-section my-4">
+        <section class="t-section">
             <div class="t-section__inner">
                 <div class="o-cover-place">
                     <div class="o-cover-place__outer">
