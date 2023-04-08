@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/conditions", {data:[{}],fetch:{},mutations:void 0});
