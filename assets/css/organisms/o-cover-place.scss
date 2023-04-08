@@ -20,9 +20,9 @@
     &__item {
         display: block;
         position: relative;
-        width: 100%;
+        width: 50%;
         height: 0;
-        padding-bottom: 100%;
+        padding-bottom: 50%;
 
         @media only screen and (min-width: $sm) {
             width: 33.333%;
@@ -93,8 +93,16 @@
         text-align: center;
         z-index: 2;
         position: absolute;
-        font-size: $fs-normal-lll;
+        font-size: $fs-small;
         padding: 0 15px;
+
+        @media only screen and (min-width: $ti) {
+            font-size: $fs-normal-s;
+        }
+
+        @media only screen and (min-width: $sm) {
+            font-size: $fs-normal-lll;
+        }
     }
 
     //Link
