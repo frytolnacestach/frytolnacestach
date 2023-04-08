@@ -104,9 +104,24 @@ export default {
       },
       {
         path: '/sitemap-places-cities.xml',
-        routes: async () => {
+        /*routes: async () => {
           let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/places-cities')
           return data.map(v => `/svet/mesto/${v.slug}`)
+        },*/
+
+        routes: async () => {
+          const routes = []
+      
+          // Add routes for the ranges 1-999, 1000-1999, and 2000-2999
+          for (let i = 1; i <= 3; i++) {
+            const start = (i - 1) * 1000 + 1
+            const end = i * 1000
+            const { data } = await axios.get(`https://frytolnacestach-api.vercel.app/api/places-cities?start=${start}&end=${end}`)
+            const rangeRoutes = data.map(v => `/svet/mesto/${v.slug}`)
+            routes.push(...rangeRoutes)
+          }
+      
+          return routes
         },
         exclude: ['/**']
       }
