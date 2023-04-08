@@ -1,12 +1,9 @@
 <template>
-    <main class="t-main">
-        <section class="t-section">
-            <SectionHero :headline="headline" />
-        </section>
+    <main class="t-main -bg-brand3 -vh100">
 
         <!-- SECTION - Vyhledávač -->
-        <section class="t-section py-4 -bg-brand3">
-            <div class="t-section__inner">
+        <section class="t-section pt-8 pb-4 -bg-brand3">
+            <div class="t-section__inner mt-4">
                 <div class="o-search">
                     <div class="o-search__input">
                         <input class="a-input-search" type="text" v-model="searchQuery" @input="filterPlaces" placeholder="Které místo tě zajímá?">
@@ -141,13 +138,12 @@
 
         data() {
             return {
-            headline: "Svět",
-            placesContinents: [],
-            placesStates: [],
-            placesCities: [],
-            placesSearch: '',
-            searchQuery: '',
-            filteredPlaces: []
+                placesContinents: [],
+                placesStates: [],
+                placesCities: [],
+                placesSearch: '',
+                searchQuery: '',
+                filteredPlaces: []
             }
         },
 

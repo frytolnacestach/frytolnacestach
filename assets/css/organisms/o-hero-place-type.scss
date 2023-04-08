@@ -1,0 +1,55 @@
+.o-hero-place-type {
+    width: 100%;
+
+    &__outer {
+        width: 100%;
+    }
+
+    &__inner {
+        width: 100%;
+    }
+
+    &__image {
+        width: 100%;
+        max-width: 320px;
+        height: 100%;
+        max-height: 320px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    &__image-file {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        width: 100%;
+        max-width: 320px;
+        height: 30vw;
+        max-height: 320px;
+
+        @media only screen and (min-width: $lg) {
+            height: 20vw;
+        }
+
+        &.-continent {
+            background-image: url('../images/world/continent.svg');
+        }
+
+        &.-state {
+            background-image: url('../images/world/state.svg');
+        }
+
+        &.-city {
+            background-image: url('../images/world/city.svg');
+        }
+    }
+
+    &__headline {
+        width: 100%;
+        font-size: $fs-40;
+        color: $brand1;
+        text-align: center;
+        margin: 0;
+    }
+}

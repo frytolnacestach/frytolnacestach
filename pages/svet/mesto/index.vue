@@ -1,10 +1,23 @@
 <template>
     <main class="t-main">
-        <section class="t-section">
-            <SectionHero :headline="headline" />
+        <!-- SECTION - Hero place type -->
+        <section class="t-section py-4 -bg-brand3">
+            <div class="t-section__inner">
+                <div class="o-hero-place-type">
+                    <div class="o-hero-place-type__outer">
+                        <div class="o-hero-place-type__inner">
+                            <div class="o-hero-place-type__image">
+                                <div class="o-hero-place-type__image-file -city"></div>
+                            </div>
+                            <h1 class="o-hero-place-type__headline">MĚSTA</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+        <!-- SECTION - Hero place type END -->
 
-        <section class="t-section">
+        <section class="t-section pb-2 -bg-brand3">
             <div class="t-section__inner">
                 <div class="m-nav-alphabet">
                     <div class="m-nav-alphabet__outer">
@@ -84,7 +97,6 @@
 
         data() {
             return {
-                headline: "Města",
                 alphabet: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'CH', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
                 placesCities: [],
                 selectedLetter: "A"

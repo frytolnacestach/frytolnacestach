@@ -1,8 +1,21 @@
 <template>
     <main class="t-main">
-        <section class="t-section">
-            <SectionHero :headline="headline" />
+        <!-- SECTION - Hero place type -->
+        <section class="t-section py-4 -bg-brand3">
+            <div class="t-section__inner">
+                <div class="o-hero-place-type">
+                    <div class="o-hero-place-type__outer">
+                        <div class="o-hero-place-type__inner">
+                            <div class="o-hero-place-type__image">
+                                <div class="o-hero-place-type__image-file -state"></div>
+                            </div>
+                            <h1 class="o-hero-place-type__headline">STÁTY</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+        <!-- SECTION - Hero place type END -->
 
         <section class="t-section">
             <div class="t-section__inner">
@@ -49,9 +62,7 @@
         },
 
         data() {
-            return {
-                headline: "Státy"
-            }
+            return {}
         },
 
         head: {
