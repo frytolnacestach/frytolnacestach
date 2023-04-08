@@ -10,86 +10,10 @@
                     <div class="m-nav-alphabet__outer">
                         <div class="m-nav-alphabet__inner">
                             <ul class="m-nav-alphabet__items">
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">A</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">B</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">C</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">D</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">E</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">F</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">G</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">H</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">CH</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">I</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">J</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">K</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">L</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">M</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">N</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">O</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">P</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">Q</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">R</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">S</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">T</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">U</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">V</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">W</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">X</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">Y</span>
-                                </li>
-                                <li class="m-nav-alphabet__item">
-                                    <span class="m-nav-alphabet__span">Z</span>
+                                <li class="m-nav-alphabet__item" v-for="letter in alphabet" :key="letter" :class="{ '-active': isActive(letter) }">
+                                    <a class="m-nav-alphabet__link" href="#" @click.prevent="getPlaces(letter)">
+                                        <span class="m-nav-alphabet__span">{{ letter }}</span>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -138,12 +62,32 @@
             getSlugURL(url) {
                 url = url.replace("https://youtu.be/", "").replace("https://youtube.com/shorts/", "");
                 return url.replace(" ", "");
+            },
+
+            async getPlaces(letter) {
+                try {
+                    const [placesCities] = await Promise.all([
+                        this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-initial/${letter}`)
+                    ]);
+
+                    this.placesCities = placesCities;
+                    this.selectedLetter = letter;
+                } catch (error) {
+                    console.error(error)
+                }
+            },
+
+            isActive(letter) {
+                return letter === this.selectedLetter;
             }
         },
 
         data() {
             return {
-                headline: "Města"
+                headline: "Města",
+                alphabet: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'CH', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
+                placesCities: [],
+                selectedLetter: "A"
             }
         },
 
@@ -157,12 +101,10 @@
 
 
         async asyncData({ $axios }) {
-            const [placesContinents, placesStates, placesCities] = await Promise.all([
-                $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continents`),
-                $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-states`),
-                $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities`)
+            const [placesCities] = await Promise.all([
+                $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-initial/A`)
             ]);
-            return { placesContinents, placesStates, placesCities };
+            return { placesCities };
         }
     }
 </script>
