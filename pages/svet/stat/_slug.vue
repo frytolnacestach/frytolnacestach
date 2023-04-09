@@ -741,6 +741,18 @@
         mounted() {
             this.adsenseAddLoad();
             this.activeTab = this.$route.params.tab || 'default';
-        }
+        },
+
+        watch: {
+            updatedTabs: {
+                immediate: true,
+                handler() {
+                    const defaultTab = this.tabs.find(tab => tab.slug === 'default');
+                    const visibleTabs = this.tabs.filter(tab => tab.visible);
+                    const activeTab = visibleTabs.length > 0 ? visibleTabs[0] : defaultTab;
+                    this.activeTab = activeTab.slug;
+                },
+            },
+        },
     }
 </script>

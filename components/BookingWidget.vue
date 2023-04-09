@@ -9,12 +9,12 @@
             data-lang="ualng"
             data-dest_id="0"
             data-dest_type="landmark"
-            :data-latitude="latitude"
-            :data-longitude="longitude"
+            :data-latitude=latitude
+            :data-longitude=longitude
             :data-landmark_name="landmarkName"
             data-mwhsb="0"
             :data-address="address"
-            :data-zoom="zoom">
+            :data-zoom=zoom>
             <!-- Anything inside will go away once widget is loaded. -->
             <a href="//www.booking.com?aid=2328995">Booking.com</a>
         </ins>

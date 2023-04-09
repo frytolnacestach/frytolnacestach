@@ -1,6 +1,8 @@
 .m-nav-place {
     background-color: $white;
     border-bottom: 1px solid $gray5;
+    min-height: 55px;
+    overflow: hidden;
 
     &__outer {
         width: 100%;
@@ -15,6 +17,7 @@
         max-width: 1230px;
         margin: 0 auto;
         display: flex;
+        flex-wrap: wrap;
         justify-content: flex-start;
         list-style-type: none;
         padding: 0;
@@ -27,11 +30,12 @@
     &__link {
         display: flex;
         justify-content: center;
-        padding: 18px 24px;
+        padding: 17px 24px;
         text-decoration: none;
         color: $black;
         position: relative;
         font-size: $fs-normal-ss;
+        line-height: 20px;
         text-align: center;
 
         &:hover {
