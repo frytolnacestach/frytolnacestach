@@ -36,6 +36,26 @@ export default {
       { src: '/js/js_o-cookies-dialog.js', type: 'text/javascript', defer: 'defer' }
     ]
   },
+  robots: {
+    UserAgent: '*',
+    Disallow: '',
+    Sitemap: 'https://frytolnacestach.cz/sitemap-main.xml',
+    // custom robots.txt file path
+    TxtSitemap: '/robots.txt',
+  },
+
+  copy: [
+    {
+      from: 'static/ads.txt',
+      to: 'ads.txt',
+      toType: 'file'
+    },
+    {
+      from: 'static/seznam-wmt-7a9jTJETrjtBnGcMOa5dKSZ1K9yvwfMY.txt',
+      to: 'seznam-wmt-7a9jTJETrjtBnGcMOa5dKSZ1K9yvwfMY.txt',
+      toType: 'file'
+    }
+  ],
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
