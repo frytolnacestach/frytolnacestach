@@ -104,10 +104,6 @@ export default {
       },
       {
         path: '/sitemap-places-cities.xml',
-        /*routes: async () => {
-          let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/places-cities')
-          return data.map(v => `/svet/mesto/${v.slug}`)
-        },*/
 
         routes: async () => {
           const routes = []
@@ -126,6 +122,16 @@ export default {
         exclude: ['/**']
       }
     ]
+  },
+
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'stat',
+        path: '/svet/stat/:slug/:tab',
+        component: resolve(__dirname, 'pages/svet/stat/_slug.vue')
+      })
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
