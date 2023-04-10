@@ -147,10 +147,39 @@ export default {
   router: {
     extendRoutes(routes, resolve) {
       routes.push({
-        name: 'stat',
+        name: 'stat-slug',
+        path: '/svet/stat/:slug',
+        component: resolve(__dirname, 'pages/svet/stat/_slug.vue'),
+        alias: '/svet/stat/:slug/default'
+      })
+      routes.push({
+        name: 'stat-slug-tab',
         path: '/svet/stat/:slug/:tab',
         component: resolve(__dirname, 'pages/svet/stat/_slug.vue')
       })
+    }
+  },
+
+  generate: {
+    async routes() {
+      const { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/places-states');
+      const slugs = data.map((item) => item.slug);
+      const routes = [];
+      slugs.forEach((slug) => {
+        const tabs = [
+          'default',
+          'ceny',
+          'lide',
+          'cesta',
+          'kontakty',
+          'ubytovani',
+          'videa'
+        ];
+        tabs.forEach((tab) => {
+          routes.push(`svet/stat/${slug}/${tab}`);
+        });
+      });
+      return routes;
     }
   },
 

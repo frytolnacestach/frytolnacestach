@@ -647,7 +647,7 @@
             },
             getTabLink(tab) {
                 return {
-                    name: 'stat',
+                    name: 'stat-slug-tab',
                     params: { slug: this.$route.params.slug, tab: tab.slug },
                 };
             },
@@ -658,7 +658,6 @@
                 return this.placesCities.some(place => place.biggest !== 'yes');
             },
             updatedTabs() {
-
                 const hasTabDefault = true;
                 const hasTabPrice = !!this.place[0].currency_code || !!this.place[0].money_prices;
                 const hasTabPeople = !!this.place[0].people_religion || !!this.place[0].people_education || !!this.place[0].people_nationality;
@@ -667,7 +666,7 @@
                 const hasTabHotel = true;
                 const hasTabVideos = !!this.videos[0];
 
-                const updateTabs = [
+                const newTabs = [
                     { slug: 'default', label: 'Výchozí', visible: hasTabDefault },
                     { slug: 'ceny', label: 'Ceny', visible: hasTabPrice },
                     { slug: 'lide', label: 'Lidé', visible: hasTabPeople },
@@ -677,7 +676,7 @@
                     { slug: 'videa', label: 'Videa', visible: hasTabVideos },
                 ];
 
-                this.tabs = updateTabs;
+                this.tabs = newTabs;
             }
 
         },
