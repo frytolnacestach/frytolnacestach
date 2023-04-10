@@ -4,7 +4,7 @@
             
             <!-- SECTION - hero -->
             <section class="t-section">
-                <div class="o-hero-place" v-bind:style="{ 'background-image': 'url(' + (place[0].image_hero ? place[0].image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
+                <div class="o-hero-place" v-bind:style="{ 'backgroundImage': 'url(' + (place[0].image_hero ? place[0].image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }" v-lazy="place[0].image_hero ? place[0].image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png'">
                     <div class="o-hero-place__outer">
                         <div class="o-hero-place__inner">
                             <h1 class="o-hero-place__headline" v-if="place[0].name">{{ place[0].name }}</h1>
@@ -174,7 +174,7 @@
                                                 <div v-for="placesCity in placesCities" :key="placesCity.id" class="o-cover-place-detail__item" v-if="placesCity.biggest === 'yes'">
                                                     <div class="o-cover-place-detail__content">
                                                         <div class="o-cover-place-detail__image">
-                                                            <div class="o-cover-place-detail__image-file" v-bind:style="{ 'background-image': 'url(' + (placesCity.image_cover ? placesCity.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
+                                                            <div class="o-cover-place-detail__image-file" v-bind:style="{ 'background-image': 'url(' + (placesCity.image_cover ? placesCity.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }" v-lazy="placesCity.image_cover ? placesCity.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png'"></div>
                                                         </div>
                                                         <h3 class="o-cover-place-detail__name">
                                                             {{ placesCity.name }}
@@ -199,7 +199,7 @@
                                             <div v-for="video in videos" :key="video.id" class="o-video-list__item" v-if="video.type === 'travel'">
                                             <div class="o-video-list__item-inner">
                                                     <div class="o-video-list__image">
-                                                        <div class="o-video-list__image-file" v-bind:style="{ 'background-image': 'url(https://img.youtube.com/vi/' + getSlugURL(video.url) + '/0.jpg)'}">
+                                                        <div class="o-video-list__image-file" v-bind:style="{ 'background-image': 'url(https://img.youtube.com/vi/' + getSlugURL(video.url) + '/0.jpg)'}" v-lazy="'https://img.youtube.com/vi/' + getSlugURL(video.url) + '/0.jpg'">
                                                             <NuxtLink class="o-video-list__image-link" :to="`/videa/${video.slug}`"></NuxtLink>
                                                         </div>
                                                     </div>
@@ -230,7 +230,7 @@
                                                 <div v-for="placesCity in placesCities" :key="placesCity.id" class="o-cover-place-detail__item" v-if="placesCity.biggest !== 'yes'">
                                                     <div class="o-cover-place-detail__content">
                                                         <div class="o-cover-place-detail__image">
-                                                            <div class="o-cover-place-detail__image-file" v-bind:style="{ 'background-image': 'url(' + (placesCity.image_cover ? placesCity.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
+                                                            <div class="o-cover-place-detail__image-file" v-bind:style="{ 'background-image': 'url(' + (placesCity.image_cover ? placesCity.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }" v-lazy="placesCity.image_cover ? placesCity.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png'"></div>
                                                         </div>
                                                         <h3 class="o-cover-place-detail__name">
                                                             {{ placesCity.name }}
@@ -564,7 +564,7 @@
                                             <div v-for="video in videos" :key="video.id" class="o-video-list__item" v-if="video.type === 'travel'">
                                             <div class="o-video-list__item-inner">
                                                     <div class="o-video-list__image">
-                                                        <div class="o-video-list__image-file" v-bind:style="{ 'background-image': 'url(https://img.youtube.com/vi/' + getSlugURL(video.url) + '/0.jpg)'}">
+                                                        <div class="o-video-list__image-file" v-bind:style="{ 'background-image': 'url(https://img.youtube.com/vi/' + getSlugURL(video.url) + '/0.jpg)'}" v-lazy="'https://img.youtube.com/vi/' + getSlugURL(video.url) + '/0.jpg'">
                                                             <NuxtLink class="o-video-list__image-link" :to="`/videa/${video.slug}`"></NuxtLink>
                                                         </div>
                                                     </div>
