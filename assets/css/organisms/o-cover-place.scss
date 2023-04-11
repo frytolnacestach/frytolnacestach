@@ -74,10 +74,25 @@
         }
     }
 
-    &__image-file {
-        @include transition(transform, .3s);
+    &__image-lazyload {
+        display: block;
         width: 100%;
         height: 100%;
+    }
+
+    &__image-picture {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative;
+    }
+
+    &__image-file {
+        @include transition(transform, .3s);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         display: flex;
         justify-content: center;
         align-items: center;

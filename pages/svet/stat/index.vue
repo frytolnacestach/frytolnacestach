@@ -24,8 +24,66 @@
                         <div class="o-cover-place__items">
                             <div v-for="placesState in placesStates" :key="placesState.id" class="o-cover-place__item">
                                 <div class="o-cover-place__content">
-                                    <div class="o-cover-place__image">
-                                        <div class="o-cover-place__image-file" v-bind:style="{ 'background-image': 'url(' + (images && images.find(image => image.id === placesState.id_image_cover) ? 'https://image.frytolnacestach.cz/storage' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
+                                    <div class="o-cover-place__image loading-image">
+
+                                        <lazyload v-if="images && images.find(image => image.id === placesState.id_image_cover)" class="o-cover-place__image-lazyload">
+                                            <picture class="o-cover-place__image-picture">
+                                                <source
+                                                    class="o-cover-place__image-file"
+                                                    media="(max-width: 640px)"
+                                                    type="image/webp"
+                                                    :srcset="'https://image.frytolnacestach.cz/storage' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.webp 1x, https://image.frytolnacestach.cz/storage' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.webp 2x'"
+                                                    :sizes="'(max-width: 640px) 100vw'"
+                                                />
+                                                <source
+                                                    class="o-cover-place__image-file"
+                                                    media="(max-width: 1024px)"
+                                                    type="image/webp"
+                                                    :srcset="'https://image.frytolnacestach.cz/storage' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.webp 1x, https://image.frytolnacestach.cz/storage' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.webp 2x'"
+                                                    :sizes="'(max-width: 1024px) 100vw'"
+                                                />
+                                                <source
+                                                    class="o-cover-place__image-file"
+                                                    type="image/webp"
+                                                    :srcset="'https://image.frytolnacestach.cz/storage' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.webp 1x, https://image.frytolnacestach.cz/storage' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.webp 2x'"
+                                                    :sizes="'(max-width: 1200px) 100vw, 800px'"
+                                                />
+                                                <img
+                                                    class="o-cover-place__image-file"
+                                                    :src="'https://image.frytolnacestach.cz/storage' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.jpg'"
+                                                    :alt="placesState.name"
+                                                />
+                                            </picture>
+                                        </lazyload>
+                                        <lazyload v-else class="o-cover-place__image-lazyload">
+                                            <picture class="o-cover-place__image-picture">
+                                                <source
+                                                    class="o-cover-place__image-file"
+                                                    media="(max-width: 640px)"
+                                                    type="image/webp"
+                                                    :srcset="`https://image.frytolnacestach.cz/storage/_default/hero.webp 1x, https://image.frytolnacestach.cz/storage/_default/hero.webp 2x`"
+                                                    :sizes="'(max-width: 640px) 100vw'"
+                                                />
+                                                <source
+                                                    class="o-cover-place__image-file"
+                                                    media="(max-width: 1024px)"
+                                                    type="image/webp"
+                                                    :srcset="`https://image.frytolnacestach.cz/storage/_default/hero.webp 1x, https://image.frytolnacestach.cz/storage/_default/hero.webp 2x`"
+                                                    :sizes="'(max-width: 1024px) 100vw'"
+                                                />
+                                                <source
+                                                    class="o-cover-place__image-file"
+                                                    type="image/webp"
+                                                    :srcset="`https://image.frytolnacestach.cz/storage/_default/hero.webp 1x, https://image.frytolnacestach.cz/storage/_default/hero.webp 2x`"
+                                                    :sizes="'(max-width: 1200px) 100vw, 800px'"
+                                                />
+                                                <img
+                                                    class="o-cover-place__image-file"
+                                                    :src="`https://image.frytolnacestach.cz/storage/_default/hero.jpg`"
+                                                    :alt="placesState.name"
+                                                />
+                                            </picture>
+                                        </lazyload>
                                     </div>
                                     <h3 class="o-cover-place__name">
                                         {{ placesState.name }}

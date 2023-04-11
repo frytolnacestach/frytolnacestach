@@ -4,7 +4,6 @@
             <SectionHero :headline="headline" />
         </section>
 
-
         <!-- SECTION - videos -->
         <section class="t-section pt-4 py-2 px-2" v-if="videos[0]">
             <div class="t-section__inner">
@@ -14,12 +13,66 @@
                             <div v-for="video in videos" :key="video.id" class="o-video-list__item">
                                 <div class="o-video-list__item-inner">
                                     <div class="o-video-list__image loading-image">
-                                        <div class="o-video-list__image-file lazyload" 
-                                            :style="{
-                                                'background-image': 'url(' + (images && images.find(image => image.id === video.id_image) ? 'https://image.frytolnacestach.cz/storage' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')',
-                                            }">
-                                            <NuxtLink class="o-video-list__image-link" :to="`/videa/${video.slug}`"></NuxtLink>
-                                        </div>
+                                        <lazyload v-if="images && images.find(image => image.id === video.id_image)" class="o-video-list__image-lazyload">
+                                            <picture class="o-video-list__image-picture">
+                                                <source
+                                                    class="o-video-list__image-file"
+                                                    media="(max-width: 640px)"
+                                                    type="image/webp"
+                                                    :srcset="'https://image.frytolnacestach.cz/storage' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 1x, https://image.frytolnacestach.cz/storage' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 2x'"
+                                                    :sizes="'(max-width: 640px) 100vw'"
+                                                />
+                                                <source
+                                                    class="o-video-list__image-file"
+                                                    media="(max-width: 1024px)"
+                                                    type="image/webp"
+                                                    :srcset="'https://image.frytolnacestach.cz/storage' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 1x, https://image.frytolnacestach.cz/storage' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 2x'"
+                                                    :sizes="'(max-width: 1024px) 100vw'"
+                                                />
+                                                <source
+                                                    class="o-video-list__image-file"
+                                                    type="image/webp"
+                                                    :srcset="'https://image.frytolnacestach.cz/storage' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 1x, https://image.frytolnacestach.cz/storage' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 2x'"
+                                                    :sizes="'(max-width: 1200px) 100vw, 800px'"
+                                                />
+                                                <img
+                                                    class="o-video-list__image-file"
+                                                    :src="'https://image.frytolnacestach.cz/storage' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.jpg'"
+                                                    :alt="video.name"
+                                                />
+                                            </picture>
+                                        </lazyload>
+                                        <lazyload v-else class="o-video-list__image-lazyload">
+                                            <picture class="o-video-list__image-picture">
+                                                <source
+                                                    class="o-video-list__image-file"
+                                                    media="(max-width: 640px)"
+                                                    type="image/webp"
+                                                    :srcset="`https://image.frytolnacestach.cz/storage/_default/hero.webp 1x, https://image.frytolnacestach.cz/storage/_default/hero.webp 2x`"
+                                                    :sizes="'(max-width: 640px) 100vw'"
+                                                />
+                                                <source
+                                                    class="o-video-list__image-file"
+                                                    media="(max-width: 1024px)"
+                                                    type="image/webp"
+                                                    :srcset="`https://image.frytolnacestach.cz/storage/_default/hero.webp 1x, https://image.frytolnacestach.cz/storage/_default/hero.webp 2x`"
+                                                    :sizes="'(max-width: 1024px) 100vw'"
+                                                />
+                                                <source
+                                                    class="o-video-list__image-file"
+                                                    type="image/webp"
+                                                    :srcset="`https://image.frytolnacestach.cz/storage/_default/hero.webp 1x, https://image.frytolnacestach.cz/storage/_default/hero.webp 2x`"
+                                                    :sizes="'(max-width: 1200px) 100vw, 800px'"
+                                                />
+                                                <img
+                                                    class="o-video-list__image-file"
+                                                    :src="`https://image.frytolnacestach.cz/storage/_default/hero.jpg`"
+                                                    :alt="video.title"
+                                                />
+                                            </picture>
+                                        </lazyload>
+
+                                        <NuxtLink class="o-video-list__image-link" :to="`/videa/${video.slug}`"></NuxtLink>
                                     </div>
                                     <div class="o-video-list__text">
                                         <h3 class="o-video-list__title">
