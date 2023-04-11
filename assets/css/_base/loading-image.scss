@@ -1,0 +1,33 @@
+.loading-image {
+    background-color: $gray2;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 25%;
+        background: $gray4;
+        animation: loadingImage 5s linear infinite;
+        //TODO: filter: blur(10vh);
+        opacity: .3;
+    }
+
+    @keyframes loadingImage {
+
+        0% {
+            left: -150%;
+        }
+
+        50% {
+            left: 150%;
+        }
+
+        100% {
+            left: -150%;
+        }
+        
+    }
+}

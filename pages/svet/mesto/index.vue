@@ -43,7 +43,7 @@
                             <div v-for="placesCity in placesCities" :key="placesCity.id" class="o-cover-place__item">
                                 <div class="o-cover-place__content">
                                     <div class="o-cover-place__image">
-                                        <div class="o-cover-place__image-file" v-bind:style="{ 'background-image': 'url(' + (placesCity.image_cover ? placesCity.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
+                                        <div class="o-cover-place__image-file" v-bind:style="{ 'background-image': 'url(' + (images && images.find(image => image.id === placesCity.id_image_cover) ? 'https://image.frytolnacestach.cz/storage' + images.find(image => image.id === placesCity.id_image_cover).source + images.find(image => image.id === placesCity.id_image_cover).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
                                     </div>
                                     <h3 class="o-cover-place__name">
                                         {{ placesCity.name }}
@@ -99,6 +99,7 @@
             return {
                 alphabet: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'CH', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
                 placesCities: [],
+                images: [],
                 selectedLetter: "A"
             }
         },
@@ -113,10 +114,11 @@
 
 
         async asyncData({ $axios }) {
-            const [placesCities] = await Promise.all([
-                $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-initial/A`)
+            const [placesCities, images] = await Promise.all([
+                $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-initial/A`),
+                $axios.$get(`https://frytolnacestach-api.vercel.app/api/images`)
             ]);
-            return { placesCities };
+            return { placesCities, images };
         }
     }
 </script>

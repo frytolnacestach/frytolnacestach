@@ -3,7 +3,9 @@
         <div class="t-main">
 
             <section>
-                <div class="o-hero-article" v-bind:style="{ 'background-image': 'url(https://img.youtube.com/vi/' + getSlugURL(video[0].url) + '/0.jpg)'}">
+                <div class="o-hero-article lazyload" 
+                    :style="{ 'background-image': 'url(' + (image ? 'https://image.frytolnacestach.cz/storage' + image[0].source + image[0].name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"
+                >
                     <div class="o-hero-article__outer">
                         <div class="o-hero-article__inner">
                             <h1 class="o-hero-article__headline" v-if="video[0].title">{{ video[0].title }}</h1>
@@ -96,7 +98,7 @@
                                 <div class="o-place-block__inner">
                                     <div class="o-place-block__content">
                                         <div class="o-place-block__image">
-                                            <div class="o-place-block__image-file" v-bind:style="{ 'background-image': 'url(' + (placeContinent[0].image_hero ?placeContinent[0].image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
+                                            <div class="o-place-block__image-file" v-bind:style="{ 'background-image': 'url(' + (imageContinent ? 'https://image.frytolnacestach.cz/storage' + imageContinent[0].source + imageContinent[0].name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
                                                 <div class="o-place-block__name">{{ placeContinent[0].name }}</div>
                                             </div>
                                         </div>
@@ -116,7 +118,7 @@
                                 <div class="o-place-block__inner">
                                     <div class="o-place-block__content">
                                         <div class="o-place-block__image">
-                                            <div class="o-place-block__image-file" v-bind:style="{ 'background-image': 'url(' + (placeState[0].image_hero ?placeState[0].image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
+                                            <div class="o-place-block__image-file" v-bind:style="{ 'background-image': 'url(' + (imageState ? 'https://image.frytolnacestach.cz/storage' + imageState[0].source + imageState[0].name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
                                                 <div class="o-place-block__name">{{ placeState[0].name }}</div>
                                             </div>
                                         </div>
@@ -136,7 +138,7 @@
                                 <div class="o-place-block__inner">
                                     <div class="o-place-block__content">
                                         <div class="o-place-block__image">
-                                            <div class="o-place-block__image-file" v-bind:style="{ 'background-image': 'url(' + (placeCity[0].image_hero ?placeCity[0].image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
+                                            <div class="o-place-block__image-file" v-bind:style="{ 'background-image': 'url(' + (imageCity ? 'https://image.frytolnacestach.cz/storage' + imageCity[0].source + imageCity[0].name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }">
                                                 <div class="o-place-block__name">{{ placeCity[0].name }}</div>
                                             </div>
                                         </div>
@@ -229,16 +231,28 @@
                 //video
                 const video = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/video/${params.slug}`)
 
+                // Načtení informací o obrázku
+                const image = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${video[0].id_image}`)
+
                 // Načtení informací o městu
                 const placeCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city-id/${video[0].id_city}`)
+
+                // Načtení informací o obrázku
+                const imageCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeCity[0].id_image_hero}`)
 
                 // Načtení informací o státu
                 const placeState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-state-id/${video[0].id_state}`)
 
+                // Načtení informací o obrázku
+                const imageState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeState[0].id_image_hero}`)
+
                 // Načtení informací o continentu
                 const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${video[0].id_continent}`)
 
-                return { video, placeCity, placeState, placeContinent }
+                // Načtení informací o obrázku
+                const imageContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeContinent[0].id_image_hero}`)
+
+                return { video, image, placeCity, placeState, placeContinent, imageCity, imageState, imageContinent }
             } catch (error) {
                 console.error(error)
             }

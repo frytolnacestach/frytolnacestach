@@ -25,7 +25,7 @@
                             <div v-for="placesState in placesStates" :key="placesState.id" class="o-cover-place__item">
                                 <div class="o-cover-place__content">
                                     <div class="o-cover-place__image">
-                                        <div class="o-cover-place__image-file" v-bind:style="{ 'background-image': 'url(' + (placesState.image_cover ? placesState.image_cover : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
+                                        <div class="o-cover-place__image-file" v-bind:style="{ 'background-image': 'url(' + (images && images.find(image => image.id === placesState.id_image_cover) ? 'https://image.frytolnacestach.cz/storage' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')' }"></div>
                                     </div>
                                     <h3 class="o-cover-place__name">
                                         {{ placesState.name }}
@@ -75,12 +75,13 @@
 
 
         async asyncData({ $axios }) {
-            const [placesContinents, placesStates, placesCities] = await Promise.all([
+            const [placesContinents, placesStates, placesCities, images] = await Promise.all([
                 $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continents`),
                 $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-states`),
-                $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities`)
+                $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities`),
+                $axios.$get(`https://frytolnacestach-api.vercel.app/api/images`)
             ]);
-            return { placesContinents, placesStates, placesCities };
+            return { placesContinents, placesStates, placesCities, images };
         }
     }
 </script>

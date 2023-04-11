@@ -13,8 +13,11 @@
                         <div class="o-video-list__items">
                             <div v-for="video in videos" :key="video.id" class="o-video-list__item">
                                 <div class="o-video-list__item-inner">
-                                    <div class="o-video-list__image">
-                                        <div class="o-video-list__image-file" v-bind:style="{ 'background-image': 'url(https://img.youtube.com/vi/' + getSlugURL(video.url) + '/0.jpg)'}">
+                                    <div class="o-video-list__image loading-image">
+                                        <div class="o-video-list__image-file lazyload" 
+                                            :style="{
+                                                'background-image': 'url(' + (images && images.find(image => image.id === video.id_image) ? 'https://image.frytolnacestach.cz/storage' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/hero.png') + ')',
+                                            }">
                                             <NuxtLink class="o-video-list__image-link" :to="`/videa/${video.slug}`"></NuxtLink>
                                         </div>
                                     </div>
@@ -79,9 +82,16 @@
             ]
         },
 
+        updated() {
+            window.lazySizes && window.lazySizes.update();
+        },
+
         async asyncData({ $axios }) {
             const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos`)
-            return { videos }
+
+            // Načtení informací o obrázku
+            const images = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images`)
+            return { videos, images }
         }
     }
 </script>

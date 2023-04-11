@@ -32,6 +32,7 @@ export default {
       { src: '/js/gtm.js', type: 'text/javascript' },
       { src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5217753750259737', async: true},
       { src: 'https://code.jquery.com/jquery-3.6.1.min.js', crossorigin: 'anonymous'},
+      { src: 'https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js', async: true },
       { src: '/js/js_m-hamburger.js', type: 'text/javascript', defer: 'defer' },
       { src: '/js/js_o-cookies-dialog.js', type: 'text/javascript', defer: 'defer' }
     ]
@@ -65,8 +66,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/axios.js',
-    { src: '~/plugins/vue-lazyload', ssr: false }
+    '~/plugins/axios.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -75,7 +75,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
+    '@nuxt/typescript-build'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -188,5 +188,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    
   }
 }
