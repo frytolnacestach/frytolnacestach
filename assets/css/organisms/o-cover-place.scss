@@ -80,13 +80,6 @@
         height: 100%;
     }
 
-    &__image-picture {
-        width: 100%;
-        height: 100%;
-        display: block;
-        position: relative;
-    }
-
     &__image-file {
         @include transition(transform, .3s);
         position: absolute;
@@ -110,6 +103,7 @@
         position: absolute;
         font-size: $fs-small;
         padding: 0 15px;
+        padding-bottom: 8px;
 
         @media only screen and (min-width: $ti) {
             font-size: $fs-normal-s;

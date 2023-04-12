@@ -75,6 +75,26 @@ _____________________________________________________________________
 Obrázky by měli využivát lazyload, také je potřebe používat ideální velikost + retina a moderní formát webp.
 
 ### Format
-
+- WebP
+- PNG
+- JPG
 
 ### Sizes
+ALL (180, 280, 340, 380, 400, 540)
+#### o-video-list__image
+0 -> 374   = 334px = (USE 340PX)
+375 -> 439 = 399px = (USE 400PX)
+440 -> 575 = 535px = (USE 540PX)
+576 -> 767 = 356px = (USE 400PX)
+768 -> 991 = 306px = (USE 340PX)
+992 ->     = 386px = (USE 400PX)
+
+
+#### o-cover-place__image
+0 -> 374   = 178px =   (USE 180PX)
+375 -> 575 = 280px =   (USE 280PX)
+576 -> 767 = 248px =   (USE 280PX)
+768 -> 991 = 240px =   (USE 280PX)
+991 -> 1400 = 272px =  (USE 280PX)
+1400 -> 1920 = 377px = (USE 380PX)
+1920 -> = 500px =      (USE 540PX)
