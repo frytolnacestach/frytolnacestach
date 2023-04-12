@@ -93,11 +93,22 @@ a {
 }
 
 //lazyload
-.loading {
-	opacity: 0;
+.lazyload-file {
 	transition: opacity 0.3s ease-in-out;
-}
+	opacity: 0;
 
-.loaded {
-	opacity: 1;
+	&[lazy=loading] {
+		transition: opacity 0.3s ease-in-out;
+		opacity: 0;
+	}
+
+	&[lazy=error] {
+		transition: opacity 0.3s ease-in-out;
+		opacity: 1;
+	}
+
+	&[lazy=loaded] {
+		transition: opacity 0.3s ease-in-out;
+		opacity: 1;
+	}
 }

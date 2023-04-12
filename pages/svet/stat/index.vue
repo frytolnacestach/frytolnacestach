@@ -27,14 +27,14 @@
                                     <div class="o-cover-place__image loading-image">
                                         <div v-if="images && images.find(image => image.id === placesState.id_image_cover)" class="o-cover-place__image-lazyload">
                                             <img
-                                                class="o-cover-place__image-file"
+                                                class="o-cover-place__image-file lazyload-file"
                                                 v-lazy="{
                                                     src: 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.webp',
                                                     srcset: {
                                                         '374': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.webp',
                                                         '575': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.webp',
                                                         '767': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.webp',
-                                                        '991': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + 'o.webp',
+                                                        '991': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.webp',
                                                         '1400': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.webp',
                                                         '1920': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.webp',
                                                         '374@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === placesState.id_image_cover).source + images.find(image => image.id === placesState.id_image_cover).name + '.webp 2x',
@@ -51,7 +51,7 @@
                                         </div>
                                         <div v-else class="o-cover-place__image-lazyload">
                                             <img
-                                                class="o-cover-place__image-file"
+                                                class="o-cover-place__image-file lazyload-file"
                                                 v-lazy="{
                                                     src: 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
                                                     srcset: {
@@ -109,7 +109,9 @@
         },
 
         data() {
-            return {}
+            return {
+                
+            }
         },
 
         head: {

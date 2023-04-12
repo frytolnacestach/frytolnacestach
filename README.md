@@ -72,7 +72,6 @@ More information about the usage of this directory in [the documentation](https:
 _____________________________________________________________________
 
 ## IMAGE
-Obrázky by měli využivát lazyload, také je potřebe používat ideální velikost + retina a moderní formát webp.
 
 ### Format
 - WebP
@@ -82,6 +81,9 @@ Obrázky by měli využivát lazyload, také je potřebe používat ideální ve
 ### Sizes
 ALL (180, 280, 340, 380, 400, 540)
 #### o-video-list__image
+Type:
+- videos
+Sizes:
 0 -> 374   = 334px = (USE 340PX)
 375 -> 439 = 399px = (USE 400PX)
 440 -> 575 = 535px = (USE 540PX)
@@ -91,6 +93,12 @@ ALL (180, 280, 340, 380, 400, 540)
 
 
 #### o-cover-place__image
+Type:
+- _default
+- world/continets
+- world/states
+- world/cities
+Sizes:
 0 -> 374   = 178px =   (USE 180PX)
 375 -> 575 = 280px =   (USE 280PX)
 576 -> 767 = 248px =   (USE 280PX)

@@ -3,8 +3,9 @@ import VueLazyload from 'vue-lazyload'
 
 Vue.use(VueLazyload, {
   preLoad: 1.3,
-  error: 'https://placehold.it/300x300?text=Image+not+found',
+  error: 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
   attempt: 1,
-  lazyComponent: true
+  loadingClass: 'lazyloading',
+  loadedClass: 'lazyloaded'
 })
 
