@@ -155,7 +155,7 @@
             title: 'Města | Frytol na cestách',
             meta: [
                 { hid: 'description', name: 'description', content: 'Oběvuj svět a jeho místá s Frytolem na cestách' },
-                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/og/og-default.png' }
+                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/_default/og-default.png' }
             ]
         },
 

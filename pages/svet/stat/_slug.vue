@@ -945,7 +945,7 @@
                 title: `${metaTitle}`,
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt}` },
-                    { property: 'og:image', content: `${this.place[0].image_hero ? this.place[0].image_hero : 'https://image.frytolnacestach.cz/storage/_default/hero.png'}`} 
+                    { property: 'og:image', content: `${this.place[0].image_hero ? 'https://image.frytolnacestach.cz/storage/_default/og-default.png' : 'https://image.frytolnacestach.cz/storage/_default/og-default.png'}`} 
                 ]
             }
         },
