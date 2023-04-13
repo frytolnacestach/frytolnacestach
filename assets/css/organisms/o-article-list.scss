@@ -1,4 +1,6 @@
 .o-article-list {
+    $self: &;
+
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -15,7 +17,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 0 -7px;
+        margin: 0 -3px;
     }
 
     &__item {
@@ -23,7 +25,7 @@
         width: 100%;
 
         @media only screen and (min-width: $sm) {
-            width: 50;
+            width: 50%;
         }
 
         @media only screen and (min-width: $md) {
@@ -32,7 +34,7 @@
     }
 
     &__item-inner {
-        margin: 7px;
+        margin: 8px;
         display: flex;
         flex-wrap: wrap;
     }
@@ -43,6 +45,21 @@
         padding-bottom: 56%;
         display: inline-block;
         position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    &__image-lazyload {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__image-file {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     &__image-link {
@@ -54,30 +71,26 @@
         left: 0;
     }
 
-    &__image-file {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-    }
-
     &__text {
         width: 100%;
-        padding: 5px 8px 8px;
-        border-left: 1px solid $gray3;
-        border-bottom: 1px solid $gray3;
-        border-right: 1px solid $gray3;
-        background-color: $gray6;
+        padding: 9px 5px 15px;
+        background-color: transparent;
     }
 
     &__title {
-        font-size: $fs-normal-ll;
+        font-size: $fs-normal-s;
         margin: 0;
     }
 
     &__title-link {
         text-decoration: none;
+        color: $black;
+        font-weight: 500;
+        line-height: 1.32;
+
+        &:hover {
+            color: $gray8;
+        }
     }
 
     &__perex {
@@ -94,6 +107,16 @@
         &:hover {
             color: $gray7;
             text-decoration: none;
+        }
+    }
+
+    &.-dark {
+        #{$self}__title-link {
+            color: $white;
+
+            &:hover {
+                color: $gray6;
+            }
         }
     }
 }

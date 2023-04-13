@@ -57,4 +57,14 @@
         font-weight: 300;
         font-size: $fs-normal-s;
     }
+
+    &__value-link {
+        font-weight: 300;
+        font-size: $fs-normal-s;
+        color: $white;
+
+        &:hover {
+            color: $brand1;
+        }
+    }
 }

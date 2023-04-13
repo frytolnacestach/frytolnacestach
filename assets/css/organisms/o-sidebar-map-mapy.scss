@@ -21,12 +21,20 @@
         display: inline-block;
     }
 
-    &__map-image {
+    &__image {
         border: none;
         margin: 0 auto;
         width: 100%;
         height: auto;
         display: inline-block;
+    }
+
+    &__image-lazyload {
+        width: 100%;
+    }
+
+    &__image-file {
+        width: 100%;
     }
 
     &__link {

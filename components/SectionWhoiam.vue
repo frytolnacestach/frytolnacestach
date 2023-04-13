@@ -2,9 +2,24 @@
     <div class="o-whoiam">
         <div class="o-whoiam__outer">
             <div class="o-whoiam__inner">
-                <div class="o-whoiam__image mt-2">
-                    <div class="o-whoiam__image-ring">
-                        <div class="o-whoiam__image-file"></div>
+                <div class="o-whoiam__ring mt-2">
+                    <div class="o-whoiam__ring-content">
+                        <div class="o-whoiam__image loading-image">
+                            <div class="o-whoiam__image-lazyload">
+                                <img
+                                    class="o-whoiam__image-file lazyload-file"
+                                    v-lazy="{
+                                        src: 'https://image.frytolnacestach.cz/storage/_default/michal-fryc.webp',
+                                        srcset: {
+                                            '320': 'https://image.frytolnacestach.cz/storage/_default/michal-fryc.webp',
+                                            '320@2x': 'https://image.frytolnacestach.cz/storage/_default/michal-fryc.webp 2x'
+                                        },
+                                        sizes: '320px'
+                                    }"
+                                    alt="Michal Fryč"
+                                />
+                            </div>
+                        </div>
                     </div>
                     <div class="o-whoiam__text mt-2">
                         <div class="o-whoiam__perex">

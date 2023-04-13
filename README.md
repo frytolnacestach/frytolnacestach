@@ -90,7 +90,7 @@ world/continets =
 world/states    =
 world/cities    =
 
-#### o-video-list__image
+#### o-video-list
 Type:
 - videos
 Sizes:
@@ -102,7 +102,7 @@ Sizes:
 992 ->     = 386px = (USE 400PX)
 
 
-#### o-cover-place__image
+#### o-cover-place
 Type:
 - _default
 - world/continets
@@ -143,40 +143,64 @@ Sizes:
 375 ->     = 345px  = (USE 390PX)
 
 
-!!#### o-article-list-hp
+#### o-article-list
 Type:
 - articles
 Sizes:
+0 -> 374   = 334px = (USE 340PX)
+375 -> 439 = 399px = (USE 400PX)
+440 -> 575 = 535px = (USE 540PX)
+576 -> 767 = 356px = (USE 400PX)
+768 -> 991 = 306px = (USE 340PX)
+992 ->     = 386px = (USE 400PX)
 
 
-!!#### o-article-list-hp
+#### o-sidebar-map-mapy
 Type:
+- _default
+Sizes:
+0 -> 374   = 344px = (USE 340PX)
+375 -> 439 = 409px = (USE 420PX)
+440 -> 575 = 545px = (USE 550PX)
+576 -> 767 = 737px = (USE 740PX)
+768 -> 991 = 961px = (USE 980PX)
+992 ->     = 300px = (USE 300PX)
+
+
+#### o-whoiam
+Type:
+- _default
+Sizes:
+0 ->         = 130px =
+
+
+#### o-hero-article
+Type:
+- _default
 - articles
 Sizes:
+0 ->    374  = 374px = 
+375 ->  575  = 575px = 
+576 ->  767  = 767px = 
+768 ->  991  = 991px = 
+992 ->  1139 = 1139px = 
+1140 -> 1219 = 1219px = 
+1220 -> 1399 = 1399px =
+1400 ->      = 1920px 
 
 
-!!#### o-sidebar-map-mapy
+#### o-hero-big
 Type:
 - _default
 Sizes:
-
-
-!!#### o-whoiam
-Type:
-- _default
-Sizes:
-
-
-!!#### o-hero-article
-Type:
-- _default
-Sizes:
-
-
-!!#### o-hero-big
-Type:
-- _default
-Sizes:
+0 ->    374  = 374px = 
+375 ->  575  = 575px = 
+576 ->  767  = 767px = 
+768 ->  991  = 991px = 
+992 ->  1139 = 1139px = 
+1140 -> 1219 = 1219px = 
+1220 -> 1399 = 1399px =
+1400 ->      = 1920px 
 
 
 #### o-hero-place

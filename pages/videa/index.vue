@@ -14,7 +14,7 @@
                                 <div class="o-video-list__item-inner">
                                     
                                     <div class="o-video-list__image loading-image">
-                                        <div v-if="images && images.find(image => image.id === video.id_image)" class="o-cover-place__image-lazyload">
+                                        <div v-if="images && images.find(image => image.id === video.id_image)" class="o-video-list__image-lazyload">
                                             <img
                                                 class="o-video-list__image-file lazyload-file"
                                                 v-lazy="{

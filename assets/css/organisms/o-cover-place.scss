@@ -40,7 +40,7 @@
         }
 
         &:hover {
-            #{$self}__image-lazy {
+            #{$self}__image-lazyload {
                 transform: scale(1.1);
             }
         }

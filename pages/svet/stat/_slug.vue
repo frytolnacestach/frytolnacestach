@@ -82,11 +82,11 @@
                                 </div>
                                 <div class="o-hot-info-hero__item">
                                     <span class="o-hot-info-hero__title">Rozloha</span>
-                                    <span class="o-hot-info-hero__value">{{ place[0].area }} km2</span>
+                                    <span class="o-hot-info-hero__value">{{ place[0].area.toLocaleString('cs-CZ') }} km²</span>
                                 </div>
                                 <div class="o-hot-info-hero__item">
                                     <span class="o-hot-info-hero__title">Populace</span>
-                                    <span class="o-hot-info-hero__value">{{ place[0].population }}</span>
+                                    <span class="o-hot-info-hero__value">{{ place[0].population.toLocaleString('cs-CZ') }}</span>
                                 </div>
                                 <!--
                                 <div class="o-hot-info-hero__item">
@@ -299,7 +299,7 @@
                                             <div v-for="video in videos" :key="video.id" class="o-video-list__item" v-if="video.type === 'travel'">
                                                 <div class="o-video-list__item-inner">
                                                     <div class="o-video-list__image loading-image">
-                                                        <div v-if="images && images.find(image => image.id === video.id_image)" class="o-cover-place__image-lazyload">
+                                                        <div v-if="images && images.find(image => image.id === video.id_image)" class="o-video-list__image-lazyload">
                                                             <img
                                                                 class="o-video-list__image-file lazyload-file"
                                                                 v-lazy="{
@@ -751,7 +751,7 @@
                                             <div v-for="video in videos" :key="video.id" class="o-video-list__item" v-if="video.type === 'travel'">
                                                 <div class="o-video-list__item-inner">
                                                     <div class="o-video-list__image loading-image">
-                                                        <div v-if="images && images.find(image => image.id === video.id_image)" class="o-cover-place__image-lazyload">
+                                                        <div v-if="images && images.find(image => image.id === video.id_image)" class="o-video-list__image-lazyload">
                                                             <img
                                                                 class="o-video-list__image-file lazyload-file"
                                                                 v-lazy="{
