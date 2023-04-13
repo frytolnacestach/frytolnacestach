@@ -49,7 +49,7 @@
         }
 
         &:hover {
-            #{$self}__image-file {
+            #{$self}__image-lazyload {
                 transform: scale(1.1);
             }
         }
@@ -84,16 +84,22 @@
         }
     }
 
-    &__image-file {
+    &__image-lazyload {
         @include transition(transform, .3s);
+        transform: scale(1);
+        display: block;
         width: 100%;
         height: 100%;
+    }
+
+    &__image-file {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-size: cover;
-        background-position: center;
-        transform: scale(1);
     }
 
     //Name
@@ -104,7 +110,7 @@
         z-index: 2;
         position: absolute;
         font-size: $fs-normal-ssss;
-        padding: 0 15px;
+        padding: 0 15px 10px;
     }
 
     //Link

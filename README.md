@@ -73,13 +73,23 @@ _____________________________________________________________________
 
 ## IMAGE
 
+
 ### Format
 - WebP
 - PNG
 - JPG
 
+
 ### Sizes
-ALL (180, 280, 340, 380, 400, 540)
+ALL             =
+_default        =
+articles        =
+maps            =
+videos          =
+world/continets =
+world/states    =
+world/cities    =
+
 #### o-video-list__image
 Type:
 - videos
@@ -106,3 +116,80 @@ Sizes:
 991 -> 1400 = 272px =  (USE 280PX)
 1400 -> 1920 = 377px = (USE 380PX)
 1920 -> = 500px =      (USE 540PX)
+
+
+#### o-cover-place-detail
+Type:
+- world/continets
+- world/states
+- world/cities
+Sizes:
+0 -> 374   = 248px    = (USE 250PX)
+375 ->  575  = 216px  = (USE 220PX)
+576 ->  767  = 200px  = (USE 220PX)
+768 ->  991  = 204px  = (USE 220PX)
+992 -> 1399  = 198px  = (USE 220PX)
+1400 -> 1920  = 278px = (USE 280PX)
+1921 ->               = (USE 360PX)
+
+
+#### o-place-block
+Type:
+- world/continets
+- world/states
+- world/cities
+Sizes:
+0 -> 374   = 344px  = (USE 345PX)
+375 ->     = 345px  = (USE 390PX)
+
+
+!!#### o-article-list-hp
+Type:
+- articles
+Sizes:
+
+
+!!#### o-article-list-hp
+Type:
+- articles
+Sizes:
+
+
+!!#### o-sidebar-map-mapy
+Type:
+- _default
+Sizes:
+
+
+!!#### o-whoiam
+Type:
+- _default
+Sizes:
+
+
+!!#### o-hero-article
+Type:
+- _default
+Sizes:
+
+
+!!#### o-hero-big
+Type:
+- _default
+Sizes:
+
+
+#### o-hero-place
+Type:
+- world/continets
+- world/states
+- world/cities
+Sizes:
+0 ->    374  = 374px = 
+375 ->  575  = 575px = 
+576 ->  767  = 767px = 
+768 ->  991  = 991px = 
+992 ->  1139 = 1139px = 
+1140 -> 1219 = 1219px = 
+1220 -> 1399 = 1399px =
+1400 ->      = 1920px 
