@@ -369,6 +369,265 @@
                     <!-- SECTION - ad-google - sidebar - END -->
                 </div>
             </div>
+
+            <div class="t-layout-full" v-if="post[0].id_continent || post[0].id_state || post[0].id_city">
+
+                <!-- SECTION - napis -->
+                <section class="t-section -bg-gray pt-4">
+                    <div class="t-section__inner">
+                        <div class="o-information-block">
+                            <div class="o-information-block__outer">
+                                <div class="o-information-block__inner">
+                                    <h2 class="o-information-block__title">Více informací o místě</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - nadpis END -->
+
+                <section class="t-section -bg-gray pt-2 pb-1">
+                    <div class="flex px-1">
+
+                        <!-- SECTION - place -->
+                        <div class="o-place-block" v-if="post[0].id_continent">
+                            <div class="o-place-block__outer">
+                                <div class="o-place-block__inner">
+                                    <div class="o-place-block__content">
+
+                                        <div class="o-place-block__image loading-image">
+                                            <div v-if="imageContinent" class="o-place-block__image-lazyload">
+                                                <img
+                                                    class="o-place-block__image-file lazyload-file"
+                                                    v-lazy="{
+                                                        src: 'https://image.frytolnacestach.cz/storage/' + imageContinent[0].source + imageContinent[0].name + '.webp',
+                                                        srcset: {
+                                                            '374': 'https://image.frytolnacestach.cz/storage/' + imageContinent[0].source + imageContinent[0].name + '.webp',
+                                                            '575': 'https://image.frytolnacestach.cz/storage/' + imageContinent[0].source + imageContinent[0].name + '.webp',
+                                                            '374@2x': 'https://image.frytolnacestach.cz/storage/' + imageContinent[0].source + imageContinent[0].name + '.webp 2x',
+                                                            '575@2x': 'https://image.frytolnacestach.cz/storage/' + imageContinent[0].source + imageContinent[0].name + '.webp 2x'
+                                                        },
+                                                        sizes: '(max-width: 374px) 374px, 375px'
+                                                    }"
+                                                    :alt="placeContinent[0].name"
+                                                />
+                                            </div>
+                                            <div v-else class="o-place-block__image-lazyload">
+                                                <img
+                                                    class="o-place-block__image-file lazyload-file"
+                                                    v-lazy="{
+                                                        src: 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                        srcset: {
+                                                            '374': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                            '575': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                            '374@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
+                                                            '575@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x'
+                                                        },
+                                                        sizes: '(max-width: 374px) 374px, 375px'
+                                                    }"
+                                                    :alt="placeContinent[0].name"
+                                                />
+                                            </div>
+                                            <div class="o-place-block__filter">
+                                                <span class="o-place-block__name">{{ placeContinent[0].name }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="o-place-block__text">
+                                            <div class="o-place-block__wysiwyg" v-if="placeContinent[0].information_chatgpt" v-html="placeContinent[0].information_chatgpt.slice(0, 220)"></div>
+                                            <NuxtLink class="o-place-block__more" :to="`/svet/kontinent/${placeContinent[0].slug}`">Číst více</NuxtLink>                                   
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SECTION - place -->
+
+                        <!-- SECTION - place -->
+                        <div class="o-place-block" v-if="post[0].id_state">
+                            <div class="o-place-block__outer">
+                                <div class="o-place-block__inner">
+                                    <div class="o-place-block__content">
+                                        <div class="o-place-block__image loading-image">
+                                            <div v-if="imageState" class="o-place-block__image-lazyload">
+                                                <img
+                                                    class="o-place-block__image-file lazyload-file"
+                                                    v-lazy="{
+                                                        src: 'https://image.frytolnacestach.cz/storage/' + imageState[0].source + imageState[0].name + '.webp',
+                                                        srcset: {
+                                                            '374': 'https://image.frytolnacestach.cz/storage/' + imageState[0].source + imageState[0].name + '.webp',
+                                                            '575': 'https://image.frytolnacestach.cz/storage/' + imageState[0].source + imageState[0].name + '.webp',
+                                                            '374@2x': 'https://image.frytolnacestach.cz/storage/' + imageState[0].source + imageState[0].name + '.webp 2x',
+                                                            '575@2x': 'https://image.frytolnacestach.cz/storage/' + imageState[0].source + imageState[0].name + '.webp 2x'
+                                                        },
+                                                        sizes: '(max-width: 374px) 374px, 375px'
+                                                    }"
+                                                    :alt="placeState[0].name"
+                                                />
+                                            </div>
+                                            <div v-else class="o-place-block__image-lazyload">
+                                                <img
+                                                    class="o-place-block__image-file lazyload-file"
+                                                    v-lazy="{
+                                                        src: 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                        srcset: {
+                                                            '374': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                            '575': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                            '374@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
+                                                            '575@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x'
+                                                        },
+                                                        sizes: '(max-width: 374px) 374px, 375px'
+                                                    }"
+                                                    :alt="placeState[0].name"
+                                                />
+                                            </div>
+                                            <div class="o-place-block__filter">
+                                                <span class="o-place-block__name">{{ placeState[0].name }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="o-place-block__text">
+                                            <div class="o-place-block__wysiwyg" v-if="placeState[0].information_chatgpt" v-html="placeState[0].information_chatgpt.slice(0, 220)"></div>
+                                            <NuxtLink class="o-place-block__more" :to="`/svet/stat/${placeState[0].slug}`">Číst více</NuxtLink>                                   
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SECTION - place -->
+
+                        <!-- SECTION - place -->
+                        <div class="o-place-block" v-if="post[0].id_city">
+                            <div class="o-place-block__outer">
+                                <div class="o-place-block__inner">
+                                    <div class="o-place-block__content">
+                                        <div class="o-place-block__image loading-image">
+                                            <div v-if="imageCity" class="o-place-block__image-lazyload">
+                                                <img
+                                                    class="o-place-block__image-file lazyload-file"
+                                                    v-lazy="{
+                                                        src: 'https://image.frytolnacestach.cz/storage/' + imageCity[0].source + imageCity[0].name + '.webp',
+                                                        srcset: {
+                                                            '374': 'https://image.frytolnacestach.cz/storage/' + imageCity[0].source + imageCity[0].name + '.webp',
+                                                            '575': 'https://image.frytolnacestach.cz/storage/' + imageCity[0].source + imageCity[0].name + '.webp',
+                                                            '374@2x': 'https://image.frytolnacestach.cz/storage/' + imageCity[0].source + imageCity[0].name + '.webp 2x',
+                                                            '575@2x': 'https://image.frytolnacestach.cz/storage/' + imageCity[0].source + imageCity[0].name + '.webp 2x'
+                                                        },
+                                                        sizes: '(max-width: 374px) 374px, 375px'
+                                                    }"
+                                                    :alt="placeCity[0].name"
+                                                />
+                                            </div>
+                                            <div v-else class="o-place-block__image-lazyload">
+                                                <img
+                                                    class="o-place-block__image-file lazyload-file"
+                                                    v-lazy="{
+                                                        src: 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                        srcset: {
+                                                            '374': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                            '575': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                            '374@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
+                                                            '575@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x'
+                                                        },
+                                                        sizes: '(max-width: 374px) 374px, 375px'
+                                                    }"
+                                                    :alt="placeCity[0].name"
+                                                />
+                                            </div>
+                                            <div class="o-place-block__filter">
+                                                <span class="o-place-block__name">{{ placeCity[0].name }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="o-place-block__text">
+                                            <div class="o-place-block__wysiwyg" v-if="placeCity[0].information_chatgpt" v-html="placeCity[0].information_chatgpt.slice(0, 220)"></div>
+                                            <NuxtLink class="o-place-block__more" :to="`/svet/mesto/${placeCity[0].slug}`">Číst více</NuxtLink>                                   
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SECTION - place -->
+                    </div>
+                </section>
+
+                <!-- SECTION - videos -->
+                <section class="t-section -bg-extra-dark-gray pt-4 py-2 px-2" v-if="videos[0]">
+                    <div class="t-section__inner">
+                        <div class="m-headline -dark">
+                            <div class="m-headline mb-2">
+                                <h2 class="m-headline__title">Videa z města {{ placeCity[0].name }}</h2>
+                            </div>
+                        </div>
+                        <div class="o-video-list -dark -p-left">
+                            <div class="o-video-list__outer">
+                                <div class="o-video-list__items">
+                                    <div v-for="video in videos" :key="video.id" class="o-video-list__item" v-if="video.type === 'travel'">
+                                        <div class="o-video-list__item-inner">
+                                            <div class="o-video-list__image loading-image">
+                                                <div v-if="images && images.find(image => image.id === video.id_image)" class="o-video-list__image-lazyload">
+                                                    <img
+                                                        class="o-video-list__image-file lazyload-file"
+                                                        v-lazy="{
+                                                            src: 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp',
+                                                            srcset: {
+                                                                '374': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp',
+                                                                '439': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp',
+                                                                '575': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp',
+                                                                '767': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp',
+                                                                '991': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp',
+                                                                '992': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp',
+                                                                '374@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 2x',
+                                                                '439@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 2x',
+                                                                '575@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 2x',
+                                                                '767@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 2x',
+                                                                '991@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 2x',
+                                                                '992@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 2x'
+                                                            },
+                                                            sizes: '(max-width: 374px) 374px, (max-width: 439px) 439px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, 992px'
+                                                        }"
+                                                        :alt="video.title"
+                                                    />
+                                                </div>
+                                                <div v-else class="o-video-list__image-lazyload">
+                                                    <img
+                                                        class="o-video-list__image-file lazyload-file"
+                                                        v-lazy="{
+                                                            src: 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                            srcset: {
+                                                                '374': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                                '439': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                                '575': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                                '767': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                                '991': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                                '992': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
+                                                                '374@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
+                                                                '439@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
+                                                                '575@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
+                                                                '767@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
+                                                                '991@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
+                                                                '992@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x'
+                                                            },
+                                                            sizes: '(max-width: 374px) 374px, (max-width: 439px) 439px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, 992px'
+                                                        }"
+                                                        :alt="video.title"
+                                                    />
+                                                </div>
+                                                <NuxtLink class="o-video-list__image-link" :to="`/videa/${video.slug}`"></NuxtLink>
+                                            </div>
+                                            <div class="o-video-list__text">
+                                                <h3 class="o-video-list__title">
+                                                    <NuxtLink class="o-video-list__title-link" :to="`/videa/${video.slug}`">{{ video.title }}</NuxtLink>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - videos END -->
+            </div>
+
         </div>
     </main>
 </template>
@@ -447,7 +706,28 @@
             // Načtení informací o obrázku
             const images = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images/`)
 
-            return { post, images }
+            // Načtení informací o městu
+            const placeCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city-id/${post[0].id_city}`)
+
+            // Načtení informací o obrázku
+            const imageCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeCity[0].id_image_hero}`)
+
+            // Načtení informací o státu
+            const placeState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-state-id/${post[0].id_state}`)
+
+            // Načtení informací o obrázku
+            const imageState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeState[0].id_image_hero}`)
+
+            // Načtení informací o continentu
+            const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${post[0].id_continent}`)
+
+            // Načtení informací o obrázku
+            const imageContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeContinent[0].id_image_hero}`)
+
+            // Načtení videi z města
+            const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos-id-city/${post[0].id_city}`)
+
+            return { post, images, placeCity, placeState, placeContinent, imageCity, imageState, imageContinent, videos }
         },
 
         mounted() {

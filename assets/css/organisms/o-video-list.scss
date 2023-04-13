@@ -119,4 +119,10 @@
             }
         }
     }
+
+    &.-p-left {
+        #{$self}__items {
+            justify-content: flex-start;
+        }
+    }
 }

@@ -118,5 +118,19 @@
                 color: $gray6;
             }
         }
+
+        #{$self}__perex-link {
+            color: $white;
+    
+            &:hover {
+                color: $gray6;
+            }
+        }
+    }
+
+    &.-p-left {
+        #{$self}__items {
+            justify-content: flex-start;
+        }
     }
 }

@@ -1,4 +1,6 @@
 .m-headline {
+    $self: &;
+
     display: inline-block;
     width: 100%;
 
@@ -14,5 +16,15 @@
         width: 100%;
         max-width: 640px;
         margin: 0 auto;
+    }
+
+    &.-dark {
+        #{$self}__title {
+            color: $white;
+        }
+
+        #{$self}__perex {
+            color: $white;
+        }
     }
 }
