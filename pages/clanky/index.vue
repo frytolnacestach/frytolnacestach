@@ -91,6 +91,7 @@
         </section>
 
         <section class="t-section t-section--gray">
+
             <div class="m-headline mt-4 text-align-center">
                 <h2 class="m-headline__title">Další obsah</h2>
             </div>
@@ -100,6 +101,7 @@
             <div class="flex flex-center mb-4">
                 <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/social">Více informací</NuxtLink>
             </div>
+            
         </section>
     </main>
 </template>
