@@ -3,7 +3,7 @@
         <div class="t-main">
             
             <!-- SECTION - hero -->
-            <section class="t-section">
+            <section class="t-section" v-if="place[0]">
                 <div class="o-hero-place">
                     <div class="o-hero-place__image loading-image">
                         <div v-if="images && images.find(image => image.id === place[0].id_image_hero)" class="o-hero-place__image-lazyload">
@@ -31,7 +31,7 @@
                                     },
                                     sizes: '(max-width: 374px) 374px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, (max-width: 1139px) 1139px, (max-width: 1219px) 1219px, (max-width: 1399px) 1399px, 1400px'
                                 }"
-                                :alt="place[0].name"
+                                :alt="place[0].name ? place[0].name : 'Úvodní obrázek'"
                             />
                         </div>
                         <div v-else class="o-hero-place__image-lazyload">
@@ -59,7 +59,7 @@
                                     },
                                     sizes: '(max-width: 374px) 374px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, (max-width: 1139px) 1139px, (max-width: 1219px) 1219px, (max-width: 1399px) 1399px, 1400px'
                                 }"
-                                :alt="place[0].name"
+                                :alt="place[0].name ? place[0].name : 'Úvodní obrázek'"
                             />
                         </div>
                         
@@ -76,37 +76,25 @@
                     <div class="o-hot-info-hero__outer">
                         <div class="o-hot-info-hero__inner">
                             <div class="o-hot-info-hero__items">
-                                <!--
-                                <div class="o-hot-info-hero__item">
+                                <!--<div class="o-hot-info-hero__item" v-if="placeContinent[0].name">
                                     <span class="o-hot-info-hero__title">Kontinent</span>
                                     <span class="o-hot-info-hero__value">{{ placeContinent[0].name }}</span>
-                                </div>
-                                -->
-                                <div class="o-hot-info-hero__item">
+                                </div>-->
+                                <div class="o-hot-info-hero__item" v-if="placeState[0].name">
                                     <span class="o-hot-info-hero__title">Stát</span>
                                     <span class="o-hot-info-hero__value">
                                         <NuxtLink class="o-hot-info-hero__value-link" :to="`/stat/${placeState[0].slug}`">{{ placeState[0].name }}</NuxtLink>
                                     </span>
                                 </div>
-                                <!--
-                                <div class="o-hot-info-hero__item">
-                                    <span class="o-hot-info-hero__title">Administrativní celek</span>
-                                    <span class="o-hot-info-hero__value">{{ place[0].id_administrative_unit }}</span>
-                                </div>
-                                <div class="o-hot-info-hero__item">
-                                    <span class="o-hot-info-hero__title">Kraj</span>
-                                    <span class="o-hot-info-hero__value">{{ place[0].id_districts }}</span>
-                                </div>
-                                -->
-                                <div class="o-hot-info-hero__item">
+                                <div class="o-hot-info-hero__item" v-if="place[0].area">
                                     <span class="o-hot-info-hero__title">Rozloha</span>
                                     <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
                                 </div>
-                                <div class="o-hot-info-hero__item">
+                                <div class="o-hot-info-hero__item" v-if="place[0].altitude">
                                     <span class="o-hot-info-hero__title">Nadmořská výška</span>
                                     <span class="o-hot-info-hero__value">{{ place[0].altitude !== 0 ? place[0].altitude.toLocaleString('cs-CZ') : place[0].altitude }} m n. m.</span>
                                 </div>
-                                <div class="o-hot-info-hero__item">
+                                <div class="o-hot-info-hero__item" v-if="place[0].population">
                                     <span class="o-hot-info-hero__title">Populace</span>
                                     <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
                                 </div>
@@ -120,7 +108,7 @@
 
             <!-- SECTION -->
             <div class="t-col2">
-                <div class="t-col2__content my-2">
+                <div class="t-col2__content my-2"  v-if="place[0]">
 
                     <!-- SECTION - information by ChatGPT -->
                     <section class="t-section py-2" v-if="place[0].information_chatgpt">
@@ -128,7 +116,7 @@
                             <div class="o-information-block">
                                 <div class="o-information-block__outer">
                                     <div class="o-information-block__inner">
-                                        <h2 class="o-information-block__title">O městě {{ place[0].name }}</h2>
+                                        <h2 class="o-information-block__title">O městě {{ place[0].name ? place[0].name : '' }}</h2>
                                         <div class="o-information-block__perex">
                                             <div class="o-information-block_wysiwyg" v-html="place[0].information_chatgpt"></div>
                                             <div class="o-information-block__author">
@@ -151,11 +139,11 @@
                                         <h2 class="o-information-block__title">Ubytování</h2>
                                         <div class="o-information-block__widget" v-for="coordinate in placeState[0].coordinates">
                                             <booking-widget
-                                                :landmarkName="`${ place[0].name }, ${ placeState[0].name }`"
-                                                :address="`${ place[0].name }, ${ placeState[0].name }`"
+                                                :landmarkName="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
+                                                :address="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
                                                 :latitude="`${ coordinate.latitude }`"
                                                 :longitude="`${ coordinate.longitude }`"
-                                                zoom="13"
+                                                zoom=13
                                             />
                                         </div>
                                     </div>
@@ -187,13 +175,13 @@
             </div>
             <!-- SECTION END -->
 
-            <div class="t-layout-full">
+            <div class="t-layout-full" v-if="place[0]">
                 <!-- SECTION - videos -->
                 <section class="t-section -bg-extra-dark-gray pt-4 py-2 px-2" v-if="videos[0]">
                     <div class="t-section__inner">
                         <div class="m-headline -dark">
                             <div class="m-headline mb-2">
-                                <h2 class="m-headline__title">Videa z města {{ place[0].name }}</h2>
+                                <h2 class="m-headline__title">Videa z města {{ place[0].name ? place[0].name : '' }}</h2>
                             </div>
                         </div>
                         <div class="o-video-list -dark -p-left">
@@ -223,7 +211,7 @@
                                                             },
                                                             sizes: '(max-width: 374px) 374px, (max-width: 439px) 439px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, 992px'
                                                         }"
-                                                        :alt="video.title"
+                                                        :alt="video.title ? video.title : 'Obrázek videa'"
                                                     />
                                                 </div>
                                                 <div v-else class="o-video-list__image-lazyload">
@@ -247,13 +235,13 @@
                                                             },
                                                             sizes: '(max-width: 374px) 374px, (max-width: 439px) 439px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, 992px'
                                                         }"
-                                                        :alt="video.title"
+                                                        :alt="video.title ? video.title : 'Obrázek videa'"
                                                     />
                                                 </div>
-                                                <NuxtLink class="o-video-list__image-link" :to="`/videa/${video.slug}`"></NuxtLink>
+                                                <NuxtLink class="o-video-list__image-link" :to="`/videa/${video.slug}`" v-if="video.slug"></NuxtLink>
                                             </div>
                                             <div class="o-video-list__text">
-                                                <h3 class="o-video-list__title">
+                                                <h3 class="o-video-list__title" v-if="video.title">
                                                     <NuxtLink class="o-video-list__title-link" :to="`/videa/${video.slug}`">{{ video.title }}</NuxtLink>
                                                 </h3>
                                             </div>
@@ -270,7 +258,7 @@
                 <section class="t-section -bg-gray py-4">
                     <div class="t-section__inner">
                         <div class="m-headline mb-2">
-                            <h2 class="m-headline__title">Další města a obce ve státě {{ placeState[0].name }}</h2>
+                            <h2 class="m-headline__title">Další města a obce ve státě {{ placeState[0].name ? placeState[0].name : '' }}</h2>
                         </div>
                         <div class="o-cover-place-detail">
                             <div class="o-cover-place-detail__outer">
@@ -297,7 +285,7 @@
                                                                 },
                                                                 sizes: '(max-width: 374px) 374px, (max-width: 1399px) 1399px, (max-width: 1920px) 1920px, 1921px'
                                                             }"
-                                                            :alt="placesCity.name"
+                                                            :alt="placesCity.name ? placesCity.name : 'Obrázek města'"
                                                         />
                                                     </div>
                                                     <div v-else class="o-cover-place-detail__image-lazyload">
@@ -317,15 +305,15 @@
                                                                 },
                                                                 sizes: '(max-width: 374px) 374px, (max-width: 1399px) 1399px, (max-width: 1920px) 1920px, 1921px'
                                                             }"
-                                                            :alt="placesCity.name"
+                                                            :alt="placesCity.name ? placesCity.name : 'Obrázek města'"
                                                         />
                                                     </div>
                                                 </div>
 
-                                                <h3 class="o-cover-place-detail__name">
+                                                <h3 class="o-cover-place-detail__name" v-if="placesCity.name">
                                                     {{ placesCity.name }}
                                                 </h3>
-                                                <NuxtLink class="o-cover-place-detail__link" :to="`/svet/mesto/${placesCity.slug}`"></NuxtLink>
+                                                <NuxtLink class="o-cover-place-detail__link" :to="`/svet/mesto/${placesCity.slug}`" v-if="placesCity.slug"></NuxtLink>
                                             </div>
                                         </div>
                                     </div>
@@ -341,7 +329,7 @@
                     <div class="t-section__inner">
                         <div class="m-headline -dark">
                             <div class="m-headline mb-2">
-                                <h2 class="m-headline__title">Články z kontinetu {{ place[0].name }}</h2>
+                                <h2 class="m-headline__title">Články z kontinetu {{ place[0].name ? place[0].name : '' }}</h2>
                             </div>
                         </div>
                         <div class="o-article-list -dark -p-left">
@@ -378,7 +366,7 @@
                                                             },
                                                             sizes: '(max-width: 374px) 374px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, (max-width: 1139px) 1139px, (max-width: 1219px) 1219px, (max-width: 1399px) 1399px, 1400px'
                                                         }"
-                                                        :alt="post.title"
+                                                        :alt="post.title ? post.title : 'Obrázek článku'"
                                                     />
                                                 </div>
                                                 <div v-else class="o-article-list__image-lazyload">
@@ -406,17 +394,17 @@
                                                             },
                                                             sizes: '(max-width: 374px) 374px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, (max-width: 1139px) 1139px, (max-width: 1219px) 1219px, (max-width: 1399px) 1399px, 1400px'
                                                         }"
-                                                        :alt="post.title"
+                                                        :alt="post.title ? post.title : 'Obrázek článku'"
                                                     />
                                                 </div>
-                                                <NuxtLink class="o-article-list__image-link" :to="`/clanky/${post.slug}`"></NuxtLink>
+                                                <NuxtLink class="o-article-list__image-link" :to="`/clanky/${post.slug}`" v-if="post.slug"></NuxtLink>
                                             </div>
 
                                             <div class="o-article-list__text">
-                                                <h3 class="o-article-list__title">
+                                                <h3 class="o-article-list__title" v-if="post.title">
                                                     <NuxtLink class="o-article-list__title-link" :to="`/clanky/${post.slug}`">{{ post.title }}</NuxtLink>
                                                 </h3>
-                                                <p class="o-article-list__perex">
+                                                <p class="o-article-list__perex" v-if="post.perex">
                                                     <NuxtLink class="o-article-list__perex-link" :to="`/clanky/${post.slug}`">{{ post.perex }}</NuxtLink>
                                                 </p>
                                             </div>
@@ -427,7 +415,7 @@
                         </div>
                     </div>
                 </section>
-                <!-- SECTION - videos END -->
+                <!-- SECTION - articles END -->
             </div>
 
         </div>
@@ -496,10 +484,10 @@
 
         head() {
             return {
-                title: `${this.place[0].name} | Frytol na cestách`,
+                title: `${this.place[0].name ? this.place[0].name : 'Město'}  | Frytol na cestách`,
                 meta: [
-                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(3, 163) : this.place[0].name}` },
-                    { name: 'keywords', content: `${this.place[0].name + ', město, cestování, svět'}` },
+                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(3, 163) : this.place[0].name ? this.place[0].name : 'Město'}` },
+                    { name: 'keywords', content: `${this.place[0].name ? this.place[0].name : '' + ', město, cestování, svět'}` },
                     { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.images.find(image => image.id === this.place[0].id_image_hero).source + this.images.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/og-default.png'}`} 
                 ]
             }
