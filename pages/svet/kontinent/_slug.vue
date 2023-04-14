@@ -82,11 +82,11 @@
                                 </div>
                                 <div class="o-hot-info-hero__item">
                                     <span class="o-hot-info-hero__title">Rozloha</span>
-                                    <span class="o-hot-info-hero__value">{{ place[0].area.toLocaleString('cs-CZ') }} km²</span>
+                                    <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
                                 </div>
                                 <div class="o-hot-info-hero__item">
                                     <span class="o-hot-info-hero__title">Hustota obyvatel</span>
-                                    <span class="o-hot-info-hero__value">{{ place[0].population_density }}/km²</span>
+                                    <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}/km²</span>
                                 </div>
                             </div>
                         </div>
@@ -455,7 +455,7 @@
             return {
                 title: `${this.place[0].name} | Frytol na cestách`,
                 meta: [
-                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt.slice(3, 163)}` },
+                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(3, 163) : this.place[0].name}` },
                     { name: 'keywords', content: `${this.place[0].name + ', kontinent, státy, cestování, svět'}` },
                     { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.images.find(image => image.id === this.place[0].id_image_hero).source + this.images.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/og-default.png'}`} 
                 ]

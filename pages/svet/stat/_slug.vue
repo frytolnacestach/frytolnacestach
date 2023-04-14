@@ -82,11 +82,11 @@
                                 </div>
                                 <div class="o-hot-info-hero__item">
                                     <span class="o-hot-info-hero__title">Rozloha</span>
-                                    <span class="o-hot-info-hero__value">{{ place[0].area.toLocaleString('cs-CZ') }} km²</span>
+                                    <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
                                 </div>
                                 <div class="o-hot-info-hero__item">
                                     <span class="o-hot-info-hero__title">Populace</span>
-                                    <span class="o-hot-info-hero__value">{{ place[0].population.toLocaleString('cs-CZ') }}</span>
+                                    <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
                                 </div>
                                 <!--
                                 <div class="o-hot-info-hero__item">
@@ -157,14 +157,14 @@
                             <!-- SECTION - information by ChatGPT END -->
 
                             <!-- SECTION - Měna -->
-                            <section class="t-section py-2" v-if="place[0].information_chatgpt">
+                            <section class="t-section py-2" v-if="place[0].currency_name">
                                 <div class="t-section__inner">
                                     <div class="o-information-block -bg-gray">
                                         <div class="o-information-block__outer">
                                             <div class="o-information-block__inner">
                                                 <h2 class="o-information-block__title">Měna</h2>
                                                 <div class="o-information-block__perex">
-                                                    <div class="o-information-block_wysiwyg">{{ place[0].currency_name }} ({{ place[0].currency_code }})</div>
+                                                    <div class="o-information-block_wysiwyg">{{ place[0].currency_name }} {{ place[0].currency_code !== null ? '(' + place[0].currency_code + ')' : '' }}</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -537,14 +537,14 @@
                     <div class="t-col2">
                         <div class="t-col2__content my-2">
                             <!-- SECTION - Měna -->
-                            <section class="t-section py-2" v-if="place[0].currency_code">
+                            <section class="t-section py-2" v-if="place[0].currency_name">
                                 <div class="t-section__inner">
                                     <div class="o-information-block -bg-gray">
                                         <div class="o-information-block__outer">
                                             <div class="o-information-block__inner">
                                                 <h2 class="o-information-block__title">Měna</h2>
                                                 <div class="o-information-block__perex">
-                                                    <div class="o-information-block_wysiwyg">{{ place[0].currency_name }} ({{ place[0].currency_code }})</div>
+                                                    <div class="o-information-block_wysiwyg">{{ place[0].currency_name }} {{ place[0].currency_code !== null ? '(' + place[0].currency_code + ')' : '' }}</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1047,7 +1047,7 @@
             return {
                 title: `${metaTitle}`,
                 meta: [
-                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt.slice(3, 163)}` },
+                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(3, 163) : this.place[0].name}` },
                     { name: 'keywords', content: `${this.place[0].name + ', stát, ceny, ubytování, lidé a kultura, cestování, svět'}` },
                     { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.images.find(image => image.id === this.place[0].id_image_hero).source + this.images.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/og-default.png'}`} 
                 ]

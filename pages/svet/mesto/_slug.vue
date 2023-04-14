@@ -100,15 +100,15 @@
                                 -->
                                 <div class="o-hot-info-hero__item">
                                     <span class="o-hot-info-hero__title">Rozloha</span>
-                                    <span class="o-hot-info-hero__value">{{ place[0].area.toLocaleString('cs-CZ') }} km²</span>
+                                    <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
                                 </div>
                                 <div class="o-hot-info-hero__item">
                                     <span class="o-hot-info-hero__title">Nadmořská výška</span>
-                                    <span class="o-hot-info-hero__value">{{ place[0].altitude.toLocaleString('cs-CZ') }} m n. m.</span>
+                                    <span class="o-hot-info-hero__value">{{ place[0].altitude !== 0 ? place[0].altitude.toLocaleString('cs-CZ') : place[0].altitude }} m n. m.</span>
                                 </div>
                                 <div class="o-hot-info-hero__item">
                                     <span class="o-hot-info-hero__title">Populace</span>
-                                    <span class="o-hot-info-hero__value">{{ place[0].population.toLocaleString('cs-CZ') }}</span>
+                                    <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
                                 </div>
                             </div>
                         </div>
@@ -498,7 +498,7 @@
             return {
                 title: `${this.place[0].name} | Frytol na cestách`,
                 meta: [
-                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt.slice(3, 163)}` },
+                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(3, 163) : this.place[0].name}` },
                     { name: 'keywords', content: `${this.place[0].name + ', město, cestování, svět'}` },
                     { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.images.find(image => image.id === this.place[0].id_image_hero).source + this.images.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/og-default.png'}`} 
                 ]
