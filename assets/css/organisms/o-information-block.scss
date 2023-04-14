@@ -100,4 +100,11 @@ BLOCKS:
             padding: 20px 15px;
         }
     }
+
+    &.-no-point {
+        #{$self}__list-ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+    }
 }

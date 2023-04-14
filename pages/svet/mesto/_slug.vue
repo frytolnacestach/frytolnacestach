@@ -498,8 +498,9 @@
             return {
                 title: `${this.place[0].name} | Frytol na cestách`,
                 meta: [
-                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt}` },
-                    { property: 'og:image', content: `${this.place[0].image_hero ? 'https://image.frytolnacestach.cz/storage/_default/og-default.png' : 'https://image.frytolnacestach.cz/storage/_default/og-default.png'}`} 
+                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt.slice(3, 163)}` },
+                    { name: 'keywords', content: `${this.place[0].name + ', město, cestování, svět'}` },
+                    { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.images.find(image => image.id === this.place[0].id_image_hero).source + this.images.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/og-default.png'}`} 
                 ]
             }
         },

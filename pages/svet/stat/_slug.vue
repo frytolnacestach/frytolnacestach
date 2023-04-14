@@ -176,7 +176,7 @@
                             <!-- SECTION - navštevníci - podmínky vstupu -->
                             <section class="t-section py-2" v-if="place[0].visitors_entry">
                                 <div class="t-section__inner">
-                                    <div class="o-information-block -bg-gray">
+                                    <div class="o-information-block -bg-gray -no-point">
                                         <div class="o-information-block__outer">
                                             <div class="o-information-block__inner">
                                                 <h2 class="o-information-block__title">Podmínky cesty do země</h2>
@@ -556,7 +556,7 @@
                             <!-- SECTION - Ceny -->
                             <section class="t-section py-2" v-if="place[0].money_prices">
                                 <div class="t-section__inner">
-                                    <div class="o-information-block -bg-gray">
+                                    <div class="o-information-block -bg-gray -no-point">
                                         <div class="o-information-block__outer">
                                             <div class="o-information-block__inner">
                                                 <h2 class="o-information-block__title">Ceny</h2>
@@ -605,7 +605,7 @@
                             <!-- SECTION - Lidé náboženství -->
                             <section class="t-section py-2" v-if="place[0].people_religion">
                                 <div class="t-section__inner">
-                                    <div class="o-information-block -bg-gray">
+                                    <div class="o-information-block -bg-gray -no-point">
                                         <div class="o-information-block__outer">
                                             <div class="o-information-block__inner">
                                                 <h2 class="o-information-block__title">Náboženství</h2>
@@ -628,7 +628,7 @@
                             <!-- SECTION - Lidé vzdělání -->
                             <section class="t-section py-2" v-if="place[0].people_education">
                                 <div class="t-section__inner">
-                                    <div class="o-information-block -bg-gray">
+                                    <div class="o-information-block -bg-gray -no-point">
                                         <div class="o-information-block__outer">
                                             <div class="o-information-block__inner">
                                                 <h2 class="o-information-block__title">Vzdělání</h2>
@@ -651,7 +651,7 @@
                             <!-- SECTION - Lidé národnost -->
                             <section class="t-section py-2" v-if="place[0].people_nationality">
                                 <div class="t-section__inner">
-                                    <div class="o-information-block -bg-gray">
+                                    <div class="o-information-block -bg-gray -no-point">
                                         <div class="o-information-block__outer">
                                             <div class="o-information-block__inner">
                                                 <h2 class="o-information-block__title">Národnost</h2>
@@ -699,7 +699,7 @@
                             <!-- SECTION - navštevníci - podmínky vstupu -->
                             <section class="t-section py-2" v-if="place[0].visitors_entry">
                                 <div class="t-section__inner">
-                                    <div class="o-information-block -bg-gray">
+                                    <div class="o-information-block -bg-gray -no-point">
                                         <div class="o-information-block__outer">
                                             <div class="o-information-block__inner">
                                                 <h2 class="o-information-block__title">Podmínky cesty do země</h2>
@@ -747,7 +747,7 @@
                             <!-- SECTION - Telefoní čísla(emergency) -->
                             <section class="t-section py-2" v-if="place[0].phone_numbers_emergency">
                                 <div class="t-section__inner">
-                                    <div class="o-information-block -bg-gray">
+                                    <div class="o-information-block -bg-gray -no-point">
                                         <div class="o-information-block__outer">
                                             <div class="o-information-block__inner">
                                                 <h2 class="o-information-block__title">Důležitá telefonní čísla</h2>
@@ -1047,8 +1047,9 @@
             return {
                 title: `${metaTitle}`,
                 meta: [
-                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt}` },
-                    { property: 'og:image', content: `${this.place[0].image_hero ? 'https://image.frytolnacestach.cz/storage/_default/og-default.png' : 'https://image.frytolnacestach.cz/storage/_default/og-default.png'}`} 
+                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt.slice(3, 163)}` },
+                    { name: 'keywords', content: `${this.place[0].name + ', stát, ceny, ubytování, lidé a kultura, cestování, svět'}` },
+                    { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.images.find(image => image.id === this.place[0].id_image_hero).source + this.images.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/og-default.png'}`} 
                 ]
             }
         },
