@@ -1,128 +1,109 @@
 <template>
-    <main>
-        <div class="t-main">
-            
-            <!-- SECTION - hero -->
-            <section class="t-section">
+    <main class="t-main">
+        <!-- SECTION - hero -->
+        <section class="t-section">
 
-                <oHeroPlace :place="place" :images="images" />
+            <oHeroPlace :place="place" :images="images" />
 
-                <!-- SECTION - hot info -->
-                <div class="js_o-hot-info-hero o-hot-info-hero">
-                    <div class="o-hot-info-hero__outer">
-                        <div class="o-hot-info-hero__inner">
-                            <div class="o-hot-info-hero__items">
-                                <div class="o-hot-info-hero__item" v-if="place[0].number_states">
-                                    <span class="o-hot-info-hero__title">Počet států</span>
-                                    <span class="o-hot-info-hero__value">{{ place[0].number_states }}</span>
-                                </div>
-                                <div class="o-hot-info-hero__item" v-if="place[0].area">
-                                    <span class="o-hot-info-hero__title">Rozloha</span>
-                                    <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
-                                </div>
-                                <div class="o-hot-info-hero__item" v-if="place[0].population">
-                                    <span class="o-hot-info-hero__title">Hustota obyvatel</span>
-                                    <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}/km²</span>
-                                </div>
+            <!-- SECTION - hot info -->
+            <div class="js_o-hot-info-hero o-hot-info-hero">
+                <div class="o-hot-info-hero__outer">
+                    <div class="o-hot-info-hero__inner">
+                        <div class="o-hot-info-hero__items">
+                            <div class="o-hot-info-hero__item" v-if="place[0].number_states">
+                                <span class="o-hot-info-hero__title">Počet států</span>
+                                <span class="o-hot-info-hero__value">{{ place[0].number_states }}</span>
+                            </div>
+                            <div class="o-hot-info-hero__item" v-if="place[0].area">
+                                <span class="o-hot-info-hero__title">Rozloha</span>
+                                <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
+                            </div>
+                            <div class="o-hot-info-hero__item" v-if="place[0].population">
+                                <span class="o-hot-info-hero__title">Hustota obyvatel</span>
+                                <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}/km²</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- SECTION - hot info - END -->
-            </section>
-            <!-- SECTION - hero - END -->
+            </div>
+            <!-- SECTION - hot info - END -->
+        </section>
+        <!-- SECTION - hero - END -->
 
 
-            <!-- SECTION -->
-            <div class="t-col2">
-                <div class="t-col2__content my-2" v-if="place[0]">
-                    
-                    <!-- SECTION - information by ChatGPT -->
-                    <section class="t-section py-2" v-if="place[0].information_chatgpt">
-                        <div class="t-section__inner">
-                            <div class="o-information-block">
-                                <div class="o-information-block__outer">
-                                    <div class="o-information-block__inner">
-                                        <h2 class="o-information-block__title">O kontinentu {{ place[0].name ? place[0].name : ''}}</h2>
-                                        <div class="o-information-block__perex">
-                                            <div class="o-information-block_wysiwyg" v-html="place[0].information_chatgpt"></div>
-                                            <div class="o-information-block__author">
-                                                <i class="m-author">zdroj. <a class="m-author__link" href="https://chat.openai.com/chat" target="_blank">ChatGPT</a></i>
-                                            </div>
+        <!-- SECTION -->
+        <div class="t-col2">
+            <div class="t-col2__content my-2" v-if="place[0]">
+                
+                <!-- SECTION - information by ChatGPT -->
+                <section class="t-section py-2" v-if="place[0].information_chatgpt">
+                    <div class="t-section__inner">
+                        <div class="o-information-block">
+                            <div class="o-information-block__outer">
+                                <div class="o-information-block__inner">
+                                    <h2 class="o-information-block__title">O kontinentu {{ place[0].name ? place[0].name : ''}}</h2>
+                                    <div class="o-information-block__perex">
+                                        <div class="o-information-block_wysiwyg" v-html="place[0].information_chatgpt"></div>
+                                        <div class="o-information-block__author">
+                                            <i class="m-author">zdroj. <a class="m-author__link" href="https://chat.openai.com/chat" target="_blank">ChatGPT</a></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
-                    <!-- SECTION - information by ChatGPT END -->
-                </div>
-
-                <div class="t-col2__sidebar my-2">
-                    <!-- SECTION - ad-google - sidebar -->
-                    <section class="t-section my-2">
-                        <div class="t-section__inner">
-                            <div class="o-ad-google-sidebar">
-                                <ins class="adsbygoogle"
-                                    :style="adStyle"
-                                    :data-ad-client="adClient"
-                                    :data-ad-slot="adSlot"
-                                    :data-ad-format="adFormat"
-                                    :data-full-width-responsive="adResponsive">
-                                </ins>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- SECTION - ad-google - sidebar - END -->
-                </div>
+                    </div>
+                </section>
+                <!-- SECTION - information by ChatGPT END -->
             </div>
-            <!-- SECTION END -->
 
-
-            <div class="t-layout-full" v-if="place[0]">
-                <!-- SECTION - státy -->
-                <section class="t-section -bg-gray py-4">
+            <div class="t-col2__sidebar my-2">
+                <!-- SECTION - ad-google - sidebar -->
+                <section class="t-section my-2">
                     <div class="t-section__inner">
-                        <div class="m-headline mb-2">
-                            <h2 class="m-headline__title">Všechny státy na kontinentu {{ place[0].name ? place[0].name : '' }}</h2>
+                        <div class="o-ad-google-sidebar">
+                            <ins class="adsbygoogle"
+                                :style="adStyle"
+                                :data-ad-client="adClient"
+                                :data-ad-slot="adSlot"
+                                :data-ad-format="adFormat"
+                                :data-full-width-responsive="adResponsive">
+                            </ins>
                         </div>
-
-                        <oCoverPlaceDetail :places="placesStates" :images="images" type="stat" />
-
                     </div>
                 </section>
-                <!-- SECTION - státy - END -->
-
-                <!-- SECTION - videos -->
-                <section class="t-section -bg-extra-dark-gray pt-4 py-2 px-2" v-if="videos[0]">
-                    <div class="t-section__inner">
-                        <div class="m-headline -dark">
-                            <div class="m-headline mb-2">
-                                <h2 class="m-headline__title">Videa z kontinentu {{ place[0].name ? place[0].name : '' }}</h2>
-                            </div>
-                        </div>
-
-                        <oVideoList :videos="videos" :images="images" type="travel" styleThema=" -dark" styleAlign=" -p-left" />
-
-                    </div>
-                </section>
-                <!-- SECTION - videos END -->
-
-                <!-- SECTION - articles -->
-                <section class="t-section -bg-extra-dark-gray pt-4 py-2 px-2" v-if="posts[0]">
-                    <div class="t-section__inner">
-                        <div class="m-headline -dark">
-                            <div class="m-headline mb-2">
-                                <h2 class="m-headline__title">Články z kontinetu {{ place[0].name ? place[0].name : '' }}</h2>
-                            </div>
-                        </div>
-                        
-                        <oArticleList :posts="posts" :images="images" styleThema=" -dark" styleAlign=" -p-left" />
-
-                    </div>
-                </section>
-                <!-- SECTION - videos END -->
+                <!-- SECTION - ad-google - sidebar - END -->
             </div>
+        </div>
+        <!-- SECTION END -->
+
+
+        <div class="t-layout-full" v-if="place[0]">
+            <!-- SECTION - státy -->
+            <section class="t-section -bg-gray py-4">
+                <div class="t-section__inner">
+                    <mHeadline title="Všechny státy na kontinentu" :titleValue="place[0].name" styleAlign=" -p-left" styleGap=" mb-2" />
+                    <oCoverPlaceDetail :places="placesStates" :images="images" type="stat" />
+                </div>
+            </section>
+            <!-- SECTION - státy - END -->
+
+            <!-- SECTION - videos -->
+            <section class="t-section -bg-extra-dark-gray pt-4 py-2 px-2" v-if="videos[0]">
+                <div class="t-section__inner">
+                    <mHeadline title="Videa z kontinentu" :titleValue="place[0].name" styleThema=" -dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                    <oVideoList :videos="videos" :images="images" type="travel" styleThema=" -dark" styleAlign=" -p-left" />
+                </div>
+            </section>
+            <!-- SECTION - videos END -->
+
+            <!-- SECTION - articles -->
+            <section class="t-section -bg-extra-dark-gray pt-4 py-2 px-2">
+                <div class="t-section__inner">
+                    <mHeadline title="Články z kontinetu" :titleValue="place[0].name" styleThema=" -dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                    <oArticleList :posts="posts" :images="images" styleThema=" -dark" styleAlign=" -p-left" />
+                </div>
+            </section>
+            <!-- SECTION - videos END -->
 
         </div>
     </main>
@@ -130,6 +111,7 @@
 
 <script>
     
+    import mHeadline from '@/components/mHeadline.vue'
     import oArticleList from '@/components/oArticleList.vue'
     import oCoverPlaceDetail from '@/components/oCoverPlaceDetail.vue'
     import oHeroPlace from '@/components/oHeroPlace.vue'
@@ -139,6 +121,7 @@
         name: 'PageContinentSlug',
 
         components: {
+            mHeadline,
             oArticleList,
             oCoverPlaceDetail,
             oHeroPlace,

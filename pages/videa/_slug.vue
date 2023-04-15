@@ -1,177 +1,104 @@
 <template>
-    <main>
-        <div class="t-main">
-
-            <section>
-                <div class="o-hero-article">
-                    <div class="o-hero-article__image loading-image">
-                        <div v-if="image" class="o-hero-place__image-lazyload">
-                            <img
-                                class="o-hero-place__image-file lazyload-file"
-                                v-lazy="{
-                                    src: 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp',
-                                    srcset: {
-                                        '374': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp',
-                                        '575': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp',
-                                        '767': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp',
-                                        '991': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp',
-                                        '1139': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp',
-                                        '1219': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp',
-                                        '1399': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp',
-                                        '1400': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp',
-                                        '374@2x': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp 2x',
-                                        '575@2x': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp 2x',
-                                        '767@2x': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp 2x',
-                                        '911@2x': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp 2x',
-                                        '1139@2x': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp 2x',
-                                        '1219@2x': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp 2x',
-                                        '1399@2x': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp 2x',
-                                        '1400@2x': 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp 2x'
-                                    },
-                                    sizes: '(max-width: 374px) 374px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, (max-width: 1139px) 1139px, (max-width: 1219px) 1219px, (max-width: 1399px) 1399px, 1400px'
-                                }"
-                                :alt="video[0].title"
-                            />
-                        </div>
-                        <div v-else class="o-hero-article__image-lazyload">
-                            <img
-                                class="o-hero-article__image-file lazyload-file"
-                                v-lazy="{
-                                    src: 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                    srcset: {
-                                        '374': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                        '575': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                        '767': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                        '991': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                        '1139': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                        '1219': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                        '1399': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                        '1400': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                        '374@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                        '575@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                        '767@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                        '991@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                        '1139@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                        '1219@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                        '1399@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                        '1400@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x'
-                                    },
-                                    sizes: '(max-width: 374px) 374px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, (max-width: 1139px) 1139px, (max-width: 1219px) 1219px, (max-width: 1399px) 1399px, 1400px'
-                                }"
-                                :alt="video[0].title"
-                            />
-                        </div>
-
-                        <div class="o-hero-article__outer">
-                            <div class="o-hero-article__inner">
-                                <h1 class="o-hero-article__headline" v-if="video[0].title">{{ video[0].title }}</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="t-col2">
-                <div class="t-col2__content my-2">
-
-                    <!-- SECTION - perex -->
-                    <section class="t-section py-2" v-if="video[0].perex">
-                        <div class="t-section__inner">
-                            <div class="o-information-block">
-                                <div class="o-information-block__outer">
-                                    <div class="o-information-block__inner">
-                                        <div class="o-information-block__perex">
-                                            <div class="o-information-block_wysiwyg" v-html="video[0].perex"></div>
-                                            <div class="o-information-block__author">
-                                                <i class="m-author">zdroj. <a class="m-author__link" href="#">Michal Fryč</a></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- SECTION - perex END -->
-
-                    <!-- SECTION - video -->
-                    <section class="t-section py-2" v-if="video[0].url">
-                        <div class="t-section__inner">
-                            <div class="o-youtube">
-                                <div class="o-youtube__outer">
-                                    <div class="o-youtube__inner">
-                                        <div class="o-youtube__video">
-                                            <iframe class="o-youtube__video-iframe" :src="'https://www.youtube.com/embed/' + getSlugURL(video[0].url)" frameborder="0" allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- SECTION - video END -->
-
-                </div>
-
-                <div class="t-col2__sidebar my-2">
-                    <!-- SECTION - ad-google - sidebar -->
-                    <section class="t-section my-2">
-                        <div class="t-section__inner">
-                            <div class="o-ad-google-sidebar">
-                                <ins class="adsbygoogle"
-                                    :style="adStyle"
-                                    :data-ad-client="adClient"
-                                    :data-ad-slot="adSlot"
-                                    :data-ad-format="adFormat"
-                                    :data-full-width-responsive="adResponsive">
-                                </ins>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- SECTION - ad-google - sidebar - END -->
-                </div>
+    <main class="t-main">
+        
+        <!-- SECTION - Hero article -->
+        <section class="t-section -p0">
+            <div class="t-section__inner">
+                <oHeroVideo :image="image" :title="video[0].title" />
             </div>
+        </section>
+        <!-- SECTION - Hero article END -->
 
-            <div class="t-layout-full" v-if="video[0].id_continent || video[0].id_state || video[0].id_city">
+        <div class="t-col2">
+            <div class="t-col2__content my-2">
 
-                <!-- SECTION - napis -->
-                <section class="t-section -bg-gray pt-4">
+                <!-- SECTION - perex -->
+                <section class="t-section py-2" v-if="video[0].perex">
                     <div class="t-section__inner">
                         <div class="o-information-block">
                             <div class="o-information-block__outer">
                                 <div class="o-information-block__inner">
-                                    <h2 class="o-information-block__title">Více informací o místě</h2>
+                                    <div class="o-information-block__perex">
+                                        <div class="o-information-block_wysiwyg" v-html="video[0].perex"></div>
+                                        <div class="o-information-block__author">
+                                            <i class="m-author">zdroj. <a class="m-author__link" href="#">Michal Fryč</a></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- SECTION - nadpis END -->
+                <!-- SECTION - perex END -->
 
-                <section class="t-section -bg-gray pt-2 pb-1">
-                    <div class="flex px-1">
-
-                        <!-- SECTION - place -->
-                        <oPlaceBlock :place="placeContinent" :image="imageContinent" type="kontinent" />
-                        <oPlaceBlock :place="placeState" :image="imageState" type="stat" />
-                        <oPlaceBlock :place="placeCity" :image="imageCity" type="mesto" />
-                        <!-- SECTION - place END -->
-
+                <!-- SECTION - youtube -->
+                <section class="t-section py-2" v-if="video[0].url">
+                    <div class="t-section__inner">
+                        <oYoutube :url="video[0].url" />
                     </div>
                 </section>
+                <!-- SECTION - youtube END -->
+
+            </div>
+
+            <div class="t-col2__sidebar my-2">
+
+                <!-- SECTION - ad-google - sidebar -->
+                <section class="t-section my-2">
+                    <div class="t-section__inner">
+                        <div class="o-ad-google-sidebar">
+                            <ins class="adsbygoogle"
+                                :style="adStyle"
+                                :data-ad-client="adClient"
+                                :data-ad-slot="adSlot"
+                                :data-ad-format="adFormat"
+                                :data-full-width-responsive="adResponsive">
+                            </ins>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - ad-google - sidebar - END -->
+                
             </div>
 
         </div>
+
+        <div class="t-layout-full" v-if="video[0].id_continent || video[0].id_state || video[0].id_city">
+
+            <!-- SECTION - place -->
+            <section class="t-section -bg-gray pt-2 pb-1">
+                <div class="t-section__inner">
+                    <mHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mb-2" />
+
+                    <div class="flex px-1">
+                        <oPlaceBlock :place="placeContinent" :image="imageContinent" type="kontinent" />
+                        <oPlaceBlock :place="placeState" :image="imageState" type="stat" />
+                        <oPlaceBlock :place="placeCity" :image="imageCity" type="mesto" />
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION - place END -->
+
+        </div>
+
     </main>
 </template>
 
 <script>
 
+    import mHeadline from '@/components/mHeadline.vue'
+    import oHeroVideo from '@/components/oHeroVideo.vue'
     import oPlaceBlock from '@/components/oPlaceBlock.vue'
+    import oYoutube from '@/components/oYoutube.vue'
 
     export default {
         name: 'PageBlogSlug',
 
         components: {
-            oPlaceBlock
+            mHeadline,
+            oHeroVideo,
+            oPlaceBlock,
+            oYoutube
         },
 
         props: {
@@ -213,16 +140,13 @@
                 inlineScript.type  = "text/javascript";
                 inlineScript.text  = '(adsbygoogle = window.adsbygoogle || []).push({});'
                 document.getElementsByTagName('body')[0].appendChild(inlineScript);
-            },
-            getSlugURL(url) {
-                url = url.replace("https://youtu.be/", "").replace("https://youtube.com/shorts/", "");
-                return url.replace(" ", "");
             }
         },
 
         data() {
             return {
-                video: '',
+                video: this.video,
+                image: this.image,
                 placeContinent: this.placeContinent,
                 placeState: this.placeState,
                 placeCity: this.placeCity,

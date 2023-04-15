@@ -7,74 +7,7 @@
         <!-- SECTION - videos -->
         <section class="t-section pt-4 py-2" v-if="videos[0]">
             <div class="t-section__inner">
-                <div class="o-video-list">
-                    <div class="o-video-list__outer">
-                        <div class="o-video-list__items">
-                            <div v-for="video in videos" :key="video.id" class="o-video-list__item">
-                                <div class="o-video-list__item-inner">
-                                    
-                                    <div class="o-video-list__image loading-image">
-                                        <div v-if="images && images.find(image => image.id === video.id_image)" class="o-video-list__image-lazyload">
-                                            <img
-                                                class="o-video-list__image-file lazyload-file"
-                                                v-lazy="{
-                                                    src: 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp',
-                                                    srcset: {
-                                                        '374': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp',
-                                                        '439': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp',
-                                                        '575': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp',
-                                                        '767': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp',
-                                                        '991': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp',
-                                                        '992': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp',
-                                                        '374@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 2x',
-                                                        '439@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 2x',
-                                                        '575@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 2x',
-                                                        '767@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 2x',
-                                                        '991@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 2x',
-                                                        '992@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === video.id_image).source + images.find(image => image.id === video.id_image).name + '.webp 2x'
-                                                    },
-                                                    sizes: '(max-width: 374px) 374px, (max-width: 439px) 439px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, 992px'
-                                                }"
-                                                :alt="video.title"
-                                            />
-                                        </div>
-                                        <div v-else class="o-video-list__image-lazyload">
-                                            <img
-                                                class="o-video-list__image-file lazyload-file"
-                                                v-lazy="{
-                                                    src: 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                    srcset: {
-                                                        '374': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                        '439': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                        '575': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                        '767': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                        '991': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                        '992': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                        '374@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                                        '439@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                                        '575@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                                        '767@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                                        '991@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                                        '992@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x'
-                                                    },
-                                                    sizes: '(max-width: 374px) 374px, (max-width: 439px) 439px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, 992px'
-                                                }"
-                                                :alt="video.title"
-                                            />
-                                        </div>
-                                        <NuxtLink class="o-video-list__image-link" :to="`/videa/${video.slug}`"></NuxtLink>
-                                    </div>
-
-                                    <div class="o-video-list__text">
-                                        <h3 class="o-video-list__title">
-                                            <NuxtLink class="o-video-list__title-link" :to="`/videa/${video.slug}`">{{ video.title }}</NuxtLink>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <oVideoList :videos="videos" :images="images" />
             </div>
         </section>
         <!-- SECTION - videos END -->
@@ -94,6 +27,8 @@
 </template>
 
 <script>
+
+    import oVideoList from '@/components/oVideoList.vue'
     import SectionHero from '../../components/SectionHero.vue'
     import SectionPlatform from '../../components/SectionPlatform.vue'
 
@@ -101,6 +36,7 @@
         name: 'PageClanky',
 
         components: {
+            oVideoList,
             SectionHero,
             SectionPlatform
         },
@@ -114,7 +50,9 @@
 
         data() {
             return {
-                headline: "Videa"
+                headline: "Videa",
+                videos: this.videos,
+                images: this.images
             }
         },
 

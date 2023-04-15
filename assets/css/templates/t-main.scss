@@ -1,4 +1,9 @@
 .t-main {
+    padding-top: 0;
+
+    @media only screen and (min-width: $lg) {
+        padding-top: 0;
+    }
 
     &.-bg-brand3 {
         background-color: $brand3a;

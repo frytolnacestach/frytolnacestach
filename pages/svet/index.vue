@@ -44,6 +44,7 @@
                     <div class="o-world-type__outer">
                         <div class="o-world-type__inner">
                             <div class="o-world-type__items">
+                                
                                 <div class="o-world-type__item">
                                     <div class="o-world-type__container">
                                         <div class="o-world-type__image">
@@ -82,6 +83,7 @@
                                         </h2>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>

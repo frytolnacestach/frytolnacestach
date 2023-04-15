@@ -1,11 +1,10 @@
 <template>
     <main class="t-main">
+
         <!-- SECTION - Hero place type -->
         <section class="t-section py-4 -bg-brand3">
             <div class="t-section__inner">
-
                 <oHeroPlaceType styleType=" -continent" title="Kontinenty" />
-
             </div>
         </section>
         <!-- SECTION - Hero place type END -->
@@ -13,9 +12,7 @@
         <!-- SECTION - Place list -->
         <section class="t-section">
             <div class="t-section__inner">
-
                 <oCoverPlace :places="placesContinents" :images="images" type="kontinent" />
-
             </div>
         </section>
         <!-- SECTION - Place list END -->

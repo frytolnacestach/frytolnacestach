@@ -60,4 +60,10 @@
     &.-bg-brand3 {
         background-color: $brand3a;
     }
+
+    &.-p0 {
+        #{$self}__inner {
+            padding: 0;
+        }
+    }
 }

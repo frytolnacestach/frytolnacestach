@@ -1,5 +1,5 @@
 <template>
-    <div :class="'o-article-list' + styleThema + styleAlign">
+    <div :class="'o-article-list' + (styleThema ? styleThema : '') + (styleAlign ? styleAlign : '')">
         <div class="o-article-list-list__outer">
             <div class="o-article-list__items">
                 <div v-for="post in posts" :key="post.id" class="o-article-list__item">
@@ -94,11 +94,11 @@
             },
             styleThema: {
                 type: String,
-                required: true
+                required: false
             },
             styleAlign: {
                 type: String,
-                required: true
+                required: false
             }
         }
     }

@@ -1,8 +1,13 @@
 <template>
     <main class="t-main">
-        <section>
-            <SectionHerobig />
+        
+        <!-- SECTION - Hero -->
+        <section class="t-section -p0">
+            <div class="t-section__inner">
+                <SectionHerobig />
+            </div>
         </section>
+        <!-- SECTION - Hero END -->
 
         <section class="t-section py-4">
             <div class="t-section__inner">
@@ -28,77 +33,9 @@
                 <div class="m-headline mb-2 text-align-center">
                     <h2 class="m-headline__title">Nejnovější články</h2>
                 </div>
-                <div class="o-article-list">
-                    <div class="o-article-list-list__outer">
-                        <div class="o-article-list__items">
-                            <div v-for="post in posts" :key="post.id" class="o-article-list__item">
-                                <div class="o-article-list__item-inner">
-                                    
-                                    <div class="o-article-list__image loading-image">
-                                        <div v-if="images && images.find(image => image.id === post.id_image_cover)" class="o-article-list__image-lazyload">
-                                            <img
-                                                class="o-article-list__image-file lazyload-file"
-                                                v-lazy="{
-                                                    src: 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === post.id_image_cover).source + images.find(image => image.id === post.id_image_cover).name + '.webp',
-                                                    srcset: {
-                                                        '374': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === post.id_image_cover).source + images.find(image => image.id === post.id_image_cover).name + '.webp',
-                                                        '439': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === post.id_image_cover).source + images.find(image => image.id === post.id_image_cover).name + '.webp',
-                                                        '575': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === post.id_image_cover).source + images.find(image => image.id === post.id_image_cover).name + '.webp',
-                                                        '767': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === post.id_image_cover).source + images.find(image => image.id === post.id_image_cover).name + '.webp',
-                                                        '991': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === post.id_image_cover).source + images.find(image => image.id === post.id_image_cover).name + '.webp',
-                                                        '992': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === post.id_image_cover).source + images.find(image => image.id === post.id_image_cover).name + '.webp',
-                                                        '374@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === post.id_image_cover).source + images.find(image => image.id === post.id_image_cover).name + '.webp 2x',
-                                                        '439@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === post.id_image_cover).source + images.find(image => image.id === post.id_image_cover).name + '.webp 2x',
-                                                        '575@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === post.id_image_cover).source + images.find(image => image.id === post.id_image_cover).name + '.webp 2x',
-                                                        '767@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === post.id_image_cover).source + images.find(image => image.id === post.id_image_cover).name + '.webp 2x',
-                                                        '991@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === post.id_image_cover).source + images.find(image => image.id === post.id_image_cover).name + '.webp 2x',
-                                                        '992@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === post.id_image_cover).source + images.find(image => image.id === post.id_image_cover).name + '.webp 2x'
-                                                    },
-                                                    sizes: '(max-width: 374px) 374px, (max-width: 439px) 439px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, 992px'
-                                                }"
-                                                :alt="post.title"
-                                            />
-                                        </div>
-                                        <div v-else class="o-article-list__image-lazyload">
-                                            <img
-                                                class="o-article-list__image-file lazyload-file"
-                                                v-lazy="{
-                                                    src: 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                    srcset: {
-                                                        '374': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                        '439': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                        '575': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                        '767': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                        '991': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                        '992': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                        '374@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                                        '439@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                                        '575@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                                        '767@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                                        '991@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                                        '992@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x'
-                                                    },
-                                                    sizes: '(max-width: 374px) 374px, (max-width: 439px) 439px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, 992px'
-                                                }"
-                                                :alt="post.title"
-                                            />
-                                        </div>
-                                        <NuxtLink class="o-article-list__image-link" :to="`/clanky/${post.slug}`"></NuxtLink>
-                                    </div>
 
-                                    <div class="o-article-list__text">
-                                        <h3 class="o-article-list__title">
-                                            <NuxtLink class="o-article-list__title-link" :to="`clanky/${post.slug}`">{{ post.title }}</NuxtLink>
-                                        </h3>
-                                        <p class="o-article-list__perex">
-                                            <NuxtLink class="o-article-list__perex-link" :to="`/clanky/${post.slug}`">{{ post.perex }}</NuxtLink>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <oArticleList :posts="posts" :images="images" />
+
                 <div class="flex flex-center mt-2">
                     <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/clanky">Všechny články</NuxtLink>
                 </div>
@@ -134,6 +71,7 @@
 
 <script>
 
+    import oArticleList from '@/components/oArticleList.vue'
     import oVideoList from '@/components/oVideoList.vue'
     import SectionHerobig from '../components/SectionHerobig.vue'
     import SectionWhoiam from '../components/SectionWhoiam.vue'
@@ -144,6 +82,7 @@
     export default {
         name: 'IndexPage',
         components: {
+            oArticleList,
             oVideoList,
             SectionHerobig,
             SectionWhoiam,

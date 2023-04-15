@@ -1,11 +1,10 @@
 <template>
     <main class="t-main">
+
         <!-- SECTION - Hero place type -->
         <section class="t-section py-4 -bg-brand3">
             <div class="t-section__inner">
-
                 <oHeroPlaceType styleType=" -city" title="Města" />
-
             </div>
         </section>
         <!-- SECTION - Hero place type END -->
@@ -13,6 +12,7 @@
         <!-- SECTION - Alphabet -->
         <section class="t-section pb-2 -bg-brand3">
             <div class="t-section__inner">
+
                 <div class="m-nav-alphabet">
                     <div class="m-nav-alphabet__outer">
                         <div class="m-nav-alphabet__inner">
@@ -26,6 +26,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </section>
          <!-- SECTION - Alphabet END -->
@@ -33,9 +34,7 @@
         <!-- SECTION - Place list -->
         <section class="t-section">
             <div class="t-section__inner">
-
                 <oCoverPlace :places="placesCities" :images="images" type="mesto" />
-
             </div>
         </section>
         <!-- SECTION - Place list END -->
