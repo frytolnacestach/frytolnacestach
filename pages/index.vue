@@ -15,27 +15,22 @@
             </div>
         </section>
 
-        <section class="t-section t-section--gray">
+        <!-- SECTION - Platforms -->
+        <section class="t-section t-section--gray pt-4">
             <div class="t-section__inner">
-                <div class="m-headline mt-4 text-align-center">
-                    <h2 class="m-headline__title">Platformy kde jsem</h2>
-                </div>
+                <mHeadline title="Platformy kde jsem" styleAlign=" -center" />
                 <SectionPlatform />
                 <div class="flex flex-center mb-4">
                     <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/social">Více informací</NuxtLink>
                 </div>
             </div>
         </section>
-
+        <!-- SECTION - Platforms END -->
 
         <section class="t-section py-4">
             <div class="t-section__inner">
-                <div class="m-headline mb-2 text-align-center">
-                    <h2 class="m-headline__title">Nejnovější články</h2>
-                </div>
-
+                <mHeadline title="Nejnovější články" styleAlign=" -center" styleGap=" mb-2" />
                 <oArticleList :posts="posts" :images="images" />
-
                 <div class="flex flex-center mt-2">
                     <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/clanky">Všechny články</NuxtLink>
                 </div>
@@ -44,13 +39,8 @@
 
         <section class="t-section t-section--gray py-4">
             <div class="t-section__inner">
-                <div class="m-headline mb-2 text-align-center">
-                    <h2 class="m-headline__title">Nejnovější video</h2>
-                </div>
-
+                <mHeadline title="Nejnovější video" styleAlign=" -center" styleGap=" mb-2" />
                 <oVideoList :videos="video" :images="image" />
-              
-
                 <div class="flex flex-center mt-2">
                     <a class="a-button-fill a-button-fill--big a-button-fill--blue" href="https://www.youtube.com/channel/UCQnsNK3Xd5Tj3zcVWQDMi8A/videos" target="_blank">Všechna videa (YouTube)</a>
                 </div>
@@ -71,6 +61,7 @@
 
 <script>
 
+    import mHeadline from '@/components/mHeadline.vue'
     import oArticleList from '@/components/oArticleList.vue'
     import oVideoList from '@/components/oVideoList.vue'
     import SectionHerobig from '../components/SectionHerobig.vue'
@@ -82,6 +73,7 @@
     export default {
         name: 'IndexPage',
         components: {
+            mHeadline,
             oArticleList,
             oVideoList,
             SectionHerobig,

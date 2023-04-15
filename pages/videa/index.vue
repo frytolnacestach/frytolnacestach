@@ -12,22 +12,22 @@
         </section>
         <!-- SECTION - videos END -->
 
-        <section class="t-section t-section--gray">
-            <div class="m-headline mt-4 text-align-center">
-                <h2 class="m-headline__title">Další obsah</h2>
-            </div>
-
-            <SectionPlatform />
-            
-            <div class="flex flex-center mb-4">
-                <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/social">Více informací</NuxtLink>
+        <!-- SECTION - Platforms -->
+        <section class="t-section t-section--gray pt-4">
+            <div class="t-section__inner">
+                <mHeadline title="Platformy kde jsem" styleAlign=" -center" />
+                <SectionPlatform />
+                <div class="flex flex-center mb-4">
+                    <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/social">Více informací</NuxtLink>
+                </div>
             </div>
         </section>
+        <!-- SECTION - Platforms END -->
     </main>
 </template>
 
 <script>
-
+    import mHeadline from '@/components/mHeadline.vue'
     import oVideoList from '@/components/oVideoList.vue'
     import SectionHero from '../../components/SectionHero.vue'
     import SectionPlatform from '../../components/SectionPlatform.vue'
@@ -36,6 +36,7 @@
         name: 'PageClanky',
 
         components: {
+            mHeadline,
             oVideoList,
             SectionHero,
             SectionPlatform
