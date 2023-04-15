@@ -107,15 +107,7 @@
 
                 <section class="t-section py-2" v-if="post[0].urlYoutube">
                     <div class="t-section__inner">
-                        <div class="o-youtube">
-                            <div class="o-youtube__outer">
-                                <div class="o-youtube__inner">
-                                    <div class="o-youtube__video">
-                                        <iframe class="o-youtube__video-iframe" :src="post[0].urlYoutube" frameborder="0" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <oYoutube :url="post[0].urlYoutube" />
                     </div>
                 </section>
 
@@ -401,6 +393,7 @@
     import mHeadline from '@/components/mHeadline.vue'
     import oPlaceBlock from '@/components/oPlaceBlock.vue'
     import oVideoList from '@/components/oVideoList.vue'
+    import oYoutube from '@/components/oYoutube.vue'
 
     export default {
         name: 'PageBlogSlug',
@@ -408,7 +401,8 @@
         components: {
             mHeadline,
             oPlaceBlock,
-            oVideoList
+            oVideoList,
+            oYoutube
         },
 
         props: {
