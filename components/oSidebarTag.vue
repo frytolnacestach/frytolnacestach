@@ -1,0 +1,24 @@
+<template>
+    <div class="o-sidebar-tag">
+        <div class="o-sidebar-tag__outer">
+            <div class="o-sidebar-tag__inner">
+                <div class="o-sidebar-tag__items">
+                    <div class="o-sidebar-tag__item" v-for="tag in tags" v-bind:key="tag.name">
+                        <a class="o-sidebar-tag__link">{{ tag.name }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        props: {
+            tags: {
+                type: Array,
+                required: true
+            },
+        }
+    }
+</script>

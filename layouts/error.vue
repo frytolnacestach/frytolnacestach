@@ -1,5 +1,5 @@
 <template>
-  <main class="t-main">
+  <main class="t-main -pt-menu">
       <section class="t-section">
           <SectionHero 
               :headline="headline"

@@ -1,8 +1,6 @@
 <template>
-	<div>
-		<MenuMain />
-		<LogotypeHeader />
-		<ControlHamburger />
+	<div class="t-components">
+		<ComponentHeader />
 		<Nuxt />
 		<ComponentFooter />
 		<PopupCookies />

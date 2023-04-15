@@ -1,12 +1,34 @@
 .m-nav-main {
     $self: &;
 
+    @include transition(right, .2s);
+    position: absolute;
     padding-left: 0;
     padding-right: 0;
     width: 100%;
+    right: -100%;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    height: 100vh;
+    background-color: $brand3;
+
+    @media only screen and (min-width: $lg) {
+        position: relative;
+        height: auto;
+        right: inherit;
+        background-color: inherit;
+    }
 
     &__outer {
         width: 100%;
+        overflow: scroll;
+        height: 100vh;
+
+        @media only screen and (min-width: $lg) {
+            overflow: inherit;
+            height: inherit;
+        }
     }
 
     &__inner {
@@ -18,19 +40,20 @@
         display: flex;
         flex-wrap: wrap;
         list-style: none;
-        margin: 0;
-        padding: 0;
+        margin: 0 -5px 0 0;
         justify-content: flex-end;
         position: relative;
+        padding: 60px 15px;
 
         @media only screen and (min-width: $lg) {
+            padding: 0;
             flex-wrap: nowrap;
         }
     }
 
     &__item {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         width: 100%;
         height: 40px;
 
@@ -83,6 +106,14 @@
 
         @media only screen and (min-width: $lg) {
             color: $brand3;
+        }
+    }
+
+    &.open {
+        right: 0;
+
+        @media only screen and (min-width: $lg) {
+            right: inherit;
         }
     }
 }

@@ -2,7 +2,7 @@
 	$self: &;
 
     display: flex;
-    position: absolute;
+    position: fixed;
     z-index: 1001;
     cursor: pointer;
     top: 10px;
@@ -27,7 +27,7 @@
 		right: 0;
 		width: 30px;
 		height: 2px;
-		background-color: $white;
+		background-color: $black;
 		border-radius: 1.5px;
 		transform-origin: center;
 		transform: rotate(0);
@@ -53,7 +53,7 @@
 
 	&__text {
 		padding-right: 10px;
-		color: $white;
+		color: $black;
 		font-size: $fs-normal;
 		line-height: 40px;
 

@@ -23,18 +23,6 @@
                                 <span class="o-hot-info-hero__title">Populace</span>
                                 <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
                             </div>
-                            <div class="o-hot-info-hero__item" v-if="place[0].number_cities">
-                                <span class="o-hot-info-hero__title">Počet měst</span>
-                                <span class="o-hot-info-hero__value">{{ place[0].number_cities }}</span>
-                            </div>
-                            <div class="o-hot-info-hero__item" v-if="place[0].mpz">
-                                <span class="o-hot-info-hero__title">MPZ</span>
-                                <span class="o-hot-info-hero__value">{{ place[0].mpz }}</span>
-                            </div>
-                            <div class="o-hot-info-hero__item" v-if="place[0].tld">
-                                <span class="o-hot-info-hero__title">TLD</span>
-                                <span class="o-hot-info-hero__value">{{ place[0].tld }}</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -105,6 +93,40 @@
                             </div>
                         </section>
                         <!-- SECTION - Měna END -->
+
+                        <!-- SECTION - MPZ -->
+                        <section class="t-section py-2" v-if="place[0].mpz">
+                            <div class="t-section__inner">
+                                <div class="o-information-block -bg-gray">
+                                    <div class="o-information-block__outer">
+                                        <div class="o-information-block__inner">
+                                            <h2 class="o-information-block__title">Mezinárodní poznávací značka (MPZ)</h2>
+                                            <div class="o-information-block__perex">
+                                                <div class="o-information-block_wysiwyg">{{ place[0].mpz }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- SECTION - MPZ END -->
+
+                        <!-- SECTION - TLD -->
+                        <section class="t-section py-2" v-if="place[0].tld">
+                            <div class="t-section__inner">
+                                <div class="o-information-block -bg-gray">
+                                    <div class="o-information-block__outer">
+                                        <div class="o-information-block__inner">
+                                            <h2 class="o-information-block__title">Národní internetová domána (TLD)</h2>
+                                            <div class="o-information-block__perex">
+                                                <div class="o-information-block_wysiwyg">{{ place[0].tld }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- SECTION - TLD END -->
 
                         <!-- SECTION - navštevníci - podmínky vstupu -->
                         <section class="t-section py-2" v-if="place[0].visitors_entry">

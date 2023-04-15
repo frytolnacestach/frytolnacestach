@@ -1,13 +1,13 @@
 <template>
-    <main class="t-main">
+    <main class="t-main -pt-menu">
         
-        <!-- SECTION - Hero article -->
+        <!-- SECTION - Hero video -->
         <section class="t-section -p0">
             <div class="t-section__inner">
                 <oHeroVideo :image="image" :title="video[0].title" />
             </div>
         </section>
-        <!-- SECTION - Hero article END -->
+        <!-- SECTION - Hero video END -->
 
         <div class="t-col2">
             <div class="t-col2__content my-2">

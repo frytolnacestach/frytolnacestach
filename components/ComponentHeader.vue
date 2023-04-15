@@ -3,7 +3,19 @@
         <div class="o-header">
             <div class="o-header__outer">
                 <div class="o-header__inner">
-                    <nav class="m-nav-main">
+
+                    <div class="m-logotype">
+                        <div class="m-logotype__image">
+                            <div class="m-logotype__image-file">
+                                <NuxtLink class="m-logotype__image-link" to="/"></NuxtLink>
+                            </div>
+                        </div>
+                        <div class="m-logotype__text">
+                            <span class="m-logotype__text-main">FRYTOL NA CESTÁCH</span>
+                        </div>
+                    </div>
+
+                    <nav class="js_m-nav-main m-nav-main">
                         <div class="m-nav-main__outer">
                             <div class="m-nav-main__inner">
                                 <ul class="m-nav-main__items">
@@ -32,6 +44,18 @@
                             </div>
                         </div>
                     </nav>
+
+                    <span class="js_m-hamburger m-hamburger" data-hamburger="close">
+                        <span class="m-hamburger__texts">
+                            <span class="m-hamburger__text m-hamburger__text--open">Menu</span>
+                            <span class="m-hamburger__text m-hamburger__text--close">Zavřít</span>
+                        </span>
+                        <span class="m-hamburger__lines">
+                            <span class="m-hamburger__line m-hamburger__line--1"></span>
+                            <span class="m-hamburger__line m-hamburger__line--2"></span>
+                            <span class="m-hamburger__line m-hamburger__line--3"></span>
+                        </span>
+                    </span>
                 </div>
             </div>
         </div>
@@ -40,6 +64,6 @@
 
 <script>
     export default {
-        name: 'MenuMain'
+        name: 'ComponentHeader'
     }
 </script>
