@@ -4,7 +4,7 @@
         <!-- SECTION - Hero -->
         <section class="t-section -p0">
             <div class="t-section__inner">
-                <SectionHerobig />
+                <oHerobig :headline="headline" />
             </div>
         </section>
         <!-- SECTION - Hero END -->
@@ -63,8 +63,8 @@
 
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
+    import oHerobig from '../components/organisms/oHerobig.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
-    import SectionHerobig from '../components/SectionHerobig.vue'
     import SectionWhoiam from '../components/SectionWhoiam.vue'
     import SectionPlatform from '../components/SectionPlatform.vue'
     import SectionDonate from '../components/SectionDonate.vue'
@@ -75,8 +75,8 @@
         components: {
             mHeadline,
             oArticleList,
+            oHerobig,
             oVideoList,
-            SectionHerobig,
             SectionWhoiam,
             SectionPlatform,
             SectionDonate,
@@ -86,7 +86,8 @@
         data() {
             return {
                 image: this.image,
-                video: this.video
+                video: this.video,
+                headline: 'Frytol na cestách',
             }
         },
 

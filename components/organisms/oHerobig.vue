@@ -32,7 +32,7 @@
 
             <div class="o-hero-big__outer">
                 <div class="o-hero-big__inner">
-                    <h1 class="o-hero-big__headline">Frytol na cestách</h1>
+                    <h1 class="o-hero-big__headline">{{ headline }}</h1>
                     <p class="o-hero-big__perex">Cestování a natáčení</p>
                     <div class="o-hero-big__buttons mt-2">
                         <a class="a-button-fill a-button-fill--big" href="https://youtube.com/@frytolnacestach" target="_blank">Youtube</a>
@@ -46,6 +46,12 @@
 
 <script>
     export default {
-        name: 'SectionHerobig'
+        name: 'oHeroBig',
+        props: {
+            headline: {
+                type: String,
+                required: true
+            }
+        },
     }
 </script>
