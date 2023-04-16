@@ -10,21 +10,21 @@
         <!-- SECTION - Hero END -->
 
         <section>
-            <SectionBoxplatform />
+            <oBoxPlatform />
         </section>
     </main>
 </template>
 
 <script>
+    import oBoxPlatform from '../components/organisms/oBoxPlatform.vue'
     import oHero from '../components/organisms/oHero.vue'
-    import SectionBoxplatform from '../components/SectionBoxplatform.vue'
 
     export default {
         name: 'PageSocial',
         
         components: {
             oHero,
-            SectionBoxplatform
+            oBoxPlatform
         },
 
         data() {

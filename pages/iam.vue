@@ -19,7 +19,7 @@
         <section class="t-section t-section--gray pt-4">
             <div class="t-section__inner">
                 <mHeadline title="Platformy kde jsem" styleAlign=" -center" />
-                <SectionPlatform />
+                <oPlatform />
                 <div class="flex flex-center mb-4">
                     <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/social">Více informací</NuxtLink>
                 </div>
@@ -32,8 +32,8 @@
 <script>
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oHero from '../components/organisms/oHero.vue'
+    import oPlatform from '../components/organisms/oPlatform.vue'
     import SectionWhoiam from '../components/SectionWhoiam.vue'
-    import SectionPlatform from '../components/SectionPlatform.vue'
 
     export default {
         name: 'PageIam',
@@ -41,8 +41,8 @@
         components: {
             mHeadline,
             oHero,
-            SectionWhoiam,
-            SectionPlatform
+            oPlatform,
+            SectionWhoiam
         },
 
         data() {

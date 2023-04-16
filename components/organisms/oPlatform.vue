@@ -18,10 +18,10 @@
 
 <script>
     export default {
-        name: 'SectionPlatform',
+        name: 'oPlatform',
         data() {
             return {
-                platforms: []
+                platforms: this.platforms
             }
         },
         async fetch() {

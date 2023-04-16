@@ -19,7 +19,7 @@
         <section class="t-section t-section--gray pt-4">
             <div class="t-section__inner">
                 <mHeadline title="Platformy kde jsem" styleAlign=" -center" />
-                <SectionPlatform />
+                <oPlatform />
                 <div class="flex flex-center mb-4">
                     <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/social">Více informací</NuxtLink>
                 </div>
@@ -65,10 +65,10 @@
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oDonate from '../components/organisms/oDonate.vue'
     import oHerobig from '../components/organisms/oHerobig.vue'
+    import oPlatform from '../components/organisms/oPlatform.vue'
     import oSupport from '../components/organisms/oSupport.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import SectionWhoiam from '../components/SectionWhoiam.vue'
-    import SectionPlatform from '../components/SectionPlatform.vue'
 
     export default {
         name: 'IndexPage',
@@ -77,10 +77,10 @@
             oArticleList,
             oDonate,
             oHerobig,
+            oPlatform,
             oSupport,
             oVideoList,
-            SectionWhoiam,
-            SectionPlatform
+            SectionWhoiam
         },
 
         data() {

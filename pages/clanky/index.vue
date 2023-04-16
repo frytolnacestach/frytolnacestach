@@ -19,7 +19,7 @@
         <section class="t-section t-section--gray pt-4">
             <div class="t-section__inner">
                 <mHeadline title="Platformy kde jsem" styleAlign=" -center" />
-                <SectionPlatform />
+                <oPlatform />
                 <div class="flex flex-center mb-4">
                     <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/social">Více informací</NuxtLink>
                 </div>
@@ -34,7 +34,7 @@
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oHero from '../../components/organisms/oHero.vue'
-    import SectionPlatform from '../../components/SectionPlatform.vue'
+    import oPlatform from '../../components/organisms/oPlatform.vue'
 
     export default {
         name: 'PageClanky',
@@ -43,7 +43,7 @@
             mHeadline,
             oArticleList,
             oHero,
-            SectionPlatform
+            oPlatform
         },
 
         data() {
