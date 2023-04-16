@@ -15,6 +15,7 @@
                 <!-- SECTION - perex -->
                 <section class="t-section py-2" v-if="video[0].perex">
                     <div class="t-section__inner">
+
                         <div class="o-information-block">
                             <div class="o-information-block__outer">
                                 <div class="o-information-block__inner">
@@ -27,6 +28,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </section>
                 <!-- SECTION - perex END -->

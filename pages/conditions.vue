@@ -9,6 +9,7 @@
         </section>
         <!-- SECTION - Hero END -->
 
+        <!-- SECTION - Wysiwyg -->
         <section class="t-section t-section--wysiwyg py-4">
             <div class="t-section__inner">
                 <div class="o-wysiwyg">
@@ -62,6 +63,8 @@
                 </div>
             </div>
         </section>
+        <!-- SECTION - Wysiwyg END -->
+
     </main>
 </template>
 

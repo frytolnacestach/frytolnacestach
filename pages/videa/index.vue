@@ -23,7 +23,7 @@
                 <mHeadline title="Platformy kde jsem" styleAlign=" -center" />
                 <oPlatform />
                 <div class="flex flex-center mb-4">
-                    <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/social">Více informací</NuxtLink>
+                    <aButtonFill url="/social" text="Více informací" styleThema=" -blue" styleSize=" -big" target="internal" />
                 </div>
             </div>
         </section>
@@ -32,6 +32,8 @@
 </template>
 
 <script>
+
+    import aButtonFill from '~/components/atoms/aButtonFill.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oHero from '../../components/organisms/oHero.vue'
     import oPlatform from '../../components/organisms/oPlatform.vue'
@@ -41,6 +43,7 @@
         name: 'PageClanky',
 
         components: {
+            aButtonFill,
             mHeadline,
             oHero,
             oPlatform,
