@@ -9,11 +9,13 @@
         </section>
         <!-- SECTION - Hero END -->
 
+        <!-- SECTION - Whoiam -->
         <section class="t-section py-4">
             <div class="t-section__inner">
                 <oWhoiam />
             </div>
         </section>
+        <!-- SECTION - Whoiam END -->
 
         <!-- SECTION - Platforms -->
         <section class="t-section t-section--gray pt-4">
@@ -27,6 +29,7 @@
         </section>
         <!-- SECTION - Platforms END -->
 
+        <!-- SECTION - Article list -->
         <section class="t-section py-4">
             <div class="t-section__inner">
                 <mHeadline title="Nejnovější články" styleAlign=" -center" styleGap=" mb-2" />
@@ -36,7 +39,9 @@
                 </div>
             </div>
         </section>
+        <!-- SECTION - Article list END -->
 
+        <!-- SECTION - Video -->
         <section class="t-section t-section--gray py-4">
             <div class="t-section__inner">
                 <mHeadline title="Nejnovější video" styleAlign=" -center" styleGap=" mb-2" />
@@ -46,7 +51,9 @@
                 </div>
             </div>
         </section>
+        <!-- SECTION - Video END-->
 
+        <!-- SECTION - Donate -->
         <section class="t-section py-4">
             <div class="t-section__inner">
                 <oDonate :showHeadline=true />
@@ -56,6 +63,8 @@
                 </div>
             </div>
         </section>
+        <!-- SECTION - Donate END -->
+        
     </main>
 </template>
 
