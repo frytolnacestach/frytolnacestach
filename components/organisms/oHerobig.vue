@@ -35,8 +35,8 @@
                     <h1 class="o-hero-big__headline">{{ headline }}</h1>
                     <p class="o-hero-big__perex">Cestování a natáčení</p>
                     <div class="o-hero-big__buttons mt-2">
-                        <a class="a-button-fill a-button-fill--big" href="https://youtube.com/@frytolnacestach" target="_blank">Youtube</a>
-                        <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/iam">Kdo jsem</NuxtLink>
+                        <a class="a-button-fill -big" href="https://youtube.com/@frytolnacestach" target="_blank">Youtube</a>
+                        <NuxtLink class="a-button-fill -big -blue" to="/iam">Kdo jsem</NuxtLink>
                     </div>
                 </div>
             </div>

@@ -25,7 +25,7 @@
                             {{ platform.perex }}
                         </p>
                         <div class="o-box-platform__button">
-                            <a :class="'a-button-fill a-button-fill--small a-button-fill--social-' + platform.slug" :href="platform.url" target="_blank" :title="platform.name">zobrazit</a>
+                            <a :class="'a-button-fill -small -social-' + platform.slug" :href="platform.url" target="_blank" :title="platform.name">zobrazit</a>
                         </div>
                     </div>
                 </div>
