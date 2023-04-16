@@ -34,12 +34,14 @@
 
 <script>
     export default {
-        name: 'SectionWhoiam',
+        name: 'oWhoiam',
+        
         data() {
             return {
-                base: []
+                base: this.base
             }
         },
+
         async fetch() {
             this.base = await fetch("https://frytolnacestach-api.vercel.app/api/base").then((res) => res.json());
         }

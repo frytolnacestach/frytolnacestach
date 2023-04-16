@@ -11,7 +11,7 @@
 
         <section class="t-section py-4">
             <div class="t-section__inner">
-                <SectionWhoiam />
+                <oWhoiam />
             </div>
         </section>
 
@@ -33,7 +33,7 @@
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oHero from '../components/organisms/oHero.vue'
     import oPlatform from '../components/organisms/oPlatform.vue'
-    import SectionWhoiam from '../components/SectionWhoiam.vue'
+    import oWhoiam from '../components/organisms/oWhoiam.vue'
 
     export default {
         name: 'PageIam',
@@ -42,7 +42,7 @@
             mHeadline,
             oHero,
             oPlatform,
-            SectionWhoiam
+            oWhoiam
         },
 
         data() {

@@ -11,7 +11,7 @@
 
         <section class="t-section py-4">
             <div class="t-section__inner">
-                <SectionWhoiam />
+                <oWhoiam />
             </div>
         </section>
 
@@ -68,7 +68,7 @@
     import oPlatform from '../components/organisms/oPlatform.vue'
     import oSupport from '../components/organisms/oSupport.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
-    import SectionWhoiam from '../components/SectionWhoiam.vue'
+    import oWhoiam from '../components/organisms/oWhoiam.vue'
 
     export default {
         name: 'IndexPage',
@@ -80,7 +80,7 @@
             oPlatform,
             oSupport,
             oVideoList,
-            SectionWhoiam
+            oWhoiam
         },
 
         data() {
