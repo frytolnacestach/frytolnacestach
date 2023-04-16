@@ -7,7 +7,7 @@
                     <div class="o-box-platform__intro">
                         <div class="o-box-platform__platform">
                             <div class="o-box-platform__icon">
-                                <div :class="'o-box-platform__icon-file o-box-platform__icon-file--' + platform.slug"></div>
+                                <div :class="'o-box-platform__icon-file -' + platform.slug"></div>
                             </div>
                             <div class="o-box-platform__statistic">
                                 <div class="o-box-platform__statistic-items">

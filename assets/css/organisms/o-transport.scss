@@ -75,43 +75,43 @@
             color: $brand2;
         }
 
-        &--car {
+        &.-car {
             &:after {
                 content: map-get($icomoon-default, 'automobile');
             }
         }
         
-        &--bus {
+        &.-bus {
             &:after {
                 content: map-get($icomoon-default, 'bus');
             }
         }
 
-        &--train {
+        &.-train {
             &:after {
                 content: map-get($icomoon-default, 'train');
             }
         }
 
-        &--airplane {
+        &.-airplane {
             &:after {
                 content: map-get($icomoon-default, 'plane');
             }
         }
 
-        &--boat-ferry {
+        &.-boat-ferry {
             &:after {
                 content: map-get($icomoon-default, 'ship');
             }
         }
 
-        &--ship {
+        &.-ship {
             &:after {
                 content: map-get($icomoon-default, 'ship');
             }
         }
 
-        &--bicycle {
+        &.-bicycle {
             &:after {
                 content: map-get($icomoon-default, 'bicycle');
             }

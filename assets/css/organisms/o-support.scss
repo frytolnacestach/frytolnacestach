@@ -64,7 +64,7 @@
             color: $black;
         }
 
-        &--patreon {
+        &.-patreon {
             &:after {
                 content: map-get($icomoon-social, 'patreon');
                 color: $patreon;

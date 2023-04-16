@@ -6,7 +6,7 @@
                 <div class="o-transport__items">
                     <div class="o-transport__item" v-for="item in items" v-bind:key="item.name">
                         <div class="o-transport__icon">
-                            <div :class="'o-transport__icon-file o-transport__icon-file--' + item.icon"></div>
+                            <div :class="'o-transport__icon-file -' + item.icon"></div>
                         </div>
                         <div class="o-transport__text">
                             <h4 class="o-transport__name">{{ item.name }}</h4>

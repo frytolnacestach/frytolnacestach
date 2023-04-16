@@ -59,70 +59,70 @@
             line-height: 1;
         }
 
-        &--youtube {
+        &.-youtube {
             &:after {
                 content: map-get($icomoon-social, 'youtube');
                 color: $youtube;
             }
         }
 
-        &--instagram {
+        &.-instagram {
             &:after {
                 content: map-get($icomoon-social, 'instagram');
                 color: $instagram;
             }
         }
 
-        &--facebook {
+        &.-facebook {
             &:after {
                 content: map-get($icomoon-social, 'facebook');
                 color: $facebook;
             }
         }
 
-        &--tiktok {
+        &.-tiktok {
             &:after {
                 content: map-get($icomoon-social, 'tiktok');
                 color: $tiktok;
             }
         }
 
-        &--twitter {
+        &.-twitter {
             &:after {
                 content: map-get($icomoon-social, 'twitter');
                 color: $twitter;
             }
         }
 
-        &--twitch {
+        &.-twitch {
             &:after {
                 content: map-get($icomoon-social, 'twitch');
                 color: $twitch;
             }
         }
 
-        &--reddit {
+        &.-reddit {
             &:after {
                 content: map-get($icomoon-social, 'reddit');
                 color: $reddit;
             }
         }
 
-        &--pinterest {
+        &.-pinterest {
             &:after {
                 content: map-get($icomoon-social, 'pinterest');
                 color: $pinterest;
             }
         }
 
-        &--discord {
+        &.-discord {
             &:after {
                 content: map-get($icomoon-social, 'discord');
                 color: $discord;
             }
         }
 
-        &--patreon {
+        &.-patreon {
             &:after {
                 content: map-get($icomoon-social, 'patreon');
                 color: $patreon;
