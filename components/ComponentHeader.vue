@@ -4,11 +4,17 @@
             <div class="o-header__outer">
                 <div class="o-header__inner">
 
+                    <!-- LOGOTYPE -->
                     <mLogotype />
+                    <!-- LOGOTYPE END -->
 
+                    <!-- NAV - Main -->
                     <mNavMain />
+                    <!-- NAV - Main END -->
 
+                    <!-- NAV - Hamburger -->
                     <mHamburger />
+                    <!-- NAV - Hamburger END -->
 
                 </div>
             </div>
