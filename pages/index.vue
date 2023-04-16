@@ -50,7 +50,7 @@
         <section class="t-section py-4">
             <div class="t-section__inner">
                 <oDonate :showHeadline=true />
-                <SectionSupport />
+                <oSupport />
                 <div class="flex flex-center">
                     <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/donate">Podpora</NuxtLink>
                 </div>
@@ -65,10 +65,10 @@
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oDonate from '../components/organisms/oDonate.vue'
     import oHerobig from '../components/organisms/oHerobig.vue'
+    import oSupport from '../components/organisms/oSupport.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import SectionWhoiam from '../components/SectionWhoiam.vue'
     import SectionPlatform from '../components/SectionPlatform.vue'
-    import SectionSupport from '../components/SectionSupport.vue'
 
     export default {
         name: 'IndexPage',
@@ -77,10 +77,10 @@
             oArticleList,
             oDonate,
             oHerobig,
+            oSupport,
             oVideoList,
             SectionWhoiam,
-            SectionPlatform,
-            SectionSupport
+            SectionPlatform
         },
 
         data() {

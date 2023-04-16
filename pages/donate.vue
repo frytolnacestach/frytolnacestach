@@ -12,7 +12,7 @@
         <section class="t-section pb-4">
             <div class="t-section__inner">
                 <oDonate />
-                <SectionSupport />
+                <oSupport />
             </div>
         </section>
 
@@ -34,8 +34,8 @@
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oDonate from '../components/organisms/oDonate.vue'
     import oHero from '../components/organisms/oHero.vue'
-    import SectionSupport from '../components/SectionSupport.vue'
     import SectionPlatform from '../components/SectionPlatform.vue'
+    import oSupport from '../components/organisms/oSupport.vue'
 
     export default {
         name: 'PageDonate',
@@ -44,8 +44,8 @@
             mHeadline,
             oDonate,
             oHero,
-            SectionSupport,
-            SectionPlatform
+            SectionPlatform,
+            oSupport
         },
 
         data() {

@@ -16,6 +16,6 @@
 
 <script>
     export default {
-        name: 'SectionSupport'
+        name: 'oSupport'
     }
 </script>
