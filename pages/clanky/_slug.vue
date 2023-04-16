@@ -18,6 +18,7 @@
         <div class="t-col2">
             <div class="t-col2__content my-2">
 
+                <!-- SECTION - Opener text -->
                 <section class="t-section pt-2" v-if="post[0].textOpener">
                     <div class="t-section__inner">
                         <div class="o-opener-text">
@@ -27,18 +28,23 @@
                         </div>
                     </div>
                 </section>
+                <!-- SECTION - Opener text END -->
 
+                <!-- SECTION - Wysiwyg -->
                 <section class="t-section pb-2" v-if="post[0].textAuthor">
                     <div class="t-section__inner">
                         <div class="o-wysiwyg" v-html="post[0].textAuthor"></div>
                     </div>
                 </section>
+                <!-- SECTION - Wysiwyg END -->
 
+                <!-- SECTION - Youtube -->
                 <section class="t-section py-2" v-if="post[0].urlYoutube">
                     <div class="t-section__inner">
                         <oYoutube :url="post[0].urlYoutube" />
                     </div>
                 </section>
+                <!-- SECTION - Youtube END -->
 
                 <!-- SECTION - Map mapy -->
                 <section class="t-section t-section--hidden-desktop my-2" v-if="post[0].urlMap">
@@ -48,135 +54,62 @@
                 </section>
                 <!-- SECTION - Map mapy -->
 
+                <!-- SECTION - Wiki -->
                 <section class="t-section py-2" v-if="post[0].textWiki">
                     <div class="t-section__inner">
-                        <div class="o-wiki">
-                            <div class="o-wiki__outer">
-                                <div class="o-wiki__inner">
-                                    <h2 class="o-wiki__title">Wikipedia</h2>
-                                    <div class="o-wiki__perex text-align-center-mobile text-align-left-desktop">
-                                        <div class="o-wysiwyg" v-html="post[0].textWiki"></div>
-                                        <div class="o-wiki__author">
-                                            <i class="m-author">zdroj. <a class="m-author__link" :href="post[0].urlWiki" target="_blank">Wikipedia</a></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <oWiki :wysiwyg="post[0].textWiki" :source="post[0].urlWiki" />
                     </div>
                 </section>
+                <!-- SECTION - Wiki END -->
 
+                <!-- SECTION - Transport -->
                 <section class="t-section py-2" v-if="post[0].travels">
                     <div class="t-section__inner">
-                        <div class="o-transport">
-                            <div class="o-transport__outer">
-                                <div class="o-transport__inner">
-                                    <h2 class="o-transport__title">Jak se sem dostat</h2>
-                                    <div class="o-transport__items">
-                                        <div class="o-transport__item" v-for="travel in post[0].travels" v-bind:key="travel.name">
-                                            <div class="o-transport__icon">
-                                                <div :class="'o-transport__icon-file o-transport__icon-file--' + travel.icon"></div>
-                                            </div>
-                                            <div class="o-transport__text">
-                                                <h4 class="o-transport__name">{{ travel.name }}</h4>
-                                                <p class="o-transport__text">{{ travel.text }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <oTransport title="Jak se sem dostat" :items="post[0].travels" />
                     </div>
                 </section>
+                <!-- SECTION - Transport END -->
 
+                <!-- SECTION - Trip information -->
                 <section class="t-section py-2" v-if="post[0].prices">
                     <div class="t-section__inner">
-                        <div class="o-trip-information o-trip-information--bg-brand1-a">
-                            <div class="o-trip-information__outer">
-                                <div class="o-trip-information__inner">
-                                    <h2 class="o-trip-information__title">Ceny</h2>
-                                    <p class="o-trip-information__perex">{{ post[0].perexPrice }}</p>
-                                    <div class="o-trip-information__items">
-                                        <div class="o-trip-information__item" v-for="price in post[0].prices" v-bind:key="price.name">
-                                            <h4 class="o-trip-information__name">{{ price.name }}<span class="o-trip-information__name-sub"> {{ price.subname }}</span></h4>
-                                            <span class="o-trip-information__value">{{ price.value }}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <oTripInformation title="Ceny" :perex="post[0].perexPrice" :items="post[0].prices" styleThema=" -bg-brand1-a" />
                     </div>
                 </section>
+                <!-- SECTION - Trip information END -->
 
+                <!-- SECTION - Trip information -->
                 <section class="t-section py-2" v-if="post[0].triplengths">
                     <div class="t-section__inner">
-                        <div class="o-trip-information o-trip-information--bg-brand2-a">
-                            <div class="o-trip-information__outer">
-                                <div class="o-trip-information__inner">
-                                    <h2 class="o-trip-information__title">Délka výletu</h2>
-                                    <p class="o-trip-information__perex">{{ post[0].perexTriplength }}</p>
-                                    <div class="o-trip-information__items">
-                                        <div class="o-trip-information__item" v-for="triplength in post[0].triplengths" v-bind:key="triplength.name">
-                                            <h4 class="o-trip-information__name">{{ triplength.name }}<span class="o-trip-information__name-sub"> {{ triplength.subname }}</span></h4>
-                                            <span class="o-trip-information__value">{{ triplength.value }}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <oTripInformation title="Délka výletu" :perex="post[0].perexTriplength" :items="post[0].triplengths" styleThema=" -bg-brand2-a" />
                     </div>
                 </section>
+                <!-- SECTION - Trip information END -->
 
+                <!-- SECTION - Trip information -->
                 <section class="t-section py-2" v-if="post[0].times">
                     <div class="t-section__inner">
-                        <div class="o-trip-information o-trip-information--bg-brand2-a">
-                            <div class="o-trip-information__outer">
-                                <div class="o-trip-information__inner">
-                                    <h2 class="o-trip-information__title">Časová náročnost</h2>
-                                    <p class="o-trip-information__perex">{{ post[0].perexTime }}</p>
-                                    <div class="o-trip-information__items">
-                                        <div class="o-trip-information__item" v-for="time in post[0].times" v-bind:key="time.name">
-                                            <h4 class="o-trip-information__name">{{ time.name }}<span class="o-trip-information__name-sub"> {{ time.subname }}</span></h4>
-                                            <span class="o-trip-information__value">{{ time.value }}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <oTripInformation title="Časová náročnost" :perex="post[0].perexTime" :items="post[0].times" styleThema=" -bg-brand2-a" />
                     </div>
                 </section>
+                <!-- SECTION - Trip information END -->
 
+                <!-- SECTION - Review -->
                 <section class="t-section py-2" v-if="post[0].reviewText">
                     <div class="t-section__inner">
-                        <div class="o-review">
-                            <div class="o-review__outer">
-                                <div class="o-review__inner">
-                                    <h2 class="o-review__title">Hodnocení</h2>
-                                    <p class="o-review__perex">
-                                        {{ post[0].reviewText }}
-                                    </p>
-                                    <span class="o-review__number">{{ post[0].reviewValue }}</span>
-                                </div>
-                            </div>
-                        </div>
+                        <oReview :reviewText="post[0].reviewText" :reviewValue="post[0].reviewValue" />
                     </div>
                 </section>
+                <!-- SECTION - Review END -->
 
+                <!-- SECTION - Update information -->
                 <section class="t-section py-2" v-if="post[0].dateInformation">
                     <div class="t-section__inner">
-                        <div class="o-information">
-                            <div class="o-information__outer">
-                                <div class="o-information__inner">
-                                    <div class="o-information__text">
-                                        <p class="o-information__perex">
-                                            Informace jsou platné k {{ formatDate(post[0].dateInformation) }}. Jestli tu najdete informaci, která již není platná budu rád za nahlašení na email <a href="mailto:frytolnacestach@gmail.com" target="_blank">frytolnacestach@gmail.com</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <oUpdateInformation :date="post[0].dateInformation" />
                     </div>
                 </section>
+                <!-- SECTION - Update information END -->
+
             </div>
 
             <div class="t-col2__sidebar my-2">
@@ -250,9 +183,14 @@
     import oHotInfo from '~/components/organisms/oHotInfo.vue'
     import oMapMapy from '~/components/organisms/oMapMapy.vue'
     import oPlaceBlock from '~/components/organisms/oPlaceBlock.vue'
+    import oReview from '~/components/organisms/oReview.vue'
     import oSidebarMapMapy from '~/components/organisms/oSidebarMapMapy.vue'
     import oSidebarTag from '~/components/organisms/oSidebarTag.vue'
+    import oTransport from '~/components/organisms/oTransport.vue'
+    import oTripInformation from '~/components/organisms/oTripInformation.vue'
+    import oUpdateInformation from '~/components/organisms/oUpdateInformation.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
+    import oWiki from '~/components/organisms/oWiki.vue'
     import oYoutube from '~/components/organisms/oYoutube.vue'
 
     export default {
@@ -264,9 +202,14 @@
             oHotInfo,
             oMapMapy,
             oPlaceBlock,
+            oReview,
             oSidebarMapMapy,
             oSidebarTag,
+            oTransport,
+            oTripInformation,
+            oUpdateInformation,
             oVideoList,
+            oWiki,
             oYoutube
         },
 
@@ -309,10 +252,6 @@
                 inlineScript.type  = "text/javascript";
                 inlineScript.text  = '(adsbygoogle = window.adsbygoogle || []).push({});'
                 document.getElementsByTagName('body')[0].appendChild(inlineScript);
-            },
-            formatDate(date) {
-                const options = { year: 'numeric', month: 'long', day: 'numeric' }
-                return new Date(date).toLocaleDateString('cs', options)
             }
         },
 

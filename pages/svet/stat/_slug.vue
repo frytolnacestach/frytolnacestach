@@ -13,7 +13,9 @@
                         <div class="o-hot-info-hero__items">
                             <div class="o-hot-info-hero__item" v-if="placeContinent[0].name">
                                 <span class="o-hot-info-hero__title">Kontinent</span>
-                                <span class="o-hot-info-hero__value">{{ placeContinent[0].name }}</span>
+                                <span class="o-hot-info-hero__value">
+                                    <NuxtLink class="o-hot-info-hero__value-link" :to="`/svet/kontinent/${placeContinent[0].slug}`">{{ placeContinent[0].name }}</NuxtLink>
+                                </span>
                             </div>
                             <div class="o-hot-info-hero__item" v-if="place[0].area">
                                 <span class="o-hot-info-hero__title">Rozloha</span>

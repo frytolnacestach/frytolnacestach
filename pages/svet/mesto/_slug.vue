@@ -14,7 +14,7 @@
                             <div class="o-hot-info-hero__item" v-if="placeState[0].name">
                                 <span class="o-hot-info-hero__title">Stát</span>
                                 <span class="o-hot-info-hero__value">
-                                    <NuxtLink class="o-hot-info-hero__value-link" :to="`svet/stat/${placeState[0].slug}`">{{ placeState[0].name }}</NuxtLink>
+                                    <NuxtLink class="o-hot-info-hero__value-link" :to="`/svet/stat/${placeState[0].slug}`">{{ placeState[0].name }}</NuxtLink>
                                 </span>
                             </div>
                             <div class="o-hot-info-hero__item" v-if="place[0].area">

@@ -61,11 +61,13 @@
         font-size: $fs-normal-sss;
     }
 
-    &--bg-brand1-a {
+
+    //Modifier
+    &.-bg-brand1-a {
         background-color: $brand1-a;
     }
 
-    &--bg-brand2-a {
+    &.-bg-brand2-a {
         background-color: $brand2-a;
     }
 }
