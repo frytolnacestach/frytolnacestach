@@ -61,9 +61,9 @@
 
 <script>
 
-    import mHeadline from '@/components/mHeadline.vue'
-    import oArticleList from '@/components/oArticleList.vue'
-    import oVideoList from '@/components/oVideoList.vue'
+    import mHeadline from '~/components/molecules/mHeadline.vue'
+    import oArticleList from '~/components/organisms/oArticleList.vue'
+    import oVideoList from '~/components/organisms/oVideoList.vue'
     import SectionHerobig from '../components/SectionHerobig.vue'
     import SectionWhoiam from '../components/SectionWhoiam.vue'
     import SectionPlatform from '../components/SectionPlatform.vue'

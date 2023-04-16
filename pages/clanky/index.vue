@@ -31,8 +31,8 @@
 
 <script>
 
-    import mHeadline from '@/components/mHeadline.vue'
-    import oArticleList from '@/components/oArticleList.vue'
+    import mHeadline from '~/components/molecules/mHeadline.vue'
+    import oArticleList from '~/components/organisms/oArticleList.vue'
     import SectionHero from '../../components/SectionHero.vue'
     import SectionPlatform from '../../components/SectionPlatform.vue'
 

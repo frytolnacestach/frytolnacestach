@@ -19,8 +19,8 @@
 </template>
 
 <script>
-    import mNavFooter from '@/components/mNavFooter.vue'
-    import oCopyright from '@/components/oCopyright.vue'
+    import mNavFooter from '~/components/molecules/mNavFooter.vue.js'
+    import oCopyright from '~/components/organisms/oCopyright.vue.js'
 
     export default {
         name: 'ComponentFooter',

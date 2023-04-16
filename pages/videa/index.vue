@@ -27,8 +27,8 @@
 </template>
 
 <script>
-    import mHeadline from '@/components/mHeadline.vue'
-    import oVideoList from '@/components/oVideoList.vue'
+    import mHeadline from '~/components/molecules/mHeadline.vue'
+    import oVideoList from '~/components/organisms/oVideoList.vue'
     import SectionHero from '../../components/SectionHero.vue'
     import SectionPlatform from '../../components/SectionPlatform.vue'
 
@@ -40,13 +40,6 @@
             oVideoList,
             SectionHero,
             SectionPlatform
-        },
-
-        methods:{
-            getSlugURL(url) {
-                url = url.replace("https://youtu.be/", "").replace("https://youtube.com/shorts/", "");
-                return url.replace(" ", "");
-            }
         },
 
         data() {

@@ -26,7 +26,7 @@
 </template>
 
 <script>
-    import mHeadline from '@/components/mHeadline.vue'
+    import mHeadline from '~/components/molecules/mHeadline.vue'
     import SectionHero from '../components/SectionHero.vue'
     import SectionDonate from '../components/SectionDonate.vue'
     import SectionSupport from '../components/SectionSupport.vue'

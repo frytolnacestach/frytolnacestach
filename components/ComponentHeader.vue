@@ -23,9 +23,9 @@
 </template>
 
 <script>
-    import mLogotype from '@/components/mLogotype.vue'
-    import mNavMain from '@/components/mNavMain.vue'
-    import mHamburger from '@/components/mHamburger.vue'
+    import mLogotype from '~/components/molecules/mLogotype.vue.js'
+    import mNavMain from '~/components/molecules/mNavMain.vue.js'
+    import mHamburger from '~/components/molecules/mHamburger.vue.js'
 
     export default {
         name: 'ComponentHeader',
