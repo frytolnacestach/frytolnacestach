@@ -33,7 +33,7 @@
 
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
-    import SectionHero from '../../components/organisms/oHero.vue'
+    import oHero from '../../components/organisms/oHero.vue'
     import SectionPlatform from '../../components/SectionPlatform.vue'
 
     export default {
@@ -42,7 +42,7 @@
         components: {
             mHeadline,
             oArticleList,
-            SectionHero,
+            oHero,
             SectionPlatform
         },
 
