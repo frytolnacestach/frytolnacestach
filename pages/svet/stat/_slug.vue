@@ -491,7 +491,7 @@
                                         <div class="o-information-block__inner">
                                             <h2 class="o-information-block__title">Ubytování</h2>
                                             <div class="o-information-block__widget" v-for="coordinate in place[0].coordinates">
-                                                <booking-widget 
+                                                <oWidgetBooking 
                                                     :landmarkName="`${ place[0].name ? place[0].name : '' }`"
                                                     :address="`${ place[0].name ? place[0].name : '' }`"
                                                     :latitude="`${ coordinate.latitude }`"
@@ -551,22 +551,22 @@
 <script>
 
     import mHeadline from '@/components/mHeadline.vue'
-    import BookingWidget from '@/components/BookingWidget.vue'
     import oArticleList from '@/components/oArticleList.vue'
     import oCoverPlaceDetail from '@/components/oCoverPlaceDetail.vue'
     import oHeroPlace from '@/components/oHeroPlace.vue'
     import oVideoList from '@/components/oVideoList.vue'
+    import oWidgetBooking from '@/components/oWidgetBooking.vue'
 
     export default {
         name: 'PageStateSlug',
 
         components: {
-            BookingWidget,
             mHeadline,
             oArticleList,
             oCoverPlaceDetail,
             oHeroPlace,
-            oVideoList
+            oVideoList,
+            oWidgetBooking
         },
 
         props: {

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="o-widget-booking">
         <ins class="bookingaff"
             data-aid="2328995"
             data-target_aid="2328995"
