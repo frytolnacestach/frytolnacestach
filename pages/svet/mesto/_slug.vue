@@ -11,10 +11,6 @@
                 <div class="o-hot-info-hero__outer">
                     <div class="o-hot-info-hero__inner">
                         <div class="o-hot-info-hero__items">
-                            <!--<div class="o-hot-info-hero__item" v-if="placeContinent[0].name">
-                                <span class="o-hot-info-hero__title">Kontinent</span>
-                                <span class="o-hot-info-hero__value">{{ placeContinent[0].name }}</span>
-                            </div>-->
                             <div class="o-hot-info-hero__item" v-if="placeState[0].name">
                                 <span class="o-hot-info-hero__title">Stát</span>
                                 <span class="o-hot-info-hero__value">

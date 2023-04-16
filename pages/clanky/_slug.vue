@@ -1,28 +1,19 @@
 <template>
     <main class="t-main -pt-menu">
 
-         <!-- SECTION - Hero article -->
-         <section class="t-section -p0">
+        <!-- SECTION - Hero article -->
+        <section class="t-section -p0">
             <div class="t-section__inner">
                 <oHeroArticle :post="post" :images="images" />
             </div>
         </section>
         <!-- SECTION - Hero article END -->
 
+        <!-- SECTION - Hot info -->
         <section v-if="post[0].locations">
-            <div class="o-hot-info">
-                <div class="o-hot-info__outer">
-                    <div class="o-hot-info__inner">
-                        <div class="o-hot-info__items">
-                            <div class="o-hot-info__item" v-for="location in post[0].locations" v-bind:key="location.type">
-                                <h4 class="o-hot-info__title">{{ location.type }}</h4>
-                                <span class="o-hot-info__value">{{ location.name }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <oHotInfo :locations="post[0].locations" />
         </section>
+        <!-- SECTION - Hot info END -->
 
         <div class="t-col2">
             <div class="t-col2__content my-2">
@@ -256,6 +247,7 @@
 
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oHeroArticle from '~/components/organisms/oHeroArticle.vue'
+    import oHotInfo from '~/components/organisms/oHotInfo.vue'
     import oMapMapy from '~/components/organisms/oMapMapy.vue'
     import oPlaceBlock from '~/components/organisms/oPlaceBlock.vue'
     import oSidebarMapMapy from '~/components/organisms/oSidebarMapMapy.vue'
@@ -269,6 +261,7 @@
         components: {
             mHeadline,
             oHeroArticle,
+            oHotInfo,
             oMapMapy,
             oPlaceBlock,
             oSidebarMapMapy,

@@ -12,7 +12,8 @@
         <!-- SECTION - Alphabet -->
         <section class="t-section pb-2 -bg-brand3">
             <div class="t-section__inner">
-
+                <!-- TODO <mNavAlphabet :alphabet="alphabet" />-->
+                
                 <div class="m-nav-alphabet">
                     <div class="m-nav-alphabet__outer">
                         <div class="m-nav-alphabet__inner">
@@ -26,7 +27,6 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
         </section>
          <!-- SECTION - Alphabet END -->
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+    import mNavAlphabet from '~/components/molecules/mNavAlphabet.vue';
     import oCoverPlace from '~/components/organisms/oCoverPlace.vue'
     import oHeroPlaceType from '~/components/organisms/oHeroPlaceType.vue'
 
@@ -50,16 +51,12 @@
         name: 'PageMesta',
 
         components: {
+            mNavAlphabet,
             oCoverPlace,
             oHeroPlaceType
         },
 
         methods:{
-            getSlugURL(url) {
-                url = url.replace("https://youtu.be/", "").replace("https://youtube.com/shorts/", "");
-                return url.replace(" ", "");
-            },
-
             async getPlaces(letter) {
                 try {
                     const [placesCities] = await Promise.all([
