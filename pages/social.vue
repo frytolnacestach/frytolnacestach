@@ -9,9 +9,14 @@
         </section>
         <!-- SECTION - Hero END -->
 
-        <section>
-            <oBoxPlatform />
+        <!-- SECTION - Box platform -->
+        <section class="t-section -p0">
+            <div class="t-section__inner">
+                <oBoxPlatform />
+            </div>
         </section>
+        <!-- SECTION - Box platform END -->
+
     </main>
 </template>
 

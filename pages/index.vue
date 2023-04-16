@@ -23,7 +23,7 @@
                 <mHeadline title="Platformy kde jsem" styleAlign=" -center" />
                 <oPlatform />
                 <div class="flex flex-center mb-4">
-                    <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/social">Více informací</NuxtLink>
+                    <aButtonFill url="/social" text="Více informací" styleThema=" -blue" styleSize=" -big" target="internal" />
                 </div>
             </div>
         </section>
@@ -35,7 +35,7 @@
                 <mHeadline title="Nejnovější články" styleAlign=" -center" styleGap=" mb-2" />
                 <oArticleList :posts="posts" :images="images" />
                 <div class="flex flex-center mt-2">
-                    <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/clanky">Všechny články</NuxtLink>
+                    <aButtonFill url="/clanky" text="Všechny články" styleThema=" -blue" styleSize=" -big" target="internal" />
                 </div>
             </div>
         </section>
@@ -47,7 +47,7 @@
                 <mHeadline title="Nejnovější video" styleAlign=" -center" styleGap=" mb-2" />
                 <oVideoList :videos="video" :images="image" />
                 <div class="flex flex-center mt-2">
-                    <a class="a-button-fill a-button-fill--big a-button-fill--blue" href="https://www.youtube.com/channel/UCQnsNK3Xd5Tj3zcVWQDMi8A/videos" target="_blank">Všechna videa (YouTube)</a>
+                    <aButtonFill url="https://www.youtube.com/channel/UCQnsNK3Xd5Tj3zcVWQDMi8A/videos" text="Všechna videa (YouTube)" styleThema=" -blue" styleSize=" -big" target="external" />
                 </div>
             </div>
         </section>
@@ -59,7 +59,7 @@
                 <oDonate :showHeadline=true />
                 <oSupport />
                 <div class="flex flex-center">
-                    <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/donate">Podpora</NuxtLink>
+                    <aButtonFill url="/donate" text="Podpora" styleThema=" -blue" styleSize=" -big" target="internal" />
                 </div>
             </div>
         </section>
@@ -70,6 +70,7 @@
 
 <script>
 
+    import aButtonFill from '~/components/atoms/aButtonFill.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oDonate from '../components/organisms/oDonate.vue'
@@ -81,7 +82,9 @@
 
     export default {
         name: 'IndexPage',
+        
         components: {
+            aButtonFill,
             mHeadline,
             oArticleList,
             oDonate,

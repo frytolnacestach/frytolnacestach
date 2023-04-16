@@ -11,7 +11,9 @@
 
         <!-- SECTION - Build -->
 		<section class="t-section">
-			<oBuild />
+            <div class="t-section__inner">
+                <oBuild />
+            </div>
 		</section>
 		<!-- SECTION - Build END -->
 

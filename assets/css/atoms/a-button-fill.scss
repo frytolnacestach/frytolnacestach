@@ -14,20 +14,22 @@
         color: $white;
     }
 
-    &--small {
+    //sizes
+    &.-small {
         padding: 4px 8px;
         border-radius: 5px;
         font-size: $fs-small;
     }
 
-    &--big {
+    &.-big {
         font-size: $fs-normal-sss;
         padding: 10px 16px;
         margin: 4px 7px;
         border-radius: 8px;
     }
 
-    &--blue {
+    //thema
+    &.-blue {
         background-color: $brand3;
         color: $white;
         text-decoration: none;
@@ -38,7 +40,8 @@
         }
     }
 
-    &--social-youtube {
+    //social
+    &.-social-youtube {
         background-color: $youtube;
         
         &:hover {
@@ -46,7 +49,7 @@
         }
     }
 
-    &--social-instagram {
+    &.-social-instagram {
         background-color: $instagram;
         
         &:hover {
@@ -54,7 +57,7 @@
         }
     }
 
-    &--social-facebook {
+    &.-social-facebook {
         background-color: $facebook;
         
         &:hover {
@@ -62,7 +65,7 @@
         }
     }
 
-    &--social-tiktok {
+    &.-social-tiktok {
         background-color: $tiktok;
         
         &:hover {
@@ -70,7 +73,7 @@
         }
     }
 
-    &--social-twitter {
+    &.-social-twitter {
         background-color: $twitter;
         
         &:hover {
@@ -78,7 +81,7 @@
         }
     }
 
-    &--social-twitch {
+    &.-social-twitch {
         background-color: $twitch;
         
         &:hover {
@@ -86,7 +89,7 @@
         }
     }
 
-    &--social-reddit {
+    &.-social-reddit {
         background-color: $reddit;
         
         &:hover {
@@ -94,7 +97,7 @@
         }
     }
 
-    &--social-pinterest {
+    &.-social-pinterest {
         background-color: $pinterest;
         
         &:hover {
@@ -102,7 +105,7 @@
         }
     }
 
-    &--social-discord {
+    &.-social-discord {
         background-color: $discord;
         
         &:hover {
@@ -110,7 +113,7 @@
         }
     }
 
-    &--social-patreon {
+    &.-social-patreon {
         background-color: $patreon;
         
         &:hover {
