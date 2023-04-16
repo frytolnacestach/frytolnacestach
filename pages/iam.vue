@@ -1,9 +1,13 @@
 <template>
     <main class="t-main -pt-menu">
         
-        <section class="t-section">
-            <SectionHero :headline="headline" />
+        <!-- SECTION - Hero -->
+		<section class="t-section -p0">
+            <div class="t-section__inner">
+                <oHero :headline="headline" />
+            </div>
         </section>
+        <!-- SECTION - Hero END -->
 
         <section class="t-section py-4">
             <div class="t-section__inner">
@@ -27,7 +31,7 @@
 
 <script>
     import mHeadline from '~/components/molecules/mHeadline.vue'
-    import SectionHero from '../components/SectionHero.vue'
+    import oHero from '../components/organisms/oHero.vue'
     import SectionWhoiam from '../components/SectionWhoiam.vue'
     import SectionPlatform from '../components/SectionPlatform.vue'
 
@@ -36,7 +40,7 @@
 
         components: {
             mHeadline,
-            SectionHero,
+            oHero,
             SectionWhoiam,
             SectionPlatform
         },

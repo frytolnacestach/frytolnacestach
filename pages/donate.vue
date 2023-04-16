@@ -1,5 +1,14 @@
 <template>
     <main class="t-main -pt-menu">
+
+        <!-- SECTION - Hero -->
+		<section class="t-section -p0">
+            <div class="t-section__inner">
+                <oHero :headline="headline" />
+            </div>
+        </section>
+        <!-- SECTION - Hero END -->
+        
         <section class="t-section">
             <SectionHero :headline="headline" />
         </section>
@@ -27,7 +36,7 @@
 
 <script>
     import mHeadline from '~/components/molecules/mHeadline.vue'
-    import SectionHero from '../components/SectionHero.vue'
+    import oHero from '../components/organisms/oHero.vue'
     import SectionDonate from '../components/SectionDonate.vue'
     import SectionSupport from '../components/SectionSupport.vue'
     import SectionPlatform from '../components/SectionPlatform.vue'
@@ -37,7 +46,7 @@
 
         components: {
             mHeadline,
-            SectionHero,
+            oHero,
             SectionDonate,
             SectionSupport,
             SectionPlatform

@@ -1,10 +1,10 @@
 <template>
     <main class="t-main -pt-menu">
-        
+       
         <!-- SECTION - Hero -->
-        <section class="t-section -p0">
+		<section class="t-section -p0">
             <div class="t-section__inner">
-                <SectionHero :headline="headline" />
+                <oHero :headline="headline" />
             </div>
         </section>
         <!-- SECTION - Hero END -->
@@ -33,7 +33,7 @@
 
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
-    import SectionHero from '../../components/SectionHero.vue'
+    import SectionHero from '../../components/organisms/oHero.vue'
     import SectionPlatform from '../../components/SectionPlatform.vue'
 
     export default {

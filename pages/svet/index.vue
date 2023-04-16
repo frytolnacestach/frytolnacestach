@@ -94,15 +94,12 @@
 </template>
 
 <script>
-    import SectionHero from '../../components/SectionHero.vue'
-    import SectionPlatform from '../../components/SectionPlatform.vue'
 
     export default {
         name: 'PageSvet',
 
         components: {
-            SectionHero,
-            SectionPlatform
+
         },
 
         methods: {

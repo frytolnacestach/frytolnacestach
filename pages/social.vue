@@ -1,8 +1,13 @@
 <template>
     <main class="t-main -pt-menu">
-        <section class="t-section">
-            <SectionHero :headline="headline" />
+
+        <!-- SECTION - Hero -->
+		<section class="t-section -p0">
+            <div class="t-section__inner">
+                <oHero :headline="headline" />
+            </div>
         </section>
+        <!-- SECTION - Hero END -->
 
         <section>
             <SectionBoxplatform />
@@ -11,14 +16,14 @@
 </template>
 
 <script>
-    import SectionHero from '../components/SectionHero.vue'
+    import oHero from '../components/organisms/oHero.vue'
     import SectionBoxplatform from '../components/SectionBoxplatform.vue'
 
     export default {
         name: 'PageSocial',
         
         components: {
-            SectionHero,
+            oHero,
             SectionBoxplatform
         },
 

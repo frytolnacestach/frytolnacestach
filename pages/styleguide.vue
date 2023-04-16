@@ -1,33 +1,33 @@
 <template>
     <main class="t-main -pt-menu">
-        <section class="t-section">
-            <SectionHero :headline="headline" />
-        </section>
-
-        <section class="t-section">
+        
+        <!-- SECTION - Hero -->
+		<section class="t-section -p0">
             <div class="t-section__inner">
-                <div class="o-build">
-                    <div class="o-build__outer">
-                        <div class="o-build__inner">
-                            <div class="o-build__text">
-                                SEKCE SE PŘIPRAVUJE
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <oHero :headline="headline" />
             </div>
         </section>
+        <!-- SECTION - Hero END -->
+
+        <!-- SECTION - Build -->
+		<section class="t-section">
+			<oBuild />
+		</section>
+		<!-- SECTION - Build END -->
+
     </main>
 </template>
 
 <script>
-    import SectionHero from '../components/SectionHero.vue'
+    import oBuild from '../components/organisms/oBuild.vue'
+    import oHero from '../components/organisms/oHero.vue'
 
     export default {
         name: 'PageStyleguide',
         
         components: {
-            SectionHero
+            oBuild,
+            oHero
         },
 
         data() {

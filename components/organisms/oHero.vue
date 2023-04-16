@@ -40,12 +40,20 @@
     </div>
 </template>
 
+
+
 <script>
     export default {
-        name: 'SectionHero',
-        props: [
-            'headline',
-            'perex'
-        ]
+        name: 'oHero',
+        props: {
+            headline: {
+                type: String,
+                required: true
+            },
+            perex: {
+                type: String,
+                required: false
+            }
+        },
     }
 </script>

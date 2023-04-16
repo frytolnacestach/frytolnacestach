@@ -23,17 +23,13 @@
 <script>
     import oCoverPlace from '~/components/organisms/oCoverPlace.vue'
     import oHeroPlaceType from '~/components/organisms/oHeroPlaceType.vue'
-    import SectionHero from '../../../components/SectionHero.vue'
-    import SectionPlatform from '../../../components/SectionPlatform.vue'
 
     export default {
         name: 'PageKontinenty',
 
         components: {
             oCoverPlace,
-            oHeroPlaceType,
-            SectionHero,
-            SectionPlatform
+            oHeroPlaceType
         },
 
         methods:{

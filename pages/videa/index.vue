@@ -1,8 +1,13 @@
 <template>
     <main class="t-main -pt-menu">
-        <section class="t-section">
-            <SectionHero :headline="headline" />
+
+        <!-- SECTION - Hero -->
+		<section class="t-section -p0">
+            <div class="t-section__inner">
+                <oHero :headline="headline" />
+            </div>
         </section>
+        <!-- SECTION - Hero END -->
 
         <!-- SECTION - videos -->
         <section class="t-section pt-4 py-2" v-if="videos[0]">
@@ -29,7 +34,7 @@
 <script>
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
-    import SectionHero from '../../components/SectionHero.vue'
+    import oHero from '../../components/organisms/oHero.vue'
     import SectionPlatform from '../../components/SectionPlatform.vue'
 
     export default {
@@ -38,7 +43,7 @@
         components: {
             mHeadline,
             oVideoList,
-            SectionHero,
+            oHero,
             SectionPlatform
         },
 
