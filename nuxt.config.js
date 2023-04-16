@@ -33,7 +33,7 @@ export default {
       { src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5217753750259737', async: true},
       { src: 'https://code.jquery.com/jquery-3.6.1.min.js', crossorigin: 'anonymous'},
       { src: '/js/js_m-hamburger.js', type: 'text/javascript', defer: 'defer' },
-      { src: '/js/js_o-cookies-dialog.js', type: 'text/javascript', defer: 'defer' }
+      { src: '/js/js_o-popup-cookies.js', type: 'text/javascript', defer: 'defer' }
     ]
   },
   robots: {

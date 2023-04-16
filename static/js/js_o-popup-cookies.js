@@ -1,15 +1,15 @@
 /*list js class for cookies dialog*/
 //js_cookies-edit
-//js_o-cookies-dialog
-//js_o-cookies-dialog__button--setting
-//js_o-cookies-dialog__button--all
-//js_o-cookies-dialog__button--technical
-//js_o-cookies-dialog__button--select
-//js_o-cookies-dialog__setting--user
-//js_o-cookies-dialog__setting--statistic
-//js_o-cookies-dialog__setting--marketing
-//js_o-cookies-dialog__page--welcome
-//js_o-cookies-dialog__page--setting
+//js_o-popup-cookies
+//js_o-popup-cookies__button--setting
+//js_o-popup-cookies__button--all
+//js_o-popup-cookies__button--technical
+//js_o-popup-cookies__button--select
+//js_o-popup-cookies__setting--user
+//js_o-popup-cookies__setting--statistic
+//js_o-popup-cookies__setting--marketing
+//js_o-popup-cookies__page--welcome
+//js_o-popup-cookies__page--setting
 
 $( document ).ready(function() {
 
@@ -42,34 +42,34 @@ $( document ).ready(function() {
     //show cookies dialog
     function cookiesDialog(){
         if (document.cookie.indexOf("FNCcookiesDialog=1") == -1) {
-            $(".js_o-cookies-dialog").addClass('open'); 
+            $(".js_o-popup-cookies").addClass('open'); 
         }
     }
 
     //Control custom cookies
     function cookiesCustom(){
         var $number = 0;
-        $status1 = $(".js_o-cookies-dialog__setting--user").data( "c-user" );
+        $status1 = $(".js_o-popup-cookies__setting--user").data( "c-user" );
         if ($status1 == "on"){
             $number++;
         }
 
-        $status2 = $(".js_o-cookies-dialog__setting--statistic").data( "c-statistic" );
+        $status2 = $(".js_o-popup-cookies__setting--statistic").data( "c-statistic" );
         if ($status2 == "on"){
             $number++;
         }
 
-        $status3 = $(".js_o-cookies-dialog__setting--marketing").data( "c-marketing" );
+        $status3 = $(".js_o-popup-cookies__setting--marketing").data( "c-marketing" );
         if ($status3 == "on"){
             $number++;
         }
 
         if ($number == 0) {
-            $(".js_o-cookies-dialog__button--select").removeClass('show');
-            $(".js_o-cookies-dialog__button--technical").addClass('show');
+            $(".js_o-popup-cookies__button--select").removeClass('show');
+            $(".js_o-popup-cookies__button--technical").addClass('show');
         } else {
-            $(".js_o-cookies-dialog__button--technical").removeClass('show');
-            $(".js_o-cookies-dialog__button--select").addClass('show'); 
+            $(".js_o-popup-cookies__button--technical").removeClass('show');
+            $(".js_o-popup-cookies__button--select").addClass('show'); 
         }
     }
 
@@ -79,27 +79,27 @@ $( document ).ready(function() {
 
     //Initialization
     if (document.cookie.indexOf("FNCcookiespersonalization_storage=1") == -1) {
-        $( ".js_o-cookies-dialog__setting--user" ).data('c-user', 'off');
-        $( ".js_o-cookies-dialog__setting--user" ).addClass('off');
+        $( ".js_o-popup-cookies__setting--user" ).data('c-user', 'off');
+        $( ".js_o-popup-cookies__setting--user" ).addClass('off');
     } else {
-        $( ".js_o-cookies-dialog__setting--user" ).data('c-user', 'on');
-        $( ".js_o-cookies-dialog__setting--user" ).addClass('on');
+        $( ".js_o-popup-cookies__setting--user" ).data('c-user', 'on');
+        $( ".js_o-popup-cookies__setting--user" ).addClass('on');
     }
 
     if (document.cookie.indexOf("FNCcookiesanalytics_storage=1") == -1) {
-        $( ".js_o-cookies-dialog__setting--statistic" ).data('c-statistic', 'off');
-        $( ".js_o-cookies-dialog__setting--statistic" ).addClass('off');
+        $( ".js_o-popup-cookies__setting--statistic" ).data('c-statistic', 'off');
+        $( ".js_o-popup-cookies__setting--statistic" ).addClass('off');
     } else {
-        $( ".js_o-cookies-dialog__setting--statistic" ).data('c-statistic', 'on');
-        $( ".js_o-cookies-dialog__setting--statistic" ).addClass('on'); 
+        $( ".js_o-popup-cookies__setting--statistic" ).data('c-statistic', 'on');
+        $( ".js_o-popup-cookies__setting--statistic" ).addClass('on'); 
     }
 
     if (document.cookie.indexOf("FNCcookiesad_storage=1") == -1) {
-        $( ".js_o-cookies-dialog__setting--marketing" ).data('c-marketing', 'off');
-        $( ".js_o-cookies-dialog__setting--marketing" ).addClass('off');
+        $( ".js_o-popup-cookies__setting--marketing" ).data('c-marketing', 'off');
+        $( ".js_o-popup-cookies__setting--marketing" ).addClass('off');
     } else {
-        $( ".js_o-cookies-dialog__setting--marketing" ).data('c-marketing', 'on');
-        $( ".js_o-cookies-dialog__setting--marketing" ).addClass('on');
+        $( ".js_o-popup-cookies__setting--marketing" ).data('c-marketing', 'on');
+        $( ".js_o-popup-cookies__setting--marketing" ).addClass('on');
     }
     cookiesDialog();
     cookiesCustom();
@@ -109,12 +109,12 @@ $( document ).ready(function() {
     //ACTIONS
 
     //Přijmám vše
-    $( ".js_o-cookies-dialog__button--all" ).click(function() {
-        $(".js_o-cookies-dialog").removeClass('open');
+    $( ".js_o-popup-cookies__button--all" ).click(function() {
+        $(".js_o-popup-cookies").removeClass('open');
         $("html").removeClass('no-scroll-bg');
         $("body").removeClass('no-scroll-bg');
-        $(".js_o-cookies-dialog__page--setting").removeClass('open');
-        $(".js_o-cookies-dialog__page--welcome").addClass('open');
+        $(".js_o-popup-cookies__page--setting").removeClass('open');
+        $(".js_o-popup-cookies__page--welcome").addClass('open');
 
         gtag('consent', 'update', {
             'functionality_storage': 'granted',
@@ -131,21 +131,21 @@ $( document ).ready(function() {
     });
 
     //Upravit preference
-        $( ".js_o-cookies-dialog__button--setting" ).click(function() {
-        $(".js_o-cookies-dialog__page--welcome").removeClass('open');
-        $(".js_o-cookies-dialog__page--setting").addClass('open');
+        $( ".js_o-popup-cookies__button--setting" ).click(function() {
+        $(".js_o-popup-cookies__page--welcome").removeClass('open');
+        $(".js_o-popup-cookies__page--setting").addClass('open');
         $(this).data('data-cookies-setting', 'visible');
         $("html").addClass('no-scroll-bg');
         $("body").addClass('no-scroll-bg');
     });
 
     //Povolit pouze nezbytné
-    $( ".js_o-cookies-dialog__button--technical" ).click(function() {
-        $(".js_o-cookies-dialog").removeClass('open');
+    $( ".js_o-popup-cookies__button--technical" ).click(function() {
+        $(".js_o-popup-cookies").removeClass('open');
         $("html").removeClass('no-scroll-bg');
         $("body").removeClass('no-scroll-bg');
-        $(".js_o-cookies-dialog__page--setting").removeClass('open');
-        $(".js_o-cookies-dialog__page--welcome").addClass('open');
+        $(".js_o-popup-cookies__page--setting").removeClass('open');
+        $(".js_o-popup-cookies__page--welcome").addClass('open');
 
         gtag('consent', 'update', {
             'functionality_storage': 'granted',
@@ -159,16 +159,16 @@ $( document ).ready(function() {
     });
 
     //Povolit vybrané
-    $( ".js_o-cookies-dialog__button--select" ).click(function() {
-        $(".js_o-cookies-dialog").removeClass('open');
+    $( ".js_o-popup-cookies__button--select" ).click(function() {
+        $(".js_o-popup-cookies").removeClass('open');
         $("html").removeClass('no-scroll-bg');
         $("body").removeClass('no-scroll-bg');
-        $(".js_o-cookies-dialog__page--setting").removeClass('open');
-        $(".js_o-cookies-dialog__page--welcome").addClass('open');
+        $(".js_o-popup-cookies__page--setting").removeClass('open');
+        $(".js_o-popup-cookies__page--welcome").addClass('open');
     });
 
     //Form - Preferenční
-    $( ".js_o-cookies-dialog__setting--user" ).click(function() {
+    $( ".js_o-popup-cookies__setting--user" ).click(function() {
         $status = $(this).data( "c-user" );
         
         if ($status == "off") {
@@ -192,7 +192,7 @@ $( document ).ready(function() {
     });
 
     //Form - Statistické
-    $( ".js_o-cookies-dialog__setting--statistic" ).click(function() {
+    $( ".js_o-popup-cookies__setting--statistic" ).click(function() {
         $status = $(this).data( "c-statistic" );
 
         if ($status == "off") {
@@ -216,7 +216,7 @@ $( document ).ready(function() {
     });
 
     //Form - Marketingové
-    $( ".js_o-cookies-dialog__setting--marketing" ).click(function() {
+    $( ".js_o-popup-cookies__setting--marketing" ).click(function() {
         $status = $(this).data( "c-marketing" );
 
         if ($status == "off") {
@@ -241,6 +241,6 @@ $( document ).ready(function() {
 
     //Cookies edit
     $( ".js_cookies-edit" ).click(function() {
-        $(".js_o-cookies-dialog").addClass('open');
+        $(".js_o-popup-cookies").addClass('open');
     });
 });

@@ -3,7 +3,7 @@
 		<ComponentHeader />
 		<Nuxt />
 		<ComponentFooter />
-		<PopupCookies />
+		<ComponentPopupCookies />
 	</div>
 </template>
 
