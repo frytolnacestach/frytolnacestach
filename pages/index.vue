@@ -49,7 +49,7 @@
 
         <section class="t-section py-4">
             <div class="t-section__inner">
-                <SectionDonate :showHeadline="1" />
+                <oDonate :showHeadline=true />
                 <SectionSupport />
                 <div class="flex flex-center">
                     <NuxtLink class="a-button-fill a-button-fill--big a-button-fill--blue" to="/donate">Podpora</NuxtLink>
@@ -63,11 +63,11 @@
 
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
+    import oDonate from '../components/organisms/oDonate.vue'
     import oHerobig from '../components/organisms/oHerobig.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import SectionWhoiam from '../components/SectionWhoiam.vue'
     import SectionPlatform from '../components/SectionPlatform.vue'
-    import SectionDonate from '../components/SectionDonate.vue'
     import SectionSupport from '../components/SectionSupport.vue'
 
     export default {
@@ -75,11 +75,11 @@
         components: {
             mHeadline,
             oArticleList,
+            oDonate,
             oHerobig,
             oVideoList,
             SectionWhoiam,
             SectionPlatform,
-            SectionDonate,
             SectionSupport
         },
 

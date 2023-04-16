@@ -8,14 +8,10 @@
             </div>
         </section>
         <!-- SECTION - Hero END -->
-        
-        <section class="t-section">
-            <SectionHero :headline="headline" />
-        </section>
 
         <section class="t-section pb-4">
             <div class="t-section__inner">
-                <SectionDonate />
+                <oDonate />
                 <SectionSupport />
             </div>
         </section>
@@ -36,8 +32,8 @@
 
 <script>
     import mHeadline from '~/components/molecules/mHeadline.vue'
+    import oDonate from '../components/organisms/oDonate.vue'
     import oHero from '../components/organisms/oHero.vue'
-    import SectionDonate from '../components/SectionDonate.vue'
     import SectionSupport from '../components/SectionSupport.vue'
     import SectionPlatform from '../components/SectionPlatform.vue'
 
@@ -46,8 +42,8 @@
 
         components: {
             mHeadline,
+            oDonate,
             oHero,
-            SectionDonate,
             SectionSupport,
             SectionPlatform
         },
