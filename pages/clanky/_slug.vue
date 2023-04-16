@@ -254,14 +254,14 @@
 
 <script>
 
-    import mHeadline from '~/components/molecules/mHeadline.vue.js'
-    import oHeroArticle from '~/components/organisms/oHeroArticle.vue.js'
-    import oMapMapy from '~/components/organisms/oMapMapy.vue.js'
-    import oPlaceBlock from '~/components/organisms/oPlaceBlock.vue.js'
-    import oSidebarMapMapy from '~/components/organisms/oSidebarMapMapy.vue.js'
-    import oSidebarTag from '~/components/organisms/oSidebarTag.vue.js'
-    import oVideoList from '~/components/organisms/oVideoList.vue.js'
-    import oYoutube from '~/components/organisms/oYoutube.vue.js'
+    import mHeadline from '~/components/molecules/mHeadline.vue'
+    import oHeroArticle from '~/components/organisms/oHeroArticle.vue'
+    import oMapMapy from '~/components/organisms/oMapMapy.vue'
+    import oPlaceBlock from '~/components/organisms/oPlaceBlock.vue'
+    import oSidebarMapMapy from '~/components/organisms/oSidebarMapMapy.vue'
+    import oSidebarTag from '~/components/organisms/oSidebarTag.vue'
+    import oVideoList from '~/components/organisms/oVideoList.vue'
+    import oYoutube from '~/components/organisms/oYoutube.vue'
 
     export default {
         name: 'PageBlogSlug',

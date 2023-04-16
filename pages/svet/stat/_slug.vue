@@ -550,12 +550,12 @@
 
 <script>
 
-    import mHeadline from '~/components/molecules/mHeadline.vue.js'
-    import oArticleList from '~/components/organisms/oArticleList.vue.js'
-    import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue.js'
-    import oHeroPlace from '~/components/organisms/oHeroPlace.vue.js'
-    import oVideoList from '~/components/organisms/oVideoList.vue.js'
-    import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue.js'
+    import mHeadline from '~/components/molecules/mHeadline.vue'
+    import oArticleList from '~/components/organisms/oArticleList.vue'
+    import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
+    import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
+    import oVideoList from '~/components/organisms/oVideoList.vue'
+    import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
 
     export default {
         name: 'PageStateSlug',

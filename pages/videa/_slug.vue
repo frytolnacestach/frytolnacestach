@@ -86,10 +86,10 @@
 
 <script>
 
-    import mHeadline from '~/components/molecules/mHeadline.vue.js'
-    import oHeroVideo from '~/components/organisms/oHeroVideo.vue.js'
-    import oPlaceBlock from '~/components/organisms/oPlaceBlock.vue.js'
-    import oYoutube from '~/components/organisms/oYoutube.vue.js'
+    import mHeadline from '~/components/molecules/mHeadline.vue'
+    import oHeroVideo from '~/components/organisms/oHeroVideo.vue'
+    import oPlaceBlock from '~/components/organisms/oPlaceBlock.vue'
+    import oYoutube from '~/components/organisms/oYoutube.vue'
 
     export default {
         name: 'PageBlogSlug',
