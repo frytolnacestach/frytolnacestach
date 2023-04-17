@@ -21,7 +21,7 @@
                     <li class="m-nav-main__item">
                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/iam">Kdo jsem</NuxtLink>
                     </li>
-                    <li class="m-nav-main__item m-nav-main__item--special">
+                    <li class="m-nav-main__item -special">
                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/donate">Podpořit</NuxtLink>
                     </li>
                 </ul>

@@ -61,7 +61,7 @@
             width: auto;
         }
 
-        &--special {
+        &.-special {
 
             #{$self}__link {
                 background-color: $brand3;
@@ -92,7 +92,7 @@
             color: $brand1;
         }
 
-        &--active {
+        &.-active {
             &:hover {
           
             }

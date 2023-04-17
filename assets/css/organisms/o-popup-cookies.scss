@@ -25,7 +25,7 @@
     }
 
     &__page {
-        &--welcome {
+        &.-welcome {
             display: none;
 
             &.open {
@@ -33,7 +33,7 @@
             }
         }
 
-        &--setting {
+        &.-setting {
             display: none;
 
             &.open {
@@ -79,7 +79,7 @@
             color: $white;
         }
 
-        &--setting {
+        &.-setting {
             background-color: $white;
             color: $brand1;
 
@@ -90,7 +90,7 @@
             }
         }
 
-        &--technical {
+        &.-technical {
             background-color: $white;
             color: $brand1;
             display: none;
@@ -106,7 +106,7 @@
             }
         }
 
-        &--select {
+        &.-select {
             background-color: $white;
             color: $brand1;
             display: none;
@@ -182,7 +182,7 @@
             }
         }
 
-        &--active {
+        &.-active {
             background-color: $gray1;
             cursor: not-allowed;
 

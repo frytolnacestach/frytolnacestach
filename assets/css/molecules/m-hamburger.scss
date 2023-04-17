@@ -32,15 +32,15 @@
 		transform-origin: center;
 		transform: rotate(0);
 
-		&--1 {
+		&.-first {
 			top: 11px;
 		}
 
-		&--2 {
+		&.-second {
 			top: 19px;
 		}
 
-		&--3 {
+		&.-third {
 			top: 27px;
 		}
 	}
@@ -57,11 +57,11 @@
 		font-size: $fs-normal;
 		line-height: 40px;
 
-		&--close {
+		&.-close {
 			display: none;
 		}
 
-		&--open {
+		&.-open {
 			display: block;
 		}
 	}
@@ -73,11 +73,11 @@
 		#{$self}__text {
             color: $black;
 
-			&--close {
+			&.-close {
 				display: block;
 			}
 
-			&--open {
+			&.-open {
 				display: none;
 			}
 		}
@@ -85,20 +85,21 @@
 		#{$self}__line {
             background-color: $black;
 
-			&--1 {
+			&.-first {
 				top: 19px;
 				transform: rotate(45deg);
 			}
 
-			&--2 {
+			&.-second {
 				top: 19px;
 				opacity: 0;
 			}
 
-			&--3 {
+			&.-third {
 				top: 19px;
 				transform: rotate(-45deg);
 			}
 		}
 	}
 }
+
