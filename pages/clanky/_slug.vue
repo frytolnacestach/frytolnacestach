@@ -21,11 +21,7 @@
                 <!-- SECTION - Opener text -->
                 <section class="t-section pt-2" v-if="post[0].textOpener">
                     <div class="t-section__inner">
-                        <div class="o-opener-text">
-                            <p class="o-opener-text__perex">
-                                {{ post[0].textOpener }}
-                            </p>
-                        </div>
+                        <oOpenerText :text="post[0].textOpener" />
                     </div>
                 </section>
                 <!-- SECTION - Opener text END -->
@@ -182,6 +178,7 @@
     import oHeroArticle from '~/components/organisms/oHeroArticle.vue'
     import oHotInfo from '~/components/organisms/oHotInfo.vue'
     import oMapMapy from '~/components/organisms/oMapMapy.vue'
+    import oOpenerText from '~/components/organisms/oOpenerText.vue'
     import oPlaceBlock from '~/components/organisms/oPlaceBlock.vue'
     import oReview from '~/components/organisms/oReview.vue'
     import oSidebarMapMapy from '~/components/organisms/oSidebarMapMapy.vue'
@@ -201,6 +198,7 @@
             oHeroArticle,
             oHotInfo,
             oMapMapy,
+            oOpenerText,
             oPlaceBlock,
             oReview,
             oSidebarMapMapy,
@@ -272,7 +270,7 @@
                 title: `${this.post[0].title} | Frytol na cestách`,
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.post[0].perex}` },
-                    { property: 'og:image', content: this.images && this.images.find(image => image.id === this.post[0].id_image_og) ? 'https://image.frytolnacestach.cz/storage/' + this.images.find(image => image.id === this.post[0].id_image_og).source + this.images.find(image => image.id === this.post[0].id_image_og).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}
+                    { property: 'og:image', content: this.images && this.images.find(image => image.id === this.post[0].id_image_og) ? 'https://image.frytolnacestach.cz/storage' + this.images.find(image => image.id === this.post[0].id_image_og).source + this.images.find(image => image.id === this.post[0].id_image_og).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}
                 ]
             }
         },
