@@ -81,17 +81,18 @@ _____________________________________________________________________
 
 
 ### Sizes
-ALL             =
-_default        =
-articles        =
-maps            =
-videos          =
-world/continets =
-world/states    =
-world/cities    =
+_default(all sizes) = 130, 180, 220, 250, 280, 300, 340, 345, 360, 374, 380, 390, 400, 420, 540, 550, 575, 740, 767, 980, 991, 1139, 1219, 1399, 1920
+main                = 130, 374, 575, 767, 991, 1139, 1219, 1399, 1920
+articles            = 340, 374, 400, 540. 575, 767, 991, 1139, 1219, 1399, 1920
+maps                = 300, 340, 420, 550, 740, 980
+videos              = 340, 400, 540
+world/continets     = 180, 220, 250, 280, 345, 360, 374, 380, 390, 540, 575, 767, 991, 1139, 1219, 1399, 1920
+world/states        = 180, 220, 250, 280, 345, 360, 374, 380, 390, 540, 575, 767, 991, 1139, 1219, 1399, 1920
+world/cities        = 180, 220, 250, 280, 345, 360, 374, 380, 390, 540, 575, 767, 991, 1139, 1219, 1399, 1920
 
 #### o-video-list
 Type:
+- _default
 - videos
 Sizes:
 0 -> 374   = 334px = (USE 340PX)
@@ -120,6 +121,7 @@ Sizes:
 
 #### o-cover-place-detail
 Type:
+- _default
 - world/continets
 - world/states
 - world/cities
@@ -135,6 +137,7 @@ Sizes:
 
 #### o-place-block
 Type:
+- _default
 - world/continets
 - world/states
 - world/cities
@@ -145,6 +148,7 @@ Sizes:
 
 #### o-article-list
 Type:
+- _default
 - articles
 Sizes:
 0 -> 374   = 334px = (USE 340PX)
@@ -158,6 +162,7 @@ Sizes:
 #### o-sidebar-map-mapy
 Type:
 - _default
+- maps
 Sizes:
 0 -> 374   = 344px = (USE 340PX)
 375 -> 439 = 409px = (USE 420PX)
@@ -170,6 +175,7 @@ Sizes:
 #### o-whoiam
 Type:
 - _default
+- main
 Sizes:
 0 ->         = 130px =
 
@@ -192,6 +198,7 @@ Sizes:
 #### o-hero-big
 Type:
 - _default
+- main
 Sizes:
 0 ->    374  = 374px = 
 375 ->  575  = 575px = 
@@ -205,6 +212,7 @@ Sizes:
 
 #### o-hero-place
 Type:
+- _default
 - world/continets
 - world/states
 - world/cities

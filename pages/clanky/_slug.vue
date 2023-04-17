@@ -272,7 +272,7 @@
                 title: `${this.post[0].title} | Frytol na cestách`,
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.post[0].perex}` },
-                    { property: 'og:image', content: this.images && this.images.find(image => image.id === this.post[0].id_image_og) ? 'https://image.frytolnacestach.cz/storage/' + this.images.find(image => image.id === this.post[0].id_image_og).source + this.images.find(image => image.id === this.post[0].id_image_og).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/_default/og-default.png'}
+                    { property: 'og:image', content: this.images && this.images.find(image => image.id === this.post[0].id_image_og) ? 'https://image.frytolnacestach.cz/storage/' + this.images.find(image => image.id === this.post[0].id_image_og).source + this.images.find(image => image.id === this.post[0].id_image_og).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}
                 ]
             }
         },

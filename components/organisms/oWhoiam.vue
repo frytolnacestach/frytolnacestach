@@ -9,10 +9,10 @@
                                 <img
                                     class="o-whoiam__image-file lazyload-file"
                                     v-lazy="{
-                                        src: 'https://image.frytolnacestach.cz/storage/_default/michal-fryc.webp',
+                                        src: 'https://image.frytolnacestach.cz/storage/main/michal-fryc.webp',
                                         srcset: {
-                                            '320': 'https://image.frytolnacestach.cz/storage/_default/michal-fryc.webp',
-                                            '320@2x': 'https://image.frytolnacestach.cz/storage/_default/michal-fryc.webp 2x'
+                                            '320': 'https://image.frytolnacestach.cz/storage/main/michal-fryc.webp',
+                                            '320@2x': 'https://image.frytolnacestach.cz/storage/main/michal-fryc.webp 2x'
                                         },
                                         sizes: '320px'
                                     }"

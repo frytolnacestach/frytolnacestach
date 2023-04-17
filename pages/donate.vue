@@ -61,7 +61,7 @@
             title: 'Podpořit | Frytol na cestách',
             meta: [
                 { hid: 'description', name: 'description', content: 'Podpořit web Frytol na cestách' },
-                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/_default/og-default.png' }
+                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' }
             ]
         }
     }

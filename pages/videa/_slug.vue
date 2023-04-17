@@ -163,7 +163,7 @@
                 title: `${this.video[0].title} | Frytol na cestách`,
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.video[0].title}` },
-                    { property: 'og:image', content: this.video[0].id_image ? 'https://image.frytolnacestach.cz/storage/_default/og-default.png' : 'https://image.frytolnacestach.cz/storage/_default/og-default.png'} 
+                    { property: 'og:image', content: this.video[0].id_image ? 'https://image.frytolnacestach.cz/storage/main/og-default.png' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'} 
                 ]
             }
         },
