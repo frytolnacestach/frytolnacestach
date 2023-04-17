@@ -82,19 +82,21 @@
         padding: 5px;
         margin: 2px 5px;
         line-height: 26px;
-        font-size: $fs-normal-sss;
+        font-size: $fs-normal-ss;
         color: $gray1;
         text-decoration: none;
         text-transform: uppercase;
-        font-weight: 600;
+        font-weight: 500;
 
         &:hover {
             color: $brand1;
         }
 
         &.-active {
+            color: $brand1;
+
             &:hover {
-          
+                color: $brand1;
             }
         }
     }

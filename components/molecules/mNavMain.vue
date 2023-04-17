@@ -4,25 +4,22 @@
             <div class="m-nav-main__inner">
                 <ul class="m-nav-main__items">
                     <li class="m-nav-main__item">
-                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/">Úvod</NuxtLink>
+                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/svet" exact-active-class="-active" :class="{'-active': /^\/svet/.test($route.path)}">Svět<span class="m-nav-main__link-subfix">BETA</span></NuxtLink>
                     </li>
                     <li class="m-nav-main__item">
-                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/svet">Svět<span class="m-nav-main__link-subfix">BETA</span></NuxtLink>
+                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/clanky" exact-active-class="-active" :class="{'-active': /^\/clanky/.test($route.path)}">Články</NuxtLink>
                     </li>
                     <li class="m-nav-main__item">
-                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/clanky">Články</NuxtLink>
+                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/videa" exact-active-class="-active" :class="{'-active': /^\/videa/.test($route.path)}">Videa</NuxtLink>
                     </li>
                     <li class="m-nav-main__item">
-                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/videa">Videa</NuxtLink>
+                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/social" exact-active-class="-active">Kde mě najdeš</NuxtLink>
                     </li>
                     <li class="m-nav-main__item">
-                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/social">Kde mě najdeš</NuxtLink>
-                    </li>
-                    <li class="m-nav-main__item">
-                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/iam">Kdo jsem</NuxtLink>
+                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/iam" exact-active-class="-active">Kdo jsem</NuxtLink>
                     </li>
                     <li class="m-nav-main__item -special">
-                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/donate">Podpořit</NuxtLink>
+                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/donate" exact-active-class="-active">Podpořit</NuxtLink>
                     </li>
                 </ul>
             </div>
