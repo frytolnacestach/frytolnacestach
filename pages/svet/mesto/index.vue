@@ -10,7 +10,7 @@
         <!-- SECTION - Hero place type END -->
 
         <!-- SECTION - Alphabet -->
-        <section class="t-section -bg-world -p0">
+        <section class="t-section -bg-world">
             <div class="t-section__inner">
                 <!-- TODO <mNavAlphabet :alphabet="alphabet" />-->
                 
@@ -32,7 +32,7 @@
          <!-- SECTION - Alphabet END -->
 
         <!-- SECTION - Place list -->
-        <section class="t-section -bg-world">
+        <section class="t-section -bg-world -p0">
             <div class="t-section__inner">
                 <oCoverPlace :places="placesCities" :images="images" type="mesto" />
             </div>
