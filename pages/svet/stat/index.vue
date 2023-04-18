@@ -10,7 +10,7 @@
         <!-- SECTION - Hero place type END -->
 
         <!-- SECTION - Place list -->
-        <section class="t-section -bg-world">
+        <section class="t-section -bg-world -p0">
             <div class="t-section__inner">
                 <oCoverPlace :places="placesStates" :images="images" type="stat" />
             </div>
