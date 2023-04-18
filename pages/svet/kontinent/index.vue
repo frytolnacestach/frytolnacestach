@@ -2,7 +2,7 @@
     <main class="t-main -pt-menu">
 
         <!-- SECTION - Hero place type -->
-        <section class="t-section py-4 -bg-brand3">
+        <section class="t-section py-4 -bg-world">
             <div class="t-section__inner">
                 <oHeroPlaceType styleType=" -continent" title="Kontinenty" />
             </div>
@@ -10,7 +10,7 @@
         <!-- SECTION - Hero place type END -->
 
         <!-- SECTION - Place list -->
-        <section class="t-section">
+        <section class="t-section -bg-world">
             <div class="t-section__inner">
                 <oCoverPlace :places="placesContinents" :images="images" type="kontinent" />
             </div>

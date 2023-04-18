@@ -1,8 +1,8 @@
 <template>
-    <main class="t-main -bg-brand3 -vh100">
+    <main class="t-main -bg-world -vh100">
 
         <!-- SECTION - Vyhledávač -->
-        <section class="t-section pt-8 pb-4 -bg-brand3">
+        <section class="t-section pt-8 pb-4 -bg-world">
             <div class="t-section__inner mt-4">
                 <div class="o-search">
                     <div class="o-search__input">
@@ -38,7 +38,7 @@
         <!-- SECTION - Vyhledávač END -->
 
         <!-- SECTION - Typ místa -->
-        <section class="t-section py-4 -bg-brand3">
+        <section class="t-section py-4 -bg-world">
             <div class="t-section__inner">
                 <div class="o-world-type">
                     <div class="o-world-type__outer">

@@ -1,7 +1,7 @@
 .o-cover-place-detail {
     $self: &;
 
-    margin: 0 -15px;
+    margin: 0 -20px;
 
     &__outer {
         width: 100%;
@@ -18,7 +18,7 @@
         //flex-wrap: wrap;
         justify-content: center;
         min-width: auto;
-        padding: 0 8px;
+        padding: 0 13px;
     }
 
     &__item {
@@ -72,7 +72,7 @@
         height: 100%;
         overflow: hidden;
         position: relative;
-        border-radius: 10px;
+        border-radius: $br-2;
 
         &:after {
             content: '';

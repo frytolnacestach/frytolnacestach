@@ -17,33 +17,66 @@ BLOCKS:
 
     &__outer {
         width: 100%;
+        padding: 5px;
+
+        @media only screen and (min-width: $ti) {
+            padding: 10px;
+        }
     }
 
     &__inner {
         width: auto;
         padding: 0;
         margin: 0;
-        border-radius: $large;
+        border-radius: $br-2;
+
+        @media only screen and (min-width: $ti) {
+            border-radius: $br-4;
+        }
     }
 
     &__title {
         width: 100%;
         font-size: $fs-large-ssss;
         margin: 0 0 20px;
+        color: $worldTEXT;
+
+        &.-m0 {
+            margin: 0;
+        }
+    }
+
+    &__title-info {
+        width: auto;
+        font-size: $fs-small-sss;
+        margin: 0 0 20px;
+        display: block;
+        color: $worldTEXT;
+        opacity: .7;
     }
 
     &__subtitle {
         width: auto;
         font-size: $fs-normal;
-        margin: 0 15px 10px;
+        margin: 0 0 10px;
         display: block;
+        color: $worldTEXT;
+
+        @media only screen and (min-width: $ti) {
+            margin: 0 15px 10px;
+        }
     }
 
 
     &__perex {
         width: auto;
         display: block;
-        margin: 0 15px;
+        margin: 0;
+        color: $worldTEXTdark;
+
+        @media only screen and (min-width: $ti) {
+            margin: 0 15px;
+        }
     }
 
     //author
@@ -83,12 +116,28 @@ BLOCKS:
 
     &__list-li {
         width: 100%;
-        padding: 5px 0;
+        padding: 5px 0 12px;
+    }
+
+    &__list-h5 {
+        display: block;
+        font-size: $fs-normal;
+        color: $white;
+        width: 100%;
+        opacity: 1;
+    }
+
+    &__list-span {
+        display: block;
+        width: 100%;
+        opacity: .8;
     }
 
     &__list-info {
         color: $brand4;
-        font-size: $fs-small-ssss;
+        font-size: $fs-small-sss;
+        opacity: .8;
+        display: block;
     }
 
 
@@ -99,6 +148,73 @@ BLOCKS:
             background-color: $gray6;
             padding: 20px 15px;
         }
+
+        #{$self}__title {
+            color: $black;
+        }
+
+        #{$self}__title-info {
+            color: $black;    
+        }
+    
+        #{$self}__subtitle {
+            color: $black;
+        }
+    
+        #{$self}__perex {
+            color: $black;
+        }
+
+        #{$self}__list-h5 {
+            color: $black;
+        }
+
+        #{$self}__list-span {
+            color: $black;
+        }
+
+        #{$self}__list-info {
+            color: $black;
+        }
+    }
+
+    &.-bg-world {
+        #{$self}__inner {
+            background-color: $worldBGcomponentDark;
+            padding: 20px 15px;
+        }
+
+        #{$self}__title {
+            color: $white;
+        }
+
+        #{$self}__title-info {
+            color: $white;    
+        }
+    
+        #{$self}__subtitle {
+            color: $white;
+        }
+    
+        #{$self}__perex {
+            color: $white;
+        }
+
+        #{$self}__list-h5 {
+            color: $white;
+        }
+
+        #{$self}__list-span {
+            color: $white;
+        }
+
+        #{$self}__list-info {
+            color: $white;
+        }
+
+        #{$self}__info {
+            color: $white;
+        }
     }
 
     &.-no-point {
@@ -106,5 +222,10 @@ BLOCKS:
             list-style-type: none;
             padding-left: 0;
         }
+    }
+
+    &.-py1 {
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }

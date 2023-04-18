@@ -28,6 +28,34 @@
         }
     }
 
+    &.-world {
+        #{$self}__title {
+            color: $worldTEXT;
+        }
+
+        #{$self}__perex {
+            color: $worldTEXT;
+        }
+    }
+
+    &.-world-dark {
+        padding-right: 10px;
+        padding-left: 10px;
+
+        @media only screen and (min-width: $ti) {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        #{$self}__title {
+            color: $white;
+        }
+
+        #{$self}__perex {
+            color: $white;
+        }
+    }
+
     &.-center {
         text-align: center;
     }

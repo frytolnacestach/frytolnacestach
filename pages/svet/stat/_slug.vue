@@ -1,549 +1,641 @@
 <template>
-    <main class="t-main">
+    <main class="t-main -bg-world -pt-menu">
         
-        <!-- SECTION - hero -->
-        <section class="t-section">
+        <!-- SECTION - hero + hot info hero -->
+        <section class="t-section -px-world mt-1 -p0">
+            <div class="t-section__inner">
+                <div class="t-grid -world-hero">
 
-            <oHeroPlace :place="place" :images="images" />
+                    <!-- SECTION - hero -->
+                    <div class="t-grid__section -hero-place">
+                        <oHeroPlace :place="place" :images="images" />
+                    </div>
+                    <!-- SECTION - hero END -->
 
-            <!-- SECTION - hot info -->
-            <div class="js_o-hot-info-hero o-hot-info-hero">
-                <div class="o-hot-info-hero__outer">
-                    <div class="o-hot-info-hero__inner">
-                        <div class="o-hot-info-hero__items">
-                            <div class="o-hot-info-hero__item" v-if="placeContinent[0].name">
-                                <span class="o-hot-info-hero__title">Kontinent</span>
-                                <span class="o-hot-info-hero__value">
-                                    <NuxtLink class="o-hot-info-hero__value-link" :to="`/svet/kontinent/${placeContinent[0].slug}`">{{ placeContinent[0].name }}</NuxtLink>
-                                </span>
+                    <!-- SECTION - hot info -->
+                    <div class="t-grid__section -hot-info-hero">
+                        <div class="js_o-hot-info-hero o-hot-info-hero">
+                            <div class="o-hot-info-hero__outer">
+                                <div class="o-hot-info-hero__inner">
+                                    <div class="o-hot-info-hero__items">
+                                        <div class="o-hot-info-hero__item" v-if="placeContinent[0].name">
+                                            <div class="o-hot-info-hero__content">
+                                                <div class="o-hot-info-hero__text">
+                                                    <span class="o-hot-info-hero__title">Kontinent</span>
+                                                    <span class="o-hot-info-hero__value">
+                                                        <NuxtLink class="o-hot-info-hero__value-link" :to="`/svet/kontinent/${placeContinent[0].slug}`">{{ placeContinent[0].name }}</NuxtLink>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="o-hot-info-hero__item" v-if="place[0].area">
+                                            <div class="o-hot-info-hero__content">
+                                                <div class="o-hot-info-hero__text">
+                                                    <span class="o-hot-info-hero__title">Rozloha</span>
+                                                    <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="o-hot-info-hero__item" v-if="place[0].population">
+                                            <div class="o-hot-info-hero__content">
+                                                <div class="o-hot-info-hero__text">
+                                                    <span class="o-hot-info-hero__title">Populace</span>
+                                                    <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="o-hot-info-hero__item" v-if="place[0].area">
-                                <span class="o-hot-info-hero__title">Rozloha</span>
-                                <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
-                            </div>
-                            <div class="o-hot-info-hero__item" v-if="place[0].population">
-                                <span class="o-hot-info-hero__title">Populace</span>
-                                <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
-                            </div>
+                        </div>
+                    </div>
+                    <!-- SECTION - hot info - END -->
+
+                </div>
+            </div>
+        </section>
+        <!-- SECTION - hero + hot info - END -->
+    
+        <!-- SECTION - Nav place -->
+        <section class="t-section -px-world-big -p0" v-if="place[0]">
+            <div class="t-section__inner">
+                <div class="m-nav-place">
+                    <div class="m-nav-place__outer">
+                        <div class="m-nav-place__inner">
+                            <ul class="m-nav-place__items">
+                                <li class="m-nav-place__item" v-for="tab in tabs" :key="tab.slug">
+                                    <nuxt-link :to="`/svet/stat/${ place[0].slug }`" class="m-nav-place__link" :class="{ '-active': activeTab === tab.slug }" v-if="tab.slug === 'default'">
+                                        {{ place[0].name ? place[0].name : 'Stát' }}
+                                    </nuxt-link>
+                                    <nuxt-link :to="getTabLink(tab)" class="m-nav-place__link" :class="{ '-active': activeTab === tab.slug }" v-if="tab.slug !== 'default' && tab.visible === true">
+                                        {{ tab.label }}
+                                    </nuxt-link>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- SECTION - hot info - END -->
         </section>
-        <!-- SECTION - hero - END -->
-
-        <section class="t-section" v-if="place[0]">
-            <div class="m-nav-place">
-                <div class="m-nav-place__outer">
-                    <div class="m-nav-place__inner">
-                        <ul class="m-nav-place__items">
-                            <li class="m-nav-place__item" v-for="tab in tabs" :key="tab.slug">
-                                <nuxt-link :to="`/svet/stat/${ place[0].slug }`" class="m-nav-place__link" :class="{ '-active': activeTab === tab.slug }" v-if="tab.slug === 'default'">
-                                    {{ place[0].name ? place[0].name : 'Stát' }}
-                                </nuxt-link>
-                                <nuxt-link :to="getTabLink(tab)" class="m-nav-place__link" :class="{ '-active': activeTab === tab.slug }" v-if="tab.slug !== 'default' && tab.visible === true">
-                                    {{ tab.label }}
-                                </nuxt-link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+         <!-- SECTION - Nav place END -->
 
         <div class="t-main -tab" v-if="place[0]">
             <template v-if="activeTab === 'default'">
                 
                 <!-- SECTION -->
-                <div class="t-col2">
-                    <div class="t-col2__content my-2">
+                <section class="t-section -px-world -p0">
+                    <div class="t-section__inner">
+                        <div class="t-grid -world-content-with-ad">
+                            <div class="t-grid__section -content">
 
-                        <!-- SECTION - information by ChatGPT -->
-                        <section class="t-section py-2" v-if="place[0].information_chatgpt">
-                            <div class="t-section__inner">
-                                <div class="o-information-block">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">O státu {{ place[0].name ? place[0].name : '' }}</h2>
-                                            <div class="o-information-block__perex">
-                                                <div class="o-information-block_wysiwyg" v-html="place[0].information_chatgpt"></div>
-                                                <div class="o-information-block__author">
-                                                    <i class="m-author">zdroj. <a class="m-author__link" href="https://chat.openai.com/chat" target="_blank">ChatGPT</a></i>
+                                <!-- SECTION - information by ChatGPT -->
+                                <section class="t-section" v-if="place[0].information_chatgpt">
+                                    <div class="t-section__inner">
+                                        <div class="o-information-block">
+                                            <div class="o-information-block__outer">
+                                                <div class="o-information-block__inner">
+                                                    <h2 class="o-information-block__title">O státu {{ place[0].name ? place[0].name : '' }}</h2>
+                                                    <div class="o-information-block__perex">
+                                                        <div class="o-information-block_wysiwyg" v-html="place[0].information_chatgpt"></div>
+                                                        <div class="o-information-block__author">
+                                                            <i class="m-author">zdroj. <a class="m-author__link" href="https://chat.openai.com/chat" target="_blank">ChatGPT</a></i>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - information by ChatGPT END -->
+                                </section>
+                                <!-- SECTION - information by ChatGPT END -->
 
-                        <!-- SECTION - Měna -->
-                        <section class="t-section py-2" v-if="place[0].currency_name">
-                            <div class="t-section__inner">
-                                <div class="o-information-block -bg-gray">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">Měna</h2>
-                                            <div class="o-information-block__perex">
-                                                <div class="o-information-block_wysiwyg">{{ place[0].currency_name }} {{ place[0].currency_code ? '(' + place[0].currency_code + ')' : '' }}</div>
+                                <div class="t-grid -world-information-adjacent">
+                                    <div class="t-grid__section">
+                                        <!-- SECTION - Měna -->
+                                        <section class="t-section" v-if="place[0].currency_name">
+                                            <div class="t-section__inner">
+                                                <div class="o-information-block -bg-world">
+                                                    <div class="o-information-block__outer">
+                                                        <div class="o-information-block__inner">
+                                                            <h2 class="o-information-block__title -m0">Měna</h2>
+                                                            <span class="o-information-block__title-info">{{ place[0].currency_name }}</span>
+                                                            <div class="o-information-block__perex">
+                                                                <div class="o-information-block_wysiwyg"> {{ place[0].currency_code ? place[0].currency_code : '' }}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </section>
+                                        <!-- SECTION - Měna END -->
+                                    </div>
+
+                                    <div class="t-grid__section">
+                                        <!-- SECTION - MPZ -->
+                                        <section class="t-section" v-if="place[0].mpz">
+                                            <div class="t-section__inner">
+                                                <div class="o-information-block -bg-world">
+                                                    <div class="o-information-block__outer">
+                                                        <div class="o-information-block__inner">
+                                                            <h2 class="o-information-block__title -m0">MPZ</h2>
+                                                            <span class="o-information-block__title-info">Mezinárodní poznávací značka</span>
+                                                            <div class="o-information-block__perex">
+                                                                <div class="o-information-block_wysiwyg">{{ place[0].mpz }}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <!-- SECTION - MPZ END -->
+                                    </div>
+
+                                    <div class="t-grid__section">
+                                        <!-- SECTION - TLD -->
+                                        <section class="t-section" v-if="place[0].tld">
+                                            <div class="t-section__inner">
+                                                <div class="o-information-block -bg-world">
+                                                    <div class="o-information-block__outer">
+                                                        <div class="o-information-block__inner">
+                                                            <h2 class="o-information-block__title -m0">TLD</h2>
+                                                            <span class="o-information-block__title-info">Národní internetová domána</span>
+                                                            <div class="o-information-block__perex">
+                                                                <div class="o-information-block_wysiwyg">{{ place[0].tld }}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <!-- SECTION - TLD END -->
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - Měna END -->
 
-                        <!-- SECTION - MPZ -->
-                        <section class="t-section py-2" v-if="place[0].mpz">
-                            <div class="t-section__inner">
-                                <div class="o-information-block -bg-gray">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">Mezinárodní poznávací značka (MPZ)</h2>
-                                            <div class="o-information-block__perex">
-                                                <div class="o-information-block_wysiwyg">{{ place[0].mpz }}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - MPZ END -->
-
-                        <!-- SECTION - TLD -->
-                        <section class="t-section py-2" v-if="place[0].tld">
-                            <div class="t-section__inner">
-                                <div class="o-information-block -bg-gray">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">Národní internetová domána (TLD)</h2>
-                                            <div class="o-information-block__perex">
-                                                <div class="o-information-block_wysiwyg">{{ place[0].tld }}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - TLD END -->
-
-                        <!-- SECTION - navštevníci - podmínky vstupu -->
-                        <section class="t-section py-2" v-if="place[0].visitors_entry">
-                            <div class="t-section__inner">
-                                <div class="o-information-block -bg-gray -no-point">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">Podmínky cesty do země</h2>
-                                            <div class="o-information-block__perex">
-                                                <div class="o-information-block__list">
-                                                    <ul class="o-information-block__list-ul">
-                                                        <li class="o-information-block__list-li" v-for="item in place[0].visitors_entry" v-bind:key="item.name">
-                                                            <span><strong>{{ item.name }}</strong> {{ item.value }} <i class="o-information-block__list-info">({{ item.date_update }})</i></span>
-                                                        </li>
-                                                    </ul>
+                                <!-- SECTION - navštevníci - podmínky vstupu -->
+                                <section class="t-section" v-if="place[0].visitors_entry">
+                                    <div class="t-section__inner">
+                                        <div class="o-information-block -py1 -bg-world -no-point">
+                                            <div class="o-information-block__outer">
+                                                <div class="o-information-block__inner">
+                                                    <h2 class="o-information-block__title">Podmínky cesty do země</h2>
+                                                    <div class="o-information-block__perex">
+                                                        <div class="o-information-block__list">
+                                                            <ul class="o-information-block__list-ul">
+                                                                <li class="o-information-block__list-li" v-for="item in place[0].visitors_entry" v-bind:key="item.name">
+                                                                    <h5 class="o-information-block__list-h5">{{ item.name }}</h5> 
+                                                                    <span class="o-information-block__list-span">{{ item.value }}</span>
+                                                                    <i class="o-information-block__list-info">({{ item.date_update }})</i>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </section>
+                                <!-- SECTION - navštevníci - podmínky vstupu END -->
+                        
                             </div>
-                        </section>
-                        <!-- SECTION - navštevníci - podmínky vstupu END -->
-                
-                    </div>
 
-                    <div class="t-col2__sidebar my-2">
-                        <!-- SECTION - ad-google - sidebar -->
-                        <section class="t-section my-2">
-                            <div class="t-section__inner">
-                                <div class="o-ad-google-sidebar">
-                                    <ins class="adsbygoogle"
-                                        :style="adStyle"
-                                        :data-ad-client="adClient"
-                                        :data-ad-slot="adSlot"
-                                        :data-ad-format="adFormat"
-                                        :data-full-width-responsive="adResponsive">
-                                    </ins>
-                                </div>
+                            <div class="t-grid__section -ad">
+                                <!-- SECTION - ad-google - sidebar -->
+                                <section class="t-section my-2">
+                                    <div class="t-section__inner">
+                                        <div class="o-ad-google-sidebar">
+                                            <ins class="adsbygoogle"
+                                                :style="adStyle"
+                                                :data-ad-client="adClient"
+                                                :data-ad-slot="adSlot"
+                                                :data-ad-format="adFormat"
+                                                :data-full-width-responsive="adResponsive">
+                                            </ins>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- SECTION - ad-google - sidebar - END -->
                             </div>
-                        </section>
-                        <!-- SECTION - ad-google - sidebar - END -->
+                        </div>
                     </div>
-                </div>
+                </section>
                 <!-- SECTION END -->
 
+                <!-- SECTION -->
+                <section class="t-section -p0">
+                    <div class="t-section__inner">
+                        <div class="t-grid -world-ful">
+                            <div class="t-grid__section -content">
 
-                <div class="t-layout-full">
+                                <!-- SECTION - města - Biggest -->
+                                <section class="t-section -p0 -py4 -px-world-big -h-scroll">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Největší města ve státě" :titleValue="place[0].name" styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" />
+                                        <oCoverPlaceDetail :places="placesCities" :images="images" type="mesto" biggest="big" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - města - Biggest - END -->
 
-                    <!-- SECTION - města - Biggest -->
-                    <section class="t-section -bg-gray py-4">
-                        <div class="t-section__inner">
-                            <mHeadline title="Největší města ve státě" :titleValue="place[0].name" styleAlign=" -p-left" styleGap=" mb-2" />
-                            <oCoverPlaceDetail :places="placesCities" :images="images" type="mesto" biggest="big" />
+                                <!-- SECTION - videos -->
+                                <section class="t-section -bg-extra-dark-gray pt-4 py-2" v-if="videos[0]">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oVideoList :videos="videos" :images="images" type="travel" styleThema=" -world" styleAlign=" -p-left" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - videos END -->
+
+                                <!-- SECTION - města - menší -->
+                                <section v-if="hasCitiesToShow" class="t-section -p0 -py4 -px-world-big -h-scroll">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Další města a obce ve státě" :titleValue="place[0].name" styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" />
+                                        <oCoverPlaceDetail :places="placesCities" :images="images" type="mesto" biggest="nobig" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - města - menší - END -->
+
+                                <!-- SECTION - articles -->
+                                <section class="t-section -bg-extra-dark-gray pt-4 py-2" v-if="posts[0]">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oArticleList :posts="posts" :images="images" styleThema=" -world" styleAlign=" -p-left" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - articles END -->
+                            </div>
                         </div>
-                    </section>
-                    <!-- SECTION - města - Biggest - END -->
+                    </div>
+                </section>
+                <!-- SECTION END -->
 
-                    <!-- SECTION - videos -->
-                    <section class="t-section -bg-extra-dark-gray pt-4 py-2 px-2" v-if="videos[0]">
-                        <div class="t-section__inner">
-                            <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                            <oVideoList :videos="videos" :images="images" type="travel" styleThema=" -dark" styleAlign=" -p-left" />
-                        </div>
-                    </section>
-                    <!-- SECTION - videos END -->
-
-                    <!-- SECTION - města - menší -->
-                    <section v-if="hasCitiesToShow" class="t-section -bg-gray py-4">
-                        <div class="t-section__inner">
-                            <mHeadline title="Další města a obce ve státě" :titleValue="place[0].name" styleAlign=" -p-left" styleGap=" mb-2" />
-                            <oCoverPlaceDetail :places="placesCities" :images="images" type="mesto" biggest="nobig" />
-                        </div>
-                    </section>
-                    <!-- SECTION - města - menší - END -->
-
-                    <!-- SECTION - articles -->
-                    <section class="t-section -bg-extra-dark-gray pt-4 py-2 px-2" v-if="posts[0]">
-                        <div class="t-section__inner">
-                            <mHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                            <oArticleList :posts="posts" :images="images" styleThema=" -dark" styleAlign=" -p-left" />
-                        </div>
-                    </section>
-                    <!-- SECTION - articles END -->
-
-                </div>
             </template>
             <template v-if="activeTab === 'ceny'">
                 <!-- SECTION -->
-                <div class="t-col2">
-                    <div class="t-col2__content my-2">
+                <section class="t-section -px-world -p0 mb-4">
+                    <div class="t-section__inner">
+                        <div class="t-grid -world-content-with-ad">
+                            <div class="t-grid__section -content">
 
-                        <!-- SECTION - Měna -->
-                        <section class="t-section py-2" v-if="place[0].currency_name">
-                            <div class="t-section__inner">
-                                <div class="o-information-block -bg-gray">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">Měna</h2>
-                                            <div class="o-information-block__perex">
-                                                <div class="o-information-block_wysiwyg">{{ place[0].currency_name }} {{ place[0].currency_code ? '(' + place[0].currency_code + ')' : '' }}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - Měna END -->
-
-                        <!-- SECTION - Ceny -->
-                        <section class="t-section py-2" v-if="place[0].money_prices">
-                            <div class="t-section__inner">
-                                <div class="o-information-block -bg-gray -no-point">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">Ceny</h2>
-                                            <div class="o-information-block__perex">
-                                                <div class="o-information-block__list">
-                                                    <ul class="o-information-block__list-ul">
-                                                        <li class="o-information-block__list-li" v-for="money_price in place[0].money_prices" v-bind:key="money_price.name">
-                                                            <span><strong>{{ money_price.name }}</strong> {{ money_price.value }} {{ place[0].currency_name }} {{ place[0].currency_code ? '(' + place[0].currency_code + ')' : '(Místní měna)' }} <i class="o-information-block__list-info">({{ money_price.date_update }})</i></span>
-                                                        </li>
-                                                    </ul>
+                                <div class="t-grid -world-information-adjacent">
+                                    <div class="t-grid__section">
+                                        <!-- SECTION - Měna -->
+                                        <section class="t-section" v-if="place[0].currency_name">
+                                            <div class="t-section__inner">
+                                                <div class="o-information-block -bg-world">
+                                                    <div class="o-information-block__outer">
+                                                        <div class="o-information-block__inner">
+                                                            <h2 class="o-information-block__title -m0">Měna</h2>
+                                                            <span class="o-information-block__title-info">{{ place[0].currency_name }}</span>
+                                                            <div class="o-information-block__perex">
+                                                                <div class="o-information-block_wysiwyg"> {{ place[0].currency_code ? place[0].currency_code : '' }}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <i class="o-information-block__info">Ceny se můžou lišit v rámci sézony, místa a nebo míry a rychosti infalce. uvedená cena dálniční známky je ta nejnižší nabízená a může se ve skutečnosti razantně lišit.</i>
+                                            </div>
+                                        </section>
+                                        <!-- SECTION - Měna END -->
+                                    </div>
+                                </div>
+
+                                <!-- SECTION - Ceny -->
+                                <section class="t-section" v-if="place[0].money_prices">
+                                    <div class="t-section__inner">
+                                        <div class="o-information-block -bg-world -no-point">
+                                            <div class="o-information-block__outer">
+                                                <div class="o-information-block__inner">
+                                                    <h2 class="o-information-block__title">Ceny</h2>
+                                                    <div class="o-information-block__perex">
+                                                        <div class="o-information-block__list">
+                                                            <ul class="o-information-block__list-ul">
+                                                                <li class="o-information-block__list-li" v-for="item in place[0].money_prices" v-bind:key="item.name">
+                                                                    <h5 class="o-information-block__list-h5">{{ item.name }}</h5> 
+                                                                    <span class="o-information-block__list-span">{{ item.value }} {{ place[0].currency_name }} {{ place[0].currency_code ? '(' + place[0].currency_code + ')' : '(Místní měna)' }}</span>
+                                                                    <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <i class="o-information-block__info">Ceny se můžou lišit v rámci sézony, místa a nebo míry a rychosti infalce. uvedená cena dálniční známky je ta nejnižší nabízená a může se ve skutečnosti razantně lišit.</i>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - Ceny END -->
+                                </section>
+                                <!-- SECTION - Ceny END -->
 
-                    </div>
-
-                    <div class="t-col2__sidebar my-2">
-                        <!-- SECTION - ad-google - sidebar -->
-                        <section class="t-section my-2">
-                            <div class="t-section__inner">
-                                <div class="o-ad-google-sidebar">
-                                    <ins class="adsbygoogle"
-                                        :style="adStyle"
-                                        :data-ad-client="adClient"
-                                        :data-ad-slot="adSlot"
-                                        :data-ad-format="adFormat"
-                                        :data-full-width-responsive="adResponsive">
-                                    </ins>
-                                </div>
                             </div>
-                        </section>
-                        <!-- SECTION - ad-google - sidebar - END -->
+
+                            <div class="t-grid__section -ad">
+                                <!-- SECTION - ad-google - sidebar -->
+                                <section class="t-section my-2">
+                                    <div class="t-section__inner">
+                                        <div class="o-ad-google-sidebar">
+                                            <ins class="adsbygoogle"
+                                                :style="adStyle"
+                                                :data-ad-client="adClient"
+                                                :data-ad-slot="adSlot"
+                                                :data-ad-format="adFormat"
+                                                :data-full-width-responsive="adResponsive">
+                                            </ins>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- SECTION - ad-google - sidebar - END -->
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
                 <!-- SECTION END -->
             </template>
             <template v-else-if="activeTab === 'lide'">
                 <!-- SECTION -->
-                <div class="t-col2">
-                    <div class="t-col2__content my-2">
+                <section class="t-section -px-world -p0 mb-4">
+                    <div class="t-section__inner">
+                        <div class="t-grid -world-content-with-ad">
+                            <div class="t-grid__section -content">
 
-                        <!-- SECTION - Lidé náboženství -->
-                        <section class="t-section py-2" v-if="place[0].people_religion">
-                            <div class="t-section__inner">
-                                <div class="o-information-block -bg-gray -no-point">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">Náboženství</h2>
-                                            <div class="o-information-block__perex">
-                                                <div class="o-information-block__list">
-                                                    <ul class="o-information-block__list-ul">
-                                                        <li class="o-information-block__list-li" v-for="item in place[0].people_religion" v-bind:key="item.name">
-                                                            <span><strong>{{ item.name }}</strong> {{ item.value }}</span>
-                                                        </li>
-                                                    </ul>
+                                <!-- SECTION - Lidé náboženství -->
+                                <section class="t-section" v-if="place[0].people_religion">
+                                    <div class="t-section__inner">
+                                        <div class="o-information-block -bg-world -no-point">
+                                            <div class="o-information-block__outer">
+                                                <div class="o-information-block__inner">
+                                                    <h2 class="o-information-block__title">Náboženství</h2>
+                                                    <div class="o-information-block__perex">
+                                                        <div class="o-information-block__list">
+                                                            <ul class="o-information-block__list-ul">
+                                                                <li class="o-information-block__list-li" v-for="item in place[0].people_religion" v-bind:key="item.name">
+                                                                    <h5 class="o-information-block__list-h5">{{ item.name }}</h5> 
+                                                                    <span class="o-information-block__list-span">{{ item.value }}</span>
+                                                                    <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - Lidé náboženství END -->
+                                </section>
+                                <!-- SECTION - Lidé náboženství END -->
 
-                        <!-- SECTION - Lidé vzdělání -->
-                        <section class="t-section py-2" v-if="place[0].people_education">
-                            <div class="t-section__inner">
-                                <div class="o-information-block -bg-gray -no-point">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">Vzdělání</h2>
-                                            <div class="o-information-block__perex">
-                                                <div class="o-information-block__list">
-                                                    <ul class="o-information-block__list-ul">
-                                                        <li class="o-information-block__list-li" v-for="item in place[0].people_education" v-bind:key="item.name">
-                                                            <span><strong>{{ item.name }}</strong> {{ item.value }}</span>
-                                                        </li>
-                                                    </ul>
+                                <!-- SECTION - Lidé vzdělání -->
+                                <section class="t-section" v-if="place[0].people_education">
+                                    <div class="t-section__inner">
+                                        <div class="o-information-block -bg-world -no-point">
+                                            <div class="o-information-block__outer">
+                                                <div class="o-information-block__inner">
+                                                    <h2 class="o-information-block__title">Vzdělání</h2>
+                                                    <div class="o-information-block__perex">
+                                                        <div class="o-information-block__list">
+                                                            <ul class="o-information-block__list-ul">
+                                                                <li class="o-information-block__list-li" v-for="item in place[0].people_education" v-bind:key="item.name">
+                                                                    <h5 class="o-information-block__list-h5">{{ item.name }}</h5> 
+                                                                    <span class="o-information-block__list-span">{{ item.value }}</span>
+                                                                    <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - Lidé vzdělání END -->
+                                </section>
+                                <!-- SECTION - Lidé vzdělání END -->
 
-                        <!-- SECTION - Lidé národnost -->
-                        <section class="t-section py-2" v-if="place[0].people_nationality">
-                            <div class="t-section__inner">
-                                <div class="o-information-block -bg-gray -no-point">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">Národnost</h2>
-                                            <div class="o-information-block__perex">
-                                                <div class="o-information-block__list">
-                                                    <ul class="o-information-block__list-ul">
-                                                        <li class="o-information-block__list-li" v-for="item in place[0].people_nationality" v-bind:key="item.name">
-                                                            <span><strong>{{ item.name }}</strong> {{ item.value }}</span>
-                                                        </li>
-                                                    </ul>
+                                <!-- SECTION - Lidé národnost -->
+                                <section class="t-section" v-if="place[0].people_nationality">
+                                    <div class="t-section__inner">
+                                        <div class="o-information-block -bg-world -no-point">
+                                            <div class="o-information-block__outer">
+                                                <div class="o-information-block__inner">
+                                                    <h2 class="o-information-block__title">Národnost</h2>
+                                                    <div class="o-information-block__perex">
+                                                        <div class="o-information-block__list">
+                                                            <ul class="o-information-block__list-ul">
+                                                                <li class="o-information-block__list-li" v-for="item in place[0].people_nationality" v-bind:key="item.name">
+                                                                    <h5 class="o-information-block__list-h5">{{ item.name }}</h5> 
+                                                                    <span class="o-information-block__list-span">{{ item.value }}</span>
+                                                                    <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </section>
+                                <!-- SECTION - Lidé národnost END -->
                             </div>
-                        </section>
-                        <!-- SECTION - Lidé národnost END -->
+
+                            <div class="t-grid__section -ad">
+                                <!-- SECTION - ad-google - sidebar -->
+                                <section class="t-section my-2">
+                                    <div class="t-section__inner">
+                                        <div class="o-ad-google-sidebar">
+                                            <ins class="adsbygoogle"
+                                                :style="adStyle"
+                                                :data-ad-client="adClient"
+                                                :data-ad-slot="adSlot"
+                                                :data-ad-format="adFormat"
+                                                :data-full-width-responsive="adResponsive">
+                                            </ins>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- SECTION - ad-google - sidebar - END -->
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="t-col2__sidebar my-2">
-                        <!-- SECTION - ad-google - sidebar -->
-                        <section class="t-section my-2">
-                            <div class="t-section__inner">
-                                <div class="o-ad-google-sidebar">
-                                    <ins class="adsbygoogle"
-                                        :style="adStyle"
-                                        :data-ad-client="adClient"
-                                        :data-ad-slot="adSlot"
-                                        :data-ad-format="adFormat"
-                                        :data-full-width-responsive="adResponsive">
-                                    </ins>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - ad-google - sidebar - END -->
-                    </div>
-                </div>
+                </section>
                 <!-- SECTION END -->
             </template>
             <template v-else-if="activeTab === 'cesta'">
                 <!-- SECTION -->
-                <div class="t-col2">
-                    <div class="t-col2__content my-2">
+                <section class="t-section -px-world -p0 mb-4">
+                    <div class="t-section__inner">
+                        <div class="t-grid -world-content-with-ad">
+                            <div class="t-grid__section -content">
 
-                        <!-- SECTION - navštevníci - podmínky vstupu -->
-                        <section class="t-section py-2" v-if="place[0].visitors_entry">
-                            <div class="t-section__inner">
-                                <div class="o-information-block -bg-gray -no-point">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">Podmínky cesty do země</h2>
-                                            <div class="o-information-block__perex">
-                                                <div class="o-information-block__list">
-                                                    <ul class="o-information-block__list-ul">
-                                                        <li class="o-information-block__list-li" v-for="item in place[0].visitors_entry" v-bind:key="item.name">
-                                                            <span><strong>{{ item.name }}</strong> {{ item.value }} <i class="o-information-block__list-info">({{ item.date_update }})</i></span>
-                                                        </li>
-                                                    </ul>
+                                <!-- SECTION - navštevníci - podmínky vstupu -->
+                                <section class="t-section" v-if="place[0].visitors_entry">
+                                    <div class="t-section__inner">
+                                        <div class="o-information-block -bg-world -no-point">
+                                            <div class="o-information-block__outer">
+                                                <div class="o-information-block__inner">
+                                                    <h2 class="o-information-block__title">Podmínky cesty do země</h2>
+                                                    <div class="o-information-block__perex">
+                                                        <div class="o-information-block__list">
+                                                            <ul class="o-information-block__list-ul">
+                                                                <li class="o-information-block__list-li" v-for="item in place[0].visitors_entry" v-bind:key="item.name">
+                                                                    <h5 class="o-information-block__list-h5">{{ item.name }}</h5> 
+                                                                    <span class="o-information-block__list-span">{{ item.value }}</span>
+                                                                    <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - navštevníci - podmínky vstupu END -->
+                                </section>
+                                <!-- SECTION - navštevníci - podmínky vstupu END -->
 
-                    </div>
-
-                    <div class="t-col2__sidebar my-2">
-                        <!-- SECTION - ad-google - sidebar -->
-                        <section class="t-section my-2">
-                            <div class="t-section__inner">
-                                <div class="o-ad-google-sidebar">
-                                    <ins class="adsbygoogle"
-                                        :style="adStyle"
-                                        :data-ad-client="adClient"
-                                        :data-ad-slot="adSlot"
-                                        :data-ad-format="adFormat"
-                                        :data-full-width-responsive="adResponsive">
-                                    </ins>
-                                </div>
                             </div>
-                        </section>
-                        <!-- SECTION - ad-google - sidebar - END -->
+
+                            <div class="t-grid__section -ad">
+                                <!-- SECTION - ad-google - sidebar -->
+                                <section class="t-section my-2">
+                                    <div class="t-section__inner">
+                                        <div class="o-ad-google-sidebar">
+                                            <ins class="adsbygoogle"
+                                                :style="adStyle"
+                                                :data-ad-client="adClient"
+                                                :data-ad-slot="adSlot"
+                                                :data-ad-format="adFormat"
+                                                :data-full-width-responsive="adResponsive">
+                                            </ins>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- SECTION - ad-google - sidebar - END -->
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
                 <!-- SECTION END -->
             </template>
             <template v-else-if="activeTab === 'kontakty'">
                 <!-- SECTION -->
-                <div class="t-col2">
-                    <div class="t-col2__content my-2">
+                <section class="t-section -px-world -p0 mb-4">
+                    <div class="t-section__inner">
+                        <div class="t-grid -world-content-with-ad">
+                            <div class="t-grid__section -content">
 
-                        <!-- SECTION - Telefoní čísla(emergency) -->
-                        <section class="t-section py-2" v-if="place[0].phone_numbers_emergency">
-                            <div class="t-section__inner">
-                                <div class="o-information-block -bg-gray -no-point">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">Důležitá telefonní čísla</h2>
-                                            <span class="o-information-block__subtitle">Telefonní předvolba {{ place[0].phone_prefix }}</span>
-                                            <div class="o-information-block__perex">
-                                                <div class="o-information-block__list">
-                                                    <ul class="o-information-block__list-ul">
-                                                        <li class="o-information-block__list-li" v-for="phone_number_emergency in place[0].phone_numbers_emergency" v-bind:key="phone_number_emergency.name">
-                                                            <span><strong>{{ phone_number_emergency.name }}</strong> {{ phone_number_emergency.number }}</span>
-                                                        </li>
-                                                    </ul>
+                                <!-- SECTION - Telefoní čísla(emergency) -->
+                                <section class="t-section" v-if="place[0].phone_numbers_emergency">
+                                    <div class="t-section__inner">
+                                        <div class="o-information-block -bg-world -no-point">
+                                            <div class="o-information-block__outer">
+                                                <div class="o-information-block__inner">
+                                                    <h2 class="o-information-block__title">Důležitá telefonní čísla</h2>
+                                                    <span class="o-information-block__subtitle">Telefonní předvolba {{ place[0].phone_prefix }}</span>
+                                                    <div class="o-information-block__perex">
+                                                        <div class="o-information-block__list">
+                                                            <ul class="o-information-block__list-ul">
+                                                                <li class="o-information-block__list-li" v-for="item in place[0].phone_numbers_emergency" v-bind:key="item.name">
+                                                                    <h5 class="o-information-block__list-h5">{{ item.name }}</h5> 
+                                                                    <span class="o-information-block__list-span">{{ item.number }}</span>
+                                                                    <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - Telefoní čísla(emergency) END -->
+                                </section>
+                                <!-- SECTION - Telefoní čísla(emergency) END -->
 
-                    </div>
-
-                    <div class="t-col2__sidebar my-2">
-                        <!-- SECTION - ad-google - sidebar -->
-                        <section class="t-section my-2">
-                            <div class="t-section__inner">
-                                <div class="o-ad-google-sidebar">
-                                    <ins class="adsbygoogle"
-                                        :style="adStyle"
-                                        :data-ad-client="adClient"
-                                        :data-ad-slot="adSlot"
-                                        :data-ad-format="adFormat"
-                                        :data-full-width-responsive="adResponsive">
-                                    </ins>
-                                </div>
                             </div>
-                        </section>
-                        <!-- SECTION - ad-google - sidebar - END -->
+
+                            <div class="t-grid__section -ad">
+                                <!-- SECTION - ad-google - sidebar -->
+                                <section class="t-section my-2">
+                                    <div class="t-section__inner">
+                                        <div class="o-ad-google-sidebar">
+                                            <ins class="adsbygoogle"
+                                                :style="adStyle"
+                                                :data-ad-client="adClient"
+                                                :data-ad-slot="adSlot"
+                                                :data-ad-format="adFormat"
+                                                :data-full-width-responsive="adResponsive">
+                                            </ins>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- SECTION - ad-google - sidebar - END -->
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
                 <!-- SECTION END -->
             </template>
             <template v-else-if="activeTab === 'ubytovani'">
                 <!-- SECTION -->
-                <div class="t-col2">
-                    <div class="t-col2__content my-2">
+                <section class="t-section -px-world -p0 mb-4">
+                    <div class="t-section__inner">
+                        <div class="t-grid -world-content-with-ad">
+                            <div class="t-grid__section -content">
 
-                        <!-- SECTION - Ubytování -->
-                        <section class="t-section py-2">
-                            <div class="t-section__inner">
-                                <div class="o-information-block">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">Ubytování</h2>
-                                            <div class="o-information-block__widget" v-for="coordinate in place[0].coordinates">
-                                                <oWidgetBooking 
-                                                    :landmarkName="`${ place[0].name ? place[0].name : '' }`"
-                                                    :address="`${ place[0].name ? place[0].name : '' }`"
-                                                    :latitude="`${ coordinate.latitude }`"
-                                                    :longitude="`${ coordinate.longitude }`"
-                                                    zoom="8"
-                                                />
+                                <!-- SECTION - Ubytování -->
+                                <section class="t-section py-2">
+                                    <div class="t-section__inner">
+                                        <div class="o-information-block">
+                                            <div class="o-information-block__outer">
+                                                <div class="o-information-block__inner">
+                                                    <h2 class="o-information-block__title">Ubytování</h2>
+                                                    <div class="o-information-block__widget" v-for="coordinate in place[0].coordinates">
+                                                        <oWidgetBooking 
+                                                            :landmarkName="`${ place[0].name ? place[0].name : '' }`"
+                                                            :address="`${ place[0].name ? place[0].name : '' }`"
+                                                            :latitude="`${ coordinate.latitude }`"
+                                                            :longitude="`${ coordinate.longitude }`"
+                                                            zoom="8"
+                                                        />
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - Ubytování END -->
+                                </section>
+                                <!-- SECTION - Ubytování END -->
 
-                    </div>
-
-                    <div class="t-col2__sidebar my-2">
-                        <!-- SECTION - ad-google - sidebar -->
-                        <section class="t-section my-2">
-                            <div class="t-section__inner">
-                                <div class="o-ad-google-sidebar">
-                                    <ins class="adsbygoogle"
-                                        :style="adStyle"
-                                        :data-ad-client="adClient"
-                                        :data-ad-slot="adSlot"
-                                        :data-ad-format="adFormat"
-                                        :data-full-width-responsive="adResponsive">
-                                    </ins>
-                                </div>
                             </div>
-                        </section>
-                        <!-- SECTION - ad-google - sidebar - END -->
+
+                            <div class="t-grid__section -ad">
+                                <!-- SECTION - ad-google - sidebar -->
+                                <section class="t-section my-2">
+                                    <div class="t-section__inner">
+                                        <div class="o-ad-google-sidebar">
+                                            <ins class="adsbygoogle"
+                                                :style="adStyle"
+                                                :data-ad-client="adClient"
+                                                :data-ad-slot="adSlot"
+                                                :data-ad-format="adFormat"
+                                                :data-full-width-responsive="adResponsive">
+                                            </ins>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- SECTION - ad-google - sidebar - END -->
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
                 <!-- SECTION END -->
             </template>
             <template v-else-if="activeTab === 'videa'">
                 <!-- SECTION -->
-                <div class="t-layout-full">
-
-                    <!-- SECTION - videos -->
-                    <section class="t-section pt-4 py-2 px-2" v-if="videos[0]">
-                        <div class="t-section__inner">
-                            <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                            <oVideoList :videos="videos" :images="images" type="travel" styleThema=" -dark" styleAlign=" -p-left" />
+                <section class="t-section -p0">
+                    <div class="t-section__inner">
+                        <div class="t-grid -world-ful">
+                            <div class="t-grid__section -content">
+                                <!-- SECTION - videos -->
+                                <section class="t-section -bg-extra-dark-gray pt-4 py-2" v-if="videos[0]">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oVideoList :videos="videos" :images="images" type="travel" styleThema=" -world" styleAlign=" -p-left" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - videos END -->
+                            </div>
                         </div>
-                    </section>
-                    <!-- SECTION - videos END -->
-
-                </div>
+                    </div>
+                </section>
                 <!-- SECTION END -->
             </template>
         </div>

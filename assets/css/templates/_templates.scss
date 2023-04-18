@@ -1,9 +1,4 @@
 //templates
-
-
-//components
-@import "t-components";
-
 //future delete
 @import "t-col2";
 
@@ -12,13 +7,19 @@
 @import "t-header";
 @import "t-hero";
 
+//main
+@import "t-main";
+
 //layout
 @import "t-layout-2col";
 @import "t-layout-full";
 @import "t-layout-grid";
 
-//main
-@import "t-main";
+//components
+@import "t-components";
 
 //section (block, component..)
 @import "t-section";
+
+//grid
+@import "t-grid";

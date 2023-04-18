@@ -17,7 +17,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 0 -3px;
     }
 
     &__item {
@@ -46,7 +45,7 @@
         display: inline-block;
         position: relative;
         overflow: hidden;
-        border-radius: 10px;
+        border-radius: $br-2;
     }
 
     &__image-lazyload {
@@ -111,6 +110,39 @@
     }
 
     &.-dark {
+        #{$self}__title-link {
+            color: $white;
+
+            &:hover {
+                color: $gray6;
+            }
+        }
+
+        #{$self}__perex-link {
+            color: $white;
+    
+            &:hover {
+                color: $gray6;
+            }
+        }
+    }
+
+    &.-world {
+        max-width: 100%;
+        padding: 0 5px;
+
+        @media only screen and (min-width: $ti) {
+            padding: 0 10px;
+        }
+
+        #{$self}__item-inner {
+            margin: 10px 5px;
+
+            @media only screen and (min-width: $ti) {
+                margin: 10px;
+            }
+        }
+
         #{$self}__title-link {
             color: $white;
 

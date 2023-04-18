@@ -11,4 +11,8 @@
             text-decoration: underline;
         }
     }
+
+    &.-world {
+        color: $worldTEXTdark2;
+    }
 }

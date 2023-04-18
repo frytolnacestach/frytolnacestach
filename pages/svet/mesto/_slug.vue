@@ -1,141 +1,180 @@
 <template>
-    <main class="t-main">
+    <main class="t-main -bg-world -pt-menu">
         
-        <!-- SECTION - hero -->
-        <section class="t-section">
+        <!-- SECTION - hero + hot info hero -->
+        <section class="t-section -px-world mt-1 -p0">
+            <div class="t-section__inner">
+                <div class="t-grid -world-hero">
 
-            <oHeroPlace :place="place" :images="images" />
-
-            <!-- SECTION - hot info -->
-            <div class="js_o-hot-info-hero o-hot-info-hero">
-                <div class="o-hot-info-hero__outer">
-                    <div class="o-hot-info-hero__inner">
-                        <div class="o-hot-info-hero__items">
-                            <div class="o-hot-info-hero__item" v-if="placeState[0].name">
-                                <span class="o-hot-info-hero__title">Stát</span>
-                                <span class="o-hot-info-hero__value">
-                                    <NuxtLink class="o-hot-info-hero__value-link" :to="`/svet/stat/${placeState[0].slug}`">{{ placeState[0].name }}</NuxtLink>
-                                </span>
-                            </div>
-                            <div class="o-hot-info-hero__item" v-if="place[0].area">
-                                <span class="o-hot-info-hero__title">Rozloha</span>
-                                <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
-                            </div>
-                            <div class="o-hot-info-hero__item" v-if="place[0].altitude">
-                                <span class="o-hot-info-hero__title">Nadmořská výška</span>
-                                <span class="o-hot-info-hero__value">{{ place[0].altitude !== 0 ? place[0].altitude.toLocaleString('cs-CZ') : place[0].altitude }} m n. m.</span>
-                            </div>
-                            <div class="o-hot-info-hero__item" v-if="place[0].population">
-                                <span class="o-hot-info-hero__title">Populace</span>
-                                <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
-                            </div>
-                        </div>
+                    <!-- SECTION - hero -->
+                    <div class="t-grid__section -hero-place">
+                        <oHeroPlace :place="place" :images="images" />
                     </div>
-                </div>
-            </div>
-            <!-- SECTION - hot info - END -->
-        </section>
-        <!-- SECTION - hero - END -->
+                    <!-- SECTION - hero END -->
 
-        <!-- SECTION -->
-        <div class="t-col2">
-            <div class="t-col2__content my-2"  v-if="place[0]">
-
-                <!-- SECTION - information by ChatGPT -->
-                <section class="t-section py-2" v-if="place[0].information_chatgpt">
-                    <div class="t-section__inner">
-                        <div class="o-information-block">
-                            <div class="o-information-block__outer">
-                                <div class="o-information-block__inner">
-                                    <h2 class="o-information-block__title">O městě {{ place[0].name ? place[0].name : '' }}</h2>
-                                    <div class="o-information-block__perex">
-                                        <div class="o-information-block_wysiwyg" v-html="place[0].information_chatgpt"></div>
-                                        <div class="o-information-block__author">
-                                            <i class="m-author">zdroj. <a class="m-author__link" href="https://chat.openai.com/chat" target="_blank">ChatGPT</a></i>
+                    <!-- SECTION - hot info -->
+                    <div class="t-grid__section -hot-info-hero">
+                        <div class="js_o-hot-info-hero o-hot-info-hero">
+                            <div class="o-hot-info-hero__outer">
+                                <div class="o-hot-info-hero__inner">
+                                    <div class="o-hot-info-hero__items">
+                                        <div class="o-hot-info-hero__item" v-if="placeState[0].name">
+                                            <div class="o-hot-info-hero__content">
+                                                <div class="o-hot-info-hero__text">
+                                                    <span class="o-hot-info-hero__title">Stát</span>
+                                                    <span class="o-hot-info-hero__value">
+                                                        <NuxtLink class="o-hot-info-hero__value-link" :to="`/svet/stat/${placeState[0].slug}`">{{ placeState[0].name }}</NuxtLink>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="o-hot-info-hero__item" v-if="place[0].area">
+                                            <div class="o-hot-info-hero__content">
+                                                <div class="o-hot-info-hero__text">
+                                                    <span class="o-hot-info-hero__title">Rozloha</span>
+                                                    <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="o-hot-info-hero__item" v-if="place[0].altitude">
+                                            <div class="o-hot-info-hero__content">
+                                                <div class="o-hot-info-hero__text">
+                                                    <span class="o-hot-info-hero__title">Nadmořská výška</span>
+                                                    <span class="o-hot-info-hero__value">{{ place[0].altitude !== 0 ? place[0].altitude.toLocaleString('cs-CZ') : place[0].altitude }} m n. m.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="o-hot-info-hero__item" v-if="place[0].population">
+                                            <div class="o-hot-info-hero__content">
+                                                <div class="o-hot-info-hero__text">
+                                                    <span class="o-hot-info-hero__title">Populace</span>
+                                                    <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-                <!-- SECTION - information by ChatGPT END -->
+                    <!-- SECTION - hot info - END -->
 
-                <!-- SECTION - Ubytování -->
-                <section class="t-section py-2">
-                    <div class="t-section__inner">
-                        <div class="o-information-block">
-                            <div class="o-information-block__outer">
-                                <div class="o-information-block__inner">
-                                    <h2 class="o-information-block__title">Ubytování</h2>
-                                    <div class="o-information-block__widget" v-for="coordinate in placeState[0].coordinates">
-                                        <oWidgetBooking
-                                            :landmarkName="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
-                                            :address="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
-                                            :latitude="`${ coordinate.latitude }`"
-                                            :longitude="`${ coordinate.longitude }`"
-                                            zoom=13
-                                        />
+                </div>
+            </div>
+        </section>
+        <!-- SECTION - hero + hot info - END -->
+
+        <!-- SECTION -->
+        <section class="t-section -px-world -p0">
+            <div class="t-section__inner">
+                <div class="t-grid -world-content-with-ad">
+                    
+                    <div class="t-grid__section -content">
+                        
+                        <!-- SECTION - information by ChatGPT -->
+                        <section class="t-section" v-if="place[0].information_chatgpt">
+                            <div class="t-section__inner">
+                                <div class="o-information-block">
+                                    <div class="o-information-block__outer">
+                                        <div class="o-information-block__inner">
+                                            <h2 class="o-information-block__title">O městě {{ place[0].name ? place[0].name : '' }}</h2>
+                                            <div class="o-information-block__perex">
+                                                <div class="o-information-block_wysiwyg" v-html="place[0].information_chatgpt"></div>
+                                                <div class="o-information-block__author">
+                                                    <i class="m-author">zdroj. <a class="m-author__link" href="https://chat.openai.com/chat" target="_blank">ChatGPT</a></i>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- SECTION - Ubytování END -->
-                
-            </div>
+                        </section>
+                        <!-- SECTION - information by ChatGPT END -->
 
-            <div class="t-col2__sidebar my-2">
-                <!-- SECTION - ad-google - sidebar -->
-                <section class="t-section my-2">
-                    <div class="t-section__inner">
-                        <div class="o-ad-google-sidebar">
-                            <ins class="adsbygoogle"
-                                :style="adStyle"
-                                :data-ad-client="adClient"
-                                :data-ad-slot="adSlot"
-                                :data-ad-format="adFormat"
-                                :data-full-width-responsive="adResponsive">
-                            </ins>
-                        </div>
+                        <!-- SECTION - Ubytování -->
+                        <section class="t-section py-2">
+                            <div class="t-section__inner">
+                                <div class="o-information-block">
+                                    <div class="o-information-block__outer">
+                                        <div class="o-information-block__inner">
+                                            <h2 class="o-information-block__title">Ubytování</h2>
+                                            <div class="o-information-block__widget" v-for="coordinate in placeState[0].coordinates">
+                                                <oWidgetBooking
+                                                    :landmarkName="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
+                                                    :address="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
+                                                    :latitude="`${ coordinate.latitude }`"
+                                                    :longitude="`${ coordinate.longitude }`"
+                                                    zoom=13
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- SECTION - Ubytování END -->
+                
                     </div>
-                </section>
-                <!-- SECTION - ad-google - sidebar - END -->
+
+                    <div class="t-grid__section -ad">
+
+                        <!-- SECTION - ad-google - sidebar -->
+                        <section class="t-section my-2">
+                            <div class="t-section__inner">
+                                <div class="o-ad-google-sidebar">
+                                    <ins class="adsbygoogle"
+                                        :style="adStyle"
+                                        :data-ad-client="adClient"
+                                        :data-ad-slot="adSlot"
+                                        :data-ad-format="adFormat"
+                                        :data-full-width-responsive="adResponsive">
+                                    </ins>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- SECTION - ad-google - sidebar - END -->
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
         <!-- SECTION END -->
 
-        <div class="t-layout-full" v-if="place[0]">
-            
-            <!-- SECTION - videos -->
-            <section class="t-section -bg-extra-dark-gray pt-4 py-2 px-2" v-if="videos[0]">
-                <div class="t-section__inner">
-                    <mHeadline title="Videa z obce" :titleValue="place[0].name" styleThema=" -dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                    <oVideoList :videos="videos" :images="images" type="travel" styleThema=" -dark" styleAlign=" -p-left" />
-                </div>
-            </section>
-            <!-- SECTION - videos END -->
+        <section class="t-section -p0">
+            <div class="t-section__inner">
+                <div class="t-grid -world-ful">
+                    <div class="t-grid__section -content">
 
-            <!-- SECTION - města - all -->
-            <section class="t-section -bg-gray py-4">
-                <div class="t-section__inner">
-                    <mHeadline title="Další města a obce ve státě" :titleValue="placeState[0].name" styleAlign=" -p-left" styleGap=" mb-2" />
-                    <oCoverPlaceDetail :places="placesCities" :images="images" type="mesto" />
-                </div>
-            </section>
-            <!-- SECTION - města - all - END -->
+                        <!-- SECTION - videos -->
+                        <section class="t-section -bg-extra-dark-gray pt-4 py-2" v-if="videos[0]">
+                            <div class="t-section__inner">
+                                <mHeadline title="Videa z obce" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                <oVideoList :videos="videos" :images="images" type="travel" styleThema=" -dark" styleAlign=" -p-left" />
+                            </div>
+                        </section>
+                        <!-- SECTION - videos END -->
 
-            <!-- SECTION - articles -->
-            <section class="t-section -bg-extra-dark-gray pt-4 py-2 px-2" v-if="posts[0]">
-                <div class="t-section__inner">
-                    <mHeadline title="Články z obce" :titleValue="place[0].name" styleThema=" -dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                    <oArticleList :posts="posts" :images="images" styleThema=" -dark" styleAlign=" -p-left" />
-                </div>
-            </section>
-            <!-- SECTION - articles END -->
+                        <!-- SECTION - města - all -->
+                        <section class="t-section -p0 -py4 -px-world-big -h-scroll">
+                            <div class="t-section__inner">
+                                <mHeadline title="Další města a obce ve státě" :titleValue="placeState[0].name" styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" />
+                                <oCoverPlaceDetail :places="placesCities" :images="images" type="mesto" />
+                            </div>
+                        </section>
+                        <!-- SECTION - města - all - END -->
+
+                        <!-- SECTION - articles -->
+                        <section class="t-section -bg-extra-dark-gray pt-4 py-2" v-if="posts[0]">
+                            <div class="t-section__inner">
+                                <mHeadline title="Články z obce" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                <oArticleList :posts="posts" :images="images" styleThema=" -dark" styleAlign=" -p-left" />
+                            </div>
+                        </section>
+                        <!-- SECTION - articles END -->
             
-        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 

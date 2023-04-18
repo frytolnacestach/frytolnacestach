@@ -1,11 +1,16 @@
 .m-nav-place {
-    background-color: $white;
-    border-bottom: 1px solid $gray5;
     min-height: 55px;
     overflow: hidden;
 
     &__outer {
-        width: 100%;
+        background-color: $white;
+        border-radius: $br-2;
+        margin: 5px 0;
+
+        @media only screen and (min-width: $ti) {
+            margin: 10px 0;
+            border-radius: $br-4;
+        }
     }
 
     &__inner {
@@ -20,7 +25,15 @@
         flex-wrap: wrap;
         justify-content: flex-start;
         list-style-type: none;
-        padding: 0;
+        padding: 0 5px;
+
+        @media only screen and (min-width: $ti) {
+            padding: 0 10px;
+        }
+
+        @media only screen and (min-width: $sm) {
+            padding: 0 20px;
+        }
     }
 
     &__item {
