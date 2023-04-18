@@ -10,7 +10,7 @@
         <!-- SECTION - Hero place type END -->
 
         <!-- SECTION - Alphabet -->
-        <section class="t-section pb-2 -bg-world -p0">
+        <section class="t-section -bg-world -p0">
             <div class="t-section__inner">
                 <!-- TODO <mNavAlphabet :alphabet="alphabet" />-->
                 
