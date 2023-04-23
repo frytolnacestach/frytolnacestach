@@ -40,66 +40,21 @@
         <!-- SECTION - Typ místa -->
         <section class="t-section py-4 -bg-world">
             <div class="t-section__inner">
-                <div class="o-world-type">
-                    <div class="o-world-type__outer">
-                        <div class="o-world-type__inner">
-                            <div class="o-world-type__items">
-                                
-                                <div class="o-world-type__item">
-                                    <div class="o-world-type__container">
-                                        <div class="o-world-type__image">
-                                            <div class="o-world-type__image-file -continent">
-                                                <NuxtLink class="o-world-type__image-link" :to="`/svet/kontinent`"></NuxtLink>
-                                            </div>
-                                        </div>
-                                        <h2 class="o-world-type__text">
-                                            <NuxtLink class="o-world-type__link" :to="`/svet/kontinent`">KONTINENTY<span class="o-world-type__link-length"> (7 položek) </span></NuxtLink>
-                                        </h2>
-                                    </div>
-                                </div>
-
-                                <div class="o-world-type__item">
-                                    <div class="o-world-type__container">
-                                        <div class="o-world-type__image">
-                                            <div class="o-world-type__image-file -state">
-                                                <NuxtLink class="o-world-type__image-link" :to="`/svet/stat`"></NuxtLink>
-                                            </div>
-                                        </div>
-                                        <h2 class="o-world-type__text">
-                                            <NuxtLink class="o-world-type__link" :to="`/svet/stat`">STÁTY<span class="o-world-type__link-length"> (249 položek) </span></NuxtLink>
-                                        </h2>
-                                    </div>
-                                </div>
-
-                                <div class="o-world-type__item">
-                                    <div class="o-world-type__container">
-                                        <div class="o-world-type__image">
-                                            <div class="o-world-type__image-file -city">
-                                                <NuxtLink class="o-world-type__image-link" :to="`/svet/mesto`"></NuxtLink>
-                                            </div>
-                                        </div>
-                                        <h2 class="o-world-type__text">
-                                            <NuxtLink class="o-world-type__link" :to="`/svet/mesto`">MĚSTA<span class="o-world-type__link-length"> (2491 položek) </span></NuxtLink>
-                                        </h2>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <oWorldType :items="oWorldType" />
             </div>
         </section>
+        <!-- SECTION - Typ místa END -->
     </main>
 </template>
 
 <script>
+    import oWorldType from '@/components/organisms/oWorldType.vue'
 
     export default {
         name: 'PageSvet',
 
         components: {
-
+            oWorldType
         },
 
         methods: {
@@ -137,7 +92,33 @@
                 placesCities: [],
                 placesSearch: '',
                 searchQuery: '',
-                filteredPlaces: []
+                filteredPlaces: [],
+                oWorldType: [
+                    {
+                        id: 1,
+                        name: "Kontinenty",
+                        url: "/svet/kontinent",
+                        length: 7,
+                        styleThemaItem: " -continent"
+
+                    },
+                    {
+                        id: 2,
+                        name: "Státy",
+                        url: "/svet/stat",
+                        length: 249,
+                        styleThemaItem: " -state"
+
+                    },
+                    {
+                        id: 3,
+                        name: "Města",
+                        url: "/svet/mesto",
+                        length: 2491,
+                        styleThemaItem: " -city"
+
+                    }
+                ],
             }
         },
 
