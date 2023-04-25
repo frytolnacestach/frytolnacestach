@@ -52,7 +52,9 @@
     }
 
     &__perex {
-
+        a {
+            font-weight: 600;
+        }
     }
 
     &__buttons {
@@ -71,6 +73,7 @@
         text-transform: uppercase;
         display: inline-block;
         margin: 5px;
+        font-weight: 600;
         cursor: pointer;
 
         &:hover {

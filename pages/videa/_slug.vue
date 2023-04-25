@@ -1,5 +1,5 @@
 <template>
-    <main class="t-main -pt-menu">
+    <main class="t-main -pt-menu" role="main">
         
         <!-- SECTION - Hero video -->
         <section class="t-section -p0">

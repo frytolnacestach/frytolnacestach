@@ -35,7 +35,7 @@
                                     :alt="post.title ? post.title : 'Obrázek článku'"
                                     v-lazy>
                             </div>
-                            <NuxtLink class="o-article-list__image-link" :to="`/clanky/${post.slug}`" v-if="post.slug"></NuxtLink>
+                            <NuxtLink class="o-article-list__image-link" :to="`/clanky/${post.slug}`" :aria-label="`Přečti si článek ${post.title}`" v-if="post.slug"></NuxtLink>
                         </div>
 
                         <div class="o-article-list__text">

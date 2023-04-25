@@ -8,8 +8,8 @@
                         <p class="o-popup-cookies__perex">Cookies nám pomáhají zlepšovat uživatelskou zkušenost našeho webu. Používáme je k anonymní analýze návštěvnosti a chování na webu, personalizaci obsahu, nebo cílení reklamy. Data o využívání našeho webu můžeme s Vaším souhlasem posílat i do systémů našich partnerů, abychom mohli plně využívat jejich nástroje. Partneři tyto údaje mohou zkombinovat s dalšími informacemi, které jste jim poskytli nebo které získali v důsledku toho, že používáte jejich služby. Více informací najdete v našich <NuxtLink to="/conditions">zásadách ochrany osobních údajů</NuxtLink> a <NuxtLink to="/cookies">zásadách cookies</NuxtLink>.</p>
                     </div>
                     <div class="o-popup-cookies__buttons">
-                        <a class="js_o-popup-cookies__button--setting o-popup-cookies__button -setting">Upravit preference</a>
-                        <a class="js_o-popup-cookies__button--all o-popup-cookies__button">Přijmám vše</a>
+                        <a class="js_o-popup-cookies__button--setting o-popup-cookies__button -setting" href="#" rel="nofollow">Upravit preference</a>
+                        <a class="js_o-popup-cookies__button--all o-popup-cookies__button" href="#" rel="nofollow">Přijmám vše</a>
                     </div>
                 </div>
                 <div class="js_o-popup-cookies__page--setting o-popup-cookies__page -setting">
@@ -49,9 +49,9 @@
                         </div>
                     </div>
                     <div class="o-popup-cookies__buttons">
-                        <a class="js_o-popup-cookies__button--technical o-popup-cookies__button -technical">Povolit pouze nezbytné</a>
-                        <a class="js_o-popup-cookies__button--select o-popup-cookies__button -select">Povolit vybrané</a>
-                        <a class="js_o-popup-cookies__button--all-detail o-popup-cookies__button">Přijmám vše</a>
+                        <a class="js_o-popup-cookies__button--technical o-popup-cookies__button -technical" href="#" rel="nofollow">Povolit pouze nezbytné</a>
+                        <a class="js_o-popup-cookies__button--select o-popup-cookies__button -select" href="#" rel="nofollow">Povolit vybrané</a>
+                        <a class="js_o-popup-cookies__button--all-detail o-popup-cookies__button" href="#" rel="nofollow">Přijmám vše</a>
                     </div>
                 </div>
             </div>

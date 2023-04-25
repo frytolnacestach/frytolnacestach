@@ -55,24 +55,31 @@
         display: flex;
         justify-content: flex-end;
         width: 100%;
-        height: 40px;
+        height: auto;
 
         @media only screen and (min-width: $lg) {
             width: auto;
+            height: 40px;
         }
 
         &.-special {
 
             #{$self}__link {
-                background-color: $brand3;
-                color: $white;
-                border-radius: 5px;
-                padding: 3px 12px;
-                line-height: 30px;
+                @include transition(background-color, .3s);
+                
+                @media only screen and (min-width: $lg) {
+                    background-color: $brand33;
+                    color: $white;
+                    border-radius: 5px;
+                    padding: 3px 12px;
+                    line-height: 30px;
+                }
 
                 &:hover {
-                    background-color: $brand2;
-                    color: $white;
+                    @media only screen and (min-width: $lg) {
+                        background-color: $brand2;
+                        color: $white;
+                    }
                 }
             }
         }
@@ -83,31 +90,45 @@
         margin: 2px 5px;
         line-height: 26px;
         font-size: $fs-normal-ss;
-        color: $gray1;
+        color: $gray7;
         text-decoration: none;
         text-transform: uppercase;
         font-weight: 500;
 
         &:hover {
-            color: $brand1;
+            color: $brand11;
         }
 
         &.-active {
-            color: $brand1;
+            color: $gray7;
+            border-bottom: 2px solid black;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+
+            @media only screen and (min-width: $lg) {
+                color: $brand11;
+                border-bottom: 0;
+                margin-bottom: 5px;
+                padding-bottom: 5px;
+            }
 
             &:hover {
-                color: $brand1;
+                color: $gray7;
+
+                @media only screen and (min-width: $lg) {
+                    color: $brand11;
+                }
             }
         }
     }
 
     &__link-subfix {
-        color: $white;
+        color: $gray7;
         font-size: $fs-small-s;
         line-height: 14px;
 
         @media only screen and (min-width: $lg) {
-            color: $brand3;
+            color: $brand33;
         }
     }
 

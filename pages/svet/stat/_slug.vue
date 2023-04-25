@@ -1,5 +1,5 @@
 <template>
-    <main class="t-main -bg-world -pt-menu">
+    <main class="t-main -bg-world -pt-menu" role="main">
         
         <!-- SECTION - hero + hot info hero -->
         <section class="t-section -px-world mt-1 -p0">
@@ -181,7 +181,7 @@
                                                         <div class="o-information-block__list">
                                                             <ul class="o-information-block__list-ul">
                                                                 <li class="o-information-block__list-li" v-for="item in place[0].visitors_entry" v-bind:key="item.name">
-                                                                    <h5 class="o-information-block__list-h5">{{ item.name }}</h5> 
+                                                                    <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
                                                                     <span class="o-information-block__list-span">{{ item.value }}</span>
                                                                     <i class="o-information-block__list-info">({{ item.date_update }})</i>
                                                                 </li>
@@ -307,7 +307,7 @@
                                                         <div class="o-information-block__list">
                                                             <ul class="o-information-block__list-ul">
                                                                 <li class="o-information-block__list-li" v-for="item in place[0].money_prices" v-bind:key="item.name">
-                                                                    <h5 class="o-information-block__list-h5">{{ item.name }}</h5> 
+                                                                    <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
                                                                     <span class="o-information-block__list-span">{{ item.value }} {{ place[0].currency_name }} {{ place[0].currency_code ? '(' + place[0].currency_code + ')' : '(Místní měna)' }}</span>
                                                                     <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
                                                                 </li>
@@ -364,7 +364,7 @@
                                                         <div class="o-information-block__list">
                                                             <ul class="o-information-block__list-ul">
                                                                 <li class="o-information-block__list-li" v-for="item in place[0].people_religion" v-bind:key="item.name">
-                                                                    <h5 class="o-information-block__list-h5">{{ item.name }}</h5> 
+                                                                    <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
                                                                     <span class="o-information-block__list-span">{{ item.value }}</span>
                                                                     <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
                                                                 </li>
@@ -389,7 +389,7 @@
                                                         <div class="o-information-block__list">
                                                             <ul class="o-information-block__list-ul">
                                                                 <li class="o-information-block__list-li" v-for="item in place[0].people_education" v-bind:key="item.name">
-                                                                    <h5 class="o-information-block__list-h5">{{ item.name }}</h5> 
+                                                                    <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
                                                                     <span class="o-information-block__list-span">{{ item.value }}</span>
                                                                     <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
                                                                 </li>
@@ -414,7 +414,7 @@
                                                         <div class="o-information-block__list">
                                                             <ul class="o-information-block__list-ul">
                                                                 <li class="o-information-block__list-li" v-for="item in place[0].people_nationality" v-bind:key="item.name">
-                                                                    <h5 class="o-information-block__list-h5">{{ item.name }}</h5> 
+                                                                    <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
                                                                     <span class="o-information-block__list-span">{{ item.value }}</span>
                                                                     <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
                                                                 </li>
@@ -469,7 +469,7 @@
                                                         <div class="o-information-block__list">
                                                             <ul class="o-information-block__list-ul">
                                                                 <li class="o-information-block__list-li" v-for="item in place[0].visitors_entry" v-bind:key="item.name">
-                                                                    <h5 class="o-information-block__list-h5">{{ item.name }}</h5> 
+                                                                    <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
                                                                     <span class="o-information-block__list-span">{{ item.value }}</span>
                                                                     <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
                                                                 </li>
@@ -526,7 +526,7 @@
                                                         <div class="o-information-block__list">
                                                             <ul class="o-information-block__list-ul">
                                                                 <li class="o-information-block__list-li" v-for="item in place[0].phone_numbers_emergency" v-bind:key="item.name">
-                                                                    <h5 class="o-information-block__list-h5">{{ item.name }}</h5> 
+                                                                    <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
                                                                     <span class="o-information-block__list-span">{{ item.number }}</span>
                                                                     <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
                                                                 </li>

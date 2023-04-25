@@ -1,5 +1,5 @@
 <template>
-    <footer class="t-footer">
+    <footer class="t-footer" role="contentinfo">
         <div class="o-footer">
 
             <!-- NAV - Footer -->

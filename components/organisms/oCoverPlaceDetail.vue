@@ -46,7 +46,7 @@
                             <h3 class="o-cover-place-detail__name" v-if="place.name">
                                 {{ place.name }}
                             </h3>
-                            <NuxtLink class="o-cover-place-detail__link" :to="`/svet/${type}/${place.slug}`" v-if="place.slug"></NuxtLink>
+                            <NuxtLink class="o-cover-place-detail__link" :to="`/svet/${type}/${place.slug}`" :aria-label="`Čti více o místě ${place.name}`" v-if="place.slug"></NuxtLink>
                         </div>
                     </div>
                 </div>

@@ -50,19 +50,20 @@
         font-size: $fs-normal-ss;
         line-height: 20px;
         text-align: center;
+        font-weight: 600;
 
         &:hover {
-            color: $brand1;
+            color: $brand11;
         }
 
         &.-active {
-            color: $brand1;
+            color: $brand11;
 
             &:after {
                 content: '';
                 width: 42%;
                 height: 3px;
-                background-color: $brand1;
+                background-color: $brand11;
                 position: absolute;
                 bottom: -1px;
             }

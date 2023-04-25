@@ -4,7 +4,7 @@
         <!-- SECTION - Vyhledávač -->
         <section class="t-section pt-8 pb-4 -bg-world">
             <div class="t-section__inner mt-4">
-                <div class="o-search">
+                <div class="o-search" role="search">
                     <div class="o-search__input">
                         <input class="a-input-search" type="text" v-model="searchQuery" @input="filterPlaces" placeholder="Které místo tě zajímá?">
                     </div>

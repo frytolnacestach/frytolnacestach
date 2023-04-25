@@ -1,5 +1,5 @@
 <template>
-    <main class="t-main -pt-menu">
+    <main class="t-main -pt-menu" role="main">
         
         <!-- SECTION - Hero place type -->
         <section class="t-section py-4 -bg-world">

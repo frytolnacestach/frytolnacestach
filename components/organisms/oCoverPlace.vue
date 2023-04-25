@@ -40,10 +40,10 @@
                                     v-lazy>
                             </div>
                         </div>
-                        <h3 class="o-cover-place__name">
+                        <h2 class="o-cover-place__name">
                             {{ place.name }}
-                        </h3>
-                        <NuxtLink class="o-cover-place__link" :to="`/svet/${type}/${place.slug}`"></NuxtLink>
+                        </h2>
+                        <NuxtLink class="o-cover-place__link" :to="`/svet/${type}/${place.slug}`" :aria-label="`Čti více o místě ${place.name}`"></NuxtLink>
                     </div>
                 </div>
             </div>

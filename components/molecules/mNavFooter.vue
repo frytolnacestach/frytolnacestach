@@ -28,7 +28,7 @@
                         <NuxtLink class="m-nav-footer__link" to="/conditions">Obchodní podmínky a zásady ochrany osobních údajů</NuxtLink>
                     </li>
                     <li class="m-nav-footer__item">
-                        <a class="js_cookies-edit m-nav-footer__link">Upravit můj souhlas s cookies</a>
+                        <NuxtLink class="js_cookies-edit m-nav-footer__link" to="#" rel="nofollow">Upravit můj souhlas s cookies</NuxtLink>
                     </li>
                 </ul>
             </div>

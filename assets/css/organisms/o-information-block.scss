@@ -119,7 +119,7 @@ BLOCKS:
         padding: 5px 0 12px;
     }
 
-    &__list-h5 {
+    &__list-h3 {
         display: block;
         font-size: $fs-normal;
         color: $white;
@@ -165,7 +165,7 @@ BLOCKS:
             color: $black;
         }
 
-        #{$self}__list-h5 {
+        #{$self}__list-h3 {
             color: $black;
         }
 
@@ -200,7 +200,7 @@ BLOCKS:
             color: $white;
         }
 
-        #{$self}__list-h5 {
+        #{$self}__list-h3 {
             color: $white;
         }
 

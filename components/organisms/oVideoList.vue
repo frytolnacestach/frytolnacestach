@@ -35,7 +35,7 @@
                                     :alt="video.title ? video.title : 'Obrázek videa'"
                                     v-lazy>
                             </div>
-                            <NuxtLink class="o-video-list__image-link" :to="`/videa/${video.slug}`" v-if="video.slug"></NuxtLink>
+                            <NuxtLink class="o-video-list__image-link" :to="`/videa/${video.slug}`" :aria-label="`Koukni se na video ${video.title}`" v-if="video.slug"></NuxtLink>
                         </div>
                         <div class="o-video-list__text">
                             <h3 class="o-video-list__title" v-if="video.title">
