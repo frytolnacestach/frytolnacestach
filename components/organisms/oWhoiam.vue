@@ -6,18 +6,15 @@
                     <div class="o-whoiam__ring-content">
                         <div class="o-whoiam__image loading-image">
                             <div class="o-whoiam__image-lazyload">
-                                <img
-                                    class="o-whoiam__image-file lazyload-file"
-                                    v-lazy="{
-                                        src: 'https://image.frytolnacestach.cz/storage/main/michal-fryc.webp',
-                                        srcset: {
-                                            '320': 'https://image.frytolnacestach.cz/storage/main/michal-fryc.webp',
-                                            '320@2x': 'https://image.frytolnacestach.cz/storage/main/michal-fryc.webp 2x'
-                                        },
-                                        sizes: '320px'
-                                    }"
+                                <img class="o-whoiam__image-file lazyload-file"
+                                    data-sizes="(max-width: 374px) 180px, (max-width: 575px) 280px, (max-width: 1920px) 380px, 540px"
+                                    :data-srcset="`
+                                        https://image.frytolnacestach.cz/storage/main/michal-fryc-130.webp 130w,
+                                        https://image.frytolnacestach.cz/storage/main/michal-fryc-260-2x.webp 360w,
+                                        `"
+                                    :data-src="`https://image.frytolnacestach.cz/storage/main/michal-fryc.webp`"
                                     alt="Michal Fryč"
-                                />
+                                    v-lazy>
                             </div>
                         </div>
                     </div>

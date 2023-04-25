@@ -7,52 +7,42 @@
                         
                         <div class="o-sidebar-map-mapy__image loading-image">
                             <div v-if="images && images.find(image => image.id === idImageMap)" class="o-sidebar-map-mapy__image-lazyload">
-                                <img
-                                    class="o-sidebar-map-mapy__image-file lazyload-file"
-                                    v-lazy="{
-                                        src: 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name + '.webp',
-                                        srcset: {
-                                            '374': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name + '.webp',
-                                            '439': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name + '.webp',
-                                            '575': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name + '.webp',
-                                            '767': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name + '.webp',
-                                            '991': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name + '.webp',
-                                            '992': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name + '.webp',
-                                            '374@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name + '.webp 2x',
-                                            '439@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name + '.webp 2x',
-                                            '575@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name + '.webp 2x',
-                                            '767@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name + '.webp 2x',
-                                            '991@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name + '.webp 2x',
-                                            '992@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name + '.webp 2x'
-                                        },
-                                        sizes: '(max-width: 374px) 374px, (max-width: 439px) 439px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, 992px'
-                                    }"
+                                <img class="o-sidebar-map-mapy__image-file lazyload-file"
+                                    data-sizes="(max-width: 374px) 340px, (max-width: 439px) 420px, (max-width: 575px) 550px, (max-width: 767px) 740px, (max-width: 991px) 980px, 300px"
+                                    :data-srcset="`
+                                        https://image.frytolnacestach.cz/storage/${images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name}-300.webp 300w,
+                                        https://image.frytolnacestach.cz/storage/${images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name}-340.webp 340w,
+                                        https://image.frytolnacestach.cz/storage/${images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name}-420.webp 420w,
+                                        https://image.frytolnacestach.cz/storage/${images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name}-550.webp 550w,
+                                        https://image.frytolnacestach.cz/storage/${images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name}-740.webp 740w,
+                                        https://image.frytolnacestach.cz/storage/${images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name}-600-2x.webp 600w
+                                        https://image.frytolnacestach.cz/storage/${images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name}-680-2x.webp 680w,
+                                        https://image.frytolnacestach.cz/storage/${images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name}-820-2x.webp 820w,
+                                        https://image.frytolnacestach.cz/storage/${images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name}-1100-2x.webp 1100w,
+                                        https://image.frytolnacestach.cz/storage/${images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name}-1480-2x.webp 1480w,
+                                        `"
+                                    :data-src="`https://image.frytolnacestach.cz/storage/${images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name}.webp`"
                                     :alt="title"
-                                />
+                                    v-lazy>
                             </div>
                             <div v-else class="o-sidebar-map-mapy__image-lazyload">
-                                <img
-                                    class="o-sidebar-map-mapy__image-file lazyload-file"
-                                    v-lazy="{
-                                        src: 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                        srcset: {
-                                            '374': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                            '439': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                            '575': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                            '767': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                            '991': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                            '992': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                            '374@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                            '439@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                            '575@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                            '767@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                            '991@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                            '992@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x'
-                                        },
-                                        sizes: '(max-width: 374px) 374px, (max-width: 439px) 439px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, 992px'
-                                    }"
+                                <img class="o-sidebar-map-mapy__image-file lazyload-file"
+                                    data-sizes="(max-width: 374px) 340px, (max-width: 439px) 420px, (max-width: 575px) 550px, (max-width: 767px) 740px, (max-width: 991px) 980px, 992px"
+                                    :data-srcset="`
+                                        https://image.frytolnacestach.cz/storage/_default/hero-340.webp 340w,
+                                        https://image.frytolnacestach.cz/storage/_default/hero-420.webp 420w,
+                                        https://image.frytolnacestach.cz/storage/_default/hero-550.webp 550w,
+                                        https://image.frytolnacestach.cz/storage/_default/hero-740.webp 740w,
+                                        https://image.frytolnacestach.cz/storage/_default/hero-980.webp 980w,
+                                        https://image.frytolnacestach.cz/storage/_default/hero-680-2x.webp 680w,
+                                        https://image.frytolnacestach.cz/storage/_default/hero-820-2x.webp 820w,
+                                        https://image.frytolnacestach.cz/storage/_default/hero-1100-2x.webp 1100w,
+                                        https://image.frytolnacestach.cz/storage/_default/hero-1480-2x.webp 1480w,
+                                        https://image.frytolnacestach.cz/storage/_default/hero-1960-2x.webp 1960w
+                                        `"
+                                    :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
                                     :alt="title"
-                                />
+                                    v-lazy>
                             </div>
                         </div>
                     </a>

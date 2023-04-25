@@ -8,44 +8,38 @@
 
                             <div class="o-cover-place-detail__image loading-image">
                                 <div v-if="images && images.find(image => image.id === place.id_image_cover)" class="o-cover-place-detail__image-lazyload">
-                                    <img
-                                        class="o-cover-place-detail__image-file lazyload-file"
-                                        v-lazy="{
-                                            src: 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name + '.webp',
-                                            srcset: {
-                                                '374': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name + '.webp',
-                                                '1399': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name + '.webp',
-                                                '1920': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name + '.webp',
-                                                '1921': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name + '.webp',
-                                                '374@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name + '.webp 2x',
-                                                '1399@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name + '.webp 2x',
-                                                '1920@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name + '.webp 2x',
-                                                '1921@2x': 'https://image.frytolnacestach.cz/storage/' + images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name + '.webp 2x',
-                                            },
-                                            sizes: '(max-width: 374px) 374px, (max-width: 1399px) 1399px, (max-width: 1920px) 1920px, 1921px'
-                                        }"
-                                        :alt="place.name ? place.name : 'Obrázek města'"
-                                    />
+                                    <img class="o-cover-place-detail__image-file lazyload-file"
+                                        data-sizes="(max-width: 374px) 250px, (max-width: 575px) 220px, (max-width: 1920px) 280px, 360px"
+                                        :data-srcset="`
+                                            https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-220.webp 220w,
+                                            https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-250.webp 250w,
+                                            https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-280.webp 280w,
+                                            https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-360.webp 360w,
+                                            https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-440-2x.webp 440w,
+                                            https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-500-2x.webp 500w,
+                                            https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-560-2x.webp 560w,
+                                            https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-720-2x.webp 720w
+                                            `"
+                                        :data-src="`https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}.webp`"
+                                        :alt="place.name"
+                                        v-lazy>
                                 </div>
                                 <div v-else class="o-cover-place-detail__image-lazyload">
-                                    <img
-                                        class="o-cover-place-detail__image-file lazyload-file"
-                                        v-lazy="{
-                                            src: 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                            srcset: {
-                                                '374': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                '1399': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                '1920': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                '1921': 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
-                                                '374@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                                '1399@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                                '1920@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x',
-                                                '1921@2x': 'https://image.frytolnacestach.cz/storage/_default/hero.webp 2x'
-                                            },
-                                            sizes: '(max-width: 374px) 374px, (max-width: 1399px) 1399px, (max-width: 1920px) 1920px, 1921px'
-                                        }"
-                                        :alt="place.name ? place.name : 'Obrázek města'"
-                                    />
+                                    <img class="o-cover-place-detail__image-file lazyload-file"
+                                        data-sizes="(max-width: 374px) 250px, (max-width: 575px) 220px, (max-width: 1920px) 280px, 360px"
+                                        :data-srcset="`
+                                            https://image.frytolnacestach.cz/storage/_default/hero-220.webp 220w,
+                                            https://image.frytolnacestach.cz/storage/_default/hero-250.webp 250w,
+                                            https://image.frytolnacestach.cz/storage/_default/hero-280.webp 280w,
+                                            https://image.frytolnacestach.cz/storage/_default/hero-360.webp 360w,
+                                            https://image.frytolnacestach.cz/storage/_default/hero-440-2x.webp 440w,
+                                            https://image.frytolnacestach.cz/storage/_default/hero-500-2x.webp 500w,
+                                            https://image.frytolnacestach.cz/storage/_default/hero-560-2x.webp 560w,
+                                            https://image.frytolnacestach.cz/storage/_default/hero-720-2x.webp 720w
+                                            `"
+                                        :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
+                                        :alt="place.name"
+                                        v-lazy>
                                 </div>
                             </div>
 

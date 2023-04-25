@@ -114,9 +114,9 @@ Sizes:
 375 -> 575 = 280px =   (USE 280PX)
 576 -> 767 = 248px =   (USE 280PX)
 768 -> 991 = 240px =   (USE 280PX)
-991 -> 1400 = 272px =  (USE 280PX)
+992 -> 1399 = 272px =  (USE 280PX)
 1400 -> 1920 = 377px = (USE 380PX)
-1920 -> = 500px =      (USE 540PX)
+1921 -> = 500px =      (USE 540PX)
 
 
 #### o-cover-place-detail
