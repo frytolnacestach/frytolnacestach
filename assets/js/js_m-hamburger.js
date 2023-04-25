@@ -1,27 +1,31 @@
-$( document ).ready(function() {
-    $( ".js_m-hamburger" ).click(function() {
-        $status = $(this).data( "hamburger" );
+document.addEventListener("DOMContentLoaded", function(event) {
+	var hamburger = document.querySelector(".js_m-hamburger");
+	hamburger.addEventListener("click", function() {
+		var status = hamburger.getAttribute("data-hamburger");
 
-        if ($status == "close") {
-            $(this).data('hamburger', 'open');
-            $(this).addClass('open');
-            $(".js_m-nav-main").addClass('open');
-            $("html").addClass('no-scroll');
-            $("body").addClass('no-scroll');
-        } else {
-            $(this).data('hamburger', 'close');
-            $(this).removeClass('open');
-            $(".js_m-nav-main").removeClass('open');
-            $("html").removeClass('no-scroll');
-            $("body").removeClass('no-scroll');
-        }
-    });
+		if (status === "close") {
+			hamburger.setAttribute("data-hamburger", "open");
+			hamburger.classList.add("open");
+			document.querySelector(".js_m-nav-main").classList.add("open");
+			document.documentElement.classList.add("no-scroll");
+			document.body.classList.add("no-scroll");
+		} else {
+			hamburger.setAttribute("data-hamburger", "close");
+			hamburger.classList.remove("open");
+			document.querySelector(".js_m-nav-main").classList.remove("open");
+			document.documentElement.classList.remove("no-scroll");
+			document.body.classList.remove("no-scroll");
+		}
+	});
 
-    $( ".js_m-nav-main__link" ).click(function() {
-        $( ".js_m-hamburger" ).data('hamburger', 'close');
-        $( ".js_m-hamburger" ).removeClass('open');
-        $(".js_m-nav-main").removeClass('open');
-        $("html").removeClass('no-scroll');
-        $("body").removeClass('no-scroll');
-    });
+	var navLinks = document.querySelectorAll(".js_m-nav-main__link");
+	navLinks.forEach(function(link) {
+		link.addEventListener("click", function() {
+			hamburger.setAttribute("data-hamburger", "close");
+			hamburger.classList.remove("open");
+			document.querySelector(".js_m-nav-main").classList.remove("open");
+			document.documentElement.classList.remove("no-scroll");
+			document.body.classList.remove("no-scroll");
+		});
+	});
 });

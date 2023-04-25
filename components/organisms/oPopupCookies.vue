@@ -51,7 +51,7 @@
                     <div class="o-popup-cookies__buttons">
                         <a class="js_o-popup-cookies__button--technical o-popup-cookies__button -technical">Povolit pouze nezbytné</a>
                         <a class="js_o-popup-cookies__button--select o-popup-cookies__button -select">Povolit vybrané</a>
-                        <a class="js_o-popup-cookies__button--all o-popup-cookies__button">Přijmám vše</a>
+                        <a class="js_o-popup-cookies__button--all-detail o-popup-cookies__button">Přijmám vše</a>
                     </div>
                 </div>
             </div>

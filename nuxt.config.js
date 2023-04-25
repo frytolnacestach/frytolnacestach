@@ -34,12 +34,11 @@ export default {
       { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' }
     ],
     script: [
-      { src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5217753750259737', async: true},
-      { src: '/js/gtm.js', type: 'text/javascript', defer: 'defer' },
-      { src: 'https://code.jquery.com/jquery-3.6.1.min.js', crossorigin: 'anonymous', async: true},
-      { src: '/js/cookies-default.js', type: 'text/javascript', defer: 'defer' },
-      { src: '/js/js_m-hamburger.js', type: 'text/javascript', defer: 'defer' },
-      { src: '/js/js_o-popup-cookies.js', type: 'text/javascript', defer: 'defer' }
+      { src: '/js/cookies-default.js', type: 'text/javascript', async: true },
+      { src: '/js/js_m-hamburger.js', type: 'text/javascript', async: true, },
+      { src: '/js/js_o-popup-cookies.js', type: 'text/javascript', async: true },
+      { src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5217753750259737', async: true },
+      { src: '/js/gtm.js', type: 'text/javascript', async: true, defer: 'defer' }
     ]
   },
   robots: {

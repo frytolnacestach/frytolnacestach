@@ -11,236 +11,289 @@
 //js_o-popup-cookies__page--welcome
 //js_o-popup-cookies__page--setting
 
-$( document ).ready(function() {
-
-    //--------------
-    //FUNCTIONS
-
-    //Cookies create
-    function cookiesCreate(){
-        var now = new Date();
-        now.setMonth( now.getMonth() + 1 );
-        let expires = "expires="+ now;
-        
-        document.cookie = "FNCcookiesDialog=1;" + expires;
-    }
-
-    //Cookies create type
-    function cookiesCreateType(type){
-        var now = new Date();
-        now.setMonth( now.getMonth() + 1 );
-        let expires = "expires="+ now;
-
-        document.cookie = "FNCcookies" + type +"=1;" + expires;
-    }
-
-    //Cookies delete type
-    function cookiesDeleteType(type){        
-        document.cookie = "FNCcookies" + type +"=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-    }
-
-    //show cookies dialog
-    function cookiesDialog(){
-        if (document.cookie.indexOf("FNCcookiesDialog=1") == -1) {
-            $(".js_o-popup-cookies").addClass('open'); 
-        }
-    }
-
-    //Control custom cookies
-    function cookiesCustom(){
-        var $number = 0;
-        $status1 = $(".js_o-popup-cookies__setting--user").data( "c-user" );
-        if ($status1 == "on"){
-            $number++;
-        }
-
-        $status2 = $(".js_o-popup-cookies__setting--statistic").data( "c-statistic" );
-        if ($status2 == "on"){
-            $number++;
-        }
-
-        $status3 = $(".js_o-popup-cookies__setting--marketing").data( "c-marketing" );
-        if ($status3 == "on"){
-            $number++;
-        }
-
-        if ($number == 0) {
-            $(".js_o-popup-cookies__button--select").removeClass('show');
-            $(".js_o-popup-cookies__button--technical").addClass('show');
-        } else {
-            $(".js_o-popup-cookies__button--technical").removeClass('show');
-            $(".js_o-popup-cookies__button--select").addClass('show'); 
-        }
-    }
 
 
-    //--------------
-    //INITIALIZATION
+//--------------
+//FUNCTIONS
 
-    //Initialization
-    if (document.cookie.indexOf("FNCcookiespersonalization_storage=1") == -1) {
-        $( ".js_o-popup-cookies__setting--user" ).data('c-user', 'off');
-        $( ".js_o-popup-cookies__setting--user" ).addClass('off');
-    } else {
-        $( ".js_o-popup-cookies__setting--user" ).data('c-user', 'on');
-        $( ".js_o-popup-cookies__setting--user" ).addClass('on');
-    }
+// Vytvoření cookies
+function cookiesCreate() {
+	var now = new Date();
+	now.setMonth(now.getMonth() + 1);
+	var expires = "expires=" + now.toUTCString();
+	document.cookie = "FNCcookiesDialog=1;" + expires;
+}
 
-    if (document.cookie.indexOf("FNCcookiesanalytics_storage=1") == -1) {
-        $( ".js_o-popup-cookies__setting--statistic" ).data('c-statistic', 'off');
-        $( ".js_o-popup-cookies__setting--statistic" ).addClass('off');
-    } else {
-        $( ".js_o-popup-cookies__setting--statistic" ).data('c-statistic', 'on');
-        $( ".js_o-popup-cookies__setting--statistic" ).addClass('on'); 
-    }
+// Vytvoření cookies s typem
+function cookiesCreateType(type) {
+	var now = new Date();
+	now.setMonth(now.getMonth() + 1);
+	var expires = "expires=" + now.toUTCString();
+	document.cookie = "FNCcookies" + type + "=1;" + expires;
+}
 
-    if (document.cookie.indexOf("FNCcookiesad_storage=1") == -1) {
-        $( ".js_o-popup-cookies__setting--marketing" ).data('c-marketing', 'off');
-        $( ".js_o-popup-cookies__setting--marketing" ).addClass('off');
-    } else {
-        $( ".js_o-popup-cookies__setting--marketing" ).data('c-marketing', 'on');
-        $( ".js_o-popup-cookies__setting--marketing" ).addClass('on');
-    }
-    cookiesDialog();
-    cookiesCustom();
+// Smazání cookies s typem
+function cookiesDeleteType(type) {
+	document.cookie = "FNCcookies" + type + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+}
+
+// Zobrazení dialogového okna cookies
+function cookiesDialog() {
+	if (document.cookie.indexOf("FNCcookiesDialog=1") == -1) {
+		var popupCookies = document.querySelector(".js_o-popup-cookies");
+		popupCookies.classList.add("open");
+	}
+}
 
 
-    //--------------
-    //ACTIONS
+// Ovládání vlastních cookies
+function cookiesCustom() {
+	var number = 0;
+	var status1 = document.querySelector(".js_o-popup-cookies__setting--user").getAttribute("data-c-user");
+	if (status1 == "on") {
+		number++;
+	}
+	var status2 = document.querySelector(".js_o-popup-cookies__setting--statistic").getAttribute("data-c-statistic");
+	if (status2 == "on") {
+		number++;
+	}
+	var status3 = document.querySelector(".js_o-popup-cookies__setting--marketing").getAttribute("data-c-marketing");
+	if (status3 == "on") {
+		number++;
+	}
 
-    //Přijmám vše
-    $( ".js_o-popup-cookies__button--all" ).click(function() {
-        $(".js_o-popup-cookies").removeClass('open');
-        $("html").removeClass('no-scroll-bg');
-        $("body").removeClass('no-scroll-bg');
-        $(".js_o-popup-cookies__page--setting").removeClass('open');
-        $(".js_o-popup-cookies__page--welcome").addClass('open');
+	if (number == 0) {
+		var buttonSelect = document.querySelector(".js_o-popup-cookies__button--select");
+		buttonSelect.classList.remove("show");
+		var buttonTechnical = document.querySelector(".js_o-popup-cookies__button--technical");
+		buttonTechnical.classList.add("show");
+	} else {
+		var buttonTechnical = document.querySelector(".js_o-popup-cookies__button--technical");
+		buttonTechnical.classList.remove("show");
+		var buttonSelect = document.querySelector(".js_o-popup-cookies__button--select");
+		buttonSelect.classList.add("show");
+	}
+}
 
-        gtag('consent', 'update', {
-            'functionality_storage': 'granted',
-            'security_storage': 'granted',
-            'personalization_storage': 'granted',
-            'analytics_storage': 'granted',
-            'ad_storage': 'granted'
-        });
-        cookiesCreateType("personalization_storage");
-        cookiesCreateType("analytics_storage");
-        cookiesCreateType("ad_storage");
 
-        cookiesCreate();
-    });
 
-    //Upravit preference
-        $( ".js_o-popup-cookies__button--setting" ).click(function() {
-        $(".js_o-popup-cookies__page--welcome").removeClass('open');
-        $(".js_o-popup-cookies__page--setting").addClass('open');
-        $(this).data('data-cookies-setting', 'visible');
-        $("html").addClass('no-scroll-bg');
-        $("body").addClass('no-scroll-bg');
-    });
+//--------------
+//INITIALIZATION
 
-    //Povolit pouze nezbytné
-    $( ".js_o-popup-cookies__button--technical" ).click(function() {
-        $(".js_o-popup-cookies").removeClass('open');
-        $("html").removeClass('no-scroll-bg');
-        $("body").removeClass('no-scroll-bg');
-        $(".js_o-popup-cookies__page--setting").removeClass('open');
-        $(".js_o-popup-cookies__page--welcome").addClass('open');
+//Initialization
+if (document.cookie.indexOf("FNCcookiespersonalization_storage=1") == -1) {
+	document.querySelector(".js_o-popup-cookies__setting--user").setAttribute('data-c-user', 'off');
+	document.querySelector(".js_o-popup-cookies__setting--user").classList.add('off');
+} else {
+	document.querySelector(".js_o-popup-cookies__setting--user").setAttribute('data-c-user', 'on');
+	document.querySelector(".js_o-popup-cookies__setting--user").classList.add('on');
+}
 
-        gtag('consent', 'update', {
-            'functionality_storage': 'granted',
-            'security_storage': 'granted',
-            'personalization_storage': 'denied',
-            'analytics_storage': 'denied',
-            'ad_storage': 'denied'
-        });
+if (document.cookie.indexOf("FNCcookiesanalytics_storage=1") == -1) {
+	document.querySelector(".js_o-popup-cookies__setting--statistic").setAttribute('data-c-statistic', 'off');
+	document.querySelector(".js_o-popup-cookies__setting--statistic").classList.add('off');
+} else {
+	document.querySelector(".js_o-popup-cookies__setting--statistic").setAttribute('data-c-statistic', 'on');
+	document.querySelector(".js_o-popup-cookies__setting--statistic").classList.add('on');
+}
 
-        cookiesCreate();
-    });
+if (document.cookie.indexOf("FNCcookiesad_storage=1") == -1) {
+	document.querySelector(".js_o-popup-cookies__setting--marketing").setAttribute('data-c-marketing', 'off');
+	document.querySelector(".js_o-popup-cookies__setting--marketing").classList.add('off');
+} else {
+	document.querySelector(".js_o-popup-cookies__setting--marketing").setAttribute('data-c-marketing', 'on');
+	document.querySelector(".js_o-popup-cookies__setting--marketing").classList.add('on');
+}
 
-    //Povolit vybrané
-    $( ".js_o-popup-cookies__button--select" ).click(function() {
-        $(".js_o-popup-cookies").removeClass('open');
-        $("html").removeClass('no-scroll-bg');
-        $("body").removeClass('no-scroll-bg');
-        $(".js_o-popup-cookies__page--setting").removeClass('open');
-        $(".js_o-popup-cookies__page--welcome").addClass('open');
-    });
+cookiesDialog();
+cookiesCustom();
 
-    //Form - Preferenční
-    $( ".js_o-popup-cookies__setting--user" ).click(function() {
-        $status = $(this).data( "c-user" );
-        
-        if ($status == "off") {
-            $(this).data('c-user', 'on');
-            $(this).addClass('on');
-            gtag('consent', 'update', {
-                'personalization_storage': 'granted'
-            });
-            cookiesCreateType("personalization_storage");
-        } else {
-            $(this).data('c-user', 'off');
-            $(this).removeClass('on');
-            gtag('consent', 'update', {
-                'personalization_storage': 'denied'
-            });
-            cookiesDeleteType("personalization_storage");
-        }
 
-        cookiesCustom();
-        cookiesCreate();
-    });
 
-    //Form - Statistické
-    $( ".js_o-popup-cookies__setting--statistic" ).click(function() {
-        $status = $(this).data( "c-statistic" );
+//--------------
+//ACTIONS
 
-        if ($status == "off") {
-            $(this).data('c-statistic', 'on');
-            $(this).addClass('on');
-            gtag('consent', 'update', {
-                'analytics_storage': 'granted'
-            });
-            cookiesCreateType("analytics_storage");
-        } else {
-            $(this).data('c-statistic', 'off');
-            $(this).removeClass('on');
-            gtag('consent', 'update', {
-                'analytics_storage': 'denied'
-            });
-            cookiesDeleteType("analytics_storage");
-        }
+//Přijmám vše
+document.querySelector(".js_o-popup-cookies__button--all").addEventListener('click', function() {
+	document.querySelector(".js_o-popup-cookies").classList.remove('open');
+	document.querySelector("html").classList.remove('no-scroll-bg');
+	document.querySelector("body").classList.remove('no-scroll-bg');
+	document.querySelector(".js_o-popup-cookies__page--setting").classList.remove('open');
+	document.querySelector(".js_o-popup-cookies__page--welcome").classList.add('open');
 
-        cookiesCustom();
-        cookiesCreate();
-    });
+	let buttonChangeUser = document.querySelector('.js_o-popup-cookies__setting--user');
+	buttonChangeUser.dataset.cUser = 'on';
+	buttonChangeUser.classList.add('on');
 
-    //Form - Marketingové
-    $( ".js_o-popup-cookies__setting--marketing" ).click(function() {
-        $status = $(this).data( "c-marketing" );
+	let buttonChangeStatistic = document.querySelector('.js_o-popup-cookies__setting--statistic');
+	buttonChangeStatistic.dataset.cStatistic = 'on';
+	buttonChangeStatistic.classList.add('on');
 
-        if ($status == "off") {
-            $(this).data('c-marketing', 'on');
-            $(this).addClass('on');
-            gtag('consent', 'update', {
-                'ad_storage': 'granted'
-            });
-            cookiesCreateType("ad_storage");
-        } else {
-            $(this).data('c-marketing', 'off');
-            $(this).removeClass('on');
-            gtag('consent', 'update', {
-                'ad_storage': 'denied'
-            });
-            cookiesDeleteType("ad_storage");
-        }
+	let buttonChangeMarketing = document.querySelector('.js_o-popup-cookies__setting--marketing');
+	buttonChangeMarketing.dataset.cMarketing = 'on';
+	buttonChangeMarketing.classList.add('on');
 
-        cookiesCustom();
-        cookiesCreate();
-    });
+	gtag('consent', 'update', {
+		'functionality_storage': 'granted',
+		'security_storage': 'granted',
+		'personalization_storage': 'granted',
+		'analytics_storage': 'granted',
+		'ad_storage': 'granted'
+	});
+	cookiesCreateType("personalization_storage");
+	cookiesCreateType("analytics_storage");
+	cookiesCreateType("ad_storage");
 
-    //Cookies edit
-    $( ".js_cookies-edit" ).click(function() {
-        $(".js_o-popup-cookies").addClass('open');
-    });
+	cookiesCreate();
+});
+
+//Přijmám vše-detail
+document.querySelector(".js_o-popup-cookies__button--all-detail").addEventListener('click', function() {
+	document.querySelector(".js_o-popup-cookies").classList.remove('open');
+	document.querySelector("html").classList.remove('no-scroll-bg');
+	document.querySelector("body").classList.remove('no-scroll-bg');
+	document.querySelector(".js_o-popup-cookies__page--setting").classList.remove('open');
+	document.querySelector(".js_o-popup-cookies__page--welcome").classList.add('open');
+
+	let buttonChangeUser = document.querySelector('.js_o-popup-cookies__setting--user');
+	buttonChangeUser.dataset.cUser = 'on';
+	buttonChangeUser.classList.add('on');
+
+	let buttonChangeStatistic = document.querySelector('.js_o-popup-cookies__setting--statistic');
+	buttonChangeStatistic.dataset.cStatistic = 'on';
+	buttonChangeStatistic.classList.add('on');
+
+	let buttonChangeMarketing = document.querySelector('.js_o-popup-cookies__setting--marketing');
+	buttonChangeMarketing.dataset.cMarketing = 'on';
+	buttonChangeMarketing.classList.add('on');
+	
+	gtag('consent', 'update', {
+		'functionality_storage': 'granted',
+		'security_storage': 'granted',
+		'personalization_storage': 'granted',
+		'analytics_storage': 'granted',
+		'ad_storage': 'granted'
+	});
+	cookiesCreateType("personalization_storage");
+	cookiesCreateType("analytics_storage");
+	cookiesCreateType("ad_storage");
+
+	cookiesCreate();
+});
+
+//Upravit preference
+document.querySelector(".js_o-popup-cookies__button--setting").addEventListener('click', function() {
+	document.querySelector(".js_o-popup-cookies__page--welcome").classList.remove('open');
+	document.querySelector(".js_o-popup-cookies__page--setting").classList.add('open');
+	this.dataset.cookiesSetting = 'visible';
+	document.querySelector("html").classList.add('no-scroll-bg');
+	document.querySelector("body").classList.add('no-scroll-bg');
+});
+
+// Povolit pouze nezbytné
+document.querySelector(".js_o-popup-cookies__button--technical").addEventListener("click", function() {
+	document.querySelector(".js_o-popup-cookies").classList.remove('open');
+	document.querySelector("html").classList.remove('no-scroll-bg');
+	document.querySelector("body").classList.remove('no-scroll-bg');
+	document.querySelector(".js_o-popup-cookies__page--setting").classList.remove('open');
+	document.querySelector(".js_o-popup-cookies__page--welcome").classList.add('open');
+
+	gtag('consent', 'update', {
+		'functionality_storage': 'granted',
+		'security_storage': 'granted',
+		'personalization_storage': 'denied',
+		'analytics_storage': 'denied',
+		'ad_storage': 'denied'
+	});
+
+	cookiesCreate();
+});
+
+// Povolit vybrané
+document.querySelector(".js_o-popup-cookies__button--select").addEventListener("click", function() {
+	document.querySelector(".js_o-popup-cookies").classList.remove('open');
+	document.querySelector("html").classList.remove('no-scroll-bg');
+	document.querySelector("body").classList.remove('no-scroll-bg');
+	document.querySelector(".js_o-popup-cookies__page--setting").classList.remove('open');
+	document.querySelector(".js_o-popup-cookies__page--welcome").classList.add('open');
+});
+
+
+// Form - Preferenční
+document.querySelectorAll('.js_o-popup-cookies__setting--user').forEach(function(el) {
+	el.addEventListener('click', function() {
+		var status = el.getAttribute('data-c-user');
+		if (status == "off") {
+			el.setAttribute('data-c-user', 'on');
+			el.classList.add('on');
+			gtag('consent', 'update', {
+				'personalization_storage': 'granted'
+			});
+			cookiesCreateType('personalization_storage');
+		} else {
+			el.setAttribute('data-c-user', 'off');
+			el.classList.remove('on');
+			gtag('consent', 'update', {
+				'personalization_storage': 'denied'
+			});
+			cookiesDeleteType('personalization_storage');
+		}
+		cookiesCustom();
+		cookiesCreate();
+	});
+});
+
+
+//Form - Statistické
+document.querySelector(".js_o-popup-cookies__setting--statistic").addEventListener("click", function() {
+	var status = this.getAttribute("data-c-statistic");
+
+	if (status == "off") {
+		this.setAttribute("data-c-statistic", "on");
+		this.classList.add("on");
+		gtag('consent', 'update', {
+			'analytics_storage': 'granted'
+		});
+		cookiesCreateType("analytics_storage");
+	} else {
+		this.setAttribute("data-c-statistic", "off");
+		this.classList.remove("on");
+		gtag('consent', 'update', {
+			'analytics_storage': 'denied'
+		});
+		cookiesDeleteType("analytics_storage");
+	}
+
+	cookiesCustom();
+	cookiesCreate();
+});
+
+
+//Form - Marketingové
+document.querySelector(".js_o-popup-cookies__setting--marketing").addEventListener("click", function() {
+	var status = this.getAttribute("data-c-marketing");
+
+	if (status == "off") {
+		this.setAttribute("data-c-marketing", "on");
+		this.classList.add("on");
+		gtag("consent", "update", {
+			"ad_storage": "granted"
+		});
+		cookiesCreateType("ad_storage");
+	} else {
+		this.setAttribute("data-c-marketing", "off");
+		this.classList.remove("on");
+		gtag("consent", "update", {
+			"ad_storage": "denied"
+		});
+		cookiesDeleteType("ad_storage");
+	}
+
+	cookiesCustom();
+	cookiesCreate();
+});
+
+//Cookies edit
+document.querySelector(".js_cookies-edit").addEventListener("click", function() {
+    document.querySelector(".js_o-popup-cookies").classList.add("open");
 });
