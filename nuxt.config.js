@@ -25,13 +25,19 @@ export default {
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/favicons/apple-touch-icon.png' },
       { rel: 'icon', type:'image/png', sizes: '32x32', href: '/images/favicons/favicon-32x32.png' },
       { rel: 'icon', type:'image/png', sizes: '16x16', href: '/images/favicons/favicon-16x16.png' },
-      { rel: 'manifest', sizes: '180x180', href: '/images/favicons/site.webmanifest' }
+      { rel: 'manifest', sizes: '180x180', href: '/images/favicons/site.webmanifest' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      { rel: 'dns-prefetch', href: 'https://fonts.gstatic.com' },
+      { rel: 'preconnect', href: 'https://image.frytolnacestach.cz' },
+      { rel: 'dns-prefetch', href: 'https://image.frytolnacestach.cz' },
+      { rel: 'preconnect', href: 'https://www.googletagmanager.com' },
+      { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' }
     ],
     script: [
-      { src: '/js/cookies-default.js', type: 'text/javascript' },
-      { src: '/js/gtm.js', type: 'text/javascript' },
       { src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5217753750259737', async: true},
-      { src: 'https://code.jquery.com/jquery-3.6.1.min.js', crossorigin: 'anonymous'},
+      { src: '/js/gtm.js', type: 'text/javascript', defer: 'defer' },
+      { src: 'https://code.jquery.com/jquery-3.6.1.min.js', crossorigin: 'anonymous', async: true},
+      { src: '/js/cookies-default.js', type: 'text/javascript', defer: 'defer' },
       { src: '/js/js_m-hamburger.js', type: 'text/javascript', defer: 'defer' },
       { src: '/js/js_o-popup-cookies.js', type: 'text/javascript', defer: 'defer' }
     ]

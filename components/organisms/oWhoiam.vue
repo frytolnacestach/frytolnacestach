@@ -7,10 +7,10 @@
                         <div class="o-whoiam__image loading-image">
                             <div class="o-whoiam__image-lazyload">
                                 <img class="o-whoiam__image-file lazyload-file"
-                                    data-sizes="(max-width: 374px) 180px, (max-width: 575px) 280px, (max-width: 1920px) 380px, 540px"
+                                    data-sizes="130px"
                                     :data-srcset="`
                                         https://image.frytolnacestach.cz/storage/main/michal-fryc-130.webp 130w,
-                                        https://image.frytolnacestach.cz/storage/main/michal-fryc-260-2x.webp 360w,
+                                        https://image.frytolnacestach.cz/storage/main/michal-fryc-260-2x.webp 260w,
                                         `"
                                     :data-src="`https://image.frytolnacestach.cz/storage/main/michal-fryc.webp`"
                                     alt="Michal Fryč"
