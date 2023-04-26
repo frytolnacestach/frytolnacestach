@@ -1,9 +1,9 @@
 <template>
-    <div class="o-hero-article">
-        <div class="o-hero-article__image loading-image">
-            <div v-if="image" class="o-hero-place__image-lazyload">
+    <div class="o-hero-video">
+        <div class="o-hero-video__image loading-image">
+            <div v-if="image" class="o-hero-video__image-lazyload">
                 <img
-                    class="o-hero-place__image-file lazyload-file"
+                    class="o-hero-video__image-file lazyload-file"
                     v-lazy="{
                         src: 'https://image.frytolnacestach.cz/storage/' + image[0].source + image[0].name + '.webp',
                         srcset: {
@@ -29,9 +29,9 @@
                     :alt="title"
                 />
             </div>
-            <div v-else class="o-hero-article__image-lazyload">
+            <div v-else class="o-hero-video__image-lazyload">
                 <img
-                    class="o-hero-article__image-file lazyload-file"
+                    class="o-hero-video__image-file lazyload-file"
                     v-lazy="{
                         src: 'https://image.frytolnacestach.cz/storage/_default/hero.webp',
                         srcset: {
@@ -58,9 +58,9 @@
                 />
             </div>
 
-            <div class="o-hero-article__outer">
-                <div class="o-hero-article__inner">
-                    <h1 class="o-hero-article__headline">{{ title }}</h1>
+            <div class="o-hero-video__outer">
+                <div class="o-hero-video__inner">
+                    <h1 class="o-hero-video__headline">{{ title }}</h1>
                 </div>
             </div>
         </div>
