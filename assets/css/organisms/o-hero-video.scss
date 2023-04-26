@@ -73,7 +73,15 @@
     &__headline {
         color: $white;
         margin: 0 0 5px;
-        font-size: $fs-40;
+        font-size: $fs-normal-ll;
+
+        @media only screen and (min-width: $md) {
+            font-size: $fs-large-l;
+        }
+
+        @media only screen and (min-width: $lg) {
+            font-size: $fs-40;
+        }
     }
 
     &__perex {
