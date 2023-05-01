@@ -1,5 +1,26 @@
 .o-ad-google-sidebar {
+    position: relative;
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
     height: auto;
+    background-color: $cAdBG;
+    margin-top: 16px;
+
+    @media only screen and (min-width: $lg) {
+        max-width: 300px;
+        height: 600px;
+    }
+
+    &:after {
+        content: 'Reklama';
+        position: absolute;
+        height: 18px;
+        color: $black;
+        top: -18px;
+        right: 0;
+        background-color: $cAdBG;
+        font-size: $fs-small-sss;
+        line-height: $fs-small-sss;
+        padding: 3px 6px;
+    }
 }

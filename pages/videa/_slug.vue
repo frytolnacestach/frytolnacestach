@@ -48,15 +48,7 @@
                 <!-- SECTION - ad-google - sidebar -->
                 <section class="t-section my-2">
                     <div class="t-section__inner">
-                        <div class="o-ad-google-sidebar">
-                            <ins class="adsbygoogle"
-                                :style="adStyle"
-                                :data-ad-client="adClient"
-                                :data-ad-slot="adSlot"
-                                :data-ad-format="adFormat"
-                                :data-full-width-responsive="adResponsive">
-                            </ins>
-                        </div>
+                        <oAdGoogleSidebar />
                     </div>
                 </section>
                 <!-- SECTION - ad-google - sidebar - END -->
@@ -89,6 +81,7 @@
 <script>
 
     import mHeadline from '~/components/molecules/mHeadline.vue'
+    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oHeroVideo from '~/components/organisms/oHeroVideo.vue'
     import oPlaceBlock from '~/components/organisms/oPlaceBlock.vue'
     import oYoutube from '~/components/organisms/oYoutube.vue'
@@ -98,51 +91,10 @@
 
         components: {
             mHeadline,
+            oAdGoogleSidebar,
             oHeroVideo,
             oPlaceBlock,
             oYoutube
-        },
-
-        props: {
-            adStyle: {
-                type: String,
-                requred: false,
-                default: "display:block"
-            },
-
-            adClient: {
-                type: String,
-                requred: false,
-                default: "ca-pub-5217753750259737"
-            },
-
-            adSlot: {
-                type: String,
-                requred: false,
-                default: "5043852899"
-            },
-
-            adFormat: {
-                type: String,
-                requred: false,
-                default: "auto"
-            },
-
-            adResponsive: {
-                type: String,
-                requred: false,
-                default: "true"
-            }
-            
-        },
-
-        methods:{
-            adsenseAddLoad(){
-                let inlineScript   = document.createElement("script");
-                inlineScript.type  = "text/javascript";
-                inlineScript.text  = '(adsbygoogle = window.adsbygoogle || []).push({});'
-                document.getElementsByTagName('body')[0].appendChild(inlineScript);
-            }
         },
 
         data() {
@@ -198,10 +150,6 @@
             } catch (error) {
                 console.error(error)
             }
-        },
-
-        mounted() {
-            this.adsenseAddLoad();
         }
     }
 </script>

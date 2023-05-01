@@ -131,15 +131,7 @@
                 <!-- SECTION - ad-google - sidebar -->
                 <section class="t-section my-2">
                     <div class="t-section__inner">
-                        <div class="o-ad-google-sidebar">
-                            <ins class="adsbygoogle"
-                                :style="adStyle"
-                                :data-ad-client="adClient"
-                                :data-ad-slot="adSlot"
-                                :data-ad-format="adFormat"
-                                :data-full-width-responsive="adResponsive">
-                            </ins>
-                        </div>
+                        <oAdGoogleSidebar />
                     </div>
                 </section>
                 <!-- SECTION - ad-google - sidebar - END -->
@@ -177,6 +169,7 @@
 <script>
 
     import mHeadline from '~/components/molecules/mHeadline.vue'
+    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oHeroArticle from '~/components/organisms/oHeroArticle.vue'
     import oHotInfo from '~/components/organisms/oHotInfo.vue'
     import oMapMapy from '~/components/organisms/oMapMapy.vue'
@@ -197,6 +190,7 @@
 
         components: {
             mHeadline,
+            oAdGoogleSidebar,
             oHeroArticle,
             oHotInfo,
             oMapMapy,
@@ -211,48 +205,6 @@
             oVideoList,
             oWiki,
             oYoutube
-        },
-
-        props: {
-            adStyle: {
-                type: String,
-                requred: false,
-                default: "display:block"
-            },
-
-            adClient: {
-                type: String,
-                requred: false,
-                default: "ca-pub-5217753750259737"
-            },
-
-            adSlot: {
-                type: String,
-                requred: false,
-                default: "5043852899"
-            },
-
-            adFormat: {
-                type: String,
-                requred: false,
-                default: "auto"
-            },
-
-            adResponsive: {
-                type: String,
-                requred: false,
-                default: "true"
-            }
-            
-        },
-
-        methods:{
-            adsenseAddLoad(){
-                let inlineScript   = document.createElement("script");
-                inlineScript.type  = "text/javascript";
-                inlineScript.text  = '(adsbygoogle = window.adsbygoogle || []).push({});'
-                document.getElementsByTagName('body')[0].appendChild(inlineScript);
-            }
         },
 
         data() {
@@ -306,10 +258,6 @@
             const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos-id-city/${post[0].id_city}`)
 
             return { post, images, placeCity, placeState, placeContinent, imageCity, imageState, imageContinent, videos }
-        },
-
-        mounted() {
-            this.adsenseAddLoad();
         }
     }
 </script>

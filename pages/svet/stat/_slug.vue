@@ -201,15 +201,7 @@
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section my-2">
                                     <div class="t-section__inner">
-                                        <div class="o-ad-google-sidebar">
-                                            <ins class="adsbygoogle"
-                                                :style="adStyle"
-                                                :data-ad-client="adClient"
-                                                :data-ad-slot="adSlot"
-                                                :data-ad-format="adFormat"
-                                                :data-full-width-responsive="adResponsive">
-                                            </ins>
-                                        </div>
+                                        <oAdGoogleSidebar />
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
@@ -328,15 +320,7 @@
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section my-2">
                                     <div class="t-section__inner">
-                                        <div class="o-ad-google-sidebar">
-                                            <ins class="adsbygoogle"
-                                                :style="adStyle"
-                                                :data-ad-client="adClient"
-                                                :data-ad-slot="adSlot"
-                                                :data-ad-format="adFormat"
-                                                :data-full-width-responsive="adResponsive">
-                                            </ins>
-                                        </div>
+                                        <oAdGoogleSidebar />
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
@@ -433,15 +417,7 @@
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section my-2">
                                     <div class="t-section__inner">
-                                        <div class="o-ad-google-sidebar">
-                                            <ins class="adsbygoogle"
-                                                :style="adStyle"
-                                                :data-ad-client="adClient"
-                                                :data-ad-slot="adSlot"
-                                                :data-ad-format="adFormat"
-                                                :data-full-width-responsive="adResponsive">
-                                            </ins>
-                                        </div>
+                                        <oAdGoogleSidebar />
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
@@ -489,15 +465,7 @@
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section my-2">
                                     <div class="t-section__inner">
-                                        <div class="o-ad-google-sidebar">
-                                            <ins class="adsbygoogle"
-                                                :style="adStyle"
-                                                :data-ad-client="adClient"
-                                                :data-ad-slot="adSlot"
-                                                :data-ad-format="adFormat"
-                                                :data-full-width-responsive="adResponsive">
-                                            </ins>
-                                        </div>
+                                        <oAdGoogleSidebar />
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
@@ -546,15 +514,7 @@
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section my-2">
                                     <div class="t-section__inner">
-                                        <div class="o-ad-google-sidebar">
-                                            <ins class="adsbygoogle"
-                                                :style="adStyle"
-                                                :data-ad-client="adClient"
-                                                :data-ad-slot="adSlot"
-                                                :data-ad-format="adFormat"
-                                                :data-full-width-responsive="adResponsive">
-                                            </ins>
-                                        </div>
+                                        <oAdGoogleSidebar />
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
@@ -600,15 +560,7 @@
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section my-2">
                                     <div class="t-section__inner">
-                                        <div class="o-ad-google-sidebar">
-                                            <ins class="adsbygoogle"
-                                                :style="adStyle"
-                                                :data-ad-client="adClient"
-                                                :data-ad-slot="adSlot"
-                                                :data-ad-format="adFormat"
-                                                :data-full-width-responsive="adResponsive">
-                                            </ins>
-                                        </div>
+                                        <oAdGoogleSidebar />
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
@@ -645,6 +597,7 @@
 <script>
 
     import mHeadline from '~/components/molecules/mHeadline.vue'
+    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
@@ -656,6 +609,7 @@
 
         components: {
             mHeadline,
+            oAdGoogleSidebar,
             oArticleList,
             oCoverPlaceDetail,
             oHeroPlace,
@@ -663,46 +617,7 @@
             oWidgetBooking
         },
 
-        props: {
-            adStyle: {
-                type: String,
-                requred: false,
-                default: "display:block"
-            },
-
-            adClient: {
-                type: String,
-                requred: false,
-                default: "ca-pub-5217753750259737"
-            },
-
-            adSlot: {
-                type: String,
-                requred: false,
-                default: "5043852899"
-            },
-
-            adFormat: {
-                type: String,
-                requred: false,
-                default: "auto"
-            },
-
-            adResponsive: {
-                type: String,
-                requred: false,
-                default: "true"
-            }
-            
-        },
-
         methods:{
-            adsenseAddLoad(){
-                let inlineScript   = document.createElement("script");
-                inlineScript.type  = "text/javascript";
-                inlineScript.text  = '(adsbygoogle = window.adsbygoogle || []).push({});'
-                document.getElementsByTagName('body')[0].appendChild(inlineScript);
-            },
             formatDate(date) {
                 const options = { year: 'numeric', month: 'long', day: 'numeric' }
                 return new Date(date).toLocaleDateString('cs', options)
@@ -815,7 +730,6 @@
         },
 
         mounted() {
-            this.adsenseAddLoad();
             this.activeTab = this.$route.params.tab || 'default';
         },
 

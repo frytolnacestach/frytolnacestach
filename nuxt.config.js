@@ -37,7 +37,6 @@ export default {
       { src: '/js/cookies-default.js', type: 'text/javascript', async: true },
       { src: '/js/js_m-hamburger.js', type: 'text/javascript', async: true, },
       { src: '/js/js_o-popup-cookies.js', type: 'text/javascript', async: true },
-      { src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5217753750259737', async: true },
       { src: '/js/gtm.js', type: 'text/javascript', async: true, defer: 'defer' }
     ]
   },
