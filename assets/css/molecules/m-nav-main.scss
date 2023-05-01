@@ -63,6 +63,9 @@
         }
 
         &.-special {
+            @media only screen and (min-width: $lg) {
+                margin-right: -5px;
+            }
 
             #{$self}__link {
                 @include transition(background-color, .3s);

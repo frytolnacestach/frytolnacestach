@@ -1,5 +1,5 @@
 <template>
-    <main class="t-main" role="main">
+    <main class="t-main -bg-person" role="main">
         
         <!-- SECTION - Hero -->
         <section class="t-section -p0">
@@ -9,90 +9,51 @@
         </section>
         <!-- SECTION - Hero END -->
 
-        <!-- SECTION - Whoiam -->
-        <section class="t-section py-4">
-            <div class="t-section__inner">
-                <oWhoiam />
-            </div>
-        </section>
-        <!-- SECTION - Whoiam END -->
-
-        <!-- SECTION - Platforms -->
-        <section class="t-section t-section--gray pt-4">
-            <div class="t-section__inner">
-                <mHeadline title="Platformy kde jsem" styleAlign=" -center" />
-                <oPlatform />
-                <div class="flex flex-center mb-4">
-                    <aButtonFill url="/social" text="Více informací" styleThema=" -blue" styleSize=" -big" target="internal" />
+        <section class="t-section -p0 px-1">
+            <div class="t-section__inner -col">
+                <div class="t-section__col px-1 mb-4">
+                    <!-- SECTION - Article list -->
+                    <mHeadline title="Nejnovější článek" styleAlign=" -left" />
+                    <oArticleList :posts="posts" :images="images" styleThema=" -latest" />
+                    <div class="flex flex-full flex-ai-end flex-center mt-2">
+                        <aButtonFillFull url="/clanky" text="Všechny články" styleThema=" -green" target="internal" />
+                    </div>
+                    <!-- SECTION - Article list END -->
+                </div>
+                <div class="t-section__col px-1 mb-4">
+                    <!-- SECTION - Video -->
+                    <mHeadline title="Nejnovější video" styleAlign=" -left" />
+                    <oVideoList :videos="video" :images="image" styleThema=" -latest" />
+                    <div class="flex flex-full flex-ai-end flex-center mt-2">
+                        <aButtonFillFull url="/videa" text="Všechna videa" styleThema="  -green" target="internal" />
+                    </div>
+                    <!-- SECTION - Video END-->
                 </div>
             </div>
         </section>
-        <!-- SECTION - Platforms END -->
 
-        <!-- SECTION - Article list -->
-        <section class="t-section py-4">
-            <div class="t-section__inner">
-                <mHeadline title="Nejnovější články" styleAlign=" -center" styleGap=" mb-2" />
-                <oArticleList :posts="posts" :images="images" />
-                <div class="flex flex-center mt-2">
-                    <aButtonFill url="/clanky" text="Všechny články" styleThema=" -blue" styleSize=" -big" target="internal" />
-                </div>
-            </div>
-        </section>
-        <!-- SECTION - Article list END -->
-
-        <!-- SECTION - Video -->
-        <section class="t-section t-section--gray py-4">
-            <div class="t-section__inner">
-                <mHeadline title="Nejnovější video" styleAlign=" -center" styleGap=" mb-2" />
-                <oVideoList :videos="video" :images="image" />
-                <div class="flex flex-center mt-2">
-                    <aButtonFill url="https://www.youtube.com/channel/UCQnsNK3Xd5Tj3zcVWQDMi8A/videos" text="Všechna videa (YouTube)" styleThema=" -blue" styleSize=" -big" target="external" />
-                </div>
-            </div>
-        </section>
-        <!-- SECTION - Video END-->
-
-        <!-- SECTION - Donate -->
-        <section class="t-section py-4">
-            <div class="t-section__inner">
-                <oDonate :showHeadline=true />
-                <oSupport />
-                <div class="flex flex-center">
-                    <aButtonFill url="/donate" text="Podpora" styleThema=" -blue" styleSize=" -big" target="internal" />
-                </div>
-            </div>
-        </section>
-        <!-- SECTION - Donate END -->
-        
     </main>
 </template>
 
 <script>
 
-    import aButtonFill from '~/components/atoms/aButtonFill.vue'
+    import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
-    import oDonate from '../components/organisms/oDonate.vue'
     import oHerobig from '../components/organisms/oHerobig.vue'
     import oPlatform from '../components/organisms/oPlatform.vue'
-    import oSupport from '../components/organisms/oSupport.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
-    import oWhoiam from '../components/organisms/oWhoiam.vue'
 
     export default {
         name: 'IndexPage',
         
         components: {
-            aButtonFill,
+            aButtonFillFull,
             mHeadline,
             oArticleList,
-            oDonate,
             oHerobig,
             oPlatform,
-            oSupport,
-            oVideoList,
-            oWhoiam
+            oVideoList
         },
 
         data() {
@@ -112,8 +73,8 @@
         },
 
         async asyncData({ $axios }) {
-            //posts
-            const posts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/posts`)
+            //post
+            const posts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/post-last`)
 
             //video
             const video = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/video-last/`)

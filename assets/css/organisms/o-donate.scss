@@ -1,3 +1,30 @@
 .o-donate {
-    
+    width: 100%;
+
+    &__outer {
+        width: 100%;
+        border-radius: $br-4;
+        background-color: $personBGcomponent;
+        grid-area: text;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+    }
+
+    &__inner {
+        width: 100%;
+        max-width: 640px;
+    }
+
+    &__title {
+        width: 100%;
+        color: $gray7;
+    }
+
+    &__perex {
+        width: 100%;
+        color: $gray7;
+    }
 }

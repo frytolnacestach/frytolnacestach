@@ -5,8 +5,10 @@
                 <div class="o-platform__items">
 
                     <div class="o-platform__item" v-for="platform in platforms" :key="platform.id">
-                        <div class="o-platform__icon">
-                            <a :class="'o-platform__icon-file -' + platform.slug" :href="platform.url" target="_blank" :title="platform.name"></a>
+                        <div class="o-platform__item-content">
+                            <div class="o-platform__icon">
+                                <a :class="'o-platform__icon-file -' + platform.slug" :href="platform.url" target="_blank" :title="platform.name"></a>
+                            </div>
                         </div>
                     </div>
 

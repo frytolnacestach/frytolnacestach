@@ -235,7 +235,7 @@
                                 <!-- SECTION - města - Biggest - END -->
 
                                 <!-- SECTION - videos -->
-                                <section class="t-section -bg-extra-dark-gray pt-4 py-2" v-if="videos[0]">
+                                <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="videos[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oVideoList :videos="videos" :images="images" type="travel" styleThema=" -world" styleAlign=" -p-left" />
@@ -253,7 +253,7 @@
                                 <!-- SECTION - města - menší - END -->
 
                                 <!-- SECTION - articles -->
-                                <section class="t-section -bg-extra-dark-gray pt-4 py-2" v-if="posts[0]">
+                                <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="posts[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oArticleList :posts="posts" :images="images" styleThema=" -world" styleAlign=" -p-left" />
@@ -625,7 +625,7 @@
                         <div class="t-grid -world-ful">
                             <div class="t-grid__section -content">
                                 <!-- SECTION - videos -->
-                                <section class="t-section -bg-extra-dark-gray pt-4 py-2" v-if="videos[0]">
+                                <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="videos[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oVideoList :videos="videos" :images="images" type="travel" styleThema=" -world" styleAlign=" -p-left" />

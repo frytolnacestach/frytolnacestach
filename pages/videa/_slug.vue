@@ -1,8 +1,8 @@
 <template>
-    <main class="t-main -pt-menu" role="main">
+    <main class="t-main -bg-person -pt-menu" role="main">
         
         <!-- SECTION - Hero video -->
-        <section class="t-section -p0">
+        <section class="t-section -p0 mb-1 mt-2">
             <div class="t-section__inner">
                 <oHeroVideo :image="image" :title="video[0].title" />
             </div>
@@ -68,11 +68,11 @@
         <div class="t-layout-full" v-if="video[0].id_continent || video[0].id_state || video[0].id_city">
 
             <!-- SECTION - place -->
-            <section class="t-section -bg-gray pt-2 pb-1">
+            <section class="t-section -p0 -bg-gray pt-2 pb-1">
                 <div class="t-section__inner">
-                    <mHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mb-2" />
+                    <mHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
 
-                    <div class="flex px-1">
+                    <div class="flex mx-1">
                         <oPlaceBlock :place="placeContinent" :image="imageContinent" type="kontinent" />
                         <oPlaceBlock :place="placeState" :image="imageState" type="stat" />
                         <oPlaceBlock :place="placeCity" :image="imageCity" type="mesto" />

@@ -1,8 +1,8 @@
 <template>
-    <main class="t-main -pt-menu" role="main">
+    <main class="t-main -bg-person -pt-menu" role="main">
 
         <!-- SECTION - Hero -->
-		<section class="t-section -p0">
+		<section class="t-section -p0 mb-1 mt-2">
             <div class="t-section__inner">
                 <oHero :headline="headline" />
             </div>
@@ -10,7 +10,7 @@
         <!-- SECTION - Hero END -->
 
         <!-- SECTION - Box platform -->
-        <section class="t-section -p0">
+        <section class="t-section -p0 mt-1 mb-2 px-2">
             <div class="t-section__inner">
                 <oBoxPlatform />
             </div>

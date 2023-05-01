@@ -1,8 +1,8 @@
 <template>
-	<main class="t-main -pt-menu">
+	<main class="t-main -bg-person -pt-menu">
 		
 		<!-- SECTION - Hero -->
-		<section class="t-section -p0">
+		<section class="t-section -p0 mb-1 mt-2">
             <div class="t-section__inner">
                 <oHero :headline="headline" :perex="perex" />
             </div>

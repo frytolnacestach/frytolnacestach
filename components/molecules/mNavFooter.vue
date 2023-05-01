@@ -2,6 +2,7 @@
     <nav class="m-nav-footer">
         <div class="m-nav-footer__outer">
             <div class="m-nav-footer__inner">
+                <span class="m-nav-footer__headline">Co dělám</span>
                 <ul class="m-nav-footer__items">
                     <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/">Úvod</NuxtLink>
@@ -21,6 +22,29 @@
                     <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/donate">Podpořit</NuxtLink>
                     </li>
+                </ul>
+            </div>
+
+
+            <div class="m-nav-footer__inner">
+                <span class="m-nav-footer__headline">Objevuj svět</span>
+                <ul class="m-nav-footer__items">
+                    <li class="m-nav-footer__item">
+                        <NuxtLink class="m-nav-footer__link" to="/svet/kontinent">Kontinenty</NuxtLink>
+                    </li>
+                    <li class="m-nav-footer__item">
+                        <NuxtLink class="m-nav-footer__link" to="/svet/stat">Státy</NuxtLink>
+                    </li>
+                    <li class="m-nav-footer__item">
+                        <NuxtLink class="m-nav-footer__link" to="/svet/mesto">Města</NuxtLink>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="m-nav-footer__inner">
+                <span class="m-nav-footer__headline">Frytolnacestách.cz</span>
+                <ul class="m-nav-footer__items">
                     <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/cookies">Zásady Cookies</NuxtLink>
                     </li>
@@ -33,5 +57,5 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> 
 </template>

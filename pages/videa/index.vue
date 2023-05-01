@@ -1,8 +1,8 @@
 <template>
-    <main class="t-main -pt-menu" role="main">
+    <main class="t-main -bg-person -pt-menu" role="main">
 
         <!-- SECTION - Hero -->
-		<section class="t-section -p0">
+		<section class="t-section -p0 mb-1 mt-2">
             <div class="t-section__inner">
                 <oHero :headline="headline" />
             </div>
@@ -10,7 +10,7 @@
         <!-- SECTION - Hero END -->
 
         <!-- SECTION - videos -->
-        <section class="t-section pt-4 py-2" v-if="videos[0]">
+        <section class="t-section -p0 py-1 px-2" v-if="videos[0]">
             <div class="t-section__inner">
                 <oVideoList :videos="videos" :images="images" />
             </div>
@@ -18,12 +18,12 @@
         <!-- SECTION - videos END -->
 
         <!-- SECTION - Platforms -->
-        <section class="t-section t-section--gray pt-4">
+        <section class="t-section -p0 py-1 mt-2 px-2">
             <div class="t-section__inner">
-                <mHeadline title="Platformy kde jsem" styleAlign=" -center" />
+                <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
                 <oPlatform />
                 <div class="flex flex-center mb-4">
-                    <aButtonFill url="/social" text="Více informací" styleThema=" -blue" styleSize=" -big" target="internal" />
+                    <aButtonFillFull url="/social" text="Více informací o platformách" styleThema=" -green" target="internal" />
                 </div>
             </div>
         </section>
@@ -33,7 +33,7 @@
 
 <script>
 
-    import aButtonFill from '~/components/atoms/aButtonFill.vue'
+    import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oHero from '../../components/organisms/oHero.vue'
     import oPlatform from '../../components/organisms/oPlatform.vue'
@@ -43,7 +43,7 @@
         name: 'PageClanky',
 
         components: {
-            aButtonFill,
+            aButtonFillFull,
             mHeadline,
             oHero,
             oPlatform,

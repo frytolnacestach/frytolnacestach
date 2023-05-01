@@ -2,7 +2,6 @@
     $self: &;
 
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
 
     &__outer {
@@ -16,7 +15,8 @@
     &__items {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
+        margin: 0 -8px;
     }
 
     &__item {
@@ -129,10 +129,10 @@
 
     &.-world {
         max-width: 100%;
-        padding: 0 5px;
+        padding: 0 10px;
 
         @media only screen and (min-width: $ti) {
-            padding: 0 10px;
+            padding: 0 20px;
         }
 
         #{$self}__item-inner {
@@ -156,6 +156,21 @@
     
             &:hover {
                 color: $gray6;
+            }
+        }
+    }
+
+    &.-latest {
+        #{$self}__item {
+            display: block;
+            width: 100%;
+    
+            @media only screen and (min-width: $sm) {
+                width: 100%;
+            }
+    
+            @media only screen and (min-width: $md) {
+                width: 100%;
             }
         }
     }

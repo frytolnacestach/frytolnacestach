@@ -1,15 +1,18 @@
 .o-platform {
+    width: 100%;
+
     &__outer {
         width: 100%;
     }
 
     &__inner {
-        width: 100%;
+        width: auto;
         display: flex;
         flex-wrap: wrap;
-        padding: 30px 20px;
-        max-width: 640px;
-        margin: 0 auto;
+        justify-content: flex-start;
+        padding: 0;
+        min-width: 100%;
+        margin: 0 -5px;
 
         @media only screen and (min-width: $md) {
 			flex-wrap: nowrap;
@@ -18,22 +21,40 @@
 
     &__items {
         width: 100%;
+        min-width: 100%;
         text-align: left;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
+        padding: 5px 0;
     }
 
     &__item {
-        width: 100px;
-        padding: 10px;
+        width: 20%;
+        height: 0;
+        padding-bottom: 20%;
+        position: relative;
+
+        @media only screen and (min-width: $md) {
+			width: 10%;
+            padding-bottom: 10%;
+		}
+    }
+
+    &__item-content {
+        padding: 5px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
     }
 
     &__icon {
-        width: 80px;
-        height: 80px;
+        width: 100%;
+        height: 100%;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
 
         @media only screen and (min-width: $md) {
             width: 100%;
@@ -41,91 +62,123 @@
     }
 
     &__icon-file {
-        width: 80px;
-        height: 80px;
+        width: 100%;
+        height: auto;
         position: relative;
+        border-radius: $br-2;
 
         &:after {
-            font-size: $fs-icon-60;
+            font-size: $fs-icon-30;
             font-family: $ff-icomoon-social; 
-            width: 60px;
-            height: 60px;
-            top: 10px;
-            left: 10px;
-            bottom: 10px;
-            right: 10px;
+            width: 90%;
+            height: 90%;
+            top: 5%;
+            left: 5%;
+            bottom: 5%;
+            right: 5%;
             position: absolute; 
             color: $black;
             line-height: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media only screen and (min-width: $sm) {
+                font-size: $fs-icon-40;
+            }
+
+            @media only screen and (min-width: $lg) {
+                font-size: $fs-icon-60;
+            }
         }
 
         &.-youtube {
+            background-color: $youtube;
+
             &:after {
                 content: map-get($icomoon-social, 'youtube');
-                color: $youtube;
+                color: $white;
             }
         }
 
         &.-instagram {
+            background-color: $instagram;
+
             &:after {
                 content: map-get($icomoon-social, 'instagram');
-                color: $instagram;
+                color: $white;
             }
         }
 
         &.-facebook {
+            background-color: $facebook;
+
             &:after {
                 content: map-get($icomoon-social, 'facebook');
-                color: $facebook;
+                color: $white;
             }
         }
 
         &.-tiktok {
+            background-color: $tiktok;
+
             &:after {
                 content: map-get($icomoon-social, 'tiktok');
-                color: $tiktok;
+                color: $white;
             }
         }
 
         &.-twitter {
+            background-color: $twitter;
+
             &:after {
                 content: map-get($icomoon-social, 'twitter');
-                color: $twitter;
+                color: $white;
             }
         }
 
         &.-twitch {
+            background-color: $twitch;
+
             &:after {
                 content: map-get($icomoon-social, 'twitch');
-                color: $twitch;
+                color: $white;
             }
         }
 
         &.-reddit {
+            background-color: $reddit;
+
             &:after {
                 content: map-get($icomoon-social, 'reddit');
-                color: $reddit;
+                color: $white;
             }
         }
 
         &.-pinterest {
+            background-color: $pinterest;
+
             &:after {
                 content: map-get($icomoon-social, 'pinterest');
-                color: $pinterest;
+                color: $white;
             }
         }
 
         &.-discord {
+            background-color: $discord;
+
             &:after {
                 content: map-get($icomoon-social, 'discord');
-                color: $discord;
+                color: $white;
             }
         }
 
         &.-patreon {
+            background-color: $patreon;
+
             &:after {
                 content: map-get($icomoon-social, 'patreon');
-                color: $patreon;
+                color: $white;
             }
         }
     }

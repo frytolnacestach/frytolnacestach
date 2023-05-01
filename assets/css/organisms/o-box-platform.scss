@@ -1,18 +1,15 @@
 .o-box-platform {
     $self: &;
 
-    background-color: $white;
-
     &__outer {
         width: 100%;
     }
+
 
     &__inner {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-        padding: 30px 20px;
-        max-width: 640px;
         margin: 0 auto;
 
         @media only screen and (min-width: $md) {
@@ -20,123 +17,221 @@
 		}
     }
 
-    &__intro {
-        width: 100%;
-        text-align: left;
+    &__items {
+        width: auto;
+        min-width: 100%;
         display: flex;
-        align-items: flex-start;
+        flex-wrap: wrap;
+        margin: 0 -5px;
+    }
+
+    &__item {
+        width: 100%;
+        display: grid;
+        display: grid;
+        grid-template-areas: 
+            "icon"
+            "text";
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        margin-bottom: 20px;
+        padding: 0 5px;
+
+
+        @media only screen and (min-width: $md) {
+            grid-template-areas: "icon text";
+            grid-template-columns: 200px auto;
+            grid-template-rows: auto;
+        }
+
+        @media only screen and (min-width: $lg) {
+			width: 50%;
+		}
+    }
+
+
+    &__icon {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px 0 0 10px;
+        grid-area: icon;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         @media only screen and (min-width: $md) {
 			width: 40%;
             min-width: 200px;
             max-width: 200px;
             text-align: right;
-            flex-wrap: wrap;;
+            flex-wrap: wrap;
 		}
-    }
-
-    &__platform {
-        width: 100%;
-    }
-
-    &__icon {
-        width: 80px;
-        height: 80px;
-        display: flex;
-        justify-content: flex-end;
-
-        @media only screen and (min-width: $md) {
-            width: 100%;
-		}
-    }
-
-    &__icon-file {
-        width: 80px;
-        height: 80px;
-        position: relative;
-
-        &:after {
-            font-size: $fs-icon-60;
-            font-family: $ff-icomoon-social; 
-            width: 60px;
-            height: 60px;
-            top: 10px;
-            left: 10px;
-            bottom: 10px;
-            right: 10px;
-            position: absolute; 
-            color: $black;
-        }
 
         &.-youtube {
-            &:after {
-                content: map-get($icomoon-social, 'youtube');
-                color: $youtube;
+            background-color: $youtube;
+
+            #{$self}__icon-file {
+                &:after {
+                    content: map-get($icomoon-social, 'youtube');
+                    color: $white;
+                }
             }
         }
 
         &.-instagram {
-            &:after {
-                content: map-get($icomoon-social, 'instagram');
-                color: $instagram;
+            background-color: $instagram;
+
+            #{$self}__icon-file {
+                &:after {
+                    content: map-get($icomoon-social, 'instagram');
+                    color: $white;
+                }
             }
         }
 
         &.-facebook {
-            &:after {
-                content: map-get($icomoon-social, 'facebook');
-                color: $facebook;
+            background-color: $facebook;
+
+            #{$self}__icon-file {
+                &:after {
+                    content: map-get($icomoon-social, 'facebook');
+                    color: $white;
+                }
             }
         }
 
         &.-tiktok {
-            &:after {
-                content: map-get($icomoon-social, 'tiktok');
-                color: $tiktok;
+            background-color: $tiktok;
+
+            #{$self}__icon-file {
+                &:after {
+                    content: map-get($icomoon-social, 'tiktok');
+                    color: $white;
+                }
             }
         }
 
         &.-twitter {
-            &:after {
-                content: map-get($icomoon-social, 'twitter');
-                color: $twitter;
+            background-color: $twitter;
+
+            #{$self}__icon-file {
+                &:after {
+                    content: map-get($icomoon-social, 'twitter');
+                    color: $white;
+                }
             }
         }
 
         &.-twitch {
-            &:after {
-                content: map-get($icomoon-social, 'twitch');
-                color: $twitch;
+            background-color: $twitch;
+
+            #{$self}__icon-file {
+                &:after {
+                    content: map-get($icomoon-social, 'twitch');
+                    color: $white;
+                }
             }
         }
 
         &.-reddit {
-            &:after {
-                content: map-get($icomoon-social, 'reddit');
-                color: $reddit;
+            background-color: $reddit;
+
+            #{$self}__icon-file {
+                &:after {
+                    content: map-get($icomoon-social, 'reddit');
+                    color: $white;
+                }
             }
         }
 
         &.-pinterest {
-            &:after {
-                content: map-get($icomoon-social, 'pinterest');
-                color: $pinterest;
+            background-color: $pinterest;
+
+            #{$self}__icon-file {
+                &:after {
+                    content: map-get($icomoon-social, 'pinterest');
+                    color: $white;
+                }
             }
         }
 
         &.-discord {
-            &:after {
-                content: map-get($icomoon-social, 'discord');
-                color: $discord;
+            background-color: $discord;
+
+            #{$self}__icon-file {
+                &:after {
+                    content: map-get($icomoon-social, 'discord');
+                    color: $white;
+                }
             }
         }
 
         &.-patreon {
-            &:after {
-                content: map-get($icomoon-social, 'patreon');
-                color: $patreon;
+            background-color: $patreon;
+
+            #{$self}__icon-file {
+                &:after {
+                    content: map-get($icomoon-social, 'patreon');
+                    color: $white;
+                }
             }
         }
+    }
+
+    &__icon-file {
+        width: 200px;
+        height: 200px;
+        position: relative;
+
+        &:after {
+            font-size: $fs-icon-150;
+            font-family: $ff-icomoon-social; 
+            width: 150px;
+            height: 150px;
+            position: absolute; 
+            color: $black;
+            top: 25px;
+            right: 25px;
+            bottom: 25px;
+            left: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+
+    &__text {
+        width: 100%;
+        text-align: left;
+        padding: 10px 0 0 0;
+        grid-area: text;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: $white;
+        border-radius: 0 $br-2 0 0;
+
+        @media only screen and (min-width: $md) {
+			width: auto;
+		}
+    }
+
+    &__headline {
+        margin: 0 0 10px;
+        padding-left: 5px;
+        font-size: $fs-normal-ll;
+    }
+
+    &__perex {
+        letter-spacing: 0.2px;
+        line-height: $lh-x-normal;
+        margin: 0 0 10px;
+        padding-left: 5px;
+    }
+
+    &__button {
+        width: 100%;
+        margin-top: auto;
     }
 
     &__statistic {
@@ -175,52 +270,5 @@
         font-style: italic;
         font-size: $fs-small-sss;
         width: 100%;
-    }
-
-    &__text {
-        width: 100%;
-        text-align: left;
-        padding: 10px 5px;
-
-        @media only screen and (min-width: $md) {
-			width: auto;
-		}
-    }
-
-    &__headline {
-        margin: 0 0 10px;
-        font-size: $fs-normal-ll;
-    }
-
-    &__perex {
-        letter-spacing: 0.2px;
-        line-height: $lh-x-normal;
-        margin: 0 0 10px;
-    }
-
-    &__button {
-        width: 100%;
-    }
-
-    &:nth-of-type(2n + 2) {
-        background-color: $gray2;
-
-        #{$self}__intro {
-            text-align: left;
-        }
-        
-        #{$self}__icon {
-            @media only screen and (min-width: $md) {
-                justify-content: flex-start;
-            }
-        }
-
-        #{$self}__text {
-
-            @media only screen and (min-width: $md) {
-                text-align: right;
-                order: -1;
-            }
-        }
     }
 }

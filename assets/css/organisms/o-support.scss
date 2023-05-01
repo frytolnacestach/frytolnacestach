@@ -1,4 +1,6 @@
 .o-support {
+    $self: &;
+
     &__outer {
         width: 100%;
     }
@@ -45,6 +47,18 @@
         height: 80px;
         display: block;
         position: relative;
+        border-radius: $br-2;
+
+        &.-patreon {
+            background-color: $patreon;
+            
+            #{$self}__logo-file {
+                &:after {
+                    content: map-get($icomoon-social, 'patreon');
+                    color: $white;
+                }
+            }
+        }
     }
 
     &__logo-file {
@@ -62,13 +76,7 @@
             right: 10px;
             position: absolute;
             color: $black;
-        }
-
-        &.-patreon {
-            &:after {
-                content: map-get($icomoon-social, 'patreon');
-                color: $patreon;
-            }
+            line-height: 1;
         }
     }
 

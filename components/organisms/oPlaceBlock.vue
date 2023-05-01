@@ -36,7 +36,7 @@
                     </div>
                     <div class="o-place-block__text">
                         <div class="o-place-block__wysiwyg" v-if="place[0].information_chatgpt" v-html="place[0].information_chatgpt.slice(0, 220)"></div>
-                        <NuxtLink class="o-place-block__more" :to="`/svet/${type}/${place[0].slug}`">Číst více</NuxtLink>                                   
+                        <aButtonFillFull :url="`/svet/${type}/${place[0].slug}`" text="Číst více" styleThema=" -green" target="internal" />                                 
                     </div>
                 </div>
             </div>
@@ -45,7 +45,15 @@
 </template>
 
 <script>
+    import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
+
     export default {
+        name: 'ComponentoPlacesBlock',
+
+        components: {
+            aButtonFillFull
+        },
+
         props: {
             place: {
                 type: Array,

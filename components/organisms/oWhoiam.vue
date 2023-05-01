@@ -2,26 +2,26 @@
     <div class="o-whoiam">
         <div class="o-whoiam__outer">
             <div class="o-whoiam__inner">
-                <div class="o-whoiam__ring mt-2">
-                    <div class="o-whoiam__ring-content">
-                        <div class="o-whoiam__image loading-image">
-                            <div class="o-whoiam__image-lazyload">
-                                <img class="o-whoiam__image-file lazyload-file"
-                                    data-sizes="130px"
-                                    :data-srcset="`
-                                        https://image.frytolnacestach.cz/storage/main/michal-fryc-130.webp 130w,
-                                        https://image.frytolnacestach.cz/storage/main/michal-fryc-260-2x.webp 260w,
-                                        `"
-                                    :data-src="`https://image.frytolnacestach.cz/storage/main/michal-fryc.webp`"
-                                    alt="Michal Fryč"
-                                    v-lazy>
-                            </div>
-                        </div>
+                <div class="o-whoiam__image loading-image">
+                    <div class="o-whoiam__image-lazyload">
+                        <img class="o-whoiam__image-file lazyload-file"
+                            data-sizes="(max-width: 374px) 340px, (max-width: 439px) 400px, (max-width: 575px) 540px, (max-width: 767px) 400px, (max-width: 991px) 340px, 400px"
+                            :data-srcset="`
+                                https://image.frytolnacestach.cz/storage/main/michal-fryc.webp 340w,
+                                https://image.frytolnacestach.cz/storage/main/michal-fryc.webp 400w,
+                                https://image.frytolnacestach.cz/storage/main/michal-fryc.webp 540w,
+                                https://image.frytolnacestach.cz/storage/main/michal-fryc.webp 680w,
+                                https://image.frytolnacestach.cz/storage/main/michal-fryc.webp 800w,
+                                https://image.frytolnacestach.cz/storage/main/michal-fryc.webp 1080w
+                                `"
+                            :data-src="`https://image.frytolnacestach.cz/storage/main/michal-fryc.webp`"
+                            alt="Michal Fryč"
+                            v-lazy>
                     </div>
-                    <div class="o-whoiam__text mt-2">
-                        <div class="o-whoiam__perex">
-                            {{ base[0].iam }}
-                        </div>
+                </div>
+                <div class="o-whoiam__text">
+                    <div class="o-whoiam__perex">
+                        {{ base[0].iam }}
                     </div>
                 </div>
             </div>

@@ -13,6 +13,21 @@
             max-width: 640px;
             margin: 0 auto;
         }
+
+        &.-col {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__col {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        @media only screen and (min-width: $md) {
+            width: 50%;
+        }
     }
 
     &--gray {
@@ -26,7 +41,6 @@
             margin:  auto;
         }
     }
-
 
     &--hidden-mobile {
         display: none;

@@ -1,5 +1,5 @@
 <template>
-    <main class="t-main -pt-menu" role="main">
+    <main class="t-main -bg-person -pt-menu" role="main">
 
         <!-- SECTION - Hero article -->
         <section class="t-section -p0">
@@ -10,8 +10,10 @@
         <!-- SECTION - Hero article END -->
 
         <!-- SECTION - Hot info -->
-        <section v-if="post[0].locations">
-            <oHotInfo :locations="post[0].locations" />
+        <section class="t-section -p0 px-2" v-if="post[0].locations">
+            <div class="t-section__inner">
+                <oHotInfo :locations="post[0].locations" />
+            </div>
         </section>
         <!-- SECTION - Hot info END -->
 
@@ -147,11 +149,11 @@
         <div class="t-layout-full" v-if="post[0].id_continent || post[0].id_state || post[0].id_city">
 
             <!-- SECTION - place -->
-            <section class="t-section -bg-gray pt-2 pb-1">
+            <section class="t-section -p0 -bg-gray pt-2 pb-1">
                 <div class="t-section__inner">
-                    <mHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mb-2" />
+                    <mHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
 
-                    <div class="flex px-1">
+                    <div class="flex mx-1">
                         <oPlaceBlock :place="placeContinent" :image="imageContinent" type="kontinent" />
                         <oPlaceBlock :place="placeState" :image="imageState" type="stat" />
                         <oPlaceBlock :place="placeCity" :image="imageCity" type="mesto" />
@@ -161,7 +163,7 @@
             <!-- SECTION - place END -->
 
             <!-- SECTION - videos -->
-            <section class="t-section -bg-extra-dark-gray pt-4 py-2 px-2" v-if="videos[0]">
+            <section class="t-section -p0 -bg-extra-dark-gray pt-4 py-2 px-2" v-if="videos[0]">
                 <div class="t-section__inner">
                     <mHeadline title="Videa z města" :titleValue="placeCity[0].name" styleThema=" -dark" styleAlign=" -p-left" styleGap=" mb-2" />
                     <oVideoList :videos="videos" :images="images" type="travel" styleThema=" -dark" styleAlign=" -p-left" />

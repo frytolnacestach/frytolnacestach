@@ -4,8 +4,8 @@
             <div class="o-support__inner">
                 <div class="o-support__items">
                     <div class="o-support__item">
-                        <div class="o-support__logo">
-                            <a class="o-support__logo-file -patreon" href="https://www.patreon.com/frytolnacestach" target="_blank"></a>
+                        <div class="o-support__logo -patreon">
+                            <a class="o-support__logo-file" href="https://www.patreon.com/frytolnacestach" target="_blank"></a>
                         </div>
                     </div>
                 </div>
