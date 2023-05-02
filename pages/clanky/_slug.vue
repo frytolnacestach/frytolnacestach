@@ -31,7 +31,7 @@
                 <!-- SECTION - Wysiwyg -->
                 <section class="t-section pb-2" v-if="post[0].textAuthor">
                     <div class="t-section__inner">
-                        <div class="o-wysiwyg" v-html="post[0].textAuthor"></div>
+                        <oWysiwyg :text="post[0].textAuthor" />
                     </div>
                 </section>
                 <!-- SECTION - Wysiwyg END -->
@@ -183,6 +183,7 @@
     import oUpdateInformation from '~/components/organisms/oUpdateInformation.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oWiki from '~/components/organisms/oWiki.vue'
+    import oWysiwyg from '~/components/organisms/oWysiwyg.vue'
     import oYoutube from '~/components/organisms/oYoutube.vue'
 
     export default {
@@ -204,6 +205,7 @@
             oUpdateInformation,
             oVideoList,
             oWiki,
+            oWysiwyg,
             oYoutube
         },
 
