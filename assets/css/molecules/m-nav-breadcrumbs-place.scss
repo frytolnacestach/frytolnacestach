@@ -12,12 +12,6 @@
 
     &__inner {
         width: 100%;
-        background-color: $white;
-        border-radius: $br-1;
-
-        @media only screen and (min-width: $ti) {
-            border-radius: $br-2;
-        }
     }
 
     &__items {
@@ -26,9 +20,13 @@
         flex-wrap: nowrap;
         list-style: none;
         margin: 0;
-        padding: 5px 15px;
+        padding: 3px 8px;
         justify-content: flex-start;
         flex-wrap: wrap;
+
+        @media only screen and (min-width: $ti) {
+            padding: 3px 18px;
+        }
     }
 
     &__item {
@@ -59,18 +57,18 @@
     }
 
     &__link {
-        color: $gray1;
+        color: $worldTEXTdark;
         line-height: 22px;
         font-size: $fs-normal-sss;
         text-decoration: none;
 
         &:hover {
-            color: $brand1;
+            color: $worldTEXTdark2;
         }
     }
 
     &__span {
-        color: $gray4;
+        color: $worldTEXT;
         line-height: 22px;
         font-size: $fs-small-l;
         text-decoration: none;

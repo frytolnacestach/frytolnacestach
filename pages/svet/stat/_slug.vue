@@ -9,7 +9,7 @@
         <!-- SECTION - BREADCRUMBS END -->
 
         <!-- SECTION - hero + hot info hero -->
-        <section class="t-section -px-world mt-1 -p0">
+        <section class="t-section -px-world -p0">
             <div class="t-section__inner">
                 <div class="t-grid -world-hero">
 
@@ -98,19 +98,7 @@
                                 <!-- SECTION - information by ChatGPT -->
                                 <section class="t-section" v-if="place[0].information_chatgpt">
                                     <div class="t-section__inner">
-                                        <div class="o-information-block">
-                                            <div class="o-information-block__outer">
-                                                <div class="o-information-block__inner">
-                                                    <h2 class="o-information-block__title">O státu {{ place[0].name ? place[0].name : '' }}</h2>
-                                                    <div class="o-information-block__perex">
-                                                        <div class="o-information-block_wysiwyg" v-html="place[0].information_chatgpt"></div>
-                                                        <div class="o-information-block__author">
-                                                            <i class="m-author">zdroj. <a class="m-author__link" href="https://chat.openai.com/chat" target="_blank">ChatGPT</a></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <oInformationBlock :title="'O státu ' + place[0].name ? place[0].name : ''" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                                     </div>
                                 </section>
                                 <!-- SECTION - information by ChatGPT END -->
@@ -120,17 +108,7 @@
                                         <!-- SECTION - Měna -->
                                         <section class="t-section" v-if="place[0].currency_name">
                                             <div class="t-section__inner">
-                                                <div class="o-information-block -bg-world">
-                                                    <div class="o-information-block__outer">
-                                                        <div class="o-information-block__inner">
-                                                            <h2 class="o-information-block__title -m0">Měna</h2>
-                                                            <span class="o-information-block__title-info">{{ place[0].currency_name }}</span>
-                                                            <div class="o-information-block__perex">
-                                                                <div class="o-information-block_wysiwyg"> {{ place[0].currency_code ? place[0].currency_code : '' }}</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <oInformationBlock title="Měna" :subtitle="place[0].currency_name" :perexWysiwyg="place[0].currency_code ? place[0].currency_code : ''" styleThema=" -bg-world" />
                                             </div>
                                         </section>
                                         <!-- SECTION - Měna END -->
@@ -140,17 +118,7 @@
                                         <!-- SECTION - MPZ -->
                                         <section class="t-section" v-if="place[0].mpz">
                                             <div class="t-section__inner">
-                                                <div class="o-information-block -bg-world">
-                                                    <div class="o-information-block__outer">
-                                                        <div class="o-information-block__inner">
-                                                            <h2 class="o-information-block__title -m0">MPZ</h2>
-                                                            <span class="o-information-block__title-info">Mezinárodní poznávací značka</span>
-                                                            <div class="o-information-block__perex">
-                                                                <div class="o-information-block_wysiwyg">{{ place[0].mpz }}</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <oInformationBlock title="MPZ" subtitle="Mezinárodní poznávací značka" :perexWysiwyg="place[0].mpz" styleThema=" -bg-world" />
                                             </div>
                                         </section>
                                         <!-- SECTION - MPZ END -->
@@ -160,17 +128,7 @@
                                         <!-- SECTION - TLD -->
                                         <section class="t-section" v-if="place[0].tld">
                                             <div class="t-section__inner">
-                                                <div class="o-information-block -bg-world">
-                                                    <div class="o-information-block__outer">
-                                                        <div class="o-information-block__inner">
-                                                            <h2 class="o-information-block__title -m0">TLD</h2>
-                                                            <span class="o-information-block__title-info">Národní internetová domána</span>
-                                                            <div class="o-information-block__perex">
-                                                                <div class="o-information-block_wysiwyg">{{ place[0].tld }}</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <oInformationBlock title="TLD" subtitle="Národní internetová domána" :perexWysiwyg="place[0].tld" styleThema=" -bg-world" />
                                             </div>
                                         </section>
                                         <!-- SECTION - TLD END -->
@@ -180,24 +138,7 @@
                                 <!-- SECTION - navštevníci - podmínky vstupu -->
                                 <section class="t-section" v-if="place[0].visitors_entry">
                                     <div class="t-section__inner">
-                                        <div class="o-information-block -py1 -bg-world -no-point">
-                                            <div class="o-information-block__outer">
-                                                <div class="o-information-block__inner">
-                                                    <h2 class="o-information-block__title">Podmínky cesty do země</h2>
-                                                    <div class="o-information-block__perex">
-                                                        <div class="o-information-block__list">
-                                                            <ul class="o-information-block__list-ul">
-                                                                <li class="o-information-block__list-li" v-for="item in place[0].visitors_entry" v-bind:key="item.name">
-                                                                    <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
-                                                                    <span class="o-information-block__list-span">{{ item.value }}</span>
-                                                                    <i class="o-information-block__list-info">({{ item.date_update }})</i>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <oInformationBlock title="Podmínky cesty do země" :perexList="place[0].visitors_entry" styleThema=" -py1 -bg-world -no-point" />
                                     </div>
                                 </section>
                                 <!-- SECTION - navštevníci - podmínky vstupu END -->
@@ -278,17 +219,7 @@
                                         <!-- SECTION - Měna -->
                                         <section class="t-section" v-if="place[0].currency_name">
                                             <div class="t-section__inner">
-                                                <div class="o-information-block -bg-world">
-                                                    <div class="o-information-block__outer">
-                                                        <div class="o-information-block__inner">
-                                                            <h2 class="o-information-block__title -m0">Měna</h2>
-                                                            <span class="o-information-block__title-info">{{ place[0].currency_name }}</span>
-                                                            <div class="o-information-block__perex">
-                                                                <div class="o-information-block_wysiwyg"> {{ place[0].currency_code ? place[0].currency_code : '' }}</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <oInformationBlock title="Měna" :subtitle="place[0].currency_name" :perexWysiwyg="place[0].currency_code ? place[0].currency_code : ''" styleThema=" -bg-world" />
                                             </div>
                                         </section>
                                         <!-- SECTION - Měna END -->
@@ -298,25 +229,7 @@
                                 <!-- SECTION - Ceny -->
                                 <section class="t-section" v-if="place[0].money_prices">
                                     <div class="t-section__inner">
-                                        <div class="o-information-block -bg-world -no-point">
-                                            <div class="o-information-block__outer">
-                                                <div class="o-information-block__inner">
-                                                    <h2 class="o-information-block__title">Ceny</h2>
-                                                    <div class="o-information-block__perex">
-                                                        <div class="o-information-block__list">
-                                                            <ul class="o-information-block__list-ul">
-                                                                <li class="o-information-block__list-li" v-for="item in place[0].money_prices" v-bind:key="item.name">
-                                                                    <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
-                                                                    <span class="o-information-block__list-span">{{ item.value }} {{ place[0].currency_name }} {{ place[0].currency_code ? '(' + place[0].currency_code + ')' : '(Místní měna)' }}</span>
-                                                                    <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <i class="o-information-block__info">Ceny se můžou lišit v rámci sézony, místa a nebo míry a rychosti infalce. uvedená cena dálniční známky je ta nejnižší nabízená a může se ve skutečnosti razantně lišit.</i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <oInformationBlock title="Ceny" :perexList="place[0].money_prices" perexInfo="Ceny se můžou lišit v rámci sézony, místa a nebo míry a rychosti infalce. uvedená cena dálniční známky je ta nejnižší nabízená a může se ve skutečnosti razantně lišit." styleThema=" -bg-world -no-point" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Ceny END -->
@@ -347,24 +260,7 @@
                                 <!-- SECTION - Lidé náboženství -->
                                 <section class="t-section" v-if="place[0].people_religion">
                                     <div class="t-section__inner">
-                                        <div class="o-information-block -bg-world -no-point">
-                                            <div class="o-information-block__outer">
-                                                <div class="o-information-block__inner">
-                                                    <h2 class="o-information-block__title">Náboženství</h2>
-                                                    <div class="o-information-block__perex">
-                                                        <div class="o-information-block__list">
-                                                            <ul class="o-information-block__list-ul">
-                                                                <li class="o-information-block__list-li" v-for="item in place[0].people_religion" v-bind:key="item.name">
-                                                                    <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
-                                                                    <span class="o-information-block__list-span">{{ item.value }}</span>
-                                                                    <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <oInformationBlock title="Náboženství" :perexList="place[0].people_religion" styleThema=" -bg-world -no-point" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Lidé náboženství END -->
@@ -372,24 +268,7 @@
                                 <!-- SECTION - Lidé vzdělání -->
                                 <section class="t-section" v-if="place[0].people_education">
                                     <div class="t-section__inner">
-                                        <div class="o-information-block -bg-world -no-point">
-                                            <div class="o-information-block__outer">
-                                                <div class="o-information-block__inner">
-                                                    <h2 class="o-information-block__title">Vzdělání</h2>
-                                                    <div class="o-information-block__perex">
-                                                        <div class="o-information-block__list">
-                                                            <ul class="o-information-block__list-ul">
-                                                                <li class="o-information-block__list-li" v-for="item in place[0].people_education" v-bind:key="item.name">
-                                                                    <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
-                                                                    <span class="o-information-block__list-span">{{ item.value }}</span>
-                                                                    <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <oInformationBlock title="Vzdělání" :perexList="place[0].people_education" styleThema=" -bg-world -no-point" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Lidé vzdělání END -->
@@ -397,24 +276,7 @@
                                 <!-- SECTION - Lidé národnost -->
                                 <section class="t-section" v-if="place[0].people_nationality">
                                     <div class="t-section__inner">
-                                        <div class="o-information-block -bg-world -no-point">
-                                            <div class="o-information-block__outer">
-                                                <div class="o-information-block__inner">
-                                                    <h2 class="o-information-block__title">Národnost</h2>
-                                                    <div class="o-information-block__perex">
-                                                        <div class="o-information-block__list">
-                                                            <ul class="o-information-block__list-ul">
-                                                                <li class="o-information-block__list-li" v-for="item in place[0].people_nationality" v-bind:key="item.name">
-                                                                    <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
-                                                                    <span class="o-information-block__list-span">{{ item.value }}</span>
-                                                                    <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <oInformationBlock title="Národnost" :perexList="place[0].people_nationality" styleThema=" -bg-world -no-point" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Lidé národnost END -->
@@ -444,24 +306,7 @@
                                 <!-- SECTION - navštevníci - podmínky vstupu -->
                                 <section class="t-section" v-if="place[0].visitors_entry">
                                     <div class="t-section__inner">
-                                        <div class="o-information-block -bg-world -no-point">
-                                            <div class="o-information-block__outer">
-                                                <div class="o-information-block__inner">
-                                                    <h2 class="o-information-block__title">Podmínky cesty do země</h2>
-                                                    <div class="o-information-block__perex">
-                                                        <div class="o-information-block__list">
-                                                            <ul class="o-information-block__list-ul">
-                                                                <li class="o-information-block__list-li" v-for="item in place[0].visitors_entry" v-bind:key="item.name">
-                                                                    <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
-                                                                    <span class="o-information-block__list-span">{{ item.value }}</span>
-                                                                    <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <oInformationBlock title="Podmínky cesty do země" :perexList="place[0].visitors_entry" styleThema=" -bg-world -no-point" />
                                     </div>
                                 </section>
                                 <!-- SECTION - navštevníci - podmínky vstupu END -->
@@ -492,25 +337,7 @@
                                 <!-- SECTION - Telefoní čísla(emergency) -->
                                 <section class="t-section" v-if="place[0].phone_numbers_emergency">
                                     <div class="t-section__inner">
-                                        <div class="o-information-block -bg-world -no-point">
-                                            <div class="o-information-block__outer">
-                                                <div class="o-information-block__inner">
-                                                    <h2 class="o-information-block__title">Důležitá telefonní čísla</h2>
-                                                    <span class="o-information-block__subtitle">Telefonní předvolba {{ place[0].phone_prefix }}</span>
-                                                    <div class="o-information-block__perex">
-                                                        <div class="o-information-block__list">
-                                                            <ul class="o-information-block__list-ul">
-                                                                <li class="o-information-block__list-li" v-for="item in place[0].phone_numbers_emergency" v-bind:key="item.name">
-                                                                    <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
-                                                                    <span class="o-information-block__list-span">{{ item.number }}</span>
-                                                                    <i class="o-information-block__list-info" v-if="item.date_update">({{ item.date_update }})</i>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <oInformationBlock title="Důležitá telefonní čísla" :subtitle="'Telefonní předvolba' + place[0].phone_prefix" :perexListNumber="place[0].phone_numbers_emergency" styleThema=" -bg-world -no-point" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Telefoní čísla(emergency) END -->
@@ -539,23 +366,17 @@
                             <div class="t-grid__section -content">
 
                                 <!-- SECTION - Ubytování -->
-                                <section class="t-section py-2">
+                                <section class="t-section py-2 px-2">
                                     <div class="t-section__inner">
-                                        <div class="o-information-block">
-                                            <div class="o-information-block__outer">
-                                                <div class="o-information-block__inner">
-                                                    <h2 class="o-information-block__title">Ubytování</h2>
-                                                    <div class="o-information-block__widget" v-for="coordinate in place[0].coordinates">
-                                                        <oWidgetBooking 
-                                                            :landmarkName="`${ place[0].name ? place[0].name : '' }`"
-                                                            :address="`${ place[0].name ? place[0].name : '' }`"
-                                                            :latitude="`${ coordinate.latitude }`"
-                                                            :longitude="`${ coordinate.longitude }`"
-                                                            zoom="8"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <mHeadline title="Ubytování" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <div v-for="coordinate in place[0].coordinates">
+                                            <oWidgetBooking 
+                                                :landmarkName="`${ place[0].name ? place[0].name : '' }`"
+                                                :address="`${ place[0].name ? place[0].name : '' }`"
+                                                :latitude="`${ coordinate.latitude }`"
+                                                :longitude="`${ coordinate.longitude }`"
+                                                zoom="8"
+                                            />
                                         </div>
                                     </div>
                                 </section>
@@ -608,6 +429,7 @@
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
+    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
 
@@ -622,24 +444,17 @@
             oArticleList,
             oCoverPlaceDetail,
             oHeroPlace,
+            oInformationBlock,
             oVideoList,
             oWidgetBooking
         },
 
         methods:{
-            formatDate(date) {
-                const options = { year: 'numeric', month: 'long', day: 'numeric' }
-                return new Date(date).toLocaleDateString('cs', options)
-            },
-            getSlugURL(url) {
-                url = url.replace("https://youtu.be/", "").replace("https://youtube.com/shorts/", "");
-                return url.replace(" ", "");
-            },
             getTabLink(tab) {
                 return {
                     name: 'stat-slug-tab',
                     params: { slug: this.$route.params.slug, tab: tab.slug },
-                };
+                }
             }
         },
 
@@ -771,6 +586,7 @@
                     this.activeTab = activeTab.slug;
                 }
             },
+
             activeTab: function(newActiveTab) {
                 const selectedTab = this.tabs.find(tab => tab.slug === newActiveTab);
                 this.activeTabName = selectedTab.label;

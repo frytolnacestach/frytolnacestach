@@ -9,7 +9,7 @@
                     </li>
 
                     <li class="m-nav-breadcrumbs__item" v-if="place">
-                        <NuxtLink class="m-nav-breadcrumbs__link" :to="links[1].url + '/' + place.slug" v-if="tab">{{ place.name }}</NuxtLink>
+                        <NuxtLink class="m-nav-breadcrumbs__link" :to="links[1].url + '/' + place.slug" v-if="typeof tab !== 'undefined' && tab !== 'default'">{{ place.name }}</NuxtLink>
                         <span class="m-nav-breadcrumbs__span" v-else>{{ place.name }}</span>
                     </li>
 

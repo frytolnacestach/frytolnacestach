@@ -9,7 +9,7 @@
         <!-- SECTION - BREADCRUMBS END -->
         
         <!-- SECTION - hero + hot info hero -->
-        <section class="t-section -px-world mt-1 -p0">
+        <section class="t-section -px-world -p0">
             <div class="t-section__inner">
                 <div class="t-grid -world-hero">
 
@@ -81,41 +81,31 @@
                         <!-- SECTION - information by ChatGPT -->
                         <section class="t-section" v-if="place[0].information_chatgpt">
                             <div class="t-section__inner">
-                                <div class="o-information-block">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">O městě {{ place[0].name ? place[0].name : '' }}</h2>
-                                            <div class="o-information-block__perex">
-                                                <div class="o-information-block_wysiwyg" v-html="place[0].information_chatgpt"></div>
-                                                <div class="o-information-block__author">
-                                                    <i class="m-author">zdroj. <a class="m-author__link" href="https://chat.openai.com/chat" target="_blank">ChatGPT</a></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <oInformationBlock :title="'O městě ' + place[0].name ? place[0].name : ''" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                             </div>
                         </section>
                         <!-- SECTION - information by ChatGPT END -->
 
-                        <!-- SECTION - Ubytování -->
-                        <section class="t-section py-2">
+                        <!-- SECTION - Place teaser -->
+                        <section class="t-section my-2 -p0">
                             <div class="t-section__inner">
-                                <div class="o-information-block">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">Ubytování</h2>
-                                            <div class="o-information-block__widget" v-for="coordinate in placeState[0].coordinates">
-                                                <oWidgetBooking
-                                                    :landmarkName="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
-                                                    :address="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
-                                                    :latitude="`${ coordinate.latitude }`"
-                                                    :longitude="`${ coordinate.longitude }`"
-                                                    zoom=13
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
+                                <oPlaceTeaser :headline="'Město ' + place[0].name + ' se nachází ve státě ' + placeState[0].name" :place="placeState" :image="imageState" type="stat" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Place teaser END -->
+
+                        <!-- SECTION - Ubytování -->
+                        <section class="t-section py-2 px-2">
+                            <div class="t-section__inner">
+                                <mHeadline title="Ubytování" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                <div v-for="coordinate in placeState[0].coordinates">
+                                    <oWidgetBooking
+                                        :landmarkName="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
+                                        :address="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
+                                        :latitude="`${ coordinate.latitude }`"
+                                        :longitude="`${ coordinate.longitude }`"
+                                        zoom=13
+                                    />
                                 </div>
                             </div>
                         </section>
@@ -183,6 +173,8 @@
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
+    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
+    import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
 
@@ -195,19 +187,10 @@
             oArticleList,
             oCoverPlaceDetail,
             oHeroPlace,
+            oInformationBlock,
+            oPlaceTeaser,
             oVideoList,
             oWidgetBooking
-        },
-
-        methods:{
-            formatDate(date) {
-                const options = { year: 'numeric', month: 'long', day: 'numeric' }
-                return new Date(date).toLocaleDateString('cs', options)
-            },
-            getSlugURL(url) {
-                url = url.replace("https://youtu.be/", "").replace("https://youtube.com/shorts/", "");
-                return url.replace(" ", "");
-            }
         },
 
         data() {
@@ -268,7 +251,10 @@
                 // Načtení informací o obrázku
                 const images = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images`)
 
-                return { place, placeState, placesCities, placeContinent, videos, posts, images }
+                // Načtení informací o obrázku
+                const imageState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeState[0].id_image_hero}`)
+
+                return { place, placeState, placesCities, placeContinent, videos, posts, images, imageState }
             } catch (error) {
                 console.error(error)
             }

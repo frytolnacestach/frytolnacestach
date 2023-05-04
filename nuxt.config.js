@@ -20,6 +20,7 @@ export default {
       { name: 'author', content: 'Michal Fryč' },
       { name: 'keywords', content: 'Frytol na cestách, youtube, cestování, blog, mapa světa' },
       { name: 'robots', content: 'index, follow' },
+      { property: 'og:locale', content: 'cs_CZ' }
     ],
     link: [
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/favicons/apple-touch-icon.png' },
@@ -88,12 +89,34 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/i18n',
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
     '@nuxtjs/sitemap',
     '@nuxtjs/svg',
     'vue-scrollto/nuxt'
   ],
+
+  i18n: {
+    locales: [
+      {
+        code: 'cs',
+        name: 'Čeština',
+        iso: 'cs-CZ',
+        file: 'cs.js'
+      }
+    ],
+    defaultLocale: 'cs',
+    vueI18n: {
+      fallbackLocale: 'cs'
+    },
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected'
+    },
+    lazy: true,
+    langDir: 'lang/'
+  },
 
   sitemap: {
     hostname: process.env.BASE_URL,

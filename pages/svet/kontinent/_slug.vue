@@ -10,7 +10,7 @@
         <!-- SECTION - BREADCRUMBS END -->
 
         <!-- SECTION - hero + hot info hero -->
-        <section class="t-section -px-world mt-1 -p0">
+        <section class="t-section -px-world -p0">
             <div class="t-section__inner">
                 <div class="t-grid -world-hero">
 
@@ -71,19 +71,7 @@
                         <!-- SECTION - information by ChatGPT -->
                         <section class="t-section" v-if="place[0].information_chatgpt">
                             <div class="t-section__inner">
-                                <div class="o-information-block">
-                                    <div class="o-information-block__outer">
-                                        <div class="o-information-block__inner">
-                                            <h2 class="o-information-block__title">O kontinentu {{ place[0].name ? place[0].name : ''}}</h2>
-                                            <div class="o-information-block__perex">
-                                                <div class="o-information-block_wysiwyg" v-html="place[0].information_chatgpt"></div>
-                                                <div class="o-information-block__author">
-                                                    <i class="m-author">zdroj. <a class="m-author__link" href="https://chat.openai.com/chat" target="_blank">ChatGPT</a></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <oInformationBlock :title="'O kontinentu ' + place[0].name ? place[0].name : ''" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                             </div>
                         </section>
                         <!-- SECTION - information by ChatGPT END -->
@@ -152,6 +140,7 @@
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
+    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
 
     export default {
@@ -164,18 +153,8 @@
             oArticleList,
             oCoverPlaceDetail,
             oHeroPlace,
+            oInformationBlock,
             oVideoList
-        },
-
-        methods:{
-            formatDate(date) {
-                const options = { year: 'numeric', month: 'long', day: 'numeric' }
-                return new Date(date).toLocaleDateString('cs', options)
-            },
-            getSlugURL(url) {
-                url = url.replace("https://youtu.be/", "").replace("https://youtube.com/shorts/", "");
-                return url.replace(" ", "");
-            }
         },
 
         data() {
