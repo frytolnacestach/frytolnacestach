@@ -1,5 +1,12 @@
 <template>
     <main class="t-main -bg-world -pt-menu" role="main">
+        <!-- SECTION - BREADCRUMBS -->
+        <section class="t-section -px-world mt-2 -p0">
+            <div class="t-section__inner">
+                <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" />
+            </div>
+        </section>
+        <!-- SECTION - BREADCRUMBS END -->
         
         <!-- SECTION - hero + hot info hero -->
         <section class="t-section -px-world mt-1 -p0">
@@ -171,7 +178,7 @@
 </template>
 
 <script>
-
+    import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
@@ -183,6 +190,7 @@
         name: 'PageCitySlug',
 
         components: {
+            mNavBreadcrumbsPlace,
             mHeadline,
             oArticleList,
             oCoverPlaceDetail,
@@ -208,7 +216,21 @@
                 placesCities: this.placesCities,
                 posts: this.posts,
                 images: this.images,
-                videos: this.videos
+                videos: this.videos,
+                mNavBreadcrumbsPlaceArray: [
+                    {
+                        id: 1,
+                        name: "Svět",
+                        url: "/svet",
+                        status: "link"
+                    },
+                    {
+                        id: 2,
+                        name: "Města",
+                        url: "/svet/mesto",
+                        status: "link"
+                    }
+                ]
             }
         },
 

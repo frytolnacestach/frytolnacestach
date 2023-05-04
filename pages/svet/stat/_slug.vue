@@ -1,6 +1,13 @@
 <template>
     <main class="t-main -bg-world -pt-menu" role="main">
-        
+        <!-- SECTION - BREADCRUMBS -->
+        <section class="t-section -px-world mt-2 -p0">
+            <div class="t-section__inner">
+                <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" />
+            </div>
+        </section>
+        <!-- SECTION - BREADCRUMBS END -->
+
         <!-- SECTION - hero + hot info hero -->
         <section class="t-section -px-world mt-1 -p0">
             <div class="t-section__inner">
@@ -595,7 +602,7 @@
 </template>
 
 <script>
-
+    import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
@@ -604,10 +611,12 @@
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
 
+
     export default {
         name: 'PageStateSlug',
 
         components: {
+            mNavBreadcrumbsPlace,
             mHeadline,
             oAdGoogleSidebar,
             oArticleList,
@@ -631,7 +640,7 @@
                     name: 'stat-slug-tab',
                     params: { slug: this.$route.params.slug, tab: tab.slug },
                 };
-            },
+            }
         },
 
         computed: {
@@ -667,6 +676,7 @@
                 place: this.place,
                 placesCities: this.placesCities,
                 activeTab: 'default',
+                activeTabName: 'PLACE_NAME',
                 tabs: [
                     { slug: 'default', label: 'state_name', visible: false },
                     { slug: 'ceny', label: 'Ceny', visible: false },
@@ -678,7 +688,21 @@
                 ],
                 posts: this.posts,
                 images: this.images,
-                videos: this.videos
+                videos: this.videos,
+                mNavBreadcrumbsPlaceArray: [
+                    {
+                        id: 1,
+                        name: "Svět",
+                        url: "/svet",
+                        status: "link"
+                    },
+                    {
+                        id: 2,
+                        name: "Státy",
+                        url: "/svet/stat",
+                        status: "link"
+                    }
+                ]
             }
         },
 
@@ -722,7 +746,7 @@
 
                 // Načtení informací o obrázku
                 const images = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images`)
-                
+
                 return { place, placesCities, placeContinent, videos, posts, images }
             } catch (error) {
                 console.error(error)
@@ -745,8 +769,12 @@
                     const visibleTabs = this.tabs.filter(tab => tab.visible);
                     const activeTab = visibleTabs.length > 0 ? visibleTabs[0] : defaultTab;
                     this.activeTab = activeTab.slug;
-                },
+                }
             },
+            activeTab: function(newActiveTab) {
+                const selectedTab = this.tabs.find(tab => tab.slug === newActiveTab);
+                this.activeTabName = selectedTab.label;
+            }
         },
     }
 </script>
