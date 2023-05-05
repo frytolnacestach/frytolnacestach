@@ -548,7 +548,7 @@
                 const place = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-state/${params.slug}`)
 
                 // Načtení měst státu podle jeho id
-                const placesCities = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-state/${place[0].id}`)
+                const placesCities = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-id-state/${place[0].id}`)
 
                 // Načtení informací o continentu
                 const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${place[0].id_continent}`)

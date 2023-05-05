@@ -89,34 +89,12 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/i18n',
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
     '@nuxtjs/sitemap',
     '@nuxtjs/svg',
     'vue-scrollto/nuxt'
   ],
-
-  i18n: {
-    locales: [
-      {
-        code: 'cs',
-        name: 'Čeština',
-        iso: 'cs-CZ',
-        file: 'cs.js'
-      }
-    ],
-    defaultLocale: 'cs',
-    vueI18n: {
-      fallbackLocale: 'cs'
-    },
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected'
-    },
-    lazy: true,
-    langDir: 'lang/'
-  },
 
   sitemap: {
     hostname: process.env.BASE_URL,
