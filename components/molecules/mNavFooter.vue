@@ -43,7 +43,7 @@
 
 
             <div class="m-nav-footer__inner">
-                <span class="m-nav-footer__headline">Frytolnacestách.cz</span>
+                <span class="m-nav-footer__headline">Frytolnacestach.cz</span>
                 <ul class="m-nav-footer__items">
                     <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/cookies">Zásady Cookies</NuxtLink>

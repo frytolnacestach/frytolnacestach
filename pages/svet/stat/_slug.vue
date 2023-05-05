@@ -66,6 +66,7 @@
         <!-- SECTION - Nav place -->
         <section class="t-section -px-world-big -p0" v-if="place[0]">
             <div class="t-section__inner">
+                
                 <div class="m-nav-place">
                     <div class="m-nav-place__outer">
                         <div class="m-nav-place__inner">
@@ -82,6 +83,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
          <!-- SECTION - Nav place END -->

@@ -45,8 +45,16 @@
                                         <div class="o-hot-info-hero__item" v-if="place[0].population">
                                             <div class="o-hot-info-hero__content">
                                                 <div class="o-hot-info-hero__text">
+                                                    <span class="o-hot-info-hero__title">Počet obyvatel</span>
+                                                    <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="o-hot-info-hero__item" v-if="place[0].population_density">
+                                            <div class="o-hot-info-hero__content">
+                                                <div class="o-hot-info-hero__text">
                                                     <span class="o-hot-info-hero__title">Hustota obyvatel</span>
-                                                    <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}/km²</span>
+                                                    <span class="o-hot-info-hero__value">{{ place[0].population_density !== 0 ? place[0].population_density.toLocaleString('cs-CZ') : place[0].population_density }}/km²</span>
                                                 </div>
                                             </div>
                                         </div>
