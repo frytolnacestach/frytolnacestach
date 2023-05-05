@@ -262,10 +262,10 @@
                 // Načtení informací o obrázku pro města
                 const imagesCities = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlacesCitiesID.join(',')}`)
 
-                // Načtení informací o obrázku pro města
+                // Načtení informací o obrázku pro videa
                 const imagesVideos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesVideosID.join(',')}`)
 
-                // Načtení informací o obrázku pro města
+                // Načtení informací o obrázku pro čláky
                 const imagesPosts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPostsID.join(',')}`)
 
                 return { place, placeState, placeContinent, placesCities, videos, posts, imagePlace, imageState, imagesCities, imagesVideos, imagesPosts }

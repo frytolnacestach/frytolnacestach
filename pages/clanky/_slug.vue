@@ -4,7 +4,7 @@
         <!-- SECTION - Hero article -->
         <section class="t-section -p0">
             <div class="t-section__inner">
-                <oHeroArticle :post="post" :images="images" />
+                <oHeroArticle :post="post" :images="imagePostHero" />
             </div>
         </section>
         <!-- SECTION - Hero article END -->
@@ -47,7 +47,7 @@
                 <!-- SECTION - Map mapy -->
                 <section class="t-section t-section--hidden-desktop my-2" v-if="post[0].urlMap">
                     <div class="t-section__inner">
-                        <oMapMapy :idImageMap="post[0].id_image_map" :url="post[0].urlMap" :title="post[0].title" :images="images" />
+                        <oMapMapy :idImageMap="post[0].id_image_map" :url="post[0].urlMap" :title="post[0].title" :images="imagePostMap" />
                     </div>
                 </section>
                 <!-- SECTION - Map mapy -->
@@ -115,7 +115,7 @@
                 <!-- SECTION - Sidebar map mapy -->
                 <section class="t-section t-section--hidden-mobile my-2" v-if="post[0].urlMap">
                     <div class="t-section__inner">
-                        <oSidebarMapMapy :idImageMap="post[0].id_image_map" :url="post[0].urlMap" :title="post[0].title" :images="images" />
+                        <oSidebarMapMapy :idImageMap="post[0].id_image_map" :url="post[0].urlMap" :title="post[0].title" :images="imagePostMap" />
                     </div>
                 </section>
                 <!-- SECTION - Sidebar map mapy END -->
@@ -158,7 +158,7 @@
             <section class="t-section -p0 -bg-extra-dark-gray pt-4 py-2 px-2" v-if="videos[0]">
                 <div class="t-section__inner">
                     <mHeadline title="Videa z města" :titleValue="placeCity[0].name" styleThema=" -dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                    <oVideoList :videos="videos" :images="images" type="travel" styleThema=" -dark" styleAlign=" -p-left" />
+                    <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -dark" styleAlign=" -p-left" />
                 </div>
             </section>
             <!-- SECTION - videos END -->
@@ -215,6 +215,7 @@
                 placeContinent: this.placeContinent,
                 placeState: this.placeState,
                 placeCity: this.placeCity,
+                videos: this.videos,
                 imageContinent: this.imageContinent,
                 imageState: this.imageState,
                 imageCity: this.imageCity
@@ -226,7 +227,7 @@
                 title: `${this.post[0].title} | Frytol na cestách`,
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.post[0].perex}` },
-                    { property: 'og:image', content: this.images && this.images.find(image => image.id === this.post[0].id_image_og) ? 'https://image.frytolnacestach.cz/storage' + this.images.find(image => image.id === this.post[0].id_image_og).source + this.images.find(image => image.id === this.post[0].id_image_og).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}
+                    { property: 'og:image', content: this.imagePostOg && this.imagePostOg.find(image => image.id === this.post[0].id_image_og) ? 'https://image.frytolnacestach.cz/storage' + this.imagePostOg.find(image => image.id === this.post[0].id_image_og).source + this.imagePostOg.find(image => image.id === this.post[0].id_image_og).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}
                 ]
             }
         },
@@ -235,31 +236,42 @@
             //post
             const post = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/post/${params.slug}`)
 
-            // Načtení informací o obrázku
-            const images = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images/`)
-
             // Načtení informací o městu
             const placeCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city-id/${post[0].id_city}`)
-
-            // Načtení informací o obrázku
-            const imageCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeCity[0].id_image_hero}`)
 
             // Načtení informací o státu
             const placeState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-state-id/${post[0].id_state}`)
 
-            // Načtení informací o obrázku
-            const imageState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeState[0].id_image_hero}`)
-
             // Načtení informací o continentu
             const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${post[0].id_continent}`)
+
+            // Načtení videi z města
+            const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos-id-city/${post[0].id_city}`)
+            const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '');
+
+
+            // Načtení informací o obrázku pro článek
+            const imagePostHero = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${post[0].id_image_hero}`)
+
+            // Načtení informací o obrázku pro článek
+            const imagePostMap = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${post[0].id_image_map}`)
+
+            // Načtení informací o obrázku pro článek
+            const imagePostOg = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${post[0].id_image_og}`)
+
+            // Načtení informací o obrázku pro videa
+            const imagesVideos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesVideosID.join(',')}`)
+
+            // Načtení informací o obrázku
+            const imageCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeCity[0].id_image_hero}`)
+
+            // Načtení informací o obrázku
+            const imageState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeState[0].id_image_hero}`)
 
             // Načtení informací o obrázku
             const imageContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeContinent[0].id_image_hero}`)
 
-            // Načtení videi z města
-            const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos-id-city/${post[0].id_city}`)
-
-            return { post, images, placeCity, placeState, placeContinent, imageCity, imageState, imageContinent, videos }
+            return { post, placeCity, placeState, placeContinent, videos, imagePostHero, imagePostMap, imagePostOg, imagesVideos, imageCity, imageState, imageContinent}
         }
     }
 </script>

@@ -15,7 +15,7 @@
 
                     <!-- SECTION - hero -->
                     <div class="t-grid__section -hero-place">
-                        <oHeroPlace :place="place" :images="images" />
+                        <oHeroPlace :place="place" :images="imagePlace" />
                     </div>
                     <!-- SECTION - hero END -->
 
@@ -169,7 +169,7 @@
                                 <section class="t-section -p0 -py4 -px-world-big -h-scroll">
                                     <div class="t-section__inner">
                                         <mHeadline title="Největší města ve státě" :titleValue="place[0].name" styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" />
-                                        <oCoverPlaceDetail :places="placesCities" :images="images" type="mesto" biggest="big" />
+                                        <oCoverPlaceDetail :places="placesCities" :images="imagesCities" type="mesto" biggest="big" />
                                     </div>
                                 </section>
                                 <!-- SECTION - města - Biggest - END -->
@@ -178,7 +178,7 @@
                                 <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="videos[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oVideoList :videos="videos" :images="images" type="travel" styleThema=" -world" styleAlign=" -p-left" />
+                                        <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleAlign=" -p-left" />
                                     </div>
                                 </section>
                                 <!-- SECTION - videos END -->
@@ -187,7 +187,7 @@
                                 <section v-if="hasCitiesToShow" class="t-section -p0 -py4 -px-world-big -h-scroll">
                                     <div class="t-section__inner">
                                         <mHeadline title="Další města a obce ve státě" :titleValue="place[0].name" styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" />
-                                        <oCoverPlaceDetail :places="placesCities" :images="images" type="mesto" biggest="nobig" />
+                                        <oCoverPlaceDetail :places="placesCities" :images="imagesCities" type="mesto" biggest="nobig" />
                                     </div>
                                 </section>
                                 <!-- SECTION - města - menší - END -->
@@ -196,7 +196,7 @@
                                 <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="posts[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oArticleList :posts="posts" :images="images" styleThema=" -world" styleAlign=" -p-left" />
+                                        <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleAlign=" -p-left" />
                                     </div>
                                 </section>
                                 <!-- SECTION - articles END -->
@@ -408,7 +408,7 @@
                                 <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="videos[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oVideoList :videos="videos" :images="images" type="travel" styleThema=" -world" styleAlign=" -p-left" />
+                                        <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleAlign=" -p-left" />
                                     </div>
                                 </section>
                                 <!-- SECTION - videos END -->
@@ -502,7 +502,6 @@
                     { slug: 'videa', label: 'Videa', visible: false },
                 ],
                 posts: this.posts,
-                images: this.images,
                 videos: this.videos,
                 mNavBreadcrumbsPlaceArray: [
                     {
@@ -537,7 +536,7 @@
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(3, 163) : this.place[0].name ? this.place[0].name : 'Stát'}` },
                     { name: 'keywords', content: `${this.place[0].name ? this.place[0].name : '' + ', stát, ceny, ubytování, lidé a kultura, cestování, svět'}` },
-                    { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.images.find(image => image.id === this.place[0].id_image_hero).source + this.images.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`} 
+                    { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`} 
                 ]
             }
         },
@@ -549,20 +548,33 @@
 
                 // Načtení měst státu podle jeho id
                 const placesCities = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-id-state/${place[0].id}`)
+                const imagesPlacesCitiesID = placesCities.map(placeCity => placeCity.id_image_cover).filter(id => id !== null && id !== '');
 
                 // Načtení informací o continentu
                 const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${place[0].id_continent}`)
 
                 // Načtení videi z místa
                 const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos-id-state/${place[0].id}`)
+                const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '');
 
                 // Načtení článků z místa
                 const posts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/posts-id-state/${place[0].id}`)
+                const imagesPostsID = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '');
 
-                // Načtení informací o obrázku
-                const images = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images`)
 
-                return { place, placesCities, placeContinent, videos, posts, images }
+                // Načtení informací o obrázku pro místo
+                const imagePlace = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${place[0].id_image_hero}`)
+
+                // Načtení informací o obrázku pro státy
+                const imagesCities = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlacesCitiesID.join(',')}`)
+
+                // Načtení informací o obrázku pro videa
+                const imagesVideos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesVideosID.join(',')}`)
+
+                // Načtení informací o obrázku pro čláky
+                const imagesPosts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPostsID.join(',')}`)
+
+                return { place, placesCities, placeContinent, videos, posts, imagePlace, imagesCities, imagesVideos, imagesPosts }
             } catch (error) {
                 console.error(error)
             }
