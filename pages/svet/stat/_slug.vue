@@ -149,7 +149,7 @@
 
                             <div class="t-grid__section -ad">
                                 <!-- SECTION - ad-google - sidebar -->
-                                <section class="t-section my-2">
+                                <section class="t-section -px-world my-2">
                                     <div class="t-section__inner">
                                         <oAdGoogleSidebar />
                                     </div>
@@ -240,7 +240,7 @@
 
                             <div class="t-grid__section -ad">
                                 <!-- SECTION - ad-google - sidebar -->
-                                <section class="t-section my-2">
+                                <section class="t-section -px-world my-2">
                                     <div class="t-section__inner">
                                         <oAdGoogleSidebar />
                                     </div>
@@ -286,7 +286,7 @@
 
                             <div class="t-grid__section -ad">
                                 <!-- SECTION - ad-google - sidebar -->
-                                <section class="t-section my-2">
+                                <section class="t-section -px-world my-2">
                                     <div class="t-section__inner">
                                         <oAdGoogleSidebar />
                                     </div>
@@ -317,7 +317,7 @@
 
                             <div class="t-grid__section -ad">
                                 <!-- SECTION - ad-google - sidebar -->
-                                <section class="t-section my-2">
+                                <section class="t-section -px-world my-2">
                                     <div class="t-section__inner">
                                         <oAdGoogleSidebar />
                                     </div>
@@ -348,7 +348,7 @@
 
                             <div class="t-grid__section -ad">
                                 <!-- SECTION - ad-google - sidebar -->
-                                <section class="t-section my-2">
+                                <section class="t-section -px-world my-2">
                                     <div class="t-section__inner">
                                         <oAdGoogleSidebar />
                                     </div>
@@ -388,7 +388,7 @@
 
                             <div class="t-grid__section -ad">
                                 <!-- SECTION - ad-google - sidebar -->
-                                <section class="t-section my-2">
+                                <section class="t-section -px-world my-2">
                                     <div class="t-section__inner">
                                         <oAdGoogleSidebar />
                                     </div>
