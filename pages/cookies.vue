@@ -110,7 +110,7 @@
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Zásady Cookies | Frytol na cestách' },
                 { hid: 'og:description', content: 'Zásady Cookies pro web Frytol na cestách' },
-                { hid: 'og:url', content: `https://frytolnacestach.cz${this.$route.fullPath}` },
+                { hid: 'og:url', content: `${process.env.baseUrl}/cookies` },
                 { hid: 'og:type', content: 'website' }
             ]
         }

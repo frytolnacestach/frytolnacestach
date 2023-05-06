@@ -72,7 +72,7 @@
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Frytol na cestách' },
                 { hid: 'og:description', content: 'Úvodní stránka webu Frytol na cestách' },
-                { hid: 'og:url', content: `https://frytolnacestach.cz${this.$route.fullPath}` },
+                { hid: 'og:url', content: `${process.env.baseUrl}` },
                 { hid: 'og:type', content: 'website' }
             ]
         },

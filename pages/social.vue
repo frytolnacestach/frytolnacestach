@@ -46,7 +46,7 @@
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Kde mě najdeš | Frytol na cestách' },
                 { hid: 'og:description', content: 'Sociální síťě kde jsem jako Frytol na cestách' },
-                { hid: 'og:url', content: `https://frytolnacestach.cz${this.$route.fullPath}` },
+                { hid: 'og:url', content: `${process.env.baseUrl}/social` },
                 { hid: 'og:type', content: 'website' }
             ]
         }

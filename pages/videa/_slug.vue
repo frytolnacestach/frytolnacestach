@@ -118,7 +118,7 @@
                     { property: 'og:image', content: `${this.video[0].id_image ? 'https://image.frytolnacestach.cz/storage' + this.imageVideo[0].source + this.imageVideo[0].name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
                     { hid: 'og:title', content: `${this.video[0].title} | Frytol na cestách` },
                     { hid: 'og:description', content: `${this.video[0].perex ? this.video[0].perex.slice(1, 160) : this.video[0].title ? this.video[0].title : 'Video'}` },
-                    { hid: 'og:url', content: `https://frytolnacestach.cz${this.$route.fullPath}` },
+                    { hid: 'og:url', content: `${process.env.baseUrl}/videa/${this.video[0].slug}` },
                     { hid: 'og:type', content: 'website' }  
                 ]
             }

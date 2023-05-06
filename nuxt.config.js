@@ -42,12 +42,17 @@ export default {
       { src: '/js/gtm.js', type: 'text/javascript', async: true, defer: 'defer' }
     ]
   },
+
   robots: {
     UserAgent: '*',
     Disallow: '',
     Sitemap: 'https://frytolnacestach.cz/sitemap-main.xml',
     // custom robots.txt file path
     TxtSitemap: '/robots.txt',
+  },
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://frytolnacestach.cz'
   },
 
   copy: [

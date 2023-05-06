@@ -64,7 +64,7 @@
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Kdo jsem | Frytol na cestách' },
                 { hid: 'og:description', content: 'Kdo je Frytol na cestách?' },
-                { hid: 'og:url', content: `https://frytolnacestach.cz${this.$route.fullPath}` },
+                { hid: 'og:url', content: `${process.env.baseUrl}/iam` },
                 { hid: 'og:type', content: 'website' }
             ]
         }

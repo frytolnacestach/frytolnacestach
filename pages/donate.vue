@@ -65,7 +65,7 @@
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Podpořit | Frytol na cestách' },
                 { hid: 'og:description', content: 'Podpořit web Frytol na cestách' },
-                { hid: 'og:url', content: `https://frytolnacestach.cz${this.$route.fullPath}` },
+                { hid: 'og:url', content: `${process.env.baseUrl}/donate` },
                 { hid: 'og:type', content: 'website' }
             ]
         }

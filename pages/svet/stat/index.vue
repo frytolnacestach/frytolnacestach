@@ -51,7 +51,7 @@
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Státy | Frytol na cestách' },
                 { hid: 'og:description', content: 'Oběvuj svět a jeho místá s Frytolem na cestách' },
-                { hid: 'og:url', content: `https://frytolnacestach.cz${this.$route.fullPath}` },
+                { hid: 'og:url', content: `${process.env.baseUrl}/svet/stat` },
                 { hid: 'og:type', content: 'website' }  
             ]
         },

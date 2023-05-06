@@ -92,7 +92,7 @@
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Obchodní podmínky a zásady ochrany osobních údajů | Frytol na cestách' },
                 { hid: 'og:description', content: 'Obchodní podmínky a zásady ochrany osobních údajů pro web Frytol na cestách' },
-                { hid: 'og:url', content: `https://frytolnacestach.cz${this.$route.fullPath}` },
+                { hid: 'og:url', content: `${process.env.baseUrl}/conditions` },
                 { hid: 'og:type', content: 'website' }  
             ]
         }
