@@ -62,7 +62,12 @@
             title: 'Články | Frytol na cestách',
             meta: [
                 { hid: 'description', name: 'description', content: 'Članky z webu Frytol na cestách' },
-                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' }
+                { name: 'keywords', content: `Články, cestování, svět` },
+                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
+                { hid: 'og:title', content: 'Články | Frytol na cestách' },
+                { hid: 'og:description', content: 'Članky z webu Frytol na cestách' },
+                { hid: 'og:url', content: `https://frytolnacestach.cz${this.$route.fullPath}` },
+                { hid: 'og:type', content: 'website' }  
             ]
         },
 

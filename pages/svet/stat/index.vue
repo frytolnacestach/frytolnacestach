@@ -47,7 +47,12 @@
             title: 'Státy | Frytol na cestách',
             meta: [
                 { hid: 'description', name: 'description', content: 'Oběvuj svět a jeho místá s Frytolem na cestách' },
-                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' }
+                { name: 'keywords', content: `státy, cestování, svět` },
+                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
+                { hid: 'og:title', content: 'Státy | Frytol na cestách' },
+                { hid: 'og:description', content: 'Oběvuj svět a jeho místá s Frytolem na cestách' },
+                { hid: 'og:url', content: `https://frytolnacestach.cz${this.$route.fullPath}` },
+                { hid: 'og:type', content: 'website' }  
             ]
         },
 

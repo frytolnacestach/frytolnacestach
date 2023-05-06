@@ -227,7 +227,12 @@
                 title: `${this.post[0].title} | Frytol na cestách`,
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.post[0].perex}` },
-                    { property: 'og:image', content: this.imagePostOg && this.imagePostOg.find(image => image.id === this.post[0].id_image_og) ? 'https://image.frytolnacestach.cz/storage' + this.imagePostOg.find(image => image.id === this.post[0].id_image_og).source + this.imagePostOg.find(image => image.id === this.post[0].id_image_og).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}
+                    { name: 'keywords', content: `${this.post[0].title + ', článek, cestování, svět'}` },
+                    { property: 'og:image', content: this.imagePostOg && this.imagePostOg.find(image => image.id === this.post[0].id_image_og) ? 'https://image.frytolnacestach.cz/storage' + this.imagePostOg.find(image => image.id === this.post[0].id_image_og).source + this.imagePostOg.find(image => image.id === this.post[0].id_image_og).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'},
+                    { hid: 'og:title', content: `${this.post[0].title} | Frytol na cestách` },
+                    { hid: 'og:description', content: `${this.post[0].textOpener ? this.post[0].textOpener.slice(1, 160) : this.post[0].title ? this.post[0].title : 'Článek'}` },
+                    { hid: 'og:url', content: `https://frytolnacestach.cz${this.$route.fullPath}` },
+                    { hid: 'og:type', content: 'website' }  
                 ]
             }
         },

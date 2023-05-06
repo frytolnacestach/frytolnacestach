@@ -42,7 +42,12 @@
             title: 'Kde mě najdeš | Frytol na cestách',
             meta: [
                 { hid: 'description', name: 'description', content: 'Sociální síťě kde jsem jako Frytol na cestách' },
-                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' }
+                { name: 'keywords', content: `sociální sítě, cestování, svět` },
+                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
+                { hid: 'og:title', content: 'Kde mě najdeš | Frytol na cestách' },
+                { hid: 'og:description', content: 'Sociální síťě kde jsem jako Frytol na cestách' },
+                { hid: 'og:url', content: `https://frytolnacestach.cz${this.$route.fullPath}` },
+                { hid: 'og:type', content: 'website' }
             ]
         }
     }
