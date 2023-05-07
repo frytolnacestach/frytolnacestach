@@ -43,6 +43,12 @@ export default {
     ]
   },
 
+  render: {
+    static: {
+      maxAge: 60 * 60 * 24 * 120 * 1000 // 120 dní
+    }
+  },
+
   robots: {
     UserAgent: '*',
     Disallow: '',
