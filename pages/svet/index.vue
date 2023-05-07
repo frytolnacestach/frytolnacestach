@@ -16,18 +16,31 @@
             </div>
         </section>
         <!-- SECTION - Typ místa END -->
+
+        <!-- SECTION - Top místa -->
+        <section class="t-section py-4 -bg-world">
+            <div class="t-section__inner">
+                <mHeadline title="Nejzajímavější místa" styleThema=" -world" styleAlign=" -center" styleGap=" mb-2" />
+                <oTopPlace />
+            </div>
+        </section>
+        <!-- SECTION - Top místa END -->
     </main>
 </template>
 
 <script>
+    import mHeadline from '~/components/molecules/mHeadline.vue'
     import oSearch from '@/components/organisms/oSearch.vue'
+    import oTopPlace from '@/components/organisms/oTopPlace.vue'
     import oWorldType from '@/components/organisms/oWorldType.vue'
 
     export default {
         name: 'PageSvet',
 
         components: {
+            mHeadline,
             oSearch,
+            oTopPlace,
             oWorldType
         },
 

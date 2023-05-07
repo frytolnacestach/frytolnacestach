@@ -98,14 +98,27 @@
                         <section class="t-section py-2 px-2">
                             <div class="t-section__inner">
                                 <mHeadline title="Ubytování" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                <div v-for="coordinate in placeState[0].coordinates">
-                                    <oWidgetBooking
-                                        :landmarkName="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
-                                        :address="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
-                                        :latitude="`${ coordinate.latitude }`"
-                                        :longitude="`${ coordinate.longitude }`"
-                                        zoom=13
-                                    />
+                                <div v-if="place[0].coordinates">
+                                    <div v-for="coordinate in place[0].coordinates">
+                                        <oWidgetBooking
+                                            :landmarkName="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
+                                            :address="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
+                                            :latitude="`${ coordinate.latitude }`"
+                                            :longitude="`${ coordinate.longitude }`"
+                                            zoom=13
+                                        />
+                                    </div>
+                                </div>
+                                <div v-else>
+                                    <div v-for="coordinate in placeState[0].coordinates">
+                                        <oWidgetBooking
+                                            :landmarkName="`${ placeState[0].name ? placeState[0].name : '' }`"
+                                            :address="`${ placeState[0].name ? placeState[0].name : '' }`"
+                                            :latitude="`${ coordinate.latitude }`"
+                                            :longitude="`${ coordinate.longitude }`"
+                                            zoom=13
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </section>
