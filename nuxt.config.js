@@ -48,7 +48,7 @@ export default {
     Disallow: '',
     Sitemap: 'https://frytolnacestach.cz/sitemap-main.xml',
     // custom robots.txt file path
-    TxtSitemap: '/robots.txt',
+    TxtSitemap: 'static/robots.txt',
   },
 
   env: {
@@ -56,6 +56,11 @@ export default {
   },
 
   copy: [
+    {
+      from: 'static/robots.txt',
+      to: 'static/robots.txt',
+      toType: 'file'
+    },
     {
       from: 'static/ads.txt',
       to: 'ads.txt',
