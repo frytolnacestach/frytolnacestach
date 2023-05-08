@@ -4,7 +4,7 @@
         <!-- SECTION - Hero place type -->
         <section class="t-section py-4 -bg-world">
             <div class="t-section__inner">
-                <oHeroPlaceType styleType=" -state" title="Státy" />
+                <oHeroPlaceType styleType=" -state" title="Státy" perex="Najdete zde nejen 190 oficiálních států, ale také mnoho ostrovních a městských států, celkem 249 území, která stojí za návštěvu a objevování." />
             </div>
         </section>
         <!-- SECTION - Hero place type END -->

@@ -5,6 +5,7 @@
                 <div class="o-hero-place-type__image-file"></div>
             </div>
             <h1 class="o-hero-place-type__headline">{{ title }}</h1>
+            <p class="o-hero-place-type__perex" v-if="perex">{{ perex }}</p>
         </div>
     </div>
 </template>
@@ -19,6 +20,10 @@
             title: {
                 type: String,
                 required: true
+            },
+            perex: {
+                type: String,
+                required: false
             }
         }
     }

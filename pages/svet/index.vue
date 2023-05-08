@@ -12,15 +12,16 @@
         <!-- SECTION - Typ místa -->
         <section class="t-section py-4 -bg-world">
             <div class="t-section__inner">
+                <mHeadline title="Nevíš kam vyrazit?" perex="Pokud toužíš pozkoumat svět a nemáš jasnou představu, kam se vydat, můžeš si vybrat některou z kategorií míst a začít prozkoumávat." styleThema=" -world" styleAlign=" -center" styleGap=" mb-2" />
                 <oWorldType :items="oWorldType" />
             </div>
         </section>
         <!-- SECTION - Typ místa END -->
 
         <!-- SECTION - Top místa -->
-        <section class="t-section py-4 -bg-world">
+        <section class="t-section -bg-world -p0 py-4">
             <div class="t-section__inner">
-                <mHeadline title="Nejzajímavější místa" styleThema=" -world" styleAlign=" -center" styleGap=" mb-2" />
+                <mHeadline title="Nejzajímavější místa" perex="Víte, kam byste se měli vydat na nezapomenutelnou dovolenou? Přinášíme vám seznam nejzajímavějších míst na světě, která musíte vidět. Od malebných vesnic a historických památek až po impozantní přírodní krásy, naše stránky vám pomohou najít nejlepší místa pro vaši další cestování." styleThema=" -world" styleAlign=" -center" styleGap=" mb-2" />
                 <oTopPlace />
             </div>
         </section>

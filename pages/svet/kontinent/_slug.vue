@@ -79,7 +79,7 @@
                         <!-- SECTION - information by ChatGPT -->
                         <section class="t-section" v-if="place[0].information_chatgpt">
                             <div class="t-section__inner">
-                                <oInformationBlock :title="'O kontinentu ' + place[0].name ? place[0].name : ''" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
+                                <oInformationBlock :title="'O kontinentu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                             </div>
                         </section>
                         <!-- SECTION - information by ChatGPT END -->

@@ -44,6 +44,15 @@
         text-transform: uppercase;
     }
 
+    &__perex {
+        font-size: $fs-normal-ss;
+        color: $brand1;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
 
     &.-continent {
         #{$self}__image-file {

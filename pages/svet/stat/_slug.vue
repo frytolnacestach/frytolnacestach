@@ -100,7 +100,7 @@
                                 <!-- SECTION - information by ChatGPT -->
                                 <section class="t-section" v-if="place[0].information_chatgpt">
                                     <div class="t-section__inner">
-                                        <oInformationBlock :title="'O státu ' + place[0].name ? place[0].name : ''" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
+                                        <oInformationBlock :title="'O státu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                                     </div>
                                 </section>
                                 <!-- SECTION - information by ChatGPT END -->
@@ -367,10 +367,17 @@
                         <div class="t-grid -world-content-with-ad">
                             <div class="t-grid__section -content">
 
-                                <!-- SECTION - Ubytování -->
-                                <section class="t-section py-2 px-2">
+                                <!-- SECTION - Ubytování - information -->
+                                <section class="t-section">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Ubytování" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" perexWysiwyg="Cena za konkrétní ubytování se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek." />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Ubytování - information END -->
+
+                                <!-- SECTION - Ubytování -->
+                                <section class="t-section -px-world py-2">
+                                    <div class="t-section__inner">
                                         <div v-for="coordinate in place[0].coordinates">
                                             <oWidgetBooking 
                                                 :landmarkName="`${ place[0].name ? place[0].name : '' }`"

@@ -4,7 +4,7 @@
         <!-- SECTION - Hero place type -->
         <section class="t-section py-4 -bg-world">
             <div class="t-section__inner">
-                <oHeroPlaceType styleType=" -city" title="Města" />
+                <oHeroPlaceType styleType=" -city" title="Města" perex="Podle velmi nepřesných zdrojů je na Zemi asi 3 a půl milionu obcí. My jich tu máme přibližně 2500." />
             </div>
         </section>
         <!-- SECTION - Hero place type END -->
