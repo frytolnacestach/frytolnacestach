@@ -1,3 +1,7 @@
+
+RewriteCond %{HTTP_HOST} ^www.frytolnacestach.cz [NC]
+RewriteRule ^(.*)$ https://frytolnacestach.cz/$1 [R=301,L]
+
 RewriteEngine on
 
 RewriteCond %{HTTPS} off
