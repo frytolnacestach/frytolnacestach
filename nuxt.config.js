@@ -76,6 +76,11 @@ export default {
       from: 'static/seznam-wmt-7a9jTJETrjtBnGcMOa5dKSZ1K9yvwfMY.txt',
       to: 'seznam-wmt-7a9jTJETrjtBnGcMOa5dKSZ1K9yvwfMY.txt',
       toType: 'file'
+    },
+    {
+      from: 'static/BingSiteAuth.xml',
+      to: 'BingSiteAuth.xml',
+      toType: 'file'
     }
   ],
 
