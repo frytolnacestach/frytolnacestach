@@ -125,36 +125,49 @@
         },
 
         async asyncData({ $axios, params }) {
-            try {
-                //video
-                const video = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/video/${params.slug}`)
+            let success = false;
+            let data = null;
 
-                // Načtení informací o městu
-                const placeCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city-id/${video[0].id_city}`)
+            while (!success) {
+                try {
+                    //video
+                    const video = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/video/${params.slug}`)
 
-                // Načtení informací o státu
-                const placeState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-state-id/${video[0].id_state}`)
+                    // Načtení informací o continentu
+                    const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${video[0].id_continent}`)
 
-                // Načtení informací o continentu
-                const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${video[0].id_continent}`)
+                    // Načtení informací o státu
+                    const placeState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-state-id/${video[0].id_state}`)
+
+                    // Načtení informací o městu
+                    const placeCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city-id/${video[0].id_city}`)
 
 
-                // Načtení informací o obrázku pro článek
-                const imageVideo = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${video[0].id_image}`)
+                    // Načtení informací o obrázku pro článek
+                    const imageVideo = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${video[0].id_image}`)
 
-                // Načtení informací o obrázku
-                const imageCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeCity[0].id_image_hero}`)
+                    // Načtení informací o obrázku
+                    const imageContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeContinent[0].id_image_hero}`)
 
-                // Načtení informací o obrázku
-                const imageState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeState[0].id_image_hero}`)
+                    // Načtení informací o obrázku
+                    const imageState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeState[0].id_image_hero}`)
 
-                // Načtení informací o obrázku
-                const imageContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeContinent[0].id_image_hero}`)
+                    // Načtení informací o obrázku
+                    const imageCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeCity[0].id_image_hero}`)
 
-                return { video, placeCity, placeState, placeContinent, imageVideo, imageCity, imageState, imageContinent }
-            } catch (error) {
-                console.error(error)
+
+                    data = { video, placeContinent, placeState, placeCity, imageVideo, imageContinent, imageState, imageCity }
+                    
+                    success = true
+                } catch (error) {
+                    console.log(`API ERROR - VIDEO DETAIL: ${params.slug}`)
+                    console.error(error)
+
+                    await new Promise(resolve => setTimeout(resolve, 1000))
+                }
             }
+
+            return data
         }
     }
 </script>

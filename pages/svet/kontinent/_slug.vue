@@ -204,43 +204,59 @@
         },
 
         async asyncData({ $axios, params }) {
-            try {
-                // Načtení místa přes API podle slug
-                const place = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent/${params.slug}`)
+            let success = false;
+            let data = null;
 
-                // Načtení státu  podle jeho id
-                const placesStates = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-states-continent/${place[0].id}`)
-                const imagesPlacesStatesID = placesStates.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '');
+            while (!success) {
+                try {
+                    // Načtení místa přes API podle slug
+                    const place = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent/${params.slug}`)
 
-                // Načtení videi z místa
-                const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos-id-continent/${place[0].id}`)
-                const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '');
+                    // Načtení státu  podle jeho id
+                    const placesStates = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-states-continent/${place[0].id}`)
 
-                // Načtení článků z místa
-                const posts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/posts-id-continent/${place[0].id}`)
-                const imagesPostsID = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '');
+                    // Načtení videi z místa
+                    const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos-id-continent/${place[0].id}`)
+
+                    // Načtení článků z místa
+                    const posts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/posts-id-continent/${place[0].id}`)
 
 
-                // Načtení informací o obrázku pro místo
-                const imagePlace = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${place[0].id_image_hero}`)
+                    //images Array
+                    const imagesPlacesStatesID = placesStates.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
+                    const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
+                    const imagesPostsID = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
 
-                // Načtení informací o obrázku pro státy
-                const imagesStates = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
 
-                // Načtení informací o obrázku pro videa
-                const imagesVideos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesVideosID.join(',')}`)
+                    // Načtení informací o obrázku pro místo
+                    const imagePlace = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${place[0].id_image_hero}`)
 
-                // Načtení informací o obrázku pro čláky
-                const imagesPosts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPostsID.join(',')}`)
+                    // Načtení informací o obrázku pro státy
+                    const imagesStates = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
 
-                return { place, placesStates, videos, posts, imagePlace, imagesStates, imagesVideos, imagesPosts }
-            } catch (error) {
-                console.error(error)
+                    // Načtení informací o obrázku pro videa
+                    const imagesVideos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesVideosID.join(',')}`)
+
+                    // Načtení informací o obrázku pro čláky
+                    const imagesPosts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPostsID.join(',')}`)
+
+
+                    data = { place, placesStates, videos, posts, imagePlace, imagesStates, imagesVideos, imagesPosts }
+                    
+                    success = true
+                } catch (error) {
+                    console.log(`API ERROR - KONTINENT DETAIL: ${params.slug}`)
+                    console.error(error)
+
+                    await new Promise(resolve => setTimeout(resolve, 1000))
+                }
             }
+
+            return data
         },
 
         updated() {
-            window.lazySizes && window.lazySizes.update();
+            window.lazySizes && window.lazySizes.update()
         }
     }
 </script>
