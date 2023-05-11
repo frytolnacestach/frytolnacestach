@@ -34,7 +34,9 @@
                     <div class="o-place-teaser__text">
                         <h3 class="o-place-teaser__name">{{ headline }}</h3>
                         <div class="o-place-teaser__wysiwyg" v-if="place[0].information_chatgpt" v-html="place[0].information_chatgpt.slice(0, place[0].information_chatgpt.lastIndexOf(' ', 320)).replace(/<\/?[^>]+(>|$)/g, '')"></div>
-                        <aButtonFillFull :url="`/svet/${type}/${place[0].slug}`" text="Číst více" styleThema=" -green" target="internal" />                                 
+                        <div class="o-place-teaser__button">
+                            <aButtonFillFull :url="`/svet/${type}/${place[0].slug}`" text="Číst více" styleThema=" -green" target="internal" />
+                        </div>                                
                     </div>
                 </div>
             </div>

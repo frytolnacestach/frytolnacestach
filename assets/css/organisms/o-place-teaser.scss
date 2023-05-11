@@ -94,6 +94,8 @@
         width: 100%;
         background-color: $worldBGcomponentLight;
         border-radius: $br-2;
+        display: flex;
+        flex-wrap: wrap;
 
         @media only screen and (min-width: $ti) {
             border-radius: $br-4;
@@ -115,5 +117,9 @@
         p {
             margin: 0;
         }
+    }
+
+    &__button {
+        width: 100%;
     }
 }
