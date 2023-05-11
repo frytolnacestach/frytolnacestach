@@ -97,13 +97,14 @@
                         <!-- SECTION - Ubytování - information -->
                         <section class="t-section">
                             <div class="t-section__inner">
-                                <oInformationBlock :title="'Ubytování ve městě ' + (place[0].name ? place[0].name : '')" perexWysiwyg="Cena za konkrétní ubytování se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek." />
+                                <oInformationBlock :title="'Ubytování ve městě ' + (place[0].name ? place[0].name : '')" perexWysiwyg="Cena za konkrétní ubytování se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek." v-if="place[0].affiliate.find(x => x.name === 'booking').value === true" />
+                                <oInformationBlock :title="'Ubytování ve městě ' + (place[0].name ? place[0].name : '')" perexWysiwyg="Bohužel o ubytování v tomhle městě vám zatím moc neporadíme" v-else />
                             </div>
                         </section>
                         <!-- SECTION - Ubytování - information END -->
 
                         <!-- SECTION - Ubytování -->
-                        <section class="t-section -px-world py-2">
+                        <section class="t-section -px-world py-2" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
                             <div class="t-section__inner">
                                 <div v-if="place[0].coordinates">
                                     <div v-for="coordinate in place[0].coordinates">
