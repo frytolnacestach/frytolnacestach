@@ -25,12 +25,6 @@
 <script>
    export default {
         name: 'MoleculesmNavBreadcrumbsComponent',
-    
-        data() {
-            return {
-                place: this.place
-            }
-        },
 
         props: {
             links: {
@@ -38,7 +32,7 @@
                 required: true
             },
             place: {
-                type: Array,
+                type: Object,
                 required: true
             },
             tab: {

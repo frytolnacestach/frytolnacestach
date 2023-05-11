@@ -63,8 +63,8 @@
                 required: true
             },
             images: {
-                type: Array,
-                required: true
+                type: Object,
+                default: null
             },
             type: {
                 type: String,
