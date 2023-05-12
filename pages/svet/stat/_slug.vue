@@ -230,7 +230,15 @@
                                 <!-- SECTION - Ceny -->
                                 <section class="t-section" v-if="place[0].money_prices">
                                     <div class="t-section__inner">
-                                        <oInformationBlock title="Ceny" :perexList="place[0].money_prices" perexInfo="Ceny se můžou lišit v rámci sézony, místa a nebo míry a rychosti infalce. uvedená cena dálniční známky je ta nejnižší nabízená a může se ve skutečnosti razantně lišit." styleThema=" -bg-world -no-point" />
+                                        <oInformationBlock title="Ceny" :perexList="place[0].money_prices" perexInfo="Ceny se můžou lišit v rámci sézony, místa a nebo míry a rychosti infalce. Proto je berte jen jako orientační." styleThema=" -bg-world -no-point" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Ceny END -->
+
+                                <!-- SECTION - Ceny ubytování -->
+                                <section class="t-section" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
+                                    <div class="t-section__inner">
+                                        <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" perexWysiwyg="Jestli vás zajímá cena ubytování v této zemi. Kouknete se do záložky ubytování, kde najdete aktuální cenu ubytování na platformě Booking." />
                                     </div>
                                 </section>
                                 <!-- SECTION - Ceny END -->

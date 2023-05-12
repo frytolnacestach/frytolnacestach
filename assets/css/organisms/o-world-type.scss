@@ -66,15 +66,15 @@
         height: 100%;
 
         &.-continent {
-            background-image: url('../images/world/continent.svg');
+            background-image: url('../../static/images/world/continent.svg');
         }
 
         &.-state {
-            background-image: url('../images/world/state.svg');
+            background-image: url('../../static/images/world/state.svg');
         }
 
         &.-city {
-            background-image: url('../images/world/city.svg');
+            background-image: url('../../static/images/world/city.svg');
         }
     }
 

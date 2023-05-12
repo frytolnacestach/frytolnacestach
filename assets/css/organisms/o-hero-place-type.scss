@@ -56,19 +56,19 @@
 
     &.-continent {
         #{$self}__image-file {
-            background-image: url('../images/world/continent.svg');
+            background-image: url('../../static/images/world/continent.svg');
         }
     }
 
     &.-state {
         #{$self}__image-file {
-            background-image: url('../images/world/state.svg');
+            background-image: url('../../static/images/world/state.svg');
         }
     }
 
     &.-city {
         #{$self}__image-file {
-            background-image: url('../images/world/city.svg');
+            background-image: url('../../static/images/world/city.svg');
         }
     }
 }
