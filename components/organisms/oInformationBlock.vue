@@ -21,17 +21,6 @@
                         </ul>
                     </div>
 
-                    <!-- TODO: Tohle chce sjednotit -->
-                    <div class="o-information-block__list" v-if="perexListNumber">
-                        <ul class="o-information-block__list-ul">
-                            <li class="o-information-block__list-li" v-for="item in perexListNumber" v-bind:key="item.name">
-                                <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
-                                <span class="o-information-block__list-span">{{ item.number }}</span>
-                                <i class="o-information-block__list-info">({{ item.date_update }})</i>
-                            </li>
-                        </ul>
-                    </div>
-
                     <i class="o-information-block__info" v-if="perexInfo">{{ perexInfo }}</i>
 
                     <div class="o-information-block__author" v-if="authorName">
@@ -64,10 +53,6 @@
                 required: false
             },
             perexList: {
-                type: Array,
-                required: false
-            },
-            perexListNumber: {
                 type: Array,
                 required: false
             },

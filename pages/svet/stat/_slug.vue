@@ -346,7 +346,7 @@
                                 <!-- SECTION - Telefoní čísla(emergency) -->
                                 <section class="t-section" v-if="place[0].phone_numbers_emergency">
                                     <div class="t-section__inner">
-                                        <oInformationBlock title="Důležitá telefonní čísla" :subtitle="'Telefonní předvolba' + place[0].phone_prefix" :perexListNumber="place[0].phone_numbers_emergency" styleThema=" -bg-world -no-point" />
+                                        <oInformationBlock title="Důležitá telefonní čísla" :subtitle="'Telefonní předvolba' + place[0].phone_prefix" :perexList="place[0].phone_numbers_emergency" styleThema=" -bg-world -no-point" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Telefoní čísla(emergency) END -->
