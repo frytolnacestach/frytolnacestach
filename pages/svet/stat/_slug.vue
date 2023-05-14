@@ -104,6 +104,14 @@
                                 </section>
                                 <!-- SECTION - information by ChatGPT END -->
 
+                                <!-- SECTION - Place teaser -->
+                                <section class="t-section my-2 -p0" v-if="place[0].id_city_main">
+                                    <div class="t-section__inner">
+                                        <oPlaceTeaser :headline="'Hlavním městem ve státě ' + place[0].name + ' je ' + placeCityMain[0].name" :place="placeCityMain" :image="imageCityMain" type="mesto" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Place teaser END -->
+
                                 <div class="t-grid -world-information-adjacent">
                                     <div class="t-grid__section">
                                         <!-- SECTION - Měna -->
@@ -447,6 +455,7 @@
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
+    import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
 
@@ -462,6 +471,7 @@
             oCoverPlaceDetail,
             oHeroPlace,
             oInformationBlock,
+            oPlaceTeaser,
             oVideoList,
             oWidgetBooking
         },
@@ -508,10 +518,12 @@
                 place: this.place,
                 placeContinent: this.placeContinent,
                 placesCities: this.placesCities,
+                placeCityMain: this.placeCityMain,
                 videos: this.videos,
                 posts: this.posts,
                 imagePlace: this.imagePlace,
                 imagesCities: this.imagesCities,
+                imageCityMain: this.imageCityMain,
                 imagesVideos: this.imagesVideos,
                 imagesPosts: this.imagesPosts,
                 activeTab: 'default',
@@ -575,6 +587,11 @@
 
             while (!success) { 
                 try {
+
+                    let placeCityMain = null;
+                    let imageCityMain = null;
+
+
                     // Načtení místa přes API podle slug
                     const place = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-state/${params.slug}`)
 
@@ -583,6 +600,11 @@
 
                     // Načtení měst státu podle jeho id
                     const placesCities = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-id-state/${place[0].id}`)
+
+                    // Načtení hlavního města podle jeho id
+                    if (place[0].id_city_main !== null) {
+                        placeCityMain = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city-id/${place[0].id_city_main}`)
+                    }
 
                     // Načtení videi z místa
                     const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos-id-state/${place[0].id}`)
@@ -603,6 +625,11 @@
                     // Načtení informací o obrázku pro státy
                     const imagesCities = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlacesCitiesID.join(',')}`)
 
+                    // Načtení informací o obrázku pro místo
+                    if (place[0].id_city_main !== null && placeCityMain && placeCityMain[0].id_image_cover !== null ) {
+                        imageCityMain = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeCityMain[0].id_image_cover}`)
+                    }
+
                     // Načtení informací o obrázku pro videa
                     const imagesVideos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesVideosID.join(',')}`)
 
@@ -610,7 +637,7 @@
                     const imagesPosts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPostsID.join(',')}`)
 
 
-                    data = { place, placeContinent, placesCities, videos, posts, imagePlace, imagesCities, imagesVideos, imagesPosts }
+                    data = { place, placeContinent, placesCities, placeCityMain, videos, posts, imagePlace, imagesCities, imageCityMain, imagesVideos, imagesPosts }
 
                     success = true
                 } catch (error) {

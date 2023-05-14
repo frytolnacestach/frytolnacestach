@@ -95,7 +95,7 @@
                         <!-- SECTION - Place teaser END -->
 
                         <!-- SECTION - Ubytování - information -->
-                        <section class="t-section">
+                        <section class="t-section pb-2">
                             <div class="t-section__inner">
                                 <oInformationBlock :title="'Ubytování ve městě ' + (place[0].name ? place[0].name : '')" perexWysiwyg="Cena za konkrétní ubytování se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek." v-if="place[0].affiliate.find(x => x.name === 'booking').value === true" />
                                 <oInformationBlock :title="'Ubytování ve městě ' + (place[0].name ? place[0].name : '')" perexWysiwyg="Bohužel o ubytování v tomhle městě vám zatím moc neporadíme" v-else />
