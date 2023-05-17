@@ -238,7 +238,7 @@
                                 <!-- SECTION - Ceny -->
                                 <section class="t-section" v-if="place[0].money_prices">
                                     <div class="t-section__inner">
-                                        <oInformationBlock title="Ceny" :perexList="place[0].money_prices" perexInfo="Ceny se můžou lišit v rámci sézony, místa a nebo míry a rychosti infalce. Proto je berte jen jako orientační." styleThema=" -bg-world -no-point" />
+                                        <oInformationBlock title="Ceny" :perexList="place[0].money_prices" :perexListItemValueSubfix="place[0].currency_code" perexInfo="Ceny se můžou lišit v rámci sézony, místa a nebo míry a rychosti infalce. Proto je berte jen jako orientační." styleThema=" -bg-world -no-point" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Ceny END -->
@@ -275,25 +275,17 @@
                             <div class="t-grid__section -content">
 
                                 <!-- SECTION - Lidé náboženství -->
-                                <section class="t-section" v-if="place[0].people_religion">
+                                <section class="t-section -px-world -p0" v-if="place[0].people_religion">
                                     <div class="t-section__inner">
-                                        <oInformationBlock title="Náboženství" :perexList="place[0].people_religion" styleThema=" -bg-world -no-point" />
+                                        <oChartPie :data="place[0].people_religion" title="Náboženství" chartID="chart-nabozenstvi" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Lidé náboženství END -->
 
-                                <!-- SECTION - Lidé vzdělání -->
-                                <section class="t-section" v-if="place[0].people_education">
-                                    <div class="t-section__inner">
-                                        <oInformationBlock title="Vzdělání" :perexList="place[0].people_education" styleThema=" -bg-world -no-point" />
-                                    </div>
-                                </section>
-                                <!-- SECTION - Lidé vzdělání END -->
-
                                 <!-- SECTION - Lidé národnost -->
-                                <section class="t-section" v-if="place[0].people_nationality">
+                                <section class="t-section -px-world -p0" v-if="place[0].people_nationality">
                                     <div class="t-section__inner">
-                                        <oInformationBlock title="Národnost" :perexList="place[0].people_nationality" styleThema=" -bg-world -no-point" />
+                                        <oChartPie :data="place[0].people_nationality" title="Národnosti" chartID="chart-narodnosti" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Lidé národnost END -->
@@ -455,6 +447,7 @@
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
+    import oChartPie from '@/components/organisms/oChartPie.vue';
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
@@ -471,6 +464,7 @@
             oCoverPlaceDetail,
             oHeroPlace,
             oInformationBlock,
+            oChartPie,
             oPlaceTeaser,
             oVideoList,
             oWidgetBooking
@@ -551,6 +545,28 @@
                         name: "Státy",
                         url: "/svet/stat",
                         status: "link"
+                    }
+                ],
+                educationData: [
+                    {
+                    name: "Neúplné základní vzdělání",
+                    value: "0.3%"
+                    },
+                    {
+                    name: "Základní vzdělání",
+                    value: "16.7%"
+                    },
+                    {
+                    name: "Střední vzdělání",
+                    value: "37.4%"
+                    },
+                    {
+                    name: "Vysokoškolské vzdělání",
+                    value: "45.6%"
+                    },
+                    {
+                    name: "Jiné vzdělání",
+                    value: "0.1%"
                     }
                 ]
             }
