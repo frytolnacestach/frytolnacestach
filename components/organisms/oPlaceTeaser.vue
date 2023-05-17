@@ -61,7 +61,7 @@
             },
             image: {
                 type: Array,
-                required: true
+                required: false
             },
             type: {
                 type: String,
