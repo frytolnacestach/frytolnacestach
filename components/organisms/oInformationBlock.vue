@@ -15,7 +15,7 @@
                         <ul class="o-information-block__list-ul">
                             <li class="o-information-block__list-li" v-for="item in perexList" v-bind:key="item.name">
                                 <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
-                                <span class="o-information-block__list-span">{{ item.value }}</span>
+                                <span class="o-information-block__list-span">{{ item.value }} {{ perexListItemValueSubfix }}</span>
                                 <i class="o-information-block__list-info">({{ item.date_update }})</i>
                             </li>
                         </ul>
@@ -53,6 +53,10 @@
                 required: false
             },
             perexList: {
+                type: Array,
+                required: false
+            },
+            perexListItemValueSubfix: {
                 type: Array,
                 required: false
             },
