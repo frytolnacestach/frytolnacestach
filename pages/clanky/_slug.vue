@@ -21,41 +21,41 @@
             <div class="t-col2__content my-2">
 
                 <!-- SECTION - Opener text -->
-                <section class="t-section pt-2" v-if="post[0].textOpener">
+                <section class="t-section pt-2" v-if="post[0].text_opener">
                     <div class="t-section__inner">
-                        <oOpenerText :text="post[0].textOpener" />
+                        <oOpenerText :text="post[0].text_opener" />
                     </div>
                 </section>
                 <!-- SECTION - Opener text END -->
 
                 <!-- SECTION - Wysiwyg -->
-                <section class="t-section pb-2" v-if="post[0].textAuthor">
+                <section class="t-section pb-2" v-if="post[0].text_author">
                     <div class="t-section__inner">
-                        <oWysiwyg :text="post[0].textAuthor" />
+                        <oWysiwyg :text="post[0].text_author" />
                     </div>
                 </section>
                 <!-- SECTION - Wysiwyg END -->
 
                 <!-- SECTION - Youtube -->
-                <section class="t-section py-2" v-if="post[0].urlYoutube">
+                <section class="t-section py-2" v-if="post[0].url_youtube">
                     <div class="t-section__inner">
-                        <oYoutube :url="post[0].urlYoutube" />
+                        <oYoutube :url="post[0].url_youtube" />
                     </div>
                 </section>
                 <!-- SECTION - Youtube END -->
 
                 <!-- SECTION - Map mapy -->
-                <section class="t-section t-section--hidden-desktop my-2" v-if="post[0].urlMap">
+                <section class="t-section t-section--hidden-desktop my-2" v-if="post[0].url_map">
                     <div class="t-section__inner">
-                        <oMapMapy :idImageMap="post[0].id_image_map" :url="post[0].urlMap" :title="post[0].title" :images="imagePostMap" />
+                        <oMapMapy :idImageMap="post[0].id_image_map" :url="post[0].url_map" :title="post[0].title" :images="imagePostMap" />
                     </div>
                 </section>
                 <!-- SECTION - Map mapy -->
 
                 <!-- SECTION - Wiki -->
-                <section class="t-section py-2" v-if="post[0].textWiki">
+                <section class="t-section py-2" v-if="post[0].text_wiki">
                     <div class="t-section__inner">
-                        <oWiki :wysiwyg="post[0].textWiki" :source="post[0].urlWiki" />
+                        <oWiki :wysiwyg="post[0].text_wiki" :source="post[0].url_wiki" />
                     </div>
                 </section>
                 <!-- SECTION - Wiki END -->
@@ -71,7 +71,7 @@
                 <!-- SECTION - Trip information -->
                 <section class="t-section py-2" v-if="post[0].prices">
                     <div class="t-section__inner">
-                        <oTripInformation title="Ceny" :perex="post[0].perexPrice" :items="post[0].prices" styleThema=" -bg-brand1-a" />
+                        <oTripInformation title="Ceny" :perex="post[0].perex_price" :items="post[0].prices" styleThema=" -bg-brand1-a" />
                     </div>
                 </section>
                 <!-- SECTION - Trip information END -->
@@ -79,7 +79,7 @@
                 <!-- SECTION - Trip information -->
                 <section class="t-section py-2" v-if="post[0].triplengths">
                     <div class="t-section__inner">
-                        <oTripInformation title="Délka výletu" :perex="post[0].perexTriplength" :items="post[0].triplengths" styleThema=" -bg-brand2-a" />
+                        <oTripInformation title="Délka výletu" :perex="post[0].perex_triplength" :items="post[0].triplengths" styleThema=" -bg-brand2-a" />
                     </div>
                 </section>
                 <!-- SECTION - Trip information END -->
@@ -87,23 +87,23 @@
                 <!-- SECTION - Trip information -->
                 <section class="t-section py-2" v-if="post[0].times">
                     <div class="t-section__inner">
-                        <oTripInformation title="Časová náročnost" :perex="post[0].perexTime" :items="post[0].times" styleThema=" -bg-brand2-a" />
+                        <oTripInformation title="Časová náročnost" :perex="post[0].perex_time" :items="post[0].times" styleThema=" -bg-brand2-a" />
                     </div>
                 </section>
                 <!-- SECTION - Trip information END -->
 
                 <!-- SECTION - Review -->
-                <section class="t-section py-2" v-if="post[0].reviewText">
+                <section class="t-section py-2" v-if="post[0].review_text">
                     <div class="t-section__inner">
-                        <oReview :reviewText="post[0].reviewText" :reviewValue="post[0].reviewValue" />
+                        <oReview :reviewText="post[0].review_text" :reviewValue="post[0].review_value" />
                     </div>
                 </section>
                 <!-- SECTION - Review END -->
 
                 <!-- SECTION - Update information -->
-                <section class="t-section py-2" v-if="post[0].dateInformation">
+                <section class="t-section py-2" v-if="post[0].date_information">
                     <div class="t-section__inner">
-                        <oUpdateInformation :date="post[0].dateInformation" />
+                        <oUpdateInformation :date="post[0].date_information" />
                     </div>
                 </section>
                 <!-- SECTION - Update information END -->
