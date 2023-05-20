@@ -7,7 +7,7 @@
                 <ul :class="'pieID legend hidden ' + chartID">
                     <li v-for="(item, index) in data" :key="index">
                         <em>{{ item.name }}</em>
-                        <span>{{ typeof item.value === 'string' && item.value.includes('%') ? item.value.replace('%', '') : item.value }}</span>
+                        <span>{{ typeof item.value === 'string' && item.value.includes('%') ? item.value.replace('%', '').replace(/\s/g, '').replace(',', '.') : item.value }}</span>
                     </li>
                 </ul>
                 
@@ -18,7 +18,7 @@
                         <ul class="o-chart-pie__legend-items">
                             <li class="o-chart-pie__legend-item" v-for="(item, index) in data" :key="index" :style="{ borderColor: getColor(index) }">
                                 <em class="o-chart-pie__legend-name">{{ item.name }}</em>
-                                <span class="o-chart-pie__legend-value">{{ typeof item.value === 'string' && item.value.includes('%') ? item.value.replace('%', '') : item.value }} %</span>
+                                <span class="o-chart-pie__legend-value">{{ typeof item.value === 'string' && item.value.includes('%') ? item.value.replace('%', '').replace(/\s/g, '').replace(',', '.') : item.value }} %</span>
                             </li>
                         </ul>
                     </div>

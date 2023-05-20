@@ -43,6 +43,12 @@ export default {
     ]
   },
 
+  pwa: {
+    manifest: {
+      lang: 'cs',
+    }
+  },
+
   render: {
     static: {
       maxAge: 60 * 60 * 24 * 120 * 1000 // 120 dní

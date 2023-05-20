@@ -16,7 +16,7 @@
                             <li class="o-information-block__list-li" v-for="item in perexList" v-bind:key="item.name">
                                 <h3 class="o-information-block__list-h3">{{ item.name }}</h3> 
                                 <span class="o-information-block__list-span">{{ item.value }} {{ perexListItemValueSubfix }}</span>
-                                <i class="o-information-block__list-info">({{ item.date_update }})</i>
+                                <i class="o-information-block__list-info">({{ formatDate(item.date_update) }})</i>
                             </li>
                         </ul>
                     </div>
@@ -57,7 +57,7 @@
                 required: false
             },
             perexListItemValueSubfix: {
-                type: Array,
+                type: String,
                 required: false
             },
             perexInfo: {
@@ -76,6 +76,15 @@
                 type: String,
                 required: false
             }
-        }
+        },
+
+        methods:{
+            formatDate(date) {
+                const [month, year] = date.split('-');
+                const formattedDate = new Date(`${year}-${month}-01`);
+                const options = { month: 'long', year: 'numeric' };
+                return formattedDate.toLocaleDateString('cs', options);
+            }
+        },
     }
 </script>

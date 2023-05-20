@@ -25,29 +25,37 @@
                             <div class="o-hot-info-hero__outer">
                                 <div class="o-hot-info-hero__inner">
                                     <div class="o-hot-info-hero__items">
-                                        <div class="o-hot-info-hero__item" v-if="placeContinent[0].name">
-                                            <div class="o-hot-info-hero__content">
-                                                <div class="o-hot-info-hero__text">
-                                                    <span class="o-hot-info-hero__title">Kontinent</span>
-                                                    <span class="o-hot-info-hero__value">
-                                                        <NuxtLink class="o-hot-info-hero__value-link" :to="`/svet/kontinent/${placeContinent[0].slug}`">{{ placeContinent[0].name }}</NuxtLink>
-                                                    </span>
+                                        <div class="o-hot-info-hero__item -link" v-if="placeContinent[0].name">
+                                            <div class="o-hot-info-hero__container">
+                                                <div class="o-hot-info-hero__content">
+                                                    <NuxtLink class="o-hot-info-hero__link" :to="`/svet/kontinent/${placeContinent[0].slug}`">
+                                                        <div class="o-hot-info-hero__text">
+                                                            <span class="o-hot-info-hero__title">Kontinent</span>
+                                                            <span class="o-hot-info-hero__value">
+                                                                {{ placeContinent[0].name }}
+                                                            </span>
+                                                        </div>
+                                                    </NuxtLink>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="o-hot-info-hero__item" v-if="place[0].area">
-                                            <div class="o-hot-info-hero__content">
-                                                <div class="o-hot-info-hero__text">
-                                                    <span class="o-hot-info-hero__title">Rozloha</span>
-                                                    <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
+                                            <div class="o-hot-info-hero__container">
+                                                <div class="o-hot-info-hero__content">
+                                                    <div class="o-hot-info-hero__text">
+                                                        <span class="o-hot-info-hero__title">Rozloha</span>
+                                                        <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="o-hot-info-hero__item" v-if="place[0].population">
-                                            <div class="o-hot-info-hero__content">
-                                                <div class="o-hot-info-hero__text">
-                                                    <span class="o-hot-info-hero__title">Populace</span>
-                                                    <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
+                                            <div class="o-hot-info-hero__container">
+                                                <div class="o-hot-info-hero__content">
+                                                    <div class="o-hot-info-hero__text">
+                                                        <span class="o-hot-info-hero__title">Populace</span>
+                                                        <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -62,6 +70,14 @@
             </div>
         </section>
         <!-- SECTION - hero + hot info - END -->
+
+        <!-- SECTION - Alerts -->
+        <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
+            <div class="t-section__inner">
+                <oAlerts :alerts="place[0].alerts" />
+            </div>
+        </section>
+        <!-- SECTION - Alerts END -->
     
         <!-- SECTION - Nav place -->
         <section class="t-section -px-world-big -p0" v-if="place[0]">
@@ -86,7 +102,7 @@
 
             </div>
         </section>
-         <!-- SECTION - Nav place END -->
+        <!-- SECTION - Nav place END -->
 
         <div class="t-main -tab" v-if="place[0]">
             <template v-if="activeTab === 'default'">
@@ -422,10 +438,10 @@
                         <div class="t-grid -world-ful">
                             <div class="t-grid__section -content">
                                 <!-- SECTION - videos -->
-                                <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="videos[0]">
+                                <section class="t-section -p0 -px-world my-2" v-if="videos[0]">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleAlign=" -p-left" />
+                                        <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world-tab" styleAlign=" -p-left" />
                                     </div>
                                 </section>
                                 <!-- SECTION - videos END -->
@@ -443,6 +459,7 @@
     import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
+    import oAlerts from '~/components/organisms/oAlerts.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
@@ -460,6 +477,7 @@
             mNavBreadcrumbsPlace,
             mHeadline,
             oAdGoogleSidebar,
+            oAlerts,
             oArticleList,
             oCoverPlaceDetail,
             oHeroPlace,

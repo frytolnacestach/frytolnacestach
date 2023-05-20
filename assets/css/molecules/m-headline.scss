@@ -29,6 +29,12 @@
     }
 
     &.-world {
+        padding: 0 5px;
+
+        @media only screen and (min-width: $ti) {
+            padding: 0 10px;
+        }
+
         #{$self}__title {
             color: $worldTEXT;
         }

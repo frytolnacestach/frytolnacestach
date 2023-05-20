@@ -25,37 +25,47 @@
                             <div class="o-hot-info-hero__outer">
                                 <div class="o-hot-info-hero__inner">
                                     <div class="o-hot-info-hero__items">
-                                        <div class="o-hot-info-hero__item" v-if="placeState[0].name">
-                                            <div class="o-hot-info-hero__content">
-                                                <div class="o-hot-info-hero__text">
-                                                    <span class="o-hot-info-hero__title">Stát</span>
-                                                    <span class="o-hot-info-hero__value">
-                                                        <NuxtLink class="o-hot-info-hero__value-link" :to="`/svet/stat/${placeState[0].slug}`">{{ placeState[0].name }}</NuxtLink>
-                                                    </span>
+                                        <div class="o-hot-info-hero__item -link" v-if="placeState[0].name">
+                                            <div class="o-hot-info-hero__container">
+                                                <div class="o-hot-info-hero__content">
+                                                    <NuxtLink class="o-hot-info-hero__link" :to="`/svet/stat/${placeState[0].slug}`">
+                                                        <div class="o-hot-info-hero__text">
+                                                            <span class="o-hot-info-hero__title">Stát</span>
+                                                            <span class="o-hot-info-hero__value">
+                                                                {{ placeState[0].name }}
+                                                            </span>
+                                                        </div>
+                                                    </NuxtLink>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="o-hot-info-hero__item" v-if="place[0].area">
-                                            <div class="o-hot-info-hero__content">
-                                                <div class="o-hot-info-hero__text">
-                                                    <span class="o-hot-info-hero__title">Rozloha</span>
-                                                    <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
+                                            <div class="o-hot-info-hero__container">
+                                                <div class="o-hot-info-hero__content">
+                                                    <div class="o-hot-info-hero__text">
+                                                        <span class="o-hot-info-hero__title">Rozloha</span>
+                                                        <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="o-hot-info-hero__item" v-if="place[0].altitude">
-                                            <div class="o-hot-info-hero__content">
-                                                <div class="o-hot-info-hero__text">
-                                                    <span class="o-hot-info-hero__title">Nadmořská výška</span>
-                                                    <span class="o-hot-info-hero__value">{{ place[0].altitude !== 0 ? place[0].altitude.toLocaleString('cs-CZ') : place[0].altitude }} m n. m.</span>
+                                            <div class="o-hot-info-hero__container">
+                                                <div class="o-hot-info-hero__content">
+                                                    <div class="o-hot-info-hero__text">
+                                                        <span class="o-hot-info-hero__title">Nadmořská výška</span>
+                                                        <span class="o-hot-info-hero__value">{{ place[0].altitude !== 0 ? place[0].altitude.toLocaleString('cs-CZ') : place[0].altitude }} m n. m.</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="o-hot-info-hero__item" v-if="place[0].population">
-                                            <div class="o-hot-info-hero__content">
-                                                <div class="o-hot-info-hero__text">
-                                                    <span class="o-hot-info-hero__title">Populace</span>
-                                                    <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
+                                            <div class="o-hot-info-hero__container">
+                                                <div class="o-hot-info-hero__content">
+                                                    <div class="o-hot-info-hero__text">
+                                                        <span class="o-hot-info-hero__title">Populace</span>
+                                                        <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -70,6 +80,22 @@
             </div>
         </section>
         <!-- SECTION - hero + hot info - END -->
+
+        <!-- SECTION - Alerts -->
+        <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
+            <div class="t-section__inner">
+                <oAlerts :alerts="place[0].alerts" />
+            </div>
+        </section>
+        <!-- SECTION - Alerts END -->
+
+        <!-- SECTION - Alerts -->
+        <section class="t-section -px-world-big -p0" v-if="placeState[0].alerts">
+            <div class="t-section__inner">
+                <oAlerts :alerts="placeState[0].alerts" />
+            </div>
+        </section>
+        <!-- SECTION - Alerts END -->
 
         <!-- SECTION -->
         <section class="t-section -px-world -p0">
@@ -191,6 +217,7 @@
     import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
+    import oAlerts from '~/components/organisms/oAlerts.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
@@ -206,6 +233,7 @@
             mNavBreadcrumbsPlace,
             mHeadline,
             oAdGoogleSidebar,
+            oAlerts,
             oArticleList,
             oCoverPlaceDetail,
             oHeroPlace,

@@ -27,34 +27,42 @@
                                 <div class="o-hot-info-hero__inner">
                                     <div class="o-hot-info-hero__items">
                                         <div class="o-hot-info-hero__item" v-if="place[0].number_states">
-                                            <div class="o-hot-info-hero__content">
-                                                <div class="o-hot-info-hero__text">
-                                                    <span class="o-hot-info-hero__title">Počet států</span>
-                                                    <span class="o-hot-info-hero__value">{{ place[0].number_states }}</span>
+                                            <div class="o-hot-info-hero__container">
+                                                <div class="o-hot-info-hero__content">
+                                                    <div class="o-hot-info-hero__text">
+                                                        <span class="o-hot-info-hero__title">Počet států</span>
+                                                        <span class="o-hot-info-hero__value">{{ place[0].number_states }}</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="o-hot-info-hero__item" v-if="place[0].area">
-                                            <div class="o-hot-info-hero__content">
-                                                <div class="o-hot-info-hero__text">
-                                                    <span class="o-hot-info-hero__title">Rozloha</span>
-                                                    <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
+                                            <div class="o-hot-info-hero__container">
+                                                <div class="o-hot-info-hero__content">
+                                                    <div class="o-hot-info-hero__text">
+                                                        <span class="o-hot-info-hero__title">Rozloha</span>
+                                                        <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="o-hot-info-hero__item" v-if="place[0].population">
-                                            <div class="o-hot-info-hero__content">
-                                                <div class="o-hot-info-hero__text">
-                                                    <span class="o-hot-info-hero__title">Počet obyvatel</span>
-                                                    <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
+                                            <div class="o-hot-info-hero__container">
+                                                <div class="o-hot-info-hero__content">
+                                                    <div class="o-hot-info-hero__text">
+                                                        <span class="o-hot-info-hero__title">Počet obyvatel</span>
+                                                        <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="o-hot-info-hero__item" v-if="place[0].population_density">
-                                            <div class="o-hot-info-hero__content">
-                                                <div class="o-hot-info-hero__text">
-                                                    <span class="o-hot-info-hero__title">Hustota obyvatel</span>
-                                                    <span class="o-hot-info-hero__value">{{ place[0].population_density !== 0 ? place[0].population_density.toLocaleString('cs-CZ') : place[0].population_density }}/km²</span>
+                                            <div class="o-hot-info-hero__container">
+                                                <div class="o-hot-info-hero__content">
+                                                    <div class="o-hot-info-hero__text">
+                                                        <span class="o-hot-info-hero__title">Hustota obyvatel</span>
+                                                        <span class="o-hot-info-hero__value">{{ place[0].population_density !== 0 ? place[0].population_density.toLocaleString('cs-CZ') : place[0].population_density }}/km²</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

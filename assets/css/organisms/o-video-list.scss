@@ -146,6 +146,35 @@
         }
     }
 
+    &.-world-tab {
+        max-width: 100%;
+        padding: 0 5px;
+
+        @media only screen and (min-width: $ti) {
+            padding: 0 10px;
+        }
+
+        #{$self}__items {
+            margin: 0 -10px;
+        }
+
+        #{$self}__item-inner {
+            margin: 10px 5px;
+
+            @media only screen and (min-width: $ti) {
+                margin: 10px;
+            }
+        }
+
+        #{$self}__title-link {
+            color: $worldTEXT;
+
+            &:hover {
+                color: $worldTEXTdark2;
+            }
+        }
+    }
+
     &.-latest {
         #{$self}__item {
             display: block;
