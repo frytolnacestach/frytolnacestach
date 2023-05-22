@@ -1,9 +1,0 @@
-{
-  "name": "frytolnacestach",
-  "short_name": "frytolnacestach",
-  "icons": [],
-  "start_url": "/?standalone=true",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "lang": "cs"
-}
