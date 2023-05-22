@@ -1,4 +1,5 @@
 const axios = require('axios')
+const icons = require('./config/icons');
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -46,6 +47,18 @@ export default {
   pwa: {
     manifest: {
       lang: 'cs',
+      name: 'Frytol na cestách',
+      short_name: 'Frytol na cestách',
+      start_url: '/',
+      display: 'standalone',
+      background_color: '#edf1f4',
+      theme_color: '#246e70',
+      icons: icons,
+      workbox: {
+        importScripts: [
+          'config/service-worker.js'
+        ],
+      }
     }
   },
 
@@ -59,7 +72,6 @@ export default {
     UserAgent: '*',
     Disallow: '',
     Sitemap: 'https://frytolnacestach.cz/sitemap-main.xml',
-    // custom robots.txt file path
     TxtSitemap: 'static/robots.txt',
   },
 

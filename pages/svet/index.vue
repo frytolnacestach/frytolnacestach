@@ -18,10 +18,17 @@
         </section>
         <!-- SECTION - Typ místa END -->
 
-        <!-- SECTION - Top místa -->
-        <section class="t-section -bg-world -p0 py-4">
+         <!-- SECTION - Top místa text -->
+         <section class="t-section -bg-world pt-4">
             <div class="t-section__inner">
                 <mHeadline title="Nejzajímavější místa" perex="Víte, kam byste se měli vydat na nezapomenutelnou dovolenou? Přinášíme vám seznam nejzajímavějších míst na světě, která musíte vidět. Od malebných vesnic a historických památek až po impozantní přírodní krásy, naše stránky vám pomohou najít nejlepší místa pro vaši další cestování." styleThema=" -world" styleAlign=" -center" styleGap=" mb-2" />
+            </div>
+        </section>
+        <!-- SECTION - Top místa END -->
+
+        <!-- SECTION - Top místa -->
+        <section class="t-section -bg-world -p0 pb-4">
+            <div class="t-section__inner">
                 <oTopPlace />
             </div>
         </section>

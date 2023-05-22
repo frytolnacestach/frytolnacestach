@@ -63,7 +63,7 @@
                 required: true
             },
             images: {
-                type: Object,
+                type: Array,
                 default: null
             },
             type: {

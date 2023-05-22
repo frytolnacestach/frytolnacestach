@@ -1,9 +1,8 @@
 .m-logotype {
     position: relative;
     display: flex;
-    z-index: 1001;
+    z-index: 999;
     background-color: white;
-    border-radius: 30px;
 
     @media only screen and (min-width: $lg) {
         background-color: transparent;
@@ -11,18 +10,19 @@
     }
 
     &__image {
-        width: 40px;
+        width: 200px;
         height: 40px;
+        padding: 5.35px 0;
         position: relative;
     }
 
     &__image-file {
-        background-image: url('../../static/images/_base/logotype.png');
+        background-image: url('../../static/images/_base/logotype.svg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        width: 40px;
-        height: 40px;
+        width: 200px;
+        height: 29.3px;
     }
 
     &__image-link {
@@ -31,30 +31,5 @@
         right: 0;
         bottom: 0;
         left: 0;
-    }
-
-    &__text {
-        height: 40px;
-        position: relative;
-        padding-right: 10px;
-        display: none;
-        
-        @media only screen and (min-width: $lg) {
-            display: block;
-            width: 240px;
-        }
-    }
-
-    &__text-link {
-        
-    }
-
-    &__text-main {
-        display: inline-block;
-        font-size: $fs-normal;
-        font-weight: 700;
-        color: $brand1;
-        line-height: 30px;
-        padding: 5px 0 5px 10px;
     }
 }

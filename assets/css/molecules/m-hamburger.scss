@@ -26,14 +26,14 @@
 		left: 0;
 		right: 0;
 		width: 30px;
-		height: 2px;
-		background-color: $black;
+		height: 3px;
+		background-color: $brand1;
 		border-radius: 1.5px;
 		transform-origin: center;
 		transform: rotate(0);
 
 		&.-first {
-			top: 11px;
+			top: 10px;
 		}
 
 		&.-second {
@@ -41,14 +41,14 @@
 		}
 
 		&.-third {
-			top: 27px;
+			top: 28px;
 		}
 	}
 
 
 	//TEXTS
 	&__texts {
-		display: block;
+		display: none;
 	}
 
 	&__text {
