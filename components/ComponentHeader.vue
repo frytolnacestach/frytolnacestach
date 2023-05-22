@@ -28,7 +28,7 @@
     import mHamburger from '~/components/molecules/mHamburger.vue'
 
     export default {
-        name: 'ComponentHeader',
+        name: 'ComponentHeaderComponent',
 
         components: {
             mLogotype,

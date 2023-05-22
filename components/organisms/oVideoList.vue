@@ -51,6 +51,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoVideoListComponent',
+
         props: {
             videos: {
                 type: Array,

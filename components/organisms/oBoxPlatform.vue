@@ -43,7 +43,8 @@
 
 <script>
     export default {
-        name: 'SectionBoxplatform',
+        name: 'OrganismsoBoxPlatformComponent',
+
         data() {
             return {
                 platforms: []

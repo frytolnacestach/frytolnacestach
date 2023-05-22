@@ -26,3 +26,9 @@
         </div>
     </nav>
 </template>
+
+<script>
+    export default {
+        name: 'MoleculesmNavMainComponent',
+    }
+</script>

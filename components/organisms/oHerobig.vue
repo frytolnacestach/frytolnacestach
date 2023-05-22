@@ -43,7 +43,8 @@
 
 <script>
     export default {
-        name: 'oHeroBig',
+        name: 'OrganismsoHeroBigComponent',
+
         props: {
             headline: {
                 type: String,

@@ -11,7 +11,7 @@
 
 <script>
     export default {
-        name: 'oDonate',
+        name: 'OrganismsoDonateComponent',
         
         props: {
             showHeadline: {

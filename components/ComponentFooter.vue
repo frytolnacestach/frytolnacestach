@@ -23,7 +23,7 @@
     import oCopyright from '~/components/organisms/oCopyright.vue'
 
     export default {
-        name: 'ComponentFooter',
+        name: 'ComponentFooterComponent',
 
         components: {
             mNavFooter,

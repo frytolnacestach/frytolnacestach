@@ -14,6 +14,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoSidebarTagComponent',
+
         props: {
             tags: {
                 type: Array,

@@ -53,6 +53,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoCoverPlaceComponent',
+
         props: {
             places: {
                 type: Array,

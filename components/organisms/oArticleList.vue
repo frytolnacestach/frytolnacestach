@@ -55,6 +55,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoArticleListComponent',
+
         props: {
             posts: {
                 type: Array,

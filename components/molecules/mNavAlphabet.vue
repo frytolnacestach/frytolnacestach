@@ -16,6 +16,8 @@
 
 <script>
     export default {
+        name: 'MoleculesmNavAlphabetComponent',
+
         props: {
             alphabet: {
                 type: Array,

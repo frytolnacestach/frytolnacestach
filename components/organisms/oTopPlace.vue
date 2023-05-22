@@ -56,7 +56,7 @@
 
 <script>
     export default {
-        name: 'oTopPlace',
+        name: 'OrganismsoTopPlaceComponent',
 
         data() {
             return {

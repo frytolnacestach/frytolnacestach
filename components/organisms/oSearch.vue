@@ -31,8 +31,6 @@
 </template>
 
 <script>
-
-
     export default {
         name: 'OrganismsSearchComponent',
 

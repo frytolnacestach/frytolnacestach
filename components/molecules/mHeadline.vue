@@ -7,6 +7,8 @@
 
 <script>
     export default {
+        name: 'MoleculesmHeadlineComponent',
+        
         props: {
             title: {
                 type: String,

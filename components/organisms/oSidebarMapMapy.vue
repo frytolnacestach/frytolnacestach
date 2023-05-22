@@ -55,6 +55,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoSidebarMapMapyComponent',
+
         props: {
             idImageMap: {
                 type: Array,

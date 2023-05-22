@@ -14,6 +14,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoUpdateInformationComponent',
+
         props: {
             date: {
                 type: String,

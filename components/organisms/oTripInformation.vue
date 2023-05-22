@@ -17,6 +17,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoTripInformationComponent',
+
         props: {
             title: {
                 type: String,

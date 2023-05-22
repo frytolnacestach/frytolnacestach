@@ -16,6 +16,6 @@
 
 <script>
     export default {
-        name: 'oSupport'
+        name: 'OrganismsoSupportComponent',
     }
 </script>

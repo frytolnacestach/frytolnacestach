@@ -11,3 +11,9 @@
         </span>
     </span>
 </template>
+
+<script>
+    export default {
+        name: 'MoleculesmHamburgerComponent',
+    }
+</script>

@@ -65,6 +65,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoMapMapyComponent',
+
         props: {
             idImageMap: {
                 type: Array,

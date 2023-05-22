@@ -12,6 +12,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoYoutubeComponent',
+
         props: {
             url: {
                 type: String,

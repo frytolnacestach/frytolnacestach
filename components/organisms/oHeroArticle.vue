@@ -65,6 +65,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoHeroArticleComponent',
+
         props: {
             post: {
                 type: Array,

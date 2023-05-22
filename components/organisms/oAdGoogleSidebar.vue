@@ -12,37 +12,34 @@
 
 <script>
     export default {
+        name: 'OrganismsoAdGoogleSidebarComponent',
+
         props: {
             adStyle: {
                 type: String,
                 requred: false,
                 default: "display:block"
             },
-
             adClient: {
                 type: String,
                 requred: false,
                 default: "ca-pub-5217753750259737"
             },
-
             adSlot: {
                 type: String,
                 requred: false,
                 default: "5043852899"
             },
-
             adFormat: {
                 type: String,
                 requred: false,
                 default: "auto"
             },
-
             adResponsive: {
                 type: String,
                 requred: false,
                 default: "true"
             }
-            
         },
 
         methods:{

@@ -48,7 +48,7 @@
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
 
     export default {
-        name: 'ComponentoPlacesBlock',
+        name: 'OrganismsoPlaceTeaserComponent',
 
         components: {
             aButtonFillFull

@@ -5,6 +5,8 @@
 
 <script>
     export default {
+        name: 'AtomsaButtonFillSocialComponent',
+        
         props: {
             url: {
                 type: String,

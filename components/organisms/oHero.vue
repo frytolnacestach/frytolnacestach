@@ -13,7 +13,8 @@
 
 <script>
     export default {
-        name: 'oHero',
+        name: 'OrganismsoHeroComponent',
+
         props: {
             headline: {
                 type: String,

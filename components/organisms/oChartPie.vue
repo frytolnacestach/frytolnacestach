@@ -30,6 +30,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoChartPieComponent',
+
         props: {
             data: {
                 type: Array,

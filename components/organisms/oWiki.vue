@@ -16,6 +16,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoWikiComponent',
+
         props: {
             wysiwyg: {
                 type: String,

@@ -20,7 +20,8 @@
 
 <script>
     export default {
-        name: 'oPlatform',
+        name: 'OrganismsoPlatformComponent',
+
         data() {
             return {
                 platforms: this.platforms

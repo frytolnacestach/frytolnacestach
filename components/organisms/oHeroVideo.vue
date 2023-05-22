@@ -69,6 +69,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoHeroVideoComponent',
+
         props: {
             title: {
                 type: Array,

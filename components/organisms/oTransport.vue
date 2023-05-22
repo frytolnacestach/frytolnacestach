@@ -21,6 +21,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoTransportComponent',
+
         props: {
             title: {
                 type: String,

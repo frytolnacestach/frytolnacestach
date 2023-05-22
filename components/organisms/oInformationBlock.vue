@@ -35,6 +35,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoInformationBlockComponent',
+
         props: {
             styleThema: {
                 type: String,

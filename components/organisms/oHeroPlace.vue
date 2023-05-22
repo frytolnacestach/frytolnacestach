@@ -59,6 +59,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoHeroPlaceComponent',
+
         props: {
             place: {
                 type: Array,

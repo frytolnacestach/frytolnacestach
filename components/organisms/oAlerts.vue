@@ -21,7 +21,7 @@
 
 <script>
     export default {
-        name: 'SectionAlerts',
+        name: 'OrganismsoAlertComponent',
         
         props: {
             alerts: {

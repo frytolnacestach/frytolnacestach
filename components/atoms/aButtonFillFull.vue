@@ -5,6 +5,8 @@
 
 <script>
     export default {
+        name: 'AtomsaButtonFillFullComponent',
+        
         props: {
             url: {
                 type: String,

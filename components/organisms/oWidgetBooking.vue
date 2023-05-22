@@ -22,40 +22,42 @@
 </template>
 
 <script>
-export default {
-    mounted() {
-        const script = document.createElement('script')
-        script.type = 'text/javascript'
-        script.async = true
-        script.src = '//cf.bstatic.com/static/affiliate_base/js/flexiproduct.js'
-        document.body.appendChild(script)
-    },
+    export default {
+        name: 'OrganismsoWidgetBookingComponent',
 
-    props: {
-        latitude: {
-            type: Number,
-            required: true,
+        props: {
+            latitude: {
+                type: Number,
+                required: true,
+            },
+
+            longitude: {
+                type: Number,
+                required: true,
+            },
+
+            landmarkName: {
+                type: String,
+                required: true,
+            },
+
+            address: {
+                type: String,
+                required: true,
+            },
+
+            zoom: {
+                type: Number,
+                required: true,
+            }
         },
 
-        longitude: {
-            type: Number,
-            required: true,
+        mounted() {
+            const script = document.createElement('script')
+            script.type = 'text/javascript'
+            script.async = true
+            script.src = '//cf.bstatic.com/static/affiliate_base/js/flexiproduct.js'
+            document.body.appendChild(script)
         },
-
-        landmarkName: {
-            type: String,
-            required: true,
-        },
-
-        address: {
-            type: String,
-            required: true,
-        },
-
-        zoom: {
-            type: Number,
-            required: true,
-        }
-    },
-}
+    }
 </script>

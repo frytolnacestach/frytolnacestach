@@ -12,6 +12,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoHeroPlaceTypeComponent',
+
         props: {
             styleType: {
                 type: String,

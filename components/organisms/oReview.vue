@@ -14,6 +14,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoReviewComponent',
+
         props: {
             reviewText: {
                 type: String,

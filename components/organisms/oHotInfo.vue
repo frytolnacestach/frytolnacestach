@@ -15,6 +15,8 @@
 
 <script>
     export default {
+        name: 'OrganismsoHotInfoComponent',
+
         props: {
             locations: {
                 type: Array,

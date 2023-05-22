@@ -10,7 +10,7 @@
     import oPopupCookies from '~/components/organisms/oPopupCookies.vue'
 
     export default {
-        name: 'ComponentPopupCookies',
+        name: 'ComponentPopupCookiesComponent',
 
         components: {
             oPopupCookies
