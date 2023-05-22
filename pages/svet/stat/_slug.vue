@@ -471,7 +471,7 @@
 
 
     export default {
-        name: 'PageStateSlug',
+        name: 'SvetStatSlugPage',
 
         components: {
             mNavBreadcrumbsPlace,

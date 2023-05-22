@@ -40,7 +40,7 @@
     import oWhoiam from '../components/organisms/oWhoiam.vue'
 
     export default {
-        name: 'PageIam',
+        name: 'IamPage',
 
         components: {
             aButtonFillFull,

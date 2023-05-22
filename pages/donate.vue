@@ -40,7 +40,7 @@
     import oSupport from '../components/organisms/oSupport.vue'
 
     export default {
-        name: 'PageDonate',
+        name: 'DonatePage',
 
         components: {
             aButtonFillFull,

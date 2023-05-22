@@ -87,7 +87,7 @@
     import oYoutube from '~/components/organisms/oYoutube.vue'
 
     export default {
-        name: 'PageBlogSlug',
+        name: 'VideaSlugPage',
 
         components: {
             mHeadline,

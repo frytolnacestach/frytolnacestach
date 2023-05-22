@@ -40,7 +40,7 @@
     import oPlatform from '../../components/organisms/oPlatform.vue'
 
     export default {
-        name: 'PageClanky',
+        name: 'ClankyIndexPage',
 
         components: {
             aButtonFillFull,

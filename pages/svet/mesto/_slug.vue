@@ -227,7 +227,7 @@
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
 
     export default {
-        name: 'PageCitySlug',
+        name: 'SvetMestoSlugPage',
 
         components: {
             mNavBreadcrumbsPlace,

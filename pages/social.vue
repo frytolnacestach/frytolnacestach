@@ -25,7 +25,7 @@
     import oHero from '../components/organisms/oHero.vue'
 
     export default {
-        name: 'PageSocial',
+        name: 'SocialPage',
         
         components: {
             oHero,

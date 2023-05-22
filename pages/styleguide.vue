@@ -25,7 +25,7 @@
     import oHero from '../components/organisms/oHero.vue'
 
     export default {
-        name: 'PageStyleguide',
+        name: 'StyleguidePage',
         
         components: {
             oBuild,

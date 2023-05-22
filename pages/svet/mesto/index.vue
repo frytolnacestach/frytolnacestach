@@ -48,7 +48,7 @@
     import oHeroPlaceType from '~/components/organisms/oHeroPlaceType.vue'
 
     export default {
-        name: 'PageMesta',
+        name: 'SvetMestoIndexPage',
 
         components: {
             mNavAlphabet,

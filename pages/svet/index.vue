@@ -43,7 +43,7 @@
     import oWorldType from '@/components/organisms/oWorldType.vue'
 
     export default {
-        name: 'PageSvet',
+        name: 'SvetIndexPage',
 
         components: {
             mHeadline,

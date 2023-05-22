@@ -25,7 +25,7 @@
     import oHeroPlaceType from '~/components/organisms/oHeroPlaceType.vue'
 
     export default {
-        name: 'PageStaty',
+        name: 'SvetStatIndexPage',
 
         components: {
             oCoverPlace,

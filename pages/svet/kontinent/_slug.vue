@@ -160,7 +160,7 @@
     import oVideoList from '~/components/organisms/oVideoList.vue'
 
     export default {
-        name: 'PageContinentSlug',
+        name: 'SvetKontinentSlugPage',
 
         components: {
             mNavBreadcrumbsPlace,

@@ -40,7 +40,7 @@
     import oVideoList from '~/components/organisms/oVideoList.vue'
 
     export default {
-        name: 'PageClanky',
+        name: 'VideaIndexPage',
 
         components: {
             aButtonFillFull,

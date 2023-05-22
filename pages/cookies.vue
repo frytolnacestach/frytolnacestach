@@ -25,7 +25,7 @@
     import oWysiwyg from '~/components/organisms/oWysiwyg.vue'
 
     export default {
-        name: 'PageConditions',
+        name: 'ConditionsPage',
 
         components: {
             oHero,

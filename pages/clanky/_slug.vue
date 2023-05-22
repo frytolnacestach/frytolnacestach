@@ -187,7 +187,7 @@
     import oYoutube from '~/components/organisms/oYoutube.vue'
 
     export default {
-        name: 'PageBlogSlug',
+        name: 'ClankySlugPage',
 
         components: {
             mHeadline,
