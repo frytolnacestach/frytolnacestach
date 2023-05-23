@@ -1,5 +1,4 @@
 const axios = require('axios')
-const icons = require('./config/icons');
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
