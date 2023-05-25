@@ -42,11 +42,11 @@
         head: {
             title: 'Obchodní podmínky a zásady ochrany osobních údajů | Frytol na cestách',
             meta: [
-                { hid: 'description', name: 'description', content: 'Obchodní podmínky a zásady ochrany osobních údajů pro web Frytol na cestách' },
-                { name: 'keywords', content: `podmínky, cestování, svět` },
+                { hid: 'description', name: 'description', content: 'Obchodní podmínky a zásady ochrany osobních údajů pro web Frytol na cestách.' },
+                { name: 'keywords', content: `podmínky, pravdila, eu, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Obchodní podmínky a zásady ochrany osobních údajů | Frytol na cestách' },
-                { hid: 'og:description', content: 'Obchodní podmínky a zásady ochrany osobních údajů pro web Frytol na cestách' },
+                { hid: 'og:description', content: 'Obchodní podmínky a zásady ochrany osobních údajů pro web Frytol na cestách.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}/conditions` },
                 { hid: 'og:type', content: 'website' }  
             ]

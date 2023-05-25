@@ -43,11 +43,11 @@
         head: {
             title: 'Kontinenty | Frytol na cestách',
             meta: [
-                { hid: 'description', name: 'description', content: 'Oběvuj svět a jeho místá s Frytolem na cestách' },
-                { name: 'keywords', content: `kontinenty, cestování, svět` },
+                { hid: 'description', name: 'description', content: 'Zjisti si základní informace o kontinentech. a státech které se na nich nachází za pomocí cestovatelského portálu Frytol na cestách.' },
+                { name: 'keywords', content: `kontinenty, informace o městech, plánuj cestu, cestovatelský portál, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Kontinenty | Frytol na cestách' },
-                { hid: 'og:description', content: 'Oběvuj svět a jeho místá s Frytolem na cestách' },
+                { hid: 'og:description', content: 'Zjisti si základní informace o kontinentech. a státech které se na nich nachází za pomocí cestovatelského portálu Frytol na cestách.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}/svet/kontinent` },
                 { hid: 'og:type', content: 'website' }  
             ]

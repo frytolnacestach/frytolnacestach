@@ -42,11 +42,11 @@
         head: {
             title: 'Zásady Cookies | Frytol na cestách',
             meta: [
-                { hid: 'description', name: 'description', content: 'Zásady Cookies pro web Frytol na cestách' },
-                { name: 'keywords', content: `cookies, cestování, svět` },
+                { hid: 'description', name: 'description', content: 'Zásady Cookies pro web Frytol na cestách.' },
+                { name: 'keywords', content: `cookies, pravidla, eu` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Zásady Cookies | Frytol na cestách' },
-                { hid: 'og:description', content: 'Zásady Cookies pro web Frytol na cestách' },
+                { hid: 'og:description', content: 'Zásady Cookies pro web Frytol na cestách.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}/cookies` },
                 { hid: 'og:type', content: 'website' }
             ]

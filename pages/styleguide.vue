@@ -41,11 +41,11 @@
         head: {
             title: 'Styleguide | Frytol na cestách',
             meta: [
-                { hid: 'description', name: 'description', content: 'Styleguide webu Frytol na cestách' },
+                { hid: 'description', name: 'description', content: 'Styleguide pro cestovatelský portál Frytol na cestách.' },
                 { name: 'keywords', content: `styleguide, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Styleguide | Frytol na cestách' },
-                { hid: 'og:description', content: 'Styleguide webu Frytol na cestách' },
+                { hid: 'og:description', content: 'Styleguide pro cestovatelský portál Frytol na cestách.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}/styleguide` },
                 { hid: 'og:type', content: 'website' }
             ]

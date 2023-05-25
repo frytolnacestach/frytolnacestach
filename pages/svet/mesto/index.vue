@@ -87,11 +87,11 @@
         head: {
             title: 'Města | Frytol na cestách',
             meta: [
-                { hid: 'description', name: 'description', content: 'Oběvuj svět a jeho místá s Frytolem na cestách' },
-                { name: 'keywords', content: `města, cestování, svět` },
+                { hid: 'description', name: 'description', content: 'Objevuj největší a nejznámější města světa na cestovatelské portálu Frytolem na cestách. Naplánuj si ideální cestu.' },
+                { name: 'keywords', content: `města, největší města, nejznámější města, informace o městech, plánuj cestu, cestovatelský portál, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Města | Frytol na cestách' },
-                { hid: 'og:description', content: 'Oběvuj svět a jeho místá s Frytolem na cestách' },
+                { hid: 'og:description', content: 'Objevuj největší a nejznámější města světa na cestovatelské portálu Frytolem na cestách. Naplánuj si ideální cestu.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}/svet/mesto` },
                 { hid: 'og:type', content: 'website' }  
             ]

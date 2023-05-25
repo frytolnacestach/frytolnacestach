@@ -86,8 +86,8 @@
         head: {
             title: 'Svět | Frytol na cestách',
             meta: [
-                { hid: 'description', name: 'description', content: 'Oběvuj svět a jeho místá s Frytolem na cestách' },
-                { name: 'keywords', content: 'hledej místo, státy, města, cestování, svět' },
+                { hid: 'description', name: 'description', content: 'Oběvuj svět a jeho místá na cestovatelské portálu Frytol na cestách. Naplánuj si dovolenou podle svých potřeb a zjisti co tě čeká.' },
+                { name: 'keywords', content: 'Naplánuj si dobolenou, cestuj, chytře, státy, města, cestování, svět' },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Svět | Frytol na cestách' },
                 { hid: 'og:description', content: 'Oběvuj svět a jeho místá s Frytolem na cestách' },

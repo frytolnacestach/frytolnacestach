@@ -59,11 +59,11 @@
         head: {
             title: 'Kdo jsem | Frytol na cestách',
             meta: [
-                { hid: 'description', name: 'description', content: 'Kdo je Frytol na cestách?' },
-                { name: 'keywords', content: `kdo jsem, cestování, svět` },
+                { hid: 'description', name: 'description', content: 'Kdo je Frytol na cestách? Co dělá a kde ho najdete.' },
+                { name: 'keywords', content: `Cestovatelská videa, Internetové platformy, kdo jsem, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Kdo jsem | Frytol na cestách' },
-                { hid: 'og:description', content: 'Kdo je Frytol na cestách?' },
+                { hid: 'og:description', content: 'Kdo je Frytol na cestách? Co dělá a kde ho najdete.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}/iam` },
                 { hid: 'og:type', content: 'website' }
             ]

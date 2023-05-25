@@ -61,11 +61,11 @@
         head: {
             title: 'Videa | Frytol na cestách',
             meta: [
-                { hid: 'description', name: 'description', content: 'Videa z webu Frytol na cestách' },
-                { name: 'keywords', content: `videa, cestování, svět` },
+                { hid: 'description', name: 'description', content: 'Cestovatelská videa z různích míst naší krásné planety.' },
+                { name: 'keywords', content: `cestovatelská videa, youtube, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Videa | Frytol na cestách' },
-                { hid: 'og:description', content: 'Videa z webu Frytol na cestách' },
+                { hid: 'og:description', content: 'Cestovatelská videa z různích míst naší krásné planety.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}/videa` },
                 { hid: 'og:type', content: 'website' }  
             ]

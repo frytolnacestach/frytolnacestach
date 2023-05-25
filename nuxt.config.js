@@ -782,7 +782,6 @@ export default {
     '~/plugins/axios.js',
     { src: '~/plugins/vue2-google-maps', ssr: false },
     { src: '~/plugins/vue-lazyload', ssr: false }
-
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

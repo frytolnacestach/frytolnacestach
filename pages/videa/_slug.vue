@@ -114,7 +114,7 @@
                 title: `${this.video[0].title} | Frytol na cestách`,
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.video[0].perex ? this.video[0].perex.slice(0, this.video[0].perex.lastIndexOf(' ', 150)) : this.video[0].title ? this.video[0].title : 'Video'}` },
-                    { name: 'keywords', content: `video, cestování, svět` },
+                    { name: 'keywords', content: `${this.video[0].title ? this.video[0].title +',' : ''} cestovatelské video, cestování, svět, cetovatelský portál` },
                     { property: 'og:image', content: `${this.video[0].id_image ? 'https://image.frytolnacestach.cz/storage' + this.imageVideo[0].source + this.imageVideo[0].name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
                     { hid: 'og:title', content: `${this.video[0].title} | Frytol na cestách` },
                     { hid: 'og:description', content: `${this.video[0].perex ? this.video[0].perex.slice(0, this.video[0].perex.lastIndexOf(' ', 150)) : this.video[0].title ? this.video[0].title : 'Video'}` },
