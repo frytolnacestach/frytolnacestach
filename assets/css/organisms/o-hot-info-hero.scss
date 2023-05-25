@@ -22,13 +22,8 @@
         justify-content: flex-start;
         width: auto;
         height: 100%;
-        max-width: 1200px;
         margin: 0;
         padding: 0;
-
-        @media only screen and (min-width: $lg) {
-            margin: 0 10px;
-        }
     }
 
     &__item {
@@ -37,10 +32,6 @@
 
         @media only screen and (min-width: $md) {
             width: 33.333%;
-        }
-
-        @media only screen and (min-width: $lg) {
-            width: 100%;
         }
 
         &.-link {
@@ -62,7 +53,7 @@
         justify-content: center;
         width: 100%;
         text-align: center;
-        padding: 8px 4px;
+        padding: 8px 3px;
         background-color: $worldBGcomponent;
         border-radius: $br-2;
         margin: 5px;
@@ -75,10 +66,6 @@
 
         @media only screen and (min-width: $sm) {
             padding: 13px 5px;
-        }
-
-        @media only screen and (min-width: $lg) {
-            margin: 10px 0;
         }
     }
 
@@ -143,6 +130,21 @@
 
         &:hover {
             color: $brand1;
+        }
+    }
+
+    &.-col4 {
+        #{$self}__item {
+            display: flex;
+            width: 50%;
+    
+            @media only screen and (min-width: $md) {
+                width: 50%;
+            }
+
+            @media only screen and (min-width: $lg) {
+                width: 25%;
+            }
         }
     }
 }

@@ -7,6 +7,17 @@
             </div>
         </section>
         <!-- SECTION - BREADCRUMBS END -->
+
+        <!-- SECTION - Buttons -->
+        <section class="t-section -px-world mt-1" v-if="isMobile">
+            <div class="t-section__inner">
+                <div class="flex flex-end-all">
+                    <a v-if="!showHero" @click="showHero = true" class="a-button-pure-icon -cover">Obrázek</a>
+                    <a v-else @click="showHero = false" class="a-button-pure-icon -map">Mapa</a>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION - Buttons END -->
         
         <!-- SECTION - hero + hot info hero -->
         <section class="t-section -px-world -p0">
@@ -14,14 +25,20 @@
                 <div class="t-grid -world-hero">
 
                     <!-- SECTION - hero -->
-                    <div class="t-grid__section -hero-place">
+                    <div class="t-grid__section -hero-place" v-show="!isMobile || (isMobile && showHero)">
                         <oHeroPlace :place="place" :images="imagePlace" />
                     </div>
                     <!-- SECTION - hero END -->
 
+                    <!-- SECTION - map -->
+                    <div class="t-grid__section -map" v-show="!isMobile || (isMobile && !showHero)">
+                        <oMapGoogle :place="place" />
+                    </div>
+                    <!-- SECTION - map - END -->
+
                     <!-- SECTION - hot info -->
                     <div class="t-grid__section -hot-info-hero">
-                        <div class="js_o-hot-info-hero o-hot-info-hero">
+                        <div class="js_o-hot-info-hero o-hot-info-hero -col4">
                             <div class="o-hot-info-hero__outer">
                                 <div class="o-hot-info-hero__inner">
                                     <div class="o-hot-info-hero__items">
@@ -222,6 +239,7 @@
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
+    import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
@@ -238,6 +256,7 @@
             oCoverPlaceDetail,
             oHeroPlace,
             oInformationBlock,
+            oMapGoogle,
             oPlaceTeaser,
             oVideoList,
             oWidgetBooking
@@ -256,6 +275,8 @@
                 imagesPosts: this.imagesPosts,
                 posts: this.posts,
                 videos: this.videos,
+                isMobile: false,
+                showHero: true,
                 mNavBreadcrumbsPlaceArray: [
                     {
                         id: 1,
@@ -271,6 +292,26 @@
                     }
                 ]
             }
+        },
+
+        methods:{
+            handleResize() {
+                // Aktualizovat hodnotu pro "isMobile" při změně velikosti okna
+                this.isMobile = window.innerWidth < 992;
+            },
+        },
+
+        mounted() {
+            // Zjistit, zda je rozlišení menší než 992px při načítání stránky
+            this.isMobile = window.innerWidth < 992;
+
+            // Poslouchat událost změny velikosti okna pro aktualizaci přepínače
+            window.addEventListener('resize', this.handleResize);
+        },
+
+        beforeUnmount() {
+            // Zrušit naslouchání události změny velikosti okna při odstranění komponenty
+            window.removeEventListener('resize', this.handleResize);
         },
 
         head() {

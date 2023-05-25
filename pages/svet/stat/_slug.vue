@@ -8,16 +8,33 @@
         </section>
         <!-- SECTION - BREADCRUMBS END -->
 
+        <!-- SECTION - Buttons -->
+        <section class="t-section -px-world mt-1" v-if="isMobile">
+            <div class="t-section__inner">
+                <div class="flex flex-end-all">
+                    <a v-if="!showHero" @click="showHero = true" class="a-button-pure-icon -cover">Obrázek</a>
+                    <a v-else @click="showHero = false" class="a-button-pure-icon -map">Mapa</a>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION - Buttons END -->
+
         <!-- SECTION - hero + hot info hero -->
         <section class="t-section -px-world -p0">
             <div class="t-section__inner">
                 <div class="t-grid -world-hero">
 
                     <!-- SECTION - hero -->
-                    <div class="t-grid__section -hero-place">
+                    <div class="t-grid__section -hero-place" v-show="!isMobile || (isMobile && showHero)">
                         <oHeroPlace :place="place" :images="imagePlace" />
                     </div>
                     <!-- SECTION - hero END -->
+
+                    <!-- SECTION - map -->
+                    <div class="t-grid__section -map" v-show="!isMobile || (isMobile && !showHero)">
+                        <oMapGoogle :place="place" />
+                    </div>
+                    <!-- SECTION - map - END -->
 
                     <!-- SECTION - hot info -->
                     <div class="t-grid__section -hot-info-hero">
@@ -406,9 +423,9 @@
                                             <oWidgetBooking 
                                                 :landmarkName="`${ place[0].name ? place[0].name : '' }`"
                                                 :address="`${ place[0].name ? place[0].name : '' }`"
-                                                :latitude="`${ coordinate.latitude }`"
-                                                :longitude="`${ coordinate.longitude }`"
-                                                zoom="8"
+                                                :latitude=parseFloat(coordinate.latitude)
+                                                :longitude= parseFloat(coordinate.longitude)
+                                                :zoom=place[0].zoom[0].booking
                                             />
                                         </div>
                                     </div>
@@ -464,7 +481,8 @@
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
-    import oChartPie from '@/components/organisms/oChartPie.vue';
+    import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
+    import oChartPie from '@/components/organisms/oChartPie.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
@@ -482,47 +500,11 @@
             oCoverPlaceDetail,
             oHeroPlace,
             oInformationBlock,
+            oMapGoogle,
             oChartPie,
             oPlaceTeaser,
             oVideoList,
             oWidgetBooking
-        },
-
-        methods:{
-            getTabLink(tab) {
-                return {
-                    name: 'stat-slug-tab',
-                    params: { slug: this.$route.params.slug, tab: tab.slug },
-                }
-            }
-        },
-
-        computed: {
-            hasCitiesToShow() {
-                return this.placesCities.some(place => place.biggest !== 'yes');
-            },
-            updatedTabs() {
-                const hasTabDefault = true;
-                const hasTabPrice = this.place[0] && (!!this.place[0].currency_name || !!this.place[0].money_prices);
-                const hasTabPeople = this.place[0] && (!!this.place[0].people_religion || !!this.place[0].people_education || !!this.place[0].people_nationality);
-                const hasTabTrip = this.place[0] && (!!this.place[0].visitors_entry);
-                const hasTabContacts = this.place[0] && (!!this.place[0]?.phone_numbers_emergency);
-                const hasTabHotel = this.place[0].affiliate.find(x => x.name === 'booking').value;
-                const hasTabVideos = this.place[0] && (!!this.videos[0]);
-
-                const newTabs = [
-                    { slug: 'default', label: 'Výchozí', visible: hasTabDefault },
-                    { slug: 'ceny', label: 'Ceny', visible: hasTabPrice },
-                    { slug: 'lide', label: 'Lidé', visible: hasTabPeople },
-                    { slug: 'cesta', label: 'Cesta', visible: hasTabTrip },
-                    { slug: 'kontakty', label: 'Kontakty', visible: hasTabContacts },
-                    { slug: 'ubytovani', label: 'Ubytování', visible: hasTabHotel },
-                    { slug: 'videa', label: 'Videa', visible: hasTabVideos },
-                ];
-
-                this.tabs = newTabs;
-            }
-
         },
 
         data() {
@@ -540,6 +522,8 @@
                 imagesPosts: this.imagesPosts,
                 activeTab: 'default',
                 activeTabName: 'PLACE_NAME',
+                isMobile: false,
+                showHero: true,
                 tabs: [
                     { slug: 'default', label: 'state_name', visible: false },
                     { slug: 'ceny', label: 'Ceny', visible: false },
@@ -588,6 +572,48 @@
                     }
                 ]
             }
+        },
+
+        methods:{
+            getTabLink(tab) {
+                return {
+                    name: 'stat-slug-tab',
+                    params: { slug: this.$route.params.slug, tab: tab.slug },
+                }
+            },
+
+            handleResize() {
+                // Aktualizovat hodnotu pro "isMobile" při změně velikosti okna
+                this.isMobile = window.innerWidth < 992;
+            },
+        },
+
+        computed: {
+            hasCitiesToShow() {
+                return this.placesCities.some(place => place.biggest !== 'yes');
+            },
+            updatedTabs() {
+                const hasTabDefault = true;
+                const hasTabPrice = this.place[0] && (!!this.place[0].currency_name || !!this.place[0].money_prices);
+                const hasTabPeople = this.place[0] && (!!this.place[0].people_religion || !!this.place[0].people_education || !!this.place[0].people_nationality);
+                const hasTabTrip = this.place[0] && (!!this.place[0].visitors_entry);
+                const hasTabContacts = this.place[0] && (!!this.place[0]?.phone_numbers_emergency);
+                const hasTabHotel = this.place[0].affiliate.find(x => x.name === 'booking').value;
+                const hasTabVideos = this.place[0] && (!!this.videos[0]);
+
+                const newTabs = [
+                    { slug: 'default', label: 'Výchozí', visible: hasTabDefault },
+                    { slug: 'ceny', label: 'Ceny', visible: hasTabPrice },
+                    { slug: 'lide', label: 'Lidé', visible: hasTabPeople },
+                    { slug: 'cesta', label: 'Cesta', visible: hasTabTrip },
+                    { slug: 'kontakty', label: 'Kontakty', visible: hasTabContacts },
+                    { slug: 'ubytovani', label: 'Ubytování', visible: hasTabHotel },
+                    { slug: 'videa', label: 'Videa', visible: hasTabVideos },
+                ];
+
+                this.tabs = newTabs;
+            }
+
         },
 
         head() {
@@ -686,6 +712,17 @@
 
         mounted() {
             this.activeTab = this.$route.params.tab || 'default';
+
+            // Zjistit, zda je rozlišení menší než 992px při načítání stránky
+            this.isMobile = window.innerWidth < 992;
+
+            // Poslouchat událost změny velikosti okna pro aktualizaci přepínače
+            window.addEventListener('resize', this.handleResize);
+        },
+
+        beforeUnmount() {
+            // Zrušit naslouchání události změny velikosti okna při odstranění komponenty
+            window.removeEventListener('resize', this.handleResize);
         },
 
         updated() {

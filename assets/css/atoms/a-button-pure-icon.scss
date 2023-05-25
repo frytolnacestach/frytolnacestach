@@ -1,0 +1,28 @@
+.a-button-pure-icon {
+    font-size: $fs-normal-s;
+    height: 30px;
+    padding: 5px 5px 5px 25px;
+    position: relative;
+
+    &::after {
+        font-family: $ff-icomoon-default;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 0;
+        top: 5px;
+        bottom: 5px;
+    }
+
+    &.-cover {
+        &::after {
+            content: map-get($icomoon-default, 'image');
+        }
+    }
+
+    &.-map {
+        &::after {
+            content: map-get($icomoon-default, 'map');
+        }
+    }
+}
