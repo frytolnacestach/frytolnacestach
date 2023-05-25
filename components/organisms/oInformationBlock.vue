@@ -63,7 +63,7 @@
                 required: false
             },
             perexInfo: {
-                type: Array,
+                type: String,
                 required: false
             },
             authorName: {
