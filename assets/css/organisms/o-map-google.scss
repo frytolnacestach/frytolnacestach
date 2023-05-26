@@ -3,9 +3,11 @@
     padding-bottom: 90%;
     height: 0;
     position: relative;
+    border-radius: $br-2;
 
     @media only screen and (min-width: $ti) {
         margin: 10px;
+        border-radius: $br-4;
     }
 
     @media only screen and (min-width: $sm) {

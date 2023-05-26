@@ -1,30 +1,27 @@
+RewriteEngine On
 
-RewriteCond %{HTTP_HOST} ^www.frytolnacestach.cz [NC]
+RewriteCond %{HTTP_HOST} ^www\.frytolnacestach\.cz$ [NC]
 RewriteRule ^(.*)$ https://frytolnacestach.cz/$1 [R=301,L]
 
-RewriteEngine on
-
 RewriteCond %{HTTPS} off
-
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
-
 RewriteCond %{HTTP_USER_AGENT} !(BlackBerry)
-
 RewriteCond %{HTTP_USER_AGENT} !(Windows\sNT\s5\.[12])
-
-RewriteCond %{HTTP_HOST} ^(www\.)?frytolnacestach.cz
-
+RewriteCond %{HTTP_HOST} ^(www\.)?frytolnacestach\.cz$ [NC]
 RewriteBase /
+
+# Odstranit lomítko na konci URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
 
 RewriteRule ^index\.html$ - [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
-
 RewriteCond %{REQUEST_FILENAME} !-d
-
 RewriteRule . /index.html [L]
+
 
 <IfModule mod_expires.c>
   ExpiresActive On

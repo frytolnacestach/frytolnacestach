@@ -1,5 +1,5 @@
 <template>
-   <div class="o-map-google">
+   <div class="o-map-google loading-image">
         <gmap-map :center="center" :zoom="zoom" :options="mapOptions"></gmap-map>
     </div>
 </template>

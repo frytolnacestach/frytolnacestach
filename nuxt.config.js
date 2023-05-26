@@ -877,6 +877,8 @@ export default {
   },
 
   router: {
+    trailingSlash: false,
+    middleware: 'redirect-trailing-slash',
     extendRoutes(routes, resolve) {
       routes.push({
         name: 'stat-slug',
