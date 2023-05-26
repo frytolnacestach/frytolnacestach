@@ -839,6 +839,14 @@ export default {
         exclude: ['/**']
       },
       {
+        path: '/sitemap-foods.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/foods')
+          return data.map(v => `/jidlo/${v.slug}`)
+        },
+        exclude: ['/**']
+      },
+      {
         path: '/sitemap-places-stats.xml',
         routes: async () => {
           let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/places-states')

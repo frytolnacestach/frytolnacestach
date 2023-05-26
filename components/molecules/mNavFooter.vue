@@ -38,6 +38,9 @@
                     <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/svet/mesto">Města</NuxtLink>
                     </li>
+                    <li class="m-nav-footer__item">
+                        <NuxtLink class="m-nav-footer__link" to="/jidlo">Jídla</NuxtLink>
+                    </li>
                 </ul>
             </div>
 

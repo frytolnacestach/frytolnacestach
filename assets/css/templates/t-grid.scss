@@ -7,7 +7,7 @@
         display: inline-grid;
     }
 
-    //world/slug - > hero + hot-info-hero
+    //world/slug - > hero + map + hot-info-hero
     &.-world-hero {
         grid-template-areas: 
             "hero-place"
@@ -36,6 +36,33 @@
 
             &.-hot-info-hero {
                 grid-area: hot-info-hero;
+            }
+        }
+    }
+
+    //food/slug - > hero + state
+    &.-food-hero {
+        grid-template-areas: 
+            "hero-food"
+            "states";
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+
+        @media only screen and (min-width: $lg) {
+            grid-template-areas: 
+                "hero-food states";
+            grid-template-columns: auto 33.333%;
+            grid-template-rows: auto;
+        }
+
+        #{$self}__section {
+
+            &.-hero-food {
+                grid-area: hero-food;
+            }
+
+            &.-states {
+                grid-area: states;
             }
         }
     }

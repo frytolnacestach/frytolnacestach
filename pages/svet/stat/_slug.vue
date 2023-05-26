@@ -145,6 +145,15 @@
                                 </section>
                                 <!-- SECTION - Place teaser END -->
 
+                                <!-- SECTION - Food -->
+                                <section class="t-section my-4 -p0" v-if="foods[0]">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Tradiční jídla ve státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oCoverFoodState :foods="foods" :images="imagesFoods" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Food END -->
+
                                 <div class="t-grid -world-information-adjacent">
                                     <div class="t-grid__section">
                                         <!-- SECTION - Měna -->
@@ -478,6 +487,7 @@
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oAlerts from '~/components/organisms/oAlerts.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
+    import oCoverFoodState from '~/components/organisms/oCoverFoodState.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
@@ -497,6 +507,7 @@
             oAdGoogleSidebar,
             oAlerts,
             oArticleList,
+            oCoverFoodState,
             oCoverPlaceDetail,
             oHeroPlace,
             oInformationBlock,
@@ -513,6 +524,7 @@
                 placeContinent: this.placeContinent,
                 placesCities: this.placesCities,
                 placeCityMain: this.placeCityMain,
+                foods: this.foods,
                 videos: this.videos,
                 posts: this.posts,
                 imagePlace: this.imagePlace,
@@ -666,6 +678,9 @@
                         placeCityMain = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city-id/${place[0].id_city_main}`)
                     }
 
+                    // Načtení jídla z místa
+                    const foods = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/foods-id-state/${place[0].id}`)
+
                     // Načtení videi z místa
                     const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos-id-state/${place[0].id}`)
 
@@ -675,9 +690,9 @@
 
                     //images Array
                     const imagesPlacesCitiesID = placesCities.map(placeCity => placeCity.id_image_cover).filter(id => id !== null && id !== '')
+                    const imagesFoodsID = foods.map(food => food.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
                     const imagesPostsID = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
-
 
                     // Načtení informací o obrázku pro místo
                     const imagePlace = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${place[0].id_image_hero}`)
@@ -690,6 +705,9 @@
                         imageCityMain = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeCityMain[0].id_image_cover}`)
                     }
 
+                    // Načtení informací o obrázku pro jídla
+                    const imagesFoods = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesFoodsID.join(',')}`)
+
                     // Načtení informací o obrázku pro videa
                     const imagesVideos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesVideosID.join(',')}`)
 
@@ -697,7 +715,7 @@
                     const imagesPosts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPostsID.join(',')}`)
 
 
-                    data = { place, placeContinent, placesCities, placeCityMain, videos, posts, imagePlace, imagesCities, imageCityMain, imagesVideos, imagesPosts }
+                    data = { place, placeContinent, placesCities, placeCityMain, foods, videos, posts, imagePlace, imagesCities, imageCityMain, imagesFoods, imagesVideos, imagesPosts }
 
                     success = true
                 } catch (error) {
