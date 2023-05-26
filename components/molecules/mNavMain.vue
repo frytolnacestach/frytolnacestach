@@ -7,19 +7,13 @@
                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/svet" exact-active-class="-active" :class="{'-active': /^\/svet/.test($route.path)}">Svět</NuxtLink>
                     </li>
                     <li class="m-nav-main__item">
-                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/jidlo" exact-active-class="-active" :class="{'-active': /^\/jidlo/.test($route.path)}">Jídla</NuxtLink>
+                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/jidlo" exact-active-class="-active" :class="{'-active': /^\/jidlo/.test($route.path)}">Tradiční jídla</NuxtLink>
                     </li>
                     <li class="m-nav-main__item">
                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/clanky" exact-active-class="-active" :class="{'-active': /^\/clanky/.test($route.path)}">Články</NuxtLink>
                     </li>
                     <li class="m-nav-main__item">
                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/videa" exact-active-class="-active" :class="{'-active': /^\/videa/.test($route.path)}">Videa</NuxtLink>
-                    </li>
-                    <li class="m-nav-main__item">
-                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/social" exact-active-class="-active">Kde mě najdeš</NuxtLink>
-                    </li>
-                    <li class="m-nav-main__item">
-                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/iam" exact-active-class="-active">Kdo jsem</NuxtLink>
                     </li>
                     <li class="m-nav-main__item -special">
                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/donate" exact-active-class="-active">Podpořit</NuxtLink>

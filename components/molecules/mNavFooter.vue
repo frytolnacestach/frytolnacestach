@@ -39,7 +39,7 @@
                         <NuxtLink class="m-nav-footer__link" to="/svet/mesto">Města</NuxtLink>
                     </li>
                     <li class="m-nav-footer__item">
-                        <NuxtLink class="m-nav-footer__link" to="/jidlo">Jídla</NuxtLink>
+                        <NuxtLink class="m-nav-footer__link" to="/jidlo">Tradiční jídla</NuxtLink>
                     </li>
                 </ul>
             </div>
