@@ -13,12 +13,12 @@ RewriteCond %{HTTP_USER_AGENT} !(Windows\sNT\s5\.[12])
 RewriteCond %{HTTP_HOST} ^(www\.)?frytolnacestach\.cz$ [NC]
 
 # Přesměrování na verzi bez lomítka na konci URL
-RewriteCond %{REQUEST_URI} ^/(.*)/$
-RewriteRule ^(.*)/$ /%1 [R=301,L]
+#RewriteCond %{REQUEST_URI} ^/(.*)/$
+#RewriteRule ^(.*)/$ /%1 [R=301,L]
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . /index.html [L]
 
 
 <IfModule mod_expires.c>
