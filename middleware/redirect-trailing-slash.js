@@ -1,7 +1,7 @@
-export default function ({ route, redirect }) {
-    if (route.path !== '/' && route.path.endsWith('/')) {
-      const pathWithoutTrailingSlash = route.path.slice(0, -1);
-      redirect(301, pathWithoutTrailingSlash);
-    }
+/*export default function ({ route, redirect }) {
+  const hasTrailingSlash = /\/$/.test(route.fullPath);
+  if (hasTrailingSlash && route.fullPath !== '/') {
+    const redirectPath = route.fullPath.replace(/\/$/, '');
+    redirect(301, redirectPath);
   }
-  
+}*/

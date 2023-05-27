@@ -877,8 +877,8 @@ export default {
   },
 
   router: {
-    trailingSlash: false,
-    middleware: 'redirect-trailing-slash',
+    //trailingSlash: false,
+    //middleware: 'redirect-trailing-slash',
     extendRoutes(routes, resolve) {
       routes.push({
         name: 'stat-slug',
@@ -891,7 +891,7 @@ export default {
         path: '/svet/stat/:slug/:tab',
         component: resolve(__dirname, 'pages/svet/stat/_slug.vue')
       })
-    }
+    },
   },
 
   generate: {

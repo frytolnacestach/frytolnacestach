@@ -1,4 +1,5 @@
 RewriteEngine On
+RewriteBase /
 
 RewriteCond %{HTTP_HOST} ^www\.frytolnacestach\.cz$ [NC]
 RewriteRule ^(.*)$ https://frytolnacestach.cz/$1 [R=301,L]
@@ -10,13 +11,10 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteCond %{HTTP_USER_AGENT} !(BlackBerry)
 RewriteCond %{HTTP_USER_AGENT} !(Windows\sNT\s5\.[12])
 RewriteCond %{HTTP_HOST} ^(www\.)?frytolnacestach\.cz$ [NC]
-RewriteBase /
 
-# Odstranit lomítko na konci URL
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)/$ /$1 [R=301,L]
-
-RewriteRule ^index\.html$ - [L]
+# Přesměrování na verzi bez lomítka na konci URL
+RewriteCond %{REQUEST_URI} ^/(.*)/$
+RewriteRule ^(.*)/$ /%1 [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
