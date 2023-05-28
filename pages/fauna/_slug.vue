@@ -1,0 +1,156 @@
+<template>
+    <main class="t-main -bg-world -pt-menu" role="main">
+
+        <!-- SECTION - BREADCRUMBS -->
+        <section class="t-section -px-world mt-2 -p0">
+            <div class="t-section__inner">
+                <mNavBreadcrumbsFood :links="mNavBreadcrumbsFoodArray" :food="fauna[0]" />
+            </div>
+        </section>
+        <!-- SECTION - BREADCRUMBS END -->
+
+        <!-- SECTION - hero + hot info hero -->
+        <section class="t-section -px-world -p0">
+            <div class="t-section__inner">
+                <div class="t-grid -food-hero">
+
+                    <!-- SECTION - hero -->
+                    <div class="t-grid__section -hero-food">
+                        <oHeroFoodDetail :food="fauna" :images="imageFauna" />
+                    </div>
+                    <!-- SECTION - hero END -->
+
+                    <!-- SECTION - fauna places -->
+                    <div class="t-grid__section -states">
+                        <oFoodStates :places="placesStates" :food="fauna[0].name" />
+                    </div>
+                    <!-- SECTION - fauna places - END -->
+                </div>
+            </div>
+        </section>
+        <!-- SECTION - hero + hot info - END -->
+
+        <!-- SECTION -->
+        <section class="t-section -px-world -p0">
+            <div class="t-section__inner">
+                <div class="t-grid -world-content-with-ad">
+                    
+                    <div class="t-grid__section -content">
+                        <!-- SECTION - information by ChatGPT -->
+                        <section class="t-section" v-if="fauna[0].description">
+                            <div class="t-section__inner">
+                                <oInformationBlock :title="(fauna[0].name ? fauna[0].name : '')" :perexWysiwyg="fauna[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
+                            </div>
+                        </section>
+                        <!-- SECTION - information by ChatGPT END -->
+                    </div>
+
+
+                    <div class="t-grid__section -ad">
+                        <!-- SECTION - ad-google - sidebar -->
+                        <section class="t-section -px-world my-2">
+                            <div class="t-section__inner">
+                                <oAdGoogleSidebar />
+                            </div>
+                        </section>
+                        <!-- SECTION - ad-google - sidebar - END -->
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- SECTION END -->
+    </main>
+</template>
+
+<script>
+    import mNavBreadcrumbsFood from '~/components/molecules/mNavBreadcrumbsFood.vue'
+    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
+    import oFoodStates from '~/components/organisms/oFoodStates.vue'
+    import oHeroFoodDetail from '~/components/organisms/oHeroFoodDetail.vue'
+    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
+
+    export default {
+        name: 'FaunaSlugPage',
+
+        components: {
+            mNavBreadcrumbsFood,
+            oAdGoogleSidebar,
+            oFoodStates,
+            oHeroFoodDetail,
+            oInformationBlock,
+        },
+
+        data() {
+            return {
+                fauna: this.fauna,
+                placesStates: this.placesStates,
+                imageFood: this.imageFood,
+                imagesStates: this.imagesStates,
+                mNavBreadcrumbsFoodArray: [
+                    {
+                        id: 1,
+                        name: "Fauna",
+                        url: "/fauna",
+                        status: "link"
+                    }
+                ]
+            }
+        },
+
+        head() {
+            return {
+                title: `${this.fauna[0].name ? this.fauna[0].name : 'Fauna'} | Frytol na cestách`,
+                meta: [
+                    { hid: 'description', name: 'description', content: `${this.fauna[0].description ? this.fauna[0].description.slice(0, this.fauna[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.fauna[0].name}` },
+                    { name: 'keywords', content: `${this.fauna[0].name + ', Fauna, Živočichové, informace o živočichách, plánuj cestu, cestovatelský portál, cestování, svět'}` },
+                    { property: 'og:image', content: `${this.fauna[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageFood.find(image => image.id === this.fauna[0].id_image_hero).source + this.imageFood.find(image => image.id === this.fauna[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
+                    { hid: 'og:title', content: `${this.fauna[0].name ? this.fauna[0].name : 'Flóra'}  | Frytol na cestách` },
+                    { hid: 'og:description', content: `${this.fauna[0].description ? this.fauna[0].description.slice(0, this.fauna[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.fauna[0].name ? this.fauna[0].name : 'Fauna'}` },
+                    { hid: 'og:url', content: `${process.env.baseUrl}/fauna/${this.fauna[0].slug}` },
+                    { hid: 'og:type', content: 'website' } 
+                ]
+            }
+        },
+
+        async asyncData({ $axios, params }) {
+            let success = false;
+            let data = null;
+
+            while (!success) {
+                try {
+                    // Načtení fauny přes API podle slug
+                    const fauna = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/fauna/${params.slug}`)
+
+                    //states Array
+                    const idsStates = fauna[0].ids_states.map(state => state.id)
+
+                    // Načtení státu  podle jeho id
+                    const placesStates = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-states-array?id=${idsStates.join(',')}`)
+
+                    //images Array
+                    const imagesPlacesStatesID = placesStates.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
+
+
+                    // Načtení informací o obrázku pro faunu
+                    const imageFauna = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${fauna[0].id_image_hero}`)
+
+                    // Načtení informací o obrázku pro státy
+                    const imagesStates = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
+
+
+                    data = { fauna, placesStates, imageFauna, imagesStates }
+                    
+                    success = true
+                } catch (error) {
+                    console.log(`API ERROR - FAUNA DETAIL: ${params.slug}`)
+                    console.error(error)
+
+                    await new Promise(resolve => setTimeout(resolve, 1000))
+                }
+            }
+
+            return data
+        }
+    }
+</script>

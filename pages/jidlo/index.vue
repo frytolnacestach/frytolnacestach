@@ -15,7 +15,7 @@
                 <oCoverFood :foods="foods" :images="images" />
             </div>
         </section>
-        <!-- SECTION - Foof list END -->
+        <!-- SECTION - Food list END -->
 
     </main>
 </template>
@@ -48,7 +48,7 @@
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Jídla | Frytol na cestách' },
                 { hid: 'og:description', content: 'Jaké jídla se jedí ve světe. Na které kde narazíte a co si kde dát? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.' },
-                { hid: 'og:url', content: `${process.env.baseUrl}/svet/jidlo` },
+                { hid: 'og:url', content: `${process.env.baseUrl}/jidlo` },
                 { hid: 'og:type', content: 'website' }  
             ]
         },

@@ -163,6 +163,24 @@
                                 </section>
                                 <!-- SECTION - Neighboring Place list END -->
 
+                                <!-- SECTION - Fauna list -->
+                                <section class="t-section -bg-world -p0" v-if="fauna[0]">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Nebezpečná Fauna ve státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oCoverPlace :places="fauna" :images="imagesFauna" type="stat" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Fauna list END -->
+
+                                <!-- SECTION - Flora list -->
+                                <section class="t-section -bg-world -p0" v-if="flora[0]">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Nebezpečná Flóra ve státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oCoverPlace :places="flora" :images="imagesFlora" type="stat" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Flora list END -->
+
                                 <div class="t-grid -world-information-adjacent">
                                     <div class="t-grid__section">
                                         <!-- SECTION - Měna -->
@@ -537,6 +555,8 @@
                 placesCities: this.placesCities,
                 placeCityMain: this.placeCityMain,
                 foods: this.foods,
+                fauna: this.fauna,
+                flora: this.flora,
                 videos: this.videos,
                 posts: this.posts,
                 imagePlace: this.imagePlace,
@@ -704,6 +724,12 @@
                     // Načtení jídla z místa
                     const foods = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/foods-id-state/${place[0].id}`)
 
+                    // Načtení fauny z místa
+                    const fauna = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/faunas-id-state/${place[0].id}`)
+
+                    // Načtení flory z místa
+                    const flora = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/floras-id-state/${place[0].id}`)
+
                     // Načtení videi z místa
                     const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos-id-state/${place[0].id}`)
 
@@ -714,6 +740,8 @@
                     //images Array
                     const imagesPlacesCitiesID = placesCities.map(placeCity => placeCity.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesFoodsID = foods.map(food => food.id_image_cover).filter(id => id !== null && id !== '')
+                    const imagesFaunaID = foods.map(fauna => fauna.id_image_cover).filter(id => id !== null && id !== '')
+                    const imagesFloraID = foods.map(flora => flora.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
                     const imagesPostsID = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
 
@@ -737,6 +765,12 @@
                     // Načtení informací o obrázku pro jídla
                     const imagesFoods = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesFoodsID.join(',')}`)
 
+                    // Načtení informací o obrázku pro faunu
+                    const imagesFauna = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesFaunaID.join(',')}`)
+
+                    // Načtení informací o obrázku pro floru
+                    const imagesFlora = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesFloraID.join(',')}`)
+
                     // Načtení informací o obrázku pro videa
                     const imagesVideos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesVideosID.join(',')}`)
 
@@ -744,7 +778,7 @@
                     const imagesPosts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPostsID.join(',')}`)
 
 
-                    data = { place, placesStatesNeighboring, placeContinent, placesCities, placeCityMain, foods, videos, posts, imagePlace, imagesStatesNeighboring, imagesCities, imageCityMain, imagesFoods, imagesVideos, imagesPosts }
+                    data = { place, placesStatesNeighboring, placeContinent, placesCities, placeCityMain, foods, fauna, flora, videos, posts, imagePlace, imagesStatesNeighboring, imagesCities, imageCityMain, imagesFoods, imagesFauna, imagesFlora, imagesVideos, imagesPosts }
 
                     success = true
                 } catch (error) {
