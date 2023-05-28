@@ -6,7 +6,11 @@
     z-index: 1001;
     cursor: pointer;
     top: 10px;
-    right: 15px;
+    right: 10px;
+
+	@media only screen and (min-width: $ti) {
+		right: 20px;
+	}
 
 	@media only screen and (min-width: $lg) {
         display: none;
