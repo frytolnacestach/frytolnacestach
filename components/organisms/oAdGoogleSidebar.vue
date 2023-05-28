@@ -1,12 +1,18 @@
 <template>
-    <div class="o-ad-google-sidebar">
-        <ins class="adsbygoogle"
-            :style="adStyle"
-            :data-ad-client="adClient"
-            :data-ad-slot="adSlot"
-            :data-ad-format="adFormat"
-            :data-full-width-responsive="adResponsive">
-        </ins>
+    <div class="o-ad-google-sidebar mt-2">
+        <div class="o-ad-google-sidebar__outer">
+            <div class="o-ad-google-sidebar__inner">
+                <div class="o-ad-google-sidebar__content">
+                    <ins class="adsbygoogle"
+                        :style="adStyle"
+                        :data-ad-client="adClient"
+                        :data-ad-slot="adSlot"
+                        :data-ad-format="adFormat"
+                        :data-full-width-responsive="adResponsive">
+                    </ins>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
