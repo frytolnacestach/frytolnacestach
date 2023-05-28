@@ -154,6 +154,15 @@
                                 </section>
                                 <!-- SECTION - Food END -->
 
+                                <!-- SECTION - Neighboring Place list -->
+                                <section class="t-section -bg-world -p0" v-if="placesStatesNeighboring">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Sousední státy státu " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oCoverPlace :places="placesStatesNeighboring" :images="imagesStatesNeighboring" type="stat" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Neighboring Place list END -->
+
                                 <div class="t-grid -world-information-adjacent">
                                     <div class="t-grid__section">
                                         <!-- SECTION - Měna -->
@@ -488,6 +497,7 @@
     import oAlerts from '~/components/organisms/oAlerts.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oCoverFoodState from '~/components/organisms/oCoverFoodState.vue'
+    import oCoverPlace from '~/components/organisms/oCoverPlace.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
@@ -508,6 +518,7 @@
             oAlerts,
             oArticleList,
             oCoverFoodState,
+            oCoverPlace,
             oCoverPlaceDetail,
             oHeroPlace,
             oInformationBlock,
@@ -521,6 +532,7 @@
         data() {
             return {
                 place: this.place,
+                placesStatesNeighboring: this.placesStatesNeighboring,
                 placeContinent: this.placeContinent,
                 placesCities: this.placesCities,
                 placeCityMain: this.placeCityMain,
@@ -528,6 +540,7 @@
                 videos: this.videos,
                 posts: this.posts,
                 imagePlace: this.imagePlace,
+                imagesStatesNeighboring: this.imagesStatesNeighboring,
                 imagesCities: this.imagesCities,
                 imageCityMain: this.imageCityMain,
                 imagesVideos: this.imagesVideos,
@@ -662,10 +675,20 @@
 
                     let placeCityMain = null;
                     let imageCityMain = null;
+                    let placesStatesNeighboring = null;
+                    let imagesStatesNeighboring = null;
 
 
                     // Načtení místa přes API podle slug
                     const place = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-state/${params.slug}`)
+
+                    if (place[0].ids_neighboring_countries !== null ) {
+                        //other Array
+                        const idsNeighboringCountries = place[0].ids_neighboring_countries.map(item => item.id);
+
+                        // Načtení informací sousedních státech
+                        placesStatesNeighboring = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-states-array?id=${idsNeighboringCountries.join(',')}`)
+                    }
 
                     // Načtení informací o continentu
                     const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${place[0].id_continent}`)
@@ -697,6 +720,12 @@
                     // Načtení informací o obrázku pro místo
                     const imagePlace = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${place[0].id_image_hero}`)
 
+                    // Načtení informací o obrázku pro sousední státy
+                    if (placesStatesNeighboring !== null ) {
+                        const imagesplaceStatesNeighboringID = placesStatesNeighboring.map(placesStateNeighboring => placesStateNeighboring.id_image_cover).filter(id => id !== null && id !== '')
+                        imagesStatesNeighboring = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesplaceStatesNeighboringID.join(',')}`)
+                    }
+
                     // Načtení informací o obrázku pro státy
                     const imagesCities = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlacesCitiesID.join(',')}`)
 
@@ -715,7 +744,7 @@
                     const imagesPosts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPostsID.join(',')}`)
 
 
-                    data = { place, placeContinent, placesCities, placeCityMain, foods, videos, posts, imagePlace, imagesCities, imageCityMain, imagesFoods, imagesVideos, imagesPosts }
+                    data = { place, placesStatesNeighboring, placeContinent, placesCities, placeCityMain, foods, videos, posts, imagePlace, imagesStatesNeighboring, imagesCities, imageCityMain, imagesFoods, imagesVideos, imagesPosts }
 
                     success = true
                 } catch (error) {
