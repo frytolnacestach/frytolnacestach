@@ -849,7 +849,7 @@ export default {
       {
         path: '/sitemap-fauna.xml',
         routes: async () => {
-          let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/fauna')
+          let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/faunas')
           return data.map(v => `/fauna/${v.slug}`)
         },
         exclude: ['/**']
@@ -857,7 +857,7 @@ export default {
       {
         path: '/sitemap-flora.xml',
         routes: async () => {
-          let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/flora')
+          let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/floras')
           return data.map(v => `/flora/${v.slug}`)
         },
         exclude: ['/**']
