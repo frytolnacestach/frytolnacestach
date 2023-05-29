@@ -753,8 +753,8 @@
                     const imagesPlacesCitiesID = placesCities.map(placeCity => placeCity.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesBrandsID = brands.map(brand => brand.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesFoodsID = foods.map(food => food.id_image_cover).filter(id => id !== null && id !== '')
-                    const imagesFaunaID = foods.map(fauna => fauna.id_image_cover).filter(id => id !== null && id !== '')
-                    const imagesFloraID = foods.map(flora => flora.id_image_cover).filter(id => id !== null && id !== '')
+                    const imagesFaunaID = fauna.map(fauna => fauna.id_image_cover).filter(id => id !== null && id !== '')
+                    const imagesFloraID = flora.map(flora => flora.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
                     const imagesPostsID = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
 
