@@ -90,8 +90,8 @@
                 mNavBreadcrumbsBrandArray: [
                     {
                         id: 1,
-                        name: "brand",
-                        url: "/brand",
+                        name: "Značka",
+                        url: "/znacka",
                         status: "link"
                     }
                 ]
