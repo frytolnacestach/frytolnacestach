@@ -1,15 +1,15 @@
 <template>
-    <div :class="'o-hero-food'">
-        <div class="o-hero-food__inner">
-            <h1 class="o-hero-food__headline">{{ title }}</h1>
-            <p class="o-hero-food__perex" v-if="perex">{{ perex }}</p>
+    <div :class="'o-hero-item'">
+        <div class="o-hero-item__inner">
+            <h1 class="o-hero-item__headline">{{ title }}</h1>
+            <p class="o-hero-item__perex" v-if="perex">{{ perex }}</p>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'OrganismsoHeroFoodComponent',
+        name: 'OrganismsoHeroItemComponent',
 
         props: {
             title: {

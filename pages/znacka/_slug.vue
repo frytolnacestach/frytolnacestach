@@ -4,7 +4,7 @@
         <!-- SECTION - BREADCRUMBS -->
         <section class="t-section -px-world mt-2 -p0">
             <div class="t-section__inner">
-                <mNavBreadcrumbsItem :links="mNavBreadcrumbsFloraArray" :item="flora[0]" />
+                <mNavBreadcrumbsItem :links="mNavBreadcrumbsBrandArray" :item="brand[0]" />
             </div>
         </section>
         <!-- SECTION - BREADCRUMBS END -->
@@ -16,15 +16,15 @@
 
                     <!-- SECTION - hero -->
                     <div class="t-grid__section -hero-food">
-                        <oHeroItemDetail :item="flora" :images="imageFlora" />
+                        <oHeroItemDetail :item="brand" :images="imageBrand" />
                     </div>
                     <!-- SECTION - hero END -->
 
-                    <!-- SECTION - flora places -->
+                    <!-- SECTION - Brand places -->
                     <div class="t-grid__section -states">
-                        <oItemStates :items="placesStates" :itemName="flora[0].name" text="Kde roste" />
+                        <oItemStates :items="placesStates" :itemName="brand[0].name" text="Kde se vyrábí" />
                     </div>
-                    <!-- SECTION - flora places - END -->
+                    <!-- SECTION - Brand places - END -->
                 </div>
             </div>
         </section>
@@ -37,9 +37,9 @@
                     
                     <div class="t-grid__section -content">
                         <!-- SECTION - information by ChatGPT -->
-                        <section class="t-section" v-if="flora[0].description">
+                        <section class="t-section" v-if="brand[0].description">
                             <div class="t-section__inner">
-                                <oInformationBlock :title="(flora[0].name ? flora[0].name : '')" :perexWysiwyg="flora[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
+                                <oInformationBlock :title="(brand[0].name ? brand[0].name : '')" :perexWysiwyg="brand[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                             </div>
                         </section>
                         <!-- SECTION - information by ChatGPT END -->
@@ -71,7 +71,7 @@
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
 
     export default {
-        name: 'FloraSlugPage',
+        name: 'brandSlugPage',
 
         components: {
             mNavBreadcrumbsItem,
@@ -83,15 +83,15 @@
 
         data() {
             return {
-                flora: this.flora,
+                brand: this.brand,
                 placesStates: this.placesStates,
-                imageFlora: this.imageFlora,
+                imageBrand: this.imageBrand,
                 imagesStates: this.imagesStates,
-                mNavBreadcrumbsFloraArray: [
+                mNavBreadcrumbsBrandArray: [
                     {
                         id: 1,
-                        name: "Flóra",
-                        url: "/flora",
+                        name: "brand",
+                        url: "/brand",
                         status: "link"
                     }
                 ]
@@ -100,14 +100,14 @@
 
         head() {
             return {
-                title: `${this.flora[0].name ? this.flora[0].name : 'Flóra'} | Frytol na cestách`,
+                title: `${this.brand[0].name ? this.brand[0].name : 'brand'} | Frytol na cestách`,
                 meta: [
-                    { hid: 'description', name: 'description', content: `${this.flora[0].description ? this.flora[0].description.slice(0, this.flora[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.flora[0].name}` },
-                    { name: 'keywords', content: `${this.flora[0].name + ', Flóra, Rostoucí flóra, informace o rostlinách, plánuj cestu, cestovatelský portál, cestování, svět'}` },
-                    { property: 'og:image', content: `${this.flora[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageFood.find(image => image.id === this.flora[0].id_image_hero).source + this.imageFood.find(image => image.id === this.flora[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
-                    { hid: 'og:title', content: `${this.flora[0].name ? this.flora[0].name : 'Flóra'}  | Frytol na cestách` },
-                    { hid: 'og:description', content: `${this.flora[0].description ? this.flora[0].description.slice(0, this.flora[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.flora[0].name ? this.flora[0].name : 'Flóra'}` },
-                    { hid: 'og:url', content: `${process.env.baseUrl}/flora/${this.flora[0].slug}` },
+                    { hid: 'description', name: 'description', content: `${this.brand[0].description ? this.brand[0].description.slice(0, this.brand[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.brand[0].name}` },
+                    { name: 'keywords', content: `${this.brand[0].name + ', brand, Živočichové, informace o živočichách, plánuj cestu, cestovatelský portál, cestování, svět'}` },
+                    { property: 'og:image', content: `${this.brand[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageFood.find(image => image.id === this.brand[0].id_image_hero).source + this.imageFood.find(image => image.id === this.brand[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
+                    { hid: 'og:title', content: `${this.brand[0].name ? this.brand[0].name : 'Flóra'}  | Frytol na cestách` },
+                    { hid: 'og:description', content: `${this.brand[0].description ? this.brand[0].description.slice(0, this.brand[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.brand[0].name ? this.brand[0].name : 'brand'}` },
+                    { hid: 'og:url', content: `${process.env.baseUrl}/brand/${this.brand[0].slug}` },
                     { hid: 'og:type', content: 'website' } 
                 ]
             }
@@ -119,11 +119,11 @@
 
             while (!success) {
                 try {
-                    // Načtení flory přes API podle slug
-                    const flora = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/flora/${params.slug}`)
+                    // Načtení fauny přes API podle slug
+                    const brand = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/brand/${params.slug}`)
 
                     //states Array
-                    const idsStates = flora[0].ids_states.map(state => state.id)
+                    const idsStates = brand[0].ids_states.map(state => state.id)
 
                     // Načtení státu  podle jeho id
                     const placesStates = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-states-array?id=${idsStates.join(',')}`)
@@ -132,18 +132,18 @@
                     const imagesPlacesStatesID = placesStates.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
 
 
-                    // Načtení informací o obrázku pro floru
-                    const imageFlora = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${flora[0].id_image_hero}`)
+                    // Načtení informací o obrázku pro faunu
+                    const imageBrand = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${brand[0].id_image_hero}`)
 
                     // Načtení informací o obrázku pro státy
                     const imagesStates = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
 
 
-                    data = { flora, placesStates, imageFlora, imagesStates }
+                    data = { brand, placesStates, imageBrand, imagesStates }
                     
                     success = true
                 } catch (error) {
-                    console.log(`API ERROR - FLÓRA DETAIL: ${params.slug}`)
+                    console.log(`API ERROR - BRAND DETAIL: ${params.slug}`)
                     console.error(error)
 
                     await new Promise(resolve => setTimeout(resolve, 1000))

@@ -1,21 +1,21 @@
 <template>
     <main class="t-main -pt-menu" role="main">
 
-        <!-- SECTION - Hero fauna -->
+        <!-- SECTION - Hero značky -->
         <section class="t-section py-4 -bg-world">
             <div class="t-section__inner">
-                <oHeroItem title="Fauna" perex="Jaké fauna kde žije? A na jakou si dát pozor? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." />
+                <oHeroItem title="Značky" perex="Jaké značky a výrobky kde najdete? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." />
             </div>
         </section>
-        <!-- SECTION - Hero fauna END -->
+        <!-- SECTION - Hero značky END -->
 
-        <!-- SECTION - Fauna list -->
+        <!-- SECTION - Značky list -->
         <section class="t-section -bg-world -p0">
             <div class="t-section__inner">
-                <oCoverItem :items="fauna" :images="images" type="fauna" />
+                <oCoverItem :items="fauna" :images="images" type="znacka" />
             </div>
         </section>
-        <!-- SECTION - Fauna list END -->
+        <!-- SECTION - Značky list END -->
 
     </main>
 </template>
@@ -25,7 +25,7 @@
     import oHeroItem from '~/components/organisms/oHeroItem.vue'
 
     export default {
-        name: 'FaunaIndexPage',
+        name: 'ZnackaIndexPage',
 
         components: {
             oCoverItem,
@@ -41,14 +41,14 @@
         },
 
         head: {
-            title: 'Fauna | Frytol na cestách',
+            title: 'Značky | Frytol na cestách',
             meta: [
-                { hid: 'description', name: 'description', content: 'Jaké fauna kde žije? A na jakou si dát pozor? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.' },
-                { name: 'keywords', content: `Fauna, co žije?, Zvířata ve světě, informace o zvířatech, plánuj cestu, cestovatelský portál, cestování, svět` },
+                { hid: 'description', name: 'description', content: 'Jaké značky a výrobky kde najdete? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.' },
+                { name: 'keywords', content: `Značky, výrobky, tradiční výroba, informace o výrobcích, plánuj cestu, cestovatelský portál, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
                 { hid: 'og:title', content: 'Fauna | Frytol na cestách' },
-                { hid: 'og:description', content: 'Jaké fauna kde žije? A na jakou si dát pozor? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.' },
-                { hid: 'og:url', content: `${process.env.baseUrl}/fauna` },
+                { hid: 'og:description', content: 'Jaké značky a výrobky kde najdete? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.' },
+                { hid: 'og:url', content: `${process.env.baseUrl}/znacka` },
                 { hid: 'og:type', content: 'website' }  
             ]
         },
@@ -56,7 +56,7 @@
 
         async asyncData({ $axios }) {
             const [fauna, images] = await Promise.all([
-                $axios.$get(`https://frytolnacestach-api.vercel.app/api/faunas`),
+                $axios.$get(`https://frytolnacestach-api.vercel.app/api/brands`),
                 $axios.$get(`https://frytolnacestach-api.vercel.app/api/images`)
             ]);
             return { fauna, images };

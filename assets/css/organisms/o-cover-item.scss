@@ -1,5 +1,11 @@
-.o-cover-food-state {
+.o-cover-item {
     $self: &;
+
+    margin: 5px;
+
+    @media only screen and (min-width: $sm) {
+        margin: 10px;
+    }
 
     &__outer {
         width: 100%;
@@ -53,6 +59,10 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: flex-end;
+
+        @media only screen and (min-width: $sm) {
+            padding: 10px;
+        }
     }
 
     //Image

@@ -145,41 +145,50 @@
                                 </section>
                                 <!-- SECTION - Place teaser END -->
 
+                                <!-- SECTION - Neighboring Place list -->
+                                <section class="t-section my-2 py-1 -p0" v-if="placesStatesNeighboring">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Sousední státy státu " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oCoverItemState :items="placesStatesNeighboring" :images="imagesStatesNeighboring" type="svet/stat" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Neighboring Place list END -->
+                                
                                 <!-- SECTION - Food -->
-                                <section class="t-section my-4 -p0" v-if="foods[0]">
+                                <section class="t-section my-2 py-1 -p0" v-if="foods[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Tradiční jídla ve státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oCoverFoodState :foods="foods" :images="imagesFoods" />
+                                        <oCoverItemState :items="foods" :images="imagesFoods" type="jidlo" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Food END -->
 
-                                <!-- SECTION - Neighboring Place list -->
-                                <section class="t-section -bg-world -p0" v-if="placesStatesNeighboring">
-                                    <div class="t-section__inner">
-                                        <mHeadline title="Sousední státy státu " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oCoverPlace :places="placesStatesNeighboring" :images="imagesStatesNeighboring" type="stat" />
-                                    </div>
-                                </section>
-                                <!-- SECTION - Neighboring Place list END -->
-
                                 <!-- SECTION - Fauna list -->
-                                <section class="t-section -bg-world -p0" v-if="fauna[0]">
+                                <section class="t-section my-2 py-1 -p0" v-if="fauna[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Nebezpečná Fauna ve státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oCoverPlace :places="fauna" :images="imagesFauna" type="stat" />
+                                        <oCoverItemState :items="fauna" :images="imagesFauna" type="fauna" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Fauna list END -->
 
                                 <!-- SECTION - Flora list -->
-                                <section class="t-section -bg-world -p0" v-if="flora[0]">
+                                <section class="t-section my-2 py-1 -p0" v-if="flora[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Nebezpečná Flóra ve státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oCoverPlace :places="flora" :images="imagesFlora" type="stat" />
+                                        <oCoverItemState :items="flora" :images="imagesFlora" type="flora" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Flora list END -->
+
+                                <!-- SECTION - Značky list -->
+                                <section class="t-section my-2 py-1 -p0" v-if="brands[0]">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Značky a výrobky ze státu " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oCoverItemState :items="brands" :images="imagesBrands" type="znacka" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Flora Značky END -->
 
                                 <div class="t-grid -world-information-adjacent">
                                     <div class="t-grid__section">
@@ -514,8 +523,7 @@
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oAlerts from '~/components/organisms/oAlerts.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
-    import oCoverFoodState from '~/components/organisms/oCoverFoodState.vue'
-    import oCoverPlace from '~/components/organisms/oCoverPlace.vue'
+    import oCoverItemState from '~/components/organisms/oCoverItemState.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
@@ -535,8 +543,7 @@
             oAdGoogleSidebar,
             oAlerts,
             oArticleList,
-            oCoverFoodState,
-            oCoverPlace,
+            oCoverItemState,
             oCoverPlaceDetail,
             oHeroPlace,
             oInformationBlock,
@@ -554,12 +561,14 @@
                 placeContinent: this.placeContinent,
                 placesCities: this.placesCities,
                 placeCityMain: this.placeCityMain,
+                brands: this.brands,
                 foods: this.foods,
                 fauna: this.fauna,
                 flora: this.flora,
                 videos: this.videos,
                 posts: this.posts,
                 imagePlace: this.imagePlace,
+                imageBrands: this.imageBrands,
                 imagesStatesNeighboring: this.imagesStatesNeighboring,
                 imagesCities: this.imagesCities,
                 imageCityMain: this.imageCityMain,
@@ -721,6 +730,9 @@
                         placeCityMain = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city-id/${place[0].id_city_main}`)
                     }
 
+                    // Načtení značek z místa
+                    const brands = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/brands-id-state/${place[0].id}`)
+
                     // Načtení jídla z místa
                     const foods = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/foods-id-state/${place[0].id}`)
 
@@ -739,6 +751,7 @@
 
                     //images Array
                     const imagesPlacesCitiesID = placesCities.map(placeCity => placeCity.id_image_cover).filter(id => id !== null && id !== '')
+                    const imagesBrandsID = brands.map(brand => brand.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesFoodsID = foods.map(food => food.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesFaunaID = foods.map(fauna => fauna.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesFloraID = foods.map(flora => flora.id_image_cover).filter(id => id !== null && id !== '')
@@ -762,6 +775,9 @@
                         imageCityMain = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeCityMain[0].id_image_cover}`)
                     }
 
+                    // Načtení informací o obrázku pro značky
+                    const imagesBrands = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesBrandsID.join(',')}`)
+
                     // Načtení informací o obrázku pro jídla
                     const imagesFoods = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesFoodsID.join(',')}`)
 
@@ -778,7 +794,7 @@
                     const imagesPosts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPostsID.join(',')}`)
 
 
-                    data = { place, placesStatesNeighboring, placeContinent, placesCities, placeCityMain, foods, fauna, flora, videos, posts, imagePlace, imagesStatesNeighboring, imagesCities, imageCityMain, imagesFoods, imagesFauna, imagesFlora, imagesVideos, imagesPosts }
+                    data = { place, placesStatesNeighboring, placeContinent, placesCities, placeCityMain, brands, foods, fauna, flora, videos, posts, imagePlace, imagesStatesNeighboring, imagesCities, imageCityMain, imagesBrands, imagesFoods, imagesFauna, imagesFlora, imagesVideos, imagesPosts }
 
                     success = true
                 } catch (error) {

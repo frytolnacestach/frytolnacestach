@@ -4,7 +4,7 @@
         <!-- SECTION - BREADCRUMBS -->
         <section class="t-section -px-world mt-2 -p0">
             <div class="t-section__inner">
-                <mNavBreadcrumbsFood :links="mNavBreadcrumbsFoodArray" :food="food[0]" />
+                <mNavBreadcrumbsItem :links="mNavBreadcrumbsFoodArray" :item="food[0]" />
             </div>
         </section>
         <!-- SECTION - BREADCRUMBS END -->
@@ -16,13 +16,13 @@
 
                     <!-- SECTION - hero -->
                     <div class="t-grid__section -hero-food">
-                        <oHeroFoodDetail :food="food" :images="imageFood" />
+                        <oHeroItemDetail :item="food" :images="imageFood" />
                     </div>
                     <!-- SECTION - hero END -->
 
                     <!-- SECTION - food places -->
                     <div class="t-grid__section -states">
-                        <oFoodStates :places="placesStates" :food="food[0].name" />
+                        <oItemStates :items="placesStates" :itemName="food[0].name" text="Kde se jí" />
                     </div>
                     <!-- SECTION - food places - END -->
                 </div>
@@ -64,20 +64,20 @@
 </template>
 
 <script>
-    import mNavBreadcrumbsFood from '~/components/molecules/mNavBreadcrumbsFood.vue'
+    import mNavBreadcrumbsItem from '~/components/molecules/mNavBreadcrumbsItem.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oFoodStates from '~/components/organisms/oFoodStates.vue'
-    import oHeroFoodDetail from '~/components/organisms/oHeroFoodDetail.vue'
+    import oItemStates from '~/components/organisms/oItemStates.vue'
+    import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
 
     export default {
         name: 'JidloSlugPage',
 
         components: {
-            mNavBreadcrumbsFood,
+            mNavBreadcrumbsItem,
             oAdGoogleSidebar,
-            oFoodStates,
-            oHeroFoodDetail,
+            oItemStates,
+            oHeroItemDetail,
             oInformationBlock,
         },
 

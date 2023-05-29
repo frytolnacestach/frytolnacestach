@@ -47,6 +47,9 @@
                     <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/flora">Flóra</NuxtLink>
                     </li>
+                    <li class="m-nav-footer__item">
+                        <NuxtLink class="m-nav-footer__link" to="/znacka">Značky</NuxtLink>
+                    </li>
                 </ul>
             </div>
 

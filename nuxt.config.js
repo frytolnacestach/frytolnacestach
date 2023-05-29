@@ -847,6 +847,30 @@ export default {
         exclude: ['/**']
       },
       {
+        path: '/sitemap-fauna.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/fauna')
+          return data.map(v => `/fauna/${v.slug}`)
+        },
+        exclude: ['/**']
+      },
+      {
+        path: '/sitemap-flora.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/flora')
+          return data.map(v => `/flora/${v.slug}`)
+        },
+        exclude: ['/**']
+      },
+      {
+        path: '/sitemap-brands.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/brands')
+          return data.map(v => `/znacka/${v.slug}`)
+        },
+        exclude: ['/**']
+      },
+      {
         path: '/sitemap-places-stats.xml',
         routes: async () => {
           let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/places-states')

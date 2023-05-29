@@ -4,7 +4,7 @@
         <!-- SECTION - Hero food -->
         <section class="t-section py-4 -bg-world">
             <div class="t-section__inner">
-                <oHeroFood title="Jídla" perex="Jaké jídla se jedí ve světe. Na které kde narazíte a co si kde dát? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." />
+                <oHeroItem title="Jídla" perex="Jaké jídla se jedí ve světe. Na které kde narazíte a co si kde dát? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." />
             </div>
         </section>
         <!-- SECTION - Hero food END -->
@@ -12,7 +12,7 @@
         <!-- SECTION - Food list -->
         <section class="t-section -bg-world -p0">
             <div class="t-section__inner">
-                <oCoverFood :foods="foods" :images="images" />
+                <oCoverItem :items="foods" :images="images" type="jidlo" />
             </div>
         </section>
         <!-- SECTION - Food list END -->
@@ -21,15 +21,15 @@
 </template>
 
 <script>
-    import oCoverFood from '~/components/organisms/oCoverFood.vue'
-    import oHeroFood from '~/components/organisms/oHeroFood.vue'
+    import oCoverItem from '~/components/organisms/oCoverItem.vue'
+    import oHeroItem from '~/components/organisms/oHeroItem.vue'
 
     export default {
         name: 'JidloIndexPage',
 
         components: {
-            oCoverFood,
-            oHeroFood
+            oCoverItem,
+            oHeroItem
         },
 
         methods:{
