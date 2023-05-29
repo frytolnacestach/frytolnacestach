@@ -104,7 +104,7 @@
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.brand[0].description ? this.brand[0].description.slice(0, this.brand[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.brand[0].name}` },
                     { name: 'keywords', content: `${this.brand[0].name + ', brand, Živočichové, informace o živočichách, plánuj cestu, cestovatelský portál, cestování, svět'}` },
-                    { property: 'og:image', content: `${this.brand[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageFood.find(image => image.id === this.brand[0].id_image_hero).source + this.imageFood.find(image => image.id === this.brand[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
+                    { property: 'og:image', content: `${this.brand[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageBrand.find(image => image.id === this.brand[0].id_image_hero).source + this.imageBrand.find(image => image.id === this.brand[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
                     { hid: 'og:title', content: `${this.brand[0].name ? this.brand[0].name : 'Flóra'}  | Frytol na cestách` },
                     { hid: 'og:description', content: `${this.brand[0].description ? this.brand[0].description.slice(0, this.brand[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.brand[0].name ? this.brand[0].name : 'brand'}` },
                     { hid: 'og:url', content: `${process.env.baseUrl}/brand/${this.brand[0].slug}` },
