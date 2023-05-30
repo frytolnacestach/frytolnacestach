@@ -32,7 +32,7 @@
                     <h1 class="o-hero-big__headline">{{ headline }}</h1>
                     <p class="o-hero-big__perex">Cestovatelský portál co tě bude bavit</p>
                     <div class="o-hero-big__buttons mt-2">
-                        <a class="a-button-fill -big" href="/svet">Chci obejvit svět</a>
+                        <a class="a-button-fill -big" href="/svet">Chci objevovat svět</a>
                         <NuxtLink class="a-button-fill -big -blue" to="/videa">Chci vidět videa</NuxtLink>
                     </div>
                 </div>
