@@ -36,7 +36,13 @@
                         <NuxtLink class="m-nav-footer__link" to="/svet/stat">Státy</NuxtLink>
                     </li>
                     <li class="m-nav-footer__item">
+                        <NuxtLink class="m-nav-footer__link" to="/svet/region">Regiony</NuxtLink>
+                    </li>
+                    <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/svet/mesto">Města</NuxtLink>
+                    </li>
+                    <li class="m-nav-footer__item">
+                        <NuxtLink class="m-nav-footer__link" to="/svet/misto">Místa</NuxtLink>
                     </li>
                     <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/jidlo">Tradiční jídla</NuxtLink>

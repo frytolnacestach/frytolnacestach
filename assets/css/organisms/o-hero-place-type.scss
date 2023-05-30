@@ -66,9 +66,21 @@
         }
     }
 
+    &.-region {
+        #{$self}__image-file {
+            background-image: url('../../static/images/world/region.svg');
+        }
+    }
+
     &.-city {
         #{$self}__image-file {
             background-image: url('../../static/images/world/city.svg');
+        }
+    }
+
+    &.-spot {
+        #{$self}__image-file {
+            background-image: url('../../static/images/world/spot.svg');
         }
     }
 }

@@ -73,10 +73,26 @@
                     },
                     {
                         id: 3,
+                        name: "Regiony",
+                        url: "/svet/region",
+                        length: 1,
+                        styleThemaItem: " -region"
+
+                    },
+                    {
+                        id: 4,
                         name: "Města",
                         url: "/svet/mesto",
-                        length: 2491,
+                        length: 2488,
                         styleThemaItem: " -city"
+
+                    },
+                    {
+                        id: 5,
+                        name: "Místa",
+                        url: "/svet/misto",
+                        length: 1,
+                        styleThemaItem: " -spot"
 
                     }
                 ],

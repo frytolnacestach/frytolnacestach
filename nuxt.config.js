@@ -879,6 +879,22 @@ export default {
         exclude: ['/**']
       },
       {
+        path: '/sitemap-places-regions.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/places-regions')
+          return data.map(v => `/svet/region/${v.slug}`)
+        },
+        exclude: ['/**']
+      },
+      {
+        path: '/sitemap-places-spots.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/places-spots')
+          return data.map(v => `/svet/misto/${v.slug}`)
+        },
+        exclude: ['/**']
+      },
+      {
         path: '/sitemap-places-cities.xml',
 
         routes: async () => {
