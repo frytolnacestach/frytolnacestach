@@ -7,7 +7,7 @@
         <div class="o-search__result">
             <div class="m-search-result">
                 <ul class="m-search-result__items" v-if="filteredPlaces.length > 0">
-                    <li v-for="placesSearch in filteredPlaces" :key="placesSearch.id" class="m-search-result__item">
+                    <li v-for="placesSearch in filteredPlaces" :key="`${placesSearch.type_place}-${placesSearch.id}`" class="m-search-result__item">
                         <NuxtLink class="m-search-result__link" :to="`/svet/kontinent/${placesSearch.slug}`" v-if="placesSearch.type_place === 'continent'">
                             <span class="m-search-result__name">{{ placesSearch.name }}</span>
                             <span class="m-search-result__type">Kontinent</span>
@@ -18,13 +18,23 @@
                             <span class="m-search-result__type">Stát</span>
                         </NuxtLink>
 
+                        <NuxtLink class="m-search-result__link" :to="`/svet/region/${placesSearch.slug}`" v-if="placesSearch.type_place === 'region'">
+                            <span class="m-search-result__name">{{ placesSearch.name }}</span>
+                            <span class="m-search-result__type">Region</span>
+                        </NuxtLink>
+
                         <NuxtLink class="m-search-result__link" :to="`/svet/mesto/${placesSearch.slug}`" v-if="placesSearch.type_place === 'city'">
                             <span class="m-search-result__name">{{ placesSearch.name }}</span>
                             <span class="m-search-result__type">Město</span>
                         </NuxtLink>
+
+                        <NuxtLink class="m-search-result__link" :to="`/svet/misto/${placesSearch.slug}`" v-if="placesSearch.type_place === 'spot'">
+                            <span class="m-search-result__name">{{ placesSearch.name }}</span>
+                            <span class="m-search-result__type">Místo</span>
+                        </NuxtLink>
                     </li>
                 </ul>
-                <span class="m-search-result__no-result" v-if="searchQuery.length >= 3 & filteredPlaces.length === 0">Tak tohle tu bohužel nenajdeš.. :/ <i>(zkuz to ještě jednou)</i></span>
+                <span class="m-search-result__no-result" v-if="searchQuery.length >= 3 & filteredPlaces.length === 0">Tak tohle tu bohužel nenajdeš.. :/ <i>(zkus to ještě jednou)</i></span>
             </div>
         </div>
     </div>
@@ -37,14 +47,20 @@
         methods: {
             async searchPlaces() {
                 try {
-                    const [placesContinents, placesStates, placesCities] = await Promise.all([
+                    const [placesContinents, placesStates, placesRegions, placesCities, placesSpots] = await Promise.all([
                         this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continents?search=${this.searchQuery}`),
                         this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-states?search=${this.searchQuery}`),
-                        this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities?search=${this.searchQuery}`)
+                        this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-regions?search=${this.searchQuery}`),
+                        this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities?search=${this.searchQuery}`),
+                        this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-spots?search=${this.searchQuery}`)
                     ]);
                     this.placesContinents = placesContinents;
+                    this.placesRegions = placesRegions;
                     this.placesStates = placesStates;
                     this.placesCities = placesCities;
+                    this.placesSpots = placesSpots;
+
+                    this.filterPlaces();
                 } catch (error) {
                     console.error(error)
                 }
@@ -57,7 +73,7 @@
                     return;
                 }
                 if (this.searchQuery.length >= 3) {
-                    this.filteredPlaces = this.placesContinents.concat(this.placesStates).concat(this.placesCities).filter(place => place.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
+                    this.filteredPlaces = this.placesContinents.concat(this.placesStates).concat(this.placesCities).concat(this.placesRegions).concat(this.placesSpots).filter(place => place.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
                 }
             }
         },
@@ -66,7 +82,9 @@
             return {
                 placesContinents: [],
                 placesStates: [],
+                placesRegions: [],
                 placesCities: [],
+                placesSpots: [],
                 placesSearch: '',
                 searchQuery: '',
                 filteredPlaces: [],
@@ -80,29 +98,23 @@
         },
 
         watch: {
-            searchQuery: function (newSearchQuery, oldSearchQuery) {
+            searchQuery: function(newSearchQuery, oldSearchQuery) {
                 if (newSearchQuery.length == 3) {
                     this.searchPlaces();
-                }
-
-                else if (newSearchQuery.substring(0, 3) !== oldSearchQuery.substring(0, 3)) {
+                } else if (newSearchQuery.substring(0, 3) !== oldSearchQuery.substring(0, 3)) {
                     this.searchPlaces();
-                }
-
-                else if (newSearchQuery.substring(0, 3) === oldSearchQuery.substring(0, 3)) {
-                    if (filteredPlaces.length == 0 ){
+                } else if (newSearchQuery.substring(0, 3) === oldSearchQuery.substring(0, 3)) {
+                    if (this.filteredPlaces.length == 0) {
                         this.searchPlaces();
                     }
-                } 
-                
-                else if (newSearchQuery.length >= 3) {
-                    filterPlaces()
-                }
-
-                else {
+                } else if (newSearchQuery.length >= 3) {
+                    this.filterPlaces();
+                } else {
                     this.placesContinents = [];
                     this.placesStates = [];
+                    this.placesRegions = [];
                     this.placesCities = [];
+                    this.placesSpots = [];
                     this.filteredPlaces = [];
                 }
             }
