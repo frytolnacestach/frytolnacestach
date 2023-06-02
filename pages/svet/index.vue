@@ -3,7 +3,7 @@
 
         <!-- SECTION - Vyhledávač -->
         <section class="t-section pt-8 pb-4 -bg-world">
-            <div class="t-section__inner mt-4">
+            <div class="t-section__inner">
                 <oSearch />
             </div>
         </section>
