@@ -26,6 +26,10 @@ export async function loginCheckLogin($router) {
                 var now = new Date();
                 now.setMonth(now.getMonth() + 1);
                 let expires = "expires=" + now;
+                //Nastavení localStorage
+                localStorage.setItem("email",loacalStorageEmail)
+                localStorage.setItem("passworld_hash",loacalStoragePassworldHash)
+                localStorage.setItem("status",loacalStorageStatus)
                 //Cookies - write
                 document.cookie = "FNCemail=" + loacalStorageEmail + ";" + expires;
                 document.cookie = "FNCpass=" + loacalStoragePassworldHash + ";" + expires;

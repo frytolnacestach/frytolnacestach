@@ -71,7 +71,7 @@
                         method: 'POST',
                         body: JSON.stringify({
                             'email': this.email,
-                            'code_activations': this.code_activation
+                            'code_activation': this.code_activation
                         })
                     });
 

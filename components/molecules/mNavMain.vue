@@ -15,8 +15,11 @@
                     <li class="m-nav-main__item">
                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/videa" exact-active-class="-active" :class="{'-active': /^\/videa/.test($route.path)}">Videa</NuxtLink>
                     </li>
-                    <li class="m-nav-main__item -special">
-                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/donate" exact-active-class="-active">Podpořit</NuxtLink>
+                    <li class="m-nav-main__item -special" v-if="email">
+                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/ucet/profil" exact-active-class="-active">{{ email }}</NuxtLink>
+                    </li>
+                    <li class="m-nav-main__item -special" v-else>
+                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/ucet" exact-active-class="-active">Přihlásit se</NuxtLink>
                     </li>
                 </ul>
             </div>
@@ -27,5 +30,18 @@
 <script>
     export default {
         name: 'MoleculesmNavMainComponent',
+
+        data() {
+            return {
+                email: this.email,
+            }
+        },
+
+        mounted() {
+            if (process.client) {
+                const localStorageEmail = localStorage.getItem('email');
+                this.email = localStorageEmail;
+            }
+        },
     }
 </script>

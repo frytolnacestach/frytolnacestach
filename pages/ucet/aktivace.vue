@@ -86,6 +86,7 @@
 
                     if (response.status === 200) {
                         this.successForm = "Aktivace vašeho účtu proběhla v pořádku";
+                        localStorage.setItem("status",3)
                     } else if (response.status === 404) {
                         this.errorForm = "Aktivace neproběhla v pořádku. Nebyl nalezen odpovídající záznam. Buď již aktivace proběhla nebo učet neexistuje.";
                     } else {
