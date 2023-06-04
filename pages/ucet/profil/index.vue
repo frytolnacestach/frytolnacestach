@@ -17,13 +17,35 @@
         </section>
         <!-- SECTION - FlashMassagesAccount END -->
 
-        <!-- SECTION - Form - profile -->
-        <section class="t-section pt-2 pb-1">
+        <!-- SECTION -->
+        <section class="t-section -px-world -p0">
             <div class="t-section__inner">
-                <oFormProfile />
+                <div class="t-grid -account">
+                    
+                    <div class="t-grid__section -nav">
+                        <!-- SECTION - nav - account -->
+                        <section class="t-section pt-2 pb-1">
+                            <div class="t-section__inner">
+                                <mNavAccount />
+                            </div>
+                        </section>
+                        <!-- SECTION - nav - account END -->
+                    </div>
+
+                    <div class="t-grid__section -content">
+                        <!-- SECTION - Form - profile -->
+                        <section class="t-section pt-2 pb-1">
+                            <div class="t-section__inner">
+                                <oFormProfile />
+                            </div>
+                        </section>
+                        <!-- SECTION - Form - profile END -->
+                    </div>
+
+                </div>
             </div>
         </section>
-        <!-- SECTION - Form - profile END -->
+        <!-- SECTION END -->
 
     </main>
 </template>
@@ -31,6 +53,7 @@
 <script>
     import { loginCheckLogout } from '~/utils/loginCheckLogout.js';
 
+    import mNavAccount from '~/components/molecules/mNavAccount.vue'
     import oFlashMessagesAccount from '~/components/organisms/oFlashMessagesAccount.vue'
     import oFormProfile from '~/components/organisms/oFormProfile.vue'
     import oHero from '~/components/organisms/oHero.vue'
@@ -39,6 +62,7 @@
         name: 'UcetProfilPage',
         
         components: {
+            mNavAccount,
             oFlashMessagesAccount,
             oFormProfile,
             oHero

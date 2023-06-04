@@ -9,15 +9,37 @@
         </section>
         <!-- SECTION - Hero END -->
 
-        <!-- SECTION - Text -->
-		<section class="t-section pt-2 pb-1">
+        <!-- SECTION -->
+        <section class="t-section -px-world -p0">
             <div class="t-section__inner">
-                <p>
-                    Pro zaslání uživatelský dat nás prosím kontaktujte na admin@frytolnacestach.cz. Za nedlouho vám tyto data budeme poskytovat automaticky.
-                </p>
+                <div class="t-grid -account">
+                    
+                    <div class="t-grid__section -nav">
+                        <!-- SECTION - nav - account -->
+                        <section class="t-section pt-2 pb-1">
+                            <div class="t-section__inner">
+                                <mNavAccount />
+                            </div>
+                        </section>
+                        <!-- SECTION - nav - account END -->
+                    </div>
+
+                    <div class="t-grid__section -content">
+                        <!-- SECTION - Text -->
+                        <section class="t-section pt-2 pb-1">
+                            <div class="t-section__inner">
+                                <p>
+                                    Pro zaslání uživatelský dat nás prosím kontaktujte na admin@frytolnacestach.cz. Za nedlouho vám tyto data budeme poskytovat automaticky.
+                                </p>
+                            </div>
+                        </section>
+                        <!-- SECTION - Text END -->
+                    </div>
+
+                </div>
             </div>
         </section>
-        <!-- SECTION - Text END -->
+        <!-- SECTION END -->
 
     </main>
 </template>
@@ -25,16 +47,14 @@
 <script>
     import { loginCheckLogout } from '~/utils/loginCheckLogout.js';
 
-    import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
+    import mNavAccount from '~/components/molecules/mNavAccount.vue'
     import oHero from '~/components/organisms/oHero.vue'
 
     export default {
         name: 'UcetMojeDataPage',
         
         components: {
-            aButtonFillFull,
-            mHeadline,
+            mNavAccount,
             oHero
         },
 
