@@ -9,13 +9,13 @@
         </section>
         <!-- SECTION - Hero END -->
 
-        <!-- SECTION - Signpost -->
+        <!-- SECTION - Form Login -->
 		<section class="t-section -p0 pt-2 pb-1">
             <div class="t-section__inner">
-                <oSignpost />
+                <oFormLogin />
             </div>
         </section>
-        <!-- SECTION - Signpost END -->
+        <!-- SECTION - Form Login END -->
 
     </main>
 </template>
@@ -26,21 +26,21 @@
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oHero from '~/components/organisms/oHero.vue'
-    import oSignpost from '~/components/organisms/oSignpost.vue'
+    import oFormLogin from '~/components/organisms/oFormLogin.vue'
 
     export default {
-        name: 'UcetIndexPage',
+        name: 'UcetPrihlaseniPage',
         
         components: {
             aButtonFillFull,
             mHeadline,
             oHero,
-            oSignpost
+            oFormLogin
         },
 
         data() {
             return {
-                headline: 'Účet na portálu Frytol na cestách',
+                headline: 'Přihlášení',
             }
         },
 
@@ -49,20 +49,16 @@
         },
 
         head: {
-            title: 'ÚČET | Frytol na cestách',
+            title: 'PŘIHLÁŠENÍ | Frytol na cestách',
             meta: [
-                { hid: 'description', name: 'description', content: 'Účet na webu Frytol na cestách.' },
+                { hid: 'description', name: 'description', content: 'Přihlášení do účtu na webu Frytol na cestách.' },
                 { name: 'keywords', content: `Cestovatelský portál, úvod, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Účet na portálu Frytol na cestách' },
-                { hid: 'og:description', content: 'Účet na webu Frytol na cestách.' },
+                { hid: 'og:title', content: 'Přihlášení' },
+                { hid: 'og:description', content: 'Přihlášení do účtu na webu Frytol na cestách.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}` },
                 { hid: 'og:type', content: 'website' }
             ]
-        },
-
-        async asyncData({ $axios }) {
-
         }
     }
 </script>

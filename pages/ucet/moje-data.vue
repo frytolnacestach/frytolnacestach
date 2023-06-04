@@ -9,60 +9,56 @@
         </section>
         <!-- SECTION - Hero END -->
 
-        <!-- SECTION - Signpost -->
-		<section class="t-section -p0 pt-2 pb-1">
+        <!-- SECTION - Text -->
+		<section class="t-section pt-2 pb-1">
             <div class="t-section__inner">
-                <oSignpost />
+                <p>
+                    Pro zaslání uživatelský dat nás prosím kontaktujte na admin@frytolnacestach.cz. Za nedlouho vám tyto data budeme poskytovat automaticky.
+                </p>
             </div>
         </section>
-        <!-- SECTION - Signpost END -->
+        <!-- SECTION - Text END -->
 
     </main>
 </template>
 
 <script>
-    import { loginCheckLogin } from '~/utils/loginCheckLogin.js';
+    import { loginCheckLogout } from '~/utils/loginCheckLogout.js';
 
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oHero from '~/components/organisms/oHero.vue'
-    import oSignpost from '~/components/organisms/oSignpost.vue'
 
     export default {
-        name: 'UcetIndexPage',
+        name: 'UcetMojeDataPage',
         
         components: {
             aButtonFillFull,
             mHeadline,
-            oHero,
-            oSignpost
+            oHero
         },
 
         data() {
             return {
-                headline: 'Účet na portálu Frytol na cestách',
+                headline: 'Moje data',
             }
         },
 
         mounted() {
-            loginCheckLogin(this.$router);
+            loginCheckLogout(this.$router);
         },
 
         head: {
-            title: 'ÚČET | Frytol na cestách',
+            title: 'Moje data | Frytol na cestách',
             meta: [
-                { hid: 'description', name: 'description', content: 'Účet na webu Frytol na cestách.' },
+                { hid: 'description', name: 'description', content: 'Moje data na webu Frytol na cestách.' },
                 { name: 'keywords', content: `Cestovatelský portál, úvod, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Účet na portálu Frytol na cestách' },
-                { hid: 'og:description', content: 'Účet na webu Frytol na cestách.' },
+                { hid: 'og:title', content: 'Moje data' },
+                { hid: 'og:description', content: 'Moje data na webu Frytol na cestách.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}` },
                 { hid: 'og:type', content: 'website' }
             ]
-        },
-
-        async asyncData({ $axios }) {
-
         }
     }
 </script>

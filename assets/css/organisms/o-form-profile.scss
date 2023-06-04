@@ -1,0 +1,38 @@
+.o-form-profile {
+    width: 100%;
+
+    &__outer {
+        width: 100%;
+    }
+
+    &__inner {
+        width: 100%;
+    }
+
+    &__messages {
+        display: block;
+        width: 100%;
+    }
+
+    &__title {
+        display: block;
+        color: $worldTEXTdark;
+        border-bottom: 1px solid $worldBGcomponent;
+        margin-bottom: 10p;
+        font-size: $fs-normal-ll;
+    }
+
+    &__form {
+        display: block;
+        width: 100%;
+        padding: 10px 15px;
+    }
+
+    &__items {
+        width: 100%;
+    }
+
+    &__item {
+        margin: 5px 0;
+    }
+}

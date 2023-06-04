@@ -1,0 +1,38 @@
+.o-signpost {
+    width: 100%;
+
+    &__outer {
+        width: 100%;
+        max-width: 460px;
+        margin: 0 auto;
+    }
+
+    &__inner {
+        width: 100%;
+    }
+
+    &__items {
+        width: 100%;
+        display: flex;
+    }
+
+    &__item {
+        width: 50%;
+        padding: 10px;
+    }
+
+    &__link {
+        display: block;
+        padding: 30px 20px;
+        text-align: center;
+        background-color: $worldBGcomponentLight;
+        border-radius: $br-1;
+        min-height: 60px;
+        font-size: $fs-normal;
+        font-weight: 500;
+        
+        @media only screen and (min-width: $md) {
+            border-radius: $br-2;
+		}
+    }
+}
