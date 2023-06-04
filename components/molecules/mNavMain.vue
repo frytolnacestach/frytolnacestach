@@ -15,7 +15,7 @@
                     <li class="m-nav-main__item">
                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/videa" exact-active-class="-active" :class="{'-active': /^\/videa/.test($route.path)}">Videa</NuxtLink>
                     </li>
-                    <li class="m-nav-main__item -special" v-if="nickname">
+                    <li class="m-nav-main__item -special" v-if="nickname && nickname !== 'undefined'">
                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/ucet/profil" exact-active-class="-active">{{ getTrimmedNickname }}</NuxtLink>
                     </li>
                     <li class="m-nav-main__item -special" v-else>
