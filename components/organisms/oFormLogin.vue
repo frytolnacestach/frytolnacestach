@@ -46,7 +46,8 @@ export default {
             errorForm: '',
             successForm: '',
             email: '',
-            password: ''
+            password: '',
+            nickname: '',
         };
     },
   
@@ -76,6 +77,7 @@ export default {
                     localStorage.setItem("email", data.message[0].email);
                     localStorage.setItem("passworld_hash", data.message[0].password);
                     localStorage.setItem("status", data.message[0].status);
+                    localStorage.setItem("nickname", data.message[0].nickname);
                     //Cookies - set expires
                     var now = new Date();
                     now.setMonth(now.getMonth() + 1);
@@ -84,6 +86,7 @@ export default {
                     document.cookie = "FNCemail=" + data.message[0].email + ";" + expires;
                     document.cookie = "FNCpass=" + data.message[0].password + ";" + expires;
                     document.cookie = "FNCstatus=" + data.message[0].password + ";" + expires;
+                    document.cookie = "FNCnickname=" + data.message[0].nickname + ";" + expires;
 
                     await this.$router.push('/ucet/profil');
                 } else if (response.status === 401) {

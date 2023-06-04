@@ -2,6 +2,7 @@ export async function loginCheckLogout($router) {
     const loacalStorageEmail = localStorage.getItem('email')
     const loacalStoragePassworldHash = localStorage.getItem('passworld_hash')
     const loacalStorageStatus = localStorage.getItem('status')
+    const loacalStorageNickname = localStorage.getItem('nickname')
 
     if (loacalStorageEmail && loacalStorageEmail != "undefined") {
         try {
@@ -16,7 +17,8 @@ export async function loginCheckLogout($router) {
                 body: JSON.stringify({
                     'email': loacalStorageEmail,
                     'password': loacalStoragePassworldHash,
-                    'status': loacalStorageStatus
+                    'status': loacalStorageStatus,
+                    'nickname': loacalStorageNickname
                 })
             });
 
@@ -30,20 +32,24 @@ export async function loginCheckLogout($router) {
                 localStorage.setItem("email",loacalStorageEmail)
                 localStorage.setItem("passworld_hash",loacalStoragePassworldHash)
                 localStorage.setItem("status",loacalStorageStatus)
+                localStorage.setItem("nickname",loacalStorageNickname)
                 //Cookies - write
                 document.cookie = "FNCemail=" + loacalStorageEmail + ";" + expires;
                 document.cookie = "FNCpass=" + loacalStoragePassworldHash + ";" + expires;
-                document.cookie = "FNCpass=" + loacalStorageStatus + ";" + expires;
+                document.cookie = "FNCstatus=" + loacalStorageStatus + ";" + expires;
+                document.cookie = "FNCnickname=" + loacalStorageNickname + ";" + expires;
             } else if (response.status === 401) {
                 console.log("Nesprávné přihlašovací údaje");
                 //Nastavení localStorage
                 localStorage.setItem("email","undefined")
                 localStorage.setItem("passworld_hash","undefined")
                 localStorage.setItem("status","undefined")
+                localStorage.setItem("nickname","undefined")
                 //Delete cookies
                 document.cookie = "FNCemail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
                 document.cookie = "FNCpass=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
                 document.cookie = "FNCstatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCnickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
                 $router.push('/ucet/prihlaseni')
             } else if (response.status === 404) {
                 console.log("Uživatel nenalezen");
@@ -51,10 +57,12 @@ export async function loginCheckLogout($router) {
                 localStorage.setItem("email","undefined")
                 localStorage.setItem("passworld_hash","undefined")
                 localStorage.setItem("status","undefined")
+                localStorage.setItem("nickname","undefined")
                 //Delete cookies
                 document.cookie = "FNCemail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
                 document.cookie = "FNCpass=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
                 document.cookie = "FNCstatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCnickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
                 $router.push('/ucet/prihlaseni')
             } else {
                 console.log("Chyba při komunikaci s API");
@@ -62,10 +70,12 @@ export async function loginCheckLogout($router) {
                 localStorage.setItem("email","undefined")
                 localStorage.setItem("passworld_hash","undefined")
                 localStorage.setItem("status","undefined")
+                localStorage.setItem("nickname","undefined")
                 //Delete cookies
                 document.cookie = "FNCemail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
                 document.cookie = "FNCpass=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
                 document.cookie = "FNCstatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCnickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
                 $router.push('/ucet/prihlaseni')
             }
         } catch (err) {
@@ -74,10 +84,12 @@ export async function loginCheckLogout($router) {
             localStorage.setItem("email","undefined")
             localStorage.setItem("passworld_hash","undefined")
             localStorage.setItem("status","undefined")
+            localStorage.setItem("nickname","undefined")
             //Delete cookies
             document.cookie = "FNCemail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
             document.cookie = "FNCpass=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
             document.cookie = "FNCstatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+            document.cookie = "FNCnickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
             $router.push('/ucet/prihlaseni')
             throw err;
         }
@@ -91,6 +103,7 @@ export async function loginCheckLogout($router) {
         document.cookie = "FNCemail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
         document.cookie = "FNCpass=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
         document.cookie = "FNCstatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+        document.cookie = "FNCnickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
         $router.push('/ucet/prihlaseni')
     }
 }

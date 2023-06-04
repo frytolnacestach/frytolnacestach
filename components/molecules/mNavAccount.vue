@@ -7,7 +7,7 @@
                         <NuxtLink class="js_m-nav-account__link m-nav-account__link" to="/ucet/profil">{{ email }}</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">
-                        <a class="js_m-nav-account__link m-nav-account__link" href="#">Odhlásit se</a>
+                        <a class="js_m-nav-account__link m-nav-account__link" href="#" @click="logout">Odhlásit se</a>
                     </li>
                     <li class="m-nav-account__item">
                         <NuxtLink class="js_m-nav-account__link m-nav-account__link" to="/ucet/profil/zmena-hesla">Změna hesla</NuxtLink>
@@ -31,6 +31,22 @@
         data() {
             return {
                 email: this.email,
+            }
+        },
+
+        methods: {
+            logout() {
+                //Nastavení localStorage
+                localStorage.setItem("email","undefined")
+                localStorage.setItem("passworld_hash","undefined")
+                localStorage.setItem("status","undefined")
+                localStorage.setItem("nickname","undefined")
+                //Delete cookies
+                document.cookie = "FNCemail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCpass=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCstatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCnickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                $router.push('/ucet/prihlaseni')
             }
         },
 

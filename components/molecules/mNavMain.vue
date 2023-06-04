@@ -15,8 +15,8 @@
                     <li class="m-nav-main__item">
                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/videa" exact-active-class="-active" :class="{'-active': /^\/videa/.test($route.path)}">Videa</NuxtLink>
                     </li>
-                    <li class="m-nav-main__item -special" v-if="email">
-                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/ucet/profil" exact-active-class="-active">{{ email }}</NuxtLink>
+                    <li class="m-nav-main__item -special" v-if="nickname">
+                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/ucet/profil" exact-active-class="-active">{{ getTrimmedNickname }}</NuxtLink>
                     </li>
                     <li class="m-nav-main__item -special" v-else>
                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/ucet" exact-active-class="-active">Přihlásit se</NuxtLink>
@@ -33,15 +33,25 @@
 
         data() {
             return {
-                email: this.email,
+                nickname: this.nickname,
             }
         },
 
         mounted() {
             if (process.client) {
-                const localStorageEmail = localStorage.getItem('email');
-                this.email = localStorageEmail;
+                const localStorageNickname = localStorage.getItem('nickname');
+                this.nickname = localStorageNickname;
             }
         },
+
+        computed: {
+            getTrimmedNickname() {
+                const maxLength = 15;
+                if (this.nickname.length > maxLength) {
+                    return this.nickname.slice(0, maxLength) + '...';
+                }
+                return this.nickname;
+            }
+        }
     }
 </script>
