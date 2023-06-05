@@ -592,15 +592,43 @@
                 mNavBreadcrumbsPlaceArray: [
                     {
                         id: 1,
+                        icon: true,
+                        type: "world",
                         name: "Svět",
                         url: "/svet",
                         status: "link"
                     },
                     {
                         id: 2,
+                        icon: true,
+                        type: "continent",
+                        name: "Kontinenty",
+                        url: "/svet/kontinent",
+                        status: "link"
+                    },
+                    {
+                        id: 3,
+                        icon: false,
+                        type: "continent",
+                        name: "Kontinent",
+                        url: "/svet/kontinent",
+                        status: "link"
+                    },
+                    {
+                        id: 4,
+                        icon: true,
+                        type: "state",
                         name: "Státy",
                         url: "/svet/stat",
                         status: "link"
+                    },
+                    {
+                        id: 5,
+                        icon: false,
+                        type: "state",
+                        name: "Stát",
+                        url: "/svet/stat",
+                        status: "span"
                     }
                 ],
                 educationData: [
@@ -815,6 +843,36 @@
 
             // Poslouchat událost změny velikosti okna pro aktualizaci přepínače
             window.addEventListener('resize', this.handleResize);
+
+            //Data for mNavBreadcrumbsPlaceArray 
+            //continent
+            this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
+                if (item.id === 3) {
+                    item.name = this.placeContinent[0].name;
+                    item.url = "/svet/kontinent/" + this.placeContinent[0].slug;
+                }
+                return item;
+            });
+            //state
+            if(this.activeTab === 'undefined' || this.activeTab === 'default') {
+                this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
+                    if (item.id === 5) {
+                        item.name = this.place[0].name;
+                        item.url = "/svet/stat/" + this.place[0].slug;
+                        item.status = "span"
+                    }
+                    return item;
+                });
+            } else {
+                this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
+                    if (item.id === 5) {
+                        item.name = this.place[0].name;
+                        item.url = "/svet/stat/" + this.place[0].slug;
+                        item.status = "link"
+                    }
+                    return item;
+                });
+            }
         },
 
         beforeUnmount() {

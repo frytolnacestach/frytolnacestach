@@ -280,15 +280,59 @@
                 mNavBreadcrumbsPlaceArray: [
                     {
                         id: 1,
+                        icon: true,
+                        type: "world",
                         name: "Svět",
                         url: "/svet",
                         status: "link"
                     },
                     {
                         id: 2,
-                        name: "Města",
-                        url: "/svet/mesto",
+                        icon: true,
+                        type: "continent",
+                        name: "Kontinenty",
+                        url: "/svet/kontinent",
                         status: "link"
+                    },
+                    {
+                        id: 3,
+                        icon: false,
+                        type: "continent",
+                        name: "Kontinent",
+                        url: "/svet/kontinent",
+                        status: "link"
+                    },
+                    {
+                        id: 4,
+                        icon: true,
+                        type: "state",
+                        name: "Státy",
+                        url: "/svet/stat",
+                        status: "link"
+                    },
+                    {
+                        id: 5,
+                        icon: false,
+                        type: "state",
+                        name: "Stát",
+                        url: "/svet/stat",
+                        status: "link"
+                    },
+                    {
+                        id: 6,
+                        icon: true,
+                        type: "city",
+                        name: "Města",
+                        url: "/svet/",
+                        status: "link"
+                    },
+                    {
+                        id: 7,
+                        icon: false,
+                        type: "city",
+                        name: "Město",
+                        url: "/svet/mesto",
+                        status: "span"
                     }
                 ]
             }
@@ -307,6 +351,32 @@
 
             // Poslouchat událost změny velikosti okna pro aktualizaci přepínače
             window.addEventListener('resize', this.handleResize);
+
+            //Data for mNavBreadcrumbsPlaceArray 
+            //continent
+            this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
+                if (item.id === 3) {
+                    item.name = this.placeContinent[0].name;
+                    item.url = "/svet/kontinent/" + this.placeContinent[0].slug;
+                }
+                return item;
+            });
+            //state
+            this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
+                if (item.id === 5) {
+                    item.name = this.placeState[0].name;
+                    item.url = "/svet/stat/" + this.placeState[0].slug;
+                }
+                return item;
+            });
+            //city
+            this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
+                if (item.id === 7) {
+                    item.name = this.place[0].name;
+                    item.url = "/svet/mesto/" + this.place[0].slug;
+                }
+                return item;
+            });
         },
 
         beforeUnmount() {
@@ -338,11 +408,11 @@
                     // Načtení města
                     const place = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city/${params.slug}`)
 
-                    // Načtení informací o kontinentu
-                    const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${place[0].id_continent}`)
-
                     // Načtení informací o státu
                     const placeState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-state-id/${place[0].id_state}`)
+
+                    // Načtení informací o kontinentu
+                    const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${placeState[0].id_continent}`)
 
                     // Načtení dalších měst ve státě 
                     const placesCities = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-id-state/${placeState[0].id}`)
@@ -376,7 +446,7 @@
                     const imagesPosts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPostsID.join(',')}`)
 
 
-                    data = { place, placeContinent, placeState, placesCities, videos, posts, imagePlace, imageState, imagesCities, imagesVideos, imagesPosts }
+                    data = { place, placeState, placeContinent, placesCities, videos, posts, imagePlace, imageState, imagesCities, imagesVideos, imagesPosts }
                     
                     success = true
                 } catch (error) {

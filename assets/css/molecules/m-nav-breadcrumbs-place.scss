@@ -65,6 +65,59 @@
         &:hover {
             color: $worldTEXTdark2;
         }
+
+        &.-icon {
+            position: relative;
+            width: $fs-icon-24;
+            height: $fs-icon-24;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                font-size: $fs-icon-24;
+                line-height: 1;
+            }
+
+            &.-world {
+                &::after {
+                    background-image: url('../../static/images/world/world.svg');
+                }
+            }
+
+            &.-continent {
+                &::after {
+                    background-image: url('../../static/images/world/continent.svg');
+                }
+            }
+
+            &.-state {
+                &::after {
+                    background-image: url('../../static/images/world/state.svg');
+                }
+            }
+
+            &.-region {
+                &::after {
+                    background-image: url('../../static/images/world/region.svg');
+                }
+            }
+
+            &.-city {
+                &::after {
+                    background-image: url('../../static/images/world/city.svg');
+                }
+            }
+
+            &.-spot {
+                &::after {
+                    background-image: url('../../static/images/world/spot.svg');
+                }
+            }
+        }
     }
 
     &__span {

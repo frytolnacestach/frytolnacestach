@@ -203,15 +203,27 @@
                 mNavBreadcrumbsPlaceArray: [
                     {
                         id: 1,
+                        icon: true,
+                        type: "world",
                         name: "Svět",
                         url: "/svet",
                         status: "link"
                     },
                     {
                         id: 2,
+                        icon: true,
+                        type: "continent",
                         name: "Kontinenty",
                         url: "/svet/kontinent",
                         status: "link"
+                    },
+                    {
+                        id: 3,
+                        icon: false,
+                        type: "continent",
+                        name: "Kontinent",
+                        url: "/svet/kontinent",
+                        status: "span"
                     }
                 ]
             }
@@ -230,6 +242,16 @@
 
             // Poslouchat událost změny velikosti okna pro aktualizaci přepínače
             window.addEventListener('resize', this.handleResize);
+
+            //Data for mNavBreadcrumbsPlaceArray 
+            //continent
+            this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
+                if (item.id === 3) {
+                    item.name = this.place[0].name;
+                    item.url = "/svet/kontinent/" + this.place[0].slug;
+                }
+                return item;
+            });
         },
 
         beforeUnmount() {
