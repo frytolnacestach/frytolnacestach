@@ -54,7 +54,7 @@ export default {
     methods: {  
         async login() {
             try {
-                const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-login/${this.email}/${this.password}`, {
+                const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-login`, {
                     headers: {
                         "Content-Type": "application/json",
                         "Access-Control-Allow-Origin": "http://localhost:3000",

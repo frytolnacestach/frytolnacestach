@@ -34,15 +34,17 @@
 
         data() {
             return {
+                profile: null,
                 errorForm: '',
                 successForm: '',
                 needActivation: false,
                 email: this.email,
-                code_activation: "$2b$10$uGSeHD75fhOYuEu3u"
+                code_activation: ''
+
             }
         },
 
-        mounted() {
+        async mounted() {
             if (process.client) {
                 const localStorageStatus = localStorage.getItem('status');
                 if (localStorageStatus === '2') {
@@ -52,9 +54,31 @@
                 const localStorageEmail = localStorage.getItem('email');
                 this.email = localStorageEmail;
             }
+
+            await this.fetchProfile();
+
+            if (this.profile && this.profile[0]) {
+                this.code_activation = this.profile[0].code_activation;
+            }
         },
 
         methods: {
+            async fetchProfile() {
+                try {
+                    const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-profile/${this.email}`);
+                    if (response.ok) {
+                        this.profile = await response.json();
+                    } else {
+                        console.log("Chyba při komunikaci s API");
+                        this.errorForm = "Chyba při komunikaci s API";
+                    }
+                } catch (err) {
+                    console.log(err);
+                    this.errorForm = "Chyba připojení k API";
+                    throw err;
+                }
+            },
+
             async resendActivationEmail() {
                 await this.mailActivation();
             },

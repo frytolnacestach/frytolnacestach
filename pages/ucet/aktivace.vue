@@ -70,7 +70,7 @@
         methods: {  
             async activation() {
                 try {
-                    const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-activation/${this.email}/${this.codeActivation}`, {
+                    const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-activation`, {
                         headers: {
                             "Content-Type": "application/json",
                             "Access-Control-Allow-Origin": "http://localhost:3000",
@@ -80,7 +80,7 @@
                         method: 'POST',
                         body: JSON.stringify({
                             'email': this.email,
-                            'code_activation': this.password,
+                            'code_activation': this.codeActivation,
                         })
                     });
 
