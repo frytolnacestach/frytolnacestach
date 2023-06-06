@@ -3,14 +3,7 @@
     overflow: hidden;
 
     &__outer {
-        background-color: $white;
-        border-radius: $br-2;
-        margin: 5px 0;
-
-        @media only screen and (min-width: $ti) {
-            margin: 10px 0;
-            border-radius: $br-4;
-        }
+        width: 100%;
     }
 
     &__inner {
@@ -29,29 +22,93 @@
     }
 
     &__item {
+        position: relative;
         width: 100%;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: auto;
+            left: 5%;
+            right: 5%;
+            height: 1px;
+            background-color: $brand1-a;
+            opacity: .7;
+        }
+
+        &:last-of-type {
+            &:after {
+                display: none;
+            }
+        }
+
+        &.-logout {
+            margin-top: 30px;
+        }
     }
 
     &__link {
+        cursor: pointer;
         display: flex;
         justify-content: left;
-        padding: 17px 24px;
+        padding: 17px 24px 17px 48px;
         text-decoration: none;
-        color: $black;
+        color: $brand1-a-dark;
         position: relative;
         font-size: $fs-normal-ss;
         line-height: 20px;
         text-align: left;
         font-weight: 600;
+        position: relative;
+
+        &::after {
+            content: '';
+            font-family: $ff-icomoon-default;
+            width: 36px;
+            height: 36px;
+            line-height: 1;
+            font-size: $fs-icon-24;
+            position: absolute;
+            left: 0;
+            top: 8px;
+            padding: 6px;
+            background-color: $brand1-a;
+            border-radius: $br-1;
+        }
+
+        &.-setting {
+            &::after {
+                content: map-get($icomoon-default, 'setting');
+            }
+        }
+
+        &.-key {
+            &::after {
+                content: map-get($icomoon-default, 'key');
+            }
+        }
+
+        &.-data {
+            &::after {
+                content: map-get($icomoon-default, 'data');
+            }
+        }
+
+        &.-trash {
+            &::after {
+                content: map-get($icomoon-default, 'trash');
+            }
+        }
+
+        &.-exit {
+            &::after {
+                content: map-get($icomoon-default, 'exit');
+            }
+        }
 
         &:hover {
             color: $brand11;
-        }
-
-        &.-active {
-            color: $white;
-            background-color: $brand11;
-            border-radius: $br-4;
         }
     }
 }

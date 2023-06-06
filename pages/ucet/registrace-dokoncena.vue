@@ -40,7 +40,7 @@
 
         data() {
             return {
-                headline: 'Vaše registrace byla dokonřena',
+                headline: 'Vaše registrace byla dokončena',
             }
         },
 

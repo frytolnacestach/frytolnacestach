@@ -25,7 +25,6 @@
     &__form {
         display: block;
         width: 100%;
-        padding: 10px 15px;
     }
 
     &__items {
@@ -33,6 +32,8 @@
     }
 
     &__item {
-        margin: 5px 0;
+        display: inline-block;
+        margin: 8px 0;
+        width: 100%;
     }
 }

@@ -26,8 +26,8 @@
                             <input class="a-input a-input--big" type="text" id="nickname" v-model="nickname" required>
                         </div>
                         <div class="o-form-registration__item">
+                            <input class="a-input-checkbox" type="checkbox" id="terms" v-model="termsAccepted" required></input>
                             <label class="m-label" for="terms">Souhlasím s <NuxtLink to="/conditions-user" target="_blank">Obchodními podmínkami</NuxtLink> (pro uživatelský účet):</label>
-                            <input class="a-input-checkbox" type="checkbox" id="terms" v-model="termsAccepted" required>
                         </div>
                     </div>
                     <div class="o-form-registration__buttons mt-1">

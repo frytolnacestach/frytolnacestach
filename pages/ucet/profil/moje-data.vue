@@ -1,22 +1,22 @@
 <template>
     <main class="t-main -bg-person -pt-menu" role="main">
-        
-        <!-- SECTION - Hero -->
-		<section class="t-section -p0 pt-2 pb-1">
-            <div class="t-section__inner">
-                <oHero :headline="headline" />
-            </div>
-        </section>
-        <!-- SECTION - Hero END -->
 
         <!-- SECTION -->
-        <section class="t-section -px-world -p0">
+        <section class="t-section -padding-x -padding-y -p0 mb-4">
             <div class="t-section__inner">
                 <div class="t-grid -account">
                     
                     <div class="t-grid__section -nav">
+                        <!-- SECTION - account headline - account -->
+                        <section class="t-section -padding-x -p0">
+                            <div class="t-section__inner">
+                                <mAccountHeader />
+                            </div>
+                        </section>
+                        <!-- SECTION - nav - account END -->
+
                         <!-- SECTION - nav - account -->
-                        <section class="t-section pt-2 pb-1">
+                        <section class="t-section -padding-x -p0">
                             <div class="t-section__inner">
                                 <mNavAccount />
                             </div>
@@ -25,15 +25,13 @@
                     </div>
 
                     <div class="t-grid__section -content">
-                        <!-- SECTION - Text -->
-                        <section class="t-section pt-2 pb-1">
+                        <!-- SECTION - Form - profile -->
+                        <section class="t-section -padding-x -p0">
                             <div class="t-section__inner">
-                                <p>
-                                    Pro zaslání uživatelský dat nás prosím kontaktujte na admin@frytolnacestach.cz. Za nedlouho vám tyto data budeme poskytovat automaticky.
-                                </p>
+                                <mHeadline title="Moje data" perex="Pro zaslání uživatelský dat nás prosím kontaktujte na admin@frytolnacestach.cz. Za nedlouho vám tyto data budeme poskytovat automaticky." styleThema=" -account" styleAlign="" styleGap="" />
                             </div>
                         </section>
-                        <!-- SECTION - Text END -->
+                        <!-- SECTION - Form - profile END -->
                     </div>
 
                 </div>
@@ -47,15 +45,17 @@
 <script>
     import { loginCheckLogout } from '~/utils/loginCheckLogout.js';
 
+    import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
+    import mHeadline from '~/components/molecules/mHeadline.vue'
     import mNavAccount from '~/components/molecules/mNavAccount.vue'
-    import oHero from '~/components/organisms/oHero.vue'
 
     export default {
         name: 'UcetMojeDataPage',
         
         components: {
-            mNavAccount,
-            oHero
+            mAccountHeader,
+            mHeadline,
+            mNavAccount
         },
 
         data() {

@@ -14,8 +14,6 @@
 
     &__perex {
         width: 100%;
-        max-width: 640px;
-        margin: 0 auto;
     }
 
     &.-dark {
@@ -59,6 +57,22 @@
 
         #{$self}__perex {
             color: $white;
+        }
+    }
+
+    &.-account {
+        padding: 5px 0;
+
+        @media only screen and (min-width: $ti) {
+            padding: 10px 0;
+        }
+
+        #{$self}__title {
+            color: $worldTEXTdark;
+        }
+
+        #{$self}__perex {
+            color: $worldTEXTdark;
         }
     }
 

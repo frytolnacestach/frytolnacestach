@@ -9,9 +9,6 @@
                     <oFlashMessages :text="successForm" styleThema=" -success" />
                     <!-- SECTION - FlashMassages END -->
                 </div>
-                <h2 class="o-form-profile__title">
-                    Editace profilu
-                </h2>
                 <!--test - {{ profile[0].surname }} - test-->
                 <form class="o-form-profile__form" @submit.prevent="editProfile">
                     <div class="o-form-profile__items">

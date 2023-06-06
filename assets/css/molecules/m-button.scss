@@ -2,10 +2,11 @@
     &__input {
         @include transition(background-color, .3s);
         background-color: $worldBGcomponentDark;
+        border-radius: $br-2;
         color: $white;
-        height: 40px;
+        height: 46px;
         line-height: 30px;
-        padding: 5px 10px;
+        padding: 8px 10px;
         border: 0;
         min-width: 160px;
         cursor: pointer;

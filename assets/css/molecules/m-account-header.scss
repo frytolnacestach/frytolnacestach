@@ -1,0 +1,76 @@
+.m-account-header {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px 0;
+    width: 100%;
+
+    @media only screen and (min-width: $lg) {
+        padding: 10px 0;
+    }
+
+    &__outer {
+        background-color: $brand1-a;
+        border-radius: $br-2;
+        width: 100%;
+
+        @media only screen and (min-width: $lg) {
+            border-radius: $br-4;
+        }
+    }
+
+    &__inner {
+        padding: 20px 10px;
+    }
+
+    &__image {
+        width: 50px;
+
+        @media only screen and (min-width: $lg) {
+            width: 100%;
+        }
+    }
+
+    &__image-file {
+        width: 50px;
+        height: 50px;
+        background-image: url('../../static/images/_base/hero.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 100%;
+        margin: 0 auto;
+
+        @media only screen and (min-width: $lg) {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    &__text {
+        width: auto;
+        text-align: left;
+        padding-left: 10px;
+
+        @media only screen and (min-width: $lg) {
+            width: 100%;
+            text-align: center;
+            padding-left: 0;
+        }
+    }
+
+    &__nickname {
+        display: block;
+        font-size: $fs-normal-sss;
+        font-weight: 600;
+
+        @media only screen and (min-width: $lg) {
+            margin-top: 10px;
+        }
+    }
+
+    &__email {
+        display: block;
+        font-size: $fs-small-sss;
+        color: $gray4;
+    }
+}

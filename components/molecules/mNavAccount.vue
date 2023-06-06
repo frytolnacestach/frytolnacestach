@@ -4,19 +4,19 @@
             <div class="m-nav-account__inner">
                 <ul class="m-nav-account__items">                    
                     <li class="m-nav-account__item -special" v-if="email">
-                        <NuxtLink class="js_m-nav-account__link m-nav-account__link" to="/ucet/profil">{{ email }}</NuxtLink>
+                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -setting" to="/ucet/profil">Základní informace</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">
-                        <a class="js_m-nav-account__link m-nav-account__link" href="#" @click="logout">Odhlásit se</a>
+                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -key" to="/ucet/profil/zmena-hesla">Změna hesla</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">
-                        <NuxtLink class="js_m-nav-account__link m-nav-account__link" to="/ucet/profil/zmena-hesla">Změna hesla</NuxtLink>
+                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -data" to="/ucet/profil/moje-data">Moje data</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">
-                        <NuxtLink class="js_m-nav-account__link m-nav-account__link" to="/ucet/profil/moje-data">Moje data</NuxtLink>
+                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -trash" to="/ucet/profil/smazani-uctu">Smazaní účtu</NuxtLink>
                     </li>
-                    <li class="m-nav-account__item">
-                        <NuxtLink class="js_m-nav-account__link m-nav-account__link" to="/ucet/profil/smazani-uctu">Smazaní účtu</NuxtLink>
+                    <li class="m-nav-account__item -logout">
+                        <a class="js_m-nav-account__link m-nav-account__link -exit" @click="logout">Odhlásit se</a>
                     </li>
                 </ul>
             </div>
