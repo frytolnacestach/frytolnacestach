@@ -1,6 +1,6 @@
 export async function loginCheckLogin($router) {
     const loacalStorageEmail = localStorage.getItem('email')
-    const loacalStoragePassworldHash = localStorage.getItem('passworld_hash')
+    const loacalStoragePasswordHash = localStorage.getItem('password_hash')
     const loacalStorageStatus = localStorage.getItem('status')
     const loacalStorageNickname = localStorage.getItem('nickname')
 
@@ -16,7 +16,7 @@ export async function loginCheckLogin($router) {
                 method: 'POST',
                 body: JSON.stringify({
                     'email': loacalStorageEmail,
-                    'password': loacalStoragePassworldHash,
+                    'password': loacalStoragePasswordHash,
                     'status': loacalStorageStatus,
                     'nickname': loacalStorageNickname
                 })
@@ -30,12 +30,12 @@ export async function loginCheckLogin($router) {
                 let expires = "expires=" + now;
                 //Nastavení localStorage
                 localStorage.setItem("email",loacalStorageEmail)
-                localStorage.setItem("passworld_hash",loacalStoragePassworldHash)
+                localStorage.setItem("password_hash",loacalStoragePasswordHash)
                 localStorage.setItem("status",loacalStorageStatus)
                 localStorage.setItem("nickname",loacalStorageNickname)
                 //Cookies - write
                 document.cookie = "FNCemail=" + loacalStorageEmail + ";" + expires;
-                document.cookie = "FNCpass=" + loacalStoragePassworldHash + ";" + expires;
+                document.cookie = "FNCpass=" + loacalStoragePasswordHash + ";" + expires;
                 document.cookie = "FNCstatus=" + loacalStorageStatus + ";" + expires;
                 document.cookie = "FNCnickname=" + loacalStorageNickname + ";" + expires;
                 $router.push('/ucet/profil')
@@ -43,7 +43,7 @@ export async function loginCheckLogin($router) {
                 console.log("Nesprávné přihlašovací údaje");
                 //Nastavení localStorage
                 localStorage.setItem("email","undefined")
-                localStorage.setItem("passworld_hash","undefined")
+                localStorage.setItem("password_hash","undefined")
                 localStorage.setItem("status","undefined")
                 localStorage.setItem("nickname","undefined")
                 //Delete cookies
@@ -55,7 +55,7 @@ export async function loginCheckLogin($router) {
                 console.log("Uživatel nenalezen");
                 //Nastavení localStorage
                 localStorage.setItem("email","undefined")
-                localStorage.setItem("passworld_hash","undefined")
+                localStorage.setItem("password_hash","undefined")
                 localStorage.setItem("status","undefined")
                 localStorage.setItem("nickname","undefined")
                 //Delete cookies
@@ -67,7 +67,7 @@ export async function loginCheckLogin($router) {
                 console.log("Chyba při komunikaci s API");
                 //Nastavení localStorage
                 localStorage.setItem("email","undefined")
-                localStorage.setItem("passworld_hash","undefined")
+                localStorage.setItem("password_hash","undefined")
                 localStorage.setItem("status","undefined")
                 localStorage.setItem("nickname","undefined")
                 //Delete cookies
@@ -80,7 +80,7 @@ export async function loginCheckLogin($router) {
             console.log(err);
             //Nastavení user-info
             localStorage.setItem("email","undefined")
-            localStorage.setItem("passworld_hash","undefined")
+            localStorage.setItem("password_hash","undefined")
             localStorage.setItem("status","undefined")
             localStorage.setItem("nickname","undefined")
             //Delete cookies
