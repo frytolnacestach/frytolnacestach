@@ -178,6 +178,14 @@
                     </div>
 
                     <div class="t-grid__section -ad">
+                        <!-- SECTION - Visited button - sidebar -->
+                        <section class="t-section -px-world">
+                            <div class="t-section__inner">
+                                <oVisitedButton :place="this.place[0].id" placeType="city" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Visited button - sidebar - END -->
+
                         <!-- SECTION - ad-google - sidebar -->
                         <section class="t-section -px-world my-2">
                             <div class="t-section__inner">
@@ -242,6 +250,7 @@
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
+    import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
 
     export default {
@@ -259,6 +268,7 @@
             oMapGoogle,
             oPlaceTeaser,
             oVideoList,
+            oVisitedButton,
             oWidgetBooking
         },
 

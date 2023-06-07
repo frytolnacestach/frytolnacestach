@@ -59,6 +59,14 @@
 
 
                     <div class="t-grid__section -ad">
+                        <!-- SECTION - Visited button - sidebar -->
+                        <section class="t-section -px-world">
+                            <div class="t-section__inner">
+                                <oVisitedButton :place="this.place[0].id" placeType="region" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Visited button - sidebar - END -->
+
                         <!-- SECTION - ad-google - sidebar -->
                         <section class="t-section -px-world my-2">
                             <div class="t-section__inner">
@@ -96,6 +104,7 @@
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
+    import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
 
     export default {
         name: 'SvetMistoSlugPage',
@@ -109,7 +118,8 @@
             oHeroPlace,
             oInformationBlock,
             oMapGoogle,
-            oVideoList
+            oVideoList,
+            oVisitedButton
         },
 
         data() {

@@ -51,6 +51,11 @@
             &::after {
                 content: map-get($icomoon-default, 'calendar');
             }
+
+            &.-active {
+                background-color: $brand1-a;
+                color: $iconActive;
+            }
         }
 
         &.-visited {
@@ -59,6 +64,11 @@
             &::after {
                 content: map-get($icomoon-default, 'flag');
             }
+
+            &.-active {
+                background-color: $brand1-a;
+                color: $iconActive;
+            }
         }
 
         &:hover {
@@ -66,10 +76,20 @@
 
             &.-future {
                 color: $white;
+
+                &.-active {
+                    background-color: $brand1;
+                    color: $white;
+                }
             }
     
             &.-visited {
                 color: $white;
+
+                &.-active {
+                    background-color: $brand1;
+                    color: $white;
+                }
             }
         }
     }

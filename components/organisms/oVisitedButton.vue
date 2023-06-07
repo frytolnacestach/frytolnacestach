@@ -9,10 +9,10 @@
             <div class="o-visited-button__inner">
                 <div class="o-visited-button__items">
                     <div class="o-visited-button__item">
-                        <span class="o-visited-button__button -future">Chci navštívit</span>
+                        <span class="o-visited-button__button -future" :class="{ '-active': status === 2 }" @click="editVisited(2)" >Chci navštívit</span>
                     </div>
                     <div class="o-visited-button__item">
-                        <span class="o-visited-button__button -visited">Navštívil(a) jsem</span>
+                        <span class="o-visited-button__button -visited" :class="{ '-active': status === 1 }" @click="editVisited(1)">Navštívil(a) jsem</span>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,11 @@
 
         data() {
             return {
-                status: 0
+                errorForm: '',
+                successForm: '',
+                status: 0,
+                email: this.email,
+                passwordHash: this.passwordHash
             };
         },
 
@@ -48,36 +52,100 @@
         },
 
         methods: {
-            async addVisited() {
+
+            async visited() {
                 try {
-                    const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-visited-place`, {
+                    const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-visited-place?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}&id_place=${encodeURIComponent(this.place)}&type=${this.placeType}`, {
                         headers: {
                             "Content-Type": "application/json",
                             "Access-Control-Allow-Origin": "http://localhost:3000",
                             "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
                             "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH"
                         },
-                        method: 'POST',
-                        body: JSON.stringify({
-                            'id_place': this.place,
-                            'type': this.placeType,
-                            'status': this.status,
-                        })
+                        method: 'GET'
                     });
 
                     if (response.ok) {
-                        console.log("Záznam uložen");
-                        this.successForm = "Záznam uložen";
+                        console.log("Záznam načten");
+                        const data = await response.json();
+                        this.status = data.message[0].status
+                    } else if (response.status === 404) {
+                        console.log("Uživatel neexistuje");
+                        //this.errorForm = "Uživatel neexistuje";
+                    } else if (response.status === 405) {
+                        console.log("Místo uživatel nemá uložené");
+                        //this.errorForm = "Místo uživatel nemá uložené";
                     } else {
                         console.log("Chyba při komunikaci s API");
-                        this.errorForm = "Chyba při komunikaci s API";
+                        //this.errorForm = "Chyba při komunikaci s API";
                     }
                 } catch (err) {
                     console.log(err);
                     this.errorForm = "Chyba připojení k API";
                     throw err;
                 }
+            },
+
+            async editVisited(newStatus) {
+                try {
+                    this.status = newStatus;
+                    try {
+                        const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-visited-place-edit`, {
+                            headers: {
+                                "Content-Type": "application/json",
+                                "Access-Control-Allow-Origin": "http://localhost:3000",
+                                "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
+                                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH"
+                            },
+                            method: 'POST',
+                            body: JSON.stringify({
+                                'email': this.email,
+                                'password_hash': this.passwordHash,
+                                'id_place': this.place,
+                                'type': this.placeType,
+                                'status': this.status
+                            })
+                        });
+
+                        if (response.ok) {
+                            if (response.status === 201) {
+                                console.log("Záznam uložen");
+                                this.successForm = "Záznam uložen";
+                            } else if (response.status === 200) {
+                                console.log("Záznam odebrán");
+                                this.successForm = "Záznam odebrán";
+                                this.status = 0
+                            }
+                        } else if (response.status === 404) {
+                            console.log("Vypadá to že nejsi přihlášen ke svému účtu.");
+                            this.status = 0
+                            this.errorForm = "Vypadá to, že nejsi přihlášen ke svému účtu.";
+                        } else {
+                            console.log("Chyba při komunikaci s API");
+                            this.errorForm = "Chyba při komunikaci s API";
+                        }
+                    } catch (err) {
+                        console.log(err);
+                        this.errorForm = "Chyba připojení k API";
+                        throw err;
+                    }
+                } catch (err) {
+                    console.log(err);
+                    this.errorForm = "Nastala chyba";
+                }
             }
+        },
+
+        mounted() {
+            if (process.client) {
+                const localStorageEmail = localStorage.getItem('email')
+                const localStoragePasswordHash = localStorage.getItem('password_hash')
+
+                this.email = localStorageEmail;
+                this.passwordHash = localStoragePasswordHash;
+            }
+
+            this.visited();
         }
     }
 </script>

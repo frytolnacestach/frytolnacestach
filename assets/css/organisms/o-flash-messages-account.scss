@@ -9,13 +9,15 @@
         width: 100%;
 
         &.-success {
-            background-color: $successBackgroundcolor;
-            border: 2px solid $successBordercolor;
+            border: 2px solid $greenBORDER;
+            color: $greenTEXT;
+            background-color: $greenBG;
         }
 
         &.-error {
-            background-color: $errorBackgroundcolor;
-            border: 2px solid $errorBordercolor;
+            border: 2px solid $redBORDER;
+            color: $redTEXT;
+            background-color: $redBG;
         }
     }
 
