@@ -38,7 +38,7 @@
             logout() {
                 //Nastavení localStorage
                 localStorage.setItem("email","undefined")
-                localStorage.setItem("passworld_hash","undefined")
+                localStorage.setItem("password_hash","undefined")
                 localStorage.setItem("status","undefined")
                 localStorage.setItem("nickname","undefined")
                 //Delete cookies

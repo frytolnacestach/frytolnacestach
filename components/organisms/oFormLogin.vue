@@ -75,7 +75,7 @@ export default {
 
                     //Cookies - localStorage
                     localStorage.setItem("email", data.message[0].email);
-                    localStorage.setItem("passworld_hash", data.message[0].password);
+                    localStorage.setItem("password_hash", data.message[0].password);
                     localStorage.setItem("status", data.message[0].status);
                     localStorage.setItem("nickname", data.message[0].nickname);
                     //Cookies - set expires
@@ -85,7 +85,7 @@ export default {
                     //Cookies - write
                     document.cookie = "FNCemail=" + data.message[0].email + ";" + expires;
                     document.cookie = "FNCpass=" + data.message[0].password + ";" + expires;
-                    document.cookie = "FNCstatus=" + data.message[0].password + ";" + expires;
+                    document.cookie = "FNCstatus=" + data.message[0].status + ";" + expires;
                     document.cookie = "FNCnickname=" + data.message[0].nickname + ";" + expires;
 
                     await this.$router.push('/ucet/profil');
