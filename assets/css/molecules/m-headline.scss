@@ -4,6 +4,14 @@
     display: inline-block;
     width: 100%;
 
+    &__outer {
+        width: 100%;
+    }
+
+    &__inner {
+        width: 100%;
+    }
+
     &__title {
         display: inline-block;
         font-size: $fs-large;
@@ -70,6 +78,13 @@
 
     &.-center {
         text-align: center;
+    }
+
+    &.-w640 {
+        #{$self}__inner {
+            max-width: 640px;
+            margin: 0 auto;
+        }
     }
 
     //color
