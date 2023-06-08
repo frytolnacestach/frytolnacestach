@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/ucet/profil/navstivena-mista", {data:[{}],fetch:{},mutations:void 0});
