@@ -48,10 +48,12 @@ $pinterest: #bd081c;
 $discord: #738adb;
 $patreon: #e64413;
 
+
 //icons
 $iconGreen: #209277;
 $iconBlue: #30c4c9;
 $iconActive: #d91956;
+
 
 //gray
 $gray1: #444444;
@@ -64,6 +66,7 @@ $gray7: #333333;
 $gray8: #0f0f0f;
 $gray9: #dddddd;
 
+
 //project
 $brand1: #209277;
 $brand1Light: #a5d3c8;
@@ -72,7 +75,7 @@ $brand3: #30c4c9;
 $brand4: #3d3c3c;
 $brand5: #383737;
 
-//priject - brand dark
+//project - brand dark
 $brand11: #1b6a58;
 $brand33: #207b7e;
 
@@ -83,6 +86,7 @@ $brand3a: #e7f8f8;
 $brand1-a: #bcded6;
 $brand2-a: #bde9de;
 $brand3-a: #ace7e9;
+
 
 //other green color
 $brand1-a-dark: #4a6860;
@@ -103,8 +107,71 @@ $worldTEXT: #246e70;
 $worldTEXTdark: #164344;
 $worldTEXTdark2: #0b2424;
 
+
+//Gray (https://www.colorhexa.com/403f3f)
+//background
+$c-gray-bg: #fafafa; //Tint Color Variation 13
+$c-gray-bg-component-light-super: #f0f0f0; //Tint Color Variation 12
+$c-gray-bg-component-light: #dddcdc; //Tint Color Variation 10
+$c-gray-bg-component: #7b7979; //Shade Color Variation 13
+$c-gray-bg-component-dark: #403f3f; //Shade Color Variation 7
+$c-gray-bg-component-dark-super: #2c2c2c; //Shade Color Variation 5
+//text
+$c-gray-t-light-super: #fafafa; //Tint Color Variation 13
+$c-gray-t-light: #e6e6e6; //Tint Color Variation 11
+$c-gray-t-dark: #222222; //Shade Color Variation 4
+$c-gray-t-dark-super: #0f0e0e; //Shade Color Variation 2
+//icon
+$c-gray-icon-light: #dddcdc; //Tint Color Variation 10
+$c-gray-icon: #403f3f; //Shade Color Variation 7
+$c-gray-icon-dark: #0f0e0e; //Shade Color Variation 2
+//other
+//space for other color
+
+//Blue (https://www.colorhexa.com/31c4c9)
+//background
+$c-blue-bg: #fbfefe; //Tint Color Variation 13
+$c-blue-bg-component-light-super: #ebfafa; //Tint Color Variation 12
+$c-blue-bg-component-light: #ccf1f2; //Tint Color Variation 10
+$c-blue-bg-component: #31c4c9; //Shade Color Variation 13
+$c-blue-bg-component-dark: #1a686a; //Shade Color Variation 7
+$c-blue-bg-component-dark-super: #12494b; //Shade Color Variation 5
+//text
+$c-blue-t-light-super: #fbfefe; //Tint Color Variation 13
+$c-blue-t-light: #dbf5f6; //Tint Color Variation 11
+$c-blue-t-dark: #0e3a3b; //Shade Color Variation 4
+$c-blue-t-dark-super: #071b1c; //Shade Color Variation 2
+//icon
+$c-blue-icon-light: #ccf1f2; //Tint Color Variation 10
+$c-blue-icon: #1a686a; //Shade Color Variation 7
+$c-blue-icon-dark: #071b1c; //Shade Color Variation 2
+//other
+//space for other color
+
+//Green (https://www.colorhexa.com/209277)
+//background
+$c-green-bg: #f0fcf9; //Tint Color Variation 13
+$c-green-bg-component-light-super: #e0f8f2; //Tint Color Variation 12
+$c-green-bg-component-light: #c0f1e5;  //Tint Color Variation 10
+$c-green-bg-component: #2bc29e; //Shade Color Variation 13
+$c-green-bg-component-dark: #125343; //Shade Color Variation 7
+$c-green-bg-component-dark-super: #0e4235; //Shade Color Variation 5
+//text
+$c-green-t-light-super: #f0fcf9; //Tint Color Variation 13
+$c-green-t-light: #d0f5ec; //Tint Color Variation 11
+$c-green-t-dark: #0b3128; //Shade Color Variation 4
+$c-green-t-dark-super: #04110e; //Shade Color Variation 2
+//icon
+$c-green-icon-light: #c0f1e5; //Tint Color Variation 10
+$c-green-icon: #125343; //Shade Color Variation 7
+$c-green-icon-dark: #04110e; //Shade Color Variation 2
+//other
+//space for other color
+
+
 //ads
 $cAdBG: #e1e1e1;
+
 
 //opacity
 $white-7: rgba($white, .7);
@@ -114,6 +181,7 @@ $black-7: rgba($black, .7);
 $brand3-a-3: rgba($brand3-a, .3);
 $brand2-a-3: rgba($brand2-a, .3);
 $brand1-a-3: rgba($brand1-a, .3);
+
 
 //hover
 $youtube-hover: lighten($youtube, 20%);
