@@ -25,6 +25,7 @@
                         <oItemStates :items="placesStates" :itemName="flora[0].name" text="Kde roste" />
                     </div>
                     <!-- SECTION - flora places - END -->
+
                 </div>
             </div>
         </section>
@@ -44,7 +45,6 @@
                         </section>
                         <!-- SECTION - information by ChatGPT END -->
                     </div>
-
 
                     <div class="t-grid__section -ad">
                         <!-- SECTION - ad-google - sidebar -->
@@ -104,7 +104,7 @@
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.flora[0].description ? this.flora[0].description.slice(0, this.flora[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.flora[0].name}` },
                     { name: 'keywords', content: `${this.flora[0].name + ', Flóra, Rostoucí flóra, informace o rostlinách, plánuj cestu, cestovatelský portál, cestování, svět'}` },
-                    { property: 'og:image', content: `${this.flora[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageFood.find(image => image.id === this.flora[0].id_image_hero).source + this.imageFood.find(image => image.id === this.flora[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
+                    { property: 'og:image', content: `${this.flora[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageFlora.find(image => image.id === this.flora[0].id_image_hero).source + this.imageFlora.find(image => image.id === this.flora[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
                     { hid: 'og:title', content: `${this.flora[0].name ? this.flora[0].name : 'Flóra'}  | Frytol na cestách` },
                     { hid: 'og:description', content: `${this.flora[0].description ? this.flora[0].description.slice(0, this.flora[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.flora[0].name ? this.flora[0].name : 'Flóra'}` },
                     { hid: 'og:url', content: `${process.env.baseUrl}/flora/${this.flora[0].slug}` },

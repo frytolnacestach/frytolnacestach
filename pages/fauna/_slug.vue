@@ -25,6 +25,7 @@
                         <oItemStates :items="placesStates" :itemName="fauna[0].name" text="Kde žije" />
                     </div>
                     <!-- SECTION - fauna places - END -->
+                    
                 </div>
             </div>
         </section>
@@ -104,7 +105,7 @@
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.fauna[0].description ? this.fauna[0].description.slice(0, this.fauna[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.fauna[0].name}` },
                     { name: 'keywords', content: `${this.fauna[0].name + ', Fauna, Živočichové, informace o živočichách, plánuj cestu, cestovatelský portál, cestování, svět'}` },
-                    { property: 'og:image', content: `${this.fauna[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageFood.find(image => image.id === this.fauna[0].id_image_hero).source + this.imageFood.find(image => image.id === this.fauna[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
+                    { property: 'og:image', content: `${this.fauna[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageFauna.find(image => image.id === this.fauna[0].id_image_hero).source + this.imageFauna.find(image => image.id === this.fauna[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
                     { hid: 'og:title', content: `${this.fauna[0].name ? this.fauna[0].name : 'Flóra'}  | Frytol na cestách` },
                     { hid: 'og:description', content: `${this.fauna[0].description ? this.fauna[0].description.slice(0, this.fauna[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.fauna[0].name ? this.fauna[0].name : 'Fauna'}` },
                     { hid: 'og:url', content: `${process.env.baseUrl}/fauna/${this.fauna[0].slug}` },
