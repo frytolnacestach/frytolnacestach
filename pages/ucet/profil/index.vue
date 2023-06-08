@@ -67,12 +67,6 @@
             oFormProfile
         },
 
-        data() {
-            return {
-                headline: 'Profil',
-            }
-        },
-
         mounted() {
             loginCheckLogout(this.$router);
         },

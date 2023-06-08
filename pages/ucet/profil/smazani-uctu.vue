@@ -58,12 +58,6 @@
             mNavAccount
         },
 
-        data() {
-            return {
-                headline: 'Smazání účtu',
-            }
-        },
-
         mounted() {
             loginCheckLogout(this.$router);
         },

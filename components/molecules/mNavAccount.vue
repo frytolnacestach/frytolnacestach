@@ -7,6 +7,12 @@
                         <NuxtLink class="js_m-nav-account__link m-nav-account__link -setting" to="/ucet/profil">Základní informace</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">
+                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -flag" to="/ucet/profil/navstivena-mista">Navštívená místa</NuxtLink>
+                    </li>
+                    <li class="m-nav-account__item">
+                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -calendar" to="/ucet/profil/chci-navstivit">Chci navštívit</NuxtLink>
+                    </li>
+                    <li class="m-nav-account__item">
                         <NuxtLink class="js_m-nav-account__link m-nav-account__link -key" to="/ucet/profil/zmena-hesla">Změna hesla</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">

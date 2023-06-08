@@ -58,12 +58,6 @@
             mNavAccount
         },
 
-        data() {
-            return {
-                headline: 'Moje data',
-            }
-        },
-
         mounted() {
             loginCheckLogout(this.$router);
         },

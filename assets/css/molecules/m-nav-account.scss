@@ -83,6 +83,18 @@
             }
         }
 
+        &.-flag {
+            &::after {
+                content: map-get($icomoon-default, 'flag');
+            }
+        }
+
+        &.-calendar {
+            &::after {
+                content: map-get($icomoon-default, 'calendar');
+            }
+        }
+
         &.-key {
             &::after {
                 content: map-get($icomoon-default, 'key');

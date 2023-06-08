@@ -58,12 +58,6 @@
             mNavAccount
         },
 
-        data() {
-            return {
-                headline: 'Změna hesla',
-            }
-        },
-
         mounted() {
             loginCheckLogout(this.$router);
         },
