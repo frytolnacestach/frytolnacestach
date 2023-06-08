@@ -1,6 +1,9 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+window.onload = function() {
+	console.log("ham: onload");
+
 	var hamburger = document.querySelector(".js_m-hamburger");
 	hamburger.addEventListener("click", function() {
+		console.log("ham: click");
 		var status = hamburger.getAttribute("data-hamburger");
 
 		if (status === "close") {
@@ -28,4 +31,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			document.body.classList.remove("no-scroll");
 		});
 	});
-});
+}

@@ -57,10 +57,12 @@
         props: {
             place: {
                 type: Array,
+                default: null,
                 required: true
             },
             image: {
                 type: Array,
+                default: null,
                 required: true
             },
             type: {
