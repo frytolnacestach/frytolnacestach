@@ -165,7 +165,7 @@
                                 <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleAlign=" -p-left" />
                             </div>
                         </section>
-                        <!-- SECTION - videos END -->
+                        <!-- SECTION - articles END -->
 
                     </div>
                 </div>

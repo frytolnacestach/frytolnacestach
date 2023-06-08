@@ -87,6 +87,24 @@
                 <div class="t-grid -world-ful">
                     <div class="t-grid__section -content">
 
+                        <!-- SECTION - videos -->
+                        <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="videos[0]">
+                            <div class="t-section__inner">
+                                <mHeadline title="Videa z kontinentu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleAlign=" -p-left" />
+                            </div>
+                        </section>
+                        <!-- SECTION - videos END -->
+
+                        <!-- SECTION - articles -->
+                        <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="posts[0]">
+                            <div class="t-section__inner">
+                                <mHeadline title="Články z kontinetu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleAlign=" -p-left" />
+                            </div>
+                        </section>
+                        <!-- SECTION - articles END -->
+
                     </div>
                 </div>
             </div>
@@ -127,6 +145,8 @@
                 place: this.place,
                 placeContinent: this.placeContinent,
                 placeState: this.placeState,
+                posts: this.posts,
+                videos: this.videos,
                 isMobile: false,
                 showHero: true,
                 mNavBreadcrumbsPlaceArray: [
@@ -266,11 +286,28 @@
                     // Načtení informací o kontinentu
                     const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${placeState[0].id_continent}`)
 
+                    // Načtení videi z místa
+                    const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos-id-region/${place[0].id}`)
+
+                    // Načtení článků z místa
+                    const posts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/posts-id-region/${place[0].id}`)
+
+
+                    //images Array
+                    const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
+                    const imagesPostsID = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
+
+
                     // Načtení informací o obrázku pro místo
                     const imagePlace = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${place[0].id_image_hero}`)
 
+                    // Načtení informací o obrázku pro videa
+                    const imagesVideos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesVideosID.join(',')}`)
 
-                    data = { place, placeState, placeContinent, imagePlace }
+                    // Načtení informací o obrázku pro čláky
+                    const imagesPosts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPostsID.join(',')}`)
+
+                    data = { place, placeState, placeContinent, videos, posts, imagePlace, imagesVideos, imagesPosts }
                     
                     success = true
                 } catch (error) {
