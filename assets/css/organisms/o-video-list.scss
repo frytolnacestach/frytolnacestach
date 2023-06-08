@@ -167,10 +167,10 @@
         }
 
         #{$self}__title-link {
-            color: $worldTEXT;
+            color: $c-green-t-dark;
 
             &:hover {
-                color: $worldTEXTdark2;
+                color: $c-green-t-dark;
             }
         }
     }

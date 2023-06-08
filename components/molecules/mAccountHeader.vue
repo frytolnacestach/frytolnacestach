@@ -7,10 +7,10 @@
 
                     </div>
                 </div>
-                <span class="m-account-header__text">
+                <div class="m-account-header__text">
                     <span class="m-account-header__nickname">{{ nickname }}</span>
                     <span class="m-account-header__email">{{ email }}</span>
-                </span>
+                </div>
             </div>
         </div>
     </div>

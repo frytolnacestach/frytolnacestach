@@ -1,8 +1,8 @@
 <template>
-    <main class="t-main -pt-menu" role="main">
+    <main class="t-main -green -pt-menu" role="main">
 
         <!-- SECTION - Hero place type -->
-        <section class="t-section py-4 -bg-world">
+        <section class="t-section py-4">
             <div class="t-section__inner">
                 <oHeroPlaceType styleType=" -continent" title="Kontinenty" perex="Na naší planetě najdete 7 kontinentů. Co takhle je prozkoumat všechny, včetně odlehlých míst jako je Antarktida?" />
             </div>
@@ -10,7 +10,7 @@
         <!-- SECTION - Hero place type END -->
 
         <!-- SECTION - Place list -->
-        <section class="t-section -bg-world -p0">
+        <section class="t-section -p0">
             <div class="t-section__inner">
                 <oCoverPlace :places="placesContinents" :images="images" type="kontinent" />
             </div>

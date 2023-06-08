@@ -1,5 +1,5 @@
 <template>
-    <main class="t-main -bg-world -pt-menu" role="main">
+    <main class="t-main -green -pt-menu" role="main">
 
         <!-- SECTION - BREADCRUMBS -->
         <section class="t-section -px-world mt-2 -p0">

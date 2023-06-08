@@ -1,8 +1,8 @@
 <template>
-    <main class="t-main -pt-menu" role="main">
+    <main class="t-main -green -pt-menu" role="main">
 
         <!-- SECTION - Hero place type -->
-        <section class="t-section py-4 -bg-world">
+        <section class="t-section py-4">
             <div class="t-section__inner">
                 <oHeroPlaceType styleType=" -city" title="Města" perex="Podle velmi nepřesných zdrojů je na Zemi asi 3 a půl milionu obcí. My jich tu máme přibližně 2500." />
             </div>
@@ -10,7 +10,7 @@
         <!-- SECTION - Hero place type END -->
 
         <!-- SECTION - Alphabet -->
-        <section class="t-section -bg-world">
+        <section class="t-section">
             <div class="t-section__inner">
                 <!-- TODO <mNavAlphabet :alphabet="alphabet" />-->
                 

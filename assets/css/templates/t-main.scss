@@ -5,10 +5,8 @@
         padding-top: 0;
     }
 
-    &.-bg-brand3 {
-        background-color: $brand3a;
-    }
 
+    //MODIFICATION
     &.-vh100 {
         min-height: 100vh;
     }
@@ -21,12 +19,17 @@
         padding-top: 60px;
     }
 
-    //background world
-    &.-bg-world {
-        background-color: $worldBG;
+
+    //Background color
+    &.-blue {
+        background-color: $c-blue-bg;
     }
 
-    &.-bg-person {
-        background-color: $worldBG;
+    &.-gray {
+        background-color: $c-gray-bg;
+    }
+
+    &.-green {
+        background-color: $c-green-bg;
     }
 }

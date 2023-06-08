@@ -27,7 +27,7 @@
         position: relative;
         width: 100%;
         padding: 13px 15px 13px 55px;
-        background-color: $gray9;
+        background-color: $white;
         border-radius: $br-2;
         height: 52px;
         line-height: 26px;
@@ -46,39 +46,39 @@
         }
 
         &.-future {
-            color: $iconGreen;
+            color: $c-green-icon;
             
             &::after {
                 content: map-get($icomoon-default, 'calendar');
             }
 
             &.-active {
-                background-color: $brand1-a;
-                color: $iconActive;
+                background-color: $c-green-bg-component-dark;
+                color: $white;
             }
         }
 
         &.-visited {
-            color: $iconBlue;
+            color: $c-blue-icon;
 
             &::after {
                 content: map-get($icomoon-default, 'flag');
             }
 
             &.-active {
-                background-color: $brand1-a;
-                color: $iconActive;
+                background-color: $c-green-bg-component-dark;
+                color: $white;
             }
         }
 
         &:hover {
-            background-color: $brand1;
+            background-color: $c-green-bg-component-dark-super;
 
             &.-future {
                 color: $white;
 
                 &.-active {
-                    background-color: $brand1;
+                    background-color: $c-green-bg-component-dark-super;
                     color: $white;
                 }
             }
@@ -87,7 +87,7 @@
                 color: $white;
 
                 &.-active {
-                    background-color: $brand1;
+                    background-color: $c-green-bg-component-dark-super;
                     color: $white;
                 }
             }

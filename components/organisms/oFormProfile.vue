@@ -13,15 +13,15 @@
                 <form class="o-form-profile__form" @submit.prevent="editProfile">
                     <div class="o-form-profile__items">
                         <div class="o-form-profile__item">
-                            <input class="a-input a-input--big" type="text" name="surname" v-model="surname" placeholder="Jméno"/>
+                            <input class="a-input -blue" type="text" name="surname" v-model="surname" placeholder="Jméno"/>
                         </div>
                         <div class="o-form-profile__item">
-                            <input class="a-input a-input--big" type="text" name="lastname" v-model="lastname" placeholder="Příjmení"/>
+                            <input class="a-input -blue" type="text" name="lastname" v-model="lastname" placeholder="Příjmení"/>
                         </div>
                     </div>
                     <div class="o-form-profile__buttons mt-1">
                         <div class="o-form-profile__button">
-                            <div class="m-button">
+                            <div class="m-button -blue">
                                 <button class="m-button__input" type="submit">Upravit údaje</button>
                             </div>
                         </div>

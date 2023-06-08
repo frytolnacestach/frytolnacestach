@@ -33,7 +33,7 @@
             left: 5%;
             right: 5%;
             height: 1px;
-            background-color: $brand1-a;
+            background-color: $c-blue-bg-component-light;
             opacity: .7;
         }
 
@@ -54,7 +54,7 @@
         justify-content: left;
         padding: 17px 24px 17px 48px;
         text-decoration: none;
-        color: $brand1-a-dark;
+        color: $c-blue-icon;
         position: relative;
         font-size: $fs-normal-ss;
         line-height: 20px;
@@ -73,7 +73,7 @@
             left: 0;
             top: 8px;
             padding: 6px;
-            background-color: $brand1-a;
+            background-color: $c-blue-bg-component-light;
             border-radius: $br-1;
         }
 
@@ -120,7 +120,7 @@
         }
 
         &:hover {
-            color: $brand11;
+            color: $c-blue-icon-dark;
         }
     }
 }

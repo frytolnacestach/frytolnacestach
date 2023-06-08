@@ -1,5 +1,5 @@
 <template>
-    <main class="t-main -bg-person -pt-menu" role="main">
+    <main class="t-main -blue -pt-menu" role="main">
 
         <!-- SECTION -->
         <section class="t-section -padding-x -padding-y -p0 mb-4">
@@ -28,7 +28,7 @@
                         <!-- SECTION - Visited place category -->
                         <section class="t-section -padding-x -p0 pb-4" v-if="placesContinents[0]">
                             <div class="t-section__inner">
-                                <mHeadline title="Kontinety které chci navštívit" styleThema=" -account" styleAlign="" styleGap="" />
+                                <mHeadline title="Kontinety které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
                                 <oCoverPlaceVisited :places="placesContinents" :images="imagesAll" type="kontinent" />
                             </div>
                         </section>
@@ -37,7 +37,7 @@
                         <!-- SECTION - Visited place category -->
                         <section class="t-section -padding-x -p0 pb-4" v-if="placesStates[0]">
                             <div class="t-section__inner">
-                                <mHeadline title="Státy které chci navštívit" styleThema=" -account" styleAlign="" styleGap="" />
+                                <mHeadline title="Státy které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
                                 <oCoverPlaceVisited :places="placesStates" :images="imagesAll" type="stat" />
                             </div>
                         </section>
@@ -46,7 +46,7 @@
                         <!-- SECTION - Visited place category -->
                         <section class="t-section -padding-x -p0 pb-4" v-if="placesCities[0]">
                             <div class="t-section__inner">
-                                <mHeadline title="Města které chci navštívit" styleThema=" -account" styleAlign="" styleGap="" />
+                                <mHeadline title="Města které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
                                 <oCoverPlaceVisited :places="placesCities" :images="imagesAll" type="mesto" />
                             </div>
                         </section>
@@ -55,7 +55,7 @@
                         <!-- SECTION - Visited place category -->
                         <section class="t-section -padding-x -p0 pb-4" v-if="placesRegions[0]">
                             <div class="t-section__inner">
-                                <mHeadline title="Regiony které chci navštívit" styleThema=" -account" styleAlign="" styleGap="" />
+                                <mHeadline title="Regiony které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
                                 <oCoverPlaceVisited :places="placesRegions" :images="imagesAll" type="region" />
                             </div>
                         </section>
@@ -64,7 +64,7 @@
                         <!-- SECTION - Visited place category -->
                         <section class="t-section -padding-x -p0 pb-4" v-if="placesSpots[0]">
                             <div class="t-section__inner">
-                                <mHeadline title="Místa které chci navštívit" styleThema=" -account" styleAlign="" styleGap="" />
+                                <mHeadline title="Místa které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
                                 <oCoverPlaceVisited :places="placesSpots" :images="imagesAll" type="misto" />
                             </div>
                         </section>

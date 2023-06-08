@@ -16,15 +16,44 @@
         color: $white;
     }
 
+    &.-bold {
+        font-weight: 600;
+    }
+
     //thema
-    &.-green {
-        background-color: $brand33;
+    &.-blue {
+        background-color: $c-blue-bg-component-dark-super;
         color: $white;
         text-decoration: none;
 
         &:hover {
-            background-color: $brand2;
+            background-color: $c-blue-bg-component-dark;
             color: $white;
         }
+
+    }
+
+    &.-gray {
+        background-color: $c-gray-bg-component-dark-super;
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $c-gray-bg-component-dark;
+            color: $white;
+        }
+
+    }
+
+    &.-green {
+        background-color: $c-green-bg-component-dark-super;
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $c-green-bg-component-dark;
+            color: $white;
+        }
+
     }
 }

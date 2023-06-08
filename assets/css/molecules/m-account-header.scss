@@ -9,7 +9,7 @@
     }
 
     &__outer {
-        background-color: $brand1-a;
+        background-color: $c-blue-bg-component-light;
         border-radius: $br-2;
         width: 100%;
 
@@ -19,6 +19,8 @@
     }
 
     &__inner {
+        display: flex;
+        flex-wrap: wrap;
         padding: 20px 10px;
     }
 
@@ -62,6 +64,7 @@
         display: block;
         font-size: $fs-normal-sss;
         font-weight: 600;
+        color: $c-blue-t-dark;
 
         @media only screen and (min-width: $lg) {
             margin-top: 10px;
@@ -71,6 +74,6 @@
     &__email {
         display: block;
         font-size: $fs-small-sss;
-        color: $gray4;
+        color: $c-blue-t-dark;
     }
 }

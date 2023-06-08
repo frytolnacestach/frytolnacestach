@@ -1,5 +1,5 @@
 <template>
-    <main class="t-main -bg-person -pt-menu" role="main">
+    <main class="t-main -blue -pt-menu" role="main">
 
         <!-- SECTION - FlashMassagesAccount -->
         <oFlashMessagesAccount />
@@ -32,7 +32,7 @@
                         <!-- SECTION - Form - profile -->
                         <section class="t-section -padding-x -p0">
                             <div class="t-section__inner">
-                                <mHeadline title="Základní informace" styleThema=" -account" styleAlign="" styleGap="" />
+                                <mHeadline title="Základní informace" styleThema=" -account -blue" styleAlign="" styleGap="" />
                                 <oFormProfile />
                             </div>
                         </section>

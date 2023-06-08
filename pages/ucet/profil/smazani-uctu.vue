@@ -1,5 +1,5 @@
 <template>
-    <main class="t-main -bg-person -pt-menu" role="main">
+    <main class="t-main -blue -pt-menu" role="main">
 
         <!-- SECTION -->
         <section class="t-section -padding-x -padding-y -p0 mb-4">
@@ -28,7 +28,7 @@
                         <!-- SECTION - Form - profile -->
                         <section class="t-section -padding-x -p0">
                             <div class="t-section__inner">
-                                <mHeadline title="Smazání účtu" perex="Pro zrušení účtu nás prosím kontaktujte na admin@frytolnacestach.cz. Za nedlouho vám toto umožní jedno tlačítko." styleThema=" -account" styleAlign="" styleGap="" />
+                                <mHeadline title="Smazání účtu" perex="Pro zrušení účtu nás prosím kontaktujte na admin@frytolnacestach.cz. Za nedlouho vám toto umožní jedno tlačítko." styleThema=" -account -blue" styleAlign="" styleGap="" />
                             </div>
                         </section>
                         <!-- SECTION - Form - profile END -->

@@ -57,13 +57,13 @@
     }
 
     &__link {
-        color: $worldTEXTdark;
+        color: $c-green-t-dark-super;
         line-height: 22px;
         font-size: $fs-normal-sss;
         text-decoration: none;
 
         &:hover {
-            color: $worldTEXTdark2;
+            color: $c-green-t-dark;
         }
 
         &.-icon {
@@ -121,7 +121,7 @@
     }
 
     &__span {
-        color: $worldTEXT;
+        color: $c-green-t-dark;
         line-height: 22px;
         font-size: $fs-small-l;
         text-decoration: none;

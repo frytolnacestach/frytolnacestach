@@ -39,7 +39,7 @@ BLOCKS:
         width: 100%;
         font-size: $fs-large-ssss;
         margin: 0 0 20px;
-        color: $worldTEXT;
+        color: $c-green-t-dark;
 
         &.-m0 {
             margin: 0;
@@ -51,7 +51,7 @@ BLOCKS:
         font-size: $fs-small-sss;
         margin: 0 0 20px;
         display: block;
-        color: $worldTEXT;
+        color: $c-green-t-dark;
         opacity: .7;
     }
 
@@ -60,7 +60,7 @@ BLOCKS:
         font-size: $fs-normal;
         margin: 0 0 10px;
         display: block;
-        color: $worldTEXT;
+        color: $c-green-t-dark;
 
         @media only screen and (min-width: $ti) {
             margin: 0 15px 10px;
@@ -72,7 +72,7 @@ BLOCKS:
         width: auto;
         display: block;
         margin: 0;
-        color: $worldTEXTdark;
+        color: $c-green-t-dark-super;
 
         @media only screen and (min-width: $ti) {
             margin: 0 15px;
@@ -174,7 +174,7 @@ BLOCKS:
 
     &.-bg-world {
         #{$self}__inner {
-            background-color: $worldBGcomponentDark;
+            background-color: $c-blue-bg-component-dark-super;
             padding: 20px 15px;
         }
 

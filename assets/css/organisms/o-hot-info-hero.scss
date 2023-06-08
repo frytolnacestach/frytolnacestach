@@ -38,10 +38,10 @@
             #{$self}__container {
                 @include transition(background-color, .3s);
                 padding: 0;
-                background-color: $worldBGcomponent;
+                background-color: $c-green-bg-component-dark;
     
                 &:hover {
-                    background-color: $worldBGcomponentDark;
+                    background-color: $c-green-bg-component-dark-super;
                 }
             }
         }
@@ -54,7 +54,7 @@
         width: 100%;
         text-align: center;
         padding: 8px 3px;
-        background-color: $worldBGcomponent;
+        background-color: $c-green-bg-component-dark;
         border-radius: $br-2;
         margin: 5px;
         align-items: center;

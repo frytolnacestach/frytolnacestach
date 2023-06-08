@@ -1,0 +1,60 @@
+.o-block-item {
+    $self: &;
+
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: left;
+
+    &__outer {
+        width: 100%;
+        padding: 5px;
+
+        @media only screen and (min-width: $ti) {
+            padding: 10px;
+        }
+    }
+
+    &__inner {
+        background-color: $c-green-bg-component-light;
+        width: auto;
+        padding: 15px 20px;
+        margin: 0;
+        border-radius: $br-1;
+
+        @media only screen and (min-width: $ti) {
+            border-radius: $br-2;
+        }
+    }
+
+    &__title {
+        width: 100%;
+        font-size: $fs-large-ssss;
+        margin: 0;
+        color: $c-green-t-dark;
+    }
+
+    &__title-info {
+        width: auto;
+        font-size: $fs-small-sss;
+        margin: 0 0 10px;
+        display: block;
+        color: $c-green-t-dark-super;
+    }
+
+    &__subtitle {
+        width: auto;
+        font-size: $fs-normal;
+        margin: 0 15px 10px;
+        display: block;
+        color: $c-green-t-dark-super;
+    }
+
+
+    &__value {
+        width: auto;
+        display: block;
+        margin: 0;
+        color: $c-green-t-dark-super;
+    }
+}

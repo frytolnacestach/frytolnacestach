@@ -2,7 +2,7 @@
     <main class="t-main -pt-menu" role="main">
 
         <!-- SECTION - Hero značky -->
-        <section class="t-section py-4 -bg-world">
+        <section class="t-section py-4">
             <div class="t-section__inner">
                 <oHeroItem title="Značky" perex="Jaké značky a výrobky kde najdete? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." />
             </div>
@@ -10,7 +10,7 @@
         <!-- SECTION - Hero značky END -->
 
         <!-- SECTION - Značky list -->
-        <section class="t-section -bg-world -p0">
+        <section class="t-section -p0">
             <div class="t-section__inner">
                 <oCoverItem :items="fauna" :images="images" type="znacka" />
             </div>

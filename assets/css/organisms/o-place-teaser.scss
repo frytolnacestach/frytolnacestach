@@ -36,7 +36,7 @@
             "text";
         grid-template-columns: 100%;
         grid-template-rows: auto auto;
-        background-color: $worldBGcomponentLight;
+        background-color: $c-green-bg-component-light;
         border-radius: $br-2;
 
         @media only screen and (min-width: $ti) {
@@ -92,7 +92,7 @@
 
     &__text {
         width: 100%;
-        background-color: $worldBGcomponentLight;
+        background-color: $c-green-bg-component-light-super;
         border-radius: $br-2;
         display: flex;
         flex-wrap: wrap;
@@ -103,7 +103,7 @@
     }
 
     &__name {
-        color: $worldTEXTdark;
+        color: $c-green-t-dark;
         font-size: $fs-large-s;
         font-weight: 600;
         z-index: 2;
@@ -112,7 +112,7 @@
 
     &__wysiwyg {
         padding: 15px 15px 20px;
-        color: $worldTEXTdark2;
+        color: $c-green-t-dark;
 
         p {
             margin: 0;

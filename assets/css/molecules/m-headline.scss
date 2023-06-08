@@ -34,11 +34,11 @@
         }
 
         #{$self}__title {
-            color: $worldTEXT;
+            color: $c-green-t-dark;
         }
 
         #{$self}__perex {
-            color: $worldTEXT;
+            color: $c-green-t-dark;
         }
     }
 
@@ -66,17 +66,40 @@
         @media only screen and (min-width: $ti) {
             padding: 10px 0;
         }
-
-        #{$self}__title {
-            color: $worldTEXTdark;
-        }
-
-        #{$self}__perex {
-            color: $worldTEXTdark;
-        }
     }
 
     &.-center {
         text-align: center;
+    }
+
+    //color
+    &.-blue {
+        #{$self}__title {
+            color: $c-blue-t-dark;
+        }
+
+        #{$self}__perex {
+            color: $c-blue-t-dark;
+        }
+    }
+
+    &.-gray {
+        #{$self}__title {
+            color: $c-gray-t-dark
+        }
+
+        #{$self}__perex {
+            color: $c-gray-t-dark
+        }
+    }
+
+    &.-green {
+        #{$self}__title {
+            color: $c-green-t-dark
+        }
+
+        #{$self}__perex {
+            color: $c-green-t-dark
+        }
     }
 }
