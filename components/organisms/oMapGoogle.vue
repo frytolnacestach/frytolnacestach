@@ -1,6 +1,6 @@
 <template>
    <div class="o-map-google loading-image">
-        <gmap-map :center="center" :zoom="zoom" :options="mapOptions"></gmap-map>
+        <gmap-map v-if="isHydrated" :center="center" :zoom="zoom" :options="mapOptions"></gmap-map>
     </div>
 </template>
 
@@ -19,6 +19,7 @@
             const { place } = this;
             
             return {
+                isHydrated: false,
                 center: { 
                     lat: 0,
                     lng: 0
@@ -135,8 +136,9 @@
         },
 
         mounted() {
+            this.fetchPlaceData();
             this.$nextTick(() => {
-                this.fetchPlaceData();
+                this.isHydrated = true;
             });
         },
 
