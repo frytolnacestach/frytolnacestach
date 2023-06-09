@@ -135,7 +135,9 @@
         },
 
         mounted() {
-            this.fetchPlaceData();
+            this.$nextTick(() => {
+                this.fetchPlaceData();
+            });
         },
 
         methods:{

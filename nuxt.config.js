@@ -768,6 +768,11 @@ export default {
       from: 'static/BingSiteAuth.xml',
       to: 'BingSiteAuth.xml',
       toType: 'file'
+    },
+    {
+      from: 'static/vercel.json',
+      to: 'vercel.json',
+      toType: 'file'
     }
   ],
 
