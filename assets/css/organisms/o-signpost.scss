@@ -22,10 +22,12 @@
     }
 
     &__link {
+        @include transition(background-color, .3s);
         display: block;
         padding: 30px 20px;
         text-align: center;
-        background-color: $c-green-bg-component-light;
+        background-color: $c-blue-bg-component-light-super;
+        color: $c-blue-t-dark;
         border-radius: $br-1;
         min-height: 60px;
         font-size: $fs-normal;
@@ -34,5 +36,10 @@
         @media only screen and (min-width: $md) {
             border-radius: $br-2;
 		}
+
+        &:hover {
+            background-color: $c-blue-bg-component-light;
+            color: $c-blue-t-dark-super;
+        }
     }
 }

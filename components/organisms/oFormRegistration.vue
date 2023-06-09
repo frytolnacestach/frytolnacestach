@@ -15,15 +15,15 @@
                     <div class="o-form-registration__items">
                         <div class="o-form-registration__item">
                             <label class="m-label" for="email">Email:</label>
-                            <input class="a-input a-input--big" type="email" id="email" v-model="email" required>
+                            <input class="a-input -blue" type="email" id="email" v-model="email" required>
                         </div>
                         <div class="o-form-registration__item">
                             <label class="m-label" for="password">Heslo:</label>
-                            <input class="a-input a-input--big" type="password" id="password" v-model="password" required>
+                            <input class="a-input -blue" type="password" id="password" v-model="password" required>
                         </div>
                         <div class="o-form-registration__item">
                             <label class="m-label" for="nickname">Přezdívka:</label>
-                            <input class="a-input a-input--big" type="text" id="nickname" v-model="nickname" required>
+                            <input class="a-input -blue" type="text" id="nickname" v-model="nickname" required>
                         </div>
                         <div class="o-form-registration__item">
                             <input class="a-input-checkbox" type="checkbox" id="terms" v-model="termsAccepted" required>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="o-form-registration__buttons mt-1">
                         <div class="o-form-registration__button">
-                            <div class="m-button">
+                            <div class="m-butto -bluen">
                                 <button class="m-button__input" type="submit">Registrovat se</button>
                             </div>
                         </div>

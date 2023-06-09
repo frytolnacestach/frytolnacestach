@@ -11,15 +11,15 @@
                 <form class="o-form-login__form" @submit.prevent="login">
                     <div class="o-form-login__items">
                         <div class="o-form-login__item">
-                            <input class="a-input a-input--big" type="text" name="email" v-model="email" placeholder="E-mail"/>
+                            <input class="a-input -blue" type="text" name="email" v-model="email" placeholder="E-mail"/>
                         </div>
                         <div class="o-form-login__item">
-                            <input class="a-input a-input--big" type="password" name="password" v-model="password" placeholder="Heslo"/>
+                            <input class="a-input -blue" type="password" name="password" v-model="password" placeholder="Heslo"/>
                         </div>
                     </div>
                     <div class="o-form-login__buttons mt-1">
                         <div class="o-form-login__button">
-                            <div class="m-button">
+                            <div class="m-button -blue">
                                 <button class="m-button__input" type="submit">Přihlásit se</button>
                             </div>
                         </div>
