@@ -916,9 +916,13 @@ export default {
     ]
   },
 
+  serverMiddleware: [
+    '~/middleware/trailingSlash'
+  ],
+
   router: {
-    //trailingSlash: false,
-    //middleware: 'redirect-trailing-slash',
+    trailingSlash: false,
+    middleware: ['removeTrailingSlash'],
     extendRoutes(routes, resolve) {
       routes.push({
         name: 'stat-slug',
