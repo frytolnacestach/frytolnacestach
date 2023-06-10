@@ -141,7 +141,7 @@
         <div class="t-layout-full" v-if="post[0].id_continent || post[0].id_state || post[0].id_city">
 
             <!-- SECTION - place -->
-            <section class="t-section -p0 -bg-gray pt-2 pb-1">
+            <section class="t-section -p0 pt-2 pb-1">
                 <div class="t-section__inner">
                     <mHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
 
