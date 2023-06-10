@@ -73,6 +73,8 @@ export default {
             }
 
             try {
+
+                
                 await this.createForm();
                 console.log('Data byla odeslaná');
             } catch (error) {
@@ -107,8 +109,11 @@ export default {
                     this.succes = "Účet vytvořen, registrační e-mail odeslán.";
                     await this.$router.push('/ucet/registrace-dokoncena');
                 } else if (response.status === 400) {
-                    console.log("Uživatel s touto e-mailovou adresou již existuje");
-                    this.errorForm = "Uživatel s touto e-mailovou adresou již existuje";
+                    console.log("Uživatel s touto e-mailovou adresou již existuje.");
+                    this.errorForm = "Uživatel s touto e-mailovou adresou již existuje.";
+                } else if (response.status === 401) {
+                    console.log("Uživatel s touto přezdívkou již existuje.");
+                    this.errorForm = "Uživatel s touto přezdívkou již existuje.";
                 } else {
                     console.log("Chyba při komunikaci s API");
                     this.errorForm = "Chyba při komunikaci s API";
