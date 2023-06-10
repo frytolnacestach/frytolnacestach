@@ -167,7 +167,7 @@ export default {
 
                     const imagesAll = imagesPlacesAllID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlacesAllID.join(',')}`) : [];
 
-                    data = { account, placesID, placesContinets, placesStates, placesCities, placesRegions, placesSpots, imagesAll }
+                    data = { account, placesID, placesContinents, placesStates, placesCities, placesRegions, placesSpots, imagesAll }
 
 
                     success = true

@@ -1,0 +1,140 @@
+.o-user-list {
+    $self: &;
+
+    margin: 5px;
+
+    @media only screen and (min-width: $sm) {
+        margin: 10px;
+    }
+
+    &__outer {
+        width: 100%;
+    }
+
+    &__inner {
+        width: 100%;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    &__item {
+        display: block;
+        position: relative;
+        width: 50%;
+        height: 0;
+        padding-bottom: 50%;
+
+        @media only screen and (min-width: $sm) {
+            width: 33.333%;
+            padding-bottom: 33.333%;
+        }
+
+        @media only screen and (min-width: $md) {
+            width: 25%;
+            padding-bottom: 25%;
+        }
+
+        @media only screen and (min-width: $lg) {
+            width: 20%;
+            padding-bottom: 20%;
+        }
+
+        &:hover {
+            #{$self}__image-lazyload {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &__content {
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+
+        @media only screen and (min-width: $sm) {
+            padding: 10px;
+        }
+    }
+
+    //Image
+    &__image {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        border-radius: $br-2;
+
+        @media only screen and (min-width: $sm) {
+            border-radius: $br-4;
+        }
+
+        &:after {
+            content: '';
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.65) 100%);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+        }
+    }
+
+    &__image-lazyload {
+        @include transition(transform, .3s);
+        transform: scale(1);
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__image-file {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    //Name
+    &__name {
+        width: 100%;
+        color: white;
+        text-align: center;
+        z-index: 2;
+        position: absolute;
+        font-size: $fs-small;
+        padding: 0 15px 10px;
+
+        @media only screen and (min-width: $ti) {
+            font-size: $fs-normal-s;
+        }
+
+        @media only screen and (min-width: $sm) {
+            font-size: $fs-normal-lll;
+        }
+    }
+
+    //Link
+    &__link {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: white;
+        text-decoration: none;
+        z-index: 3;
+    }
+}
