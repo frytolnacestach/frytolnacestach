@@ -3,7 +3,7 @@
         <div class="o-place-teaser__outer">
             <div class="o-place-teaser__inner">
                 <div class="o-place-teaser__content">
-                    <div class="o-place-teaser__image loading-image">
+                    <div class="o-place-teaser__image loading-image -green">
                         <div v-if="image" class="o-place-teaser__image-lazyload">
                             <img class="o-place-teaser__image-file lazyload-file"
                                 data-sizes="(max-width: 374px) 345px, 390px"

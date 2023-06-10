@@ -1,5 +1,5 @@
 <template>
-   <div class="o-map-google loading-image">
+   <div class="o-map-google loading-image -green">
         <gmap-map v-if="isHydrated" :center="center" :zoom="zoom" :options="mapOptions"></gmap-map>
     </div>
 </template>

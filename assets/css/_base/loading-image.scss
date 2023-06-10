@@ -1,14 +1,28 @@
 .loading-image {
+    position: relative;
     animation-duration: 1.6s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-name: loadingImage;
     animation-timing-function: linear;
+    background-size: 1920px 1080px;
     background: $gray2;
     background: linear-gradient(to right, $gray5 8%, $gray9 38%, $gray5 54%);
-    background-size: 1920px 1080px;
 
-    position: relative;
+    &.-blue {
+        background: $c-blue-loading-bg;
+        background: linear-gradient(to right, $c-blue-loading-1 8%, $c-blue-loading-2 38%, $c-blue-loading-1 54%);
+    }
+
+    &.-green {
+        background: $c-green-loading-bg;
+        background: linear-gradient(to right, $c-green-loading-1 8%, $c-green-loading-2 38%, $c-green-loading-1 54%);
+    }
+
+    &.-gray {
+        background: $c-gray-loading-bg;
+        background: linear-gradient(to right, $c-gray-loading-1 8%, $c-gray-loading-2 38%, $c-gray-loading-1 54%);
+    }
 
     @keyframes loadingImage {
         0%{

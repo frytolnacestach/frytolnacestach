@@ -4,7 +4,7 @@
             <div class="o-cover-place__items">
                 <div v-for="place in places" :key="place.id" class="o-cover-place__item">
                     <div class="o-cover-place__content">
-                        <div class="o-cover-place__image loading-image">
+                        <div class="o-cover-place__image loading-image -green">
                             <div v-if="images && images.find(image => image.id === place.id_image_cover)" class="o-cover-place__image-lazyload">
                                 <img class="o-cover-place__image-file lazyload-file"
                                     data-sizes="(max-width: 374px) 180px, (max-width: 575px) 280px, (max-width: 1920px) 380px, 540px"

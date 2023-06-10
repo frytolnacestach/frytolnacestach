@@ -7,7 +7,7 @@
                         <div class="o-world-type__container">
                             <div class="o-world-type__image">
                                 <div :class="'o-world-type__image-file' + item.styleThemaItem">
-                                    <NuxtLink class="o-world-type__image-link" :to="item.url"></NuxtLink>
+                                    <NuxtLink class="o-world-type__image-link" :to="item.url" :alt="item.name"></NuxtLink>
                                 </div>
                             </div>
                             <h2 class="o-world-type__text">

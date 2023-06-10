@@ -1,6 +1,4 @@
 window.onload = function() {
-	console.log("ham: onload");
-
 	var hamburger = document.querySelector(".js_m-hamburger");
 	hamburger.addEventListener("click", function() {
 		console.log("ham: click");
