@@ -1,6 +1,6 @@
 <template>
     <div class="o-hero-big">
-        <div class="o-hero-big__image loading-image">
+        <div class="o-hero-big__image loading-image -gray">
             <div class="o-hero-big__image-lazyload">
                 <img class="o-hero-big__image-file lazyload-file"
                     data-sizes="(max-width: 374px) 374px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, (max-width: 1139px) 1139px, (max-width: 1219px) 1219px, (max-width: 1399px) 1399px, 1920px"

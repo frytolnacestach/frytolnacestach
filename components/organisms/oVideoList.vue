@@ -4,7 +4,7 @@
             <div class="o-video-list__items">
                 <div v-for="video in filteredVideos" :key="video.id" class="o-video-list__item">
                     <div class="o-video-list__item-inner">
-                        <div class="o-video-list__image loading-image">
+                        <div class="o-video-list__image loading-image -gray">
                             <div v-if="images && images.find(image => image.id === video.id_image)" class="o-video-list__image-lazyload">
                                 <img class="o-video-list__image-file lazyload-file"
                                     data-sizes="(max-width: 374px) 340px, (max-width: 439px) 400px, (max-width: 575px) 540px, (max-width: 767px) 400px, (max-width: 991px) 340px, 400px"

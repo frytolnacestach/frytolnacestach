@@ -2,7 +2,7 @@
     <div class="o-whoiam">
         <div class="o-whoiam__outer">
             <div class="o-whoiam__inner">
-                <div class="o-whoiam__image loading-image">
+                <div class="o-whoiam__image loading-image -gray">
                     <div class="o-whoiam__image-lazyload">
                         <img class="o-whoiam__image-file lazyload-file"
                             data-sizes="(max-width: 374px) 340px, (max-width: 439px) 400px, (max-width: 575px) 540px, (max-width: 767px) 400px, (max-width: 991px) 340px, 400px"

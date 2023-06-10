@@ -3,7 +3,7 @@
         <div class="o-place-block__outer">
             <div class="o-place-block__inner">
                 <div class="o-place-block__content">
-                    <div class="o-place-block__image loading-image">
+                    <div class="o-place-block__image loading-image -gray">
                         <div v-if="image" class="o-place-block__image-lazyload">
                             <img class="o-place-block__image-file lazyload-file"
                                 data-sizes="(max-width: 374px) 345px, 390px"

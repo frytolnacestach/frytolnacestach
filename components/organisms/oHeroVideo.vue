@@ -1,7 +1,7 @@
 <template>
     <div class="o-hero-video">
         <div class="o-hero-video__image loading-image">
-            <div v-if="image" class="o-hero-video__image-lazyload">
+            <div v-if="image" class="o-hero-video__image-lazyload -gray">
                 <img
                     class="o-hero-video__image-file lazyload-file"
                     v-lazy="{

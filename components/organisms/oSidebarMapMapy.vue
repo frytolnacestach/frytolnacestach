@@ -5,7 +5,7 @@
                 <div class="o-sidebar-map-mapy__map">
                     <a class="o-sidebar-map-mapy__map-link" :href="url" target="_blank">
                         
-                        <div class="o-sidebar-map-mapy__image loading-image">
+                        <div class="o-sidebar-map-mapy__image loading-image -gray">
                             <div v-if="images && images.find(image => image.id === idImageMap)" class="o-sidebar-map-mapy__image-lazyload">
                                 <img class="o-sidebar-map-mapy__image-file lazyload-file"
                                     data-sizes="(max-width: 374px) 340px, (max-width: 439px) 420px, (max-width: 575px) 550px, (max-width: 767px) 740px, (max-width: 991px) 980px, 300px"

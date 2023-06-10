@@ -1,6 +1,6 @@
 <template>
     <div class="o-hero-article">
-        <div class="o-hero-article__image loading-image">
+        <div class="o-hero-article__image loading-image -gray">
             <div v-if="images && images.find(image => image.id === post[0].id_image_hero)" class="o-hero-article__image-lazyload">
                 <img class="o-hero-article__image-file lazyload-file"
                     data-sizes="(max-width: 374px) 374px, (max-width: 575px) 575px, (max-width: 767px) 767px, (max-width: 991px) 991px, (max-width: 1139px) 1139px, (max-width: 1219px) 1219px, (max-width: 1399px) 1399px, 1920px"
