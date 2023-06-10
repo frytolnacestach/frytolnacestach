@@ -151,14 +151,14 @@ export default {
                     const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || [];
                     const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || [];
 
-                    const placesContinets = placesContinentsID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continents-array?id=${placesContinentsID.join(',')}`) : [];
+                    const placesContinents = placesContinentsID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continents-array?id=${placesContinentsID.join(',')}`) : [];
                     const placesStates = placesStatesID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-states-array?id=${placesStatesID.join(',')}`) : [];
                     const placesCities = placesCitiesID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-array?id=${placesCitiesID.join(',')}`) : [];
                     const placesRegions = placesRegionsID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-regions-array?id=${placesRegionsID.join(',')}`) : [];
                     const placesSpots = placesSpotsID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-spots-array?id=${placesSpotsID.join(',')}`) : [];
 
                     const imagesPlacesAllID = [].concat(
-                        placesContinets.map(placesContinet => placesContinet.id_image_cover),
+                        placesContinents.map(placesContinent => placesContinent.id_image_cover),
                         placesStates.map(placesState => placesState.id_image_cover),
                         placesCities.map(placesCity => placesCity.id_image_cover),
                         placesRegions.map(placesRegion => placesRegion.id_image_cover),

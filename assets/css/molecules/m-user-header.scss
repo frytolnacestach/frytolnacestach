@@ -21,7 +21,15 @@
     &__inner {
         display: flex;
         flex-wrap: wrap;
-        padding: 20px 10px;
+        padding: 9px 12px;
+
+        @media only screen and (min-width: $sm) {
+            padding: 15px 10px;
+        }
+
+        @media only screen and (min-width: $lg) {
+            padding: 20px 10px;
+        }
     }
 
     &__image {
