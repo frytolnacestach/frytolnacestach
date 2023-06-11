@@ -1,58 +1,70 @@
 .o-hero {
-    width: 100%;
-    height: auto;
-    min-height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    position: relative;
-    border-radius: $br-4;
-    margin: 0 20px;
-    width: auto;
-    background-color: $c-gray-bg-component-light-super;
+    $self: &;
 
-    @media only screen and (min-width: $lg) {
-        min-height: auto;
-    }
+    width: 100%;
 
     &__outer {
-        position: relative;
-        width: 100%; 
-        height: auto;
-        display: flex;
-        align-items: center;
+        width: 100%;
     }
 
     &__inner {
         width: 100%;
-        max-width: 640px;
-        text-align: center;
-        margin: 0 auto;
-        z-index: 2;
-        position: relative;
-        padding: 10px 15px;
     }
 
     &__headline {
-        color: $gray7;
-        margin: 0 0 5px;
+        width: 100%;
         font-size: $fs-40;
+        color: $gray7;
+        text-align: center;
+        margin: 0;
         text-transform: uppercase;
     }
 
     &__perex {
+        font-size: $fs-normal-ss;
         color: $gray7;
-        margin: 0;
-        font-size: $fs-normal-ssss;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
     }
 
-    &__date {
-        color: $gray3;
-        font-size: $fs-small-ssss;
+
+    //size
+    &.-w600 {
+        #{$self}__inner {
+            margin: 0 auto;
+            max-width: 600px;
+        }
     }
 
-    &__buttons {
-        display: flex;
-        justify-content: center;
+    //color
+    &.-blue {
+        #{$self}__headline {
+            color: $c-blue-t-dark;
+        }
+
+        #{$self}__perex {
+            color: $c-blue-t-dark-super;
+        }
+    }
+
+    &.-gray {
+        #{$self}__headline {
+            color: $c-gray-t-dark;
+        }
+
+        #{$self}__perex {
+            color: $c-gray-t-dark-super;
+        }
+    }
+
+    &.-green {
+        #{$self}__headline {
+            color: $c-green-t-dark;
+        }
+
+        #{$self}__perex {
+            color: $c-green-t-dark-super;
+        }
     }
 }

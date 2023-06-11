@@ -1,38 +1,56 @@
 .loading-image {
-    position: relative;
-    animation-duration: 4s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-name: loadingImage;
-    animation-timing-function: linear;
-    background-size: 1920px 1080px;
-    background: $gray2;
-    background: linear-gradient(to right, $gray5 10%, $gray9 50%, $gray5 90%);
+    background: $c-gray-loading-bg;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 400%;
+        height: 400%;
+        top: 0;
+        bottom: 0;
+        right: -300%;
+        left: 0%;
+        background: linear-gradient(270deg, $c-gray-loading-1, $c-gray-loading-2);
+        background-size: 400% 400%;
+        animation: loadingImage 3s ease infinite;
+    }
 
     &.-blue {
         background: $c-blue-loading-bg;
-        background: linear-gradient(to right, $c-blue-loading-1 10%, $c-blue-loading-2 50%, $c-blue-loading-1 90%);
+
+        &::before {
+            background: linear-gradient(270deg, $c-blue-loading-1, $c-blue-loading-2);
+        }
     }
 
     &.-green {
         background: $c-green-loading-bg;
-        background: linear-gradient(to right, $c-green-loading-1 10%, $c-green-loading-2 50%, $c-green-loading-1 90%);
+
+        &::before {
+            background: linear-gradient(270deg, $c-green-loading-1, $c-green-loading-2);
+        }
     }
 
     &.-gray {
         background: $c-gray-loading-bg;
-        background: linear-gradient(to right, $c-gray-loading-1 10%, $c-gray-loading-2 50px, $c-gray-loading-1 90%);
+
+        &::before {
+            background: linear-gradient(270deg, $c-gray-loading-1, $c-gray-loading-2);
+        }
     }
 
     @keyframes loadingImage {
         0%{
-            background-position: -540px 0
+            right: -300%;
+            left: 0%;
         }
         50%{
-            background-position: 540px 0
+            right: 0%;
+            left: -300%;
         }
         100%{
-            background-position: -540px 0
+            right: -300%;
+            left: 0%;
         }
     }
 }

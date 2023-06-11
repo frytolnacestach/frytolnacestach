@@ -13,27 +13,27 @@ $gray: gray;
 //red
 $redBG: #fef8f8;
 $redTEXT: #bd2626;
-$redBORDER:#eda6a6;
+$redBORDER: #eda6a6;
 //orange
 $orangeBG: #fefaf8;
 $orangeTEXT: #bd5b26;
-$orangeBORDER:#edbfa6;
+$orangeBORDER: #edbfa6;
 //yellow
 $yellowBG: #fefcf8;
 $yellowTEXT: #bd9f26;
-$yellowBORDER:#eddfa6;
+$yellowBORDER: #eddfa6;
 //green
 $greenBG: #f8fef9;
 $greenTEXT: #26bd4c;
-$greenBORDER:#a6edb8;
+$greenBORDER: #a6edb8;
 //blue
 $blueBG: #f8f9fe;
 $blueTEXT: #264cbd;
-$blueBORDER:#a6b8ed;
+$blueBORDER: #a6b8ed;
 //gray
 $grayBG: #fcfbfb;
 $grayTEXT: #2e2d2d;
-$grayBORDER:#cbcaca;
+$grayBORDER: #cbcaca;
 
 
 //social
@@ -63,7 +63,6 @@ $gray9: #dddddd;
 
 //project
 $brand1: #209277;
-$brand1Light: #a5d3c8;
 $brand2: #24b694;
 $brand3: #30c4c9;
 $brand4: #3d3c3c;
@@ -82,67 +81,64 @@ $brand2-a: #bde9de;
 $brand3-a: #ace7e9;
 
 
-//Gray (https://www.colorhexa.com/403f3f)
+//Blue
 //background
-$c-gray-bg: #fafafa; //Tint Color Variation 13
-$c-gray-bg-component-light-super: #f0f0f0; //Tint Color Variation 12
-$c-gray-bg-component-light: #dddcdc; //Tint Color Variation 10
-$c-gray-bg-component: #7b7979; //Shade Color Variation 13
-$c-gray-bg-component-dark: #403f3f; //Shade Color Variation 7
-$c-gray-bg-component-dark-super: #2c2c2c; //Shade Color Variation 5
+$c-blue-bg: #f4f8ff;
+$c-blue-bg-component-light-super: #dee8f8;
+$c-blue-bg-component-light: #c6d3e8;
+$c-blue-bg-component-dark: #465F85;
+$c-blue-bg-component-dark-super: #192941;
 //text
-$c-gray-t-light-super: #fafafa; //Tint Color Variation 13
-$c-gray-t-light: #e6e6e6; //Tint Color Variation 11
-$c-gray-t-dark: #363535; //Shade Color Variation 6
-$c-gray-t-dark-super: #222222; //Shade Color Variation 4
+$c-blue-t-light-super: #f4f8ff;
+$c-blue-t-light: #d2dced;
+$c-blue-t-dark: #314360;
+$c-blue-t-dark-super: #111f35;
 //icon
-$c-gray-icon-light: #dddcdc; //Tint Color Variation 10
-$c-gray-icon: #403f3f; //Shade Color Variation 7
-$c-gray-icon-dark: #0f0e0e; //Shade Color Variation 2
+$c-blue-icon-light: #c6d3e8;
+$c-blue-icon: #465F85;
+$c-blue-icon-dark: #142134;
+//other
+$c-blue-loading-bg: #c6d3e8;
+$c-blue-loading-1: #c6d3e8;
+$c-blue-loading-2: #5c7db1;
+
+//Gray
+//background
+$c-gray-bg: #f5f5f5;
+$c-gray-bg-component-light-super: #eeeeee;
+$c-gray-bg-component-light: #e1e1e1;
+$c-gray-bg-component-dark: #403f3f; //TODO: before 2023-06-11
+$c-gray-bg-component-dark-super: #2c2c2c; //TODO: before 2023-06-11
+//text
+$c-gray-t-light-super: #f5f5f5;
+$c-gray-t-light: #e6e6e6; //TODO: before 2023-06-11
+$c-gray-t-dark: #363535; //TODO: before 2023-06-11
+$c-gray-t-dark-super: #222222; //TODO: before 2023-06-11
+//icon
+$c-gray-icon-light: #e1e1e1;
+$c-gray-icon: #403f3f; //TODO: before 2023-06-11
+$c-gray-icon-dark: #0f0e0e; //TODO: before 2023-06-11
 //other
 $c-gray-loading-bg: #e4e4e4;
 $c-gray-loading-1: #cdcdcd;
 $c-gray-loading-2: #dddddd;
 
-//Blue (https://www.colorhexa.com/31c4c9)
+//Green
 //background
-$c-blue-bg: #fbfefe; //Tint Color Variation 13
-$c-blue-bg-component-light-super: #ebfafa; //Tint Color Variation 12
-$c-blue-bg-component-light: #ccf1f2; //Tint Color Variation 10
-$c-blue-bg-component: #31c4c9; //Shade Color Variation 13
-$c-blue-bg-component-dark: #1a686a; //Shade Color Variation 7
-$c-blue-bg-component-dark-super: #12494b; //Shade Color Variation 5
+$c-green-bg: #f4fffc;
+$c-green-bg-component-light-super: #def8f1;
+$c-green-bg-component-light: #bcddd5;
+$c-green-bg-component-dark: #125343; //TODO: before 2023-06-11
+$c-green-bg-component-dark-super: #0e4235; //TODO: before 2023-06-11
 //text
-$c-blue-t-light-super: #fbfefe; //Tint Color Variation 13
-$c-blue-t-light: #dbf5f6; //Tint Color Variation 11
-$c-blue-t-dark: #16585b; //Shade Color Variation 6
-$c-blue-t-dark-super: #0e3a3b; //Shade Color Variation 4
+$c-green-t-light-super: #f4fffc;
+$c-green-t-light: #d0f5ec; //TODO: before 2023-06-11
+$c-green-t-dark: #125243; //TODO: before 2023-06-11
+$c-green-t-dark-super: #0b3128; //TODO: before 2023-06-11
 //icon
-$c-blue-icon-light: #ccf1f2; //Tint Color Variation 10
-$c-blue-icon: #1a686a; //Shade Color Variation 7
-$c-blue-icon-dark: #071b1c; //Shade Color Variation 2
-//other
-$c-blue-loading-bg: #ccf1f2;
-$c-blue-loading-1: #ccf1f2;
-$c-blue-loading-2: #a0d1d2;
-
-//Green (https://www.colorhexa.com/209277)
-//background
-$c-green-bg: #f0fcf9; //Tint Color Variation 13
-$c-green-bg-component-light-super: #e0f8f2; //Tint Color Variation 12
-$c-green-bg-component-light: #c0f1e5;  //Tint Color Variation 10
-$c-green-bg-component: #2bc29e; //Shade Color Variation 13
-$c-green-bg-component-dark: #125343; //Shade Color Variation 7
-$c-green-bg-component-dark-super: #0e4235; //Shade Color Variation 5
-//text
-$c-green-t-light-super: #f0fcf9; //Tint Color Variation 13
-$c-green-t-light: #d0f5ec; //Tint Color Variation 11
-$c-green-t-dark: #125243; //Shade Color Variation 6
-$c-green-t-dark-super: #0b3128; //Shade Color Variation 4
-//icon
-$c-green-icon-light: #c0f1e5; //Tint Color Variation 10
-$c-green-icon: #125343; //Shade Color Variation 7
-$c-green-icon-dark: #04110e; //Shade Color Variation 2
+$c-green-icon-light: #bcddd5;
+$c-green-icon: #125343; //TODO: before 2023-06-11
+$c-green-icon-dark: #04110e; //TODO: before 2023-06-11
 //other
 $c-green-loading-bg: #c0f1e5;
 $c-green-loading-1: #c0f1e5;

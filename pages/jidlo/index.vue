@@ -4,7 +4,7 @@
         <!-- SECTION - Hero food -->
         <section class="t-section py-4">
             <div class="t-section__inner">
-                <oHeroItem title="Jídla" perex="Jaké jídla se jedí ve světe. Na které kde narazíte a co si kde dát? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." />
+                <oHero headline="Jídla" perex="Jaké jídla se jedí ve světe. Na které kde narazíte a co si kde dát? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w600" />
             </div>
         </section>
         <!-- SECTION - Hero food END -->
@@ -22,14 +22,14 @@
 
 <script>
     import oCoverItem from '~/components/organisms/oCoverItem.vue'
-    import oHeroItem from '~/components/organisms/oHeroItem.vue'
+    import oHero from '~/components/organisms/oHero.vue'
 
     export default {
         name: 'JidloIndexPage',
 
         components: {
             oCoverItem,
-            oHeroItem
+            oHero
         },
 
         methods:{

@@ -1,5 +1,5 @@
 <template>
-    <div class="o-hero">
+    <div :class="'o-hero' + modifierCSS + classCSS">
         <div class="o-hero__outer">
             <div class="o-hero__inner">
                 <h1 class="o-hero__headline">{{ headline }}</h1>
@@ -9,13 +9,21 @@
     </div>
 </template>
 
-
-
 <script>
     export default {
         name: 'OrganismsoHeroComponent',
 
         props: {
+            modifierCSS: {
+                type: String,
+                required: false,
+                default: ' '
+            },
+            classCSS: {
+                type: String,
+                required: false,
+                default: ' '
+            },
             headline: {
                 type: String,
                 required: true

@@ -4,7 +4,7 @@
         <!-- SECTION - Hero flora -->
         <section class="t-section py-4">
             <div class="t-section__inner">
-                <oHeroItem title="Flóra" perex="Jaké flóra kde roste? A na jakou si dát pozor? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." />
+                <oHero title="Flóra" perex="Jaké flóra kde roste? A na jakou si dát pozor? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w600" />
             </div>
         </section>
         <!-- SECTION - Hero flora END -->
@@ -22,14 +22,14 @@
 
 <script>
     import oCoverItem from '~/components/organisms/oCoverItem.vue'
-    import oHeroItem from '~/components/organisms/oHeroItem.vue'
+    import oHero from '~/components/organisms/oHero.vue'
 
     export default {
         name: 'FloraIndexPage',
 
         components: {
             oCoverItem,
-            oHeroItem
+            oHero
         },
 
         methods:{

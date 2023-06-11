@@ -4,7 +4,7 @@
         <!-- SECTION - Hero značky -->
         <section class="t-section py-4">
             <div class="t-section__inner">
-                <oHeroItem title="Značky" perex="Jaké značky a výrobky kde najdete? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." />
+                <oHero title="Značky" perex="Jaké značky a výrobky kde najdete? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w600" />
             </div>
         </section>
         <!-- SECTION - Hero značky END -->
@@ -22,22 +22,14 @@
 
 <script>
     import oCoverItem from '~/components/organisms/oCoverItem.vue'
-    import oHeroItem from '~/components/organisms/oHeroItem.vue'
+    import oHero from '~/components/organisms/oHero.vue'
 
     export default {
         name: 'ZnackaIndexPage',
 
         components: {
             oCoverItem,
-            oHeroItem
-        },
-
-        methods:{
-
-        },
-
-        data() {
-            return {}
+            oHero
         },
 
         head: {
