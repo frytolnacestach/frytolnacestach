@@ -2,7 +2,7 @@
     width: 100%;
 
     &__outher {
-        background-color: $white;
+        background-color: $c-green-bg-component-light-super;
         border-radius: $br-2;
         margin: 5px 0;
     
@@ -19,6 +19,8 @@
     &__headline {
         font-size: $fs-large-l;
         margin-bottom: 20px;
+        color: $c-green-t-dark;
+        border-bottom: 1px solid $c-green-bg-component-light;
     }
 
     &__container {
@@ -44,7 +46,7 @@
             z-index: 1;
             width: 100px;
             height: 100px;
-            background: #EEE;
+            background: $c-green-bg-component-light-super;
             border-radius: 50%;
             top: 50px;
             left: 50px;
@@ -82,7 +84,7 @@
     }
 
     &__legend-items {
-
+        color: $c-green-t-dark-super;
     }
 
     &__legend-item {
