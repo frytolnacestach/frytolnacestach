@@ -297,7 +297,7 @@
                                 <!-- SECTION - Ceny -->
                                 <section class="t-section" v-if="place[0].money_prices">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Ceny v zemi" perex="Ceny se můžou lišit v rámci sézony, místa a nebo míry a rychosti infalce. Proto je berte jen jako orientační." styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <mHeadline title="Ceny v zemi" perex="Ceny se můžou lišit v rámci sézony, místa a nebo míry a rychlosti inflace. Proto je berte jen jako orientační." styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oBlockList :items="place[0].money_prices" :perexListItemValueSubfix="place[0].currency_code" />
                                     </div>
                                 </section>
