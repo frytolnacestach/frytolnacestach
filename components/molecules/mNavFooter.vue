@@ -25,7 +25,6 @@
                 </ul>
             </div>
 
-
             <div class="m-nav-footer__inner">
                 <span class="m-nav-footer__headline">Objevuj svět</span>
                 <ul class="m-nav-footer__items">
@@ -44,6 +43,12 @@
                     <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/svet/misto">Místa</NuxtLink>
                     </li>
+                </ul>
+            </div>
+
+            <div class="m-nav-footer__inner">
+                <span class="m-nav-footer__headline">Poznej svět</span>
+                <ul class="m-nav-footer__items">
                     <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/jidlo">Tradiční jídla</NuxtLink>
                     </li>
@@ -61,7 +66,6 @@
                     </li>
                 </ul>
             </div>
-
 
             <div class="m-nav-footer__inner">
                 <span class="m-nav-footer__headline">Frytolnacestach.cz</span>
