@@ -46,7 +46,7 @@
 
         computed: {
             getTrimmedNickname() {
-                const maxLength = 15;
+                const maxLength = 20;
                 if (this.nickname.length > maxLength) {
                     return this.nickname.slice(0, maxLength) + '...';
                 }
