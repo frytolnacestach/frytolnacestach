@@ -133,6 +133,21 @@
         }
     }
 
+    &.-col2 {
+        #{$self}__item {
+            display: flex;
+            width: 50%;
+    
+            @media only screen and (min-width: $md) {
+                width: 50%;
+            }
+
+            @media only screen and (min-width: $lg) {
+                width: 50%;
+            }
+        }
+    }
+
     &.-col4 {
         #{$self}__item {
             display: flex;

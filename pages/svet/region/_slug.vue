@@ -90,7 +90,7 @@
                         <!-- SECTION - videos -->
                         <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="videos[0]">
                             <div class="t-section__inner">
-                                <mHeadline title="Videa z kontinentu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                <mHeadline title="Videa z regionu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                 <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleAlign=" -p-left" />
                             </div>
                         </section>
@@ -99,7 +99,7 @@
                         <!-- SECTION - articles -->
                         <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="posts[0]">
                             <div class="t-section__inner">
-                                <mHeadline title="Články z kontinetu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                <mHeadline title="Články z regionu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                 <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleAlign=" -p-left" />
                             </div>
                         </section>

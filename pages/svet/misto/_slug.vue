@@ -20,6 +20,7 @@
         </section>
         <!-- SECTION - Buttons END -->
 
+
         <!-- SECTION - hero + hot info hero -->
         <section class="t-section -px-world -p0">
             <div class="t-section__inner">
@@ -36,6 +37,43 @@
                         <oMapGoogle :place="place" />
                     </div>
                     <!-- SECTION - map - END -->
+
+                    <!-- SECTION - hot info -->
+                    <div class="t-grid__section -hot-info-hero">
+                        <div class="js_o-hot-info-hero o-hot-info-hero -col2">
+                            <div class="o-hot-info-hero__outer">
+                                <div class="o-hot-info-hero__inner">
+                                    <div class="o-hot-info-hero__items">
+                                        <div class="o-hot-info-hero__item -link" v-if="placeState[0].name">
+                                            <div class="o-hot-info-hero__container">
+                                                <div class="o-hot-info-hero__content">
+                                                    <NuxtLink class="o-hot-info-hero__link" :to="`/svet/stat/${placeState[0].slug}`">
+                                                        <div class="o-hot-info-hero__text">
+                                                            <span class="o-hot-info-hero__title">Stát</span>
+                                                            <span class="o-hot-info-hero__value">
+                                                                {{ placeState[0].name }}
+                                                            </span>
+                                                        </div>
+                                                    </NuxtLink>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="o-hot-info-hero__item" v-if="place[0].altitude">
+                                            <div class="o-hot-info-hero__container">
+                                                <div class="o-hot-info-hero__content">
+                                                    <div class="o-hot-info-hero__text">
+                                                        <span class="o-hot-info-hero__title">Nadmořská výška</span>
+                                                        <span class="o-hot-info-hero__value">{{ place[0].altitude !== 0 ? place[0].altitude.toLocaleString('cs-CZ') : place[0].altitude }} m n. m.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SECTION - hot info - END -->
 
                 </div>
             </div>
@@ -90,7 +128,7 @@
                        <!-- SECTION - videos -->
                        <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="videos[0]">
                             <div class="t-section__inner">
-                                <mHeadline title="Videa z kontinentu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                <mHeadline title="Videa z místa" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                 <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleAlign=" -p-left" />
                             </div>
                         </section>
@@ -99,7 +137,7 @@
                         <!-- SECTION - articles -->
                         <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="posts[0]">
                             <div class="t-section__inner">
-                                <mHeadline title="Články z kontinetu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                <mHeadline title="Články z místa" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                 <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleAlign=" -p-left" />
                             </div>
                         </section>
