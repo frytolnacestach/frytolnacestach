@@ -1,80 +1,86 @@
 <template>
     <main class="t-main -blue -pt-menu" role="main">
 
-        <div class="t-col2">
-            <div class="t-col2__sidebar my-2">
-                <!-- SECTION - user headline - account -->
-                <section class="t-section -padding-x -p0" v-if="user[0]">
-                    <div class="t-section__inner">
-                        <mUserHeader :user="user" />
-                    </div>
-                </section>
-                <!-- SECTION - user headline - account END -->
+        <!-- SECTION -->
+        <section class="t-section -padding-x -padding-y -p0 mb-4">
+            <div class="t-section__inner">
+                <div class="t-col2">
+                    <div class="t-col2__sidebar mb-2">
+                        <!-- SECTION - user headline - account -->
+                        <section class="t-section -padding-x -p0" v-if="user[0]">
+                            <div class="t-section__inner">
+                                <mUserHeader :user="user" />
+                            </div>
+                        </section>
+                        <!-- SECTION - user headline - account END -->
 
-                <!-- SECTION - ad-google - sidebar -->
-                <section class="t-section -px-world my-2">
-                    <div class="t-section__inner">
-                        <oAdGoogleSidebar />
+                        <!-- SECTION - ad-google - sidebar -->
+                        <section class="t-section -px-world my-2">
+                            <div class="t-section__inner">
+                                <oAdGoogleSidebar />
+                            </div>
+                        </section>
+                        <!-- SECTION - ad-google - sidebar - END -->
                     </div>
-                </section>
-                <!-- SECTION - ad-google - sidebar - END -->
+
+                    <div class="t-col2__content mb-2">
+                        <!-- SECTION - Visited place category -->
+                        <section class="t-section -padding-x -p0 pb-4" v-if="!placesID[0]">
+                            <div class="t-section__inner">
+                                <mHeadline title="Tento uživatel zatím nemá žádná navštívená místa" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Visited place category END -->
+
+                        <!-- SECTION - Visited place category -->
+                        <section class="t-section -padding-x -p0 pb-4" v-if="placesContinents[0]">
+                            <div class="t-section__inner">
+                                <mHeadline title="Kontinety které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                <oCoverPlaceVisited :places="placesContinents" :images="imagesAll" type="kontinent" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Visited place category END -->
+
+                        <!-- SECTION - Visited place category -->
+                        <section class="t-section -padding-x -p0 pb-4" v-if="placesStates[0]">
+                            <div class="t-section__inner">
+                                <mHeadline title="Státy které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                <oCoverPlaceVisited :places="placesStates" :images="imagesAll" type="stat" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Visited place category END -->
+
+                        <!-- SECTION - Visited place category -->
+                        <section class="t-section -padding-x -p0 pb-4" v-if="placesCities[0]">
+                            <div class="t-section__inner">
+                                <mHeadline title="Města které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                <oCoverPlaceVisited :places="placesCities" :images="imagesAll" type="mesto" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Visited place category END -->
+
+                        <!-- SECTION - Visited place category -->
+                        <section class="t-section -padding-x -p0 pb-4" v-if="placesRegions[0]">
+                            <div class="t-section__inner">
+                                <mHeadline title="Regiony které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                <oCoverPlaceVisited :places="placesRegions" :images="imagesAll" type="region" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Visited place category END -->
+
+                        <!-- SECTION - Visited place category -->
+                        <section class="t-section -padding-x -p0 pb-4" v-if="placesSpots[0]">
+                            <div class="t-section__inner">
+                                <mHeadline title="Místa které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                <oCoverPlaceVisited :places="placesSpots" :images="imagesAll" type="misto" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Visited place category END -->
+                    </div>
+                </div>
             </div>
-
-            <div class="t-col2__content my-2">
-                <!-- SECTION - Visited place category -->
-                <section class="t-section -padding-x -p0 pb-4" v-if="!placesID[0]">
-                    <div class="t-section__inner">
-                        <mHeadline title="Tento uživatel zatím nemá žádná navštívená místa" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                    </div>
-                </section>
-                <!-- SECTION - Visited place category END -->
-
-                <!-- SECTION - Visited place category -->
-                <section class="t-section -padding-x -p0 pb-4" v-if="placesContinents[0]">
-                    <div class="t-section__inner">
-                        <mHeadline title="Kontinety které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                        <oCoverPlaceVisited :places="placesContinents" :images="imagesAll" type="kontinent" />
-                    </div>
-                </section>
-                <!-- SECTION - Visited place category END -->
-
-                <!-- SECTION - Visited place category -->
-                <section class="t-section -padding-x -p0 pb-4" v-if="placesStates[0]">
-                    <div class="t-section__inner">
-                        <mHeadline title="Státy které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                        <oCoverPlaceVisited :places="placesStates" :images="imagesAll" type="stat" />
-                    </div>
-                </section>
-                <!-- SECTION - Visited place category END -->
-
-                <!-- SECTION - Visited place category -->
-                <section class="t-section -padding-x -p0 pb-4" v-if="placesCities[0]">
-                    <div class="t-section__inner">
-                        <mHeadline title="Města které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                        <oCoverPlaceVisited :places="placesCities" :images="imagesAll" type="mesto" />
-                    </div>
-                </section>
-                <!-- SECTION - Visited place category END -->
-
-                <!-- SECTION - Visited place category -->
-                <section class="t-section -padding-x -p0 pb-4" v-if="placesRegions[0]">
-                    <div class="t-section__inner">
-                        <mHeadline title="Regiony které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                        <oCoverPlaceVisited :places="placesRegions" :images="imagesAll" type="region" />
-                    </div>
-                </section>
-                <!-- SECTION - Visited place category END -->
-
-                <!-- SECTION - Visited place category -->
-                <section class="t-section -padding-x -p0 pb-4" v-if="placesSpots[0]">
-                    <div class="t-section__inner">
-                        <mHeadline title="Místa které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                        <oCoverPlaceVisited :places="placesSpots" :images="imagesAll" type="misto" />
-                    </div>
-                </section>
-                <!-- SECTION - Visited place category END -->
-            </div>
-        </div>
+        </section>
+        <!-- SECTION END -->
     </main>
 </template>
 

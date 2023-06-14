@@ -876,6 +876,14 @@ export default {
         exclude: ['/**']
       },
       {
+        path: '/sitemap-travel-dictionary.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/travel-dictionaries')
+          return data.map(v => `/cestovatelsky-slovnik/${v.slug}`)
+        },
+        exclude: ['/**']
+      },
+      {
         path: '/sitemap-users.xml',
         routes: async () => {
           let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/users')
