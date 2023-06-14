@@ -96,15 +96,15 @@
 
         data() {
             return {
-                user: this.user,
-                placesID: this.placeID,
-                visitedPlaces: this.visitedPlaces,
-                placesContinents: this.placesContinents,
-                placesStates: this.placesStates,
-                placesCities: this.placesCities,
-                placesRegions: this.placesRegions,
-                placesSpots: this.placesSpots,
-                imagesAll: this.imagesAll
+                user: '',
+                placesID: '',
+                visitedPlaces: '',
+                placesContinents: '',
+                placesStates: '',
+                placesCities: '',
+                placesRegions: '',
+                placesSpots: '',
+                imagesAll: '',
             }
         },
 

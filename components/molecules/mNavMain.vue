@@ -39,9 +39,19 @@
 
         mounted() {
             if (process.client) {
-                const localStorageNickname = localStorage.getItem('nickname');
-                this.nickname = localStorageNickname;
+                this.nickname =  localStorage.getItem('nickname');
             }
+        },
+
+        watch: {
+            '$route.path': {
+                handler() {
+                    if (process.client) {
+                        this.nickname = localStorage.getItem('nickname');
+                    }
+                },
+                immediate: true
+            },
         },
 
         computed: {

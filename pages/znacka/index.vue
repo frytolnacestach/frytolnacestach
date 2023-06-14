@@ -4,7 +4,7 @@
         <!-- SECTION - Hero značky -->
         <section class="t-section py-4">
             <div class="t-section__inner">
-                <oHero title="Značky" perex="Jaké značky a výrobky kde najdete? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w600" />
+                <oHero headline="Značky" perex="Jaké značky a výrobky kde najdete? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w600" />
             </div>
         </section>
         <!-- SECTION - Hero značky END -->

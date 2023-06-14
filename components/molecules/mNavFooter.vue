@@ -68,6 +68,15 @@
             </div>
 
             <div class="m-nav-footer__inner">
+                <span class="m-nav-footer__headline">Cestuj</span>
+                <ul class="m-nav-footer__items">
+                    <li class="m-nav-footer__item">
+                        <NuxtLink class="m-nav-footer__link" to="/cestovatelsky-slovnik">Cestovatelský slovník</NuxtLink>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="m-nav-footer__inner">
                 <span class="m-nav-footer__headline">Frytolnacestach.cz</span>
                 <ul class="m-nav-footer__items">
                     <li class="m-nav-footer__item">
@@ -75,6 +84,9 @@
                     </li>
                     <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/conditions">Obchodní podmínky a zásady ochrany osobních údajů</NuxtLink>
+                    </li>
+                    <li class="m-nav-footer__item">
+                        <NuxtLink class="m-nav-footer__link" to="/conditions-user">Obchodní podmínky a zásady ochrany osobních údajů (uživatelský účet)</NuxtLink>
                     </li>
                     <li class="m-nav-footer__item">
                         <NuxtLink class="js_cookies-edit m-nav-footer__link" to="#" rel="nofollow">Upravit můj souhlas s cookies</NuxtLink>
