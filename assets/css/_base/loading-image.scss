@@ -39,6 +39,12 @@
         }
     }
 
+    //skeleton
+    &.-skeleton {
+        position: relative;
+        overflow: hidden;
+    }
+
     @keyframes loadingImage {
         0%{
             right: -300%;

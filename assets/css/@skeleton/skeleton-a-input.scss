@@ -1,0 +1,19 @@
+.skeleton-a-input {
+    width: 100%;
+    max-width: 560px;
+    height: 56px;
+    border-radius: $br-2;
+
+    //color
+    &.-blue {
+        background-color: $c-blue-bg-component-light-super;
+    }
+
+    &.-gray {
+        background-color: $c-gray-bg-component-light-super;
+    }
+
+    &.-green {
+        background-color: $c-green-bg-component-light-super;
+    }
+}

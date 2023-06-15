@@ -1,0 +1,16 @@
+.skeleton-m-button {
+    $self: &;
+
+    &__input {
+        background-color: $c-blue-bg-component-light-super;
+        border-radius: $br-2;
+        height: 46px;
+        width: 160px;
+    }
+
+    &.-blue {
+        #{$self}__input {
+            background-color: $c-blue-bg-component-light-super;
+        }
+    } 
+}

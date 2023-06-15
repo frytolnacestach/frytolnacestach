@@ -1,24 +1,17 @@
-.o-form-login {
+.skeleton-o-form-profile {
     width: 100%;
 
     &__outer {
-        max-width: 460px;
-        margin: 0 auto;
+        width: 100%;
     }
 
     &__inner {
         width: 100%;
     }
 
-    &__messages {
-        display: block;
-        width: 100%;
-    }
-
     &__title {
         display: block;
         color: $c-green-t-dark-super;
-        border-bottom: 1px solid $c-blue-bg-component-dark;
         margin-bottom: 10px;
         font-size: $fs-normal-ll;
     }
@@ -26,7 +19,6 @@
     &__form {
         display: block;
         width: 100%;
-        padding: 10px 15px;
     }
 
     &__items {

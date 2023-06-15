@@ -1,35 +1,71 @@
 <template>
-    <div class="o-form-profile">
-        <div class="o-form-profile__outer">
-            <div class="o-form-profile__inner">
+    <div>
+        <!-- skeleton -->
+        <div v-if="profile === null">
+            <div class="skeleton-o-form-profile">
+                <div class="skeleton-o-form-profile__outer">
+                    <div class="skeleton-o-form-profile__inner">
 
-                <div class="o-form-profile__messages">
-                    <!-- SECTION - FlashMassages -->
-                    <oFlashMessages :text="errorForm" styleThema=" -error" />
-                    <oFlashMessages :text="successForm" styleThema=" -success" />
-                    <!-- SECTION - FlashMassages END -->
-                </div>
-                <!--test - {{ profile[0].surname }} - test-->
-                <form class="o-form-profile__form" @submit.prevent="editProfile">
-                    <div class="o-form-profile__items">
-                        <div class="o-form-profile__item">
-                            <input class="a-input -blue" type="text" name="surname" v-model="surname" placeholder="Jméno"/>
-                        </div>
-                        <div class="o-form-profile__item">
-                            <input class="a-input -blue" type="text" name="lastname" v-model="lastname" placeholder="Příjmení"/>
-                        </div>
-                    </div>
-                    <div class="o-form-profile__buttons mt-1">
-                        <div class="o-form-profile__button">
-                            <div class="m-button -blue">
-                                <button class="m-button__input" type="submit">Upravit údaje</button>
+                        <div class="skeleton-o-form-profile__form">
+                            <div class="skeleton-o-form-profile__items">
+                                <div class="skeleton-o-form-profile__item">
+                                    <div class="skeleton-a-input loading-image -blue -skeleton"></div>
+                                </div>
+                                <div class="skeleton-o-form-profile__item">
+                                    <div class="skeleton-a-input loading-image -blue -skeleton"></div>
+                                </div>
+                            </div>
+                            <div class="skeleton-o-form-profile__buttons mt-1">
+                                <div class="skeleton-o-form-profile__button">
+                                    <div class="skeleton-m-button -blue">
+                                        <div class="skeleton-m-button__input loading-image -blue -skeleton"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </form>
 
+                    </div>
+                </div>
             </div>
         </div>
+        <!-- skeleton END -->
+
+        <client-only v-if="profile !== null">
+            <div class="o-form-profile">
+                <div class="o-form-profile__outer">
+                    <div class="o-form-profile__inner">
+
+                        <!-- SECTION - FlashMassages -->
+                        <div class="o-form-profile__messages">
+                            <oFlashMessages :text="errorForm" styleThema=" -error" />
+                            <oFlashMessages :text="successForm" styleThema=" -success" />
+                        </div>
+                        <!-- SECTION - FlashMassages END -->
+
+                        <!-- FORM -->
+                        <form class="o-form-profile__form" @submit.prevent="editProfile">
+                            <div class="o-form-profile__items">
+                                <div class="o-form-profile__item">
+                                    <input class="a-input -blue" type="text" name="surname" v-model="surname" placeholder="Jméno"/>
+                                </div>
+                                <div class="o-form-profile__item">
+                                    <input class="a-input -blue" type="text" name="lastname" v-model="lastname" placeholder="Příjmení"/>
+                                </div>
+                            </div>
+                            <div class="o-form-profile__buttons mt-1">
+                                <div class="o-form-profile__button">
+                                    <div class="m-button -blue">
+                                        <button class="m-button__input" type="submit">Upravit údaje</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- FORM END -->
+
+                    </div>
+                </div>
+            </div>
+        </client-only>
     </div>
 </template>
   
