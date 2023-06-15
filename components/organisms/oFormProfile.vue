@@ -9,16 +9,16 @@
                         <div class="skeleton-o-form-profile__form">
                             <div class="skeleton-o-form-profile__items">
                                 <div class="skeleton-o-form-profile__item">
-                                    <div class="skeleton-a-input loading-image -blue -skeleton"></div>
+                                    <div class="skeleton-a-input loading-image -skeleton-blue"></div>
                                 </div>
                                 <div class="skeleton-o-form-profile__item">
-                                    <div class="skeleton-a-input loading-image -blue -skeleton"></div>
+                                    <div class="skeleton-a-input loading-image -skeleton-blue"></div>
                                 </div>
                             </div>
                             <div class="skeleton-o-form-profile__buttons mt-1">
                                 <div class="skeleton-o-form-profile__button">
                                     <div class="skeleton-m-button -blue">
-                                        <div class="skeleton-m-button__input loading-image -blue -skeleton"></div>
+                                        <div class="skeleton-m-button__input loading-image -skeleton-blue"></div>
                                     </div>
                                 </div>
                             </div>

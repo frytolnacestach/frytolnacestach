@@ -40,9 +40,34 @@
     }
 
     //skeleton
-    &.-skeleton {
+    &.-skeleton-blue {
         position: relative;
         overflow: hidden;
+        background: $c-blue-skeleton-loading-bg;
+
+        &::before {
+            background: linear-gradient(270deg, $c-blue-skeleton-loading-1, $c-blue-skeleton-loading-2);
+        }
+    }
+
+    &.-skeleton-green {
+        position: relative;
+        overflow: hidden;
+        background: $c-green-skeleton-loading-bg;
+
+        &::before {
+            background: linear-gradient(270deg, $c-green-skeleton-loading-1, $c-green-skeleton-loading-2);
+        }
+    }
+
+    &.-skeleton-gray {
+        position: relative;
+        overflow: hidden;
+        background: $c-gray-skeleton-loading-bg;
+
+        &::before {
+            background: linear-gradient(270deg, $c-gray-skeleton-loading-1, $c-gray-skeleton-loading-2);
+        }
     }
 
     @keyframes loadingImage {
