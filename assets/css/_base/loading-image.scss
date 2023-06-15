@@ -70,6 +70,38 @@
         }
     }
 
+    //skeleton-dark
+    &.-skeleton-dark-blue {
+        position: relative;
+        overflow: hidden;
+        background: $c-blue-skeleton-dark-loading-bg;
+
+        &::before {
+            background: linear-gradient(270deg, $c-blue-skeleton-dark-loading-1, $c-blue-skeleton-dark-loading-2);
+        }
+    }
+
+    &.-skeleton-dark-green {
+        position: relative;
+        overflow: hidden;
+        background: $c-green-skeleton-dark-loading-bg;
+
+        &::before {
+            background: linear-gradient(270deg, $c-green-skeleton-dark-loading-1, $c-green-skeleton-dark-loading-2);
+        }
+    }
+
+    &.-skeleton-dark-gray {
+        position: relative;
+        overflow: hidden;
+        background: $c-gray-skeleton-dark-loading-bg;
+
+        &::before {
+            background: linear-gradient(270deg, $c-gray-skeleton-dark-loading-1, $c-gray-skeleton-dark-loading-2);
+        }
+    }
+
+    //animation
     @keyframes loadingImage {
         0%{
             right: -300%;
