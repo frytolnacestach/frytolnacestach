@@ -27,8 +27,8 @@
                         <!-- SECTION - Visited place category -->
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
-                                <mHeadline title="Kontinety které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :placesID="placesContinentsID" type="kontinent" v-if="placesContinentsID" />
+                                <mHeadline title="Kontinety které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                <oCoverPlaceVisited :placesID="placesContinentsID" type="kontinent" v-if="placesContinentsID" account="other" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -36,8 +36,8 @@
                         <!-- SECTION - Visited place category -->
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
-                                <mHeadline title="Státy které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :placesID="placesStatesID" type="stat" v-if="placesStatesID" />
+                                <mHeadline title="Státy které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                <oCoverPlaceVisited :placesID="placesStatesID" type="stat" v-if="placesStatesID" account="other" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -45,8 +45,8 @@
                         <!-- SECTION - Visited place category -->
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
-                                <mHeadline title="Města které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :placesID="placesCitiesID" type="mesto" v-if="placesCitiesID" />
+                                <mHeadline title="Města které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                <oCoverPlaceVisited :placesID="placesCitiesID" type="mesto" v-if="placesCitiesID" account="other" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -54,8 +54,8 @@
                         <!-- SECTION - Visited place category -->
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
-                                <mHeadline title="Regiony které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :placesID="placesRegionsID" type="region" v-if="placesRegionsID" />
+                                <mHeadline title="Regiony které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                <oCoverPlaceVisited :placesID="placesRegionsID" type="region" v-if="placesRegionsID" account="other" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -63,8 +63,8 @@
                         <!-- SECTION - Visited place category -->
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
-                                <mHeadline title="Místa které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :placesID="placesSpotsID" type="misto" v-if="placesSpotsID" />
+                                <mHeadline title="Místa které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                <oCoverPlaceVisited :placesID="placesSpotsID" type="misto" v-if="placesSpotsID" account="other" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->

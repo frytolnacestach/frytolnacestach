@@ -14,10 +14,14 @@
 
     &__title {
         display: inline-block;
-        font-size: $fs-large;
+        font-size: $fs-normal-ll;
         font-weight: 600;
         text-transform: uppercase;
         margin: 0;
+
+        @media only screen and (min-width: $sm) {
+            font-size: $fs-large;
+        }
     }
 
     &__perex {
