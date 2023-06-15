@@ -61,15 +61,15 @@
                     <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/znacka">Značky</NuxtLink>
                     </li>
-                    <li class="m-nav-footer__item">
-                        <NuxtLink class="m-nav-footer__link" to="/cestovatel">Cestovatelé</NuxtLink>
-                    </li>
                 </ul>
             </div>
 
             <div class="m-nav-footer__inner">
                 <span class="m-nav-footer__headline">Cestuj</span>
                 <ul class="m-nav-footer__items">
+                    <li class="m-nav-footer__item">
+                        <NuxtLink class="m-nav-footer__link" to="/cestovatel">Cestovatelé</NuxtLink>
+                    </li>
                     <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/cestovatelsky-slovnik">Cestovatelský slovník</NuxtLink>
                     </li>
