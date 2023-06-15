@@ -26,46 +26,46 @@
 
                     <div class="t-grid__section -content">
                         <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4" v-if="placesContinents[0]">
+                        <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Kontinety které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :places="placesContinents" :images="imagesAll" type="kontinent" />
+                                <oCoverPlaceVisited :placesID="placesContinentsID" type="kontinent" v-if="placesContinentsID" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
 
                         <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4" v-if="placesStates[0]">
+                        <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Státy které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :places="placesStates" :images="imagesAll" type="stat" />
+                                <oCoverPlaceVisited :placesID="placesStatesID" type="stat" v-if="placesStatesID" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
 
                         <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4" v-if="placesCities[0]">
+                        <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Města které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :places="placesCities" :images="imagesAll" type="mesto" />
+                                <oCoverPlaceVisited :placesID="placesCitiesID" type="mesto" v-if="placesCitiesID" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
 
                         <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4" v-if="placesRegions[0]">
+                        <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Regiony které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :places="placesRegions" :images="imagesAll" type="region" />
+                                <oCoverPlaceVisited :placesID="placesRegionsID" type="region" v-if="placesRegionsID" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
 
                         <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4" v-if="placesSpots[0]">
+                        <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Místa které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :places="placesSpots" :images="imagesAll" type="misto" />
+                                <oCoverPlaceVisited :placesID="placesSpotsID" type="misto" v-if="placesSpotsID" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -102,14 +102,11 @@ export default {
             email: null,
             passwordHash: null,
             account: '',
-            placesID: '',
-            visitedPlaces: '',
-            placesContinents: '',
-            placesStates: '',
-            placesCities: '',
-            placesRegions: '',
-            placesSpots: '',
-            imagesAll: ''
+            placesContinentsID: '',
+            placesStatesID: '',
+            placesCitiesID: '',
+            placesRegionsID: '',
+            placesSpotsID: '',
         }
     },
 
@@ -151,23 +148,7 @@ export default {
                     const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || [];
                     const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || [];
 
-                    const placesContinents = placesContinentsID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continents-array?id=${placesContinentsID.join(',')}`) : [];
-                    const placesStates = placesStatesID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-states-array?id=${placesStatesID.join(',')}`) : [];
-                    const placesCities = placesCitiesID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-array?id=${placesCitiesID.join(',')}`) : [];
-                    const placesRegions = placesRegionsID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-regions-array?id=${placesRegionsID.join(',')}`) : [];
-                    const placesSpots = placesSpotsID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-spots-array?id=${placesSpotsID.join(',')}`) : [];
-
-                    const imagesPlacesAllID = [].concat(
-                        placesContinents.map(placesContinent => placesContinent.id_image_cover),
-                        placesStates.map(placesState => placesState.id_image_cover),
-                        placesCities.map(placesCity => placesCity.id_image_cover),
-                        placesRegions.map(placesRegion => placesRegion.id_image_cover),
-                        placesSpots.map(placesSpot => placesSpot.id_image_cover)
-                    ).filter(id => id !== null && id !== '');
-
-                    const imagesAll = imagesPlacesAllID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlacesAllID.join(',')}`) : [];
-
-                    data = { account, placesID, placesContinents, placesStates, placesCities, placesRegions, placesSpots, imagesAll }
+                    data = { account, placesContinentsID, placesStatesID, placesCitiesID, placesRegionsID, placesSpotsID }
 
 
                     success = true
