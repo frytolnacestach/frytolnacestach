@@ -95,7 +95,12 @@
             </div>
         </client-only>
         <client-only v-if="places && Array.isArray(places) && places.length === 0">
-            Nemáš tu žádné místo. Co takhle projít <nuxt-link to="/svet">svět</nuxt-link> a přidat sem místa?
+            <p v-if="account === 'other'">
+                Ještě tu žádné místo nemám.
+            </p>
+            <p v-else>
+                Nemáš tu žádné místo. Co takhle projít <nuxt-link to="/svet">svět</nuxt-link> a přidat sem místa?
+            </p>
         </client-only>
     </div>
 </template>
@@ -110,6 +115,10 @@
                 required: true
             },
             type: {
+                type: String,
+                required: true
+            },
+            account: {
                 type: String,
                 required: true
             }

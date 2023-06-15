@@ -1,6 +1,11 @@
-.skeleton-o-cover-place-visited {
+.skeleton-o-cover-place {
     $self: &;
-    margin: 0 -5px;
+
+    margin: -5px 5px 5px 5px;
+
+    @media only screen and (min-width: $sm) {
+        margin: -10px 10px 10px;
+    }
 
     &__outer {
         width: 100%;
@@ -48,6 +53,10 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: flex-end;
+
+        @media only screen and (min-width: $sm) {
+            padding: 10px;
+        }
     }
 
     //Image
@@ -57,5 +66,9 @@
         overflow: hidden;
         position: relative;
         border-radius: $br-2;
+
+        @media only screen and (min-width: $sm) {
+            border-radius: $br-4;
+        }
     }
 }
