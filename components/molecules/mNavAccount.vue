@@ -3,20 +3,20 @@
         <div class="m-nav-account__outer">
             <div class="m-nav-account__inner">
                 <ul class="m-nav-account__items">                    
-                    <li class="m-nav-account__item -special" v-if="email">
-                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -setting" to="/ucet/profil">Základní informace</NuxtLink>
+                    <li class="m-nav-account__item" v-if="email">
+                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -setting" to="/ucet/profil" exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil'}">Základní informace</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">
-                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -flag" to="/ucet/profil/navstivena-mista">Navštívená místa</NuxtLink>
+                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -flag" to="/ucet/profil/navstivena-mista" exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/navstivena-mista'}">Navštívená místa</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">
-                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -calendar" to="/ucet/profil/chci-navstivit">Chci navštívit</NuxtLink>
+                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -calendar" to="/ucet/profil/chci-navstivit" exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/chci-navstivit'}">Chci navštívit</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">
-                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -key" to="/ucet/profil/zmena-hesla">Změna hesla</NuxtLink>
+                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -key" to="/ucet/profil/zmena-hesla" exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/zmena-hesla'}">Změna hesla</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">
-                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -data" to="/ucet/profil/moje-data">Moje data</NuxtLink>
+                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -data" to="/ucet/profil/moje-data" exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/moje-data'}">Moje data</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">
                         <NuxtLink class="js_m-nav-account__link m-nav-account__link -trash" to="/ucet/profil/smazani-uctu">Smazaní účtu</NuxtLink>

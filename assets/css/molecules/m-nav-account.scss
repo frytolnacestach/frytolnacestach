@@ -119,6 +119,10 @@
             }
         }
 
+        &.-active {
+            color: $c-blue-icon-dark;
+        }
+
         &:hover {
             color: $c-blue-icon-dark;
         }

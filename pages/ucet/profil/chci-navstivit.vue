@@ -146,6 +146,7 @@
                         const placesStatesID = placesID.filter(place => place.type === 'state').map(place => place.id_place) || [];
                         const placesCitiesID = placesID.filter(place => place.type === 'city').map(place => place.id_place) || [];
                         const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || [];
+
                         const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || [];
 
                         data = { account, placesContinentsID, placesStatesID, placesCitiesID, placesRegionsID, placesSpotsID }
@@ -159,7 +160,6 @@
                     }
                 }
 
-                // Update data properties with fetched data
                 Object.assign(this, data);
             }
         },
