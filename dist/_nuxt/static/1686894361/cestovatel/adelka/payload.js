@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/cestovatel/adelka", (function(a,b){return {data:[{staticUser:[{id:a,nickname:"Adelka",slug:"adelka",surname:b,lastname:b,status:a}]}],fetch:{},mutations:void 0}}(3,null)));

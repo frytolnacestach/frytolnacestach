@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/cestovatel/adelka", (function(a,b){return {data:[{user:[{id:a,nickname:"Adelka",slug:"adelka",surname:b,lastname:b,status:a}],placesID:[],placesContinents:[],placesStates:[],placesCities:[],placesRegions:[],placesSpots:[],imagesAll:[]}],fetch:{},mutations:void 0}}(3,null)));
