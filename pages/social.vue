@@ -39,12 +39,12 @@
         },
 
         head: {
-            title: 'Kde mě najdeš | Frytol na cestách',
+            title: 'Kde mě najdeš | Cestovatelský portál Frytol na cestách',
             meta: [
                 { hid: 'description', name: 'description', content: 'Sociální sítě a platformy kde najdete Frytola na cestách.' },
                 { name: 'keywords', content: `sociální sítě, cestovatelská videa, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Kde mě najdeš | Frytol na cestách' },
+                { hid: 'og:title', content: 'Kde mě najdeš | Cestovatelský portál Frytol na cestách' },
                 { hid: 'og:description', content: 'Sociální sítě a platformy kde najdete Frytola na cestách.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}/social` },
                 { hid: 'og:type', content: 'website' }

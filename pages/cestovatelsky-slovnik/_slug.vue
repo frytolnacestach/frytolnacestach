@@ -91,12 +91,12 @@
 
         head() {
             return {
-                title: `${this.travelDictionary[0].name ? this.travelDictionary[0].name : 'Cestovatelský slovník'} | Frytol na cestách`,
+                title: `${this.travelDictionary[0].name ? this.travelDictionary[0].name : 'Cestovatelský slovník'} | Cestovatelský portál Frytol na cestách`,
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.travelDictionary[0].description ? this.travelDictionary[0].description.slice(0, this.travelDictionary[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.travelDictionary[0].name}` },
                     { name: 'keywords', content: `${this.travelDictionary[0].name + ', Cestovatelský slovník, co je to ' + this.travelDictionary[0].name + ', travel hacky, plánuj cestu, cestovatelský portál, cestování, svět'}` },
                     { property: 'og:image', content: `${this.travelDictionary[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).source + this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
-                    { hid: 'og:title', content: `${this.travelDictionary[0].name ? this.travelDictionary[0].name : 'Cestovatelský slovník'}  | Frytol na cestách` },
+                    { hid: 'og:title', content: `${this.travelDictionary[0].name ? this.travelDictionary[0].name : 'Cestovatelský slovník'} | Cestovatelský portál Frytol na cestách` },
                     { hid: 'og:description', content: `${this.travelDictionary[0].description ? this.travelDictionary[0].description.slice(0, this.travelDictionary[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.travelDictionary[0].name ? this.travelDictionary[0].name : 'Fauna'}` },
                     { hid: 'og:url', content: `${process.env.baseUrl}/cestovatelsky-slovnik/${this.travelDictionary[0].slug}` },
                     { hid: 'og:type', content: 'website' } 

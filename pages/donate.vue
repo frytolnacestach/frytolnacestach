@@ -58,12 +58,12 @@
         },
 
         head: {
-            title: 'Podpořit | Frytol na cestách',
+            title: 'Podpořit | Cestovatelský portál Frytol na cestách',
             meta: [
                 { hid: 'description', name: 'description', content: 'Podpořte cestovatelský portá a video tvorbu od Frytola na cestách.' },
                 { name: 'keywords', content: `podpořit, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Podpořit | Frytol na cestách' },
+                { hid: 'og:title', content: 'Podpořit | Cestovatelský portál Frytol na cestách' },
                 { hid: 'og:description', content: 'Podpořte cestovatelský portá a video tvorbu od Frytola na cestách.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}/donate` },
                 { hid: 'og:type', content: 'website' }

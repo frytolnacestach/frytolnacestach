@@ -41,12 +41,12 @@
         },
 
         head: {
-            title: 'Cestovatelský slovník | Frytol na cestách',
+            title: 'Cestovatelský slovník | Cestovatelský portál Frytol na cestách',
             meta: [
                 { hid: 'description', name: 'description', content: 'Najdeš zde spoustu výrazů a zkratek které se ti mohou hodit při tvém cestování.' },
                 { name: 'keywords', content: `Cestovatelský slovník, travel hack, zkratky, plánuj cestu, cestovatelský portál, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Cestovatelský slovník | Frytol na cestách' },
+                { hid: 'og:title', content: 'Cestovatelský slovník | Cestovatelský portál Frytol na cestách' },
                 { hid: 'og:description', content: 'Najdeš zde spoustu výrazů a zkratek které se ti mohou hodit při tvém cestování.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}/cestovatelsky-slovnik` },
                 { hid: 'og:type', content: 'website' }  

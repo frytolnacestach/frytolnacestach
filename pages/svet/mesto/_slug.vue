@@ -396,12 +396,12 @@
 
         head() {
             return {
-                title: `${this.place[0].name ? this.place[0].name : 'Město'}  | Frytol na cestách`,
+                title: `${this.place[0].name ? this.place[0].name : 'Město'} | Cestovatelský portál Frytol na cestách`,
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Město'}` },
                     { name: 'keywords', content: `${this.place[0].name ? this.place[0].name : '' + ', město, cestování, svět, cestovatelský portál, jaké další města tu jsou, plánování cesty, dovolená, pravidla, kultura, ceny'}` },
                     { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
-                    { hid: 'og:title', content: `${this.place[0].name ? this.place[0].name : 'Město'}  | Frytol na cestách` },
+                    { hid: 'og:title', content: `${this.place[0].name ? this.place[0].name : 'Město'} | Cestovatelský portál Frytol na cestách` },
                     { hid: 'og:description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Město'}` },
                     { hid: 'og:url', content: `${process.env.baseUrl}/svet/mesto${this.place[0].slug}` },
                     { hid: 'og:type', content: 'website' } 

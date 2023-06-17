@@ -63,12 +63,12 @@
         },
 
         head: {
-            title: 'Smazání účtu | Frytol na cestách',
+            title: 'Smazání účtu | Cestovatelský portál Frytol na cestách',
             meta: [
                 { hid: 'description', name: 'description', content: 'Smazání účtu na webu Frytol na cestách.' },
                 { name: 'keywords', content: `Cestovatelský portál, úvod, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Smazání účtu' },
+                { hid: 'og:title', content: 'Smazání účtu | Cestovatelský portál Frytol na cestách' },
                 { hid: 'og:description', content: 'Smazání účtu na webu Frytol na cestách.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}` },
                 { hid: 'og:type', content: 'website' }

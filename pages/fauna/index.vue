@@ -41,12 +41,12 @@
         },
 
         head: {
-            title: 'Fauna | Frytol na cestách',
+            title: 'Fauna co žije ve světě | Cestovatelský portál Frytol na cestách',
             meta: [
                 { hid: 'description', name: 'description', content: 'Jaké fauna kde žije? A na jakou si dát pozor? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.' },
                 { name: 'keywords', content: `Fauna, co žije?, Zvířata ve světě, informace o zvířatech, plánuj cestu, cestovatelský portál, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Fauna | Frytol na cestách' },
+                { hid: 'og:title', content: 'Fauna co žije ve světě | Cestovatelský portál Frytol na cestách' },
                 { hid: 'og:description', content: 'Jaké fauna kde žije? A na jakou si dát pozor? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}/fauna` },
                 { hid: 'og:type', content: 'website' }  

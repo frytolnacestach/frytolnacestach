@@ -871,9 +871,9 @@
             const tab = this.tabs.find(tab => tab.slug === this.activeTab);
             const label = tab.label;
             if (this.activeTab === 'default') {
-                this.metaTitle = `${this.place[0].name ? this.place[0].name : 'Stát'}  | Frytol na cestách`
+                this.metaTitle = `${this.place[0].name ? this.place[0].name : 'Stát'} | Cestovatelský portál Frytol na cestách`
             } else {
-                this.metaTitle = `${label} ve státě ${this.place[0].name ? this.place[0].name : ''} | Frytol na cestách`
+                this.metaTitle = `${label} ve státě ${this.place[0].name ? this.place[0].name : ''} | Cestovatelský portál Frytol na cestách`
             }
 
             // Zjistit, zda je rozlišení menší než 992px při načítání stránky

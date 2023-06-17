@@ -41,12 +41,12 @@
         },
 
         head: {
-            title: 'Flóra | Frytol na cestách',
+            title: 'Flóra co roste ve světě | Frytol na cestách',
             meta: [
                 { hid: 'description', name: 'description', content: 'Jaké flóra kde roste? A na jakou si dát pozor? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.' },
                 { name: 'keywords', content: `Flóra, kde co roste?, Jedovaté rostliny, informace o rostlinách, plánuj cestu, cestovatelský portál, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Flóra | Frytol na cestách' },
+                { hid: 'og:title', content: 'Flóra co roste ve světě | Cestovatelský portál Frytol na cestách' },
                 { hid: 'og:description', content: 'Jaké flóra kde roste? A na jakou si dát pozor? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}/flora` },
                 { hid: 'og:type', content: 'website' }  

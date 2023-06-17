@@ -48,12 +48,12 @@
         },
 
         head: {
-            title: 'Cestovatelé | Frytol na cestách',
+            title: 'Cestovatelé | Cestovatelský portál Frytol na cestách',
             meta: [
                 { hid: 'description', name: 'description', content: 'Cestovatelé na cestovatelském portáku Frytol na cestách Ať ti neuniknou žádné novinky o cestování.' },
                 { name: 'keywords', content: `Cestovatelé, uživatelé, travel hacky, rady, létání, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Cestovatelé | Frytol na cestách' },
+                { hid: 'og:title', content: 'Cestovatelé | Cestovatelský portál Frytol na cestách' },
                 { hid: 'og:description', content: 'Cestovatelé na cestovatelském portáku Frytol na cestách Ať ti neuniknou žádné novinky o cestování.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}/clanky` },
                 { hid: 'og:type', content: 'website' }  

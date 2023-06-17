@@ -33,12 +33,12 @@
         },
 
         head: {
-            title: 'Značky | Frytol na cestách',
+            title: 'Značky | Cestovatelský portál Frytol na cestách',
             meta: [
                 { hid: 'description', name: 'description', content: 'Jaké značky a výrobky kde najdete? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.' },
                 { name: 'keywords', content: `Značky, výrobky, tradiční výroba, informace o výrobcích, plánuj cestu, cestovatelský portál, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Fauna | Frytol na cestách' },
+                { hid: 'og:title', content: 'Fauna | Cestovatelský portál Frytol na cestách' },
                 { hid: 'og:description', content: 'Jaké značky a výrobky kde najdete? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}/znacka` },
                 { hid: 'og:type', content: 'website' }  

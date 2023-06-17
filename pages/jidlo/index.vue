@@ -41,12 +41,12 @@
         },
 
         head: {
-            title: 'Jídla | Frytol na cestách',
+            title: 'Tradiční jídla ve světě | Cestovatelský portál Frytol na cestách',
             meta: [
                 { hid: 'description', name: 'description', content: 'Jaké jídla se jedí ve světe. Na které kde narazíte a co si kde dát? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.' },
                 { name: 'keywords', content: `Jídla, kde se co jí?, světová tradiční jídla, informace o jídlech, plánuj cestu, cestovatelský portál, cestování, svět` },
                 { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Jídla | Frytol na cestách' },
+                { hid: 'og:title', content: 'Tradiční jídla ve světě | Cestovatelský portál Frytol na cestách' },
                 { hid: 'og:description', content: 'Jaké jídla se jedí ve světe. Na které kde narazíte a co si kde dát? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.' },
                 { hid: 'og:url', content: `${process.env.baseUrl}/jidlo` },
                 { hid: 'og:type', content: 'website' }  
