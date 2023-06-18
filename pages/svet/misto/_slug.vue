@@ -343,7 +343,7 @@
                     // Načtení místa přes API podle slug
                     const place = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-spot/${params.slug}`)
 
-                    // Načtení dalších měst ve státě 
+                    // Načtení města v místě 
                     const placeCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city-id/${place[0].id_city}`)
 
                     // Načtení informací o státu
