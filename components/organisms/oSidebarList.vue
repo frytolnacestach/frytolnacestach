@@ -1,0 +1,88 @@
+<template>
+    <section class="t-section -px-world my-2" v-if="events">
+        <div class="t-section__inner">
+            <div class="o-sidebar-list">
+                <div class="o-sidebar-list__outer">
+                    <div class="o-sidebar-list__inner">
+                        <h3 class="o-sidebar-list__header">Události v lokalitě</h3>
+                        <div class="o-sidebar-list__items">
+                            <div class="o-sidebar-list__item" v-for="event in events" :key="event.id">
+                                <div class="o-sidebar-list__image-container">
+                                    <div class="o-sidebar-list__image loading-image -green">
+                                        <div v-if="images && images.find(image => image.id === event.id_image_hero)" class="o-sidebar-list__image-lazyload">
+                                            <img class="o-sidebar-list__image-file lazyload-file"
+                                                data-sizes="320px"
+                                                :data-srcset="`
+                                                    https://image.frytolnacestach.cz/storage/${images.find(image => image.id === event.id_image_cover).source + images.find(image => image.id === event.id_image_cover).name}-374.webp 320w,
+                                                    `"
+                                                :data-src="`https://image.frytolnacestach.cz/storage/${images.find(image => image.id === event.id_image_cover).source + images.find(image => image.id === event.id_image_cover).name}.webp`"
+                                                :alt="event.name ? event.name : 'Úvodní obrázek'"
+                                                :preload="true"
+                                                v-lazy>
+                                        </div>
+                                        <div v-else class="o-sidebar-list__image-lazyload">
+                                            <img class="o-sidebar-list__image-file lazyload-file"
+                                                data-sizes="320px"
+                                                :data-srcset="`
+                                                    https://image.frytolnacestach.cz/storage/_default/hero-374.webp 374w,
+                                                    https://image.frytolnacestach.cz/storage/_default/hero-748-2x.webp 748w
+                                                    `"
+                                                :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
+                                                :alt="event.name ? event.name : 'Úvodní obrázek'"
+                                                :preload="true"
+                                                v-lazy>
+                                        </div>
+                                        <nuxtLink class="o-sidebar-list__image-link" :to="'/udalost/' + event.slug"></nuxtLink>
+                                    </div>
+                                </div>
+                                <div class="o-sidebar-list__text">
+                                    <h4 class="o-sidebar-list__name"><nuxtLink class="o-sidebar-list__name-link" :to="'/udalost/' + event.slug">{{ event.name }}</nuxtLink></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<script>
+    export default {
+        name: 'OrganismsoSidebarListComponent',
+
+        props: {
+            place: {
+                type: Number,
+                required: true
+            },
+            type: {
+                type: String,
+                required: true
+            }
+        },
+
+        data() {
+            return {
+                events: this.events,
+                images: this.images
+            }
+        },
+
+        async fetch() {
+            
+            if(type === "state") {
+                this.events = await fetch("https://frytolnacestach-api.vercel.app/api/events").then((res) => res.json());
+            } else if (type === "region") {
+                this.events = await fetch("https://frytolnacestach-api.vercel.app/api/events").then((res) => res.json());
+            } else if (type === "city") {
+                this.events = await fetch("https://frytolnacestach-api.vercel.app/api/events").then((res) => res.json());
+            } else if (type === "spot") {
+                this.events = await fetch("https://frytolnacestach-api.vercel.app/api/events").then((res) => res.json());
+            }
+
+            const imagesEventsID = this.events.map(event => event.id_image_cover).filter(id => id !== null && id !== '');
+            this.images = await fetch(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesEventsID.join(',')}`).then((res) => res.json());
+        },
+    }
+</script>

@@ -73,6 +73,9 @@
                     <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/cestovatelsky-slovnik">Cestovatelský slovník</NuxtLink>
                     </li>
+                    <li class="m-nav-footer__item">
+                        <NuxtLink class="m-nav-footer__link" to="/udalost">Události</NuxtLink>
+                    </li>
                 </ul>
             </div>
 

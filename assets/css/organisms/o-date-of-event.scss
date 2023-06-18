@@ -1,0 +1,25 @@
+.o-date-of-event {
+    display: block;
+
+    &__outer {
+        display: block;
+    }
+
+    &__inner {
+        display: block;
+    }
+
+    &__label {
+        display: block;
+        font-weight: 700;
+    }
+
+    &__start {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    &__end {
+        display: block;
+    }
+}

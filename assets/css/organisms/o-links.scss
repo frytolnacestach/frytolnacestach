@@ -1,0 +1,31 @@
+.o-links {
+    display: block;
+
+    &__outer {
+        display: block;
+    }
+
+    &__inner {
+        display: block;
+    }
+
+    &__header {
+        margin-bottom: 5px;
+    }
+
+    &__items {
+        display: block;
+    }
+
+    &__item {
+        display: block;
+    }
+
+    &__name {
+        font-weight: 700;
+    }
+
+    &__link {
+        word-wrap: break-word;
+    }
+}

@@ -1,0 +1,76 @@
+.o-prices {
+    display: block;
+
+    &__outer {
+        display: block;
+        padding: 0 5px;
+
+        @media only screen and (min-width: $ti) {
+            padding: 0 10px;
+        }
+    }
+
+    &__inner {
+        display: block;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: 100%;
+        padding: 5px;
+
+        @media only screen and (min-width: $ti) {
+            padding: 0 10px;
+        }
+
+        @media only screen and (min-width: $sm) {
+            width: 50%;
+        }
+
+        @media only screen and (min-width: $md) {
+            width: 33.3%;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: $c-green-bg-component-light-super;
+        padding: 15px 20px;
+        height: 100%;
+        border-radius: $br-1;
+
+        @media only screen and (min-width: $sm) {
+            border-radius: $br-2;
+        }
+    }
+
+    &__name {
+        display: inline-block;
+        width: 100%;
+        color: $c-green-t-dark;
+        font-size: $fs-normal-sss;
+        border-bottom: 1px solid $c-green-bg-component-light;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+    }
+
+    &__perex {
+        display: inline-block;
+        width: 100%;
+        color: $c-green-t-dark-super;
+        font-size: $fs-small-l;
+    }
+
+    &__value {
+        display: inline-block;
+        width: 100%;
+        font-weight: 700;
+        color: $c-green-t-dark-super;
+        font-size: $fs-small-l;
+    }
+}

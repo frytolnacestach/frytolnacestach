@@ -178,6 +178,10 @@
                     </div>
 
                     <div class="t-grid__section -ad">
+                        <!-- SECTION - Events - sidebar -->
+                        <oSidebarList :place="this.place[0].id" type="city" />
+                        <!-- SECTION - Events - sidebar - END -->
+
                         <!-- SECTION - Visited button - sidebar -->
                         <section class="t-section -px-world">
                             <div class="t-section__inner">
@@ -249,6 +253,7 @@
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
+    import oSidebarList from '~/components/organisms/oSidebarList.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
@@ -267,6 +272,7 @@
             oInformationBlock,
             oMapGoogle,
             oPlaceTeaser,
+            oSidebarList,
             oVideoList,
             oVisitedButton,
             oWidgetBooking
