@@ -71,7 +71,7 @@
 
 
         async fetch() {
-            this.topPlaces = await fetch("https://frytolnacestach-api.vercel.app/api/top-places").then((res) => res.json());
+            this.topPlaces = await fetch("https://api.frytolnacestach.cz/api/top-places").then((res) => res.json());
 
             const topPlacesIDcontinents = this.topPlaces
                 .filter(place => place.type === 'continent' && place.id_place !== null && place.id_place !== '')
@@ -86,11 +86,11 @@
                 .map(place => place.id_place);
 
 
-            this.placesContinents = await fetch(`https://frytolnacestach-api.vercel.app/api/places-continents-array?id=${topPlacesIDcontinents.join(',')}`).then((res) => res.json());
+            this.placesContinents = await fetch(`https://api.frytolnacestach.cz/api/places-continents-array?id=${topPlacesIDcontinents.join(',')}`).then((res) => res.json());
 
-            this.placesStates = await fetch(`https://frytolnacestach-api.vercel.app/api/places-states-array?id=${topPlacesIDstates.join(',')}`).then((res) => res.json());
+            this.placesStates = await fetch(`https://api.frytolnacestach.cz/api/places-states-array?id=${topPlacesIDstates.join(',')}`).then((res) => res.json());
 
-            this.placesCities = await fetch(`https://frytolnacestach-api.vercel.app/api/places-cities-array?id=${topPlacesIDcities.join(',')}`).then((res) => res.json());
+            this.placesCities = await fetch(`https://api.frytolnacestach.cz/api/places-cities-array?id=${topPlacesIDcities.join(',')}`).then((res) => res.json());
 
             this.places = (this.placesContinents ? this.placesContinents : []).concat(
                 this.placesStates ? this.placesStates : [],
@@ -101,7 +101,7 @@
             //load images for top Places
             const imagesPlaceID = this.places.map(place => place.id_image_cover).filter(id => id !== null && id !== '');
 
-            this.images = await fetch(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlaceID.join(',')}`).then((res) => res.json());
+            this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlaceID.join(',')}`).then((res) => res.json());
         }
     }
 </script>

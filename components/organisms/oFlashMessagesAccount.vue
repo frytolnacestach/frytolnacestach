@@ -65,7 +65,7 @@
         methods: {
             async fetchProfile() {
                 try {
-                    const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-profile/${this.email}`);
+                    const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile/${this.email}`);
                     if (response.ok) {
                         this.profile = await response.json();
                     } else {
@@ -85,7 +85,7 @@
 
             async mailActivation() {
                 try {
-                    const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-activation-email`, {
+                    const response = await fetch(`https://api.frytolnacestach.cz/api/user-activation-email`, {
                         headers: {
                             "Content-Type": "application/json",
                             "Access-Control-Allow-Origin": "http://localhost:3000",

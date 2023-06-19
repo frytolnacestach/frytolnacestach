@@ -138,9 +138,9 @@ export default {
 
             while (!success) {
                 try {
-                    const account = await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/user-authentication?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}`)
+                    const account = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-authentication?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}`)
                     
-                    const placesID = await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/user-visited-place-id-user?id_user=${account[0].id}&status=1`)
+                    const placesID = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${account[0].id}&status=1`)
 
                     const placesContinentsID = placesID.filter(place => place.type === 'continent').map(place => place.id_place) || [];
                     const placesStatesID = placesID.filter(place => place.type === 'state').map(place => place.id_place) || [];

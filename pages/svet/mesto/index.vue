@@ -60,7 +60,7 @@
             async getPlaces(letter) {
                 try {
                     const [placesCities] = await Promise.all([
-                        this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-initial/${letter}`)
+                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-initial/${letter}`)
                     ]);
 
                     this.placesCities = placesCities;
@@ -100,8 +100,8 @@
 
         async asyncData({ $axios }) {
             const [placesCities, images] = await Promise.all([
-                $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-initial/A`),
-                $axios.$get(`https://frytolnacestach-api.vercel.app/api/images`)
+                $axios.$get(`https://api.frytolnacestach.cz/api/places-cities-initial/A`),
+                $axios.$get(`https://api.frytolnacestach.cz/api/images`)
             ]);
             return { placesCities, images };
         }

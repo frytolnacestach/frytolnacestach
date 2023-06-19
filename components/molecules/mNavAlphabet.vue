@@ -29,7 +29,7 @@
             async getPlaces(letter) {
                 try {
                     const [placesCities] = await Promise.all([
-                        this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-initial/${letter}`)
+                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-initial/${letter}`)
                     ]);
 
                     this.placesCities = placesCities;

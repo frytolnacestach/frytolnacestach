@@ -70,7 +70,7 @@
         methods: {  
             async activation() {
                 try {
-                    const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-activation`, {
+                    const response = await fetch(`https://api.frytolnacestach.cz/api/user-activation`, {
                         headers: {
                             "Content-Type": "application/json",
                             "Access-Control-Allow-Origin": "http://localhost:3000",

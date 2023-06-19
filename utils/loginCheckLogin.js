@@ -6,7 +6,7 @@ export async function loginCheckLogin($router) {
 
     if (loacalStorageEmail && loacalStorageEmail != "undefined") {
         try {
-            const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-login-check`, {
+            const response = await fetch(`https://api.frytolnacestach.cz/api/user-login-check`, {
                 headers: {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "http://localhost:3000",

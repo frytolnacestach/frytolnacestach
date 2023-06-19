@@ -72,17 +72,17 @@
         async fetch() {
             
             if(this.type === "state") {
-                this.events = await fetch(`https://frytolnacestach-api.vercel.app/api/events-id-state/${this.place}`).then((res) => res.json());
+                this.events = await fetch(`https://api.frytolnacestach.cz/api/events-id-state/${this.place}`).then((res) => res.json());
             } else if (this.type === "region") {
-                this.events = await fetch(`https://frytolnacestach-api.vercel.app/api/events-id-region/${this.place}`).then((res) => res.json());
+                this.events = await fetch(`https://api.frytolnacestach.cz/api/events-id-region/${this.place}`).then((res) => res.json());
             } else if (this.type === "city") {
-                this.events = await fetch(`https://frytolnacestach-api.vercel.app/api/events-id-city/${this.place}`).then((res) => res.json());
+                this.events = await fetch(`https://api.frytolnacestach.cz/api/events-id-city/${this.place}`).then((res) => res.json());
             } else if (this.type === "spot") {
-                this.events = await fetch(`https://frytolnacestach-api.vercel.app/api/events-id-spot/${this.place}`).then((res) => res.json());
+                this.events = await fetch(`https://api.frytolnacestach.cz/api/events-id-spot/${this.place}`).then((res) => res.json());
             }
 
             const imagesEventsID = this.events.map(event => event.id_image_cover).filter(id => id !== null && id !== '');
-            this.images = await fetch(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesEventsID.join(',')}`).then((res) => res.json());
+            this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesEventsID.join(',')}`).then((res) => res.json());
         },
     }
 </script>

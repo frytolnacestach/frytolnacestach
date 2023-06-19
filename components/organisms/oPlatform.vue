@@ -28,7 +28,7 @@
             }
         },
         async fetch() {
-            this.platforms = await fetch("https://frytolnacestach-api.vercel.app/api/platforms").then((res) => res.json());
+            this.platforms = await fetch("https://api.frytolnacestach.cz/api/platforms").then((res) => res.json());
         }
     }
 </script>

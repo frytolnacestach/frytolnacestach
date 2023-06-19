@@ -111,10 +111,10 @@
             while (!success) {
                 try {
                     // Načtení fauny přes API podle slug
-                    const travelDictionary = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/travel-dictionary/${params.slug}`)
+                    const travelDictionary = await $axios.$get(`https://api.frytolnacestach.cz/api/travel-dictionary/${params.slug}`)
 
                     // Načtení informací o obrázku pro faunu
-                    const imageTravelDictionary = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${travelDictionary[0].id_image_hero}`)
+                    const imageTravelDictionary = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${travelDictionary[0].id_image_hero}`)
 
                     data = { travelDictionary, imageTravelDictionary }
                     

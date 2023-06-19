@@ -62,7 +62,7 @@
 
         async asyncData({ $axios }) {
             //users
-            const users = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/users`)
+            const users = await $axios.$get(`https://api.frytolnacestach.cz/api/users`)
 
             return { users }
         }

@@ -73,10 +73,10 @@
 
         async asyncData({ $axios }) {
             //posts
-            const posts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/posts`)
+            const posts = await $axios.$get(`https://api.frytolnacestach.cz/api/posts`)
 
             // Načtení informací o obrázku
-            const images = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images`)
+            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images`)
             return { posts, images }
         }
     }

@@ -250,12 +250,12 @@
             while (!success) {
                 try {
                     //post
-                    const post = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/post/${params.slug}`)
+                    const post = await $axios.$get(`https://api.frytolnacestach.cz/api/post/${params.slug}`)
 
                     // Načtení videi z města
                     let videos = null;
                     try {
-                        videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos-id-city/${post[0].id_city}`)
+                        videos = await $axios.$get(`https://api.frytolnacestach.cz/api/videos-id-city/${post[0].id_city}`)
                     } catch (error) {
                         console.log(`API ERROR - VIDEOS`)
                     }
@@ -263,7 +263,7 @@
                     // Načtení informací o continentu
                     let placeContinent = null;
                     try {
-                        placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${post[0].id_continent}`)
+                        placeContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continent-id/${post[0].id_continent}`)
                     } catch (error) {
                         console.log(`API ERROR - PLACE CONTINENT`)
                     }
@@ -271,7 +271,7 @@
                     // Načtení informací o státu
                     let placeState = null;
                     try {
-                        placeState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-state-id/${post[0].id_state}`)
+                        placeState = await $axios.$get(`https://api.frytolnacestach.cz/api/places-state-id/${post[0].id_state}`)
                     } catch (error) {
                         console.log(`API ERROR - PLACE STATE`)
                     }
@@ -279,7 +279,7 @@
                     // Načtení informací o regionu
                     let placeRegion = null;
                     try {
-                        placeRegion = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-region-id/${post[0].id_region}`)
+                        placeRegion = await $axios.$get(`https://api.frytolnacestach.cz/api/places-region-id/${post[0].id_region}`)
                     } catch (error) {
                         console.log(`API ERROR - PLACE REGION`)
                     }
@@ -287,7 +287,7 @@
                     // Načtení informací o městu
                     let placeCity = null;
                     try {
-                        placeCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city-id/${post[0].id_city}`)
+                        placeCity = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${post[0].id_city}`)
                     } catch (error) {
                         console.log(`API ERROR - PLACE CITY`)
                     }
@@ -295,7 +295,7 @@
                     // Načtení informací o místě
                     let placeSpot = null;
                     try {
-                        placeSpot = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-spot-id/${post[0].id_spot}`)
+                        placeSpot = await $axios.$get(`https://api.frytolnacestach.cz/api/places-spot-id/${post[0].id_spot}`)
                     } catch (error) {
                         console.log(`API ERROR - PLACE SPOT`)
                     }
@@ -304,7 +304,7 @@
                     // Načtení informací o obrázku pro článek
                     let imagePostHero = null;
                     try {
-                        imagePostHero = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${post[0].id_image_hero}`)
+                        imagePostHero = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${post[0].id_image_hero}`)
                     } catch (error) {
                         console.log(`API ERROR - IMAGE HERO`)
                     }
@@ -312,7 +312,7 @@
                     // Načtení informací o obrázku pro článek
                     let imagePostMap = null;
                     try {
-                        imagePostMap = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${post[0].id_image_map}`)
+                        imagePostMap = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${post[0].id_image_map}`)
                     } catch (error) {
                         console.log(`API ERROR - IMAGE MAP`)
                     }
@@ -320,7 +320,7 @@
                     // Načtení informací o obrázku pro článek
                     let imagePostOg = null;
                     try {
-                        imagePostOg = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${post[0].id_image_og}`)
+                        imagePostOg = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${post[0].id_image_og}`)
                     } catch (error) {
                         console.log(`API ERROR - IMAGE OG`)
                     }
@@ -331,7 +331,7 @@
                     if (videos) {
                         try {
                             const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '');
-                            imagesVideos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesVideosID.join(',')}`)
+                            imagesVideos = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosID.join(',')}`)
                         } catch (error) {
                             console.log(`API ERROR - IMAGE OG`)
                         }
@@ -341,7 +341,7 @@
                     let imageContinent = null;
                     if (placeContinent) {
                         try {
-                            imageContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeContinent[0].id_image_hero}`)
+                            imageContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeContinent[0].id_image_hero}`)
                         } catch (error) {
                             console.log(`API ERROR - IMAGE PLACE CONTINENT`)
                         }
@@ -351,7 +351,7 @@
                     let imageState = null;
                     if (placeState) {
                         try {
-                            imageState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeState[0].id_image_hero}`)
+                            imageState = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeState[0].id_image_hero}`)
                         } catch (error) {
                             console.log(`API ERROR - IMAGE PLACE STATE`)
                         }
@@ -361,7 +361,7 @@
                     let imageRegion = null;
                     if (placeRegion) {
                         try {
-                            imageRegion = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeRegion[0].id_image_hero}`)
+                            imageRegion = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeRegion[0].id_image_hero}`)
                         } catch (error) {
                             console.log(`API ERROR - IMAGE PLACE REGION`)
                         }
@@ -371,7 +371,7 @@
                     let imageCity = null;
                     if (placeCity) {
                         try {
-                            imageCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeCity[0].id_image_hero}`)
+                            imageCity = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeCity[0].id_image_hero}`)
                         } catch (error) {
                             console.log(`API ERROR - IMAGE PLACE CITY`)
                         }
@@ -381,7 +381,7 @@
                     let imageSpot = null;
                     if (placeSpot) {
                         try {
-                            imageSpot = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeSpot[0].id_image_hero}`)
+                            imageSpot = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeSpot[0].id_image_hero}`)
                         } catch (error) {
                             console.log(`API ERROR - IMAGE PLACE SPOT`)
                         }

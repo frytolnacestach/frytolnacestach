@@ -76,13 +76,13 @@
 
                 //load places
                 const [placesResponse] = await Promise.all([
-                    this.$axios.get(`https://frytolnacestach-api.vercel.app/api/places-states?page=${this.page}&items=${this.perPage}`)
+                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?page=${this.page}&items=${this.perPage}`)
                 ]);
                 const { data: placesData } = placesResponse;
 
                 //load images
                 const imagesPlacesStatesID = placesData.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '');
-                const imagesResponse = await this.$axios.get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlacesStatesID.join(',')}`);
+                const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`);
                 const { data: imagesData } = imagesResponse;
 
                 //add to data

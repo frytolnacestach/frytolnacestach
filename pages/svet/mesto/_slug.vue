@@ -137,6 +137,10 @@
                         </section>
                         <!-- SECTION - Place teaser END -->
 
+                        <!-- SECTION - Place teaser spots -->
+                        <oPlaceTeaserSpots :headline="'Co vidět ve městě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" />
+                        <!-- SECTION - Place teaser spots END -->
+
                         <!-- SECTION - Ubytování - information -->
                         <section class="t-section pb-2">
                             <div class="t-section__inner">
@@ -252,6 +256,7 @@
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
+    import oPlaceTeaserSpots from '~/components/organisms/oPlaceTeaserSpots.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oSidebarList from '~/components/organisms/oSidebarList.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
@@ -271,6 +276,7 @@
             oHeroPlace,
             oInformationBlock,
             oMapGoogle,
+            oPlaceTeaserSpots,
             oPlaceTeaser,
             oSidebarList,
             oVideoList,
@@ -422,22 +428,22 @@
             while (!success) {
                 try {
                     // Načtení města
-                    const place = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city/${params.slug}`)
+                    const place = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city/${params.slug}`)
 
                     // Načtení informací o státu
-                    const placeState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-state-id/${place[0].id_state}`)
+                    const placeState = await $axios.$get(`https://api.frytolnacestach.cz/api/places-state-id/${place[0].id_state}`)
 
                     // Načtení informací o kontinentu
-                    const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${placeState[0].id_continent}`)
+                    const placeContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continent-id/${placeState[0].id_continent}`)
 
                     // Načtení dalších měst ve státě 
-                    const placesCities = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-id-state/${placeState[0].id}`)
+                    const placesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/places-cities-id-state/${placeState[0].id}`)
 
                     // Načtení videi z místa
-                    const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos-id-city/${place[0].id}`)
+                    const videos = await $axios.$get(`https://api.frytolnacestach.cz/api/videos-id-city/${place[0].id}`)
 
                     // Načtení článků z místa
-                    const posts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/posts-id-city/${place[0].id}`)
+                    const posts = await $axios.$get(`https://api.frytolnacestach.cz/api/posts-id-city/${place[0].id}`)
 
 
                     //images Array
@@ -447,19 +453,19 @@
 
 
                     // Načtení informací o obrázku pro místo
-                    const imagePlace = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${place[0].id_image_hero}`)
+                    const imagePlace = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${place[0].id_image_hero}`)
 
                     // Načtení informací o obrázku pro stát
-                    const imageState = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeState[0].id_image_hero}`)
+                    const imageState = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeState[0].id_image_hero}`)
 
                     // Načtení informací o obrázku pro města
-                    const imagesCities = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlacesCitiesID.join(',')}`)
+                    const imagesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesID.join(',')}`)
 
                     // Načtení informací o obrázku pro videa
-                    const imagesVideos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesVideosID.join(',')}`)
+                    const imagesVideos = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosID.join(',')}`)
 
                     // Načtení informací o obrázku pro čláky
-                    const imagesPosts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPostsID.join(',')}`)
+                    const imagesPosts = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsID.join(',')}`)
 
 
                     data = { place, placeState, placeContinent, placesCities, videos, posts, imagePlace, imageState, imagesCities, imagesVideos, imagesPosts }

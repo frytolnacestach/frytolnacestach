@@ -140,21 +140,21 @@
                     let places = [];
                 
                     if ( this.type === "kontinent" ) {
-                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continents-array?id=${this.placesID.join(',')}`) : [];
+                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents-array?id=${this.placesID.join(',')}`) : [];
                     } else if ( this.type === "stat" ) {
-                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-states-array?id=${this.placesID.join(',')}`) : [];
+                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?id=${this.placesID.join(',')}`) : [];
                     } else if ( this.type === "mesto" ) {
-                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-array?id=${this.placesID.join(',')}`) : [];
+                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-array?id=${this.placesID.join(',')}`) : [];
                     } else if ( this.type === "region" ) {
-                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-regions-array?id=${this.placesID.join(',')}`) : [];
+                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions-array?id=${this.placesID.join(',')}`) : [];
                     } else if ( this.type === "misto" ) {
-                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/places-spots-array?id=${this.placesID.join(',')}`) : [];
+                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots-array?id=${this.placesID.join(',')}`) : [];
                     }
                     
 
                     const imagesPlacesID = places.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
 
-                    const images = await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlacesID.join(',')}`)
+                    const images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesID.join(',')}`)
 
                     data = { places, images }
 

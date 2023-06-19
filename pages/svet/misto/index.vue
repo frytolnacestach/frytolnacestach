@@ -56,8 +56,8 @@
 
         async asyncData({ $axios }) {
             const [placesSpots, images] = await Promise.all([
-                $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-spots`),
-                $axios.$get(`https://frytolnacestach-api.vercel.app/api/images`)
+                $axios.$get(`https://api.frytolnacestach.cz/api/places-spots`),
+                $axios.$get(`https://api.frytolnacestach.cz/api/images`)
             ]);
             return { placesSpots, images };
         }

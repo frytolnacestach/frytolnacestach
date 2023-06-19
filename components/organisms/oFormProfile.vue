@@ -96,7 +96,7 @@ export default {
     methods: {
         async fetchProfile() {
             try {
-                const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-profile/${this.localStorageEmail}`);
+                const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile/${this.localStorageEmail}`);
                 if (response.ok) {
                     this.profile = await response.json();
                 } else {
@@ -111,7 +111,7 @@ export default {
         },
         async editProfile() {
             try {
-                const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-profile-edit/${this.localStorageEmail}`, {
+                const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile-edit/${this.localStorageEmail}`, {
                     headers: {
                         "Content-Type": "application/json",
                         "Access-Control-Allow-Origin": "http://localhost:3000",

@@ -56,8 +56,8 @@
 
         async asyncData({ $axios }) {
             const [travelDictionary, images] = await Promise.all([
-                $axios.$get(`https://frytolnacestach-api.vercel.app/api/travel-dictionaries`),
-                $axios.$get(`https://frytolnacestach-api.vercel.app/api/images`)
+                $axios.$get(`https://api.frytolnacestach.cz/api/travel-dictionaries`),
+                $axios.$get(`https://api.frytolnacestach.cz/api/images`)
             ]);
             return { travelDictionary, images };
         }

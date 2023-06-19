@@ -76,10 +76,10 @@
         },
 
         async asyncData({ $axios }) {
-            const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos`)
+            const videos = await $axios.$get(`https://api.frytolnacestach.cz/api/videos`)
 
             // Načtení informací o obrázku
-            const images = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images`)
+            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images`)
             return { videos, images }
         }
     }

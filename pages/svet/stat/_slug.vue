@@ -772,44 +772,44 @@
 
 
                     // Načtení místa přes API podle slug
-                    const place = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-state/${params.slug}`)
+                    const place = await $axios.$get(`https://api.frytolnacestach.cz/api/places-state/${params.slug}`)
 
                     if (place[0].ids_neighboring_countries !== null ) {
                         //other Array
                         const idsNeighboringCountries = place[0].ids_neighboring_countries.map(item => item.id);
 
                         // Načtení informací sousedních státech
-                        placesStatesNeighboring = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-states-array?id=${idsNeighboringCountries.join(',')}`)
+                        placesStatesNeighboring = await $axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsNeighboringCountries.join(',')}`)
                     }
 
                     // Načtení informací o continentu
-                    const placeContinent = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-continent-id/${place[0].id_continent}`)
+                    const placeContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continent-id/${place[0].id_continent}`)
 
                     // Načtení měst státu podle jeho id
-                    const placesCities = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-cities-id-state/${place[0].id}`)
+                    const placesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/places-cities-id-state/${place[0].id}`)
 
                     // Načtení hlavního města podle jeho id
                     if (place[0].id_city_main !== null) {
-                        placeCityMain = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city-id/${place[0].id_city_main}`)
+                        placeCityMain = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${place[0].id_city_main}`)
                     }
 
                     // Načtení značek z místa
-                    const brands = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/brands-id-state/${place[0].id}`)
+                    const brands = await $axios.$get(`https://api.frytolnacestach.cz/api/brands-id-state/${place[0].id}`)
 
                     // Načtení jídla z místa
-                    const foods = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/foods-id-state/${place[0].id}`)
+                    const foods = await $axios.$get(`https://api.frytolnacestach.cz/api/foods-id-state/${place[0].id}`)
 
                     // Načtení fauny z místa
-                    const fauna = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/faunas-id-state/${place[0].id}`)
+                    const fauna = await $axios.$get(`https://api.frytolnacestach.cz/api/faunas-id-state/${place[0].id}`)
 
                     // Načtení flory z místa
-                    const flora = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/floras-id-state/${place[0].id}`)
+                    const flora = await $axios.$get(`https://api.frytolnacestach.cz/api/floras-id-state/${place[0].id}`)
 
                     // Načtení videi z místa
-                    const videos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/videos-id-state/${place[0].id}`)
+                    const videos = await $axios.$get(`https://api.frytolnacestach.cz/api/videos-id-state/${place[0].id}`)
 
                     // Načtení článků z místa
-                    const posts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/posts-id-state/${place[0].id}`)
+                    const posts = await $axios.$get(`https://api.frytolnacestach.cz/api/posts-id-state/${place[0].id}`)
 
 
                     //images Array
@@ -822,39 +822,39 @@
                     const imagesPostsID = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
 
                     // Načtení informací o obrázku pro místo
-                    const imagePlace = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${place[0].id_image_hero}`)
+                    const imagePlace = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${place[0].id_image_hero}`)
 
                     // Načtení informací o obrázku pro sousední státy
                     if (placesStatesNeighboring !== null ) {
                         const imagesplaceStatesNeighboringID = placesStatesNeighboring.map(placesStateNeighboring => placesStateNeighboring.id_image_cover).filter(id => id !== null && id !== '')
-                        imagesStatesNeighboring = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesplaceStatesNeighboringID.join(',')}`)
+                        imagesStatesNeighboring = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesplaceStatesNeighboringID.join(',')}`)
                     }
 
                     // Načtení informací o obrázku pro státy
-                    const imagesCities = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlacesCitiesID.join(',')}`)
+                    const imagesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesID.join(',')}`)
 
                     // Načtení informací o obrázku pro místo
                     if (place[0].id_city_main !== null && placeCityMain && placeCityMain[0].id_image_cover !== null ) {
-                        imageCityMain = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${placeCityMain[0].id_image_cover}`)
+                        imageCityMain = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeCityMain[0].id_image_cover}`)
                     }
 
                     // Načtení informací o obrázku pro značky
-                    const imagesBrands = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesBrandsID.join(',')}`)
+                    const imagesBrands = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesBrandsID.join(',')}`)
 
                     // Načtení informací o obrázku pro jídla
-                    const imagesFoods = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesFoodsID.join(',')}`)
+                    const imagesFoods = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFoodsID.join(',')}`)
 
                     // Načtení informací o obrázku pro faunu
-                    const imagesFauna = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesFaunaID.join(',')}`)
+                    const imagesFauna = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFaunaID.join(',')}`)
 
                     // Načtení informací o obrázku pro floru
-                    const imagesFlora = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesFloraID.join(',')}`)
+                    const imagesFlora = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFloraID.join(',')}`)
 
                     // Načtení informací o obrázku pro videa
-                    const imagesVideos = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesVideosID.join(',')}`)
+                    const imagesVideos = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosID.join(',')}`)
 
                     // Načtení informací o obrázku pro čláky
-                    const imagesPosts = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPostsID.join(',')}`)
+                    const imagesPosts = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsID.join(',')}`)
 
 
                     data = { place, placesStatesNeighboring, placeContinent, placesCities, placeCityMain, brands, foods, fauna, flora, videos, posts, imagePlace, imagesStatesNeighboring, imagesCities, imageCityMain, imagesBrands, imagesFoods, imagesFauna, imagesFlora, imagesVideos, imagesPosts }

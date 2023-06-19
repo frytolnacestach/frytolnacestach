@@ -211,13 +211,13 @@
             while (!success) {
                 try {
                     // Načtení události přes API podle slug
-                    const event = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/event/${params.slug}`)
+                    const event = await $axios.$get(`https://api.frytolnacestach.cz/api/event/${params.slug}`)
 
                     //informace o městě
-                    const placeCity = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-city-id/${event[0].id_city}`)
+                    const placeCity = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${event[0].id_city}`)
 
                     // Načtení informací o obrázku pro místo
-                    const image = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${event[0].id_image_hero}`)
+                    const image = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${event[0].id_image_hero}`)
 
                     data = { event, placeCity, image }
                     

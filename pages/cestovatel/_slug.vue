@@ -121,7 +121,7 @@
 
         async asyncData({ $axios, params }) {
             try {
-                const staticUser = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/user/${params.slug}`);
+                const staticUser = await $axios.$get(`https://api.frytolnacestach.cz/api/user/${params.slug}`);
 
                 return {
                     staticUser
@@ -144,9 +144,9 @@
                 if (process.client) {
                 while (!success) {
                     try {
-                    const user = await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/user/${this.$route.params.slug}`);
+                    const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user/${this.$route.params.slug}`);
                     
-                    const placesID = await this.$axios.$get(`https://frytolnacestach-api.vercel.app/api/user-visited-place-id-user?id_user=${user[0].id}&status=1`);
+                    const placesID = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${user[0].id}&status=1`);
 
                     const placesContinentsID = placesID.filter(place => place.type === 'continent').map(place => place.id_place) || [];
                     const placesStatesID = placesID.filter(place => place.type === 'state').map(place => place.id_place) || [];

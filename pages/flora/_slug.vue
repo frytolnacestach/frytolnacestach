@@ -120,23 +120,23 @@
             while (!success) {
                 try {
                     // Načtení flory přes API podle slug
-                    const flora = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/flora/${params.slug}`)
+                    const flora = await $axios.$get(`https://api.frytolnacestach.cz/api/flora/${params.slug}`)
 
                     //states Array
                     const idsStates = flora[0].ids_states.map(state => state.id)
 
                     // Načtení státu  podle jeho id
-                    const placesStates = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/places-states-array?id=${idsStates.join(',')}`)
+                    const placesStates = await $axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsStates.join(',')}`)
 
                     //images Array
                     const imagesPlacesStatesID = placesStates.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
 
 
                     // Načtení informací o obrázku pro floru
-                    const imageFlora = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/image-id/${flora[0].id_image_hero}`)
+                    const imageFlora = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${flora[0].id_image_hero}`)
 
                     // Načtení informací o obrázku pro státy
-                    const imagesStates = await $axios.$get(`https://frytolnacestach-api.vercel.app/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
+                    const imagesStates = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
 
 
                     data = { flora, placesStates, imageFlora, imagesStates }

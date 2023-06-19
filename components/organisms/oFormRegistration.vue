@@ -85,7 +85,7 @@ export default {
   
         async createForm() {
             try {
-                const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-registration`, {
+                const response = await fetch(`https://api.frytolnacestach.cz/api/user-registration`, {
                     headers: {
                         "Content-Type": "application/json",
                         "Access-Control-Allow-Origin": "http://localhost:3000",
