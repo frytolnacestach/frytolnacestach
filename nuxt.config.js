@@ -884,6 +884,14 @@ export default {
         exclude: ['/**']
       },
       {
+        path: '/sitemap-events.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/events')
+          return data.map(v => `/udalost/${v.slug}`)
+        },
+        exclude: ['/**']
+      },
+      {
         path: '/sitemap-users.xml',
         routes: async () => {
           let { data } = await axios.get('https://frytolnacestach-api.vercel.app/api/users')

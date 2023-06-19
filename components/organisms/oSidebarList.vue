@@ -1,5 +1,5 @@
 <template>
-    <section class="t-section -px-world my-2" v-if="events">
+    <section class="t-section -px-world my-2" v-if="events && events.length > 0">
         <div class="t-section__inner">
             <div class="o-sidebar-list">
                 <div class="o-sidebar-list__outer">
@@ -71,14 +71,14 @@
 
         async fetch() {
             
-            if(type === "state") {
-                this.events = await fetch("https://frytolnacestach-api.vercel.app/api/events").then((res) => res.json());
-            } else if (type === "region") {
-                this.events = await fetch("https://frytolnacestach-api.vercel.app/api/events").then((res) => res.json());
-            } else if (type === "city") {
-                this.events = await fetch("https://frytolnacestach-api.vercel.app/api/events").then((res) => res.json());
-            } else if (type === "spot") {
-                this.events = await fetch("https://frytolnacestach-api.vercel.app/api/events").then((res) => res.json());
+            if(this.type === "state") {
+                this.events = await fetch(`https://frytolnacestach-api.vercel.app/api/events-id-state/${this.place}`).then((res) => res.json());
+            } else if (this.type === "region") {
+                this.events = await fetch(`https://frytolnacestach-api.vercel.app/api/events-id-region/${this.place}`).then((res) => res.json());
+            } else if (this.type === "city") {
+                this.events = await fetch(`https://frytolnacestach-api.vercel.app/api/events-id-city/${this.place}`).then((res) => res.json());
+            } else if (this.type === "spot") {
+                this.events = await fetch(`https://frytolnacestach-api.vercel.app/api/events-id-spot/${this.place}`).then((res) => res.json());
             }
 
             const imagesEventsID = this.events.map(event => event.id_image_cover).filter(id => id !== null && id !== '');

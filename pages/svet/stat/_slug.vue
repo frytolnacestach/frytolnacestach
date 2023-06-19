@@ -226,6 +226,10 @@
                                 </section>
                                 <!-- SECTION - TLD END -->
 
+                                <!-- SECTION - Events - sidebar -->
+                                <oSidebarList :place="this.place[0].id" type="state" />
+                                <!-- SECTION - Events - sidebar - END -->
+
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world my-2">
                                     <div class="t-section__inner">
@@ -564,6 +568,7 @@
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oChartPie from '@/components/organisms/oChartPie.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
+    import oSidebarList from '~/components/organisms/oSidebarList.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
@@ -587,6 +592,7 @@
             oMapGoogle,
             oChartPie,
             oPlaceTeaser,
+            oSidebarList,
             oVideoList,
             oVisitedButton,
             oWidgetBooking

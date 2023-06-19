@@ -178,10 +178,6 @@
                     </div>
 
                     <div class="t-grid__section -ad">
-                        <!-- SECTION - Events - sidebar -->
-                        <oSidebarList :place="this.place[0].id" type="city" />
-                        <!-- SECTION - Events - sidebar - END -->
-
                         <!-- SECTION - Visited button - sidebar -->
                         <section class="t-section -px-world">
                             <div class="t-section__inner">
@@ -189,6 +185,10 @@
                             </div>
                         </section>
                         <!-- SECTION - Visited button - sidebar - END -->
+
+                        <!-- SECTION - Events - sidebar -->
+                        <oSidebarList :place="this.place[0].id" type="city" />
+                        <!-- SECTION - Events - sidebar - END -->
 
                         <!-- SECTION - ad-google - sidebar -->
                         <section class="t-section -px-world my-2">

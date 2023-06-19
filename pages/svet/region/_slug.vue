@@ -67,6 +67,10 @@
                         </section>
                         <!-- SECTION - Visited button - sidebar - END -->
 
+                        <!-- SECTION - Events - sidebar -->
+                        <oSidebarList :place="this.place[0].id" type="region" />
+                        <!-- SECTION - Events - sidebar - END -->
+
                         <!-- SECTION - ad-google - sidebar -->
                         <section class="t-section -px-world my-2">
                             <div class="t-section__inner">
@@ -121,6 +125,7 @@
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
+    import oSidebarList from '~/components/organisms/oSidebarList.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
 
@@ -136,6 +141,7 @@
             oHeroPlace,
             oInformationBlock,
             oMapGoogle,
+            oSidebarList,
             oVideoList,
             oVisitedButton
         },
