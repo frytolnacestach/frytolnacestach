@@ -55,7 +55,7 @@
 
             async visited() {
                 try {
-                    const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-visited-place?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}&id_place=${encodeURIComponent(this.place)}&type=${this.placeType}`, {
+                    const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}&id_place=${encodeURIComponent(this.place)}&type=${this.placeType}`, {
                         headers: {
                             "Content-Type": "application/json",
                             "Access-Control-Allow-Origin": "http://localhost:3000",
@@ -90,7 +90,7 @@
                 try {
                     this.status = newStatus;
                     try {
-                        const response = await fetch(`https://frytolnacestach-api.vercel.app/api/user-visited-place-edit`, {
+                        const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-edit`, {
                             headers: {
                                 "Content-Type": "application/json",
                                 "Access-Control-Allow-Origin": "http://localhost:3000",
