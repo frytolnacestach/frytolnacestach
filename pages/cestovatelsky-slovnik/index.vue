@@ -12,7 +12,7 @@
         <!-- SECTION - cestovatelsky slovnik list -->
         <section class="t-section -p0">
             <div class="t-section__inner">
-                <oCoverItem :items="travelDictionary" :images="images" type="cestovatelsky-slovnik" />
+                <oCoverItem :items="travelDictionaries" :images="images" type="cestovatelsky-slovnik" />
             </div>
         </section>
         <!-- SECTION - cestovatelsky slovnik list END -->
@@ -32,12 +32,11 @@
             oHero
         },
 
-        methods:{
-
-        },
-
         data() {
-            return {}
+            return {
+                travelDictionaries: this.travelDictionaries,
+                images: this.images
+            }
         },
 
         head: {
@@ -53,13 +52,22 @@
             ]
         },
 
-
+        //API STATIC
         async asyncData({ $axios }) {
-            const [travelDictionary, images] = await Promise.all([
-                $axios.$get(`https://api.frytolnacestach.cz/api/travel-dictionaries`),
-                $axios.$get(`https://api.frytolnacestach.cz/api/images`)
-            ]);
-            return { travelDictionary, images };
+            //Get travelDictionaries
+            const travelDictionaries = await $axios.$get(`https://api.frytolnacestach.cz/api/travel-dictionaries`)
+
+            //Images travelDictionary
+            //IDS Array
+            const imagesTravelDictionariesIDS = travelDictionaries.map(travelDictionary => travelDictionary.id_image_cover).filter(id => id !== null && id !== '')
+            //Get images
+            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesTravelDictionariesIDS.join(',')}`)
+
+            //return
+            return {
+                travelDictionaries,
+                images
+            }
         }
     }
 </script>

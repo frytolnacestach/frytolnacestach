@@ -37,7 +37,10 @@
         },
 
         data() {
-            return {}
+            return {
+                placesContinents: this.placesContinents,
+                images: this.images
+            }
         },
 
         head: {
@@ -53,13 +56,22 @@
             ]
         },
 
-
+        //API STATIC
         async asyncData({ $axios }) {
-            const [placesContinents, images] = await Promise.all([
-                $axios.$get(`https://api.frytolnacestach.cz/api/places-continents`),
-                $axios.$get(`https://api.frytolnacestach.cz/api/images`)
-            ]);
-            return { placesContinents, images };
+            //Get placesContinents
+            const placesContinents = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continents`)
+
+            //Images placesContinents
+            //IDS Array
+            const imagesPlacesContinentsIDS = placesContinents.map(placesContinent => placesContinent.id_image_cover).filter(id => id !== null && id !== '')
+            //Get images
+            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesContinentsIDS.join(',')}`)
+
+            //return
+            return {
+                placesContinents,
+                images
+            }
         }
     }
 </script>

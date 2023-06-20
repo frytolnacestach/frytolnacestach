@@ -32,12 +32,11 @@
             oHero
         },
 
-        methods:{
-
-        },
-
         data() {
-            return {}
+            return {
+                foods: this.foods,
+                images: this.images
+            }
         },
 
         head: {
@@ -53,13 +52,22 @@
             ]
         },
 
-
+        //API STATIC
         async asyncData({ $axios }) {
-            const [foods, images] = await Promise.all([
-                $axios.$get(`https://api.frytolnacestach.cz/api/foods`),
-                $axios.$get(`https://api.frytolnacestach.cz/api/images`)
-            ]);
-            return { foods, images };
+            //Get foods
+            const foods = await $axios.$get(`https://api.frytolnacestach.cz/api/foods`)
+
+            //Images foods
+            //IDS Array
+            const imagesFoodsIDS = foods.map(food => food.id_image_cover).filter(id => id !== null && id !== '')
+            //Get images
+            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFoodsIDS.join(',')}`)
+
+            //return
+            return {
+                foods,
+                images
+            }
         }
     }
 </script>

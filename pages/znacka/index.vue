@@ -12,7 +12,7 @@
         <!-- SECTION - Značky list -->
         <section class="t-section -p0">
             <div class="t-section__inner">
-                <oCoverItem :items="fauna" :images="images" type="znacka" />
+                <oCoverItem :items="brands" :images="images" type="znacka" />
             </div>
         </section>
         <!-- SECTION - Značky list END -->
@@ -32,6 +32,13 @@
             oHero
         },
 
+        data() {
+            return {
+                brands: this.brands,
+                images: this.images
+            }
+        },
+
         head: {
             title: 'Značky | Cestovatelský portál Frytol na cestách',
             meta: [
@@ -45,13 +52,22 @@
             ]
         },
 
-
+        //API STATIC
         async asyncData({ $axios }) {
-            const [fauna, images] = await Promise.all([
-                $axios.$get(`https://api.frytolnacestach.cz/api/brands`),
-                $axios.$get(`https://api.frytolnacestach.cz/api/images`)
-            ]);
-            return { fauna, images };
+            //Get brands
+            const brands = await $axios.$get(`https://api.frytolnacestach.cz/api/brands`)
+
+            //Images brands
+            //IDS Array
+            const imagesBrandsIDS = brands.map(brand => brand.id_image_cover).filter(id => id !== null && id !== '')
+            //Get images
+            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesBrandsIDS.join(',')}`)
+
+            //return
+            return {
+                brands,
+                images
+            }
         }
     }
 </script>

@@ -32,6 +32,13 @@
             oHero
         },
 
+        data() {
+            return {
+                events: this.events,
+                images: this.images
+            }
+        },
+
         head: {
             title: 'Události | Cestovatelský portál Frytol na cestách',
             meta: [
@@ -45,12 +52,22 @@
             ]
         },
 
+        //API STATIC
         async asyncData({ $axios }) {
-            const [events, images] = await Promise.all([
-                $axios.$get(`https://api.frytolnacestach.cz/api/events`),
-                $axios.$get(`https://api.frytolnacestach.cz/api/images`)
-            ]);
-            return { events, images };
+            //Get events
+            const events = await $axios.$get(`https://api.frytolnacestach.cz/api/events`)
+
+            //Images events
+            //IDS Array
+            const imagesEventsIDS = events.map(event => event.id_image_cover).filter(id => id !== null && id !== '')
+            //Get images
+            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesEventsIDS.join(',')}`)
+
+            //return
+            return {
+                events,
+                images
+            }
         }
     }
 </script>

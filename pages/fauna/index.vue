@@ -12,7 +12,7 @@
         <!-- SECTION - Fauna list -->
         <section class="t-section -p0">
             <div class="t-section__inner">
-                <oCoverItem :items="fauna" :images="images" type="fauna" />
+                <oCoverItem :items="faunas" :images="images" type="fauna" />
             </div>
         </section>
         <!-- SECTION - Fauna list END -->
@@ -32,12 +32,11 @@
             oHero
         },
 
-        methods:{
-
-        },
-
         data() {
-            return {}
+            return {
+                faunas: this.faunas,
+                images: this.images
+            }
         },
 
         head: {
@@ -53,13 +52,22 @@
             ]
         },
 
-
+        //API STATIC
         async asyncData({ $axios }) {
-            const [fauna, images] = await Promise.all([
-                $axios.$get(`https://api.frytolnacestach.cz/api/faunas`),
-                $axios.$get(`https://api.frytolnacestach.cz/api/images`)
-            ]);
-            return { fauna, images };
+            //Get faunas
+            const faunas = await $axios.$get(`https://api.frytolnacestach.cz/api/faunas`)
+
+            //Images faunas
+            //IDS Array
+            const imagesFaunasIDS = faunas.map(fauna => fauna.id_image_cover).filter(id => id !== null && id !== '')
+            //Get images
+            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFaunasIDS.join(',')}`)
+
+            //return
+            return {
+                faunas,
+                images
+            }
         }
     }
 </script>

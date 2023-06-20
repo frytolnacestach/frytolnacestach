@@ -59,11 +59,17 @@
         methods:{
             async getPlaces(letter) {
                 try {
-                    const [placesCities] = await Promise.all([
-                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-initial/${letter}`)
-                    ]);
+                    //Get placesCities
+                    const placesCities = await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-initial/${letter}`)
+
+                    //Images placesCities
+                    //IDS Array
+                    const imagesPlacesCitiesIDS = placesCities.map(placesCity => placesCity.id_image_cover).filter(id => id !== null && id !== '')
+                    //Get images
+                    const images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesIDS.join(',')}`)
 
                     this.placesCities = placesCities;
+                    this.images = images;
                     this.selectedLetter = letter;
                 } catch (error) {
                     console.error(error)
@@ -97,13 +103,22 @@
             ]
         },
 
-
+        //API STATIC
         async asyncData({ $axios }) {
-            const [placesCities, images] = await Promise.all([
-                $axios.$get(`https://api.frytolnacestach.cz/api/places-cities-initial/A`),
-                $axios.$get(`https://api.frytolnacestach.cz/api/images`)
-            ]);
-            return { placesCities, images };
+            //Get placesCities
+            const placesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/places-cities-initial/A`)
+
+            //Images placesCities
+            //IDS Array
+            const imagesPlacesCitiesIDS = placesCities.map(placesCity => placesCity.id_image_cover).filter(id => id !== null && id !== '')
+            //Get images
+            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesIDS.join(',')}`)
+
+            //return
+            return {
+                placesCities,
+                images
+            }
         }
     }
 </script>

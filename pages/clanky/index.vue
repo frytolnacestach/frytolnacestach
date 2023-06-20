@@ -71,13 +71,22 @@
             ]
         },
 
+        //API STATIC
         async asyncData({ $axios }) {
-            //posts
+            //Get posts
             const posts = await $axios.$get(`https://api.frytolnacestach.cz/api/posts`)
 
-            // Načtení informací o obrázku
-            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images`)
-            return { posts, images }
+            //Images posts
+            //IDS Array
+            const imagesPostsIDS = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
+            //Get images
+            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
+
+            //return
+            return {
+                posts,
+                images
+            }
         }
     }
 </script>

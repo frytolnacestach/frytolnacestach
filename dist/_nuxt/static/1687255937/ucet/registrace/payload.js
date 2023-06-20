@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/ucet/registrace", {data:[{}],fetch:{},mutations:void 0});

@@ -32,12 +32,11 @@
             oHeroPlaceType
         },
 
-        methods:{
-
-        },
-
         data() {
-            return {}
+            return {
+                placesRegions: this.placesRegions,
+                images: this.images
+            }
         },
 
         head: {
@@ -53,13 +52,22 @@
             ]
         },
 
-
+        //API STATIC
         async asyncData({ $axios }) {
-            const [placesRegions, images] = await Promise.all([
-                $axios.$get(`https://api.frytolnacestach.cz/api/places-regions`),
-                $axios.$get(`https://api.frytolnacestach.cz/api/images`)
-            ]);
-            return { placesRegions, images };
+            //Get placesRegions
+            const placesRegions = await $axios.$get(`https://api.frytolnacestach.cz/api/places-regions`)
+
+            //Images placesRegions
+            //IDS Array
+            const imagesPlacesRegionsIDS = placesRegions.map(placesRegion => placesRegion.id_image_cover).filter(id => id !== null && id !== '')
+            //Get images
+            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesRegionsIDS.join(',')}`)
+
+            //return
+            return {
+                placesRegions,
+                images
+            }
         }
     }
 </script>

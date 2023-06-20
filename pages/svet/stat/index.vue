@@ -36,10 +36,6 @@
             oHeroPlaceType
         },
 
-        methods:{
-
-        },
-
         data() {
             return {
                 images: [],
@@ -106,7 +102,6 @@
                 window.removeEventListener('scroll', this.handleScroll);
             },
 
-
             loadMoreItems() {
                 //no further loading can occur while loading
                 if (this.isLoading || this.noMoreItems) {
@@ -115,7 +110,6 @@
                 this.page++;
                 this.loadPlaces();
             },
-
 
             handleScroll() {
                 //no further loading can occur while loading
