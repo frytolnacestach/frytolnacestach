@@ -5,37 +5,11 @@
             <div class="skeleton-o-cover-place-visited">
                 <div class="skeleton-o-cover-place-visited__outer">
                     <div class="o-cover-place-visited__items">
-                        
-                        <div class="skeleton-o-cover-place-visited__item">
+                        <div v-for="index in 5" :key="index" class="skeleton-o-cover-place-visited__item">
                             <div class="skeleton-o-cover-place-visited__content">
                                 <div class="skeleton-o-cover-place-visited__image loading-image -skeleton-blue"></div>
                             </div>
                         </div>
-
-                        <div class="skeleton-o-cover-place-visited__item">
-                            <div class="skeleton-o-cover-place-visited__content">
-                                <div class="skeleton-o-cover-place-visited__image loading-image -skeleton-blue"></div>
-                            </div>
-                        </div>
-
-                        <div class="skeleton-o-cover-place-visited__item">
-                            <div class="skeleton-o-cover-place-visited__content">
-                                <div class="skeleton-o-cover-place-visited__image loading-image -skeleton-blue"></div>
-                            </div>
-                        </div>
-
-                        <div class="skeleton-o-cover-place-visited__item">
-                            <div class="skeleton-o-cover-place-visited__content">
-                                <div class="skeleton-o-cover-place-visited__image loading-image -skeleton-blue"></div>
-                            </div>
-                        </div>
-
-                        <div class="skeleton-o-cover-place-visited__item">
-                            <div class="skeleton-o-cover-place-visited__content">
-                                <div class="skeleton-o-cover-place-visited__image loading-image -skeleton-blue"></div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -140,15 +114,15 @@
                     let places = [];
                 
                     if ( this.type === "kontinent" ) {
-                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents-array?id=${this.placesID.join(',')}`) : [];
+                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents-array?showType=list&id=${this.placesID.join(',')}`) : [];
                     } else if ( this.type === "stat" ) {
-                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?id=${this.placesID.join(',')}`) : [];
+                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${this.placesID.join(',')}`) : [];
                     } else if ( this.type === "mesto" ) {
-                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-array?id=${this.placesID.join(',')}`) : [];
+                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-array?showType=list&id=${this.placesID.join(',')}`) : [];
                     } else if ( this.type === "region" ) {
-                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions-array?id=${this.placesID.join(',')}`) : [];
+                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions-array?showType=list&id=${this.placesID.join(',')}`) : [];
                     } else if ( this.type === "misto" ) {
-                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots-array?id=${this.placesID.join(',')}`) : [];
+                        places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots-array?showType=list&id=${this.placesID.join(',')}`) : [];
                     }
                     
 
