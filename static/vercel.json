@@ -1,12 +1,12 @@
 {
     "trailingSlash": false,
 
+    "version": 2,
     "builds": [
-      { "src": "nuxt.config.js", "use": "@vercel/static-build" }
+      { "src": "nuxt.config.js", "use": "@nuxt/vercel-builder", "config": {} }
     ],
     "routes": [
       { "src": "/_nuxt/(.*)", "dest": "/_nuxt/$1" },
       { "src": "/(.*)", "dest": "/" }
-    ],
-    "version": 2
+    ]
   }
