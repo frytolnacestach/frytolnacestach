@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/stat", {data:[{}],fetch:{},mutations:void 0});
