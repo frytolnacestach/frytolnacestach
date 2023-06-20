@@ -48,11 +48,11 @@
             async searchPlaces() {
                 try {
                     const [placesContinents, placesStates, placesRegions, placesCities, placesSpots] = await Promise.all([
-                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents?search=${this.searchQuery}`),
-                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states?search=${this.searchQuery}`),
-                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions?search=${this.searchQuery}`),
-                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities?search=${this.searchQuery}`),
-                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots?search=${this.searchQuery}`)
+                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents?showType=search&search=${this.searchQuery}`),
+                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states?showType=search&search=${this.searchQuery}`),
+                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions?showType=search&search=${this.searchQuery}`),
+                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities?showType=search&search=${this.searchQuery}`),
+                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots?showType=search&search=${this.searchQuery}`)
                     ]);
                     this.placesContinents = placesContinents;
                     this.placesRegions = placesRegions;
