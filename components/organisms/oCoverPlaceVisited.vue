@@ -101,7 +101,7 @@
         data() {
             return {
                 places: null,
-                images: null,
+                images: null
             }
         },
 

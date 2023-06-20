@@ -149,45 +149,25 @@
                                 <section class="t-section my-2 py-1 -p0" v-if="placesStatesNeighboring">
                                     <div class="t-section__inner">
                                         <mHeadline title="Sousední státy státu " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oCoverItemState :items="placesStatesNeighboring" :images="imagesStatesNeighboring" type="svet/stat" />
+                                        <oCoverNeighboring :items="placesStatesNeighboring" :images="imagesStatesNeighboring" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Neighboring Place list END -->
                                 
                                 <!-- SECTION - Food -->
-                                <section class="t-section my-2 py-1 -p0" v-if="foods[0]">
-                                    <div class="t-section__inner">
-                                        <mHeadline title="Tradiční jídla ve státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oCoverItemState :items="foods" :images="imagesFoods" type="jidlo" />
-                                    </div>
-                                </section>
+                                <oCoverItemState type="jidlo" title="Tradiční jídla ve státě" :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
                                 <!-- SECTION - Food END -->
 
                                 <!-- SECTION - Fauna list -->
-                                <section class="t-section my-2 py-1 -p0" v-if="fauna[0]">
-                                    <div class="t-section__inner">
-                                        <mHeadline title="Nebezpečná Fauna ve státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oCoverItemState :items="fauna" :images="imagesFauna" type="fauna" />
-                                    </div>
-                                </section>
+                                <oCoverItemState type="fauna" title="Nebezpečná Fauna ve státě" :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
                                 <!-- SECTION - Fauna list END -->
 
                                 <!-- SECTION - Flora list -->
-                                <section class="t-section my-2 py-1 -p0" v-if="flora[0]">
-                                    <div class="t-section__inner">
-                                        <mHeadline title="Nebezpečná Flóra ve státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oCoverItemState :items="flora" :images="imagesFlora" type="flora" />
-                                    </div>
-                                </section>
+                                <oCoverItemState type="flora" title="Nebezpečná Flóra ve státě" :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
                                 <!-- SECTION - Flora list END -->
 
                                 <!-- SECTION - Značky list -->
-                                <section class="t-section my-2 py-1 -p0" v-if="brands[0]">
-                                    <div class="t-section__inner">
-                                        <mHeadline title="Značky a výrobky ze státu " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oCoverItemState :items="brands" :images="imagesBrands" type="znacka" />
-                                    </div>
-                                </section>
+                                <oCoverItemState type="znacka" title="Značky a výrobky ze státu" :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
                                 <!-- SECTION - Flora Značky END -->
                         
                             </div>
@@ -562,6 +542,7 @@
     import oBlockItem from '~/components/organisms/oBlockItem.vue'
     import oBlockList from '~/components/organisms/oBlockList.vue'
     import oCoverItemState from '~/components/organisms/oCoverItemState.vue'
+    import oCoverNeighboring from '~/components/organisms/oCoverNeighboring.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
@@ -586,6 +567,7 @@
             oBlockItem,
             oBlockList,
             oCoverItemState,
+            oCoverNeighboring,
             oCoverPlaceDetail,
             oHeroPlace,
             oInformationBlock,
@@ -605,14 +587,9 @@
                 placeContinent: this.placeContinent,
                 placesCities: this.placesCities,
                 placeCityMain: this.placeCityMain,
-                brands: this.brands,
-                foods: this.foods,
-                fauna: this.fauna,
-                flora: this.flora,
                 videos: this.videos,
                 posts: this.posts,
                 imagePlace: this.imagePlace,
-                imageBrands: this.imageBrands,
                 imagesStatesNeighboring: this.imagesStatesNeighboring,
                 imagesCities: this.imagesCities,
                 imageCityMain: this.imageCityMain,
@@ -764,16 +741,29 @@
 
             while (!success) { 
                 try {
+                    // COMPONENT - Place detail
+                    // načtení místa přes API podle slug
+                    const place = await $axios.$get(`https://api.frytolnacestach.cz/api/places-state/${params.slug}`)
+                    // Image
+                    const imagePlace = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${place[0].id_image_hero}`)
 
+
+                    // COMPONENT - Main city
                     let placeCityMain = null;
                     let imageCityMain = null;
+                    // Načtení hlavního města podle jeho id
+                    if (place[0].id_city_main !== null) {
+                        placeCityMain = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${place[0].id_city_main}`)
+                    }
+                    // Images
+                    if (place[0].id_city_main !== null && placeCityMain && placeCityMain[0].id_image_cover !== null ) {
+                        imageCityMain = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeCityMain[0].id_image_cover}`)
+                    }
+
+
+                    // COMPONENT - Neighboring states
                     let placesStatesNeighboring = null;
                     let imagesStatesNeighboring = null;
-
-
-                    // Načtení místa přes API podle slug
-                    const place = await $axios.$get(`https://api.frytolnacestach.cz/api/places-state/${params.slug}`)
-
                     if (place[0].ids_neighboring_countries !== null ) {
                         //other Array
                         const idsNeighboringCountries = place[0].ids_neighboring_countries.map(item => item.id);
@@ -781,83 +771,52 @@
                         // Načtení informací sousedních státech
                         placesStatesNeighboring = await $axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${idsNeighboringCountries.join(',')}`)
                     }
-
-                    // Načtení informací o continentu
-                    const placeContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continent-id/${place[0].id_continent}`)
-
-                    // Načtení měst státu podle jeho id
-                    const placesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/places-cities-id-state/${place[0].id}?showType=list`)
-
-                    // Načtení hlavního města podle jeho id
-                    if (place[0].id_city_main !== null) {
-                        placeCityMain = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${place[0].id_city_main}`)
-                    }
-
-                    // Načtení značek z místa
-                    const brands = await $axios.$get(`https://api.frytolnacestach.cz/api/brands-id-state/${place[0].id}`)
-
-                    // Načtení jídla z místa
-                    const foods = await $axios.$get(`https://api.frytolnacestach.cz/api/foods-id-state/${place[0].id}`)
-
-                    // Načtení fauny z místa
-                    const fauna = await $axios.$get(`https://api.frytolnacestach.cz/api/faunas-id-state/${place[0].id}`)
-
-                    // Načtení flory z místa
-                    const flora = await $axios.$get(`https://api.frytolnacestach.cz/api/floras-id-state/${place[0].id}`)
-
-                    // Načtení videi z místa
-                    const videos = await $axios.$get(`https://api.frytolnacestach.cz/api/videos-id-state/${place[0].id}`)
-
-                    // Načtení článků z místa
-                    const posts = await $axios.$get(`https://api.frytolnacestach.cz/api/posts-id-state/${place[0].id}`)
-
-
-                    //images Array
-                    const imagesPlacesCitiesID = placesCities.map(placeCity => placeCity.id_image_cover).filter(id => id !== null && id !== '')
-                    const imagesBrandsID = brands.map(brand => brand.id_image_cover).filter(id => id !== null && id !== '')
-                    const imagesFoodsID = foods.map(food => food.id_image_cover).filter(id => id !== null && id !== '')
-                    const imagesFaunaID = fauna.map(fauna => fauna.id_image_cover).filter(id => id !== null && id !== '')
-                    const imagesFloraID = flora.map(flora => flora.id_image_cover).filter(id => id !== null && id !== '')
-                    const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
-                    const imagesPostsID = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
-
-                    // Načtení informací o obrázku pro místo
-                    const imagePlace = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${place[0].id_image_hero}`)
-
-                    // Načtení informací o obrázku pro sousední státy
+                    // Images
                     if (placesStatesNeighboring !== null ) {
                         const imagesplaceStatesNeighboringID = placesStatesNeighboring.map(placesStateNeighboring => placesStateNeighboring.id_image_cover).filter(id => id !== null && id !== '')
                         imagesStatesNeighboring = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesplaceStatesNeighboringID.join(',')}`)
                     }
 
-                    // Načtení informací o obrázku pro státy
+
+                    // COMPONENT - continentu
+                    const placeContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continent-id/${place[0].id_continent}`)
+
+
+                    // COMPONENT - Města ve státě
+                    const placesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/places-cities-id-state/${place[0].id}?showType=list`)
+                    // images
+                    const imagesPlacesCitiesID = placesCities.map(placeCity => placeCity.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesID.join(',')}`)
+                
 
-                    // Načtení informací o obrázku pro místo
-                    if (place[0].id_city_main !== null && placeCityMain && placeCityMain[0].id_image_cover !== null ) {
-                        imageCityMain = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeCityMain[0].id_image_cover}`)
-                    }
-
-                    // Načtení informací o obrázku pro značky
-                    const imagesBrands = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesBrandsID.join(',')}`)
-
-                    // Načtení informací o obrázku pro jídla
-                    const imagesFoods = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFoodsID.join(',')}`)
-
-                    // Načtení informací o obrázku pro faunu
-                    const imagesFauna = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFaunaID.join(',')}`)
-
-                    // Načtení informací o obrázku pro floru
-                    const imagesFlora = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFloraID.join(',')}`)
-
-                    // Načtení informací o obrázku pro videa
+                    // COMPONENT - Videa z místa
+                    const videos = await $axios.$get(`https://api.frytolnacestach.cz/api/videos-id-state/${place[0].id}?showType=list`)
+                    // images
+                    const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
                     const imagesVideos = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosID.join(',')}`)
 
-                    // Načtení informací o obrázku pro čláky
+                    // COMPONENT - Články z místa
+                    const posts = await $axios.$get(`https://api.frytolnacestach.cz/api/posts-id-state/${place[0].id}?showType=list`)
+                    // images
+                    const imagesPostsID = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesPosts = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsID.join(',')}`)
 
 
-                    data = { place, placesStatesNeighboring, placeContinent, placesCities, placeCityMain, brands, foods, fauna, flora, videos, posts, imagePlace, imagesStatesNeighboring, imagesCities, imageCityMain, imagesBrands, imagesFoods, imagesFauna, imagesFlora, imagesVideos, imagesPosts }
+                    data = {
+                        place,
+                        imagePlace,
+                        placesStatesNeighboring,
+                        imagesStatesNeighboring,
+                        placeContinent,
+                        placesCities,
+                        imagesCities,
+                        placeCityMain,
+                        imageCityMain,
+                        videos,
+                        imagesVideos,
+                        posts,
+                        imagesPosts
+                    }
 
                     success = true
                 } catch (error) {
