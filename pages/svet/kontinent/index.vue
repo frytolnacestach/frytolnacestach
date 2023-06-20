@@ -59,7 +59,7 @@
         //API STATIC
         async asyncData({ $axios }) {
             //Get placesContinents
-            const placesContinents = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continents`)
+            const placesContinents = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continents?showType=list`)
 
             //Images placesContinents
             //IDS Array

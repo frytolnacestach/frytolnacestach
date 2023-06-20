@@ -55,7 +55,7 @@
         //API STATIC
         async asyncData({ $axios }) {
             //Get placesRegions
-            const placesRegions = await $axios.$get(`https://api.frytolnacestach.cz/api/places-regions`)
+            const placesRegions = await $axios.$get(`https://api.frytolnacestach.cz/api/places-regions?showType=list`)
 
             //Images placesRegions
             //IDS Array

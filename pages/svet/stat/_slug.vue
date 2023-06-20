@@ -779,14 +779,14 @@
                         const idsNeighboringCountries = place[0].ids_neighboring_countries.map(item => item.id);
 
                         // Načtení informací sousedních státech
-                        placesStatesNeighboring = await $axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsNeighboringCountries.join(',')}`)
+                        placesStatesNeighboring = await $axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${idsNeighboringCountries.join(',')}`)
                     }
 
                     // Načtení informací o continentu
                     const placeContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continent-id/${place[0].id_continent}`)
 
                     // Načtení měst státu podle jeho id
-                    const placesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/places-cities-id-state/${place[0].id}`)
+                    const placesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/places-cities-id-state/${place[0].id}?showType=list`)
 
                     // Načtení hlavního města podle jeho id
                     if (place[0].id_city_main !== null) {

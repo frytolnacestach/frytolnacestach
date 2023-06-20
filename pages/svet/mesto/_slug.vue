@@ -437,7 +437,7 @@
                     const placeContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continent-id/${placeState[0].id_continent}`)
 
                     // Načtení dalších měst ve státě 
-                    const placesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/places-cities-id-state/${placeState[0].id}`)
+                    const placesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/places-cities-id-state/${placeState[0].id}?showType=list`)
 
                     // Načtení videi z místa
                     const videos = await $axios.$get(`https://api.frytolnacestach.cz/api/videos-id-city/${place[0].id}`)
