@@ -16,6 +16,7 @@
 
     &__sidebar {
         display: inline-block;
+        width: 100%;
         
         @media only screen and (min-width: $lg) {
             flex: 0 0 330px;
