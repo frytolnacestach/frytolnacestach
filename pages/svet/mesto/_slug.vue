@@ -444,24 +444,39 @@
                     // PlaceCities
                     const placesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/places-cities-id-state/${placeState[0].id}?showType=list`)
                     // Image
+                    let imagesCities
                     const imagesPlacesCitiesID = placesCities.map(placeCity => placeCity.id_image_cover).filter(id => id !== null && id !== '')
-                    const imagesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesID.join(',')}`)
+                    if ( imagesPlacesCitiesID  !== null) {
+                        imagesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesID.join(',')}`)
+                    } else {
+                        imagesCities = null
+                    }
 
 
                     // COMPONENT - oVideoList
                     // Videos
                     const videos = await $axios.$get(`https://api.frytolnacestach.cz/api/videos-id-city/${place[0].id}`)
                     // Image
-                    const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
-                    const imagesVideos = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosID.join(',')}`)
+                    let imagesVideos
+                    if ( videos !== null) {
+                        const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
+                        imagesVideos = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosID.join(',')}`)
+                    } else {
+                        imagesVideos = null
+                    }
 
 
                     // COMPONENT - oArticleList
                     // Posts
                     const posts = await $axios.$get(`https://api.frytolnacestach.cz/api/posts-id-city/${place[0].id}`)
                     // Image
-                    const imagesPostsID = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
-                    const imagesPosts = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsID.join(',')}`)
+                    let imagesPosts
+                    if ( videos !== null) {
+                        const imagesPostsID = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
+                        imagesPosts = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsID.join(',')}`)
+                    } else {
+                        imagesPosts = null
+                    }
 
 
                     data = {
