@@ -54,15 +54,14 @@
 
         //API STATIC
         async asyncData({ $axios }) {
-            //Get placesRegions
+            // PAGE - Regions list
+            // PlacesRegions
             const placesRegions = await $axios.$get(`https://api.frytolnacestach.cz/api/places-regions?showType=list`)
-
-            //Images placesRegions
-            //IDS Array
+            // Images
             const imagesPlacesRegionsIDS = placesRegions.map(placesRegion => placesRegion.id_image_cover).filter(id => id !== null && id !== '')
-            //Get images
             const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesRegionsIDS.join(',')}`)
 
+            
             //return
             return {
                 placesRegions,

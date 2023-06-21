@@ -54,14 +54,13 @@
 
         //API STATIC
         async asyncData({ $axios }) {
-            //Get events
+            // PAGE - Events list
+            // Events
             const events = await $axios.$get(`https://api.frytolnacestach.cz/api/events`)
-
-            //Images events
-            //IDS Array
+            // Images
             const imagesEventsIDS = events.map(event => event.id_image_cover).filter(id => id !== null && id !== '')
-            //Get images
             const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesEventsIDS.join(',')}`)
+
 
             //return
             return {

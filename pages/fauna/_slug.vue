@@ -128,7 +128,7 @@
 
 
                     // COMPONENT - Places states
-                    // States
+                    // PlacesStates
                     const idsStates = fauna[0].ids_states.map(state => state.id)
                     const placesStates = await $axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsStates.join(',')}`)
                     // Images
@@ -136,7 +136,13 @@
                     const imagesStates = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
 
 
-                    data = { fauna, placesStates, imageFauna, imagesStates }
+                    data = {
+                        fauna,
+                        imageFauna,
+                        placesStates,
+                        imagesStates
+                    }
+
                     
                     success = true
                 } catch (error) {

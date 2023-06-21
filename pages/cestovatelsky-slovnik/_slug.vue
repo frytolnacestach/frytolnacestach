@@ -110,14 +110,19 @@
 
             while (!success) {
                 try {
-                    // Načtení fauny přes API podle slug
+                    // PAGE - TravelDictionaries detail
+                    // TravelDictionaries
                     const travelDictionary = await $axios.$get(`https://api.frytolnacestach.cz/api/travel-dictionary/${params.slug}`)
-
-                    // Načtení informací o obrázku pro faunu
+                    // Images
                     const imageTravelDictionary = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${travelDictionary[0].id_image_hero}`)
 
-                    data = { travelDictionary, imageTravelDictionary }
-                    
+
+                    data = {
+                        travelDictionary,
+                        imageTravelDictionary
+                    }
+
+
                     success = true
                 } catch (error) {
                     console.log(`API ERROR - CESTOVATELSKÝ SLOVNÍK DETAIL: ${params.slug}`)

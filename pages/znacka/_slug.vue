@@ -135,7 +135,13 @@
                     const imagesStates = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
 
 
-                    data = { brand, placesStates, imageBrand, imagesStates }
+                    data = {
+                        brand,
+                        placesStates,
+                        imageBrand,
+                        imagesStates
+                    }
+
                     
                     success = true
                 } catch (error) {

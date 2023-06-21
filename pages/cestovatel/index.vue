@@ -61,10 +61,14 @@
         },
 
         async asyncData({ $axios }) {
-            //users
+            // PAGE - Users list
+            // Users
             const users = await $axios.$get(`https://api.frytolnacestach.cz/api/users`)
 
-            return { users }
+
+            return {
+                users
+            }
         }
     }
 </script>

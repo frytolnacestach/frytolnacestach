@@ -54,15 +54,14 @@
 
         //API STATIC
         async asyncData({ $axios }) {
-            //Get travelDictionaries
+            // PAGE - TravelDictionaries list
+            // TravelDictionaries
             const travelDictionaries = await $axios.$get(`https://api.frytolnacestach.cz/api/travel-dictionaries`)
-
-            //Images travelDictionary
-            //IDS Array
+            // Images
             const imagesTravelDictionariesIDS = travelDictionaries.map(travelDictionary => travelDictionary.id_image_cover).filter(id => id !== null && id !== '')
-            //Get images
             const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesTravelDictionariesIDS.join(',')}`)
 
+            
             //return
             return {
                 travelDictionaries,

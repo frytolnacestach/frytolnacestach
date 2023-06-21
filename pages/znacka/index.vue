@@ -54,14 +54,13 @@
 
         //API STATIC
         async asyncData({ $axios }) {
-            //Get brands
+            // PAGE - Brands list
+            // Brands
             const brands = await $axios.$get(`https://api.frytolnacestach.cz/api/brands`)
-
-            //Images brands
-            //IDS Array
+            // Images
             const imagesBrandsIDS = brands.map(brand => brand.id_image_cover).filter(id => id !== null && id !== '')
-            //Get images
             const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesBrandsIDS.join(',')}`)
+
 
             //return
             return {

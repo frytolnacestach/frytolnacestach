@@ -59,10 +59,6 @@
                 { hid: 'og:url', content: `${process.env.baseUrl}` },
                 { hid: 'og:type', content: 'website' }
             ]
-        },
-
-        async asyncData({ $axios }) {
-
         }
     }
 </script>

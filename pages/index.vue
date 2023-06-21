@@ -39,7 +39,7 @@
                 <div class="t-section__col px-1 mb-4">
                     <!-- SECTION - Article list -->
                     <mHeadline title="Nejnovější článek" styleAlign=" -left" />
-                    <oArticleList :posts="posts" :images="images" styleThema=" -latest" />
+                    <oArticleList :posts="post" :images="imagePost" styleThema=" -latest" />
                     <div class="flex flex-full flex-ai-end flex-center mt-2">
                         <aButtonFillFull url="/clanky" text="Všechny články" styleThema=" -green" target="internal" />
                     </div>
@@ -48,7 +48,7 @@
                 <div class="t-section__col px-1 mb-4">
                     <!-- SECTION - Video -->
                     <mHeadline title="Nejnovější video" styleAlign=" -left" />
-                    <oVideoList :videos="video" :images="image" styleThema=" -latest" />
+                    <oVideoList :videos="video" :images="imageVideo" styleThema=" -latest" />
                     <div class="flex flex-full flex-ai-end flex-center mt-2">
                         <aButtonFillFull url="/videa" text="Všechna videa" styleThema="  -green" target="internal" />
                     </div>
@@ -86,8 +86,10 @@
 
         data() {
             return {
-                image: this.image,
+                post: this.post,
+                imagePost: this.imagePost,
                 video: this.video,
+                imageVideo: this.imageVideo,
                 headline: 'Frytol na cestách',
                 oWorldType: [
                     {
@@ -148,19 +150,26 @@
         },
 
         async asyncData({ $axios }) {
-            //post
-            const posts = await $axios.$get(`https://api.frytolnacestach.cz/api/post-last`)
+            // COMPONENT - Post
+            // Post
+            const post = await $axios.$get(`https://api.frytolnacestach.cz/api/post-last`)
+            // Image
+            const imagePost = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${post[0].id_image_cover}`)
 
-            //video
+
+            // COMPONENT - Video
+            // Video
             const video = await $axios.$get(`https://api.frytolnacestach.cz/api/video-last/`)
+            // Image
+            const imageVideo = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${video[0].id_image}`)
 
-            // Načtení informací o obrázku
-            const image = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${video[0].id_image}`)
 
-            // Načtení informací o obrázku
-            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images/`)
-
-            return { posts, video, image, images }
+            return {
+                post,
+                imagePost,
+                video,
+                imageVideo
+            }
         }
     }
 </script>

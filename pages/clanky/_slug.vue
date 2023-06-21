@@ -249,75 +249,24 @@
 
             while (!success) {
                 try {
-                    //post
+                    // PAGE - Video detail
+                    // Post
                     const post = await $axios.$get(`https://api.frytolnacestach.cz/api/post/${params.slug}`)
-
-                    // Načtení videi z města
-                    let videos = null;
-                    try {
-                        videos = await $axios.$get(`https://api.frytolnacestach.cz/api/videos-id-city/${post[0].id_city}`)
-                    } catch (error) {
-                        console.log(`API ERROR - VIDEOS`)
-                    }
-
-                    // Načtení informací o continentu
-                    let placeContinent = null;
-                    try {
-                        placeContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continent-id/${post[0].id_continent}`)
-                    } catch (error) {
-                        console.log(`API ERROR - PLACE CONTINENT`)
-                    }
-
-                    // Načtení informací o státu
-                    let placeState = null;
-                    try {
-                        placeState = await $axios.$get(`https://api.frytolnacestach.cz/api/places-state-id/${post[0].id_state}`)
-                    } catch (error) {
-                        console.log(`API ERROR - PLACE STATE`)
-                    }
-
-                    // Načtení informací o regionu
-                    let placeRegion = null;
-                    try {
-                        placeRegion = await $axios.$get(`https://api.frytolnacestach.cz/api/places-region-id/${post[0].id_region}`)
-                    } catch (error) {
-                        console.log(`API ERROR - PLACE REGION`)
-                    }
-
-                    // Načtení informací o městu
-                    let placeCity = null;
-                    try {
-                        placeCity = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${post[0].id_city}`)
-                    } catch (error) {
-                        console.log(`API ERROR - PLACE CITY`)
-                    }
-
-                    // Načtení informací o místě
-                    let placeSpot = null;
-                    try {
-                        placeSpot = await $axios.$get(`https://api.frytolnacestach.cz/api/places-spot-id/${post[0].id_spot}`)
-                    } catch (error) {
-                        console.log(`API ERROR - PLACE SPOT`)
-                    }
-
-
-                    // Načtení informací o obrázku pro článek
+                    // Image
                     let imagePostHero = null;
                     try {
                         imagePostHero = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${post[0].id_image_hero}`)
                     } catch (error) {
                         console.log(`API ERROR - IMAGE HERO`)
                     }
-
-                    // Načtení informací o obrázku pro článek
+                    // Image
                     let imagePostMap = null;
                     try {
                         imagePostMap = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${post[0].id_image_map}`)
                     } catch (error) {
                         console.log(`API ERROR - IMAGE MAP`)
                     }
-
-                    // Načtení informací o obrázku pro článek
+                    // Image
                     let imagePostOg = null;
                     try {
                         imagePostOg = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${post[0].id_image_og}`)
@@ -326,7 +275,15 @@
                     }
 
 
-                    // Načtení informací o obrázku pro videa
+                    // COMPONENT - oVideoList
+                    // Videos
+                    let videos = null;
+                    try {
+                        videos = await $axios.$get(`https://api.frytolnacestach.cz/api/videos-id-city/${post[0].id_city}`)
+                    } catch (error) {
+                        console.log(`API ERROR - VIDEOS`)
+                    }
+                    // Images
                     let imagesVideos = null;
                     if (videos) {
                         try {
@@ -337,7 +294,16 @@
                         }
                     }
 
-                    // Načtení informací o obrázku
+
+                    // COMPONENT - oPlaceBlock
+                    // PlaceContinent
+                    let placeContinent = null;
+                    try {
+                        placeContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continent-id/${post[0].id_continent}`)
+                    } catch (error) {
+                        console.log(`API ERROR - PLACE CONTINENT`)
+                    }
+                    // Image
                     let imageContinent = null;
                     if (placeContinent) {
                         try {
@@ -347,7 +313,16 @@
                         }
                     }
 
-                    // Načtení informací o obrázku
+
+                    // COMPONENT - oPlaceBlock
+                    // PlaceState
+                    let placeState = null;
+                    try {
+                        placeState = await $axios.$get(`https://api.frytolnacestach.cz/api/places-state-id/${post[0].id_state}`)
+                    } catch (error) {
+                        console.log(`API ERROR - PLACE STATE`)
+                    }
+                    // Image
                     let imageState = null;
                     if (placeState) {
                         try {
@@ -357,7 +332,16 @@
                         }
                     }
 
-                    // Načtení informací o obrázku
+
+                    // COMPONENT - oPlaceBlock
+                    // PlaceRegion
+                    let placeRegion = null;
+                    try {
+                        placeRegion = await $axios.$get(`https://api.frytolnacestach.cz/api/places-region-id/${post[0].id_region}`)
+                    } catch (error) {
+                        console.log(`API ERROR - PLACE REGION`)
+                    }
+                    // Image
                     let imageRegion = null;
                     if (placeRegion) {
                         try {
@@ -367,7 +351,16 @@
                         }
                     }
 
-                    // Načtení informací o obrázku
+
+                    // COMPONENT - oPlaceBlock
+                    // PlaceCity
+                    let placeCity = null;
+                    try {
+                        placeCity = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${post[0].id_city}`)
+                    } catch (error) {
+                        console.log(`API ERROR - PLACE CITY`)
+                    }
+                    // Image
                     let imageCity = null;
                     if (placeCity) {
                         try {
@@ -377,7 +370,16 @@
                         }
                     }
 
-                    // Načtení informací o obrázku
+
+                    // COMPONENT - oPlaceBlock
+                    // PlaceSpot
+                    let placeSpot = null;
+                    try {
+                        placeSpot = await $axios.$get(`https://api.frytolnacestach.cz/api/places-spot-id/${post[0].id_spot}`)
+                    } catch (error) {
+                        console.log(`API ERROR - PLACE SPOT`)
+                    }
+                    // Image
                     let imageSpot = null;
                     if (placeSpot) {
                         try {
@@ -390,22 +392,23 @@
 
                     data = { 
                         post,
-                        videos,
-                        placeContinent,
-                        placeState,
-                        placeRegion,
-                        placeCity,
-                        placeSpot,
                         imagePostHero,
                         imagePostMap,
                         imagePostOg,
+                        videos,
                         imagesVideos,
+                        placeContinent,
                         imageContinent,
+                        placeState,
                         imageState,
+                        placeRegion,
                         imageRegion,
+                        placeCity,
                         imageCity,
+                        placeSpot,
                         imageSpot
                     }
+
                     
                     success = true
                 } catch (error) {

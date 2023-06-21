@@ -77,14 +77,13 @@
 
         //API STATIC
         async asyncData({ $axios }) {
-            //Get videos
+            // PAGE - Videos list
+            // Video
             const videos = await $axios.$get(`https://api.frytolnacestach.cz/api/videos`)
-
-            //Images videos
-            //IDS Array
+            // Images
             const imagesVideosIDS = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
-            //Get images
             const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
+
 
             //return
             return {

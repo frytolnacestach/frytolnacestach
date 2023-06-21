@@ -210,16 +210,21 @@
 
             while (!success) {
                 try {
-                    // Načtení události přes API podle slug
+                    // PAGE - Event detail
+                    // Event
                     const event = await $axios.$get(`https://api.frytolnacestach.cz/api/event/${params.slug}`)
-
-                    //informace o městě
+                    // Image
+                    const image = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${event[0].id_image_hero}`)
+                    // PlaceCity
                     const placeCity = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${event[0].id_city}`)
 
-                    // Načtení informací o obrázku pro místo
-                    const image = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${event[0].id_image_hero}`)
 
-                    data = { event, placeCity, image }
+                    data = {
+                        event,
+                        image,
+                        placeCity
+                    
+                    }
                     
                     success = true
                 } catch (error) {

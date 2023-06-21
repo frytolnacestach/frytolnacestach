@@ -58,15 +58,14 @@
 
         //API STATIC
         async asyncData({ $axios }) {
-            //Get placesContinents
+            // PAGE - Continents list
+            // PlacesContinents
             const placesContinents = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continents?showType=list`)
-
-            //Images placesContinents
-            //IDS Array
+            // Images
             const imagesPlacesContinentsIDS = placesContinents.map(placesContinent => placesContinent.id_image_cover).filter(id => id !== null && id !== '')
-            //Get images
             const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesContinentsIDS.join(',')}`)
 
+            
             //return
             return {
                 placesContinents,

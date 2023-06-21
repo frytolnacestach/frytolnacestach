@@ -73,15 +73,14 @@
 
         //API STATIC
         async asyncData({ $axios }) {
-            //Get posts
+            // PAGE - Posts list
+            // Posts
             const posts = await $axios.$get(`https://api.frytolnacestach.cz/api/posts`)
-
-            //Images posts
-            //IDS Array
+            // Images
             const imagesPostsIDS = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
-            //Get images
             const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
 
+            
             //return
             return {
                 posts,

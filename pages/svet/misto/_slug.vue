@@ -346,42 +346,48 @@
 
             while (!success) {
                 try {
-                    // Načtení místa přes API podle slug
+                    // PAGE - Spot detail
+                    // Place
                     const place = await $axios.$get(`https://api.frytolnacestach.cz/api/places-spot/${params.slug}`)
-
-                    // Načtení města v místě 
+                    // Image
+                    const imagePlace = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${place[0].id_image_hero}`)
+                    // PlaceCity
                     const placeCity = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${place[0].id_city}`)
-
-                    // Načtení informací o státu
+                    // PlaceState
                     const placeState = await $axios.$get(`https://api.frytolnacestach.cz/api/places-state-id/${place[0].id_state}`)
-
-                    // Načtení informací o kontinentu
+                    // PlaceContinent
                     const placeContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continent-id/${placeState[0].id_continent}`)
 
-                    // Načtení videi z místa
+
+                    // COMPONENT - oVideoList
+                    // Videos
                     const videos = await $axios.$get(`https://api.frytolnacestach.cz/api/videos-id-spot/${place[0].id}`)
-
-                    // Načtení článků z místa
-                    const posts = await $axios.$get(`https://api.frytolnacestach.cz/api/posts-id-spot/${place[0].id}`)
-
-
-                    //images Array
+                    // Images
                     const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
-                    const imagesPostsID = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
-
-
-                    // Načtení informací o obrázku pro místo
-                    const imagePlace = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${place[0].id_image_hero}`)
-
-                    // Načtení informací o obrázku pro videa
                     const imagesVideos = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosID.join(',')}`)
 
-                    // Načtení informací o obrázku pro čláky
+
+                    // COMPONENT - oArticleList
+                    // Posts
+                    const posts = await $axios.$get(`https://api.frytolnacestach.cz/api/posts-id-spot/${place[0].id}`)
+                    // Images
+                    const imagesPostsID = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesPosts = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsID.join(',')}`)
 
 
-                    data = { place, placeCity, placeState, placeContinent, videos, posts, imagePlace, imagesVideos, imagesPosts }
+                    data = {
+                        place,
+                        imagePlace,
+                        placeCity,
+                        placeState,
+                        placeContinent,
+                        videos,
+                        imagesVideos,
+                        posts,
+                        imagesPosts
+                    }
                     
+
                     success = true
                 } catch (error) {
                     console.log(`API ERROR - MÍSTO DETAIL: ${params.slug}`)

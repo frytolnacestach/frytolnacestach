@@ -105,15 +105,14 @@
 
         //API STATIC
         async asyncData({ $axios }) {
-            //Get placesCities
+            // PAGE - Cities list
+            // PlacesCities
             const placesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/places-cities-initial/A`)
-
-            //Images placesCities
-            //IDS Array
+            // Images
             const imagesPlacesCitiesIDS = placesCities.map(placesCity => placesCity.id_image_cover).filter(id => id !== null && id !== '')
-            //Get images
             const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesIDS.join(',')}`)
 
+            
             //return
             return {
                 placesCities,

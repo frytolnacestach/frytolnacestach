@@ -127,28 +127,40 @@ export default {
         loginCheckLogout(this.$router);
 
         if (process.client) {
+            let success = false;
+            let data = null;
+            
             const localStorageEmail = localStorage.getItem('email')
             const localStoragePasswordHash = localStorage.getItem('password_hash')
 
             this.email = localStorageEmail;
             this.passwordHash = localStoragePasswordHash;
 
-            let success = false;
-            let data = null;
-
             while (!success) {
                 try {
+                    // PAGE - Account list
+                    // Account
                     const account = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-authentication?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}`)
-                    
-                    const placesID = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${account[0].id}&status=1`)
 
+
+                    // COMPONENT - oCoverPlaceVisited
+                    // PlacesID
+                    const placesID = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${account[0].id}&status=1`)
                     const placesContinentsID = placesID.filter(place => place.type === 'continent').map(place => place.id_place) || [];
                     const placesStatesID = placesID.filter(place => place.type === 'state').map(place => place.id_place) || [];
                     const placesCitiesID = placesID.filter(place => place.type === 'city').map(place => place.id_place) || [];
                     const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || [];
                     const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || [];
 
-                    data = { account, placesContinentsID, placesStatesID, placesCitiesID, placesRegionsID, placesSpotsID }
+
+                    data = {
+                        account,
+                        placesContinentsID,
+                        placesStatesID,
+                        placesCitiesID,
+                        placesRegionsID,
+                        placesSpotsID
+                    }
 
 
                     success = true

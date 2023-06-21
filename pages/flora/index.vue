@@ -54,15 +54,14 @@
 
         //API STATIC
         async asyncData({ $axios }) {
-            //Get floras
+            // PAGE - Floras list
+            // Floras
             const floras = await $axios.$get(`https://api.frytolnacestach.cz/api/floras`)
-
-            //Images floras
-            //IDS Array
+            // Images
             const imagesFlorasIDS = floras.map(flora => flora.id_image_cover).filter(id => id !== null && id !== '')
-            //Get images
             const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFlorasIDS.join(',')}`)
 
+            
             //return
             return {
                 floras,

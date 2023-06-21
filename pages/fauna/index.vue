@@ -54,14 +54,13 @@
 
         //API STATIC
         async asyncData({ $axios }) {
-            //Get faunas
+            // PAGE - Faunas list
+            // Faunas
             const faunas = await $axios.$get(`https://api.frytolnacestach.cz/api/faunas`)
-
-            //Images faunas
-            //IDS Array
+            // Images
             const imagesFaunasIDS = faunas.map(fauna => fauna.id_image_cover).filter(id => id !== null && id !== '')
-            //Get images
             const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFaunasIDS.join(',')}`)
+
 
             //return
             return {

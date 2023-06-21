@@ -136,51 +136,10 @@
 
             while (!success) {
                 try {
-                    // načtení videa
+                    // PAGE - Video detail
+                    // Video
                     const video = await $axios.$get(`https://api.frytolnacestach.cz/api/video/${params.slug}`)
-
-                    // načtení informací o continentu
-                    let placeContinent = null;
-                    try {
-                        placeContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continent-id/${video[0].id_continent}`)
-                    } catch (error) {
-                        console.log(`API ERROR - PLACE CONTINENT: ${video[0].id_continent}`)
-                    }
-
-                    // načtení informací o státu
-                    let placeState = null;
-                    try {
-                        placeState = await $axios.$get(`https://api.frytolnacestach.cz/api/places-state-id/${video[0].id_state}`)
-                    } catch (error) {
-                        console.log(`API ERROR - PLACE STATE: ${video[0].id_state}`)
-                    }
-
-                    // načtení informací o regionu
-                    let placeRegion = null;
-                    try {
-                        placeRegion = await $axios.$get(`https://api.frytolnacestach.cz/api/places-region-id/${video[0].id_region}`)
-                    } catch (error) {
-                        console.log(`API ERROR - PLACE REGION: ${video[0].id_region}`)
-                    }
-
-                    // načtení informací o městu
-                    let placeCity = null;
-                    try {
-                        placeCity = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${video[0].id_city}`)
-                    } catch (error) {
-                        console.log(`API ERROR - PLACE CITY: ${video[0].id_city}`)
-                    }
-
-                    // načtení informací o místu
-                    let placeSpot = null;
-                    try {
-                        placeSpot = await $axios.$get(`https://api.frytolnacestach.cz/api/places-spot-id/${video[0].id_spot}`)
-                    } catch (error) {
-                        console.log(`API ERROR - PLACE SPOT: ${video[0].id_spot}`)
-                    }
-
-
-                    // načtení informací o obrázku pro článek
+                    // Image
                     let imageVideo = null;
                     try {
                         imageVideo = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${video[0].id_image}`)
@@ -188,7 +147,16 @@
                         console.log(`API ERROR - IMAGE VIDEO`)
                     }
 
-                    // načtení informací o obrázku
+
+                    // COMPONENT - oPlaceBlock
+                    // PlaceContinent
+                    let placeContinent = null;
+                    try {
+                        placeContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continent-id/${video[0].id_continent}`)
+                    } catch (error) {
+                        console.log(`API ERROR - PLACE CONTINENT: ${video[0].id_continent}`)
+                    }
+                    // Image
                     let imageContinent = null;
                     if (placeContinent) {
                         try {
@@ -198,7 +166,16 @@
                         }
                     }
 
-                    // načtení informací o obrázku
+
+                    // COMPONENT - oPlaceBlock
+                    // PlaceState
+                    let placeState = null;
+                    try {
+                        placeState = await $axios.$get(`https://api.frytolnacestach.cz/api/places-state-id/${video[0].id_state}`)
+                    } catch (error) {
+                        console.log(`API ERROR - PLACE STATE: ${video[0].id_state}`)
+                    }
+                    // Image
                     let imageState = null;
                     if (placeState) {
                         try {
@@ -208,7 +185,16 @@
                         }
                     }
 
-                    // načtení informací o obrázku
+
+                    // COMPONENT - oPlaceBlock
+                    // PlaceRegion
+                    let placeRegion = null;
+                    try {
+                        placeRegion = await $axios.$get(`https://api.frytolnacestach.cz/api/places-region-id/${video[0].id_region}`)
+                    } catch (error) {
+                        console.log(`API ERROR - PLACE REGION: ${video[0].id_region}`)
+                    }
+                    // Image
                     let imageRegion = null;
                     if (placeRegion) {
                         try {
@@ -218,7 +204,16 @@
                         }
                     }
 
-                    // načtení informací o obrázku
+
+                    // COMPONENT - oPlaceBlock
+                    // PlaceCity
+                    let placeCity = null;
+                    try {
+                        placeCity = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${video[0].id_city}`)
+                    } catch (error) {
+                        console.log(`API ERROR - PLACE CITY: ${video[0].id_city}`)
+                    }
+                    // Image
                     let imageCity = null;
                     if (placeCity) {
                         try {
@@ -228,7 +223,16 @@
                         }
                     }
 
-                    // načtení informací o obrázku
+
+                    // COMPONENT - oPlaceBlock
+                    // PlaceSpot
+                    let placeSpot = null;
+                    try {
+                        placeSpot = await $axios.$get(`https://api.frytolnacestach.cz/api/places-spot-id/${video[0].id_spot}`)
+                    } catch (error) {
+                        console.log(`API ERROR - PLACE SPOT: ${video[0].id_spot}`)
+                    }
+                    // Image
                     let imageSpot = null;
                     if (placeSpot) {
                         try {
@@ -237,6 +241,7 @@
                             console.log(`API ERROR - IMAGE PLACE SPOT`)
                         }
                     }
+
 
                     data = {
                         video,
@@ -252,6 +257,7 @@
                         imageCity,
                         imageSpot
                     }
+
 
                     success = true;
                 } catch (error) {
