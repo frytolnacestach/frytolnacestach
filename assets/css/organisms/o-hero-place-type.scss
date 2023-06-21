@@ -38,7 +38,7 @@
     &__headline {
         width: 100%;
         font-size: $fs-40;
-        color: $brand1;
+        color: $c-green-bg-component-dark;
         text-align: center;
         margin: 0;
         text-transform: uppercase;
@@ -46,7 +46,7 @@
 
     &__perex {
         font-size: $fs-normal-ss;
-        color: $brand1;
+        color: $c-green-bg-component-dark;
         width: 100%;
         max-width: 600px;
         margin: 0 auto;

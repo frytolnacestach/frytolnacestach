@@ -80,6 +80,9 @@ $brand1-a: #bcded6;
 $brand2-a: #bde9de;
 $brand3-a: #ace7e9;
 
+//new color - named?
+$brand1Light: #58867b;
+$brand1Dark: #125343;
 
 //Blue
 //background
@@ -137,13 +140,13 @@ $c-gray-skeleton-dark-loading-2: #dddddd;
 
 //Green
 //background
-$c-green-bg: #f4fffc;
-$c-green-bg-component-light-super: #def8f1;
-$c-green-bg-component-light: #bcddd5;
+$c-green-bg: #effbf9;
+$c-green-bg-component-light-super: #e3f2ed;
+$c-green-bg-component-light: #c2ded5;
 $c-green-bg-component-dark: #125343; //TODO: before 2023-06-11
 $c-green-bg-component-dark-super: #0e4235; //TODO: before 2023-06-11
 //text
-$c-green-t-light-super: #f4fffc;
+$c-green-t-light-super: #effbf9;
 $c-green-t-light: #d0f5ec; //TODO: before 2023-06-11
 $c-green-t-dark: #125243; //TODO: before 2023-06-11
 $c-green-t-dark-super: #0b3128; //TODO: before 2023-06-11
@@ -152,12 +155,12 @@ $c-green-icon-light: #bcddd5;
 $c-green-icon: #125343; //TODO: before 2023-06-11
 $c-green-icon-dark: #04110e; //TODO: before 2023-06-11
 //other
-$c-green-loading-bg: #c0f1e5;
-$c-green-loading-1: #c0f1e5;
-$c-green-loading-2: #9dd2c5;
-$c-green-skeleton-loading-bg: #def8f1;
-$c-green-skeleton-loading-1: #def8f1;
-$c-green-skeleton-loading-2: #bcddd5;
+$c-green-loading-bg: #e3f2ed;
+$c-green-loading-1: #e3f2ed;
+$c-green-loading-2: #c2ded5;
+$c-green-skeleton-loading-bg: #e3f2ed;
+$c-green-skeleton-loading-1: #e3f2ed;
+$c-green-skeleton-loading-2: #c2ded5;
 $c-green-skeleton-dark-loading-bg: #c0f1e5;
 $c-green-skeleton-dark-loading-1: #c0f1e5;
 $c-green-skeleton-dark-loading-2: #9dd2c5;

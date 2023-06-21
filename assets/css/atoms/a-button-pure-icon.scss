@@ -15,14 +15,26 @@
     }
 
     &.-cover {
+        color: $brand1Dark;
+
         &::after {
             content: map-get($icomoon-default, 'image');
+        }
+
+        &:hover {
+            color: $brand1Dark;
         }
     }
 
     &.-map {
+        color: $brand1Dark;
+
         &::after {
             content: map-get($icomoon-default, 'map');
+        }
+
+        &:hover {
+            color: $brand1Dark;
         }
     }
 }

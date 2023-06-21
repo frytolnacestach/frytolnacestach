@@ -12,8 +12,8 @@
         <section class="t-section -px-world mt-1" v-if="isMobile">
             <div class="t-section__inner">
                 <div class="flex flex-end-all">
-                    <a v-if="!showHero" @click="showHero = true" class="a-button-pure-icon -cover">Obrázek</a>
-                    <a v-else @click="showHero = false" class="a-button-pure-icon -map">Mapa</a>
+                    <span v-if="!showHero" @click="showHero = true" class="a-button-pure-icon -cover">Obrázek</span>
+                    <span v-else @click="showHero = false" class="a-button-pure-icon -map">Mapa</span>
                 </div>
             </div>
         </section>
