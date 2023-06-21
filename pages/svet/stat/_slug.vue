@@ -741,8 +741,8 @@
 
             while (!success) { 
                 try {
-                    // COMPONENT - Place detail
-                    // načtení místa přes API podle slug
+                    // PAGE - Place state detail
+                    // Place state
                     const place = await $axios.$get(`https://api.frytolnacestach.cz/api/places-state/${params.slug}`)
                     // Image
                     const imagePlace = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${place[0].id_image_hero}`)

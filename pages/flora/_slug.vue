@@ -84,8 +84,8 @@
         data() {
             return {
                 flora: this.flora,
-                placesStates: this.placesStates,
                 imageFlora: this.imageFlora,
+                placesStates: this.placesStates,
                 imagesStates: this.imagesStates,
                 mNavBreadcrumbsFloraArray: [
                     {
@@ -119,27 +119,23 @@
 
             while (!success) {
                 try {
-                    // Načtení flory přes API podle slug
+                    // PAGE - Flora detail
+                    // Flora
                     const flora = await $axios.$get(`https://api.frytolnacestach.cz/api/flora/${params.slug}`)
-
-                    //states Array
-                    const idsStates = flora[0].ids_states.map(state => state.id)
-
-                    // Načtení státu  podle jeho id
-                    const placesStates = await $axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsStates.join(',')}`)
-
-                    //images Array
-                    const imagesPlacesStatesID = placesStates.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
-
-
-                    // Načtení informací o obrázku pro floru
+                    // Image
                     const imageFlora = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${flora[0].id_image_hero}`)
 
-                    // Načtení informací o obrázku pro státy
+
+                    // COMPONENT - Places states
+                    // States
+                    const idsStates = flora[0].ids_states.map(state => state.id)
+                    const placesStates = await $axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsStates.join(',')}`)
+                    // Images
+                    const imagesPlacesStatesID = placesStates.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesStates = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
 
 
-                    data = { flora, placesStates, imageFlora, imagesStates }
+                    data = { flora, imageFlora, placesStates, imagesStates }
                     
                     success = true
                 } catch (error) {

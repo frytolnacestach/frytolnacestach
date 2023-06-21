@@ -84,8 +84,8 @@
         data() {
             return {
                 brand: this.brand,
-                placesStates: this.placesStates,
                 imageBrand: this.imageBrand,
+                placesStates: this.placesStates,
                 imagesStates: this.imagesStates,
                 mNavBreadcrumbsBrandArray: [
                     {
@@ -119,23 +119,19 @@
 
             while (!success) {
                 try {
-                    // Načtení fauny přes API podle slug
+                    // PAGE - Brand detail
+                    // Brand
                     const brand = await $axios.$get(`https://api.frytolnacestach.cz/api/brand/${params.slug}`)
-
-                    //states Array
-                    const idsStates = brand[0].ids_states.map(state => state.id)
-
-                    // Načtení státu  podle jeho id
-                    const placesStates = await $axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsStates.join(',')}`)
-
-                    //images Array
-                    const imagesPlacesStatesID = placesStates.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
-
-
-                    // Načtení informací o obrázku pro faunu
+                    // Image
                     const imageBrand = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${brand[0].id_image_hero}`)
 
-                    // Načtení informací o obrázku pro státy
+
+                    // COMPONENT - Places states
+                    // States
+                    const idsStates = brand[0].ids_states.map(state => state.id)
+                    const placesStates = await $axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsStates.join(',')}`)
+                    // Images
+                    const imagesPlacesStatesID = placesStates.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesStates = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
 
 

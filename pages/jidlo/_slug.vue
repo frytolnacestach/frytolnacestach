@@ -84,8 +84,8 @@
         data() {
             return {
                 food: this.food,
-                placesStates: this.placesStates,
                 imageFood: this.imageFood,
+                placesStates: this.placesStates,
                 imagesStates: this.imagesStates,
                 mNavBreadcrumbsFoodArray: [
                     {
@@ -119,23 +119,19 @@
 
             while (!success) {
                 try {
-                    // Načtení jídla přes API podle slug
+                    // PAGE - Food detail
+                    // Food
                     const food = await $axios.$get(`https://api.frytolnacestach.cz/api/food/${params.slug}`)
-
-                    //states Array
-                    const idsStates = food[0].ids_states.map(state => state.id)
-
-                    // Načtení státu  podle jeho id
-                    const placesStates = await $axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsStates.join(',')}`)
-
-                    //images Array
-                    const imagesPlacesStatesID = placesStates.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
-
-
-                    // Načtení informací o obrázku pro jídlo
+                    // Image
                     const imageFood = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${food[0].id_image_hero}`)
 
-                    // Načtení informací o obrázku pro státy
+
+                    // COMPONENT - Places states
+                    // States
+                    const idsStates = food[0].ids_states.map(state => state.id)
+                    const placesStates = await $axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsStates.join(',')}`)
+                    // Images
+                    const imagesPlacesStatesID = placesStates.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesStates = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
 
 

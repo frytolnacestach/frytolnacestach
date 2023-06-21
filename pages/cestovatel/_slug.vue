@@ -144,24 +144,24 @@
                 if (process.client) {
                 while (!success) {
                     try {
-                    const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user/${this.$route.params.slug}`);
-                    
-                    const placesID = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${user[0].id}&status=1`);
+                        const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user/${this.$route.params.slug}`);
+                        
+                        const placesID = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${user[0].id}&status=1`);
 
-                    const placesContinentsID = placesID.filter(place => place.type === 'continent').map(place => place.id_place) || [];
-                    const placesStatesID = placesID.filter(place => place.type === 'state').map(place => place.id_place) || [];
-                    const placesCitiesID = placesID.filter(place => place.type === 'city').map(place => place.id_place) || [];
-                    const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || [];
-                    const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || [];
+                        const placesContinentsID = placesID.filter(place => place.type === 'continent').map(place => place.id_place) || [];
+                        const placesStatesID = placesID.filter(place => place.type === 'state').map(place => place.id_place) || [];
+                        const placesCitiesID = placesID.filter(place => place.type === 'city').map(place => place.id_place) || [];
+                        const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || [];
+                        const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || [];
 
-                    data = { staticUser: user, user, placesContinentsID, placesStatesID, placesCitiesID, placesRegionsID, placesSpotsID };
+                        data = { staticUser: user, user, placesContinentsID, placesStatesID, placesCitiesID, placesRegionsID, placesSpotsID };
 
-                    success = true;
+                        success = true;
                     } catch (error) {
-                    console.log(`API ERROR - CESTOVATEL DETAIL: ${this.$route.params.slug}`);
-                    console.error(error);
+                        console.log(`API ERROR - CESTOVATEL DETAIL: ${this.$route.params.slug}`);
+                        console.error(error);
 
-                    await new Promise(resolve => setTimeout(resolve, 1000));
+                        await new Promise(resolve => setTimeout(resolve, 1000));
                     }
                 }
 
