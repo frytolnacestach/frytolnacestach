@@ -17,8 +17,23 @@
 
     &.-cover {
         color: $brand1Dark;
+        background-color: $c-green-bg-component-light-super;
+        height: 60px;
+        line-height: 20px;
+        padding: 10px 15px 35px 35px;
+        margin-bottom: -30px;
+        margin-right: 5px;
+        border-radius: $br-2 $br-2 0 0;
+
+        @media only screen and (min-width: $ti) {
+            margin-right: 10px;
+            border-radius: $br-3 $br-3 0 0;
+        }
 
         &::after {
+            left: 15px;
+            top: 10px;
+            bottom: inherit;
             content: map-get($icomoon-default, 'image');
         }
 
@@ -29,8 +44,23 @@
 
     &.-map {
         color: $brand1Dark;
+        background-color: $c-green-bg-component-light-super;
+        height: 60px;
+        line-height: 20px;
+        padding: 10px 10px 35px 35px;
+        margin-bottom: -30px;
+        margin-right: 5px;
+        border-radius: $br-2 $br-2 0 0;
+
+        @media only screen and (min-width: $ti) {
+            margin-right: 10px;
+            border-radius: $br-3 $br-3 0 0;
+        }
 
         &::after {
+            left: 15px;
+            top: 10px;
+            bottom: inherit;
             content: map-get($icomoon-default, 'map');
         }
 
