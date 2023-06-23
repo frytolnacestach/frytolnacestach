@@ -1,0 +1,74 @@
+.o-form-review-item {
+    $self: &;
+
+    width: 100%;
+
+    &__outer {
+        width: 100%;
+    }
+
+    &__inner {
+        width: 100%;
+    }
+
+    &__messages {
+        display: block;
+        width: 100%;
+    }
+
+    &__title {
+        display: block;
+        color: $c-green-t-dark-super;
+        border-bottom: 1px solid $c-green-bg-component-dark;
+        margin-bottom: 10px;
+        font-size: $fs-normal-ll;
+    }
+
+    &__form {
+        display: block;
+        width: 100%;
+        padding: 10px 15px;
+    }
+
+    &__items {
+        width: 100%;
+    }
+
+    &__item {
+        display: inline-block;
+        margin: 8px 0;
+        width: 100%;
+
+        &.-notmargin {
+            margin: 0;
+        }
+    }
+
+    &__close {
+        @include transition(color, .3s);
+        cursor: pointer;
+        font-family: $ff-icomoon-default;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 0;
+        right: 0;
+        color: $c-green-icon-light;
+
+        &::after {
+            font-size: $fs-icon-30;
+            line-height: 1;
+            content: map-get($icomoon-default, 'cross');
+        }
+
+        &:hover {
+            color: $c-green-icon;
+        }
+    }
+
+    &.-edit {
+        #{$self}__form {
+            padding: 0;
+        }
+    }
+}

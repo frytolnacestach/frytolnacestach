@@ -169,6 +169,10 @@
                                 <!-- SECTION - Značky list -->
                                 <oCoverItemState type="znacka" title="Značky a výrobky ze státu" :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
                                 <!-- SECTION - Flora Značky END -->
+
+                                <!-- SECTION - Review -->
+                                <oReviewItem :IDplace="place[0].id" type="state" v-if="place[0].id" />
+                                <!-- SECTION - Review END -->
                         
                             </div>
 
@@ -549,6 +553,7 @@
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oChartPie from '@/components/organisms/oChartPie.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
+    import oReviewItem from '~/components/organisms/oReviewItem.vue'
     import oSidebarList from '~/components/organisms/oSidebarList.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
@@ -574,6 +579,7 @@
             oMapGoogle,
             oChartPie,
             oPlaceTeaser,
+            oReviewItem,
             oSidebarList,
             oVideoList,
             oVisitedButton,

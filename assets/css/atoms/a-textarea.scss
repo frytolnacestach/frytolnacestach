@@ -1,7 +1,31 @@
 .a-textarea {
     width: 100%;
+    max-width: 560px;
     height: 86px;
-    line-height: 26px;
-    padding: 3px 10px;
-    border: 1px solid $gray4;
+    padding: 4px 15px;
+    line-height: 30px;
+    border: 1px solid $brand2-a;
+    border-radius: $br-2;
+    background-color: $brand2-a-3;
+    font-size: $fs-normal-sss;
+
+    &:focus{
+        outline: none;
+    }
+
+    //color
+    &.-blue {
+        border: 1px solid $c-blue-bg-component-light;
+        background-color: $c-blue-bg-component-light-super;
+    }
+
+    &.-gray {
+        border: 1px solid $c-gray-bg-component-light;
+        background-color: $c-gray-bg-component-light-super;
+    }
+
+    &.-green {
+        border: 1px solid $c-green-bg-component-light;
+        background-color: $c-green-bg-component-light-super;
+    }
 }
