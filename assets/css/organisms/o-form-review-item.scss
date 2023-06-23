@@ -51,8 +51,9 @@
         position: absolute;
         width: 40px;
         height: 40px;
-        top: 0;
-        right: 0;
+        padding: 5px;
+        top: 5px;
+        right: 5px;
         color: $c-green-icon-light;
 
         &::after {

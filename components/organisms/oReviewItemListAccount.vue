@@ -1,8 +1,8 @@
 <template>
     <section class="t-section -p0">
         <div class="t-section__inner">
-            <mHeadline title="Napsaná hodnocení" perex="Uživatel zatím nenapsal žádná hodnocení" styleThema=" -account -blue" styleAlign="" styleGap="" v-if="reviews.length === 0" />
-            <mHeadline title="Napsaná hodnocení" styleThema=" -account -blue" styleAlign="" styleGap="" v-if="reviews && reviews.length > 0" />
+            <mHeadline title="Napsané recenze" perex="Uživatel zatím nenapsal žádnou recenzi" styleThema=" -account -blue" styleAlign="" styleGap="" v-if="reviews.length === 0" />
+            <mHeadline title="Napsané recenze" styleThema=" -account -blue" styleAlign="" styleGap="" v-if="reviews && reviews.length > 0" />
             <div class="o-review-item-list-account" v-if="reviews && reviews.length > 0 && places && places.length > 0">
                 <div class="o-review-item-list-account__outer">
                     <div class="o-review-item-list-account__inner">

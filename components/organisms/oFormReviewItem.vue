@@ -109,12 +109,12 @@
                                                                 <h3 class="o-review-item-list__name">
                                                                     <NuxtLink :to="`/cestovatel/${account[0].slug}`" :aria-label="`Přejít na profil uživatele ${account[0].nickname}`">{{ account[0].nickname }}</NuxtLink>
                                                                 </h3>
-                                                                <div class="o-form-review-item__item">
-                                                                    <textarea class="a-textarea -green" name="text" v-model="text" placeholder="Text recenze"></textarea>
+                                                                <div class="o-form-review-item__item -notmargin">
+                                                                    <textarea class="a-textarea -green2" name="text" v-model="text" placeholder="Text recenze"></textarea>
                                                                 </div>
                                                             </div>
-                                                            <div class="o-form-review-item__buttons mt-1">
-                                                                <div class="o-form-review-item__button">
+                                                            <div class="o-form-review-item__buttons">
+                                                                <div class="o-form-review-item__button mt-1">
                                                                     <div class="m-button -green" :class="{'-notactive': selectRating === null}">
                                                                         <button class="m-button__input" :disabled="selectRating === null ? true : false" type="submit">Uložit úpravy</button>
                                                                     </div>

@@ -3,14 +3,14 @@
         <div class="t-section__inner">
 
             <!-- SECTION - mHeadline -->
-            <mHeadline title="Byl jsi tu? Tak napiš hodnocení." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="myReview.length === 0 && numberReviews !== 0 && account.length !== 0 && newReview === false" />
-            <mHeadline title="Byl jsi tu? Tak napiš hodnocení." perex="Ale nejdříve se musíš přihlásit ke svému účtu." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="numberReviews !== 0 && account.length === 0 && newReview === false" />
-            <mHeadline title="Napiš recenzi" perex="Ještě nikdo tu nenapsal hodnocení, buď první." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="numberReviews === 0 && account.length !== 0 && newReview === false" />
+            <mHeadline title="Byl jsi tu? Tak napiš recenzi." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="myReview.length === 0 && numberReviews !== 0 && account.length !== 0 && newReview === false" />
+            <mHeadline title="Byl jsi tu? Tak napiš recenzi." perex="Ale nejdříve se musíš přihlásit ke svému účtu." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="numberReviews !== 0 && account.length === 0 && newReview === false" />
+            <mHeadline title="Napiš recenzi" perex="Ještě nikdo tu nenapsal recenzi, buď první." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="numberReviews === 0 && account.length !== 0 && newReview === false" />
             <mHeadline title="Napiš recenzi" perex="Ale nejdříve se musíš přihlásit ke svému účtu." styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" v-if="numberReviews === 0 && account.length === 0 && newReview === false" />
             <!-- SECTION - mHeadline END -->
 
             <!-- SECTION - mHeadline -->
-            <mHeadline title="Hodnocení" perex="Super, napsal jsi hodnocení jako první! Děkujeme."  styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" v-if="reviews.length === 0 && newReview === true" />
+            <mHeadline title="Recenze" perex="Super, napsal jsi recenzi jako první! Děkujeme."  styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" v-if="reviews.length === 0 && newReview === true" />
             <!-- SECTION - mHeadline END -->
 
             <!-- SECTION - Form Review -->
@@ -18,7 +18,7 @@
             <!-- SECTION - Form Review END -->
 
             <!-- SECTION - mHeadline -->
-            <mHeadline title="Hodnocení" styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="reviews.length !== 0" />
+            <mHeadline title="Recenze" styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="reviews.length !== 0" />
             <!-- SECTION - mHeadline END -->
 
             <!-- SECTION - Review -->
@@ -109,7 +109,7 @@
                     
                     success = true
                 } catch (error) {
-                    console.log(`API ERROR - UŽIVATELE KOMENTÁŘŮ`)
+                    console.log(`API ERROR - UŽIVATELKÉ RECENZE`)
                     console.error(error)
 
                     await new Promise(resolve => setTimeout(resolve, 1000))

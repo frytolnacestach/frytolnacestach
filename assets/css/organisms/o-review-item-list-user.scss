@@ -48,7 +48,6 @@
         overflow: hidden;
         width: 70px;
         height: 70px;
-        margin-top: 5px;
         border-radius: $br-1;
 
         @media only screen and (min-width: $ti) {
@@ -100,7 +99,7 @@
         width: 40px;
         height: 40px;
         padding: 5px;
-        color: $starGray;
+        color: $star;
 
         &::after {
             font-size: $fs-icon-30;
@@ -109,15 +108,23 @@
         }
 
         &.-active {
-            color: $starYellow;
+            color: $starActive;
         }
     }
 
     &__text {
         width: 100%;
+        max-width: 640px;
+        background-color: $c-green-bg-component-light-super;
         display: flex;
         flex-wrap: wrap;
         position: relative;
+        padding: 5px 10px 10px 10px;
+        border-radius: $br-1;
+
+        @media only screen and (min-width: $ti) {
+            border-radius: $br-2;
+        }
     }
 
     &__review {
@@ -133,29 +140,9 @@
         z-index: 2;
     }
 
-    &__setting {
-        @include transition(color, .3s);
-        cursor: pointer;
-        font-family: $ff-icomoon-default;
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        top: 0;
-        right: 0;
-        color: $c-green-icon-light;
-
-        &::after {
-            font-size: $fs-icon-30;
-            line-height: 1;
-            content: map-get($icomoon-default, 'setting');
-        }
-
-        &:hover {
-            color: $c-green-icon;
-        }
-    }
-
     &__perex {
         color: $c-green-t-dark-super;
+        font-size: $fs-normal-s;
+        line-height: $lh-x-normal;
     }
 }

@@ -73,12 +73,12 @@
                                                             <h3 class="o-review-item-list__name" v-if="users && users.find(user => user.id === review.id_user)">
                                                                 <NuxtLink :to="`/cestovatel/${users.find(user => user.id === review.id_user).slug}`" :aria-label="`Přejít na profil uživatele ${users.find(user => user.id === review.id_user).nickname}`">{{ users.find(user => user.id === review.id_user).nickname }}</NuxtLink>
                                                             </h3>
-                                                            <div class="o-form-review-item__item">
-                                                                <textarea class="a-textarea -green" name="text" v-model="text" placeholder="Text recenze"></textarea>
+                                                            <div class="o-form-review-item__item -notmargin">
+                                                                <textarea class="a-textarea -green2" name="text" v-model="text" placeholder="Text recenze"></textarea>
                                                             </div>
                                                         </div>
-                                                        <div class="o-form-review-item__buttons mt-1">
-                                                            <div class="o-form-review-item__button">
+                                                        <div class="o-form-review-item__buttons">
+                                                            <div class="o-form-review-item__button mt-1">
                                                                 <div class="m-button -green" :class="{'-notactive': selectRating === null}">
                                                                     <button class="m-button__input" :disabled="selectRating === null ? true : false" type="submit">Uložit úpravy</button>
                                                                 </div>
@@ -159,10 +159,10 @@
                     });
 
                     if (response.ok) {
-                        console.log("Hodnocení bylo přidáno");
-                        this.successForm = "Hodnocení bylo upraveno";
+                        console.log("Recenze byla přidána");
+                        this.successForm = "Recenze byla přidána";
 
-                        const reviewIndex = this.reviews.findIndex(review => review.id === this.account[0].id);
+                        const reviewIndex = this.reviews.findIndex(review => review.id_user === this.account[0].id);
                         if (reviewIndex !== -1) {
                             this.reviews[reviewIndex].text = this.text
                             this.reviews[reviewIndex].rating = this.selectRating
@@ -170,10 +170,10 @@
 
                         this.reviewShowReview()
                     } else if (response.status === 201) {
-                        console.log("Hodnocení bylo přidáno");
-                        this.successForm = "Hodnocení bylo upraveno";
+                        console.log("Recenze byla přidána");
+                        this.successForm = "Recenze byla přidána";
 
-                        const reviewIndex = this.reviews.findIndex(review => review.id === this.account[0].id);
+                        const reviewIndex = this.reviews.findIndex(review => review.id_user === this.account[0].id);
                         if (reviewIndex !== -1) {
                             this.reviews[reviewIndex].text = this.text
                             this.reviews[reviewIndex].rating = this.selectRating
@@ -228,7 +228,7 @@
                     
                     success = true
                 } catch (error) {
-                    console.log(`API ERROR - UŽIVATELE KOMENTÁŘŮ`)
+                    console.log(`API ERROR - UŽIVATELSKÉ RECENZE`)
                     console.error(error)
 
                     await new Promise(resolve => setTimeout(resolve, 1000))
