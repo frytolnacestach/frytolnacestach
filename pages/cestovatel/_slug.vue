@@ -68,6 +68,14 @@
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
+
+                        <!-- SECTION - Hodnoceni -->
+                        <section class="t-section -padding-x -p0 pb-4">
+                            <div class="t-section__inner">
+                                <oReviewItemListUser :user="user" v-if="user[0]" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Hodnoceni END -->
                     </div>
                 </div>
             </div>
@@ -81,6 +89,7 @@
     import mUserHeader from '~/components/molecules/mUserHeader.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oCoverPlaceVisited from '~/components/organisms/oCoverPlaceVisited.vue'
+    import oReviewItemListUser from '~/components/organisms/oReviewItemListUser.vue'
 
     export default {
         name: 'CestovatelSlugPage',
@@ -89,7 +98,8 @@
             mHeadline,
             mUserHeader,
             oAdGoogleSidebar,
-            oCoverPlaceVisited
+            oCoverPlaceVisited,
+            oReviewItemListUser
         },
 
         data() {

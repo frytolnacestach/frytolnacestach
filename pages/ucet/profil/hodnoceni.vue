@@ -28,12 +28,10 @@
                         <!-- SECTION - Hodnoceni -->
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
-                                <mHeadline title="Napsaná hodnocení" styleThema=" -account -blue" styleAlign="" styleGap="" />
                                 <oReviewItemListAccount :account="account" v-if="account[0]" />
                             </div>
                         </section>
                         <!-- SECTION - Hodnoceni END -->
-            
                     </div>
 
                 </div>
