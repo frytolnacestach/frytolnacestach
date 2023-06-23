@@ -95,6 +95,12 @@
             }
         }
 
+        &.-review {
+            &::after {
+                content: map-get($icomoon-default, 'star-full');
+            }
+        }
+
         &.-key {
             &::after {
                 content: map-get($icomoon-default, 'key');
