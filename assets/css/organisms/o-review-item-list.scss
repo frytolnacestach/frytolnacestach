@@ -99,7 +99,7 @@
         width: 40px;
         height: 40px;
         padding: 5px;
-        color: $star;
+        color: $star-green;
 
         &::after {
             font-size: $fs-icon-30;
@@ -138,6 +138,14 @@
         font-size: $fs-normal-sss;
         font-weight: 600;
         z-index: 2;
+    }
+
+    &__name-link {
+        color: $c-green-t-dark-super;
+
+        &:hover {
+            color: $c-green-t-dark;
+        }
     }
 
     &__setting {

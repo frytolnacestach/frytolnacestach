@@ -40,7 +40,7 @@
                                             </div>
                                             <div class="o-review-item-list__setting" v-if="account[0].id === review.id_user" @click="selectRating = review.rating, text = review.text, reviewShowEdit()"></div>
                                             <h3 class="o-review-item-list__name" v-if="users && users.find(user => user.id === review.id_user)">
-                                                <NuxtLink :to="`/cestovatel/${users.find(user => user.id === review.id_user).slug}`" :aria-label="`Přejít na profil uživatele ${users.find(user => user.id === review.id_user).nickname}`">{{ users.find(user => user.id === review.id_user).nickname }}</NuxtLink>
+                                                <NuxtLink class="o-review-item-list__name-link" :to="`/cestovatel/${users.find(user => user.id === review.id_user).slug}`" :aria-label="`Přejít na profil uživatele ${users.find(user => user.id === review.id_user).nickname}`">{{ users.find(user => user.id === review.id_user).nickname }}</NuxtLink>
                                             </h3>
                                             <p class="o-review-item-list__perex">{{ review.text }}</p>
                                         </div>
@@ -71,7 +71,7 @@
                                                                 <div class="o-form-review-item__close" v-if="account[0].id === review.id_user" @click="reviewShowReview()"></div>
                                                             </div>
                                                             <h3 class="o-review-item-list__name" v-if="users && users.find(user => user.id === review.id_user)">
-                                                                <NuxtLink :to="`/cestovatel/${users.find(user => user.id === review.id_user).slug}`" :aria-label="`Přejít na profil uživatele ${users.find(user => user.id === review.id_user).nickname}`">{{ users.find(user => user.id === review.id_user).nickname }}</NuxtLink>
+                                                                <NuxtLink class="o-review-item-list__name-link" :to="`/cestovatel/${users.find(user => user.id === review.id_user).slug}`" :aria-label="`Přejít na profil uživatele ${users.find(user => user.id === review.id_user).nickname}`">{{ users.find(user => user.id === review.id_user).nickname }}</NuxtLink>
                                                             </h3>
                                                             <div class="o-form-review-item__item -notmargin">
                                                                 <textarea class="a-textarea -green2" name="text" v-model="text" placeholder="Text recenze"></textarea>

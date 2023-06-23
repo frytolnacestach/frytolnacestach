@@ -9,7 +9,7 @@
                         <div class="o-review-item-list-user__items">
                             <div class="o-review-item-list-user__item" v-for="review in reviews" :key="review.id">
                                 <div class="o-review-item-list-user__content">
-                                    <div class="o-review-item-list-user__image loading-image -green">
+                                    <div class="o-review-item-list-user__image loading-image -blue">
                                         <div class="o-review-item-list-user__image-lazyload" v-if="images && images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place ))">
                                             <img class="o-review-item-list-user__image-file lazyload-file"
                                                 data-sizes="(max-width: 374px) 345px"
@@ -44,7 +44,7 @@
                                                 <div class="o-review-item-list-user__star" :class="{'-active': review.rating > 4}"></div>
                                             </div>
                                             <h3 class="o-review-item-list-user__name">
-                                                <NuxtLink :to="`/${mapType(review.type)}/${places.find(place => place.id === review.id_place && place.type_place === review.type).slug}`" :aria-label="`Přejít na profil uživatele ${places.find(place => place.id === review.id_place && place.type_place === review.type).nickname}`">{{ places.find(place => place.id === review.id_place && place.type_place === review.type).name }}</NuxtLink>
+                                                <NuxtLink  class="o-review-item-list-user__name-link" :to="`/${mapType(review.type)}/${places.find(place => place.id === review.id_place && place.type_place === review.type).slug}`" :aria-label="`Přejít na profil uživatele ${places.find(place => place.id === review.id_place && place.type_place === review.type).nickname}`">{{ places.find(place => place.id === review.id_place && place.type_place === review.type).name }}</NuxtLink>
                                             </h3>
                                             <p class="o-review-item-list-user__perex">{{ review.text }}</p>
                                         </div>
