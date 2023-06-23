@@ -178,6 +178,10 @@
                             </div>
                         </section>
                         <!-- SECTION - Ubytování END -->
+
+                        <!-- SECTION - Review -->
+                        <oReviewItem :IDplace="place[0].id" type="city" v-if="place[0].id" />
+                        <!-- SECTION - Review END -->
                 
                     </div>
 
@@ -259,6 +263,7 @@
     import oPlaceTeaserSpots from '~/components/organisms/oPlaceTeaserSpots.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oSidebarList from '~/components/organisms/oSidebarList.vue'
+    import oReviewItem from '~/components/organisms/oReviewItem.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
@@ -279,6 +284,7 @@
             oPlaceTeaserSpots,
             oPlaceTeaser,
             oSidebarList,
+            oReviewItem,
             oVideoList,
             oVisitedButton,
             oWidgetBooking

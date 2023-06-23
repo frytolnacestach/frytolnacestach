@@ -195,13 +195,11 @@
             },
 
             async reviewShowEdit() {
-                console.log("kliknuti na reviewShowEdit");
                 this.showReview = false;
                 this.showEditForm = true;
             },
 
             async reviewShowReview() {
-                console.log("kliknuti na reviewShowReview");
                 this.showEditForm = false;
                 this.showReview = true;
             },

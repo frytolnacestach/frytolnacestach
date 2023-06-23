@@ -3,14 +3,18 @@
         <div class="t-section__inner">
 
             <!-- SECTION - mHeadline -->
-            <mHeadline title="Byl jsi tu? Tak napiš hodnocení." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="myReview.length === 0 && numberReviews !== 0 && account.length !== 0" />
-            <mHeadline title="Byl jsi tu? Tak napiš hodnocení." perex="Ale nejdříve se musíš přihlásit ke svému účtu." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="numberReviews !== 0 && account.length === 0" />
-            <mHeadline title="Napiš recenzi" perex="Ještě nikdo tu nenapsal hodnocení, buď první." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="numberReviews === 0 && account.length !== 0" />
-            <mHeadline title="Napiš recenzi" perex="Ale nejdříve se musíš přihlásit ke svému účtu." styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" v-if="numberReviews === 0 && account.length === 0" />
+            <mHeadline title="Byl jsi tu? Tak napiš hodnocení." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="myReview.length === 0 && numberReviews !== 0 && account.length !== 0 && newReview === false" />
+            <mHeadline title="Byl jsi tu? Tak napiš hodnocení." perex="Ale nejdříve se musíš přihlásit ke svému účtu." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="numberReviews !== 0 && account.length === 0 && newReview === false" />
+            <mHeadline title="Napiš recenzi" perex="Ještě nikdo tu nenapsal hodnocení, buď první." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="numberReviews === 0 && account.length !== 0 && newReview === false" />
+            <mHeadline title="Napiš recenzi" perex="Ale nejdříve se musíš přihlásit ke svému účtu." styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" v-if="numberReviews === 0 && account.length === 0 && newReview === false" />
+            <!-- SECTION - mHeadline END -->
+
+            <!-- SECTION - mHeadline -->
+            <mHeadline title="Hodnocení" perex="Super, napsal jsi hodnocení jako první! Děkujeme."  styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" v-if="reviews.length === 0 && newReview === true" />
             <!-- SECTION - mHeadline END -->
 
             <!-- SECTION - Form Review -->
-            <oFormReviewItem :IDplace="IDplace" :type="type" v-if="myReview.length === 0 && account.length !== 0" />
+            <oFormReviewItem :IDplace="IDplace" :type="type" :newReview="newReview" v-if="myReview.length === 0 && account.length !== 0" @update="addReviewUpdate" />
             <!-- SECTION - Form Review END -->
 
             <!-- SECTION - mHeadline -->
@@ -57,7 +61,8 @@
                 account: [],
                 reviews: [],
                 myReview: [],
-                numberReviews: 0
+                numberReviews: 0,
+                newReview: false
             }
         },
 
@@ -113,5 +118,11 @@
 
             Object.assign(this, data);
         },
+
+        methods: {
+            addReviewUpdate(newValue) {
+                this.newReview = newValue;
+            }
+        }
     }
 </script>

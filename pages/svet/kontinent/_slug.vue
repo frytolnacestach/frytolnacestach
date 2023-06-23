@@ -108,6 +108,10 @@
                             </div>
                         </section>
                         <!-- SECTION - information by ChatGPT END -->
+
+                        <!-- SECTION - Review -->
+                        <oReviewItem :IDplace="place[0].id" type="continent" v-if="place[0].id" />
+                        <!-- SECTION - Review END -->
                     </div>
 
 
@@ -183,6 +187,7 @@
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
+    import oReviewItem from '~/components/organisms/oReviewItem.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
 
@@ -198,6 +203,7 @@
             oHeroPlace,
             oInformationBlock,
             oMapGoogle,
+            oReviewItem,
             oVideoList,
             oVisitedButton
         },
