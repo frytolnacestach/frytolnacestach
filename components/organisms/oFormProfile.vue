@@ -51,6 +51,25 @@
                                 <div class="o-form-profile__item">
                                     <input class="a-input -blue" type="text" name="lastname" v-model="lastname" placeholder="Příjmení"/>
                                 </div>
+
+                                <div class="o-form-profile__group">
+                                    <label class="o-form-profile__label">Odkazy:</label>
+                                    <div class="o-form-profile__item -flex" v-for="(item, index) in urls" :key="index">
+                                        <input class="a-input -blue" type="text" v-model="urls[index].url" />
+                                        <div class="m-button-remove -blue">
+                                            <button class="m-button-remove__input" type="button" @click="removeUrlInput(index)">
+                                                Odstranit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="o-form-profile__buttons mt-1">
+                                    <div class="o-form-profile__button">
+                                        <div class="m-button-add -blue">
+                                            <button class="m-button-add__input" type="button" @click="addUrlInput" v-if="urls.length < 32">Přidat odkaz</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="o-form-profile__buttons mt-1">
                                 <div class="o-form-profile__button">
@@ -89,7 +108,12 @@ export default {
             password: '',
             nickname: '',
             surname: '',
-            lastname: ''
+            lastname: '',
+            urls: [
+                {
+                    url: ""
+                }
+            ]
         };
     },
   
@@ -121,7 +145,8 @@ export default {
                     method: 'POST',
                     body: JSON.stringify({
                         'surname': this.surname,
-                        'lastname': this.lastname
+                        'lastname': this.lastname,
+                        'urls': this.urls
                     })
                 });
 
@@ -138,6 +163,17 @@ export default {
                 throw err;
             }
         },
+
+        addUrlInput() {
+            if (this.urls.length < 32) {
+                this.urls.push({ url: "" });
+            }
+        },
+
+        removeUrlInput(index) {
+            this.urls.splice(index, 1);
+        }
+
     },
 
     async mounted() {
@@ -150,6 +186,7 @@ export default {
         if (this.profile) {
             this.surname = this.profile[0].surname;
             this.lastname = this.profile[0].lastname;
+            this.urls = this.profile[0].urls;
         }
     }
 };

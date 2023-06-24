@@ -1,0 +1,38 @@
+.m-button-add {
+    $self: &;
+    
+    width: 100%;
+    max-width: 560px;
+
+    &__input {
+        @include transition(background-color, .3s);
+        background-color: $c-gray-bg-component-light-super;
+        border: 1px solid $c-gray-bg-component-light;
+        border-radius: $br-2;
+        color: $c-gray-t-dark-super;
+        height: 46px;
+        line-height: 30px;
+        padding: 8px 10px;
+        border: 0;
+        min-width: 160px;
+        width: 100%;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $c-gray-bg-component-light;
+        }
+    }
+
+    &.-blue {
+        #{$self}__input {
+            background-color: $c-blue-bg-component-light;
+            border: 1px solid $c-blue-bg-component-light;
+            color: $c-blue-t-dark-super;
+            
+            &:hover {
+                background-color: $c-blue-bg-component-dark;
+                color: $c-blue-t-light-super;
+            }
+        }
+    }
+}

@@ -14,6 +14,14 @@
                         </section>
                         <!-- SECTION - user headline - account END -->
 
+                        <!-- SECTION - user urls - account -->
+                        <section class="t-section -padding-x -p0" v-if="user[0]">
+                            <div class="t-section__inner">
+                                <oUserUrls :urls="user[0].urls" />
+                            </div>
+                        </section>
+                        <!-- SECTION - user urls - account END -->
+
                         <!-- SECTION - ad-google - sidebar -->
                         <section class="t-section -px-world my-2">
                             <div class="t-section__inner">
@@ -90,6 +98,7 @@
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oCoverPlaceVisited from '~/components/organisms/oCoverPlaceVisited.vue'
     import oReviewItemListUser from '~/components/organisms/oReviewItemListUser.vue'
+    import oUserUrls from '~/components/organisms/oUserUrls.vue'
 
     export default {
         name: 'CestovatelSlugPage',
@@ -99,7 +108,8 @@
             mUserHeader,
             oAdGoogleSidebar,
             oCoverPlaceVisited,
-            oReviewItemListUser
+            oReviewItemListUser,
+            oUserUrls
         },
 
         data() {

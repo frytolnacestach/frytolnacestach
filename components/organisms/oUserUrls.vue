@@ -1,0 +1,30 @@
+<template>
+    <div>
+        <client-only v-if="urls !== null">
+            <div class="o-user-urls">
+                <div class="o-user-urls__outer">
+                    <div class="o-user-urls__inner">
+                        <div class="o-user-urls__items">
+                            <div class="o-user-urls__item" v-for="url in urls" :key="index">
+                                <a class="o-user-urls__link" :href="url.url" :title="url.url">{{ url.url }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </client-only>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'OrganismsoUserUrlsComponent',
+
+        props: {
+            urls: {
+                type: Array,
+                required: true
+            }
+        }
+    }
+</script>

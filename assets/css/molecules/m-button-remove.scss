@@ -1,0 +1,37 @@
+.m-button-remove {
+    $self: &;
+
+    cursor: pointer;
+    font-family: $ff-icomoon-default;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+
+    &::after {
+        @include transition(color, .3s);
+        font-size: $fs-icon-30;
+        line-height: 1;
+        color: $c-gray-icon;
+        content: map-get($icomoon-default, 'cross');
+    }
+
+    &__input {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        opacity: 0
+    }
+
+    &.-blue {
+        &::after {
+            color: $c-blue-icon;
+        }
+
+        &:hover {
+            &::after {
+                color: $c-blue-icon-light;
+            }
+        }
+    }
+}
