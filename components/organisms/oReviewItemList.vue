@@ -159,8 +159,8 @@
                     });
 
                     if (response.ok) {
-                        console.log("Recenze byla přidána");
-                        this.successForm = "Recenze byla přidána";
+                        console.log("Recenze byla upravena");
+                        this.successForm = "Recenze byla upravena";
 
                         const reviewIndex = this.reviews.findIndex(review => review.id_user === this.account[0].id);
                         if (reviewIndex !== -1) {
@@ -170,8 +170,8 @@
 
                         this.reviewShowReview()
                     } else if (response.status === 201) {
-                        console.log("Recenze byla přidána");
-                        this.successForm = "Recenze byla přidána";
+                        console.log("Recenze byla upravena");
+                        this.successForm = "Recenze byla upravena";
 
                         const reviewIndex = this.reviews.findIndex(review => review.id_user === this.account[0].id);
                         if (reviewIndex !== -1) {
@@ -183,6 +183,9 @@
                     } else if (response.status === 404) {
                         console.log("Uživatel neexistuje nebo nejste přihlášen");
                         this.errorForm = "Uživatel neexistuje nebo nejste přihlášen";
+                    } else if (response.status === 406) {
+                        console.log("Neplatné hodnoty u hodnocení");
+                        this.errorForm = "Neplatné hodnoty u hodnocení";
                     } else {
                         console.log("Chyba při komunikaci s API");
                         this.errorForm = "Chyba při komunikaci s API";

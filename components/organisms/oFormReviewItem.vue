@@ -202,14 +202,14 @@
                     });
 
                     if (response.ok) {
-                        console.log("Hodnocení bylo přidáno");
-                        this.successForm = "Hodnocení bylo přidáno";
+                        console.log("Recenze byla přidána");
+                        this.successForm = "Recenze byla přidána";
 
                         this.updateParentVariable()
                         this.reviewShowReviewNew()
                     } else if (response.status === 201) {
-                        console.log("Hodnocení bylo přidáno");
-                        this.successForm = "Hodnocení bylo přidáno";
+                        console.log("Recenze byla přidána");
+                        this.successForm = "Recenze byla přidána";
 
                         this.updateParentVariable()
                         this.reviewShowReviewNew()
@@ -219,6 +219,9 @@
                     } else if (response.status === 405) {
                         console.log("Tady už uživatel hodnocení napsal");
                         this.errorForm = "Tady už uživatel hodnocení napsal";
+                    } else if (response.status === 406) {
+                        console.log("Neplatné hodnoty u hodnocení");
+                        this.errorForm = "Neplatné hodnoty u hodnocení";
                     } else {
                         console.log("Chyba při komunikaci s API");
                         this.errorForm = "Chyba při komunikaci s API";
@@ -251,16 +254,19 @@
                     });
 
                     if (response.ok) {
-                        console.log("Hodnocení bylo přidáno");
-                        this.successForm = "Hodnocení bylo upraveno";
+                        console.log("Recenze byla upravena");
+                        this.successForm = "Recenze byla upravena";
                         this.reviewShowReview()
                     } else if (response.status === 201) {
-                        console.log("Hodnocení bylo přidáno");
-                        this.successForm = "Hodnocení bylo upraveno";
+                        console.log("Recenze byla upravena");
+                        this.successForm = "Recenze byla upravena";
                         this.reviewShowReview()
                     } else if (response.status === 404) {
                         console.log("Uživatel neexistuje nebo nejste přihlášen");
                         this.errorForm = "Uživatel neexistuje nebo nejste přihlášen";
+                    } else if (response.status === 406) {
+                        console.log("Neplatné hodnoty u hodnocení");
+                        this.errorForm = "Neplatné hodnoty u hodnocení";
                     } else {
                         console.log("Chyba při komunikaci s API");
                         this.errorForm = "Chyba při komunikaci s API";
