@@ -1,0 +1,93 @@
+.m-nav-main-profile {
+    $self: &;
+
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    right: 50px;
+    top: 10px;
+
+    @media only screen and (min-width: $ti) {
+        right: 60px;
+    }
+    
+    @media only screen and (min-width: $lg) {
+        position: relative;
+        right: inherit;
+        top: inherit
+    }
+
+    &__nickname {
+        color: $c-blue-t-dark-super;
+    }
+
+    &__points {
+        color: $c-blue-t-dark-super;
+    }
+
+    &__icon {
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        position: relative;
+    }
+
+    &__icon-link {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        &.-login {
+            #{$self}__icon-file {
+                &::after {
+                    color: $c-blue-icon;
+                }
+            }
+        }
+
+        &.-active {
+            #{$self}__icon-file {
+                &::after {
+                    color: $c-blue-icon-dark;
+                }
+            }
+        }
+
+        &:hover {
+            #{$self}__icon-file {
+                &::after {
+                    color: $c-blue-icon-dark;
+                }
+            }
+
+            &.-login {
+                #{$self}__icon-file {
+                    &::after {
+                        color: $c-blue-icon-dark;
+                    }
+                }
+            }
+        }
+    }
+
+    &__icon-file {
+        position: absolute;
+        display: block;
+        top: 5px;
+        right: 5px;
+        bottom: 5px;
+        left: 5px;
+
+        &::after {
+            @include transition(color, .3s);
+            font-size: $fs-icon-30;
+            font-family: $ff-icomoon-default;
+            color: $c-blue-icon-light;
+            line-height: 1;
+            content: map-get($icomoon-default, 'user');
+        }
+
+    }
+}

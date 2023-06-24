@@ -12,6 +12,10 @@
                     <mNavMain />
                     <!-- NAV - Main END -->
 
+                    <!-- NAV - Main profile -->
+                    <mNavMainProfile />
+                    <!-- NAV - Main profile END -->
+
                     <!-- NAV - Hamburger -->
                     <mHamburger />
                     <!-- NAV - Hamburger END -->
@@ -25,6 +29,7 @@
 <script>
     import mLogotype from '~/components/molecules/mLogotype.vue'
     import mNavMain from '~/components/molecules/mNavMain.vue'
+    import mNavMainProfile from '~/components/molecules/mNavMainProfile.vue'
     import mHamburger from '~/components/molecules/mHamburger.vue'
 
     export default {
@@ -33,6 +38,7 @@
         components: {
             mLogotype,
             mNavMain,
+            mNavMainProfile,
             mHamburger
         }
     }

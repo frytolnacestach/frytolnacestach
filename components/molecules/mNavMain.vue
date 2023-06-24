@@ -15,12 +15,6 @@
                     <li class="m-nav-main__item">
                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/videa" exact-active-class="-active" :class="{'-active': /^\/videa/.test($route.path)}">Videa</NuxtLink>
                     </li>
-                    <li class="m-nav-main__item -special" v-if="nickname && nickname !== 'undefined'">
-                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/ucet/profil" exact-active-class="-active">{{ getTrimmedNickname }}</NuxtLink>
-                    </li>
-                    <li class="m-nav-main__item -special" v-else>
-                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/ucet" exact-active-class="-active">Přihlásit se</NuxtLink>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -29,39 +23,6 @@
 
 <script>
     export default {
-        name: 'MoleculesmNavMainComponent',
-
-        data() {
-            return {
-                nickname: this.nickname,
-            }
-        },
-
-        mounted() {
-            if (process.client) {
-                this.nickname =  localStorage.getItem('nickname');
-            }
-        },
-
-        watch: {
-            '$route.path': {
-                handler() {
-                    if (process.client) {
-                        this.nickname = localStorage.getItem('nickname');
-                    }
-                },
-                immediate: true
-            },
-        },
-
-        computed: {
-            getTrimmedNickname() {
-                const maxLength = 20;
-                if (this.nickname.length > maxLength) {
-                    return this.nickname.slice(0, maxLength) + '...';
-                }
-                return this.nickname;
-            }
-        }
+        name: 'MoleculesmNavMainComponent'
     }
 </script>

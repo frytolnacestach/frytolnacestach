@@ -40,7 +40,7 @@
 
         data() {
             return {
-                headline: 'Účet na portálu Frytol na cestách',
+                headline: 'Účet na cestovatelském portálu Frytol na cestách',
             }
         },
 
