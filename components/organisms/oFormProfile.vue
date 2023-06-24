@@ -51,20 +51,6 @@
                                 <div class="o-form-profile__item">
                                     <input class="a-input -blue" type="text" name="lastname" v-model="lastname" placeholder="Příjmení"/>
                                 </div>
-
-                                <div class="o-form-profile__items">
-                                    <label class="o-form-profile__items">Odkazy na profily:</label>
-                                    <div v-for="(item, index) in urls" :key="index" class="o-form-profile__item">
-                                    <input class="a-input -blue" type="text" v-model="urls[index].url" :placeholder="'URL ' + (index + 1)" />
-                                    </div>
-                                </div>
-                                <div class="o-form-profile__buttons mt-1">
-                                    <div class="o-form-profile__button">
-                                    <div class="m-button -blue">
-                                        <button class="m-button__input" type="button" @click="addUrlInput" v-if="urls.length < 32">Přidat URL</button>
-                                    </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="o-form-profile__buttons mt-1">
                                 <div class="o-form-profile__button">
@@ -103,12 +89,7 @@ export default {
             password: '',
             nickname: '',
             surname: '',
-            lastname: '',
-            urls: [
-                {
-                    url: ""
-                }
-            ]
+            lastname: ''
         };
     },
   
@@ -140,8 +121,7 @@ export default {
                     method: 'POST',
                     body: JSON.stringify({
                         'surname': this.surname,
-                        'lastname': this.lastname,
-                        'urls': this.urls
+                        'lastname': this.lastname
                     })
                 });
 
@@ -158,13 +138,6 @@ export default {
                 throw err;
             }
         },
-
-        addUrlInput() {
-            if (this.urls.length < 32) {
-                this.urls.push({ url: "" });
-            }
-        }
-
     },
 
     async mounted() {
