@@ -91,7 +91,7 @@
                         id: 5,
                         name: "Místa",
                         url: "/svet/misto",
-                        length: 19,
+                        length: 20,
                         styleThemaItem: " -spot"
 
                     }
