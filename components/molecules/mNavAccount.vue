@@ -1,5 +1,5 @@
 <template>
-    <nav class="m-nav-account" role="navigation">
+    <nav class="m-nav-account" :class="{'-open': statusOpen}" role="navigation">
         <div class="m-nav-account__outer">
             <div class="m-nav-account__inner">
                 <ul class="m-nav-account__items">                    
@@ -36,6 +36,13 @@
 <script>
     export default {
         name: 'MoleculesmNavAccountComponent',
+
+        props: {
+            statusOpen: {
+                type: Boolean,
+                required: true
+            }
+        },
 
         data() {
             return {

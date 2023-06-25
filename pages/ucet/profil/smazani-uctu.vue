@@ -10,7 +10,7 @@
                         <!-- SECTION - account headline - account -->
                         <section class="t-section -padding-x -p0">
                             <div class="t-section__inner">
-                                <mAccountHeader />
+                                <mAccountHeader @update="menuAccountUpdate" />
                             </div>
                         </section>
                         <!-- SECTION - nav - account END -->
@@ -18,7 +18,7 @@
                         <!-- SECTION - nav - account -->
                         <section class="t-section -padding-x -p0">
                             <div class="t-section__inner">
-                                <mNavAccount />
+                                <mNavAccount :statusOpen="mNavAccountOpen" />
                             </div>
                         </section>
                         <!-- SECTION - nav - account END -->
@@ -58,6 +58,12 @@
             mNavAccount
         },
 
+        data() {
+            return {
+                mNavAccountOpen: false
+            }
+        },
+
         mounted() {
             loginCheckLogout(this.$router);
         },
@@ -73,6 +79,12 @@
                 { hid: 'og:url', content: `${process.env.baseUrl}` },
                 { hid: 'og:type', content: 'website' }
             ]
+        },
+
+        methods: {
+            menuAccountUpdate(newValue) {
+                this.mNavAccountOpen = newValue;
+            }
         }
     }
 </script>

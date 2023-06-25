@@ -33,6 +33,9 @@
                             <span class="m-account-header__nickname">{{ nickname }}</span>
                             <span class="m-account-header__email">{{ email }}</span>
                         </div>
+                        <div class="m-account-header__nav" :class="{'-open': parentVariable}" @click="updateParentVariable()">
+                            <span class="m-account-header__nav-icon"></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -47,12 +50,17 @@
         data() {
             return {
                 nickname: null,
-                email: null
+                email: null,
+                parentVariable: false
             }
         },
 
         methods: {
-
+            updateParentVariable() {
+                this.parentVariable = !this.parentVariable;
+                const newValue = this.parentVariable;
+                this.$emit('update', newValue);
+            }
         },
 
         mounted() {

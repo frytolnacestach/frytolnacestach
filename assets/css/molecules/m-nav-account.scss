@@ -1,6 +1,11 @@
 .m-nav-account {
     min-height: 55px;
     overflow: hidden;
+    display: none;
+
+    @media only screen and (min-width: $lg) {
+        display: block;
+    }
 
     &__outer {
         width: 100%;
@@ -132,5 +137,9 @@
         &:hover {
             color: $c-blue-icon-dark;
         }
+    }
+
+    &.-open {
+        display: block;
     }
 }

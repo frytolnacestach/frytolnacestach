@@ -1,4 +1,6 @@
 .m-account-header {
+    $self: &;
+
     display: flex;
     flex-wrap: wrap;
     padding: 5px 0;
@@ -21,6 +23,7 @@
     &__inner {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
         padding: 9px 12px;
 
         @media only screen and (min-width: $sm) {
@@ -84,5 +87,67 @@
         font-size: $fs-small-sss;
         color: $c-blue-t-dark;
         margin-top: 5px;
+    }
+
+    &__nav {
+        margin-left: auto;
+        width: 40px;
+        height: 40px;
+
+        &.-open {
+            #{$self}__nav-icon {
+                &::before {
+                    transform: rotate(-42deg);
+                }
+
+                &::after {
+                    transform: rotate(42deg);
+                }
+            }
+        }
+
+        @media only screen and (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__nav-icon {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        display: block;
+
+        &::before {
+            content: '';
+            position: absolute;
+            transform: rotate(42deg);
+            width: 17px;
+            height: 2px;
+            background-color: $c-blue-icon;
+            top: 19px;
+            left: 6px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            transform: rotate(-42deg);
+            width: 17px;
+            height: 2px;
+            background-color: $c-blue-icon;
+            top: 19px;
+            right: 6px;
+
+        }
+
+        &:hover {
+            &::before {
+                background-color: $c-blue-icon-dark;
+            }
+
+            &::after {
+                background-color: $c-blue-icon-dark;
+            }
+        }
     }
 }
