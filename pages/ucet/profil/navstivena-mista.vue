@@ -29,7 +29,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Kontinety které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :placesID="placesContinentsID" type="kontinent" v-if="placesContinentsID" />
+                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesContinentsID" type="kontinent" account="login" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -38,7 +38,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Státy které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :placesID="placesStatesID" type="stat" v-if="placesStatesID" />
+                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesStatesID" type="stat" account="login" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -47,7 +47,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Města které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :placesID="placesCitiesID" type="mesto" v-if="placesCitiesID" />
+                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesCitiesID" type="mesto" account="login" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -56,7 +56,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Regiony které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :placesID="placesRegionsID" type="region" v-if="placesRegionsID" />
+                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesRegionsID" type="region" account="login" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -65,7 +65,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Místa které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :placesID="placesSpotsID" type="misto" v-if="placesSpotsID" />
+                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesSpotsID" type="misto" account="login" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -102,11 +102,12 @@ export default {
             email: null,
             passwordHash: null,
             account: '',
-            placesContinentsID: '',
-            placesStatesID: '',
-            placesCitiesID: '',
-            placesRegionsID: '',
-            placesSpotsID: '',
+            placesContinentsID: [],
+            placesStatesID: [],
+            placesCitiesID: [],
+            placesRegionsID: [],
+            placesSpotsID: [],
+            loadingComponentOCoverPlaceVisited: true
         }
     },
 
@@ -152,7 +153,7 @@ export default {
                     const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || [];
                     const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || [];
 
-
+                    // TO DATA
                     data = {
                         account,
                         placesContinentsID,
@@ -162,7 +163,10 @@ export default {
                         placesSpotsID
                     }
 
+                    // END LOADING
+                    this.loadingComponentOCoverPlaceVisited = false
 
+                    // SUCCESS
                     success = true
                 } catch (error) {
                     console.log(`API ERROR - NAVSTIVIL JSEM`)

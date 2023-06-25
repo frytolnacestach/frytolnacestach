@@ -67,6 +67,12 @@
             oFormProfile
         },
 
+        data() {
+            return {
+                mNavAccountOpen: false
+            }
+        },
+
         mounted() {
             loginCheckLogout(this.$router);
         },

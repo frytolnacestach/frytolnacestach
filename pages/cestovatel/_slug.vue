@@ -36,7 +36,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Kontinety které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :placesID="placesContinentsID" type="kontinent" v-if="placesContinentsID" account="other" />
+                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesContinentsID" type="kontinent" account="other" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -45,7 +45,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Státy které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :placesID="placesStatesID" type="stat" v-if="placesStatesID" account="other" />
+                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesStatesID" type="stat" account="other" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -54,7 +54,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Města které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :placesID="placesCitiesID" type="mesto" v-if="placesCitiesID" account="other" />
+                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesCitiesID" type="mesto" account="other" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -63,7 +63,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Regiony které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :placesID="placesRegionsID" type="region" v-if="placesRegionsID" account="other" />
+                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesRegionsID" type="region" account="other" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -72,7 +72,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Místa které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :placesID="placesSpotsID" type="misto" v-if="placesSpotsID" account="other" />
+                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesSpotsID" type="misto" account="other" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -116,11 +116,12 @@
             return {
                 staticUser: this.staticUser,
                 user: '',
-                placesContinentsID: '',
-                placesStatesID: '',
-                placesCitiesID: '',
-                placesRegionsID: '',
-                placesSpotsID: '',
+                placesContinentsID: [],
+                placesStatesID: [],
+                placesCitiesID: [],
+                placesRegionsID: [],
+                placesSpotsID: [],
+                loadingComponentOCoverPlaceVisited: true
             }
         },
 
@@ -158,8 +159,8 @@
 
         mounted() {
             this.$nextTick(async () => {
-                let success = false;
-                let data = null;
+                let success = false
+                let data = null
 
                 if (process.client) {
                 while (!success) {
@@ -178,7 +179,7 @@
                         const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || [];
                         const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || [];
 
-
+                        // TO DATA
                         data = {
                             staticUser: user,
                             user,
@@ -189,8 +190,11 @@
                             placesSpotsID
                         }
 
+                        // END LOADING
+                        this.loadingComponentOCoverPlaceVisited = false
 
-                        success = true;
+                        // SUCCESS
+                        success = true
                     } catch (error) {
                         console.log(`API ERROR - CESTOVATEL DETAIL: ${this.$route.params.slug}`);
                         console.error(error);
