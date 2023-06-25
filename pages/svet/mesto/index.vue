@@ -12,8 +12,6 @@
         <!-- SECTION - Alphabet -->
         <section class="t-section">
             <div class="t-section__inner">
-                <!-- TODO <mNavAlphabet :alphabet="alphabet" />-->
-                
                 <div class="m-nav-alphabet">
                     <div class="m-nav-alphabet__outer">
                         <div class="m-nav-alphabet__inner">
@@ -43,7 +41,6 @@
 </template>
 
 <script>
-    import mNavAlphabet from '~/components/molecules/mNavAlphabet.vue';
     import oCoverPlace from '~/components/organisms/oCoverPlace.vue'
     import oHeroPlaceType from '~/components/organisms/oHeroPlaceType.vue'
 
@@ -51,7 +48,6 @@
         name: 'SvetMestoIndexPage',
 
         components: {
-            mNavAlphabet,
             oCoverPlace,
             oHeroPlaceType
         },

@@ -107,6 +107,7 @@
                 if (this.isLoading || this.noMoreItems) {
                     return;
                 }
+                // loading more items
                 this.page++;
                 this.loadPlaces();
             },
@@ -117,11 +118,18 @@
                     return;
                 }
 
+                // Document for scroll point
                 const windowHeight = window.innerHeight;
                 const documentHeight = document.documentElement.scrollHeight;
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
-                if (scrollTop + windowHeight >= documentHeight - 100) {
+                // Footer height
+                const tFooterElement = document.querySelector('.t-footer');
+                const tFooterHeight = tFooterElement.offsetHeight;
+
+                // Point for loading
+                if (scrollTop + windowHeight >= documentHeight - tFooterHeight) {
+                    // loading more items
                     this.page++;
                     this.loadPlaces();
                 }
