@@ -25,13 +25,13 @@
                     </div>
 
                     <div class="t-grid__section -content">
-                        <!-- SECTION - Hodnoceni -->
+                        <!-- SECTION - Recenze -->
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
-                                <oReviewItemListAccount :account="account" v-if="account[0]" />
+                                <oReviewItemListAccount :account="account" />
                             </div>
                         </section>
-                        <!-- SECTION - Hodnoceni END -->
+                        <!-- SECTION - Recenze END -->
                     </div>
 
                 </div>

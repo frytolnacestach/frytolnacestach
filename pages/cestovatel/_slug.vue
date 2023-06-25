@@ -77,13 +77,13 @@
                         </section>
                         <!-- SECTION - Visited place category END -->
 
-                        <!-- SECTION - Hodnoceni -->
+                        <!-- SECTION - Recenze -->
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
-                                <oReviewItemListUser :user="user" v-if="user[0]" />
+                                <oReviewItemListUser :user="user" />
                             </div>
                         </section>
-                        <!-- SECTION - Hodnoceni END -->
+                        <!-- SECTION - Recenze END -->
                     </div>
                 </div>
             </div>

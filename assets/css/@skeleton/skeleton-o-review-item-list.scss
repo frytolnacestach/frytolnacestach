@@ -1,0 +1,73 @@
+.skeleton-o-review-item-list {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: left;
+
+    @media only screen and (min-width: $md) {
+        max-width: 100%;
+    }
+
+    &__inner {
+        width: auto;
+        padding: 0;
+        margin: 0;
+        border-radius: $large;
+    }
+
+    &__items {
+        display: block;
+    }
+
+    &__item {
+        margin-bottom: 20px;
+    }
+
+    &__content {
+        width: 100%;
+        display: grid;
+        column-gap: 8px;
+        grid-template-areas: "image text";
+        grid-template-columns: 40px auto;
+        grid-template-rows: auto;
+
+        @media only screen and (min-width: $ti) {
+            grid-template-columns: 50px auto;
+        }
+
+        @media only screen and (min-width: $sm) {
+            column-gap: 15px;
+            grid-template-columns: 70px auto;
+        }
+    }
+
+    &__image {
+        position: relative;
+        overflow: hidden;
+        width: 40px;
+        height: 40px;
+        border-radius: $br-1;
+
+        @media only screen and (min-width: $ti) {
+            width: 50px;
+            height: 50px;
+            border-radius: $br-2;
+        }
+
+        @media only screen and (min-width: $sm) {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    &__text {
+        width: 100%;
+        max-width: 640px;
+        height: 112px;
+        border-radius: $br-1;
+
+        @media only screen and (min-width: $ti) {
+            border-radius: $br-2;
+        }
+    }
+}

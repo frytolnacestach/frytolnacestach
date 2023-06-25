@@ -1,53 +1,17 @@
 <template>
     <section class="t-section -p0">
         <div class="t-section__inner">
-            <mHeadline title="Napsané recenze" perex="Uživatel zatím nenapsal žádnou recenzi" styleThema=" -account -blue" styleAlign="" styleGap="" v-if="reviews.length === 0" />
-            <mHeadline title="Napsané recenze" styleThema=" -account -blue" styleAlign="" styleGap="" v-if="reviews && reviews.length > 0" />
-            <div class="o-review-item-list-account" v-if="reviews && reviews.length > 0 && places && places.length > 0">
-                <div class="o-review-item-list-account__outer">
-                    <div class="o-review-item-list-account__inner">
-                        <div class="o-review-item-list-account__items">
-                            <div class="o-review-item-list-account__item" v-for="review in reviews" :key="review.id">
-                                <div class="o-review-item-list-account__content">
-                                    <div class="o-review-item-list-account__image loading-image -blue">
-                                        <div class="o-review-item-list-account__image-lazyload" v-if="images && images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place ))">
-                                            <img class="o-review-item-list-account__image-file lazyload-file"
-                                                data-sizes="(max-width: 374px) 345px"
-                                                :data-srcset="`
-                                                    https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-345.webp 345w,
-                                                    https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-690-2x.webp 690w
-                                                    `"
-                                                :data-src="`https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}.webp`"
-                                                :alt="places.find(place => place.id === review.id_place && place.type_place === review.type).name"
-                                                v-lazy>
-                                        </div>
-                                        <div class="o-review-item-list-account__image-lazyload" v-else >
-                                            <img class="o-review-item-list-account__image-file lazyload-file"
-                                                data-sizes="(max-width: 374px) 345px"
-                                                :data-srcset="`
-                                                    https://image.frytolnacestach.cz/storage/_default/hero-345.webp 345w
-                                                    https://image.frytolnacestach.cz/storage/_default/hero-690-2x.webp 690w
-                                                    `"
-                                                :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
-                                                :alt="places.find(place => place.id === review.id_place && place.type_place === review.type).name"
-                                                v-lazy>
-                                        </div>
-                                        <NuxtLink class="o-review-item-list-account__image-link" :to="`/${mapType(review.type)}/${places.find(place => place.id === review.id_place && place.type_place === review.type).slug}`" :aria-label="`Přejít na místo ${places.find(place => place.id === review.id_place && place.type_place === review.type).name}`"></NuxtLink>
-                                    </div>
-                                    <div class="o-review-item-list-account__text">
-                                        <div class="o-review-item-list-account__review">
-                                            <div class="o-review-item-list-account__stars">
-                                                <div class="o-review-item-list-account__star" :class="{'-active': review.rating > 0}"></div>
-                                                <div class="o-review-item-list-account__star" :class="{'-active': review.rating > 1}"></div>
-                                                <div class="o-review-item-list-account__star" :class="{'-active': review.rating > 2}"></div>
-                                                <div class="o-review-item-list-account__star" :class="{'-active': review.rating > 3}"></div>
-                                                <div class="o-review-item-list-account__star" :class="{'-active': review.rating > 4}"></div>
-                                            </div>
-                                            <h3 class="o-review-item-list-account__name">
-                                                <NuxtLink class="o-review-item-list-account__name-link" :to="`/${mapType(review.type)}/${places.find(place => place.id === review.id_place && place.type_place === review.type).slug}`" :aria-label="`Přejít na profil uživatele ${places.find(place => place.id === review.id_place && place.type_place === review.type).nickname}`">{{ places.find(place => place.id === review.id_place && place.type_place === review.type).name }}</NuxtLink>
-                                            </h3>
-                                            <p class="o-review-item-list-account__perex">{{ review.text }}</p>
-                                        </div>
+            <mHeadline title="Napsané recenze" styleThema=" -account -blue" styleAlign="" styleGap="" />
+            <!-- skeleton -->
+            <div v-if="reviews === null">
+                <div class="skeleton-o-review-item-list">
+                    <div class="skeleton-o-review-item-list__outer">
+                        <div class="skeleton-o-review-item-list__inner">
+                            <div class="skeleton-o-review-item-list__items">
+                                <div v-for="index in 3" :key="index" class="skeleton-o-review-item-list__item">
+                                    <div class="skeleton-o-review-item-list__content">
+                                        <div class="skeleton-o-review-item-list__image loading-image -skeleton-blue"></div>
+                                        <div class="skeleton-o-review-item-list__text loading-image -skeleton-blue"></div>
                                     </div>
                                 </div>
                             </div>
@@ -55,6 +19,67 @@
                     </div>
                 </div>
             </div>
+            <!-- skeleton END -->
+
+            <client-only v-if="reviews !== null">
+                <div class="o-review-item-list-account" v-if="reviews && reviews.length > 0 && places && places.length > 0">
+                    <div class="o-review-item-list-account__outer">
+                        <div class="o-review-item-list-account__inner">
+                            <div class="o-review-item-list-account__items">
+                                <div class="o-review-item-list-account__item" v-for="review in reviews" :key="review.id">
+                                    <div class="o-review-item-list-account__content">
+                                        <div class="o-review-item-list-account__image loading-image -blue">
+                                            <div class="o-review-item-list-account__image-lazyload" v-if="images && images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place ))">
+                                                <img class="o-review-item-list-account__image-file lazyload-file"
+                                                    data-sizes="(max-width: 374px) 345px"
+                                                    :data-srcset="`
+                                                        https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-345.webp 345w,
+                                                        https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-690-2x.webp 690w
+                                                        `"
+                                                    :data-src="`https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}.webp`"
+                                                    :alt="places.find(place => place.id === review.id_place && place.type_place === review.type).name"
+                                                    v-lazy>
+                                            </div>
+                                            <div class="o-review-item-list-account__image-lazyload" v-else >
+                                                <img class="o-review-item-list-account__image-file lazyload-file"
+                                                    data-sizes="(max-width: 374px) 345px"
+                                                    :data-srcset="`
+                                                        https://image.frytolnacestach.cz/storage/_default/hero-345.webp 345w
+                                                        https://image.frytolnacestach.cz/storage/_default/hero-690-2x.webp 690w
+                                                        `"
+                                                    :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
+                                                    :alt="places.find(place => place.id === review.id_place && place.type_place === review.type).name"
+                                                    v-lazy>
+                                            </div>
+                                            <NuxtLink class="o-review-item-list-account__image-link" :to="`/${mapType(review.type)}/${places.find(place => place.id === review.id_place && place.type_place === review.type).slug}`" :aria-label="`Přejít na místo ${places.find(place => place.id === review.id_place && place.type_place === review.type).name}`"></NuxtLink>
+                                        </div>
+                                        <div class="o-review-item-list-account__text">
+                                            <div class="o-review-item-list-account__review">
+                                                <div class="o-review-item-list-account__stars">
+                                                    <div class="o-review-item-list-account__star" :class="{'-active': review.rating > 0}"></div>
+                                                    <div class="o-review-item-list-account__star" :class="{'-active': review.rating > 1}"></div>
+                                                    <div class="o-review-item-list-account__star" :class="{'-active': review.rating > 2}"></div>
+                                                    <div class="o-review-item-list-account__star" :class="{'-active': review.rating > 3}"></div>
+                                                    <div class="o-review-item-list-account__star" :class="{'-active': review.rating > 4}"></div>
+                                                </div>
+                                                <h3 class="o-review-item-list-account__name">
+                                                    <NuxtLink class="o-review-item-list-account__name-link" :to="`/${mapType(review.type)}/${places.find(place => place.id === review.id_place && place.type_place === review.type).slug}`" :aria-label="`Přejít na profil uživatele ${places.find(place => place.id === review.id_place && place.type_place === review.type).nickname}`">{{ places.find(place => place.id === review.id_place && place.type_place === review.type).name }}</NuxtLink>
+                                                </h3>
+                                                <p class="o-review-item-list-account__perex">{{ review.text }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </client-only>
+            <client-only v-if="reviews && Array.isArray(reviews) && reviews.length === 0">
+                <p>
+                    Zatím tu nemáš žádnou recenzi. Co takhle projít <nuxt-link to="/svet">svět</nuxt-link> a recenzovat místo co si navštívil?
+                </p>
+            </client-only>
         </div>
     </section>
 </template>
@@ -80,7 +105,7 @@
             return {
                 localStorageEmail: '',
                 localStoragePasswordHash: '',
-                reviews: [],
+                reviews: null,
                 places: [],
                 images: [],
                 placesContinents: this.placesContinents,
