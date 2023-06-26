@@ -13,7 +13,7 @@
         <section class="t-section py-4">
             <div class="t-section__inner">
                 <mHeadline title="Nevíš kam vyrazit?" perex="Pokud toužíš pozkoumat svět a nemáš jasnou představu, kam se vydat, můžeš si vybrat některou z kategorií míst a začít prozkoumávat." styleThema=" -world -w640" styleAlign=" -center" styleGap=" mb-2" />
-                <oWorldType :items="oWorldType" />
+                <oWorldType />
             </div>
         </section>
         <!-- SECTION - Typ místa END -->
@@ -50,53 +50,6 @@
             oSearch,
             oTopPlace,
             oWorldType
-        },
-
-        data() {
-            return {
-                oWorldType: [
-                    {
-                        id: 1,
-                        name: "Kontinenty",
-                        url: "/svet/kontinent",
-                        length: 7,
-                        styleThemaItem: " -continent"
-
-                    },
-                    {
-                        id: 2,
-                        name: "Státy",
-                        url: "/svet/stat",
-                        length: 249,
-                        styleThemaItem: " -state"
-
-                    },
-                    {
-                        id: 3,
-                        name: "Regiony",
-                        url: "/svet/region",
-                        length: 1,
-                        styleThemaItem: " -region"
-
-                    },
-                    {
-                        id: 4,
-                        name: "Města",
-                        url: "/svet/mesto",
-                        length: 2488,
-                        styleThemaItem: " -city"
-
-                    },
-                    {
-                        id: 5,
-                        name: "Místa",
-                        url: "/svet/misto",
-                        length: 20,
-                        styleThemaItem: " -spot"
-
-                    }
-                ],
-            }
         },
 
         head: {

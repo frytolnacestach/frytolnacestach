@@ -9,30 +9,14 @@
         </section>
         <!-- SECTION - Hero place type END -->
 
-        <!-- SECTION - Alphabet -->
-        <section class="t-section">
-            <div class="t-section__inner">
-                <div class="m-nav-alphabet">
-                    <div class="m-nav-alphabet__outer">
-                        <div class="m-nav-alphabet__inner">
-                            <ul class="m-nav-alphabet__items">
-                                <li class="m-nav-alphabet__item" v-for="letter in alphabet" :key="letter" :class="{ '-active': isActive(letter) }">
-                                    <a class="m-nav-alphabet__link" href="#" @click.prevent="getPlaces(letter)">
-                                        <span class="m-nav-alphabet__span">{{ letter }}</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-         <!-- SECTION - Alphabet END -->
-
         <!-- SECTION - Place list -->
         <section class="t-section -bg-world -p0">
             <div class="t-section__inner">
                 <oCoverPlace :places="placesCities" :images="images" type="mesto" />
+                <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                    <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                </div>
+                <oCoverPlace :places="null" :images="null" type="mesto" :skeleton=true v-if="isLoading" />
             </div>
         </section>
         <!-- SECTION - Place list END -->
@@ -52,37 +36,14 @@
             oHeroPlaceType
         },
 
-        methods:{
-            async getPlaces(letter) {
-                try {
-                    //Get placesCities
-                    const placesCities = await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-initial/${letter}`)
-
-                    //Images placesCities
-                    //IDS Array
-                    const imagesPlacesCitiesIDS = placesCities.map(placesCity => placesCity.id_image_cover).filter(id => id !== null && id !== '')
-                    //Get images
-                    const images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesIDS.join(',')}`)
-
-                    this.placesCities = placesCities;
-                    this.images = images;
-                    this.selectedLetter = letter;
-                } catch (error) {
-                    console.error(error)
-                }
-            },
-
-            isActive(letter) {
-                return letter === this.selectedLetter;
-            }
-        },
-
         data() {
             return {
-                alphabet: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'CH', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
-                placesCities: [],
                 images: [],
-                selectedLetter: "A"
+                placesCities: [],
+                isLoading: false,
+                noMoreItems: false,
+                page: 1,
+                perPage: 20
             }
         },
 
@@ -99,21 +60,84 @@
             ]
         },
 
-        //API STATIC
-        async asyncData({ $axios }) {
-            // PAGE - Cities list
-            // PlacesCities
-            const placesCities = await $axios.$get(`https://api.frytolnacestach.cz/api/places-cities-initial/A`)
-            // Images
-            const imagesPlacesCitiesIDS = placesCities.map(placesCity => placesCity.id_image_cover).filter(id => id !== null && id !== '')
-            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesIDS.join(',')}`)
+        async mounted() {
+            await this.loadPlaces();
+            this.addScrollListener();
+        },
 
-            
-            //return
-            return {
-                placesCities,
-                images
-            }
+        methods:{
+            async loadPlaces() {
+                //start loading
+                this.isLoading = true;
+
+                //load places
+                const [placesResponse] = await Promise.all([
+                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-cities?showType=list&page=${this.page}&items=${this.perPage}`)
+                ]);
+                const { data: placesData } = placesResponse;
+                this.placesCities = this.placesCities.concat(placesData);
+
+                //load images
+                const imagesPlacesCitiesIDS = placesData.map(placeCity => placeCity.id_image_cover).filter(id => id !== undefined && id !== null && id !== '');
+                if (imagesPlacesCitiesIDS.length > 0) {
+                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesIDS.join(',')}`);
+                    const { data: imagesData } = imagesResponse;
+                    this.images = this.images.concat(imagesData);
+                }
+
+                //no more items?
+                if (placesData.length === 0 || placesData.length < this.perPage) {
+                    this.noMoreItems = true;
+                }
+
+                //end loading
+                this.isLoading = false;
+            },
+
+            addScrollListener() {
+                window.addEventListener('scroll', this.handleScroll);
+            },
+
+            removeScrollListener() {
+                window.removeEventListener('scroll', this.handleScroll);
+            },
+
+            loadMoreItems() {
+                //no further loading can occur while loading
+                if (this.isLoading || this.noMoreItems) {
+                    return;
+                }
+                // loading more items
+                this.page++;
+                this.loadPlaces();
+            },
+
+            handleScroll() {
+                //no further loading can occur while loading
+                if (this.isLoading || this.noMoreItems) {
+                    return;
+                }
+
+                // Document for scroll point
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+                // Footer height
+                const tFooterElement = document.querySelector('.t-footer');
+                const tFooterHeight = tFooterElement.offsetHeight;
+
+                // Point for loading
+                if (scrollTop + windowHeight >= documentHeight - tFooterHeight) {
+                    // loading more items
+                    this.page++;
+                    this.loadPlaces();
+                }
+            },
+        },
+
+        beforeDestroy() {
+            this.removeScrollListener();
         }
     }
 </script>

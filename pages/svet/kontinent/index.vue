@@ -13,6 +13,10 @@
         <section class="t-section -p0">
             <div class="t-section__inner">
                 <oCoverPlace :places="placesContinents" :images="images" type="kontinent" />
+                <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                    <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                </div>
+                <oCoverPlace :places="null" :images="null" type="kontinent" :skeleton=true v-if="isLoading" />
             </div>
         </section>
         <!-- SECTION - Place list END -->
@@ -32,14 +36,14 @@
             oHeroPlaceType
         },
 
-        methods:{
-
-        },
-
         data() {
             return {
-                placesContinents: this.placesContinents,
-                images: this.images
+                images: [],
+                placesContinents: [],
+                isLoading: false,
+                noMoreItems: false,
+                page: 1,
+                perPage: 20
             }
         },
 
@@ -56,21 +60,84 @@
             ]
         },
 
-        //API STATIC
-        async asyncData({ $axios }) {
-            // PAGE - Continents list
-            // PlacesContinents
-            const placesContinents = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continents?showType=list`)
-            // Images
-            const imagesPlacesContinentsIDS = placesContinents.map(placesContinent => placesContinent.id_image_cover).filter(id => id !== null && id !== '')
-            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesContinentsIDS.join(',')}`)
+        async mounted() {
+            await this.loadPlaces();
+            this.addScrollListener();
+        },
 
-            
-            //return
-            return {
-                placesContinents,
-                images
-            }
+        methods:{
+            async loadPlaces() {
+                //start loading
+                this.isLoading = true;
+
+                //load places
+                const [placesResponse] = await Promise.all([
+                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-continents?showType=list&page=${this.page}&items=${this.perPage}`)
+                ]);
+                const { data: placesData } = placesResponse;
+                this.placesContinents = this.placesContinents.concat(placesData);
+
+                //load images
+                const imagesPlacesContinentsIDS = placesData.map(placeContinent => placeContinent.id_image_cover).filter(id => id !== undefined && id !== null && id !== '');
+                if (imagesPlacesContinentsIDS.length > 0) {
+                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesContinentsIDS.join(',')}`);
+                    const { data: imagesData } = imagesResponse;
+                    this.images = this.images.concat(imagesData);
+                }
+
+                //no more items?
+                if (placesData.length === 0 || placesData.length < this.perPage) {
+                    this.noMoreItems = true;
+                }
+
+                //end loading
+                this.isLoading = false;
+            },
+
+            addScrollListener() {
+                window.addEventListener('scroll', this.handleScroll);
+            },
+
+            removeScrollListener() {
+                window.removeEventListener('scroll', this.handleScroll);
+            },
+
+            loadMoreItems() {
+                //no further loading can occur while loading
+                if (this.isLoading || this.noMoreItems) {
+                    return;
+                }
+                // loading more items
+                this.page++;
+                this.loadPlaces();
+            },
+
+            handleScroll() {
+                //no further loading can occur while loading
+                if (this.isLoading || this.noMoreItems) {
+                    return;
+                }
+
+                // Document for scroll point
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+                // Footer height
+                const tFooterElement = document.querySelector('.t-footer');
+                const tFooterHeight = tFooterElement.offsetHeight;
+
+                // Point for loading
+                if (scrollTop + windowHeight >= documentHeight - tFooterHeight) {
+                    // loading more items
+                    this.page++;
+                    this.loadPlaces();
+                }
+            },
+        },
+
+        beforeDestroy() {
+            this.removeScrollListener();
         }
     }
 </script>

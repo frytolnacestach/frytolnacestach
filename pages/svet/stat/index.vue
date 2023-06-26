@@ -75,15 +75,15 @@
                     this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=list&page=${this.page}&items=${this.perPage}`)
                 ]);
                 const { data: placesData } = placesResponse;
+                this.placesStates = this.placesStates.concat(placesData);
 
                 //load images
-                const imagesPlacesStatesID = placesData.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '');
-                const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`);
-                const { data: imagesData } = imagesResponse;
-
-                //add to data
-                this.placesStates = this.placesStates.concat(placesData);
-                this.images = this.images.concat(imagesData);
+                const imagesPlacesStatesIDS = placesData.map(placeState => placeState.id_image_cover).filter(id => id !== undefined && id !== null && id !== '');
+                if (imagesPlacesStatesIDS.length > 0) {
+                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesIDS.join(',')}`);
+                    const { data: imagesData } = imagesResponse;
+                    this.images = this.images.concat(imagesData);
+                }
 
                 //no more items?
                 if (placesData.length === 0 || placesData.length < this.perPage) {

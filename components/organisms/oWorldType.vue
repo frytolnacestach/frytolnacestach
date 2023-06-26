@@ -1,5 +1,5 @@
 <template>
-    <div class="o-world-type">
+    <div class="o-world-type" v-if="count">
         <div class="o-world-type__outer">
             <div class="o-world-type__inner">
                 <div class="o-world-type__items">
@@ -24,12 +24,74 @@
 <script>
     export default {
         name: 'OrganismsoWorldTypeComponent',
-    
-        props: {
-            items: {
-                type: Array,
-                required: true
+
+        data() {
+            return { 
+                count: this.count,
+                items: [
+                    {
+                        id: 1,
+                        name: "Kontinenty",
+                        url: "/svet/kontinent",
+                        length: 0,
+                        styleThemaItem: " -continent"
+
+                    },
+                    {
+                        id: 2,
+                        name: "Státy",
+                        url: "/svet/stat",
+                        length: 0,
+                        styleThemaItem: " -state"
+
+                    },
+                    {
+                        id: 3,
+                        name: "Regiony",
+                        url: "/svet/region",
+                        length: 0,
+                        styleThemaItem: " -region"
+
+                    },
+                    {
+                        id: 4,
+                        name: "Města",
+                        url: "/svet/mesto",
+                        length: 0,
+                        styleThemaItem: " -city"
+
+                    },
+                    {
+                        id: 5,
+                        name: "Místa",
+                        url: "/svet/misto",
+                        length: 0,
+                        styleThemaItem: " -spot"
+
+                    }
+                ],
             }
+        },
+
+        async fetch() {
+            const response = await fetch("https://api.frytolnacestach.cz/api/places-count");
+            const data = await response.json();
+
+            const countObj = {
+                places_cities: data.places_cities,
+                places_continents: data.places_continents,
+                places_regions: data.places_regions,
+                places_spots: data.places_spots,
+                places_states: data.places_states
+            };
+
+            this.items[0].length = countObj.places_continents;
+            this.items[1].length = countObj.places_states;
+            this.items[2].length = countObj.places_regions;
+            this.items[3].length = countObj.places_cities;
+            this.items[4].length = countObj.places_spots;
+
+            this.count = [countObj];
         }
     }
 </script>
