@@ -1,5 +1,5 @@
 <template>
-    <div class="o-world-type" v-if="count">
+    <div class="o-world-type">
         <div class="o-world-type__outer">
             <div class="o-world-type__inner">
                 <div class="o-world-type__items">
