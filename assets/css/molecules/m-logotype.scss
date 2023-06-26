@@ -10,19 +10,27 @@
     }
 
     &__image {
-        width: 200px;
+        width: 160px;
         height: 40px;
         padding: 5.35px 0;
         position: relative;
+
+        @media only screen and (min-width: $ti) {
+            width: 200px;
+        }
     }
 
     &__image-file {
         background-image: url('../../static/images/_base/logotype.svg');
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        width: 200px;
+        width: 160px;
         height: 29.3px;
+
+        @media only screen and (min-width: $ti) {
+            width: 200px;
+        }
     }
 
     &__image-link {
