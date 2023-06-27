@@ -433,6 +433,14 @@
                                 </section>
                                 <!-- SECTION - Telefoní čísla(emergency) END -->
 
+                                <!-- SECTION - Organizace -->
+                                <section class="t-section mt-4" v-if="place[0].organization">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Organizace ve kterých se stát nachází" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oOrganizationList :items="this.place[0].organization" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Organizace END -->
                             </div>
 
                             <div class="t-grid__section -ad">
@@ -443,6 +451,22 @@
                                     </div>
                                 </section>
                                 <!-- SECTION - Visited button - sidebar - END -->
+
+                                <!-- SECTION - links - sidebar -->
+                                <section class="t-section -px-world">
+                                    <div class="t-section__inner">
+                                        <oSidebarLinks :items="this.place[0].links" headline="Užitečné odkazy" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - links - sidebar - END -->
+
+                                <!-- SECTION - apps - sidebar -->
+                                <section class="t-section -px-world">
+                                    <div class="t-section__inner">
+                                        <oSidebarLinks :items="this.place[0].apps" headline="Užitečné aplikace" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - apps - sidebar - END -->
 
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world my-2">
@@ -552,8 +576,10 @@
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oChartPie from '@/components/organisms/oChartPie.vue'
+    import oOrganizationList from '~/components/organisms/oOrganizationList.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
+    import oSidebarLinks from '~/components/organisms/oSidebarLinks.vue'
     import oSidebarList from '~/components/organisms/oSidebarList.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
@@ -578,8 +604,10 @@
             oInformationBlock,
             oMapGoogle,
             oChartPie,
+            oOrganizationList,
             oPlaceTeaser,
             oReviewItem,
+            oSidebarLinks,
             oSidebarList,
             oVideoList,
             oVisitedButton,
