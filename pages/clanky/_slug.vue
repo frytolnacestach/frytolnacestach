@@ -113,9 +113,9 @@
             <div class="t-col2__sidebar my-2">
 
                 <!-- SECTION - Sidebar map mapy -->
-                <section class="t-section t-section--hidden-mobile my-2" v-if="post[0].urlMap">
+                <section class="t-section t-section--hidden-mobile my-2" v-if="post[0].url_map">
                     <div class="t-section__inner">
-                        <oSidebarMapMapy :idImageMap="post[0].id_image_map" :url="post[0].urlMap" :title="post[0].title" :images="imagePostMap" />
+                        <oSidebarMapMapy :idImageMap="post[0].id_image_map" :url="post[0].url_map" :title="post[0].title" :images="imagePostMap" />
                     </div>
                 </section>
                 <!-- SECTION - Sidebar map mapy END -->
