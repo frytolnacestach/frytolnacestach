@@ -275,6 +275,45 @@
                 <!-- SECTION END -->
 
             </template>
+            <template v-if="activeTab === 'co-videt'">
+                <!-- SECTION -->
+                <section class="t-section -px-world -p0 mb-4">
+                    <div class="t-section__inner">
+                        <div class="t-grid -world-content-with-ad">
+                            <div class="t-grid__section -content">
+                                <!-- SECTION - Place teaser spots -->
+                                <oPlaceTeaserSpots :headline="'Jaké místa vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" />
+                                <oPlaceTeaserRegions :headline="'Jaké regiony vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" />
+                                <oPlaceTeaserCities :headline="'Jaké města vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" />
+                                <!-- SECTION - Place teaser spots END -->
+                            </div>
+
+                            <div class="t-grid__section -ad">
+                                <!-- SECTION - Visited button - sidebar -->
+                                <section class="t-section -px-world">
+                                    <div class="t-section__inner">
+                                        <oVisitedButton :place="this.place[0].id" placeType="state" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Visited button - sidebar - END -->
+
+                                <!-- SECTION - Events - sidebar -->
+                                <oSidebarList :place="this.place[0].id" type="state" />
+                                <!-- SECTION - Events - sidebar - END -->
+
+                                <!-- SECTION - ad-google - sidebar -->
+                                <section class="t-section -px-world my-2">
+                                    <div class="t-section__inner">
+                                        <oAdGoogleSidebar />
+                                    </div>
+                                </section>
+                                <!-- SECTION - ad-google - sidebar - END -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION END -->
+            </template>
             <template v-if="activeTab === 'ceny'">
                 <!-- SECTION -->
                 <section class="t-section -px-world -p0 mb-4">
@@ -577,6 +616,9 @@
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oChartPie from '@/components/organisms/oChartPie.vue'
     import oOrganizationList from '~/components/organisms/oOrganizationList.vue'
+    import oPlaceTeaserCities from '~/components/organisms/oPlaceTeaserCities.vue'
+    import oPlaceTeaserRegions from '~/components/organisms/oPlaceTeaserRegions.vue'
+    import oPlaceTeaserSpots from '~/components/organisms/oPlaceTeaserSpots.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
     import oSidebarLinks from '~/components/organisms/oSidebarLinks.vue'
@@ -605,6 +647,9 @@
             oMapGoogle,
             oChartPie,
             oOrganizationList,
+            oPlaceTeaserCities,
+            oPlaceTeaserRegions,
+            oPlaceTeaserSpots,
             oPlaceTeaser,
             oReviewItem,
             oSidebarLinks,
@@ -636,6 +681,7 @@
                 metaTitle: '',
                 tabs: [
                     { slug: 'default', label: 'state_name', visible: false },
+                    { slug: 'co-videt', label: 'Co vidět', visible: false },
                     { slug: 'ceny', label: 'Ceny', visible: false },
                     { slug: 'lide', label: 'Lidé', visible: false },
                     { slug: 'cesta', label: 'Cesta', visible: false },
@@ -732,6 +778,7 @@
             },
             updatedTabs() {
                 const hasTabDefault = true;
+                const hasTabShow = this.place[0] && (!!this.placesCities[0]);
                 const hasTabPrice = this.place[0] && (!!this.place[0].currency_name || !!this.place[0].money_prices);
                 const hasTabPeople = this.place[0] && (!!this.place[0].people_religion || !!this.place[0].people_education || !!this.place[0].people_nationality);
                 const hasTabTrip = this.place[0] && (!!this.place[0].visitors_entry);
@@ -741,6 +788,7 @@
 
                 const newTabs = [
                     { slug: 'default', label: 'Výchozí', visible: hasTabDefault },
+                    { slug: 'co-videt', label: 'Co vidět', visible: hasTabShow },
                     { slug: 'ceny', label: 'Ceny', visible: hasTabPrice },
                     { slug: 'lide', label: 'Lidé', visible: hasTabPeople },
                     { slug: 'cesta', label: 'Cesta', visible: hasTabTrip },

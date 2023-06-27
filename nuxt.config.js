@@ -975,6 +975,7 @@ export default {
       slugs.forEach((slug) => {
         const tabs = [
           'default',
+          'co-videt',
           'ceny',
           'lide',
           'cesta',

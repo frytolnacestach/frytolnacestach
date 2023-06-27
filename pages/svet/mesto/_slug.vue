@@ -138,7 +138,7 @@
                         <!-- SECTION - Place teaser END -->
 
                         <!-- SECTION - Place teaser spots -->
-                        <oPlaceTeaserSpots :headline="'Co vidět ve městě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" />
+                        <oPlaceTeaserSpots :headline="'Co vidět ve městě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="city" />
                         <!-- SECTION - Place teaser spots END -->
 
                         <!-- SECTION - Ubytování - information -->

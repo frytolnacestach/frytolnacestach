@@ -138,7 +138,7 @@
             </div>
         </div>
 
-        <div class="t-layout-full" v-if="post[0].id_continent || post[0].id_state || post[0].id_city">
+        <div class="t-layout-full" v-if="post[0].id_continent || post[0].id_state || post[0].id_region || post[0].id_city || post[0].id_spot">
 
             <!-- SECTION - place -->
             <section class="t-section -p0 pt-2 pb-1">
@@ -146,11 +146,11 @@
                     <mHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
 
                     <div class="flex mx-1">
-                        <oPlaceBlock :place="placeContinent" :image="imageContinent" type="kontinent" v-if="placeContinent" />
-                        <oPlaceBlock :place="placeState" :image="imageState" type="stat" v-if="placeState" />
-                        <oPlaceBlock :place="placeRegion" :image="imageRegion" type="region" v-if="placeRegion" />
-                        <oPlaceBlock :place="placeCity" :image="imageCity" type="mesto" v-if="placeCity" />
-                        <oPlaceBlock :place="placeSpot" :image="imageRegion" type="misto" v-if="placeSpot" />
+                        <oPlaceBlock :placeID="post[0].id_continent" type="kontinent" v-if="post[0].id_continent" />
+                        <oPlaceBlock :placeID="post[0].id_state" type="stat" v-if="post[0].id_state" />
+                        <oPlaceBlock :placeID="post[0].id_region" type="region" v-if="post[0].id_region" />
+                        <oPlaceBlock :placeID="post[0].id_city" type="mesto" v-if="post[0].id_city" />
+                        <oPlaceBlock :placeID="post[0].id_spot" type="misto" v-if="post[0].id_spot" />
                     </div>
                 </div>
             </section>
@@ -159,7 +159,7 @@
             <!-- SECTION - videos -->
             <section class="t-section -p0 -bg-extra-dark-gray pt-4 py-2 px-2" v-if="videos[0]">
                 <div class="t-section__inner">
-                    <mHeadline title="Videa z města" :titleValue="placeCity[0].name" styleThema=" -dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                    <mHeadline title="Videa z této oblasti" styleThema=" -dark" styleAlign=" -p-left" styleGap=" mb-2" />
                     <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -dark" styleAlign=" -p-left" />
                 </div>
             </section>
@@ -214,17 +214,7 @@
         data() {
             return {
                 post: this.post,
-                videos: [],
-                placeContinent: [],
-                placeState: [],
-                placeRegion: [],
-                placeCity: [],
-                placeSpot: [],
-                imageContinent: [],
-                imageState: [],
-                imageRegion: [],
-                imageCity: [],
-                imageSpot: []
+                videos: []
             }
         },
 
@@ -294,119 +284,13 @@
                         }
                     }
 
-
-                    // COMPONENT - oPlaceBlock
-                    // PlaceContinent
-                    let placeContinent = null;
-                    try {
-                        placeContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continent-id/${post[0].id_continent}`)
-                    } catch (error) {
-                        console.log(`API ERROR - PLACE CONTINENT`)
-                    }
-                    // Image
-                    let imageContinent = null;
-                    if (placeContinent) {
-                        try {
-                            imageContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeContinent[0].id_image_hero}`)
-                        } catch (error) {
-                            console.log(`API ERROR - IMAGE PLACE CONTINENT`)
-                        }
-                    }
-
-
-                    // COMPONENT - oPlaceBlock
-                    // PlaceState
-                    let placeState = null;
-                    try {
-                        placeState = await $axios.$get(`https://api.frytolnacestach.cz/api/places-state-id/${post[0].id_state}`)
-                    } catch (error) {
-                        console.log(`API ERROR - PLACE STATE`)
-                    }
-                    // Image
-                    let imageState = null;
-                    if (placeState) {
-                        try {
-                            imageState = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeState[0].id_image_hero}`)
-                        } catch (error) {
-                            console.log(`API ERROR - IMAGE PLACE STATE`)
-                        }
-                    }
-
-
-                    // COMPONENT - oPlaceBlock
-                    // PlaceRegion
-                    let placeRegion = null;
-                    try {
-                        placeRegion = await $axios.$get(`https://api.frytolnacestach.cz/api/places-region-id/${post[0].id_region}`)
-                    } catch (error) {
-                        console.log(`API ERROR - PLACE REGION`)
-                    }
-                    // Image
-                    let imageRegion = null;
-                    if (placeRegion) {
-                        try {
-                            imageRegion = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeRegion[0].id_image_hero}`)
-                        } catch (error) {
-                            console.log(`API ERROR - IMAGE PLACE REGION`)
-                        }
-                    }
-
-
-                    // COMPONENT - oPlaceBlock
-                    // PlaceCity
-                    let placeCity = null;
-                    try {
-                        placeCity = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${post[0].id_city}`)
-                    } catch (error) {
-                        console.log(`API ERROR - PLACE CITY`)
-                    }
-                    // Image
-                    let imageCity = null;
-                    if (placeCity) {
-                        try {
-                            imageCity = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeCity[0].id_image_hero}`)
-                        } catch (error) {
-                            console.log(`API ERROR - IMAGE PLACE CITY`)
-                        }
-                    }
-
-
-                    // COMPONENT - oPlaceBlock
-                    // PlaceSpot
-                    let placeSpot = null;
-                    try {
-                        placeSpot = await $axios.$get(`https://api.frytolnacestach.cz/api/places-spot-id/${post[0].id_spot}`)
-                    } catch (error) {
-                        console.log(`API ERROR - PLACE SPOT`)
-                    }
-                    // Image
-                    let imageSpot = null;
-                    if (placeSpot) {
-                        try {
-                            imageSpot = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeSpot[0].id_image_hero}`)
-                        } catch (error) {
-                            console.log(`API ERROR - IMAGE PLACE SPOT`)
-                        }
-                    }
-
-
                     data = { 
                         post,
                         imagePostHero,
                         imagePostMap,
                         imagePostOg,
                         videos,
-                        imagesVideos,
-                        placeContinent,
-                        imageContinent,
-                        placeState,
-                        imageState,
-                        placeRegion,
-                        imageRegion,
-                        placeCity,
-                        imageCity,
-                        placeSpot,
-                        imageSpot
+                        imagesVideos
                     }
 
                     
