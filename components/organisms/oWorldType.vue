@@ -11,7 +11,12 @@
                                 </div>
                             </div>
                             <h2 class="o-world-type__text">
-                                <NuxtLink class="o-world-type__link" :to="item.url">{{ item.name }}<span class="o-world-type__link-length"> ({{ item.length }} položek) </span></NuxtLink>
+                                <NuxtLink class="o-world-type__link" :to="item.url">
+                                    <span class="o-world-type__link-title">{{ item.name }}</span>
+                                    <span class="o-world-type__link-length">
+                                        (&nbsp;<div class="o-world-type__link-length-number -loader" v-if="item.length === 0"></div><span class="o-world-type__link-length-number -number" v-if="item.length !== 0">{{ item.length }}</span>&nbsp;položek&nbsp;)
+                                    </span>
+                                </NuxtLink>
                             </h2>
                         </div>
                     </div>
