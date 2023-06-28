@@ -5,7 +5,7 @@
                 <div class="o-map-mapy__map">
                     <a class="o-map-mapy__map-link" :href="url" target="_blank">
                         
-                        <div class="o-map-mapy__image loading-image -gray">
+                        <div class="o-map-mapy__map-image loading-image -gray">
                             <div v-if="images && images.find(image => image.id === idImageMap)" class="o-map-mapy__image-lazyload">
                                 <img
                                     class="o-map-mapy__image-file lazyload-file"
