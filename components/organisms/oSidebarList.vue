@@ -11,9 +11,10 @@
                                     <div class="o-sidebar-list__image loading-image -green">
                                         <div v-if="images && images.find(image => image.id === event.id_image_hero)" class="o-sidebar-list__image-lazyload">
                                             <img class="o-sidebar-list__image-file lazyload-file"
-                                                data-sizes="320px"
+                                                data-sizes="0px"
                                                 :data-srcset="`
-                                                    https://image.frytolnacestach.cz/storage/${images.find(image => image.id === event.id_image_cover).source + images.find(image => image.id === event.id_image_cover).name}-374.webp 320w,
+                                                    https://image.frytolnacestach.cz/storage/${images.find(image => image.id === event.id_image_cover).source + images.find(image => image.id === event.id_image_cover).name}-100.webp 100w,
+                                                    https://image.frytolnacestach.cz/storage/${images.find(image => image.id === event.id_image_cover).source + images.find(image => image.id === event.id_image_cover).name}-200-2x.webp 200w,
                                                     `"
                                                 :data-src="`https://image.frytolnacestach.cz/storage/${images.find(image => image.id === event.id_image_cover).source + images.find(image => image.id === event.id_image_cover).name}.webp`"
                                                 :alt="event.name ? event.name : 'Úvodní obrázek'"
@@ -22,10 +23,10 @@
                                         </div>
                                         <div v-else class="o-sidebar-list__image-lazyload">
                                             <img class="o-sidebar-list__image-file lazyload-file"
-                                                data-sizes="320px"
+                                                data-sizes="0px"
                                                 :data-srcset="`
-                                                    https://image.frytolnacestach.cz/storage/_default/hero-374.webp 374w,
-                                                    https://image.frytolnacestach.cz/storage/_default/hero-748-2x.webp 748w
+                                                    https://image.frytolnacestach.cz/storage/_default/h-hero-100.webp 100w,
+                                                    https://image.frytolnacestach.cz/storage/_default/h-hero-200-2x.webp 200w
                                                     `"
                                                 :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
                                                 :alt="event.name ? event.name : 'Úvodní obrázek'"

@@ -5,14 +5,22 @@
                 <div class="o-whoiam__image loading-image -gray">
                     <div class="o-whoiam__image-lazyload">
                         <img class="o-whoiam__image-file lazyload-file"
-                            data-sizes="(max-width: 374px) 340px, (max-width: 439px) 400px, (max-width: 575px) 540px, (max-width: 767px) 400px, (max-width: 991px) 340px, 400px"
+                            data-sizes="(max-width: 349px) 320px, (max-width: 374px) 344px, (max-width: 399px) 370px, (max-width: 459px) 430px, (max-width: 575px) 546px, (max-width: 767px) 738px, (max-width: 991px) 962px, 320px"
                             :data-srcset="`
-                                https://image.frytolnacestach.cz/storage/main/michal-fryc.webp 340w,
-                                https://image.frytolnacestach.cz/storage/main/michal-fryc.webp 400w,
-                                https://image.frytolnacestach.cz/storage/main/michal-fryc.webp 540w,
-                                https://image.frytolnacestach.cz/storage/main/michal-fryc.webp 680w,
-                                https://image.frytolnacestach.cz/storage/main/michal-fryc.webp 800w,
-                                https://image.frytolnacestach.cz/storage/main/michal-fryc.webp 1080w
+                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-320.webp 320w,
+                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-344.webp 344w,
+                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-370.webp 370w,
+                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-430.webp 430w,
+                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-556.webp 546w,
+                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-738.webp 738w,
+                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-962.webp 962w,
+                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-640-2x.webp 640w,
+                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-688-2x.webp 688w,
+                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-740-2x.webp 740w,
+                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-860-2x.webp 860w,
+                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-1112-2x.webp 1092w,
+                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-1476-2x.webp 1476w,
+                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-1924-2x.webp 1924w
                                 `"
                             :data-src="`https://image.frytolnacestach.cz/storage/main/michal-fryc.webp`"
                             alt="Michal Fryč"

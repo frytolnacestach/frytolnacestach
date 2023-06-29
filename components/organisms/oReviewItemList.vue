@@ -13,9 +13,11 @@
                                             <img class="o-review-item-list__image-file lazyload-file"
                                                 data-sizes="(max-width: 374px) 345px, 390px"
                                                 :data-srcset="`
-                                                    https://image.frytolnacestach.cz/storage/_default/hero-345.webp 345w
-                                                    https://image.frytolnacestach.cz/storage/_default/hero-690-2x.webp 690w
-                                                    `"
+                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-50.webp 50w,
+                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-70.webp 70w,
+                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-100-2x.webp 100w,
+                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-140-2x.webp 140w
+                                                        `"
                                                 :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
                                                 :alt="users.find(user => user.id === review.id_user).nickname"
                                                 v-lazy>

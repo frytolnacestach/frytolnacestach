@@ -25,16 +25,28 @@
                                 <div class="o-cover-place-visited__image loading-image -blue">
                                     <div v-if="images && images.find(image => image.id === place.id_image_cover)" class="o-cover-place-visited__image-lazyload">
                                         <img class="o-cover-place-visited__image-file lazyload-file"
-                                            data-sizes="(max-width: 374px) 180px, (max-width: 575px) 280px, (max-width: 1920px) 380px, 540px"
+                                            data-sizes="(max-width: 349px) 160px, (max-width: 374px) 172px, (max-width: 399px) 176px, (max-width: 459px) 206px, (max-width: 575px) 264px, (max-width: 767px) 236px, (max-width: 991px) 232px, (max-width: 1219px) 164px, (max-width: 1399px) 200px, 304px"
                                             :data-srcset="`
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-180.webp 180w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-280.webp 280w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-380.webp 380w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-540.webp 540w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-360-2x.webp 360w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-560-2x.webp 560w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-760-2x.webp 760w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}-1080-2x.webp 1080w
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-166.webp 160w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-186.webp 172w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-186.webp 176w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-210.webp 206w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-274.webp 264w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-240.webp 236w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-240.webp 232w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-166.webp 164w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-210.webp 200w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-306.webp 304w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-332-2x.webp 320w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-372-2x.webp 344w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-372-2x.webp 352w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-420-2x.webp 412w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-548-2x.webp 528w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-480-2x.webp 472w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-480-2x.webp 464w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-332-2x.webp 328w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-420-2x.webp 400w,
+                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-612-2x.webp 608w
                                                 `"
                                             :data-src="`https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}.webp`"
                                             :alt="place.name"
@@ -42,16 +54,28 @@
                                     </div>
                                     <div v-else class="o-cover-place-visited__image-lazyload">
                                         <img class="o-cover-place-visited__image-file lazyload-file"
-                                            data-sizes="(max-width: 374px) 180px, (max-width: 575px) 280px, (max-width: 1920px) 380px, 540px"
+                                            data-sizes="(max-width: 349px) 160px, (max-width: 374px) 172px, (max-width: 399px) 176px, (max-width: 459px) 206px, (max-width: 575px) 264px, (max-width: 767px) 236px, (max-width: 991px) 232px, (max-width: 1219px) 164px, (max-width: 1399px) 200px, 304px"
                                             :data-srcset="`
-                                                https://image.frytolnacestach.cz/storage/_default/hero-180.webp 180w,
-                                                https://image.frytolnacestach.cz/storage/_default/hero-280.webp 280w,
-                                                https://image.frytolnacestach.cz/storage/_default/hero-380.webp 380w,
-                                                https://image.frytolnacestach.cz/storage/_default/hero-540.webp 540w,
-                                                https://image.frytolnacestach.cz/storage/_default/hero-360-2x.webp 360w,
-                                                https://image.frytolnacestach.cz/storage/_default/hero-560-2x.webp 560w,
-                                                https://image.frytolnacestach.cz/storage/_default/hero-760-2x.webp 760w,
-                                                https://image.frytolnacestach.cz/storage/_default/hero-1080-2x.webp 1080w
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-166.webp 160w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-186.webp 172w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-186.webp 176w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-210.webp 206w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-274.webp 264w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-240.webp 236w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-240.webp 232w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-166.webp 164w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-210.webp 200w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-306.webp 304w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-332-2x.webp 320w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-372-2x.webp 344w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-372-2x.webp 352w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-420-2x.webp 412w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-548-2x.webp 528w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-480-2x.webp 472w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-480-2x.webp 464w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-332-2x.webp 328w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-420-2x.webp 400w,
+                                                https://image.frytolnacestach.cz/storage/_default/s-hero-612-2x.webp 608w
                                                 `"
                                             :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
                                             :alt="place.name"
