@@ -21,8 +21,8 @@
                                 <img class="o-sidebar-map-mapy__image-file lazyload-file"
                                     data-sizes="320px"
                                     :data-srcset="`
-                                        https://image.frytolnacestach.cz/storage/_default/hero-320.webp 320w,
-                                        https://image.frytolnacestach.cz/storage/_default/hero-640-2x.webp 640w
+                                        https://image.frytolnacestach.cz/storage/_default/h-hero-320.webp 320w,
+                                        https://image.frytolnacestach.cz/storage/_default/h-hero-640-2x.webp 640w
                                         `"
                                     :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
                                     :alt="title"

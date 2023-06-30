@@ -11,10 +11,12 @@
                                     <div class="o-review-item-list__image loading-image -green" v-if="users && users.find(user => user.id === review.id_user)">
                                         <div class="o-review-item-list__image-lazyload">
                                             <img class="o-review-item-list__image-file lazyload-file"
-                                                data-sizes="(max-width: 374px) 345px, 390px"
+                                                data-sizes="(max-width: 374px) 40px, (max-width: 575px) 50px, 70px"
                                                 :data-srcset="`
+                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-40.webp 40w,
                                                         https://image.frytolnacestach.cz/storage/_default/s-hero-50.webp 50w,
                                                         https://image.frytolnacestach.cz/storage/_default/s-hero-70.webp 70w,
+                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-80-2x.webp 80w,
                                                         https://image.frytolnacestach.cz/storage/_default/s-hero-100-2x.webp 100w,
                                                         https://image.frytolnacestach.cz/storage/_default/s-hero-140-2x.webp 140w
                                                         `"
