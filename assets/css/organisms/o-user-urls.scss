@@ -3,7 +3,11 @@
     flex-wrap: wrap;
     padding: 5px 0;
     width: 100%;
-    max-width: 310px;
+    max-width: 100%;
+
+    @media only screen and (min-width: $lg) {
+        max-width: 310px;
+    }
 
     @media only screen and (min-width: $lg) {
         padding: 10px 0;
