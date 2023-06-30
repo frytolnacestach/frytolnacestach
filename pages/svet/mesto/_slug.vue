@@ -194,6 +194,10 @@
                         </section>
                         <!-- SECTION - Visited button - sidebar - END -->
 
+                        <!-- SECTION - Parking - sidebar -->
+                        <oSidebarParking :items="this.place[0].parking" />
+                        <!-- SECTION - Parking - sidebar - END -->
+
                         <!-- SECTION - Events - sidebar -->
                         <oSidebarList :place="this.place[0].id" type="city" />
                         <!-- SECTION - Events - sidebar - END -->
@@ -263,6 +267,7 @@
     import oPlaceTeaserSpots from '~/components/organisms/oPlaceTeaserSpots.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oSidebarList from '~/components/organisms/oSidebarList.vue'
+    import oSidebarParking from '~/components/organisms/oSidebarParking.vue'
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
@@ -284,6 +289,7 @@
             oPlaceTeaserSpots,
             oPlaceTeaser,
             oSidebarList,
+            oSidebarParking,
             oReviewItem,
             oVideoList,
             oVisitedButton,
