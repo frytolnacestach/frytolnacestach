@@ -9,6 +9,14 @@
         </section>
         <!-- SECTION - Hero place type END -->
 
+        <!-- SECTION - Filter -->
+        <section class="t-section -p0">
+            <div class="t-section__inner">
+                <oFormFilterPlace typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
+            </div>
+        </section>
+        <!-- SECTION - Filter END -->
+
         <!-- SECTION - Place list -->
         <section class="t-section -p0">
             <div class="t-section__inner">
@@ -26,6 +34,7 @@
 
 <script>
     import oCoverPlace from '~/components/organisms/oCoverPlace.vue'
+    import oFormFilterPlace from '~/components/organisms/oFormFilterPlace.vue'
     import oHeroPlaceType from '~/components/organisms/oHeroPlaceType.vue'
 
     export default {
@@ -33,6 +42,7 @@
 
         components: {
             oCoverPlace,
+            oFormFilterPlace,
             oHeroPlaceType
         },
 
@@ -43,7 +53,8 @@
                 isLoading: false,
                 noMoreItems: false,
                 page: 1,
-                perPage: 20
+                perPage: 20,
+                filterPlace: ''
             }
         },
 
@@ -72,10 +83,9 @@
 
                 //load places
                 const [placesResponse] = await Promise.all([
-                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-regions?showType=list&page=${this.page}&items=${this.perPage}`)
+                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-regions?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
                 ]);
                 const { data: placesData } = placesResponse;
-                this.placesRegions = this.placesRegions.concat(placesData);
 
                 //load images
                 const imagesPlacesRegionsIDS = placesData.map(placeRegion => placeRegion.id_image_cover).filter(id => id !== undefined && id !== null && id !== '');
@@ -83,6 +93,12 @@
                     const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesRegionsIDS.join(',')}`);
                     const { data: imagesData } = imagesResponse;
                     this.images = this.images.concat(imagesData);
+
+                    // add to placecesData to placesRegions
+                    this.placesRegions = this.placesRegions.concat(placesData);
+                } else {
+                    // add to placecesData to placesRegions
+                    this.placesRegions = this.placesRegions.concat(placesData);
                 }
 
                 //no more items?
@@ -134,6 +150,18 @@
                     this.loadPlaces();
                 }
             },
+
+            // filter set update
+            filterUpdate(newValue) {
+                this.filterPlace = newValue
+                this.images = []
+                this.placesRegions = []
+                this.isLoading = false
+                this.noMoreItems = false
+                this.page = 1
+                this.perPage = 20
+                this.loadPlaces()
+            }
         },
 
         beforeDestroy() {

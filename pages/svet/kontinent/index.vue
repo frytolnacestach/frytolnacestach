@@ -75,7 +75,6 @@
                     this.$axios.get(`https://api.frytolnacestach.cz/api/places-continents?showType=list&page=${this.page}&items=${this.perPage}`)
                 ]);
                 const { data: placesData } = placesResponse;
-                this.placesContinents = this.placesContinents.concat(placesData);
 
                 //load images
                 const imagesPlacesContinentsIDS = placesData.map(placeContinent => placeContinent.id_image_cover).filter(id => id !== undefined && id !== null && id !== '');
@@ -83,7 +82,13 @@
                     const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesContinentsIDS.join(',')}`);
                     const { data: imagesData } = imagesResponse;
                     this.images = this.images.concat(imagesData);
-                }
+                
+                    // add to placecesData to placesContinent
+                    this.placesContinents = this.placesContinents.concat(placesData);
+                } else {
+                    // add to placecesData to placesContinent
+                    this.placesContinents = this.placesContinents.concat(placesData);
+                } 
 
                 //no more items?
                 if (placesData.length === 0 || placesData.length < this.perPage) {

@@ -9,6 +9,14 @@
         </section>
         <!-- SECTION - Hero place type END -->
 
+        <!-- SECTION - Filter -->
+        <section class="t-section -p0">
+            <div class="t-section__inner">
+                <oFormFilterPlace typePlaceFilterName="Vybrat kontinent" typePlaceFilter="continents" @update="filterUpdate" />
+            </div>
+        </section>
+        <!-- SECTION - Filter END -->
+
         <!-- SECTION - Place list -->
         <section class="t-section -p0">
             <div class="t-section__inner">
@@ -26,6 +34,7 @@
 
 <script>
     import oCoverPlace from '~/components/organisms/oCoverPlace.vue'
+    import oFormFilterPlace from '~/components/organisms/oFormFilterPlace.vue'
     import oHeroPlaceType from '~/components/organisms/oHeroPlaceType.vue'
 
     export default {
@@ -33,6 +42,7 @@
 
         components: {
             oCoverPlace,
+            oFormFilterPlace,
             oHeroPlaceType
         },
 
@@ -43,7 +53,8 @@
                 isLoading: false,
                 noMoreItems: false,
                 page: 1,
-                perPage: 20
+                perPage: 20,
+                filterPlace: ''
             }
         },
 
@@ -61,45 +72,50 @@
         },
 
         async mounted() {
-            await this.loadPlaces();
-            this.addScrollListener();
+            await this.loadPlaces()
+            this.addScrollListener()
         },
 
         methods: {
             async loadPlaces() {
                 //start loading
-                this.isLoading = true;
+                this.isLoading = true
 
                 //load places
                 const [placesResponse] = await Promise.all([
-                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=list&page=${this.page}&items=${this.perPage}`)
+                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=list&idContinent=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
                 ]);
-                const { data: placesData } = placesResponse;
-                this.placesStates = this.placesStates.concat(placesData);
+                const { data: placesData } = placesResponse
 
                 //load images
-                const imagesPlacesStatesIDS = placesData.map(placeState => placeState.id_image_cover).filter(id => id !== undefined && id !== null && id !== '');
+                const imagesPlacesStatesIDS = placesData.map(placeState => placeState.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
                 if (imagesPlacesStatesIDS.length > 0) {
-                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesIDS.join(',')}`);
-                    const { data: imagesData } = imagesResponse;
-                    this.images = this.images.concat(imagesData);
+                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesIDS.join(',')}`)
+                    const { data: imagesData } = imagesResponse
+                    this.images = this.images.concat(imagesData)
+
+                    // add to placecesData to placesStates
+                    this.placesStates = this.placesStates.concat(placesData)
+                } else {
+                    // add to placecesData to placesStates
+                    this.placesStates = this.placesStates.concat(placesData)
                 }
 
                 //no more items?
                 if (placesData.length === 0 || placesData.length < this.perPage) {
-                    this.noMoreItems = true;
+                    this.noMoreItems = true
                 }
 
                 //end loading
-                this.isLoading = false;
+                this.isLoading = false
             },
 
             addScrollListener() {
-                window.addEventListener('scroll', this.handleScroll);
+                window.addEventListener('scroll', this.handleScroll)
             },
 
             removeScrollListener() {
-                window.removeEventListener('scroll', this.handleScroll);
+                window.removeEventListener('scroll', this.handleScroll)
             },
 
             loadMoreItems() {
@@ -108,8 +124,8 @@
                     return;
                 }
                 // loading more items
-                this.page++;
-                this.loadPlaces();
+                this.page++
+                this.loadPlaces()
             },
 
             handleScroll() {
@@ -119,25 +135,37 @@
                 }
 
                 // Document for scroll point
-                const windowHeight = window.innerHeight;
-                const documentHeight = document.documentElement.scrollHeight;
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                const windowHeight = window.innerHeight
+                const documentHeight = document.documentElement.scrollHeight
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
 
                 // Footer height
-                const tFooterElement = document.querySelector('.t-footer');
-                const tFooterHeight = tFooterElement.offsetHeight;
+                const tFooterElement = document.querySelector('.t-footer')
+                const tFooterHeight = tFooterElement.offsetHeight
 
                 // Point for loading
                 if (scrollTop + windowHeight >= documentHeight - tFooterHeight) {
                     // loading more items
-                    this.page++;
-                    this.loadPlaces();
+                    this.page++
+                    this.loadPlaces()
                 }
             },
+
+            // filter set update
+            filterUpdate(newValue) {
+                this.filterPlace = newValue
+                this.images = []
+                this.placesStates = []
+                this.isLoading = false
+                this.noMoreItems = false
+                this.page = 1
+                this.perPage = 20
+                this.loadPlaces()
+            }
         },
 
         beforeDestroy() {
-            this.removeScrollListener();
+            this.removeScrollListener()
         }
     }
 </script>

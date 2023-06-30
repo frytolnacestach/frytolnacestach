@@ -1,0 +1,31 @@
+.o-form-filter-place {
+    padding: 0 10px;
+
+    @media only screen and (min-width: $ti) {
+        padding: 0 20px;
+    }
+
+
+    &__outer {
+        background-color: $c-green-bg-component-light-super;
+        border-radius: $br-2;
+        margin: 5px 0;
+        padding: 10px 15px;
+
+        @media only screen and (min-width: $ti) {
+            border-radius: $br-4;
+        }
+
+        @media only screen and (min-width: $sm) {
+            padding: 15px 30px;
+        }
+    }
+
+    &__inner {
+
+    }
+
+    &__form {
+
+    }
+}
