@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/region", (function(a,b,c){return {data:[{placesRegions:[{id:1,id_image_cover:a,slug:b,type_place:c,name:"Porta Bohemica"}],images:[{id:a,name:b,source:"\u002Fworld\u002Fregions\u002F",date_create:"2023-06-12T18:38:16.132167+00:00",type:c,author:"pixabay.com"}]}],fetch:{},mutations:void 0}}(615,"porta-bohemica","region")));
