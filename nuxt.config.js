@@ -31,7 +31,8 @@ export default {
       { rel: 'preconnect', href: 'https://image.frytolnacestach.cz' },
       { rel: 'dns-prefetch', href: 'https://image.frytolnacestach.cz' },
       { rel: 'preconnect', href: 'https://www.googletagmanager.com' },
-      { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' }
+      { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;900&display=swap'}
     ],
     script: [
       { src: '/js/cookies-default.js', type: 'text/javascript', async: true },

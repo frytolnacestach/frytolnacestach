@@ -122,7 +122,7 @@
             }
 
             const imagesCitiesID = this.cities.map(city => city.id_image_cover).filter(id => id !== null && id !== '');
-            this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesCtiesID.join(',')}`).then((res) => res.json());
+            this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesCitiesID.join(',')}`).then((res) => res.json());
         }
     }
 </script>
