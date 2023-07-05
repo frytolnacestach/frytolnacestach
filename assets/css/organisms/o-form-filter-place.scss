@@ -1,10 +1,9 @@
 .o-form-filter-place {
     padding: 0 10px;
 
-    @media only screen and (min-width: $ti) {
+    @media only screen and (min-width: $sm) {
         padding: 0 20px;
     }
-
 
     &__outer {
         background-color: $c-green-bg-component-light-super;
