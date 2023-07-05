@@ -67,10 +67,10 @@
                                                 :alt="city.name"
                                                 v-lazy>
                                         </div>
-                                        <NuxtLink class="o-place-teaser-cities__image-link" :to="`/svet/misto/${city.slug}`" :aria-label="`Čti více o místě ${city.name}`"></NuxtLink>
+                                        <NuxtLink class="o-place-teaser-cities__image-link" :to="`/svet/mesto/${city.slug}`" :aria-label="`Čti více o městě ${city.name}`"></NuxtLink>
                                     </div>
                                     <div class="o-place-teaser-cities__text">
-                                        <nuxtLink class="o-place-teaser-cities__name" :to="`/svet/misto/${city.slug}`" :aria-label="`Čti více o místě ${city.name}`">{{ city.name }}</nuxtLink>
+                                        <nuxtLink class="o-place-teaser-cities__name" :to="`/svet/mesto/${city.slug}`" :aria-label="`Čti více o městě ${city.name}`">{{ city.name }}</nuxtLink>
                                         <div class="o-place-teaser-cities__wysiwyg" v-if="city.information_chatgpt" v-html="city.information_chatgpt.slice(0, city.information_chatgpt.lastIndexOf(' ', 160)).replace(/<\/?[^>]+(>|$)/g, '')"></div>                               
                                     </div>
                                 </div>
