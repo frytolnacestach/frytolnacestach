@@ -38,48 +38,7 @@
 
                     <!-- SECTION - hot info -->
                     <div class="t-grid__section -hot-info-hero">
-                        <div class="js_o-hot-info-hero o-hot-info-hero">
-                            <div class="o-hot-info-hero__outer">
-                                <div class="o-hot-info-hero__inner">
-                                    <div class="o-hot-info-hero__items">
-                                        <div class="o-hot-info-hero__item -link" v-if="placeContinent[0].name">
-                                            <div class="o-hot-info-hero__container">
-                                                <div class="o-hot-info-hero__content">
-                                                    <NuxtLink class="o-hot-info-hero__link" :to="`/svet/kontinent/${placeContinent[0].slug}`">
-                                                        <div class="o-hot-info-hero__text">
-                                                            <span class="o-hot-info-hero__title">Kontinent</span>
-                                                            <span class="o-hot-info-hero__value">
-                                                                {{ placeContinent[0].name }}
-                                                            </span>
-                                                        </div>
-                                                    </NuxtLink>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="o-hot-info-hero__item" v-if="place[0].area">
-                                            <div class="o-hot-info-hero__container">
-                                                <div class="o-hot-info-hero__content">
-                                                    <div class="o-hot-info-hero__text">
-                                                        <span class="o-hot-info-hero__title">Rozloha</span>
-                                                        <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="o-hot-info-hero__item" v-if="place[0].population">
-                                            <div class="o-hot-info-hero__container">
-                                                <div class="o-hot-info-hero__content">
-                                                    <div class="o-hot-info-hero__text">
-                                                        <span class="o-hot-info-hero__title">Populace</span>
-                                                        <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
                     </div>
                     <!-- SECTION - hot info - END -->
 
@@ -612,6 +571,7 @@
     import oCoverNeighboring from '~/components/organisms/oCoverNeighboring.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
+    import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oChartPie from '@/components/organisms/oChartPie.vue'
@@ -643,6 +603,7 @@
             oCoverNeighboring,
             oCoverPlaceDetail,
             oHeroPlace,
+            oHotInfoHero,
             oInformationBlock,
             oMapGoogle,
             oChartPie,
@@ -733,26 +694,26 @@
                         status: "span"
                     }
                 ],
-                educationData: [
+                oHotInfoHeroArray: [
                     {
-                    name: "Neúplné základní vzdělání",
-                    value: "0.3%"
+                        id: 1,
+                        title: "Kontinent",
+                        name: "_NÁZEV KONTINENTU_",
+                        url: `_ODKAZ_`,
+                        type: "string",
                     },
                     {
-                    name: "Základní vzdělání",
-                    value: "16.7%"
+                        id: 2,
+                        title: "Rozloha",
+                        name: "_ROZLOHA_",
+                        type: "number",
+                        subfix: " km²"
                     },
                     {
-                    name: "Střední vzdělání",
-                    value: "37.4%"
-                    },
-                    {
-                    name: "Vysokoškolské vzdělání",
-                    value: "45.6%"
-                    },
-                    {
-                    name: "Jiné vzdělání",
-                    value: "0.1%"
+                        id: 3,
+                        title: "Populace",
+                        name: "_POPULACE_",
+                        type: "number"
                     }
                 ]
             }
@@ -978,6 +939,27 @@
                     return item;
                 });
             }
+
+            //Data for oHotInfoHero
+            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
+                if (item.id === 1) {
+                    item.name = this.placeContinent[0].name;
+                    item.url = `/svet/kontinent/${this.placeContinent[0].slug}`
+                }
+                return item;
+            });
+            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
+                if (item.id === 2) {
+                    item.name = this.place[0].area;
+                }
+                return item;
+            });
+            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
+                if (item.id === 3) {
+                    item.name = this.place[0].population;
+                }
+                return item;
+            });
         },
 
         beforeUnmount() {

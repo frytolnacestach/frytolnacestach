@@ -38,58 +38,7 @@
 
                     <!-- SECTION - hot info -->
                     <div class="t-grid__section -hot-info-hero">
-                        <div class="js_o-hot-info-hero o-hot-info-hero -col4">
-                            <div class="o-hot-info-hero__outer">
-                                <div class="o-hot-info-hero__inner">
-                                    <div class="o-hot-info-hero__items">
-                                        <div class="o-hot-info-hero__item -link" v-if="placeState[0].name">
-                                            <div class="o-hot-info-hero__container">
-                                                <div class="o-hot-info-hero__content">
-                                                    <NuxtLink class="o-hot-info-hero__link" :to="`/svet/stat/${placeState[0].slug}`">
-                                                        <div class="o-hot-info-hero__text">
-                                                            <span class="o-hot-info-hero__title">Stát</span>
-                                                            <span class="o-hot-info-hero__value">
-                                                                {{ placeState[0].name }}
-                                                            </span>
-                                                        </div>
-                                                    </NuxtLink>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="o-hot-info-hero__item" v-if="place[0].area">
-                                            <div class="o-hot-info-hero__container">
-                                                <div class="o-hot-info-hero__content">
-                                                    <div class="o-hot-info-hero__text">
-                                                        <span class="o-hot-info-hero__title">Rozloha</span>
-                                                        <span class="o-hot-info-hero__value">{{ place[0].area !== 0 ? place[0].area.toLocaleString('cs-CZ') : place[0].area }} km²</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="o-hot-info-hero__item" v-if="place[0].altitude">
-                                            <div class="o-hot-info-hero__container">
-                                                <div class="o-hot-info-hero__content">
-                                                    <div class="o-hot-info-hero__text">
-                                                        <span class="o-hot-info-hero__title">Nadmořská výška</span>
-                                                        <span class="o-hot-info-hero__value">{{ place[0].altitude !== 0 ? place[0].altitude.toLocaleString('cs-CZ') : place[0].altitude }} m n. m.</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="o-hot-info-hero__item" v-if="place[0].population">
-                                            <div class="o-hot-info-hero__container">
-                                                <div class="o-hot-info-hero__content">
-                                                    <div class="o-hot-info-hero__text">
-                                                        <span class="o-hot-info-hero__title">Populace</span>
-                                                        <span class="o-hot-info-hero__value">{{ place[0].population !== 0 ? place[0].population.toLocaleString('cs-CZ') : place[0].population }}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col4"/>
                     </div>
                     <!-- SECTION - hot info - END -->
 
@@ -262,6 +211,7 @@
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
+    import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oPlaceTeaserSpots from '~/components/organisms/oPlaceTeaserSpots.vue'
@@ -284,6 +234,7 @@
             oArticleList,
             oCoverPlaceDetail,
             oHeroPlace,
+            oHotInfoHero,
             oInformationBlock,
             oMapGoogle,
             oPlaceTeaserSpots,
@@ -368,6 +319,35 @@
                         url: "/svet/mesto",
                         status: "span"
                     }
+                ],
+                oHotInfoHeroArray: [
+                    {
+                        id: 1,
+                        title: "Stát",
+                        name: "_NÁZEV STÁTU_",
+                        url: `_ODKAZ_`,
+                        type: "string",
+                    },
+                    {
+                        id: 2,
+                        title: "Rozloha",
+                        name: "_ROZLOHA_",
+                        type: "number",
+                        subfix: " km²"
+                    },
+                    {
+                        id: 3,
+                        title: "Nadmořská výška",
+                        name: "_NADMOŘSKÁ VÝŠKA_",
+                        type: "number",
+                        subfix: " m n. m."
+                    },
+                    {
+                        id: 4,
+                        title: "Populace",
+                        name: "_POPULACE_",
+                        type: "number"
+                    }
                 ]
             }
         },
@@ -408,6 +388,33 @@
                 if (item.id === 7) {
                     item.name = this.place[0].name;
                     item.url = "/svet/mesto/" + this.place[0].slug;
+                }
+                return item;
+            });
+
+            //Data for oHotInfoHero
+            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
+                if (item.id === 1) {
+                    item.name = this.placeState[0].name;
+                    item.url = `/svet/stat/${this.placeState[0].slug}`
+                }
+                return item;
+            });
+            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
+                if (item.id === 2) {
+                    item.name = this.place[0].area;
+                }
+                return item;
+            });
+            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
+                if (item.id === 3) {
+                    item.name = this.place[0].altitude;
+                }
+                return item;
+            });
+            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
+                if (item.id === 4) {
+                    item.name = this.place[0].population;
                 }
                 return item;
             });
