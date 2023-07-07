@@ -71,7 +71,8 @@
                                     </div>
                                     <div class="o-place-teaser-spots__text">
                                         <nuxtLink class="o-place-teaser-spots__name" :to="`/svet/misto/${spot.slug}`" :aria-label="`Čti více o místě ${spot.name}`">{{ spot.name }}</nuxtLink>
-                                        <div class="o-place-teaser-spots__wysiwyg" v-if="spot.information_chatgpt" v-html="spot.information_chatgpt.slice(0, spot.information_chatgpt.lastIndexOf(' ', 160)).replace(/<\/?[^>]+(>|$)/g, '')"></div>                               
+                                        <div class="o-place-teaser-spots__wysiwyg" v-if="spot.information_chatgpt && !spot.information_author?.length > 0" v-html="spot.information_chatgpt.slice(0, spot.information_chatgpt.lastIndexOf(' ', 160)).replace(/<\/?[^>]+(>|$)/g, '')"></div>       
+                                        <div class="o-place-teaser-spots__wysiwyg" v-if="spot.information_author?.length > 0" v-html="spot.information_author[0].text.slice(0, spot.information_author[0].text.lastIndexOf(' ', 160)).replace(/<\/?[^>]+(>|$)/g, '')"></div>   
                                     </div>
                                 </div>
                             </div>

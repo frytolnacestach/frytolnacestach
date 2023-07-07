@@ -71,7 +71,8 @@
                                     </div>
                                     <div class="o-place-teaser-regions__text">
                                         <nuxtLink class="o-place-teaser-regions__name" :to="`/svet/region/${region.slug}`" :aria-label="`Čti více o regionu ${region.name}`">{{ region.name }}</nuxtLink>
-                                        <div class="o-place-teaser-regions__wysiwyg" v-if="region.information_chatgpt" v-html="region.information_chatgpt.slice(0, region.information_chatgpt.lastIndexOf(' ', 160)).replace(/<\/?[^>]+(>|$)/g, '')"></div>                               
+                                        <div class="o-place-teaser-regions__wysiwyg" v-if="region.information_chatgpt && !region.information_author?.length > 0" v-html="region.information_chatgpt.slice(0, region.information_chatgpt.lastIndexOf(' ', 160)).replace(/<\/?[^>]+(>|$)/g, '')"></div>       
+                                        <div class="o-place-teaser-regions__wysiwyg" v-if="region.information_author?.length > 0" v-html="region.information_author[0].text.slice(0, region.information_author[0].text.lastIndexOf(' ', 160)).replace(/<\/?[^>]+(>|$)/g, '')"></div>    
                                     </div>
                                 </div>
                             </div>
