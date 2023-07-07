@@ -7,7 +7,7 @@
                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/svet" exact-active-class="-active" :class="{'-active': /^\/svet/.test($route.path)}">Svět</NuxtLink>
                     </li>
                     <li class="m-nav-main__item">
-                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/jidlo" exact-active-class="-active" :class="{'-active': /^\/jidlo/.test($route.path)}">Tradiční jídla</NuxtLink>
+                        <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/cestovatel" exact-active-class="-active" :class="{'-active': /^\/cestovatel/.test($route.path)}">Cestovatelé</NuxtLink>
                     </li>
                     <li class="m-nav-main__item">
                         <NuxtLink class="js_m-nav-main__link m-nav-main__link" to="/clanky" exact-active-class="-active" :class="{'-active': /^\/clanky/.test($route.path)}">Články</NuxtLink>
