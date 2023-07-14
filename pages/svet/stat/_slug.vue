@@ -772,18 +772,29 @@
         },
 
         head() {
-            return {
-                title: `${this.metaTitle}`,
-                meta: [
-                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}` },
-                    { name: 'keywords', content: `${this.place[0].name ? this.place[0].name : '' + ', stát, ceny, ubytování, lidé a kultura, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu'}` },
-                    { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
-                    { hid: 'og:title', content: `${this.metaTitle}` },
-                    { hid: 'og:description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}` },
-                    { hid: 'og:url', content: `${process.env.baseUrl}/svet/stat/${this.place[0].slug}${this.activeTab !== 'default' ? `/${this.activeTab}` : ''}` },
-                    { hid: 'og:type', content: 'website' }
-                ]
+            const placeName = this.place && this.place.length > 0 ? this.place[0].name : 'Stát';
+            const defaultTitle = `${placeName} | Cestovatelský portál Frytol na cestách`;
+            let title = defaultTitle;
+
+            if (this.$route.params.tab) {
+                const tab = this.tabs.find(tab => tab.slug === this.$route.params.tab);
+                const label = tab.label || '';
+                const tabTitle = `${label} ve státě ${placeName} | Cestovatelský portál Frytol na cestách`;
+                title = tabTitle;
             }
+
+            return {
+            title,
+            meta: [
+                { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}` },
+                { name: 'keywords', content: `${this.place[0].name ? this.place[0].name : '' + ', stát, ceny, ubytování, lidé a kultura, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu'}` },
+                { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
+                { hid: 'og:title', content: title },
+                { hid: 'og:description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}` },
+                { hid: 'og:url', content: `${process.env.baseUrl}/svet/stat/${this.place[0].slug}${this.activeTab !== 'default' ? `/${this.activeTab}` : ''}` },
+                { hid: 'og:type', content: 'website' }
+            ]
+            };
         },
 
         async asyncData({ $axios, params }) {
@@ -902,15 +913,6 @@
 
         mounted() {
             this.activeTab = this.$route.params.tab || 'default';
-
-            //nastavení metaTitle
-            const tab = this.tabs.find(tab => tab.slug === this.activeTab);
-            const label = tab.label;
-            if (this.activeTab === 'default') {
-                this.metaTitle = `${this.place[0].name ? this.place[0].name : 'Stát'} | Cestovatelský portál Frytol na cestách`
-            } else {
-                this.metaTitle = `${label} ve státě ${this.place[0].name ? this.place[0].name : ''} | Cestovatelský portál Frytol na cestách`
-            }
 
             // Zjistit, zda je rozlišení menší než 992px při načítání stránky
             this.isMobile = window.innerWidth < 992;
