@@ -1,7 +1,6 @@
 window.onload = function() {
 	var hamburger = document.querySelector(".js_m-hamburger");
 	hamburger.addEventListener("click", function() {
-		console.log("ham: click");
 		var status = hamburger.getAttribute("data-hamburger");
 
 		if (status === "close") {
@@ -30,3 +29,4 @@ window.onload = function() {
 		});
 	});
 }
+

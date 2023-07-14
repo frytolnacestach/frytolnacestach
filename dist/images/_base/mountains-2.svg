@@ -1,0 +1,5 @@
+<svg viewBox="0 0 600 100" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <path d="M 122.91 58.526 L 175.012 100.612 L 70.807 100.612 L 122.91 58.526 Z" style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: #96b1aa; fill-opacity: 1;" bx:shape="triangle 70.807 58.526 104.205 42.086 0.5 0 1@10d72ae3"></path>
+  <path d="M 353.364 78.526 L 369.568 100.393 L 337.16 100.393 L 353.364 78.526 Z" style="stroke: rgb(0, 0, 0); fill: #96b1aa; stroke-width: 0px; fill-opacity: 1;" bx:shape="triangle 337.16 78.526 32.408 21.867 0.5 0 1@702fecb9"></path>
+  <path d="M 459.484 79.581 L 488.276 103.061 L 430.693 103.061 L 459.484 79.581 Z" style="stroke: rgb(0, 0, 0); fill: #96b1aa; stroke-width: 0px; fill-opacity: 1;" bx:shape="triangle 430.693 79.581 57.583 23.48 0.5 0 1@7cc6ccc3"></path>
+</svg>
