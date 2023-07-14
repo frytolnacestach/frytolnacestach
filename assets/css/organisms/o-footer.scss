@@ -78,7 +78,7 @@
         animation: mountains 100s linear infinite;
     }
 
-    &__animation-item-aircraft {
+    &__animation-item-aircraft-1 {
         position: absolute;
         left: 0;
         top: 0;
@@ -91,6 +91,26 @@
         background-repeat: no-repeat;
         background-position: center;
         animation: aircraft 100s linear infinite;
+    }
+
+    &__animation-item-aircraft-2 {
+        display: none;
+        position: absolute;
+        left: -150%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 200%;
+        background-image: url('../../static/images/_base/aircraft.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        animation: aircraft 100s linear infinite;
+
+        @media only screen and (min-width: $sm) {
+            display: block;
+        }
     }
 
 

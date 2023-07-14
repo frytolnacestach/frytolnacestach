@@ -6,7 +6,8 @@
                     <li class="o-footer__animation-item-mountains-3"></li>
                     <li class="o-footer__animation-item-mountains-2"></li>
                     <li class="o-footer__animation-item-mountains-1"></li>
-                    <li class="o-footer__animation-item-aircraft"></li>
+                    <li class="o-footer__animation-item-aircraft-1"></li>
+                    <li class="o-footer__animation-item-aircraft-2"></li>
                 </ul>
             </div>
 
