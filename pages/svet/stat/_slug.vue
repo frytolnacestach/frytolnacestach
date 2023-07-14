@@ -807,7 +807,7 @@
                     // Place
                     const place = await $axios.$get(`https://api.frytolnacestach.cz/api/places-state/${params.slug}`)
                     // Image
-                    const imagePlace = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${place[0].id_image_hero}`)
+                    const imagePlace = place[0].id_image_hero && place[0].id_image_hero !== 0 ? await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${place[0].id_image_hero}`) : []
                     // PlaceContinent
                     const placeContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continent-id/${place[0].id_continent}`)
 
