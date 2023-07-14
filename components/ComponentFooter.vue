@@ -1,6 +1,14 @@
 <template>
     <footer class="t-footer" role="contentinfo">
         <div class="o-footer">
+            <div class="o-footer__animation">
+                <ul class="o-footer__animation-items">
+                    <li class="o-footer__animation-item-mountains-3"></li>
+                    <li class="o-footer__animation-item-mountains-2"></li>
+                    <li class="o-footer__animation-item-mountains-1"></li>
+                    <li class="o-footer__animation-item-aircraft"></li>
+                </ul>
+            </div>
 
             <!-- NAV - Footer -->
             <div class="o-footer__nav">
