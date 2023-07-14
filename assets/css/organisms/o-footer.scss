@@ -14,14 +14,22 @@
     &__animation {
         width: 100%;
         height: auto;
-        margin-top: -8.333%
+        margin-top: -16.666%;
+
+        @media only screen and (min-width: $sm) {
+            margin-top: -8.333%
+        }
     }
 
     &__animation-items {
         width: 100%;
         position: relative;
         height: 0;
-        padding-bottom: 8.333%;
+        padding-bottom: 16.666%;
+
+        @media only screen and (min-width: $sm) {
+            padding-bottom: 8.333%;
+        }
     }
 
 
@@ -30,14 +38,14 @@
         left: 0;
         top: 0;
         right: 0;
-        bottom: 0;;
+        bottom: 0;
         width: 100%;
-        width: 100%;
+        width: 200%;
         background-image: url('../../static/images/_base/mountains-1.svg');
         background-size: contain;
         background-repeat: repeat;
         background-position: center;
-        animation: mountains 20s linear infinite;
+        animation: mountains 70s linear infinite;
     }
 
     &__animation-item-mountains-2 {
@@ -45,14 +53,14 @@
         left: 0;
         top: 0;
         right: 0;
-        bottom: 0;;
+        bottom: 0;
         height: 100%;
-        width: 100%;
+        width: 200%;
         background-image: url('../../static/images/_base/mountains-2.svg');
         background-size: contain;
         background-repeat: repeat;
         background-position: center;
-        animation: mountains 26s linear infinite;
+        animation: mountains 83s linear infinite;
     }
 
     &__animation-item-mountains-3 {
@@ -60,14 +68,14 @@
         left: 0;
         top: 0;
         right: 0;
-        bottom: 0;;
+        bottom: 0;
         height: 100%;
-        width: 100%;
+        width: 200%;
         background-image: url('../../static/images/_base/mountains-3.svg');
         background-size: contain;
         background-repeat: repeat;
         background-position: center;
-        animation: mountains 32s linear infinite;
+        animation: mountains 100s linear infinite;
     }
 
     &__animation-item-aircraft {
@@ -75,14 +83,14 @@
         left: 0;
         top: 0;
         right: 0;
-        bottom: 0;;
+        bottom: 0;
         height: 100%;
-        width: 100%;
+        width: 200%;
         background-image: url('../../static/images/_base/aircraft.svg');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        animation: aircraft 32s linear infinite;
+        animation: aircraft 100s linear infinite;
     }
 
 
@@ -91,23 +99,23 @@
             background-position-x: 100%;
         }
         100% {
-            background-position-x: 0%;
+            background-position-x: -100%;
         }
     }
 
     @keyframes aircraft {
         0% {
             background-position-x: -20%;
-            background-position-y: 0%;
+            top: 0%;
         }
         20% {
-            background-position-y: 0%;
+            top: 0%;
         }
         25% {
-            background-position-y: 10%;
+            top: 10%;
         }
         30% {
-            background-position-y: 0%;
+            top: 0%;
         }
         100% {
             background-position-x: 220%;

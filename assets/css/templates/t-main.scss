@@ -1,7 +1,11 @@
 .t-main {
     padding-top: 0;
-    padding-bottom: 8.333%;
-    
+    padding-bottom: 16.666%;
+
+    @media only screen and (min-width: $sm) {
+        padding-bottom: 8.333%;
+    }
+
     @media only screen and (min-width: $lg) {
         padding-top: 0;
     }
