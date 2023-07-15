@@ -10,7 +10,7 @@
         <!-- SECTION - Hero END -->
 
         <!-- SECTION - Articles -->
-        <section class="t-section -p0 py-1 px-2">
+        <section class="t-section -p0">
             <div class="t-section__inner">
                 <oUserList :items="users" :images="images" />
             </div>
