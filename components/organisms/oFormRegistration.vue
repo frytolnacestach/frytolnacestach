@@ -32,7 +32,7 @@
                     </div>
                     <div class="o-form-registration__buttons mt-1">
                         <div class="o-form-registration__button">
-                            <div class="m-butto -bluen">
+                            <div class="m-button -blue">
                                 <button class="m-button__input" type="submit">Registrovat se</button>
                             </div>
                         </div>
