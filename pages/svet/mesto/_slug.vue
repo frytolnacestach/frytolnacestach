@@ -315,7 +315,7 @@
                         icon: true,
                         type: "city",
                         name: "Města",
-                        url: "/svet/",
+                        url: "/svet/mesto",
                         status: "link"
                     },
                     {
