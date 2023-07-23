@@ -96,7 +96,7 @@
                 type: String,
                 required: true
             }, 
-            biggest: {
+            importance: {
                 type: String,
                 required: false
             }
@@ -104,10 +104,10 @@
 
         computed: {
             filteredPlaces() {
-                if (this.biggest === "big") {
-                    return this.places.filter(place => place.biggest === 'yes');
-                } else if (this.biggest === "nobig") {
-                    return this.places.filter(place => place.biggest !== 'yes');
+                if (this.importance === "biggest") {
+                    return this.places.filter(place => place.importance === 'biggest');
+                } else if (this.importance === null) {
+                    return this.places.filter(place => place.importance !== 'biggest');
                 } else {
                     return this.places;
                 }

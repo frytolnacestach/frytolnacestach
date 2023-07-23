@@ -204,7 +204,7 @@
                                 <section class="t-section -p0 -py4 -px-world-big -h-scroll" v-if="placesCities[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Největší města ve státě" :titleValue="place[0].name" styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" />
-                                        <oCoverPlaceDetail :places="placesCities" :images="imagesCities" type="mesto" biggest="big" />
+                                        <oCoverPlaceDetail :places="placesCities" :images="imagesCities" type="mesto" importance="biggest" />
                                     </div>
                                 </section>
                                 <!-- SECTION - města - Biggest - END -->
@@ -222,7 +222,7 @@
                                 <section class="t-section -p0 -py4 -px-world-big -h-scroll" v-if="hasCitiesToShow">
                                     <div class="t-section__inner">
                                         <mHeadline title="Další města a obce ve státě" :titleValue="place[0].name" styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" />
-                                        <oCoverPlaceDetail :places="placesCities" :images="imagesCities" type="mesto" biggest="nobig" />
+                                        <oCoverPlaceDetail :places="placesCities" :images="imagesCities" type="mesto" :importance=null />
                                     </div>
                                 </section>
                                 <!-- SECTION - města - menší - END -->
