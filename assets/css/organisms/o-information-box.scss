@@ -1,0 +1,67 @@
+.o-information-box {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: $c-green-bg-component-light-super;
+    border-radius: $br-2;
+    margin: 20px auto;
+
+    &__outer {
+        width: 100%;
+        padding: 20px 40px;
+    }
+
+    &__inner {
+        width: 100%;
+    }
+
+    &__title {
+        font-size: $fs-large-ssss;
+        color: $c-green-t-dark-super;
+        margin: 0 15px;
+        text-align: center;
+    }
+
+    &__perex {
+        font-size: $fs-normal-s;
+        color: $c-green-t-dark-super;
+        width: 100%;
+        text-align: center;
+        margin: 8px 0 0;
+    }
+
+    &__items {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__item {
+        width: 100%;
+        text-align: center;
+        padding: 20px 10px 15px;
+
+        @media only screen and (min-width: $sm) {
+            width: 33.3%;
+        }
+    }
+
+    &__name {
+        font-size: $fs-normal;
+        margin: 0 0 10px;
+        color: $c-green-t-dark-super;
+    }
+
+    &__name-sub {
+        display: block;
+        font-size: $fs-small;
+        width: 100%;
+        color: $c-green-t-dark-super;
+    }
+
+    &__value {
+        font-size: $fs-normal-sss;
+        color: $c-green-t-dark-super;
+    }
+}

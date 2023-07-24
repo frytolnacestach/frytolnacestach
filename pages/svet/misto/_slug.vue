@@ -71,6 +71,14 @@
                         </section>
                         <!-- SECTION - information by Author END -->
 
+                        <!-- SECTION - information duration -->
+                        <section class="t-section" v-if="place[0].information_duration !== null">
+                            <div class="t-section__inner">
+                                <oInformationBox :data="place[0].information_duration" />
+                            </div>
+                        </section>
+                        <!-- SECTION - information duration END -->
+
                         <!-- SECTION - Review -->
                         <oReviewItem :IDplace="place[0].id" type="spot" v-if="place[0].id" />
                         <!-- SECTION - Review END -->
@@ -144,6 +152,7 @@
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
+    import oInformationBox from '~/components/organisms/oInformationBox.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oSidebarList from '~/components/organisms/oSidebarList.vue'
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
@@ -162,6 +171,7 @@
             oHeroPlace,
             oHotInfoHero,
             oInformationBlock,
+            oInformationBox,
             oMapGoogle,
             oSidebarList,
             oReviewItem,

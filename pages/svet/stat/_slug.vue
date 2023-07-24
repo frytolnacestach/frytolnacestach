@@ -58,24 +58,7 @@
         <!-- SECTION - Nav place -->
         <section class="t-section -px-world-big -p0" v-if="place[0]">
             <div class="t-section__inner">
-                
-                <div class="m-nav-place">
-                    <div class="m-nav-place__outer">
-                        <div class="m-nav-place__inner">
-                            <ul class="m-nav-place__items">
-                                <li class="m-nav-place__item" v-for="tab in tabs" :key="tab.slug">
-                                    <nuxt-link :to="`/svet/stat/${ place[0].slug }`" class="m-nav-place__link" :class="{ '-active': activeTab === tab.slug }" v-if="tab.slug === 'default'">
-                                        {{ place[0].name ? place[0].name : 'Stát' }}
-                                    </nuxt-link>
-                                    <nuxt-link :to="getTabLink(tab)" class="m-nav-place__link" :class="{ '-active': activeTab === tab.slug }" v-if="tab.slug !== 'default' && tab.visible === true">
-                                        {{ tab.label }}
-                                    </nuxt-link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
+                <mNavPlace :tabs="tabs" :place="place[0]" />
             </div>
         </section>
         <!-- SECTION - Nav place END -->
@@ -152,6 +135,14 @@
                                     </div>
                                 </section>
                                 <!-- SECTION - Visited button - sidebar - END -->
+
+                                <!-- SECTION - time - sidebar -->
+                                <section class="t-section -px-world">
+                                    <div class="t-section__inner">
+                                        <oTime :mpz="this.place[0].mpz" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - time - sidebar - END -->
 
                                 <!-- SECTION - Měna -->
                                 <section class="t-section" v-if="place[0].currency_name">
@@ -569,6 +560,7 @@
 
 <script>
     import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
+    import mNavPlace from '~/components/molecules/mNavPlace.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oAlerts from '~/components/organisms/oAlerts.vue'
@@ -591,6 +583,7 @@
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
     import oSidebarLinks from '~/components/organisms/oSidebarLinks.vue'
     import oSidebarList from '~/components/organisms/oSidebarList.vue'
+    import oTime from '~/components/organisms/oTime.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
@@ -601,6 +594,7 @@
 
         components: {
             mNavBreadcrumbsPlace,
+            mNavPlace,
             mHeadline,
             oAdGoogleSidebar,
             oAlerts,
@@ -623,6 +617,7 @@
             oReviewItem,
             oSidebarLinks,
             oSidebarList,
+            oTime,
             oVideoList,
             oVisitedButton,
             oWidgetBooking
@@ -743,7 +738,7 @@
 
         computed: {
             hasCitiesToShow() {
-                return this.placesCities.some(place => place.biggest !== 'yes');
+                return this.placesCities.some(place => place.importance !== 'biggest');
             },
             updatedTabs() {
                 const hasTabDefault = true;

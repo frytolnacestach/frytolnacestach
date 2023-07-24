@@ -13,6 +13,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "core-js": "^3.25.3",
     "lazysizes": "^5.3.2",
+    "moment-timezone": "^0.5.43",
     "nuxt": "^2.15.8",
     "path": "^0.12.7",
     "vue": "^2.7.10",

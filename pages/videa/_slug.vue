@@ -45,6 +45,14 @@
 
             <div class="t-col2__sidebar my-2">
 
+                <!-- SECTION - author - sidebar -->
+                <section class="t-section -px-world my-2">
+                    <div class="t-section__inner">
+                        <oAuthorSidebar :author="video[0].id_user"/>
+                    </div>
+                </section>
+                <!-- SECTION - author - sidebar - END -->
+
                 <!-- SECTION - ad-google - sidebar -->
                 <section class="t-section -px-world my-2">
                     <div class="t-section__inner">
@@ -84,6 +92,7 @@
 
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
+    import oAuthorSidebar from '~/components/organisms/oAuthorSidebar.vue'
     import oHeroVideo from '~/components/organisms/oHeroVideo.vue'
     import oPlaceBlock from '~/components/organisms/oPlaceBlock.vue'
     import oYoutube from '~/components/organisms/oYoutube.vue'
@@ -94,6 +103,7 @@
         components: {
             mHeadline,
             oAdGoogleSidebar,
+            oAuthorSidebar,
             oHeroVideo,
             oPlaceBlock,
             oYoutube

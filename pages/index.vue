@@ -56,6 +56,15 @@
                 </div>
             </div>
         </section>
+
+        <!-- SECTION - events -->
+        <section class="t-section py-4">
+            <div class="t-section__inner">
+                <mHeadline title="Nejbližší události" styleAlign=" -left" />
+                <oEventList />
+            </div>
+        </section>
+        <!-- SECTION - events END -->
     </main>
 </template>
 
@@ -64,6 +73,7 @@
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
+    import oEventList from '~/components/organisms/oEventList.vue'
     import oHerobig from '../components/organisms/oHerobig.vue'
     import oPlatform from '../components/organisms/oPlatform.vue'
     import oTopPlace from '@/components/organisms/oTopPlace.vue'
@@ -77,6 +87,7 @@
             aButtonFillFull,
             mHeadline,
             oArticleList,
+            oEventList,
             oHerobig,
             oPlatform,
             oTopPlace,

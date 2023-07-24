@@ -112,6 +112,14 @@
 
             <div class="t-col2__sidebar my-2">
 
+                <!-- SECTION - author - sidebar -->
+                <section class="t-section -px-world my-2">
+                    <div class="t-section__inner">
+                        <oAuthorSidebar :author="post[0].id_user"/>
+                    </div>
+                </section>
+                <!-- SECTION - author - sidebar - END -->
+
                 <!-- SECTION - Sidebar map mapy -->
                 <section class="t-section t-section--hidden-mobile my-2" v-if="post[0].url_map">
                     <div class="t-section__inner">
@@ -172,6 +180,7 @@
 
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
+    import oAuthorSidebar from '~/components/organisms/oAuthorSidebar.vue'
     import oHeroArticle from '~/components/organisms/oHeroArticle.vue'
     import oHotInfo from '~/components/organisms/oHotInfo.vue'
     import oMapMapy from '~/components/organisms/oMapMapy.vue'
@@ -194,6 +203,7 @@
         components: {
             mHeadline,
             oAdGoogleSidebar,
+            oAuthorSidebar,
             oHeroArticle,
             oHotInfo,
             oMapMapy,
