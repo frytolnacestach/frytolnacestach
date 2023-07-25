@@ -23,7 +23,7 @@
 
         props: {
             place: {
-                type: Array,
+                type: Object,
                 required: true
             },
             tabs: {

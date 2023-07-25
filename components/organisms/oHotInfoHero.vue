@@ -11,7 +11,7 @@
                                     <div class="o-hot-info-hero__text">
                                         <span class="o-hot-info-hero__title">{{ item.title }}</span>
                                         <span class="o-hot-info-hero__value" v-if="item.type === 'number'">
-                                            {{ item.name !== 0 ? item.name.toLocaleString('cs-CZ') : item.name }}
+                                            {{ item.name !== 0 && item.name !== null ? item.name.toLocaleString('cs-CZ') : item.name === null ? 0 : item.name }}
                                             <span class="o-hot-info-hero__value-subfix">{{ item.subfix }}</span>
                                         </span>
                                         <span class="o-hot-info-hero__value" v-if="item.type === 'string'">
@@ -24,7 +24,7 @@
                                 <div class="o-hot-info-hero__text" v-if="!item.url">
                                     <span class="o-hot-info-hero__title">{{ item.title }}</span>
                                     <span class="o-hot-info-hero__value" v-if="item.type === 'number'">
-                                        {{ item.name !== 0 ? item.name.toLocaleString('cs-CZ') : item.name }}
+                                        {{ item.name !== 0 && item.name !== null ? item.name.toLocaleString('cs-CZ') : item.name === null ? 0 : item.name }}
                                         <span class="o-hot-info-hero__value-subfix">{{ item.subfix }}</span>
                                     </span>
                                     <span class="o-hot-info-hero__value" v-if="item.type === 'string'">
