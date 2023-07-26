@@ -3,7 +3,7 @@
         <!-- SECTION - BREADCRUMBS -->
         <section class="t-section -px-world mt-2 -p0">
             <div class="t-section__inner">
-                <mNavBreadcrumbsItem :links="mNavBreadcrumbsWorldTimwArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" />
+                <mNavBreadcrumbsItem :links="mNavBreadcrumbsWorldTimwArray" :item="place[0]" />
             </div>
         </section>
         <!-- SECTION - BREADCRUMBS END -->
@@ -104,29 +104,11 @@
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oAlerts from '~/components/organisms/oAlerts.vue'
-    import oArticleList from '~/components/organisms/oArticleList.vue'
-    import oBlockItem from '~/components/organisms/oBlockItem.vue'
-    import oBlockList from '~/components/organisms/oBlockList.vue'
-    import oCoverItemState from '~/components/organisms/oCoverItemState.vue'
-    import oCoverNeighboring from '~/components/organisms/oCoverNeighboring.vue'
-    import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
-    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
-    import oChartPie from '@/components/organisms/oChartPie.vue'
-    import oOrganizationList from '~/components/organisms/oOrganizationList.vue'
-    import oPlaceTeaserCities from '~/components/organisms/oPlaceTeaserCities.vue'
-    import oPlaceTeaserRegions from '~/components/organisms/oPlaceTeaserRegions.vue'
-    import oPlaceTeaserSpots from '~/components/organisms/oPlaceTeaserSpots.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
-    import oReviewItem from '~/components/organisms/oReviewItem.vue'
-    import oSidebarLinks from '~/components/organisms/oSidebarLinks.vue'
-    import oSidebarList from '~/components/organisms/oSidebarList.vue'
     import oTime from '~/components/organisms/oTime.vue'
-    import oVideoList from '~/components/organisms/oVideoList.vue'
-    import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
-    import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
 
 
     export default {
@@ -198,16 +180,16 @@
             let title = defaultTitle;
 
             return {
-            title,
-            meta: [
-                { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}` },
-                { name: 'keywords', content: `${this.place[0].name ? this.place[0].name : '' + ', stát, čas, informace, časové pásma, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu'}` },
-                { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
-                { hid: 'og:title', content: title },
-                { hid: 'og:description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}` },
-                { hid: 'og:url', content: `${process.env.baseUrl}/svetovy-cas/${this.place[0].slug}` },
-                { hid: 'og:type', content: 'website' }
-            ]
+                title,
+                meta: [
+                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}` },
+                    { name: 'keywords', content: `${this.place[0].name ? this.place[0].name : '' + ', stát, čas, informace, časové pásma, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu'}` },
+                    { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}` },
+                    { hid: 'og:url', content: `${process.env.baseUrl}/svetovy-cas/${this.place[0].slug}` },
+                    { hid: 'og:type', content: 'website' }
+                ]
             };
         },
 
