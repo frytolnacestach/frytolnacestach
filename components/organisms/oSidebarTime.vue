@@ -1,10 +1,10 @@
 <template>
-    <div class="o-time">
-        <div class="o-time__outer">
-            <div class="o-time__inner">
-                <span class="o-time__headline">Místní čas</span>
-                <span class="o-time__time">{{ localTime }}</span>
-                <span class="o-time__date">{{ localDate }}</span>
+    <div class="o-sidebar-time">
+        <div class="o-sidebar-time__outer">
+            <div class="o-sidebar-time__inner">
+                <span class="o-sidebar-time__headline">Místní čas</span>
+                <span class="o-sidebar-time__time">{{ localTime }}</span>
+                <span class="o-sidebar-time__date">{{ localDate }}</span>
             </div>
         </div>
     </div>
@@ -16,7 +16,7 @@
     moment.locale('cs');
   
     export default {
-        name: 'OrganismsoTimeComponent',
+        name: 'OrganismsoSidebarTimeComponent',
 
         props: {
             mpz: {

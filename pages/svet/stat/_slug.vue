@@ -139,7 +139,7 @@
                                 <!-- SECTION - time - sidebar -->
                                 <section class="t-section -px-world">
                                     <div class="t-section__inner">
-                                        <oTime :mpz="this.place[0].mpz" />
+                                        <oSidebarTime :mpz="this.place[0].mpz" />
                                     </div>
                                 </section>
                                 <!-- SECTION - time - sidebar - END -->
@@ -583,7 +583,7 @@
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
     import oSidebarLinks from '~/components/organisms/oSidebarLinks.vue'
     import oSidebarList from '~/components/organisms/oSidebarList.vue'
-    import oTime from '~/components/organisms/oTime.vue'
+    import oSidebarTime from '~/components/organisms/oSidebarTime.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
@@ -617,7 +617,7 @@
             oReviewItem,
             oSidebarLinks,
             oSidebarList,
-            oTime,
+            oSidebarTime,
             oVideoList,
             oVisitedButton,
             oWidgetBooking

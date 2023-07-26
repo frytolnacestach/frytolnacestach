@@ -893,6 +893,14 @@ export default {
         exclude: ['/**']
       },
       {
+        path: '/sitemap-world-time.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://api.frytolnacestach.cz/api/places-states')
+          return data.map(v => `/svetovy-cas/${v.slug}`)
+        },
+        exclude: ['/**']
+      },
+      {
         path: '/sitemap-users.xml',
         routes: async () => {
           let { data } = await axios.get('https://api.frytolnacestach.cz/api/users')

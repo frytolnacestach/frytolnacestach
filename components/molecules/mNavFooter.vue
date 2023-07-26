@@ -76,6 +76,9 @@
                     <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/udalost">Události</NuxtLink>
                     </li>
+                    <li class="m-nav-footer__item">
+                        <NuxtLink class="m-nav-footer__link" to="/svetovy-cas">Světový čas</NuxtLink>
+                    </li>
                 </ul>
             </div>
 
