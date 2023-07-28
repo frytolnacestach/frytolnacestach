@@ -77,9 +77,9 @@
                 const { data: travelDictionariesData } = travelDictionariesResponse;
 
                 //load images
-                const imagestravelDictionariesIDS = travelDictionariesData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '');
-                if (imagestravelDictionariesIDS.length > 0) {
-                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagestravelDictionariesIDS.join(',')}`);
+                const imagesTravelDictionariesIDS  = travelDictionariesData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '');
+                if (imagesTravelDictionariesIDS .length > 0) {
+                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesTravelDictionariesIDS .join(',')}`);
                     const { data: imagesData } = imagesResponse;
                     this.images = this.images.concat(imagesData);
                 

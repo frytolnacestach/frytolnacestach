@@ -38,9 +38,6 @@
 
         data() {
             return {
-                //foods: this.foods,
-                //images: this.images,
-
                 foods: [],
                 images: [],
                 isLoading: false,
@@ -80,9 +77,9 @@
                 const { data: foodsData } = foodsResponse;
 
                 //load images
-                const imagesfoodsIDS = foodsData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '');
-                if (imagesfoodsIDS.length > 0) {
-                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesfoodsIDS.join(',')}`);
+                const imagesFoodsIDS = foodsData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '');
+                if (imagesFoodsIDS.length > 0) {
+                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFoodsIDS.join(',')}`);
                     const { data: imagesData } = imagesResponse;
                     this.images = this.images.concat(imagesData);
                 
