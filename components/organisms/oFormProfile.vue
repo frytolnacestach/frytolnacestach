@@ -52,6 +52,11 @@
                                     <input class="a-input -blue" type="text" name="lastname" v-model="lastname" placeholder="Příjmení"/>
                                 </div>
 
+                                <div class="o-form-profile__item">
+                                    <input class="a-input-checkbox" type="checkbox" id="agreement_mail" v-model="agreementMail">
+                                    <label class="m-label" for="agreement_mail">Souhlasím se zasíláním marketingových emailů</label>
+                                </div>
+
                                 <div class="o-form-profile__group">
                                     <label class="o-form-profile__label">Odkazy:</label>
                                     <div class="o-form-profile__item -flex" v-for="(item, index) in urls" :key="index">
@@ -109,6 +114,7 @@ export default {
             nickname: '',
             surname: '',
             lastname: '',
+            agreementMail: '',
             urls: [
                 {
                     url: ""
@@ -146,6 +152,7 @@ export default {
                     body: JSON.stringify({
                         'surname': this.surname,
                         'lastname': this.lastname,
+                        'agreement_mail': this.agreementMail,
                         'urls': this.urls
                     })
                 });
@@ -187,6 +194,7 @@ export default {
             this.surname = this.profile[0].surname;
             this.lastname = this.profile[0].lastname;
             this.urls = this.profile[0].urls;
+            this.agreementMail = this.profile[0].agreement_mail;
         }
     }
 };

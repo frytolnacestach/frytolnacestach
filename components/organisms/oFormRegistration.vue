@@ -29,6 +29,10 @@
                             <input class="a-input-checkbox" type="checkbox" id="terms" v-model="termsAccepted" required>
                             <label class="m-label" for="terms">Souhlasím s <NuxtLink to="/conditions-user" target="_blank">Obchodními podmínkami</NuxtLink> (pro uživatelský účet):</label>
                         </div>
+                        <div class="o-form-registration__item">
+                            <input class="a-input-checkbox" type="checkbox" id="agreement_mail" v-model="agreementMail">
+                            <label class="m-label" for="agreement_mail">Souhlasím se zasíláním marketingových emailů</label>
+                        </div>
                     </div>
                     <div class="o-form-registration__buttons mt-1">
                         <div class="o-form-registration__button">
@@ -61,7 +65,8 @@ export default {
             email: '',
             password: '',
             nickname: '',
-            termsAccepted: false
+            termsAccepted: false,
+            agreementMail: false
         };
     },
   
@@ -97,6 +102,7 @@ export default {
                         'email': this.email,
                         'password': this.password,
                         'nickname': this.nickname,
+                        'agreement_mail': this.agreementMail
                     })
                 });
 
