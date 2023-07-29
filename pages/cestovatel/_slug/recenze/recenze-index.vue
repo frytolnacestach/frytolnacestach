@@ -40,50 +40,13 @@
                     </div>
 
                     <div class="t-col2__content mb-2">
-                        <!-- SECTION - Visited place category -->
+                        <!-- SECTION - Recenze -->
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
-                                <mHeadline title="Kontinety které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesContinentsID" type="kontinent" account="other" />
+                                <oReviewItemListUser :user="user" />
                             </div>
                         </section>
-                        <!-- SECTION - Visited place category END -->
-
-                        <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4">
-                            <div class="t-section__inner">
-                                <mHeadline title="Státy které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesStatesID" type="stat" account="other" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Visited place category END -->
-
-                        <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4">
-                            <div class="t-section__inner">
-                                <mHeadline title="Města které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesCitiesID" type="mesto" account="other" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Visited place category END -->
-
-                        <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4">
-                            <div class="t-section__inner">
-                                <mHeadline title="Regiony které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesRegionsID" type="region" account="other" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Visited place category END -->
-
-                        <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4">
-                            <div class="t-section__inner">
-                                <mHeadline title="Místa které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesSpotsID" type="misto" account="other" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Visited place category END -->
+                        <!-- SECTION - Recenze END -->
                     </div>
                 </div>
             </div>
@@ -97,7 +60,7 @@
     import mUserHeader from '~/components/molecules/mUserHeader.vue'
     import mNavUser from '~/components/molecules/mNavUser.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oCoverPlaceVisited from '~/components/organisms/oCoverPlaceVisited.vue'
+    import oReviewItemListUser from '~/components/organisms/oReviewItemListUser.vue'
     import oUserUrls from '~/components/organisms/oUserUrls.vue'
 
     export default {
@@ -108,7 +71,7 @@
             mUserHeader,
             mNavUser,
             oAdGoogleSidebar,
-            oCoverPlaceVisited,
+            oReviewItemListUser,
             oUserUrls
         },
 
@@ -116,12 +79,6 @@
             return {
                 staticUser: this.staticUser,
                 user: '',
-                placesContinentsID: [],
-                placesStatesID: [],
-                placesCitiesID: [],
-                placesRegionsID: [],
-                placesSpotsID: [],
-                loadingComponentOCoverPlaceVisited: true,
                 mNavUserOpen: false
             }
         },
@@ -171,28 +128,11 @@
                         const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user/${this.$route.params.slug}`);
 
 
-                        // COMPONENT - oCoverPlaceVisited
-                        // PlacesID
-                        const placesID = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${user[0].id}&status=1`);
-                        const placesContinentsID = placesID.filter(place => place.type === 'continent').map(place => place.id_place) || [];
-                        const placesStatesID = placesID.filter(place => place.type === 'state').map(place => place.id_place) || [];
-                        const placesCitiesID = placesID.filter(place => place.type === 'city').map(place => place.id_place) || [];
-                        const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || [];
-                        const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || [];
-
                         // TO DATA
                         data = {
                             staticUser: user,
                             user,
-                            placesContinentsID,
-                            placesStatesID,
-                            placesCitiesID,
-                            placesRegionsID,
-                            placesSpotsID
                         }
-
-                        // END LOADING
-                        this.loadingComponentOCoverPlaceVisited = false
 
                         // SUCCESS
                         success = true

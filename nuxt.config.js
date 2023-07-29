@@ -973,6 +973,16 @@ export default {
         path: '/svet/stat/:slug/:tab',
         component: resolve(__dirname, 'pages/svet/stat/_slug.vue')
       })
+      routes.push({
+        name: 'user-review',
+        path: '/cestovatel/:slug/recenze',
+        component: resolve(__dirname, 'pages/cestovatel/_slug/recenze/recenze-index.vue')
+      })
+      routes.push({
+        name: 'user-follow',
+        path: '/cestovatel/:slug/sleduji',
+        component: resolve(__dirname, 'pages/cestovatel/_slug/sleduji/sleduji-index.vue')
+      })
     },
   },
 
