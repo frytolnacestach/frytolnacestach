@@ -9,7 +9,7 @@
                         <!-- SECTION - user headline - account -->
                         <section class="t-section -padding-x -p0" v-if="user[0]">
                             <div class="t-section__inner">
-                                <mUserHeader :user="staticUser" />
+                                <mUserHeader :user="staticUser" @update="menuUserUpdate" />
                             </div>
                         </section>
                         <!-- SECTION - user headline - account END -->
@@ -31,11 +31,13 @@
                         <!-- SECTION - user urls - account END -->
 
                         <!-- SECTION - ad-google - sidebar -->
+                        <!--
                         <section class="t-section -px-world my-2">
                             <div class="t-section__inner">
                                 <oAdGoogleSidebar />
                             </div>
                         </section>
+                        -->
                         <!-- SECTION - ad-google - sidebar - END -->
                     </div>
 
@@ -208,5 +210,11 @@
                 }
             });
         },
+
+        methods: {
+            menuUserUpdate(newValue) {
+                this.mNavUserOpen = newValue;
+            }
+        }
     }
 </script>

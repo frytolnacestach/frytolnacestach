@@ -11,5 +11,11 @@
     export default {
         name: 'CestovateleTest2IndexPage',
 
+        data() {
+            return {
+                mNavUserOpen: false
+            }
+        }
+
     }
 </script>

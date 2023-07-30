@@ -5,7 +5,7 @@
                 <div class="o-user-urls__outer">
                     <div class="o-user-urls__inner">
                         <div class="o-user-urls__items">
-                            <div class="o-user-urls__item" v-for="url in urls" :key="index">
+                            <div class="o-user-urls__item" v-for="url in urls" :key="url.url">
                                 <a class="o-user-urls__link" :href="url.url" :title="url.url">{{ url.url }}</a>
                             </div>
                         </div>
