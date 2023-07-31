@@ -74,7 +74,7 @@
                     'BR': 'America/Sao_Paulo',
                     'BS': 'America/Nassau',
                     'BT': 'Asia/Thimphu',
-                    'BV': 'Antarctica/Bouvet_Island',
+                    'BV': 'Europe/Oslo',//'BV': 'Antarctica/Bouvet_Island',
                     'BW': 'Africa/Gaborone',
                     'BY': 'Europe/Minsk',
                     'BZ': 'America/Belize',

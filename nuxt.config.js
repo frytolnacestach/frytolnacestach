@@ -837,14 +837,6 @@ export default {
         exclude: ['/**']
       },
       {
-        path: '/sitemap-places-continets.xml',
-        routes: async () => {
-          let { data } = await axios.get('https://api.frytolnacestach.cz/api/places-continents')
-          return data.map(v => `/svet/kontinent/${v.slug}`)
-        },
-        exclude: ['/**']
-      },
-      {
         path: '/sitemap-foods.xml',
         routes: async () => {
           let { data } = await axios.get('https://api.frytolnacestach.cz/api/foods')
@@ -909,6 +901,14 @@ export default {
         exclude: ['/**']
       },
       {
+        path: '/sitemap-places-continets.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://api.frytolnacestach.cz/api/places-continents')
+          return data.map(v => `/svet/kontinent/${v.slug}`)
+        },
+        exclude: ['/**']
+      },
+      {
         path: '/sitemap-places-stats.xml',
         routes: async () => {
           let { data } = await axios.get('https://api.frytolnacestach.cz/api/places-states')
@@ -921,14 +921,6 @@ export default {
         routes: async () => {
           let { data } = await axios.get('https://api.frytolnacestach.cz/api/places-regions')
           return data.map(v => `/svet/region/${v.slug}`)
-        },
-        exclude: ['/**']
-      },
-      {
-        path: '/sitemap-places-spots.xml',
-        routes: async () => {
-          let { data } = await axios.get('https://api.frytolnacestach.cz/api/places-spots')
-          return data.map(v => `/svet/misto/${v.slug}`)
         },
         exclude: ['/**']
       },
@@ -948,6 +940,14 @@ export default {
           }
       
           return routes
+        },
+        exclude: ['/**']
+      },
+      {
+        path: '/sitemap-places-spots.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://api.frytolnacestach.cz/api/places-spots')
+          return data.map(v => `/svet/misto/${v.slug}`)
         },
         exclude: ['/**']
       }
