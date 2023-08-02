@@ -1,17 +1,10 @@
 <template>
-    <div class="o-author-sidebar">
-        <div class="o-author-sidebar__outer">
-            <div class="o-author-sidebar__inner">
-                <h4 class="o-author-sidebar__headline">Autor</h4> 
-                <NuxtLink :to="`/cestovatel/${user[0].slug}`" class="o-author-sidebar__name" v-if="user[0]">{{ user[0].nickname }}</NuxtLink>
-            </div>
-        </div>
-    </div>
+    <i class="m-author">zdroj. <nuxtLink class="m-author__link" :to="`/cestovatel/${user[0].slug}`" v-if="user[0]">{{ user[0].nickname }}</nuxtLink></i>
 </template>
 
 <script>
     export default {
-        name: 'OrganismsoAutorSidebarComponent',
+        name: 'OrganismsmAutorComponent',
 
         props: {
             author: {
@@ -38,7 +31,7 @@
 
                     success = true
                 } catch (error) {
-                    console.log(`API ERROR - O AUTHOR SIDEBAR`);
+                    console.log(`API ERROR - M AUTHOR`);
                     console.error(error);
 
                     await new Promise(resolve => setTimeout(resolve, 1000))

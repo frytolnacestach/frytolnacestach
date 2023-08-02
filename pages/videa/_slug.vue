@@ -22,7 +22,7 @@
                                     <div class="o-information-block__perex">
                                         <div class="o-information-block_wysiwyg" v-html="video[0].perex"></div>
                                         <div class="o-information-block__author">
-                                            <i class="m-author">zdroj. <a class="m-author__link" href="#">Michal Fryč</a></i>
+                                            <mAuthor :author="video[0].id_user" />
                                         </div>
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@
             <div class="t-col2__sidebar my-2">
 
                 <!-- SECTION - author - sidebar -->
-                <section class="t-section -px-world my-2">
+                <section class="t-section -px-world mt-2">
                     <div class="t-section__inner">
                         <oAuthorSidebar :author="video[0].id_user"/>
                     </div>
@@ -89,7 +89,7 @@
 </template>
 
 <script>
-
+    import mAuthor from '~/components/molecules/mAuthor.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oAuthorSidebar from '~/components/organisms/oAuthorSidebar.vue'
@@ -101,6 +101,7 @@
         name: 'VideaSlugPage',
 
         components: {
+            mAuthor,
             mHeadline,
             oAdGoogleSidebar,
             oAuthorSidebar,

@@ -1,17 +1,24 @@
 .o-author-sidebar {
+
     &__outer {
 
     }
 
     &__inner {
+        background-color: $c-gray-bg-component-light-super;
+        border-radius: $br-2;
+        padding: 10px 15px;
 
+        @media only screen and (min-width: $ti) {
+            border-radius: $br-4;
+        }
     }
 
     &__headline {
-        
+        font-size: $fs-normal-ll;
     }
 
     &__name {
-        
+        font-size: $fs-normal-sss;
     }
 }
