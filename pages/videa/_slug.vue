@@ -46,7 +46,7 @@
             <div class="t-col2__sidebar my-2">
 
                 <!-- SECTION - author - sidebar -->
-                <section class="t-section -px-world mt-2">
+                <section class="t-section -px-world mt-2 -p0">
                     <div class="t-section__inner">
                         <oAuthorSidebar :author="video[0].id_user"/>
                     </div>

@@ -26,12 +26,22 @@
                             <input class="a-input -blue" type="text" id="nickname" v-model="nickname" required>
                         </div>
                         <div class="o-form-registration__item">
-                            <input class="a-input-checkbox" type="checkbox" id="terms" v-model="termsAccepted" required>
-                            <label class="m-label" for="terms">Souhlasím s <NuxtLink to="/conditions-user" target="_blank">Obchodními podmínkami</NuxtLink> (pro uživatelský účet):</label>
+                            <div class="m-input-checkbox -blue">
+                                <label class="m-input-checkbox__label">
+                                    <input class="m-input-checkbox__input" type="checkbox" id="terms" v-model="termsAccepted" required />
+                                    <span class="m-input-checkbox__checkbox"></span>
+                                    <span class="m-input-checkbox__text" for="terms">Souhlasím s <NuxtLink to="/conditions-user" target="_blank">Obchodními podmínkami</NuxtLink> (pro uživatelský účet)</span>
+                                </label>
+                            </div>
                         </div>
                         <div class="o-form-registration__item">
-                            <input class="a-input-checkbox" type="checkbox" id="agreement_mail" v-model="agreementMail">
-                            <label class="m-label" for="agreement_mail">Souhlasím se zasíláním marketingových emailů</label>
+                            <div class="m-input-checkbox -blue">
+                                <label class="m-input-checkbox__label">
+                                    <input class="m-input-checkbox__input" type="checkbox" id="agreement_mail" v-model="agreementMail" />
+                                    <span class="m-input-checkbox__checkbox"></span>
+                                    <span class="m-input-checkbox__text" for="agreement_mail">Souhlasím se zasíláním marketingových emailů</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="o-form-registration__buttons mt-1">

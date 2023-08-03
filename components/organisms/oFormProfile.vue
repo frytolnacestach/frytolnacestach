@@ -52,9 +52,12 @@
                                     <input class="a-input -blue" type="text" name="lastname" v-model="lastname" placeholder="Příjmení"/>
                                 </div>
 
-                                <div class="o-form-profile__item">
-                                    <input class="a-input-checkbox" type="checkbox" id="agreement_mail" v-model="agreementMail">
-                                    <label class="m-label" for="agreement_mail">Souhlasím se zasíláním marketingových emailů</label>
+                                <div class="m-input-checkbox -blue">
+                                    <label class="m-input-checkbox__label">
+                                        <input class="m-input-checkbox__input" type="checkbox" id="agreement_mail" v-model="agreementMail" />
+                                        <span class="m-input-checkbox__checkbox"></span>
+                                        <span class="m-input-checkbox__text" for="agreement_mail">Souhlasím se zasíláním marketingových emailů</span>
+                                    </label>
                                 </div>
 
                                 <div class="o-form-profile__group">
@@ -199,4 +202,3 @@ export default {
     }
 };
 </script>
-  

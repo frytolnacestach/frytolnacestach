@@ -1,0 +1,109 @@
+.m-input-checkbox {
+    $self: &;
+
+    position: relative;
+    display: inline-block;
+    
+    &__label {
+        display: flex;
+
+        &:hover {
+            #{$self}__checkbox {
+                border-color: $c-gray-bg-component-dark;
+            }
+        }
+    }
+
+    &__input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+        &:active + #{$self}__checkbox {
+            border-color: $red;
+        }
+
+        &:checked + #{$self}__checkbox:after {
+            content: "";
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            right: 2px;
+            bottom: 2px;
+            width: auto;
+            height: auto;
+            background-color: $c-gray-bg-component-dark-super;
+            border-radius: 4px;
+        }
+    }
+
+    &__checkbox {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+        border: 1px solid $c-gray-bg-component-light;
+        border-radius: $br-1;
+        background-color: $c-gray-bg-component-light-super;
+    }
+
+    &__text {
+        display: block;
+    }
+
+
+    // color
+    // blue
+    &.-blue {
+        #{$self}__label {
+            &:hover {
+                #{$self}__checkbox {
+                    border-color: $c-blue-bg-component-dark;
+                }
+            }
+        }
+
+        #{$self}__input {
+            &:checked + #{$self}__checkbox:after {
+                background-color: $c-blue-bg-component-dark-super;
+            }
+        }
+
+        #{$self}__checkbox {
+            border: 1px solid $c-blue-bg-component-light;
+            background-color: $c-blue-bg-component-light-super;
+        }
+
+        #{$self}__text {
+            color: $c-blue-t-dark-super;
+        }
+    }
+
+    // green
+    &.-green {
+        #{$self}__label {
+            &:hover {
+                #{$self}__checkbox {
+                    border-color: $c-green-bg-component-dark;
+                }
+            }
+        }
+
+        #{$self}__input {
+            &:checked + #{$self}__checkbox:after {
+                background-color: $c-green-bg-component-dark-super;
+            }
+        }
+
+        #{$self}__checkbox {
+            border: 1px solid $c-green-bg-component-light;
+            background-color: $c-green-bg-component-light-super;
+        }
+
+        #{$self}__text {
+            color: $c-green-t-dark-super;
+        }
+    }
+}
