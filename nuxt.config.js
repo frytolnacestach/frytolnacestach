@@ -7,7 +7,8 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     htmlAttrs: {
-      lang: 'cs'
+      lang: 'cs',
+      class: 'p-default'
     },
     title: 'Frytol na cestách',
     meta: [
@@ -972,6 +973,11 @@ export default {
         name: 'stat-slug-tab',
         path: '/svet/stat/:slug/:tab',
         component: resolve(__dirname, 'pages/svet/stat/_slug.vue')
+      })
+      routes.push({
+        name: 'user-follow',
+        path: '/cestovatel/:slug/navstivena-mista',
+        component: resolve(__dirname, 'pages/cestovatel/_slug/navstivena-mista/navstivena-mista-index.vue')
       })
       routes.push({
         name: 'user-review',

@@ -6,9 +6,7 @@
                 <div class="skeleton-m-account-header__outer">
                     <div class="skeleton-m-account-header__inner">
                         <div class="skeleton-m-account-header__image">
-                            <div class="skeleton-m-account-header__image-file loading-image -skeleton-dark-blue">
-
-                            </div>
+                            <div class="skeleton-m-account-header__image-file loading-image -skeleton-dark-blue"></div>
                         </div>
                         <div class="skeleton-m-account-header__text">
                             <span class="skeleton-m-account-header__nickname loading-image -skeleton-dark-blue"></span>
@@ -25,9 +23,7 @@
                 <div class="m-account-header__outer">
                     <div class="m-account-header__inner">
                         <div class="m-account-header__image">
-                            <div class="m-account-header__image-file">
-
-                            </div>
+                            <div class="m-account-header__image-file"></div>
                         </div>
                         <div class="m-account-header__text">
                             <span class="m-account-header__nickname">{{ nickname }}</span>

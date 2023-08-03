@@ -88,15 +88,15 @@
             }
         }
 
-        &.-flag {
+        &.-user {
             &::after {
-                content: map-get($icomoon-default, 'flag');
+                content: map-get($icomoon-default, 'user');
             }
         }
 
-        &.-calendar {
+        &.-flag {
             &::after {
-                content: map-get($icomoon-default, 'calendar');
+                content: map-get($icomoon-default, 'flag');
             }
         }
 
@@ -106,29 +106,6 @@
             }
         }
 
-        &.-key {
-            &::after {
-                content: map-get($icomoon-default, 'key');
-            }
-        }
-
-        &.-data {
-            &::after {
-                content: map-get($icomoon-default, 'data');
-            }
-        }
-
-        &.-trash {
-            &::after {
-                content: map-get($icomoon-default, 'trash');
-            }
-        }
-
-        &.-exit {
-            &::after {
-                content: map-get($icomoon-default, 'exit');
-            }
-        }
 
         &.-active {
             color: $c-blue-icon-dark;

@@ -7,7 +7,13 @@
                         <NuxtLink class="js_m-nav-user__link m-nav-user__link -setting" :to='"/cestovatel/" + $route.params.slug' exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil'}">Základní informace</NuxtLink>
                     </li>
                     <li class="m-nav-user__item">
+                        <NuxtLink class="js_m-nav-user__link m-nav-user__link -flag" :to='"/cestovatel/" + $route.params.slug + "/navstivena-mista"' exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/navstivena-mista'}">Navštívená místa</NuxtLink>
+                    </li>
+                    <li class="m-nav-user__item">
                         <NuxtLink class="js_m-nav-user__link m-nav-user__link -review" :to='"/cestovatel/" + $route.params.slug + "/recenze"' exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/recenze'}">Recenzoval jsem</NuxtLink>
+                    </li>
+                    <li class="m-nav-user__item">
+                        <NuxtLink class="js_m-nav-user__link m-nav-user__link -user" :to='"/cestovatel/" + $route.params.slug + "/sleduji"' exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/sleduji'}">Sleduji</NuxtLink>
                     </li>
                 </ul>
             </div>

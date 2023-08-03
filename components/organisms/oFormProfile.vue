@@ -5,7 +5,6 @@
             <div class="skeleton-o-form-profile">
                 <div class="skeleton-o-form-profile__outer">
                     <div class="skeleton-o-form-profile__inner">
-
                         <div class="skeleton-o-form-profile__form">
                             <div class="skeleton-o-form-profile__items">
                                 <div class="skeleton-o-form-profile__item">
@@ -23,7 +22,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

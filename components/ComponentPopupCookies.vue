@@ -1,9 +1,7 @@
 <template>
-
-    <!-- LOGOTYPE -->
+    <!-- Popup Cookies -->
     <oPopupCookies />
-    <!-- LOGOTYPE END -->
-
+    <!-- Popup Cookies END -->
 </template>
 
 <script>
