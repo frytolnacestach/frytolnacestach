@@ -35,7 +35,14 @@
                     </div>
 
                     <div class="t-col2__content mb-2">
-                       v přípravě
+                        <!-- SECTION -  -->
+                        <section class="t-section -padding-x -p0" v-if="user[0]">
+                            <div class="t-section__inner">
+                                <mHeadline title="Sleduji" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                v přípravě
+                            </div>
+                        </section>
+                        <!-- SECTION - END -->
                     </div>
                 </div>
             </div>
@@ -45,6 +52,7 @@
 </template>
 
 <script>
+    import mHeadline from '~/components/molecules/mHeadline.vue'
     import mUserHeader from '~/components/molecules/mUserHeader.vue'
     import mNavUser from '~/components/molecules/mNavUser.vue'
     import oUserUrls from '~/components/organisms/oUserUrls.vue'
@@ -53,6 +61,7 @@
         name: 'CestovateleTest2IndexPage',
 
         components: {
+            mHeadline,
             mUserHeader,
             mNavUser,
             oUserUrls

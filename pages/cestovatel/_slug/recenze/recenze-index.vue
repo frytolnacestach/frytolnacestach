@@ -7,9 +7,10 @@
                 <div class="t-col2">
                     <div class="t-col2__sidebar mb-2">
                         <!-- SECTION - user headline - account -->
-                        <section class="t-section -padding-x -p0" v-if="user[0]">
+                        <section class="t-section -padding-x -p0">
                             <div class="t-section__inner">
-                                <mUserHeader :user="staticUser" />
+                                <mUserHeader :user="staticUser" @update="menuUserUpdate" v-if="user[0]" />
+                                <mUserHeader :user="null" :skeleton=true v-if="!user[0]" />
                             </div>
                         </section>
                         <!-- SECTION - user headline - account END -->
