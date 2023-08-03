@@ -23,14 +23,6 @@
                         </section>
                         <!-- SECTION - nav - account END -->
 
-                        <!-- SECTION - user urls - account -->
-                        <section class="t-section -padding-x -p0" v-if="user[0]">
-                            <div class="t-section__inner">
-                                <oUserUrls :urls="user[0].urls" />
-                            </div>
-                        </section>
-                        <!-- SECTION - user urls - account END -->
-
                         <!-- SECTION - ad-google - sidebar -->
                         <!--
                         <section class="t-section -px-world my-2">
@@ -43,50 +35,14 @@
                     </div>
 
                     <div class="t-col2__content mb-2">
-                        <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4">
+                        <!-- SECTION - user urls - account -->
+                        <section class="t-section -padding-x -p0" v-if="user[0]">
                             <div class="t-section__inner">
-                                <mHeadline title="Kontinety které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesContinentsID" type="kontinent" account="other" />
+                                <mHeadline title="Tady mě najdeš" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                <oUserUrls :urls="user[0].urls" />
                             </div>
                         </section>
-                        <!-- SECTION - Visited place category END -->
-
-                        <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4">
-                            <div class="t-section__inner">
-                                <mHeadline title="Státy které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesStatesID" type="stat" account="other" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Visited place category END -->
-
-                        <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4">
-                            <div class="t-section__inner">
-                                <mHeadline title="Města které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesCitiesID" type="mesto" account="other" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Visited place category END -->
-
-                        <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4">
-                            <div class="t-section__inner">
-                                <mHeadline title="Regiony které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesRegionsID" type="region" account="other" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Visited place category END -->
-
-                        <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4">
-                            <div class="t-section__inner">
-                                <mHeadline title="Místa které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesSpotsID" type="misto" account="other" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Visited place category END -->
+                        <!-- SECTION - user urls - account END -->
                     </div>
                 </div>
             </div>
@@ -100,7 +56,6 @@
     import mUserHeader from '~/components/molecules/mUserHeader.vue'
     import mNavUser from '~/components/molecules/mNavUser.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oCoverPlaceVisited from '~/components/organisms/oCoverPlaceVisited.vue'
     import oUserUrls from '~/components/organisms/oUserUrls.vue'
 
     export default {
@@ -111,7 +66,6 @@
             mUserHeader,
             mNavUser,
             oAdGoogleSidebar,
-            oCoverPlaceVisited,
             oUserUrls
         },
 

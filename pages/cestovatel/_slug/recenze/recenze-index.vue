@@ -22,20 +22,14 @@
                         </section>
                         <!-- SECTION - nav - account END -->
 
-                        <!-- SECTION - user urls - account -->
-                        <section class="t-section -padding-x -p0" v-if="user[0]">
-                            <div class="t-section__inner">
-                                <oUserUrls :urls="user[0].urls" />
-                            </div>
-                        </section>
-                        <!-- SECTION - user urls - account END -->
-
                         <!-- SECTION - ad-google - sidebar -->
+                        <!--
                         <section class="t-section -px-world my-2">
                             <div class="t-section__inner">
                                 <oAdGoogleSidebar />
                             </div>
                         </section>
+                        -->
                         <!-- SECTION - ad-google - sidebar - END -->
                     </div>
 
