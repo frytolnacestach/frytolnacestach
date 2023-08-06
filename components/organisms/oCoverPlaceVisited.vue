@@ -88,6 +88,7 @@
                                 <NuxtLink class="o-cover-place-visited__link" :to="`/svet/${type}/${place.slug}`" :aria-label="`Čti více o místě ${place.name}`"></NuxtLink>
                             </div>
                         </div>
+                        <mButtonPlaceAdd type="next" v-if="account === 'login'" />
                     </div>
                 </div>
             </div>
@@ -100,13 +101,23 @@
                 Nemáš tu žádné místo. Co takhle projít <nuxt-link to="/svet">svět</nuxt-link> a přidat sem místa?
             </p>
         </client-only>
+        <mButtonPlaceAdd type="first" v-if="account === 'login'" />
+        <oFormPlaceVisitedAdd v-if="account === 'login'" />
     </div>
 </template>
 
 
 <script>
+    import mButtonPlaceAdd from '~/components/molecules/mButtonPlaceAdd.vue'
+    import oFormPlaceVisitedAdd from '~/components/organisms/oFormPlaceVisitedAdd.vue';
+
     export default {
         name: 'OrganismsoCoverPlaceComponent',
+
+        components: {
+            mButtonPlaceAdd,
+            oFormPlaceVisitedAdd
+        },
 
         props: {
             loadingNecessaryData: {
