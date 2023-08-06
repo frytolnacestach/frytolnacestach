@@ -9,28 +9,20 @@
         </section>
         <!-- SECTION - BREADCRUMBS END -->
 
-        <!-- SECTION - hero + hot info hero -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -food-hero">
-
-                    <!-- SECTION - hero -->
-                    <div class="t-grid__section -hero-food">
-                        <oHeroItemDetail :item="travelDictionary" :images="imageTravelDictionary" />
-                    </div>
-                    <!-- SECTION - hero END -->
-                    
-                </div>
-            </div>
-        </section>
-        <!-- SECTION - hero + hot info - END -->
-
         <!-- SECTION -->
         <section class="t-section -px-world -p0">
             <div class="t-section__inner">
                 <div class="t-grid -world-content-with-ad">
                     
                     <div class="t-grid__section -content">
+                        <!-- SECTION - hero -->
+                        <section class="t-section">
+                            <div class="t-section__inner">
+                                <oHeroItemDetail :item="travelDictionary" :images="imageTravelDictionary" />
+                            </div>
+                        </section>
+                        <!-- SECTION - hero END -->
+
                         <!-- SECTION - information by ChatGPT -->
                         <section class="t-section" v-if="travelDictionary[0].description">
                             <div class="t-section__inner">
@@ -42,6 +34,10 @@
 
 
                     <div class="t-grid__section -ad">
+                        <!-- SECTION - Events - sidebar -->
+                        <oSidebarListTravelDictionary :IDTravelDictionary="this.travelDictionary[0].id" />
+                        <!-- SECTION - Events - sidebar - END -->
+
                         <!-- SECTION - ad-google - sidebar -->
                         <section class="t-section -px-world my-2">
                             <div class="t-section__inner">
@@ -63,6 +59,7 @@
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
+    import oSidebarListTravelDictionary from '~/components/organisms/oSidebarListTravelDictionary.vue'
 
     export default {
         name: 'CestovatelskySlovnikSlugPage',
@@ -72,6 +69,7 @@
             oAdGoogleSidebar,
             oHeroItemDetail,
             oInformationBlock,
+            oSidebarListTravelDictionary
         },
 
         data() {
