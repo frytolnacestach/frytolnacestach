@@ -102,7 +102,7 @@
             </p>
         </client-only>
         <mButtonPlaceAdd type="first" v-if="account === 'login' && places && Array.isArray(places) && places.length === 0" @add-place-clicked="showAddPlaceForm" />
-        <oFormPlaceVisitedAdd :type="type" :visitedPlace="places" v-if="showPlaceForm &&account === 'login'" />
+        <oFormPlaceVisitedAdd :type="type" :visitedPlace="places" v-if="showPlaceForm && account === 'login'" @add-place="showAddNewPlaceForm" />
     </div>
 </template>
 
@@ -141,8 +141,10 @@
         data() {
             return {
                 places: null,
+                newPlace: null,
                 images: null,
-                showPlaceForm: false
+                showPlaceForm: false,
+                newPlaceID: null
             }
         },
 
@@ -190,8 +192,41 @@
                 }
             },
 
+            async loadNewPlace() {
+                try {
+                    let newPlace = []
+
+                    if (this.type === "kontinent") {
+                        newPlace = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents-array?showType=list&id=${this.newPlaceID}`) : []
+                    } else if (this.type === "stat") {
+                        newPlace = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${this.newPlaceID}`) : []
+                    } else if (this.type === "mesto") {
+                        newPlace = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-array?showType=list&id=${this.newPlaceID}`) : []
+                    } else if (this.type === "region") {
+                        newPlace = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions-array?showType=list&id=${this.newPlaceID}`) : []
+                    } else if (this.type === "misto") {
+                        newPlace = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots-array?showType=list&id=${this.newPlaceID}`) : []
+                    }
+
+                    const imagesPlacesID = newPlace.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
+                    const newImage = imagesPlacesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesID.join(',')}`) : []
+
+                    this.places = [...this.places, ...newPlace];
+                    this.images = [...this.images, ...newImage];
+                } catch (error) {
+                    console.log(`API ERROR - VYPIS NOVÉHO NAVŠTÍVENÉHO MÍSTA`)
+                    console.error(error)
+                }
+            },
+
             showAddPlaceForm() {
-                this.showPlaceForm = true;
+                this.showPlaceForm = true
+            },
+
+            showAddNewPlaceForm(id) {
+                this.newPlaceID = id
+
+                this.loadNewPlace()
             }
         }
     }

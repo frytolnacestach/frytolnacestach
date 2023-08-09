@@ -111,6 +111,7 @@
                                 console.log("Místo bylo přidáno mezi navštívené");
                                 this.successForm = "Místo bylo přidáno mezi navštívené";
                                 this.searchQuery = ''
+                                this.emitAddNewPlaceEvent(this.placeID)
                             } else if (response.status === 200) {
                                 console.log("Záznam odebrán");
                                 this.successForm = "Záznam odebrán";
@@ -166,6 +167,10 @@
 
             hasVisited(id) {
                 return this.visitedPlace.some(place => place.id === id);
+            },
+
+            emitAddNewPlaceEvent(placeID) {
+                this.$emit('add-place', placeID);
             }
         },
 
