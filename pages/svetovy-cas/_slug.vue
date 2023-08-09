@@ -36,12 +36,6 @@
                     </div>
                     <!-- SECTION - map - END -->
 
-                    <!-- SECTION - hot info -->
-                    <div class="t-grid__section -hot-info-hero">
-                        <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
-                    </div>
-                    <!-- SECTION - hot info - END -->
-
                 </div>
             </div>
         </section>

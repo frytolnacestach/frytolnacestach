@@ -1,39 +1,56 @@
 .o-time {
+
     &__outer {
         width: 100%;
         background-color: $c-green-bg-component-light-super;
-        border-radius: $br-1;
+        border-radius: $br-2;
 
         @media only screen and (min-width: $ti) {
-            border-radius: $br-2;
+            border-radius: $br-4;
         }
     }
 
     &__inner {
         width: 100%;
-        padding: 10px;
+        padding: 30px 15px;
         text-align: center;
+
+        @media only screen and (min-width: $sm) {
+            padding: 50px 25px;
+        }
     }
 
     &__headline {
         display: block;
         width: 100%;
         color: $c-green-t-dark-super;
-        font-size: $fs-small-ssss;
+        font-size: $fs-large-l;
+
+        @media only screen and (min-width: $sm) {
+            font-size: $fs-40;
+        }
     }
 
     &__time {
         display: block;
         width: 100%;
         color: $c-green-t-dark-super;
-        font-size: $fs-normal-llll;
+        font-size: $fs-80;
         font-weight: 700;
+
+        @media only screen and (min-width: $sm) {
+            font-size: $fs-120;
+        }
     }
 
     &__date {
         display: block;
         width: 100%;
         color: $c-green-t-dark-super;
-        font-size: $fs-small-l;
+        font-size: $fs-large-s;
+
+        @media only screen and (min-width: $sm) {
+            font-size: $fs-large-lll;
+        }
     }
 }
