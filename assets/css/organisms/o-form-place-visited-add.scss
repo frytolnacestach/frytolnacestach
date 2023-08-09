@@ -1,3 +1,29 @@
 .o-form-place-visited-add {
-    
+    width: 100%;
+    margin: 5px 0;
+    border-radius: $br-2;
+    background-color: $c-blue-bg-component-light;
+
+    &__input {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__result {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__condition {
+        display: flex;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+        justify-content: flex-end;
+        opacity: .7;
+        margin-top: 3px;
+        padding-right: 5px;
+        font-size: $fs-small-ssss;
+        height: 16px;
+    }
 }

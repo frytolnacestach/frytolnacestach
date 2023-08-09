@@ -1,4 +1,6 @@
 .m-search-result {
+    $self: &;
+
     width: 100%;
     max-width: 420px;
     max-height: 40vh;
@@ -11,7 +13,7 @@
         padding: 10px 5px;
         overflow: scroll;
         max-height: 40vh;
-        background-color: $brand2-a-3;
+        background-color: $c-gray-bg-component-light-super;
     }
 
     &__item {
@@ -25,12 +27,13 @@
             left: 0;
             right: 0;
             height: 1px;
-            background-color: $brand2-a;
+            background-color: $c-gray-bg-component-dark;
         }
     }
 
     &__link {
-        color: $black;
+        cursor: pointer;
+        color: $c-gray-t-dark-super;
         text-decoration: none;
         width: 100%;
         display: block;
@@ -38,8 +41,7 @@
         font-size: $fs-normal-sss;
 
         &:hover {
-            color: $brand1;
-            background-color: $brand1-a-3;
+            background-color: $c-gray-bg-component-light;
         }
     }
 
@@ -54,6 +56,12 @@
         font-size: $fs-small-ssss;
     }
 
+    &__visited {
+        width: 100%;
+        color: $gray1;
+        font-size: $fs-small-ssss;
+    }
+
     &__no-result {
         color: $red;
         text-align: right;
@@ -61,5 +69,70 @@
         padding: 3px 5px 0;
         display: block;
         font-size: $fs-small-l;
+    }
+
+    // color
+    &.-gray {
+        #{$self}__items {
+            background-color: $c-gray-bg-component-light-super;
+        }
+    
+        #{$self}__item {
+    
+            &:after {
+                background-color: $c-gray-bg-component-dark;
+            }
+        }
+    
+        #{$self}__link {
+            color: $c-gray-t-dark-super;
+
+            &:hover {
+                background-color: $c-gray-bg-component-light;
+            }
+        }
+    }
+
+    &.-blue {
+        #{$self}__items {
+            background-color: $c-blue-bg-component-light-super;
+        }
+    
+        #{$self}__item {
+            color: $black;
+
+            &:after {
+                background-color: $c-blue-bg-component-dark;
+            }
+        }
+    
+        #{$self}__link {
+            color: $c-gray-t-dark-super;
+            
+            &:hover {
+                background-color: $c-blue-bg-component-light;
+            }
+        }
+    }
+
+    &.-green {
+        #{$self}__items {
+            background-color: $c-green-bg-component-light-super;
+        }
+    
+        #{$self}__item {
+    
+            &:after {
+                background-color: $c-green-bg-component-dark;
+            }
+        }
+    
+        #{$self}__link {
+            color: $c-gray-t-dark-super;
+
+            &:hover {
+                background-color: $c-green-bg-component-light;
+            }
+        }
     }
 }

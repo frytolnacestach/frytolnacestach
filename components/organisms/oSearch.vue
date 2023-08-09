@@ -1,11 +1,11 @@
 <template>
     <div class="o-search" role="search">
         <div class="o-search__input">
-            <input class="a-input-search" type="text" v-model="searchQuery" @input="filterPlaces" placeholder="Které místo tě zajímá?">
+            <input class="a-input-search -green" type="text" v-model="searchQuery" @input="filterPlaces" placeholder="Které místo tě zajímá?">
         </div>
         <span class="o-search__condition" v-if="searchQuery.length < 3">Napiš alepoň 3 znaky</span>
         <div class="o-search__result">
-            <div class="m-search-result">
+            <div class="m-search-result -green">
                 <ul class="m-search-result__items" v-if="filteredPlaces.length > 0">
                     <li v-for="placesSearch in filteredPlaces" :key="`${placesSearch.type_place}-${placesSearch.id}`" class="m-search-result__item">
                         <NuxtLink class="m-search-result__link" :to="`/svet/kontinent/${placesSearch.slug}`" v-if="placesSearch.type_place === 'continent'">

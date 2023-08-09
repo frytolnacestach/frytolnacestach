@@ -1,5 +1,5 @@
 <template>
-    <div class="m-button-place-add" :class="{'-first': type === 'first'}">
+    <div class="m-button-place-add" :class="{'-first': type === 'first'}" @click="emitAddPlaceEvent">
         <div class="m-button-place-add__content">
             <div class="m-button-place-add__box">
                 <span class="m-button-place-add__text" v-if="type === 'first'">Přidat první místo</span>
@@ -17,6 +17,12 @@
             type: {
                 type: String,
                 required: true
+            }
+        },
+
+        methods: {
+            emitAddPlaceEvent() {
+                this.$emit('add-place-clicked');
             }
         }
     }

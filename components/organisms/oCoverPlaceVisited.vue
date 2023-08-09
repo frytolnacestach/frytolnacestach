@@ -88,7 +88,7 @@
                                 <NuxtLink class="o-cover-place-visited__link" :to="`/svet/${type}/${place.slug}`" :aria-label="`Čti více o místě ${place.name}`"></NuxtLink>
                             </div>
                         </div>
-                        <mButtonPlaceAdd type="next" v-if="account === 'login'" />
+                        <mButtonPlaceAdd type="next" v-if="account === 'login' && places && Array.isArray(places) && places.length !== 0" @add-place-clicked="showAddPlaceForm" />
                     </div>
                 </div>
             </div>
@@ -101,8 +101,8 @@
                 Nemáš tu žádné místo. Co takhle projít <nuxt-link to="/svet">svět</nuxt-link> a přidat sem místa?
             </p>
         </client-only>
-        <mButtonPlaceAdd type="first" v-if="account === 'login'" />
-        <oFormPlaceVisitedAdd v-if="account === 'login'" />
+        <mButtonPlaceAdd type="first" v-if="account === 'login' && places && Array.isArray(places) && places.length === 0" @add-place-clicked="showAddPlaceForm" />
+        <oFormPlaceVisitedAdd :type="type" :visitedPlace="places" v-if="showPlaceForm &&account === 'login'" />
     </div>
 </template>
 
@@ -141,7 +141,8 @@
         data() {
             return {
                 places: null,
-                images: null
+                images: null,
+                showPlaceForm: false
             }
         },
 
@@ -187,6 +188,10 @@
                     console.log(`API ERROR - VYPIS NAVŠTÍVIL JSEM/CHCI NAVŠTÍVIT`)
                     console.error(error)
                 }
+            },
+
+            showAddPlaceForm() {
+                this.showPlaceForm = true;
             }
         }
     }

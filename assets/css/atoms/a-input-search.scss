@@ -16,4 +16,20 @@
     &::placeholder {
         color: $gray10;
     }
+
+    // color
+    &.-gray {
+        border: 1px solid $c-gray-bg-component-light;
+        background-color: $c-gray-bg-component-light-super;
+    }
+
+    &.-blue {
+        border: 1px solid $c-blue-bg-component-light;
+        background-color: $c-blue-bg-component-light-super;
+    }
+
+    &.-green {
+        border: 1px solid $c-green-bg-component-light;
+        background-color: $c-green-bg-component-light-super;
+    }
 }
