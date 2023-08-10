@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/cestovatel/pandina/navstivena-mista", (function(a){return {data:[{staticUser:[{id:2,nickname:"Pandina",slug:"pandina",surname:a,lastname:a,status:3,urls:a}]}],fetch:{},mutations:void 0}}(null)));
