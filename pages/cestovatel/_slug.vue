@@ -15,6 +15,14 @@
                         </section>
                         <!-- SECTION - user headline - account END -->
 
+                        <!-- SECTION - Follower button - sidebar -->
+                        <section class="t-section -px-world">
+                            <div class="t-section__inner">
+                                <oFollowerButton :user="user[0].id" v-if="user[0]" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Follower button - sidebar - END -->
+
                         <!-- SECTION - nav - account -->
                         <section class="t-section -padding-x -p0">
                             <div class="t-section__inner">
@@ -56,6 +64,7 @@
     import mUserHeader from '~/components/molecules/mUserHeader.vue'
     import mNavUser from '~/components/molecules/mNavUser.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
+    import oFollowerButton from '~/components/organisms/oFollowerButton.vue'
     import oUserUrls from '~/components/organisms/oUserUrls.vue'
 
     export default {
@@ -66,6 +75,7 @@
             mUserHeader,
             mNavUser,
             oAdGoogleSidebar,
+            oFollowerButton,
             oUserUrls
         },
 

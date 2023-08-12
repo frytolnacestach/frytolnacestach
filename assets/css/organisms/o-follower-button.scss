@@ -1,0 +1,65 @@
+.o-follower-button {
+    width: 100%;
+    margin: 5px 0;
+
+    &__outer {
+        width: 100%;
+    }
+
+    &__inner {
+        width: 100%;
+    }
+
+    &__items {
+        width: 100%;
+    }
+
+    &__item {
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    &__button {
+        @include transition(color, .3s);
+        @include transition(background-color, .3s);
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        padding: 13px 15px 13px 55px;
+        background-color: $c-blue-bg-component-light-super;
+        border-radius: $br-2;
+        height: 52px;
+        line-height: 26px;
+        color: $c-blue-icon;
+
+        &::after {
+            content: '';
+            font-family: $ff-icomoon-default;
+            width: 36px;
+            height: 36px;
+            line-height: 1;
+            font-size: $fs-icon-24;
+            position: absolute;
+            left: 15px;
+            top: 8px;
+            padding: 6px;
+            content: map-get($icomoon-default, 'user-plus');
+        }
+
+        &.-active {
+            background-color: $c-blue-bg-component-dark;
+            color: $white;
+        }
+
+        &:hover {
+            background-color: $c-blue-bg-component-dark-super;
+            color: $white;
+
+            &.-active {
+                background-color: $c-blue-bg-component-dark-super;
+                color: $white;
+            }
+        }
+    }
+}

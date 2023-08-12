@@ -1,18 +1,15 @@
 <template>
-    <div class="o-visited-button">
+    <div class="o-follower-button">
         <!-- SECTION - FlashMassages -->
         <oFlashMessages :text="errorForm" styleThema=" -error" />
         <oFlashMessages :text="successForm" styleThema=" -success" />
         <!-- SECTION - FlashMassages END -->
 
-        <div class="o-visited-button__outer">
-            <div class="o-visited-button__inner">
-                <div class="o-visited-button__items">
-                    <div class="o-visited-button__item">
-                        <span class="o-visited-button__button -future" :class="{ '-active': status === 2 }" @click="editVisited(2)" >Chci navštívit</span>
-                    </div>
-                    <div class="o-visited-button__item">
-                        <span class="o-visited-button__button -visited" :class="{ '-active': status === 1 }" @click="editVisited(1)">Navštívil(a) jsem</span>
+        <div class="o-follower-button__outer">
+            <div class="o-follower-button__inner">
+                <div class="o-follower-button__items">
+                    <div class="o-follower-button__item">
+                        <span class="o-follower-button__button" :class="{ '-active': status === 1 }" @click="editFollower(1)">{{ status === 1 ? 'Sledovat' : 'Sleduji' }}</span>
                     </div>
                 </div>
             </div>
@@ -24,7 +21,7 @@
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
 
     export default {
-        name: 'OrganismsoVisitedButtonComponent',
+        name: 'OrganismsoFollowerButtonComponent',
 
         components: {
             oFlashMessages
@@ -41,21 +38,17 @@
         },
 
         props: {
-            place: {
+            user: {
                 type: Number,
-                required: true
-            },
-            placeType: {
-                type: String,
                 required: true
             }
         },
 
         methods: {
 
-            async visited() {
+            async follower() {
                 try {
-                    const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}&id_place=${encodeURIComponent(this.place)}&type=${this.placeType}`, {
+                    const response = await fetch(`https://api.frytolnacestach.cz/api/user-follower-id-follower?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}&id_follower=${encodeURIComponent(this.user)}`, {
                         headers: {
                             "Content-Type": "application/json",
                             "Access-Control-Allow-Origin": "http://localhost:3000",
@@ -86,11 +79,11 @@
                 }
             },
 
-            async editVisited(newStatus) {
+            async editFollower(newStatus) {
                 try {
                     this.status = newStatus;
                     try {
-                        const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-edit`, {
+                        const response = await fetch(`https://api.frytolnacestach.cz/api/user-follower-edit`, {
                             headers: {
                                 "Content-Type": "application/json",
                                 "Access-Control-Allow-Origin": "http://localhost:3000",
@@ -101,8 +94,7 @@
                             body: JSON.stringify({
                                 'email': this.email,
                                 'password_hash': this.passwordHash,
-                                'id_place': this.place,
-                                'type': this.placeType,
+                                'id_follower': this.user,
                                 'status': this.status
                             })
                         });
@@ -145,7 +137,7 @@
                 this.passwordHash = localStoragePasswordHash;
             }
 
-            this.visited();
+            this.follower();
         }
     }
 </script>
