@@ -8,10 +8,34 @@
     &__item {
         width: 100%;
 
+        &.-info-gray {
+            border: 2px solid $grayBORDER;
+            color: $grayTEXT;
+            background-color: $grayBG;
+        }
+
+        &.-info-blue {
+            border: 2px solid $blueBORDER;
+            color: $blueTEXT;
+            background-color: $blueBG;
+        }
+
         &.-success {
             border: 2px solid $greenBORDER;
             color: $greenTEXT;
             background-color: $greenBG;
+        }
+
+        &.-warning-yellow {
+            border: 2px solid $yellowBORDER;
+            color: $yellowTEXT;
+            background-color: $yellowBG;
+        }
+
+        &.-warning-orange {
+            border: 2px solid $orangeBORDER;
+            color: $orangeTEXT;
+            background-color: $orangeBG;
         }
 
         &.-error {
