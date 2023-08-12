@@ -1,5 +1,5 @@
 <template>
-    <div class="o-form-place-visited-add py-4" role="search">
+    <div class="o-form-place-visited-add" role="search">
         <!-- SECTION - FlashMassages -->
         <oFlashMessages :text="errorForm" styleThema=" -error" />
         <oFlashMessages :text="successForm" styleThema=" -success" />

@@ -1,8 +1,13 @@
 .o-form-place-visited-add {
     width: 100%;
     margin: 5px 0;
+    padding: 20px 15px;
     border-radius: $br-2;
     background-color: $c-blue-bg-component-light;
+
+    @media only screen and (min-width: $sm) {
+        padding: 40px 20px;
+    }
 
     &__input {
         display: flex;

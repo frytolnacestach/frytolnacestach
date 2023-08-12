@@ -5,9 +5,13 @@
     padding: 4px 15px;
     line-height: 40px;
     border-radius: 10px;
-    font-size: $fs-normal-ll;
+    font-size: $fs-normal-sss;
     border: 1px solid $c-green-bg-component-light;
     background-color: $c-green-bg-component-light-super;
+
+    @media only screen and (min-width: $sm) {
+        font-size: $fs-normal-ll;
+    }
 
     &:focus{
         outline: none;
