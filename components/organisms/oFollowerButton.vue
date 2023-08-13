@@ -62,6 +62,7 @@
                         console.log("Záznam načten");
                         const data = await response.json();
                         this.status = data.message[0].status
+                        //this.successForm = "Záznam načten";
                     } else if (response.status === 404) {
                         console.log("Uživatel neexistuje");
                         //this.errorForm = "Uživatel neexistuje";

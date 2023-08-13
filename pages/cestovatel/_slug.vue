@@ -18,7 +18,7 @@
                         <!-- SECTION - Follower button - sidebar -->
                         <section class="t-section -px-world">
                             <div class="t-section__inner">
-                                <oFollowerButton :user="user[0].id" v-if="user[0]" />
+                                <oFollowerButton :user="user[0].id" v-if="user[0] && user[0].email !== email" />
                             </div>
                         </section>
                         <!-- SECTION - Follower button - sidebar - END -->
@@ -83,6 +83,7 @@
             return {
                 staticUser: this.staticUser,
                 user: '',
+                email: '',
                 placesContinentsID: [],
                 placesStatesID: [],
                 placesCitiesID: [],
@@ -174,6 +175,13 @@
                 Object.assign(this, data);
                 }
             });
+
+            // local storage
+            if (process.client) {
+                const localStorageEmail = localStorage.getItem('email')
+
+                this.email = localStorageEmail;
+            }
         },
 
         methods: {
