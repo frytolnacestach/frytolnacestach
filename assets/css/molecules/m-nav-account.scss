@@ -106,6 +106,12 @@
             }
         }
 
+        &.-user {
+            &::after {
+                content: map-get($icomoon-default, 'user');
+            }
+        }
+
         &.-key {
             &::after {
                 content: map-get($icomoon-default, 'key');

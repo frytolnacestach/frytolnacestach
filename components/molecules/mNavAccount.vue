@@ -13,6 +13,9 @@
                         <NuxtLink class="js_m-nav-account__link m-nav-account__link -calendar" to="/ucet/profil/chci-navstivit" exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/chci-navstivit'}">Chci navštívit</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">
+                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -user" to="/ucet/profil/sleduji" exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/sleduji'}">Sleduji</NuxtLink>
+                    </li>
+                    <li class="m-nav-account__item">
                         <NuxtLink class="js_m-nav-account__link m-nav-account__link -review" to="/ucet/profil/recenze" exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/recenze'}">Recenzoval jsem</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">

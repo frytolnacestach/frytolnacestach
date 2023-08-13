@@ -78,7 +78,7 @@
 
 <script>
     export default {
-        name: 'OrganismsoCoverItemComponent',
+        name: 'OrganismsoUserListComponent',
 
         props: {
             items: {

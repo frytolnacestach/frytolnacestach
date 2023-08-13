@@ -39,7 +39,7 @@
                         <section class="t-section -padding-x -p0" v-if="user[0]">
                             <div class="t-section__inner">
                                 <mHeadline title="Sleduji" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                v přípravě
+                                <oFollowerList type="user" :idUser="user[0].id" />
                             </div>
                         </section>
                         <!-- SECTION - END -->
@@ -55,6 +55,7 @@
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import mUserHeader from '~/components/molecules/mUserHeader.vue'
     import mNavUser from '~/components/molecules/mNavUser.vue'
+    import oFollowerList from '~/components/organisms/oFollowerList.vue'
     import oUserUrls from '~/components/organisms/oUserUrls.vue'
 
     export default {
@@ -64,6 +65,7 @@
             mHeadline,
             mUserHeader,
             mNavUser,
+            oFollowerList,
             oUserUrls
         },
 
