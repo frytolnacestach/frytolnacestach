@@ -9,7 +9,7 @@
             <div class="o-follower-button__inner">
                 <div class="o-follower-button__items">
                     <div class="o-follower-button__item">
-                        <span class="o-follower-button__button" :class="{ '-active': status === 1 }" @click="editFollower(1)">{{ status === 1 ? 'Sledovat' : 'Sleduji' }}</span>
+                        <span class="o-follower-button__button" :class="{ '-active': status === 1 }" @click="editFollower(1)">{{ status === 1 ? 'Sleduji' : 'Sledovat' }}</span>
                     </div>
                 </div>
             </div>
