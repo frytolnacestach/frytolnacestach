@@ -75,7 +75,7 @@
                 </div>
             </div>
         </div>
-        <client-only v-if="users !== [] || users !== null">
+        <client-only v-if="users === [] || users === null">
             <p v-if="type==='account'">
                 Zatím nikoho nesleduješ
             </p>
