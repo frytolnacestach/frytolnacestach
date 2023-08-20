@@ -1,85 +1,84 @@
 <template>
-    <div>
-        <div class="o-achievements">
-            <div class="o-achievements__outer">
-                <div class="o-achievements__inner">
-                    <div class="o-achievements__items">
-                        <div class="o-achievements__item -type-world -value-bronze">
-                            <div class="o-achievements__content">
-                                <div class="o-achievements__medal"></div>
-                                <div class="o-achievements__text">
-                                    <h2 class="o-achievements__name">Světový cestovatel (Bronzový)</h2>
-                                    <p class="o-achievements__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                                </div>
-                                <div class="o-achievements__progress">
-                                    <span class="o-achievements__progress-number"><span class="o-achievements__progress-number-actual">10</span>/<span class="o-achievements__progress-number-need">10</span></span>
-                                    <div class="o-achievements__progress-line">
-                                        <div class="o-achievements__progress-line-full" style="width: 100%"></div>
-                                    </div>
+    <div class="o-achievements">
+        <div class="o-achievements__outer">
+            <div class="o-achievements__inner">
+                <div class="o-achievements__items">
+                    
+                    <div class="o-achievements__item -type-world -value-bronze">
+                        <div class="o-achievements__content">
+                            <div class="o-achievements__medal"></div>
+                            <div class="o-achievements__text">
+                                <h2 class="o-achievements__name">Světový cestovatel (Bronzový)</h2>
+                                <p class="o-achievements__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                            <div class="o-achievements__progress">
+                                <span class="o-achievements__progress-number"><span class="o-achievements__progress-number-actual">10</span>/<span class="o-achievements__progress-number-need">10</span></span>
+                                <div class="o-achievements__progress-line">
+                                    <div class="o-achievements__progress-line-full" style="width: 100%"></div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="o-achievements__item -type-world -value-silver">
-                            <div class="o-achievements__content">
-                                <div class="o-achievements__medal"></div>
-                                <div class="o-achievements__text">
-                                    <h2 class="o-achievements__name">Světový cestovatel (Stříbrný)</h2>
-                                    <p class="o-achievements__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                                </div>
-                                <div class="o-achievements__progress">
-                                    <span class="o-achievements__progress-number"><span class="o-achievements__progress-number-actual">16</span>/<span class="o-achievements__progress-number-need">25</span></span>
-                                    <div class="o-achievements__progress-line">
-                                        <div class="o-achievements__progress-line-full" style="width: 64%"></div>
-                                    </div>
+                    <div class="o-achievements__item -type-world -value-silver">
+                        <div class="o-achievements__content">
+                            <div class="o-achievements__medal"></div>
+                            <div class="o-achievements__text">
+                                <h2 class="o-achievements__name">Světový cestovatel (Stříbrný)</h2>
+                                <p class="o-achievements__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                            <div class="o-achievements__progress">
+                                <span class="o-achievements__progress-number"><span class="o-achievements__progress-number-actual">16</span>/<span class="o-achievements__progress-number-need">25</span></span>
+                                <div class="o-achievements__progress-line">
+                                    <div class="o-achievements__progress-line-full" style="width: 64%"></div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="o-achievements__item -type-world -value-gold">
-                            <div class="o-achievements__content">
-                                <div class="o-achievements__medal"></div>
-                                <div class="o-achievements__text">
-                                    <h2 class="o-achievements__name">Světový cestovatel (Zlatý)</h2>
-                                    <p class="o-achievements__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                                </div>
-                                <div class="o-achievements__progress">
-                                    <span class="o-achievements__progress-number"><span class="o-achievements__progress-number-actual">16</span>/<span class="o-achievements__progress-number-need">125</span></span>
-                                    <div class="o-achievements__progress-line">
-                                        <div class="o-achievements__progress-line-full" style="width: 12.8%"></div>
-                                    </div>
+                    <div class="o-achievements__item -type-world -value-gold">
+                        <div class="o-achievements__content">
+                            <div class="o-achievements__medal"></div>
+                            <div class="o-achievements__text">
+                                <h2 class="o-achievements__name">Světový cestovatel (Zlatý)</h2>
+                                <p class="o-achievements__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                            <div class="o-achievements__progress">
+                                <span class="o-achievements__progress-number"><span class="o-achievements__progress-number-actual">16</span>/<span class="o-achievements__progress-number-need">125</span></span>
+                                <div class="o-achievements__progress-line">
+                                    <div class="o-achievements__progress-line-full" style="width: 12.8%"></div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="o-achievements__item -type-world -value-diamond">
-                            <div class="o-achievements__content">
-                                <div class="o-achievements__medal"></div>
-                                <div class="o-achievements__text">
-                                    <h2 class="o-achievements__name">Světový cestovatel (Diamontový)</h2>
-                                    <p class="o-achievements__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                                </div>
-                                <div class="o-achievements__progress">
-                                    <span class="o-achievements__progress-number"><span class="o-achievements__progress-number-actual">16</span>/<span class="o-achievements__progress-number-need">249</span></span>
-                                    <div class="o-achievements__progress-line">
-                                        <div class="o-achievements__progress-line-full" style="width: 6.4%"></div>
-                                    </div>
+                    <div class="o-achievements__item -type-world -value-diamond">
+                        <div class="o-achievements__content">
+                            <div class="o-achievements__medal"></div>
+                            <div class="o-achievements__text">
+                                <h2 class="o-achievements__name">Světový cestovatel (Diamontový)</h2>
+                                <p class="o-achievements__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                            <div class="o-achievements__progress">
+                                <span class="o-achievements__progress-number"><span class="o-achievements__progress-number-actual">16</span>/<span class="o-achievements__progress-number-need">249</span></span>
+                                <div class="o-achievements__progress-line">
+                                    <div class="o-achievements__progress-line-full" style="width: 6.4%"></div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="o-achievements__item -type-world">
-                            <div class="o-achievements__content">
-                                <div class="o-achievements__medal"></div>
-                                <div class="o-achievements__text">
-                                    <h2 class="o-achievements__name">Světový cestovatel (Diamontový)</h2>
-                                    <p class="o-achievements__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                                </div>
-                                <div class="o-achievements__progress">
-                                    <span class="o-achievements__progress-number"><span class="o-achievements__progress-number-actual">16</span>/<span class="o-achievements__progress-number-need">249</span></span>
-                                    <div class="o-achievements__progress-line">
-                                        <div class="o-achievements__progress-line-full" style="width: 6.4%"></div>
-                                    </div>
+                    <div class="o-achievements__item -type-world">
+                        <div class="o-achievements__content">
+                            <div class="o-achievements__medal"></div>
+                            <div class="o-achievements__text">
+                                <h2 class="o-achievements__name">Světový cestovatel (Diamontový)</h2>
+                                <p class="o-achievements__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                            <div class="o-achievements__progress">
+                                <span class="o-achievements__progress-number"><span class="o-achievements__progress-number-actual">16</span>/<span class="o-achievements__progress-number-need">249</span></span>
+                                <div class="o-achievements__progress-line">
+                                    <div class="o-achievements__progress-line-full" style="width: 6.4%"></div>
                                 </div>
                             </div>
                         </div>
