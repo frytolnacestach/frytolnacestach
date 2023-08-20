@@ -7,6 +7,9 @@
                         <NuxtLink class="js_m-nav-account__link m-nav-account__link -setting" to="/ucet/profil" exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil'}">Základní informace</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">
+                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -checkmark" to="/ucet/profil/achievementy" exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/achievementy'}">Achievementy</NuxtLink>
+                    </li>
+                    <li class="m-nav-account__item">
                         <NuxtLink class="js_m-nav-account__link m-nav-account__link -flag" to="/ucet/profil/navstivena-mista" exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/navstivena-mista'}">Navštívená místa</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">

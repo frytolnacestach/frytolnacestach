@@ -1,0 +1,295 @@
+.o-achievements {
+    $self: &;
+
+    margin: 0 -5px;
+
+    @media only screen and (min-width: $sm) {
+        margin: 0 -10px;
+    }
+
+    &__outer {
+        width: 100%;
+    }
+
+    &__inner {
+        width: 100%;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    &__item {
+        width: 100%;
+        padding: 5px;
+
+        @media only screen and (min-width: $sm) {
+            padding: 10px;
+        }
+
+        @media only screen and (min-width: $md) {
+            width: 50%;
+        }
+
+        @media only screen and (min-width: $lg) {
+            width: 33.33%;
+        }
+
+        // Modify - type
+        &.-type-world {
+            
+        }
+
+
+        // Modify - value
+        &.-value-bronze {
+            #{$self}__content {
+                background: $achievement-bronze-bg-1;
+                background: linear-gradient(135deg, $achievement-bronze-bg-1 0%, $achievement-bronze-bg-2 48%, $achievement-bronze-bg-3 100%);
+                color: $achievement-bronze-t-light;
+        
+                &:after {
+                    background-color: $achievement-bronze-bg-light;
+                }
+            }
+
+            #{$self}__medal {
+        
+                &:after {
+                    background-color: $achievement-bronze-bg-light;
+                }
+            }
+
+            #{$self}__name {
+                color: $achievement-bronze-t-light;
+            }
+
+            #{$self}__description {
+                color: $achievement-bronze-t-light;
+            }
+
+            #{$self}__progress-number {
+                color: $achievement-bronze-t-dark;
+            }
+
+            #{$self}__progress-line {
+                border: 1px solid $achievement-bronze-bg-dark;
+                background-color: $achievement-bronze-bg-light;
+            }
+
+            #{$self}__progress-line-full {
+                background-color: $achievement-bronze-bg-dark;
+            }
+        }
+
+        &.-value-silver {
+            #{$self}__content {
+                background: $achievement-silver-bg-1;
+                background: linear-gradient(135deg, $achievement-silver-bg-1 0%, $achievement-silver-bg-2 48%, $achievement-silver-bg-3 100%);
+                color: $achievement-silver-t-light;
+        
+                &:after {
+                    background-color: $achievement-silver-bg-light;
+                }
+            }
+
+            #{$self}__medal {
+        
+                &:after {
+                    background-color: $achievement-silver-bg-light;
+                }
+            }
+
+            #{$self}__name {
+                color: $achievement-silver-t-light;
+            }
+
+            #{$self}__description {
+                color: $achievement-silver-t-light;
+            }
+
+            #{$self}__progress-number {
+                color: $achievement-silver-t-dark;
+            }
+
+            #{$self}__progress-line {
+                border: 1px solid $achievement-silver-bg-dark;
+                background-color: $achievement-silver-bg-light;
+            }
+
+            #{$self}__progress-line-full {
+                background-color: $achievement-silver-bg-dark;
+            }
+        }
+
+        &.-value-gold {
+            #{$self}__content {
+                background: $achievement-gold-bg-1;
+                background: linear-gradient(135deg, $achievement-gold-bg-1 0%, $achievement-gold-bg-2 48%, $achievement-gold-bg-3 100%);
+                color: $achievement-gold-t-light;
+        
+                &:after {
+                    background-color: $achievement-gold-bg-light;
+                }
+            }
+
+            #{$self}__medal {
+        
+                &:after {
+                    background-color: $achievement-gold-bg-light;
+                }
+            }
+
+            #{$self}__name {
+                color: $achievement-gold-t-light;
+            }
+
+            #{$self}__description {
+                color: $achievement-gold-t-light;
+            }
+
+            #{$self}__progress-number {
+                color: $achievement-gold-t-dark;
+            }
+
+            #{$self}__progress-line {
+                border: 1px solid $achievement-gold-bg-dark;
+                background-color: $achievement-gold-bg-light;
+            }
+
+            #{$self}__progress-line-full {
+                background-color: $achievement-gold-bg-dark;
+            }
+        }
+
+        &.-value-diamond {
+            #{$self}__content {
+                background: $achievement-diamond-bg-1;
+                background: linear-gradient(135deg, $achievement-diamond-bg-1 0%, $achievement-diamond-bg-2 48%, $achievement-diamond-bg-3 100%);
+                color: $achievement-diamond-t-light;
+        
+                &:after {
+                    background-color: $achievement-diamond-bg-light;
+                }
+            }
+
+            #{$self}__medal {
+        
+                &:after {
+                    background-color: $achievement-diamond-bg-light;
+                }
+            }
+
+            #{$self}__name {
+                color: $achievement-diamond-t-light;
+            }
+
+            #{$self}__description {
+                color: $achievement-diamond-t-light;
+            }
+
+            #{$self}__progress-number {
+                color: $achievement-diamond-t-dark;
+            }
+
+            #{$self}__progress-line {
+                border: 1px solid $achievement-diamond-bg-dark;
+                background-color: $achievement-diamond-bg-light;
+            }
+
+            #{$self}__progress-line-full {
+                background-color: $achievement-diamond-bg-dark;
+            }
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-areas: 
+            "medal text"
+            "progress progress";
+        grid-template-columns: 75px auto;
+        grid-template-rows: auto auto;
+        padding: 10px;
+        background: $achievement-default-bg-1;
+        background: linear-gradient(135deg, $achievement-default-bg-1 0%, $achievement-default-bg-2 48%, $achievement-default-bg-3 100%);
+        color: $achievement-default-t-light;
+        border-radius: $br-1;
+
+        @media only screen and (min-width: $ti) {
+            border-radius: $br-2;
+        }
+
+        &:after {
+            background-color: $achievement-default-bg-light;
+        }
+    }
+
+    &__medal {
+        grid-area: medal;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            background-color: $achievement-default-bg-light;
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+        }
+    }
+
+    &__text {
+        grid-area: text;
+    }
+
+    &__name {
+        display: block;
+        color: $achievement-default-t-light;
+    }
+
+    &__description {
+        display: block;
+        color: $achievement-default-t-light;
+    }
+
+    &__progress {
+        grid-area: progress;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    &__progress-number {
+        margin-left: auto;
+        color: $achievement-default-t-dark;
+    }
+
+    &__progress-number-actual {
+        
+    }
+
+    &__progress-number-need {
+        
+    }
+
+    &__progress-line {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 16px;
+        border: 1px solid $achievement-default-bg-dark;
+        border-radius: 4px;
+        background-color: $achievement-default-bg-light;
+    }
+
+    &__progress-line-full {
+        display: inline-block;
+        height: 14px;
+        border-radius: 3px;
+        background-color: $achievement-default-bg-dark;
+    }
+}

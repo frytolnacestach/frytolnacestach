@@ -136,7 +136,7 @@
 
     &__item {
         padding-bottom: 20px;
-        border-bottom: 1px solid $gray2;
+        border-bottom: 1px solid $gray3;
         margin-bottom: 20px;
     }
 
@@ -151,7 +151,7 @@
 
     &__type-name {
         font-style: italic;
-        color: $gray4;
+        color: $gray5;
         font-size: $fs-small-sss;
     }
     
@@ -159,7 +159,7 @@
         position: relative;
         width: 60px;
         height: 30px;
-        background-color: $gray3;
+        background-color: $gray2;
         border-radius: 15px;
         display: inline-block;
         cursor: pointer;
@@ -186,7 +186,7 @@
         }
 
         &.-active {
-            background-color: $gray1;
+            background-color: $gray7;
             cursor: not-allowed;
 
             &::after {

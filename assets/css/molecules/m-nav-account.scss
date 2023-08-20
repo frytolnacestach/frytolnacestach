@@ -88,6 +88,12 @@
             }
         }
 
+        &.-checkmark {
+            &::after {
+                content: map-get($icomoon-default, 'checkmark');
+            }
+        }
+
         &.-flag {
             &::after {
                 content: map-get($icomoon-default, 'flag');

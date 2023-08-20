@@ -31,10 +31,10 @@
     &.-notactive {
         #{$self}__input {
             cursor: not-allowed;
-            background-color: $gray4;
+            background-color: $gray5;
             
             &:hover {
-                background-color: $gray4;
+                background-color: $gray5;
             }
         }
     }

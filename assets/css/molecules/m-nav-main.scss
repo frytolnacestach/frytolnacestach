@@ -97,7 +97,7 @@
         margin: 2px 5px;
         line-height: 26px;
         font-size: $fs-normal-ss;
-        color: $gray7;
+        color: $gray8;
         text-decoration: none;
         text-transform: uppercase;
         font-weight: 500;
@@ -107,7 +107,7 @@
         }
 
         &.-active {
-            color: $gray7;
+            color: $gray8;
             border-bottom: 2px solid black;
             margin-bottom: 8px;
             padding-bottom: 6px;
@@ -120,7 +120,7 @@
             }
 
             &:hover {
-                color: $gray7;
+                color: $gray8;
 
                 @media only screen and (min-width: $lg) {
                     color: $brand11;
@@ -130,7 +130,7 @@
     }
 
     &__link-subfix {
-        color: $gray7;
+        color: $gray8;
         font-size: $fs-small-s;
         line-height: 14px;
 

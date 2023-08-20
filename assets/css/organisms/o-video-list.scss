@@ -88,23 +88,23 @@
         line-height: 1.32;
 
         &:hover {
-            color: $gray8;
+            color: $gray9;
         }
     }
 
     &__perex {
-        color: $gray1;
+        color: $gray7;
         font-size: $fs-normal-s;
         margin: 5px 0 0 0;
-        color: $gray7;
+        color: $gray8;
     }
 
     &__perex-link {
-        color: $gray7;
+        color: $gray8;
         text-decoration: none;
 
         &:hover {
-            color: $gray7;
+            color: $gray8;
             text-decoration: none;
         }
     }
@@ -116,7 +116,7 @@
             color: $white;
 
             &:hover {
-                color: $gray6;
+                color: $gray1;
             }
         }
     }
@@ -141,7 +141,7 @@
             color: $white;
 
             &:hover {
-                color: $gray6;
+                color: $gray1;
             }
         }
     }

@@ -3,6 +3,124 @@ $white: #ffffff;
 $black: #000000;
 
 
+//gray
+$gray1: #f8f8f8;
+$gray2: #eeeeee;
+$gray3: #e4e4e4;
+$gray4: #cdcdcd;
+$gray5: #777777;
+$gray6: #545454;
+$gray7: #444444;
+$gray8: #333333;
+$gray9: #0f0f0f;
+
+
+//project
+$brand1: #209277;
+$brand2: #24b694;
+$brand3: #30c4c9;
+$brand4: #3d3c3c;
+$brand5: #383737;
+
+
+//project - brand dark
+$brand11: #1b6a58;
+$brand33: #207b7e;
+
+
+//project - edit
+$brand1-a: #bcded6;
+$brand2-a: #bde9de;
+$brand3-a: #ace7e9;
+
+
+//new color - named?
+$brand1Light: #58867b;
+$brand1Dark: #125343;
+
+
+//THEME - Blue
+//background
+$c-blue-bg: #f4f8ff;
+$c-blue-bg-component-light-super: #dee8f8;
+$c-blue-bg-component-light: #c6d3e8;
+$c-blue-bg-component-dark: #465F85;
+$c-blue-bg-component-dark-super: #192941;
+//text
+$c-blue-t-light-super: #f4f8ff;
+$c-blue-t-light: #d2dced;
+$c-blue-t-dark: #314360;
+$c-blue-t-dark-super: #111f35;
+//icon
+$c-blue-icon-light: #c6d3e8;
+$c-blue-icon: #465F85;
+$c-blue-icon-dark: #142134;
+//other
+$c-blue-loading-bg: #c6d3e8;
+$c-blue-loading-1: #c6d3e8;
+$c-blue-loading-2: #5c7db1;
+$c-blue-skeleton-loading-bg: #dee8f8;
+$c-blue-skeleton-loading-1: #dee8f8;
+$c-blue-skeleton-loading-2: #c6d3e8;
+$c-blue-skeleton-dark-loading-bg: #c6d3e8;
+$c-blue-skeleton-dark-loading-1: #c6d3e8;
+$c-blue-skeleton-dark-loading-2: #5c7db1;
+
+//THEME - Gray
+//background
+$c-gray-bg: #f5f5f5;
+$c-gray-bg-component-light-super: #eeeeee;
+$c-gray-bg-component-light: #e1e1e1;
+$c-gray-bg-component-dark: #403f3f; //TODO: before 2023-06-11
+$c-gray-bg-component-dark-super: #2c2c2c; //TODO: before 2023-06-11
+//text
+$c-gray-t-light-super: #f5f5f5;
+$c-gray-t-light: #e6e6e6; //TODO: before 2023-06-11
+$c-gray-t-dark: #363535; //TODO: before 2023-06-11
+$c-gray-t-dark-super: #222222; //TODO: before 2023-06-11
+//icon
+$c-gray-icon-light: #e1e1e1;
+$c-gray-icon: #403f3f; //TODO: before 2023-06-11
+$c-gray-icon-dark: #0f0e0e; //TODO: before 2023-06-11
+//other
+$c-gray-loading-bg: #e4e4e4;
+$c-gray-loading-1: #cdcdcd;
+$c-gray-loading-2: #dddddd;
+$c-gray-skeleton-loading-bg: #eeeeee;
+$c-gray-skeleton-loading-1: #eeeeee;
+$c-gray-skeleton-loading-2: #e1e1e1;
+$c-gray-skeleton-dark-loading-bg: #e4e4e4;
+$c-gray-skeleton-dark-loading-1: #cdcdcd;
+$c-gray-skeleton-dark-loading-2: #dddddd;
+
+//THEME - Green
+//background
+$c-green-bg: #effbf9;
+$c-green-bg-component-light-super: #e3f2ed;
+$c-green-bg-component-light: #c2ded5;
+$c-green-bg-component-dark: #125343; //TODO: before 2023-06-11
+$c-green-bg-component-dark-super: #0e4235; //TODO: before 2023-06-11
+//text
+$c-green-t-light-super: #effbf9;
+$c-green-t-light: #d0f5ec; //TODO: before 2023-06-11
+$c-green-t-dark: #125243; //TODO: before 2023-06-11
+$c-green-t-dark-super: #0b3128; //TODO: before 2023-06-11
+//icon
+$c-green-icon-light: #bcddd5;
+$c-green-icon: #125343; //TODO: before 2023-06-11
+$c-green-icon-dark: #04110e; //TODO: before 2023-06-11
+//other
+$c-green-loading-bg: #e3f2ed;
+$c-green-loading-1: #e3f2ed;
+$c-green-loading-2: #c2ded5;
+$c-green-skeleton-loading-bg: #e3f2ed;
+$c-green-skeleton-loading-1: #e3f2ed;
+$c-green-skeleton-loading-2: #c2ded5;
+$c-green-skeleton-dark-loading-bg: #c0f1e5;
+$c-green-skeleton-dark-loading-1: #c0f1e5;
+$c-green-skeleton-dark-loading-2: #9dd2c5;
+
+
 //alert, flashmessages
 $red: #cc3300;
 $orange: orange;
@@ -49,122 +167,47 @@ $discord: #738adb;
 $patreon: #e64413;
 
 
-//gray
-$gray1: #444444;
-$gray2: #e4e4e4;
-$gray3: #eeeeee;
-$gray4: #777777;
-$gray5: #cdcdcd;
-$gray6: #f8f8f8;
-$gray7: #333333;
-$gray8: #0f0f0f;
-$gray9: #dddddd;
-$gray10: #545454;
+//achievement - default
+$achievement-default-bg-1: #b6b6b6;
+$achievement-default-bg-2: #d4d4d4;
+$achievement-default-bg-3: #f3f3f3;
+$achievement-default-bg-light: #a3a3a3;
+$achievement-default-bg-dark: #a3a3a3;
+$achievement-default-t-light: #a3a3a3;
+$achievement-default-t-dark: #a3a3a3;
+//achievement - bronze
+$achievement-bronze-bg-1: #804a00;
+$achievement-bronze-bg-2: #895e1a;
+$achievement-bronze-bg-3: #9c7a3c;
+$achievement-bronze-bg-light: #f5e9d6;
+$achievement-bronze-bg-dark: #190f00;
+$achievement-bronze-t-light: #f5e9d6;
+$achievement-bronze-t-dark: #190f00;
+//achievement - silver
+$achievement-silver-bg-1: #9B9B9B;
+$achievement-silver-bg-2: #ACACAC;
+$achievement-silver-bg-3: #CFCFCF;
+$achievement-silver-bg-light: #383838;
+$achievement-silver-bg-dark: #1c1c1c;
+$achievement-silver-t-light: #383838;
+$achievement-silver-t-dark: #1c1c1c;
+//achievement - gold
+$achievement-gold-bg-1: #B8860B;
+$achievement-gold-bg-2: #D4AF37;
+$achievement-gold-bg-3: #FFCC00;
+$achievement-gold-bg-light: #4f4727;
+$achievement-gold-bg-dark: #0f0b00;
+$achievement-gold-t-light: #4f4727;
+$achievement-gold-t-dark: #0f0b00;
+//achievement - diamond
+$achievement-diamond-bg-1: #B7F1FD;
+$achievement-diamond-bg-2: #D0F8FF;
+$achievement-diamond-bg-3: #EFFFFE;
+$achievement-diamond-bg-light: #256a65;
+$achievement-diamond-bg-dark: #005e70;
+$achievement-diamond-t-light: #256a65;
+$achievement-diamond-t-dark: #005e70;
 
-
-//project
-$brand1: #209277;
-$brand2: #24b694;
-$brand3: #30c4c9;
-$brand4: #3d3c3c;
-$brand5: #383737;
-
-//project - brand dark
-$brand11: #1b6a58;
-$brand33: #207b7e;
-
-//project - light
-$brand3a: #e7f8f8;
-
-//project - edit
-$brand1-a: #bcded6;
-$brand2-a: #bde9de;
-$brand3-a: #ace7e9;
-
-//new color - named?
-$brand1Light: #58867b;
-$brand1Dark: #125343;
-
-//Blue
-//background
-$c-blue-bg: #f4f8ff;
-$c-blue-bg-component-light-super: #dee8f8;
-$c-blue-bg-component-light: #c6d3e8;
-$c-blue-bg-component-dark: #465F85;
-$c-blue-bg-component-dark-super: #192941;
-//text
-$c-blue-t-light-super: #f4f8ff;
-$c-blue-t-light: #d2dced;
-$c-blue-t-dark: #314360;
-$c-blue-t-dark-super: #111f35;
-//icon
-$c-blue-icon-light: #c6d3e8;
-$c-blue-icon: #465F85;
-$c-blue-icon-dark: #142134;
-//other
-$c-blue-loading-bg: #c6d3e8;
-$c-blue-loading-1: #c6d3e8;
-$c-blue-loading-2: #5c7db1;
-$c-blue-skeleton-loading-bg: #dee8f8;
-$c-blue-skeleton-loading-1: #dee8f8;
-$c-blue-skeleton-loading-2: #c6d3e8;
-$c-blue-skeleton-dark-loading-bg: #c6d3e8;
-$c-blue-skeleton-dark-loading-1: #c6d3e8;
-$c-blue-skeleton-dark-loading-2: #5c7db1;
-
-//Gray
-//background
-$c-gray-bg: #f5f5f5;
-$c-gray-bg-component-light-super: #eeeeee;
-$c-gray-bg-component-light: #e1e1e1;
-$c-gray-bg-component-dark: #403f3f; //TODO: before 2023-06-11
-$c-gray-bg-component-dark-super: #2c2c2c; //TODO: before 2023-06-11
-//text
-$c-gray-t-light-super: #f5f5f5;
-$c-gray-t-light: #e6e6e6; //TODO: before 2023-06-11
-$c-gray-t-dark: #363535; //TODO: before 2023-06-11
-$c-gray-t-dark-super: #222222; //TODO: before 2023-06-11
-//icon
-$c-gray-icon-light: #e1e1e1;
-$c-gray-icon: #403f3f; //TODO: before 2023-06-11
-$c-gray-icon-dark: #0f0e0e; //TODO: before 2023-06-11
-//other
-$c-gray-loading-bg: #e4e4e4;
-$c-gray-loading-1: #cdcdcd;
-$c-gray-loading-2: #dddddd;
-$c-gray-skeleton-loading-bg: #eeeeee;
-$c-gray-skeleton-loading-1: #eeeeee;
-$c-gray-skeleton-loading-2: #e1e1e1;
-$c-gray-skeleton-dark-loading-bg: #e4e4e4;
-$c-gray-skeleton-dark-loading-1: #cdcdcd;
-$c-gray-skeleton-dark-loading-2: #dddddd;
-
-//Green
-//background
-$c-green-bg: #effbf9;
-$c-green-bg-component-light-super: #e3f2ed;
-$c-green-bg-component-light: #c2ded5;
-$c-green-bg-component-dark: #125343; //TODO: before 2023-06-11
-$c-green-bg-component-dark-super: #0e4235; //TODO: before 2023-06-11
-//text
-$c-green-t-light-super: #effbf9;
-$c-green-t-light: #d0f5ec; //TODO: before 2023-06-11
-$c-green-t-dark: #125243; //TODO: before 2023-06-11
-$c-green-t-dark-super: #0b3128; //TODO: before 2023-06-11
-//icon
-$c-green-icon-light: #bcddd5;
-$c-green-icon: #125343; //TODO: before 2023-06-11
-$c-green-icon-dark: #04110e; //TODO: before 2023-06-11
-//other
-$c-green-loading-bg: #e3f2ed;
-$c-green-loading-1: #e3f2ed;
-$c-green-loading-2: #c2ded5;
-$c-green-skeleton-loading-bg: #e3f2ed;
-$c-green-skeleton-loading-1: #e3f2ed;
-$c-green-skeleton-loading-2: #c2ded5;
-$c-green-skeleton-dark-loading-bg: #c0f1e5;
-$c-green-skeleton-dark-loading-1: #c0f1e5;
-$c-green-skeleton-dark-loading-2: #9dd2c5;
 
 //star
 $star-blue: #c6d3e8;
@@ -172,9 +215,12 @@ $star-gray: #e1e1e1;
 $star-green: #bcddd5;
 $starActive: #e4c957; 
 
+
 //ads
 $cAdBG: #e1e1e1;
 
+
+// OTHER - SET
 //opacity
 $white-7: rgba($white, .7);
 $black-2: rgba($black, .2);
