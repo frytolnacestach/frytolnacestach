@@ -19,9 +19,11 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
+        align-items: stretch;
     }
 
     &__item {
+        display: flex;
         width: 100%;
         padding: 5px;
 
@@ -37,9 +39,46 @@
             width: 33.33%;
         }
 
+
         // Modify - type
-        &.-type-world {
-            
+        &.-type-world-continent {
+            #{$self}__content {
+                &::after {
+                    content: 'Kontinent'
+                }
+            }
+        }
+
+        &.-type-world-state {
+            #{$self}__content {
+                &::after {
+                    content: 'Stát'
+                }
+            }
+        }
+
+        &.-type-world-region {
+            #{$self}__content {
+                &::after {
+                    content: 'Region'
+                }
+            }
+        }
+
+        &.-type-world-city {
+            #{$self}__content {
+                &::after {
+                    content: 'Město'
+                }
+            }
+        }
+
+        &.-type-world-spot {
+            #{$self}__content {
+                &::after {
+                    content: 'Místo'
+                }
+            }
         }
 
 
@@ -51,14 +90,14 @@
                 color: $achievement-bronze-t-light;
         
                 &:after {
-                    background-color: $achievement-bronze-bg-light;
+                    color: $achievement-bronze-t-light;
                 }
             }
 
             #{$self}__medal {
         
                 &:after {
-                    background-color: $achievement-bronze-bg-light;
+                    background-color: $achievement-bronze-medail;
                 }
             }
 
@@ -91,14 +130,14 @@
                 color: $achievement-silver-t-light;
         
                 &:after {
-                    background-color: $achievement-silver-bg-light;
+                    color: $achievement-silver-t-light;
                 }
             }
 
             #{$self}__medal {
         
                 &:after {
-                    background-color: $achievement-silver-bg-light;
+                    background-color: $achievement-silver-medail;
                 }
             }
 
@@ -131,14 +170,14 @@
                 color: $achievement-gold-t-light;
         
                 &:after {
-                    background-color: $achievement-gold-bg-light;
+                    color: $achievement-gold-t-light;
                 }
             }
 
             #{$self}__medal {
         
                 &:after {
-                    background-color: $achievement-gold-bg-light;
+                    background-color: $achievement-gold-medail;
                 }
             }
 
@@ -171,14 +210,14 @@
                 color: $achievement-diamond-t-light;
         
                 &:after {
-                    background-color: $achievement-diamond-bg-light;
+                    color: $achievement-diamond-t-light;
                 }
             }
 
             #{$self}__medal {
         
                 &:after {
-                    background-color: $achievement-diamond-bg-light;
+                    background-color: $achievement-diamond-medail;
                 }
             }
 
@@ -206,13 +245,16 @@
     }
 
     &__content {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
         display: grid;
         grid-template-areas: 
             "medal text"
             "progress progress";
         grid-template-columns: 75px auto;
         grid-template-rows: auto auto;
-        padding: 10px;
+        padding: 13px 10px 12px;
         background: $achievement-default-bg-1;
         background: linear-gradient(135deg, $achievement-default-bg-1 0%, $achievement-default-bg-2 48%, $achievement-default-bg-3 100%);
         color: $achievement-default-t-light;
@@ -222,19 +264,28 @@
             border-radius: $br-2;
         }
 
-        &:after {
-            background-color: $achievement-default-bg-light;
+        &::after {
+            content:'';
+            position: absolute;
+            bottom: -5px;
+            left: -4px;
+            font-size: $fs-45;
+            line-height: 1;
+            text-transform: uppercase;
+            color: $achievement-default-t-light;
+            opacity: .25;
         }
     }
 
     &__medal {
         grid-area: medal;
         position: relative;
+        min-height: 60px;
 
         &:after {
             content: '';
             position: absolute;
-            background-color: $achievement-default-bg-light;
+            background-color: $achievement-default-medail;
             width: 60px;
             height: 60px;
             border-radius: 30px;
@@ -260,7 +311,8 @@
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-        margin-top: 20px;
+        margin-top: 12px;
+        z-index: 1;
     }
 
     &__progress-number {

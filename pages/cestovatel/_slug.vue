@@ -51,6 +51,15 @@
                             </div>
                         </section>
                         <!-- SECTION - user urls - account END -->
+
+                        <!-- SECTION - Achievements -->
+                        <section class="t-section -padding-x -p0 pb-4">
+                            <div class="t-section__inner">
+                                <mHeadline title="Moje úspěchy" styleThema=" -user -blue" styleAlign="" styleGap="" />
+                                <oAchievements type="user" :idUser="user[0].id" v-if="user[0]" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Achievements END -->
                     </div>
                 </div>
             </div>
@@ -64,6 +73,7 @@
     import mUserHeader from '~/components/molecules/mUserHeader.vue'
     import mNavUser from '~/components/molecules/mNavUser.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
+    import oAchievements from '~/components/organisms/oAchievements.vue'
     import oFollowerButton from '~/components/organisms/oFollowerButton.vue'
     import oUserUrls from '~/components/organisms/oUserUrls.vue'
 
@@ -75,6 +85,7 @@
             mUserHeader,
             mNavUser,
             oAdGoogleSidebar,
+            oAchievements,
             oFollowerButton,
             oUserUrls
         },
