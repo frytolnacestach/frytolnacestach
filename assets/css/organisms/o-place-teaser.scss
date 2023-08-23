@@ -26,7 +26,6 @@
         border-radius: $large;
     }
 
-
     &__content {
         width: 100%;
         display: grid;
@@ -123,5 +122,6 @@
 
     &__button {
         width: 100%;
+        margin-top: auto;
     }
 }
