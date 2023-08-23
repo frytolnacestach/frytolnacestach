@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- skeleton -->
-        <div class="skeleton-o-top-place" v-if="places === null">
+        <div class="skeleton-o-top-place" v-if="places === null || images === null">
             <div class="skeleton-o-top-place__outer">
                 <div class="skeleton-o-top-place__items">
                     <div v-for="index in 20" :key="index" class="skeleton-o-top-place__item">
@@ -14,7 +14,7 @@
         </div>
         <!-- skeleton END -->
 
-        <div class="o-top-place" v-if="places !== null">
+        <div class="o-top-place" v-if="places !== null && images !== null">
             <div class="o-top-place__outer">
                 <div class="o-top-place__items">
                     <div v-for="place in places" :key="place.id" class="o-top-place__item">
@@ -95,22 +95,25 @@
 </template>
 
 <script>
+    import axios from 'axios';
+
     export default {
         name: 'OrganismsoTopPlaceComponent',
 
         data() {
             return {
-                topPlaces: this.topPlaces,
+                topPlaces: [],
+                placesContinents: [],
+                placesStates: [],
+                placesCities: [],
                 places: null,
-                placesContinents: this.placesContinents,
-                placesStates: this.placesStates,
-                placesCities: this.placesCities,
-                images: this.images
+                images: null
             }
         },
 
-        async fetch() {
-            this.topPlaces = await fetch("https://api.frytolnacestach.cz/api/top-places").then((res) => res.json());
+        async created() {
+            const topPlaces = await axios.get("https://api.frytolnacestach.cz/api/top-places");
+            this.topPlaces = topPlaces.data;
 
             const topPlacesIDcontinents = this.topPlaces
                 .filter(place => place.type === 'continent' && place.id_place !== null && place.id_place !== '')
@@ -124,23 +127,25 @@
                 .filter(place => place.type === 'city' && place.id_place !== null && place.id_place !== '')
                 .map(place => place.id_place);
 
+            const placesContinents = await axios.get(`https://api.frytolnacestach.cz/api/places-continents-array?id=${topPlacesIDcontinents.join(',')}`);
+            this.placesContinents = placesContinents.data;
 
-            this.placesContinents = await fetch(`https://api.frytolnacestach.cz/api/places-continents-array?id=${topPlacesIDcontinents.join(',')}`).then((res) => res.json());
+            const placesStates = await axios.get(`https://api.frytolnacestach.cz/api/places-states-array?id=${topPlacesIDstates.join(',')}`);
+            this.placesStates = placesStates.data;
 
-            this.placesStates = await fetch(`https://api.frytolnacestach.cz/api/places-states-array?id=${topPlacesIDstates.join(',')}`).then((res) => res.json());
+            const placesCities = await axios.get(`https://api.frytolnacestach.cz/api/places-cities-array?id=${topPlacesIDcities.join(',')}`);
+            this.placesCities = placesCities.data;
 
-            this.placesCities = await fetch(`https://api.frytolnacestach.cz/api/places-cities-array?id=${topPlacesIDcities.join(',')}`).then((res) => res.json());
-
-            this.places = (this.placesContinents ? this.placesContinents : []).concat(
-                this.placesStates ? this.placesStates : [],
-                this.placesCities ? this.placesCities : []
+            const places = this.placesContinents.concat(
+                this.placesStates,
+                this.placesCities
             );
+            this.places = places;
 
+            const imagesPlaceID = places.map(place => place.id_image_cover).filter(id => id !== null && id !== '');
 
-            //load images for top Places
-            const imagesPlaceID = this.places.map(place => place.id_image_cover).filter(id => id !== null && id !== '');
-
-            this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlaceID.join(',')}`).then((res) => res.json());
+            const images = await axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlaceID.join(',')}`);
+            this.images = images.data;
         }
     }
 </script>
