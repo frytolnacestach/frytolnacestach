@@ -11,12 +11,9 @@
         margin: 5px 0;
         padding: 10px 15px;
 
-        @media only screen and (min-width: $ti) {
-            border-radius: $br-4;
-        }
-
         @media only screen and (min-width: $sm) {
             padding: 15px 30px;
+            border-radius: $br-4;
         }
     }
 
