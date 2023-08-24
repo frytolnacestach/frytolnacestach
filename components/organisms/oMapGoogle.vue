@@ -42,7 +42,7 @@
                                     "visibility": "on"
                                 },
                                 {
-                                    "color": "#207b7e"
+                                    "color": "#20547e"
                                 },
                                 {
                                     "saturation": "0"
