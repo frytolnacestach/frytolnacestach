@@ -72,7 +72,7 @@
                         <!-- SECTION - information by Author END -->
 
                         <!-- SECTION - information duration -->
-                        <section class="t-section" v-if="place[0].information_duration !== null">
+                        <section class="t-section" v-if="place[0].information_author?.length > 0 && place[0].information_duration !== null">
                             <div class="t-section__inner">
                                 <oInformationBox :data="place[0].information_duration" />
                             </div>
