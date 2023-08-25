@@ -44,7 +44,7 @@
 
                     <div class="t-col2__content mb-2">
                         <!-- SECTION - user urls - account -->
-                        <section class="t-section -padding-x -p0" v-if="user[0]">
+                        <section class="t-section -padding-x -p0 mb-4" v-if="user[0]">
                             <div class="t-section__inner">
                                 <mHeadline title="Tady mě najdeš" styleThema=" -account -blue" styleAlign="" styleGap="" />
                                 <oUserUrls :urls="user[0].urls" />

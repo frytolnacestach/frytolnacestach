@@ -13,6 +13,9 @@
                 </div>
             </div>
         </client-only>
+        <client-only v-if="urls === null || urls.length === 0">
+            Cestovatel nemá vyplňěné žádné odkazy.
+        </client-only>
     </div>
 </template>
 
