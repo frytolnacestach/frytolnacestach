@@ -112,6 +112,12 @@
             }
         }
 
+        &.-film {
+            &::after {
+                content: map-get($icomoon-default, 'film');
+            }
+        }
+
         &.-user {
             &::after {
                 content: map-get($icomoon-default, 'user');

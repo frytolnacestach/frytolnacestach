@@ -22,6 +22,9 @@
                         <NuxtLink class="js_m-nav-account__link m-nav-account__link -review" to="/ucet/profil/recenze" exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/recenze'}">Recenzoval jsem</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">
+                        <NuxtLink class="js_m-nav-account__link m-nav-account__link -film" to="/ucet/profil/videa" exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/videa'}">Videa</NuxtLink>
+                    </li>
+                    <li class="m-nav-account__item">
                         <NuxtLink class="js_m-nav-account__link m-nav-account__link -key" to="/ucet/profil/zmena-hesla" exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/zmena-hesla'}">Změna hesla</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">

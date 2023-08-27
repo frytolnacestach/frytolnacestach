@@ -59,7 +59,7 @@
     import oUserUrls from '~/components/organisms/oUserUrls.vue'
 
     export default {
-        name: 'CestovatelSlugPage',
+        name: 'CestovatelRecenzeSlugPage',
 
         components: {
             mHeadline,
@@ -143,5 +143,11 @@
                 }
             });
         },
+
+        methods: {
+            menuUserUpdate(newValue) {
+                this.mNavUserOpen = newValue;
+            }
+        }
     }
 </script>

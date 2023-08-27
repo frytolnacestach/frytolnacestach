@@ -59,7 +59,7 @@
     import oUserUrls from '~/components/organisms/oUserUrls.vue'
 
     export default {
-        name: 'CestovateleTest2IndexPage',
+        name: 'CestovateleSledujiSlugPage',
 
         components: {
             mHeadline,

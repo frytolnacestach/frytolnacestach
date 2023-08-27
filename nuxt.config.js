@@ -985,6 +985,11 @@ export default {
         component: resolve(__dirname, 'pages/cestovatel/_slug/recenze/recenze-index.vue')
       })
       routes.push({
+        name: 'user-video',
+        path: '/cestovatel/:slug/videa',
+        component: resolve(__dirname, 'pages/cestovatel/_slug/videa/videa-index.vue')
+      })
+      routes.push({
         name: 'user-follow',
         path: '/cestovatel/:slug/sleduji',
         component: resolve(__dirname, 'pages/cestovatel/_slug/sleduji/sleduji-index.vue')

@@ -106,6 +106,12 @@
             }
         }
 
+        &.-film {
+            &::after {
+                content: map-get($icomoon-default, 'film');
+            }
+        }
+
 
         &.-active {
             color: $c-blue-icon-dark;
