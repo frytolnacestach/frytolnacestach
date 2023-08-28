@@ -112,7 +112,13 @@
             }
         }
 
-        &.-film {
+        &.-post {
+            &::after {
+                content: map-get($icomoon-default, 'image');
+            }
+        }
+
+        &.-video {
             &::after {
                 content: map-get($icomoon-default, 'film');
             }

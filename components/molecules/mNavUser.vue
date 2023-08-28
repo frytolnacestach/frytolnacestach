@@ -13,7 +13,10 @@
                         <NuxtLink class="js_m-nav-user__link m-nav-user__link -review" :to='"/cestovatel/" + $route.params.slug + "/recenze"' exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/recenze'}">Recenzoval jsem</NuxtLink>
                     </li>
                     <li class="m-nav-user__item">
-                        <NuxtLink class="js_m-nav-user__link m-nav-user__link -film" :to='"/cestovatel/" + $route.params.slug + "/videa"' exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/videa'}">Videa</NuxtLink>
+                        <NuxtLink class="js_m-nav-user__link m-nav-user__link -post" :to='"/cestovatel/" + $route.params.slug + "/clanky"' exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/clanky'}">Články</NuxtLink>
+                    </li>
+                    <li class="m-nav-user__item">
+                        <NuxtLink class="js_m-nav-user__link m-nav-user__link -video" :to='"/cestovatel/" + $route.params.slug + "/videa"' exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/videa'}">Videa</NuxtLink>
                     </li>
                     <li class="m-nav-user__item">
                         <NuxtLink class="js_m-nav-user__link m-nav-user__link -user" :to='"/cestovatel/" + $route.params.slug + "/sleduji"' exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil/sleduji'}">Sleduji</NuxtLink>
