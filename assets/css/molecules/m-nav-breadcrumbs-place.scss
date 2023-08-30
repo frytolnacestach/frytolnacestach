@@ -37,7 +37,7 @@
 
         &:after {
             content: '›';
-            color: $brand1Dark;
+            color: $green5;
             position: absolute;
             right: 3px;
             line-height: 22px;
@@ -56,13 +56,13 @@
     }
 
     &__link {
-        color: $brand1Dark;
+        color: $green5;
         line-height: 22px;
         font-size: $fs-normal-sss;
         text-decoration: none;
 
         &:hover {
-            color: $brand1Light;
+            color: $green3;
         }
 
         &.-icon {
@@ -120,7 +120,7 @@
     }
 
     &__span {
-        color: $brand1Light;
+        color: $green3;
         line-height: 22px;
         font-size: $fs-small-l;
         text-decoration: none;

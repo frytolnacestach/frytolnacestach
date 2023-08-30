@@ -26,7 +26,7 @@
             },
             perex: {
                 type: String,
-                required: true
+                required: false
             },
             items: {
                 type: Array,

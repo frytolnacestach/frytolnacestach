@@ -2,6 +2,13 @@
 $white: #ffffff;
 $black: #000000;
 
+//project
+$brand1: #209277;
+$brand2: #24b694;
+$brand3: #30c4c9;
+$brand4: #3d3c3c;
+$brand5: #383737;
+
 
 //gray
 $gray1: #f8f8f8;
@@ -14,29 +21,17 @@ $gray7: #444444;
 $gray8: #333333;
 $gray9: #0f0f0f;
 
+//green
+$green1: #bde9de;
+$green2: #bcded6;
+$green3: #58867b;
+$green4: #1b6a58;
+$green5: #125343;
 
-//project
-$brand1: #209277;
-$brand2: #24b694;
-$brand3: #30c4c9;
-$brand4: #3d3c3c;
-$brand5: #383737;
+//blue
+$blue1: #ace7e9;
+$blue2: #207b7e;
 
-
-//project - brand dark
-$brand11: #1b6a58;
-$brand33: #207b7e;
-
-
-//project - edit
-$brand1-a: #bcded6;
-$brand2-a: #bde9de;
-$brand3-a: #ace7e9;
-
-
-//new color - named?
-$brand1Light: #58867b;
-$brand1Dark: #125343;
 
 
 //THEME - Blue
@@ -231,9 +226,9 @@ $white-7: rgba($white, .7);
 $black-2: rgba($black, .2);
 $black-3: rgba($black, .3);
 $black-7: rgba($black, .7);
-$brand3-a-3: rgba($brand3-a, .3);
-$brand2-a-3: rgba($brand2-a, .3);
-$brand1-a-3: rgba($brand1-a, .3);
+$blue1-3: rgba($blue1, .3);
+$green1-3: rgba($green1, .3);
+$green2-3: rgba($green2, .3);
 
 
 //hover

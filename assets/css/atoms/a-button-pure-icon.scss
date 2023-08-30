@@ -16,7 +16,7 @@
     }
 
     &.-cover {
-        color: $brand1Dark;
+        color: $green5;
         background-color: $c-green-bg-component-light-super;
         height: 60px;
         line-height: 20px;
@@ -38,12 +38,12 @@
         }
 
         &:hover {
-            color: $brand1Dark;
+            color: $green5;
         }
     }
 
     &.-map {
-        color: $brand1Dark;
+        color: $green5;
         background-color: $c-green-bg-component-light-super;
         height: 60px;
         line-height: 20px;
@@ -65,7 +65,7 @@
         }
 
         &:hover {
-            color: $brand1Dark;
+            color: $green5;
         }
     }
 }

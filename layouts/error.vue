@@ -4,33 +4,23 @@
 		<!-- SECTION - Hero -->
 		<section class="t-section -p0 mb-1 mt-2">
             <div class="t-section__inner">
-                <oHero :headline="headline" :perex="perex" />
+                <oError404 :headline="headline" :perex="perex" />
             </div>
         </section>
         <!-- SECTION - Hero END -->
-
-		<!-- SECTION - Build -->
-		<section class="t-section">
-			<div class="t-section__inner">
-				<oBuild />
-			</div>
-		</section>
-		<!-- SECTION - Build END -->
 		
 	</main>
 </template>
 
 <script>
-	import oBuild from '../components/organisms/oBuild.vue'
-	import oHero from '../components/organisms/oHero.vue'
+	import oError404 from '../components/organisms/oError404.vue'
 
 	export default {
 		name: 'ErrorLayout',
 		layout: 'empty',
 
 		components: {
-			oBuild,
-			oHero
+			oError404
 		},
 
 		props: {

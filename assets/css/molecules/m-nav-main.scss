@@ -103,7 +103,7 @@
         font-weight: 500;
 
         &:hover {
-            color: $brand11;
+            color: $green4;
         }
 
         &.-active {
@@ -113,7 +113,7 @@
             padding-bottom: 6px;
 
             @media only screen and (min-width: $lg) {
-                color: $brand11;
+                color: $green4;
                 border-bottom: 0;
                 margin-bottom: 5px;
                 padding-bottom: 5px;
@@ -123,7 +123,7 @@
                 color: $gray8;
 
                 @media only screen and (min-width: $lg) {
-                    color: $brand11;
+                    color: $green4;
                 }
             }
         }
@@ -135,7 +135,7 @@
         line-height: 14px;
 
         @media only screen and (min-width: $lg) {
-            color: $brand33;
+            color: $blue2;
         }
     }
 

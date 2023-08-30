@@ -8,7 +8,7 @@
     
         props: {
             text: {
-                type: Array,
+                type: String,
                 required: true
             }
         }
