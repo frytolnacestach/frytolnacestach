@@ -1,10 +1,17 @@
-//function
-
 //mixin
-@import "__mixin/transition";
+@import "___mixin/transition";
+
+//maps
+@import "__maps/maps";
+
+//variables
+@import "__variables/variables";
 
 //base
 @import "_base/base";
+
+//helpers
+@import "_helpers/helpers";
 
 //skeleton
 @import "@skeleton/skeleton";
