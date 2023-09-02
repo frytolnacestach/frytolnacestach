@@ -86,6 +86,7 @@
                                     {{ place.name }}
                                 </h2>
                                 <NuxtLink class="o-cover-place-visited__link" :to="`/svet/${type}/${place.slug}`" :aria-label="`Čti více o místě ${place.name}`"></NuxtLink>
+                                <mButtonPlaceRemove :IDPlace="place.id" :typePlace="place.type_place" v-if="account === 'login' && places && Array.isArray(places) && places.length !== 0" @add-place-clicked="showRemovePlaceForm" />
                             </div>
                         </div>
                         <mButtonPlaceAdd type="next" v-if="account === 'login' && places && Array.isArray(places) && places.length !== 0" @add-place-clicked="showAddPlaceForm" />
@@ -106,9 +107,9 @@
     </div>
 </template>
 
-
 <script>
     import mButtonPlaceAdd from '~/components/molecules/mButtonPlaceAdd.vue'
+    import mButtonPlaceRemove from '~/components/molecules/mButtonPlaceRemove.vue'
     import oFormPlaceVisitedAdd from '~/components/organisms/oFormPlaceVisitedAdd.vue';
 
     export default {
@@ -116,6 +117,7 @@
 
         components: {
             mButtonPlaceAdd,
+            mButtonPlaceRemove,
             oFormPlaceVisitedAdd
         },
 
@@ -219,6 +221,7 @@
                 }
             },
 
+            // Add Place
             showAddPlaceForm() {
                 this.showPlaceForm = true
             },
@@ -227,6 +230,11 @@
                 this.newPlaceID = id
 
                 this.loadNewPlace()
+            },
+
+            // Remove place
+            showRemovePlaceForm() {
+                this.showPlaceForm = true
             }
         }
     }
