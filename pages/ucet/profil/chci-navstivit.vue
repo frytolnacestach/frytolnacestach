@@ -88,7 +88,7 @@
     import oCoverPlaceVisited from '~/components/organisms/oCoverPlaceVisited.vue'
 
     export default {
-        name: 'UcetZmenaHeslaPage',
+        name: 'UcetChciNavstivitPage',
         
         components: {
             mAccountHeader,

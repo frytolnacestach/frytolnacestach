@@ -52,7 +52,7 @@ import oReviewItemListAccount from '~/components/organisms/oReviewItemListAccoun
 
 
 export default {
-    name: 'UcetHodnoceniPage',
+    name: 'UcetRecenzePage',
 
     components: {
         mAccountHeader,

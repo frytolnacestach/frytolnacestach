@@ -88,7 +88,7 @@ import mNavAccount from '~/components/molecules/mNavAccount.vue'
 import oCoverPlaceVisited from '~/components/organisms/oCoverPlaceVisited.vue'
 
 export default {
-    name: 'UcetZmenaHeslaPage',
+    name: 'UcetNavstivenaMistaPage',
 
     components: {
         mAccountHeader,

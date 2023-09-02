@@ -57,7 +57,7 @@
     import oArticleListUser from '~/components/organisms/oArticleListUser.vue'
 
     export default {
-        name: 'UcetVideaPage',
+        name: 'UcetClankyPage',
         
         components: {
             mAccountHeader,
