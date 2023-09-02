@@ -86,7 +86,7 @@
                                     {{ place.name }}
                                 </h2>
                                 <NuxtLink class="o-cover-place-visited__link" :to="`/svet/${type}/${place.slug}`" :aria-label="`Čti více o místě ${place.name}`"></NuxtLink>
-                                <mButtonPlaceRemove :IDPlace="place.id" :typePlace="place.type_place" v-if="account === 'login' && places && Array.isArray(places) && places.length !== 0" @add-place-clicked="showRemovePlaceForm" />
+                                <mButtonPlaceRemove :placeID="place.id" :placeType="place.type_place" v-if="account === 'login'" @remove-place="showRemoveNewPlaceForm" />
                             </div>
                         </div>
                         <mButtonPlaceAdd type="next" v-if="account === 'login' && places && Array.isArray(places) && places.length !== 0" @add-place-clicked="showAddPlaceForm" />
@@ -146,7 +146,8 @@
                 newPlace: null,
                 images: null,
                 showPlaceForm: false,
-                newPlaceID: null
+                newPlaceID: null,
+                removePlaceID: null
             }
         },
 
@@ -221,6 +222,16 @@
                 }
             },
 
+            async removePlace() {
+                // Inxec položky k vymazání
+                const indexToRemove = this.places.findIndex(place => place.id === this.removePlaceID)
+
+                // Vymazaní položky z pole
+                if (indexToRemove !== -1) {
+                    this.places.splice(indexToRemove, 1)
+                }
+            },
+
             // Add Place
             showAddPlaceForm() {
                 this.showPlaceForm = true
@@ -233,9 +244,11 @@
             },
 
             // Remove place
-            showRemovePlaceForm() {
-                this.showPlaceForm = true
-            }
+            showRemoveNewPlaceForm(id) {
+                this.removePlaceID = id
+
+                this.removePlace()
+            },
         }
     }
 </script>
