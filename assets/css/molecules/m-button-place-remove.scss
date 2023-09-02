@@ -1,0 +1,52 @@
+.m-button-place-remove {
+    @include transition(opacity, .3s);
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: $c-blue-bg-component-light-super;
+    border: 1px solid $c-blue-bg-component-light;
+    border-radius: $br-1;
+    opacity: 0;
+    z-index: 5;
+
+    @media (pointer: coarse) {
+        opacity: .6;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        bottom: 3px;
+        right: 3px;
+        line-height: 1;
+        color: $c-blue-bg-component-dark;
+        font-family: $ff-icomoon-default;
+        font-size: $fs-icon-24;
+        content: map-get($icomoon-default, 'cross');
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+// parent hover
+.o-cover-place-visited {
+    &__item {
+        &:hover {
+            .m-button-place-remove {
+                opacity: .6;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
