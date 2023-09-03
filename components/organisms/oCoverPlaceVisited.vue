@@ -86,6 +86,7 @@
                                     {{ place.name }}
                                 </h2>
                                 <NuxtLink class="o-cover-place-visited__link" :to="`/svet/${type}/${place.slug}`" :aria-label="`Čti více o místě ${place.name}`"></NuxtLink>
+                                <mButtonPlaceAddVisited :placeID="place.id" :placeType="place.type_place" v-if="account === 'login' && status === 2" @remove-place="showRemoveNewPlaceForm" />
                                 <mButtonPlaceRemove :placeID="place.id" :placeType="place.type_place" v-if="account === 'login'" @remove-place="showRemoveNewPlaceForm" />
                             </div>
                         </div>
@@ -103,12 +104,13 @@
             </p>
         </client-only>
         <mButtonPlaceAdd type="first" v-if="account === 'login' && places && Array.isArray(places) && places.length === 0" @add-place-clicked="showAddPlaceForm" />
-        <oFormPlaceVisitedAdd :type="type" :visitedPlace="places" v-if="showPlaceForm && account === 'login'" @add-place="showAddNewPlaceForm" />
+        <oFormPlaceVisitedAdd :status="status" :type="type" :visitedPlace="places" v-if="showPlaceForm && account === 'login'" @add-place="showAddNewPlaceForm" />
     </div>
 </template>
 
 <script>
     import mButtonPlaceAdd from '~/components/molecules/mButtonPlaceAdd.vue'
+    import mButtonPlaceAddVisited from '~/components/molecules/mButtonPlaceAddVisited.vue'
     import mButtonPlaceRemove from '~/components/molecules/mButtonPlaceRemove.vue'
     import oFormPlaceVisitedAdd from '~/components/organisms/oFormPlaceVisitedAdd.vue';
 
@@ -117,6 +119,7 @@
 
         components: {
             mButtonPlaceAdd,
+            mButtonPlaceAddVisited,
             mButtonPlaceRemove,
             oFormPlaceVisitedAdd
         },
@@ -136,6 +139,10 @@
             },
             account: {
                 type: String,
+                required: true
+            },
+            status: {
+                type: Number,
                 required: true
             }
         },

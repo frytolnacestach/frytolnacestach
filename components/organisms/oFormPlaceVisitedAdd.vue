@@ -14,7 +14,8 @@
                     <li v-for="placesSearch in filteredPlaces" :key="`${placesSearch.type_place}-${placesSearch.id}`" class="m-search-result__item">
                         <div class="m-search-result__link" @click="editVisited(placesSearch.id)">
                             <span class="m-search-result__name">{{ placesSearch.name }}</span>
-                            <span class="m-search-result__visited" v-if="hasVisited(placesSearch.id)">{{ placeTypeName }} si už navštívil(a)</span>
+                            <!-- TODO -  hasStatus(status) NEMÁM MOŽNOST OVĚŘIT -->
+                            <span class="m-search-result__visited" v-if="hasVisited(placesSearch.id)">{{ placeTypeName }} {{ status === 1 ? 'si už navštívil(a)' : status === 2 ? 'už máš mezi chci navštívil(a)' : '' }}</span>
                         </div>
                     </li>
                 </ul>
@@ -42,6 +43,10 @@
             visitedPlace: {
                 type: Array,
                 required: false
+            },
+            status: {
+                type: Number,
+                required: true
             }
         },
 
@@ -88,6 +93,8 @@
             async editVisited(placeID) {
                 try {
                     this.placeID = placeID;
+
+
                     try {
                         const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-edit`, {
                             headers: {
@@ -102,14 +109,20 @@
                                 'password_hash': this.passwordHash,
                                 'id_place': this.placeID, 
                                 'type': this.placeTypeApp,
-                                'status': 1
+                                'status': this.status
                             })
                         });
 
                         if (response.ok) {
                             if (response.status === 201) {
-                                console.log("Místo bylo přidáno mezi navštívené");
-                                this.successForm = "Místo bylo přidáno mezi navštívené";
+                                if (this.status === 1) {
+                                    console.log("Místo bylo přidáno mezi navštívené");
+                                    this.successForm = "Místo bylo přidáno mezi navštívené";
+                                } else if (this.status === 2) {
+                                    console.log("Místo bylo přidáno mezi chci navštívit");
+                                    this.successForm = "Místo bylo přidáno mezi chci navštívit";
+                                }
+                                
                                 this.searchQuery = ''
                                 this.emitAddNewPlaceEvent(this.placeID)
                             } else if (response.status === 200) {
@@ -165,8 +178,14 @@
                 }
             },
 
+            // Má uživatel zápis k tomuto místu?
             hasVisited(id) {
                 return this.visitedPlace.some(place => place.id === id);
+            },
+
+            // Má stejný status?
+            hasStatus(status) {
+                return this.visitedPlace.some(place => place.status === status);
             },
 
             emitAddNewPlaceEvent(placeID) {

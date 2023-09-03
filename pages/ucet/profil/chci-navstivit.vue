@@ -29,7 +29,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Kontinety které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesContinentsID" type="kontinent" />
+                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesContinentsID" type="kontinent" account="login" :status="2" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -38,7 +38,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Státy které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesStatesID" type="stat" />
+                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesStatesID" type="stat" account="login" :status="2" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -47,7 +47,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Města které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesCitiesID" type="mesto" />
+                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesCitiesID" type="mesto" account="login" :status="2" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -56,7 +56,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Regiony které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesRegionsID" type="region" />
+                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesRegionsID" type="region" account="login" :status="2" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -65,7 +65,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Místa které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesSpotsID" type="misto" />
+                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesSpotsID" type="misto" account="login" :status="2" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
