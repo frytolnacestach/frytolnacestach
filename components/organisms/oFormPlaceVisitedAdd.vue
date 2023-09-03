@@ -5,7 +5,7 @@
         <oFlashMessages :text="successForm" styleThema=" -success" />
         <!-- SECTION - FlashMassages END -->
         <div class="o-form-place-visited-add__input">
-            <input class="a-input-search -blue" type="text" v-model="searchQuery" @input="filterPlaces" :placeholder="'Který ' + placeTypeName + ' si navštívil?'">
+            <input class="a-input-search -blue" type="text" v-model="searchQuery" @input="filterPlaces" :placeholder="status === 1 ? 'Který ' + placeTypeName + ' si navštívil(a)?' : status === 2 ? 'Který ' + placeTypeName + ' chceš navštívit' : ''">
         </div>
         <span class="o-form-place-visited-add__condition" v-if="searchQuery.length < 3">Napiš alepoň 3 znaky</span>
         <div class="o-form-place-visited-add__result">
