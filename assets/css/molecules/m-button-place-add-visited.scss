@@ -36,6 +36,15 @@
     }
 }
 
+// tooltip
+.m-button-place-add-visited {
+    &:hover {
+        .a-tooltip {
+            opacity: .8;
+        }
+    }
+}
+
 // parent hover
 .o-cover-place-visited {
     &__item {

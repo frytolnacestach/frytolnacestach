@@ -1,10 +1,18 @@
 <template>
-    <div class="m-button-place-remove" @click="deleteVisited(placeID)"></div>
+    <div class="m-button-place-remove" @click="deleteVisited(placeID)">
+        <aTooltip text="Odstranit místo" />
+    </div>
 </template>
 
 <script>
+    import aTooltip from '@/components/atoms/aTooltip.vue'
+
     export default {
         name: 'MoleculesmButtonPlaceRemoveComponent',
+
+        components: {
+            aTooltip
+        },
         
         props: {
             placeID: {

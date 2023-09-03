@@ -1,0 +1,23 @@
+.a-tooltip {
+    @include transition(opacity, .3s);
+    background-color: $black;
+    color: $white;
+    padding: 2px 5px;
+    position: absolute;
+    top: -130%;
+    text-wrap: nowrap;
+    border-radius: $br-1;
+    opacity: 0;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        bottom: -3px;
+        left: 7px;
+        transform: rotate(45deg);
+        background-color: $black;
+    }
+}

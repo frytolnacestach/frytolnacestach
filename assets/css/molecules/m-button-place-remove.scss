@@ -36,6 +36,15 @@
     }
 }
 
+// tooltip
+.m-button-place-remove {
+    &:hover {
+        .a-tooltip {
+            opacity: 1;
+        }
+    }
+}
+
 // parent hover
 .o-cover-place-visited {
     &__item {
@@ -44,7 +53,7 @@
                 opacity: .6;
 
                 &:hover {
-                    opacity: 1;
+                    opacity: .8;
                 }
             }
         }

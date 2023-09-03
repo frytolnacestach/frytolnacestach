@@ -1,10 +1,18 @@
 <template>
-    <div class="m-button-place-add-visited" @click="deleteVisited(placeID)"></div>
+    <div class="m-button-place-add-visited" @click="deleteVisited(placeID)">
+        <aTooltip text="Už jsem navštívil" />
+    </div>
 </template>
 
 <script>
+    import aTooltip from '@/components/atoms/aTooltip.vue'
+
     export default {
         name: 'MoleculesmButtonPlaceAddVisitedComponent',
+
+        components: {
+            aTooltip
+        },
         
         props: {
             placeID: {
