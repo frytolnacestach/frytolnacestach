@@ -148,7 +148,6 @@
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
-    import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
@@ -167,7 +166,6 @@
             mHeadline,
             oAdGoogleSidebar,
             oArticleList,
-            oCoverPlaceDetail,
             oHeroPlace,
             oHotInfoHero,
             oInformationBlock,

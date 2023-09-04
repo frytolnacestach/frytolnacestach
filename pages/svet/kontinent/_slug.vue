@@ -108,7 +108,7 @@
                         <!-- SECTION - státy -->
                         <section class="t-section -p0 -py4 -px-world-big -h-scroll">
                             <div class="t-section__inner">
-                                <mHeadline title="Všechny státy na kontinentu" :titleValue="place[0].name" styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" />
+                                <mHeadline title="Všechny státy na kontinentu" :titleValue="place[0].name" styleAlign=" -left" styleThema=" -world" styleGap=" -px-0 mb-2" />
                                 <oCoverPlaceDetail :places="placesStates" :images="imagesStates" type="stat" />
                             </div>
                         </section>
