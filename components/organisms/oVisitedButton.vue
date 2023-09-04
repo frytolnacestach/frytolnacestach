@@ -1,22 +1,40 @@
 <template>
-    <div class="o-visited-button">
-        <!-- SECTION - FlashMassages -->
-        <oFlashMessages :text="errorForm" styleThema=" -error" />
-        <oFlashMessages :text="successForm" styleThema=" -success" />
-        <!-- SECTION - FlashMassages END -->
-
-        <div class="o-visited-button__outer">
-            <div class="o-visited-button__inner">
-                <div class="o-visited-button__items">
-                    <div class="o-visited-button__item">
-                        <span class="o-visited-button__button -future" :class="{ '-active': status === 2 }" @click="editVisited(2)" >Chci navštívit</span>
-                    </div>
-                    <div class="o-visited-button__item">
-                        <span class="o-visited-button__button -visited" :class="{ '-active': status === 1 }" @click="editVisited(1)">Navštívil(a) jsem</span>
+    <div>
+        <!-- skeleton -->
+        <div class="skeleton-o-visited-button" v-if="skeleton === true">
+            <div class="skeleton-o-visited-button__outer">
+                <div class="skeleton-o-visited-button__inner">
+                    <div class="skeleton-o-visited-button__items">
+                        <div v-for="index in 2" :key="index" class="skeleton-o-visited-button__item">
+                            <span class="skeleton-o-visited-button__button loading-image -skeleton-green"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- skeleton END -->
+
+        <client-only v-if="skeleton === false">
+            <div class="o-visited-button">
+                <!-- SECTION - FlashMassages -->
+                <oFlashMessages :text="errorForm" styleThema=" -error" />
+                <oFlashMessages :text="successForm" styleThema=" -success" />
+                <!-- SECTION - FlashMassages END -->
+
+                <div class="o-visited-button__outer">
+                    <div class="o-visited-button__inner">
+                        <div class="o-visited-button__items">
+                            <div class="o-visited-button__item">
+                                <span class="o-visited-button__button -future" :class="{ '-active': status === 2 }" @click="editVisited(2)" >Chci navštívit</span>
+                            </div>
+                            <div class="o-visited-button__item">
+                                <span class="o-visited-button__button -visited" :class="{ '-active': status === 1 }" @click="editVisited(1)">Navštívil(a) jsem</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </client-only>
     </div>
 </template>
 
@@ -34,6 +52,7 @@
             return {
                 errorForm: '',
                 successForm: '',
+                skeleton: true,
                 status: 0,
                 email: this.email,
                 passwordHash: this.passwordHash
@@ -52,7 +71,6 @@
         },
 
         methods: {
-
             async visited() {
                 try {
                     const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}&id_place=${encodeURIComponent(this.place)}&type=${this.placeType}`, {
@@ -69,12 +87,15 @@
                         console.log("Záznam načten");
                         const data = await response.json();
                         this.status = data.message[0].status
+                        this.skeleton = false
                     } else if (response.status === 404) {
                         console.log("Uživatel neexistuje");
                         //this.errorForm = "Uživatel neexistuje";
+                        this.skeleton = false
                     } else if (response.status === 405) {
                         console.log("Místo uživatel nemá uložené");
                         //this.errorForm = "Místo uživatel nemá uložené";
+                        this.skeleton = false
                     } else {
                         console.log("Chyba při komunikaci s API");
                         //this.errorForm = "Chyba při komunikaci s API";
