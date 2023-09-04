@@ -79,9 +79,12 @@
                                         v-lazy>
                                 </div>
                             </div>
-                            <h2 class="o-cover-place__name">
-                                {{ place.name }}
-                            </h2>
+                            <div class="o-cover-place__text">
+                                <span class="o-cover-place__prename" v-if="showPrename">{{ getPrename(place.id_state) }}</span>
+                                <h2 class="o-cover-place__name">
+                                    {{ place.name }}
+                                </h2>
+                            </div>
                             <NuxtLink class="o-cover-place__link" :to="`/svet/${type}/${place.slug}`" :aria-label="`Čti více o místě ${place.name}`"></NuxtLink>
                         </div>
                     </div>
@@ -100,6 +103,10 @@
                 type: Array,
                 required: true
             },
+            placesParent: {
+                type: Array,
+                required: true
+            },
             images: {
                 type: Array,
                 required: true
@@ -111,7 +118,26 @@
             skeleton: {
                 type: Boolean,
                 required: false
+            },
+            showPrename: {
+                type: Boolean,
+                required: false
             }
+        },
+
+        methods: {
+            // Metoda pro prohledání pole placesParent, kde se hledá aktuální potřební stát v podobě idState
+            getPrename(idState) {
+                const matchingPlaceParent = this.placesParent.find(
+                    (parent) => parent.id === idState
+                );
+
+                if (matchingPlaceParent) {
+                    return matchingPlaceParent.name;
+                }
+
+                return '';
+            },
         },
     }
 </script>

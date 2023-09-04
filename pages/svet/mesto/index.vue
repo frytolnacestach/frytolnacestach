@@ -20,7 +20,7 @@
         <!-- SECTION - Place list -->
         <section class="t-section -bg-world -p0">
             <div class="t-section__inner">
-                <oCoverPlace :places="placesCities" :images="images" type="mesto" />
+                <oCoverPlace :places="placesCities" :placesParent="placesParent" :showPrename="true" :images="images" type="mesto" />
                 <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                     <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
                 </div>
@@ -50,6 +50,7 @@
             return {
                 images: [],
                 placesCities: [],
+                placesParent: [],
                 isLoading: false,
                 noMoreItems: false,
                 page: 1,
@@ -86,6 +87,16 @@
                     this.$axios.get(`https://api.frytolnacestach.cz/api/places-cities?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
                 ]);
                 const { data: placesData } = placesResponse;
+
+                //load places parent
+                let placesParentIDS = placesData.map(placeCity => placeCity.id_state).filter(id => id !== undefined && id !== null && id !== '');
+                placesParentIDS = [...new Set(placesParentIDS)];
+                const [placesParentResponse] = await Promise.all([
+                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${placesParentIDS.join(',')}`)
+                ]);
+                const { data: placesParentData } = placesParentResponse;
+
+                this.placesParent = this.placesParent.concat(placesParentData);
 
                 //load images
                 const imagesPlacesCitiesIDS = placesData.map(placeCity => placeCity.id_image_cover).filter(id => id !== undefined && id !== null && id !== '');
