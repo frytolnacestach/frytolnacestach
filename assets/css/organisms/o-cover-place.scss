@@ -124,6 +124,10 @@
         @media only screen and (min-width: $sm) {
             font-size: $fs-small;
         }
+
+        &.-state {
+            opacity: .9
+        }
     }
 
     &__name {
