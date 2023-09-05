@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1693946760",layout:"default",error:a,serverRendered:true,routePath:"\u002Fsvet\u002Fmisto\u002Fmesto-umeni-a-ved--ciudad-de-las-artes-y-las-ciencias",config:{_app:{basePath:"\u002F",assetsPath:"\u002F_nuxt\u002F",cdnURL:a}}}}(null));

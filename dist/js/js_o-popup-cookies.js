@@ -113,7 +113,7 @@ cookiesCustom();
 //--------------
 //ACTIONS
 
-//Přijmám vše
+//Přijímám vše
 document.querySelector(".js_o-popup-cookies__button--all").addEventListener('click', function() {
 	document.querySelector(".js_o-popup-cookies").classList.remove('open');
 	document.querySelector("html").classList.remove('no-scroll-bg');
@@ -147,7 +147,7 @@ document.querySelector(".js_o-popup-cookies__button--all").addEventListener('cli
 	cookiesCreate();
 });
 
-//Přijmám vše-detail
+//Přijímám vše-detail
 document.querySelector(".js_o-popup-cookies__button--all-detail").addEventListener('click', function() {
 	document.querySelector(".js_o-popup-cookies").classList.remove('open');
 	document.querySelector("html").classList.remove('no-scroll-bg');
