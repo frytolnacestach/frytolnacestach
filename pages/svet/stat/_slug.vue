@@ -726,29 +726,30 @@
             getTabLink(tab) {
                 return {
                     name: 'stat-slug-tab',
-                    params: { slug: this.$route.params.slug, tab: tab.slug },
+                    params: { slug: this.$route.params.slug, tab: tab.slug }
                 }
             },
 
             handleResize() {
                 // Aktualizovat hodnotu pro "isMobile" při změně velikosti okna
-                this.isMobile = window.innerWidth < 992;
-            },
+                this.isMobile = window.innerWidth < 992
+            }
         },
 
         computed: {
             hasCitiesToShow() {
-                return this.placesCities.some(place => place.importance !== 'biggest');
+                return this.placesCities.some(place => place.importance !== 'biggest')
             },
+
             updatedTabs() {
                 const hasTabDefault = true;
-                const hasTabShow = this.place[0] && (!!this.placesCities[0]);
-                const hasTabPrice = this.place[0] && (!!this.place[0].currency_name || !!this.place[0].money_prices);
-                const hasTabPeople = this.place[0] && (!!this.place[0].people_religion || !!this.place[0].people_education || !!this.place[0].people_nationality);
-                const hasTabTrip = this.place[0] && (!!this.place[0].visitors_entry);
-                const hasTabContacts = this.place[0] && (!!this.place[0]?.phone_numbers_emergency);
-                const hasTabHotel = this.place[0].affiliate.find(x => x.name === 'booking').value;
-                const hasTabVideos = this.place[0] && (!!this.videos[0]);
+                const hasTabShow = this.place[0] && (!!this.placesCities[0])
+                const hasTabPrice = this.place[0] && (!!this.place[0].currency_name || !!this.place[0].money_prices)
+                const hasTabPeople = this.place[0] && (!!this.place[0].people_religion || !!this.place[0].people_education || !!this.place[0].people_nationality)
+                const hasTabTrip = this.place[0] && (!!this.place[0].visitors_entry)
+                const hasTabContacts = this.place[0] && (!!this.place[0]?.phone_numbers_emergency)
+                const hasTabHotel = this.place[0].affiliate.find(x => x.name === 'booking').value
+                const hasTabVideos = this.place[0] && (!!this.videos[0])
 
                 const newTabs = [
                     { slug: 'default', label: 'Výchozí', visible: hasTabDefault },
@@ -758,43 +759,42 @@
                     { slug: 'cesta', label: 'Cesta', visible: hasTabTrip },
                     { slug: 'kontakty', label: 'Kontakty', visible: hasTabContacts },
                     { slug: 'ubytovani', label: 'Ubytování', visible: hasTabHotel },
-                    { slug: 'videa', label: 'Videa', visible: hasTabVideos },
-                ];
+                    { slug: 'videa', label: 'Videa', visible: hasTabVideos }
+                ]
 
-                this.tabs = newTabs;
+                this.tabs = newTabs
             }
-
         },
 
         head() {
-            const placeName = this.place && this.place.length > 0 ? this.place[0].name : 'Stát';
-            const defaultTitle = `${placeName} | Cestovatelský portál Frytol na cestách`;
-            let title = defaultTitle;
+            const placeName = this.place && this.place.length > 0 ? this.place[0].name : 'Stát'
+            const defaultTitle = `${placeName} | Cestovatelský portál Frytol na cestách`
+            let title = defaultTitle
 
             if (this.$route.params.tab) {
-                const tab = this.tabs.find(tab => tab.slug === this.$route.params.tab);
-                const label = tab.label || '';
-                const tabTitle = `${label} ve státě ${placeName} | Cestovatelský portál Frytol na cestách`;
-                title = tabTitle;
+                const tab = this.tabs.find(tab => tab.slug === this.$route.params.tab)
+                const label = tab.label || ''
+                const tabTitle = `${label} ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
+                title = tabTitle
             }
 
             return {
-            title,
-            meta: [
-                { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}` },
-                { name: 'keywords', content: `${this.place[0].name ? this.place[0].name : '' + ', stát, ceny, ubytování, lidé a kultura, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu'}` },
-                { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
-                { hid: 'og:title', content: title },
-                { hid: 'og:description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}` },
-                { hid: 'og:url', content: `${process.env.baseUrl}/svet/stat/${this.place[0].slug}${this.activeTab !== 'default' ? `/${this.activeTab}` : ''}` },
-                { hid: 'og:type', content: 'website' }
-            ]
-            };
+                title,
+                meta: [
+                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}` },
+                    { name: 'keywords', content: `${this.place[0].name ? this.place[0].name : '' + ', stát, ceny, ubytování, lidé a kultura, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu'}` },
+                    { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}` },
+                    { hid: 'og:url', content: `${process.env.baseUrl}/svet/stat/${this.place[0].slug}${this.activeTab !== 'default' ? `/${this.activeTab}` : ''}` },
+                    { hid: 'og:type', content: 'website' }
+                ]
+            }
         },
 
         async asyncData({ $axios, params }) {
-            let success = false;
-            let data = null;
+            let success = false
+            let data = null
 
             while (!success) { 
                 try {
@@ -809,12 +809,12 @@
 
                     // COMPONENT - Main city
                     // PlaceCityMain
-                    let placeCityMain = null;
+                    let placeCityMain = null
                     if (place[0].id_city_main !== null) {
                         placeCityMain = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${place[0].id_city_main}`)
                     }
                     // Images
-                    let imageCityMain = null;
+                    let imageCityMain = null
                     if (place[0].id_city_main !== null && placeCityMain && placeCityMain[0].id_image_cover !== null ) {
                         imageCityMain = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeCityMain[0].id_image_cover}`)
                     }
@@ -824,7 +824,7 @@
                     // PlacesStatesNeighboring
                     let placesStatesNeighboring
                     if (place[0].ids_neighboring_countries !== null ) {
-                        const idsNeighboringCountries = place[0].ids_neighboring_countries.map(item => item.id);
+                        const idsNeighboringCountries = place[0].ids_neighboring_countries.map(item => item.id)
                         placesStatesNeighboring = await $axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${idsNeighboringCountries.join(',')}`)
                     } else {
                         placesStatesNeighboring = null
@@ -903,94 +903,94 @@
                     await new Promise(resolve => setTimeout(resolve, 1000))
                 }
             }
-            return data;
+            return data
         },
 
         mounted() {
-            this.activeTab = this.$route.params.tab || 'default';
+            this.activeTab = this.$route.params.tab || 'default'
 
             // Zjistit, zda je rozlišení menší než 992px při načítání stránky
-            this.isMobile = window.innerWidth < 992;
+            this.isMobile = window.innerWidth < 992
 
             // Poslouchat událost změny velikosti okna pro aktualizaci přepínače
-            window.addEventListener('resize', this.handleResize);
+            window.addEventListener('resize', this.handleResize)
 
             //Data for mNavBreadcrumbsPlaceArray 
             //continent
             this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
                 if (item.id === 3) {
-                    item.name = this.placeContinent[0].name;
-                    item.url = "/svet/kontinent/" + this.placeContinent[0].slug;
+                    item.name = this.placeContinent[0].name
+                    item.url = "/svet/kontinent/" + this.placeContinent[0].slug
                 }
-                return item;
-            });
+                return item
+            })
             //state
             if(this.activeTab === 'undefined' || this.activeTab === 'default') {
                 this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
                     if (item.id === 5) {
-                        item.name = this.place[0].name;
-                        item.url = "/svet/stat/" + this.place[0].slug;
+                        item.name = this.place[0].name
+                        item.url = "/svet/stat/" + this.place[0].slug
                         item.status = "span"
                     }
-                    return item;
-                });
+                    return item
+                })
             } else {
                 this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
                     if (item.id === 5) {
-                        item.name = this.place[0].name;
-                        item.url = "/svet/stat/" + this.place[0].slug;
+                        item.name = this.place[0].name
+                        item.url = "/svet/stat/" + this.place[0].slug
                         item.status = "link"
                     }
-                    return item;
-                });
+                    return item
+                })
             }
 
             //Data for oHotInfoHero
             this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
                 if (item.id === 1) {
-                    item.name = this.placeContinent[0].name;
+                    item.name = this.placeContinent[0].name
                     item.url = `/svet/kontinent/${this.placeContinent[0].slug}`
                 }
-                return item;
-            });
+                return item
+            })
             this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
                 if (item.id === 2) {
-                    item.name = this.place[0].area;
+                    item.name = this.place[0].area
                 }
-                return item;
-            });
+                return item
+            })
             this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
                 if (item.id === 3) {
-                    item.name = this.place[0].population;
+                    item.name = this.place[0].population
                 }
-                return item;
-            });
+                return item
+            })
         },
 
         beforeUnmount() {
             // Zrušit naslouchání události změny velikosti okna při odstranění komponenty
-            window.removeEventListener('resize', this.handleResize);
+            window.removeEventListener('resize', this.handleResize)
         },
 
         updated() {
-            window.lazySizes && window.lazySizes.update();
+            window.lazySizes && window.lazySizes.update()
         },
 
         watch: {
             updatedTabs: {
                 immediate: true,
                 handler() {
-                    const defaultTab = this.tabs.find(tab => tab.slug === 'default');
-                    const visibleTabs = this.tabs.filter(tab => tab.visible);
-                    const activeTab = visibleTabs.length > 0 ? visibleTabs[0] : defaultTab;
-                    this.activeTab = activeTab.slug;
+                    const defaultTab = this.tabs.find(tab => tab.slug === 'default')
+                    const visibleTabs = this.tabs.filter(tab => tab.visible)
+                    const activeTab = visibleTabs.length > 0 ? visibleTabs[0] : defaultTab
+                    this.activeTab = activeTab.slug
                 }
             },
 
             activeTab: function(newActiveTab) {
-                const selectedTab = this.tabs.find(tab => tab.slug === newActiveTab);
-                this.activeTabName = selectedTab.label;
+                const selectedTab = this.tabs.find(tab => tab.slug === newActiveTab)
+                this.activeTabName = selectedTab.label
             }
-        },
+        }
     }
 </script>

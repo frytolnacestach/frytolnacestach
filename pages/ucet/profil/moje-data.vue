@@ -65,7 +65,7 @@
         },
 
         mounted() {
-            loginCheckLogout(this.$router);
+            loginCheckLogout(this.$router)
         },
 
         head: {
@@ -83,7 +83,7 @@
 
         methods: {
             menuAccountUpdate(newValue) {
-                this.mNavAccountOpen = newValue;
+                this.mNavAccountOpen = newValue
             }
         }
     }

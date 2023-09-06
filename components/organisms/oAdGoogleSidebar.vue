@@ -50,15 +50,15 @@
 
         methods:{
             adsenseAddLoad(){
-                let inlineScript   = document.createElement("script");
-                inlineScript.type  = "text/javascript";
+                let inlineScript   = document.createElement("script")
+                inlineScript.type  = "text/javascript"
                 inlineScript.text  = '(adsbygoogle = window.adsbygoogle || []).push({});'
-                document.getElementsByTagName('body')[0].appendChild(inlineScript);
+                document.getElementsByTagName('body')[0].appendChild(inlineScript)
             }
         },
 
         mounted() {
-            this.adsenseAddLoad();
+            this.adsenseAddLoad()
         }
     }
 </script>

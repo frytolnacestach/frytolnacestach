@@ -22,30 +22,30 @@
 
         data() {
             return {
-                user: [],
+                user: []
             }
         },
 
         async mounted() {
-            let success = false;
-            let data = null;
+            let success = false
+            let data = null
 
             while (!success) {
                 try {
-                    const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-id/${this.author}`);
+                    const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-id/${this.author}`)
 
                     data = { user }
 
                     success = true
                 } catch (error) {
-                    console.log(`API ERROR - O AUTHOR SIDEBAR`);
-                    console.error(error);
+                    console.log(`API ERROR - O AUTHOR SIDEBAR`)
+                    console.error(error)
 
                     await new Promise(resolve => setTimeout(resolve, 1000))
                 }
             }
 
-            Object.assign(this, data);
+            Object.assign(this, data)
         }
     }
 </script>

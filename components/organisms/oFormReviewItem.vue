@@ -203,37 +203,37 @@
                             'rating': this.selectRating,
                             'text': this.text
                         })
-                    });
+                    })
 
                     if (response.ok) {
-                        console.log("Recenze byla přidána");
-                        this.successForm = "Recenze byla přidána";
+                        console.log("Recenze byla přidána")
+                        this.successForm = "Recenze byla přidána"
 
                         this.updateParentVariable()
                         this.reviewShowReviewNew()
                     } else if (response.status === 201) {
-                        console.log("Recenze byla přidána");
-                        this.successForm = "Recenze byla přidána";
+                        console.log("Recenze byla přidána")
+                        this.successForm = "Recenze byla přidána"
 
                         this.updateParentVariable()
                         this.reviewShowReviewNew()
                     } else if (response.status === 404) {
-                        console.log("Uživatel neexistuje nebo nejste přihlášen");
-                        this.errorForm = "Uživatel neexistuje nebo nejste přihlášen";
+                        console.log("Uživatel neexistuje nebo nejste přihlášen")
+                        this.errorForm = "Uživatel neexistuje nebo nejste přihlášen"
                     } else if (response.status === 405) {
-                        console.log("Tady už uživatel hodnocení napsal");
-                        this.errorForm = "Tady už uživatel hodnocení napsal";
+                        console.log("Tady už uživatel hodnocení napsal")
+                        this.errorForm = "Tady už uživatel hodnocení napsal"
                     } else if (response.status === 406) {
-                        console.log("Neplatné hodnoty u hodnocení");
-                        this.errorForm = "Neplatné hodnoty u hodnocení";
+                        console.log("Neplatné hodnoty u hodnocení")
+                        this.errorForm = "Neplatné hodnoty u hodnocení"
                     } else {
-                        console.log("Chyba při komunikaci s API");
-                        this.errorForm = "Chyba při komunikaci s API";
+                        console.log("Chyba při komunikaci s API")
+                        this.errorForm = "Chyba při komunikaci s API"
                     }
                 } catch (err) {
-                    console.log(err);
-                    this.errorForm = "Chyba připojení k API";
-                    throw err;
+                    console.log(err)
+                    this.errorForm = "Chyba připojení k API"
+                    throw err
                 }
             },
 
@@ -255,67 +255,67 @@
                             'rating': this.selectRating,
                             'text': this.text
                         })
-                    });
+                    })
 
                     if (response.ok) {
-                        console.log("Recenze byla upravena");
-                        this.successForm = "Recenze byla upravena";
+                        console.log("Recenze byla upravena")
+                        this.successForm = "Recenze byla upravena"
                         this.reviewShowReview()
                     } else if (response.status === 201) {
                         console.log("Recenze byla upravena");
                         this.successForm = "Recenze byla upravena";
                         this.reviewShowReview()
                     } else if (response.status === 404) {
-                        console.log("Uživatel neexistuje nebo nejste přihlášen");
-                        this.errorForm = "Uživatel neexistuje nebo nejste přihlášen";
+                        console.log("Uživatel neexistuje nebo nejste přihlášen")
+                        this.errorForm = "Uživatel neexistuje nebo nejste přihlášen"
                     } else if (response.status === 406) {
-                        console.log("Neplatné hodnoty u hodnocení");
-                        this.errorForm = "Neplatné hodnoty u hodnocení";
+                        console.log("Neplatné hodnoty u hodnocení")
+                        this.errorForm = "Neplatné hodnoty u hodnocení"
                     } else {
-                        console.log("Chyba při komunikaci s API");
-                        this.errorForm = "Chyba při komunikaci s API";
+                        console.log("Chyba při komunikaci s API")
+                        this.errorForm = "Chyba při komunikaci s API"
                     }
                 } catch (err) {
-                    console.log(err);
-                    this.errorForm = "Chyba připojení k API";
-                    throw err;
+                    console.log(err)
+                    this.errorForm = "Chyba připojení k API"
+                    throw err
                 }
             },
 
             async reviewShowCreate() {
-                console.log("kliknuti na reviewShowEdit");
-                this.showReviewNew = false;
-                this.showCreateForm = true;
+                console.log("kliknuti na reviewShowEdit")
+                this.showReviewNew = false
+                this.showCreateForm = true
             },
 
             async reviewShowReviewNew() {
-                console.log("kliknuti na reviewShowReview");
-                this.showCreateForm = false;
-                this.showReviewNew = true;
+                console.log("kliknuti na reviewShowReview")
+                this.showCreateForm = false
+                this.showReviewNew = true
             },
 
             async reviewShowEdit() {
-                this.showReview = false;
-                this.showEditForm = true;
+                this.showReview = false
+                this.showEditForm = true
             },
 
             async reviewShowReview() {
-                this.showEditForm = false;
-                this.showReview = true;
+                this.showEditForm = false
+                this.showReview = true
             },
 
             updateParentVariable() {
-                const newValue = true;
-                this.$emit('update', newValue);
+                const newValue = true
+                this.$emit('update', newValue)
             }
         },
 
         async mounted() {
             if (process.client) {
-                const localStorageEmail = localStorage.getItem('email');
-                const localStoragePasswordHash = localStorage.getItem('password_hash');
-                this.email = localStorageEmail;
-                this.passwordHash = localStoragePasswordHash;
+                const localStorageEmail = localStorage.getItem('email')
+                const localStoragePasswordHash = localStorage.getItem('password_hash')
+                this.email = localStorageEmail
+                this.passwordHash = localStoragePasswordHash
             }
             
             let success = false;
@@ -350,7 +350,7 @@
                 }
             }
 
-            Object.assign(this, data);
-        },
+            Object.assign(this, data)
+        }
     }
 </script>

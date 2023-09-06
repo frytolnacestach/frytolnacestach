@@ -21,13 +21,13 @@
             dateEnd: {
                 type: String,
                 required: true
-            },
+            }
         },
 
         methods: {
             formatDate(date) {
-                const options = { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', timeZoneName: 'short' };
-                return new Date(date).toLocaleDateString('cs', options);
+                const options = { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', timeZoneName: 'short' }
+                return new Date(date).toLocaleDateString('cs', options)
             }
         }
     }

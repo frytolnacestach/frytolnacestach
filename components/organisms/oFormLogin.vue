@@ -32,80 +32,79 @@
 </template>
   
 <script>
-import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
-  
-export default {
-    name: 'OrganismsoFormRegistrationComponent',
-  
-    components: {
-        oFlashMessages
-    },
-  
-    data() {
-        return {
-            errorForm: '',
-            successForm: '',
-            email: '',
-            password: '',
-            nickname: '',
-        };
-    },
-  
-    methods: {  
-        async login() {
-            try {
-                const response = await fetch(`https://api.frytolnacestach.cz/api/user-login`, {
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Access-Control-Allow-Origin": "http://localhost:3000",
-                        "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
-                        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH"
-                    },
-                    method: 'POST',
-                    body: JSON.stringify({
-                        'email': this.email,
-                        'password': this.password,
-                    })
-                });
-
-                if (response.ok) {
-                    const data = await response.json();
-                    console.log("Přihlášení úspěšné");
-                    this.successForm = "Přihlášení úspěšné";
-
-                    //Cookies - localStorage
-                    localStorage.setItem("email", data.message[0].email);
-                    localStorage.setItem("password_hash", data.message[0].password);
-                    localStorage.setItem("status", data.message[0].status);
-                    localStorage.setItem("nickname", data.message[0].nickname);
-                    //Cookies - set expires
-                    var now = new Date();
-                    now.setMonth(now.getMonth() + 1);
-                    let expires = "expires=" + now;
-                    //Cookies - write
-                    document.cookie = "FNCemail=" + data.message[0].email + ";" + expires;
-                    document.cookie = "FNCpass=" + data.message[0].password + ";" + expires;
-                    document.cookie = "FNCstatus=" + data.message[0].status + ";" + expires;
-                    document.cookie = "FNCnickname=" + data.message[0].nickname + ";" + expires;
-
-                    await this.$router.push('/ucet/profil');
-                } else if (response.status === 401) {
-                    console.log("Nesprávné přihlašovací údaje");
-                    this.errorForm = "Nesprávné přihlašovací údaje";
-                } else if (response.status === 404) {
-                    console.log("Uživatel nenalezen");
-                    this.errorForm = "Uživatel nenalezen";
-                } else {
-                    console.log("Chyba při komunikaci s API");
-                    this.errorForm = "Chyba při komunikaci s API";
-                }
-            } catch (err) {
-                console.log(err);
-                this.errorForm = "Chyba připojení k API";
-                throw err;
+    import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
+    
+    export default {
+        name: 'OrganismsoFormRegistrationComponent',
+    
+        components: {
+            oFlashMessages
+        },
+    
+        data() {
+            return {
+                errorForm: '',
+                successForm: '',
+                email: '',
+                password: '',
+                nickname: ''
             }
         },
+    
+        methods: {  
+            async login() {
+                try {
+                    const response = await fetch(`https://api.frytolnacestach.cz/api/user-login`, {
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Access-Control-Allow-Origin": "http://localhost:3000",
+                            "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
+                            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH"
+                        },
+                        method: 'POST',
+                        body: JSON.stringify({
+                            'email': this.email,
+                            'password': this.password
+                        })
+                    })
+
+                    if (response.ok) {
+                        const data = await response.json()
+                        console.log("Přihlášení úspěšné")
+                        this.successForm = "Přihlášení úspěšné"
+
+                        //Cookies - localStorage
+                        localStorage.setItem("email", data.message[0].email)
+                        localStorage.setItem("password_hash", data.message[0].password)
+                        localStorage.setItem("status", data.message[0].status)
+                        localStorage.setItem("nickname", data.message[0].nickname)
+                        //Cookies - set expires
+                        var now = new Date()
+                        now.setMonth(now.getMonth() + 1)
+                        let expires = "expires=" + now
+                        //Cookies - write
+                        document.cookie = "FNCemail=" + data.message[0].email + ";" + expires
+                        document.cookie = "FNCpass=" + data.message[0].password + ";" + expires
+                        document.cookie = "FNCstatus=" + data.message[0].status + ";" + expires
+                        document.cookie = "FNCnickname=" + data.message[0].nickname + ";" + expires
+
+                        await this.$router.push('/ucet/profil')
+                    } else if (response.status === 401) {
+                        console.log("Nesprávné přihlašovací údaje")
+                        this.errorForm = "Nesprávné přihlašovací údaje"
+                    } else if (response.status === 404) {
+                        console.log("Uživatel nenalezen")
+                        this.errorForm = "Uživatel nenalezen"
+                    } else {
+                        console.log("Chyba při komunikaci s API")
+                        this.errorForm = "Chyba při komunikaci s API"
+                    }
+                } catch (err) {
+                    console.log(err)
+                    this.errorForm = "Chyba připojení k API"
+                    throw err
+                }
+            }
+        }
     }
-};
 </script>
-  

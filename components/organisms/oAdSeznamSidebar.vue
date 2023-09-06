@@ -21,36 +21,37 @@
         name: 'OrganismsoAdSeznamSidebarComponent',
 
         mounted() {
-            const adContainer = this.$refs.adContainer;
+            const adContainer = this.$refs.adContainer
 
             // Vytvoření elementu pro reklamu
-            const adElement = document.createElement('div');
-            adElement.id = 'ssp-zone-302431';
+            const adElement = document.createElement('div')
+            adElement.id = 'ssp-zone-302431'
 
             // Vložení reklamního elementu do kontejneru
-            adContainer.appendChild(adElement);
+            adContainer.appendChild(adElement)
 
             // Načtení externího skriptu sssp.js
-            const script = document.createElement('script');
-            script.src = 'https://ssp.seznam.cz/static/js/ssp.js';
-            script.async = true;
-            script.onload = this.initAdCode;
+            const script = document.createElement('script')
+            script.src = 'https://ssp.seznam.cz/static/js/ssp.js'
+            script.async = true
+            script.onload = this.initAdCode
 
             // Přidání skriptu do hlavičky dokumentu
-            document.head.appendChild(script);
+            document.head.appendChild(script)
         },
+
         methods: {
             initAdCode() {
-            // Metoda getAds() zajišťuje získání reklamy z reklamního systému a její vykreslení do stránky.
-            // Parametry jednotlivých zón jsou definované v níže uvedeném poli, které je argumentem této metody.
-            sssp.getAds([
-                {
-                "zoneId": 302431,        // Unikátní identifikátor reklamní zóny
-                "id": "ssp-zone-302431", // ID elementu, do kterého se vypisuje reklama
-                "width": 300,            // Maximální šířka reklamy v zóně
-                "height": 600            // Maximální výška reklamy v zóně
-                }
-            ]);
+                // Metoda getAds() zajišťuje získání reklamy z reklamního systému a její vykreslení do stránky.
+                // Parametry jednotlivých zón jsou definované v níže uvedeném poli, které je argumentem této metody.
+                sssp.getAds([
+                    {
+                        "zoneId": 302431,        // Unikátní identifikátor reklamní zóny
+                        "id": "ssp-zone-302431", // ID elementu, do kterého se vypisuje reklama
+                        "width": 300,            // Maximální šířka reklamy v zóně
+                        "height": 600            // Maximální výška reklamy v zóně
+                    }
+                ])
             }
         }
     }

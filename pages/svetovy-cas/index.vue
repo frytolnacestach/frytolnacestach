@@ -70,6 +70,7 @@
                 { hid: 'og:type', content: 'website' }  
             ]
         },
+        
         async mounted() {
             await this.loadPlaces()
             this.addScrollListener()

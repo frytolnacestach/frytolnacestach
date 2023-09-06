@@ -164,14 +164,14 @@
         methods:{
             handleResize() {
                 // Aktualizovat hodnotu pro "isMobile" při změně velikosti okna
-                this.isMobile = window.innerWidth < 992;
-            },
+                this.isMobile = window.innerWidth < 992
+            }
         },
 
         head() {
-            const placeName = this.place && this.place.length > 0 ? this.place[0].name : 'Stát';
-            const defaultTitle = `Jaký je čas ve státě ${placeName} | Cestovatelský portál Frytol na cestách`;
-            let title = defaultTitle;
+            const placeName = this.place && this.place.length > 0 ? this.place[0].name : 'Stát'
+            const defaultTitle = `Jaký je čas ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
+            let title = defaultTitle
 
             return {
                 title,
@@ -188,8 +188,8 @@
         },
 
         async asyncData({ $axios, params }) {
-            let success = false;
-            let data = null;
+            let success = false
+            let data = null
 
             while (!success) { 
                 try {
@@ -204,7 +204,7 @@
                     data = {
                         place,
                         imagePlace,
-                        placeContinent,
+                        placeContinent
                     }
 
 
@@ -216,47 +216,47 @@
                     await new Promise(resolve => setTimeout(resolve, 1000))
                 }
             }
-            return data;
+            return data
         },
 
         mounted() {
-            this.activeTab = this.$route.params.tab || 'default';
+            this.activeTab = this.$route.params.tab || 'default'
 
             // Zjistit, zda je rozlišení menší než 992px při načítání stránky
-            this.isMobile = window.innerWidth < 992;
+            this.isMobile = window.innerWidth < 992
 
             // Poslouchat událost změny velikosti okna pro aktualizaci přepínače
-            window.addEventListener('resize', this.handleResize);
+            window.addEventListener('resize', this.handleResize)
 
             //Data for oHotInfoHero
             this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
                 if (item.id === 1) {
-                    item.name = this.placeContinent[0].name;
+                    item.name = this.placeContinent[0].name
                     item.url = `/svet/kontinent/${this.placeContinent[0].slug}`
                 }
                 return item;
-            });
+            })
             this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
                 if (item.id === 2) {
-                    item.name = this.place[0].area;
+                    item.name = this.place[0].area
                 }
                 return item;
-            });
+            })
             this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
                 if (item.id === 3) {
-                    item.name = this.place[0].population;
+                    item.name = this.place[0].population
                 }
-                return item;
-            });
+                return item
+            })
         },
 
         beforeUnmount() {
             // Zrušit naslouchání události změny velikosti okna při odstranění komponenty
-            window.removeEventListener('resize', this.handleResize);
+            window.removeEventListener('resize', this.handleResize)
         },
 
         updated() {
-            window.lazySizes && window.lazySizes.update();
+            window.lazySizes && window.lazySizes.update()
         }
     }
 </script>

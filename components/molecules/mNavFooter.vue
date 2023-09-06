@@ -105,6 +105,6 @@
 
 <script>
     export default {
-        name: 'MoleculesmNavFootewComponent',
+        name: 'MoleculesmNavFootewComponent'
     }
 </script>

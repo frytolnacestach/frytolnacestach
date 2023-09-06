@@ -11,9 +11,9 @@
 </template>
   
 <script>
-    import moment from 'moment-timezone';
+    import moment from 'moment-timezone'
     import 'moment/locale/cs'
-    moment.locale('cs');
+    moment.locale('cs')
   
     export default {
         name: 'OrganismsoTimeComponent',
@@ -21,23 +21,26 @@
         props: {
             mpz: {
                 type: String,
-                required: true,
-            },
+                required: true
+            }
         },
+
         data() {
             return {
                 localTime: null,
                 localDate: null
-            };
+            }
         },
+
         watch: {
             mpz: {
                 immediate: true,
                 handler(newVal) {
-                    this.getLocalTimeFromState(newVal);
-                },
-            },
+                    this.getLocalTimeFromState(newVal)
+                }
+            }
         },
+
         methods: {
             getLocalTimeFromState(mpz) {
                 const stateTimezoneMap = {
@@ -289,15 +292,15 @@
                     'YT': 'Indian/Mayotte',
                     'ZA': 'Africa/Johannesburg',
                     'ZM': 'Africa/Lusaka',
-                    'ZW': 'Africa/Harare',
-                };
+                    'ZW': 'Africa/Harare'
+                }
     
                 const timezone = stateTimezoneMap[mpz]
 
                 if (!timezone) {
                     this.localTime = 'Není k dispozici časová zóna pro tento stát.'
                     this.localDate = 'Není k dispozici časová zóna pro tento stát.'
-                    return;
+                    return
                 }
         
                 this.localTime = moment().tz(timezone).format('HH:mm')

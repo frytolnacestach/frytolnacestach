@@ -49,28 +49,27 @@
                     const [placesResponse] = await Promise.all([
                         this.$axios.get(`https://api.frytolnacestach.cz/api/places-continents?showType=filter`)
                     ]);
-                    const { data: placesData } = placesResponse;
-                    this.filterPlaces = placesData;
+                    const { data: placesData } = placesResponse
+                    this.filterPlaces = placesData
                 } else if (this.typePlaceFilter === "states") {
                     // states
                     const [placesResponse] = await Promise.all([
                         this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=filter`)
                     ]);
-                    const { data: placesData } = placesResponse;
-                    this.filterPlaces = placesData;
+                    const { data: placesData } = placesResponse
+                    this.filterPlaces = placesData
                 }
             },
 
             handleFilterSelectChange() {
-                const selectedPlaceId = this.filterSelect;
-                this.updateParentVariable(selectedPlaceId);
+                const selectedPlaceId = this.filterSelect
+                this.updateParentVariable(selectedPlaceId)
             },
 
             updateParentVariable(id) {
-                const newValue = id;
-                this.$emit('update', newValue);
+                const newValue = id
+                this.$emit('update', newValue)
             }
-            
         }
     }
 </script>

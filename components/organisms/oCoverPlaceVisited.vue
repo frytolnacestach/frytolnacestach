@@ -167,9 +167,10 @@
                     }
                 }
             },
+
             loadingNecessaryData(newVal, oldVal) {
                 if (!newVal && this.placesID.length === 0) {
-                    this.places = [];
+                    this.places = []
                 }
             }
         },
@@ -221,8 +222,8 @@
                     const imagesPlacesID = newPlace.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
                     const newImage = imagesPlacesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesID.join(',')}`) : []
 
-                    this.places = [...this.places, ...newPlace];
-                    this.images = [...this.images, ...newImage];
+                    this.places = [...this.places, ...newPlace]
+                    this.images = [...this.images, ...newImage]
                 } catch (error) {
                     console.log(`API ERROR - VYPIS NOVÉHO NAVŠTÍVENÉHO MÍSTA`)
                     console.error(error)
@@ -255,7 +256,7 @@
                 this.removePlaceID = id
 
                 this.removePlace()
-            },
+            }
         }
     }
 </script>

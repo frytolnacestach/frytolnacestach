@@ -63,37 +63,37 @@
             return {
                 travelDictionaries: [],
                 images: [],
-                isLoading: false,
+                isLoading: false
             }
         },
 
         async fetch() {
             //start loading
-            this.isLoading = true;
+            this.isLoading = true
 
             //load travelDictionaries
             const [travelDictionariesResponse] = await Promise.all([
                 this.$axios.get(`https://api.frytolnacestach.cz/api/travel-dictionaries-random?showType=list&actualID=${this.IDTravelDictionary}&quantity=5`)
 
-            ]);
-            const { data: travelDictionariesData } = travelDictionariesResponse;
+            ])
+            const { data: travelDictionariesData } = travelDictionariesResponse
 
             //load images
-            const imagesTravelDictionariesIDS  = travelDictionariesData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '');
+            const imagesTravelDictionariesIDS  = travelDictionariesData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
             if (imagesTravelDictionariesIDS .length > 0) {
-                const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesTravelDictionariesIDS .join(',')}`);
-                const { data: imagesData } = imagesResponse;
-                this.images = this.images.concat(imagesData);
+                const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesTravelDictionariesIDS .join(',')}`)
+                const { data: imagesData } = imagesResponse
+                this.images = this.images.concat(imagesData)
             
                 // add to placecesData to travelDictionaries
-                this.travelDictionaries = this.travelDictionaries.concat(travelDictionariesData);
+                this.travelDictionaries = this.travelDictionaries.concat(travelDictionariesData)
             } else {
                 // add to placecesData to travelDictionaries
-                this.travelDictionaries = this.travelDictionaries.concat(travelDictionariesData);
+                this.travelDictionaries = this.travelDictionaries.concat(travelDictionariesData)
             } 
 
             //end loading
-            this.isLoading = false;
-        },
+            this.isLoading = false
+        }
     }
 </script>

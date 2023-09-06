@@ -61,6 +61,6 @@
 
 <script>
     export default {
-        name: 'OrganismsoPopupCookiesComponent',
+        name: 'OrganismsoPopupCookiesComponent'
     }
 </script>

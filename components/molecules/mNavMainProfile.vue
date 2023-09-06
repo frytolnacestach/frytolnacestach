@@ -24,7 +24,7 @@
 
         mounted() {
             if (process.client) {
-                this.nickname =  localStorage.getItem('nickname');
+                this.nickname =  localStorage.getItem('nickname')
             }
         },
 
@@ -32,20 +32,20 @@
             '$route.path': {
                 handler() {
                     if (process.client) {
-                        this.nickname = localStorage.getItem('nickname');
+                        this.nickname = localStorage.getItem('nickname')
                     }
                 },
                 immediate: true
-            },
+            }
         },
 
         computed: {
             getTrimmedNickname() {
-                const maxLength = 20;
+                const maxLength = 20
                 if (this.nickname.length > maxLength) {
-                    return this.nickname.slice(0, maxLength) + '...';
+                    return this.nickname.slice(0, maxLength) + '...'
                 }
-                return this.nickname;
+                return this.nickname
             }
         }
     }

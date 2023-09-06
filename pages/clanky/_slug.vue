@@ -244,8 +244,8 @@
         },
 
         async asyncData({ $axios, params }) {
-            let success = false;
-            let data = null;
+            let success = false
+            let data = null
 
             while (!success) {
                 try {
@@ -253,21 +253,21 @@
                     // Post
                     const post = await $axios.$get(`https://api.frytolnacestach.cz/api/post/${params.slug}`)
                     // Image
-                    let imagePostHero = null;
+                    let imagePostHero = null
                     try {
                         imagePostHero = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${post[0].id_image_hero}`)
                     } catch (error) {
                         console.log(`API ERROR - IMAGE HERO`)
                     }
                     // Image
-                    let imagePostMap = null;
+                    let imagePostMap = null
                     try {
                         imagePostMap = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${post[0].id_image_map}`)
                     } catch (error) {
                         console.log(`API ERROR - IMAGE MAP`)
                     }
                     // Image
-                    let imagePostOg = null;
+                    let imagePostOg = null
                     try {
                         imagePostOg = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${post[0].id_image_og}`)
                     } catch (error) {
@@ -277,14 +277,14 @@
 
                     // COMPONENT - oVideoList
                     // Videos
-                    let videos = null;
+                    let videos = null
                     try {
                         videos = await $axios.$get(`https://api.frytolnacestach.cz/api/videos-id-city/${post[0].id_city}`)
                     } catch (error) {
                         console.log(`API ERROR - VIDEOS`)
                     }
                     // Images
-                    let imagesVideos = null;
+                    let imagesVideos = null
                     if (videos) {
                         try {
                             const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '');

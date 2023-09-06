@@ -101,18 +101,18 @@
 
         async asyncData({ $axios, params }) {
             try {
-                const staticUser = await $axios.$get(`https://api.frytolnacestach.cz/api/user/${params.slug}`);
+                const staticUser = await $axios.$get(`https://api.frytolnacestach.cz/api/user/${params.slug}`)
 
                 return {
                     staticUser
-                };
+                }
             } catch (error) {
-                console.log(`API ERROR - CESTOVATEL DETAIL(static): ${params.slug}`);
-                console.error(error);
+                console.log(`API ERROR - CESTOVATEL DETAIL(static): ${params.slug}`)
+                console.error(error)
 
                 return {
                     staticUser: null
-                };
+                }
             }
         },
 
@@ -122,47 +122,47 @@
                 let data = null
 
                 if (process.client) {
-                while (!success) {
-                    try {
-                        // PAGE - Cestovatel
-                        // User
-                        const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user/${this.$route.params.slug}`);
+                    while (!success) {
+                        try {
+                            // PAGE - Cestovatel
+                            // User
+                            const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user/${this.$route.params.slug}`)
 
 
-                        // COMPONENT - oVideoListUser
-                        // Videos
-                        const videos = await this.$axios.$get(`https://api.frytolnacestach.cz/api/videos-id-user/${user[0].id}`)
-                        // Images
-                        const imagesVideosIDS = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
-                        const images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
+                            // COMPONENT - oVideoListUser
+                            // Videos
+                            const videos = await this.$axios.$get(`https://api.frytolnacestach.cz/api/videos-id-user/${user[0].id}`)
+                            // Images
+                            const imagesVideosIDS = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
+                            const images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
 
 
-                        // TO DATA
-                        data = {
-                            staticUser: user,
-                            user,
-                            videos,
-                            images
+                            // TO DATA
+                            data = {
+                                staticUser: user,
+                                user,
+                                videos,
+                                images
+                            }
+
+                            // SUCCESS
+                            success = true
+                        } catch (error) {
+                            console.log(`API ERROR - CESTOVATEL VIDEA DETAIL: ${this.$route.params.slug}`)
+                            console.error(error)
+
+                            await new Promise(resolve => setTimeout(resolve, 1000))
                         }
-
-                        // SUCCESS
-                        success = true
-                    } catch (error) {
-                        console.log(`API ERROR - CESTOVATEL VIDEA DETAIL: ${this.$route.params.slug}`);
-                        console.error(error);
-
-                        await new Promise(resolve => setTimeout(resolve, 1000));
                     }
-                }
 
-                Object.assign(this, data);
+                    Object.assign(this, data)
                 }
-            });
+            })
         },
 
         methods: {
             menuUserUpdate(newValue) {
-                this.mNavUserOpen = newValue;
+                this.mNavUserOpen = newValue
             }
         }
 

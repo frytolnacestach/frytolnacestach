@@ -58,7 +58,7 @@
                 status: 0,
                 email: this.email,
                 passwordHash: this.passwordHash
-            };
+            }
         },
 
         props: {
@@ -87,25 +87,25 @@
 
                     if (response.ok) {
                         console.log("Záznam načten");
-                        const data = await response.json();
+                        const data = await response.json()
                         this.status = data.message[0].status
                         this.skeleton = false
                     } else if (response.status === 404) {
-                        console.log("Uživatel neexistuje");
-                        //this.errorForm = "Uživatel neexistuje";
+                        console.log("Uživatel neexistuje")
+                        //this.errorForm = "Uživatel neexistuje"
                         this.skeleton = false
                     } else if (response.status === 405) {
-                        console.log("Místo uživatel nemá uložené");
-                        //this.errorForm = "Místo uživatel nemá uložené";
+                        console.log("Místo uživatel nemá uložené")
+                        //this.errorForm = "Místo uživatel nemá uložené"
                         this.skeleton = false
                     } else {
-                        console.log("Chyba při komunikaci s API");
-                        //this.errorForm = "Chyba při komunikaci s API";
+                        console.log("Chyba při komunikaci s API")
+                        //this.errorForm = "Chyba při komunikaci s API"
                     }
                 } catch (err) {
-                    console.log(err);
-                    this.errorForm = "Chyba připojení k API";
-                    throw err;
+                    console.log(err)
+                    this.errorForm = "Chyba připojení k API"
+                    throw err
                 }
             },
 
@@ -128,33 +128,33 @@
                                 'type': this.placeType,
                                 'status': this.status
                             })
-                        });
+                        })
 
                         if (response.ok) {
                             if (response.status === 201) {
-                                console.log("Záznam uložen");
-                                this.successForm = "Záznam uložen";
+                                console.log("Záznam uložen")
+                                this.successForm = "Záznam uložen"
                             } else if (response.status === 200) {
-                                console.log("Záznam odebrán");
-                                this.successForm = "Záznam odebrán";
+                                console.log("Záznam odebrán")
+                                this.successForm = "Záznam odebrán"
                                 this.status = 0
                             }
                         } else if (response.status === 404) {
-                            console.log("Vypadá to že nejsi přihlášen ke svému účtu.");
+                            console.log("Vypadá to že nejsi přihlášen ke svému účtu.")
                             this.status = 0
-                            this.errorForm = "Vypadá to, že nejsi přihlášen ke svému účtu.";
+                            this.errorForm = "Vypadá to, že nejsi přihlášen ke svému účtu."
                         } else {
-                            console.log("Chyba při komunikaci s API");
-                            this.errorForm = "Chyba při komunikaci s API";
+                            console.log("Chyba při komunikaci s API")
+                            this.errorForm = "Chyba při komunikaci s API"
                         }
                     } catch (err) {
-                        console.log(err);
-                        this.errorForm = "Chyba připojení k API";
-                        throw err;
+                        console.log(err)
+                        this.errorForm = "Chyba připojení k API"
+                        throw err
                     }
                 } catch (err) {
-                    console.log(err);
-                    this.errorForm = "Nastala chyba";
+                    console.log(err)
+                    this.errorForm = "Nastala chyba"
                 }
             }
         },
@@ -164,11 +164,11 @@
                 const localStorageEmail = localStorage.getItem('email')
                 const localStoragePasswordHash = localStorage.getItem('password_hash')
 
-                this.email = localStorageEmail;
-                this.passwordHash = localStoragePasswordHash;
+                this.email = localStorageEmail
+                this.passwordHash = localStoragePasswordHash
             }
 
-            this.visited();
+            this.visited()
         }
     }
 </script>

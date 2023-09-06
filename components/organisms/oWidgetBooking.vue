@@ -28,27 +28,23 @@
         props: {
             latitude: {
                 type: Number,
-                required: true,
+                required: true
             },
-
             longitude: {
                 type: Number,
-                required: true,
+                required: true
             },
-
             landmarkName: {
                 type: String,
-                required: true,
+                required: true
             },
-
             address: {
                 type: String,
-                required: true,
+                required: true
             },
-
             zoom: {
                 type: Number,
-                required: true,
+                required: true
             }
         },
 
@@ -58,6 +54,6 @@
             script.async = true
             script.src = '//cf.bstatic.com/static/affiliate_base/js/flexiproduct.js'
             document.body.appendChild(script)
-        },
+        }
     }
 </script>

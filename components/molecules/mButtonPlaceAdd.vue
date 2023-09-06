@@ -22,7 +22,7 @@
 
         methods: {
             emitAddPlaceEvent() {
-                this.$emit('add-place-clicked');
+                this.$emit('add-place-clicked')
             }
         }
     }

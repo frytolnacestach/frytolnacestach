@@ -10,6 +10,6 @@
 
 <script>
     export default {
-        name: 'OrganismsoCopyrightComponent',
+        name: 'OrganismsoCopyrightComponent'
     }
 </script>

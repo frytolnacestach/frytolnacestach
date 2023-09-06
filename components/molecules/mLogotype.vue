@@ -10,6 +10,6 @@
 
 <script>
     export default {
-        name: 'MoleculesmLogotypeComponent',
+        name: 'MoleculesmLogotypeComponent'
     }
 </script>

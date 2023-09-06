@@ -79,7 +79,7 @@
             images: {
                 type: Array,
                 required: true
-            },
+            }
         }
     }
 </script>

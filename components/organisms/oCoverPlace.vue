@@ -133,11 +133,11 @@
                 );
 
                 if (matchingPlaceParent) {
-                    return matchingPlaceParent.name;
+                    return matchingPlaceParent.name
                 }
 
-                return '';
-            },
-        },
+                return ''
+            }
+        }
     }
 </script>

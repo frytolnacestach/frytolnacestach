@@ -12,6 +12,6 @@
 
 <script>
     export default {
-        name: 'OrganismsoBuildComponent',
+        name: 'OrganismsoBuildComponent'
     }
 </script>

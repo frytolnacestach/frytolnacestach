@@ -28,6 +28,6 @@
                 type: String,
                 required: false
             }
-        },
+        }
     }
 </script>

@@ -78,7 +78,7 @@
             oAdGoogleSidebar,
             oItemStates,
             oHeroItemDetail,
-            oInformationBlock,
+            oInformationBlock
         },
 
         data() {

@@ -26,7 +26,7 @@
             perexWysiwyg: {
                 type: String,
                 required: false
-            },
+            }
         }
     }
 </script>

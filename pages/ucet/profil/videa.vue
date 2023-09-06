@@ -49,7 +49,7 @@
 </template>
 
 <script>
-    import { loginCheckLogout } from '~/utils/loginCheckLogout.js';
+    import { loginCheckLogout } from '~/utils/loginCheckLogout.js'
 
     import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
@@ -78,7 +78,7 @@
         },
 
         mounted() {
-            loginCheckLogout(this.$router);
+            loginCheckLogout(this.$router)
         },
 
         head: {
@@ -95,17 +95,17 @@
         },
 
         async mounted() {
-            loginCheckLogout(this.$router);
+            loginCheckLogout(this.$router)
 
             if (process.client) {
-                let success = false;
-                let data = null;
+                let success = false
+                let data = null
                 
                 const localStorageEmail = localStorage.getItem('email')
                 const localStoragePasswordHash = localStorage.getItem('password_hash')
 
-                this.email = localStorageEmail;
-                this.passwordHash = localStoragePasswordHash;
+                this.email = localStorageEmail
+                this.passwordHash = localStoragePasswordHash
 
                 while (!success) {
                     try {
@@ -140,13 +140,13 @@
                 }
 
                 // Update data properties with fetched data
-                Object.assign(this, data);
+                Object.assign(this, data)
             }
         },
 
         methods: {
             menuAccountUpdate(newValue) {
-                this.mNavAccountOpen = newValue;
+                this.mNavAccountOpen = newValue
             }
         }
     }

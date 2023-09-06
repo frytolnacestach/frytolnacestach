@@ -72,7 +72,7 @@
         },
 
         updated() {
-            window.lazySizes && window.lazySizes.update();
+            window.lazySizes && window.lazySizes.update()
         },
 
         //API STATIC

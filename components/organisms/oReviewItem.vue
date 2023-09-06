@@ -70,13 +70,15 @@
 
         async mounted() {
             if (process.client) {
-                const localStorageEmail = localStorage.getItem('email');
-                const localStoragePasswordHash = localStorage.getItem('password_hash');
-                const localStorageStatus = localStorage.getItem('status');
-                this.email = localStorageEmail;
-                this.passwordHash = localStoragePasswordHash;
+                const localStorageEmail = localStorage.getItem('email')
+                const localStoragePasswordHash = localStorage.getItem('password_hash')
+                const localStorageStatus = localStorage.getItem('status')
+
+                this.email = localStorageEmail
+                this.passwordHash = localStoragePasswordHash
+
                 if (localStorageStatus !== null) {
-                    this.statusAccount = parseInt(localStorageStatus);
+                    this.statusAccount = parseInt(localStorageStatus)
                 }
             }
             
@@ -90,6 +92,7 @@
 
                     let account = []
                     let myReview = []
+
                     if (process.client) {
                         if (this.email !== null) {
                             // Account
@@ -107,7 +110,7 @@
                     }
 
                     
-                    this.numberReviews = reviews.length;
+                    this.numberReviews = reviews.length
 
 
                     data = { reviews, account, myReview }
@@ -122,12 +125,12 @@
                 }
             }
 
-            Object.assign(this, data);
+            Object.assign(this, data)
         },
 
         methods: {
             addReviewUpdate(newValue) {
-                this.newReview = newValue;
+                this.newReview = newValue
             }
         }
     }

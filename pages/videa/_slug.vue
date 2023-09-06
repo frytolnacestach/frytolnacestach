@@ -132,8 +132,8 @@
         },
 
         async asyncData({ $axios, params }) {
-            let success = false;
-            let data = null;
+            let success = false
+            let data = null
 
             while (!success) {
                 try {
@@ -141,7 +141,7 @@
                     // Video
                     const video = await $axios.$get(`https://api.frytolnacestach.cz/api/video/${params.slug}`)
                     // Image
-                    let imageVideo = null;
+                    let imageVideo = null
                     try {
                         imageVideo = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${video[0].id_image}`)
                     } catch (error) {
@@ -151,20 +151,19 @@
 
                     data = {
                         video,
-                        imageVideo,
+                        imageVideo
                     }
 
 
                     success = true;
                 } catch (error) {
-                    console.log(`API ERROR - VIDEO DETAIL: ${params.slug}`);
-                    console.error(error);
-                    await new Promise((resolve) => setTimeout(resolve, 1000));
+                    console.log(`API ERROR - VIDEO DETAIL: ${params.slug}`)
+                    console.error(error)
+                    await new Promise((resolve) => setTimeout(resolve, 1000))
                 }
             }
 
-            return data;
+            return data
         }
-
     }
 </script>

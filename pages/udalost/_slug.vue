@@ -172,21 +172,21 @@
         methods:{
             handleResize() {
                 // Aktualizovat hodnotu pro "isMobile" při změně velikosti okna
-                this.isMobile = window.innerWidth < 992;
-            },
+                this.isMobile = window.innerWidth < 992
+            }
         },
 
         mounted() {
             // Zjistit, zda je rozlišení menší než 992px při načítání stránky
-            this.isMobile = window.innerWidth < 992;
+            this.isMobile = window.innerWidth < 992
 
             // Poslouchat událost změny velikosti okna pro aktualizaci přepínače
-            window.addEventListener('resize', this.handleResize);
+            window.addEventListener('resize', this.handleResize)
         },
 
         beforeUnmount() {
             // Zrušit naslouchání události změny velikosti okna při odstranění komponenty
-            window.removeEventListener('resize', this.handleResize);
+            window.removeEventListener('resize', this.handleResize)
         },
 
         head() {
@@ -205,8 +205,8 @@
         },
 
         async asyncData({ $axios, params }) {
-            let success = false;
-            let data = null;
+            let success = false
+            let data = null
 
             while (!success) {
                 try {

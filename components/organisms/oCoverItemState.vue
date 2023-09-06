@@ -106,7 +106,7 @@
             placeStateName: {
                 type: String,
                 required: true
-            },
+            }
         },
 
         data() {
@@ -117,25 +117,25 @@
         },
 
         async mounted() {
-            let success = false;
-            let data = null;
+            let success = false
+            let data = null
 
             while (!success) {
                 try {
-                    let items = [];
+                    let items = []
 
                     if ( this.type === "jidlo" ) {
                         // Načtení jídla z místa
-                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/foods-id-state/${this.placeStateID}?showType=list`) : [];
+                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/foods-id-state/${this.placeStateID}?showType=list`) : []
                     } else if ( this.type === "fauna" ) {
                         // Načtení fauny z místa
-                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/faunas-id-state/${this.placeStateID}?showType=list`) : [];
+                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/faunas-id-state/${this.placeStateID}?showType=list`) : []
                     } else if ( this.type === "flora" ) {
                         // Načtení flory z místa
-                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/floras-id-state/${this.placeStateID}?showType=list`) : [];
+                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/floras-id-state/${this.placeStateID}?showType=list`) : []
                     } else if ( this.type === "znacka" ) {
                         // Načtení značek z místa
-                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/brands-id-state/${this.placeStateID}?showType=list`) : [];
+                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/brands-id-state/${this.placeStateID}?showType=list`) : []
                     }
 
                     // Načtení informací o obrázcích pro items
@@ -154,7 +154,7 @@
                 }
             }
 
-            Object.assign(this, data);
-        },
+            Object.assign(this, data)
+        }
     }
 </script>

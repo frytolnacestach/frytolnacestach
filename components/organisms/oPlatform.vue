@@ -27,8 +27,9 @@
                 platforms: this.platforms
             }
         },
+
         async fetch() {
-            this.platforms = await fetch("https://api.frytolnacestach.cz/api/platforms").then((res) => res.json());
+            this.platforms = await fetch("https://api.frytolnacestach.cz/api/platforms").then((res) => res.json())
         }
     }
 </script>

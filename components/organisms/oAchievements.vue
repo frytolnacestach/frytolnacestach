@@ -58,7 +58,7 @@
                 if (type >= value) {
                     return 100;
                 } else {
-                    return (type / value) * 100;
+                    return (type / value) * 100
                 }
             },
             createAchievementsList(achievements) {
@@ -222,21 +222,21 @@
                         need: 2500,
                         name: 'Diamantový Místní Mistr',
                         description: ''
-                    },
-                ];
+                    }
+                ]
             }
         },
 
         async mounted() {
             if (process.client) {
-                const localStorageEmail = localStorage.getItem('email');
-                const localStoragePasswordHash = localStorage.getItem('password_hash');
-                this.email = localStorageEmail;
-                this.passwordHash = localStoragePasswordHash;
+                const localStorageEmail = localStorage.getItem('email')
+                const localStoragePasswordHash = localStorage.getItem('password_hash')
+                this.email = localStorageEmail
+                this.passwordHash = localStoragePasswordHash
             }
             
-            let success = false;
-            let data = null;
+            let success = false
+            let data = null
 
             while (!success) {
                 try {
@@ -285,7 +285,7 @@
                 }
             }
 
-            Object.assign(this, data);
+            Object.assign(this, data)
         }
     }
 </script>

@@ -15,6 +15,7 @@
 <script>
     export default {
         name: 'OrganismsoFlashMessagesComponent',
+
         props: {
             text: {
                 type: String,
@@ -24,6 +25,6 @@
                 type: String,
                 required: true
             }
-        },
+        }
     }
 </script>

@@ -95,9 +95,9 @@
         computed: {
             filteredVideos() {
                 if (this.type) {
-                    return this.videos.filter(video => video.type === this.type);
+                    return this.videos.filter(video => video.type === this.type)
                 } else {
-                    return this.videos;
+                    return this.videos
                 }
             }
         }

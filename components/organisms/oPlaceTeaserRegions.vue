@@ -117,13 +117,12 @@
         },
 
         async fetch() {
-            
             if(this.type === "state") {
-                this.regions = await fetch(`https://api.frytolnacestach.cz/api/places-regions-id-state/${this.IDplace}`).then((res) => res.json());
+                this.regions = await fetch(`https://api.frytolnacestach.cz/api/places-regions-id-state/${this.IDplace}`).then((res) => res.json())
             }
 
-            const imagesRegionsID = this.regions.map(region => region.id_image_cover).filter(id => id !== null && id !== '');
-            this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesRegionsID.join(',')}`).then((res) => res.json());
+            const imagesRegionsID = this.regions.map(region => region.id_image_cover).filter(id => id !== null && id !== '')
+            this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesRegionsID.join(',')}`).then((res) => res.json())
         },
     }
 </script>

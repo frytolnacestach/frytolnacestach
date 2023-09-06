@@ -108,21 +108,21 @@
         async fetch() {
             // Place
             if (this.type === "kontinent") {
-                this.place = await fetch(`https://api.frytolnacestach.cz/api/places-continent-id/${this.placeID}`).then((res) => res.json());
+                this.place = await fetch(`https://api.frytolnacestach.cz/api/places-continent-id/${this.placeID}`).then((res) => res.json())
             } else if (this.type === "stat") {
-                this.place = await fetch(`https://api.frytolnacestach.cz/api/places-state-id/${this.placeID}`).then((res) => res.json());
+                this.place = await fetch(`https://api.frytolnacestach.cz/api/places-state-id/${this.placeID}`).then((res) => res.json())
             } else if (this.type === "region") {
-                this.place = await fetch(`https://api.frytolnacestach.cz/api/places-region-id/${this.placeID}`).then((res) => res.json());
+                this.place = await fetch(`https://api.frytolnacestach.cz/api/places-region-id/${this.placeID}`).then((res) => res.json())
             } else if (this.type === "mesto") {
-                this.place = await fetch(`https://api.frytolnacestach.cz/api/places-city-id/${this.placeID}`).then((res) => res.json());
+                this.place = await fetch(`https://api.frytolnacestach.cz/api/places-city-id/${this.placeID}`).then((res) => res.json())
             } else if (this.type === "misto") {
-                this.place = await fetch(`https://api.frytolnacestach.cz/api/places-spot-id/${this.placeID}`).then((res) => res.json());
+                this.place = await fetch(`https://api.frytolnacestach.cz/api/places-spot-id/${this.placeID}`).then((res) => res.json())
             }
 
 
             // Image
             if (this.place) {
-                this.image = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.place[0].id_image_hero}`).then((res) => res.json());
+                this.image = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.place[0].id_image_hero}`).then((res) => res.json())
             }
         }
     }

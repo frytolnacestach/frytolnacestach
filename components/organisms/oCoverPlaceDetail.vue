@@ -105,11 +105,11 @@
         computed: {
             filteredPlaces() {
                 if (this.importance === "biggest") {
-                    return this.places.filter(place => place.importance === 'biggest');
+                    return this.places.filter(place => place.importance === 'biggest')
                 } else if (this.importance === null) {
-                    return this.places.filter(place => place.importance !== 'biggest');
+                    return this.places.filter(place => place.importance !== 'biggest')
                 } else {
-                    return this.places;
+                    return this.places
                 }
             }
         }

@@ -60,10 +60,10 @@
 
         methods: {
             updateParentVariable() {
-                this.parentVariable = !this.parentVariable;
-                const newValue = this.parentVariable;
-                this.$emit('update', newValue);
+                this.parentVariable = !this.parentVariable
+                const newValue = this.parentVariable
+                this.$emit('update', newValue)
             }
-        },
+        }
     }
 </script>

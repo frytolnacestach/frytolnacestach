@@ -131,34 +131,34 @@
                             ]
                         }
                     ]
-                },
+                }
             }
         },
 
         mounted() {
-            this.fetchPlaceData();
+            this.fetchPlaceData()
             this.$nextTick(() => {
-                this.isHydrated = true;
-            });
+                this.isHydrated = true
+            })
         },
 
         methods:{
             fetchPlaceData() {
                 if (this.place && this.place.length > 0 && this.place[0].coordinates && this.place[0].coordinates.length > 0) {
                     
-                    const latitude = this.place[0].coordinates[0].latitude;
-                    const longitude = this.place[0].coordinates[0].longitude;
+                    const latitude = this.place[0].coordinates[0].latitude
+                    const longitude = this.place[0].coordinates[0].longitude
 
                     // Kontrola, zda hodnoty jsou ve formě čísla
                     if (!isNaN(parseFloat(latitude)) && !isNaN(parseFloat(longitude))) {
-                        this.center.lat = parseFloat(latitude);
-                        this.center.lng = parseFloat(longitude);
+                        this.center.lat = parseFloat(latitude)
+                        this.center.lng = parseFloat(longitude)
                     } else {
-                        this.center.lat = latitude;
-                        this.center.lng = longitude;
+                        this.center.lat = latitude
+                        this.center.lng = longitude
                     }
                 }
             }
-        },
+        }
     }
 </script>

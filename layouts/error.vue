@@ -17,6 +17,7 @@
 
 	export default {
 		name: 'ErrorLayout',
+
 		layout: 'empty',
 
 		components: {

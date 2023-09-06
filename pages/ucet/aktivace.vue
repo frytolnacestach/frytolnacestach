@@ -22,7 +22,7 @@
 </template>
 
 <script>
-    import { loginCheckLogoutInfo } from '~/utils/loginCheckLogoutInfo.js';
+    import { loginCheckLogoutInfo } from '~/utils/loginCheckLogoutInfo.js'
 
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
@@ -53,17 +53,17 @@
             loginCheckLogoutInfo()
                 .then((isLoggedIn) => {
                     if (isLoggedIn) {
-                        this.email = this.$route.query.email || null;
-                        this.codeActivation = this.$route.query.activation_code || null;
-                        this.activation();
+                        this.email = this.$route.query.email || null
+                        this.codeActivation = this.$route.query.activation_code || null
+                        this.activation()
                     } else {
-                        this.errorForm = `Musíte se přihlásit, abyste mohli aktivovat účet. <br><a href="/ucet/prihlaseni">Přihlásit se</a>`;
+                        this.errorForm = `Musíte se přihlásit, abyste mohli aktivovat účet. <br><a href="/ucet/prihlaseni">Přihlásit se</a>`
                     }
                 })
                 .catch((error) => {
-                    console.log(error);
-                    this.errorForm = "Chyba při ověřování přihlášení";
-                });
+                    console.log(error)
+                    this.errorForm = "Chyba při ověřování přihlášení"
+                })
         },
 
 
@@ -80,24 +80,24 @@
                         method: 'POST',
                         body: JSON.stringify({
                             'email': this.email,
-                            'code_activation': this.codeActivation,
+                            'code_activation': this.codeActivation
                         })
-                    });
+                    })
 
                     if (response.status === 200) {
-                        this.successForm = "Aktivace vašeho účtu proběhla v pořádku";
+                        this.successForm = "Aktivace vašeho účtu proběhla v pořádku"
                         localStorage.setItem("status",3)
                     } else if (response.status === 404) {
-                        this.errorForm = "Aktivace neproběhla v pořádku. Nebyl nalezen odpovídající záznam. Buď již aktivace proběhla nebo učet neexistuje.";
+                        this.errorForm = "Aktivace neproběhla v pořádku. Nebyl nalezen odpovídající záznam. Buď již aktivace proběhla nebo učet neexistuje."
                     } else {
-                        this.errorForm = "Chyba při komunikaci s API";
+                        this.errorForm = "Chyba při komunikaci s API"
                     }
                 } catch (err) {
-                    console.log(err);
-                    this.errorForm = "Chyba připojení k API";
-                    throw err;
+                    console.log(err)
+                    this.errorForm = "Chyba připojení k API"
+                    throw err
                 }
-            },
+            }
         },
 
         head: {

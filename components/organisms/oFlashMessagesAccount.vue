@@ -46,41 +46,41 @@
 
         async mounted() {
             if (process.client) {
-                const localStorageStatus = localStorage.getItem('status');
+                const localStorageStatus = localStorage.getItem('status')
                 if (localStorageStatus === '2') {
-                    this.needActivation = true;
+                    this.needActivation = true
                 }
 
-                const localStorageEmail = localStorage.getItem('email');
-                this.email = localStorageEmail;
+                const localStorageEmail = localStorage.getItem('email')
+                this.email = localStorageEmail
             }
 
-            await this.fetchProfile();
+            await this.fetchProfile()
 
             if (this.profile && this.profile[0]) {
-                this.code_activation = this.profile[0].code_activation;
+                this.code_activation = this.profile[0].code_activation
             }
         },
 
         methods: {
             async fetchProfile() {
                 try {
-                    const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile/${this.email}`);
+                    const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile/${this.email}`)
                     if (response.ok) {
-                        this.profile = await response.json();
+                        this.profile = await response.json()
                     } else {
-                        console.log("Chyba při komunikaci s API");
-                        this.errorForm = "Chyba při komunikaci s API";
+                        console.log("Chyba při komunikaci s API")
+                        this.errorForm = "Chyba při komunikaci s API"
                     }
                 } catch (err) {
-                    console.log(err);
-                    this.errorForm = "Chyba připojení k API";
-                    throw err;
+                    console.log(err)
+                    this.errorForm = "Chyba připojení k API"
+                    throw err
                 }
             },
 
             async resendActivationEmail() {
-                await this.mailActivation();
+                await this.mailActivation()
             },
 
             async mailActivation() {
@@ -97,25 +97,24 @@
                             'email': this.email,
                             'code_activation': this.code_activation
                         })
-                    });
+                    })
 
                     if (response.ok) {
-                        console.log("Aktivační email byl odeslán");
-                        this.successForm = "Aktivační email byl odeslán";
+                        console.log("Aktivační email byl odeslán")
+                        this.successForm = "Aktivační email byl odeslán"
                     } else if (response.status === 201) {
-                        console.log("Aktivační email byl odeslán");
-                        this.successForm = "Aktivační email byl odeslán";
+                        console.log("Aktivační email byl odeslán")
+                        this.successForm = "Aktivační email byl odeslán"
                     } else {
-                        console.log("Chyba při komunikaci s API");
-                        this.errorForm = "Chyba při komunikaci s API";
+                        console.log("Chyba při komunikaci s API")
+                        this.errorForm = "Chyba při komunikaci s API"
                     }
                 } catch (err) {
-                    console.log(err);
-                    this.errorForm = "Chyba připojení k API";
-                    throw err;
+                    console.log(err)
+                    this.errorForm = "Chyba připojení k API"
+                    throw err
                 }
-            },
+            }
         }
-
     }
 </script>

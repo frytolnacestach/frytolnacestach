@@ -362,69 +362,69 @@
         methods:{
             handleResize() {
                 // Aktualizovat hodnotu pro "isMobile" při změně velikosti okna
-                this.isMobile = window.innerWidth < 992;
-            },
+                this.isMobile = window.innerWidth < 992
+            }
         },
 
         mounted() {
             // Zjistit, zda je rozlišení menší než 992px při načítání stránky
-            this.isMobile = window.innerWidth < 992;
+            this.isMobile = window.innerWidth < 992
 
             // Poslouchat událost změny velikosti okna pro aktualizaci přepínače
-            window.addEventListener('resize', this.handleResize);
+            window.addEventListener('resize', this.handleResize)
 
             //Data for mNavBreadcrumbsPlaceArray 
             //continent
             this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
                 if (item.id === 3) {
-                    item.name = this.placeContinent[0].name;
-                    item.url = "/svet/kontinent/" + this.placeContinent[0].slug;
+                    item.name = this.placeContinent[0].name
+                    item.url = "/svet/kontinent/" + this.placeContinent[0].slug
                 }
-                return item;
-            });
+                return item
+            })
             //state
             this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
                 if (item.id === 5) {
-                    item.name = this.placeState[0].name;
-                    item.url = "/svet/stat/" + this.placeState[0].slug;
+                    item.name = this.placeState[0].name
+                    item.url = "/svet/stat/" + this.placeState[0].slug
                 }
-                return item;
-            });
+                return item
+            })
             //city
             this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
                 if (item.id === 7) {
-                    item.name = this.place[0].name;
-                    item.url = "/svet/mesto/" + this.place[0].slug;
+                    item.name = this.place[0].name
+                    item.url = "/svet/mesto/" + this.place[0].slug
                 }
-                return item;
-            });
+                return item
+            })
 
             //Data for oHotInfoHero
             this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
                 if (item.id === 1) {
-                    item.name = this.placeState[0].name;
+                    item.name = this.placeState[0].name
                     item.url = `/svet/stat/${this.placeState[0].slug}`
                 }
-                return item;
-            });
+                return item
+            })
             this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
                 if (item.id === 2) {
-                    item.name = this.place[0].area;
+                    item.name = this.place[0].area
                 }
-                return item;
-            });
+                return item
+            })
             this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
                 if (item.id === 3) {
-                    item.name = this.place[0].altitude;
+                    item.name = this.place[0].altitude
                 }
-                return item;
-            });
+                return item
+            })
             this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
                 if (item.id === 4) {
-                    item.name = this.place[0].population;
+                    item.name = this.place[0].population
                 }
-                return item;
-            });
+                return item
+            })
         },
 
         beforeUnmount() {
@@ -448,8 +448,8 @@
         },
 
         async asyncData({ $axios, params }) {
-            let success = false;
-            let data = null;
+            let success = false
+            let data = null
 
             while (!success) {
                 try {
@@ -533,7 +533,7 @@
         },
 
         updated() {
-            window.lazySizes && window.lazySizes.update();
+            window.lazySizes && window.lazySizes.update()
         }
     }
 </script>

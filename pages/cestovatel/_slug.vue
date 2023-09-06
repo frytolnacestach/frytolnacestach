@@ -122,18 +122,18 @@
 
         async asyncData({ $axios, params }) {
             try {
-                const staticUser = await $axios.$get(`https://api.frytolnacestach.cz/api/user/${params.slug}`);
+                const staticUser = await $axios.$get(`https://api.frytolnacestach.cz/api/user/${params.slug}`)
 
                 return {
                     staticUser
-                };
+                }
             } catch (error) {
-                console.log(`API ERROR - CESTOVATEL DETAIL(static): ${params.slug}`);
-                console.error(error);
+                console.log(`API ERROR - CESTOVATEL DETAIL(static): ${params.slug}`)
+                console.error(error)
 
                 return {
                     staticUser: null
-                };
+                }
             }
         },
 
@@ -147,17 +147,17 @@
                     try {
                         // PAGE - Cestovatel
                         // User
-                        const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user/${this.$route.params.slug}`);
+                        const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user/${this.$route.params.slug}`)
 
 
                         // COMPONENT - oCoverPlaceVisited
                         // PlacesID
-                        const placesID = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${user[0].id}&status=1`);
-                        const placesContinentsID = placesID.filter(place => place.type === 'continent').map(place => place.id_place) || [];
-                        const placesStatesID = placesID.filter(place => place.type === 'state').map(place => place.id_place) || [];
-                        const placesCitiesID = placesID.filter(place => place.type === 'city').map(place => place.id_place) || [];
-                        const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || [];
-                        const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || [];
+                        const placesID = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${user[0].id}&status=1`)
+                        const placesContinentsID = placesID.filter(place => place.type === 'continent').map(place => place.id_place) || []
+                        const placesStatesID = placesID.filter(place => place.type === 'state').map(place => place.id_place) || []
+                        const placesCitiesID = placesID.filter(place => place.type === 'city').map(place => place.id_place) || []
+                        const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || []
+                        const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || []
 
                         // TO DATA
                         data = {
@@ -176,28 +176,28 @@
                         // SUCCESS
                         success = true
                     } catch (error) {
-                        console.log(`API ERROR - CESTOVATEL DETAIL: ${this.$route.params.slug}`);
-                        console.error(error);
+                        console.log(`API ERROR - CESTOVATEL DETAIL: ${this.$route.params.slug}`)
+                        console.error(error)
 
-                        await new Promise(resolve => setTimeout(resolve, 1000));
+                        await new Promise(resolve => setTimeout(resolve, 1000))
                     }
                 }
 
-                Object.assign(this, data);
+                Object.assign(this, data)
                 }
-            });
+            })
 
             // local storage
             if (process.client) {
                 const localStorageEmail = localStorage.getItem('email')
 
-                this.email = localStorageEmail;
+                this.email = localStorageEmail
             }
         },
 
         methods: {
             menuUserUpdate(newValue) {
-                this.mNavUserOpen = newValue;
+                this.mNavUserOpen = newValue
             }
         }
     }

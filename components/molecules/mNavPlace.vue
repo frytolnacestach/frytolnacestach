@@ -49,24 +49,24 @@
         },
 
         mounted() {
-            this.activeTab = this.$route.params.tab || 'default';
+            this.activeTab = this.$route.params.tab || 'default'
         },
 
         watch: {
             updatedTabs: {
                 immediate: true,
                 handler() {
-                    const defaultTab = this.tabs.find(tab => tab.slug === 'default');
-                    const visibleTabs = this.tabs.filter(tab => tab.visible);
-                    const activeTab = visibleTabs.length > 0 ? visibleTabs[0] : defaultTab;
-                    this.activeTab = activeTab.slug;
+                    const defaultTab = this.tabs.find(tab => tab.slug === 'default')
+                    const visibleTabs = this.tabs.filter(tab => tab.visible)
+                    const activeTab = visibleTabs.length > 0 ? visibleTabs[0] : defaultTab
+                    this.activeTab = activeTab.slug
                 }
             },
 
             activeTab: function(newActiveTab) {
-                const selectedTab = this.tabs.find(tab => tab.slug === newActiveTab);
-                this.activeTabName = selectedTab.label;
+                const selectedTab = this.tabs.find(tab => tab.slug === newActiveTab)
+                this.activeTabName = selectedTab.label
             }
-        },
+        }
     }
 </script>

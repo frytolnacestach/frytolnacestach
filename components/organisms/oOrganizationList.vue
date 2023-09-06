@@ -42,11 +42,11 @@
 
         methods:{
             formatDate(date) {
-                const [year, month, day] = date.split('-');
-                const formattedDate = new Date(`${year}-${month}-${day}`);
-                const options = { day: 'numeric', month: 'long', year: 'numeric' };
-                return formattedDate.toLocaleDateString('cs', options);
+                const [year, month, day] = date.split('-')
+                const formattedDate = new Date(`${year}-${month}-${day}`)
+                const options = { day: 'numeric', month: 'long', year: 'numeric' }
+                return formattedDate.toLocaleDateString('cs', options)
             }
-        },
+        }
     }
 </script>

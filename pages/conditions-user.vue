@@ -53,7 +53,7 @@
         },
 
         async fetch() {
-            this.base = await fetch("https://api.frytolnacestach.cz/api/base").then((res) => res.json());
+            this.base = await fetch("https://api.frytolnacestach.cz/api/base").then((res) => res.json())
         }
     }
 </script>

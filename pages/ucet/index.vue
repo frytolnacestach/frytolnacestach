@@ -21,7 +21,7 @@
 </template>
 
 <script>
-    import { loginCheckLogin } from '~/utils/loginCheckLogin.js';
+    import { loginCheckLogin } from '~/utils/loginCheckLogin.js'
 
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
@@ -40,12 +40,12 @@
 
         data() {
             return {
-                headline: 'Účet na cestovatelském portálu Frytol na cestách',
+                headline: 'Účet na cestovatelském portálu Frytol na cestách'
             }
         },
 
         mounted() {
-            loginCheckLogin(this.$router);
+            loginCheckLogin(this.$router)
         },
 
         head: {

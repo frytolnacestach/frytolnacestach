@@ -95,18 +95,18 @@
 
         async asyncData({ $axios, params }) {
             try {
-                const staticUser = await $axios.$get(`https://api.frytolnacestach.cz/api/user/${params.slug}`);
+                const staticUser = await $axios.$get(`https://api.frytolnacestach.cz/api/user/${params.slug}`)
 
                 return {
                     staticUser
                 };
             } catch (error) {
-                console.log(`API ERROR - CESTOVATEL DETAIL(static): ${params.slug}`);
-                console.error(error);
+                console.log(`API ERROR - CESTOVATEL DETAIL(static): ${params.slug}`)
+                console.error(error)
 
                 return {
                     staticUser: null
-                };
+                }
             }
         },
 
@@ -116,37 +116,37 @@
                 let data = null
 
                 if (process.client) {
-                while (!success) {
-                    try {
-                        // PAGE - Cestovatel
-                        // User
-                        const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user/${this.$route.params.slug}`);
+                    while (!success) {
+                        try {
+                            // PAGE - Cestovatel
+                            // User
+                            const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user/${this.$route.params.slug}`)
 
 
-                        // TO DATA
-                        data = {
-                            staticUser: user,
-                            user,
+                            // TO DATA
+                            data = {
+                                staticUser: user,
+                                user
+                            }
+
+                            // SUCCESS
+                            success = true
+                        } catch (error) {
+                            console.log(`API ERROR - CESTOVATEL DETAIL: ${this.$route.params.slug}`)
+                            console.error(error)
+
+                            await new Promise(resolve => setTimeout(resolve, 1000))
                         }
-
-                        // SUCCESS
-                        success = true
-                    } catch (error) {
-                        console.log(`API ERROR - CESTOVATEL DETAIL: ${this.$route.params.slug}`);
-                        console.error(error);
-
-                        await new Promise(resolve => setTimeout(resolve, 1000));
                     }
-                }
 
-                Object.assign(this, data);
+                    Object.assign(this, data)
                 }
-            });
+            })
         },
 
         methods: {
             menuUserUpdate(newValue) {
-                this.mNavUserOpen = newValue;
+                this.mNavUserOpen = newValue
             }
         }
     }

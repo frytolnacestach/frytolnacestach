@@ -121,25 +121,26 @@ export default {
                     url: ""
                 }
             ]
-        };
+        }
     },
   
     methods: {
         async fetchProfile() {
             try {
-                const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile/${this.localStorageEmail}`);
+                const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile/${this.localStorageEmail}`)
                 if (response.ok) {
-                    this.profile = await response.json();
+                    this.profile = await response.json()
                 } else {
-                    console.log("Chyba při komunikaci s API");
-                    this.errorForm = "Chyba při komunikaci s API";
+                    console.log("Chyba při komunikaci s API")
+                    this.errorForm = "Chyba při komunikaci s API"
                 }
             } catch (err) {
-                console.log(err);
-                this.errorForm = "Chyba připojení k API";
-                throw err;
+                console.log(err)
+                this.errorForm = "Chyba připojení k API"
+                throw err
             }
         },
+
         async editProfile() {
             try {
                 const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile-edit/${this.localStorageEmail}`, {
@@ -156,46 +157,46 @@ export default {
                         'agreement_mail': this.agreementMail,
                         'urls': this.urls
                     })
-                });
+                })
 
                 if (response.ok) {
-                    console.log("Změny byly uložené");
-                    this.successForm = "Změny byly uložené";
+                    console.log("Změny byly uložené")
+                    this.successForm = "Změny byly uložené"
                 } else {
-                    console.log("Chyba při komunikaci s API");
-                    this.errorForm = "Chyba při komunikaci s API";
+                    console.log("Chyba při komunikaci s API")
+                    this.errorForm = "Chyba při komunikaci s API"
                 }
             } catch (err) {
-                console.log(err);
-                this.errorForm = "Chyba připojení k API";
-                throw err;
+                console.log(err)
+                this.errorForm = "Chyba připojení k API"
+                throw err
             }
         },
 
         addUrlInput() {
             if (this.urls.length < 32) {
-                this.urls.push({ url: "" });
+                this.urls.push({ url: "" })
             }
         },
 
         removeUrlInput(index) {
-            this.urls.splice(index, 1);
+            this.urls.splice(index, 1)
         }
 
     },
 
     async mounted() {
         if (process.client) {
-            this.localStorageEmail = localStorage.getItem('email');
+            this.localStorageEmail = localStorage.getItem('email')
         }
 
-        await this.fetchProfile();
+        await this.fetchProfile()
 
         if (this.profile) {
-            this.surname = this.profile[0].surname;
-            this.lastname = this.profile[0].lastname;
-            this.urls = this.profile[0].urls;
-            this.agreementMail = this.profile[0].agreement_mail;
+            this.surname = this.profile[0].surname
+            this.lastname = this.profile[0].lastname
+            this.urls = this.profile[0].urls
+            this.agreementMail = this.profile[0].agreement_mail
         }
     }
 };

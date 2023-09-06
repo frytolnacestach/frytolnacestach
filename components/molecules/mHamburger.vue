@@ -14,6 +14,6 @@
 
 <script>
     export default {
-        name: 'MoleculesmHamburgerComponent',
+        name: 'MoleculesmHamburgerComponent'
     }
 </script>

@@ -119,11 +119,11 @@
         async fetch() {
             
             if(this.type === "state") {
-                this.cities = await fetch(`https://api.frytolnacestach.cz/api/places-cities-id-state/${this.IDplace}`).then((res) => res.json());
+                this.cities = await fetch(`https://api.frytolnacestach.cz/api/places-cities-id-state/${this.IDplace}`).then((res) => res.json())
             }
 
-            const imagesCitiesID = this.cities.map(city => city.id_image_cover).filter(id => id !== null && id !== '');
-            this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesCitiesID.join(',')}`).then((res) => res.json());
+            const imagesCitiesID = this.cities.map(city => city.id_image_cover).filter(id => id !== null && id !== '')
+            this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesCitiesID.join(',')}`).then((res) => res.json())
         }
     }
 </script>

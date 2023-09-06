@@ -124,7 +124,7 @@
             account: {
                 type: Array,
                 required: true
-            },
+            }
         },
 
         data() {
@@ -160,13 +160,13 @@
                             'rating': this.selectRating,
                             'text': this.text
                         })
-                    });
+                    })
 
                     if (response.ok) {
-                        console.log("Recenze byla upravena");
-                        this.successForm = "Recenze byla upravena";
+                        console.log("Recenze byla upravena")
+                        this.successForm = "Recenze byla upravena"
 
-                        const reviewIndex = this.reviews.findIndex(review => review.id_user === this.account[0].id);
+                        const reviewIndex = this.reviews.findIndex(review => review.id_user === this.account[0].id)
                         if (reviewIndex !== -1) {
                             this.reviews[reviewIndex].text = this.text
                             this.reviews[reviewIndex].rating = this.selectRating
@@ -174,10 +174,10 @@
 
                         this.reviewShowReview()
                     } else if (response.status === 201) {
-                        console.log("Recenze byla upravena");
-                        this.successForm = "Recenze byla upravena";
+                        console.log("Recenze byla upravena")
+                        this.successForm = "Recenze byla upravena"
 
-                        const reviewIndex = this.reviews.findIndex(review => review.id_user === this.account[0].id);
+                        const reviewIndex = this.reviews.findIndex(review => review.id_user === this.account[0].id)
                         if (reviewIndex !== -1) {
                             this.reviews[reviewIndex].text = this.text
                             this.reviews[reviewIndex].rating = this.selectRating
@@ -185,41 +185,41 @@
 
                         this.reviewShowReview()
                     } else if (response.status === 404) {
-                        console.log("Uživatel neexistuje nebo nejste přihlášen");
-                        this.errorForm = "Uživatel neexistuje nebo nejste přihlášen";
+                        console.log("Uživatel neexistuje nebo nejste přihlášen")
+                        this.errorForm = "Uživatel neexistuje nebo nejste přihlášen"
                     } else if (response.status === 406) {
-                        console.log("Neplatné hodnoty u hodnocení");
-                        this.errorForm = "Neplatné hodnoty u hodnocení";
+                        console.log("Neplatné hodnoty u hodnocení")
+                        this.errorForm = "Neplatné hodnoty u hodnocení"
                     } else {
-                        console.log("Chyba při komunikaci s API");
-                        this.errorForm = "Chyba při komunikaci s API";
+                        console.log("Chyba při komunikaci s API")
+                        this.errorForm = "Chyba při komunikaci s API"
                     }
                 } catch (err) {
-                    console.log(err);
-                    this.errorForm = "Chyba připojení k API";
-                    throw err;
+                    console.log(err)
+                    this.errorForm = "Chyba připojení k API"
+                    throw err
                 }
             },
 
             async reviewShowEdit() {
-                this.showReview = false;
-                this.showEditForm = true;
+                this.showReview = false
+                this.showEditForm = true
             },
 
             async reviewShowReview() {
-                this.showEditForm = false;
-                this.showReview = true;
-            },
+                this.showEditForm = false
+                this.showReview = true
+            }
         },
 
         async mounted() {
             if (process.client) {
-                this.localStorageEmail = localStorage.getItem('email');
-                this.localStoragePasswordHash = localStorage.getItem('password_hash');
+                this.localStorageEmail = localStorage.getItem('email')
+                this.localStoragePasswordHash = localStorage.getItem('password_hash')
             }
 
-            let success = false;
-            let data = null;
+            let success = false
+            let data = null
 
             while (!success) {
                 try {
@@ -242,7 +242,7 @@
                 }
             }
 
-            Object.assign(this, data);
+            Object.assign(this, data)
         }
     }
 </script>

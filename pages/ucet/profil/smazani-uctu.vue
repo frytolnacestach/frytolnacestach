@@ -43,7 +43,7 @@
 </template>
 
 <script>
-    import { loginCheckLogout } from '~/utils/loginCheckLogout.js';
+    import { loginCheckLogout } from '~/utils/loginCheckLogout.js'
 
     import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
@@ -65,7 +65,7 @@
         },
 
         mounted() {
-            loginCheckLogout(this.$router);
+            loginCheckLogout(this.$router)
         },
 
         head: {
@@ -83,7 +83,7 @@
 
         methods: {
             menuAccountUpdate(newValue) {
-                this.mNavAccountOpen = newValue;
+                this.mNavAccountOpen = newValue
             }
         }
     }

@@ -77,24 +77,22 @@ export default {
             nickname: '',
             termsAccepted: false,
             agreementMail: false
-        };
+        }
     },
   
     methods: {
         async register() {
             if (!this.termsAccepted) {
-                alert('Musíte souhlasit s obchodními podmínkami pro uživatelský účet.');
-                return;
+                alert('Musíte souhlasit s obchodními podmínkami pro uživatelský účet.')
+                return
             }
 
             try {
-
-                
-                await this.createForm();
-                console.log('Data byla odeslaná');
+                await this.createForm()
+                console.log('Data byla odeslaná')
             } catch (error) {
                 console.log(error);
-                this.errorForm = "Nastala chyba při odeslání vaších udajů.";
+                this.errorForm = "Nastala chyba při odeslání vaších udajů."
             }
         },
   
@@ -114,32 +112,32 @@ export default {
                         'nickname': this.nickname,
                         'agreement_mail': this.agreementMail
                     })
-                });
+                })
 
                 if (response.ok) {
-                    console.log("Registrace úspěšná");
-                    this.successForm = "Registrace úspěšná";
-                    await this.$router.push('/ucet/registrace-dokoncena');
+                    console.log("Registrace úspěšná")
+                    this.successForm = "Registrace úspěšná"
+                    await this.$router.push('/ucet/registrace-dokoncena')
                 } else if (response.status === 201) {
-                    console.log("Účet vytvořen, registrační e-mail odeslán.");
-                    this.succes = "Účet vytvořen, registrační e-mail odeslán.";
-                    await this.$router.push('/ucet/registrace-dokoncena');
+                    console.log("Účet vytvořen, registrační e-mail odeslán.")
+                    this.succes = "Účet vytvořen, registrační e-mail odeslán."
+                    await this.$router.push('/ucet/registrace-dokoncena')
                 } else if (response.status === 400) {
-                    console.log("Uživatel s touto e-mailovou adresou již existuje.");
-                    this.errorForm = "Uživatel s touto e-mailovou adresou již existuje.";
+                    console.log("Uživatel s touto e-mailovou adresou již existuje.")
+                    this.errorForm = "Uživatel s touto e-mailovou adresou již existuje."
                 } else if (response.status === 401) {
-                    console.log("Uživatel s touto přezdívkou již existuje.");
-                    this.errorForm = "Uživatel s touto přezdívkou již existuje.";
+                    console.log("Uživatel s touto přezdívkou již existuje.")
+                    this.errorForm = "Uživatel s touto přezdívkou již existuje."
                 } else {
-                    console.log("Chyba při komunikaci s API");
-                    this.errorForm = "Chyba při komunikaci s API";
+                    console.log("Chyba při komunikaci s API")
+                    this.errorForm = "Chyba při komunikaci s API"
                 }
             } catch (err) {
-                console.log(err);
-                this.errorForm = "Chyba připojení k API";
-                throw err;
+                console.log(err)
+                this.errorForm = "Chyba připojení k API"
+                throw err
             }
-        },
+        }
     }
-};
+}
 </script>

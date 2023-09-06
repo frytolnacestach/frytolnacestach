@@ -82,11 +82,11 @@
 
         methods:{
             formatDate(date) {
-                const [month, year] = date.split('-');
-                const formattedDate = new Date(`${year}-${month}-01`);
-                const options = { month: 'long', year: 'numeric' };
-                return formattedDate.toLocaleDateString('cs', options);
+                const [month, year] = date.split('-')
+                const formattedDate = new Date(`${year}-${month}-01`)
+                const options = { month: 'long', year: 'numeric' }
+                return formattedDate.toLocaleDateString('cs', options)
             }
-        },
+        }
     }
 </script>

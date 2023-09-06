@@ -72,82 +72,82 @@
         },
 
         async mounted() {
-            await this.loadPlaces();
-            this.addScrollListener();
+            await this.loadPlaces()
+            this.addScrollListener()
         },
 
         methods:{
             async loadPlaces() {
                 //start loading
-                this.isLoading = true;
+                this.isLoading = true
 
                 //load places
                 const [placesResponse] = await Promise.all([
                     this.$axios.get(`https://api.frytolnacestach.cz/api/places-regions?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
-                ]);
-                const { data: placesData } = placesResponse;
+                ])
+                const { data: placesData } = placesResponse
 
                 //load images
                 const imagesPlacesRegionsIDS = placesData.map(placeRegion => placeRegion.id_image_cover).filter(id => id !== undefined && id !== null && id !== '');
                 if (imagesPlacesRegionsIDS.length > 0) {
                     const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesRegionsIDS.join(',')}`);
-                    const { data: imagesData } = imagesResponse;
-                    this.images = this.images.concat(imagesData);
+                    const { data: imagesData } = imagesResponse
+                    this.images = this.images.concat(imagesData)
 
                     // add to placecesData to placesRegions
-                    this.placesRegions = this.placesRegions.concat(placesData);
+                    this.placesRegions = this.placesRegions.concat(placesData)
                 } else {
                     // add to placecesData to placesRegions
-                    this.placesRegions = this.placesRegions.concat(placesData);
+                    this.placesRegions = this.placesRegions.concat(placesData)
                 }
 
                 //no more items?
                 if (placesData.length === 0 || placesData.length < this.perPage) {
-                    this.noMoreItems = true;
+                    this.noMoreItems = true
                 }
 
                 //end loading
-                this.isLoading = false;
+                this.isLoading = false
             },
 
             addScrollListener() {
-                window.addEventListener('scroll', this.handleScroll);
+                window.addEventListener('scroll', this.handleScroll)
             },
 
             removeScrollListener() {
-                window.removeEventListener('scroll', this.handleScroll);
+                window.removeEventListener('scroll', this.handleScroll)
             },
 
             loadMoreItems() {
                 //no further loading can occur while loading
                 if (this.isLoading || this.noMoreItems) {
-                    return;
+                    return
                 }
                 // loading more items
-                this.page++;
-                this.loadPlaces();
+                this.page++
+                this.loadPlaces()
             },
 
             handleScroll() {
                 //no further loading can occur while loading
                 if (this.isLoading || this.noMoreItems) {
-                    return;
+                    return
                 }
 
                 // Document for scroll point
-                const windowHeight = window.innerHeight;
-                const documentHeight = document.documentElement.scrollHeight;
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                const windowHeight = window.innerHeight
+                const documentHeight = document.documentElement.scrollHeight
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
 
                 // Footer height
-                const tFooterElement = document.querySelector('.t-footer');
-                const tFooterHeight = tFooterElement.offsetHeight;
+                const tFooterElement = document.querySelector('.t-footer')
+                const tFooterHeight = tFooterElement.offsetHeight
 
                 // Point for loading
                 if (scrollTop + windowHeight >= documentHeight - tFooterHeight) {
                     // loading more items
-                    this.page++;
-                    this.loadPlaces();
+                    this.page++
+                    this.loadPlaces()
                 }
             },
 
@@ -165,7 +165,7 @@
         },
 
         beforeDestroy() {
-            this.removeScrollListener();
+            this.removeScrollListener()
         }
     }
 </script>

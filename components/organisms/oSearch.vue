@@ -53,12 +53,13 @@
                         this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions?showType=search&search=${this.searchQuery}`),
                         this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities?showType=search&search=${this.searchQuery}`),
                         this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots?showType=search&search=${this.searchQuery}`)
-                    ]);
-                    this.placesContinents = placesContinents;
-                    this.placesRegions = placesRegions;
-                    this.placesStates = placesStates;
-                    this.placesCities = placesCities;
-                    this.placesSpots = placesSpots;
+                    ])
+                    
+                    this.placesContinents = placesContinents
+                    this.placesRegions = placesRegions
+                    this.placesStates = placesStates
+                    this.placesCities = placesCities
+                    this.placesSpots = placesSpots
 
                     this.filterPlaces();
                 } catch (error) {
@@ -70,10 +71,10 @@
                 this.filteredPlaces = [];
 
                 if (!this.searchQuery) {
-                    return;
+                    return
                 }
                 if (this.searchQuery.length >= 3) {
-                    this.filteredPlaces = this.placesContinents.concat(this.placesStates).concat(this.placesCities).concat(this.placesRegions).concat(this.placesSpots).filter(place => place.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
+                    this.filteredPlaces = this.placesContinents.concat(this.placesStates).concat(this.placesCities).concat(this.placesRegions).concat(this.placesSpots).filter(place => place.name.toLowerCase().includes(this.searchQuery.toLowerCase()))
                 }
             }
         },
@@ -93,29 +94,29 @@
 
         computed: {
             hasResults() {
-                return this.searchQuery.length >= 3 && this.filteredPlaces.length === 0;
+                return this.searchQuery.length >= 3 && this.filteredPlaces.length === 0
             }
         },
 
         watch: {
             searchQuery: function(newSearchQuery, oldSearchQuery) {
                 if (newSearchQuery.length == 3) {
-                    this.searchPlaces();
+                    this.searchPlaces()
                 } else if (newSearchQuery.substring(0, 3) !== oldSearchQuery.substring(0, 3)) {
-                    this.searchPlaces();
+                    this.searchPlaces()
                 } else if (newSearchQuery.substring(0, 3) === oldSearchQuery.substring(0, 3)) {
                     if (this.filteredPlaces.length == 0) {
-                        this.searchPlaces();
+                        this.searchPlaces()
                     }
                 } else if (newSearchQuery.length >= 3) {
-                    this.filterPlaces();
+                    this.filterPlaces()
                 } else {
-                    this.placesContinents = [];
-                    this.placesStates = [];
-                    this.placesRegions = [];
-                    this.placesCities = [];
-                    this.placesSpots = [];
-                    this.filteredPlaces = [];
+                    this.placesContinents = []
+                    this.placesStates = []
+                    this.placesRegions = []
+                    this.placesCities = []
+                    this.placesSpots = []
+                    this.filteredPlaces = []
                 }
             }
         }

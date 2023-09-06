@@ -31,7 +31,6 @@
 </template>
 
 <script>
-
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oDonate from '../components/organisms/oDonate.vue'

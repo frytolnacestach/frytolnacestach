@@ -101,18 +101,18 @@
 
         async asyncData({ $axios, params }) {
             try {
-                const staticUser = await $axios.$get(`https://api.frytolnacestach.cz/api/user/${params.slug}`);
+                const staticUser = await $axios.$get(`https://api.frytolnacestach.cz/api/user/${params.slug}`)
 
                 return {
                     staticUser
-                };
+                }
             } catch (error) {
-                console.log(`API ERROR - CESTOVATEL DETAIL(static): ${params.slug}`);
-                console.error(error);
+                console.log(`API ERROR - CESTOVATEL DETAIL(static): ${params.slug}`)
+                console.error(error)
 
                 return {
                     staticUser: null
-                };
+                }
             }
         },
 
@@ -122,49 +122,48 @@
                 let data = null
 
                 if (process.client) {
-                while (!success) {
-                    try {
-                        // PAGE - Cestovatel
-                        // User
-                        const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user/${this.$route.params.slug}`);
+                    while (!success) {
+                        try {
+                            // PAGE - Cestovatel
+                            // User
+                            const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user/${this.$route.params.slug}`)
 
 
-                        // COMPONENT - oArticleListUser
-                        // Posts
-                        const posts = await this.$axios.$get(`https://api.frytolnacestach.cz/api/posts-id-user/${user[0].id}`)
-                        // Images
-                        const imagesPostsIDS = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
-                        const images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
+                            // COMPONENT - oArticleListUser
+                            // Posts
+                            const posts = await this.$axios.$get(`https://api.frytolnacestach.cz/api/posts-id-user/${user[0].id}`)
+                            // Images
+                            const imagesPostsIDS = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
+                            const images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
 
 
-                        // TO DATA
-                        data = {
-                            staticUser: user,
-                            user,
-                            posts,
-                            images
+                            // TO DATA
+                            data = {
+                                staticUser: user,
+                                user,
+                                posts,
+                                images
+                            }
+
+                            // SUCCESS
+                            success = true
+                        } catch (error) {
+                            console.log(`API ERROR - CESTOVATEL ČLÁNKY DETAIL: ${this.$route.params.slug}`)
+                            console.error(error)
+
+                            await new Promise(resolve => setTimeout(resolve, 1000))
                         }
-
-                        // SUCCESS
-                        success = true
-                    } catch (error) {
-                        console.log(`API ERROR - CESTOVATEL ČLÁNKY DETAIL: ${this.$route.params.slug}`);
-                        console.error(error);
-
-                        await new Promise(resolve => setTimeout(resolve, 1000));
                     }
-                }
 
-                Object.assign(this, data);
+                    Object.assign(this, data)
                 }
-            });
+            })
         },
 
         methods: {
             menuUserUpdate(newValue) {
-                this.mNavUserOpen = newValue;
+                this.mNavUserOpen = newValue
             }
         }
-
     }
 </script>

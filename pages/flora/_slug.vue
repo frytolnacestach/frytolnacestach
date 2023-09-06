@@ -78,7 +78,7 @@
             oAdGoogleSidebar,
             oItemStates,
             oHeroItemDetail,
-            oInformationBlock,
+            oInformationBlock
         },
 
         data() {
@@ -114,8 +114,8 @@
         },
 
         async asyncData({ $axios, params }) {
-            let success = false;
-            let data = null;
+            let success = false
+            let data = null
 
             while (!success) {
                 try {

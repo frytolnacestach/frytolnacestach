@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import { loginCheckLogout } from '~/utils/loginCheckLogout.js';
+import { loginCheckLogout } from '~/utils/loginCheckLogout.js'
 
 import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
 import mHeadline from '~/components/molecules/mHeadline.vue'
@@ -126,17 +126,17 @@ export default {
     },
 
     async mounted() {
-        loginCheckLogout(this.$router);
+        loginCheckLogout(this.$router)
 
         if (process.client) {
-            let success = false;
-            let data = null;
+            let success = false
+            let data = null
             
             const localStorageEmail = localStorage.getItem('email')
             const localStoragePasswordHash = localStorage.getItem('password_hash')
 
-            this.email = localStorageEmail;
-            this.passwordHash = localStoragePasswordHash;
+            this.email = localStorageEmail
+            this.passwordHash = localStoragePasswordHash
 
             while (!success) {
                 try {
@@ -148,11 +148,11 @@ export default {
                     // COMPONENT - oCoverPlaceVisited
                     // PlacesID
                     const placesID = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${account[0].id}&status=1`)
-                    const placesContinentsID = placesID.filter(place => place.type === 'continent').map(place => place.id_place) || [];
-                    const placesStatesID = placesID.filter(place => place.type === 'state').map(place => place.id_place) || [];
-                    const placesCitiesID = placesID.filter(place => place.type === 'city').map(place => place.id_place) || [];
-                    const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || [];
-                    const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || [];
+                    const placesContinentsID = placesID.filter(place => place.type === 'continent').map(place => place.id_place) || []
+                    const placesStatesID = placesID.filter(place => place.type === 'state').map(place => place.id_place) || []
+                    const placesCitiesID = placesID.filter(place => place.type === 'city').map(place => place.id_place) || []
+                    const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || []
+                    const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || []
 
                     // TO DATA
                     data = {
@@ -178,13 +178,13 @@ export default {
             }
 
             // Update data properties with fetched data
-            Object.assign(this, data);
+            Object.assign(this, data)
         }
     },
 
     methods: {
         menuAccountUpdate(newValue) {
-            this.mNavAccountOpen = newValue;
+            this.mNavAccountOpen = newValue
         }
     }
 }

@@ -113,6 +113,6 @@
                 type: Boolean,
                 required: false
             }
-        },
+        }
     }
 </script>

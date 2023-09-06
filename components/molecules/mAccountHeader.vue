@@ -53,19 +53,19 @@
 
         methods: {
             updateParentVariable() {
-                this.parentVariable = !this.parentVariable;
-                const newValue = this.parentVariable;
-                this.$emit('update', newValue);
+                this.parentVariable = !this.parentVariable
+                const newValue = this.parentVariable
+                this.$emit('update', newValue)
             }
         },
 
         mounted() {
             if (process.client) {
-                const localStorageNickname = localStorage.getItem('nickname');
-                const localStorageEmail = localStorage.getItem('email');
-                this.nickname = localStorageNickname;
-                this.email = localStorageEmail;
+                const localStorageNickname = localStorage.getItem('nickname')
+                const localStorageEmail = localStorage.getItem('email')
+                this.nickname = localStorageNickname
+                this.email = localStorageEmail
             }
-        },
+        }
     }
 </script>

@@ -58,7 +58,7 @@
 
         data() {
             return {
-                email: this.email,
+                email: this.email
             }
         },
 
@@ -81,9 +81,9 @@
 
         mounted() {
             if (process.client) {
-                const localStorageEmail = localStorage.getItem('email');
-                this.email = localStorageEmail;
+                const localStorageEmail = localStorage.getItem('email')
+                this.email = localStorageEmail
             }
-        },
+        }
     }
 </script>

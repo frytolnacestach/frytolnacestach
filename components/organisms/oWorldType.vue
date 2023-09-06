@@ -74,13 +74,13 @@
                         styleThemaItem: " -spot"
 
                     }
-                ],
+                ]
             }
         },
 
         async fetch() {
-            const response = await fetch("https://api.frytolnacestach.cz/api/places-count");
-            const data = await response.json();
+            const response = await fetch("https://api.frytolnacestach.cz/api/places-count")
+            const data = await response.json()
 
             const countObj = {
                 places_cities: data.places_cities,
@@ -90,13 +90,13 @@
                 places_states: data.places_states
             };
 
-            this.items[0].length = countObj.places_continents;
-            this.items[1].length = countObj.places_states;
-            this.items[2].length = countObj.places_regions;
-            this.items[3].length = countObj.places_cities;
-            this.items[4].length = countObj.places_spots;
+            this.items[0].length = countObj.places_continents
+            this.items[1].length = countObj.places_states
+            this.items[2].length = countObj.places_regions
+            this.items[3].length = countObj.places_cities
+            this.items[4].length = countObj.places_spots
 
-            this.count = [countObj];
+            this.count = [countObj]
         }
     }
 </script>

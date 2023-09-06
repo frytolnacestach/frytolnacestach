@@ -106,7 +106,7 @@
             user: {
                 type: Array,
                 required: true
-            },
+            }
         },
 
         data() {
@@ -123,61 +123,61 @@
                 placesRegions: this.placesRegions,
                 imagesPlacesRegions: this.imagesPlacesRegions,
                 placesSpots: this.placesSpots,
-                imagesPlacesSpots: this.imagesPlacesSpots,
+                imagesPlacesSpots: this.imagesPlacesSpots
             }
         },
 
         methods: {
             mapType(type) {
                 if (type === 'continent') {
-                    return 'svet/kontinent';
+                    return 'svet/kontinent'
                 } else if (type === 'state') {
-                    return 'svet/stat';
+                    return 'svet/stat'
                 } else if (type === 'region') {
-                    return 'svet/region';
+                    return 'svet/region'
                 } else if (type === 'city') {
-                    return 'svet/mesto';
+                    return 'svet/mesto'
                 } else if (type === 'spot') {
-                    return 'svet/misto';
-                } 
+                    return 'svet/misto'
+                }
             }
         },
 
         async mounted() {
-            let success = false;
-            let data = null;
+            let success = false
+            let data = null
 
             while (!success) {
                 try {
                     // Reviews
                     const reviews = await this.$axios.$get(`https://api.frytolnacestach.cz/api/reviews-id-user?id_user=${this.user[0].id}`)
 
-                    const placesContinentsID = reviews.filter(review => review.type === 'continent').map(review => review.id_place) || [];
-                    const placesStatesID = reviews.filter(review => review.type === 'state').map(review => review.id_place) || [];
-                    const placesCitiesID = reviews.filter(review => review.type === 'city').map(review => review.id_place) || [];
-                    const placesRegionsID = reviews.filter(review => review.type === 'region').map(review => review.id_place) || [];
-                    const placesSpotsID = reviews.filter(review => review.type === 'spot').map(review => review.id_place) || [];
+                    const placesContinentsID = reviews.filter(review => review.type === 'continent').map(review => review.id_place) || []
+                    const placesStatesID = reviews.filter(review => review.type === 'state').map(review => review.id_place) || []
+                    const placesCitiesID = reviews.filter(review => review.type === 'city').map(review => review.id_place) || []
+                    const placesRegionsID = reviews.filter(review => review.type === 'region').map(review => review.id_place) || []
+                    const placesSpotsID = reviews.filter(review => review.type === 'spot').map(review => review.id_place) || []
 
 
-                    const placesContinents = placesContinentsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents-array?showType=list&id=${placesContinentsID.join(',')}`) : [];
+                    const placesContinents = placesContinentsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents-array?showType=list&id=${placesContinentsID.join(',')}`) : []
                     const imagesPlacesContinentsID = placesContinents.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
-                    const imagesPlacesContinents = imagesPlacesContinentsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesContinentsID.join(',')}`) : [];
+                    const imagesPlacesContinents = imagesPlacesContinentsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesContinentsID.join(',')}`) : []
 
-                    const placesStates = placesStatesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${placesStatesID.join(',')}`) : [];
+                    const placesStates = placesStatesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${placesStatesID.join(',')}`) : []
                     const imagesPlacesStatesID = placesStates.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
-                    const imagesPlacesStates = imagesPlacesStatesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`) : [];
+                    const imagesPlacesStates = imagesPlacesStatesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`) : []
 
-                    const placesCities = placesCitiesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-array?showType=list&id=${placesCitiesID.join(',')}`) : [];
+                    const placesCities = placesCitiesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-array?showType=list&id=${placesCitiesID.join(',')}`) : []
                     const imagesPlacesCitiesID = placesCities.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
-                    const imagesPlacesCities = imagesPlacesCitiesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesID.join(',')}`) : [];
+                    const imagesPlacesCities = imagesPlacesCitiesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesID.join(',')}`) : []
 
-                    const placesRegions = placesRegionsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions-array?showType=list&id=${placesRegionsID.join(',')}`) : [];
+                    const placesRegions = placesRegionsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions-array?showType=list&id=${placesRegionsID.join(',')}`) : []
                     const imagesPlacesRegionsID = placesRegions.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
-                    const imagesPlacesRegions = imagesPlacesRegionsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesRegionsID.join(',')}`) : [];
+                    const imagesPlacesRegions = imagesPlacesRegionsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesRegionsID.join(',')}`) : []
 
-                    const placesSpots = placesSpotsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots-array?showType=list&id=${placesSpotsID.join(',')}`) : [];
+                    const placesSpots = placesSpotsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots-array?showType=list&id=${placesSpotsID.join(',')}`) : []
                     const imagesPlacesSpotsID = placesSpots.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
-                    const imagesPlacesSpots = imagesPlacesSpotsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesSpotsID.join(',')}`) : [];
+                    const imagesPlacesSpots = imagesPlacesSpotsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesSpotsID.join(',')}`) : []
 
 
                     const places = [
@@ -221,7 +221,7 @@
                 }
             }
 
-            Object.assign(this, data);
+            Object.assign(this, data)
         }
     }
 </script>

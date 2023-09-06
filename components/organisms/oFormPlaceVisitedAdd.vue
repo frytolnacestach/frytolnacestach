@@ -84,16 +84,15 @@
                 const localStorageEmail = localStorage.getItem('email')
                 const localStoragePasswordHash = localStorage.getItem('password_hash')
 
-                this.email = localStorageEmail;
-                this.passwordHash = localStoragePasswordHash;
+                this.email = localStorageEmail
+                this.passwordHash = localStoragePasswordHash
             }
         },
 
         methods: {
             async editVisited(placeID) {
                 try {
-                    this.placeID = placeID;
-
+                    this.placeID = placeID
 
                     try {
                         const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-edit`, {
@@ -116,34 +115,34 @@
                         if (response.ok) {
                             if (response.status === 201) {
                                 if (this.status === 1) {
-                                    console.log("Místo bylo přidáno mezi navštívené");
-                                    this.successForm = "Místo bylo přidáno mezi navštívené";
+                                    console.log("Místo bylo přidáno mezi navštívené")
+                                    this.successForm = "Místo bylo přidáno mezi navštívené"
                                 } else if (this.status === 2) {
-                                    console.log("Místo bylo přidáno mezi chci navštívit");
-                                    this.successForm = "Místo bylo přidáno mezi chci navštívit";
+                                    console.log("Místo bylo přidáno mezi chci navštívit")
+                                    this.successForm = "Místo bylo přidáno mezi chci navštívit"
                                 }
                                 
                                 this.searchQuery = ''
                                 this.emitAddNewPlaceEvent(this.placeID)
                             } else if (response.status === 200) {
-                                console.log("Záznam odebrán");
-                                this.successForm = "Záznam odebrán";
+                                console.log("Záznam odebrán")
+                                this.successForm = "Záznam odebrán"
                             }
                         } else if (response.status === 404) {
-                            console.log("Vypadá to že nejsi přihlášen ke svému účtu.");
-                            this.errorForm = "Vypadá to, že nejsi přihlášen ke svému účtu.";
+                            console.log("Vypadá to že nejsi přihlášen ke svému účtu.")
+                            this.errorForm = "Vypadá to, že nejsi přihlášen ke svému účtu."
                         } else {
-                            console.log("Chyba při komunikaci s API");
-                            this.errorForm = "Chyba při komunikaci s API";
+                            console.log("Chyba při komunikaci s API")
+                            this.errorForm = "Chyba při komunikaci s API"
                         }
                     } catch (err) {
-                        console.log(err);
-                        this.errorForm = "Chyba připojení k API";
+                        console.log(err)
+                        this.errorForm = "Chyba připojení k API"
                         throw err;
                     }
                 } catch (err) {
-                    console.log(err);
-                    this.errorForm = "Nastala chyba";
+                    console.log(err)
+                    this.errorForm = "Nastala chyba"
                 }
             },
 
@@ -168,7 +167,7 @@
             },
 
             filterPlaces() {
-                this.filteredPlaces = [];
+                this.filteredPlaces = []
 
                 if (!this.searchQuery) {
                     return;
@@ -180,16 +179,16 @@
 
             // Má uživatel zápis k tomuto místu?
             hasVisited(id) {
-                return this.visitedPlace.some(place => place.id === id);
+                return this.visitedPlace.some(place => place.id === id)
             },
 
             // Má stejný status?
             hasStatus(status) {
-                return this.visitedPlace.some(place => place.status === status);
+                return this.visitedPlace.some(place => place.status === status)
             },
 
             emitAddNewPlaceEvent(placeID) {
-                this.$emit('add-place', placeID);
+                this.$emit('add-place', placeID)
             }
         },
 

@@ -69,7 +69,6 @@
 </template>
 
 <script>
-
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
