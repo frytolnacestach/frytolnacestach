@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <section class="t-component-skeleton">
         <!-- skeleton -->
         <div v-if="nickname === null">
             <div class="skeleton-m-account-header">
@@ -18,6 +18,7 @@
         </div>
         <!-- skeleton END -->
 
+        <!-- client -->
         <client-only v-if="nickname !== null">
             <div class="m-account-header">
                 <div class="m-account-header__outer">
@@ -36,7 +37,8 @@
                 </div>
             </div>
         </client-only>
-    </div>
+        <!-- client END -->
+    </section>
 </template>
 
 <script>

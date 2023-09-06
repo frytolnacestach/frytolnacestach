@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <section class="t-component-skeleton">
         <!-- skeleton -->
         <div v-if="user === null && skeleton === true">
             <div class="skeleton-m-user-header">
@@ -17,6 +17,7 @@
         </div>
         <!-- skeleton END -->
 
+        <!-- client -->
         <client-only v-if="user !== null && skeleton !== true">
             <div class="m-user-header">
                 <div class="m-user-header__outer">
@@ -34,7 +35,8 @@
                 </div>
             </div>
         </client-only>
-    </div>
+        <!-- client END -->
+    </section>
 </template>
 
 <script>

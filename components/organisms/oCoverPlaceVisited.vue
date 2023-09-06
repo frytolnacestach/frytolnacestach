@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <section class="t-component-skeleton">
         <!-- skeleton -->
         <div v-if="places === null">
             <div class="skeleton-o-cover-place-visited">
@@ -16,6 +16,7 @@
         </div>
         <!-- skeleton END -->
 
+        <!-- client -->
         <client-only v-if="places !== null">
             <div class="o-cover-place-visited">
                 <div class="o-cover-place-visited__outer">
@@ -103,9 +104,10 @@
                 Nemáš tu žádné místo. Co takhle projít <nuxt-link to="/svet">svět</nuxt-link> a přidat sem místa?
             </p>
         </client-only>
+        <!-- client END -->
         <mButtonPlaceAdd type="first" v-if="account === 'login' && places && Array.isArray(places) && places.length === 0" @add-place-clicked="showAddPlaceForm" />
         <oFormPlaceVisitedAdd :status="status" :type="type" :visitedPlace="places" v-if="showPlaceForm && account === 'login'" @add-place="showAddNewPlaceForm" />
-    </div>
+    </section>
 </template>
 
 <script>

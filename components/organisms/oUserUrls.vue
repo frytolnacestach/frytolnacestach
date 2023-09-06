@@ -1,6 +1,5 @@
 <template>
     <section class="t-component-skeleton">
-        
         <!-- skeleton -->
         <!--<div class="skeleton-o-user-urls">
             <div class="skeleton-o-user-urls__outer">
@@ -31,7 +30,6 @@
             Cestovatel nemá vyplňěné žádné odkazy.
         </client-only>
         <!-- client END -->
-
     </section>
 </template>
 

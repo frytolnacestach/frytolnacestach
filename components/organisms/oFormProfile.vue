@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <section class="t-component-skeleton">
         <!-- skeleton -->
         <div v-if="profile === null">
             <div class="skeleton-o-form-profile">
@@ -28,6 +28,7 @@
         </div>
         <!-- skeleton END -->
 
+        <!-- client -->
         <client-only v-if="profile !== null">
             <div class="o-form-profile">
                 <div class="o-form-profile__outer">
@@ -91,7 +92,8 @@
                 </div>
             </div>
         </client-only>
-    </div>
+        <!-- client END -->
+    </section>
 </template>
   
 <script>

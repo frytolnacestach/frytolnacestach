@@ -2,78 +2,81 @@
     <section class="t-section my-2 -p0">
         <div class="t-section__inner">
             <mHeadline title="Napsané recenze" styleThema=" -account -blue" styleAlign="" styleGap="" />
-            <!-- skeleton -->
-            <div v-if="reviews === null">
-                <div class="skeleton-o-review-item-list">
-                    <div class="skeleton-o-review-item-list__outer">
-                        <div class="skeleton-o-review-item-list__inner">
-                            <div class="skeleton-o-review-item-list__items">
-                                <div v-for="index in 3" :key="index" class="skeleton-o-review-item-list__item">
-                                    <div class="skeleton-o-review-item-list__content">
-                                        <div class="skeleton-o-review-item-list__image loading-image -skeleton-blue"></div>
-                                        <div class="skeleton-o-review-item-list__text loading-image -skeleton-blue"></div>
+            <section class="t-component-skeleton">
+                <!-- skeleton -->
+                <div v-if="reviews === null">
+                    <div class="skeleton-o-review-item-list">
+                        <div class="skeleton-o-review-item-list__outer">
+                            <div class="skeleton-o-review-item-list__inner">
+                                <div class="skeleton-o-review-item-list__items">
+                                    <div v-for="index in 3" :key="index" class="skeleton-o-review-item-list__item">
+                                        <div class="skeleton-o-review-item-list__content">
+                                            <div class="skeleton-o-review-item-list__image loading-image -skeleton-blue"></div>
+                                            <div class="skeleton-o-review-item-list__text loading-image -skeleton-blue"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- skeleton END -->
+                <!-- skeleton END -->
 
-            <client-only v-if="reviews !== null">
-                <div class="o-review-item-list-user" v-if="reviews && reviews.length > 0 && places && places.length > 0">
-                    <div class="o-review-item-list-user__outer">
-                        <div class="o-review-item-list-user__inner">
-                            <div class="o-review-item-list-user__items">
-                                <div class="o-review-item-list-user__item" v-for="review in reviews" :key="review.id">
-                                    <div class="o-review-item-list-user__content">
-                                        <div class="o-review-item-list-user__image loading-image -blue">
-                                            <div class="o-review-item-list-user__image-lazyload" v-if="images && images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place ))">
-                                                <img class="o-review-item-list-user__image-file lazyload-file"
-                                                    data-sizes="(max-width: 374px) 40px, (max-width: 575px) 50px, 70px"
-                                                    :data-srcset="`
-                                                        https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-40.webp 40w,
-                                                        https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-50.webp 50w,
-                                                        https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-70.webp 70w,
-                                                        https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-80-2x.webp 80w,
-                                                        https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-100-2x.webp 100w,
-                                                        https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-140-2x.webp 140w
-                                                        `"
-                                                    :data-src="`https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}.webp`"
-                                                    :alt="places.find(place => place.id === review.id_place && place.type_place === review.type).name"
-                                                    v-lazy>
-                                            </div>
-                                            <div class="o-review-item-list-user__image-lazyload" v-else >
-                                                <img class="o-review-item-list-user__image-file lazyload-file"
-                                                    data-sizes="(max-width: 374px) 40px, (max-width: 575px) 50px, 70px"
-                                                    :data-srcset="`
-                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-40.webp 40w,
-                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-50.webp 50w,
-                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-70.webp 70w,
-                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-80-2x.webp 80w,
-                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-100-2x.webp 100w,
-                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-140-2x.webp 140w
-                                                        `"
-                                                    :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
-                                                    :alt="places.find(place => place.id === review.id_place && place.type_place === review.type).name"
-                                                    v-lazy>
-                                            </div>
-                                            <NuxtLink class="o-review-item-list-user__image-link" :to="`/${mapType(review.type)}/${places.find(place => place.id === review.id_place && place.type_place === review.type).slug}`" :aria-label="`Přejít na místo ${places.find(place => place.id === review.id_place && place.type_place === review.type).name}`"></NuxtLink>
-                                        </div>
-                                        <div class="o-review-item-list-user__text">
-                                            <div class="o-review-item-list-user__review">
-                                                <div class="o-review-item-list-user__stars">
-                                                    <div class="o-review-item-list-user__star" :class="{'-active': review.rating > 0}"></div>
-                                                    <div class="o-review-item-list-user__star" :class="{'-active': review.rating > 1}"></div>
-                                                    <div class="o-review-item-list-user__star" :class="{'-active': review.rating > 2}"></div>
-                                                    <div class="o-review-item-list-user__star" :class="{'-active': review.rating > 3}"></div>
-                                                    <div class="o-review-item-list-user__star" :class="{'-active': review.rating > 4}"></div>
+                <!-- client -->
+                <client-only v-if="reviews !== null">
+                    <div class="o-review-item-list-user" v-if="reviews && reviews.length > 0 && places && places.length > 0">
+                        <div class="o-review-item-list-user__outer">
+                            <div class="o-review-item-list-user__inner">
+                                <div class="o-review-item-list-user__items">
+                                    <div class="o-review-item-list-user__item" v-for="review in reviews" :key="review.id">
+                                        <div class="o-review-item-list-user__content">
+                                            <div class="o-review-item-list-user__image loading-image -blue">
+                                                <div class="o-review-item-list-user__image-lazyload" v-if="images && images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place ))">
+                                                    <img class="o-review-item-list-user__image-file lazyload-file"
+                                                        data-sizes="(max-width: 374px) 40px, (max-width: 575px) 50px, 70px"
+                                                        :data-srcset="`
+                                                            https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-40.webp 40w,
+                                                            https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-50.webp 50w,
+                                                            https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-70.webp 70w,
+                                                            https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-80-2x.webp 80w,
+                                                            https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-100-2x.webp 100w,
+                                                            https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-140-2x.webp 140w
+                                                            `"
+                                                        :data-src="`https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}.webp`"
+                                                        :alt="places.find(place => place.id === review.id_place && place.type_place === review.type).name"
+                                                        v-lazy>
                                                 </div>
-                                                <h3 class="o-review-item-list-user__name">
-                                                    <NuxtLink  class="o-review-item-list-user__name-link" :to="`/${mapType(review.type)}/${places.find(place => place.id === review.id_place && place.type_place === review.type).slug}`" :aria-label="`Přejít na profil uživatele ${places.find(place => place.id === review.id_place && place.type_place === review.type).nickname}`">{{ places.find(place => place.id === review.id_place && place.type_place === review.type).name }}</NuxtLink>
-                                                </h3>
-                                                <p class="o-review-item-list-user__perex">{{ review.text }}</p>
+                                                <div class="o-review-item-list-user__image-lazyload" v-else >
+                                                    <img class="o-review-item-list-user__image-file lazyload-file"
+                                                        data-sizes="(max-width: 374px) 40px, (max-width: 575px) 50px, 70px"
+                                                        :data-srcset="`
+                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-40.webp 40w,
+                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-50.webp 50w,
+                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-70.webp 70w,
+                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-80-2x.webp 80w,
+                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-100-2x.webp 100w,
+                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-140-2x.webp 140w
+                                                            `"
+                                                        :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
+                                                        :alt="places.find(place => place.id === review.id_place && place.type_place === review.type).name"
+                                                        v-lazy>
+                                                </div>
+                                                <NuxtLink class="o-review-item-list-user__image-link" :to="`/${mapType(review.type)}/${places.find(place => place.id === review.id_place && place.type_place === review.type).slug}`" :aria-label="`Přejít na místo ${places.find(place => place.id === review.id_place && place.type_place === review.type).name}`"></NuxtLink>
+                                            </div>
+                                            <div class="o-review-item-list-user__text">
+                                                <div class="o-review-item-list-user__review">
+                                                    <div class="o-review-item-list-user__stars">
+                                                        <div class="o-review-item-list-user__star" :class="{'-active': review.rating > 0}"></div>
+                                                        <div class="o-review-item-list-user__star" :class="{'-active': review.rating > 1}"></div>
+                                                        <div class="o-review-item-list-user__star" :class="{'-active': review.rating > 2}"></div>
+                                                        <div class="o-review-item-list-user__star" :class="{'-active': review.rating > 3}"></div>
+                                                        <div class="o-review-item-list-user__star" :class="{'-active': review.rating > 4}"></div>
+                                                    </div>
+                                                    <h3 class="o-review-item-list-user__name">
+                                                        <NuxtLink  class="o-review-item-list-user__name-link" :to="`/${mapType(review.type)}/${places.find(place => place.id === review.id_place && place.type_place === review.type).slug}`" :aria-label="`Přejít na profil uživatele ${places.find(place => place.id === review.id_place && place.type_place === review.type).nickname}`">{{ places.find(place => place.id === review.id_place && place.type_place === review.type).name }}</NuxtLink>
+                                                    </h3>
+                                                    <p class="o-review-item-list-user__perex">{{ review.text }}</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -81,13 +84,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </client-only>
-            <client-only v-if="reviews && Array.isArray(reviews) && reviews.length === 0">
-                <p>
-                    Cestovatel zatím nenapsal žadnou recenzi.
-                </p>
-            </client-only>
+                </client-only>
+                <client-only v-if="reviews && Array.isArray(reviews) && reviews.length === 0">
+                    <p>
+                        Cestovatel zatím nenapsal žadnou recenzi.
+                    </p>
+                </client-only>
+                <!-- client END -->
+            </section>
         </div>
     </section>
 </template>
