@@ -1,21 +1,18 @@
 <template>
     <footer class="t-footer" role="contentinfo">
         <div class="o-footer">
-            <div class="o-footer__animation">
-                <ul class="o-footer__animation-items">
-                    <li class="o-footer__animation-item-mountains-3"></li>
-                    <li class="o-footer__animation-item-mountains-2"></li>
-                    <li class="o-footer__animation-item-mountains-1"></li>
-                    <li class="o-footer__animation-item-aircraft-1"></li>
-                    <li class="o-footer__animation-item-aircraft-2"></li>
-                </ul>
-            </div>
 
-            <!-- NAV - Footer -->
+            <!-- ANIMATION Flight -->
+            <div class="o-footer__animation">
+                <oAnimationFlight />
+            </div>
+            <!-- ANIMATION Flight END-->
+
+            <!-- NAV Footer -->
             <div class="o-footer__nav">
                 <mNavFooter />
             </div>
-            <!-- NAV - Footer END -->
+            <!-- NAV Footer END -->
 
             <!-- COPYRIGHT -->
             <div class="o-footer__copyright">
@@ -29,6 +26,7 @@
 
 <script>
     import mNavFooter from '~/components/molecules/mNavFooter.vue'
+    import oAnimationFlight from '~/components/organisms/oAnimationFlight.vue'
     import oCopyright from '~/components/organisms/oCopyright.vue'
 
     export default {
@@ -36,6 +34,7 @@
 
         components: {
             mNavFooter,
+            oAnimationFlight,
             oCopyright
         }
     }

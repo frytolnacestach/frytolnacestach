@@ -1,0 +1,127 @@
+.o-animation-flight {
+    width: 100%;
+    height: auto;
+    margin-top: -16.666%;
+
+    @media only screen and (min-width: $sm) {
+        margin-top: -8.333%
+    }
+
+    &__items {
+        width: 100%;
+        position: relative;
+        height: 0;
+        padding-bottom: 16.666%;
+
+        @media only screen and (min-width: $sm) {
+            padding-bottom: 8.333%;
+        }
+    }
+
+    // Mountains
+    &__item-mountains {
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        width: 200%;
+        background-size: contain;
+        background-repeat: repeat-x;
+        background-position: left bottom;
+        
+        &.-first {
+            background-image: url('../../static/images/_base/mountains-1.svg');
+            animation: mountains 70s linear infinite;
+        }
+
+        &.-second {
+            background-image: url('../../static/images/_base/mountains-2.svg');
+            animation: mountains 83s linear infinite;
+        }
+
+        &.-third {
+            background-image: url('../../static/images/_base/mountains-3.svg');
+            animation: mountains 100s linear infinite;
+        }
+    }
+
+    // Aircraft
+    &__item-aircraft {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        width: 200%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('../../static/images/_base/aircraft.svg');
+
+        &.-first {
+            background-position: left bottom;
+            animation: aircraft1 100s linear infinite;
+        }
+
+        &.-second {
+            display: none;
+            background-position: center;
+            animation: aircraft2 100s linear infinite;
+
+            @media only screen and (min-width: $sm) {
+                display: block;
+            }
+        }
+    }
+
+
+    // Animations
+    @keyframes mountains {
+        0% {
+            background-position-x: 100%;
+        }
+        100% {
+            background-position-x: -100%;
+        }
+    }
+
+    @keyframes aircraft1 {
+        0% {
+            background-position-x: -120%;
+            top: 0%;
+        }
+        20% {
+            top: 0%;
+        }
+        25% {
+            top: 10%;
+        }
+        30% {
+            top: 0%;
+        }
+        100% {
+            background-position-x: 120%;
+        }
+    }
+
+    @keyframes aircraft2 {
+        0% {
+            background-position-x: -20%;
+            top: 0%;
+        }
+        20% {
+            top: 0%;
+        }
+        25% {
+            top: 5%;
+        }
+        30% {
+            top: 0%;
+        }
+        100% {
+            background-position-x: 220%;
+        }
+    }
+}
