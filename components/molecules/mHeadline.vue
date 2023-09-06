@@ -4,7 +4,7 @@
             <div class="m-headline__inner">
                 <h2 class="m-headline__title">
                     {{ title }} {{ titleValue ? titleValue : '' }}
-                    <a class="a-button-fill -small -green" :href="url" v-if="url">{{ urlText }}</a>
+                    <aButtonFill :url="url" :text="urlText" styleThema=" -small -green" target="internal" v-if="url" />
                 </h2>
                 <p class="m-headline__perex pt-1" v-if="perex">{{ perex }}</p>
             </div>
@@ -13,9 +13,15 @@
 </template>
 
 <script>
+    import aButtonFill from '~/components/atoms/aButtonFill.vue'
+
     export default {
         name: 'MoleculesmHeadlineComponent',
         
+        components: {
+            aButtonFill
+        },
+
         props: {
             title: {
                 type: String,
