@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <section class="t-component-skeleton">
         <!-- skeleton -->
         <div class="skeleton-o-visited-button" v-if="skeleton === true">
             <div class="skeleton-o-visited-button__outer">
@@ -14,6 +14,7 @@
         </div>
         <!-- skeleton END -->
 
+        <!-- client -->
         <client-only v-if="skeleton === false">
             <div class="o-visited-button">
                 <!-- SECTION - FlashMassages -->
@@ -34,8 +35,9 @@
                     </div>
                 </div>
             </div>
+            <!-- client END -->
         </client-only>
-    </div>
+    </section>
 </template>
 
 <script>
