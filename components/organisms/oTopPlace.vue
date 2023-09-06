@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <section class="t-component-skeleton">
         <!-- skeleton -->
         <div class="skeleton-o-top-place" v-if="places === null || images === null">
             <div class="skeleton-o-top-place__outer">
@@ -14,7 +14,8 @@
         </div>
         <!-- skeleton END -->
 
-        <div class="o-top-place" v-if="places !== null && images !== null">
+        <!-- client -->
+        <client-only class="o-top-place" v-if="places !== null && images !== null">
             <div class="o-top-place__outer">
                 <div class="o-top-place__items">
                     <div v-for="place in places" :key="place.id" class="o-top-place__item">
@@ -90,8 +91,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </client-only>
+        <!-- client END -->
+    </section>
 </template>
 
 <script>
