@@ -205,11 +205,13 @@
                         status: "span"
                     }
                 ],
+
                 oHotInfoHeroArray: [
                     {
                         id: 1,
                         title: "POČET STÁTŮ",
                         name: "_POČET STÁTŮ_",
+                        url: `_ODKAZ_`,
                         type: "number",
                     },
                     {
@@ -264,6 +266,7 @@
             this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
                 if (item.id === 1) {
                     item.name = this.place[0].number_states
+                    item.url = `/svet/stat?filterIDcontinent=${this.place[0].id}`
                 }
                 return item
             })

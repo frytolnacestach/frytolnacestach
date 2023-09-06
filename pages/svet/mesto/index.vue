@@ -167,6 +167,7 @@
                 this.filterPlace = newValue
                 this.images = []
                 this.placesCities = []
+                this.placesParent = []
                 this.isLoading = false
                 this.noMoreItems = false
                 this.page = 1

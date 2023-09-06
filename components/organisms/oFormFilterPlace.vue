@@ -37,7 +37,28 @@
             }
         },
 
-        async mounted() {
+        async created() {
+            if (this.typePlaceFilter === "continents") {
+                // Získání hodnoty z URL parametru filterIDcontinent
+                const urlParams = new URLSearchParams(window.location.search)
+                const filterIDcontinent = urlParams.get('filterIDcontinent')
+
+                // Nastavení hodnoty filterSelect na základě URL parametru
+                if (filterIDcontinent) {
+                    this.filterSelect = filterIDcontinent
+                    this.updateParentVariable(this.filterSelect)
+                }
+            } else if (this.typePlaceFilter === "states") {
+                // Získání hodnoty z URL parametru filterIDstate
+                const urlParams = new URLSearchParams(window.location.search)
+                const filterIDstate = urlParams.get('filterIDstate')
+
+                // Nastavení hodnoty filterSelect na základě URL parametru
+                if (filterIDstate) {
+                    this.filterSelect = filterIDstate
+                    this.updateParentVariable(this.filterSelect)
+                }
+            }
             await this.loadPlaces()
         },
 
