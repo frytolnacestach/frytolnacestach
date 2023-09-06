@@ -109,7 +109,7 @@
             },
             placesParent: {
                 type: Array,
-                required: true
+                required: false
             },
             images: {
                 type: Array,
