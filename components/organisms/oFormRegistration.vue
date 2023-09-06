@@ -91,7 +91,7 @@ export default {
                 await this.createForm()
                 console.log('Data byla odeslaná')
             } catch (error) {
-                console.log(error);
+                console.log(error)
                 this.errorForm = "Nastala chyba při odeslání vaších udajů."
             }
         },

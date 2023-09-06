@@ -110,7 +110,7 @@
                                 'type': this.placeTypeApp,
                                 'status': this.status
                             })
-                        });
+                        })
 
                         if (response.ok) {
                             if (response.status === 201) {
@@ -138,7 +138,7 @@
                     } catch (err) {
                         console.log(err)
                         this.errorForm = "Chyba připojení k API"
-                        throw err;
+                        throw err
                     }
                 } catch (err) {
                     console.log(err)
@@ -170,7 +170,7 @@
                 this.filteredPlaces = []
 
                 if (!this.searchQuery) {
-                    return;
+                    return
                 }
                 if (this.searchQuery.length >= 3) {
                     this.filteredPlaces = this.places.filter(place => place.name.toLowerCase().includes(this.searchQuery.toLowerCase()))

@@ -123,7 +123,7 @@
                         throw err
                     }
                 } catch (err) {
-                    console.log(err);
+                    console.log(err)
                     this.errorForm = "Nastala chyba"
                 }
             }

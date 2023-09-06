@@ -130,7 +130,7 @@
             getPrename(idState) {
                 const matchingPlaceParent = this.placesParent.find(
                     (parent) => parent.id === idState
-                );
+                )
 
                 if (matchingPlaceParent) {
                     return matchingPlaceParent.name

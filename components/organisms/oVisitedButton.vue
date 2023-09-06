@@ -83,10 +83,10 @@
                             "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH"
                         },
                         method: 'GET'
-                    });
+                    })
 
                     if (response.ok) {
-                        console.log("Záznam načten");
+                        console.log("Záznam načten")
                         const data = await response.json()
                         this.status = data.message[0].status
                         this.skeleton = false
@@ -111,7 +111,7 @@
 
             async editVisited(newStatus) {
                 try {
-                    this.status = newStatus;
+                    this.status = newStatus
                     try {
                         const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-edit`, {
                             headers: {

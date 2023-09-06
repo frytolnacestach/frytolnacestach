@@ -186,14 +186,14 @@
                         ...placesCities,
                         ...placesRegions,
                         ...placesSpots
-                    ];
+                    ]
                     const images = [
                         ...imagesPlacesContinents,
                         ...imagesPlacesStates,
                         ...imagesPlacesCities,
                         ...imagesPlacesRegions,
                         ...imagesPlacesSpots
-                    ];
+                    ]
 
                     data = {
                         reviews,

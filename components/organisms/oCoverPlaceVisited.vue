@@ -112,7 +112,7 @@
     import mButtonPlaceAdd from '~/components/molecules/mButtonPlaceAdd.vue'
     import mButtonPlaceAddVisited from '~/components/molecules/mButtonPlaceAddVisited.vue'
     import mButtonPlaceRemove from '~/components/molecules/mButtonPlaceRemove.vue'
-    import oFormPlaceVisitedAdd from '~/components/organisms/oFormPlaceVisitedAdd.vue';
+    import oFormPlaceVisitedAdd from '~/components/organisms/oFormPlaceVisitedAdd.vue'
 
     export default {
         name: 'OrganismsoCoverPlaceComponent',

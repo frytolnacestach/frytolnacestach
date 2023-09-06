@@ -61,14 +61,14 @@
                     this.placesCities = placesCities
                     this.placesSpots = placesSpots
 
-                    this.filterPlaces();
+                    this.filterPlaces()
                 } catch (error) {
                     console.error(error)
                 }
             },
 
             filterPlaces() {
-                this.filteredPlaces = [];
+                this.filteredPlaces = []
 
                 if (!this.searchQuery) {
                     return

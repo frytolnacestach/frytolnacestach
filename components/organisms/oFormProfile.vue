@@ -95,109 +95,109 @@
 </template>
   
 <script>
-import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
-  
-export default {
-    name: 'OrganismsoFormProfileComponent',
-  
-    components: {
-        oFlashMessages
-    },
-  
-    data() {
-        return {
-            profile: null,
-            localStorageEmail: '',
-            errorForm: '',
-            successForm: '',
-            email: '',
-            password: '',
-            nickname: '',
-            surname: '',
-            lastname: '',
-            agreementMail: '',
-            urls: [
-                {
-                    url: ""
-                }
-            ]
-        }
-    },
-  
-    methods: {
-        async fetchProfile() {
-            try {
-                const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile/${this.localStorageEmail}`)
-                if (response.ok) {
-                    this.profile = await response.json()
-                } else {
-                    console.log("Chyba při komunikaci s API")
-                    this.errorForm = "Chyba při komunikaci s API"
-                }
-            } catch (err) {
-                console.log(err)
-                this.errorForm = "Chyba připojení k API"
-                throw err
+    import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
+    
+    export default {
+        name: 'OrganismsoFormProfileComponent',
+    
+        components: {
+            oFlashMessages
+        },
+    
+        data() {
+            return {
+                profile: null,
+                localStorageEmail: '',
+                errorForm: '',
+                successForm: '',
+                email: '',
+                password: '',
+                nickname: '',
+                surname: '',
+                lastname: '',
+                agreementMail: '',
+                urls: [
+                    {
+                        url: ""
+                    }
+                ]
             }
         },
+    
+        methods: {
+            async fetchProfile() {
+                try {
+                    const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile/${this.localStorageEmail}`)
+                    if (response.ok) {
+                        this.profile = await response.json()
+                    } else {
+                        console.log("Chyba při komunikaci s API")
+                        this.errorForm = "Chyba při komunikaci s API"
+                    }
+                } catch (err) {
+                    console.log(err)
+                    this.errorForm = "Chyba připojení k API"
+                    throw err
+                }
+            },
 
-        async editProfile() {
-            try {
-                const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile-edit/${this.localStorageEmail}`, {
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Access-Control-Allow-Origin": "http://localhost:3000",
-                        "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
-                        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH"
-                    },
-                    method: 'POST',
-                    body: JSON.stringify({
-                        'surname': this.surname,
-                        'lastname': this.lastname,
-                        'agreement_mail': this.agreementMail,
-                        'urls': this.urls
+            async editProfile() {
+                try {
+                    const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile-edit/${this.localStorageEmail}`, {
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Access-Control-Allow-Origin": "http://localhost:3000",
+                            "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
+                            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH"
+                        },
+                        method: 'POST',
+                        body: JSON.stringify({
+                            'surname': this.surname,
+                            'lastname': this.lastname,
+                            'agreement_mail': this.agreementMail,
+                            'urls': this.urls
+                        })
                     })
-                })
 
-                if (response.ok) {
-                    console.log("Změny byly uložené")
-                    this.successForm = "Změny byly uložené"
-                } else {
-                    console.log("Chyba při komunikaci s API")
-                    this.errorForm = "Chyba při komunikaci s API"
+                    if (response.ok) {
+                        console.log("Změny byly uložené")
+                        this.successForm = "Změny byly uložené"
+                    } else {
+                        console.log("Chyba při komunikaci s API")
+                        this.errorForm = "Chyba při komunikaci s API"
+                    }
+                } catch (err) {
+                    console.log(err)
+                    this.errorForm = "Chyba připojení k API"
+                    throw err
                 }
-            } catch (err) {
-                console.log(err)
-                this.errorForm = "Chyba připojení k API"
-                throw err
+            },
+
+            addUrlInput() {
+                if (this.urls.length < 32) {
+                    this.urls.push({ url: "" })
+                }
+            },
+
+            removeUrlInput(index) {
+                this.urls.splice(index, 1)
             }
+
         },
 
-        addUrlInput() {
-            if (this.urls.length < 32) {
-                this.urls.push({ url: "" })
+        async mounted() {
+            if (process.client) {
+                this.localStorageEmail = localStorage.getItem('email')
             }
-        },
 
-        removeUrlInput(index) {
-            this.urls.splice(index, 1)
-        }
+            await this.fetchProfile()
 
-    },
-
-    async mounted() {
-        if (process.client) {
-            this.localStorageEmail = localStorage.getItem('email')
-        }
-
-        await this.fetchProfile()
-
-        if (this.profile) {
-            this.surname = this.profile[0].surname
-            this.lastname = this.profile[0].lastname
-            this.urls = this.profile[0].urls
-            this.agreementMail = this.profile[0].agreement_mail
+            if (this.profile) {
+                this.surname = this.profile[0].surname
+                this.lastname = this.profile[0].lastname
+                this.urls = this.profile[0].urls
+                this.agreementMail = this.profile[0].agreement_mail
+            }
         }
     }
-};
 </script>

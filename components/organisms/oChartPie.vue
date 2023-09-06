@@ -100,8 +100,8 @@
             },
 
             iterateSlices(sliceSize, pieElement, offset, dataCount, sliceCount, color) {
-                const sliceID = this.chartID + "-s" + dataCount + "-" + sliceCount;
-                const maxSize = 179;
+                const sliceID = this.chartID + "-s" + dataCount + "-" + sliceCount
+                const maxSize = 179
                 if (sliceSize <= maxSize) {
                     this.addSlice(sliceSize, pieElement, offset, sliceID, color)
                 } else {
@@ -118,13 +118,13 @@
             },
 
             createPie(dataElement, pieElement) {
-                const listData = [];
-                const dataSpans = this.$el.querySelectorAll(dataElement + " span");
+                const listData = []
+                const dataSpans = this.$el.querySelectorAll(dataElement + " span")
                 dataSpans.forEach((span) => {
                     listData.push(Number(span.innerHTML))
                 })
 
-                let listTotal = 0;
+                let listTotal = 0
                 listData.forEach((data) => {
                     listTotal += data
                 })

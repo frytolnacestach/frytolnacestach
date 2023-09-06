@@ -16,7 +16,7 @@
         },
 
         data() {
-            const { place } = this;
+            const { place } = this
             
             return {
                 isHydrated: false,

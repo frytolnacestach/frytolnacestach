@@ -56,7 +56,7 @@
         methods: {
             calculateWidth(value, type) {
                 if (type >= value) {
-                    return 100;
+                    return 100
                 } else {
                     return (type / value) * 100
                 }

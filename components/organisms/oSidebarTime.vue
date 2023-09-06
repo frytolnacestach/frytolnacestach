@@ -11,9 +11,9 @@
 </template>
   
 <script>
-    import moment from 'moment-timezone';
+    import moment from 'moment-timezone'
     import 'moment/locale/cs'
-    moment.locale('cs');
+    moment.locale('cs')
   
     export default {
         name: 'OrganismsoSidebarTimeComponent',

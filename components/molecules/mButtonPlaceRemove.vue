@@ -40,6 +40,7 @@
             async deleteVisited(placeID) {
                 try {
                     this.placeID = placeID
+                    
                     try {
                         const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-edit`, {
                             headers: {
@@ -56,7 +57,7 @@
                                 'type': this.placeType,
                                 'status': 0
                             })
-                        });
+                        })
 
                         if (response.ok) {
                             if (response.status === 201) {

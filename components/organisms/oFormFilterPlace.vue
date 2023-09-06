@@ -38,7 +38,7 @@
         },
 
         async mounted() {
-            await this.loadPlaces();
+            await this.loadPlaces()
         },
 
         methods: {
@@ -48,14 +48,14 @@
                     // continents
                     const [placesResponse] = await Promise.all([
                         this.$axios.get(`https://api.frytolnacestach.cz/api/places-continents?showType=filter`)
-                    ]);
+                    ])
                     const { data: placesData } = placesResponse
                     this.filterPlaces = placesData
                 } else if (this.typePlaceFilter === "states") {
                     // states
                     const [placesResponse] = await Promise.all([
                         this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=filter`)
-                    ]);
+                    ])
                     const { data: placesData } = placesResponse
                     this.filterPlaces = placesData
                 }

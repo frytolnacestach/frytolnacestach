@@ -262,8 +262,8 @@
                         this.successForm = "Recenze byla upravena"
                         this.reviewShowReview()
                     } else if (response.status === 201) {
-                        console.log("Recenze byla upravena");
-                        this.successForm = "Recenze byla upravena";
+                        console.log("Recenze byla upravena")
+                        this.successForm = "Recenze byla upravena"
                         this.reviewShowReview()
                     } else if (response.status === 404) {
                         console.log("Uživatel neexistuje nebo nejste přihlášen")
@@ -318,8 +318,8 @@
                 this.passwordHash = localStoragePasswordHash
             }
             
-            let success = false;
-            let data = null;
+            let success = false
+            let data = null
 
             while (!success) {
                 try {
