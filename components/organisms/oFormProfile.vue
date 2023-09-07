@@ -1,31 +1,7 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <div v-if="profile === null">
-            <div class="skeleton-o-form-profile">
-                <div class="skeleton-o-form-profile__outer">
-                    <div class="skeleton-o-form-profile__inner">
-                        <div class="skeleton-o-form-profile__form">
-                            <div class="skeleton-o-form-profile__items">
-                                <div class="skeleton-o-form-profile__item">
-                                    <div class="skeleton-a-input loading-image -skeleton-blue"></div>
-                                </div>
-                                <div class="skeleton-o-form-profile__item">
-                                    <div class="skeleton-a-input loading-image -skeleton-blue"></div>
-                                </div>
-                            </div>
-                            <div class="skeleton-o-form-profile__buttons mt-1">
-                                <div class="skeleton-o-form-profile__button">
-                                    <div class="skeleton-m-button -blue">
-                                        <div class="skeleton-m-button__input loading-image -skeleton-blue"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <skeletonoFormProfile styleThema=" -skeleton-blue" v-if="profile === null" />
         <!-- skeleton END -->
 
         <!-- client -->
@@ -97,12 +73,14 @@
 </template>
   
 <script>
+    import skeletonoFormProfile from '~/components/skeleton/skeletonoFormProfile.vue'
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
     
     export default {
         name: 'OrganismsoFormProfileComponent',
     
         components: {
+            skeletonoFormProfile,
             oFlashMessages
         },
     

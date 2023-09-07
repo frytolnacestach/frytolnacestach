@@ -1,112 +1,127 @@
 <template>
     <section class="t-section my-2 -p0" v-if="reviews && reviews.length > 0">
-        <div class="t-section__inner">
-            <mHeadline :title="headline" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-            <div class="o-review-item-list">
-                <div class="o-review-item-list__outer">
-                    <div class="o-review-item-list__inner">
-                        <div class="o-review-item-list__items">
-                            <div class="o-review-item-list__item" v-for="review in reviews" :key="review.id">
-                                <div class="o-review-item-list__content">
-                                    <div class="o-review-item-list__image loading-image -green" v-if="users && users.find(user => user.id === review.id_user)">
-                                        <div class="o-review-item-list__image-lazyload">
-                                            <img class="o-review-item-list__image-file lazyload-file"
-                                                data-sizes="(max-width: 374px) 40px, (max-width: 575px) 50px, 70px"
-                                                :data-srcset="`
-                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-40.webp 40w,
-                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-50.webp 50w,
-                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-70.webp 70w,
-                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-80-2x.webp 80w,
-                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-100-2x.webp 100w,
-                                                        https://image.frytolnacestach.cz/storage/_default/s-hero-140-2x.webp 140w
-                                                        `"
-                                                :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
-                                                :alt="users.find(user => user.id === review.id_user).nickname"
-                                                v-lazy>
-                                        </div>
-                                        <NuxtLink class="o-review-item-list__image-link" :to="`/cestovatel/${users.find(user => user.id === review.id_user).slug}`" :aria-label="`Přejít na profil uživatele ${users.find(user => user.id === review.id_user).nickname}`"></NuxtLink>
-                                    </div>
-                                    <div class="o-review-item-list__text">
-                                        <!-- SECTION - FlashMassages -->
-                                        <div class="o-form-review-item__messages">
-                                            <oFlashMessages :text="errorForm" styleThema=" -error" />
-                                            <oFlashMessages :text="successForm" styleThema=" -success" />
-                                        </div>
-                                        <!-- SECTION - FlashMassages END -->
+        <div class="t-section__inner">            
+            <section class="t-component-skeleton">
+                <!-- skeleton -->
+                <skeletonoReviewItemList styleThema=" -skeleton-green" v-if="reviews === null" />
+                <!-- skeleton END -->
 
-                                        <div class="o-review-item-list__review" v-if="showReview">
-                                            <div class="o-review-item-list__stars">
-                                                <div class="o-review-item-list__star" :class="{'-active': review.rating > 0}"></div>
-                                                <div class="o-review-item-list__star" :class="{'-active': review.rating > 1}"></div>
-                                                <div class="o-review-item-list__star" :class="{'-active': review.rating > 2}"></div>
-                                                <div class="o-review-item-list__star" :class="{'-active': review.rating > 3}"></div>
-                                                <div class="o-review-item-list__star" :class="{'-active': review.rating > 4}"></div>
+                <!-- client -->
+                <client-only v-if="reviews !== null">
+                    <div class="o-review-item-list">
+                        <div class="o-review-item-list__outer">
+                            <div class="o-review-item-list__inner">
+                                <div class="o-review-item-list__items">
+                                    <div class="o-review-item-list__item" v-for="review in reviews" :key="review.id">
+                                        <div class="o-review-item-list__content">
+                                            <div class="o-review-item-list__image loading-image -green" v-if="users && users.find(user => user.id === review.id_user)">
+                                                <div class="o-review-item-list__image-lazyload">
+                                                    <img class="o-review-item-list__image-file lazyload-file"
+                                                        data-sizes="(max-width: 374px) 40px, (max-width: 575px) 50px, 70px"
+                                                        :data-srcset="`
+                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-40.webp 40w,
+                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-50.webp 50w,
+                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-70.webp 70w,
+                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-80-2x.webp 80w,
+                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-100-2x.webp 100w,
+                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-140-2x.webp 140w
+                                                            `"
+                                                        :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
+                                                        :alt="users.find(user => user.id === review.id_user).nickname"
+                                                        v-lazy>
+                                                </div>
+                                                <NuxtLink class="o-review-item-list__image-link" :to="`/cestovatel/${users.find(user => user.id === review.id_user).slug}`" :aria-label="`Přejít na profil uživatele ${users.find(user => user.id === review.id_user).nickname}`"></NuxtLink>
                                             </div>
-                                            <div class="o-review-item-list__setting" v-if="account[0].id === review.id_user" @click="selectRating = review.rating, text = review.text, reviewShowEdit()"></div>
-                                            <h3 class="o-review-item-list__name" v-if="users && users.find(user => user.id === review.id_user)">
-                                                <NuxtLink class="o-review-item-list__name-link" :to="`/cestovatel/${users.find(user => user.id === review.id_user).slug}`" :aria-label="`Přejít na profil uživatele ${users.find(user => user.id === review.id_user).nickname}`">{{ users.find(user => user.id === review.id_user).nickname }}</NuxtLink>
-                                            </h3>
-                                            <p class="o-review-item-list__perex">{{ review.text }}</p>
-                                        </div>
+                                            <div class="o-review-item-list__text">
+                                                <!-- SECTION - FlashMassages -->
+                                                <div class="o-form-review-item__messages">
+                                                    <oFlashMessages :text="errorForm" styleThema=" -error" />
+                                                    <oFlashMessages :text="successForm" styleThema=" -success" />
+                                                </div>
+                                                <!-- SECTION - FlashMassages END -->
 
-                                        <!-- FORM -->
-                                        <div class="o-form-review-item -edit" v-if="showEditForm">
-                                            <div class="o-form-review-item__outer">
-                                                <div class="o-form-review-item__inner">
-                                                    <form class="o-form-review-item__form" @submit.prevent="editReview">
-                                                        <div class="o-form-review-item__items">
-                                                            <div class="o-form-review-item__item -notmargin">
-                                                                <div class="m-radio-star__stars">
-                                                                    <div class="m-radio-star__star" v-for="rating in 5">
-                                                                        <label class="m-radio-star__label" :key="rating" @click="selectRating = rating">
-                                                                            <input
-                                                                                class="m-radio-star__input -blue"
-                                                                                type="radio"
-                                                                                name="rating"
-                                                                                :value="rating"
-                                                                                :checked="selectRating === rating"
-                                                                                v-model="selectRating"
-                                                                                required
-                                                                            />
-                                                                            <div class="m-radio-star__star-icon" :class="{'-active': selectRating > (rating - 1)}"></div>
-                                                                        </label>
+                                                <div class="o-review-item-list__review" v-if="showReview">
+                                                    <div class="o-review-item-list__stars">
+                                                        <div class="o-review-item-list__star" :class="{'-active': review.rating > 0}"></div>
+                                                        <div class="o-review-item-list__star" :class="{'-active': review.rating > 1}"></div>
+                                                        <div class="o-review-item-list__star" :class="{'-active': review.rating > 2}"></div>
+                                                        <div class="o-review-item-list__star" :class="{'-active': review.rating > 3}"></div>
+                                                        <div class="o-review-item-list__star" :class="{'-active': review.rating > 4}"></div>
+                                                    </div>
+                                                    <div class="o-review-item-list__setting" v-if="account[0].id === review.id_user" @click="selectRating = review.rating, text = review.text, reviewShowEdit()"></div>
+                                                    <h3 class="o-review-item-list__name" v-if="users && users.find(user => user.id === review.id_user)">
+                                                        <NuxtLink class="o-review-item-list__name-link" :to="`/cestovatel/${users.find(user => user.id === review.id_user).slug}`" :aria-label="`Přejít na profil uživatele ${users.find(user => user.id === review.id_user).nickname}`">{{ users.find(user => user.id === review.id_user).nickname }}</NuxtLink>
+                                                    </h3>
+                                                    <p class="o-review-item-list__perex">{{ review.text }}</p>
+                                                </div>
+
+                                                <!-- FORM -->
+                                                <div class="o-form-review-item -edit" v-if="showEditForm">
+                                                    <div class="o-form-review-item__outer">
+                                                        <div class="o-form-review-item__inner">
+                                                            <form class="o-form-review-item__form" @submit.prevent="editReview">
+                                                                <div class="o-form-review-item__items">
+                                                                    <div class="o-form-review-item__item -notmargin">
+                                                                        <div class="m-radio-star__stars">
+                                                                            <div class="m-radio-star__star" v-for="rating in 5">
+                                                                                <label class="m-radio-star__label" :key="rating" @click="selectRating = rating">
+                                                                                    <input
+                                                                                        class="m-radio-star__input -blue"
+                                                                                        type="radio"
+                                                                                        name="rating"
+                                                                                        :value="rating"
+                                                                                        :checked="selectRating === rating"
+                                                                                        v-model="selectRating"
+                                                                                        required
+                                                                                    />
+                                                                                    <div class="m-radio-star__star-icon" :class="{'-active': selectRating > (rating - 1)}"></div>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="o-form-review-item__close" v-if="account[0].id === review.id_user" @click="reviewShowReview()"></div>
+                                                                    </div>
+                                                                    <h3 class="o-review-item-list__name" v-if="users && users.find(user => user.id === review.id_user)">
+                                                                        <NuxtLink class="o-review-item-list__name-link" :to="`/cestovatel/${users.find(user => user.id === review.id_user).slug}`" :aria-label="`Přejít na profil uživatele ${users.find(user => user.id === review.id_user).nickname}`">{{ users.find(user => user.id === review.id_user).nickname }}</NuxtLink>
+                                                                    </h3>
+                                                                    <div class="o-form-review-item__item -notmargin">
+                                                                        <textarea class="a-textarea -green2" name="text" v-model="text" placeholder="Text recenze"></textarea>
                                                                     </div>
                                                                 </div>
-                                                                <div class="o-form-review-item__close" v-if="account[0].id === review.id_user" @click="reviewShowReview()"></div>
-                                                            </div>
-                                                            <h3 class="o-review-item-list__name" v-if="users && users.find(user => user.id === review.id_user)">
-                                                                <NuxtLink class="o-review-item-list__name-link" :to="`/cestovatel/${users.find(user => user.id === review.id_user).slug}`" :aria-label="`Přejít na profil uživatele ${users.find(user => user.id === review.id_user).nickname}`">{{ users.find(user => user.id === review.id_user).nickname }}</NuxtLink>
-                                                            </h3>
-                                                            <div class="o-form-review-item__item -notmargin">
-                                                                <textarea class="a-textarea -green2" name="text" v-model="text" placeholder="Text recenze"></textarea>
-                                                            </div>
-                                                        </div>
-                                                        <div class="o-form-review-item__buttons">
-                                                            <div class="o-form-review-item__button mt-1">
-                                                                <div class="m-button -green" :class="{'-notactive': selectRating === null}">
-                                                                    <button class="m-button__input" :disabled="selectRating === null ? true : false" type="submit">Uložit úpravy</button>
+                                                                <div class="o-form-review-item__buttons">
+                                                                    <div class="o-form-review-item__button mt-1">
+                                                                        <div class="m-button -green" :class="{'-notactive': selectRating === null}">
+                                                                            <button class="m-button__input" :disabled="selectRating === null ? true : false" type="submit">Uložit úpravy</button>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
+                                                            </form>
                                                         </div>
-                                                    </form>
+                                                    </div>
                                                 </div>
+                                                <!-- FORM END -->
                                             </div>
                                         </div>
-                                        <!-- FORM END -->
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </client-only>
+                <!-- client END -->
+            </section>
         </div>
     </section>
 </template>
 
 <script>
+    import skeletonoReviewItemList from '~/components/skeleton/skeletonoReviewItemList.vue'
+
     export default {
         name: 'OrganismsoReviewItemListComponent',
+
+        components: {
+            skeletonoReviewItemList
+        },
 
         props: {
             IDplace: {

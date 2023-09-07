@@ -1,15 +1,7 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <!--<div class="skeleton-o-user-urls">
-            <div class="skeleton-o-user-urls__outer">
-                <div class="skeleton-o-user-urls__inner">
-                    <div class="skeleton-o-user-urls__items">
-                        <div v-for="index in 3" :key="index" class="skeleton-o-user-urls__item loading-image -skeleton-blue"></div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
+        <!--<skeletonoUserUrls styleThema=" -skeleton-blue" v-if="urls === null" />-->
         <!-- skeleton END -->
 
         <!-- client -->
@@ -34,8 +26,14 @@
 </template>
 
 <script>
+    import skeletonoUserUrls from '~/components/skeleton/skeletonoUserUrls.vue'
+
     export default {
         name: 'OrganismsoUserUrlsComponent',
+
+        components: {
+            skeletonoUserUrls
+        },
 
         props: {
             urls: {

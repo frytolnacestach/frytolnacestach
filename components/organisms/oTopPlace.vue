@@ -1,17 +1,7 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <div class="skeleton-o-top-place" v-if="places === null || images === null">
-            <div class="skeleton-o-top-place__outer">
-                <div class="skeleton-o-top-place__items">
-                    <div v-for="index in 20" :key="index" class="skeleton-o-top-place__item">
-                        <div class="skeleton-o-top-place__content">
-                            <div class="skeleton-o-top-place__image loading-image -skeleton-green"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <skeletonoTopPlace styleThema=" -skeleton-green" v-if="places === null || images === null" />
         <!-- skeleton END -->
 
         <!-- client -->
@@ -101,8 +91,14 @@
 <script>
     import axios from 'axios'
 
+    import skeletonoTopPlace from '~/components/skeleton/skeletonoTopPlace.vue'
+
     export default {
         name: 'OrganismsoTopPlaceComponent',
+
+        components: {
+            skeletonoTopPlace
+        },
 
         data() {
             return {

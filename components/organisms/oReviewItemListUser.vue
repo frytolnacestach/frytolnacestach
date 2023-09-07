@@ -2,24 +2,10 @@
     <section class="t-section my-2 -p0">
         <div class="t-section__inner">
             <mHeadline title="Napsané recenze" styleThema=" -account -blue" styleAlign="" styleGap="" />
+            
             <section class="t-component-skeleton">
                 <!-- skeleton -->
-                <div v-if="reviews === null">
-                    <div class="skeleton-o-review-item-list">
-                        <div class="skeleton-o-review-item-list__outer">
-                            <div class="skeleton-o-review-item-list__inner">
-                                <div class="skeleton-o-review-item-list__items">
-                                    <div v-for="index in 3" :key="index" class="skeleton-o-review-item-list__item">
-                                        <div class="skeleton-o-review-item-list__content">
-                                            <div class="skeleton-o-review-item-list__image loading-image -skeleton-blue"></div>
-                                            <div class="skeleton-o-review-item-list__text loading-image -skeleton-blue"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <skeletonoReviewItemList styleThema=" -skeleton-blue" v-if="reviews === null" />
                 <!-- skeleton END -->
 
                 <!-- client -->
@@ -97,12 +83,14 @@
 </template>
 
 <script>
+    import skeletonoReviewItemList from '~/components/skeleton/skeletonoReviewItemList.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
 
     export default {
         name: 'OrganismsoReviewItemListUserComponent',
 
         components: {
+            skeletonoReviewItemList,
             mHeadline
         },
 

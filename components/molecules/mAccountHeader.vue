@@ -1,21 +1,7 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <div v-if="nickname === null">
-            <div class="skeleton-m-account-header">
-                <div class="skeleton-m-account-header__outer">
-                    <div class="skeleton-m-account-header__inner">
-                        <div class="skeleton-m-account-header__image">
-                            <div class="skeleton-m-account-header__image-file loading-image -skeleton-dark-blue"></div>
-                        </div>
-                        <div class="skeleton-m-account-header__text">
-                            <span class="skeleton-m-account-header__nickname loading-image -skeleton-dark-blue"></span>
-                            <span class="skeleton-m-account-header__email loading-image -skeleton-dark-blue"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <skeletonmAccountHeader styleThema=" -skeleton-dark-blue" v-if="nickname === null" />
         <!-- skeleton END -->
 
         <!-- client -->
@@ -42,8 +28,14 @@
 </template>
 
 <script>
+    import skeletonmAccountHeader from '~/components/skeleton/skeletonmAccountHeader.vue'
+
     export default {
         name: 'MoleculesmAccountHeaderComponent',
+
+        components: {
+            skeletonmAccountHeader
+        },
 
         data() {
             return {

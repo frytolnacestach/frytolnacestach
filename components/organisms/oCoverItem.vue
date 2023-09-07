@@ -1,17 +1,7 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <div class="skeleton-o-cover-item" v-if="items === null && skeleton === true">
-            <div class="skeleton-o-cover-item__outer">
-                <div class="skeleton-o-cover-item__items">
-                    <div v-for="index in 20" :key="index" class="skeleton-o-cover-item__item">
-                        <div class="skeleton-o-cover-item__content">
-                            <div class="skeleton-o-cover-item__image loading-image -skeleton-green"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <skeletonoCoverItem styleThema=" -skeleton-green" v-if="items === null && skeleton === true" />
         <!-- skeleton END -->
 
         <!-- client -->
@@ -97,8 +87,14 @@
 
 
 <script>
+    import skeletonoCoverItem from '~/components/skeleton/skeletonoCoverItem.vue'
+
     export default {
         name: 'OrganismsoCoverItemComponent',
+
+        components: {
+            skeletonoCoverItem
+        },
 
         props: {
             items: {

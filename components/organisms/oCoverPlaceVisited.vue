@@ -1,19 +1,7 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <div v-if="places === null">
-            <div class="skeleton-o-cover-place-visited">
-                <div class="skeleton-o-cover-place-visited__outer">
-                    <div class="o-cover-place-visited__items">
-                        <div v-for="index in 5" :key="index" class="skeleton-o-cover-place-visited__item">
-                            <div class="skeleton-o-cover-place-visited__content">
-                                <div class="skeleton-o-cover-place-visited__image loading-image -skeleton-blue"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <skeletonoCoverPlaceVisited styleThema=" -skeleton-blue" v-if="places === null" />
         <!-- skeleton END -->
 
         <!-- client -->
@@ -111,6 +99,7 @@
 </template>
 
 <script>
+    import skeletonoCoverPlaceVisited from '~/components/skeleton/skeletonoCoverPlaceVisited.vue'
     import mButtonPlaceAdd from '~/components/molecules/mButtonPlaceAdd.vue'
     import mButtonPlaceAddVisited from '~/components/molecules/mButtonPlaceAddVisited.vue'
     import mButtonPlaceRemove from '~/components/molecules/mButtonPlaceRemove.vue'
@@ -120,6 +109,7 @@
         name: 'OrganismsoCoverPlaceComponent',
 
         components: {
+            skeletonoCoverPlaceVisited,
             mButtonPlaceAdd,
             mButtonPlaceAddVisited,
             mButtonPlaceRemove,

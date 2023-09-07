@@ -1,17 +1,7 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <div class="skeleton-o-time-place" v-if="places === null && skeleton === true">
-            <div class="skeleton-o-time-place__outer">
-                <div class="skeleton-o-time-place__items">
-                    <div v-for="index in 20" :key="index" class="skeleton-o-time-place__item">
-                        <div class="skeleton-o-time-place__content">
-                            <div class="skeleton-o-time-place__image loading-image -skeleton-green"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <skeletonoTimePlace styleThema=" -skeleton-green" v-if="places === null && skeleton === true" />
         <!-- skeleton END -->
 
         <!-- client -->
@@ -96,8 +86,14 @@
 </template>
 
 <script>
+    import skeletonoTimePlace from '~/components/skeleton/skeletonoTimePlace.vue'
+
     export default {
         name: 'OrganismsoTimePlaceComponent',
+
+        components: {
+            skeletonoTimePlace
+        },
 
         props: {
             places: {

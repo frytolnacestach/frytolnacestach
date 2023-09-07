@@ -1,20 +1,7 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <div v-if="user === null && skeleton === true">
-            <div class="skeleton-m-user-header">
-                <div class="skeleton-m-user-header__outer">
-                    <div class="skeleton-m-user-header__inner">
-                        <div class="skeleton-m-user-header__image">
-                            <div class="skeleton-m-user-header__image-file loading-image -skeleton-dark-blue"></div>
-                        </div>
-                        <div class="skeleton-m-user-header__text">
-                            <span class="skeleton-m-user-header__nickname loading-image -skeleton-dark-blue"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <skeletonmUserHeader styleThema=" -skeleton-dark-blue" v-if="user === null && skeleton === true" />
         <!-- skeleton END -->
 
         <!-- client -->
@@ -40,8 +27,14 @@
 </template>
 
 <script>
+    import skeletonmUserHeader from '~/components/skeleton/skeletonmUserHeader.vue'
+
     export default {
         name: 'MoleculesmUserHeaderComponent',
+
+        components: {
+            skeletonmUserHeader
+        },
 
         props: {
             user: {
