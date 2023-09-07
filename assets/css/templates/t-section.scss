@@ -9,11 +9,6 @@
         padding: 0 15px;
         display: block;
 
-        &--w640 {
-            max-width: 640px;
-            margin: 0 auto;
-        }
-
         &.-col {
             display: flex;
             flex-wrap: wrap;
@@ -30,7 +25,9 @@
         }
     }
 
-    &--wysiwyg {
+    //MODIFICATION
+    // other
+    &.-wysiwyg {
 
         #{$self}__inner {
             max-width: 840px;
@@ -38,7 +35,7 @@
         }
     }
 
-    &--hidden-mobile {
+    &.-hidden-mobile {
         display: none;
     
         @media only screen and (min-width: $lg) {
@@ -46,7 +43,7 @@
         }
     }
     
-    &--hidden-desktop {
+    &.-hidden-desktop {
         display: inline-block;
     
         @media only screen and (min-width: $lg) {
@@ -54,8 +51,6 @@
         }
     }
 
-
-    //MODIFICATION
     //Background gray
     &.-bg-gray {
         background-color: $gray1;

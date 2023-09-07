@@ -45,7 +45,7 @@
                 <!-- SECTION - Youtube END -->
 
                 <!-- SECTION - Map mapy -->
-                <section class="t-section t-section--hidden-desktop my-2" v-if="post[0].url_map">
+                <section class="t-section -hidden-desktop my-2" v-if="post[0].url_map">
                     <div class="t-section__inner">
                         <oMapMapy :idImageMap="post[0].id_image_map" :url="post[0].url_map" :title="post[0].title" :images="imagePostMap" />
                     </div>
@@ -121,7 +121,7 @@
                 <!-- SECTION - author - sidebar - END -->
 
                 <!-- SECTION - Sidebar map mapy -->
-                <section class="t-section t-section--hidden-mobile my-2" v-if="post[0].url_map">
+                <section class="t-section -hidden-mobile my-2" v-if="post[0].url_map">
                     <div class="t-section__inner">
                         <oSidebarMapMapy :idImageMap="post[0].id_image_map" :url="post[0].url_map" :title="post[0].title" :images="imagePostMap" />
                     </div>
