@@ -134,13 +134,25 @@
     //align
     &.-left {
         text-align: left;
+
+        #{$self}__title {
+            justify-content: flex-start;
+        }
     }
 
     &.-center {
         text-align: center;
+
+        #{$self}__title {
+            justify-content: center;
+        }
     }
 
     &.-right {
         text-align: right;
+
+        #{$self}__title {
+            justify-content: flex-end;
+        }
     }
 }
