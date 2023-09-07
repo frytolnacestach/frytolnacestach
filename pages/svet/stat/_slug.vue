@@ -11,10 +11,7 @@
         <!-- SECTION - Buttons -->
         <section class="t-section -px-world mt-1 -p0" v-if="isMobile">
             <div class="t-section__inner">
-                <div class="flex flex-end-all">
-                    <span v-if="!showHero" @click="showHero = true" class="a-button-pure-icon -cover">Obrázek</span>
-                    <span v-else @click="showHero = false" class="a-button-pure-icon -map">Mapa</span>
-                </div>
+                <oSwitchHero :show-hero.sync="showHero" />
             </div>
         </section>
         <!-- SECTION - Buttons END -->
@@ -584,6 +581,7 @@
     import oSidebarLinks from '~/components/organisms/oSidebarLinks.vue'
     import oSidebarList from '~/components/organisms/oSidebarList.vue'
     import oSidebarTime from '~/components/organisms/oSidebarTime.vue'
+    import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
@@ -618,6 +616,7 @@
             oSidebarLinks,
             oSidebarList,
             oSidebarTime,
+            oSwitchHero,
             oVideoList,
             oVisitedButton,
             oWidgetBooking
