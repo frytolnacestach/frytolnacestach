@@ -1,29 +1,37 @@
 <template>
-    <div class="o-follower-button">
-        <!-- SECTION - FlashMassages -->
-        <oFlashMessages :text="errorForm" styleThema=" -error" />
-        <oFlashMessages :text="successForm" styleThema=" -success" />
-        <!-- SECTION - FlashMassages END -->
+    <section class="t-component-skeleton">
+        <!-- client -->
+        <client-only v-if="skeleton === false">
+            <div class="o-follower-button">
+                <!-- SECTION - FlashMassages -->
+                <oFlashMessages :text="errorForm" styleThema=" -error" />
+                <oFlashMessages :text="successForm" styleThema=" -success" />
+                <!-- SECTION - FlashMassages END -->
 
-        <div class="o-follower-button__outer">
-            <div class="o-follower-button__inner">
-                <div class="o-follower-button__items">
-                    <div class="o-follower-button__item">
-                        <span class="o-follower-button__button" :class="{ '-active': status === 1 }" @click="editFollower(1)">{{ status === 1 ? 'Sleduji' : 'Sledovat' }}</span>
+                <div class="o-follower-button__outer">
+                    <div class="o-follower-button__inner">
+                        <div class="o-follower-button__items">
+                            <div class="o-follower-button__item">
+                                <span class="o-follower-button__button" :class="{ '-active': status === 1 }" @click="editFollower(1)">{{ status === 1 ? 'Sleduji' : 'Sledovat' }}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </client-only>
+        <!-- client END -->
+    </section>
 </template>
 
 <script>
+    import skeletonoFollowerButton from '~/components/skeleton/skeletonoFollowerButton.vue'
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
 
     export default {
         name: 'OrganismsoFollowerButtonComponent',
 
         components: {
+            skeletonoFollowerButton,
             oFlashMessages
         },
 
@@ -31,6 +39,7 @@
             return {
                 errorForm: '',
                 successForm: '',
+                skeleton: true,
                 status: 0,
                 email: this.email,
                 passwordHash: this.passwordHash
@@ -62,12 +71,15 @@
                         console.log("Záznam načten")
                         const data = await response.json()
                         this.status = data.message[0].status
+                        this.skeleton = false
                         //this.successForm = "Záznam načten"
                     } else if (response.status === 404) {
                         console.log("Uživatel neexistuje")
+                        this.skeleton = false
                         //this.errorForm = "Uživatel neexistuje"
                     } else if (response.status === 405) {
-                        console.log("Místo uživatel nemá uložené")
+                        console.log("Uživatele nesleduješ")
+                        this.skeleton = false
                         //this.errorForm = "Místo uživatel nemá uložené"
                     } else {
                         console.log("Chyba při komunikaci s API")

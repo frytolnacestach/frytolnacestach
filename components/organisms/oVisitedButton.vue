@@ -1,7 +1,7 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <skeletoVisitedButton styleThema=" -skeleton-green" v-if="skeleton === true" />
+        <skeletonoVisitedButton styleThema=" -skeleton-green" v-if="skeleton === true" />
         <!-- skeleton END -->
 
         <!-- client -->
@@ -25,20 +25,20 @@
                     </div>
                 </div>
             </div>
-            <!-- client END -->
         </client-only>
+        <!-- client END -->
     </section>
 </template>
 
 <script>
-    import skeletoVisitedButton from '~/components/skeleton/skeletoVisitedButton.vue'
+    import skeletonoVisitedButton from '~/components/skeleton/skeletonoVisitedButton.vue'
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
 
     export default {
         name: 'OrganismsoVisitedButtonComponent',
 
         components: {
-            skeletoVisitedButton,
+            skeletonoVisitedButton,
             oFlashMessages
         },
 
