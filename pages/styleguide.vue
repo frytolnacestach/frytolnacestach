@@ -2,7 +2,7 @@
     <main class="t-main -gray -pt-menu" role="main">
         
         <!-- SECTION - Hero -->
-		<section class="t-section -p0">
+        <section class="t-section -p0">
             <div class="t-section__inner">
                 <oHero :headline="headline" modifierCSS=" -gray" />
             </div>
