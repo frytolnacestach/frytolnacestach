@@ -782,6 +782,7 @@ export default {
   css: [
     // SCSS file in the project
     '@/assets/css/main.scss',
+    '@/assets/css/print.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

@@ -1,0 +1,42 @@
+@media print {
+    .t-main {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        @media only screen and (min-width: $sm) {
+            padding-bottom: 0;
+        }
+
+        @media only screen and (min-width: $lg) {
+            padding-top: 0;
+        }
+
+
+        //MODIFICATION
+        &.-vh100 {
+            min-height: 100vh;
+        }
+
+        &.-tab {
+            width: 100%;
+        }
+
+        &.-pt-menu {
+            padding-top: 0;
+        }
+
+
+        //Background color
+        &.-blue {
+            background-color: transparent;
+        }
+
+        &.-gray {
+            background-color: transparent;
+        }
+
+        &.-green {
+            background-color: transparent;
+        }
+    }
+}
