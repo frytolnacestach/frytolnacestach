@@ -17,8 +17,8 @@
 
         methods: {
             toggleHero() {
-                this.showHero = !this.showHero;
-                this.$emit('update:showHero', this.showHero);
+                this.showHero = !this.showHero
+                this.$emit('update:showHero', this.showHero)
             }
         }
     }
