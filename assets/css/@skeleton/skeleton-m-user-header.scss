@@ -55,6 +55,8 @@
     &__text {
         width: 220px;
         padding-left: 10px;
+        display: flex;
+        align-items: center;
 
         @media only screen and (min-width: $lg) {
             width: 100%;
@@ -66,11 +68,11 @@
         display: block;
         height: 27px;
         border-radius: $br-2;
-        max-width: 100%;
+        width: 100%;
 
         @media only screen and (min-width: $lg) {
             margin: 10px auto 0;
-            max-width: 75%;
+            width: 75%;
         }
     }
 }
