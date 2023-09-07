@@ -1,5 +1,5 @@
 <template>
-    <section class="t-section my-2 -p0" v-if="regions && regions.length > 0">
+    <section :class="'t-section my-2 -p0' + (styleGap ? styleGap : '')" v-if="regions && regions.length > 0">
         <div class="t-section__inner">
             <mHeadline :title="headline" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
             <div class="o-place-teaser-regions">
@@ -106,6 +106,10 @@
             type: {
                 type: String,
                 required: true
+            },
+            styleGap: {
+                type: String,
+                required: false
             }
         },
 

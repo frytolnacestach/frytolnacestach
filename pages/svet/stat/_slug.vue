@@ -237,9 +237,9 @@
                         <div class="t-grid -world-content-with-ad">
                             <div class="t-grid__section -content">
                                 <!-- SECTION - Place teaser spots -->
-                                <oPlaceTeaserSpots :headline="'Jaké místa vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" />
-                                <oPlaceTeaserRegions :headline="'Jaké regiony vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" />
-                                <oPlaceTeaserCities :headline="'Jaké města vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" />
+                                <oPlaceTeaserSpots :headline="'Jaké místa vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" styleGap=" mt-2 mb-4" />
+                                <oPlaceTeaserRegions :headline="'Jaké regiony vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" styleGap=" mt-2 mb-4" />
+                                <oPlaceTeaserCities :headline="'Jaké města vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" styleGap=" mt-2 mb-4" />
                                 <!-- SECTION - Place teaser spots END -->
                             </div>
 
