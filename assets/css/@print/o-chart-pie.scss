@@ -1,0 +1,39 @@
+@media print {
+    .o-chart-pie {
+
+        &__outher {
+            margin: 10px 0;
+            border-radius: $br-4;
+        
+            @media only screen and (min-width: $ti) {
+                margin: 10px 0;
+                border-radius: $br-4;
+            }
+        }
+
+        &__container {
+            grid-template-columns: [first] 200px [line2] auto;
+
+            @media only screen and (min-width: $md) {
+                grid-template-columns: [first] 200px [line2] auto;
+            }
+        }
+
+
+        &__legend {
+            padding-top: 0;
+            padding-left: 30px;
+
+            @media only screen and (min-width: $md) {
+                padding-top: 0;
+                padding-left: 30px;
+            }
+        }
+
+        @keyframes bake-pie {
+            from {
+                transform: rotate(0deg) translate3d(0,0,0);
+            }
+        }
+    }
+}

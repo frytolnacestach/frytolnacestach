@@ -1,5 +1,5 @@
 <template>
-    <div class="o-chart-pie">
+    <div class="o-chart-pie print-section">
         <div class="o-chart-pie__outher">
             <div class="o-chart-pie__inner">
                 <h2 class="o-chart-pie__headline">{{ title }}</h2>

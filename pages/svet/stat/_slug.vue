@@ -85,7 +85,7 @@
                                 <!-- SECTION - information by Author END -->
 
                                 <!-- SECTION - Place teaser -->
-                                <section class="t-section my-2 -p0" v-if="place[0].id_city_main">
+                                <section class="t-section my-2 -p0 print-section" v-if="place[0].id_city_main">
                                     <div class="t-section__inner">
                                         <oPlaceTeaser :headline="'Hlavním městem ve státě ' + place[0].name + ' je ' + placeCityMain[0].name" :place="placeCityMain" :image="imageCityMain" type="mesto" />
                                     </div>
@@ -496,7 +496,7 @@
                                 <!-- SECTION - Ubytování - information END -->
 
                                 <!-- SECTION - Ubytování -->
-                                <section class="t-section -px-world py-2" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
+                                <section class="t-section -px-world py-2 hidden-print" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
                                     <div class="t-section__inner">
                                         <div v-for="coordinate in place[0].coordinates">
                                             <oWidgetBooking 
