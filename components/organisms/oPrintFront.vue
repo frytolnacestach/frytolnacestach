@@ -39,28 +39,43 @@
             }
         },
 
-        created() {
-            // title
-            const pageTitle = this.getPageTitleFromDOM() || 'Cestovatelský portál Frytol na cestách'
-            const titleParts = pageTitle.split('|')
-            if (titleParts.length === 2) {
-                this.title = titleParts[0].trim()
-                this.subtitle = titleParts[1].trim()
-            } else {
-                this.title = pageTitle
-            }
-
-            //url
+        mounted() {
             if (process.client) {
-                this.pageUrl = window.location.href
+                this.onDOMContentLoaded()
             }
         },
 
         methods: {
+            onDOMContentLoaded() {
+                // title
+                this.pageTitle = this.getPageTitleFromDOM() || 'Cestovatelský portál Frytol na cestách'
+                this.getTitleArray(this.pageTitle)
+                // url
+                this.getActualUrl()
+            },
             getPageTitleFromDOM() {
+                const titleElement = document.querySelector('title')
+                return titleElement.textContent
+            },
+            getTitleArray(pageTitle) {
+                const titleParts = pageTitle.split('|')
+                if (titleParts.length === 2) {
+                    this.title = titleParts[0].trim()
+                    this.subtitle = titleParts[1].trim()
+                } else {
+                    this.title = pageTitle
+                }
+                console.log('___Title:' + pageTitle)
+            },
+            getActualUrl() {
+                this.pageUrl = window.location.href
+            }
+        },
+
+        watch: {
+            $route(to, from) {
                 if (process.client) {
-                    const titleElement = document.querySelector('title')
-                    return titleElement ? titleElement.textContent : null
+                    this.onDOMContentLoaded()
                 }
             }
         }
