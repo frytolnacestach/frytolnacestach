@@ -39,16 +39,6 @@
             }
         },
 
-        computed: {
-            pageUrl() {
-                if (process.client) {
-                    return window.location.href
-                } else {
-                    return ''
-                }
-            }
-        },
-
         created() {
             // title
             const pageTitle = this.getPageTitleFromDOM() || 'Cestovatelský portál Frytol na cestách'
