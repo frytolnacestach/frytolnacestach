@@ -1,5 +1,5 @@
 <template>
-    <div class="m-nav-place">
+    <div class="m-nav-place hidden-print">
         <div class="m-nav-place__outer">
             <div class="m-nav-place__inner">
                 <ul class="m-nav-place__items">

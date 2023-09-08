@@ -1,5 +1,5 @@
 <template>
-    <div class="o-ad-seznam-sidebar mt-2">
+    <div class="o-ad-seznam-sidebar mt-2 hidden-print">
         <div class="o-ad-seznam-sidebar__outer">
             <div class="o-ad-seznam-sidebar__inner">
                 <div class="o-ad-seznam-sidebar__content">

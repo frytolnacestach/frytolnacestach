@@ -1,5 +1,5 @@
 <template>
-    <div class="o-sidebar-time">
+    <div class="o-sidebar-time hidden-print">
         <div class="o-sidebar-time__outer">
             <div class="o-sidebar-time__inner">
                 <span class="o-sidebar-time__headline">Místní čas</span>

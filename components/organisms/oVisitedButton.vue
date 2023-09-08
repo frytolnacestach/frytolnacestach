@@ -1,5 +1,5 @@
 <template>
-    <section class="t-component-skeleton">
+    <section class="t-component-skeleton hidden-print">
         <!-- skeleton -->
         <skeletonoVisitedButton styleThema=" -skeleton-green" v-if="skeleton === true" />
         <!-- skeleton END -->

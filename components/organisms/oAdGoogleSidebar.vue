@@ -1,5 +1,5 @@
 <template>
-    <div class="o-ad-google-sidebar mt-2">
+    <div class="o-ad-google-sidebar mt-2 hidden-print">
         <div class="o-ad-google-sidebar__outer">
             <div class="o-ad-google-sidebar__inner">
                 <div class="o-ad-google-sidebar__content">

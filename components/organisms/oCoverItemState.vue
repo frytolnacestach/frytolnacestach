@@ -1,5 +1,5 @@
 <template>
-    <section class="t-section my-2 py-1 -p0" v-if="items !== null && items.length > 0">
+    <section class="t-section my-2 py-1 -p0 print-section" v-if="items !== null && items.length > 0">
         <div class="t-section__inner">
             <mHeadline :title="title + ' '" :titleValue="placeStateName" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
             <div class="o-cover-item-state">

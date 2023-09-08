@@ -1,5 +1,5 @@
 <template>
-    <nav class="js_m-nav-main m-nav-main" role="navigation">
+    <nav class="js_m-nav-main m-nav-main hidden-print" role="navigation">
         <div class="m-nav-main__outer">
             <div class="m-nav-main__inner">
                 <ul class="m-nav-main__items">

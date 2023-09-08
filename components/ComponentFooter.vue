@@ -1,5 +1,5 @@
 <template>
-    <footer class="t-footer" role="contentinfo">
+    <footer class="t-footer hidden-print" role="contentinfo">
         <div class="o-footer">
 
             <!-- ANIMATION Flight -->

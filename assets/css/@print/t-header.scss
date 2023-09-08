@@ -1,5 +1,9 @@
 @media print {
     .t-header {
-        display: none;
+        width: 100%;
+        position: relative;
+        background-color: $white;
+        border-bottom: 0;
+        box-shadow: none;
     }
 }

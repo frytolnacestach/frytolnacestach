@@ -1,5 +1,5 @@
 <template>
-    <section class="t-section my-2 -p0">
+    <section class="t-section my-2 -p0 hidden-print">
         <div class="t-section__inner">
             <!-- SECTION - mHeadline -->
             <mHeadline title="Byl jsi tu? Tak napiš recenzi." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="myReview.length === 0 && numberReviews !== 0 && account.length !== 0 && newReview === false && statusAccount !== 2"/>

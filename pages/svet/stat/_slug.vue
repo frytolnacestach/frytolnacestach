@@ -93,7 +93,7 @@
                                 <!-- SECTION - Place teaser END -->
 
                                 <!-- SECTION - Neighboring Place list -->
-                                <section class="t-section my-2 py-1 -p0" v-if="placesStatesNeighboring">
+                                <section class="t-section my-2 py-1 -p0 print-section" v-if="placesStatesNeighboring">
                                     <div class="t-section__inner">
                                         <mHeadline title="Sousední státy státu " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oCoverNeighboring :items="placesStatesNeighboring" :images="imagesStatesNeighboring" />
@@ -141,29 +141,31 @@
                                 </section>
                                 <!-- SECTION - time - sidebar - END -->
 
-                                <!-- SECTION - Měna -->
-                                <section class="t-section" v-if="place[0].currency_name">
-                                    <div class="t-section__inner">
-                                        <oBlockItem title="Měna" :subtitle="place[0].currency_name" :perexWysiwyg="place[0].currency_code ? place[0].currency_code : ''" styleThema=" -bg-world" />
-                                    </div>
-                                </section>
-                                <!-- SECTION - Měna END -->
+                                <section class="t-section-print">
+                                    <!-- SECTION - Měna -->
+                                    <section class="t-section" v-if="place[0].currency_name">
+                                        <div class="t-section__inner">
+                                            <oBlockItem title="Měna" :subtitle="place[0].currency_name" :perexWysiwyg="place[0].currency_code ? place[0].currency_code : ''" styleThema=" -bg-world" />
+                                        </div>
+                                    </section>
+                                    <!-- SECTION - Měna END -->
 
-                                <!-- SECTION - MPZ -->
-                                <section class="t-section" v-if="place[0].mpz">
-                                    <div class="t-section__inner">
-                                        <oBlockItem title="MPZ" subtitle="Mezinárodní poznávací značka" :perexWysiwyg="place[0].mpz" styleThema=" -bg-world" />
-                                    </div>
-                                </section>
-                                <!-- SECTION - MPZ END -->
+                                    <!-- SECTION - MPZ -->
+                                    <section class="t-section" v-if="place[0].mpz">
+                                        <div class="t-section__inner">
+                                            <oBlockItem title="MPZ" subtitle="Mezinárodní poznávací značka" :perexWysiwyg="place[0].mpz" styleThema=" -bg-world" />
+                                        </div>
+                                    </section>
+                                    <!-- SECTION - MPZ END -->
 
-                                <!-- SECTION - TLD -->
-                                <section class="t-section" v-if="place[0].tld">
-                                    <div class="t-section__inner">
-                                        <oBlockItem title="TLD" subtitle="Národní internetová domána" :perexWysiwyg="place[0].tld" styleThema=" -bg-world" />
-                                    </div>
+                                    <!-- SECTION - TLD -->
+                                    <section class="t-section" v-if="place[0].tld">
+                                        <div class="t-section__inner">
+                                            <oBlockItem title="TLD" subtitle="Národní internetová domána" :perexWysiwyg="place[0].tld" styleThema=" -bg-world" />
+                                        </div>
+                                    </section>
+                                    <!-- SECTION - TLD END -->
                                 </section>
-                                <!-- SECTION - TLD END -->
 
                                 <!-- SECTION - Events - sidebar -->
                                 <oSidebarList :place="this.place[0].id" type="state" />
@@ -189,7 +191,7 @@
                             <div class="t-grid__section -content">
 
                                 <!-- SECTION - města - Biggest -->
-                                <section class="t-section -p0 -py4 -px-world-big -h-scroll" v-if="placesCities[0]">
+                                <section class="t-section -p0 -py4 -px-world-big -h-scroll print-section" v-if="placesCities[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Největší města ve státě" :titleValue="place[0].name" styleAlign=" -left" styleThema=" -world" styleGap=" -px-0 mb-2" />
                                         <oCoverPlaceDetail :places="placesCities" :images="imagesCities" type="mesto" importance="biggest" />
@@ -198,7 +200,7 @@
                                 <!-- SECTION - města - Biggest - END -->
 
                                 <!-- SECTION - videos -->
-                                <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="videos[0]">
+                                <section class="t-section -p0 -bg-extra-dark-gray py-4 hidden-print" v-if="videos[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleAlign=" -p-left" />
@@ -207,7 +209,7 @@
                                 <!-- SECTION - videos END -->
 
                                 <!-- SECTION - města - menší -->
-                                <section class="t-section -p0 -py4 -px-world-big -h-scroll" v-if="hasCitiesToShow">
+                                <section class="t-section -p0 -py4 -px-world-big -h-scroll print-section" v-if="hasCitiesToShow">
                                     <div class="t-section__inner">
                                         <mHeadline title="Další města a obce ve státě" :titleValue="place[0].name" styleAlign=" -left" styleThema=" -world" styleGap=" -px-0 mb-2" />
                                         <oCoverPlaceDetail :places="placesCities" :images="imagesCities" type="mesto" :importance=null />
@@ -216,7 +218,7 @@
                                 <!-- SECTION - města - menší - END -->
 
                                 <!-- SECTION - articles -->
-                                <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="posts[0]">
+                                <section class="t-section -p0 -bg-extra-dark-gray py-4 hidden-print" v-if="posts[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleAlign=" -p-left" />
@@ -304,13 +306,15 @@
                                 </section>
                                 <!-- SECTION - Visited button - sidebar - END -->
 
-                                <!-- SECTION - Měna -->
-                                <section class="t-section" v-if="place[0].currency_name">
-                                    <div class="t-section__inner">
-                                        <oBlockItem title="Měna" :subtitle="place[0].currency_name" :perexWysiwyg="place[0].currency_code ? place[0].currency_code : ''" styleThema=" -bg-world" />
-                                    </div>
+                                <section class="t-section-print">
+                                    <!-- SECTION - Měna -->
+                                    <section class="t-section" v-if="place[0].currency_name">
+                                        <div class="t-section__inner">
+                                            <oBlockItem title="Měna" :subtitle="place[0].currency_name" :perexWysiwyg="place[0].currency_code ? place[0].currency_code : ''" styleThema=" -bg-world" />
+                                        </div>
+                                    </section>
+                                    <!-- SECTION - Měna END -->
                                 </section>
-                                <!-- SECTION - Měna END -->
 
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world my-2">
