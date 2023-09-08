@@ -2,7 +2,7 @@
     <main class="t-main -green -vh100">
 
         <!-- SECTION - Vyhledávač -->
-        <section class="t-section pt-8 pb-4">
+        <section class="t-section pt-8 pb-4 hidden-print">
             <div class="t-section__inner">
                 <oSearch />
             </div>
@@ -10,7 +10,7 @@
         <!-- SECTION - Vyhledávač END -->
 
         <!-- SECTION - Typ místa -->
-        <section class="t-section py-4">
+        <section class="t-section py-4 print-section">
             <div class="t-section__inner">
                 <mHeadline title="Nevíš kam vyrazit?" perex="Pokud toužíš pozkoumat svět a nemáš jasnou představu, kam se vydat, můžeš si vybrat některou z kategorií míst a začít prozkoumávat." styleThema=" -world -w640" styleAlign=" -center" styleGap=" mb-2" />
                 <oWorldType />
@@ -18,17 +18,10 @@
         </section>
         <!-- SECTION - Typ místa END -->
 
-         <!-- SECTION - Top místa text -->
-         <section class="t-section pt-4">
+        <!-- SECTION - Top místa -->
+        <section class="t-section -p0 pb-4 print-section">
             <div class="t-section__inner">
                 <mHeadline title="Nejzajímavější místa" perex="Víte, kam byste se měli vydat na nezapomenutelnou dovolenou? Přinášíme vám seznam nejzajímavějších míst na světě, která musíte vidět. Od malebných vesnic a historických památek až po impozantní přírodní krásy, naše stránky vám pomohou najít nejlepší místa pro vaši další cestování." styleThema=" -world -w640" styleAlign=" -center" styleGap=" mb-2" />
-            </div>
-        </section>
-        <!-- SECTION - Top místa END -->
-
-        <!-- SECTION - Top místa -->
-        <section class="t-section -p0 pb-4">
-            <div class="t-section__inner">
                 <oTopPlace />
             </div>
         </section>
