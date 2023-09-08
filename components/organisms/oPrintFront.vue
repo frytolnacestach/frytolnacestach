@@ -47,13 +47,6 @@
         },
 
         methods: {
-            onDOMContentLoaded() {
-                // title
-                this.pageTitle = this.getPageTitleFromDOM() || 'Cestovatelský portál Frytol na cestách'
-                this.getTitleArray(this.pageTitle)
-                // url
-                this.getActualUrl()
-            },
             getPageTitleFromDOM() {
                 const titleElement = document.querySelector('title')
                 return titleElement.textContent
@@ -71,6 +64,14 @@
             getActualUrl() {
                 this.pageUrl = window.location.href
             },
+            onDOMContentLoaded() {
+                // title
+                this.pageTitle = this.getPageTitleFromDOM() || 'Cestovatelský portál Frytol na cestách'
+                this.getTitleArray(this.pageTitle)
+                // url
+                this.getActualUrl()
+            },
+            // Kontrolo změn v title
             observeTitleChanges() {
                 const titleElement = document.querySelector('title')
                 const observer = new MutationObserver(() => {
