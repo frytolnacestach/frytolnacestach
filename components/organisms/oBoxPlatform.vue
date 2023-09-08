@@ -5,7 +5,7 @@
             <div class="o-box-platform__outer">
                 <div class="o-box-platform__inner">
                     <div class="o-box-platform__items">
-                        <div class="o-box-platform__item" v-for="platform in platforms" :key="platform.id">
+                        <div class="o-box-platform__item print-section" v-for="platform in platforms" :key="platform.id">
 
                             <div :class="'o-box-platform__icon -' + platform.slug">
                                 <div class="o-box-platform__icon-file"></div>
