@@ -34,7 +34,7 @@
                 <!-- SECTION - perex END -->
 
                 <!-- SECTION - youtube -->
-                <section class="t-section py-2" v-if="video[0].url">
+                <section class="t-section py-2 hidden-print" v-if="video[0].url">
                     <div class="t-section__inner">
                         <oYoutube :url="video[0].url" />
                     </div>
@@ -68,7 +68,7 @@
         <div class="t-layout-full" v-if="video[0].id_continent || video[0].id_state || video[0].id_region || video[0].id_city || video[0].id_spot">
 
             <!-- SECTION - place -->
-            <section class="t-section -p0 pt-2 pb-1">
+            <section class="t-section -p0 pt-2 pb-1 print-section">
                 <div class="t-section__inner">
                     <mHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
 

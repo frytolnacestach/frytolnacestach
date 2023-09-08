@@ -1,0 +1,28 @@
+@media print {
+    .o-transport {
+
+        &__items {
+            margin: 5px 15px;
+
+            @media only screen and (min-width: $lg) {
+                margin: 5px 15px;
+            }
+        }
+
+        &__item {
+            width: 33.3%;
+
+            @media only screen and (min-width: $sm) {
+                width: 33.3%;
+            }
+
+            @media only screen and (min-width: $md) {
+                width: 33.3%;
+            }
+
+            @media only screen and (min-width: $lg) {
+                width: 33.3%;
+            }
+        }
+    }
+}

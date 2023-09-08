@@ -1,0 +1,11 @@
+@media print {
+    .o-trip-information {
+        &__item {
+            width: 33.3%;
+
+            @media only screen and (min-width: $sm) {
+                width: 33.3%;
+            }
+        }
+    }
+}

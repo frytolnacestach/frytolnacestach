@@ -37,7 +37,7 @@
                 <!-- SECTION - Wysiwyg END -->
 
                 <!-- SECTION - Youtube -->
-                <section class="t-section py-2" v-if="post[0].url_youtube">
+                <section class="t-section py-2 hidden-print" v-if="post[0].url_youtube">
                     <div class="t-section__inner">
                         <oYoutube :url="post[0].url_youtube" />
                     </div>
@@ -45,7 +45,7 @@
                 <!-- SECTION - Youtube END -->
 
                 <!-- SECTION - Map mapy -->
-                <section class="t-section -hidden-desktop my-2" v-if="post[0].url_map">
+                <section class="t-section -hidden-desktop my-2 print-section" v-if="post[0].url_map">
                     <div class="t-section__inner">
                         <oMapMapy :idImageMap="post[0].id_image_map" :url="post[0].url_map" :title="post[0].title" :images="imagePostMap" />
                     </div>
@@ -53,7 +53,7 @@
                 <!-- SECTION - Map mapy -->
 
                 <!-- SECTION - Wiki -->
-                <section class="t-section py-2" v-if="post[0].text_wiki">
+                <section class="t-section py-2 print-section" v-if="post[0].text_wiki">
                     <div class="t-section__inner">
                         <oWiki :wysiwyg="post[0].text_wiki" :source="post[0].url_wiki" />
                     </div>
@@ -61,7 +61,7 @@
                 <!-- SECTION - Wiki END -->
 
                 <!-- SECTION - Transport -->
-                <section class="t-section py-2" v-if="post[0].travels">
+                <section class="t-section py-2 print-section" v-if="post[0].travels">
                     <div class="t-section__inner">
                         <oTransport title="Jak se sem dostat" :items="post[0].travels" />
                     </div>
@@ -69,7 +69,7 @@
                 <!-- SECTION - Transport END -->
 
                 <!-- SECTION - Trip information -->
-                <section class="t-section py-2" v-if="post[0].prices">
+                <section class="t-section py-2 print-section" v-if="post[0].prices">
                     <div class="t-section__inner">
                         <oTripInformation title="Ceny" :perex="post[0].perex_price" :items="post[0].prices" styleThema=" -bg-brand1-a" />
                     </div>
@@ -77,7 +77,7 @@
                 <!-- SECTION - Trip information END -->
 
                 <!-- SECTION - Trip information -->
-                <section class="t-section py-2" v-if="post[0].triplengths">
+                <section class="t-section py-2 print-section" v-if="post[0].triplengths">
                     <div class="t-section__inner">
                         <oTripInformation title="Délka výletu" :perex="post[0].perex_triplength" :items="post[0].triplengths" styleThema=" -bg-brand2-a" />
                     </div>
@@ -85,7 +85,7 @@
                 <!-- SECTION - Trip information END -->
 
                 <!-- SECTION - Trip information -->
-                <section class="t-section py-2" v-if="post[0].times">
+                <section class="t-section py-2 print-section" v-if="post[0].times">
                     <div class="t-section__inner">
                         <oTripInformation title="Časová náročnost" :perex="post[0].perex_time" :items="post[0].times" styleThema=" -bg-brand2-a" />
                     </div>
@@ -93,7 +93,7 @@
                 <!-- SECTION - Trip information END -->
 
                 <!-- SECTION - Review -->
-                <section class="t-section py-2" v-if="post[0].review_text">
+                <section class="t-section py-2 print-section" v-if="post[0].review_text">
                     <div class="t-section__inner">
                         <oReview :reviewText="post[0].review_text" :reviewValue="post[0].review_value" />
                     </div>
@@ -101,7 +101,7 @@
                 <!-- SECTION - Review END -->
 
                 <!-- SECTION - Update information -->
-                <section class="t-section py-2" v-if="post[0].date_information">
+                <section class="t-section py-2 print-section" v-if="post[0].date_information">
                     <div class="t-section__inner">
                         <oUpdateInformation :date="post[0].date_information" />
                     </div>
@@ -113,7 +113,7 @@
             <div class="t-col2__sidebar my-2">
 
                 <!-- SECTION - author - sidebar -->
-                <section class="t-section -px-world my-2 -p0">
+                <section class="t-section -px-world my-2 -p0 print-section">
                     <div class="t-section__inner">
                         <oAuthorSidebar :author="post[0].id_user"/>
                     </div>
@@ -121,7 +121,7 @@
                 <!-- SECTION - author - sidebar - END -->
 
                 <!-- SECTION - Sidebar map mapy -->
-                <section class="t-section -hidden-mobile my-2" v-if="post[0].url_map">
+                <section class="t-section -hidden-mobile my-2 hidden-print" v-if="post[0].url_map">
                     <div class="t-section__inner">
                         <oSidebarMapMapy :idImageMap="post[0].id_image_map" :url="post[0].url_map" :title="post[0].title" :images="imagePostMap" />
                     </div>
@@ -129,7 +129,7 @@
                 <!-- SECTION - Sidebar map mapy END -->
 
                 <!-- SECTION - Sidebar tag -->
-                <section class="t-section my-2" v-if="post[0].tags">
+                <section class="t-section my-2 print-section" v-if="post[0].tags">
                     <div class="t-section__inner">
                         <oSidebarTag :tags="post[0].tags" />
                     </div>
@@ -149,7 +149,7 @@
         <div class="t-layout-full" v-if="post[0].id_continent || post[0].id_state || post[0].id_region || post[0].id_city || post[0].id_spot">
 
             <!-- SECTION - place -->
-            <section class="t-section -p0 pt-2 pb-1">
+            <section class="t-section -p0 pt-2 pb-1 print-section">
                 <div class="t-section__inner">
                     <mHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
 
@@ -165,7 +165,7 @@
             <!-- SECTION - place END -->
 
             <!-- SECTION - videos -->
-            <section class="t-section -p0 -bg-extra-dark-gray pt-4 py-2 px-2" v-if="videos[0]">
+            <section class="t-section -p0 -bg-extra-dark-gray pt-4 py-2 px-2 hidden-print" v-if="videos[0]">
                 <div class="t-section__inner">
                     <mHeadline title="Videa z této oblasti" styleThema=" -dark" styleAlign=" -p-left" styleGap=" mb-2" />
                     <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -dark" styleAlign=" -p-left" />
