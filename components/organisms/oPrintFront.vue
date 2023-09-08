@@ -42,6 +42,7 @@
         mounted() {
             if (process.client) {
                 this.onDOMContentLoaded()
+                this.observeTitleChanges()
             }
         },
 
@@ -69,6 +70,13 @@
             },
             getActualUrl() {
                 this.pageUrl = window.location.href
+            },
+            observeTitleChanges() {
+                const titleElement = document.querySelector('title')
+                const observer = new MutationObserver(() => {
+                    this.onDOMContentLoaded()
+                })
+                observer.observe(titleElement, { childList: true, characterData: true, subtree: true })
             }
         },
 
