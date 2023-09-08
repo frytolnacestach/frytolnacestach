@@ -9,24 +9,17 @@
         </section>
         <!-- SECTION - Hero END -->
 
-        <!-- SECTION - Top místa text -->
-        <section class="t-section pt-4">
+        <!-- SECTION - Top místa -->
+        <section class="t-section -p0 pb-4 print-section">
             <div class="t-section__inner">
                 <mHeadline title="Nejzajímavější místa" perex="Víte, kam byste se měli vydat na nezapomenutelnou dovolenou? Přinášíme vám seznam nejzajímavějších míst na světě, která musíte vidět. Od malebných vesnic a historických památek až po impozantní přírodní krásy, naše stránky vám pomohou najít nejlepší místa pro vaši další cestování." styleThema=" -world -w640" styleAlign=" -center" styleGap=" mb-2" />
-            </div>
-        </section>
-        <!-- SECTION - Top místa END -->
-
-        <!-- SECTION - Top místa -->
-        <section class="t-section -p0 pb-4">
-            <div class="t-section__inner">
                 <oTopPlace />
             </div>
         </section>
         <!-- SECTION - Top místa END -->
         
          <!-- SECTION - Typ místa -->
-         <section class="t-section py-4">
+         <section class="t-section py-4 print-section">
             <div class="t-section__inner">
                 <mHeadline title="Nevíš kam vyrazit?" perex="Pokud toužíš pozkoumat svět a nemáš jasnou představu, kam se vydat, můžeš si vybrat některou z kategorií míst a začít prozkoumávat." styleThema=" -world -w640" styleAlign=" -center" styleGap=" mb-2" />
                 <oWorldType />
@@ -36,7 +29,7 @@
 
         <section class="t-section -p0 px-1">
             <div class="t-section__inner -col">
-                <div class="t-section__col px-1 mb-4">
+                <div class="t-section__col px-1 mb-4 print-section">
                     <!-- SECTION - Article list -->
                     <mHeadline title="Nejnovější článek" styleAlign=" -left" />
                     <oArticleList :posts="post" :images="imagePost" styleThema=" -latest" />
@@ -45,7 +38,7 @@
                     </div>
                     <!-- SECTION - Article list END -->
                 </div>
-                <div class="t-section__col px-1 mb-4">
+                <div class="t-section__col px-1 mb-4 print-section">
                     <!-- SECTION - Video -->
                     <mHeadline title="Nejnovější video" styleAlign=" -left" />
                     <oVideoList :videos="video" :images="imageVideo" styleThema=" -latest" />
@@ -58,7 +51,7 @@
         </section>
 
         <!-- SECTION - events -->
-        <section class="t-section py-4">
+        <section class="t-section py-4 print-section">
             <div class="t-section__inner">
                 <mHeadline title="Nejbližší události" styleAlign=" -left" />
                 <oEventList />

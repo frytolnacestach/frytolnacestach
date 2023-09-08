@@ -10,7 +10,7 @@
         <!-- SECTION - Hero place type END -->
 
         <!-- SECTION - Filter -->
-        <section class="t-section -p0">
+        <section class="t-section -p0 hidden-print">
             <div class="t-section__inner">
                 <oFormFilterPlace typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
             </div>

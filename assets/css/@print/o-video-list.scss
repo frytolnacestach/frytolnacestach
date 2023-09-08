@@ -1,0 +1,53 @@
+@media print {
+    .o-video-list {
+        $self: &;
+
+        &__item {
+            width: 33.3%;
+
+            @media only screen and (min-width: $sm) {
+                width: 33.3%;
+            }
+
+            @media only screen and (min-width: $md) {
+                width: 33.3%;
+            }
+        }
+
+        &.-world {
+            padding: 0 10px;
+
+            @media only screen and (min-width: $ti) {
+                padding: 0 10px;
+            }
+
+            #{$self}__item-inner {
+                margin: 10px 5px;
+
+                @media only screen and (min-width: $ti) {
+                    margin: 10px 5px;
+                }
+            }
+        }
+
+        &.-world-tab {
+            padding: 0 5px;
+
+            @media only screen and (min-width: $ti) {
+                padding: 0 5px;
+            }
+
+            #{$self}__items {
+                margin: 0 -10px;
+            }
+
+            #{$self}__item-inner {
+                margin: 10px 5px;
+
+                @media only screen and (min-width: $ti) {
+                    margin: 10px 5px;
+                }
+            }
+        }
+    }
+}
