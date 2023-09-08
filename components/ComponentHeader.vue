@@ -1,5 +1,5 @@
 <template>
-    <header class="t-header" role="banner">
+    <header class="t-header hidden-print" role="banner">
         <div class="o-header">
             <div class="o-header__outer">
                 <div class="o-header__inner">

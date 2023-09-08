@@ -1,5 +1,5 @@
 <template>
-    <span class="js_m-hamburger m-hamburger hidden-print" data-hamburger="close">
+    <span class="js_m-hamburger m-hamburger" data-hamburger="close">
         <span class="m-hamburger__texts">
             <span class="m-hamburger__text -open">Menu</span>
             <span class="m-hamburger__text -close">Zavřít</span>

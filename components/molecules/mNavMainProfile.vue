@@ -1,5 +1,5 @@
 <template>
-    <div class="m-nav-main-profile hidden-print">
+    <div class="m-nav-main-profile">
         <div class="m-nav-main-profile__icon">
             <NuxtLink class="m-nav-main-profile__icon-link -login" to="/ucet/profil" exact-active-class="-active" :class="{'-active': /^\/ucet/.test($route.path)}" :title="'Jsi přihlášen jako ' + nickname" v-if="nickname && nickname !== 'undefined'">
                 <span class="m-nav-main-profile__icon-file"></span>

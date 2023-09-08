@@ -1,6 +1,7 @@
 <template>
 	<div class="t-components">
 		<ComponentHeader />
+		<ComponentPrintFront />
 		<Nuxt />
 		<ComponentFooter />
 		<ComponentPopupCookies />

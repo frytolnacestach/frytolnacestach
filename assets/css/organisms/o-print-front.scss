@@ -1,0 +1,81 @@
+.o-print-front {
+    display: none;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+
+    &__outer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    &__inner {
+        width: 100vw;
+        height: auto;
+        padding: 80px 0;
+    }
+
+    &__logotype {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &__image {
+        width: 480px;
+        height: 120px;
+        padding: 16.05px 0;
+        position: relative;
+    }
+
+    &__image-file {
+        background-image: url('../../static/images/_base/logotype.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 480px;
+        height: 87.6px;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 40px;
+        font-weight: 600;
+        font-size: $fs-50;
+    }
+
+    &__subtitle {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: $fs-large-l;
+    }
+
+    &__url {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+
+    &__url-title {
+        margin-top: 40px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    &__url-link {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-decoration: underline;
+        margin-top: 10px;
+    }
+}
