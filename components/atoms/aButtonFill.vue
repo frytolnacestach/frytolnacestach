@@ -1,6 +1,6 @@
 <template>
-    <NuxtLink :class="'a-button-fill' + (styleThema ? styleThema : '')" :to="url" v-if="target === 'internal'">{{ text }}</NuxtLink>
-    <a :class="'a-button-fill' + (styleThema ? styleThema : '')" :href="url" target="_blank" v-else>{{ text }}</a>
+    <NuxtLink :class="'a-button-fill' + (styleThema ? styleThema : '') + ' hidden-print'" :to="url" v-if="target === 'internal'">{{ text }}</NuxtLink>
+    <a :class="'a-button-fill' + (styleThema ? styleThema : '') + ' hidden-print'" :href="url" target="_blank" v-else>{{ text }}</a>
 </template>
 
 <script>

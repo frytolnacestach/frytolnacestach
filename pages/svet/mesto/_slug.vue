@@ -104,7 +104,7 @@
                         <!-- SECTION - Ubytování - information END -->
 
                         <!-- SECTION - Ubytování -->
-                        <section class="t-section -px-world py-2" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
+                        <section class="t-section -px-world py-2 hidden-print" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
                             <div class="t-section__inner">
                                 <div v-if="place[0].coordinates">
                                     <div v-for="coordinate in place[0].coordinates">
