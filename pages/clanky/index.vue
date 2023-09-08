@@ -10,7 +10,7 @@
         <!-- SECTION - Hero END -->
 
         <!-- SECTION - Articles -->
-        <section class="t-section -p0 py-1 px-2">
+        <section class="t-section -p0 py-1 px-2 print-section">
             <div class="t-section__inner">
                 <oArticleList :posts="posts" :images="images" />
             </div>
@@ -18,7 +18,7 @@
         <!-- SECTION - Articles END -->
 
         <!-- SECTION - Platforms -->
-        <section class="t-section -p0 py-1 mt-2 px-2">
+        <section class="t-section -p0 py-1 mt-2 px-2 print-section">
             <div class="t-section__inner">
                 <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
                 <oPlatform />

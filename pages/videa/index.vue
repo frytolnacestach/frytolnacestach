@@ -10,7 +10,7 @@
         <!-- SECTION - Hero END -->
 
         <!-- SECTION - videos -->
-        <section class="t-section -p0 py-1 px-2" v-if="videos[0]">
+        <section class="t-section -p0 py-1 px-2 print-section" v-if="videos[0]">
             <div class="t-section__inner">
                 <oVideoList :videos="videos" :images="images" />
             </div>
@@ -18,7 +18,7 @@
         <!-- SECTION - videos END -->
 
         <!-- SECTION - Platforms -->
-        <section class="t-section -p0 py-1 mt-2 px-2">
+        <section class="t-section -p0 py-1 mt-2 px-2 print-section">
             <div class="t-section__inner">
                 <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
                 <oPlatform />

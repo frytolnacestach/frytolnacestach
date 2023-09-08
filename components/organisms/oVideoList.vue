@@ -2,7 +2,7 @@
     <div :class="'o-video-list' + (styleThema ? styleThema : '') + (styleAlign ? styleAlign : '')">
         <div class="o-video-list__outer">
             <div class="o-video-list__items">
-                <div v-for="video in filteredVideos" :key="video.id" class="o-video-list__item">
+                <div v-for="video in filteredVideos" :key="video.id" class="o-video-list__item print-section">
                     <div class="o-video-list__item-inner">
                         <div class="o-video-list__image loading-image -gray">
                             <div v-if="images && images.find(image => image.id === video.id_image)" class="o-video-list__image-lazyload">
