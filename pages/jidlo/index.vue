@@ -1,25 +1,27 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
 
-        <!-- SECTION - Hero food -->
-        <section class="t-section py-4">
-            <div class="t-section__inner">
-                <oHero headline="Jídla" perex="Jaké jídla se jedí ve světe. Na které kde narazíte a co si kde dát? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w600" />
-            </div>
-        </section>
-        <!-- SECTION - Hero food END -->
-
-        <!-- SECTION - cestovatelsky slovnik list -->
-        <section class="t-section -p0">
-            <div class="t-section__inner">
-                <oCoverItem :items="foods" :images="images" type="jidlo" />
-                <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                    <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+        <section class="t-section print-section">
+            <!-- SECTION - Hero food -->
+            <section class="t-section py-4">
+                <div class="t-section__inner">
+                    <oHero headline="Jídla" perex="Jaké jídla se jedí ve světe. Na které kde narazíte a co si kde dát? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w600" />
                 </div>
-                <oCoverItem :items="null" :images="null" type="jidlo" :skeleton=true v-if="isLoading" />
-            </div>
+            </section>
+            <!-- SECTION - Hero food END -->
+
+            <!-- SECTION - cestovatelsky slovnik list -->
+            <section class="t-section -p0">
+                <div class="t-section__inner">
+                    <oCoverItem :items="foods" :images="images" type="jidlo" />
+                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                    </div>
+                    <oCoverItem :items="null" :images="null" type="jidlo" :skeleton=true v-if="isLoading" />
+                </div>
+            </section>
+            <!-- SECTION - cestovatelsky slovnik list END -->
         </section>
-        <!-- SECTION - cestovatelsky slovnik list END -->
 
     </main>
 </template>

@@ -1,25 +1,27 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
 
-        <!-- SECTION - Hero fauna -->
-        <section class="t-section py-4">
-            <div class="t-section__inner">
-                <oHero headline="Fauna" perex="Jaké fauna kde žije? A na jakou si dát pozor? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w600" />
-            </div>
-        </section>
-        <!-- SECTION - Hero fauna END -->
-
-        <!-- SECTION - cestovatelsky slovnik list -->
-        <section class="t-section -p0">
-            <div class="t-section__inner">
-                <oCoverItem :items="faunas" :images="images" type="fauna" />
-                <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                    <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+        <section class="t-section print-section">
+            <!-- SECTION - Hero fauna -->
+            <section class="t-section py-4">
+                <div class="t-section__inner">
+                    <oHero headline="Fauna" perex="Jaké fauna kde žije? A na jakou si dát pozor? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w600" />
                 </div>
-                <oCoverItem :items="null" :images="null" type="fauna" :skeleton=true v-if="isLoading" />
-            </div>
+            </section>
+            <!-- SECTION - Hero fauna END -->
+
+            <!-- SECTION - cestovatelsky slovnik list -->
+            <section class="t-section -p0">
+                <div class="t-section__inner">
+                    <oCoverItem :items="faunas" :images="images" type="fauna" />
+                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                    </div>
+                    <oCoverItem :items="null" :images="null" type="fauna" :skeleton=true v-if="isLoading" />
+                </div>
+            </section>
+            <!-- SECTION - cestovatelsky slovnik list END -->
         </section>
-        <!-- SECTION - cestovatelsky slovnik list END -->
 
     </main>
 </template>
