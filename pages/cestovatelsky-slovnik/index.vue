@@ -1,25 +1,27 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
 
-        <!-- SECTION - Hero cestovatelsky slovnik -->
-        <section class="t-section py-4">
-            <div class="t-section__inner">
-                <oHero headline="Cestovatelský slovník" perex="Najdeš zde spoustu výrazů a zkratek které se ti mohou hodit při tvém cestování." modifierCSS=" -green -w600" />
-            </div>
-        </section>
-        <!-- SECTION - Hero cestovatelsky slovnik END -->
-
-        <!-- SECTION - cestovatelsky slovnik list -->
-        <section class="t-section -p0">
-            <div class="t-section__inner">
-                <oCoverItem :items="travelDictionaries" :images="images" type="cestovatelsky-slovnik" />
-                <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                    <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+        <section class="t-section print-section">
+            <!-- SECTION - Hero cestovatelsky slovnik -->
+            <section class="t-section py-4">
+                <div class="t-section__inner">
+                    <oHero headline="Cestovatelský slovník" perex="Najdeš zde spoustu výrazů a zkratek které se ti mohou hodit při tvém cestování." modifierCSS=" -green -w600" />
                 </div>
-                <oCoverItem :items="null" :images="null" type="cestovatelsky-slovnik" :skeleton=true v-if="isLoading" />
-            </div>
+            </section>
+            <!-- SECTION - Hero cestovatelsky slovnik END -->
+
+            <!-- SECTION - cestovatelsky slovnik list -->
+            <section class="t-section -p0">
+                <div class="t-section__inner">
+                    <oCoverItem :items="travelDictionaries" :images="images" type="cestovatelsky-slovnik" />
+                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                    </div>
+                    <oCoverItem :items="null" :images="null" type="cestovatelsky-slovnik" :skeleton=true v-if="isLoading" />
+                </div>
+            </section>
+            <!-- SECTION - cestovatelsky slovnik list END -->
         </section>
-        <!-- SECTION - cestovatelsky slovnik list END -->
 
     </main>
 </template>
