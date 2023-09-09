@@ -1,5 +1,5 @@
 <template>
-    <section class="t-section -px-world mt-1 mb-2" v-if="travelDictionaries && travelDictionaries.length > 0">
+    <section class="t-section -px-world mt-1 mb-2 print-section" v-if="travelDictionaries && travelDictionaries.length > 0">
         <div class="t-section__inner">
             <div class="o-sidebar-list-travel-dictionary">
                 <div class="o-sidebar-list-travel-dictionary__outer">

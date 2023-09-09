@@ -2,7 +2,7 @@
     <main class="t-main -green -pt-menu" role="main">
 
         <!-- SECTION - BREADCRUMBS -->
-        <section class="t-section -px-world mt-2 -p0">
+        <section class="t-section -px-world mt-2 -p0 print-section">
             <div class="t-section__inner">
                 <mNavBreadcrumbsItem :links="mNavBreadcrumbsTravelDictionaryArray" :item="travelDictionary[0]" />
             </div>
@@ -16,7 +16,7 @@
                     
                     <div class="t-grid__section -content">
                         <!-- SECTION - hero -->
-                        <section class="t-section">
+                        <section class="t-section print-section">
                             <div class="t-section__inner">
                                 <oHeroItemDetail :item="travelDictionary" :images="imageTravelDictionary" />
                             </div>
@@ -24,7 +24,7 @@
                         <!-- SECTION - hero END -->
 
                         <!-- SECTION - information by ChatGPT -->
-                        <section class="t-section" v-if="travelDictionary[0].description">
+                        <section class="t-section print-section" v-if="travelDictionary[0].description">
                             <div class="t-section__inner">
                                 <oInformationBlock :title="'Co je ' + (travelDictionary[0].name ? travelDictionary[0].name : '') + '?'" :perexWysiwyg="travelDictionary[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                             </div>
