@@ -1,21 +1,23 @@
 <template>
     <main class="t-main -blue -pt-menu" role="main">
        
-        <!-- SECTION - Hero -->
-		<section class="t-section -p0 mb-1 mt-2">
-            <div class="t-section__inner">
-                <oHero :headline="headline"  modifierCSS=" -blue" />
-            </div>
-        </section>
-        <!-- SECTION - Hero END -->
+        <section class="t-section print-section">
+            <!-- SECTION - Hero -->
+            <section class="t-section -p0 mb-1 mt-2">
+                <div class="t-section__inner">
+                    <oHero :headline="headline"  modifierCSS=" -blue" />
+                </div>
+            </section>
+            <!-- SECTION - Hero END -->
 
-        <!-- SECTION - Articles -->
-        <section class="t-section -p0">
-            <div class="t-section__inner">
-                <oUserList :items="users" :images="images" />
-            </div>
+            <!-- SECTION - Articles -->
+            <section class="t-section -p0">
+                <div class="t-section__inner">
+                    <oUserList :items="users" :images="images" />
+                </div>
+            </section>
+            <!-- SECTION - Articles END -->
         </section>
-        <!-- SECTION - Articles END -->
 
     </main>
 </template>
