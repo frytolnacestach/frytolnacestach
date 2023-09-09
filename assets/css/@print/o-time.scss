@@ -1,0 +1,12 @@
+@media print {
+    .o-time {
+
+        &__outer {
+            border-radius: $br-4;
+
+            @media only screen and (min-width: $ti) {
+                border-radius: $br-4;
+            }
+        }
+    }
+}
