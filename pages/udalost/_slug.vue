@@ -1,6 +1,5 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
         <!-- SECTION - BREADCRUMBS -->
         <section class="t-section -px-world mt-2 -p0">
             <div class="t-section__inner">
@@ -10,12 +9,9 @@
         <!-- SECTION - BREADCRUMBS END -->
 
         <!-- SECTION - Buttons -->
-        <section class="t-section -px-world mt-1" v-if="isMobile">
+        <section class="t-section -px-world mt-1 -p0" v-if="isMobile">
             <div class="t-section__inner">
-                <div class="flex flex-end-all">
-                    <a v-if="!showHero" @click="showHero = true" class="a-button-pure-icon -cover">Obrázek</a>
-                    <a v-else @click="showHero = false" class="a-button-pure-icon -map">Mapa</a>
-                </div>
+                <oSwitchHero :show-hero.sync="showHero" />
             </div>
         </section>
         <!-- SECTION - Buttons END -->
@@ -57,7 +53,7 @@
                         <!-- SECTION - information END -->
 
                         <!-- SECTION - prices -->
-                        <section class="t-section my-4" v-if="event[0].prices">
+                        <section class="t-section my-4 print-section" v-if="event[0].prices">
                             <div class="t-section__inner">
                                 <mHeadline title="Cena akce" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                 <oPrices :items="event[0].prices" />
@@ -66,7 +62,7 @@
                         <!-- SECTION - prices END -->
 
                         <!-- SECTION - Ubytování - information -->
-                        <section class="t-section">
+                        <section class="t-section print-section">
                             <div class="t-section__inner">
                                 <oInformationBlock :title="'Ubytování blízko události ' + (event[0].name ? event[0].name : '')" perexWysiwyg="Cena za konkrétní ubytování se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek." v-if="event[0].affiliate.find(x => x.name === 'booking').value === true" />
                             </div>
@@ -74,7 +70,7 @@
                         <!-- SECTION - Ubytování - information END -->
 
                         <!-- SECTION - Ubytování -->
-                        <section class="t-section -px-world py-2" v-if="event[0].affiliate.find(x => x.name === 'booking').value === true">
+                        <section class="t-section -px-world py-2 hidden-print" v-if="event[0].affiliate.find(x => x.name === 'booking').value === true">
                             <div class="t-section__inner">
                                 <div v-for="coordinate in event[0].coordinates">
                                     <oWidgetBooking 
@@ -93,7 +89,7 @@
 
                     <div class="t-grid__section -ad">
                         <!-- SECTION - Date of Event - sidebar -->
-                        <section class="t-section -px-world my-2" v-if="event[0].date_start || event[0].date_end">
+                        <section class="t-section -px-world my-2 print-section" v-if="event[0].date_start || event[0].date_end">
                             <div class="t-section__inner">
                                 <oDateOfEvent :dateStart="event[0].date_start" :dateEnd="event[0].date_end" />
                             </div>
@@ -101,7 +97,7 @@
                         <!-- SECTION - Date of Event - sidebar - END -->
 
                         <!-- SECTION - links -->
-                        <section class="t-section -px-world my-2" v-if="event[0].links">
+                        <section class="t-section -px-world my-2 print-section" v-if="event[0].links">
                             <div class="t-section__inner">
                                 <oLinks :items="event[0].links" />
                             </div>
@@ -134,6 +130,7 @@
     import oLinks from '~/components/organisms/oLinks.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oPrices from '~/components/organisms/oPrices.vue'
+    import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
     import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
 
     export default {
@@ -149,6 +146,7 @@
             oLinks,
             oMapGoogle,
             oPrices,
+            oSwitchHero,
             oWidgetBooking
         },
 
