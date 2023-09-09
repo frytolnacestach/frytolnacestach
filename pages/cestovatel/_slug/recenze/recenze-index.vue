@@ -5,7 +5,7 @@
         <section class="t-section -padding-x -padding-y -p0 mb-4">
             <div class="t-section__inner">
                 <div class="t-col2">
-                    <div class="t-col2__sidebar mb-2">
+                    <div class="t-col2__sidebar mb-2 print-section">
                         <!-- SECTION - user headline - account -->
                         <section class="t-section -padding-x -p0">
                             <div class="t-section__inner">
@@ -36,7 +36,7 @@
 
                     <div class="t-col2__content mb-2">
                         <!-- SECTION - Recenze -->
-                        <section class="t-section -padding-x -p0 pb-4">
+                        <section class="t-section -padding-x -p0 pb-4 print-section">
                             <div class="t-section__inner">
                                 <oReviewItemListUser :user="user" />
                             </div>

@@ -12,7 +12,7 @@
                         <div class="o-review-item-list__outer">
                             <div class="o-review-item-list__inner">
                                 <div class="o-review-item-list__items">
-                                    <div class="o-review-item-list__item" v-for="review in reviews" :key="review.id">
+                                    <div class="o-review-item-list__item print-section" v-for="review in reviews" :key="review.id">
                                         <div class="o-review-item-list__content">
                                             <div class="o-review-item-list__image loading-image -green" v-if="users && users.find(user => user.id === review.id_user)">
                                                 <div class="o-review-item-list__image-lazyload">

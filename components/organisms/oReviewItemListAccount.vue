@@ -14,7 +14,7 @@
                         <div class="o-review-item-list-account__outer">
                             <div class="o-review-item-list-account__inner">
                                 <div class="o-review-item-list-account__items">
-                                    <div class="o-review-item-list-account__item" v-for="review in reviews" :key="review.id">
+                                    <div class="o-review-item-list-account__item print-section" v-for="review in reviews" :key="review.id">
                                         <div class="o-review-item-list-account__content">
                                             <div class="o-review-item-list-account__image loading-image -blue">
                                                 <div class="o-review-item-list-account__image-lazyload" v-if="images && images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place ))">

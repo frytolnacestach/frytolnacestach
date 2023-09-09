@@ -1,0 +1,41 @@
+@media print {
+    .o-cover-place-visited {
+        $self: &;
+        margin: 0 -5px;
+
+
+        &__item {
+            width: 20%;
+            padding-bottom: 20%;
+
+            @media only screen and (min-width: $sm) {
+                width: 20%;
+                padding-bottom: 20%;
+            }
+
+            @media only screen and (min-width: $md) {
+                width: 20%;
+                padding-bottom: 20%;
+            }
+
+            @media only screen and (min-width: $lg) {
+                width: 20%;
+                padding-bottom: 20%;
+            }
+        }
+
+        //Name
+        &__name {
+            font-size: $fs-normal-s;
+
+            @media only screen and (min-width: $ti) {
+                font-size: $fs-normal-s;
+            }
+
+            @media only screen and (min-width: $sm) {
+                font-size: $fs-normal-ssss;
+
+            }
+        }
+    }
+}

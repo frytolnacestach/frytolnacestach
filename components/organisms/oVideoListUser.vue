@@ -2,7 +2,7 @@
     <div class="o-video-list-user">
         <div class="o-video-list-user__outer">
             <div class="o-video-list-user__items">
-                <div v-for="video in filteredVideos" :key="video.id" class="o-video-list-user__item">
+                <div v-for="video in filteredVideos" :key="video.id" class="o-video-list-user__item print-section">
                     <div class="o-video-list-user__item-inner">
                         <div class="o-video-list-user__image loading-image -gray">
                             <div v-if="images && images.find(image => image.id === video.id_image)" class="o-video-list-user__image-lazyload">

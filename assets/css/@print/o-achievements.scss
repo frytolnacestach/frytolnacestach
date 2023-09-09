@@ -1,0 +1,29 @@
+@media print {
+    .o-achievements {
+        $self: &;
+
+        margin: 0 -5px;
+
+        @media only screen and (min-width: $sm) {
+            margin: 0 -5px;
+        }
+
+        &__item {
+            display: flex;
+            width: 33.33%;
+            padding: 5px;
+
+            @media only screen and (min-width: $sm) {
+                padding: 5px;
+            }
+
+            @media only screen and (min-width: $md) {
+                width: 33.33%;
+            }
+
+            @media only screen and (min-width: $lg) {
+                width: 33.33%;
+            }
+        }
+    }
+}

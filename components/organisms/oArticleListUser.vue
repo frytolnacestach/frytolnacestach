@@ -2,7 +2,7 @@
     <div :class="'o-article-list-user' + (styleThema ? styleThema : '') + (styleAlign ? styleAlign : '')">
         <div class="o-article-list-user-list__outer">
             <div class="o-article-list-user__items">
-                <div v-for="post in posts" :key="post.id" class="o-article-list-user__item">
+                <div v-for="post in posts" :key="post.id" class="o-article-list-user__item print-section">
                     <div class="o-article-list-user__item-inner">
                         <div class="o-article-list-user__image loading-image -gray">
                             <div v-if="images && images.find(image => image.id === post.id_image_cover)" class="o-article-list-user__image-lazyload">

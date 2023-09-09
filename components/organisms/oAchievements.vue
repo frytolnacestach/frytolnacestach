@@ -4,7 +4,7 @@
             <div class="o-achievements__inner">
                 <div class="o-achievements__items">
                     
-                    <div class="o-achievements__item" :class="[item.type, { [item.value]: item.actual >= item.need }]" v-for="item in achievementsList" :key="item.id">
+                    <div class="o-achievements__item print-section" :class="[item.type, { [item.value]: item.actual >= item.need }]" v-for="item in achievementsList" :key="item.id">
                         <div class="o-achievements__content">
                             <div class="o-achievements__medal"></div>
                             <div class="o-achievements__text">
