@@ -2,7 +2,7 @@
     <main class="t-main -green -pt-menu" role="main">
 
         <!-- SECTION - Hero -->
-		<section class="t-section -p0 mb-1 mt-2">
+		<section class="t-section -p0 mb-1 mt-2 print-section">
             <div class="t-section__inner">
                 <oHero :headline="headline" modifierCSS=" -gray"/>
             </div>
@@ -10,7 +10,7 @@
         <!-- SECTION - Hero END -->
 
         <!-- SECTION - Filter -->
-        <section class="t-section -p0">
+        <section class="t-section -p0 hidden-print">
             <div class="t-section__inner">
                 <oFormFilterPlace typePlaceFilterName="Vybrat kontinent" typePlaceFilter="continents" @update="filterUpdate" />
             </div>
@@ -18,7 +18,7 @@
         <!-- SECTION - Filter END -->
 
         <!-- SECTION - Time Place list -->
-        <section class="t-section -p0">
+        <section class="t-section -p0 print-section">
             <div class="t-section__inner">
                 <oTimePlace :places="placesStates" :images="images" type="stat" />
                 <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
