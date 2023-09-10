@@ -4,7 +4,7 @@
         <!-- SECTION - Hero place type -->
         <section class="t-section py-4">
             <div class="t-section__inner">
-                <oHeroPlaceType styleType=" -state" title="Státy" perex="Najdete zde nejen 190 oficiálních států, ale také mnoho ostrovních a městských států, celkem 249 území, která stojí za návštěvu a objevování." />
+                <oHeroPlaceType styleType=" -state" :title="headlineFilter" perex="Najdete zde nejen 190 oficiálních států, ale také mnoho ostrovních a městských států, celkem 249 území, která stojí za návštěvu a objevování." />
             </div>
         </section>
         <!-- SECTION - Hero place type END -->
@@ -48,13 +48,16 @@
 
         data() {
             return {
+                headline: 'Státy',
+                headlineFilter: 'Státy',
+                filterPlace: '',
+                filterPlaceName: '',
                 images: [],
                 placesStates: [],
                 isLoading: false,
                 noMoreItems: false,
                 page: 1,
-                perPage: 20,
-                filterPlace: ''
+                perPage: 20
             }
         },
 
@@ -128,6 +131,14 @@
                 this.loadPlaces()
             },
 
+            updateHeadline() {
+                if (this.filterPlaceName) {
+                    this.headlineFilter = this.headline + ' kontinentu ' + this.filterPlaceName
+                } else {
+                    this.headlineFilter = this.headline
+                }
+            },
+
             handleScroll() {
                 //no further loading can occur while loading
                 if (this.isLoading || this.noMoreItems) {
@@ -153,7 +164,8 @@
 
             // filter set update
             filterUpdate(newValue) {
-                this.filterPlace = newValue
+                this.filterPlace = newValue.id
+                this.filterPlaceName = newValue.name
                 this.images = []
                 this.placesStates = []
                 this.isLoading = false
@@ -161,6 +173,7 @@
                 this.page = 1
                 this.perPage = 20
                 this.loadPlaces()
+                this.updateHeadline()
             }
         },
 

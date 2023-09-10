@@ -4,7 +4,7 @@
         <!-- SECTION - Hero place type -->
         <section class="t-section py-4">
             <div class="t-section__inner">
-                <oHeroPlaceType styleType=" -spot" title="Místa" perex="Informace o místech" />
+                <oHeroPlaceType styleType=" -spot" :title="headlineFilter" perex="Informace o místech" />
             </div>
         </section>
         <!-- SECTION - Hero place type END -->
@@ -48,6 +48,10 @@
 
         data() {
             return {
+                headline: 'Místa',
+                headlineFilter: this.headline,
+                filterPlace: '',
+                filterPlaceName: '',
                 images: [],
                 placesSpots: [],
                 isLoading: false,
@@ -128,6 +132,14 @@
                 this.loadPlaces()
             },
 
+            updateHeadline() {
+                if (this.filterPlaceName) {
+                    this.headlineFilter = this.headline + ' státu ' + this.filterPlaceName
+                } else {
+                    this.headlineFilter = this.headline
+                }
+            },
+
             handleScroll() {
                 //no further loading can occur while loading
                 if (this.isLoading || this.noMoreItems) {
@@ -153,7 +165,8 @@
 
             // filter set update
             filterUpdate(newValue) {
-                this.filterPlace = newValue
+                this.filterPlace = newValue.id
+                this.filterPlaceName = newValue.name
                 this.images = []
                 this.placesSpots = []
                 this.isLoading = false
@@ -161,6 +174,7 @@
                 this.page = 1
                 this.perPage = 20
                 this.loadPlaces()
+                this.updateHeadline()
             }
         },
 

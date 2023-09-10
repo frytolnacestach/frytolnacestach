@@ -80,8 +80,10 @@
             },
 
             updateParentVariable(id) {
-                const newValue = id
-                this.$emit('update', newValue)
+                const selectedFilterPlace = this.filterPlaces.find(place => place.id === id);
+                if (selectedFilterPlace) {
+                    this.$emit('update', { id, name: selectedFilterPlace.name });
+                }
             }
         }
     }

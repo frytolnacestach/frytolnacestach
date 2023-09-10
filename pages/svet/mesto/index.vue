@@ -4,7 +4,7 @@
         <!-- SECTION - Hero place type -->
         <section class="t-section py-4">
             <div class="t-section__inner">
-                <oHeroPlaceType styleType=" -city" title="Města" perex="Podle velmi nepřesných zdrojů je na Zemi asi 3 a půl milionu obcí. My jich tu máme přibližně 2500." />
+                <oHeroPlaceType styleType=" -city" :title="headlineFilter" perex="Podle velmi nepřesných zdrojů je na Zemi asi 3 a půl milionu obcí. My jich tu máme přibližně 2500." />
             </div>
         </section>
         <!-- SECTION - Hero place type END -->
@@ -48,6 +48,10 @@
 
         data() {
             return {
+                headline: 'Města',
+                headlineFilter: this.headline,
+                filterPlace: '',
+                filterPlaceName: '',
                 images: [],
                 placesCities: [],
                 placesParent: [],
@@ -139,6 +143,14 @@
                 this.loadPlaces()
             },
 
+            updateHeadline() {
+                if (this.filterPlaceName) {
+                    this.headlineFilter = this.headline + ' státu ' + this.filterPlaceName
+                } else {
+                    this.headlineFilter = this.headline
+                }
+            },
+
             handleScroll() {
                 //no further loading can occur while loading
                 if (this.isLoading || this.noMoreItems) {
@@ -164,7 +176,8 @@
 
             // filter set update
             filterUpdate(newValue) {
-                this.filterPlace = newValue
+                this.filterPlace = newValue.id
+                this.filterPlaceName = newValue.name
                 this.images = []
                 this.placesCities = []
                 this.placesParent = []
@@ -173,6 +186,7 @@
                 this.page = 1
                 this.perPage = 20
                 this.loadPlaces()
+                this.updateHeadline()
             }
         },
 
