@@ -44,6 +44,7 @@ export default {
     ]
   },
 
+  // PWA
   pwa: {
     manifest: {
       lang: 'cs',
@@ -732,6 +733,7 @@ export default {
       }
     }
   },
+  // PWA END
 
   render: {
     static: {
@@ -792,6 +794,14 @@ export default {
     { src: '~/plugins/vue-lazyload', ssr: false }
   ],
 
+  // Lazyload
+  lazyload: {
+    directiveOnly: true,
+    loadingClass: 'loading',
+    loadedClass: 'loaded',
+    appendClass: 'lazyload-wrapper'
+  },
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -803,7 +813,6 @@ export default {
     '@nuxtjs/tailwindcss'
   ],
 
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/pwa',
@@ -813,6 +822,56 @@ export default {
     'vue-scrollto/nuxt'
   ],
 
+  serverMiddleware: [
+    '~/middleware/trailingSlash'
+  ],
+
+  // Router
+  router: {
+    trailingSlash: false,
+    middleware: ['removeTrailingSlash'],
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'stat-slug',
+        path: '/svet/stat/:slug',
+        component: resolve(__dirname, 'pages/svet/stat/_slug.vue'),
+        alias: '/svet/stat/:slug/default'
+      })
+      routes.push({
+        name: 'stat-slug-tab',
+        path: '/svet/stat/:slug/:tab',
+        component: resolve(__dirname, 'pages/svet/stat/_slug.vue')
+      })
+      routes.push({
+        name: 'user-follow',
+        path: '/cestovatel/:slug/navstivena-mista',
+        component: resolve(__dirname, 'pages/cestovatel/_slug/navstivena-mista/navstivena-mista-index.vue')
+      })
+      routes.push({
+        name: 'user-review',
+        path: '/cestovatel/:slug/recenze',
+        component: resolve(__dirname, 'pages/cestovatel/_slug/recenze/recenze-index.vue')
+      })
+      routes.push({
+        name: 'user-video',
+        path: '/cestovatel/:slug/videa',
+        component: resolve(__dirname, 'pages/cestovatel/_slug/videa/videa-index.vue')
+      })
+      routes.push({
+        name: 'user-post',
+        path: '/cestovatel/:slug/clanky',
+        component: resolve(__dirname, 'pages/cestovatel/_slug/clanky/clanky-index.vue')
+      })
+      routes.push({
+        name: 'user-follow',
+        path: '/cestovatel/:slug/sleduji',
+        component: resolve(__dirname, 'pages/cestovatel/_slug/sleduji/sleduji-index.vue')
+      })
+    },
+  },
+  // Router END
+
+  // Generate XML
   sitemap: {
     hostname: process.env.BASE_URL,
     exclude: [
@@ -887,18 +946,18 @@ export default {
         exclude: ['/**']
       },
       {
-        path: '/sitemap-world-time.xml',
-        routes: async () => {
-          let { data } = await axios.get('https://api.frytolnacestach.cz/api/places-states')
-          return data.map(v => `/svetovy-cas/${v.slug}`)
-        },
-        exclude: ['/**']
-      },
-      {
         path: '/sitemap-users.xml',
         routes: async () => {
           let { data } = await axios.get('https://api.frytolnacestach.cz/api/users')
           return data.map(v => `/cestovatel/${v.slug}`)
+        },
+        exclude: ['/**']
+      },
+      {
+        path: '/sitemap-world-time.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://api.frytolnacestach.cz/api/places-states')
+          return data.map(v => `/svetovy-cas/${v.slug}`)
         },
         exclude: ['/**']
       },
@@ -955,60 +1014,129 @@ export default {
       }
     ]
   },
+  // Generate XML END
 
-  serverMiddleware: [
-    '~/middleware/trailingSlash'
-  ],
-
-  router: {
-    trailingSlash: false,
-    middleware: ['removeTrailingSlash'],
-    extendRoutes(routes, resolve) {
-      routes.push({
-        name: 'stat-slug',
-        path: '/svet/stat/:slug',
-        component: resolve(__dirname, 'pages/svet/stat/_slug.vue'),
-        alias: '/svet/stat/:slug/default'
-      })
-      routes.push({
-        name: 'stat-slug-tab',
-        path: '/svet/stat/:slug/:tab',
-        component: resolve(__dirname, 'pages/svet/stat/_slug.vue')
-      })
-      routes.push({
-        name: 'user-follow',
-        path: '/cestovatel/:slug/navstivena-mista',
-        component: resolve(__dirname, 'pages/cestovatel/_slug/navstivena-mista/navstivena-mista-index.vue')
-      })
-      routes.push({
-        name: 'user-review',
-        path: '/cestovatel/:slug/recenze',
-        component: resolve(__dirname, 'pages/cestovatel/_slug/recenze/recenze-index.vue')
-      })
-      routes.push({
-        name: 'user-video',
-        path: '/cestovatel/:slug/videa',
-        component: resolve(__dirname, 'pages/cestovatel/_slug/videa/videa-index.vue')
-      })
-      routes.push({
-        name: 'user-post',
-        path: '/cestovatel/:slug/clanky',
-        component: resolve(__dirname, 'pages/cestovatel/_slug/clanky/clanky-index.vue')
-      })
-      routes.push({
-        name: 'user-follow',
-        path: '/cestovatel/:slug/sleduji',
-        component: resolve(__dirname, 'pages/cestovatel/_slug/sleduji/sleduji-index.vue')
-      })
-    },
-  },
-
+  // Generate
   generate: {
     async routes() {
-      const { data } = await axios.get('https://api.frytolnacestach.cz/api/places-states');
-      const slugs = data.map((item) => item.slug);
-      const routes = [];
-      slugs.forEach((slug) => {
+      // APIs
+      const [
+        postsData,
+        videosData,
+        foodsData,
+        faunasData,
+        florasData,
+        brandsData,
+        travelDictionariesData,
+        eventsData,
+        usersData,
+        worldTimeData, 
+        placesContinentsData, 
+        placesStatesData, 
+        placesRegionsData, 
+        placesCitiesData1, 
+        placesCitiesData2, 
+        placesCitiesData3, 
+        placesSpotsData
+      ] = await Promise.all([
+        axios.get('https://api.frytolnacestach.cz/api/posts'),
+        axios.get('https://api.frytolnacestach.cz/api/videos'),
+        axios.get('https://api.frytolnacestach.cz/api/foods'),
+        axios.get('https://api.frytolnacestach.cz/api/faunas'),
+        axios.get('https://api.frytolnacestach.cz/api/floras'),
+        axios.get('https://api.frytolnacestach.cz/api/brands'),
+        axios.get('https://api.frytolnacestach.cz/api/travel-dictionaries'),
+        axios.get('https://api.frytolnacestach.cz/api/events'),
+        axios.get('https://api.frytolnacestach.cz/api/users'),
+        axios.get('https://api.frytolnacestach.cz/api/places-states'),
+        axios.get('https://api.frytolnacestach.cz/api/places-continents'),
+        axios.get('https://api.frytolnacestach.cz/api/places-states'),
+        axios.get('https://api.frytolnacestach.cz/api/places-regions'),
+        axios.get('https://api.frytolnacestach.cz/api/places-cities?start=1&end=999'),
+        axios.get('https://api.frytolnacestach.cz/api/places-cities?start=1000&end=1999'),
+        axios.get('https://api.frytolnacestach.cz/api/places-cities?start=2000&end=2999'),
+        axios.get('https://api.frytolnacestach.cz/api/places-spots')
+      ]);
+
+      //MAPs
+      const posts = postsData.data.map((item) => item.slug)
+      const videos = videosData.data.map((item) => item.slug)
+      const foods = foodsData.data.map((item) => item.slug)
+      const faunas = faunasData.data.map((item) => item.slug)
+      const floras = florasData.data.map((item) => item.slug)
+      const brands = brandsData.data.map((item) => item.slug)
+      const travelDictionaries = travelDictionariesData.data.map((item) => item.slug)
+      const events = eventsData.data.map((item) => item.slug)
+      const users = usersData.data.map((item) => item.slug)
+      const worldTime = worldTimeData.data.map((item) => item.slug)
+      const placesContinents = placesContinentsData.data.map((item) => item.slug)
+      const placesStates = placesStatesData.data.map((item) => item.slug)
+      const placesRegions = placesRegionsData.data.map((item) => item.slug)
+      const placesCities1 = placesCitiesData1.data.map((item) => item.slug)
+      const placesCities2 = placesCitiesData2.data.map((item) => item.slug)
+      const placesCities3 = placesCitiesData3.data.map((item) => item.slug)
+      const placesSpots = placesSpotsData.data.map((item) => item.slug)
+
+      // Const
+      const routes = []
+
+      // Posts
+      posts.forEach((slug) => {
+        routes.push(`clanky/${slug}`)
+      })
+
+      // Videos
+      videos.forEach((slug) => {
+        routes.push(`videa/${slug}`)
+      })
+
+      // Foods
+      foods.forEach((slug) => {
+        routes.push(`jidlo/${slug}`)
+      })
+
+      // Faunas
+      faunas.forEach((slug) => {
+        routes.push(`fauna/${slug}`)
+      })
+
+      // Floras
+      floras.forEach((slug) => {
+        routes.push(`flora/${slug}`)
+      })
+
+      // Brands
+      brands.forEach((slug) => {
+        routes.push(`znacka/${slug}`)
+      })
+
+      // Travel Dictionaries
+      travelDictionaries.forEach((slug) => {
+        routes.push(`cestovatelsky-slovnik/${slug}`)
+      })
+
+      // Events
+      events.forEach((slug) => {
+        routes.push(`udalost/${slug}`)
+      })
+
+      // Users
+      users.forEach((slug) => {
+        routes.push(`cestovatel/${slug}`)
+      })
+
+      // World Time
+      worldTime.forEach((slug) => {
+        routes.push(`svetovy-cas/${slug}`)
+      })
+
+      // Places - Continents
+      placesContinents.forEach((slug) => {
+        routes.push(`svet/kontinent/${slug}`)
+      })
+
+      // Places - States
+      placesStates.forEach((slug) => {
         const tabs = [
           'default',
           'co-videt',
@@ -1019,20 +1147,37 @@ export default {
           'ubytovani',
           'videa'
         ];
+
         tabs.forEach((tab) => {
-          routes.push(`svet/stat/${slug}/${tab}`);
-        });
-      });
-      return routes;
+          routes.push(`svet/stat/${slug}/${tab}`)
+        })
+      })
+
+      // Places - Regions
+      placesRegions.forEach((slug) => {
+        routes.push(`svet/region/${slug}`)
+      })
+
+      // Places - Cities
+      placesCities1.forEach((slug) => {
+        routes.push(`svet/mesto/${slug}`)
+      })
+      placesCities2.forEach((slug) => {
+        routes.push(`svet/mesto/${slug}`)
+      })
+      placesCities3.forEach((slug) => {
+        routes.push(`svet/mesto/${slug}`)
+      })
+
+      // Places - Spots
+      placesSpots.forEach((slug) => {
+        routes.push(`svet/misto/${slug}`)
+      })
+
+      return routes
     }
   },
-
-  lazyload: {
-    directiveOnly: true,
-    loadingClass: 'loading',
-    loadedClass: 'loaded',
-    appendClass: 'lazyload-wrapper'
-  },
+  // Generate END
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
