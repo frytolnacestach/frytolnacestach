@@ -1,6 +1,10 @@
 <template>
-   <div class="o-map-google loading-image -green">
-        <gmap-map v-if="isHydrated" :center="center" :zoom="zoom" :options="mapOptions"></gmap-map>
+    <div class="o-map-google">
+        <div class="o-map-google__outer">
+            <div class="o-map-google__inner loading-image -green">
+                <gmap-map v-if="isHydrated" :center="center" :zoom="zoom" :options="mapOptions"></gmap-map>
+            </div>
+        </div>
     </div>
 </template>
 

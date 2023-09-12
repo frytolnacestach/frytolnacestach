@@ -1,0 +1,13 @@
+@media print {
+    .o-hero-place {
+        height: 45vw;
+
+        @media only screen and (min-width: $sm) {
+            height: 45vw;
+        }
+
+        @media only screen and (min-width: $lg) {
+            height: 45vw;
+        }
+    }
+}

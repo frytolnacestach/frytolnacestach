@@ -1,5 +1,5 @@
 <template>
-    <div class="m-button-place-add-visited" @click="deleteVisited(placeID)">
+    <div class="m-button-place-add-visited hidden-print" @click="deleteVisited(placeID)">
         <aTooltip text="Už jsem navštívil" />
     </div>
 </template>
