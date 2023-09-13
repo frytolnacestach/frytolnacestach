@@ -50,7 +50,7 @@
             return {
                 headline: 'Místa',
                 headlineFilter: 'Místa',
-                filterPlace: '',
+                filterPlace: null,
                 filterPlaceName: '',
                 images: [],
                 placesSpots: [],
@@ -85,10 +85,15 @@
                 //start loading
                 this.isLoading = true
 
+                // Variable
+                let placesResponse
+
                 //load places
-                const [placesResponse] = await Promise.all([
-                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-spots?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
-                ])
+                if (this.filterPlace !== null) {
+                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-spots?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
+                } else {
+                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-spots?showType=list&page=${this.page}&items=${this.perPage}`)
+                }
                 const { data: placesData } = placesResponse
 
                 //load images

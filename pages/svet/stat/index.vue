@@ -50,7 +50,7 @@
             return {
                 headline: 'Státy',
                 headlineFilter: 'Státy',
-                filterPlace: '',
+                filterPlace: null,
                 filterPlaceName: '',
                 images: [],
                 placesStates: [],
@@ -84,10 +84,15 @@
                 //start loading
                 this.isLoading = true
 
+                // Variable
+                let placesResponse
+
                 //load places
-                const [placesResponse] = await Promise.all([
-                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=list&idContinent=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
-                ]);
+                if (this.filterPlace !== null) {
+                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=list&idContinent=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
+                } else {
+                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=list&page=${this.page}&items=${this.perPage}`)
+                }
                 const { data: placesData } = placesResponse
 
                 //load images

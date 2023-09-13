@@ -70,10 +70,11 @@
                 //start loading
                 this.isLoading = true
 
+                // Variable
+                let placesResponse
+
                 //load places
-                const [placesResponse] = await Promise.all([
-                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-continents?showType=list&page=${this.page}&items=${this.perPage}`)
-                ]);
+                placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-continents?showType=list&page=${this.page}&items=${this.perPage}`)
                 const { data: placesData } = placesResponse
 
                 //load images

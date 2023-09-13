@@ -50,7 +50,7 @@
             return {
                 headline: 'Města',
                 headlineFilter: 'Města',
-                filterPlace: '',
+                filterPlace: null,
                 filterPlaceName: '',
                 images: [],
                 placesCities: [],
@@ -86,10 +86,15 @@
                 //start loading
                 this.isLoading = true
 
+                // Variable
+                let placesResponse
+
                 //load places
-                const [placesResponse] = await Promise.all([
-                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-cities?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
-                ])
+                if (this.filterPlace !== null) {
+                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-cities?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
+                } else {
+                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-cities?showType=list&page=${this.page}&items=${this.perPage}`)
+                }
                 const { data: placesData } = placesResponse
 
                 //load places parent
