@@ -39,39 +39,37 @@
 
         async created() {
             if (this.typePlaceFilter === "continents") {
-                const filterIDcontinent = this.$route.query.filterIDcontinent;
+                const filterIDcontinent = this.$route.query.filterIDcontinent
                 if (filterIDcontinent) {
-                    this.filterSelect = filterIDcontinent;
-                    this.updateParentVariable(this.filterSelect);
+                    this.filterSelect = parseInt(filterIDcontinent, 10)
                 }
             } else if (this.typePlaceFilter === "states") {
-                const filterIDstate = this.$route.query.filterIDstate;
+                const filterIDstate = this.$route.query.filterIDstate
                 if (filterIDstate) {
-                    this.filterSelect = filterIDstate;
-                    this.updateParentVariable(this.filterSelect);
+                    this.filterSelect = parseInt(filterIDcontinent, 10)
                 }
             }
-            await this.loadPlaces();
+            await this.loadPlaces()
         },
 
         methods: {
             async loadPlaces() {
+                // Variable
+                let placesResponse
+                
                 // COMPONENT - oFormFilterPlace
                 if (this.typePlaceFilter === "continents") {
                     // continents
-                    const [placesResponse] = await Promise.all([
-                        this.$axios.get(`https://api.frytolnacestach.cz/api/places-continents?showType=filter`)
-                    ])
+                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-continents?showType=filter`)
                     const { data: placesData } = placesResponse
                     this.filterPlaces = placesData
                 } else if (this.typePlaceFilter === "states") {
                     // states
-                    const [placesResponse] = await Promise.all([
-                        this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=filter`)
-                    ])
+                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=filter`)
                     const { data: placesData } = placesResponse
                     this.filterPlaces = placesData
                 }
+                this.updateParentVariable(this.filterSelect)
             },
 
             handleFilterSelectChange() {
@@ -80,11 +78,11 @@
             },
 
             updateParentVariable(id) {
-                const selectedFilterPlace = this.filterPlaces.find(place => place.id === id);
+                const selectedFilterPlace = this.filterPlaces.find(place => place.id === id)
                 if (selectedFilterPlace) {
-                    this.$emit('update', { id, name: selectedFilterPlace.name });
+                    this.$emit('update', { id, name: selectedFilterPlace.name })
                 } else {
-                    this.$emit('update', { id: null, name: null });
+                    this.$emit('update', { id: null, name: null })
                 }
             }
         }
