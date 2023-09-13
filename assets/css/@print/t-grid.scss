@@ -19,10 +19,12 @@
     
                 &.-hero-place {
                     grid-area: hero-place;
+                    display: block!important;
                 }
     
                 &.-map {
                     grid-area: map;
+                    display: block!important;
                 }
     
                 &.-hot-info-hero {

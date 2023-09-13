@@ -49,7 +49,7 @@
         data() {
             return {
                 headline: 'Místa',
-                headlineFilter: this.headline,
+                headlineFilter: 'Místa',
                 filterPlace: '',
                 filterPlaceName: '',
                 images: [],

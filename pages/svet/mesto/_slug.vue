@@ -9,7 +9,7 @@
         <!-- SECTION - BREADCRUMBS END -->
 
         <!-- SECTION - Buttons -->
-        <section class="t-section -px-world mt-1 -p0" v-if="isMobile">
+        <section class="t-section -px-world mt-1 -p0 hidden-print" v-if="isMobile">
             <div class="t-section__inner">
                 <oSwitchHero :show-hero.sync="showHero" />
             </div>
@@ -168,13 +168,14 @@
         </section>
         <!-- SECTION END -->
 
+        <!-- SECTION Videos, All cities and Articles -->
         <section class="t-section -p0">
             <div class="t-section__inner">
                 <div class="t-grid -world-ful">
                     <div class="t-grid__section -content">
 
                         <!-- SECTION - videos -->
-                        <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="videos[0]">
+                        <section class="t-section -p0 -bg-extra-dark-gray py-4 hidden-print" v-if="videos[0]">
                             <div class="t-section__inner">
                                 <mHeadline title="Videa z obce" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                 <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleAlign=" -p-left" />
@@ -192,7 +193,7 @@
                         <!-- SECTION - města - all - END -->
 
                         <!-- SECTION - articles -->
-                        <section class="t-section -p0 -bg-extra-dark-gray py-4" v-if="posts[0]">
+                        <section class="t-section -p0 -bg-extra-dark-gray py-4 hidden-print" v-if="posts[0]">
                             <div class="t-section__inner">
                                 <mHeadline title="Články z obce" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                 <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleAlign=" -p-left" />
@@ -204,6 +205,7 @@
                 </div>
             </div>
         </section>
+         <!-- SECTION Videos, All cities and Articles END -->
     </main>
 </template>
 

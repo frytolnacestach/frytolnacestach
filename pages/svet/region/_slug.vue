@@ -10,7 +10,7 @@
         <!-- SECTION - BREADCRUMBS END -->
 
         <!-- SECTION - Buttons -->
-        <section class="t-section -px-world mt-1 -p0" v-if="isMobile">
+        <section class="t-section -px-world mt-1 -p0 hidden-print" v-if="isMobile">
             <div class="t-section__inner">
                 <oSwitchHero :show-hero.sync="showHero" />
             </div>
@@ -94,8 +94,8 @@
         </section>
         <!-- SECTION END -->
 
-
-        <section class="t-section -p0">
+        <!-- SECTION Videos and Articles -->
+        <section class="t-section -p0 hidden-print">
             <div class="t-section__inner">
                 <div class="t-grid -world-ful">
                     <div class="t-grid__section -content">
@@ -122,6 +122,7 @@
                 </div>
             </div>
         </section>
+        <!-- SECTION Videos and Articles END -->
     </main>
 </template>
 

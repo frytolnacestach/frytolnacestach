@@ -9,7 +9,7 @@
         <!-- SECTION - BREADCRUMBS END -->
 
         <!-- SECTION - Buttons -->
-        <section class="t-section -px-world mt-1 -p0" v-if="isMobile">
+        <section class="t-section -px-world mt-1 -p0 hidden-print" v-if="isMobile">
             <div class="t-section__inner">
                 <div class="flex flex-end-all">
                     <span v-if="!showHero" @click="showHero = true" class="a-button-pure-icon -cover">Obrázek</span>
