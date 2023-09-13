@@ -1011,6 +1011,23 @@ export default {
           return data.map(v => `/svet/misto/${v.slug}`)
         },
         exclude: ['/**']
+      },
+      {
+        path: '/sitemap-filter.xml',
+        routes: async () => {
+          const continentsResponse = await axios.get('https://api.frytolnacestach.cz/api/places-continents')
+          const statesResponse = await axios.get('https://api.frytolnacestach.cz/api/places-states')
+
+          const continentRoutes = continentsResponse.data.map(v => `/svet/stat?filterIDcontinent=${v.id}`)
+          const stateRoutes = [
+            ...statesResponse.data.map(v => `/svet/region?filterIDstate=${v.id}`),
+            ...statesResponse.data.map(v => `/svet/mesto?filterIDstate=${v.id}`),
+            ...statesResponse.data.map(v => `/svet/misto?filterIDstate=${v.id}`)
+          ]
+
+          return [...continentRoutes, ...stateRoutes];
+        },
+        exclude: ['/**']
       }
     ]
   },
@@ -1076,6 +1093,8 @@ export default {
       const placesCities2 = placesCitiesData2.data.map((item) => item.slug)
       const placesCities3 = placesCitiesData3.data.map((item) => item.slug)
       const placesSpots = placesSpotsData.data.map((item) => item.slug)
+      const placesContinentsID = placesContinentsData.data.map((item) => item.id)
+      const placesStatesID = placesStatesData.data.map((item) => item.id)
 
       // Const
       const routes = []
@@ -1172,6 +1191,18 @@ export default {
       // Places - Spots
       placesSpots.forEach((slug) => {
         routes.push(`svet/misto/${slug}`)
+      })
+
+      // Filter - Continent
+      placesContinentsID.forEach((id) => {
+        routes.push(`svet/stat?filterIDcontinent=${id}`)
+      })
+
+      // Filter - State
+      placesStatesID.forEach((id) => {
+        routes.push(`svet/region?filterIDstate=${id}`)
+        routes.push(`svet/mesto?filterIDstate=${id}`)
+        routes.push(`svet/misto?filterIDstate=${id}`)
       })
 
       return routes
