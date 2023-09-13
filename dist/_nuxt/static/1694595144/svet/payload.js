@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svet", (function(a){return {data:[{}],fetch:{"OrganismsoWorldTypeComponent:0":{_error:{message:"request to https:\u002F\u002Fapi.frytolnacestach.cz\u002Fapi\u002Fplaces-count failed, reason: connect ETIMEDOUT 76.76.21.123:443",type:"system",errno:a,code:a,statusCode:500}}},mutations:void 0}}("ETIMEDOUT")));
