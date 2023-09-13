@@ -80,12 +80,15 @@
         },
 
         async mounted() {
-            await this.loadPlaces()
+            const filterIDstate = this.$route.query.filterIDstate
+            if (!filterIDstate) {
+                await this.loadPlaces()
+            }
             this.addScrollListener()
         },
 
         methods:{
-            async loadPlaces() {
+            async loadPlaces(reset) {
                 //start loading
                 this.isLoading = true
 
@@ -108,10 +111,20 @@
                     this.images = this.images.concat(imagesData)
                 
                     // add to placecesData to placesSpots
-                    this.placesSpots = this.placesSpots.concat(placesData)
+                    if (reset) {
+                        // Reset Arrays after change filter
+                        this.placesSpots = placesData
+                    } else {
+                        this.placesSpots = this.placesSpots.concat(placesData)
+                    }
                 } else {
                     // add to placecesData to placesSpots
-                    this.placesSpots = this.placesSpots.concat(placesData)
+                    if (reset) {
+                        // Reset Arrays after change filter
+                        this.placesSpots = placesData
+                    } else {
+                        this.placesSpots = this.placesSpots.concat(placesData)
+                    }
                 } 
 
                 //no more items?
@@ -182,7 +195,7 @@
                 this.noMoreItems = false
                 this.page = 1
                 this.perPage = 20
-                this.loadPlaces()
+                this.loadPlaces(true)
                 this.updateHeadline()
             }
         },

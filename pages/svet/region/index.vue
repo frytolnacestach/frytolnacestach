@@ -79,12 +79,17 @@
         },
 
         async mounted() {
-            await this.loadPlaces()
+            // Existing Select filter?
+            const filterIDstate = this.$route.query.filterIDstate
+            if (!filterIDstate) {
+                await this.loadPlaces()
+            }
+            // Call listener for scrolling
             this.addScrollListener()
         },
 
         methods:{
-            async loadPlaces() {
+            async loadPlaces(reset) {
                 //start loading
                 this.isLoading = true
 
@@ -107,10 +112,20 @@
                     this.images = this.images.concat(imagesData)
 
                     // add to placecesData to placesRegions
-                    this.placesRegions = this.placesRegions.concat(placesData)
+                    if (reset) {
+                        // Reset Arrays after change filter
+                        this.placesRegions = placesData
+                    } else {
+                        this.placesRegions = this.placesRegions.concat(placesData)
+                    }
                 } else {
                     // add to placecesData to placesRegions
-                    this.placesRegions = this.placesRegions.concat(placesData)
+                    if (reset) {
+                        // Reset Arrays after change filter
+                        this.placesRegions = placesData
+                    } else {
+                        this.placesRegions = this.placesRegions.concat(placesData)
+                    }
                 }
 
                 //no more items?
@@ -175,13 +190,13 @@
             filterUpdate(newValue) {
                 this.filterPlace = newValue.id
                 this.filterPlaceName = newValue.name
-                this.images = []
-                this.placesRegions = []
+                this.images = [],
+                this.placesRegions = [],
                 this.isLoading = false
                 this.noMoreItems = false
                 this.page = 1
                 this.perPage = 20
-                this.loadPlaces()
+                this.loadPlaces(true)
                 this.updateHeadline()
             }
         },
