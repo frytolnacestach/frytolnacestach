@@ -62,17 +62,21 @@
             }
         },
 
-        head: {
-            title: 'Místa | Cestovatelský portál Frytol na cestách',
-            meta: [
-                { hid: 'description', name: 'description', content: 'Zjisti si základní informace o místech za pomocí cestovatelského portálu Frytol na cestách.' },
-                { name: 'keywords', content: `místa, informace o místech, plánuj cestu, cestovatelský portál, cestování, svět` },
-                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Regiony | Cestovatelský portál Frytol na cestách' },
-                { hid: 'og:description', content: 'Zjisti si základní informace o místech za pomocí cestovatelského portálu Frytol na cestách.' },
-                { hid: 'og:url', content: `${process.env.baseUrl}/svet/misto` },
-                { hid: 'og:type', content: 'website' }  
-            ]
+        head() {
+            let title = `${this.headlineFilter} | Cestovatelský portál Frytol na cestách`
+
+            return {
+                title,
+                    meta: [
+                    { hid: 'description', name: 'description', content: 'Zjisti si základní informace o místech za pomocí cestovatelského portálu Frytol na cestách.' },
+                    { name: 'keywords', content: `místa, informace o místech, plánuj cestu, cestovatelský portál, cestování, svět` },
+                    { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: 'Zjisti si základní informace o místech za pomocí cestovatelského portálu Frytol na cestách.' },
+                    { hid: 'og:url', content: `${process.env.baseUrl}/svet/misto` },
+                    { hid: 'og:type', content: 'website' }  
+                ]
+            }
         },
 
         async mounted() {

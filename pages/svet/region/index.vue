@@ -61,17 +61,21 @@
             }
         },
 
-        head: {
-            title: 'Regiony | Cestovatelský portál Frytol na cestách',
-            meta: [
-                { hid: 'description', name: 'description', content: 'Zjisti si základní informace o regionech. a místech které se v nich nachází za pomocí cestovatelského portálu Frytol na cestách.' },
-                { name: 'keywords', content: `regiony, informace o regionech, plánuj cestu, cestovatelský portál, cestování, svět` },
-                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Regiony | Cestovatelský portál Frytol na cestách' },
-                { hid: 'og:description', content: 'Zjisti si základní informace o regionech. a místech které se v nich nachází za pomocí cestovatelského portálu Frytol na cestách.' },
-                { hid: 'og:url', content: `${process.env.baseUrl}/svet/region` },
-                { hid: 'og:type', content: 'website' }  
-            ]
+        head() {
+            let title = `${this.headlineFilter} | Cestovatelský portál Frytol na cestách`
+
+            return {
+                title,
+                meta: [
+                    { hid: 'description', name: 'description', content: 'Zjisti si základní informace o regionech. a místech které se v nich nachází za pomocí cestovatelského portálu Frytol na cestách.' },
+                    { name: 'keywords', content: `regiony, informace o regionech, plánuj cestu, cestovatelský portál, cestování, svět` },
+                    { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: 'Zjisti si základní informace o regionech. a místech které se v nich nachází za pomocí cestovatelského portálu Frytol na cestách.' },
+                    { hid: 'og:url', content: `${process.env.baseUrl}/svet/region` },
+                    { hid: 'og:type', content: 'website' }  
+                ]
+            }
         },
 
         async mounted() {
