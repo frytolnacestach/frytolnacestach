@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/mesto", {data:[{}],fetch:{},mutations:void 0});

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/social", (function(a){return {data:[{}],fetch:{"OrganismsoBoxPlatformComponent:0":{_error:{message:"request to https:\u002F\u002Fapi.frytolnacestach.cz\u002Fapi\u002Fplatforms failed, reason: connect ETIMEDOUT 76.76.21.123:443",type:"system",errno:a,code:a,statusCode:500}}},mutations:void 0}}("ETIMEDOUT")));
