@@ -1,0 +1,73 @@
+.o-account-banner {
+    $self: &;
+
+    width: 100%;
+
+    &__outer {
+        width: 100%;
+    }
+
+    &__inner {
+        width: 100%;
+        padding: 13px 15px;
+        background-color: $c-gray-bg-component-light-super;
+        border-radius: $br-2;
+    }
+
+    &__headline {
+        color: $c-gray-t-dark-super;
+        font-size: $fs-normal-l;
+    }
+
+    &__description {
+        color: $c-gray-t-dark;
+        padding: 5px 0 10px;
+    }
+
+    &__buttons {
+        width: 100%;
+    }
+
+    // thema
+    &.-blue {
+        #{$self}__inner {
+            background-color: $c-blue-bg-component-light-super;
+        }
+
+        #{$self}__headline {
+            color: $c-blue-t-dark-super;
+        }
+
+        #{$self}__inner {
+            color: $c-blue-t-dark;
+        }
+    }
+
+    &.-gray {
+        #{$self}__inner {
+            background-color: $c-gray-bg-component-light-super;
+        }
+
+        #{$self}__headline {
+            color: $c-gray-t-dark-super;
+        }
+
+        #{$self}__inner {
+            color: $c-gray-t-dark;
+        }
+    }
+
+    &.-green {
+        #{$self}__inner {
+            background-color: $c-green-bg-component-light-super;
+        }
+
+        #{$self}__headline {
+            color: $c-green-t-dark-super;
+        }
+
+        #{$self}__inner {
+            color: $c-green-t-dark;
+        }
+    }
+}

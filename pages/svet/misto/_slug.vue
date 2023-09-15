@@ -91,6 +91,14 @@
                         </section>
                         <!-- SECTION - Visited button - sidebar - END -->
 
+                        <!-- SECTION - Account banner - sidebar -->
+                        <section class="t-section -px-world my-1">
+                            <div class="t-section__inner">
+                                <oAccountBanner styleThema=" -green" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Account banner - sidebar END -->
+
                         <!-- SECTION - Events - sidebar -->
                         <oSidebarList :place="this.place[0].id" type="spot" />
                         <!-- SECTION - Events - sidebar - END -->
@@ -144,6 +152,7 @@
 <script>
     import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
+    import oAccountBanner from '~/components/organisms/oAccountBanner.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
@@ -163,6 +172,7 @@
         components: {
             mNavBreadcrumbsPlace,
             mHeadline,
+            oAccountBanner,
             oAdGoogleSidebar,
             oArticleList,
             oHeroPlace,

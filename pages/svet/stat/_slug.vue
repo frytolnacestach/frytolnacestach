@@ -133,6 +133,14 @@
                                 </section>
                                 <!-- SECTION - Visited button - sidebar - END -->
 
+                                <!-- SECTION - Account banner - sidebar -->
+                                <section class="t-section -px-world my-1">
+                                    <div class="t-section__inner">
+                                        <oAccountBanner styleThema=" -green" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Account banner - sidebar END -->
+
                                 <!-- SECTION - time - sidebar -->
                                 <section class="t-section -px-world">
                                     <div class="t-section__inner">
@@ -254,6 +262,14 @@
                                 </section>
                                 <!-- SECTION - Visited button - sidebar - END -->
 
+                                <!-- SECTION - Account banner - sidebar -->
+                                <section class="t-section -px-world my-1">
+                                    <div class="t-section__inner">
+                                        <oAccountBanner styleThema=" -green" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Account banner - sidebar END -->
+
                                 <!-- SECTION - Events - sidebar -->
                                 <oSidebarList :place="this.place[0].id" type="state" />
                                 <!-- SECTION - Events - sidebar - END -->
@@ -305,6 +321,14 @@
                                     </div>
                                 </section>
                                 <!-- SECTION - Visited button - sidebar - END -->
+
+                                <!-- SECTION - Account banner - sidebar -->
+                                <section class="t-section -px-world my-1">
+                                    <div class="t-section__inner">
+                                        <oAccountBanner styleThema=" -green" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Account banner - sidebar END -->
 
                                 <section class="t-section-print">
                                     <!-- SECTION - Měna -->
@@ -362,6 +386,14 @@
                                 </section>
                                 <!-- SECTION - Visited button - sidebar - END -->
 
+                                <!-- SECTION - Account banner - sidebar -->
+                                <section class="t-section -px-world my-1">
+                                    <div class="t-section__inner">
+                                        <oAccountBanner styleThema=" -green" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Account banner - sidebar END -->
+
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world my-2">
                                     <div class="t-section__inner">
@@ -401,6 +433,14 @@
                                     </div>
                                 </section>
                                 <!-- SECTION - Visited button - sidebar - END -->
+
+                                <!-- SECTION - Account banner - sidebar -->
+                                <section class="t-section -px-world my-1">
+                                    <div class="t-section__inner">
+                                        <oAccountBanner styleThema=" -green" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Account banner - sidebar END -->
 
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world my-2">
@@ -449,6 +489,14 @@
                                     </div>
                                 </section>
                                 <!-- SECTION - Visited button - sidebar - END -->
+
+                                <!-- SECTION - Account banner - sidebar -->
+                                <section class="t-section -px-world my-1">
+                                    <div class="t-section__inner">
+                                        <oAccountBanner styleThema=" -green" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Account banner - sidebar END -->
 
                                 <!-- SECTION - links - sidebar -->
                                 <section class="t-section -px-world">
@@ -522,6 +570,14 @@
                                 </section>
                                 <!-- SECTION - Visited button - sidebar - END -->
 
+                                <!-- SECTION - Account banner - sidebar -->
+                                <section class="t-section -px-world my-1">
+                                    <div class="t-section__inner">
+                                        <oAccountBanner styleThema=" -green" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Account banner - sidebar END -->
+
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world my-2">
                                     <div class="t-section__inner">
@@ -563,6 +619,7 @@
     import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
     import mNavPlace from '~/components/molecules/mNavPlace.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
+    import oAccountBanner from '~/components/organisms/oAccountBanner.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oAlerts from '~/components/organisms/oAlerts.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
@@ -598,6 +655,7 @@
             mNavBreadcrumbsPlace,
             mNavPlace,
             mHeadline,
+            oAccountBanner,
             oAdGoogleSidebar,
             oAlerts,
             oArticleList,

@@ -147,6 +147,14 @@
                         </section>
                         <!-- SECTION - Visited button - sidebar - END -->
 
+                        <!-- SECTION - Account banner - sidebar -->
+                        <section class="t-section -px-world my-1">
+                            <div class="t-section__inner">
+                                <oAccountBanner styleThema=" -green" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Account banner - sidebar END -->
+
                         <!-- SECTION - Parking - sidebar -->
                         <oSidebarParking :items="this.place[0].parking" />
                         <!-- SECTION - Parking - sidebar - END -->
@@ -212,6 +220,7 @@
 <script>
     import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
+    import oAccountBanner from '~/components/organisms/oAccountBanner.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oAlerts from '~/components/organisms/oAlerts.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
@@ -236,6 +245,7 @@
         components: {
             mNavBreadcrumbsPlace,
             mHeadline,
+            oAccountBanner,
             oAdGoogleSidebar,
             oAlerts,
             oArticleList,
