@@ -1,0 +1,56 @@
+.o-language-phrases {
+    width: 100%;
+
+    &__outer {
+        background-color: $c-green-bg-component-light-super;
+        border-radius: $br-2;
+        margin: 5px 0;
+    
+        @media only screen and (min-width: $ti) {
+            margin: 10px 0;
+            border-radius: $br-4;
+        }
+    }
+
+    &__inner {
+        padding: 20px;
+    }
+
+    &__headline {
+        font-size: $fs-large-l;
+        margin-bottom: 20px;
+        color: $c-green-t-dark;
+        border-bottom: 1px solid $c-green-bg-component-light;
+    }
+
+    &__items {
+        width: 100%;
+    }
+
+    &__item {
+        display: flex;
+        padding-bottom: 3px;
+    }
+
+    &__value {
+        padding: 3px;
+
+        &.-czech {
+            font-size: $fs-normal-ss;
+        }
+
+        &.-foreign {
+            font-weight: 600;
+            font-size: $fs-small;
+        }
+
+        &.-foreign_arabic {
+            font-size: $fs-normal-s;
+        }
+
+        &.-phonetic-transcription {
+            font-style: italic;
+            font-size: $fs-small-l;
+        }
+    }
+}

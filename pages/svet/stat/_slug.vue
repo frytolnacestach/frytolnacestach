@@ -375,6 +375,14 @@
                                     </div>
                                 </section>
                                 <!-- SECTION - Lidé národnost END -->
+
+                                <!-- SECTION - Jazykové fráze -->
+                                <section class="t-section -px-world -p0" v-if="place[0].language_phrases">
+                                    <div class="t-section__inner">
+                                        <oLanguagePhrases :data="place[0].language_phrases" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Jazykové fráze END -->
                             </div>
 
                             <div class="t-grid__section -ad">
@@ -631,6 +639,7 @@
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
+    import oLanguagePhrases from '~/components/organisms/oLanguagePhrases.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oChartPie from '@/components/organisms/oChartPie.vue'
     import oOrganizationList from '~/components/organisms/oOrganizationList.vue'
@@ -667,6 +676,7 @@
             oHeroPlace,
             oHotInfoHero,
             oInformationBlock,
+            oLanguagePhrases,
             oMapGoogle,
             oChartPie,
             oOrganizationList,
