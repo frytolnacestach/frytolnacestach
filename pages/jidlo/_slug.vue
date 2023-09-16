@@ -99,11 +99,13 @@
         },
 
         head() {
+            let metaSeoTags = this.food[0].seo_tags.map(item => item.tag).join(", ")
+
             return {
                 title: `${this.food[0].name ? this.food[0].name : 'Jídlo'} | Cestovatelský portál Frytol na cestách`,
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.food[0].description ? this.food[0].description.slice(0, this.food[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.food[0].name}` },
-                    { name: 'keywords', content: `${this.food[0].name + ', Jídla, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět'}` },
+                    { name: 'keywords', content: `${this.food[0].name + metaSeoTags + ', Jídla, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět'}` },
                     { property: 'og:image', content: `${this.food[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageFood.find(image => image.id === this.food[0].id_image_hero).source + this.imageFood.find(image => image.id === this.food[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
                     { hid: 'og:title', content: `${this.food[0].name ? this.food[0].name : 'Jídlo'} | Cestovatelský portál Frytol na cestách` },
                     { hid: 'og:description', content: `${this.food[0].description ? this.food[0].description.slice(0, this.food[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.food[0].name ? this.food[0].name : 'Jídlo'}` },

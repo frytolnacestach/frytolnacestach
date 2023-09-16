@@ -285,11 +285,13 @@
         },
 
         head() {
+            let metaSeoTags = this.place[0].seo_tags.map(item => item.tag).join(", ")
+
             return {
                 title: `${this.place[0].name ? this.place[0].name : 'Region'} | Cestovatelský portál Frytol na cestách`,
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name}` },
-                    { name: 'keywords', content: `${this.place[0].name + ', region, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'}` },
+                    { name: 'keywords', content: `${this.place[0].name + metaSeoTags + ', region, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'}` },
                     { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
                     { hid: 'og:title', content: `${this.place[0].name ? this.place[0].name : 'Region'} | Cestovatelský portál Frytol na cestách` },
                     { hid: 'og:description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Region'}` },

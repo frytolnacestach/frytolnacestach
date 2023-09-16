@@ -100,11 +100,13 @@
         },
 
         head() {
+            let metaSeoTags = this.fauna[0].seo_tags.map(item => item.tag).join(", ")
+
             return {
                 title: `${this.fauna[0].name ? this.fauna[0].name : 'Fauna'} | Cestovatelský portál Frytol na cestách`,
                 meta: [
                     { hid: 'description', name: 'description', content: `${this.fauna[0].description ? this.fauna[0].description.slice(0, this.fauna[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.fauna[0].name}` },
-                    { name: 'keywords', content: `${this.fauna[0].name + ', Fauna, Živočichové, informace o živočichách, plánuj cestu, cestovatelský portál, cestování, svět'}` },
+                    { name: 'keywords', content: `${this.fauna[0].name + metaSeoTags + ', Fauna, Živočichové, informace o živočichách, plánuj cestu, cestovatelský portál, cestování, svět'}` },
                     { property: 'og:image', content: `${this.fauna[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageFauna.find(image => image.id === this.fauna[0].id_image_hero).source + this.imageFauna.find(image => image.id === this.fauna[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
                     { hid: 'og:title', content: `${this.fauna[0].name ? this.fauna[0].name : 'Flóra'} | Cestovatelský portál Frytol na cestách` },
                     { hid: 'og:description', content: `${this.fauna[0].description ? this.fauna[0].description.slice(0, this.fauna[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.fauna[0].name ? this.fauna[0].name : 'Fauna'}` },
