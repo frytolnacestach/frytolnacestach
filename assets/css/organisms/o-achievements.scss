@@ -84,19 +84,22 @@
 
         // Modify - value
         &.-value-bronze {
+            
             #{$self}__content {
                 background: $achievement-bronze-bg-1;
                 background: linear-gradient(135deg, $achievement-bronze-bg-1 0%, $achievement-bronze-bg-2 48%, $achievement-bronze-bg-3 100%);
                 color: $achievement-bronze-t-light;
         
-                &:after {
+                &::after {
                     color: $achievement-bronze-t-light;
                 }
             }
 
             #{$self}__medal {
         
-                &:after {
+                &::after {
+                    content: map-get($icomoon-default, 'award');
+                    color: $gray8;
                     background-color: $achievement-bronze-medail;
                 }
             }
@@ -124,19 +127,22 @@
         }
 
         &.-value-silver {
+            
             #{$self}__content {
                 background: $achievement-silver-bg-1;
                 background: linear-gradient(135deg, $achievement-silver-bg-1 0%, $achievement-silver-bg-2 48%, $achievement-silver-bg-3 100%);
                 color: $achievement-silver-t-light;
         
-                &:after {
+                &::after {
                     color: $achievement-silver-t-light;
                 }
             }
 
             #{$self}__medal {
         
-                &:after {
+                &::after {
+                    content: map-get($icomoon-default, 'award1');
+                    color: $gray4;
                     background-color: $achievement-silver-medail;
                 }
             }
@@ -164,19 +170,22 @@
         }
 
         &.-value-gold {
+
             #{$self}__content {
                 background: $achievement-gold-bg-1;
                 background: linear-gradient(135deg, $achievement-gold-bg-1 0%, $achievement-gold-bg-2 48%, $achievement-gold-bg-3 100%);
                 color: $achievement-gold-t-light;
         
-                &:after {
+                &::after {
                     color: $achievement-gold-t-light;
                 }
             }
 
             #{$self}__medal {
         
-                &:after {
+                &::after {
+                    content: map-get($icomoon-default, 'medal');
+                    color: $gray8;
                     background-color: $achievement-gold-medail;
                 }
             }
@@ -209,14 +218,16 @@
                 background: linear-gradient(135deg, $achievement-diamond-bg-1 0%, $achievement-diamond-bg-2 48%, $achievement-diamond-bg-3 100%);
                 color: $achievement-diamond-t-light;
         
-                &:after {
+                &::after {
                     color: $achievement-diamond-t-light;
                 }
             }
 
             #{$self}__medal {
         
-                &:after {
+                &::after {
+                    content: map-get($icomoon-default, 'diamond');
+                    color: $gray7;
                     background-color: $achievement-diamond-medail;
                 }
             }
@@ -282,13 +293,18 @@
         position: relative;
         min-height: 60px;
 
-        &:after {
+        &::after {
             content: '';
+            color: $black;
+            font-size: $fs-icon-40;
+            line-height: 60px;
+            text-align: center;
             position: absolute;
             background-color: $achievement-default-medail;
             width: 60px;
             height: 60px;
             border-radius: 30px;
+            font-family: $ff-icomoon-default;
         }
     }
 

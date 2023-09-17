@@ -88,9 +88,9 @@
             }
         }
 
-        &.-checkmark {
+        &.-trophy {
             &::after {
-                content: map-get($icomoon-default, 'checkmark');
+                content: map-get($icomoon-default, 'trophy');
             }
         }
 
