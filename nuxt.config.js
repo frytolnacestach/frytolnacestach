@@ -938,6 +938,22 @@ export default {
         exclude: ['/**']
       },
       {
+        path: '/sitemap-chains.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://api.frytolnacestach.cz/api/chains')
+          return data.map(v => `/retezec/${v.slug}`)
+        },
+        exclude: ['/**']
+      },
+      {
+        path: '/sitemap-wall-sockets.xml',
+        routes: async () => {
+          let { data } = await axios.get('https://api.frytolnacestach.cz/api/wall-sockets')
+          return data.map(v => `/elektricka-zasuvka/${v.slug}`)
+        },
+        exclude: ['/**']
+      },
+      {
         path: '/sitemap-events.xml',
         routes: async () => {
           let { data } = await axios.get('https://api.frytolnacestach.cz/api/events')
@@ -1044,6 +1060,8 @@ export default {
         faunasData,
         florasData,
         brandsData,
+        chainsData,
+        wallSocketsData,
         travelDictionariesData,
         eventsData,
         usersData,
@@ -1062,6 +1080,8 @@ export default {
         axios.get('https://api.frytolnacestach.cz/api/faunas'),
         axios.get('https://api.frytolnacestach.cz/api/floras'),
         axios.get('https://api.frytolnacestach.cz/api/brands'),
+        axios.get('https://api.frytolnacestach.cz/api/chains'),
+        axios.get('https://api.frytolnacestach.cz/api/wall-sockets'),
         axios.get('https://api.frytolnacestach.cz/api/travel-dictionaries'),
         axios.get('https://api.frytolnacestach.cz/api/events'),
         axios.get('https://api.frytolnacestach.cz/api/users'),
@@ -1082,6 +1102,8 @@ export default {
       const faunas = faunasData.data.map((item) => item.slug)
       const floras = florasData.data.map((item) => item.slug)
       const brands = brandsData.data.map((item) => item.slug)
+      const chains = chainsData.data.map((item) => item.slug)
+      const wallSockets = wallSocketsData.data.map((item) => item.slug)
       const travelDictionaries = travelDictionariesData.data.map((item) => item.slug)
       const events = eventsData.data.map((item) => item.slug)
       const users = usersData.data.map((item) => item.slug)
@@ -1127,6 +1149,16 @@ export default {
       // Brands
       brands.forEach((slug) => {
         routes.push(`znacka/${slug}`)
+      })
+
+      // Chains
+      chains.forEach((slug) => {
+        routes.push(`retezec/${slug}`)
+      })
+
+      // Wall Sockets
+      wallSockets.forEach((slug) => {
+        routes.push(`elektricka-zasuvka/${slug}`)
       })
 
       // Travel Dictionaries

@@ -61,6 +61,12 @@
                     <li class="m-nav-footer__item">
                         <NuxtLink class="m-nav-footer__link" to="/znacka">Značky</NuxtLink>
                     </li>
+                    <li class="m-nav-footer__item">
+                        <NuxtLink class="m-nav-footer__link" to="/retezec">Řetězce</NuxtLink>
+                    </li>
+                    <li class="m-nav-footer__item">
+                        <NuxtLink class="m-nav-footer__link" to="/elektricka-zasuvka">Elektrické zásuvky</NuxtLink>
+                    </li>
                 </ul>
             </div>
 
