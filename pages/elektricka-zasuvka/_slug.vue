@@ -99,7 +99,10 @@
         },
 
         head() {
-            let metaSeoTags = this.wallSockets[0].seo_tags.map(item => item.tag).join(", ")
+            let metaSeoTags
+            if (this.wallSockets[0].seo_tags && this.wallSockets[0].seo_tags.length > 0) {
+                metaSeoTags = this.wallSockets[0].seo_tags.map(item => item.tag).join(", ")
+            }
 
             return {
                 title: `${this.wallSockets[0].name ? this.wallSockets[0].name : 'Elektrikcá zásuvka'} | Cestovatelský portál Frytol na cestách`,

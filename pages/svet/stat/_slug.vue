@@ -117,6 +117,14 @@
                                 <oCoverItemState type="znacka" title="Značky a výrobky ze státu" :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
                                 <!-- SECTION - Flora Značky END -->
 
+                                <!-- SECTION - Značky list -->
+                                <oCoverItemState type="elektricka-zasuvka" title="Elektrické zásuvky použivané ve státě" :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
+                                <!-- SECTION - Flora Značky END -->
+
+                                <!-- SECTION - Značky list -->
+                                <oCoverItemState type="retezec" title="Řetězce ve státě" :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
+                                <!-- SECTION - Flora Značky END -->
+
                                 <!-- SECTION - Review -->
                                 <oReviewItem :IDplace="place[0].id" type="state" v-if="place[0].id" />
                                 <!-- SECTION - Review END -->
@@ -849,7 +857,10 @@
                 title = tabTitle
             }
 
-            let metaSeoTags = this.place[0].seo_tags.map(item => item.tag).join(", ")
+            let metaSeoTags
+            if (this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
+                metaSeoTags = this.place[0].seo_tags.map(item => item.tag).join(", ")
+            }
 
             return {
                 title,

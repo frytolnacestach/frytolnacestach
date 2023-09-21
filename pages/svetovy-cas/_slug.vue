@@ -173,7 +173,10 @@
             const defaultTitle = `Jaký je čas ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
             let title = defaultTitle
 
-            let metaSeoTags = this.place[0].seo_tags.map(item => item.tag).join(", ")
+            let metaSeoTags
+            if (this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
+                metaSeoTags = this.place[0].seo_tags.map(item => item.tag).join(", ")
+            }
 
             return {
                 title,

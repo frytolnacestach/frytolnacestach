@@ -229,7 +229,10 @@
         },
 
         head() {
-            let metaSeoTags = this.post[0].seo_tags.map(item => item.tag).join(", ")
+            let metaSeoTags
+            if (this.post[0].seo_tags && this.post[0].seo_tags.length > 0) {
+                metaSeoTags = this.post[0].seo_tags.map(item => item.tag).join(", ")
+            }
 
             return {
                 title: `${this.post[0].title} | Cestovatelský portál Frytol na cestách`,

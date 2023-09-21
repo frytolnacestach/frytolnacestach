@@ -70,7 +70,7 @@
                                 <h2 class="o-cover-item-state__name">
                                     {{ item.name }}
                                 </h2>
-                                <NuxtLink class="o-cover-item-state__link" :to="`/${type}/${item.slug}`" :aria-label="`Čti více o jídle ${item.name}`"></NuxtLink>
+                                <NuxtLink class="o-cover-item-state__link" :to="`/${type}/${item.slug}`" :aria-label="`Čti více o ${item.name}`"></NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -136,6 +136,12 @@
                     } else if ( this.type === "znacka" ) {
                         // Načtení značek z místa
                         items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/brands-id-state/${this.placeStateID}?showType=list`) : []
+                    } else if ( this.type === "elektricka-zasuvka" ) {
+                        // Načtení značek z místa
+                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/wall-sockets-id-state/${this.placeStateID}?showType=list`) : []
+                    } else if ( this.type === "retezec" ) {
+                        // Načtení značek z místa
+                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/chains-id-state/${this.placeStateID}?showType=list`) : []
                     }
 
                     // Načtení informací o obrázcích pro items

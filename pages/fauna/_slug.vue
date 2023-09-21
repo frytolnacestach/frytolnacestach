@@ -100,7 +100,10 @@
         },
 
         head() {
-            let metaSeoTags = this.fauna[0].seo_tags.map(item => item.tag).join(", ")
+            let metaSeoTags
+            if (this.fauna[0].seo_tags && this.fauna[0].seo_tags.length > 0) {
+                metaSeoTags = this.fauna[0].seo_tags.map(item => item.tag).join(", ")
+            }
 
             return {
                 title: `${this.fauna[0].name ? this.fauna[0].name : 'Fauna'} | Cestovatelský portál Frytol na cestách`,
