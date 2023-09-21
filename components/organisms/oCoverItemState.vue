@@ -137,10 +137,10 @@
                         // Načtení značek z místa
                         items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/brands-id-state/${this.placeStateID}?showType=list`) : []
                     } else if ( this.type === "elektricka-zasuvka" ) {
-                        // Načtení značek z místa
+                        // Načtení elektrických zásuvek z místa
                         items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/wall-sockets-id-state/${this.placeStateID}?showType=list`) : []
                     } else if ( this.type === "retezec" ) {
-                        // Načtení značek z místa
+                        // Načtení řetěscům z místa
                         items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/chains-id-state/${this.placeStateID}?showType=list`) : []
                     }
 
