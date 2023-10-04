@@ -188,7 +188,10 @@
         },
 
         head() {
-            let metaSeoTags = this.place[0].seo_tags.map(item => item.tag).join(", ")
+            let metaSeoTags
+            if (this.event[0].seo_tags && this.event[0].seo_tags.length > 0) {
+                this.event[0].seo_tags.map(item => item.tag).join(", ")
+            }
 
             return {
                 title: `${this.event[0].name ? this.event[0].name : 'Region'} | Cestovatelský portál Frytol na cestách`,
