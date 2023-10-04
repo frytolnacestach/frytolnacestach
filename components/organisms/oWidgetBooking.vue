@@ -42,6 +42,14 @@
                 type: String,
                 required: true
             },
+            dateStart: {
+                type: String,
+                required: false
+            },
+            dateEnd: {
+                type: String,
+                required: false
+            },
             zoom: {
                 type: Number,
                 required: true

@@ -79,6 +79,8 @@
                                         :latitude=parseFloat(coordinate.latitude)
                                         :longitude=parseFloat(coordinate.longitude)
                                         :zoom=event[0].zoom[0].booking
+                                        :dateStart=event[0].date_start
+                                        :dateEnd=event[0].date_end
                                     />
                                 </div>
                             </div>
