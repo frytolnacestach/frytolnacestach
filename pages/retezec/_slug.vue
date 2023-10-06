@@ -90,8 +90,8 @@
                 mNavBreadcrumbschainArray: [
                     {
                         id: 1,
-                        name: "Značka",
-                        url: "/znacka",
+                        name: "Řetězec",
+                        url: "/retezec",
                         status: "link"
                     }
                 ]

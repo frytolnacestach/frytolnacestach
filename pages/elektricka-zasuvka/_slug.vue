@@ -90,8 +90,8 @@
                 mNavBreadcrumbsWallSocketsArray: [
                     {
                         id: 1,
-                        name: "Značka",
-                        url: "/znacka",
+                        name: "Elektricka zásuvka",
+                        url: "/elektrické zásuvky",
                         status: "link"
                     }
                 ]
