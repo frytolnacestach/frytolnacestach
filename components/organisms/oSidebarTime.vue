@@ -288,6 +288,7 @@
                     'VU': 'Pacific/Efate',
                     'WF': 'Pacific/Wallis',
                     'WS': 'Pacific/Apia',
+                    'XK': 'Europe/Belgrade',
                     'YE': 'Asia/Aden',
                     'YT': 'Indian/Mayotte',
                     'ZA': 'Africa/Johannesburg',
