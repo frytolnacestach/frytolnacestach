@@ -123,7 +123,7 @@
                         type: '-type-world-state',
                         value: '-value-diamond',
                         actual: achievements[0].state,
-                        need: 249,
+                        need: 250,
                         name: 'Diamantový Státní Mistr',
                         description: ''
                     },
