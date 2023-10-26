@@ -146,6 +146,14 @@ null
 ##### Square
 172, 186, 210, 224, 240, 274, 306, 360
 
+#### chains
+##### Horizontal
+330, 360, 420, 536, 728, 780, 900, 952, 1248
+##### Vertical
+null
+##### Square
+172, 186, 210, 224, 240, 274, 306, 360
+
 #### gallery
 ##### Horizontal
 null
@@ -201,6 +209,14 @@ null
 null
 ##### Square
 null
+
+#### wall_sockets
+##### Horizontal
+330, 360, 420, 536, 728, 780, 900, 952, 1248
+##### Vertical
+null
+##### Square
+172, 186, 210, 224, 240, 274, 306, 360
 
 #### world/cities
 ##### Horizontal
