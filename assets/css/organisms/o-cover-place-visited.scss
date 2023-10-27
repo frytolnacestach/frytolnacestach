@@ -40,7 +40,9 @@
 
         &:hover {
             #{$self}__image-lazyload {
-                transform: scale(1.1);
+                @media not all and (pointer: coarse) {
+                    transform: scale(1.1);
+                }
             }
         }
     }

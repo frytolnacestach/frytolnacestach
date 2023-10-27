@@ -26,12 +26,6 @@
                 width: 20%;
                 padding-bottom: 20%;
             }
-
-            &:hover {
-                #{$self}__image-lazyload {
-                    transform: scale(1.1);
-                }
-            }
         }
 
         &__content {
