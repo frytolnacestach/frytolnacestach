@@ -1,34 +1,48 @@
 <template>
-    <div class="o-achievements" v-if="achievements[0]">
-        <div class="o-achievements__outer">
-            <div class="o-achievements__inner">
-                <div class="o-achievements__items">
-                    
-                    <div class="o-achievements__item print-section" :class="[item.type, { [item.value]: item.actual >= item.need }]" v-for="item in achievementsList" :key="item.id">
-                        <div class="o-achievements__content">
-                            <div class="o-achievements__medal"></div>
-                            <div class="o-achievements__text">
-                                <h2 class="o-achievements__name">{{ item.name }}</h2>
-                                <p class="o-achievements__description" v-if="item.description">{{ item.description }}</p>
-                            </div>
-                            <div class="o-achievements__progress">
-                                <span class="o-achievements__progress-number"><span class="o-achievements__progress-number-actual">{{ item.actual > item.need ? item.need : item.actual }}</span>/<span class="o-achievements__progress-number-need">{{ item.need }}</span></span>
-                                <div class="o-achievements__progress-line">
-                                    <div class="o-achievements__progress-line-full" :style="{ width: calculateWidth(item.need, item.actual) + '%' }"></div>
+    <section class="t-component-skeleton">
+        <!-- skeleton -->
+        <skeletonoAchievements styleThema=" -skeleton-blue" v-if="achievements && achievements.length === 0" />
+        <!-- skeleton END -->
+
+        <!-- client -->
+        <client-only v-if="achievements !== null">
+            <div class="o-achievements">
+                <div class="o-achievements__outer">
+                    <div class="o-achievements__inner">
+                        <div class="o-achievements__items">
+                            <div class="o-achievements__item print-section" :class="[item.type, { [item.value]: item.actual >= item.need }]" v-for="item in achievementsList" :key="item.id">
+                                <div class="o-achievements__content">
+                                    <div class="o-achievements__medal"></div>
+                                    <div class="o-achievements__text">
+                                        <h2 class="o-achievements__name">{{ item.name }}</h2>
+                                        <p class="o-achievements__description" v-if="item.description">{{ item.description }}</p>
+                                    </div>
+                                    <div class="o-achievements__progress">
+                                        <span class="o-achievements__progress-number"><span class="o-achievements__progress-number-actual">{{ item.actual > item.need ? item.need : item.actual }}</span>/<span class="o-achievements__progress-number-need">{{ item.need }}</span></span>
+                                        <div class="o-achievements__progress-line">
+                                            <div class="o-achievements__progress-line-full" :style="{ width: calculateWidth(item.need, item.actual) + '%' }"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-        </div>
-    </div>
+        </client-only>
+        <!-- client END -->
+    </section>
 </template>
 
 <script>
+    import skeletonoAchievements from '~/components/skeleton/skeletonoAchievements.vue'
+
     export default {
         name: 'OrganismsoAchievementsListComponent',
+
+        components: {
+            skeletonoAchievements
+        },
 
         props: {
             type: {
