@@ -99,21 +99,55 @@
         },
 
         head() {
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
+
+            // title
+            title = `${this.flora[0].name ? this.flora[0].name : 'Flóra'} | Cestovatelský portál Frytol na cestách`
+
+            // description
+            description = `${this.flora[0].description ? this.flora[0].description.slice(0, this.flora[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.flora[0].name}`
+
+            // keywolds
             let metaSeoTags
             if (this.flora[0].seo_tags && this.flora[0].seo_tags.length > 0) {
                 metaSeoTags = this.flora[0].seo_tags.map(item => item.tag).join(", ")
             }
+            keywords = (this.flora[0].name ? this.flora[0].name : '') + metaSeoTags + ', Flóra, Rostoucí flóra, informace o rostlinách, plánuj cestu, cestovatelský portál, cestování, svět'
+            
+            // ogImage
+            ogImage = `${this.flora[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageFlora.find(image => image.id === this.flora[0].id_image_hero).source + this.imageFlora.find(image => image.id === this.flora[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
 
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/flora/${this.flora[0].slug}`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
             return {
-                title: `${this.flora[0].name ? this.flora[0].name : 'Flóra'} | Cestovatelský portál Frytol na cestách`,
+                title,
                 meta: [
-                    { hid: 'description', name: 'description', content: `${this.flora[0].description ? this.flora[0].description.slice(0, this.flora[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.flora[0].name}` },
-                    { name: 'keywords', content: `${this.flora[0].name + metaSeoTags + ', Flóra, Rostoucí flóra, informace o rostlinách, plánuj cestu, cestovatelský portál, cestování, svět'}` },
-                    { property: 'og:image', content: `${this.flora[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageFlora.find(image => image.id === this.flora[0].id_image_hero).source + this.imageFlora.find(image => image.id === this.flora[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
-                    { hid: 'og:title', content: `${this.flora[0].name ? this.flora[0].name : 'Flóra'} | Cestovatelský portál Frytol na cestách` },
-                    { hid: 'og:description', content: `${this.flora[0].description ? this.flora[0].description.slice(0, this.flora[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.flora[0].name ? this.flora[0].name : 'Flóra'}` },
-                    { hid: 'og:url', content: `${process.env.baseUrl}/flora/${this.flora[0].slug}` },
-                    { hid: 'og:type', content: 'website' } 
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
                 ]
             }
         },

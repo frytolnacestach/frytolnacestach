@@ -161,35 +161,67 @@
             }
         },
 
+        head() {
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
+
+            // title
+            const placeName = this.place && this.place.length > 0 ? this.place[0].name : 'Stát'
+            const defaultTitle = `Jaký je čas ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
+            title = defaultTitle
+
+            // description
+            description = `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}`
+
+            // keywolds
+            let metaSeoTags
+            if (this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
+                metaSeoTags = this.place[0].seo_tags.map(item => item.tag).join(", ")
+            }
+            keywords = (this.place[0].name ? this.place[0].name : '') + metaSeoTags + ', stát, čas, informace, časové pásma, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu' 
+            
+            // ogImage
+            ogImage = `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/svetovy-cas/${this.place[0].slug}`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
+            return {
+                title,
+                meta: [
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
+                ]
+            }
+        },
+
         methods:{
             handleResize() {
                 // Aktualizovat hodnotu pro "isMobile" při změně velikosti okna
                 this.isMobile = window.innerWidth < 992
             }
-        },
-
-        head() {
-            const placeName = this.place && this.place.length > 0 ? this.place[0].name : 'Stát'
-            const defaultTitle = `Jaký je čas ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
-            let title = defaultTitle
-
-            let metaSeoTags
-            if (this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
-                metaSeoTags = this.place[0].seo_tags.map(item => item.tag).join(", ")
-            }
-
-            return {
-                title,
-                meta: [
-                    { hid: 'description', name: 'description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}` },
-                    { name: 'keywords', content: `${this.place[0].name ? this.place[0].name : '' + metaSeoTags + ', stát, čas, informace, časové pásma, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu'}` },
-                    { property: 'og:image', content: `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
-                    { hid: 'og:title', content: title },
-                    { hid: 'og:description', content: `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}` },
-                    { hid: 'og:url', content: `${process.env.baseUrl}/svetovy-cas/${this.place[0].slug}` },
-                    { hid: 'og:type', content: 'website' }
-                ]
-            };
         },
 
         async asyncData({ $axios, params }) {

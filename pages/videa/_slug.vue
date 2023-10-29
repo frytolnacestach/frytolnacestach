@@ -117,21 +117,55 @@
         },
 
         head() {
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
+
+            // title
+            title = `${this.video[0].title} | Cestovatelský portál Frytol na cestách`
+
+            // description
+            description = `${this.video[0].perex ? this.video[0].perex.slice(0, this.video[0].perex.lastIndexOf(' ', 150)) : this.video[0].title ? this.video[0].title : 'Video'}`
+
+            // keywolds
             let metaSeoTags
             if (this.video[0].seo_tags && this.video[0].seo_tags.length > 0) {
                 metaSeoTags = this.video[0].seo_tags.map(item => item.tag).join(", ")
             }
+            keywords = (this.video[0].title ? this.video[0].title : '') + metaSeoTags + ', cestovatelské video, cestování, svět, cetovatelský portál'
+            
+            // ogImage
+            ogImage = `${this.video[0].id_image ? 'https://image.frytolnacestach.cz/storage' + this.imageVideo[0].source + this.imageVideo[0].name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
 
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/videa/${this.video[0].slug}`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
             return {
-                title: `${this.video[0].title} | Cestovatelský portál Frytol na cestách`,
+                title,
                 meta: [
-                    { hid: 'description', name: 'description', content: `${this.video[0].perex ? this.video[0].perex.slice(0, this.video[0].perex.lastIndexOf(' ', 150)) : this.video[0].title ? this.video[0].title : 'Video'}` },
-                    { name: 'keywords', content: `${this.video[0].title ? this.video[0].title + ',' : '' + metaSeoTags} cestovatelské video, cestování, svět, cetovatelský portál` },
-                    { property: 'og:image', content: `${this.video[0].id_image ? 'https://image.frytolnacestach.cz/storage' + this.imageVideo[0].source + this.imageVideo[0].name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
-                    { hid: 'og:title', content: `${this.video[0].title} | Cestovatelský portál Frytol na cestách` },
-                    { hid: 'og:description', content: `${this.video[0].perex ? this.video[0].perex.slice(0, this.video[0].perex.lastIndexOf(' ', 150)) : this.video[0].title ? this.video[0].title : 'Video'}` },
-                    { hid: 'og:url', content: `${process.env.baseUrl}/videa/${this.video[0].slug}` },
-                    { hid: 'og:type', content: 'website' }  
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
                 ]
             }
         },

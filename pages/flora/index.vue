@@ -49,17 +49,54 @@
             }
         },
 
-        head: {
-            title: 'Flóra co roste ve světě | Frytol na cestách',
-            meta: [
-                { hid: 'description', name: 'description', content: 'Jaké flóra kde roste? A na jakou si dát pozor? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.' },
-                { name: 'keywords', content: `Flóra, kde co roste?, Jedovaté rostliny, informace o rostlinách, plánuj cestu, cestovatelský portál, cestování, svět` },
-                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Flóra co roste ve světě | Cestovatelský portál Frytol na cestách' },
-                { hid: 'og:description', content: 'Jaké flóra kde roste? A na jakou si dát pozor? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.' },
-                { hid: 'og:url', content: `${process.env.baseUrl}/flora` },
-                { hid: 'og:type', content: 'website' }  
-            ]
+        head() {
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
+
+            // title
+            title = 'Flóra co roste ve světě | Frytol na cestách'
+
+            // description
+            description = 'Jaké flóra kde roste? A na jakou si dát pozor? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.'
+
+            // keywolds
+            keywords = 'Flóra, kde co roste?, Jedovaté rostliny, informace o rostlinách, plánuj cestu, cestovatelský portál, cestování, svět'
+            
+            // ogImage
+            ogImage = 'https://image.frytolnacestach.cz/storage/main/og-default.png'
+
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/flora`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
+            return {
+                title,
+                meta: [
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
+                ]
+            }
         },
 
         async mounted() {

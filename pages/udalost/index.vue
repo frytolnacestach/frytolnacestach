@@ -49,17 +49,54 @@
             }
         },
 
-        head: {
-            title: 'Události | Cestovatelský portál Frytol na cestách',
-            meta: [
-                { hid: 'description', name: 'description', content: 'Události které se ve světě konají.' },
-                { name: 'keywords', content: `udalosti, svetove eventy, plánuj cestu, cestovatelský portál, cestování, svět` },
-                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Události | Cestovatelský portál Frytol na cestách' },
-                { hid: 'og:description', content: 'Události které se ve světě konají.' },
-                { hid: 'og:url', content: `${process.env.baseUrl}/udalost` },
-                { hid: 'og:type', content: 'website' }  
-            ]
+        head() {
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
+
+            // title
+            title = 'Události | Cestovatelský portál Frytol na cestách'
+
+            // description
+            description = 'Události které se ve světě konají.'
+
+            // keywolds
+            keywords = 'udalosti, svetove eventy, plánuj cestu, cestovatelský portál, cestování, svět'
+            
+            // ogImage
+            ogImage = 'https://image.frytolnacestach.cz/storage/main/og-default.png'
+
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/udalost`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
+            return {
+                title,
+                meta: [
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
+                ]
+            }
         },
 
         async mounted() {

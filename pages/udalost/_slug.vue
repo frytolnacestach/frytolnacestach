@@ -169,6 +169,60 @@
             }
         },
 
+        head() {
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
+
+            // title
+            title = `${this.event[0].name ? this.event[0].name : 'Region'} | Cestovatelský portál Frytol na cestách`
+
+            // description
+            description = `${this.event[0].description ? this.event[0].description.slice(0, this.event[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.event[0].name}`
+
+            // keywolds
+            let metaSeoTags
+            if (this.event[0].seo_tags && this.event[0].seo_tags.length > 0) {
+                this.event[0].seo_tags.map(item => item.tag).join(", ")
+            }
+            keywords = (this.event[0].name ? this.event[0].name : '') + metaSeoTags + ', událost, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
+            
+            // ogImage
+            ogImage = `${this.event[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.image.find(image => image.id === this.event[0].id_image_hero).source + this.image.find(image => image.id === this.event[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/cestovatelsky-slovnik/${this.travelDictionary[0].slug}`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
+            return {
+                title,
+                meta: [
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
+                ]
+            }
+        },
+
         methods:{
             handleResize() {
                 // Aktualizovat hodnotu pro "isMobile" při změně velikosti okna
@@ -187,26 +241,6 @@
         beforeUnmount() {
             // Zrušit naslouchání události změny velikosti okna při odstranění komponenty
             window.removeEventListener('resize', this.handleResize)
-        },
-
-        head() {
-            let metaSeoTags
-            if (this.event[0].seo_tags && this.event[0].seo_tags.length > 0) {
-                this.event[0].seo_tags.map(item => item.tag).join(", ")
-            }
-
-            return {
-                title: `${this.event[0].name ? this.event[0].name : 'Region'} | Cestovatelský portál Frytol na cestách`,
-                meta: [
-                    { hid: 'description', name: 'description', content: `${this.event[0].description ? this.event[0].description.slice(0, this.event[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.event[0].name}` },
-                    { name: 'keywords', content: `${this.event[0].name + metaSeoTags + ', událost, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'}` },
-                    { property: 'og:image', content: `${this.event[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.image.find(image => image.id === this.event[0].id_image_hero).source + this.image.find(image => image.id === this.event[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
-                    { hid: 'og:title', content: `${this.event[0].name ? this.event[0].name : 'Událost'} | Cestovatelský portál Frytol na cestách` },
-                    { hid: 'og:description', content: `${this.event[0].description ? this.event[0].description.slice(0, this.event[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.event[0].name ? this.event[0].name : 'Region'}` },
-                    { hid: 'og:url', content: `${process.env.baseUrl}/udalost/${this.event[0].slug}` },
-                    { hid: 'og:type', content: 'website' } 
-                ]
-            }
         },
 
         async asyncData({ $axios, params }) {

@@ -38,17 +38,54 @@
             }
         },
 
-        head: {
-            title: 'Kde mě najdeš | Cestovatelský portál Frytol na cestách',
-            meta: [
-                { hid: 'description', name: 'description', content: 'Sociální sítě a platformy kde najdete Frytola na cestách.' },
-                { name: 'keywords', content: `sociální sítě, cestovatelská videa, cestování, svět` },
-                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Kde mě najdeš | Cestovatelský portál Frytol na cestách' },
-                { hid: 'og:description', content: 'Sociální sítě a platformy kde najdete Frytola na cestách.' },
-                { hid: 'og:url', content: `${process.env.baseUrl}/social` },
-                { hid: 'og:type', content: 'website' }
-            ]
+        head() {
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
+
+            // title
+            title = 'Kde mě najdeš | Cestovatelský portál Frytol na cestách'
+
+            // description
+            description = 'Sociální sítě a platformy kde najdete Frytola na cestách.'
+
+            // keywolds
+            keywords = 'sociální sítě, cestovatelská videa, cestování, svět'
+            
+            // ogImage
+            ogImage = 'https://image.frytolnacestach.cz/storage/main/og-default.png'
+
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/social`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
+            return {
+                title,
+                meta: [
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
+                ]
+            }
         }
     }
 </script>

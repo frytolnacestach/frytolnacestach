@@ -88,16 +88,55 @@
         },
 
         head() {
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
+
+            // title
+            title = `${this.travelDictionary[0].name ? this.travelDictionary[0].name : 'Cestovatelský slovník'} | Cestovatelský portál Frytol na cestách`
+
+            // description
+            description = `${this.travelDictionary[0].description ? this.travelDictionary[0].description.slice(0, this.travelDictionary[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.travelDictionary[0].name}`
+
+            // keywolds
+            let metaSeoTags
+            if (this.travelDictionary[0].seo_tags && this.travelDictionary[0].seo_tags.length > 0) {
+                metaSeoTags = this.travelDictionary[0].seo_tags.map(item => item.tag).join(", ")
+            }
+            keywords = (this.travelDictionary[0].name ? this.travelDictionary[0].name : '') + metaSeoTags + ', Cestovatelský slovník, co je to ' + this.travelDictionary[0].name + ', travel hacky, plánuj cestu, cestovatelský portál, cestování, svět'
+            
+            // ogImage
+            ogImage = `${this.travelDictionary[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).source + this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/cestovatelsky-slovnik/${this.travelDictionary[0].slug}`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
             return {
-                title: `${this.travelDictionary[0].name ? this.travelDictionary[0].name : 'Cestovatelský slovník'} | Cestovatelský portál Frytol na cestách`,
+                title,
                 meta: [
-                    { hid: 'description', name: 'description', content: `${this.travelDictionary[0].description ? this.travelDictionary[0].description.slice(0, this.travelDictionary[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.travelDictionary[0].name}` },
-                    { name: 'keywords', content: `${this.travelDictionary[0].name + ', Cestovatelský slovník, co je to ' + this.travelDictionary[0].name + ', travel hacky, plánuj cestu, cestovatelský portál, cestování, svět'}` },
-                    { property: 'og:image', content: `${this.travelDictionary[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).source + this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
-                    { hid: 'og:title', content: `${this.travelDictionary[0].name ? this.travelDictionary[0].name : 'Cestovatelský slovník'} | Cestovatelský portál Frytol na cestách` },
-                    { hid: 'og:description', content: `${this.travelDictionary[0].description ? this.travelDictionary[0].description.slice(0, this.travelDictionary[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.travelDictionary[0].name ? this.travelDictionary[0].name : 'Fauna'}` },
-                    { hid: 'og:url', content: `${process.env.baseUrl}/cestovatelsky-slovnik/${this.travelDictionary[0].slug}` },
-                    { hid: 'og:type', content: 'website' } 
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
                 ]
             }
         },

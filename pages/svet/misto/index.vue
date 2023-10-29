@@ -63,18 +63,51 @@
         },
 
         head() {
-            let title = `${this.headlineFilter} | Cestovatelský portál Frytol na cestách`
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
 
+            // title
+            title = `${this.headlineFilter} | Cestovatelský portál Frytol na cestách`
+
+            // description
+            description = 'Zjisti si základní informace o místech za pomocí cestovatelského portálu Frytol na cestách.'
+
+            // keywolds
+            keywords = 'místa, informace o místech, plánuj cestu, cestovatelský portál, cestování, svět'
+            
+            // ogImage
+            ogImage = 'https://image.frytolnacestach.cz/storage/main/og-default.png'
+
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/svet/misto`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
             return {
                 title,
-                    meta: [
-                    { hid: 'description', name: 'description', content: 'Zjisti si základní informace o místech za pomocí cestovatelského portálu Frytol na cestách.' },
-                    { name: 'keywords', content: `místa, informace o místech, plánuj cestu, cestovatelský portál, cestování, svět` },
-                    { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
+                meta: [
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
                     { hid: 'og:title', content: title },
-                    { hid: 'og:description', content: 'Zjisti si základní informace o místech za pomocí cestovatelského portálu Frytol na cestách.' },
-                    { hid: 'og:url', content: `${process.env.baseUrl}/svet/misto` },
-                    { hid: 'og:type', content: 'website' }  
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
                 ]
             }
         },

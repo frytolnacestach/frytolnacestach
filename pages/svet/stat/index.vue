@@ -62,18 +62,51 @@
         },
 
         head() {
-            let title = `${this.headlineFilter} | Cestovatelský portál Frytol na cestách`
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
 
+            // title
+            title = `${this.headlineFilter} | Cestovatelský portál Frytol na cestách`
+
+            // description
+            description = 'Objevuj všechny státy světa na cestovatelské portálu Frytolem na cestách. Naplánuj si ideální cestu.'
+
+            // keywolds
+            keywords = 'státy, ostrovy, území, plánuj cestu, cestovatelský portál, cestování, svět'
+            
+            // ogImage
+            ogImage = 'https://image.frytolnacestach.cz/storage/main/og-default.png'
+
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/svet/stat`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
             return {
                 title,
                 meta: [
-                    { hid: 'description', name: 'description', content: 'Objevuj všechny státy světa na cestovatelské portálu Frytolem na cestách. Naplánuj si ideální cestu.' },
-                    { name: 'keywords', content: `státy, ostrovy, území, plánuj cestu, cestovatelský portál, cestování, svět` },
-                    { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
                     { hid: 'og:title', content: title },
-                    { hid: 'og:description', content: 'Objevuj všechny státy světa na cestovatelské portálu Frytolem na cestách. Naplánuj si ideální cestu.' },
-                    { hid: 'og:url', content: `${process.env.baseUrl}/svet/stat` },
-                    { hid: 'og:type', content: 'website' }  
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
                 ]
             }
         },

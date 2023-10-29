@@ -39,17 +39,54 @@
             }
         },
 
-        head: {
-            title: 'Obchodní podmínky a zásady ochrany osobních údajů | Cestovatelský portál Frytol na cestách',
-            meta: [
-                { hid: 'description', name: 'description', content: 'Obchodní podmínky a zásady ochrany osobních údajů pro web Frytol na cestách.' },
-                { name: 'keywords', content: `podmínky, pravdila, eu, cestování, svět` },
-                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Obchodní podmínky a zásady ochrany osobních údajů | Cestovatelský portál Frytol na cestách' },
-                { hid: 'og:description', content: 'Obchodní podmínky a zásady ochrany osobních údajů pro web Frytol na cestách.' },
-                { hid: 'og:url', content: `${process.env.baseUrl}/conditions` },
-                { hid: 'og:type', content: 'website' }  
-            ]
+        head() {
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
+
+            // title
+            title = 'Obchodní podmínky a zásady ochrany osobních údajů | Cestovatelský portál Frytol na cestách'
+
+            // description
+            description = 'Obchodní podmínky a zásady ochrany osobních údajů pro web Frytol na cestách.'
+
+            // keywolds
+            keywords = 'podmínky, pravdila, eu, cestování, svět'
+            
+            // ogImage
+            ogImage = 'https://image.frytolnacestach.cz/storage/main/og-default.png'
+
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/conditions`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
+            return {
+                title,
+                meta: [
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
+                ]
+            }
         },
 
         async fetch() {

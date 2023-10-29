@@ -99,21 +99,55 @@
         },
 
         head() {
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
+
+            // title
+            title = `${this.wallSockets[0].name ? this.wallSockets[0].name : 'Elektrikcá zásuvka'} | Cestovatelský portál Frytol na cestách`
+
+            // description
+            description = `${this.wallSockets[0].description ? this.wallSockets[0].description.slice(0, this.wallSockets[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.wallSockets[0].name}`
+
+            // keywolds
             let metaSeoTags
             if (this.wallSockets[0].seo_tags && this.wallSockets[0].seo_tags.length > 0) {
                 metaSeoTags = this.wallSockets[0].seo_tags.map(item => item.tag).join(", ")
             }
+            keywords = (this.wallSockets[0].name ? this.wallSockets[0].name : '') + metaSeoTags + ', Elektrická zásuvka, redukce, zásuvky, plánuj cestu, cestovatelský portál, cestování, svět'
+            
+            // ogImage
+            ogImage = `${this.wallSockets[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageWallSockets.find(image => image.id === this.wallSockets[0].id_image_hero).source + this.imageWallSockets.find(image => image.id === this.wallSockets[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
 
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/elektricka-zasuvka/${this.wallSockets[0].slug}`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
             return {
-                title: `${this.wallSockets[0].name ? this.wallSockets[0].name : 'Elektrikcá zásuvka'} | Cestovatelský portál Frytol na cestách`,
+                title,
                 meta: [
-                    { hid: 'description', name: 'description', content: `${this.wallSockets[0].description ? this.wallSockets[0].description.slice(0, this.wallSockets[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.wallSockets[0].name}` },
-                    { name: 'keywords', content: `${this.wallSockets[0].name + metaSeoTags + ', Elektrická zásuvka, redukce, zásuvky, plánuj cestu, cestovatelský portál, cestování, svět'}` },
-                    { property: 'og:image', content: `${this.wallSockets[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageWallSockets.find(image => image.id === this.wallSockets[0].id_image_hero).source + this.imageWallSockets.find(image => image.id === this.wallSockets[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`},
-                    { hid: 'og:title', content: `${this.wallSockets[0].name ? this.wallSockets[0].name : 'Elektrikcá zásuvka'}  | Cestovatelský portál Frytol na cestách` },
-                    { hid: 'og:description', content: `${this.wallSockets[0].description ? this.wallSockets[0].description.slice(0, this.wallSockets[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.wallSockets[0].name ? this.wallSockets[0].name : 'elektrická zásuvka'}` },
-                    { hid: 'og:url', content: `${process.env.baseUrl}/elektricka-zasuvka/${this.wallSockets[0].slug}` },
-                    { hid: 'og:type', content: 'website' } 
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
                 ]
             }
         },

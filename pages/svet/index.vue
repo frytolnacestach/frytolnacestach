@@ -45,17 +45,54 @@
             oWorldType
         },
 
-        head: {
-            title: 'Svět | Cestovatelský portál Frytol na cestách',
-            meta: [
-                { hid: 'description', name: 'description', content: 'Oběvuj svět a jeho místá na cestovatelské portálu Frytol na cestách. Naplánuj si dovolenou podle svých potřeb a zjisti co tě čeká.' },
-                { name: 'keywords', content: 'Naplánuj si dobolenou, cestuj, chytře, státy, města, cestování, svět' },
-                { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-                { hid: 'og:title', content: 'Svět | Cestovatelský portál Frytol na cestách' },
-                { hid: 'og:description', content: 'Oběvuj svět a jeho místá s Frytolem na cestách' },
-                { hid: 'og:url', content: `${process.env.baseUrl}/svet` },
-                { hid: 'og:type', content: 'website' }  
-            ]
+        head() {
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
+
+            // title
+            title = 'Svět | Cestovatelský portál Frytol na cestách'
+
+            // description
+            description = 'Oběvuj svět a jeho místá na cestovatelské portálu Frytol na cestách. Naplánuj si dovolenou podle svých potřeb a zjisti co tě čeká.'
+
+            // keywolds
+            keywords = 'Naplánuj si dobolenou, cestuj, chytře, státy, města, cestování, svět'
+            
+            // ogImage
+            ogImage = 'https://image.frytolnacestach.cz/storage/main/og-default.png'
+
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/svet`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
+            return {
+                title,
+                meta: [
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
+                ]
+            }
         }
     }
 </script>

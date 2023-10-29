@@ -105,17 +105,62 @@
             }
         },
 
-        head() {
+        data() {
             return {
-                title: `${this.staticUser[0].nickname} | Frytol na cestách`,
+                staticUser: this.staticUser,
+                user: '',
+                videos: [],
+                images: [],
+                mNavUserOpen: false
+            }
+        },
+
+        head() {
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
+
+            // title
+            title = `${this.staticUser[0].nickname} | Frytol na cestách`
+
+            // description
+            description = `Profil cestovatele ${this.staticUser[0].nickname} na cestovatelském portálu Frytol na cestách`
+
+            // keywolds
+            keywords = `${this.staticUser[0].nickname + ', cestovatel, uživatel, cestování, svět, rady, cestovatelský portál'}`
+            
+            // ogImage
+            ogImage = 'https://image.frytolnacestach.cz/storage/main/og-default.png'
+
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/cestovatel/${this.staticUser[0].slug}/videa`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
+            return {
+                title,
                 meta: [
-                    { hid: 'description', content: 'Profil cestovatele' },
-                    { name: 'keywords', content: `${this.staticUser[0].nickname + ', cestovatel, uživatel, cestování, svět, rady, cestovatelský portál'}` },
-                    { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png'},
-                    { hid: 'og:title', content: `${this.staticUser[0].nickname} | Frytol na cestách` },
-                    { hid: 'og:description', content: 'Profil cestovatele' },
-                    { hid: 'og:url', content: `${process.env.baseUrl}/cestovatel/${this.staticUser[0].slug}` },
-                    { hid: 'og:type', content: 'website' }  
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
                 ]
             }
         },

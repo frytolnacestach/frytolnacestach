@@ -80,112 +80,149 @@
 </template>
 
 <script>
-import { loginCheckLogout } from '~/utils/loginCheckLogout.js'
+    import { loginCheckLogout } from '~/utils/loginCheckLogout.js'
 
-import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
-import mHeadline from '~/components/molecules/mHeadline.vue'
-import mNavAccount from '~/components/molecules/mNavAccount.vue'
-import oCoverPlaceVisited from '~/components/organisms/oCoverPlaceVisited.vue'
+    import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
+    import mHeadline from '~/components/molecules/mHeadline.vue'
+    import mNavAccount from '~/components/molecules/mNavAccount.vue'
+    import oCoverPlaceVisited from '~/components/organisms/oCoverPlaceVisited.vue'
 
-export default {
-    name: 'UcetNavstivenaMistaPage',
+    export default {
+        name: 'UcetNavstivenaMistaPage',
 
-    components: {
-        mAccountHeader,
-        mHeadline,
-        mNavAccount,
-        oCoverPlaceVisited
-    },
+        components: {
+            mAccountHeader,
+            mHeadline,
+            mNavAccount,
+            oCoverPlaceVisited
+        },
 
-    data() {
-        return {
-            mNavAccountOpen: false,
-            email: null,
-            passwordHash: null,
-            account: '',
-            placesContinentsID: [],
-            placesStatesID: [],
-            placesCitiesID: [],
-            placesRegionsID: [],
-            placesSpotsID: [],
-            loadingComponentOCoverPlaceVisited: true
-        }
-    },
-
-    head: {
-        title: 'MÍSTA CO JSEM NAVŠTÍVIL | Cestovatelský portál Frytol na cestách',
-        meta: [
-            { hid: 'description', name: 'description', content: 'Místa co jsem navštívil, které jsou na webu Frytol na cestách.' },
-            { name: 'keywords', content: `Cestovatelský portál, úvod, cestování, svět` },
-            { property: 'og:image', content: 'https://image.frytolnacestach.cz/storage/main/og-default.png' },
-            { hid: 'og:title', content: 'Místa co jsem navštívil | Cestovatelský portál Frytol na cestách' },
-            { hid: 'og:description', content: 'Místa co jsem navštívil, které jsou na webu Frytol na cestách.' },
-            { hid: 'og:url', content: `${process.env.baseUrl}` },
-            { hid: 'og:type', content: 'website' }
-        ]
-    },
-
-    async mounted() {
-        loginCheckLogout(this.$router)
-
-        if (process.client) {
-            let success = false
-            let data = null
-            
-            const localStorageEmail = localStorage.getItem('email')
-            const localStoragePasswordHash = localStorage.getItem('password_hash')
-
-            this.email = localStorageEmail
-            this.passwordHash = localStoragePasswordHash
-
-            while (!success) {
-                try {
-                    // PAGE - Account list
-                    // Account
-                    const account = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-authentication?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}`)
-
-
-                    // COMPONENT - oCoverPlaceVisited
-                    // PlacesID
-                    const placesID = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${account[0].id}&status=1`)
-                    const placesContinentsID = placesID.filter(place => place.type === 'continent').map(place => place.id_place) || []
-                    const placesStatesID = placesID.filter(place => place.type === 'state').map(place => place.id_place) || []
-                    const placesCitiesID = placesID.filter(place => place.type === 'city').map(place => place.id_place) || []
-                    const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || []
-                    const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || []
-
-                    // TO DATA
-                    data = {
-                        account,
-                        placesContinentsID,
-                        placesStatesID,
-                        placesCitiesID,
-                        placesRegionsID,
-                        placesSpotsID
-                    }
-
-                    // END LOADING
-                    this.loadingComponentOCoverPlaceVisited = false
-
-                    // SUCCESS
-                    success = true
-                } catch (error) {
-                    console.log(`API ERROR - NAVSTIVIL JSEM`)
-                    console.error(error)
-
-                    await new Promise(resolve => setTimeout(resolve, 1000))
-                }
+        data() {
+            return {
+                mNavAccountOpen: false,
+                email: null,
+                passwordHash: null,
+                account: '',
+                placesContinentsID: [],
+                placesStatesID: [],
+                placesCitiesID: [],
+                placesRegionsID: [],
+                placesSpotsID: [],
+                loadingComponentOCoverPlaceVisited: true
             }
+        },
 
-            // Update data properties with fetched data
-            Object.assign(this, data)
-        }
-    },
+        head() {
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
 
-    methods: {
-        menuAccountUpdate(newValue) {
-            this.mNavAccountOpen = newValue
+            // title
+            title = 'MÍSTA CO JSEM NAVŠTÍVIL | Cestovatelský portál Frytol na cestách'
+
+            // description
+            description = 'Místa co jsem navštívil, které jsou na cetovatelském portálu Frytol na cestách.'
+
+            // keywolds
+            keywords = 'můj profil, navštívená místa, cestovatelský portál, statistiky'
+            
+            // ogImage
+            ogImage = 'https://image.frytolnacestach.cz/storage/main/og-default.png'
+
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
+            return {
+                title,
+                meta: [
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
+                    { hid: 'og:title', content: title },
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
+                ]
+            }
+        },
+
+        async mounted() {
+            loginCheckLogout(this.$router)
+
+            if (process.client) {
+                let success = false
+                let data = null
+                
+                const localStorageEmail = localStorage.getItem('email')
+                const localStoragePasswordHash = localStorage.getItem('password_hash')
+
+                this.email = localStorageEmail
+                this.passwordHash = localStoragePasswordHash
+
+                while (!success) {
+                    try {
+                        // PAGE - Account list
+                        // Account
+                        const account = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-authentication?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}`)
+
+
+                        // COMPONENT - oCoverPlaceVisited
+                        // PlacesID
+                        const placesID = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${account[0].id}&status=1`)
+                        const placesContinentsID = placesID.filter(place => place.type === 'continent').map(place => place.id_place) || []
+                        const placesStatesID = placesID.filter(place => place.type === 'state').map(place => place.id_place) || []
+                        const placesCitiesID = placesID.filter(place => place.type === 'city').map(place => place.id_place) || []
+                        const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || []
+                        const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || []
+
+                        // TO DATA
+                        data = {
+                            account,
+                            placesContinentsID,
+                            placesStatesID,
+                            placesCitiesID,
+                            placesRegionsID,
+                            placesSpotsID
+                        }
+
+                        // END LOADING
+                        this.loadingComponentOCoverPlaceVisited = false
+
+                        // SUCCESS
+                        success = true
+                    } catch (error) {
+                        console.log(`API ERROR - NAVSTIVIL JSEM`)
+                        console.error(error)
+
+                        await new Promise(resolve => setTimeout(resolve, 1000))
+                    }
+                }
+
+                // Update data properties with fetched data
+                Object.assign(this, data)
+            }
+        },
+
+        methods: {
+            menuAccountUpdate(newValue) {
+                this.mNavAccountOpen = newValue
+            }
         }
     }
-}
 </script>
