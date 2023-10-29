@@ -59,7 +59,6 @@
                 } else {
                     this.title = pageTitle
                 }
-                console.log('___Title:' + pageTitle)
             },
             getActualUrl() {
                 this.pageUrl = window.location.href

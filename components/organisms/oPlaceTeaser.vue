@@ -4,7 +4,7 @@
             <div class="o-place-teaser__inner">
                 <div class="o-place-teaser__content">
                     <div class="o-place-teaser__image loading-image -green">
-                        <div v-if="image" class="o-place-teaser__image-lazyload">
+                        <div v-if="image && image.length > 0" class="o-place-teaser__image-lazyload">
                             <img class="o-place-teaser__image-file lazyload-file"
                                 data-sizes="(max-width: 349px) 330px, (max-width: 374px) 354px, (max-width: 399px) 354px, (max-width: 459px) 420px, (max-width: 575px) 536px, (max-width: 767px) 728px, (max-width: 991px) 286px, (max-width: 1219px) 258px, (max-width: 1399px) 312px, 468px"
                                 :data-srcset="`
