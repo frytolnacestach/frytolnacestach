@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1698698170",layout:"empty",error:{statusCode:404,path:a,message:"This page could not be found"},serverRendered:false,routePath:a,config:{_app:{basePath:"\u002F",assetsPath:"\u002F_nuxt\u002F",cdnURL:null}}}}("\u002Felektrick%C3%A9%20z%C3%A1suvky"));
