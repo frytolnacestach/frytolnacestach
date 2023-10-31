@@ -28,7 +28,7 @@
                         <!-- SECTION - Form - profile -->
                         <section class="t-section -padding-x -p0">
                             <div class="t-section__inner">
-                                <mHeadline title="Změna hesla" perex="V přípravě" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                <mHeadline title="Změna hesla" styleThema=" -account -blue" styleAlign="" styleGap="" />
                                 <oFormPasswordChange />
                             </div>
                         </section>
