@@ -29,6 +29,7 @@
                         <section class="t-section -padding-x -p0">
                             <div class="t-section__inner">
                                 <mHeadline title="Změna hesla" perex="V přípravě" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                <oFormPasswordChange />
                             </div>
                         </section>
                         <!-- SECTION - Form - profile END -->
@@ -48,6 +49,7 @@
     import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import mNavAccount from '~/components/molecules/mNavAccount.vue'
+    import oFormPasswordChange from '~/components/organisms/oFormPasswordChange.vue'
 
     export default {
         name: 'UcetZmenaHeslaPage',
@@ -55,7 +57,8 @@
         components: {
             mAccountHeader,
             mHeadline,
-            mNavAccount
+            mNavAccount,
+            oFormPasswordChange
         },
 
         data() {
