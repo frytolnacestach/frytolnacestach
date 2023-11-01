@@ -8,14 +8,14 @@
             </div>
         </section>
         <!-- SECTION - Hero END -->
-
-        <!-- SECTION - Form Password lost -->
+        
+        <!-- SECTION - Form Password lost new -->
 		<section class="t-section -p0 pt-2 pb-1">
             <div class="t-section__inner">
-                <oFormPasswordLost />
+                <oFormPasswordLostNew />
             </div>
         </section>
-        <!-- SECTION - Form Password lost END -->
+        <!-- SECTION - Form Password new lost END -->
 
     </main>
 </template>
@@ -25,22 +25,22 @@
 
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oFormPasswordLost from '~/components/organisms/oFormPasswordLost.vue'
+    import oFormPasswordLostNew from '~/components/organisms/oFormPasswordLostNew.vue'
     import oHero from '~/components/organisms/oHero.vue'
 
     export default {
-        name: 'UcetZepomenuteHesloPage',
+        name: 'UcetObnovaHeslaPage',
         
         components: {
             aButtonFillFull,
             mHeadline,
-            oFormPasswordLost,
+            oFormPasswordLostNew,
             oHero
         },
 
         data() {
             return {
-                headline: 'Zapomenuté Heslo'
+                headline: 'Obnova hesla'
             }
         },
 

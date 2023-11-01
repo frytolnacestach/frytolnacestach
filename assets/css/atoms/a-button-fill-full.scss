@@ -20,7 +20,7 @@
         font-weight: 600;
     }
 
-    //thema
+    // thema
     &.-blue {
         background-color: $c-blue-bg-component-dark-super;
         color: $white;
@@ -55,5 +55,10 @@
             color: $white;
         }
 
+    }
+
+    // size
+    &.-w400 {
+        max-width: 400px;
     }
 }

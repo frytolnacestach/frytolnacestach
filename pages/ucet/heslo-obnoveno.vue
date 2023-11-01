@@ -8,39 +8,37 @@
             </div>
         </section>
         <!-- SECTION - Hero END -->
-
-        <!-- SECTION - Form Password lost -->
+        
+        <!-- SECTION - Button -->
 		<section class="t-section -p0 pt-2 pb-1">
-            <div class="t-section__inner">
-                <oFormPasswordLost />
+            <div class="t-section__inner flex flex-center">
+                <aButtonFillFull url="/ucet/profil" text="Zpět do profilu" styleThema=" -blue -bold" target="internal" styleSize=" -w400" />
             </div>
         </section>
-        <!-- SECTION - Form Password lost END -->
+        <!-- SECTION - Button END -->
 
     </main>
 </template>
 
 <script>
-    import { loginCheckLogin } from '~/utils/loginCheckLogin.js'
+    import { loginCheckLogout } from '~/utils/loginCheckLogout.js'
 
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oFormPasswordLost from '~/components/organisms/oFormPasswordLost.vue'
     import oHero from '~/components/organisms/oHero.vue'
 
     export default {
-        name: 'UcetZepomenuteHesloPage',
+        name: 'UcetHesloObnovenoPage',
         
         components: {
             aButtonFillFull,
             mHeadline,
-            oFormPasswordLost,
             oHero
         },
 
         data() {
             return {
-                headline: 'Zapomenuté Heslo'
+                headline: 'Heslo bylo obnoveno'
             }
         },
 
@@ -95,7 +93,7 @@
         },
 
         mounted() {
-            loginCheckLogin(this.$router)
+            loginCheckLogout(this.$router)
         }
     }
 </script>

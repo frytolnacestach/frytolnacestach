@@ -16,6 +16,7 @@
                         <div class="o-form-login__item">
                             <input class="a-input -blue" type="password" name="password" v-model="password" placeholder="Heslo"/>
                         </div>
+                        <nuxt-link to="/ucet/zapomenute-heslo">Zapomenuté heslo</nuxt-link>
                     </div>
                     <div class="o-form-login__buttons mt-1">
                         <div class="o-form-login__button">
@@ -35,7 +36,7 @@
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
     
     export default {
-        name: 'OrganismsoFormRegistrationComponent',
+        name: 'OrganismsoFormLoginComponent',
     
         components: {
             oFlashMessages
