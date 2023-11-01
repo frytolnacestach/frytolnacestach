@@ -37,7 +37,7 @@
 
                                 <div class="o-form-profile__group">
                                     <label class="o-form-profile__label">Odkazy:</label>
-                                    <div class="o-form-profile__item -flex" v-for="(item, index) in urls" :key="index">
+                                    <div class="o-form-profile__item -flex" v-for="(item, index) in urls" :key="index" v-if="urls">
                                         <input class="a-input -blue" type="text" v-model="urls[index].url" />
                                         <div class="m-button-remove -blue">
                                             <button class="m-button-remove__input" type="button" @click="removeUrlInput(index)">
@@ -48,8 +48,11 @@
                                 </div>
                                 <div class="o-form-profile__buttons mt-1">
                                     <div class="o-form-profile__button">
-                                        <div class="m-button-add -blue">
+                                        <div class="m-button-add -blue" v-if="urls">
                                             <button class="m-button-add__input" type="button" @click="addUrlInput" v-if="urls.length < 32">Přidat odkaz</button>
+                                        </div>
+                                        <div class="m-button-add -blue" v-else="urls">
+                                            <button class="m-button-add__input" type="button" @click="addUrlInput">Přidat první odkaz</button>
                                         </div>
                                     </div>
                                 </div>
@@ -154,8 +157,14 @@
             },
 
             addUrlInput() {
-                if (this.urls.length < 32) {
+                if (this.urls && this.urls.length < 32) {
                     this.urls.push({ url: "" })
+                } else if (!this.urls) {
+                    this.urls = [
+                    {
+                        url: ""
+                    }
+                ]
                 }
             },
 
