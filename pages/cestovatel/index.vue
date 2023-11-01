@@ -23,7 +23,6 @@
 </template>
 
 <script>
-
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oUserList from '~/components/organisms/oUserList.vue'
@@ -45,14 +44,7 @@
             return {
                 headline: "Cestovatelé",
                 users: this.users,
-                images: this.images
-            }
-        },
-
-        data() {
-            return {
                 staticUser: this.staticUser,
-                user: '',
                 videos: [],
                 images: [],
                 mNavUserOpen: false
@@ -89,7 +81,7 @@
             ogDescription = description
 
             // ogUrl
-            ogUrl = `${process.env.baseUrl}/cestovatel/${this.staticUser[0].slug}/videa`
+            ogUrl = `${process.env.baseUrl}/cestovatel`
 
             // ogType
             ogType = 'website'
