@@ -91,7 +91,7 @@
                     {
                         id: 1,
                         name: "Elektricka zásuvka",
-                        url: "/elektrické zásuvky",
+                        url: "/elektricka-zasuvka",
                         status: "link"
                     }
                 ]
