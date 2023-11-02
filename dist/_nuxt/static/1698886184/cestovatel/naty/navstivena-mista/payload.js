@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/cestovatel/naty/navstivena-mista", {data:[{staticUser:[{id:6,email:"nataliefrycova2006@gmail.com",nickname:"Naty",slug:"naty",surname:"Natálie",lastname:"Fryčová",status:3,urls:[{url:"https:\u002F\u002Fwww.instagram.com\u002Fnatyfrycova\u002F"}]}]}],fetch:{},mutations:void 0});
