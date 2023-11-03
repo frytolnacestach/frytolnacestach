@@ -1,5 +1,5 @@
 <template>
-    <main class="t-main -pt-menu" role="main">
+    <main class="t-main -green -pt-menu" role="main">
 
         <section class="t-section print-section">
             <!-- SECTION - Hero elektrické zásuvky -->
