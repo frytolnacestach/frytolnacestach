@@ -11,6 +11,7 @@
 
     &__items {
         display: flex;
+        flex-wrap: wrap;
         margin: 0 -5px;
     }
 
@@ -32,10 +33,10 @@
         align-items: center;
         background-color: $c-blue-bg-component-light-super;
         padding: 20px 15px;
-        border-radius: $br-2;
+        border-radius: $br-1;
 
         @media only screen and (min-width: $sm) {
-            border-radius: $br-4;
+            border-radius: $br-2;
         }
     }
 
