@@ -1,36 +1,36 @@
 <template>
-    <div class="o-number-places" v-if="achievements[0]">
+    <div class="o-number-places" v-if="numberPlaces[0]">
         <div class="o-number-places__outer">
             <div class="o-number-places__inner">
                 <div class="o-number-places__items">
                     <div class="o-number-places__item">
                         <div class="o-number-places__content">
                             <h3 class="o-number-places__headline">Kontinentů</h3>
-                            <span class="o-number-places__number">{{ achievements[0].continent }}</span>
+                            <span class="o-number-places__number">{{ numberPlaces[0].continent }}</span>
                         </div>
                     </div>
                     <div class="o-number-places__item">
                         <div class="o-number-places__content">
                             <h3 class="o-number-places__headline">Států</h3>
-                            <span class="o-number-places__number">{{ achievements[0].state }}</span>
+                            <span class="o-number-places__number">{{ numberPlaces[0].state }}</span>
                         </div>
                     </div>
                     <div class="o-number-places__item">
                         <div class="o-number-places__content">
                             <h3 class="o-number-places__headline">Regionů</h3>
-                            <span class="o-number-places__number">{{ achievements[0].region }}</span>
+                            <span class="o-number-places__number">{{ numberPlaces[0].region }}</span>
                         </div>
                     </div>
                     <div class="o-number-places__item">
                         <div class="o-number-places__content">
                             <h3 class="o-number-places__headline">Měst</h3>
-                            <span class="o-number-places__number">{{ achievements[0].city }}</span>
+                            <span class="o-number-places__number">{{ numberPlaces[0].city }}</span>
                         </div>
                     </div>
                     <div class="o-number-places__item">
                         <div class="o-number-places__content">
                             <h3 class="o-number-places__headline">Míst</h3>
-                            <span class="o-number-places__number">{{ achievements[0].spot }}</span>
+                            <span class="o-number-places__number">{{ numberPlaces[0].spot }}</span>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                 passwordHash: null,
                 loginCheck: false,
                 account: [],
-                achievements: [],
+                numberPlaces: [],
                 users: []
             }
         },
@@ -68,7 +68,7 @@
             while (!success) {
                 try {
                     let account = null
-                    let achievements = null
+                    let numberPlaces = null
                     let users = null
 
                     if (process.client) {
@@ -78,9 +78,9 @@
 
                             this.loginCheck = true
 
-                            // Achievements
+                            // numberPlaces
                             if (account !== null) {
-                                achievements = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${account[0].id}`)
+                                numberPlaces = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${account[0].id}`)
                             }
                         } else {
                             this.loginCheck = true
@@ -89,7 +89,7 @@
                         this.loginCheck = false
                     }
 
-                    data = { account, achievements, users }
+                    data = { account, numberPlaces, users }
 
 
                     success = true
