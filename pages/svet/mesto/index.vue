@@ -145,7 +145,7 @@
                 ])
                 const { data: placesParentData } = placesParentResponse;
 
-                this.placesParent = this.placesParent.concat(placesParentData);
+                this.placesParent = this.placesParent.concat(placesParentData)
 
                 //load images
                 const imagesPlacesCitiesIDS = placesData.map(placeCity => placeCity.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')

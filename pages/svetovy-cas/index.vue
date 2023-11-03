@@ -47,14 +47,14 @@
 
         data() {
             return {
+                headline: "Kolik hodin je ve světě",
+                filterPlace: null,
                 images: [],
                 placesStates: [],
                 isLoading: false,
                 noMoreItems: false,
                 page: 1,
-                perPage: 20,
-                filterPlace: '',
-                headline: "Kolik hodin je ve světě"
+                perPage: 20
             }
         },
 
@@ -109,19 +109,27 @@
         },
         
         async mounted() {
-            await this.loadPlaces()
+            const filterIDstate = this.$route.query.filterIDcontinent
+            if (!filterIDstate) {
+                await this.loadPlaces()
+            }
             this.addScrollListener()
         },
 
         methods: {
-            async loadPlaces() {
+            async loadPlaces(reset) {
                 //start loading
                 this.isLoading = true
 
+                // Variable
+                let placesResponse
+
                 //load places
-                const [placesResponse] = await Promise.all([
-                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=list&idContinent=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
-                ]);
+                if (this.filterPlace !== null) {
+                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=list&idContinent=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
+                } else {
+                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=list&page=${this.page}&items=${this.perPage}`)
+                }
                 const { data: placesData } = placesResponse
 
                 //load images
@@ -132,10 +140,20 @@
                     this.images = this.images.concat(imagesData)
 
                     // add to placecesData to placesStates
-                    this.placesStates = this.placesStates.concat(placesData)
+                    if (reset) {
+                        // Reset Arrays after change filter
+                        this.placesStates = placesData
+                    } else {
+                        this.placesStates = this.placesStates.concat(placesData)
+                    }
                 } else {
                     // add to placecesData to placesStates
-                    this.placesStates = this.placesStates.concat(placesData)
+                    if (reset) {
+                        // Reset Arrays after change filter
+                        this.placesStates = placesData
+                    } else {
+                        this.placesStates = this.placesStates.concat(placesData)
+                    }
                 }
 
                 //no more items?
@@ -190,14 +208,14 @@
 
             // filter set update
             filterUpdate(newValue) {
-                this.filterPlace = newValue
+                this.filterPlace = newValue.id
                 this.images = []
                 this.placesStates = []
                 this.isLoading = false
                 this.noMoreItems = false
                 this.page = 1
                 this.perPage = 20
-                this.loadPlaces()
+                this.loadPlaces(true)
             }
         },
 

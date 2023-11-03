@@ -110,6 +110,7 @@
                 ]
             }
         },
+        
         async mounted() {
             const filterIDstate = this.$route.query.filterIDcontinent
             if (!filterIDstate) {
