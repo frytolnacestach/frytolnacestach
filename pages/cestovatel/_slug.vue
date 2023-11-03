@@ -126,6 +126,7 @@
             let ogUrl
             let ogType
 
+
             // title
             title = `${this.staticUser[0].nickname} | Frytol na cestách`
 
@@ -133,7 +134,11 @@
             description = `Profil cestovatele ${this.staticUser[0].nickname} na cestovatelském portálu Frytol na cestách`
 
             // keywolds
-            keywords = `${this.staticUser[0].nickname + ', cestovatel, uživatel, cestování, svět, rady, cestovatelský portál'}`
+            let metaSeoTags
+            if (this.staticUser[0].seo_tags && this.staticUser[0].seo_tags.length > 0) {
+                metaSeoTags = this.staticUser[0].seo_tags.map(item => item.tag).join(", ")
+            }
+            keywords = `${this.staticUser[0].nickname + metaSeoTags + ', cestovatel, uživatel, cestování, svět, rady, cestovatelský portál'}`
             
             // ogImage
             ogImage = 'https://image.frytolnacestach.cz/storage/main/og-default.png'

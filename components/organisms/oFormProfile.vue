@@ -56,6 +56,28 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="o-form-profile__group">
+                                    <label class="o-form-profile__label">Seo Tagy:</label>
+                                    <div class="o-form-profile__item -flex" v-for="(item, index) in seo_tags" :key="index" v-if="seo_tags">
+                                        <input class="a-input -blue" type="text" v-model="seo_tags[index].tag" />
+                                        <div class="m-button-remove -blue">
+                                            <button class="m-button-remove__input" type="button" @click="removeTagInput(index)">
+                                                Odstranit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="o-form-profile__buttons mt-1">
+                                    <div class="o-form-profile__button">
+                                        <div class="m-button-add -blue" v-if="seo_tags">
+                                            <button class="m-button-add__input" type="button" @click="addTagInput" v-if="seo_tags.length < 5">Přidat tag</button>
+                                        </div>
+                                        <div class="m-button-add -blue" v-else="seo_tags">
+                                            <button class="m-button-add__input" type="button" @click="addTagInput">Přidat první tag</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="o-form-profile__buttons mt-1">
                                 <div class="o-form-profile__button">
@@ -103,6 +125,11 @@
                     {
                         url: ""
                     }
+                ],
+                seo_tags: [
+                    {
+                        tag: ""
+                    }
                 ]
             }
         },
@@ -138,7 +165,8 @@
                             'surname': this.surname,
                             'lastname': this.lastname,
                             'agreement_mail': this.agreementMail,
-                            'urls': this.urls
+                            'urls': this.urls,
+                            'seo_tags': this.seo_tags
                         })
                     })
 
@@ -161,17 +189,32 @@
                     this.urls.push({ url: "" })
                 } else if (!this.urls) {
                     this.urls = [
-                    {
-                        url: ""
-                    }
-                ]
+                        {
+                            url: ""
+                        }
+                    ]
+                }
+            },
+
+            addTagInput() {
+                if (this.seo_tags && this.seo_tags.length < 5) {
+                    this.seo_tags.push({ tag: "" })
+                } else if (!this.seo_tags) {
+                    this.seo_tags = [
+                        {
+                            tag: ""
+                        }
+                    ]
                 }
             },
 
             removeUrlInput(index) {
                 this.urls.splice(index, 1)
-            }
+            },
 
+            removeTagInput(index) {
+                this.seo_tags.splice(index, 1)
+            }
         },
 
         async mounted() {
@@ -185,6 +228,7 @@
                 this.surname = this.profile[0].surname
                 this.lastname = this.profile[0].lastname
                 this.urls = this.profile[0].urls
+                this.seo_tags = this.profile[0].seo_tags
                 this.agreementMail = this.profile[0].agreement_mail
             }
         }

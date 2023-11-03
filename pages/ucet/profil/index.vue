@@ -29,6 +29,15 @@
                     </div>
 
                     <div class="t-grid__section -content">
+                        <!-- SECTION - Number places -->
+                        <section class="t-section -padding-x -p0 mb-2">
+                            <div class="t-section__inner">
+                                <mHeadline title="Počet navštívených míst" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                <oNumberPlaces />
+                            </div>
+                        </section>
+                        <!-- SECTION - Number places END -->
+
                         <!-- SECTION - Form - profile -->
                         <section class="t-section -padding-x -p0">
                             <div class="t-section__inner">
@@ -55,6 +64,7 @@
     import mNavAccount from '~/components/molecules/mNavAccount.vue'
     import oFlashMessagesAccount from '~/components/organisms/oFlashMessagesAccount.vue'
     import oFormProfile from '~/components/organisms/oFormProfile.vue'
+    import oNumberPlaces from '~/components/organisms/oNumberPlaces.vue'
 
     export default {
         name: 'UcetProfilPage',
@@ -64,7 +74,8 @@
             mHeadline,
             mNavAccount,
             oFlashMessagesAccount,
-            oFormProfile
+            oFormProfile,
+            oNumberPlaces
         },
 
         data() {
