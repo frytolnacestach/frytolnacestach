@@ -477,7 +477,7 @@
             ogDescription = description
 
             // ogUrl
-            ogUrl = `${process.env.baseUrl}/svet/mesto${this.place[0].slug}`
+            ogUrl = `${process.env.baseUrl}/svet/mesto/${this.place[0].slug}`
 
             // ogType
             ogType = 'website'
