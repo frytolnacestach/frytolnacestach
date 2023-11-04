@@ -204,7 +204,7 @@
             ogDescription = description
 
             // ogUrl
-            ogUrl = `${process.env.baseUrl}/cestovatelsky-slovnik/${this.travelDictionary[0].slug}`
+            ogUrl = `${process.env.baseUrl}/udalost/${this.event[0].slug}`
 
             // ogType
             ogType = 'website'
