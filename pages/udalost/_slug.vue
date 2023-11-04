@@ -70,7 +70,7 @@
                         <!-- SECTION - Ubytování - information END -->
 
                         <!-- SECTION - Ubytování -->
-                        <section class="t-section -px-world py-2 hidden-print" v-if="event[0].affiliate.find(x => x.name === 'booking').value === true">
+                        <section class="t-section -px-world py-2 hidden-print" v-if="event[0].affiliate.find(x => x.name === 'booking').value === true && placeCity[0]">
                             <div class="t-section__inner">
                                 <div v-for="coordinate in event[0].coordinates">
                                     <oWidgetBooking 
@@ -155,6 +155,7 @@
         data() {
             return {
                 event: this.event,
+                image: this.image,
                 placeCity: this.placeCity,
                 isMobile: false,
                 showHero: true,
@@ -253,16 +254,16 @@
                     // Event
                     const event = await $axios.$get(`https://api.frytolnacestach.cz/api/event/${params.slug}`)
                     // Image
-                    const image = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${event[0].id_image_hero}`)
+                    const image = event[0].id_image_hero && event[0].id_image_hero !== 0 ? await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${event[0].id_image_hero}`) : []
+
                     // PlaceCity
-                    const placeCity = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${event[0].id_city}`)
+                    const placeCity = event[0].id_city && event[0].id_city !== 0 ? await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${event[0].id_city}`) : []
 
 
                     data = {
                         event,
                         image,
                         placeCity
-                    
                     }
                     
                     success = true
