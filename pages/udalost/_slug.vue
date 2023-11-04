@@ -70,7 +70,7 @@
                         <!-- SECTION - Ubytování - information END -->
 
                         <!-- SECTION - Ubytování -->
-                        <section class="t-section -px-world py-2 hidden-print" v-if="event[0].affiliate.find(x => x.name === 'booking').value === true && placeCity[0]">
+                        <section class="t-section -px-world py-2 hidden-print" v-if="event[0] && placeCity[0] && event[0].affiliate.find(x => x.name === 'booking').value === true">
                             <div class="t-section__inner">
                                 <div v-for="coordinate in event[0].coordinates">
                                     <oWidgetBooking 
