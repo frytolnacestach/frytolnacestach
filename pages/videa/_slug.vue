@@ -2,7 +2,7 @@
     <main class="t-main -gray -pt-menu" role="main">
         
         <!-- SECTION - Hero video -->
-        <section class="t-section -p0 mb-1 mt-2">
+        <section class="t-section -p0">
             <div class="t-section__inner">
                 <oHeroVideo :image="imageVideo" :title="video[0].title" />
             </div>
@@ -10,7 +10,7 @@
         <!-- SECTION - Hero video END -->
 
         <div class="t-col2">
-            <div class="t-col2__content my-2">
+            <div class="t-col2__content mb-2">
 
                 <!-- SECTION - perex -->
                 <section class="t-section py-2" v-if="video[0].perex">
@@ -46,7 +46,7 @@
             <div class="t-col2__sidebar my-2">
 
                 <!-- SECTION - author - sidebar -->
-                <section class="t-section -px-world mt-2 -p0">
+                <section class="t-section -px-world mb-2 -p0">
                     <div class="t-section__inner">
                         <oAuthorSidebar :author="video[0].id_user"/>
                     </div>
@@ -54,7 +54,7 @@
                 <!-- SECTION - author - sidebar - END -->
 
                 <!-- SECTION - ad-google - sidebar -->
-                <section class="t-section -px-world my-2">
+                <section class="t-section -px-world mt-4 mb-2">
                     <div class="t-section__inner">
                         <oAdGoogleSidebar />
                     </div>
