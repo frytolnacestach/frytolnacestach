@@ -12,11 +12,12 @@
         <!-- SECTION - Text -->
 		<section class="t-section pt-2 pb-1">
             <div class="t-section__inner">
-                <p>
+                <p class="flex flex-center">
                     Veše registrace byla úspěšná. Teď se <nuxtLink to="/ucet/prihlaseni">přihlašte</nuxtLink> a následně aktivujte účet.
                 </p>
             </div>
         </section>
+
         <!-- SECTION - Text END -->
 
     </main>
