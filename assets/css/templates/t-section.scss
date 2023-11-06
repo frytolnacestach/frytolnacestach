@@ -26,7 +26,11 @@
     }
 
     //MODIFICATION
-    // other
+    // Other
+    &.-h-scroll {
+        max-width: 100vw;
+    }
+
     &.-wysiwyg {
 
         #{$self}__inner {
@@ -51,17 +55,18 @@
         }
     }
 
-    //Background gray
+    // Background color
+    // Gray
     &.-bg-gray {
         background-color: $gray1;
     }
 
-    //Background black
-    &.-bg-extra-dark-gray {
-        background-color: $gray9;
+    // Green
+    &.-bg-green {
+        background-color: $c-green-bg-component-light-super;
     }
 
-
+    // Padding
     &.-px-world {
         padding-left: 5px;
         padding-right: 5px;
@@ -82,7 +87,6 @@
         }
     }
 
-    //padding
     &.-padding-x {
         padding-left: 5px;
         padding-right: 5px;
@@ -113,11 +117,6 @@
         }
     }
 
-    &.-h-scroll {
-        max-width: 100vw;
-    }
-
-    //padding 0
     &.-p0 {
         #{$self}__inner {
             padding: 0;

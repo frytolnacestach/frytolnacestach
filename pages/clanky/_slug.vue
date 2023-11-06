@@ -165,7 +165,7 @@
             <!-- SECTION - place END -->
 
             <!-- SECTION - videos -->
-            <section class="t-section -p0 -bg-extra-dark-gray pt-4 py-2 px-2 hidden-print" v-if="videos[0]">
+            <section class="t-section -p0 -bg-green pt-4 py-2 px-2 hidden-print" v-if="videos[0]">
                 <div class="t-section__inner">
                     <mHeadline title="Videa z této oblasti" styleThema=" -dark" styleAlign=" -p-left" styleGap=" mb-2" />
                     <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -dark" styleAlign=" -p-left" />

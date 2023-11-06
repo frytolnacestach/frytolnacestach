@@ -144,18 +144,18 @@
         }
 
         #{$self}__title-link {
-            color: $white;
+            color: $c-green-t-dark-super;
 
             &:hover {
-                color: $gray1;
+                color: $c-green-t-dark;
             }
         }
 
         #{$self}__perex-link {
-            color: $white;
+            color: $c-green-t-dark-super;
     
             &:hover {
-                color: $gray1;
+                color: $c-green-t-dark;
             }
         }
     }
