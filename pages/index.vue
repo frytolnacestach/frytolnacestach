@@ -10,7 +10,7 @@
         <!-- SECTION - Hero END -->
 
         <!-- SECTION - Top místa -->
-        <section class="t-section -p0 pb-4 print-section">
+        <section class="t-section -p0 mt-4 pb-4 print-section">
             <div class="t-section__inner">
                 <mHeadline title="Nejzajímavější místa" perex="Víte, kam byste se měli vydat na nezapomenutelnou dovolenou? Přinášíme vám seznam nejzajímavějších míst na světě, která musíte vidět. Od malebných vesnic a historických památek až po impozantní přírodní krásy, naše stránky vám pomohou najít nejlepší místa pro vaši další cestování." styleThema=" -world -w640" styleAlign=" -center" styleGap=" mb-2" />
                 <oTopPlace />
