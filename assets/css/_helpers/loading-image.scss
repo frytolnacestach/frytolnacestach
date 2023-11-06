@@ -15,6 +15,7 @@
         animation: loadingImage 3s ease infinite;
     }
 
+    // MODIFICATION
     &.-blue {
         background: $c-blue-loading-bg;
 
@@ -39,7 +40,7 @@
         }
     }
 
-    //skeleton
+    // Skeleton
     &.-skeleton-blue {
         position: relative;
         overflow: hidden;
@@ -70,7 +71,7 @@
         }
     }
 
-    //skeleton-dark
+    // Skeleton-dark
     &.-skeleton-dark-blue {
         position: relative;
         overflow: hidden;
@@ -101,7 +102,7 @@
         }
     }
 
-    //animation
+    // ANIMATION
     @keyframes loadingImage {
         0%{
             right: -300%;

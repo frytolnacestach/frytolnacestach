@@ -4,7 +4,7 @@
             <div class="o-article-list__items">
                 <div v-for="post in posts" :key="post.id" class="o-article-list__item print-section">
                     <div class="o-article-list__item-inner">
-                        <div class="o-article-list__image loading-image -gray">
+                        <div class="o-article-list__image loading-image -green">
                             <div v-if="images && images.find(image => image.id === post.id_image_cover)" class="o-article-list__image-lazyload">
                                 <img class="o-article-list__image-file lazyload-file"
                                     data-sizes="(max-width: 349px) 320px, (max-width: 374px) 340px, (max-width: 399px) 360px, (max-width: 459px) 420px, (max-width: 575px) 536px, (max-width: 767px) 360px, (max-width: 1019px) 320px, (max-width: 1219px) 384px, (max-width: 1399px) 442px, 620px"
