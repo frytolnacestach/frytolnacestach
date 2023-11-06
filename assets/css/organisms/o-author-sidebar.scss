@@ -2,7 +2,9 @@
     display: block;
 
     &__outer {
-        padding: 0 10px;
+        @media only screen and (min-width: $lg) {
+            padding: 0 10px;
+        }
     }
 
     &__inner {

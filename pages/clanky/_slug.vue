@@ -129,7 +129,7 @@
                 <!-- SECTION - Sidebar map mapy END -->
 
                 <!-- SECTION - Sidebar tag -->
-                <section class="t-section my-2 print-section" v-if="post[0].tags">
+                <section class="t-section -px-world my-2 -p0 print-section" v-if="post[0].tags">
                     <div class="t-section__inner">
                         <oSidebarTag :tags="post[0].tags" />
                     </div>
