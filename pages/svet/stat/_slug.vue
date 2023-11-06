@@ -515,7 +515,7 @@
                                 <!-- SECTION - Account banner - sidebar END -->
 
                                 <!-- SECTION - links - sidebar -->
-                                <section class="t-section -px-world">
+                                <section class="t-section -px-world" v-if="this.place[0].links && this.place[0].links.length > 0">
                                     <div class="t-section__inner">
                                         <oSidebarLinks :items="this.place[0].links" headline="Užitečné odkazy" />
                                     </div>
@@ -523,7 +523,7 @@
                                 <!-- SECTION - links - sidebar - END -->
 
                                 <!-- SECTION - apps - sidebar -->
-                                <section class="t-section -px-world">
+                                <section class="t-section -px-world" v-if="this.place[0].apps && this.place[0].apps.length > 0">
                                     <div class="t-section__inner">
                                         <oSidebarLinks :items="this.place[0].apps" headline="Užitečné aplikace" />
                                     </div>
