@@ -91,7 +91,7 @@
                         <!-- SECTION - Account banner - sidebar END -->
 
                         <!-- SECTION - ad-google - sidebar -->
-                        <section class="t-section -px-world my-2">
+                        <section class="t-section -px-world mt-4 mb-2">
                             <div class="t-section__inner">
                                 <oAdGoogleSidebar />
                             </div>
