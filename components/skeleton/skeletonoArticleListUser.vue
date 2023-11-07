@@ -18,7 +18,7 @@
 
 <script>
     export default {
-        name: 'SkeletonoArticleListComponent',
+        name: 'SkeletonoArticleListUserComponent',
 
         props: {
             styleThema: {

@@ -237,7 +237,7 @@
                                 <section class="t-section -p0 -bg-green py-4 hidden-print" v-if="posts[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleAlign=" -p-left" />
+                                        <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
                                     </div>
                                 </section>
                                 <!-- SECTION - articles END -->

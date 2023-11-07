@@ -12,7 +12,11 @@
         <!-- SECTION - Articles -->
         <section class="t-section -p0 py-1 px-2 print-section">
             <div class="t-section__inner">
-                <oArticleList :posts="posts" :images="images" />
+                <oArticleList :posts="posts" :images="images" styleThemaLoading=" -gray" />
+                <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                    <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                </div>
+                <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
             </div>
         </section>
         <!-- SECTION - Articles END -->
@@ -53,8 +57,12 @@
         data() {
             return {
                 headline: "Články",
-                posts: this.posts,
-                images: this.images
+                posts: [],
+                images: [],
+                isLoading: false,
+                noMoreItems: false,
+                page: 1,
+                perPage: 20
             }
         },
 
@@ -108,21 +116,94 @@
             }
         },
 
-        //API STATIC
-        async asyncData({ $axios }) {
-            // PAGE - Posts list
-            // Posts
-            const posts = await $axios.$get(`https://api.frytolnacestach.cz/api/posts`)
-            // Images
-            const imagesPostsIDS = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
-            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
+        updated() {
+            window.lazySizes && window.lazySizes.update()
+        },
 
-            
-            //return
-            return {
-                posts,
-                images
-            }
+        async mounted() {
+            await this.loadPosts()
+            this.addScrollListener()
+        },
+
+        methods:{
+            async loadPosts() {
+                //start loading
+                this.isLoading = true
+
+                // Variable
+                let postsResponse
+
+                //load posts
+                postsResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/posts?showType=list&page=${this.page}&items=${this.perPage}`)
+                const { data: postsData } = postsResponse
+
+                //load images
+                const imagesPostsIDS = postsData.map(posts => posts.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
+                if (imagesPostsIDS.length > 0) {
+                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
+                    const { data: imagesData } = imagesResponse
+                    this.images = this.images.concat(imagesData)
+                
+                    // add to postsData to posts
+                    this.posts = this.posts.concat(postsData)
+                } else {
+                    // add to postsData to posts
+                    this.posts = this.posts.concat(postsData)
+                } 
+
+                //no more items?
+                if (postsData.length === 0 || postsData.length < this.perPage) {
+                    this.noMoreItems = true
+                }
+
+                //end loading
+                this.isLoading = false
+            },
+
+            addScrollListener() {
+                window.addEventListener('scroll', this.handleScroll)
+            },
+
+            removeScrollListener() {
+                window.removeEventListener('scroll', this.handleScroll)
+            },
+
+            loadMoreItems() {
+                //no further loading can occur while loading
+                if (this.isLoading || this.noMoreItems) {
+                    return
+                }
+                // loading more items
+                this.page++
+                this.loadPosts()
+            },
+
+            handleScroll() {
+                //no further loading can occur while loading
+                if (this.isLoading || this.noMoreItems) {
+                    return
+                }
+
+                // Document for scroll point
+                const windowHeight = window.innerHeight
+                const documentHeight = document.documentElement.scrollHeight
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+
+                // Footer height
+                const tFooterElement = document.querySelector('.t-footer')
+                const tFooterHeight = tFooterElement.offsetHeight
+
+                // Point for loading
+                if (scrollTop + windowHeight >= documentHeight - tFooterHeight) {
+                    // loading more items
+                    this.page++
+                    this.loadPosts()
+                }
+            },
+        },
+
+        beforeDestroy() {
+            this.removeScrollListener()
         }
     }
 </script>
