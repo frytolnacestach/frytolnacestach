@@ -14,6 +14,10 @@
             <section class="t-section -p0">
                 <div class="t-section__inner">
                     <oUserList :items="users" :images="images" />
+                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                    </div>
+                    <oUserList :items="null" :images="null" :skeleton=true v-if="isLoading" />
                 </div>
             </section>
             <!-- SECTION - Articles END -->
@@ -43,11 +47,14 @@
         data() {
             return {
                 headline: "Cestovatelé",
-                users: this.users,
-                staticUser: this.staticUser,
-                videos: [],
+                users: [],
                 images: [],
-                mNavUserOpen: false
+                staticUser: this.staticUser,
+                mNavUserOpen: false,
+                isLoading: false,
+                noMoreItems: false,
+                page: 1,
+                perPage: 20
             }
         },
 
@@ -101,15 +108,79 @@
             }
         },
 
-        async asyncData({ $axios }) {
-            // PAGE - Users list
-            // Users
-            const users = await $axios.$get(`https://api.frytolnacestach.cz/api/users`)
+        async mounted() {
+            await this.loadUsers()
+            this.addScrollListener()
+        },
 
+        methods:{
+            async loadUsers() {
+                //start loading
+                this.isLoading = true
 
-            return {
-                users
-            }
+                // Variable
+                let usersResponse
+
+                //load users
+                usersResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/users?showType=list&page=${this.page}&items=${this.perPage}`)
+                const { data: usersData } = usersResponse
+
+                // add to placecesData to users
+                this.users = this.users.concat(usersData)
+     
+                //no more items?
+                if (usersData.length === 0 || usersData.length < this.perPage) {
+                    this.noMoreItems = true
+                }
+
+                //end loading
+                this.isLoading = false
+            },
+
+            addScrollListener() {
+                window.addEventListener('scroll', this.handleScroll)
+            },
+
+            removeScrollListener() {
+                window.removeEventListener('scroll', this.handleScroll)
+            },
+
+            loadMoreItems() {
+                //no further loading can occur while loading
+                if (this.isLoading || this.noMoreItems) {
+                    return
+                }
+                // loading more items
+                this.page++
+                this.loadUsers()
+            },
+
+            handleScroll() {
+                //no further loading can occur while loading
+                if (this.isLoading || this.noMoreItems) {
+                    return
+                }
+
+                // Document for scroll point
+                const windowHeight = window.innerHeight
+                const documentHeight = document.documentElement.scrollHeight
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+
+                // Footer height
+                const tFooterElement = document.querySelector('.t-footer')
+                const tFooterHeight = tFooterElement.offsetHeight
+
+                // Point for loading
+                if (scrollTop + windowHeight >= documentHeight - tFooterHeight) {
+                    // loading more items
+                    this.page++
+                    this.loadUsers()
+                }
+            },
+        },
+
+        beforeDestroy() {
+            this.removeScrollListener()
         }
     }
 </script>
