@@ -219,7 +219,7 @@
                                 <section class="t-section -p0 -bg-green py-4 hidden-print" v-if="videos[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleAlign=" -p-left" />
+                                        <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
                                     </div>
                                 </section>
                                 <!-- SECTION - videos END -->
@@ -617,7 +617,7 @@
                                 <section class="t-section -p0 -px-world my-2" v-if="videos[0]">
                                     <div class="t-section__inner">
                                         <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world-tab" styleAlign=" -p-left" />
+                                        <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world-tab" styleThemaLoading=" -green" styleAlign=" -p-left" />
                                     </div>
                                 </section>
                                 <!-- SECTION - videos END -->

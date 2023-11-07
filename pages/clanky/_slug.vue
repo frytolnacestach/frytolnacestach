@@ -168,7 +168,7 @@
             <section class="t-section -p0 -bg-green pt-4 py-2 px-2 hidden-print" v-if="videos[0]">
                 <div class="t-section__inner">
                     <mHeadline title="Videa z této oblasti" styleThema=" -dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                    <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -dark" styleAlign=" -p-left" />
+                    <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -dark" styleThemaLoading=" -gray" styleAlign=" -p-left" />
                 </div>
             </section>
             <!-- SECTION - videos END -->

@@ -10,9 +10,13 @@
         <!-- SECTION - Hero END -->
 
         <!-- SECTION - videos -->
-        <section class="t-section -p0 py-1 px-2 print-section" v-if="videos[0]">
+        <section class="t-section -p0 py-1 px-2 print-section">
             <div class="t-section__inner">
-                <oVideoList :videos="videos" :images="images" />
+                <oVideoList :videos="videos" :images="images" styleThemaLoading=" -gray" />
+                <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                    <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                </div>
+                <oVideoList :videos="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
             </div>
         </section>
         <!-- SECTION - videos END -->
@@ -53,8 +57,12 @@
         data() {
             return {
                 headline: "Videa",
-                videos: this.videos,
-                images: this.images
+                videos: [],
+                images: [],
+                isLoading: false,
+                noMoreItems: false,
+                page: 1,
+                perPage: 20
             }
         },
 
@@ -112,21 +120,90 @@
             window.lazySizes && window.lazySizes.update()
         },
 
-        //API STATIC
-        async asyncData({ $axios }) {
-            // PAGE - Videos list
-            // Video
-            const videos = await $axios.$get(`https://api.frytolnacestach.cz/api/videos`)
-            // Images
-            const imagesVideosIDS = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
-            const images = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
+        async mounted() {
+            await this.loadVideos()
+            this.addScrollListener()
+        },
 
+        methods:{
+            async loadVideos() {
+                //start loading
+                this.isLoading = true
 
-            //return
-            return {
-                videos,
-                images
-            }
+                // Variable
+                let videosResponse
+
+                //load videos
+                videosResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/videos?showType=list&page=${this.page}&items=${this.perPage}`)
+                const { data: videosData } = videosResponse
+
+                //load images
+                const imagesVideosIDS = videosData.map(videos => videos.id_image).filter(id => id !== undefined && id !== null && id !== '')
+                if (imagesVideosIDS.length > 0) {
+                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
+                    const { data: imagesData } = imagesResponse
+                    this.images = this.images.concat(imagesData)
+                
+                    // add to videosData to videos
+                    this.videos = this.videos.concat(videosData)
+                } else {
+                    // add to videosData to videos
+                    this.videos = this.videos.concat(videosData)
+                } 
+
+                //no more items?
+                if (videosData.length === 0 || videosData.length < this.perPage) {
+                    this.noMoreItems = true
+                }
+
+                //end loading
+                this.isLoading = false
+            },
+
+            addScrollListener() {
+                window.addEventListener('scroll', this.handleScroll)
+            },
+
+            removeScrollListener() {
+                window.removeEventListener('scroll', this.handleScroll)
+            },
+
+            loadMoreItems() {
+                //no further loading can occur while loading
+                if (this.isLoading || this.noMoreItems) {
+                    return
+                }
+                // loading more items
+                this.page++
+                this.loadVideos()
+            },
+
+            handleScroll() {
+                //no further loading can occur while loading
+                if (this.isLoading || this.noMoreItems) {
+                    return
+                }
+
+                // Document for scroll point
+                const windowHeight = window.innerHeight
+                const documentHeight = document.documentElement.scrollHeight
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+
+                // Footer height
+                const tFooterElement = document.querySelector('.t-footer')
+                const tFooterHeight = tFooterElement.offsetHeight
+
+                // Point for loading
+                if (scrollTop + windowHeight >= documentHeight - tFooterHeight) {
+                    // loading more items
+                    this.page++
+                    this.loadVideos()
+                }
+            },
+        },
+
+        beforeDestroy() {
+            this.removeScrollListener()
         }
     }
 </script>

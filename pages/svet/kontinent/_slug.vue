@@ -123,7 +123,7 @@
                         <section class="t-section -p0 -bg-green py-4 hidden-print" v-if="videos[0]">
                             <div class="t-section__inner">
                                 <mHeadline title="Videa z kontinentu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                                <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleAlign=" -p-left" />
+                                <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
                             </div>
                         </section>
                         <!-- SECTION - videos END -->

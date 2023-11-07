@@ -17,7 +17,7 @@
 
 <script>
     export default {
-        name: 'SkeletonoVideoListComponent',
+        name: 'SkeletonoVideoListUserComponent',
 
         props: {
             styleThema: {
