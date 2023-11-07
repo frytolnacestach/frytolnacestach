@@ -23,7 +23,7 @@
 
                     <!-- SECTION - hero -->
                     <div class="t-grid__section -hero-place" v-show="!isMobile || (isMobile && showHero)">
-                        <oHeroPlace :place="place" :images="imagePlace" />
+                        <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
                     </div>
                     <!-- SECTION - hero END -->
 
@@ -704,6 +704,7 @@
 
         data() {
             return {
+                preTitle: '',
                 place: this.place,
                 placesStatesNeighboring: this.placesStatesNeighboring,
                 placeContinent: this.placeContinent,
@@ -721,7 +722,6 @@
                 activeTabName: 'PLACE_NAME',
                 isMobile: false,
                 showHero: true,
-                metaTitle: '',
                 tabs: [
                     { slug: 'default', label: 'state_name', visible: false },
                     { slug: 'co-videt', label: 'Co vidět', visible: false },
@@ -812,6 +812,10 @@
             handleResize() {
                 // Aktualizovat hodnotu pro "isMobile" při změně velikosti okna
                 this.isMobile = window.innerWidth < 992
+            },
+
+            getPreTitle() {
+                this.preTitle = `${this.activeTabName} ve státě`
             }
         },
 
@@ -1106,6 +1110,7 @@
             activeTab: function(newActiveTab) {
                 const selectedTab = this.tabs.find(tab => tab.slug === newActiveTab)
                 this.activeTabName = selectedTab.label
+                this.getPreTitle()
             }
         }
     }

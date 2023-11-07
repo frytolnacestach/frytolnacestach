@@ -25,7 +25,7 @@
 
                     <!-- SECTION - hero -->
                     <div class="t-grid__section -hero-place" v-show="!isMobile || (isMobile && showHero)">
-                        <oHeroPlace :place="place" :images="imagePlace" />
+                        <oHeroPlace :title="place[0].name" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
                     </div>
                     <!-- SECTION - hero END -->
 
