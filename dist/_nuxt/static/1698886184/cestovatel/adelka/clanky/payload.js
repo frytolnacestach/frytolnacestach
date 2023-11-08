@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/cestovatel/adelka/clanky", (function(a,b){return {data:[{staticUser:[{id:b,email:"adelinka114@seznam.cz",nickname:"Adelka",slug:"adelka",surname:a,lastname:a,status:b,urls:a}]}],fetch:{},mutations:void 0}}(null,3)));
