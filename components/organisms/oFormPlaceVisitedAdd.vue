@@ -94,51 +94,55 @@
                 try {
                     this.placeID = placeID
 
-                    try {
-                        const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-edit`, {
-                            headers: {
-                                "Content-Type": "application/json",
-                                "Access-Control-Allow-Origin": "http://localhost:3000",
-                                "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
-                                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH"
-                            },
-                            method: 'POST',
-                            body: JSON.stringify({
-                                'email': this.email,
-                                'password_hash': this.passwordHash,
-                                'id_place': this.placeID, 
-                                'type': this.placeTypeApp,
-                                'status': this.status
+                    if (this.visitedPlace.some(place => place.id === placeID)) {
+                        this.errorForm = "Místo již máte mezi navštíveními"
+                    } else {
+                        try {
+                            const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-edit`, {
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    "Access-Control-Allow-Origin": "http://localhost:3000",
+                                    "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
+                                    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH"
+                                },
+                                method: 'POST',
+                                body: JSON.stringify({
+                                    'email': this.email,
+                                    'password_hash': this.passwordHash,
+                                    'id_place': this.placeID, 
+                                    'type': this.placeTypeApp,
+                                    'status': this.status
+                                })
                             })
-                        })
 
-                        if (response.ok) {
-                            if (response.status === 201) {
-                                if (this.status === 1) {
-                                    console.log("Místo bylo přidáno mezi navštívené")
-                                    this.successForm = "Místo bylo přidáno mezi navštívené"
-                                } else if (this.status === 2) {
-                                    console.log("Místo bylo přidáno mezi chci navštívit")
-                                    this.successForm = "Místo bylo přidáno mezi chci navštívit"
+                            if (response.ok) {
+                                if (response.status === 201) {
+                                    if (this.status === 1) {
+                                        console.log("Místo bylo přidáno mezi navštívené")
+                                        this.successForm = "Místo bylo přidáno mezi navštívené"
+                                    } else if (this.status === 2) {
+                                        console.log("Místo bylo přidáno mezi chci navštívit")
+                                        this.successForm = "Místo bylo přidáno mezi chci navštívit"
+                                    }
+                                    
+                                    this.searchQuery = ''
+                                    this.emitAddNewPlaceEvent(this.placeID)
+                                } else if (response.status === 200) {
+                                    console.log("Záznam odebrán")
+                                    this.successForm = "Záznam odebrán"
                                 }
-                                
-                                this.searchQuery = ''
-                                this.emitAddNewPlaceEvent(this.placeID)
-                            } else if (response.status === 200) {
-                                console.log("Záznam odebrán")
-                                this.successForm = "Záznam odebrán"
+                            } else if (response.status === 404) {
+                                console.log("Vypadá to že nejsi přihlášen ke svému účtu.")
+                                this.errorForm = "Vypadá to, že nejsi přihlášen ke svému účtu."
+                            } else {
+                                console.log("Chyba při komunikaci s API")
+                                this.errorForm = "Chyba při komunikaci s API"
                             }
-                        } else if (response.status === 404) {
-                            console.log("Vypadá to že nejsi přihlášen ke svému účtu.")
-                            this.errorForm = "Vypadá to, že nejsi přihlášen ke svému účtu."
-                        } else {
-                            console.log("Chyba při komunikaci s API")
-                            this.errorForm = "Chyba při komunikaci s API"
+                        } catch (err) {
+                            console.log(err)
+                            this.errorForm = "Chyba připojení k API"
+                            throw err
                         }
-                    } catch (err) {
-                        console.log(err)
-                        this.errorForm = "Chyba připojení k API"
-                        throw err
                     }
                 } catch (err) {
                     console.log(err)

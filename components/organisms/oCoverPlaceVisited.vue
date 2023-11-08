@@ -5,7 +5,7 @@
         <!-- skeleton END -->
 
         <!-- client -->
-        <client-only v-if="places !== null">
+        <client-only v-if="places !== null  && places.length !== 0">
             <div class="o-cover-place-visited">
                 <div class="o-cover-place-visited__outer">
                     <div class="o-cover-place-visited__items">
@@ -106,7 +106,7 @@
     import oFormPlaceVisitedAdd from '~/components/organisms/oFormPlaceVisitedAdd.vue'
 
     export default {
-        name: 'OrganismsoCoverPlaceComponent',
+        name: 'OrganismsoCoverPlaceVisitedComponent',
 
         components: {
             skeletonoCoverPlaceVisited,
@@ -141,9 +141,9 @@
 
         data() {
             return {
-                places: null,
+                places: [],
                 newPlace: null,
-                images: null,
+                images: [],
                 showPlaceForm: false,
                 newPlaceID: null,
                 removePlaceID: null
@@ -200,15 +200,15 @@
                     let newPlace = []
 
                     if (this.type === "kontinent") {
-                        newPlace = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents-array?showType=list&id=${this.newPlaceID}`) : []
+                        newPlace = this.newPlaceID !== null ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents-array?showType=list&id=${this.newPlaceID}`) : []
                     } else if (this.type === "stat") {
-                        newPlace = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${this.newPlaceID}`) : []
+                        newPlace = this.newPlaceID !== null ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${this.newPlaceID}`) : []
                     } else if (this.type === "mesto") {
-                        newPlace = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-array?showType=list&id=${this.newPlaceID}`) : []
+                        newPlace = this.newPlaceID !== null ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-array?showType=list&id=${this.newPlaceID}`) : []
                     } else if (this.type === "region") {
-                        newPlace = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions-array?showType=list&id=${this.newPlaceID}`) : []
+                        newPlace = this.newPlaceID !== null ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions-array?showType=list&id=${this.newPlaceID}`) : []
                     } else if (this.type === "misto") {
-                        newPlace = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots-array?showType=list&id=${this.newPlaceID}`) : []
+                        newPlace = this.newPlaceID !== null ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots-array?showType=list&id=${this.newPlaceID}`) : []
                     }
 
                     const imagesPlacesID = newPlace.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
