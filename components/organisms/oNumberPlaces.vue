@@ -1,47 +1,63 @@
 <template>
-    <div class="o-number-places" v-if="numberPlaces[0]">
-        <div class="o-number-places__outer">
-            <div class="o-number-places__inner">
-                <div class="o-number-places__items">
-                    <div class="o-number-places__item">
-                        <div class="o-number-places__content">
-                            <h3 class="o-number-places__headline">Kontinentů</h3>
-                            <span class="o-number-places__number">{{ numberPlaces[0].continent }}</span>
-                        </div>
-                    </div>
-                    <div class="o-number-places__item">
-                        <div class="o-number-places__content">
-                            <h3 class="o-number-places__headline">Států</h3>
-                            <span class="o-number-places__number">{{ numberPlaces[0].state }}</span>
-                        </div>
-                    </div>
-                    <div class="o-number-places__item">
-                        <div class="o-number-places__content">
-                            <h3 class="o-number-places__headline">Regionů</h3>
-                            <span class="o-number-places__number">{{ numberPlaces[0].region }}</span>
-                        </div>
-                    </div>
-                    <div class="o-number-places__item">
-                        <div class="o-number-places__content">
-                            <h3 class="o-number-places__headline">Měst</h3>
-                            <span class="o-number-places__number">{{ numberPlaces[0].city }}</span>
-                        </div>
-                    </div>
-                    <div class="o-number-places__item">
-                        <div class="o-number-places__content">
-                            <h3 class="o-number-places__headline">Míst</h3>
-                            <span class="o-number-places__number">{{ numberPlaces[0].spot }}</span>
+    <section class="t-component-skeleton">
+        <!-- skeleton -->
+        <skeletonoNumberPlaces styleThema=" -skeleton-blue" v-if="skeleton" />
+        <!-- skeleton END -->
+
+        <!-- client -->
+        <client-only v-if="numberPlaces[0] && !skeleton">
+            <div class="o-number-places">
+                <div class="o-number-places__outer">
+                    <div class="o-number-places__inner">
+                        <div class="o-number-places__items">
+                            <div class="o-number-places__item">
+                                <div class="o-number-places__content">
+                                    <h3 class="o-number-places__headline">Kontinentů</h3>
+                                    <span class="o-number-places__number">{{ numberPlaces[0].continent }}</span>
+                                </div>
+                            </div>
+                            <div class="o-number-places__item">
+                                <div class="o-number-places__content">
+                                    <h3 class="o-number-places__headline">Států</h3>
+                                    <span class="o-number-places__number">{{ numberPlaces[0].state }}</span>
+                                </div>
+                            </div>
+                            <div class="o-number-places__item">
+                                <div class="o-number-places__content">
+                                    <h3 class="o-number-places__headline">Regionů</h3>
+                                    <span class="o-number-places__number">{{ numberPlaces[0].region }}</span>
+                                </div>
+                            </div>
+                            <div class="o-number-places__item">
+                                <div class="o-number-places__content">
+                                    <h3 class="o-number-places__headline">Měst</h3>
+                                    <span class="o-number-places__number">{{ numberPlaces[0].city }}</span>
+                                </div>
+                            </div>
+                            <div class="o-number-places__item">
+                                <div class="o-number-places__content">
+                                    <h3 class="o-number-places__headline">Míst</h3>
+                                    <span class="o-number-places__number">{{ numberPlaces[0].spot }}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </client-only>
+        <!-- client END -->
+    </section>
 </template>
 
 <script>
+    import skeletonoNumberPlaces from '~/components/skeleton/skeletonoNumberPlaces.vue'
+
     export default {
         name: 'OrganismsoNumberPlacesComponent',
+
+        components: {
+            skeletonoNumberPlaces
+        },
 
         data() {
             return {
@@ -50,7 +66,8 @@
                 loginCheck: false,
                 account: [],
                 numberPlaces: [],
-                users: []
+                users: [],
+                skeleton: true,
             }
         },
 
@@ -91,7 +108,7 @@
 
                     data = { account, numberPlaces, users }
 
-
+                    this.skeleton = false
                     success = true
                 } catch (error) {
                     console.log(`API ERROR - POČET NAVŠTÍVENÝCH MÍST`)
