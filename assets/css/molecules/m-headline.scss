@@ -42,6 +42,16 @@
         }
     }
 
+    &.-gray {
+        #{$self}__title {
+            color: $c-gray-t-dark-super;
+        }
+
+        #{$self}__perex {
+            color: $c-gray-t-dark-super;
+        }
+    }
+
     &.-world {
         padding: 0 5px;
 

@@ -165,10 +165,10 @@
             <!-- SECTION - place END -->
 
             <!-- SECTION - videos -->
-            <section class="t-section -p0 -bg-green pt-4 py-2 px-2 hidden-print" v-if="videos[0]">
+            <section class="t-section -p0 -bg-gray pt-4 py-2 px-2 hidden-print" v-if="videos[0]">
                 <div class="t-section__inner">
-                    <mHeadline title="Videa z této oblasti" styleThema=" -dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                    <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -dark" styleThemaLoading=" -gray" styleAlign=" -p-left" />
+                    <mHeadline title="Videa z této oblasti" styleThema=" -gray" styleAlign=" -p-left" styleGap=" mb-2" />
+                    <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -gray" styleThemaLoading=" -gray" styleAlign=" -p-left" />
                 </div>
             </section>
             <!-- SECTION - videos END -->

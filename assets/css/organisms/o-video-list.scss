@@ -121,6 +121,16 @@
         }
     }
 
+    &.-gray {
+        #{$self}__title-link {
+            color: $c-gray-t-dark-super;
+
+            &:hover {
+                color: $c-gray-t-dark;
+            }
+        }
+    }
+
     &.-world {
         max-width: 100%;
         padding: 0 10px;
