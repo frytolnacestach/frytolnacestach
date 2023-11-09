@@ -12,7 +12,7 @@
         <!-- SECTION - Button -->
 		<section class="t-section -p0 pt-2 pb-1">
             <div class="t-section__inner flex flex-center">
-                <aButtonFillFull url="/ucet/profil" text="Zpět do profilu" styleThema=" -blue -bold" target="internal" styleSize=" -w400" />
+                <aButtonFillFull target="internal" url="/ucet/profil" text="Zpět do profilu" styleThema=" -blue" styleSize=" -w400" styleFont=" -bold" />
             </div>
         </section>
         <!-- SECTION - Button END -->

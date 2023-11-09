@@ -68,7 +68,7 @@
                         <div class="o-place-teaser__wysiwyg" v-if="place[0].information_chatgpt && !place[0].information_author?.length > 0" v-html="place[0].information_chatgpt.slice(0, place[0].information_chatgpt.lastIndexOf(' ', 160)).replace(/<\/?[^>]+(>|$)/g, '')"></div>       
                         <div class="o-place-teaser__wysiwyg" v-if="place[0].information_author?.length > 0" v-html="place[0].information_author[0].text.slice(0, place[0].information_author[0].text.lastIndexOf(' ', 160)).replace(/<\/?[^>]+(>|$)/g, '')"></div>    
                         <div class="o-place-teaser__button hidden-print">
-                            <aButtonFillFull :url="`/svet/${type}/${place[0].slug}`" text="Číst více" styleThema=" -green -bold" target="internal" />
+                            <aButtonFillFull target="internal" :url="`/svet/${type}/${place[0].slug}`" text="Číst více" styleThema=" -green" styleFont=" -bold" />
                         </div>                                
                     </div>
                 </div>

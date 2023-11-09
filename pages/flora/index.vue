@@ -14,10 +14,10 @@
             <section class="t-section -p0">
                 <div class="t-section__inner">
                     <oCoverItem :items="floras" :images="images" type="flora" />
+                    <oCoverItem :items="null" :images="null" type="flora" :skeleton=true v-if="isLoading" />
                     <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                         <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
                     </div>
-                    <oCoverItem :items="null" :images="null" type="flora" :skeleton=true v-if="isLoading" />
                 </div>
             </section>
             <!-- SECTION - cestovatelsky slovnik list END -->

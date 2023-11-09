@@ -1,7 +1,7 @@
 .a-button-fill {
     @include transition(background-color, .3s);
     cursor: pointer;
-    background-color: $brand1;
+    background-color: $c-gray-bg-component-dark-super;
     color: $white;
     border-radius: 6px;
     padding: 5px 10px;
@@ -11,11 +11,69 @@
     font-size: $fs-small-l;
 
     &:hover {
-        background-color: $brand2;
+        background-color: $c-gray-bg-component-dark;
         color: $white;
     }
 
-    //sizes
+
+    // Thema
+    &.-brand-blue {
+        background-color: $brand3;
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $brand2;
+            color: $white;
+        }
+    }
+
+    &.-brand-green {
+        background-color: $brand1;
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $brand2;
+            color: $white;
+        }
+    }
+
+    &.-blue {
+        background-color: $c-blue-bg-component-dark-super;
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $c-blue-bg-component-dark;
+            color: $white;
+        }
+    }
+
+    &.-gray {
+        background-color: $c-gray-bg-component-dark-super;
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $c-gray-bg-component-dark;
+            color: $white;
+        }
+    }
+
+    &.-green {
+        background-color: $c-green-bg-component-dark-super;
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $c-green-bg-component-dark;
+            color: $white;
+        }
+    }
+
+    
+    // Sizes
     &.-small {
         padding: 4px 8px;
         border-radius: 5px;
@@ -27,17 +85,5 @@
         padding: 10px 16px;
         margin: 4px 7px;
         border-radius: 8px;
-    }
-
-    //thema
-    &.-blue {
-        background-color: $brand3;
-        color: $white;
-        text-decoration: none;
-
-        &:hover {
-            background-color: $brand2;
-            color: $white;
-        }
     }
 }

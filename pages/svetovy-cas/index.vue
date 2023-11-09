@@ -21,10 +21,10 @@
         <section class="t-section -p0 print-section">
             <div class="t-section__inner">
                 <oTimePlace :places="placesStates" :images="images" type="stat" />
+                <oTimePlace :places="null" :images="null" type="stat" :skeleton=true v-if="isLoading" />
                 <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                     <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
                 </div>
-                <oTimePlace :places="null" :images="null" type="stat" :skeleton=true v-if="isLoading" />
             </div>
         </section>
         <!-- SECTION - Time Place list END -->

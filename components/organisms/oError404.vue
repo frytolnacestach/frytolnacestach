@@ -6,7 +6,7 @@
                 <p class="o-error404__perex" v-if="perex">{{ perex }}</p>
                 <div class="col flex flex-center mt-4 mb-2">
                     <div class="col-6">
-                        <aButtonFillFull url="/" text="Zpět na úvod" styleThema=" -green -bold" target="internal" />
+                        <aButtonFillFull target="internal" url="/" text="Zpět na úvod" styleThema=" -green" styleFont=" -bold" />
                     </div>
                 </div>
             </div>

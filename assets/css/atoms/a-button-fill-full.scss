@@ -1,6 +1,6 @@
 .a-button-fill-full {
     @include transition(background-color, .3s);
-    background-color: $brand1;
+    background-color: $c-gray-bg-component-dark-super;
     color: $white;
     border-radius: $br-2;
     padding: 12px 15px;
@@ -12,15 +12,34 @@
     text-align: center;
 
     &:hover {
-        background-color: $brand2;
+        background-color: $c-gray-bg-component-dark;
         color: $white;
     }
 
-    &.-bold {
-        font-weight: 600;
+
+    // Thema
+    &.-brand-blue {
+        background-color: $brand3;
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $brand2;
+            color: $white;
+        }
     }
 
-    // thema
+    &.-brand-green {
+        background-color: $brand1;
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $brand2;
+            color: $white;
+        }
+    }
+
     &.-blue {
         background-color: $c-blue-bg-component-dark-super;
         color: $white;
@@ -30,7 +49,6 @@
             background-color: $c-blue-bg-component-dark;
             color: $white;
         }
-
     }
 
     &.-gray {
@@ -42,7 +60,6 @@
             background-color: $c-gray-bg-component-dark;
             color: $white;
         }
-
     }
 
     &.-green {
@@ -54,11 +71,17 @@
             background-color: $c-green-bg-component-dark;
             color: $white;
         }
-
     }
 
-    // size
+
+    // Size
     &.-w400 {
         max-width: 400px;
+    }
+
+
+    // Font
+    &.-bold {
+        font-weight: 600;
     }
 }

@@ -21,10 +21,10 @@
         <section class="t-section -bg-world -p0">
             <div class="t-section__inner">
                 <oCoverPlace :places="placesCities" :placesParent="placesParent" :showPrename="true" :images="images" type="mesto" />
+                <oCoverPlace :places="null" :images="null" type="mesto" :skeleton=true v-if="isLoading" />
                 <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                     <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
                 </div>
-                <oCoverPlace :places="null" :images="null" type="mesto" :skeleton=true v-if="isLoading" />
             </div>
         </section>
         <!-- SECTION - Place list END -->

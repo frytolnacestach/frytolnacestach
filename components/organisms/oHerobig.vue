@@ -36,8 +36,8 @@
                     <h1 class="o-hero-big__headline">{{ headline }}</h1>
                     <p class="o-hero-big__perex">Cestovatelský portál co tě bude bavit</p>
                     <div class="o-hero-big__buttons mt-2">
-                        <a class="a-button-fill -big" href="/svet">Chci objevovat svět</a>
-                        <NuxtLink class="a-button-fill -big -blue" to="/videa">Chci vidět videa</NuxtLink>
+                        <aButtonFill target="internal" url="/svet" text="Chci objevovat svět" styleThema=" -brand-green" styleSize=" -big" />
+                        <aButtonFill target="internal" url="/videa" text="Chci vidět videa" styleThema=" -brand-blue" styleSize=" -big" />
                     </div>
                 </div>
             </div>
@@ -46,8 +46,14 @@
 </template>
 
 <script>
+    import aButtonFill from '~/components/atoms/aButtonFill.vue'
+
     export default {
         name: 'OrganismsoHeroBigComponent',
+
+        components: {
+            aButtonFill
+        },
 
         props: {
             headline: {

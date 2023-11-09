@@ -13,10 +13,10 @@
         <section class="t-section -p0 py-1 px-2 print-section">
             <div class="t-section__inner">
                 <oVideoList :videos="videos" :images="images" styleThemaLoading=" -gray" />
-                <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                    <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
-                </div>
                 <oVideoList :videos="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
+                <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                    <span class="a-button-fill -big -gray" @click="loadMoreItems">Načíst další položky</span>
+                </div>
             </div>
         </section>
         <!-- SECTION - videos END -->
@@ -27,7 +27,7 @@
                 <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
                 <oPlatform />
                 <div class="flex flex-center mb-4">
-                    <aButtonFillFull url="/social" text="Více informací o platformách" styleThema=" -green" target="internal" />
+                    <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -green" />
                 </div>
             </div>
         </section>

@@ -7,8 +7,8 @@
                     Založ si účet a otevři dveře k nezapomenutelným dobrodružstvím. Získej výhody jako označování svých cest, sbírání cestovatelských úspěchů a psaní recenzí. Staň se součástí naší cestovatelské komunity.
                 </p>
                 <div class="o-account-banner__buttons">
-                    <aButtonFill url="/ucet/registrace" text="Registace" styleThema=" -small -green" target="internal" />
-                    <aButtonFill url="/ucet/prihlaseni" text="Přihlášení" styleThema=" -small -blue" target="internal" />
+                    <aButtonFill target="internal" url="/ucet/registrace" text="Registace" styleThema=" -green" styleSize=" -small" />
+                    <aButtonFill target="internal" url="/ucet/prihlaseni" text="Přihlášení" styleThema=" -blue" styleSize=" -small" />
                 </div>
             </div>
         </div>

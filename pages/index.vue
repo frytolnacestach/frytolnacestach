@@ -34,7 +34,7 @@
                     <mHeadline title="Nejnovější článek" styleAlign=" -left" />
                     <oArticleList :posts="post" :images="imagePost" styleThema=" -latest" styleThemaLoading=" -gray" />
                     <div class="flex flex-full flex-ai-end flex-center mt-2">
-                        <aButtonFillFull url="/clanky" text="Všechny články" styleThema=" -green" target="internal" />
+                        <aButtonFillFull target="internal" url="/clanky" text="Všechny články" styleThema=" -green" />
                     </div>
                     <!-- SECTION - Article list END -->
                 </div>
@@ -43,7 +43,7 @@
                     <mHeadline title="Nejnovější video" styleAlign=" -left" />
                     <oVideoList :videos="video" :images="imageVideo" styleThema=" -latest" styleThemaLoading=" -gray" />
                     <div class="flex flex-full flex-ai-end flex-center mt-2">
-                        <aButtonFillFull url="/videa" text="Všechna videa" styleThema="  -green" target="internal" />
+                        <aButtonFillFull target="internal" url="/videa" text="Všechna videa" styleThema=" -green" />
                     </div>
                     <!-- SECTION - Video END-->
                 </div>
