@@ -1,11 +1,11 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <skeletonoCoverPlaceVisited styleThema=" -skeleton-blue" v-if="places === null" />
+        <skeletonoCoverPlaceVisited styleThema=" -skeleton-blue" v-if="skeleton" />
         <!-- skeleton END -->
 
         <!-- client -->
-        <client-only v-if="places !== null  && places.length !== 0">
+        <client-only v-if="places !== null && places.length !== 0 && !skeleton">
             <div class="o-cover-place-visited">
                 <div class="o-cover-place-visited__outer">
                     <div class="o-cover-place-visited__items">
@@ -84,7 +84,7 @@
                 </div>
             </div>
         </client-only>
-        <client-only v-if="places && Array.isArray(places) && places.length === 0">
+        <client-only v-if="places && Array.isArray(places) && places.length === 0 && !skeleton">
             <p v-if="account === 'other'">
                 Ještě tu žádné místo nemám.
             </p>
@@ -93,7 +93,7 @@
             </p>
         </client-only>
         <!-- client END -->
-        <mButtonPlaceAdd type="first" v-if="account === 'login' && places && Array.isArray(places) && places.length === 0" @add-place-clicked="showAddPlaceForm" />
+        <mButtonPlaceAdd type="first" v-if="account === 'login' && places && Array.isArray(places) && places.length === 0 && !skeleton" @add-place-clicked="showAddPlaceForm" />
         <oFormPlaceVisitedAdd :status="status" :type="type" :visitedPlace="places" v-if="showPlaceForm && account === 'login'" @add-place="showAddNewPlaceForm" />
     </section>
 </template>
@@ -146,7 +146,8 @@
                 images: [],
                 showPlaceForm: false,
                 newPlaceID: null,
-                removePlaceID: null
+                removePlaceID: null,
+                skeleton: true
             }
         },
 
@@ -189,6 +190,7 @@
 
                     this.places = places
                     this.images = images
+                    this.skeleton = false
                 } catch (error) {
                     console.log(`API ERROR - VYPIS NAVŠTÍVIL JSEM/CHCI NAVŠTÍVIT`)
                     console.error(error)
