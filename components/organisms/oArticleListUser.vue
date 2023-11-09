@@ -1,7 +1,7 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <skeletonoArticleListUser styleThema=" -skeleton-blue" v-if="posts && posts.length === 0" />
+        <skeletonoArticleListUser styleThema=" -skeleton-blue" v-if="posts && posts.length === 0 && skeleton" />
         <!-- skeleton END -->
 
         <!-- client -->
@@ -105,6 +105,10 @@
             styleAlign: {
                 type: String,
                 required: false
+            },
+            skeleton: {
+                type: Boolean,
+                required: true
             }
         }
     }

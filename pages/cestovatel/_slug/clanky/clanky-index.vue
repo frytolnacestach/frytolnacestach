@@ -36,11 +36,11 @@
 
                     <div class="t-col2__content mb-2">
                         <!-- SECTION -  -->
-                        <section class="t-section -padding-x -p0 print-section" v-if="user[0]">
+                        <section class="t-section -padding-x -p0 print-section">
                             <div class="t-section__inner">
                                 <mHeadline title="Články" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oArticleListUser :posts="posts" :images="images" v-if="posts !== [] && posts !== null" />
-                                <client-only v-if="posts === [] || posts.length === 0 || posts === null">
+                                <oArticleListUser :posts="posts" :images="images" :skeleton="skeleton" v-if="posts && posts !== null" />
+                                <client-only v-if="(posts.length === 0 || posts === null) && !skeleton">
                                     <p>
                                         Cestovatel zatím nepřidal žádný článek.
                                     </p>
@@ -80,7 +80,8 @@
                 user: '',
                 posts: [],
                 images: [],
-                mNavUserOpen: false
+                mNavUserOpen: false,
+                skeleton: true
             }
         },
 
@@ -179,6 +180,8 @@
                                 posts,
                                 images
                             }
+
+                            this.skeleton = false
 
                             // SUCCESS
                             success = true

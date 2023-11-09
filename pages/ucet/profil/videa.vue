@@ -29,8 +29,8 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Videa" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oVideoListUser :videos="videos" :images="images" v-if="videos !== [] && videos !== null" />
-                                <client-only v-if="videos === [] || videos.length === 0 || videos === null">
+                                <oVideoListUser :videos="videos" :images="images" :skeleton="skeleton" v-if="videos && videos !== null" />
+                                <client-only v-if="(videos.length === 0 || videos === null) && !skeleton">
                                     <p>
                                         Zatím si nepřidal žádné video.
                                     </p>
@@ -73,7 +73,8 @@
                 passwordHash: null,
                 account: '',
                 videos: [],
-                images: []
+                images: [],
+                skeleton: true
             }
         },
 
@@ -165,6 +166,8 @@
                             videos,
                             images
                         }
+
+                        this.skeleton = false
 
                         // SUCCESS
                         success = true

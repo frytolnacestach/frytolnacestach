@@ -1,7 +1,7 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <skeletonoVideoListUser styleThema=" -skeleton-blue" v-if="filteredVideos && filteredVideos.length === 0" />
+        <skeletonoVideoListUser styleThema=" -skeleton-blue" v-if="filteredVideos && filteredVideos.length === 0 && skeleton" />
         <!-- skeleton END -->
 
         <!-- client -->
@@ -92,6 +92,10 @@
             },
             images: {
                 type: Array,
+                required: true
+            },
+            skeleton: {
+                type: Boolean,
                 required: true
             }
         },

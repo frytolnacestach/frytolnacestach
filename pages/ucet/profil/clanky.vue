@@ -29,8 +29,8 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Články" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oArticleListUser :posts="posts" :images="images" v-if="posts !== [] && posts !== null" />
-                                <client-only v-if="posts === [] || posts.length === 0 || posts === null">
+                                <oArticleListUser :posts="posts" :images="images" :skeleton="skeleton" v-if="posts && posts !== null" />
+                                <client-only v-if="(posts.length === 0 || posts === null) && !skeleton">
                                     <p>
                                         Zatím si nepřidal žádný článek
                                     </p>
@@ -73,7 +73,8 @@
                 passwordHash: null,
                 account: '',
                 posts: [],
-                images: []
+                images: [],
+                skeleton: true
             }
         },
 
@@ -165,6 +166,8 @@
                             posts,
                             images
                         }
+
+                        this.skeleton = false
 
                         // SUCCESS
                         success = true

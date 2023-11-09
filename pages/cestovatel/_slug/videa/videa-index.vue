@@ -36,11 +36,11 @@
 
                     <div class="t-col2__content mb-2">
                         <!-- SECTION -  -->
-                        <section class="t-section -padding-x -p0 print-section" v-if="user[0]">
+                        <section class="t-section -padding-x -p0 print-section">
                             <div class="t-section__inner">
                                 <mHeadline title="Videa" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oVideoListUser :videos="videos" :images="images" v-if="videos !== [] && videos !== null" />
-                                <client-only v-if="videos === [] || videos.length === 0 || videos === null">
+                                <oVideoListUser :videos="videos" :images="images" :skeleton="skeleton" v-if="videos && videos !== null" />
+                                <client-only v-if="(videos.length === 0 || videos === null) && !skeleton">
                                     <p>
                                         Cestovatel zatím nepřidal žádné video.
                                     </p>
@@ -80,7 +80,8 @@
                 user: '',
                 videos: [],
                 images: [],
-                mNavUserOpen: false
+                mNavUserOpen: false,
+                skeleton: true
             }
         },
 
@@ -179,6 +180,8 @@
                                 videos,
                                 images
                             }
+
+                            this.skeleton = false
 
                             // SUCCESS
                             success = true
