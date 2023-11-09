@@ -16,7 +16,7 @@
                     <oUserList :items="users" :images="images" />
                     <oUserList :items="null" :images="null" :skeleton=true v-if="isLoading" />
                     <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                        <span class="a-button-fill -big -blue" @click="loadMoreItems">Načíst další položky</span>
                     </div>
                 </div>
             </section>
