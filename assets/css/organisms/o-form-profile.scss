@@ -36,6 +36,14 @@
         margin-top: 15px;
     }
 
+    &__label {
+        display: block;
+        
+        &.-strong {
+            font-weight: 700;
+        }
+    }
+
     &__item {
         display: inline-block;
         margin: 8px 0;

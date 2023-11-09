@@ -36,7 +36,7 @@
                                 </div>
 
                                 <div class="o-form-profile__group">
-                                    <label class="o-form-profile__label">Odkazy:</label>
+                                    <label class="o-form-profile__label -strong">Odkazy:</label>
                                     <div class="o-form-profile__item -flex" v-for="(item, index) in urls" :key="index" v-if="urls">
                                         <input class="a-input -blue" type="text" v-model="urls[index].url" />
                                         <div class="m-button-remove -blue">
@@ -58,7 +58,7 @@
                                 </div>
 
                                 <div class="o-form-profile__group">
-                                    <label class="o-form-profile__label">Seo Tagy:</label>
+                                    <label class="o-form-profile__label -strong">Seo Tagy:</label>
                                     <div class="o-form-profile__item -flex" v-for="(item, index) in seo_tags" :key="index" v-if="seo_tags">
                                         <input class="a-input -blue" type="text" v-model="seo_tags[index].tag" />
                                         <div class="m-button-remove -blue">
