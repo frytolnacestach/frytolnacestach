@@ -1,19 +1,16 @@
 .o-user-list {
     $self: &;
 
-    display: block;
-    margin: 5px;
-
-    @media only screen and (min-width: $sm) {
-        margin: 10px;
-    }
-
-    @media only screen and (min-width: $lg) {
-        padding: 10px 0;
-    }
+    display: flex;
 
     &__outer {
         display: block;
+        width: 100%;
+        margin: 5px;
+
+        @media only screen and (min-width: $sm) {
+            margin: 10px;
+        }
     }
 
     &__inner {

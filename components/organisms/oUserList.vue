@@ -5,7 +5,7 @@
         <!-- skeleton END -->
 
         <!-- client -->
-        <client-only v-if="items !== null && skeleton !== true">
+        <client-only v-if="items !== null && items.length !== 0 && skeleton !== true">
             <div class="o-user-list">
                 <div class="o-user-list__outer">
                     <div class="o-user-list__items">
