@@ -43,6 +43,7 @@
                                                     :data-src="`https://image.frytolnacestach.cz/storage/${images.find(image => image.id === user.id_image_cover).source + images.find(image => image.id === user.id_image_cover).name}.webp`"
                                                     :alt="user.nickname"
                                                     v-lazy>
+                                                <NuxtLink class="o-follower-list__image-link" :to="`/cestovatel/${user.slug}`" :aria-label="`Čti více o cestovateli ${user.nickname}`"></NuxtLink>
                                             </div>
                                             <div v-else class="o-follower-list__image-lazyload loading-image -blue">
                                                 <img class="o-follower-list__image-file lazyload-file"
@@ -72,8 +73,8 @@
                                                     :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
                                                     :alt="user.nickname"
                                                     v-lazy>
+                                                <NuxtLink class="o-follower-list__image-link" :to="`/cestovatel/${user.slug}`" :aria-label="`Čti více o cestovateli ${user.nickname}`"></NuxtLink>
                                             </div>
-                                            <NuxtLink class="o-follower-list__link" :to="`/cestovatel/${user.slug}`" :aria-label="`Čti více o cestovateli ${user.nickname}`"></NuxtLink>
                                         </div>
                                         <div class="o-follower-list__text">
                                             <span class="o-follower-list__nickname">
