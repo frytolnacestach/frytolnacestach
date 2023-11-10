@@ -39,7 +39,7 @@
                         <section class="t-section -padding-x -p0 print-section">
                             <div class="t-section__inner">
                                 <mHeadline title="Videa" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oVideoListUser :videos="videos" :images="images" :skeleton="skeleton" v-if="videos && videos !== null" />
+                                <oVideoListUser :videos="videos" :images="images" skeletonThema=" -skeleton-blue" :skeleton="skeleton" v-if="videos && videos !== null" />
                                 <client-only v-if="(videos.length === 0 || videos === null) && !skeleton">
                                     <p>
                                         Cestovatel zatím nepřidal žádné video.

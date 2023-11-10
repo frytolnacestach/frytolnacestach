@@ -1,7 +1,7 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <skeletonoVideoListUser :styleThema="(skeletonThema ? skeletonThema : '')" :skeletonNumber="skeletonNumber" v-if="filteredVideos && filteredVideos.length === 0 && videos === null && skeleton" />
+        <skeletonoVideoListUser :styleThema="(skeletonThema ? skeletonThema : '')" :skeletonNumber="skeletonNumber" v-if="filteredVideos && filteredVideos.length === 0 && skeleton" />
         <!-- skeleton END -->
 
         <!-- client -->
