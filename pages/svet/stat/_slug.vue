@@ -216,10 +216,14 @@
                                 <!-- SECTION - města - Biggest - END -->
 
                                 <!-- SECTION - videos -->
-                                <section class="t-section -p0 -bg-green py-4 hidden-print" v-if="videos[0]">
+                                <section class="t-section -p0 -bg-green py-4 hidden-print" v-if="place[0] && videos.length !== 0">
                                     <div class="t-section__inner">
                                         <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
+                                        <oVideoList :videos="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
+                                        <div class="flex flex-center my-2" v-if="!isLoadingVideos && !noMoreVideosItems">
+                                            <span class="a-button-border -big -green" @click="loadMoreVideosItems">Načíst další videa</span>
+                                        </div>
                                     </div>
                                 </section>
                                 <!-- SECTION - videos END -->
@@ -234,10 +238,14 @@
                                 <!-- SECTION - města - menší - END -->
 
                                 <!-- SECTION - articles -->
-                                <section class="t-section -p0 -bg-green py-4 hidden-print" v-if="posts[0]">
+                                <section class="t-section -p0 -bg-green py-4 hidden-print" v-if="place[0] && posts.length !== 0">
                                     <div class="t-section__inner">
                                         <mHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
+                                        <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingPosts" />
+                                        <div class="flex flex-center my-2" v-if="!isLoadingPosts && !noMorePostsItems">
+                                            <span class="a-button-border -big -green" @click="loadMorePostsItems">Načíst další články</span>
+                                        </div>
                                     </div>
                                 </section>
                                 <!-- SECTION - articles END -->
@@ -614,10 +622,14 @@
                         <div class="t-grid -world-ful">
                             <div class="t-grid__section -content">
                                 <!-- SECTION - videos -->
-                                <section class="t-section -p0 -px-world my-2" v-if="videos[0]">
+                                <section class="t-section -p0 -px-world my-2" v-if="place[0] && videos.length !== 0">
                                     <div class="t-section__inner">
                                         <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world-tab" styleThemaLoading=" -green" styleAlign=" -p-left" />
+                                        <oVideoList :videos="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
+                                        <div class="flex flex-center my-2" v-if="!isLoadingVideos && !noMoreVideosItems">
+                                            <span class="a-button-border -big -green" @click="loadMoreVideosItems">Načíst další videa</span>
+                                        </div>
                                     </div>
                                 </section>
                                 <!-- SECTION - videos END -->
@@ -710,18 +722,26 @@
                 placeContinent: this.placeContinent,
                 placesCities: this.placesCities,
                 placeCityMain: this.placeCityMain,
-                videos: this.videos,
-                posts: this.posts,
                 imagePlace: this.imagePlace,
                 imagesStatesNeighboring: this.imagesStatesNeighboring,
                 imagesCities: this.imagesCities,
                 imageCityMain: this.imageCityMain,
-                imagesVideos: this.imagesVideos,
-                imagesPosts: this.imagesPosts,
                 activeTab: 'default',
                 activeTabName: 'PLACE_NAME',
                 isMobile: false,
                 showHero: true,
+                videos: [],
+                imagesVideos: [],
+                isLoadingVideos: false,
+                noMoreVideosItems: false,
+                videosPage: 1,
+                videosPerPage: 9,
+                posts: [],
+                imagesPosts: [],
+                isLoadingPosts: false,
+                noMorePostsItems: false,
+                postsPage: 1,
+                postsPerPage: 9,
                 tabs: [
                     { slug: 'default', label: 'state_name', visible: false },
                     { slug: 'co-videt', label: 'Co vidět', visible: false },
@@ -732,8 +752,6 @@
                     { slug: 'ubytovani', label: 'Ubytování', visible: false },
                     { slug: 'videa', label: 'Videa', visible: false },
                 ],
-                posts: this.posts,
-                videos: this.videos,
                 mNavBreadcrumbsPlaceArray: [
                     {
                         id: 1,
@@ -809,13 +827,101 @@
                 }
             },
 
+            getPreTitle() {
+                this.preTitle = `${this.activeTabName} ve státě`
+            },
+
             handleResize() {
                 // Aktualizovat hodnotu pro "isMobile" při změně velikosti okna
                 this.isMobile = window.innerWidth < 992
             },
 
-            getPreTitle() {
-                this.preTitle = `${this.activeTabName} ve státě`
+            async loadPosts() {
+                //start loading
+                this.isLoadingPosts = true
+
+                // Variable
+                let postsResponse
+
+                //load posts
+                postsResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/posts-id-state/${this.place[0].id}?showType=list&page=${this.postsPage}&items=${this.postsPerPage}`)
+                const { data: postsData } = postsResponse
+
+                //load images
+                const imagesPostsIDS = postsData.map(posts => posts.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
+                if (imagesPostsIDS.length > 0) {
+                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
+                    const { data: imagesData } = imagesResponse
+                    this.imagesPosts = this.imagesPosts.concat(imagesData)
+                
+                    // add to postsData to posts
+                    this.posts = this.posts.concat(postsData)
+                } else {
+                    // add to postsData to posts
+                    this.posts = this.posts.concat(postsData)
+                } 
+
+                //no more items?
+                if (postsData.length === 0 || postsData.length < this.postsPerPage) {
+                    this.noMorePostsItems = true
+                }
+
+                //end loading
+                this.isLoadingPosts = false
+            },
+
+            async loadVideos() {
+                //start loading
+                this.isLoadingVideos = true
+
+                // Variable
+                let videosResponse
+
+                //load videos
+                videosResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/videos-id-state/${this.place[0].id}?showType=list&page=${this.videosPage}&items=${this.videosPerPage}`)
+                const { data: videosData } = videosResponse
+
+                //load images
+                const imagesVideosIDS = videosData.map(videos => videos.id_image).filter(id => id !== undefined && id !== null && id !== '')
+                if (imagesVideosIDS.length > 0) {
+                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
+                    const { data: imagesData } = imagesResponse
+                    this.imagesVideos = this.imagesVideos.concat(imagesData)
+                
+                    // add to videosData to videos
+                    this.videos = this.videos.concat(videosData)
+                } else {
+                    // add to videosData to videos
+                    this.videos = this.videos.concat(videosData)
+                } 
+
+                //no more items?
+                if (videosData.length === 0 || videosData.length < this.videosPerPage) {
+                    this.noMoreVideosItems = true
+                }
+
+                //end loading
+                this.isLoadingVideos = false
+            },
+
+            loadMoreVideosItems() {
+                //no further loading can occur while loading
+                if (this.isLoadingVideos || this.noMoreVideosItems) {
+                    return
+                }
+                // loading more items
+                this.videosPage++
+                this.loadVideos()
+            },
+
+            loadMorePostsItems() {
+                //no further loading can occur while loading
+                if (this.isLoadingPosts || this.noMorePostsItems) {
+                    return
+                }
+                // loading more items
+                this.postsPage++
+                this.loadPosts()
             }
         },
 
@@ -832,7 +938,7 @@
                 const hasTabTrip = this.place[0] && (!!this.place[0].visitors_entry)
                 const hasTabContacts = this.place[0] && (!!this.place[0]?.phone_numbers_emergency)
                 const hasTabHotel = this.place[0].affiliate.find(x => x.name === 'booking').value
-                const hasTabVideos = this.place[0] && (!!this.videos[0])
+                const hasTabVideos = this.place[0] && (!!this.videos && this.videos.length !== 0)
 
                 const newTabs = [
                     { slug: 'default', label: 'Výchozí', visible: hasTabDefault },
@@ -970,32 +1076,6 @@
                     } else {
                         imagesCities = null
                     }
-                
-
-                    // COMPONENT - oVideoList
-                    // Videos
-                    const videos = await $axios.$get(`https://api.frytolnacestach.cz/api/videos-id-state/${place[0].id}?showType=list`)
-                    // Images
-                    let imagesVideos
-                    if ( videos !== null) {
-                        const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
-                        imagesVideos = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosID.join(',')}`)
-                    } else {
-                        imagesVideos = null
-                    }
-
-
-                    // COMPONENT - Články z místa
-                    // Posts
-                    const posts = await $axios.$get(`https://api.frytolnacestach.cz/api/posts-id-state/${place[0].id}?showType=list`)
-                    // Images
-                    let imagesPosts
-                    if ( videos !== null) {
-                        const imagesPostsID = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
-                        imagesPosts = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsID.join(',')}`)
-                    } else {
-                        imagesPosts = null
-                    }
 
 
                     data = {
@@ -1007,11 +1087,7 @@
                         placesCities,
                         imagesCities,
                         placeCityMain,
-                        imageCityMain,
-                        videos,
-                        imagesVideos,
-                        posts,
-                        imagesPosts
+                        imageCityMain
                     }
 
 
@@ -1027,13 +1103,16 @@
         },
 
         mounted() {
-            this.activeTab = this.$route.params.tab || 'default'
+            this.loadVideos()
+            this.loadPosts()
 
             // Zjistit, zda je rozlišení menší než 992px při načítání stránky
             this.isMobile = window.innerWidth < 992
 
             // Poslouchat událost změny velikosti okna pro aktualizaci přepínače
             window.addEventListener('resize', this.handleResize)
+
+            this.activeTab = this.$route.params.tab || 'default'
 
             //Data for mNavBreadcrumbsPlaceArray 
             //continent

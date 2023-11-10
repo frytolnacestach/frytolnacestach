@@ -1,0 +1,98 @@
+.a-button-border {
+    @include transition(background-color, .3s);
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid $c-gray-bg-component-dark;
+    color: $c-gray-bg-component-dark;
+    border-radius: 6px;
+    padding: 5px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: $fs-small-l;
+
+    &:hover {
+        background-color: $c-gray-bg-component-dark;
+        color: $white;
+    }
+
+
+    // Thema
+    &.-brand-blue {
+        background-color: transparent;
+        border: 2px solid $brand3;
+        color: $brand3;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $brand2;
+            border: 2px solid $brand2;
+            color: $white;
+        }
+    }
+
+    &.-brand-green {
+        background-color: transparent;
+        border: 2px solid $brand1;
+        color: $brand1;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $brand2;
+            border: 2px solid $brand2;
+            color: $white;
+        }
+    }
+
+    &.-blue {
+        background-color: transparent;
+        border: 2px solid $c-blue-bg-component-dark;
+        color: $c-blue-bg-component-dark;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $c-blue-bg-component-dark;
+            border: 2px solid $c-blue-bg-component-dark;
+            color: $white;
+        }
+    }
+
+    &.-gray {
+        background-color: transparent;
+        border: 2px solid $c-gray-bg-component-dark;
+        color: $c-gray-bg-component-dark;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $c-gray-bg-component-dark;
+            color: $white;
+        }
+    }
+
+    &.-green {
+        background-color: transparent;
+        border: 2px solid $c-green-bg-component-dark;
+        color: $c-green-bg-component-dark;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $c-green-bg-component-dark;
+            color: $white;
+        }
+    }
+
+    
+    // Sizes
+    &.-small {
+        padding: 4px 8px;
+        border-radius: 5px;
+        font-size: $fs-small;
+    }
+
+    &.-big {
+        font-size: $fs-normal-sss;
+        padding: 10px 16px;
+        margin: 4px 7px;
+        border-radius: 8px;
+    }
+}

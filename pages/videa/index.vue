@@ -199,7 +199,7 @@
                     this.page++
                     this.loadVideos()
                 }
-            },
+            }
         },
 
         beforeDestroy() {

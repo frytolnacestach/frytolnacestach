@@ -1,11 +1,11 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <skeletonoArticleList :styleThema="(skeletonThema ? skeletonThema : '')" :skeletonNumber="skeletonNumber" v-if="posts === null && skeleton === true" />
+        <skeletonoArticleList :styleThema="(skeletonThema ? skeletonThema : '')" :skeletonNumber="skeletonNumber" v-if="posts === null && skeleton" />
         <!-- skeleton END -->
 
         <!-- client -->
-        <client-only v-if="posts !== null && skeleton !== true">
+        <client-only v-if="posts !== null && !skeleton">
             <div :class="'o-article-list' + (styleThema ? styleThema : '') + (styleAlign ? styleAlign : '')">
                 <div class="o-article-list-list__outer">
                     <div class="o-article-list__items">

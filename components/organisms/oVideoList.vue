@@ -1,15 +1,15 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <skeletonoVideoList :styleThema="(skeletonThema ? skeletonThema : '')" :skeletonNumber="skeletonNumber" v-if="videos === null && skeleton === true" />
+        <skeletonoVideoList :styleThema="(skeletonThema ? skeletonThema : '')" :skeletonNumber="skeletonNumber" v-if="videos === null && skeleton" />
         <!-- skeleton END -->
 
         <!-- client -->
-        <client-only v-if="videos !== null && skeleton !== true">
+        <client-only v-if="videosFiltered !== null && !skeleton">
             <div :class="'o-video-list' + (styleThema ? styleThema : '') + (styleAlign ? styleAlign : '')">
                 <div class="o-video-list__outer">
                     <div class="o-video-list__items">
-                        <div v-for="video in filteredVideos" :key="video.id" class="o-video-list__item print-section">
+                        <div v-for="video in videosFiltered" :key="video.id" class="o-video-list__item print-section">
                             <div class="o-video-list__item-inner">
                                 <div :class="'o-video-list__image loading-image ' + (styleThemaLoading ? styleThemaLoading : '')">
                                     <div v-if="images && images.find(image => image.id === video.id_image)" class="o-video-list__image-lazyload">
@@ -124,12 +124,32 @@
             }
         },
 
-        computed: {
+        data() {
+            return {
+                videosFiltered: []
+            }
+        },
+
+        watch: {
+            videos: {
+                handler(newVal) {
+                    this.filteredVideos()
+                },
+                immediate: true,
+                deep: true
+            }
+        },
+
+        mounted() {
+            this.filteredVideos()
+        },
+
+        methods: {
             filteredVideos() {
                 if (this.type) {
-                    return this.videos.filter(video => video.type === this.type)
+                    this.videosFiltered = this.videos.filter(video => video.type === this.type)
                 } else {
-                    return this.videos
+                    this.videosFiltered = this.videos
                 }
             }
         }
