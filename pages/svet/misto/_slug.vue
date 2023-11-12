@@ -356,7 +356,7 @@
                 let videosResponse
 
                 //load videos
-                videosResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/videos-id-spot${this.place[0].id}?showType=list&page=${this.videosPage}&items=${this.videosPerPage}`)
+                videosResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/videos-id-spot/${this.place[0].id}?showType=list&page=${this.videosPage}&items=${this.videosPerPage}`)
                 const { data: videosData } = videosResponse
 
                 //load images
