@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/cestovatel/mr.-nikdo/recenze", (function(a){return {data:[{staticUser:[{id:21,email:"MullerVlada20@seznam.cz",nickname:"Mr. Nikdo ",slug:"mr.-nikdo",surname:"Vladimír ",lastname:"Muller",status:3,urls:a,seo_tags:a}]}],fetch:{},mutations:void 0}}(null)));
