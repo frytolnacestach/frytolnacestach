@@ -626,7 +626,7 @@
                                     <div class="t-section__inner">
                                         <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world-tab" styleThemaLoading=" -green" styleAlign=" -p-left" />
-                                        <oVideoList :videos="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
+                                        <oVideoList :videos="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true />
                                         <div class="flex flex-center my-2" v-if="!isLoadingVideos && !noMoreVideosItems">
                                             <span class="a-button-border -big -green" @click="loadMoreVideosItems">Načíst další videa</span>
                                         </div>
