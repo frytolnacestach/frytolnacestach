@@ -5,6 +5,8 @@
                 <span class="o-time__headline">Místní čas</span>
                 <span class="o-time__time">{{ localTime }}</span>
                 <span class="o-time__date">{{ localDate }}</span>
+                <span class="o-time__difference" v-if="local !== null && czach !== null && mpz !== 'CZ'">{{ timeDifferenceMessage }}</span>
+                <span class="o-time__home" v-if="mpz !== 'CZ'">(V Česku je {{ czechTime }} {{ czechDate }})</span>
             </div>
         </div>
     </div>
@@ -27,8 +29,33 @@
 
         data() {
             return {
+                local: null,
                 localTime: null,
-                localDate: null
+                localDate: null,
+                czech: null,
+                czechTime: null,
+                czechDate: null
+            }
+        },
+
+        computed: {
+            timeDifferenceMessage() {
+                const localMoment = moment(this.local, 'HH:mm DD.MMMM YYYY')
+                const czechMoment = moment(this.czech, 'HH:mm DD.MMMM YYYY')
+
+                if (localMoment.isValid() && czechMoment.isValid()) {
+                    const timeDifference = localMoment.diff(czechMoment, 'hours')
+                    
+                    if (timeDifference > 0) {
+                        return `Místní čas je o ${timeDifference} hodin dopředu oproti Česku.`
+                    } else if (timeDifference < 0) {
+                        return `Místní čas je o ${Math.abs(timeDifference)} hodin dozadu oproti Česku.`
+                    } else if (timeDifference === 0) {
+                        return 'Místní čas je stejný jako čas v Česku.'
+                    }
+                } else {
+                    return 'Chyba při analýze času.'
+                }
             }
         },
 
@@ -304,8 +331,15 @@
                     return
                 }
         
+                // Local time
+                this.local = moment().tz(timezone).format('HH:mm DD.MMMM YYYY')
                 this.localTime = moment().tz(timezone).format('HH:mm')
                 this.localDate = moment().tz(timezone).format('DD.MMMM YYYY')
+
+                // Czech time
+                this.czech = moment().tz('CZ').format('HH:mm DD.MMMM YYYY')
+                this.czechTime = moment().tz('CZ').format('HH:mm')
+                this.czechDate = moment().tz('CZ').format('DD.MMMM YYYY')
             }
         }
     }

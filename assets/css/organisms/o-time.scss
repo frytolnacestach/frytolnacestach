@@ -53,4 +53,28 @@
             font-size: $fs-large-lll;
         }
     }
+
+    &__difference {
+        display: block;
+        width: 100%;
+        color: $c-green-t-dark;
+        font-size: $fs-normal-l;
+        margin-top: 10px;
+
+        @media only screen and (min-width: $sm) {
+            font-size: $fs-normal-sss;
+        }
+    }
+
+    &__home {
+        display: block;
+        width: 100%;
+        color: $c-green-t-dark;
+        font-size: $fs-normal-ssss;
+        margin-top: 10px;
+
+        @media only screen and (min-width: $sm) {
+            font-size: $fs-normal-s;
+        }
+    }
 }

@@ -36,4 +36,20 @@
         color: $c-green-t-dark-super;
         font-size: $fs-small-l;
     }
+
+    &__difference {
+        display: block;
+        width: 100%;
+        color: $c-green-t-dark;
+        font-size: $fs-small-sss;
+        margin-top: 10px;
+    }
+
+    &__home {
+        display: block;
+        width: 100%;
+        color: $c-green-t-dark;
+        font-size: $fs-small-ss;
+        margin-top: 5px;
+    }
 }
