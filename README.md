@@ -71,6 +71,44 @@ More information about the usage of this directory in [the documentation](https:
 
 _____________________________________________________________________
 
+## PROBS
+
+### Skeleton
+#### skeleton
+Slouží jako určení jestli se má vykreslit skeleton šablona
+```bash
+skeleton: {
+    type: Boolean,
+    required: false
+}
+```
+
+#### skeletonThema
+Určuje barevnou variantu skeletonu
+```bash
+skeletonThema: {
+    type: String,
+    required: false
+}
+```
+
+#### skeletonNumber
+Určuje počet prvků skeletonu
+```bash
+skeletonNumber: {
+    type: Number,
+    required: false
+}
+```
+
+### Style
+// TODO
+
+### Data
+// TODO
+
+_____________________________________________________________________
+
 ## IMAGE
 
 ### Format
@@ -718,9 +756,14 @@ ________________________________________
 
 ----------------------------------------
 
-// TODO:
-o-article-list -latest (aktuálně vychází z klasikcého o-article-list)
-o-video-list -latest (aktuálně vychází z klasikcého o-video-list)
-o-review-item-list (stejné jako o-review-item-list-account)
-m-user-header
-m-account-header
+## TODO:
+### Images
+- o-article-list -latest (aktuálně vychází z klasikcého o-article-list)
+- o-video-list -latest (aktuálně vychází z klasikcého o-video-list)
+- o-review-item-list (stejné jako o-review-item-list-account)
+- m-user-header
+- m-account-header
+
+### Props
+- Probs pro style
+- Probs pro data
