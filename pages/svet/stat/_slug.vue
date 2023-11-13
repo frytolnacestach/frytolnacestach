@@ -177,7 +177,7 @@
                                     <!-- SECTION - TLD -->
                                     <section class="t-section" v-if="place[0].tld">
                                         <div class="t-section__inner">
-                                            <oBlockItem title="TLD" subtitle="Národní internetová domána" :perexWysiwyg="place[0].tld" styleThema=" -bg-world" />
+                                            <oBlockItem title="TLD" subtitle="Národní internetová doména" :perexWysiwyg="place[0].tld" styleThema=" -bg-world" />
                                         </div>
                                     </section>
                                     <!-- SECTION - TLD END -->
