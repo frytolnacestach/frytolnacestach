@@ -124,7 +124,7 @@
                             <div class="t-section__inner">
                                 <mHeadline title="Videa z kontinentu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                 <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
-                                <oVideoList :videos="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
+                                <oVideoList :videos="null" :images="null" styleThema=" -world" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
                                 <div class="flex flex-center my-2" v-if="!isLoadingVideos && !noMoreVideosItems">
                                     <span class="a-button-border -big -green" @click="loadMoreVideosItems">Načíst další videa</span>
                                 </div>

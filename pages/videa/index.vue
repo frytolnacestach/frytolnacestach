@@ -13,7 +13,7 @@
         <section class="t-section -p0 py-1 px-2 print-section">
             <div class="t-section__inner">
                 <oVideoList :videos="videos" :images="images" styleThemaLoading=" -gray" />
-                <oVideoList :videos="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
+                <oVideoList :videos="null" :images="null" styleThema=" -world" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
                 <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                     <span class="a-button-fill -big -gray" @click="loadMoreItems">Načíst další položky</span>
                 </div>
