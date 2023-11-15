@@ -101,8 +101,72 @@ skeletonNumber: {
 }
 ```
 
+
 ### Style
-// TODO
+#### styleThema
+Určuje barevné schéma komponenty
+```bash
+styleThema: {
+    type: String,
+    required: false
+}
+```
+
+#### styleThemaLoading
+Určuje barevné schéma lazyloadu obrázku
+```bash
+styleThemaLoading: {
+    type: String,
+    required: false
+}
+```
+
+#### styleGap
+Určuje krajní mezery komponenty
+```bash
+styleGap: {
+    type: String,
+    required: false
+}
+```
+
+#### styleAlign
+Určuje zarovnání komponenty nebo obsahu v ní
+```bash
+styleAlign: {
+    type: String,
+    required: false
+}
+```
+
+#### styleCol
+Určuje počet sloupců
+```bash
+styleCol: {
+    type: String,
+    required: true
+}
+```
+
+#### modifierCSS (je potřeba nahradit)
+Přiřazuje mofifikační třídy 
+```bash
+modifierCSS: {
+    type: String,
+    required: false,
+    default: ' '
+}
+```
+
+#### classCSS (je potřeba nahradit)
+Přiřaduje další třídy
+```bash
+classCSS: {
+    type: String,
+    required: false,
+    default: ' '
+}
+```
 
 ### Data
 // TODO
@@ -765,5 +829,4 @@ ________________________________________
 - m-account-header
 
 ### Props
-- Probs pro style
 - Probs pro data
