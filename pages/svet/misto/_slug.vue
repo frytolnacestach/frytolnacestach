@@ -49,9 +49,9 @@
         <!-- SECTION -->
         <section class="t-section -px-world -p0">
             <div class="t-section__inner">
-                <div class="t-grid -world-content-with-ad">
+                <div class="t-grid -place-main-with-aside">
                     
-                    <div class="t-grid__section -content">
+                    <div class="t-grid__section -main">
                         <!-- SECTION - information by ChatGPT -->
                         <section class="t-section" v-if="place[0].information_chatgpt && !place[0].information_author?.length > 0">
                             <div class="t-section__inner">
@@ -82,7 +82,7 @@
                     </div>
 
 
-                    <div class="t-grid__section -ad">
+                    <div class="t-grid__section -aside-place-status">
                         <!-- SECTION - Visited button - sidebar -->
                         <section class="t-section -px-world">
                             <div class="t-section__inner">
@@ -90,7 +90,8 @@
                             </div>
                         </section>
                         <!-- SECTION - Visited button - sidebar - END -->
-
+                    </div>
+                    <div class="t-grid__section -aside-content">
                         <!-- SECTION - Account banner - sidebar -->
                         <section class="t-section -px-world my-1">
                             <div class="t-section__inner">
@@ -102,7 +103,8 @@
                         <!-- SECTION - Events - sidebar -->
                         <oSidebarList :place="this.place[0].id" type="spot" />
                         <!-- SECTION - Events - sidebar - END -->
-
+                    </div>
+                    <div class="t-grid__section -aside-ad">
                         <!-- SECTION - ad-google - sidebar -->
                         <section class="t-section -px-world mt-4 mb-2">
                             <div class="t-section__inner">

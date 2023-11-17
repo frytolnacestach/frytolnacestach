@@ -96,6 +96,49 @@
         }
     }
 
+    // Grid for detail place
+    &.-place-main-with-aside {
+        grid-template-areas: 
+        "aside-place-status"
+        "main"
+        "aside-content"
+        "aside-ad";
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto auto;
+
+        @media only screen and (min-width: $lg) {
+            grid-template-areas: 
+                "main aside-place-status"
+                "main aside-content"
+                "main aside-ad";
+            grid-template-columns: auto 320px;
+            grid-template-rows: auto auto 1fr;
+        }
+
+        #{$self}__section {
+
+            &.-main {
+                grid-area: main;
+                display: block;
+            }
+
+            &.-aside-place-status {
+                grid-area: aside-place-status;
+                display: block;
+            }
+
+            &.-aside-content {
+                grid-area: aside-content;
+                display: block;
+            }
+
+            &.-aside-ad {
+                grid-area: aside-ad;
+                display: block;
+            }
+        }
+    }
+
 
     //world/slug - > fullwith
     &.-world-full {
