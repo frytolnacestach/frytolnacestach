@@ -5,7 +5,7 @@
                 <span class="o-sidebar-time__headline">Místní čas</span>
                 <span class="o-sidebar-time__time">{{ localTime }}</span>
                 <span class="o-sidebar-time__date">{{ localDate }}</span>
-                <span class="o-sidebar-time__difference" v-if="local !== null && czach !== null && mpz !== 'CZ'">{{ timeDifferenceMessage }}</span>
+                <span class="o-sidebar-time__difference" v-if="local !== null && czech !== null && mpz !== 'CZ'">{{ timeDifferenceMessage }}</span>
                 <span class="o-sidebar-time__home" v-if="mpz !== 'CZ'">(V Česku je {{ czechTime }} {{ czechDate }})</span>
             </div>
         </div>
