@@ -4,10 +4,18 @@
         <!-- SECTION - Hero -->
 		<section class="t-section -p0 mb-1 mt-2">
             <div class="t-section__inner">
-                <oHero :headline="headline"  modifierCSS=" -gray" />
+                <oHero :headline="headlineFilter"  modifierCSS=" -gray" />
             </div>
         </section>
         <!-- SECTION - Hero END -->
+
+        <!-- SECTION - Filter -->
+        <section class="t-section -p0 hidden-print">
+            <div class="t-section__inner">
+                <oFormFilterPlace styleThema=" -gray" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
+            </div>
+        </section>
+        <!-- SECTION - Filter END -->
 
         <!-- SECTION - Articles -->
         <section class="t-section -p0 py-1 px-2 print-section">
@@ -36,10 +44,10 @@
 </template>
 
 <script>
-
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
+    import oFormFilterPlace from '~/components/organisms/oFormFilterPlace.vue'
     import oHero from '../../components/organisms/oHero.vue'
     import oPlatform from '../../components/organisms/oPlatform.vue'
 
@@ -50,6 +58,7 @@
             aButtonFillFull,
             mHeadline,
             oArticleList,
+            oFormFilterPlace,
             oHero,
             oPlatform
         },
@@ -57,6 +66,9 @@
         data() {
             return {
                 headline: "Články",
+                headlineFilter: 'Články',
+                filterPlaceName: '',
+                filterPlace: '',
                 posts: [],
                 images: [],
                 isLoading: false,
@@ -126,7 +138,7 @@
         },
 
         methods:{
-            async loadPosts() {
+            async loadPosts(reset) {
                 //start loading
                 this.isLoading = true
 
@@ -134,7 +146,11 @@
                 let postsResponse
 
                 //load posts
-                postsResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/posts?showType=list&page=${this.page}&items=${this.perPage}`)
+                if (this.filterPlace !== null) {
+                    postsResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/posts?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
+                } else {
+                    postsResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/posts?showType=list&page=${this.page}&items=${this.perPage}`)
+                }
                 const { data: postsData } = postsResponse
 
                 //load images
@@ -145,10 +161,20 @@
                     this.images = this.images.concat(imagesData)
                 
                     // add to postsData to posts
-                    this.posts = this.posts.concat(postsData)
+                    if (reset) {
+                        // Reset Arrays after change filter
+                        this.posts = postsData
+                    } else {
+                        this.posts = this.posts.concat(postsData)
+                    }
                 } else {
                     // add to postsData to posts
-                    this.posts = this.posts.concat(postsData)
+                    if (reset) {
+                        // Reset Arrays after change filter
+                        this.posts = postsData
+                    } else {
+                        this.posts = this.posts.concat(postsData)
+                    }
                 } 
 
                 //no more items?
@@ -178,6 +204,14 @@
                 this.loadPosts()
             },
 
+            updateHeadline() {
+                if (this.filterPlaceName) {
+                    this.headlineFilter = this.headline + ' státu ' + this.filterPlaceName
+                } else {
+                    this.headlineFilter = this.headline
+                }
+            },
+
             handleScroll() {
                 //no further loading can occur while loading
                 if (this.isLoading || this.noMoreItems) {
@@ -200,6 +234,20 @@
                     this.loadPosts()
                 }
             },
+
+            // filter set update
+            filterUpdate(newValue) {
+                this.filterPlace = newValue.id
+                this.filterPlaceName = newValue.name
+                this.posts = [],
+                this.images = [],
+                this.isLoading = false
+                this.noMoreItems = false
+                this.page = 1
+                this.perPage = 20
+                this.loadPosts(true)
+                this.updateHeadline()
+            }
         },
 
         beforeDestroy() {
