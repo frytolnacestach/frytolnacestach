@@ -7,7 +7,7 @@
                 <oHero :headline="headlineFilter" modifierCSS=" -gray"/>
             </div>
         </section>
-        <!-- SECTION - Hero END <oFormFilterPlace styleThema=" -green"-->
+        <!-- SECTION - Hero END -->
 
         <!-- SECTION - Filter -->
         <section class="t-section -p0 hidden-print">
@@ -44,7 +44,6 @@
 </template>
 
 <script>
-
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oHero from '../../components/organisms/oHero.vue'
