@@ -1038,7 +1038,9 @@ export default {
           const stateRoutes = [
             ...statesResponse.data.map(v => `/svet/region?filterIDstate=${v.id}`),
             ...statesResponse.data.map(v => `/svet/mesto?filterIDstate=${v.id}`),
-            ...statesResponse.data.map(v => `/svet/misto?filterIDstate=${v.id}`)
+            ...statesResponse.data.map(v => `/svet/misto?filterIDstate=${v.id}`),
+            ...statesResponse.data.map(v => `/clanky?filterIDstate=${v.id}`),
+            ...statesResponse.data.map(v => `/videa?filterIDstate=${v.id}`)
           ]
 
           return [...continentRoutes, ...stateRoutes];
