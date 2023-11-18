@@ -50,7 +50,7 @@
             return {
                 headline: 'Regiony',
                 headlineFilter: 'Regiony',
-                filterPlace: null,
+                filterPlace: '',
                 filterPlaceName: '',
                 images: [],
                 placesRegions: [],

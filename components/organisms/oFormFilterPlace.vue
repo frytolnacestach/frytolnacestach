@@ -50,7 +50,7 @@
             } else if (this.typePlaceFilter === "states") {
                 const filterIDstate = this.$route.query.filterIDstate
                 if (filterIDstate) {
-                    this.filterSelect = parseInt(filterIDcontinent, 10)
+                    this.filterSelect = parseInt(filterIDstate, 10)
                 }
             }
             await this.loadPlaces()

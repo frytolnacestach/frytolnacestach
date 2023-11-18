@@ -50,15 +50,14 @@
             return {
                 headline: 'Místa',
                 headlineFilter: 'Místa',
-                filterPlace: null,
+                filterPlace: '',
                 filterPlaceName: '',
                 images: [],
                 placesSpots: [],
                 isLoading: false,
                 noMoreItems: false,
                 page: 1,
-                perPage: 20,
-                filterPlace: ''
+                perPage: 20
             }
         },
 

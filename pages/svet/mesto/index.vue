@@ -50,7 +50,7 @@
             return {
                 headline: 'Města',
                 headlineFilter: 'Města',
-                filterPlace: null,
+                filterPlace: '',
                 filterPlaceName: '',
                 images: [],
                 placesCities: [],
@@ -58,8 +58,7 @@
                 isLoading: false,
                 noMoreItems: false,
                 page: 1,
-                perPage: 20,
-                filterPlace: ''
+                perPage: 20
             }
         },
 

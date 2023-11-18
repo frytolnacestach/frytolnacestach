@@ -50,7 +50,7 @@
             return {
                 headline: 'Státy',
                 headlineFilter: 'Státy',
-                filterPlace: null,
+                filterPlace: '',
                 filterPlaceName: '',
                 images: [],
                 placesStates: [],
@@ -112,8 +112,8 @@
         },
         
         async mounted() {
-            const filterIDstate = this.$route.query.filterIDcontinent
-            if (!filterIDstate) {
+            const filterIDcontinent = this.$route.query.filterIDcontinent
+            if (!filterIDcontinent) {
                 await this.loadPlaces()
             }
             this.addScrollListener()
