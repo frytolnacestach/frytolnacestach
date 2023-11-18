@@ -1,9 +1,9 @@
 <template>
-    <div class="o-form-filter-place" role="filter">
+    <div :class="'o-form-filter-place' + (styleThema ? styleThema : '')" role="filter">
         <div class="o-form-filter-place__outer">
             <div class="o-form-filter-place__inner">
                 <div class="o-form-filter-place__form">
-                    <div class="m-select">
+                    <div :class="'m-select' + (styleThema ? styleThema : '')">
                         <select class="m-select__select" name="filterSelect" v-model="filterSelect" @change="handleFilterSelectChange">
                             <option value="">{{ typePlaceFilterName }}</option>
                             <option v-for="filterPlace in filterPlaces" :key="filterPlace.id" :value="filterPlace.id">{{filterPlace.name}}</option>
@@ -20,6 +20,10 @@
         name: 'OrganismsFormFilterPlaceComponent',
 
         props: {
+            styleThema: {
+                type: String,
+                required: false
+            },
             typePlaceFilterName: {
                 type: String,
                 required: true

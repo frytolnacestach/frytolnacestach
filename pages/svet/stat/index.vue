@@ -12,7 +12,7 @@
         <!-- SECTION - Filter -->
         <section class="t-section -p0 hidden-print">
             <div class="t-section__inner">
-                <oFormFilterPlace typePlaceFilterName="Vybrat kontinent" typePlaceFilter="continents" @update="filterUpdate" />
+                <oFormFilterPlace styleThema=" -green" typePlaceFilterName="Vybrat kontinent" typePlaceFilter="continents" @update="filterUpdate" />
             </div>
         </section>
         <!-- SECTION - Filter END -->

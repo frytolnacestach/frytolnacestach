@@ -4,16 +4,24 @@
         <!-- SECTION - Hero -->
 		<section class="t-section -p0 mb-1 mt-2">
             <div class="t-section__inner">
-                <oHero :headline="headline" modifierCSS=" -gray"/>
+                <oHero :headline="headlineFilter" modifierCSS=" -gray"/>
             </div>
         </section>
-        <!-- SECTION - Hero END -->
+        <!-- SECTION - Hero END <oFormFilterPlace styleThema=" -green"-->
+
+        <!-- SECTION - Filter -->
+        <section class="t-section -p0 hidden-print">
+            <div class="t-section__inner">
+                <oFormFilterPlace styleThema=" -gray" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
+            </div>
+        </section>
+        <!-- SECTION - Filter END -->
 
         <!-- SECTION - videos -->
         <section class="t-section -p0 py-1 px-2 print-section">
             <div class="t-section__inner">
                 <oVideoList :videos="videos" :images="images" styleThemaLoading=" -gray" />
-                <oVideoList :videos="null" :images="null" styleThema=" -world" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
+                <oVideoList :videos="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
                 <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                     <span class="a-button-fill -big -gray" @click="loadMoreItems">Načíst další položky</span>
                 </div>
@@ -40,6 +48,7 @@
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oHero from '../../components/organisms/oHero.vue'
+    import oFormFilterPlace from '~/components/organisms/oFormFilterPlace.vue'
     import oPlatform from '../../components/organisms/oPlatform.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
 
@@ -49,6 +58,7 @@
         components: {
             aButtonFillFull,
             mHeadline,
+            oFormFilterPlace,
             oHero,
             oPlatform,
             oVideoList
@@ -57,6 +67,9 @@
         data() {
             return {
                 headline: "Videa",
+                headlineFilter: 'Videa',
+                filterPlaceName: '',
+                filterPlace: '',
                 videos: [],
                 images: [],
                 isLoading: false,
@@ -121,12 +134,15 @@
         },
 
         async mounted() {
-            await this.loadVideos()
+            const filterIDstate = this.$route.query.filterIDstate
+            if (!filterIDstate) {
+                await this.loadVideos()
+            }
             this.addScrollListener()
         },
 
         methods:{
-            async loadVideos() {
+            async loadVideos(reset) {
                 //start loading
                 this.isLoading = true
 
@@ -134,7 +150,11 @@
                 let videosResponse
 
                 //load videos
-                videosResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/videos?showType=list&page=${this.page}&items=${this.perPage}`)
+                if (this.filterPlace !== null) {
+                    videosResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/videos?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
+                } else {
+                    videosResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/videos?showType=list&page=${this.page}&items=${this.perPage}`)
+                }
                 const { data: videosData } = videosResponse
 
                 //load images
@@ -145,10 +165,20 @@
                     this.images = this.images.concat(imagesData)
                 
                     // add to videosData to videos
-                    this.videos = this.videos.concat(videosData)
+                    if (reset) {
+                        // Reset Arrays after change filter
+                        this.videos = videosData
+                    } else {
+                        this.videos = this.videos.concat(videosData)
+                    }
                 } else {
                     // add to videosData to videos
-                    this.videos = this.videos.concat(videosData)
+                    if (reset) {
+                        // Reset Arrays after change filter
+                        this.videos = videosData
+                    } else {
+                        this.videos = this.videos.concat(videosData)
+                    }
                 } 
 
                 //no more items?
@@ -178,6 +208,14 @@
                 this.loadVideos()
             },
 
+            updateHeadline() {
+                if (this.filterPlaceName) {
+                    this.headlineFilter = this.headline + ' státu ' + this.filterPlaceName
+                } else {
+                    this.headlineFilter = this.headline
+                }
+            },
+
             handleScroll() {
                 //no further loading can occur while loading
                 if (this.isLoading || this.noMoreItems) {
@@ -199,6 +237,20 @@
                     this.page++
                     this.loadVideos()
                 }
+            },
+
+            // filter set update
+            filterUpdate(newValue) {
+                this.filterPlace = newValue.id
+                this.filterPlaceName = newValue.name
+                this.videos = [],
+                this.images = [],
+                this.isLoading = false
+                this.noMoreItems = false
+                this.page = 1
+                this.perPage = 20
+                this.loadVideos(true)
+                this.updateHeadline()
             }
         },
 

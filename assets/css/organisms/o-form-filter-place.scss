@@ -1,4 +1,6 @@
 .o-form-filter-place {
+    $self: &;
+
     padding: 0 10px;
 
     @media only screen and (min-width: $sm) {
@@ -6,7 +8,7 @@
     }
 
     &__outer {
-        background-color: $c-green-bg-component-light-super;
+        background-color: $c-gray-bg-component-light-super;
         border-radius: $br-2;
         margin: 5px 0;
         padding: 10px 15px;
@@ -23,5 +25,24 @@
 
     &__form {
 
+    }
+
+    //color
+    &.-blue {
+        #{$self}__outer {
+            background-color: $c-blue-bg-component-light-super;
+        }
+    }
+
+    &.-gray {
+        #{$self}__outer {
+            background-color: $c-gray-bg-component-light-super;
+        } 
+    }
+
+    &.-green {
+        #{$self}__outer {
+            background-color: $c-green-bg-component-light-super;
+        }
     }
 }
