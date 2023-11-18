@@ -78,6 +78,13 @@
 
             handleFilterSelectChange() {
                 const selectedPlaceId = this.filterSelect
+                // Set URL query
+                if (this.typePlaceFilter === "continents") {
+                    this.$router.replace({ query: { filterIDcontinent: selectedPlaceId } })
+                } else if (this.typePlaceFilter === "states") {
+                    this.$router.replace({ query: { filterIDstate: selectedPlaceId } })
+                }
+                // Update in parent
                 this.updateParentVariable(selectedPlaceId)
             },
 
