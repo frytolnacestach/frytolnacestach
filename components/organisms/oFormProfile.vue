@@ -219,7 +219,7 @@
 
         async mounted() {
             if (process.client) {
-                this.localStorageEmail = localStorage.getItem('email')
+                this.localStorageEmail = localStorage.getItem('userEmail')
             }
 
             await this.fetchProfile()

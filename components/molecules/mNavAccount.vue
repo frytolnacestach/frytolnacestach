@@ -65,15 +65,15 @@
         methods: {
             logout() {
                 //Nastavení localStorage
-                localStorage.setItem("email","undefined")
-                localStorage.setItem("password_hash","undefined")
-                localStorage.setItem("status","undefined")
-                localStorage.setItem("nickname","undefined")
+                localStorage.setItem("userEmail","undefined")
+                localStorage.setItem("userPasswordHash","undefined")
+                localStorage.setItem("userStatus","undefined")
+                localStorage.setItem("userNickname","undefined")
                 //Delete cookies
-                document.cookie = "FNCemail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-                document.cookie = "FNCpass=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-                document.cookie = "FNCstatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-                document.cookie = "FNCnickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCuserEmail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCuserPasswordHash=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCuserStatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCuserNickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
                 //router
                 this.$router.push('/ucet/prihlaseni')
             }
@@ -81,7 +81,7 @@
 
         mounted() {
             if (process.client) {
-                const localStorageEmail = localStorage.getItem('email')
+                const localStorageEmail = localStorage.getItem('userEmail')
                 this.email = localStorageEmail
             }
         }

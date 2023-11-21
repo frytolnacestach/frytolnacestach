@@ -78,19 +78,19 @@
                             this.successForm = "Změna hesla proběhla v pořádku"
 
                             //Cookies - localStorage
-                            localStorage.setItem("email", data.message[0].email)
-                            localStorage.setItem("password_hash", data.message[0].password)
-                            localStorage.setItem("status", data.message[0].status)
-                            localStorage.setItem("nickname", data.message[0].nickname)
+                            localStorage.setItem("userEmail", data.message[0].email)
+                            localStorage.setItem("userPasswordHash", data.message[0].password)
+                            localStorage.setItem("userStatus", data.message[0].status)
+                            localStorage.setItem("userNickname", data.message[0].nickname)
                             //Cookies - set expires
                             var now = new Date()
                             now.setMonth(now.getMonth() + 1)
                             let expires = "expires=" + now
                             //Cookies - write
-                            document.cookie = "FNCemail=" + data.message[0].email + ";" + expires
-                            document.cookie = "FNCpass=" + data.message[0].password + ";" + expires
-                            document.cookie = "FNCstatus=" + data.message[0].status + ";" + expires
-                            document.cookie = "FNCnickname=" + data.message[0].nickname + ";" + expires
+                            document.cookie = "FNCuserEmail=" + data.message[0].email + ";" + expires
+                            document.cookie = "FNCuserPasswordHash=" + data.message[0].password + ";" + expires
+                            document.cookie = "FNCuserStatus=" + data.message[0].status + ";" + expires
+                            document.cookie = "FNCuserNickname=" + data.message[0].nickname + ";" + expires
 
                             await this.$router.push('/ucet/heslo-obnoveno')
                         } else if (response.status === 404) {

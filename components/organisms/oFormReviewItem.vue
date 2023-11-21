@@ -312,8 +312,8 @@
 
         async mounted() {
             if (process.client) {
-                const localStorageEmail = localStorage.getItem('email')
-                const localStoragePasswordHash = localStorage.getItem('password_hash')
+                const localStorageEmail = localStorage.getItem('userEmail')
+                const localStoragePasswordHash = localStorage.getItem('userPasswordHash')
                 this.email = localStorageEmail
                 this.passwordHash = localStoragePasswordHash
             }

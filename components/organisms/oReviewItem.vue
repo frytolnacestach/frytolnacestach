@@ -70,9 +70,9 @@
 
         async mounted() {
             if (process.client) {
-                const localStorageEmail = localStorage.getItem('email')
-                const localStoragePasswordHash = localStorage.getItem('password_hash')
-                const localStorageStatus = localStorage.getItem('status')
+                const localStorageEmail = localStorage.getItem('userEmail')
+                const localStoragePasswordHash = localStorage.getItem('userPasswordHash')
+                const localStorageStatus = localStorage.getItem('userStatus')
 
                 this.email = localStorageEmail
                 this.passwordHash = localStoragePasswordHash
@@ -94,7 +94,7 @@
                     let myReview = []
 
                     if (process.client) {
-                        if (this.email !== null) {
+                        if (this.email !== null && this.email !== "undefined" ) {
                             // Account
                             account = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-authentication?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}`)
 
