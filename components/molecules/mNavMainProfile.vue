@@ -1,7 +1,7 @@
 <template>
     <div class="m-nav-main-profile">
         <div class="m-nav-main-profile__icon">
-            <NuxtLink class="m-nav-main-profile__icon-link -login" to="/ucet/profil" exact-active-class="-active" :class="{'-active': /^\/ucet/.test($route.path)}" :title="'Jsi přihlášen jako ' + nickname" v-if="nickname && nickname !== 'undefined'">
+            <NuxtLink class="m-nav-main-profile__icon-link -login" to="/ucet/profil" exact-active-class="-active" :class="{'-active': /^\/ucet/.test($route.path)}" :title="'Jsi přihlášen jako ' + getTrimmedNickname(user[0].nickname)" v-if="user && user.length > 0">
                 <span class="m-nav-main-profile__icon-file"></span>
             </NuxtLink>
 
@@ -18,34 +18,27 @@
 
         data() {
             return {
-                nickname: this.nickname,
+                user: []
             }
         },
-
-        mounted() {
-            if (process.client) {
-                this.nickname =  localStorage.getItem('nickname')
+        
+        methods: {
+            getTrimmedNickname(nickname) {
+                const maxLength = 20
+                if (nickname.length > maxLength) {
+                    return nickname.slice(0, maxLength) + '...'
+                }
+                return nickname
             }
         },
 
         watch: {
-            '$route.path': {
+            '$store.state.user': {
+                deep: true,
+                immediate: true,
                 handler() {
-                    if (process.client) {
-                        this.nickname = localStorage.getItem('nickname')
-                    }
-                },
-                immediate: true
-            }
-        },
-
-        computed: {
-            getTrimmedNickname() {
-                const maxLength = 20
-                if (this.nickname.length > maxLength) {
-                    return this.nickname.slice(0, maxLength) + '...'
+                    this.user = this.$store.state.user
                 }
-                return this.nickname
             }
         }
     }

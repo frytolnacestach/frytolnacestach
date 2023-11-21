@@ -810,7 +810,8 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build', 
     '@nuxtjs/eslint-module', 
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/vuex'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

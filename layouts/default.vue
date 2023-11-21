@@ -1,11 +1,17 @@
 <template>
     <div class="t-components">
-        <ComponentLogin @userData="handleUserData" />
-        <ComponentHeader />
+        <!-- Print -->
         <ComponentPrintFront />
+        <!-- END Print -->
+        <!-- Login -->
+        <ComponentLogin @userData="handleUserData" />
+        <!-- END Login -->
+        <!-- Frontend -->
+        <ComponentHeader :user="user" />
         <Nuxt />
         <ComponentFooter />
         <ComponentPopupCookies />
+        <!-- END Frontend -->
     </div>
 </template>
 
@@ -16,20 +22,14 @@
         data() {
             return {
                 loginStatus: 0,
-                userEmail: '',
-                userPasswordHash: '',
-                userStatus: null,
-                userNickname: ''
+                user: []
             }
         },
 
         methods: {
             handleUserData(data) {
                 this.loginStatus = data.loginStatus
-                this.userEmail = data.userEmail
-                this.userPasswordHash = data.userPasswordHash
-                this.userStatus = data.userStatus
-                this.userNickname = data.userNickname
+                this.user = data.user
             }
         }
     }

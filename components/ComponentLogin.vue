@@ -11,14 +11,11 @@
         data() {
             return {
                 loginStatus: null,
-                userEmail: null,
-                userPasswordHash: null,
-                userStatus: null,
-                userNickname: null
+                user: []
             }
         },
 
-        async mounted() {
+        async beforeMount() {
             if (process.client) {
                 const localStorageEmail = localStorage.getItem('userEmail')
                 const localStoragePasswordHash = localStorage.getItem('userPasswordHash')
@@ -64,16 +61,28 @@
                         this.userPasswordHash = localStoragePasswordHash
                         this.userStatus = localStorageStatus
                         this.userNickname = localStorageNickname
+                        
+                        // Get user data
+                        try {
+                            const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile/${localStorageEmail}`)
+                            if (response.ok) {
+                                this.user = await response.json()
+                            } else {
+                                this.user = []
+                            }
+                        } catch {
+                            this.user = []
+                        }
+
                         // Emit
                         this.$emit('userData', {
                             loginStatus: 1,
-                            userEmail: localStorageEmail,
-                            userPasswordHash: localStoragePasswordHash,
-                            userStatus: localStorageStatus,
-                            userNickname: localStorageNickname
+                            user: this.user
                         })
+                        this.$store.commit('setUser', this.user)
+
                     } else if (response.status === 401) {
-                        console.log("[USER] Nesprávné přihlašovací údaje");
+                        console.log("[USER] Nesprávné přihlašovací údaje")
                         // Nastavení localStorage
                         localStorage.setItem("userEmail","undefined")
                         localStorage.setItem("userPasswordHash","undefined")
@@ -89,13 +98,11 @@
                         // Emit
                         this.$emit('userData', {
                             loginStatus: 0,
-                            userEmail: "undefined",
-                            userPasswordHash: "undefined",
-                            userStatus: "undefined",
-                            userNickname: "undefined"
+                            user: []
                         })
+                        this.$store.commit('setUser', this.user)
                     } else if (response.status === 404) {
-                        console.log("[USER] Uživatel nenalezen");
+                        console.log("[USER] Uživatel nenalezen")
                         // Nastavení localStorage
                         localStorage.setItem("userEmail","undefined")
                         localStorage.setItem("userPasswordHash","undefined")
@@ -111,13 +118,11 @@
                         // Emit
                         this.$emit('userData', {
                             loginStatus: 0,
-                            userEmail: "undefined",
-                            userPasswordHash: "undefined",
-                            userStatus: "undefined",
-                            userNickname: "undefined"
+                            user: []
                         })
+                        this.$store.commit('setUser', this.user)
                     } else {
-                        console.log("[USER] Chyba při komunikaci s API");
+                        console.log("[USER] Chyba při komunikaci s API")
                         // Nastavení localStorage
                         localStorage.setItem("userEmail","undefined")
                         localStorage.setItem("userPasswordHash","undefined")
@@ -133,14 +138,12 @@
                         // Emit
                         this.$emit('userData', {
                             loginStatus: 0,
-                            userEmail: "undefined",
-                            userPasswordHash: "undefined",
-                            userStatus: "undefined",
-                            userNickname: "undefined"
+                            user: []
                         })
+                        this.$store.commit('setUser', this.user)
                     }
                 } else {
-                    console.log("[USER] Uživatel není přihlášen");
+                    console.log("[USER] Uživatel není přihlášen")
                     // Nastavení localStorage
                     localStorage.setItem("userEmail","undefined")
                     localStorage.setItem("userPasswordHash","undefined")
@@ -156,11 +159,9 @@
                     // Emit
                     this.$emit('userData', {
                         loginStatus: 0,
-                        userEmail: "undefined",
-                        userPasswordHash: "undefined",
-                        userStatus: "undefined",
-                        userNickname: "undefined"
+                        user: []
                     })
+                    this.$store.commit('setUser', this.user)
                 }
             }
         }
