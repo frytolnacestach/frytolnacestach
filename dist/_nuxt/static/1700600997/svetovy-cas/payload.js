@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/svetovy-cas", {data:[{}],fetch:{},mutations:[]});

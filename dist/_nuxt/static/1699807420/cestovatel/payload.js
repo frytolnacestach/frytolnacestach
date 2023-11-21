@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/cestovatel", {data:[{}],fetch:{},mutations:void 0});

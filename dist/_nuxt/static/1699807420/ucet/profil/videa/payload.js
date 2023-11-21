@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/ucet/profil/videa", {data:[{}],fetch:{},mutations:void 0});

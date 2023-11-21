@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/ucet/profil/moje-data", {data:[{}],fetch:{},mutations:[]});

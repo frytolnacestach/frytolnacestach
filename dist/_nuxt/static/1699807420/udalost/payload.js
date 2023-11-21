@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/udalost", {data:[{}],fetch:{},mutations:void 0});

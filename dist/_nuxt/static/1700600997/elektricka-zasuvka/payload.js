@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/elektricka-zasuvka", {data:[{}],fetch:{},mutations:[]});

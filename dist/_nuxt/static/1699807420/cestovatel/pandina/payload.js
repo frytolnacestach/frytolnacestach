@@ -1,1 +1,0 @@
-__NUXT_JSONP__("cestovatel/pandina", (function(a){return {data:[{staticUser:[{id:2,email:"andina.s@seznam.cz",nickname:"Pandina",slug:"pandina",surname:"Andrea ",lastname:"Korolovová ",status:3,urls:a,seo_tags:a}]}],fetch:{},mutations:void 0}}(null)));

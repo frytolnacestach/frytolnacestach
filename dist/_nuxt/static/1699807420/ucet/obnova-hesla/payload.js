@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/ucet/obnova-hesla", {data:[{}],fetch:{},mutations:void 0});

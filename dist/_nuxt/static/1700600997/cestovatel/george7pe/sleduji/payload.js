@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/cestovatel/george7pe/sleduji", (function(a){return {data:[{staticUser:[{id:20,email:"george7pe@yahoo.com",nickname:"George7Pe",slug:"george7pe",surname:a,lastname:a,status:3,urls:a,seo_tags:a}]}],fetch:{},mutations:[]}}(null)));

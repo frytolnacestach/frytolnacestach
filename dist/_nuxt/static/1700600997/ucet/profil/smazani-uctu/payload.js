@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/ucet/profil/smazani-uctu", {data:[{}],fetch:{},mutations:[]});
