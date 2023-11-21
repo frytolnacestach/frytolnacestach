@@ -95,7 +95,7 @@
                         <!-- SECTION - Account banner - sidebar -->
                         <section class="t-section -px-world my-1">
                             <div class="t-section__inner">
-                                <oAccountBanner styleThema=" -green" />
+                                <oAccountBanner :user="user" styleThema=" -green" />
                             </div>
                         </section>
                         <!-- SECTION - Account banner - sidebar END -->
@@ -199,6 +199,7 @@
 
         data() {
             return {
+                user: [],
                 place: this.place,
                 placeContinent: this.placeContinent,
                 placeState: this.placeState,
@@ -566,6 +567,16 @@
 
         updated() {
             window.lazySizes && window.lazySizes.update()
+        },
+
+        watch: {
+            '$store.state.user': {
+                deep: true,
+                immediate: true,
+                handler() {
+                    this.user = this.$store.state.user
+                }
+            }
         }
     }
 </script>
