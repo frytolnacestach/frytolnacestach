@@ -69,8 +69,7 @@
         data() {
             return {
                 numberPlaces: [],
-                users: [],
-                skeleton: true,
+                skeleton: true
             }
         },
 
