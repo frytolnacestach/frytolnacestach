@@ -123,41 +123,6 @@
 
         async mounted() {
             loginCheckLogout(this.$router)
-
-            if (process.client) {
-                let success = false
-                let data = null
-                
-                const localStorageEmail = localStorage.getItem("accountEmail")
-                const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
-
-                this.email = localStorageEmail
-                this.passwordHash = localStoragePasswordHash
-
-                while (!success) {
-                    try {
-                        // PAGE - Account list
-                        // Account
-                        const account = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-authentication?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}`)
-
-
-                        data = {
-                            account
-                        }
-
-
-                        success = true
-                    } catch (error) {
-                        console.log(`API ERROR - HODNOTIL JSEM`)
-                        console.error(error)
-
-                        await new Promise(resolve => setTimeout(resolve, 1000))
-                    }
-                }
-
-                // Update data properties with fetched data
-                Object.assign(this, data)
-            }
         },
 
         methods: {
