@@ -44,9 +44,7 @@
                 errorForm: '',
                 successForm: '',
                 skeleton: true,
-                status: 0,
-                email: this.email,
-                passwordHash: this.passwordHash
+                status: 0
             }
         },
 
@@ -161,14 +159,6 @@
         },
 
         mounted() {
-            if (process.client) {
-                const localStorageEmail = localStorage.getItem("accountEmail")
-                const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
-
-                this.email = localStorageEmail
-                this.passwordHash = localStoragePasswordHash
-            }
-
             this.follower()
         }
     }
