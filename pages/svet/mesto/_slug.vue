@@ -133,7 +133,7 @@
                         <!-- SECTION - Ubytování END -->
 
                         <!-- SECTION - Review -->
-                        <oReviewItem :IDplace="place[0].id" type="city" v-if="place[0].id" />
+                        <oReviewItem :IDplace="place[0].id" :user="user" type="city" v-if="place[0].id" />
                         <!-- SECTION - Review END -->
                 
                     </div>

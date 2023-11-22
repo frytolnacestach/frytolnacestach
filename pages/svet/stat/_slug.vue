@@ -126,7 +126,7 @@
                                 <!-- SECTION - Flora Značky END -->
 
                                 <!-- SECTION - Review -->
-                                <oReviewItem :IDplace="place[0].id" type="state" v-if="place[0].id" />
+                                <oReviewItem :IDplace="place[0].id" :user="user" type="state" v-if="place[0].id" />
                                 <!-- SECTION - Review END -->
                         
                             </div>

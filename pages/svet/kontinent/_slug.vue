@@ -68,7 +68,7 @@
                         <!-- SECTION - information by Author END -->
 
                         <!-- SECTION - Review -->
-                        <oReviewItem :IDplace="place[0].id" type="continent" v-if="place[0].id" />
+                        <oReviewItem :IDplace="place[0].id" :user="user" type="continent" v-if="place[0].id" />
                         <!-- SECTION - Review END -->
                     </div>
 

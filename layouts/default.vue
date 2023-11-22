@@ -7,7 +7,7 @@
         <ComponentLogin @userData="handleUserData" />
         <!-- END Login -->
         <!-- Frontend -->
-        <ComponentHeader :user="user" />
+        <ComponentHeader />
         <Nuxt />
         <ComponentFooter />
         <ComponentPopupCookies />
