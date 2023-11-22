@@ -45,6 +45,10 @@
         },
 
         props: {
+            account: {
+                type: Array,
+                required: true
+            },
             type: {
                 type: String,
                 required: true
@@ -57,13 +61,12 @@
 
         data() {
             return {
-                email: null,
-                passwordHash: null,
-                loginCheck: false,
-                account: [],
+                //email: null,
+                //passwordHash: null,
+                //loginCheck: false,
+                //users: [],
                 achievements: [],
-                users: [],
-                achievementsList: []
+                achievementsList: [],
             }
         },
 
@@ -75,6 +78,7 @@
                     return (type / value) * 100
                 }
             },
+
             createAchievementsList(achievements) {
                 return [
                     {
@@ -238,68 +242,41 @@
                         description: ''
                     }
                 ]
-            }
-        },
+            },
 
-        async mounted() {
-            if (process.client) {
-                const localStorageEmail = localStorage.getItem("accountEmail")
-                const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
-                this.email = localStorageEmail
-                this.passwordHash = localStoragePasswordHash
-            }
-            
-            let success = false
-            let data = null
-
-            while (!success) {
+            async fetchData() {
                 try {
-                    let account = null
-                    let achievements = null
-                    let users = null
-
                     if (this.type === "account") {
-                        if (process.client) {
-                            if (this.email !== null) {
-                                // Account
-                                account = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-authentication?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}`)
-
-                                this.loginCheck = true
-
+                        if (this.account && this.account.length !== 0) {
+                            if (process.client) {
                                 // Achievements
-                                if (account !== null) {
-                                    achievements = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${account[0].id}`)
-                                    this.achievementsList = this.createAchievementsList(achievements)
-                                }
-                            } else {
-                                this.loginCheck = true
+                                this.achievements = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${this.account[0].id}`)
+                                this.achievementsList = this.createAchievementsList(this.achievements)
                             }
-                        } else {
-                            this.loginCheck = false
                         }
-
-                        data = { account, achievements, users }
                     } else {
                         if (process.client) {
                             // achievements
-                            achievements = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${this.idUser}`)
-                            this.achievementsList = this.createAchievementsList(achievements)
+                            this.achievements = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${this.idUser}`)
+                            this.achievementsList = this.createAchievementsList(this.achievements)
                         }
-
-                        data = { account, achievements, users }
                     }
 
-                    
-                    success = true
+                    this.skeleton = false
                 } catch (error) {
-                    console.log(`API ERROR - SLEDUJI`)
+                    console.log(`API ERROR - ACHIEMENTY`)
                     console.error(error)
 
                     await new Promise(resolve => setTimeout(resolve, 1000))
                 }
             }
+        },
 
-            Object.assign(this, data)
+        watch: {
+            account: {
+                handler: 'fetchData',
+                immediate: true
+            }
         }
     }
 </script>

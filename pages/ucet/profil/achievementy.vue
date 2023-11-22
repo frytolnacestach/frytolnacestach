@@ -29,7 +29,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Achievementy" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oAchievements type="account" />
+                                <oAchievements :account="account" type="account" />
                             </div>
                         </section>
                         <!-- SECTION - Achievements END -->
