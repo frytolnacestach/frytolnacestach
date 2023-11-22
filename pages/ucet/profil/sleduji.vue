@@ -29,7 +29,7 @@
                         <section class="t-section -padding-x -p0 pb-4">
                             <div class="t-section__inner">
                                 <mHeadline title="Sleduji" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oFollowerList type="account" />
+                                <oFollowerList :account="account" type="account" />
                             </div>
                         </section>
                         <!-- SECTION - Follower list END -->

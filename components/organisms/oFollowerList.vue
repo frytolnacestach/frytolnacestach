@@ -1,11 +1,11 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <skeletonoFollowerList styleThema=" -skeleton-blue" v-if="users && users.length === 0" />
+        <skeletonoFollowerList styleThema=" -skeleton-blue" v-if="skeleton" />
         <!-- skeleton END -->
 
         <!-- client -->
-        <client-only v-if="users !== null">
+        <client-only v-if="!skeleton">
             <div class="o-follower-list">
                 <div class="o-follower-list__outer">
                     <div class="o-follower-list__inner">
@@ -92,7 +92,7 @@
         <!-- client END -->
 
         <!-- client -->
-        <client-only v-if="users === [] || users === null">
+        <client-only v-if="users.length === 0 && !skeleton">
             <p v-if="type==='account'">
                 Zatím nikoho nesleduješ
             </p>
@@ -115,6 +115,10 @@
         },
 
         props: {
+            account: {
+                type: Array,
+                required: true
+            },
             type: {
                 type: String,
                 required: true
@@ -127,75 +131,44 @@
 
         data() {
             return {
-                email: null,
-                passwordHash: null,
-                loginCheck: false,
-                account: [],
+                skeleton: true,
                 followers: [],
                 users: []
             }
         },
 
-        async mounted() {
-            if (process.client) {
-                const localStorageEmail = localStorage.getItem("accountEmail")
-                const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
-                this.email = localStorageEmail
-                this.passwordHash = localStoragePasswordHash
-            }
-            
-            let success = false
-            let data = null
-
-            while (!success) {
+        methods: {
+            async fetchData() {
                 try {
-                    let account = null
-                    let followers = null
-                    let users = null
-
                     if (this.type === "account") {
-                        if (process.client) {
-                            if (this.email !== null) {
-                                // Account
-                                account = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-authentication?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}`)
-
-                                this.loginCheck = true
-
+                        if (this.account && this.account.length !== 0) {
+                            if (process.client) {
                                 // Followers
-                                if (account !== null) {
-                                    followers = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-followers-id-user?id_user=${account[0].id}`)
+                                this.followers = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-followers-id-user?id_user=${this.account[0].id}`)
 
-                                    if (followers !== null) {
-                                        // Users
-                                        const usersFollowersIDS = followers.map(follower => follower.id_follower).filter(id => id !== null && id !== '')
-                                        users = await this.$axios.$get(`https://api.frytolnacestach.cz/api/users-ids?id=${usersFollowersIDS.join(',')}`)
-                                    }
+                                if (this.followers && this.followers.length !== 0) {
+                                    // Users
+                                    const usersFollowersIDS = this.followers.map(follower => follower.id_follower).filter(id => id !== null && id !== '')
+                                    this.users = await this.$axios.$get(`https://api.frytolnacestach.cz/api/users-ids?id=${usersFollowersIDS.join(',')}`)
                                 }
-                            } else {
-                                this.loginCheck = true
-                            }
-                        } else {
-                            this.loginCheck = false
-                        }
 
-                        data = { account, followers, users }
+                                this.skeleton = false
+                            }
+                        }
                     } else {
                         if (process.client) {
-                                // Followers
-                                followers = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-followers-id-user?id_user=${this.idUser}`)
+                            // Followers
+                            this.followers = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-followers-id-user?id_user=${this.idUser}`)
 
-                                if (followers !== null) {
-                                    // Users
-                                    const usersFollowersIDS = followers.map(follower => follower.id_follower).filter(id => id !== null && id !== '')
-                                    users = await this.$axios.$get(`https://api.frytolnacestach.cz/api/users-ids?id=${usersFollowersIDS.join(',')}`)
-                                }
+                            if (this.followers && this.followers.length !== 0) {
+                                // Users
+                                const usersFollowersIDS = this.followers.map(follower => follower.id_follower).filter(id => id !== null && id !== '')
+                                this.users = await this.$axios.$get(`https://api.frytolnacestach.cz/api/users-ids?id=${usersFollowersIDS.join(',')}`)
+                            }
+
+                            this.skeleton = false
                         }
-
-                        data = { account, followers, users }
                     }
-
-                    
-                    success = true
                 } catch (error) {
                     console.log(`API ERROR - SLEDUJI`)
                     console.error(error)
@@ -203,8 +176,13 @@
                     await new Promise(resolve => setTimeout(resolve, 1000))
                 }
             }
+        },
 
-            Object.assign(this, data)
+        watch: {
+            account: {
+                handler: 'fetchData',
+                immediate: true
+            }
         }
     }
 </script>
