@@ -133,7 +133,7 @@
                         <!-- SECTION - Ubytování END -->
 
                         <!-- SECTION - Review -->
-                        <oReviewItem :IDplace="place[0].id" :account="account" type="city" v-if="place[0].id" />
+                        <oReviewItem :account="account" :IDplace="place[0].id" type="city" v-if="place[0].id" />
                         <!-- SECTION - Review END -->
                 
                     </div>
@@ -142,7 +142,7 @@
                         <!-- SECTION - Visited button - sidebar -->
                         <section class="t-section -px-world">
                             <div class="t-section__inner">
-                                <oVisitedButton :place="this.place[0].id" placeType="city" />
+                                <oVisitedButton :account="account" :place="this.place[0].id" placeType="city" />
                             </div>
                         </section>
                         <!-- SECTION - Visited button - sidebar - END -->
