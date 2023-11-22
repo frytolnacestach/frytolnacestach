@@ -124,6 +124,10 @@
         },
 
         props: {
+            account: {
+                type: Array,
+                required: true
+            },
             IDplace: {
                 type: Number,
                 required: true
@@ -135,10 +139,6 @@
             type: {
                 type: String,
                 required: true
-            },
-            account: {
-                type: Array,
-                required: true
             }
         },
 
@@ -146,8 +146,6 @@
             return {
                 errorForm: '',
                 successForm: '',
-                localStorageEmail: '',
-                localStoragePasswordHash: '',
                 showEditForm: false,
                 showReview: true,
                 users: this.users,
@@ -168,8 +166,8 @@
                         },
                         method: 'POST',
                         body: JSON.stringify({
-                            'email': this.localStorageEmail,
-                            'password_hash': this.localStoragePasswordHash,
+                            'email': this.account[0].email,
+                            'password_hash': this.account[0].password,
                             'id_place': this.IDplace,
                             'type': this.type,
                             'rating': this.selectRating,
@@ -228,11 +226,6 @@
         },
 
         async mounted() {
-            if (process.client) {
-                const localStorageEmail = localStorage.getItem("accountEmail")
-                const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
-            }
-
             let success = false
             let data = null
 
