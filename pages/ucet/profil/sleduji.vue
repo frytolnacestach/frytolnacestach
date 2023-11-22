@@ -10,7 +10,7 @@
                         <!-- SECTION - account headline - account -->
                         <section class="t-section -padding-x -p0">
                             <div class="t-section__inner">
-                                <mAccountHeader @update="menuAccountUpdate" />
+                                <mAccountHeader :account="account" @update="menuAccountUpdate" />
                             </div>
                         </section>
                         <!-- SECTION - nav - account END -->
@@ -63,6 +63,7 @@
 
         data() {
             return {
+                account: [],
                 mNavAccountOpen: false
             }
         },
@@ -124,6 +125,16 @@
         methods: {
             menuAccountUpdate(newValue) {
                 this.mNavAccountOpen = newValue
+            }
+        },
+
+        watch: {
+            '$store.state.account': {
+                deep: true,
+                immediate: true,
+                handler() {
+                    this.account = this.$store.state.account
+                }
             }
         }
     }
