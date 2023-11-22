@@ -239,7 +239,7 @@
 
             // local storage
             if (process.client) {
-                const localStorageEmail = localStorage.getItem('userEmail')
+                const localStorageEmail = localStorage.getItem("accountEmail")
 
                 this.email = localStorageEmail
             }

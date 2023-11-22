@@ -4,7 +4,7 @@
         <ComponentPrintFront />
         <!-- END Print -->
         <!-- Login -->
-        <ComponentLogin @userData="handleUserData" />
+        <ComponentLogin @accountData="handleAccountData" />
         <!-- END Login -->
         <!-- Frontend -->
         <ComponentHeader />
@@ -22,14 +22,14 @@
         data() {
             return {
                 loginStatus: 0,
-                user: []
+                account: []
             }
         },
 
         methods: {
-            handleUserData(data) {
+            handleAccountData(data) {
                 this.loginStatus = data.loginStatus
-                this.user = data.user
+                this.account = data.account
             }
         }
     }

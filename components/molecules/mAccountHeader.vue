@@ -55,8 +55,8 @@
 
         mounted() {
             if (process.client) {
-                const localStorageNickname = localStorage.getItem('userNickname')
-                const localStorageEmail = localStorage.getItem('userEmail')
+                const localStorageNickname = localStorage.getItem("accountNickname")
+                const localStorageEmail = localStorage.getItem("accountEmail")
                 this.nickname = localStorageNickname
                 this.email = localStorageEmail
             }

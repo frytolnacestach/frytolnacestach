@@ -89,7 +89,6 @@
 
         data() {
             return {
-                user: [],
                 post: this.post,
                 imagePost: this.imagePost,
                 video: this.video,
@@ -168,16 +167,6 @@
                 imagePost,
                 video,
                 imageVideo
-            }
-        },
-
-        watch: {
-            '$store.state.user': {
-                deep: true,
-                immediate: true,
-                handler() {
-                    this.user = this.$store.state.user
-                }
             }
         }
     }

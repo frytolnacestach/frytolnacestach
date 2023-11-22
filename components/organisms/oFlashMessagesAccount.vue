@@ -46,12 +46,12 @@
 
         async mounted() {
             if (process.client) {
-                const localStorageStatus = localStorage.getItem('userStatus')
+                const localStorageStatus = localStorage.getItem("accountStatus")
                 if (localStorageStatus === '2') {
                     this.needActivation = true
                 }
 
-                const localStorageEmail = localStorage.getItem('userEmail')
+                const localStorageEmail = localStorage.getItem("accountEmail")
                 this.email = localStorageEmail
             }
 

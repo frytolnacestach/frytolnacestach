@@ -1,7 +1,7 @@
 <template>
     <div class="m-nav-main-profile">
         <div class="m-nav-main-profile__icon">
-            <NuxtLink class="m-nav-main-profile__icon-link -login" to="/ucet/profil" exact-active-class="-active" :class="{'-active': /^\/ucet/.test($route.path)}" :title="'Jsi přihlášen jako ' + getTrimmedNickname(user[0].nickname)" v-if="user && user.length > 0">
+            <NuxtLink class="m-nav-main-profile__icon-link -login" to="/ucet/profil" exact-active-class="-active" :class="{'-active': /^\/ucet/.test($route.path)}" :title="'Jsi přihlášen jako ' + getTrimmedNickname(account[0].nickname)" v-if="account && account.length > 0">
                 <span class="m-nav-main-profile__icon-file"></span>
             </NuxtLink>
 
@@ -18,7 +18,7 @@
 
         data() {
             return {
-                user: []
+                account: []
             }
         },
         
@@ -33,11 +33,11 @@
         },
 
         watch: {
-            '$store.state.user': {
+            '$store.state.account': {
                 deep: true,
                 immediate: true,
                 handler() {
-                    this.user = this.$store.state.user
+                    this.account = this.$store.state.account
                 }
             }
         }

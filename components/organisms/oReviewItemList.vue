@@ -48,7 +48,7 @@
                                                         <div class="o-review-item-list__star" :class="{'-active': review.rating > 3}"></div>
                                                         <div class="o-review-item-list__star" :class="{'-active': review.rating > 4}"></div>
                                                     </div>
-                                                    <div class="o-review-item-list__setting" v-if="account[0].id === review.id_user" @click="selectRating = review.rating, text = review.text, reviewShowEdit()"></div>
+                                                    <div class="o-review-item-list__setting" v-if="account && account.length !== 0 && account[0].id === review.id_user" @click="selectRating = review.rating, text = review.text, reviewShowEdit()"></div>
                                                     <h3 class="o-review-item-list__name" v-if="users && users.find(user => user.id === review.id_user)">
                                                         <NuxtLink class="o-review-item-list__name-link" :to="`/cestovatel/${users.find(user => user.id === review.id_user).slug}`" :aria-label="`Přejít na profil uživatele ${users.find(user => user.id === review.id_user).nickname}`">{{ users.find(user => user.id === review.id_user).nickname }}</NuxtLink>
                                                     </h3>
@@ -229,8 +229,8 @@
 
         async mounted() {
             if (process.client) {
-                const localStorageEmail = localStorage.getItem('userEmail')
-                const localStoragePasswordHash = localStorage.getItem('userPasswordHash')
+                const localStorageEmail = localStorage.getItem("accountEmail")
+                const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
             }
 
             let success = false

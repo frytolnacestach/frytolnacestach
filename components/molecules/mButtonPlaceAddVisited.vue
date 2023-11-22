@@ -28,8 +28,8 @@
         mounted() {
             // user login information
             if (process.client) {
-                const localStorageEmail = localStorage.getItem('userEmail')
-                const localStoragePasswordHash = localStorage.getItem('userPasswordHash')
+                const localStorageEmail = localStorage.getItem("accountEmail")
+                const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
 
                 this.email = localStorageEmail
                 this.passwordHash = localStoragePasswordHash

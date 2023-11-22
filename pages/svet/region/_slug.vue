@@ -62,7 +62,7 @@
                         <!-- SECTION - information by Author END -->
 
                         <!-- SECTION - Review -->
-                        <oReviewItem :IDplace="place[0].id" :user="user" type="region" v-if="place[0].id" />
+                        <oReviewItem :IDplace="place[0].id" :account="account" type="region" v-if="place[0].id" />
                         <!-- SECTION - Review END -->
                     </div>
 
@@ -80,7 +80,7 @@
                         <!-- SECTION - Account banner - sidebar -->
                         <section class="t-section -px-world my-1">
                             <div class="t-section__inner">
-                                <oAccountBanner :user="user" styleThema=" -green" />
+                                <oAccountBanner :account="account" styleThema=" -green" />
                             </div>
                         </section>
                         <!-- SECTION - Account banner - sidebar END -->
@@ -180,7 +180,7 @@
 
         data() {
             return {
-                user: [],
+                account: [],
                 place: this.place,
                 placeContinent: this.placeContinent,
                 placeState: this.placeState,
@@ -518,11 +518,11 @@
         },
 
         watch: {
-            '$store.state.user': {
+            '$store.state.account': {
                 deep: true,
                 immediate: true,
                 handler() {
-                    this.user = this.$store.state.user
+                    this.account = this.$store.state.account
                 }
             }
         }

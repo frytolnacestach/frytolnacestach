@@ -75,19 +75,19 @@
                         this.successForm = "Přihlášení úspěšné"
 
                         //Cookies - localStorage
-                        localStorage.setItem("userEmail", data.message[0].email)
-                        localStorage.setItem("userPasswordHash", data.message[0].password)
-                        localStorage.setItem("userStatus", data.message[0].status)
-                        localStorage.setItem("userNickname", data.message[0].nickname)
+                        localStorage.setItem("accountEmail", data.message[0].email)
+                        localStorage.setItem("accountPasswordHash", data.message[0].password)
+                        localStorage.setItem("accountStatus", data.message[0].status)
+                        localStorage.setItem("accountNickname", data.message[0].nickname)
                         //Cookies - set expires
                         var now = new Date()
                         now.setMonth(now.getMonth() + 1)
                         let expires = "expires=" + now
                         //Cookies - write
-                        document.cookie = "FNCuserEmail=" + data.message[0].email + ";" + expires
-                        document.cookie = "FNCuserPasswordHash=" + data.message[0].password + ";" + expires
-                        document.cookie = "FNCuserStatus=" + data.message[0].status + ";" + expires
-                        document.cookie = "FNCuserNickname=" + data.message[0].nickname + ";" + expires
+                        document.cookie = "FNCaccountEmail=" + data.message[0].email + ";" + expires
+                        document.cookie = "FNCaccountPasswordHash=" + data.message[0].password + ";" + expires
+                        document.cookie = "FNCaccountStatus=" + data.message[0].status + ";" + expires
+                        document.cookie = "FNCaccountNickname=" + data.message[0].nickname + ";" + expires
 
                         await this.$router.push('/ucet/profil')
                     } else if (response.status === 401) {

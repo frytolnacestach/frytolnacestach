@@ -2,11 +2,11 @@ import Vuex from 'vuex';
 
 const store = () => new Vuex.Store({
   state: {
-    user: null
+    account: []
   },
   mutations: {
-    setUser(state, user) {
-      state.user = user;
+    setAccount(state, account) {
+      state.account = account;
     }
   }
 });

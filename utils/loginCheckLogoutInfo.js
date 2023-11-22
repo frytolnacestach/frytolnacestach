@@ -1,8 +1,8 @@
 export async function loginCheckLogoutInfo($router) {
-    const localStorageEmail = localStorage.getItem('userEmail')
-    const localStoragePasswordHash = localStorage.getItem('userPasswordHash')
-    const localStorageStatus = localStorage.getItem('userStatus')
-    const localStorageNickname = localStorage.getItem('userNickname')
+    const localStorageEmail = localStorage.getItem("accountEmail")
+    const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
+    const localStorageStatus = localStorage.getItem("accountStatus")
+    const localStorageNickname = localStorage.getItem("accountNickname")
 
     if (localStorageEmail && localStorageEmail != "undefined") {
         try {
@@ -29,65 +29,65 @@ export async function loginCheckLogoutInfo($router) {
                 now.setMonth(now.getMonth() + 1);
                 let expires = "expires=" + now;
                 //Nastavení localStorage
-                localStorage.setItem("userEmail",localStorageEmail)
-                localStorage.setItem("userPasswordHash",localStoragePasswordHash)
-                localStorage.setItem("userStatus",localStorageStatus)
-                localStorage.setItem("userNickname",localStorageNickname)
+                localStorage.setItem("accountEmail",localStorageEmail)
+                localStorage.setItem("accountPasswordHash",localStoragePasswordHash)
+                localStorage.setItem("accountStatus",localStorageStatus)
+                localStorage.setItem("accountNickname",localStorageNickname)
                 //Cookies - write
-                document.cookie = "FNCuserEmail=" + localStorageEmail + ";" + expires;
-                document.cookie = "FNCuserPasswordHash=" + localStoragePasswordHash + ";" + expires;
-                document.cookie = "FNCuserStatus=" + localStorageStatus + ";" + expires;
-                document.cookie = "FNCuserNickname=" + localStorageNickname + ";" + expires;
+                document.cookie = "FNCaccountEmail=" + localStorageEmail + ";" + expires;
+                document.cookie = "FNCaccountPasswordHash=" + localStoragePasswordHash + ";" + expires;
+                document.cookie = "FNCaccountStatus=" + localStorageStatus + ";" + expires;
+                document.cookie = "FNCaccountNickname=" + localStorageNickname + ";" + expires;
                 return true;
             } else if (response.status === 401) {
                 console.log("Nesprávné přihlašovací údaje");
                 //Nastavení localStorage
-                localStorage.setItem("userEmail","undefined")
-                localStorage.setItem("userPasswordHash","undefined")
-                localStorage.setItem("userStatus","undefined")
-                localStorage.setItem("userNickname","undefined")
+                localStorage.setItem("accountEmail","undefined")
+                localStorage.setItem("accountPasswordHash","undefined")
+                localStorage.setItem("accountStatus","undefined")
+                localStorage.setItem("accountNickname","undefined")
                 //Delete cookies
-                document.cookie = "FNCuserEmail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-                document.cookie = "FNCuserPasswordHash=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-                document.cookie = "FNCuserStatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-                document.cookie = "FNCuserNickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCaccountEmail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCaccountPasswordHash=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCaccountStatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCaccountNickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
             } else if (response.status === 404) {
                 console.log("Uživatel nenalezen");
                 //Nastavení localStorage
-                localStorage.setItem("userEmail","undefined")
-                localStorage.setItem("userPasswordHash","undefined")
-                localStorage.setItem("userStatus","undefined")
-                localStorage.setItem("userNickname","undefined")
+                localStorage.setItem("accountEmail","undefined")
+                localStorage.setItem("accountPasswordHash","undefined")
+                localStorage.setItem("accountStatus","undefined")
+                localStorage.setItem("accountNickname","undefined")
                 //Delete cookies
-                document.cookie = "FNCuserEmail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-                document.cookie = "FNCuserPasswordHash=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-                document.cookie = "FNCuserStatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-                document.cookie = "FNCuserNickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCaccountEmail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCaccountPasswordHash=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCaccountStatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCaccountNickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
             } else {
                 console.log("Chyba při komunikaci s API");
                 //Nastavení localStorage
-                localStorage.setItem("userEmail","undefined")
-                localStorage.setItem("userPasswordHash","undefined")
-                localStorage.setItem("userStatus","undefined")
-                localStorage.setItem("userNickname","undefined")
+                localStorage.setItem("accountEmail","undefined")
+                localStorage.setItem("accountPasswordHash","undefined")
+                localStorage.setItem("accountStatus","undefined")
+                localStorage.setItem("accountNickname","undefined")
                 //Delete cookies
-                document.cookie = "FNCuserEmail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-                document.cookie = "FNCuserPasswordHash=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-                document.cookie = "FNCuserStatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-                document.cookie = "FNCuserNickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCaccountEmail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCaccountPasswordHash=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCaccountStatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                document.cookie = "FNCaccountNickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
             }
         } catch (err) {
             console.log(err);
             //Nastavení user-info
-            localStorage.setItem("userEmail","undefined")
-            localStorage.setItem("userPasswordHash","undefined")
-            localStorage.setItem("userStatus","undefined")
-            localStorage.setItem("userNickname","undefined")
+            localStorage.setItem("accountEmail","undefined")
+            localStorage.setItem("accountPasswordHash","undefined")
+            localStorage.setItem("accountStatus","undefined")
+            localStorage.setItem("accountNickname","undefined")
             //Delete cookies
-            document.cookie = "FNCuserEmail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-            document.cookie = "FNCuserPasswordHash=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-            document.cookie = "FNCuserStatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-            document.cookie = "FNCuserNickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+            document.cookie = "FNCaccountEmail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+            document.cookie = "FNCaccountPasswordHash=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+            document.cookie = "FNCaccountStatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+            document.cookie = "FNCaccountNickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
             throw err;
         }
     }

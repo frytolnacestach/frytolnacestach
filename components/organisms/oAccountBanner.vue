@@ -1,5 +1,5 @@
 <template>
-    <div :class="`o-account-banner`+ styleThema" v-if="user && user.length === 0">
+    <div :class="`o-account-banner`+ styleThema" v-if="account && account.length === 0">
         <div class="o-account-banner__outer">
             <div class="o-account-banner__inner">
                 <h3 class="o-account-banner__headline">Ty tu ještě nemáš účet?</h3>
@@ -30,7 +30,7 @@
                 type: String,
                 required: true
             },
-            user: {
+            account: {
                 type: Array,
                 required: true
             }
