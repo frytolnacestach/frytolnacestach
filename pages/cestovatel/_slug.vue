@@ -18,7 +18,7 @@
                         <!-- SECTION - Follower button - sidebar -->
                         <section class="t-section -px-world">
                             <div class="t-section__inner">
-                                <oFollowerButton :user="user[0].id" v-if="user[0] && user[0].email !== email" />
+                                <oFollowerButton :account="account" :user="user[0].id" v-if="user[0] && user[0].email !== email" />
                             </div>
                         </section>
                         <!-- SECTION - Follower button - sidebar - END -->
@@ -92,6 +92,7 @@
 
         data() {
             return {
+                account: [],
                 staticUser: this.staticUser,
                 user: '',
                 email: '',
@@ -100,17 +101,9 @@
                 placesCitiesID: [],
                 placesRegionsID: [],
                 placesSpotsID: [],
-                loadingComponentOCoverPlaceVisited: true,
-                mNavUserOpen: false
-            }
-        },
-
-        data() {
-            return {
-                staticUser: this.staticUser,
-                user: '',
                 videos: [],
                 images: [],
+                loadingComponentOCoverPlaceVisited: true,
                 mNavUserOpen: false
             }
         },
@@ -248,6 +241,16 @@
         methods: {
             menuUserUpdate(newValue) {
                 this.mNavUserOpen = newValue
+            }
+        },
+
+        watch: {
+            '$store.state.account': {
+                deep: true,
+                immediate: true,
+                handler() {
+                    this.account = this.$store.state.account
+                }
             }
         }
     }
