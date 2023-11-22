@@ -3,7 +3,7 @@
         <div class="m-nav-account__outer">
             <div class="m-nav-account__inner">
                 <ul class="m-nav-account__items">                    
-                    <li class="m-nav-account__item" v-if="email">
+                    <li class="m-nav-account__item">
                         <NuxtLink class="js_m-nav-account__link m-nav-account__link -setting" to="/ucet/profil" exact-active-class="-active" :class="{'-active': $route.path === '/ucet/profil'}">Základní informace</NuxtLink>
                     </li>
                     <li class="m-nav-account__item">
@@ -56,12 +56,6 @@
             }
         },
 
-        data() {
-            return {
-                email: this.email
-            }
-        },
-
         methods: {
             logout() {
                 //Nastavení localStorage
@@ -76,13 +70,6 @@
                 document.cookie = "FNCaccountNickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
                 //router
                 this.$router.push('/ucet/prihlaseni')
-            }
-        },
-
-        mounted() {
-            if (process.client) {
-                const localStorageEmail = localStorage.getItem("accountEmail")
-                this.email = localStorageEmail
             }
         }
     }
