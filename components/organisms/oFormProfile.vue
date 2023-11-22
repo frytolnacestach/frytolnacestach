@@ -1,11 +1,11 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <skeletonoFormProfile styleThema=" -skeleton-blue" v-if="profile === null" />
+        <skeletonoFormProfile styleThema=" -skeleton-blue" v-if="skeleton" />
         <!-- skeleton END -->
 
         <!-- client -->
-        <client-only v-if="profile !== null">
+        <client-only v-if="!skeleton">
             <div class="o-form-profile">
                 <div class="o-form-profile__outer">
                     <div class="o-form-profile__inner">
@@ -108,13 +108,21 @@
             skeletonoFormProfile,
             oFlashMessages
         },
+
+        props: {
+            account: {
+                type: Array,
+                required: true
+            }
+        },
     
         data() {
             return {
-                profile: null,
-                localStorageEmail: '',
                 errorForm: '',
                 successForm: '',
+                skeleton: true,
+                profile: null,
+                localStorageEmail: '',
                 email: '',
                 password: '',
                 nickname: '',
@@ -136,51 +144,66 @@
     
         methods: {
             async fetchProfile() {
-                try {
-                    const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile/${this.localStorageEmail}`)
-                    if (response.ok) {
-                        this.profile = await response.json()
-                    } else {
-                        console.log("Chyba při komunikaci s API")
-                        this.errorForm = "Chyba při komunikaci s API"
+                if (this.account && this.account.length !== 0) {
+                    try {
+                        const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile/${this.account[0].email}`)
+                        if (response.ok) {
+                            this.profile = await response.json()
+
+                            this.surname = this.profile[0].surname
+                            this.lastname = this.profile[0].lastname
+                            this.urls = this.profile[0].urls
+                            this.seo_tags = this.profile[0].seo_tags
+                            this.agreementMail = this.profile[0].agreement_mail
+                            this.skeleton = false
+                        } else {
+                            console.log("Chyba při komunikaci s API")
+                            this.errorForm = "Chyba při komunikaci s API"
+                        }
+                    } catch (err) {
+                        console.log(err)
+                        this.errorForm = "Chyba připojení k API"
+                        throw err
                     }
-                } catch (err) {
-                    console.log(err)
-                    this.errorForm = "Chyba připojení k API"
-                    throw err
+                } else {
+                    this.skeleton = false
                 }
             },
 
             async editProfile() {
-                try {
-                    const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile-edit/${this.localStorageEmail}`, {
-                        headers: {
-                            "Content-Type": "application/json",
-                            "Access-Control-Allow-Origin": "http://localhost:3000",
-                            "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
-                            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH"
-                        },
-                        method: 'POST',
-                        body: JSON.stringify({
-                            'surname': this.surname,
-                            'lastname': this.lastname,
-                            'agreement_mail': this.agreementMail,
-                            'urls': this.urls,
-                            'seo_tags': this.seo_tags
+                if (this.account && this.account.length !== 0) {
+                    try {
+                        const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile-edit/${this.account[0].email}`, {
+                            headers: {
+                                "Content-Type": "application/json",
+                                "Access-Control-Allow-Origin": "http://localhost:3000",
+                                "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
+                                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH"
+                            },
+                            method: 'POST',
+                            body: JSON.stringify({
+                                'surname': this.surname,
+                                'lastname': this.lastname,
+                                'agreement_mail': this.agreementMail,
+                                'urls': this.urls,
+                                'seo_tags': this.seo_tags
+                            })
                         })
-                    })
 
-                    if (response.ok) {
-                        console.log("Změny byly uložené")
-                        this.successForm = "Změny byly uložené"
-                    } else {
-                        console.log("Chyba při komunikaci s API")
-                        this.errorForm = "Chyba při komunikaci s API"
+                        if (response.ok) {
+                            console.log("Změny byly uložené")
+                            this.successForm = "Změny byly uložené"
+                        } else {
+                            console.log("Chyba při komunikaci s API")
+                            this.errorForm = "Chyba při komunikaci s API"
+                        }
+                    } catch (err) {
+                        console.log(err)
+                        this.errorForm = "Chyba připojení k API"
+                        throw err
                     }
-                } catch (err) {
-                    console.log(err)
-                    this.errorForm = "Chyba připojení k API"
-                    throw err
+                } else {
+                    this.errorForm = "Vypadá to že nejsi přihlášen"
                 }
             },
 
@@ -218,18 +241,13 @@
         },
 
         async mounted() {
-            if (process.client) {
-                this.localStorageEmail = localStorage.getItem("accountEmail")
-            }
-
             await this.fetchProfile()
+        },
 
-            if (this.profile) {
-                this.surname = this.profile[0].surname
-                this.lastname = this.profile[0].lastname
-                this.urls = this.profile[0].urls
-                this.seo_tags = this.profile[0].seo_tags
-                this.agreementMail = this.profile[0].agreement_mail
+        watch: {
+            account: {
+                handler: 'fetchProfile',
+                immediate: true
             }
         }
     }

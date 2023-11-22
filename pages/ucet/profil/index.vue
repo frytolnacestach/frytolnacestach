@@ -42,7 +42,7 @@
                         <section class="t-section -padding-x -p0">
                             <div class="t-section__inner">
                                 <mHeadline title="Základní informace" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oFormProfile />
+                                <oFormProfile :account="account" />
                             </div>
                         </section>
                         <!-- SECTION - Form - profile END -->
