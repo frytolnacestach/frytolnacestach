@@ -103,8 +103,6 @@
 
         data() {
             return {
-                localStorageEmail: '',
-                localStoragePasswordHash: '',
                 reviews: null,
                 places: [],
                 images: [],
@@ -138,11 +136,6 @@
         },
 
         async mounted() {
-            if (process.client) {
-                const localStorageEmail = localStorage.getItem("accountEmail")
-                const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
-            }
-
             let success = false
             let data = null
 
