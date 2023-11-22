@@ -1,11 +1,11 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <skeletonoAchievements styleThema=" -skeleton-blue" v-if="achievements && achievements.length === 0" />
+        <skeletonoAchievements styleThema=" -skeleton-blue" v-if="skeleton" />
         <!-- skeleton END -->
 
         <!-- client -->
-        <client-only v-if="achievements !== null">
+        <client-only v-if="!skeleton">
             <div class="o-achievements">
                 <div class="o-achievements__outer">
                     <div class="o-achievements__inner">
@@ -61,10 +61,7 @@
 
         data() {
             return {
-                //email: null,
-                //passwordHash: null,
-                //loginCheck: false,
-                //users: [],
+                skeleton: true,
                 achievements: [],
                 achievementsList: [],
             }
@@ -252,6 +249,8 @@
                                 // Achievements
                                 this.achievements = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${this.account[0].id}`)
                                 this.achievementsList = this.createAchievementsList(this.achievements)
+
+                                this.skeleton = false
                             }
                         }
                     } else {
@@ -259,10 +258,10 @@
                             // achievements
                             this.achievements = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${this.idUser}`)
                             this.achievementsList = this.createAchievementsList(this.achievements)
+
+                            this.skeleton = false
                         }
                     }
-
-                    this.skeleton = false
                 } catch (error) {
                     console.log(`API ERROR - ACHIEMENTY`)
                     console.error(error)
