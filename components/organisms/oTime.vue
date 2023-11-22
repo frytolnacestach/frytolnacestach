@@ -337,9 +337,9 @@
                 this.localDate = moment().tz(timezone).format('DD.MMMM YYYY')
 
                 // Czech time
-                this.czech = moment().tz('CZ').format('HH:mm DD.MMMM YYYY')
-                this.czechTime = moment().tz('CZ').format('HH:mm')
-                this.czechDate = moment().tz('CZ').format('DD.MMMM YYYY')
+                this.czech = moment().tz('Europe/Prague').format('HH:mm DD.MMMM YYYY')
+                this.czechTime = moment().tz('Europe/Prague').format('HH:mm')
+                this.czechDate = moment().tz('Europe/Prague').format('DD.MMMM YYYY')
             }
         }
     }
