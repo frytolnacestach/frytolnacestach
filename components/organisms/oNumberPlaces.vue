@@ -59,66 +59,46 @@
             skeletonoNumberPlaces
         },
 
+        props: {
+            account: {
+                type: Array,
+                required: true
+            }
+        },
+
         data() {
             return {
-                email: null,
-                passwordHash: null,
-                loginCheck: false,
-                account: [],
                 numberPlaces: [],
                 users: [],
                 skeleton: true,
             }
         },
 
-        async mounted() {
-            if (process.client) {
-                const localStorageEmail = localStorage.getItem("accountEmail")
-                const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
-                this.email = localStorageEmail
-                this.passwordHash = localStoragePasswordHash
-            }
-            
-            let success = false
-            let data = null
-
-            while (!success) {
-                try {
-                    let account = null
-                    let numberPlaces = null
-                    let users = null
-
-                    if (process.client) {
-                        if (this.email !== null) {
-                            // Account
-                            account = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-authentication?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}`)
-
-                            this.loginCheck = true
-
+        methods: {
+            async fetchData() {
+                if (this.account && this.account.length !== 0) {
+                    try {
+                        if (process.client) {
                             // numberPlaces
-                            if (account !== null) {
-                                numberPlaces = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${account[0].id}`)
-                            }
-                        } else {
-                            this.loginCheck = true
+                            this.numberPlaces = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${this.account[0].id}`)
                         }
-                    } else {
-                        this.loginCheck = false
+
+                        this.skeleton = false
+                    } catch (error) {
+                        console.log(`API ERROR - POČET NAVŠTÍVENÝCH MÍST`)
+                        console.error(error)
+
+                        await new Promise(resolve => setTimeout(resolve, 1000))
                     }
-
-                    data = { account, numberPlaces, users }
-
-                    this.skeleton = false
-                    success = true
-                } catch (error) {
-                    console.log(`API ERROR - POČET NAVŠTÍVENÝCH MÍST`)
-                    console.error(error)
-
-                    await new Promise(resolve => setTimeout(resolve, 1000))
                 }
             }
+        },
 
-            Object.assign(this, data)
+        watch: {
+            account: {
+                handler: 'fetchData',
+                immediate: true
+            }
         }
     }
 </script>

@@ -33,7 +33,7 @@
                         <section class="t-section -padding-x -p0 mb-2">
                             <div class="t-section__inner">
                                 <mHeadline title="Počet navštívených míst" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oNumberPlaces />
+                                <oNumberPlaces :account="account" />
                             </div>
                         </section>
                         <!-- SECTION - Number places END -->
