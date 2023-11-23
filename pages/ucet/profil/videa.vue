@@ -70,8 +70,6 @@
             return {
                 account: [],
                 mNavAccountOpen: false,
-                email: null,
-                passwordHash: null,
                 account: '',
                 videos: [],
                 images: [],
@@ -133,65 +131,40 @@
             loginCheckLogout(this.$router)
         },
 
-        async mounted() {
-            loginCheckLogout(this.$router)
-
-            if (process.client) {
-                let success = false
-                let data = null
-                
-                const localStorageEmail = localStorage.getItem("accountEmail")
-                const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
-
-                this.email = localStorageEmail
-                this.passwordHash = localStoragePasswordHash
-
-                while (!success) {
-                    try {
-                        // PAGE - Account list
-                        // Account
-                        const account = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-authentication?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}`)
-
-
-                        // COMPONENT - oVideoListUser
-                        // Videos
-                        const videos = await this.$axios.$get(`https://api.frytolnacestach.cz/api/videos-id-user/${account[0].id}`)
-                        // Images
-                        const imagesVideosIDS = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
-                        const images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
-
-
-                        // TO DATA
-                        data = {
-                            account,
-                            videos,
-                            images
-                        }
-
-                        this.skeleton = false
-
-                        // SUCCESS
-                        success = true
-                    } catch (error) {
-                        console.log(`API ERROR - MOJE VIDEA`)
-                        console.error(error)
-
-                        await new Promise(resolve => setTimeout(resolve, 1000))
-                    }
-                }
-
-                // Update data properties with fetched data
-                Object.assign(this, data)
-            }
-        },
-
         methods: {
+            async fetchData() {
+                try {
+                    if (this.account && this.account.length !== 0) {
+                        if (process.client) {
+                            // COMPONENT - oVideoListUser
+                            // Videos
+                            this.videos = await this.$axios.$get(`https://api.frytolnacestach.cz/api/videos-id-user/${this.account[0].id}`)
+                            // Images
+                            this.imagesVideosIDS = this.videos.map(video => video.id_image).filter(id => id !== null && id !== '')
+                            this.images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${this.imagesVideosIDS.join(',')}`)
+
+                            this.skeleton = false
+                        }
+                    }
+                } catch (error) {
+                    console.log(`API ERROR - MOJE VIDEA`)
+                    console.error(error)
+
+                    await new Promise(resolve => setTimeout(resolve, 1000))
+                }
+            },
+
             menuAccountUpdate(newValue) {
                 this.mNavAccountOpen = newValue
             }
         },
 
         watch: {
+            account: {
+                handler: 'fetchData',
+                immediate: true
+            },
+
             '$store.state.account': {
                 deep: true,
                 immediate: true,
