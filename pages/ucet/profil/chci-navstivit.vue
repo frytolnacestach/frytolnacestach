@@ -29,7 +29,7 @@
                         <section class="t-section -padding-x -p0 pb-4 print-section">
                             <div class="t-section__inner">
                                 <mHeadline title="Kontinety které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesContinentsID" type="kontinent" account="login" :status="2" />
+                                <oCoverPlaceVisited :loadingNecessaryData="skeleton" :placesID="placesContinentsID" type="kontinent" account="login" :status="2" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -38,7 +38,7 @@
                         <section class="t-section -padding-x -p0 pb-4 print-section">
                             <div class="t-section__inner">
                                 <mHeadline title="Státy které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesStatesID" type="stat" account="login" :status="2" />
+                                <oCoverPlaceVisited :loadingNecessaryData="skeleton" :placesID="placesStatesID" type="stat" account="login" :status="2" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -47,7 +47,7 @@
                         <section class="t-section -padding-x -p0 pb-4 print-section">
                             <div class="t-section__inner">
                                 <mHeadline title="Města které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesCitiesID" type="mesto" account="login" :status="2" />
+                                <oCoverPlaceVisited :loadingNecessaryData="skeleton" :placesID="placesCitiesID" type="mesto" account="login" :status="2" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -56,7 +56,7 @@
                         <section class="t-section -padding-x -p0 pb-4 print-section">
                             <div class="t-section__inner">
                                 <mHeadline title="Regiony které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesRegionsID" type="region" account="login" :status="2" />
+                                <oCoverPlaceVisited :loadingNecessaryData="skeleton" :placesID="placesRegionsID" type="region" account="login" :status="2" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -65,7 +65,7 @@
                         <section class="t-section -padding-x -p0 pb-4 print-section">
                             <div class="t-section__inner">
                                 <mHeadline title="Místa které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :loadingNecessaryData="loadingComponentOCoverPlaceVisited" :placesID="placesSpotsID" type="misto" account="login" :status="2" />
+                                <oCoverPlaceVisited :loadingNecessaryData="skeleton" :placesID="placesSpotsID" type="misto" account="login" :status="2" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -101,15 +101,12 @@
             return {
                 account: [],
                 mNavAccountOpen: false,
-                email: null,
-                passwordHash: null,
-                account: '',
                 placesContinentsID: [],
                 placesStatesID: [],
                 placesCitiesID: [],
                 placesRegionsID: [],
                 placesSpotsID: [],
-                loadingComponentOCoverPlaceVisited: true
+                skeleton: true
             }
         },
 
@@ -163,68 +160,47 @@
             }
         },
 
-        async mounted() {
+        mounted() {
             loginCheckLogout(this.$router)
-
-            if (process.client) {
-                let success = false
-                let data = null
-
-                const localStorageEmail = localStorage.getItem("accountEmail")
-                const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
-
-                this.email = localStorageEmail
-                this.passwordHash = localStoragePasswordHash
-
-                while (!success) {
-                    try {
-                        // PAGE - Account list
-                        // Account
-                        const account = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-authentication?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}`)
-                        
-                        // COMPONENT - oCoverPlaceVisited
-                        // PlacesID
-                        const placesID = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${account[0].id}&status=2`)
-                        const placesContinentsID = placesID.filter(place => place.type === 'continent').map(place => place.id_place) || []
-                        const placesStatesID = placesID.filter(place => place.type === 'state').map(place => place.id_place) || []
-                        const placesCitiesID = placesID.filter(place => place.type === 'city').map(place => place.id_place) || []
-                        const placesRegionsID = placesID.filter(place => place.type === 'region').map(place => place.id_place) || []
-                        const placesSpotsID = placesID.filter(place => place.type === 'spot').map(place => place.id_place) || []
-
-                        // TO DATA
-                        data = {
-                            account,
-                            placesContinentsID,
-                            placesStatesID,
-                            placesCitiesID,
-                            placesRegionsID,
-                            placesSpotsID
-                        }
-
-                        // END LOADING
-                        this.loadingComponentOCoverPlaceVisited = false
-
-                        // SUCCESS
-                        success = true
-                    } catch (error) {
-                        console.log(`API ERROR - CHCI NAVSTIVIT`)
-                        console.error(error)
-
-                        await new Promise(resolve => setTimeout(resolve, 1000))
-                    }
-                }
-
-                Object.assign(this, data)
-            }
         },
 
         methods: {
+            async fetchData() {
+                try {
+                    if (this.account && this.account.length !== 0) {
+                        if (process.client) {
+                            // COMPONENT - oCoverPlaceVisited
+                            // PlacesID
+                            this.placesID = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${this.account[0].id}&status=2`)
+                            this.placesContinentsID = this.placesID.filter(place => place.type === 'continent').map(place => place.id_place) || []
+                            this.placesStatesID = this.placesID.filter(place => place.type === 'state').map(place => place.id_place) || []
+                            this.placesCitiesID = this.placesID.filter(place => place.type === 'city').map(place => place.id_place) || []
+                            this.placesRegionsID = this.placesID.filter(place => place.type === 'region').map(place => place.id_place) || []
+                            this.placesSpotsID = this.placesID.filter(place => place.type === 'spot').map(place => place.id_place) || []
+
+                            this.skeleton = false
+                        }
+                    }
+                } catch (error) {
+                    console.log(`API ERROR - MOJE ČLÁNKY`)
+                    console.error(error)
+
+                    await new Promise(resolve => setTimeout(resolve, 1000))
+                }
+            },
+
+
             menuAccountUpdate(newValue) {
                 this.mNavAccountOpen = newValue
             }
         },
 
         watch: {
+            account: {
+                handler: 'fetchData',
+                immediate: true
+            },
+
             '$store.state.account': {
                 deep: true,
                 immediate: true,
