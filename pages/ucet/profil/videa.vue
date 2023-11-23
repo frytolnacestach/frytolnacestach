@@ -70,7 +70,6 @@
             return {
                 account: [],
                 mNavAccountOpen: false,
-                account: '',
                 videos: [],
                 images: [],
                 skeleton: true
