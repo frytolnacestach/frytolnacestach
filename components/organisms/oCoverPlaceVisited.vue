@@ -75,17 +75,17 @@
                                     {{ place.name }}
                                 </h2>
                                 <NuxtLink class="o-cover-place-visited__link" :to="`/svet/${type}/${place.slug}`" :aria-label="`Čti více o místě ${place.name}`"></NuxtLink>
-                                <mButtonPlaceAddVisited :placeID="place.id" :placeType="place.type_place" v-if="account === 'login' && status === 2" @remove-place="showRemoveNewPlaceForm" />
-                                <mButtonPlaceRemove :placeID="place.id" :placeType="place.type_place" v-if="account === 'login'" @remove-place="showRemoveNewPlaceForm" />
+                                <mButtonPlaceAddVisited :placeID="place.id" :placeType="place.type_place" v-if="typeAccount === 'login' && status === 2" @remove-place="showRemoveNewPlaceForm" />
+                                <mButtonPlaceRemove :placeID="place.id" :placeType="place.type_place" v-if="typeAccount === 'login'" @remove-place="showRemoveNewPlaceForm" />
                             </div>
                         </div>
-                        <mButtonPlaceAdd type="next" v-if="account === 'login' && places && Array.isArray(places) && places.length !== 0" @add-place-clicked="showAddPlaceForm" />
+                        <mButtonPlaceAdd type="next" v-if="typeAccount === 'login' && places && Array.isArray(places) && places.length !== 0" @add-place-clicked="showAddPlaceForm" />
                     </div>
                 </div>
             </div>
         </client-only>
         <client-only v-if="places && Array.isArray(places) && places.length === 0 && !skeleton">
-            <p v-if="account === 'other'">
+            <p v-if="typeAccount === 'other'">
                 Ještě tu žádné místo nemám.
             </p>
             <p v-else>
@@ -93,8 +93,8 @@
             </p>
         </client-only>
         <!-- client END -->
-        <mButtonPlaceAdd type="first" v-if="account === 'login' && places && Array.isArray(places) && places.length === 0 && !skeleton" @add-place-clicked="showAddPlaceForm" />
-        <oFormPlaceVisitedAdd :status="status" :type="type" :visitedPlace="places" v-if="showPlaceForm && account === 'login'" @add-place="showAddNewPlaceForm" />
+        <mButtonPlaceAdd type="first" v-if="typeAccount === 'login' && places && Array.isArray(places) && places.length === 0 && !skeleton" @add-place-clicked="showAddPlaceForm" />
+        <oFormPlaceVisitedAdd :status="status" :type="type" :visitedPlace="places" v-if="showPlaceForm && typeAccount === 'login'" @add-place="showAddNewPlaceForm" />
     </section>
 </template>
 
@@ -117,8 +117,12 @@
         },
 
         props: {
-            loadingNecessaryData: {
+            skeleton: {
                 type: Boolean,
+                required: true
+            },
+            account: {
+                type: Array,
                 required: true
             },
             placesID: {
@@ -129,7 +133,7 @@
                 type: String,
                 required: true
             },
-            account: {
+            typeAccount: {
                 type: String,
                 required: true
             },
@@ -155,13 +159,13 @@
             placesID: {
                 immediate: true,
                 handler(newVal, oldVal) {
-                    if (newVal.length > 0 && (newVal !== oldVal || !this.places) && this.loadingNecessaryData === false ) {
+                    if (newVal.length > 0 && (newVal !== oldVal || !this.places) && this.skeleton === false ) {
                         this.loadData()
                     }
                 }
             },
 
-            loadingNecessaryData(newVal, oldVal) {
+            skeleton(newVal, oldVal) {
                 if (!newVal && this.placesID.length === 0) {
                     this.places = []
                 }

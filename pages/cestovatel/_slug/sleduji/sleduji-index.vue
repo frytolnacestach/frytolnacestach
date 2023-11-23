@@ -162,9 +162,6 @@
                                 user
                             }
 
-                            // END LOADING
-                            this.loadingComponentOCoverPlaceVisited = false
-
                             // SUCCESS
                             success = true
                         } catch (error) {
