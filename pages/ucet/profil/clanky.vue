@@ -70,9 +70,6 @@
             return {
                 account: [],
                 mNavAccountOpen: false,
-                email: null,
-                passwordHash: null,
-                account: '',
                 posts: [],
                 images: [],
                 skeleton: true
@@ -133,65 +130,41 @@
             loginCheckLogout(this.$router)
         },
 
-        async mounted() {
-            loginCheckLogout(this.$router)
-
-            if (process.client) {
-                let success = false
-                let data = null
-                
-                const localStorageEmail = localStorage.getItem("accountEmail")
-                const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
-
-                this.email = localStorageEmail
-                this.passwordHash = localStoragePasswordHash
-
-                while (!success) {
-                    try {
-                        // PAGE - Account list
-                        // Account
-                        const account = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-authentication?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}`)
-
-
-                        // COMPONENT - oArticleListUser
-                        // Posts
-                        const posts = await this.$axios.$get(`https://api.frytolnacestach.cz/api/posts-id-user/${account[0].id}`)
-                        // Images
-                        const imagesPostsIDS = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
-                        const images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
-
-
-                        // TO DATA
-                        data = {
-                            account,
-                            posts,
-                            images
-                        }
-
-                        this.skeleton = false
-
-                        // SUCCESS
-                        success = true
-                    } catch (error) {
-                        console.log(`API ERROR - MOJE ČLÁNKY`)
-                        console.error(error)
-
-                        await new Promise(resolve => setTimeout(resolve, 1000))
-                    }
-                }
-
-                // Update data properties with fetched data
-                Object.assign(this, data)
-            }
-        },
-
         methods: {
+            async fetchData() {
+                try {
+                    if (this.account && this.account.length !== 0) {
+                        if (process.client) {
+                            // COMPONENT - oArticleListUser
+                            // Posts
+                            this.posts = await this.$axios.$get(`https://api.frytolnacestach.cz/api/posts-id-user/${this.account[0].id}`)
+                            // Images
+                            this.imagesPostsIDS = this.posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
+                            this.images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${this.imagesPostsIDS.join(',')}`)
+
+                            this.skeleton = false
+                        }
+                    }
+                } catch (error) {
+                    console.log(`API ERROR - MOJE ČLÁNKY`)
+                    console.error(error)
+
+                    await new Promise(resolve => setTimeout(resolve, 1000))
+                }
+            },
+
+
             menuAccountUpdate(newValue) {
                 this.mNavAccountOpen = newValue
             }
         },
 
         watch: {
+            account: {
+                handler: 'fetchData',
+                immediate: true
+            },
+            
             '$store.state.account': {
                 deep: true,
                 immediate: true,
