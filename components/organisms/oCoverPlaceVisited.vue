@@ -117,7 +117,7 @@
         },
 
         props: {
-            skeleton: {
+            skeletonProbs: {
                 type: Boolean,
                 required: true
             },
@@ -159,15 +159,16 @@
             placesID: {
                 immediate: true,
                 handler(newVal, oldVal) {
-                    if (newVal.length > 0 && (newVal !== oldVal || !this.places) && this.skeleton === false ) {
+                    if (newVal.length > 0 && (newVal !== oldVal || !this.places) && this.skeletonProbs === false ) {
                         this.loadData()
                     }
                 }
             },
 
-            skeleton(newVal, oldVal) {
+            skeletonProbs(newVal, oldVal) {
                 if (!newVal && this.placesID.length === 0) {
                     this.places = []
+                    this.skeleton = false
                 }
             }
         },

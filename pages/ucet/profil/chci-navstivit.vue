@@ -29,7 +29,7 @@
                         <section class="t-section -padding-x -p0 pb-4 print-section">
                             <div class="t-section__inner">
                                 <mHeadline title="Kontinety které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :skeleton="skeleton" :account="account" :placesID="placesContinentsID" type="kontinent" typeAccount="login" :status="2" />
+                                <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesContinentsID" type="kontinent" typeAccount="login" :status="2" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -38,7 +38,7 @@
                         <section class="t-section -padding-x -p0 pb-4 print-section">
                             <div class="t-section__inner">
                                 <mHeadline title="Státy které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :skeleton="skeleton" :account="account" :placesID="placesStatesID" type="stat" typeAccount="login" :status="2" />
+                                <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesStatesID" type="stat" typeAccount="login" :status="2" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -47,7 +47,7 @@
                         <section class="t-section -padding-x -p0 pb-4 print-section">
                             <div class="t-section__inner">
                                 <mHeadline title="Města které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :skeleton="skeleton" :account="account" :placesID="placesCitiesID" type="mesto" typeAccount="login" :status="2" />
+                                <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesCitiesID" type="mesto" typeAccount="login" :status="2" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -56,7 +56,7 @@
                         <section class="t-section -padding-x -p0 pb-4 print-section">
                             <div class="t-section__inner">
                                 <mHeadline title="Regiony které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :skeleton="skeleton" :account="account" :placesID="placesRegionsID" type="region" typeAccount="login" :status="2" />
+                                <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesRegionsID" type="region" typeAccount="login" :status="2" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
@@ -65,7 +65,7 @@
                         <section class="t-section -padding-x -p0 pb-4 print-section">
                             <div class="t-section__inner">
                                 <mHeadline title="Místa které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :skeleton="skeleton" :account="account" :placesID="placesSpotsID" type="misto" typeAccount="login" :status="2" />
+                                <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesSpotsID" type="misto" typeAccount="login" :status="2" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
