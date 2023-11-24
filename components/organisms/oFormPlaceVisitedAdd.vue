@@ -36,6 +36,10 @@
         },
 
         props: {
+            account: {
+                type: Array,
+                required: true
+            },
             type: {
                 type: String,
                 required: true
@@ -58,8 +62,6 @@
                 placesSearch: '',
                 searchQuery: '',
                 filteredPlaces: [],
-                email: this.email,
-                passwordHash: this.passwordHash,
                 placeTypeSlug: null,
                 placeTypeApp: null,
                 placeTypeName: null,
@@ -78,15 +80,6 @@
             this.placeTypeSlug = matchedPlace.type
             this.placeTypeApp = matchedPlace.placeTypeApp
             this.placeTypeName = matchedPlace.placeTypeName
-
-            // user login information
-            if (process.client) {
-                const localStorageEmail = localStorage.getItem("accountEmail")
-                const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
-
-                this.email = localStorageEmail
-                this.passwordHash = localStoragePasswordHash
-            }
         },
 
         methods: {
@@ -107,8 +100,8 @@
                                 },
                                 method: 'POST',
                                 body: JSON.stringify({
-                                    'email': this.email,
-                                    'password_hash': this.passwordHash,
+                                    'email': this.account[0].email,
+                                    'password_hash': this.account[0].password,
                                     'id_place': this.placeID, 
                                     'type': this.placeTypeApp,
                                     'status': this.status
