@@ -122,7 +122,6 @@
                 successForm: '',
                 skeleton: true,
                 profile: null,
-                localStorageEmail: '',
                 email: '',
                 password: '',
                 nickname: '',
