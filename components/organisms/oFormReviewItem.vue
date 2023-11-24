@@ -45,7 +45,7 @@
                 </form>
                 <!-- FORM END -->
 
-                <div class="o-review-item-list" v-if="showReviewNew">
+                <div class="o-review-item-list" v-if="account && showReviewNew">
                     <div class="o-review-item-list__outer">
                         <div class="o-review-item-list__inner">
                             <div class="o-review-item-list__items">
@@ -153,6 +153,10 @@
         },
 
         props: {
+            account: {
+                type: Array,
+                required: true
+            },
             IDplace: {
                 type: Number,
                 required: true
@@ -171,15 +175,11 @@
             return {
                 errorForm: '',
                 successForm: '',
-                email: null,
-                passwordHash: null,
-                loginCheck: false,
                 showCreateForm: true,
                 showReviewNew: false,
                 showEditForm: false,
                 showReview: true,
                 selectRating: null,
-                account: [],
                 text: ''
             }
         },
@@ -196,8 +196,8 @@
                         },
                         method: 'POST',
                         body: JSON.stringify({
-                            'email': this.email,
-                            'password_hash': this.passwordHash,
+                            'email': this.account[0].email,
+                            'password_hash': this.account[0].password,
                             'id_place': this.IDplace,
                             'type': this.type,
                             'rating': this.selectRating,
@@ -248,8 +248,8 @@
                         },
                         method: 'POST',
                         body: JSON.stringify({
-                            'email': this.email,
-                            'password_hash': this.passwordHash,
+                            'email': this.account[0].email,
+                            'password_hash': this.account[0].password,
                             'id_place': this.IDplace,
                             'type': this.type,
                             'rating': this.selectRating,
@@ -308,49 +308,6 @@
                 const newValue = true
                 this.$emit('update', newValue)
             }
-        },
-
-        async mounted() {
-            if (process.client) {
-                const localStorageEmail = localStorage.getItem("accountEmail")
-                const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
-                this.email = localStorageEmail
-                this.passwordHash = localStoragePasswordHash
-            }
-            
-            let success = false
-            let data = null
-
-            while (!success) {
-                try {
-                    let account = null
-                    if (process.client) {
-                        if (this.email !== null) {
-                            // Account
-                            account = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-authentication?email=${encodeURIComponent(this.email)}&password_hash=${encodeURIComponent(this.passwordHash)}`)
-
-                            this.loginCheck = true
-                        } else {
-                            this.loginCheck = true
-                        }
-                    } else {
-                        this.loginCheck = false
-                    }
-
-
-                    data = { account }
-
-                    
-                    success = true
-                } catch (error) {
-                    console.log(`API ERROR - PŘIDÁNÍ HODNOCENÍ`)
-                    console.error(error)
-
-                    await new Promise(resolve => setTimeout(resolve, 1000))
-                }
-            }
-
-            Object.assign(this, data)
         }
     }
 </script>

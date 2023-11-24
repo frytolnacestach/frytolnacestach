@@ -15,7 +15,7 @@
             <!-- SECTION - mHeadline END -->
 
             <!-- SECTION - Form Review -->
-            <oFormReviewItem :IDplace="IDplace" :type="type" :newReview="newReview" v-if="myReview.length === 0 && account && account.length !== 0 && account[0].status === 3" @update="addReviewUpdate" />
+            <oFormReviewItem :account="account" :IDplace="IDplace" :type="type" :newReview="newReview" v-if="myReview.length === 0 && account && account.length !== 0 && account[0].status === 3" @update="addReviewUpdate" />
             <!-- SECTION - Form Review END -->
 
             <!-- SECTION - mHeadline -->
