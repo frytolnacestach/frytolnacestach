@@ -29,7 +29,7 @@
                         <section class="t-section -padding-x -p0">
                             <div class="t-section__inner">
                                 <mHeadline title="Změna hesla" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oFormPasswordChange />
+                                <oFormPasswordChange :account="account" />
                             </div>
                         </section>
                         <!-- SECTION - Form - profile END -->

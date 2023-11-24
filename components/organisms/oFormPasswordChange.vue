@@ -43,6 +43,13 @@
         components: {
             oFlashMessages
         },
+
+        props: {
+            account: {
+                type: Array,
+                required: true
+            }
+        },
     
         data() {
             return {
@@ -59,7 +66,7 @@
         methods: {  
             async passwordChange() {
                 if (this.passwordCheck) {
-                    this.email =  localStorage.getItem("accountEmail")
+                    this.email = this.account[0].email
 
                     try {
                         const response = await fetch(`https://api.frytolnacestach.cz/api/user-password-change`, {
@@ -122,6 +129,7 @@
             passwordNew() {
                 this.passwordCheck = this.passwordNew === this.passwordNewCheck
             },
+
             passwordNewCheck() {
                 this.passwordCheck = this.passwordNew === this.passwordNewCheck
             }
