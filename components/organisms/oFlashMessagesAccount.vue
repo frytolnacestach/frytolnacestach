@@ -1,11 +1,11 @@
 <template>
-    <div class="flex flex-full">
+    <div class="flex flex-full" v-if="account && account.length !== 0 && account[0].status === 2">
         <!-- SECTION - FlashMassages -->
         <oFlashMessages :text="errorForm" styleThema=" -error" />
         <oFlashMessages :text="successForm" styleThema=" -success" />
         <!-- SECTION - FlashMassages END -->
 
-        <div class="o-flash-messages-account" v-if="needActivation">
+        <div class="o-flash-messages-account">
             <div class="o-flash-messages-account__items">
                 <div :class="'o-flash-messages-account__item -error'">
                     <div class="o-flash-messages-account__outer">
@@ -32,53 +32,22 @@
             oFlashMessages
         },
 
-        data() {
-            return {
-                profile: null,
-                errorForm: '',
-                successForm: '',
-                needActivation: false,
-                email: this.email,
-                code_activation: ''
-
+        props: {
+            account: {
+                type: Array,
+                required: true
             }
         },
 
-        async mounted() {
-            if (process.client) {
-                const localStorageStatus = localStorage.getItem("accountStatus")
-                if (localStorageStatus === '2') {
-                    this.needActivation = true
-                }
+        data() {
+            return {
+                errorForm: '',
+                successForm: ''
 
-                const localStorageEmail = localStorage.getItem("accountEmail")
-                this.email = localStorageEmail
-            }
-
-            await this.fetchProfile()
-
-            if (this.profile && this.profile[0]) {
-                this.code_activation = this.profile[0].code_activation
             }
         },
 
         methods: {
-            async fetchProfile() {
-                try {
-                    const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile/${this.email}`)
-                    if (response.ok) {
-                        this.profile = await response.json()
-                    } else {
-                        console.log("Chyba při komunikaci s API")
-                        this.errorForm = "Chyba při komunikaci s API"
-                    }
-                } catch (err) {
-                    console.log(err)
-                    this.errorForm = "Chyba připojení k API"
-                    throw err
-                }
-            },
-
             async resendActivationEmail() {
                 await this.mailActivation()
             },
@@ -94,8 +63,8 @@
                         },
                         method: 'POST',
                         body: JSON.stringify({
-                            'email': this.email,
-                            'code_activation': this.code_activation
+                            'email': this.account[0].email,
+                            'code_activation': this.account[0].code_activation
                         })
                     })
 

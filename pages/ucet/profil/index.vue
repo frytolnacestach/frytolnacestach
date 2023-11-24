@@ -2,7 +2,7 @@
     <main class="t-main -blue -pt-menu" role="main">
 
         <!-- SECTION - FlashMassagesAccount -->
-        <oFlashMessagesAccount />
+        <oFlashMessagesAccount :account="account" />
         <!-- SECTION - FlashMassagesAccount END -->
 
         <!-- SECTION -->
