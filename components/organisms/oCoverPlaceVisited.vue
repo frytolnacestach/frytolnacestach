@@ -75,8 +75,8 @@
                                     {{ place.name }}
                                 </h2>
                                 <NuxtLink class="o-cover-place-visited__link" :to="`/svet/${type}/${place.slug}`" :aria-label="`Čti více o místě ${place.name}`"></NuxtLink>
-                                <mButtonPlaceAddVisited :placeID="place.id" :placeType="place.type_place" v-if="typeAccount === 'login' && status === 2" @remove-place="showRemoveNewPlaceForm" />
-                                <mButtonPlaceRemove :placeID="place.id" :placeType="place.type_place" v-if="typeAccount === 'login'" @remove-place="showRemoveNewPlaceForm" />
+                                <mButtonPlaceAddVisited :account="account" :placeID="place.id" :placeType="place.type_place" v-if="typeAccount === 'login' && status === 2" @remove-place="showRemoveNewPlaceForm" />
+                                <mButtonPlaceRemove :account="account" :placeID="place.id" :placeType="place.type_place" v-if="typeAccount === 'login'" @remove-place="showRemoveNewPlaceForm" />
                             </div>
                         </div>
                         <mButtonPlaceAdd type="next" v-if="typeAccount === 'login' && places && Array.isArray(places) && places.length !== 0" @add-place-clicked="showAddPlaceForm" />
@@ -94,7 +94,7 @@
         </client-only>
         <!-- client END -->
         <mButtonPlaceAdd type="first" v-if="typeAccount === 'login' && places && Array.isArray(places) && places.length === 0 && !skeleton" @add-place-clicked="showAddPlaceForm" />
-        <oFormPlaceVisitedAdd :status="status" :type="type" :visitedPlace="places" v-if="showPlaceForm && typeAccount === 'login'" @add-place="showAddNewPlaceForm" />
+        <oFormPlaceVisitedAdd :account="account" :status="status" :type="type" :visitedPlace="places" v-if="showPlaceForm && typeAccount === 'login'" @add-place="showAddNewPlaceForm" />
     </section>
 </template>
 

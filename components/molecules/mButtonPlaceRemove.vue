@@ -15,6 +15,10 @@
         },
         
         props: {
+            account: {
+                type: Array,
+                required: true
+            },
             placeID: {
                 type: Number,
                 required: true
@@ -22,17 +26,6 @@
             placeType: {
                 type: String,
                 required: true
-            }
-        },
-
-        mounted() {
-            // user login information
-            if (process.client) {
-                const localStorageEmail = localStorage.getItem("accountEmail")
-                const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
-
-                this.email = localStorageEmail
-                this.passwordHash = localStoragePasswordHash
             }
         },
 
@@ -51,8 +44,8 @@
                             },
                             method: 'POST',
                             body: JSON.stringify({
-                                'email': this.email,
-                                'password_hash': this.passwordHash,
+                                'email': this.account[0].email,
+                                'password_hash': this.account[0].password,
                                 'id_place': this.placeID, 
                                 'type': this.placeType,
                                 'status': 0
