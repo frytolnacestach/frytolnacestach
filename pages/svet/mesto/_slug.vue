@@ -599,7 +599,7 @@
                     { hid: 'description', name: 'description', content: description },
                     { name: 'keywords', content: keywords },
                     { property: 'og:image', content: ogImage },
-                    { hid: 'og:title', content: title },
+                    { hid: 'og:title', content: ogTitle },
                     { hid: 'og:description', content: ogDescription },
                     { hid: 'og:url', content: ogUrl },
                     { hid: 'og:type', content: ogType }
