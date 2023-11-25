@@ -35,8 +35,7 @@
                                             <div class="o-review-item-list__text">
                                                 <!-- SECTION - FlashMassages -->
                                                 <div class="o-form-review-item__messages">
-                                                    <oFlashMessages :text="errorForm" styleThema=" -error" />
-                                                    <oFlashMessages :text="successForm" styleThema=" -success" />
+                                                    <oFlashMessages :dataMessages="flashMessage" />
                                                 </div>
                                                 <!-- SECTION - FlashMassages END -->
 
@@ -144,8 +143,7 @@
 
         data() {
             return {
-                errorForm: '',
-                successForm: '',
+                flashMessage: [],
                 showEditForm: false,
                 showReview: true,
                 users: this.users,
@@ -176,8 +174,10 @@
                     })
 
                     if (response.ok) {
-                        console.log("Recenze byla upravena")
-                        this.successForm = "Recenze byla upravena"
+                        this.flashMessage.push({
+                            status: "success",
+                            message: "Recenze byla upravena"
+                        })
 
                         const reviewIndex = this.reviews.findIndex(review => review.id_user === this.account[0].id)
                         if (reviewIndex !== -1) {
@@ -187,8 +187,10 @@
 
                         this.reviewShowReview()
                     } else if (response.status === 201) {
-                        console.log("Recenze byla upravena")
-                        this.successForm = "Recenze byla upravena"
+                        this.flashMessage.push({
+                            status: "success",
+                            message: "Recenze byla upravena"
+                        })
 
                         const reviewIndex = this.reviews.findIndex(review => review.id_user === this.account[0].id)
                         if (reviewIndex !== -1) {
@@ -198,18 +200,26 @@
 
                         this.reviewShowReview()
                     } else if (response.status === 404) {
-                        console.log("Uživatel neexistuje nebo nejste přihlášen")
-                        this.errorForm = "Uživatel neexistuje nebo nejste přihlášen"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Uživatel neexistuje nebo nejste přihlášen"
+                        })
                     } else if (response.status === 406) {
-                        console.log("Neplatné hodnoty u hodnocení")
-                        this.errorForm = "Neplatné hodnoty u hodnocení"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Neplatné hodnoty u hodnocení"
+                        })
                     } else {
-                        console.log("Chyba při komunikaci s API")
-                        this.errorForm = "Chyba při komunikaci s API"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Chyba při komunikaci s API"
+                        })
                     }
                 } catch (err) {
-                    console.log(err)
-                    this.errorForm = "Chyba připojení k API"
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Chyba připojení k API"
+                    })
                     throw err
                 }
             },

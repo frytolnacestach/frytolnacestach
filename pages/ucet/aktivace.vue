@@ -12,8 +12,7 @@
         <!-- SECTION - FlashMassages -->
         <section class="t-section pt-2 pb-1">
             <div class="t-section__inner">
-                <oFlashMessages :text="errorForm" styleThema=" -error" />
-                <oFlashMessages :text="successForm" styleThema=" -success" />
+                <oFlashMessages :dataMessages="flashMessage" />
             </div>
         </section>
         <!-- SECTION - FlashMassages END -->
@@ -41,9 +40,8 @@
 
         data() {
             return {
+                flashMessage: [],
                 headline: 'Aktivace účtu',
-                errorForm: '',
-                successForm: '',
                 email: null,
                 codeActivation: null
             }
@@ -107,12 +105,17 @@
                         this.codeActivation = this.$route.query.activation_code || null
                         this.activation()
                     } else {
-                        this.errorForm = `Musíte se přihlásit, abyste mohli aktivovat účet. <br><a href="/ucet/prihlaseni">Přihlásit se</a>`
+                        this.flashMessage.push({
+                            status: "error",
+                            message: `Musíte se přihlásit, abyste mohli aktivovat účet. <br><a href="/ucet/prihlaseni">Přihlásit se</a>`
+                        })
                     }
                 })
                 .catch((error) => {
-                    console.log(error)
-                    this.errorForm = "Chyba při ověřování přihlášení"
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Chyba při ověřování přihlášení"
+                    })
                 })
         },
 
@@ -135,16 +138,27 @@
                     })
 
                     if (response.status === 200) {
-                        this.successForm = "Aktivace vašeho účtu proběhla v pořádku"
+                        this.flashMessage.push({
+                            status: "success",
+                            message: "Aktivace vašeho účtu proběhla v pořádku"
+                        })
                         localStorage.setItem("status",3)
                     } else if (response.status === 404) {
-                        this.errorForm = "Aktivace neproběhla v pořádku. Nebyl nalezen odpovídající záznam. Buď již aktivace proběhla nebo učet neexistuje."
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Aktivace neproběhla v pořádku. Nebyl nalezen odpovídající záznam. Buď již aktivace proběhla nebo učet neexistuje."
+                        })
                     } else {
-                        this.errorForm = "Chyba při komunikaci s API"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Chyba při komunikaci s API"
+                        })
                     }
                 } catch (err) {
-                    console.log(err)
-                    this.errorForm = "Chyba připojení k API"
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Chyba připojení k API"
+                    })
                     throw err
                 }
             }

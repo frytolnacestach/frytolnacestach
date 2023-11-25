@@ -5,8 +5,7 @@
 
                 <!-- SECTION - FlashMassages -->
                 <div class="o-form-review-item__messages" v-if="showCreateForm">
-                    <oFlashMessages :text="errorForm" styleThema=" -error" />
-                    <oFlashMessages :text="successForm" styleThema=" -success" />
+                    <oFlashMessages :dataMessages="flashMessage" />
                 </div>
                 <!-- SECTION - FlashMassages END -->
 
@@ -173,8 +172,7 @@
 
         data() {
             return {
-                errorForm: '',
-                successForm: '',
+                flashMessage: [],
                 showCreateForm: true,
                 showReviewNew: false,
                 showEditForm: false,
@@ -206,33 +204,47 @@
                     })
 
                     if (response.ok) {
-                        console.log("Recenze byla přidána")
-                        this.successForm = "Recenze byla přidána"
+                        this.flashMessage.push({
+                            status: "success",
+                            message: "Recenze byla přidána"
+                        })
 
                         this.updateParentVariable()
                         this.reviewShowReviewNew()
                     } else if (response.status === 201) {
-                        console.log("Recenze byla přidána")
-                        this.successForm = "Recenze byla přidána"
+                        this.flashMessage.push({
+                            status: "success",
+                            message: "Recenze byla přidána"
+                        })
 
                         this.updateParentVariable()
                         this.reviewShowReviewNew()
                     } else if (response.status === 404) {
-                        console.log("Uživatel neexistuje nebo nejste přihlášen")
-                        this.errorForm = "Uživatel neexistuje nebo nejste přihlášen"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Uživatel neexistuje nebo nejste přihlášen"
+                        })
                     } else if (response.status === 405) {
-                        console.log("Tady už uživatel hodnocení napsal")
-                        this.errorForm = "Tady už uživatel hodnocení napsal"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Tady už uživatel hodnocení napsal"
+                        })
                     } else if (response.status === 406) {
-                        console.log("Neplatné hodnoty u hodnocení")
-                        this.errorForm = "Neplatné hodnoty u hodnocení"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Neplatné hodnoty u hodnocení"
+                        })
                     } else {
-                        console.log("Chyba při komunikaci s API")
-                        this.errorForm = "Chyba při komunikaci s API"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Chyba při komunikaci s API"
+                        })
                     }
                 } catch (err) {
-                    console.log(err)
-                    this.errorForm = "Chyba připojení k API"
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Chyba připojení k API"
+                    })
                     throw err
                 }
             },
@@ -258,38 +270,48 @@
                     })
 
                     if (response.ok) {
-                        console.log("Recenze byla upravena")
-                        this.successForm = "Recenze byla upravena"
+                        this.flashMessage.push({
+                            status: "success",
+                            message: "Recenze byla upravena"
+                        })
                         this.reviewShowReview()
                     } else if (response.status === 201) {
-                        console.log("Recenze byla upravena")
-                        this.successForm = "Recenze byla upravena"
+                        this.flashMessage.push({
+                            status: "success",
+                            message: "Recenze byla upravena"
+                        })
                         this.reviewShowReview()
                     } else if (response.status === 404) {
-                        console.log("Uživatel neexistuje nebo nejste přihlášen")
-                        this.errorForm = "Uživatel neexistuje nebo nejste přihlášen"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Uživatel neexistuje nebo nejste přihlášen"
+                        })
                     } else if (response.status === 406) {
-                        console.log("Neplatné hodnoty u hodnocení")
-                        this.errorForm = "Neplatné hodnoty u hodnocení"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Neplatné hodnoty u hodnocení"
+                        })
                     } else {
-                        console.log("Chyba při komunikaci s API")
-                        this.errorForm = "Chyba při komunikaci s API"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Chyba při komunikaci s API"
+                        })
                     }
                 } catch (err) {
-                    console.log(err)
-                    this.errorForm = "Chyba připojení k API"
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Chyba připojení k API"
+                    })
                     throw err
                 }
             },
 
             async reviewShowCreate() {
-                console.log("kliknuti na reviewShowEdit")
                 this.showReviewNew = false
                 this.showCreateForm = true
             },
 
             async reviewShowReviewNew() {
-                console.log("kliknuti na reviewShowReview")
                 this.showCreateForm = false
                 this.showReviewNew = true
             },

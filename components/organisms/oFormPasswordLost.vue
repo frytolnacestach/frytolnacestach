@@ -4,8 +4,7 @@
             <div class="o-form-password-lost__inner">
 
                 <!-- SECTION - FlashMassages -->
-                <oFlashMessages :text="errorForm" styleThema=" -error" />
-                <oFlashMessages :text="successForm" styleThema=" -success" />
+                <oFlashMessages :dataMessages="flashMessage" />
                 <!-- SECTION - FlashMassages END -->
 
                 <form class="o-form-password-lost__form" @submit.prevent="passwordLost">
@@ -41,8 +40,7 @@
     
         data() {
             return {
-                errorForm: '',
-                successForm: '',
+                flashMessage: [],
                 email: ''
             }
         },
@@ -64,19 +62,27 @@
                     })
 
                     if (response.ok) {
-                        console.log("Email byl odeslán")
-                        this.successForm = "Email byl odeslán"
+                        this.flashMessage.push({
+                            status: "success",
+                            message: "Email byl odeslán"
+                        })
                         this.email = ''
                     } else if (response.status === 400) {
-                        console.log("Uživatel nenalezen")
-                        this.errorForm = "Uživatel nenalezen"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Uživatel nenalezen"
+                        })
                     } else {
-                        console.log("Chyba při komunikaci s API")
-                        this.errorForm = "Chyba při komunikaci s API"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Chyba při komunikaci s API"
+                        })
                     }
                 } catch (err) {
-                    console.log(err)
-                    this.errorForm = "Chyba připojení k API"
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Chyba připojení k API"
+                    })
                     throw err
                 }
             }

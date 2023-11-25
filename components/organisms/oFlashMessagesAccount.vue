@@ -1,8 +1,7 @@
 <template>
     <div class="flex flex-full" v-if="account && account.length !== 0 && account[0].status === 2">
         <!-- SECTION - FlashMassages -->
-        <oFlashMessages :text="errorForm" styleThema=" -error" />
-        <oFlashMessages :text="successForm" styleThema=" -success" />
+        <oFlashMessages :dataMessages="flashMessage" />
         <!-- SECTION - FlashMassages END -->
 
         <div class="o-flash-messages-account">
@@ -41,9 +40,12 @@
 
         data() {
             return {
-                errorForm: '',
-                successForm: ''
-
+                flashMessage: [
+                    {
+                        status: "",
+                        message: ""
+                    }
+                ]
             }
         },
 
@@ -69,18 +71,26 @@
                     })
 
                     if (response.ok) {
-                        console.log("Aktivační email byl odeslán")
-                        this.successForm = "Aktivační email byl odeslán"
+                        this.flashMessage.push({
+                            status: "success",
+                            message: "Aktivační email byl odeslán"
+                        })
                     } else if (response.status === 201) {
-                        console.log("Aktivační email byl odeslán")
-                        this.successForm = "Aktivační email byl odeslán"
+                        this.flashMessage.push({
+                            status: "success",
+                            message: "Aktivační email byl odeslán"
+                        })
                     } else {
-                        console.log("Chyba při komunikaci s API")
-                        this.errorForm = "Chyba při komunikaci s API"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Chyba při komunikaci s API"
+                        })
                     }
                 } catch (err) {
-                    console.log(err)
-                    this.errorForm = "Chyba připojení k API"
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Chyba připojení k API"
+                    })
                     throw err
                 }
             }

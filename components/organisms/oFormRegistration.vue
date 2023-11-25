@@ -5,8 +5,7 @@
 
                 <div class="o-form-registration__messages">
                     <!-- SECTION - FlashMassages -->
-                    <oFlashMessages :text="errorForm" styleThema=" -error" />
-                    <oFlashMessages :text="successForm" styleThema=" -success" />
+                    <oFlashMessages :dataMessages="flashMessage"/>
                     <!-- SECTION - FlashMassages END -->
                 </div>
 
@@ -70,8 +69,12 @@ export default {
   
     data() {
         return {
-            errorForm: '',
-            successForm: '',
+            flashMessage: [
+                {
+                    status: "",
+                    message: ""
+                }
+            ],
             email: '',
             password: '',
             nickname: '',
@@ -89,10 +92,11 @@ export default {
 
             try {
                 await this.createForm()
-                console.log('Data byla odeslaná')
             } catch (error) {
-                console.log(error)
-                this.errorForm = "Nastala chyba při odeslání vaších udajů."
+                this.flashMessage.push({
+                    status: "error",
+                    message: "Nastala chyba při odeslání vaších udajů."
+                })
             }
         },
   
@@ -115,26 +119,38 @@ export default {
                 })
 
                 if (response.ok) {
-                    console.log("Registrace úspěšná")
-                    this.successForm = "Registrace úspěšná"
+                    this.flashMessage.push({
+                        status: "success",
+                        message: "Registrace úspěšná"
+                    })
                     await this.$router.push('/ucet/registrace-dokoncena')
                 } else if (response.status === 201) {
-                    console.log("Účet vytvořen, registrační e-mail odeslán.")
-                    this.succes = "Účet vytvořen, registrační e-mail odeslán."
+                    this.flashMessage.push({
+                        status: "success",
+                        message: "Účet vytvořen, registrační e-mail odeslán."
+                    })
                     await this.$router.push('/ucet/registrace-dokoncena')
                 } else if (response.status === 400) {
-                    console.log("Uživatel s touto e-mailovou adresou již existuje.")
-                    this.errorForm = "Uživatel s touto e-mailovou adresou již existuje."
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Uživatel s touto e-mailovou adresou již existuje."
+                    })
                 } else if (response.status === 401) {
-                    console.log("Uživatel s touto přezdívkou již existuje.")
-                    this.errorForm = "Uživatel s touto přezdívkou již existuje."
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Uživatel s touto přezdívkou již existuje."
+                    })
                 } else {
-                    console.log("Chyba při komunikaci s API")
-                    this.errorForm = "Chyba při komunikaci s API"
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Chyba při komunikaci s API"
+                    })
                 }
             } catch (err) {
-                console.log(err)
-                this.errorForm = "Chyba připojení k API"
+                this.flashMessage.push({
+                    status: "error",
+                    message: "Chyba připojení k API"
+                })
                 throw err
             }
         }

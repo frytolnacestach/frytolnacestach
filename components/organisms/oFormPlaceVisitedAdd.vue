@@ -1,8 +1,7 @@
 <template>
     <div class="o-form-place-visited-add" role="search">
         <!-- SECTION - FlashMassages -->
-        <oFlashMessages :text="errorForm" styleThema=" -error" />
-        <oFlashMessages :text="successForm" styleThema=" -success" />
+        <oFlashMessages :dataMessages="flashMessage" />
         <!-- SECTION - FlashMassages END -->
         <div class="o-form-place-visited-add__input">
             <input class="a-input-search -blue" type="text" v-model="searchQuery" @input="filterPlaces" :placeholder="status === 1 ? 'Který ' + placeTypeName + ' si navštívil(a)?' : status === 2 ? 'Který ' + placeTypeName + ' chceš navštívit' : ''">
@@ -56,8 +55,7 @@
 
         data() {
             return {
-                errorForm: '',
-                successForm: '',
+                flashMessage: [],
                 places: [],
                 placesSearch: '',
                 searchQuery: '',
@@ -88,7 +86,10 @@
                     this.placeID = placeID
 
                     if (this.visitedPlace.some(place => place.id === placeID)) {
-                        this.errorForm = "Místo již máte mezi navštíveními"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Místo již máte mezi navštíveními"
+                        })
                     } else {
                         try {
                             const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-edit`, {
@@ -111,35 +112,49 @@
                             if (response.ok) {
                                 if (response.status === 201) {
                                     if (this.status === 1) {
-                                        console.log("Místo bylo přidáno mezi navštívené")
-                                        this.successForm = "Místo bylo přidáno mezi navštívené"
+                                        this.flashMessage.push({
+                                            status: "success",
+                                            message: "Místo bylo přidáno mezi navštívené"
+                                        })
                                     } else if (this.status === 2) {
-                                        console.log("Místo bylo přidáno mezi chci navštívit")
-                                        this.successForm = "Místo bylo přidáno mezi chci navštívit"
+                                        this.flashMessage.push({
+                                            status: "success",
+                                            message: "Místo bylo přidáno mezi chci navštívit"
+                                        })
                                     }
                                     
                                     this.searchQuery = ''
                                     this.emitAddNewPlaceEvent(this.placeID)
                                 } else if (response.status === 200) {
-                                    console.log("Záznam odebrán")
-                                    this.successForm = "Záznam odebrán"
+                                    this.flashMessage.push({
+                                        status: "success",
+                                        message: "Záznam odebrán"
+                                    })
                                 }
                             } else if (response.status === 404) {
-                                console.log("Vypadá to že nejsi přihlášen ke svému účtu.")
-                                this.errorForm = "Vypadá to, že nejsi přihlášen ke svému účtu."
+                                this.flashMessage.push({
+                                    status: "error",
+                                    message: "Vypadá to, že nejsi přihlášen ke svému účtu."
+                                })
                             } else {
-                                console.log("Chyba při komunikaci s API")
-                                this.errorForm = "Chyba při komunikaci s API"
+                                this.flashMessage.push({
+                                    status: "error",
+                                    message: "Chyba při komunikaci s API"
+                                })
                             }
                         } catch (err) {
-                            console.log(err)
-                            this.errorForm = "Chyba připojení k API"
+                            this.flashMessage.push({
+                                status: "error",
+                                message: "Chyba připojení k API"
+                            })
                             throw err
                         }
                     }
                 } catch (err) {
-                    console.log(err)
-                    this.errorForm = "Nastala chyba"
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Nastala chyba"
+                    })
                 }
             },
 

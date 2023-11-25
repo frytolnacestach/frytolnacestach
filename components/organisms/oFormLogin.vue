@@ -4,8 +4,7 @@
             <div class="o-form-login__inner">
 
                 <!-- SECTION - FlashMassages -->
-                <oFlashMessages :text="errorForm" styleThema=" -error" />
-                <oFlashMessages :text="successForm" styleThema=" -success" />
+                <oFlashMessages :dataMessages="flashMessage" />
                 <!-- SECTION - FlashMassages END -->
 
                 <form class="o-form-login__form" @submit.prevent="login">
@@ -44,8 +43,7 @@
     
         data() {
             return {
-                errorForm: '',
-                successForm: '',
+                flashMessage: [],
                 email: '',
                 password: '',
                 nickname: ''
@@ -71,8 +69,10 @@
 
                     if (response.ok) {
                         const data = await response.json()
-                        console.log("Přihlášení úspěšné")
-                        this.successForm = "Přihlášení úspěšné"
+                        this.flashMessage.push({
+                            status: "success",
+                            message: "Přihlášení úspěšné"
+                        })
 
                         //Cookies - localStorage
                         localStorage.setItem("accountEmail", data.message[0].email)
@@ -91,18 +91,26 @@
 
                         await this.$router.push('/ucet/profil')
                     } else if (response.status === 401) {
-                        console.log("Nesprávné přihlašovací údaje")
-                        this.errorForm = "Nesprávné přihlašovací údaje"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Nesprávné přihlašovací údaje"
+                        })
                     } else if (response.status === 404) {
-                        console.log("Uživatel nenalezen")
-                        this.errorForm = "Uživatel nenalezen"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Uživatel nenalezen"
+                        })
                     } else {
-                        console.log("Chyba při komunikaci s API")
-                        this.errorForm = "Chyba při komunikaci s API"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Chyba při komunikaci s API"
+                        })
                     }
                 } catch (err) {
-                    console.log(err)
-                    this.errorForm = "Chyba připojení k API"
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Chyba připojení k API"
+                    })
                     throw err
                 }
             }

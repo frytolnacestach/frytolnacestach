@@ -12,8 +12,7 @@
 
                         <!-- SECTION - FlashMassages -->
                         <div class="o-form-profile__messages">
-                            <oFlashMessages :text="errorForm" styleThema=" -error" />
-                            <oFlashMessages :text="successForm" styleThema=" -success" />
+                            <oFlashMessages :dataMessages="flashMessage" v-if="flashMessage" />
                         </div>
                         <!-- SECTION - FlashMassages END -->
 
@@ -118,8 +117,7 @@
     
         data() {
             return {
-                errorForm: '',
-                successForm: '',
+                flashMessage: [],
                 skeleton: true,
                 profile: null,
                 email: '',
@@ -156,12 +154,16 @@
                             this.agreementMail = this.profile[0].agreement_mail
                             this.skeleton = false
                         } else {
-                            console.log("Chyba při komunikaci s API")
-                            this.errorForm = "Chyba při komunikaci s API"
+                            this.flashMessage.push({
+                                status: "error",
+                                message: "Chyba při komunikaci s API"
+                            })
                         }
                     } catch (err) {
-                        console.log(err)
-                        this.errorForm = "Chyba připojení k API"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Chyba připojení k API"
+                        })
                         throw err
                     }
                 } else {
@@ -190,19 +192,28 @@
                         })
 
                         if (response.ok) {
-                            console.log("Změny byly uložené")
-                            this.successForm = "Změny byly uložené"
+                            this.flashMessage.push({
+                                status: "success",
+                                message: "Změny byly uložené"
+                            })
                         } else {
-                            console.log("Chyba při komunikaci s API")
-                            this.errorForm = "Chyba při komunikaci s API"
+                            this.flashMessage.push({
+                                status: "error",
+                                message: "Chyba při komunikaci s API"
+                            })
                         }
                     } catch (err) {
-                        console.log(err)
-                        this.errorForm = "Chyba připojení k API"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Chyba připojení k API"
+                        })
                         throw err
                     }
                 } else {
-                    this.errorForm = "Vypadá to že nejsi přihlášen"
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Vypadá to že nejsi přihlášen"
+                    })
                 }
             },
 

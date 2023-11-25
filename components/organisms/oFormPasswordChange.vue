@@ -4,8 +4,7 @@
             <div class="o-form-password-change__inner">
 
                 <!-- SECTION - FlashMassages -->
-                <oFlashMessages :text="errorForm" styleThema=" -error" />
-                <oFlashMessages :text="successForm" styleThema=" -success" />
+                <oFlashMessages :dataMessages="flashMessage" />
                 <!-- SECTION - FlashMassages END -->
 
                 <form class="o-form-password-change__form" @submit.prevent="passwordChange">
@@ -53,8 +52,7 @@
     
         data() {
             return {
-                errorForm: '',
-                successForm: '',
+                flashMessage: [],
                 email: '',
                 password: '',
                 passwordNew: '',
@@ -86,8 +84,10 @@
 
                         if (response.ok) {
                             const data = await response.json()
-                            console.log("Změna hesla byla úspěšná")
-                            this.successForm = "Změna hesla byla úspěšná"
+                            this.flashMessage.push({
+                                status: "success",
+                                message: "Změna hesla byla úspěšná"
+                            })
 
                             //Cookies - localStorage
                             localStorage.setItem("accountEmail", data.message[0].email)
@@ -104,23 +104,33 @@
                             document.cookie = "FNCaccountStatus=" + data.message[0].status + ";" + expires
                             document.cookie = "FNCaccountNickname=" + data.message[0].nickname + ";" + expires
                         } else if (response.status === 401) {
-                            console.log("Nesprávné aktuální heslo")
-                            this.errorForm = "Nesprávné aktuální heslo"
+                            this.flashMessage.push({
+                                status: "error",
+                                message: "Nesprávné aktuální heslo"
+                            })
                         } else if (response.status === 404) {
-                            console.log("Uživatel nenalezen")
-                            this.errorForm = "Uživatel nenalezen"
+                            this.flashMessage.push({
+                                status: "error",
+                                message: "Uživatel nenalezen"
+                            })
                         } else {
-                            console.log("Chyba při komunikaci s API")
-                            this.errorForm = "Chyba při komunikaci s API"
+                            this.flashMessage.push({
+                                status: "error",
+                                message: "Chyba při komunikaci s API"
+                            })
                         }
                     } catch (err) {
-                        console.log(err)
-                        this.errorForm = "Chyba připojení k API"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Chyba připojení k API"
+                        })
                         throw err
                     }
                 } else {
-                    console.log("Nové heslo se neshoduje")
-                    this.errorForm = "Nové heslo se neshoduje"
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Nové heslo se neshoduje"
+                    })
                 }
             }
         },

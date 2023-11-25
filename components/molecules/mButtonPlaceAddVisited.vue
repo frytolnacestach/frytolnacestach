@@ -29,6 +29,12 @@
             }
         },
 
+        data() {
+            return {
+                flashMessage: []
+            }
+        },
+
         methods: {
             async deleteVisited(placeID) {
                 try {
@@ -53,29 +59,41 @@
 
                         if (response.ok) {
                             if (response.status === 201) {
-                                console.log("Místo bylo přidáno mezi navštívené")
-                                this.successForm = "Místo bylo přidáno mezi navštívené"
+                                this.flashMessage.push({
+                                    status: "success",
+                                    message: "Místo bylo přidáno mezi navštívené"
+                                })
                                 this.searchQuery = ''
                                 this.emitRemoveNewPlaceEvent(this.placeID)
                             } else if (response.status === 200) {
-                                console.log("Záznam odebrán")
-                                this.successForm = "Záznam odebrán"
+                                this.flashMessage.push({
+                                    status: "success",
+                                    message: "Záznam odebrán"
+                                })
                             }
                         } else if (response.status === 404) {
-                            console.log("Vypadá to že nejsi přihlášen ke svému účtu.")
-                            this.errorForm = "Vypadá to, že nejsi přihlášen ke svému účtu."
+                            this.flashMessage.push({
+                                status: "error",
+                                message: "Vypadá to, že nejsi přihlášen ke svému účtu."
+                            })
                         } else {
-                            console.log("Chyba při komunikaci s API")
-                            this.errorForm = "Chyba při komunikaci s API"
+                            this.flashMessage.push({
+                                status: "error",
+                                message: "Chyba při komunikaci s API"
+                            })
                         }
                     } catch (err) {
-                        console.log(err)
-                        this.errorForm = "Chyba připojení k API"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Chyba připojení k API"
+                        })
                         throw err
                     }
                 } catch (err) {
-                    console.log(err)
-                    this.errorForm = "Nastala chyba"
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Nastala chyba"
+                    })
                 }
             },
 

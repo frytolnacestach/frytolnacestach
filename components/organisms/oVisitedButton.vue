@@ -8,8 +8,7 @@
         <client-only v-if="skeleton === false">
             <div class="o-visited-button">
                 <!-- SECTION - FlashMassages -->
-                <oFlashMessages :text="errorForm" styleThema=" -error" />
-                <oFlashMessages :text="successForm" styleThema=" -success" />
+                <oFlashMessages :dataMessages="flashMessage" />
                 <!-- SECTION - FlashMassages END -->
 
                 <div class="o-visited-button__outer">
@@ -44,8 +43,7 @@
 
         data() {
             return {
-                errorForm: '',
-                successForm: '',
+                flashMessage: [],
                 skeleton: true,
                 status: 0
             }
@@ -81,22 +79,21 @@
                         })
 
                         if (response.ok) {
-                            console.log("Záznam načten")
                             const data = await response.json()
                             this.status = data.message[0].status
                             this.skeleton = false
                         } else if (response.status === 404) {
-                            console.log("Uživatel neexistuje")
                             this.skeleton = false
                         } else if (response.status === 405) {
-                            console.log("Místo uživatel nemá uložené")
                             this.skeleton = false
                         } else {
-                            console.log("Chyba při komunikaci s API")
+                            this.skeleton = false
                         }
                     } catch (err) {
-                        console.log(err)
-                        this.errorForm = "Chyba připojení k API"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Chyba připojení k API"
+                        })
                         throw err
                     }
                 } else {
@@ -129,34 +126,48 @@
 
                             if (response.ok) {
                                 if (response.status === 201) {
-                                    console.log("Záznam uložen")
-                                    this.successForm = "Záznam uložen"
+                                    this.flashMessage.push({
+                                        status: "success",
+                                        message: "Záznam uložen"
+                                    })
                                 } else if (response.status === 200) {
-                                    console.log("Záznam odebrán")
-                                    this.successForm = "Záznam odebrán"
                                     this.status = 0
+                                    this.flashMessage.push({
+                                        status: "success",
+                                        message: "Záznam odebrán"
+                                    })
                                 }
                             } else if (response.status === 404) {
-                                console.log("Vypadá to že nejsi přihlášen ke svému účtu.")
                                 this.status = 0
-                                this.errorForm = "Vypadá to, že nejsi přihlášen ke svému účtu."
+                                this.flashMessage.push({
+                                    status: "error",
+                                    message: "Vypadá to, že nejsi přihlášen ke svému účtu."
+                                })
                             } else {
-                                console.log("Chyba při komunikaci s API")
-                                this.errorForm = "Chyba při komunikaci s API"
+                                this.flashMessage.push({
+                                    status: "error",
+                                    message: "Chyba při komunikaci s API"
+                                })
                             }
                         } catch (err) {
-                            console.log(err)
-                            this.errorForm = "Chyba připojení k API"
+                            this.flashMessage.push({
+                                status: "error",
+                                message: "Chyba připojení k API"
+                            })
                             throw err
                         }
                     } catch (err) {
-                        console.log(err)
-                        this.errorForm = "Nastala chyba"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Nastala chyba"
+                        })
                     }
                 } else {
-                    console.log("Vypadá to že nejsi přihlášen ke svému účtu.")
                     this.status = 0
-                    this.errorForm = "Vypadá to, že nejsi přihlášen ke svému účtu."
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Vypadá to, že nejsi přihlášen ke svému účtu."
+                    })
                 }
             }
         },

@@ -4,8 +4,7 @@
             <div class="o-form-password-lost-new__inner">
 
                 <!-- SECTION - FlashMassages -->
-                <oFlashMessages :text="errorForm" styleThema=" -error" />
-                <oFlashMessages :text="successForm" styleThema=" -success" />
+                <oFlashMessages :dataMessages="flashMessage" />
                 <!-- SECTION - FlashMassages END -->
 
                 <form class="o-form-password-lost-new__form" @submit.prevent="passwordLostNew">
@@ -43,8 +42,7 @@
     
         data() {
             return {
-                errorForm: '',
-                successForm: '',
+                flashMessage: [],
                 passwordNew: '',
                 passwordNewCheck: '',
                 passwordCheck: false,
@@ -74,8 +72,10 @@
 
                         if (response.ok) {
                             const data = await response.json()
-                            console.log("Změna hesla proběhla v pořádku")
-                            this.successForm = "Změna hesla proběhla v pořádku"
+                            this.flashMessage.push({
+                                status: "success",
+                                message: "Změna hesla proběhla v pořádku"
+                            })
 
                             //Cookies - localStorage
                             localStorage.setItem("accountEmail", data.message[0].email)
@@ -94,20 +94,28 @@
 
                             await this.$router.push('/ucet/heslo-obnoveno')
                         } else if (response.status === 404) {
-                            console.log("Uživatel nenalezen")
-                            this.errorForm = "Uživatel nenalezen"
+                            this.flashMessage.push({
+                                status: "error",
+                                message: "Uživatel nenalezen"
+                            })
                         } else {
-                            console.log("Chyba při komunikaci s API")
-                            this.errorForm = "Chyba při komunikaci s API"
+                            this.flashMessage.push({
+                                status: "error",
+                                message: "Chyba při komunikaci s API"
+                            })
                         }
                     } catch (err) {
-                        console.log(err)
-                        this.errorForm = "Chyba připojení k API"
+                        this.flashMessage.push({
+                            status: "error",
+                            message: "Chyba připojení k API"
+                        })
                         throw err
                     }
                 } else {
-                    console.log("Nové heslo se neshoduje")
-                    this.errorForm = "Nové heslo se neshoduje"
+                    this.flashMessage.push({
+                        status: "error",
+                        message: "Nové heslo se neshoduje"
+                    })
                 }
             }
         },
