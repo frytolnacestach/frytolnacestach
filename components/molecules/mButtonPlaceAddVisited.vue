@@ -60,6 +60,8 @@
                         if (response.ok) {
                             if (response.status === 201) {
                                 this.flashMessage.push({
+                                    date: new Date().getTime(),
+                                    duration: 5000,
                                     status: "success",
                                     message: "Místo bylo přidáno mezi navštívené"
                                 })
@@ -67,23 +69,31 @@
                                 this.emitRemoveNewPlaceEvent(this.placeID)
                             } else if (response.status === 200) {
                                 this.flashMessage.push({
+                                    date: new Date().getTime(),
+                                    duration: 5000,
                                     status: "success",
                                     message: "Záznam odebrán"
                                 })
                             }
                         } else if (response.status === 404) {
                             this.flashMessage.push({
+                                date: new Date().getTime(),
+                                duration: 5000,
                                 status: "error",
                                 message: "Vypadá to, že nejsi přihlášen ke svému účtu."
                             })
                         } else {
                             this.flashMessage.push({
+                                date: new Date().getTime(),
+                                duration: 5000,
                                 status: "error",
                                 message: "Chyba při komunikaci s API"
                             })
                         }
                     } catch (err) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Chyba připojení k API"
                         })
@@ -91,6 +101,8 @@
                     }
                 } catch (err) {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "error",
                         message: "Nastala chyba"
                     })

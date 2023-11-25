@@ -205,6 +205,8 @@
 
                     if (response.ok) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "success",
                             message: "Recenze byla přidána"
                         })
@@ -213,6 +215,8 @@
                         this.reviewShowReviewNew()
                     } else if (response.status === 201) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "success",
                             message: "Recenze byla přidána"
                         })
@@ -221,27 +225,37 @@
                         this.reviewShowReviewNew()
                     } else if (response.status === 404) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Uživatel neexistuje nebo nejste přihlášen"
                         })
                     } else if (response.status === 405) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Tady už uživatel hodnocení napsal"
                         })
                     } else if (response.status === 406) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Neplatné hodnoty u hodnocení"
                         })
                     } else {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Chyba při komunikaci s API"
                         })
                     }
                 } catch (err) {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "error",
                         message: "Chyba připojení k API"
                     })
@@ -271,34 +285,46 @@
 
                     if (response.ok) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "success",
                             message: "Recenze byla upravena"
                         })
                         this.reviewShowReview()
                     } else if (response.status === 201) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "success",
                             message: "Recenze byla upravena"
                         })
                         this.reviewShowReview()
                     } else if (response.status === 404) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Uživatel neexistuje nebo nejste přihlášen"
                         })
                     } else if (response.status === 406) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Neplatné hodnoty u hodnocení"
                         })
                     } else {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Chyba při komunikaci s API"
                         })
                     }
                 } catch (err) {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "error",
                         message: "Chyba připojení k API"
                     })

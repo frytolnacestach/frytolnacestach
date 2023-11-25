@@ -85,6 +85,8 @@
                         if (response.ok) {
                             const data = await response.json()
                             this.flashMessage.push({
+                                date: new Date().getTime(),
+                                duration: 5000,
                                 status: "success",
                                 message: "Změna hesla byla úspěšná"
                             })
@@ -105,22 +107,30 @@
                             document.cookie = "FNCaccountNickname=" + data.message[0].nickname + ";" + expires
                         } else if (response.status === 401) {
                             this.flashMessage.push({
+                                date: new Date().getTime(),
+                                duration: 5000,
                                 status: "error",
                                 message: "Nesprávné aktuální heslo"
                             })
                         } else if (response.status === 404) {
                             this.flashMessage.push({
+                                date: new Date().getTime(),
+                                duration: 5000,
                                 status: "error",
                                 message: "Uživatel nenalezen"
                             })
                         } else {
                             this.flashMessage.push({
+                                date: new Date().getTime(),
+                                duration: 5000,
                                 status: "error",
                                 message: "Chyba při komunikaci s API"
                             })
                         }
                     } catch (err) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Chyba připojení k API"
                         })
@@ -128,6 +138,8 @@
                     }
                 } else {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "error",
                         message: "Nové heslo se neshoduje"
                     })

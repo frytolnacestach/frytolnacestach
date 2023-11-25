@@ -94,6 +94,8 @@ export default {
                 await this.createForm()
             } catch (error) {
                 this.flashMessage.push({
+                    date: new Date().getTime(),
+                    duration: 5000,
                     status: "error",
                     message: "Nastala chyba při odeslání vaších udajů."
                 })
@@ -120,34 +122,46 @@ export default {
 
                 if (response.ok) {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "success",
                         message: "Registrace úspěšná"
                     })
                     await this.$router.push('/ucet/registrace-dokoncena')
                 } else if (response.status === 201) {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "success",
                         message: "Účet vytvořen, registrační e-mail odeslán."
                     })
                     await this.$router.push('/ucet/registrace-dokoncena')
                 } else if (response.status === 400) {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "error",
                         message: "Uživatel s touto e-mailovou adresou již existuje."
                     })
                 } else if (response.status === 401) {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "error",
                         message: "Uživatel s touto přezdívkou již existuje."
                     })
                 } else {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "error",
                         message: "Chyba při komunikaci s API"
                     })
                 }
             } catch (err) {
                 this.flashMessage.push({
+                    date: new Date().getTime(),
+                    duration: 5000,
                     status: "error",
                     message: "Chyba připojení k API"
                 })

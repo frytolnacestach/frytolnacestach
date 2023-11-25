@@ -73,6 +73,8 @@
                         if (response.ok) {
                             const data = await response.json()
                             this.flashMessage.push({
+                                date: new Date().getTime(),
+                                duration: 5000,
                                 status: "success",
                                 message: "Změna hesla proběhla v pořádku"
                             })
@@ -95,17 +97,23 @@
                             await this.$router.push('/ucet/heslo-obnoveno')
                         } else if (response.status === 404) {
                             this.flashMessage.push({
+                                date: new Date().getTime(),
+                                duration: 5000,
                                 status: "error",
                                 message: "Uživatel nenalezen"
                             })
                         } else {
                             this.flashMessage.push({
+                                date: new Date().getTime(),
+                                duration: 5000,
                                 status: "error",
                                 message: "Chyba při komunikaci s API"
                             })
                         }
                     } catch (err) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Chyba připojení k API"
                         })
@@ -113,6 +121,8 @@
                     }
                 } else {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "error",
                         message: "Nové heslo se neshoduje"
                     })

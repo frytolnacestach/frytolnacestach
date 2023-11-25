@@ -72,22 +72,30 @@
 
                     if (response.ok) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "success",
                             message: "Aktivační email byl odeslán"
                         })
                     } else if (response.status === 201) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "success",
                             message: "Aktivační email byl odeslán"
                         })
                     } else {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Chyba při komunikaci s API"
                         })
                     }
                 } catch (err) {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "error",
                         message: "Chyba připojení k API"
                     })

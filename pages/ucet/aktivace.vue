@@ -106,6 +106,8 @@
                         this.activation()
                     } else {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: `Musíte se přihlásit, abyste mohli aktivovat účet. <br><a href="/ucet/prihlaseni">Přihlásit se</a>`
                         })
@@ -113,6 +115,8 @@
                 })
                 .catch((error) => {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "error",
                         message: "Chyba při ověřování přihlášení"
                     })
@@ -139,23 +143,31 @@
 
                     if (response.status === 200) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "success",
                             message: "Aktivace vašeho účtu proběhla v pořádku"
                         })
                         localStorage.setItem("status",3)
                     } else if (response.status === 404) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Aktivace neproběhla v pořádku. Nebyl nalezen odpovídající záznam. Buď již aktivace proběhla nebo učet neexistuje."
                         })
                     } else {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Chyba při komunikaci s API"
                         })
                     }
                 } catch (err) {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "error",
                         message: "Chyba připojení k API"
                     })

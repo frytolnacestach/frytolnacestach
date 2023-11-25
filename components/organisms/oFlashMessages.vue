@@ -1,7 +1,7 @@
 <template>
     <div class="o-flash-messages" v-if="messages && messages.length > 0">
         <div class="o-flash-messages__items">
-            <div :class="'o-flash-messages__item' + (item.status ? (' -' + item.status) : '')" v-for="(item, index) in messages" :key="index">
+            <div :class="'o-flash-messages__item' + (item.status ? (' -' + item.status) : '')" v-for="(item, index) in messages" :key="index" v-if="item.visibility !== 'hidden'">
                 <div class="o-flash-messages__outer">
                     <div class="o-flash-messages__inner">
                         <span class="o-flash-messages__text" v-html="item.message"></span>
@@ -28,11 +28,37 @@ export default {
             messages: []
         }
     },
+
+    methods: {
+        updateMessageVisibility(index, visibility) {
+            this.$set(this.messages[index], 'visibility', visibility);
+        },
+    },
   
     watch: {
         dataMessages: {
             handler(newData) {
-                this.messages = this.dataMessages
+                this.messages = newData.map((item) => ({
+                    ...item,
+                    visibility: 'visible',
+                }))
+
+                this.messages.forEach((item, index) => {
+                    if (item.date) {
+                        const currentTime = new Date().getTime();
+                        const expirationTime = new Date(item.date).getTime() + item.duration
+
+                        const timeout = expirationTime - currentTime
+
+                        if (timeout > 0) {
+                            setTimeout(() => {
+                                this.updateMessageVisibility(index, 'hidden')
+                            }, timeout);
+                        } else {
+                            this.updateMessageVisibility(index, 'hidden')
+                        }
+                    }
+                })
             },
             immediate: true
         },

@@ -70,6 +70,8 @@
                     if (response.ok) {
                         const data = await response.json()
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "success",
                             message: "Přihlášení úspěšné"
                         })
@@ -92,22 +94,30 @@
                         await this.$router.push('/ucet/profil')
                     } else if (response.status === 401) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Nesprávné přihlašovací údaje"
                         })
                     } else if (response.status === 404) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Uživatel nenalezen"
                         })
                     } else {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Chyba při komunikaci s API"
                         })
                     }
                 } catch (err) {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "error",
                         message: "Chyba připojení k API"
                     })

@@ -155,12 +155,16 @@
                             this.skeleton = false
                         } else {
                             this.flashMessage.push({
+                                date: new Date().getTime(),
+                                duration: 5000,
                                 status: "error",
                                 message: "Chyba při komunikaci s API"
                             })
                         }
                     } catch (err) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Chyba připojení k API"
                         })
@@ -193,17 +197,23 @@
 
                         if (response.ok) {
                             this.flashMessage.push({
+                                date: new Date().getTime(),
+                                duration: 5000,
                                 status: "success",
-                                message: "Změny byly uložené"
+                                message: "Změny byly uložené",
                             })
                         } else {
                             this.flashMessage.push({
+                                date: new Date().getTime(),
+                                duration: 5000,
                                 status: "error",
                                 message: "Chyba při komunikaci s API"
                             })
                         }
                     } catch (err) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Chyba připojení k API"
                         })
@@ -211,6 +221,8 @@
                     }
                 } else {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "error",
                         message: "Vypadá to že nejsi přihlášen"
                     })

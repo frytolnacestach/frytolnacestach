@@ -63,23 +63,31 @@
 
                     if (response.ok) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "success",
                             message: "Email byl odeslán"
                         })
                         this.email = ''
                     } else if (response.status === 400) {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Uživatel nenalezen"
                         })
                     } else {
                         this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
                             status: "error",
                             message: "Chyba při komunikaci s API"
                         })
                     }
                 } catch (err) {
                     this.flashMessage.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
                         status: "error",
                         message: "Chyba připojení k API"
                     })
