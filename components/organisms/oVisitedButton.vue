@@ -190,6 +190,13 @@
 
         mounted() {
             this.visited()
+        },
+
+        watch: {
+            account: {
+                handler: 'visited',
+                immediate: true
+            }
         }
     }
 </script>
