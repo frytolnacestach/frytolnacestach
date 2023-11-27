@@ -73,6 +73,16 @@ _____________________________________________________________________
 
 ## PROBS
 
+### Account
+#### account
+Slouží jako pole pro uživatelská data
+```bash
+skeleton: {
+    type: Array,
+    required: true
+}
+```
+
 ### Skeleton
 #### skeleton
 Slouží jako určení jestli se má vykreslit skeleton šablona
