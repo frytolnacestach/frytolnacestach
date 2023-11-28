@@ -93,7 +93,7 @@
                                 <!-- SECTION - Place teaser END -->
 
                                 <!-- SECTION - Neighboring Place list -->
-                                <section class="t-section my-2 py-1 -p0 print-section" v-if="placesStatesNeighboring">
+                                <section class="t-section my-4 py-1 -p0 print-section" v-if="placesStatesNeighboring">
                                     <div class="t-section__inner">
                                         <mHeadline title="Sousední státy státu " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oCoverNeighboring :items="placesStatesNeighboring" :images="imagesStatesNeighboring" />
