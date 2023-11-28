@@ -102,27 +102,27 @@
                                 <!-- SECTION - Neighboring Place list END -->
                                 
                                 <!-- SECTION - Food -->
-                                <oCoverItemState type="jidlo" title="Tradiční jídla ve státě" :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
+                                <oCoverItemState type="jidlo" title="Tradiční jídla ve státě" perex="Ponořte se do bohaté tradice a ochutnejte neodolatelná tradiční jídla, která vám přiblíží autentickou chuť a atmosféru této fascinující destinace." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
                                 <!-- SECTION - Food END -->
 
                                 <!-- SECTION - Fauna list -->
-                                <oCoverItemState type="fauna" title="Nebezpečná Fauna ve státě" :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
+                                <oCoverItemState type="fauna" title="Nebezpečná Fauna ve státě" perex="Představujeme vám nebezpečná zvířata, která obývají tuto oblast, a poodhalujeme výjimečné vlastnosti a zajímavosti o nich." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
                                 <!-- SECTION - Fauna list END -->
 
                                 <!-- SECTION - Flora list -->
-                                <oCoverItemState type="flora" title="Nebezpečná Flóra ve státě" :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
+                                <oCoverItemState type="flora" title="Nebezpečná Flóra ve státě" perex="Přehled o rostlinách, které ukrývají svou sílu a nebezpečí. Objevte tajemství jedinečných rostlinných druhů, které tvoří fascinující a zároveň riskantní součást tamní přírody." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
                                 <!-- SECTION - Flora list END -->
 
                                 <!-- SECTION - Značky list -->
-                                <oCoverItemState type="znacka" title="Značky a výrobky ze státu" :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
+                                <oCoverItemState type="znacka" title="Značky a výrobky ze státu" perex="Zajímavý přehled kvalitních produktů, které vystihují místní charakter a tradici." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
                                 <!-- SECTION - Flora Značky END -->
 
                                 <!-- SECTION - Značky list -->
-                                <oCoverItemState type="elektricka-zasuvka" title="Elektrické zásuvky použivané ve státě" :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
+                                <oCoverItemState type="elektricka-zasuvka" title="Elektrické zásuvky použivané ve státě" perex="Poskytujeme vám informace pro pohodlné připojení a dobíjení vašich zařízení během pobytu, abyste byli připraveni na místní elektrickou infrastrukturu." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
                                 <!-- SECTION - Flora Značky END -->
 
                                 <!-- SECTION - Značky list -->
-                                <oCoverItemState type="retezec" title="Řetězce ve státě" :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
+                                <oCoverItemState type="retezec" title="Řetězce ve státě" perex="Představujeme vám přehled nadnárodních i místních řetězců, abyste mohli plánovat své nákupy a stravování s lehkostí a přizpůsobit je svým preferencím." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
                                 <!-- SECTION - Flora Značky END -->
 
                                 <!-- SECTION - Review -->

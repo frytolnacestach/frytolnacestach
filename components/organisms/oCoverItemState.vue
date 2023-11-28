@@ -1,7 +1,7 @@
 <template>
     <section class="t-section my-4 py-1 -p0 print-section" v-if="items !== null && items.length > 0">
         <div class="t-section__inner">
-            <mHeadline :title="title + ' '" :titleValue="placeStateName" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+            <mHeadline :title="title + ' '" :titleValue="placeStateName" :perex="perex" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
             <div class="o-cover-item-state">
                 <div class="o-cover-item-state__outer">
                     <div class="o-cover-item-state__items">
@@ -102,6 +102,10 @@
             title: {
                 type: String,
                 required: true
+            },
+            perex: {
+                type: String,
+                required: false
             },
             placeStateName: {
                 type: String,
