@@ -95,7 +95,7 @@
                                 <!-- SECTION - Neighboring Place list -->
                                 <section class="t-section my-4 py-1 -p0 print-section" v-if="placesStatesNeighboring">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Sousední státy státu " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <mHeadline title="Sousední státy státu " :titleValue="place[0].name" perex="Přehled o zemích, které sdílí pevninskou či mostní hranici s touto destinací, představujeme kulturu, zajímavosti a potenciální cestovatelská dobrodružství" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oCoverNeighboring :items="placesStatesNeighboring" :images="imagesStatesNeighboring" />
                                     </div>
                                 </section>
