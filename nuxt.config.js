@@ -880,7 +880,26 @@ export default {
     ],
     sitemaps: [
       {
-        path: '/sitemap-main.xml'
+        path: '/sitemap-base.xml',
+        exclude: [
+          '/videa/.*', '/videa\\?.*', 
+          '/clanky/.*', '/clanky\\?.*', 
+          '/cestovatel/.*', '/cestovatel\\?.*',
+          '/cestovatelsky-slovnik/.*', '/cestovatelsky-slovnik\\?.*',
+          '/udalost/.*', '/udalost\\?.*',
+          '/svetovy-cas/.*', '/svetovy-cas\\?.*',
+          '/jidlo/.*', '/jidlo\\?.*',
+          '/fauna/.*', '/fauna\\?.*',
+          '/flora/.*', '/flora\\?.*',
+          '/znacka/.*', '/znacka\\?.*',
+          '/retezec/.*', '/retezec\\?.*',
+          '/elektricka-zasuvka/.*', '/elektricka-zasuvka\\?.*',
+          '/kontinent/.*', '/kontinent\\?.*',
+          '/stat/.*', '/stat\\?.*',
+          '/region/.*', '/region\\?.*',
+          '/mesto/.*', '/mesto\\?.*',
+          '/misto/.*', '/misto\\?.*',
+        ]
       },
       {
         path: '/sitemap-posts.xml',
@@ -989,8 +1008,22 @@ export default {
       {
         path: '/sitemap-places-stats.xml',
         routes: async () => {
-          let { data } = await axios.get('https://api.frytolnacestach.cz/api/places-states')
-          return data.map(v => `/svet/stat/${v.slug}`)
+          let { data } = await axios.get('https://api.frytolnacestach.cz/api/places-states');
+          
+          let allRoutes = [];
+      
+          data.forEach(v => {
+            // State - base
+            allRoutes.push(`/svet/stat/${v.slug}`);
+      
+            // State - tabs
+            const tabs = ['co-videt', 'ceny', 'lide', 'cesta', 'kontakty', 'ubytovani', 'videa'];
+            tabs.forEach(tab => {
+              allRoutes.push(`/svet/stat/${v.slug}/${tab}`);
+            });
+          });
+      
+          return allRoutes;
         },
         exclude: ['/**']
       },
@@ -1239,6 +1272,8 @@ export default {
         routes.push(`svet/region?filterIDstate=${id}`)
         routes.push(`svet/mesto?filterIDstate=${id}`)
         routes.push(`svet/misto?filterIDstate=${id}`)
+        routes.push(`clanky?filterIDstate=${id}`)
+        routes.push(`videa?filterIDstate=${id}`)
       })
 
       return routes
