@@ -113,12 +113,14 @@
 </template>
 
 <script>
+    import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
     import skeletonoReviewItemList from '~/components/skeleton/skeletonoReviewItemList.vue'
 
     export default {
         name: 'OrganismsoReviewItemListComponent',
 
         components: {
+            oFlashMessages,
             skeletonoReviewItemList
         },
 
