@@ -28,6 +28,7 @@
                         `"
                     :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
                     :alt="headline"
+                    :srr="true"
                     v-lazy>
             </div>
 

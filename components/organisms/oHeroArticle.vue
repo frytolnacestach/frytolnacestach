@@ -28,6 +28,7 @@
                         `"
                     :data-src="`https://image.frytolnacestach.cz/storage/${images.find(image => image.id === post[0].id_image_cover).source + images.find(image => image.id === post[0].id_image_cover).name}.webp`"
                     :alt="post[0].title"
+                    :srr="true"
                     v-lazy>
             </div>
             <div v-else class="o-hero-article__image-lazyload">
@@ -57,6 +58,7 @@
                         `"
                     :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
                     :alt="post[0].title"
+                    :srr="true"
                     v-lazy>
             </div>
 

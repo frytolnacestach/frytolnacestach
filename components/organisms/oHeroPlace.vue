@@ -29,7 +29,7 @@
                             `"
                         :data-src="`https://image.frytolnacestach.cz/storage/${images.find(image => image.id === idImageHero).source + images.find(image => image.id === idImageHero).name}.webp`"
                         :alt="title ? title : 'Úvodní obrázek'"
-                        :preload="true"
+                        :srr="true"
                         v-lazy>
 
                 </div>
@@ -60,7 +60,7 @@
                             `"
                         :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
                         :alt="title ? title : 'Úvodní obrázek'"
-                        :preload="true"
+                        :srr="true"
                         v-lazy>
                 </div>
                 

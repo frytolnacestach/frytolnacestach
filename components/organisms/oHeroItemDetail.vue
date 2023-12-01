@@ -30,6 +30,7 @@
                         :data-src="`https://image.frytolnacestach.cz/storage/${images.find(image => image.id === item[0].id_image_cover).source + images.find(image => image.id === item[0].id_image_cover).name}.webp`"
                         :alt="item[0].name ? item[0].name : 'Úvodní obrázek'"
                         :preload="true"
+                        :srr="true"
                         v-lazy>
                 </div>
                 <div v-else class="o-hero-item-detail__image-lazyload">
@@ -60,6 +61,7 @@
                         :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
                         :alt="item[0].name ? item[0].name : 'Úvodní obrázek'"
                         :preload="true"
+                        :srr="true"
                         v-lazy>
                 </div>
                 
