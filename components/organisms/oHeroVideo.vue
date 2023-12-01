@@ -30,7 +30,7 @@
                         `"
                     :data-src="`https://image.frytolnacestach.cz/storage/${image[0].source + image[0].name}.webp`"
                     :alt="title"
-                    :srr="true"
+                    :preload="true"
                     v-lazy>
             </div>
             <div v-else class="o-hero-video__image-lazyload">
@@ -60,7 +60,7 @@
                         `"
                     :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
                     :alt="title"
-                    :srr="true"
+                    :preload="true"
                     v-lazy>
             </div>
 
