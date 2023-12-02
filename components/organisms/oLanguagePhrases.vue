@@ -7,7 +7,7 @@
                     <div class="o-language-phrases__item" v-for="item in data" v-bind:key="item.czech">
                         <span class="o-language-phrases__value -czech" v-if="item.czech">{{ item.czech }}</span>
                         <span class="o-language-phrases__value -foreign" v-if="item.foreign">{{ item.foreign }}</span>
-                        <span class="o-language-phrases__value -foreign_arabic" v-if="item.foreign_arabic">{{ item.foreign_arabic }}</span>
+                        <span class="o-language-phrases__value -foreign-language" v-if="item.foreign_language">{{ item.foreign_language }}</span>
                         <span class="o-language-phrases__value -phonetic-transcription" v-if="item.phonetic_transcription">{{ item.phonetic_transcription }}</span>
                     </div>
                 </div>
