@@ -64,9 +64,9 @@
                                     v-lazy>
                             </div>
                         </div>
-                        <h2 class="o-cover-neighboring__name">
+                        <h3 class="o-cover-neighboring__name">
                             {{ item.name }}
-                        </h2>
+                        </h3>
                         <NuxtLink class="o-cover-neighboring__link" :to="`/svet/stat/${item.slug}`" :aria-label="`Čti více o jídle ${item.name}`"></NuxtLink>
                     </div>
                 </div>
