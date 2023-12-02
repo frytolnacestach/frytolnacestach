@@ -133,7 +133,7 @@
 
                             <div class="t-grid__section -aside-place-status">
                                 <!-- SECTION - Visited button - sidebar -->
-                                <section class="t-section -px-world">
+                                <section class="t-section -px-world my-1">
                                     <div class="t-section__inner">
                                         <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
                                     </div>
@@ -142,7 +142,7 @@
                             </div>
                             <div class="t-grid__section -aside-content">
                                 <!-- SECTION - Account banner - sidebar -->
-                                <section class="t-section -px-world my-1">
+                                <section class="t-section -px-world my-1" v-if="account && account.length === 0">
                                     <div class="t-section__inner">
                                         <oAccountBanner :account="account" styleThema=" -green" />
                                     </div>
@@ -150,7 +150,7 @@
                                 <!-- SECTION - Account banner - sidebar END -->
 
                                 <!-- SECTION - time - sidebar -->
-                                <section class="t-section -px-world">
+                                <section class="t-section -px-world my-1">
                                     <div class="t-section__inner">
                                         <oSidebarTime :mpz="this.place[0].mpz" />
                                     </div>
@@ -159,7 +159,7 @@
 
                                 <section class="t-section-print">
                                     <!-- SECTION - Měna -->
-                                    <section class="t-section" v-if="place[0].currency_name">
+                                    <section class="t-section -px-world my-1" v-if="place[0].currency_name">
                                         <div class="t-section__inner">
                                             <oBlockItem title="Měna" :subtitle="place[0].currency_name" :perexWysiwyg="place[0].currency_code ? place[0].currency_code : ''" styleThema=" -bg-world" />
                                         </div>
@@ -167,7 +167,7 @@
                                     <!-- SECTION - Měna END -->
 
                                     <!-- SECTION - MPZ -->
-                                    <section class="t-section" v-if="place[0].mpz">
+                                    <section class="t-section -px-world my-1" v-if="place[0].mpz">
                                         <div class="t-section__inner">
                                             <oBlockItem title="MPZ" subtitle="Mezinárodní poznávací značka" :perexWysiwyg="place[0].mpz" styleThema=" -bg-world" />
                                         </div>
@@ -175,7 +175,7 @@
                                     <!-- SECTION - MPZ END -->
 
                                     <!-- SECTION - TLD -->
-                                    <section class="t-section" v-if="place[0].tld">
+                                    <section class="t-section -px-world my-1" v-if="place[0].tld">
                                         <div class="t-section__inner">
                                             <oBlockItem title="TLD" subtitle="Národní internetová doména" :perexWysiwyg="place[0].tld" styleThema=" -bg-world" />
                                         </div>
@@ -272,7 +272,7 @@
 
                             <div class="t-grid__section -aside-place-status">
                                 <!-- SECTION - Visited button - sidebar -->
-                                <section class="t-section -px-world">
+                                <section class="t-section -px-world my-1">
                                     <div class="t-section__inner">
                                         <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
                                     </div>
@@ -281,7 +281,7 @@
                             </div>
                             <div class="t-grid__section -aside-content">
                                 <!-- SECTION - Account banner - sidebar -->
-                                <section class="t-section -px-world my-1">
+                                <section class="t-section -px-world my-1" v-if="account && account.length === 0">
                                     <div class="t-section__inner">
                                         <oAccountBanner :account="account" styleThema=" -green" />
                                     </div>
@@ -334,7 +334,7 @@
 
                             <div class="t-grid__section -aside-place-status">
                                 <!-- SECTION - Visited button - sidebar -->
-                                <section class="t-section -px-world">
+                                <section class="t-section -px-world my-1">
                                     <div class="t-section__inner">
                                         <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
                                     </div>
@@ -343,7 +343,7 @@
                             </div>
                             <div class="t-grid__section -aside-content">
                                 <!-- SECTION - Account banner - sidebar -->
-                                <section class="t-section -px-world my-1">
+                                <section class="t-section -px-world my-1" v-if="account && account.length === 0">
                                     <div class="t-section__inner">
                                         <oAccountBanner :account="account" styleThema=" -green" />
                                     </div>
@@ -352,7 +352,7 @@
 
                                 <section class="t-section-print">
                                     <!-- SECTION - Měna -->
-                                    <section class="t-section" v-if="place[0].currency_name">
+                                    <section class="t-section -px-world my-1" v-if="place[0].currency_name">
                                         <div class="t-section__inner">
                                             <oBlockItem title="Měna" :subtitle="place[0].currency_name" :perexWysiwyg="place[0].currency_code ? place[0].currency_code : ''" styleThema=" -bg-world" />
                                         </div>
@@ -408,7 +408,7 @@
 
                             <div class="t-grid__section -aside-place-status">
                                 <!-- SECTION - Visited button - sidebar -->
-                                <section class="t-section -px-world">
+                                <section class="t-section -px-world my-1">
                                     <div class="t-section__inner">
                                         <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
                                     </div>
@@ -417,7 +417,7 @@
                             </div>
                             <div class="t-grid__section -aside-content">
                                 <!-- SECTION - Account banner - sidebar -->
-                                <section class="t-section -px-world my-1">
+                                <section class="t-section -px-world my-1" v-if="account && account.length === 0">
                                     <div class="t-section__inner">
                                         <oAccountBanner :account="account" styleThema=" -green" />
                                     </div>
@@ -458,7 +458,7 @@
 
                             <div class="t-grid__section -aside-place-status">
                                 <!-- SECTION - Visited button - sidebar -->
-                                <section class="t-section -px-world">
+                                <section class="t-section -px-world my-1">
                                     <div class="t-section__inner">
                                         <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
                                     </div>
@@ -467,7 +467,7 @@
                             </div>
                             <div class="t-grid__section -aside-content">
                                 <!-- SECTION - Account banner - sidebar -->
-                                <section class="t-section -px-world my-1">
+                                <section class="t-section -px-world my-1" v-if="account && account.length === 0">
                                     <div class="t-section__inner">
                                         <oAccountBanner :account="account" styleThema=" -green" />
                                     </div>
@@ -516,7 +516,7 @@
 
                             <div class="t-grid__section -aside-place-status">
                                 <!-- SECTION - Visited button - sidebar -->
-                                <section class="t-section -px-world">
+                                <section class="t-section -px-world my-1">
                                     <div class="t-section__inner">
                                         <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
                                     </div>
@@ -525,7 +525,7 @@
                             </div>
                             <div class="t-grid__section -aside-content">
                                 <!-- SECTION - Account banner - sidebar -->
-                                <section class="t-section -px-world my-1">
+                                <section class="t-section -px-world my-1" v-if="account && account.length === 0">
                                     <div class="t-section__inner">
                                         <oAccountBanner :account="account" styleThema=" -green" />
                                     </div>
@@ -598,7 +598,7 @@
 
                             <div class="t-grid__section -aside-place-status">
                                 <!-- SECTION - Visited button - sidebar -->
-                                <section class="t-section -px-world">
+                                <section class="t-section -px-world my-1">
                                     <div class="t-section__inner">
                                         <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
                                     </div>
@@ -607,7 +607,7 @@
                             </div>
                             <div class="t-grid__section -aside-content">
                                 <!-- SECTION - Account banner - sidebar -->
-                                <section class="t-section -px-world my-1">
+                                <section class="t-section -px-world my-1" v-if="account && account.length === 0">
                                     <div class="t-section__inner">
                                         <oAccountBanner :account="account" styleThema=" -green" />
                                     </div>

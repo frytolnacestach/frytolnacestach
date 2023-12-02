@@ -1,5 +1,5 @@
 <template>
-    <div :class="'o-block-item'">
+    <div class="o-block-item">
         <div class="o-block-item__outer">
             <div class="o-block-item__inner">
                 <h2 class="o-block-item__title" :class="{ '-m0': subtitle }" v-if="title">{{ title }}</h2>

@@ -84,7 +84,7 @@
 
                     <div class="t-grid__section -aside-place-status">
                         <!-- SECTION - Visited button - sidebar -->
-                        <section class="t-section -px-world">
+                        <section class="t-section -px-world my-1">
                             <div class="t-section__inner">
                                 <oVisitedButton :account="account" :place="this.place[0].id" placeType="spot" />
                             </div>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="t-grid__section -aside-content">
                         <!-- SECTION - Account banner - sidebar -->
-                        <section class="t-section -px-world my-1">
+                        <section class="t-section -px-world my-1" v-if="account && account.length === 0">
                             <div class="t-section__inner">
                                 <oAccountBanner :account="account" styleThema=" -green" />
                             </div>
