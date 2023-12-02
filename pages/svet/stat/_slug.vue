@@ -505,7 +505,7 @@
                                 <!-- SECTION - Telefoní čísla(emergency) END -->
 
                                 <!-- SECTION - Organizace -->
-                                <section class="t-section mt-4" v-if="place[0].organization">
+                                <section class="t-section mt-4" v-if="place[0].organization && place[0].organization.length > 0">
                                     <div class="t-section__inner">
                                         <mHeadline title="Organizace ve kterých se stát nachází" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oOrganizationList :items="this.place[0].organization" />
