@@ -2,7 +2,7 @@
     <div :class="'m-headline' + (styleThema ? styleThema : '') + (styleAlign ? styleAlign : '') + (styleGap ? styleGap : '')">
         <div class="m-headline__outer">
             <div class="m-headline__inner">
-                <h2 class="m-headline__title">
+                <h2 class="m-headline__title" v-if="title">
                     {{ title }} {{ titleValue ? titleValue : '' }}
                     <aButtonFill :url="url" :text="urlText" styleThema=" -small -green" target="internal" v-if="url" />
                 </h2>
@@ -25,7 +25,7 @@
         props: {
             title: {
                 type: String,
-                required: true
+                required: false
             },
             titleValue: {
                 type: String,
