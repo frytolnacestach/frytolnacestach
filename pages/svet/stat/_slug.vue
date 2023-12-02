@@ -398,7 +398,7 @@
                                 <!-- SECTION - Lidé národnost END -->
 
                                 <!-- SECTION - Jazykové fráze -->
-                                <section class="t-section -px-world -p0" v-if="place[0].language_phrases">
+                                <section class="t-section -px-world -p0" v-if="place[0].language_phrases && place[0].language_phrases.length > 0">
                                     <div class="t-section__inner">
                                         <oLanguagePhrases :data="place[0].language_phrases" />
                                     </div>
