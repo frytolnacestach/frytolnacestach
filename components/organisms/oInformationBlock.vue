@@ -9,7 +9,7 @@
 
                 <div class="o-information-block__perex">
 
-                    <div class="o-information-block_wysiwyg" v-html="perexWysiwyg" v-if="perexWysiwyg"></div>
+                    <div class="o-information-block__wysiwyg" v-html="perexWysiwyg" v-if="perexWysiwyg"></div>
 
                     <div class="o-information-block__list" v-if="perexList">
                         <ul class="o-information-block__list-ul">

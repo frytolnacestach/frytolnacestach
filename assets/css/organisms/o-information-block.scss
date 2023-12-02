@@ -95,6 +95,14 @@ BLOCKS:
     //wysiwyg
     &__wysiwyg {
         width: 100%;
+
+        p {
+            margin-bottom: 14px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
     }
 
 
