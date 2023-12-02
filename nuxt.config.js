@@ -894,11 +894,11 @@ export default {
           '/znacka/.*', '/znacka\\?.*',
           '/retezec/.*', '/retezec\\?.*',
           '/elektricka-zasuvka/.*', '/elektricka-zasuvka\\?.*',
-          '/kontinent/.*', '/kontinent\\?.*',
-          '/stat/.*', '/stat\\?.*',
-          '/region/.*', '/region\\?.*',
-          '/mesto/.*', '/mesto\\?.*',
-          '/misto/.*', '/misto\\?.*',
+          '/svet/kontinent/.*', '/svet/kontinent\\?.*',
+          '/svet/stat/.*', '/svet/stat\\?.*',
+          '/svet/region/.*', '/svet/region\\?.*',
+          '/svet/mesto/.*', '/svet/mesto\\?.*',
+          '/svet/misto/.*', '/svet/misto\\?.*',
         ]
       },
       {
