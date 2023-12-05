@@ -1,4 +1,6 @@
 .o-ad-google-sidebar {
+    $self: &;
+
     width: auto;
     display: grid;
     position: relative;
@@ -55,5 +57,40 @@
         margin: 0 auto;
         width: 100%;
         max-width: 100%;
+    }
+
+
+    //Background color
+    &.-blue {
+        #{$self}__inner {
+            background-color: $c-blue-bg-component-light-super;
+
+            &:after {
+                background-color: $c-blue-bg-component-light-super;
+                color: $c-blue-t-dark-super;
+            }
+        }
+    }
+
+    &.-gray {
+        #{$self}__inner {
+            background-color: $c-gray-bg-component-light-super;
+
+            &:after {
+                background-color: $c-gray-bg-component-light-super;
+                color: $c-gray-t-dark-super;
+            }
+        }
+    }
+
+    &.-green {
+        #{$self}__inner {
+            background-color: $c-green-bg-component-light-super;
+
+            &:after {
+                background-color: $c-green-bg-component-light-super;
+                color: $c-green-t-dark-super;
+            }
+        }
     }
 }
