@@ -11,10 +11,7 @@
         <!-- SECTION - Buttons -->
         <section class="t-section -px-world mt-1 -p0 hidden-print" v-if="isMobile">
             <div class="t-section__inner">
-                <div class="flex flex-end-all">
-                    <span v-if="!showHero" @click="showHero = true" class="a-button-pure-icon -cover">Obrázek</span>
-                    <span v-else @click="showHero = false" class="a-button-pure-icon -map">Mapa</span>
-                </div>
+                <oSwitchHero :show-hero.sync="showHero" />
             </div>
         </section>
         <!-- SECTION - Buttons END -->
@@ -57,13 +54,13 @@
                     <div class="t-grid -world-content-with-ad">
                         <div class="t-grid__section -content">
 
-                            <!-- SECTION - time - sidebar -->
-                            <section class="t-section -px-world">
+                            <!-- SECTION - time -->
+                            <section class="t-section -px-world mt-4">
                                 <div class="t-section__inner">
                                     <oTime :mpz="this.place[0].mpz" />
                                 </div>
                             </section>
-                            <!-- SECTION - time - sidebar - END -->
+                            <!-- SECTION - time - END -->
 
                             <!-- SECTION - Place teaser -->
                             <section class="t-section my-2 -p0">
@@ -102,6 +99,7 @@
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
+    import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
     import oTime from '~/components/organisms/oTime.vue'
 
 
@@ -117,6 +115,7 @@
             oHotInfoHero,
             oMapGoogle,
             oPlaceTeaser,
+            oSwitchHero,
             oTime
         },
 
