@@ -35,7 +35,7 @@
                         <!--
                         <section class="t-section -px-world mt-4 mb-2">
                             <div class="t-section__inner">
-                                <oAdGoogleSidebar />
+                                <oAdGoogleSidebar styleThema=" -blue" />
                             </div>
                         </section>
                         -->

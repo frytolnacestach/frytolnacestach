@@ -56,7 +56,7 @@
                 <!-- SECTION - ad-google - sidebar -->
                 <section class="t-section -px-world mt-4 mb-2">
                     <div class="t-section__inner">
-                        <oAdGoogleSidebar />
+                        <oAdGoogleSidebar styleThema=" -gray" />
                     </div>
                 </section>
                 <!-- SECTION - ad-google - sidebar - END -->

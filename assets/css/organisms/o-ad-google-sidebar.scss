@@ -41,14 +41,15 @@
         &:after {
             content: 'Reklama';
             position: absolute;
-            height: 18px;
+            height: 20px;
             color: $black;
-            top: -18px;
+            top: -20px;
             right: 0;
             background-color: $cAdBG;
             font-size: $fs-small-sss;
             line-height: $fs-small-sss;
-            padding: 3px 6px;
+            padding: 4px 10px;
+            border-radius: 10px 10px 0 0;
         }
     }
 
