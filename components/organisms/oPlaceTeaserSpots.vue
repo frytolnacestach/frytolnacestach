@@ -70,7 +70,7 @@
                                         <NuxtLink class="o-place-teaser-spots__image-link" :to="`/svet/misto/${spot.slug}`" :aria-label="`Čti více o místě ${spot.name}`"></NuxtLink>
                                     </div>
                                     <div class="o-place-teaser-spots__text">
-                                        <nuxtLink class="o-place-teaser-spots__name" :to="`/svet/misto/${spot.slug}`" :aria-label="`Čti více o místě ${spot.name}`">{{ spot.name }}</nuxtLink>
+                                        <h3 class="o-place-teaser-spots__name"><nuxtLink class="o-place-teaser-spots__name-link" :to="`/svet/misto/${spot.slug}`" :aria-label="`Čti více o místě ${spot.name}`">{{ spot.name }}</nuxtLink></h3>
                                         <div class="o-place-teaser-spots__wysiwyg" v-if="spot.information_chatgpt && !spot.information_author?.length > 0" v-html="spot.information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, spot.information_chatgpt.lastIndexOf(' ', 150))"></div>       
                                         <div class="o-place-teaser-spots__wysiwyg" v-if="spot.information_author?.length > 0" v-html="spot.information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, spot.information_author[0].text.lastIndexOf(' ', 150))"></div>   
                                     </div>

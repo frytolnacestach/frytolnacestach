@@ -99,6 +99,10 @@
     }
 
     &__name {
+        display: block;
+    }
+
+    &__name-link {
         color: $c-green-t-dark;
         font-size: $fs-large-s;
         font-weight: 600;
@@ -111,6 +115,7 @@
     }
 
     &__wysiwyg {
+        width: 100%;
         padding: 10px 15px 10px 0;
         color: $c-green-t-dark;
 

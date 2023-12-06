@@ -70,7 +70,7 @@
                                         <NuxtLink class="o-place-teaser-cities__image-link" :to="`/svet/mesto/${city.slug}`" :aria-label="`Čti více o městě ${city.name}`"></NuxtLink>
                                     </div>
                                     <div class="o-place-teaser-cities__text">
-                                        <nuxtLink class="o-place-teaser-cities__name" :to="`/svet/mesto/${city.slug}`" :aria-label="`Čti více o městě ${city.name}`">{{ city.name }}</nuxtLink>
+                                        <h3 class="o-place-teaser-cities__name"><nuxtLink class="o-place-teaser-cities__name-link" :to="`/svet/mesto/${city.slug}`" :aria-label="`Čti více o městě ${city.name}`">{{ city.name }}</nuxtLink></h3>
                                         <div class="o-place-teaser-cities__wysiwyg" v-if="city.information_chatgpt && !city.information_author?.length > 0" v-html="city.information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, city.information_chatgpt.lastIndexOf(' ', 150))"></div>       
                                         <div class="o-place-teaser-cities__wysiwyg" v-if="city.information_author?.length > 0" v-html="city.information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, city.information_author[0].text.lastIndexOf(' ', 150))"></div>     
                                     </div>
