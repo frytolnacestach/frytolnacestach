@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <div class="o-place-block__text">
-                        <div class="o-place-block__wysiwyg" v-if="place[0].information_chatgpt" v-html="place[0].information_chatgpt.slice(0, 220)"></div>
+                        <div class="o-place-block__wysiwyg" v-if="place[0].information_chatgpt" v-html="place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, 220)"></div>
                         <aButtonFillFull target="internal" :url="`/svet/${type}/${place[0].slug}`" text="Číst více" styleThema=" -green" />                                 
                     </div>
                 </div>
