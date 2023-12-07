@@ -637,7 +637,7 @@
                                 <!-- SECTION - videos -->
                                 <section class="t-section -p0 -px-world my-2" v-if="place[0] && videos.length !== 0">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <mHeadline title="Videa ze státu" :titleValue="place[0].name" :perex="'Podívejte se na fascinující videa ze státu ' + place[0].name + ', která nám poskytují jedinečný pohled na tuto zemi. Prozkoumejte krásy krajiny, pochopte bohatou historii a zažijte každodenní život prostřednictvím těchto videí. Získejte nezapomenutelný pohled na ' + place[0].name + ' prostřednictvím objektivu, který zachycuje nejzajímavější momenty a místa tohoto úžasného státu.'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world-tab" styleThemaLoading=" -green" styleAlign=" -p-left" />
                                         <oVideoList :videos="null" :images="null" styleThema=" -world" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true />
                                         <div class="flex flex-center my-2" v-if="!isLoadingVideos && !noMoreVideosItems">
