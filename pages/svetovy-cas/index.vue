@@ -2,9 +2,9 @@
     <main class="t-main -green -pt-menu" role="main">
 
         <!-- SECTION - Hero -->
-		<section class="t-section -p0 mb-1 mt-2 print-section">
+		<section class="t-section py-4 print-section">
             <div class="t-section__inner">
-                <oHero :headline="headline" modifierCSS=" -gray"/>
+                <oHero :headline="headline" perex="Připravte se na světové dobrodružství přesně podle svého rytmu! Náš cestovatelský portál vám přináší aktuální čas a časový posun v různých zemích, abyste byli vždycky v synchronizaci s časem." modifierCSS=" -green -w600"/>
             </div>
         </section>
         <!-- SECTION - Hero END -->
