@@ -26,6 +26,12 @@
         @media only screen and (min-width: $ti) {
             border-radius: $br-4;
         }
+
+        @media only screen and (min-width: $lg) {
+            max-height: 30.68vw;
+            height: auto;
+            overflow: scroll;
+        }
     }
 
     &__headline {
