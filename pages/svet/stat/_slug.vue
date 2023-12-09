@@ -325,7 +325,7 @@
                                 <!-- SECTION - Ceny ubytování -->
                                 <section class="t-section mt-4" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
                                     <div class="t-section__inner">
-                                        <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" perexWysiwyg="Jestli vás zajímá cena ubytování v této zemi. Kouknete se do záložky ubytování, kde najdete aktuální cenu ubytování na platformě Booking." />
+                                        <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Jestli vás zajímá cena ubytování ve státě ' + (place[0].name ? place[0].name : '') + '. Kouknete se do záložky ubytování, kde najdete aktuální cenu ubytování na platformě Booking.'" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Ceny END -->
@@ -572,8 +572,8 @@
                                 <!-- SECTION - Ubytování - information -->
                                 <section class="t-section">
                                     <div class="t-section__inner">
-                                        <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" perexWysiwyg="Cena za konkrétní ubytování se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek." v-if="place[0].affiliate.find(x => x.name === 'booking').value === true" />
-                                        <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" perexWysiwyg="Bohužel o ceně ubytování v tomhle státě vám zatím moc neporadíme." v-else />
+                                        <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Cena za konkrétní ubytování ve státě ' + (place[0].name ? place[0].name : '') + ' se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek.'" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true" />
+                                        <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Bohužel o ceně ubytování ve státě ' + (place[0].name ? place[0].name : '') + ' vám zatím moc neporadíme.'" v-else />
                                     </div>
                                 </section>
                                 <!-- SECTION - Ubytování - information END -->
