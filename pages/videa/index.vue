@@ -90,10 +90,10 @@
             let ogType
 
             // title
-            title = 'Videa | Cestovatelský portál Frytol na cestách'
+            title = `${this.headlineFilter} | Cestovatelský portál Frytol na cestách`
 
             // description
-            description = 'Cestovatelská videa z různích míst naší krásné planety.'
+            description = `Sleduj cestovatelská ${this.headlineFilter !== 'Videa' ? (this.headlineFilter.replace("Videa", "videa") + ' na cestovatelském portálu Frytol na cestách.') : 'videa z různích míst naší krásné planety na cestovatelském portálu Frytol na cestách.'}`
 
             // keywolds
             keywords = 'cestovatelská videa, youtube, cestování, svět'
@@ -209,7 +209,7 @@
 
             updateHeadline() {
                 if (this.filterPlaceName) {
-                    this.headlineFilter = this.headline + ' státu ' + this.filterPlaceName
+                    this.headlineFilter = this.headline + ' ze státu ' + this.filterPlaceName
                 } else {
                     this.headlineFilter = this.headline
                 }

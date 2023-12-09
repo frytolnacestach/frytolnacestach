@@ -90,10 +90,10 @@
             let ogType
 
             // title
-            title = 'Články | Cestovatelský portál Frytol na cestách'
+            title = `${this.headlineFilter} | Cestovatelský portál Frytol na cestách`
 
             // description
-            description = 'Čti články na cestovatelském portáku Frytol na cestách Ať ti neuniknou žádné novinky o cestování.'
+            description = `Čti ${this.headlineFilter !== 'Články' ? (this.headlineFilter.replace("Články", "články")  + ' na cestovatelském portálu Frytol na cestách.') : 'články z různích míst naší krásné planety na cestovatelském portálu Frytol na cestách.'}`
 
             // keywolds
             keywords = 'Články, novinky, travel hacky, rady, létání, cestování, svět'
@@ -206,7 +206,7 @@
 
             updateHeadline() {
                 if (this.filterPlaceName) {
-                    this.headlineFilter = this.headline + ' státu ' + this.filterPlaceName
+                    this.headlineFilter = this.headline + ' o státu ' + this.filterPlaceName
                 } else {
                     this.headlineFilter = this.headline
                 }
