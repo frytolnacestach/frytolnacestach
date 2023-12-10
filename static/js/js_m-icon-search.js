@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("load", mIconSearch);
+
+function mIconSearch() {
 	var iconSearch = document.querySelector(".js_m-icon-search__icon");
 	var iconSearchClose = document.querySelector(".js_o-popup-search__close");
 
@@ -13,4 +15,4 @@ document.addEventListener("DOMContentLoaded", function() {
 		document.documentElement.classList.remove("no-scroll");
 		document.body.classList.remove("no-scroll");
 	});
-});
+}

@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("load", mHamburger);
+
+function mHamburger() {
 	var hamburger = document.querySelector(".js_m-hamburger");
 	hamburger.addEventListener("click", function() {
 		var status = hamburger.getAttribute("data-hamburger");
@@ -28,4 +30,4 @@ document.addEventListener("DOMContentLoaded", function() {
 			document.body.classList.remove("no-scroll");
 		});
 	});
-});
+};
