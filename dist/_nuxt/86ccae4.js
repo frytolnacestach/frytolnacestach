@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[110],{571:function(n,t,e){"use strict";e.r(t);var o={name:"OrganismsoWysiwygComponent",props:{text:{type:String,required:!0}}},r=e(2),component=Object(r.a)(o,(function(){var n=this;return(0,n._self._c)("div",{staticClass:"o-wysiwyg",domProps:{innerHTML:n._s(n.text)}})}),[],!1,null,null,null);t.default=component.exports}}]);
