@@ -1,4 +1,6 @@
 .o-event-list {
+    $self: &;
+
     display: block;
 
     &__outer {
@@ -66,5 +68,39 @@
 
     &__name {
         font-weight: 700;
+    }
+
+   // Thema
+    &.-blue {
+
+        #{$self}__name-link {
+            color: $c-blue-bg-component-dark;
+
+            &:hover {
+                color: $c-blue-bg-component-dark-super;
+            }
+        }
+    }
+
+    &.-gray {
+
+        #{$self}__name-link {
+            color: $c-gray-bg-component-dark;
+
+            &:hover {
+                color: $c-gray-bg-component-dark-super;
+            }
+        }
+    }
+
+    &.-green {
+
+        #{$self}__name-link {
+            color: $c-green-bg-component-dark;
+
+            &:hover {
+                color: $c-green-bg-component-dark-super;
+            }
+        }
     }
 }

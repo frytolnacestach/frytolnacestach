@@ -1,11 +1,11 @@
 <template>
-    <div class="o-event-list">
+    <div :class="'o-event-list' + (styleThema ? styleThema : ' -gray')">
         <div class="o-event-list__outer">
             <div class="o-event-list__inner">
                 <div class="o-event-list__items">
                     <div class="o-event-list__item" v-for="event in events" :key="event.id">
                         <div class="o-event-list__image-container">
-                            <div class="o-event-list__image loading-image -green">
+                            <div :class="'o-event-list__image loading-image' + (styleThema ? styleThema : ' -gray')">
                                 <div v-if="images && images.find(image => image.id === event.id_image_hero)" class="o-event-list__image-lazyload">
                                     <img class="o-event-list__image-file lazyload-file"
                                         data-sizes="0px"
@@ -46,6 +46,13 @@
 <script>
     export default {
         name: 'OrganismsoEventListComponent',
+
+        props: {
+            styleThema: {
+                type: String,
+                required: false
+            }
+        },
 
         data() {
             return {

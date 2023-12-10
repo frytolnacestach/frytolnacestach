@@ -1,7 +1,7 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <skeletonoTopPlace styleThema=" -skeleton-green" v-if="places === null || images === null" />
+        <skeletonoTopPlace :styleThema="(skeletonThema ? skeletonThema : ' -skeleton-gray')" v-if="places === null || images === null" />
         <!-- skeleton END -->
 
         <!-- client -->
@@ -11,7 +11,7 @@
                     <div class="o-top-place__items">
                         <div v-for="place in places" :key="place.id" class="o-top-place__item">
                             <div class="o-top-place__content">
-                                <div class="o-top-place__image loading-image -green">
+                                <div :class="'o-top-place__image loading-image' + (styleThema ? styleThema : ' -gray')">
                                     <div v-if="images && images.find(image => image.id === place.id_image_cover)" class="o-top-place__image-lazyload">
                                         <img class="o-top-place__image-file lazyload-file"
                                             data-sizes="(max-width: 349px) 160px, (max-width: 374px) 172px, (max-width: 399px) 186px, (max-width: 459px) 216px, (max-width: 575px) 274px, (max-width: 767px) 230px, (max-width: 991px) 224px, (max-width: 1219px) 220px, (max-width: 1399px) 256px, 360px"
@@ -98,6 +98,17 @@
 
         components: {
             skeletonoTopPlace
+        },
+
+        props: {
+            styleThema: {
+                type: String,
+                required: false
+            },
+            skeletonThema: {
+                type: String,
+                required: false
+            }
         },
 
         data() {

@@ -67,30 +67,30 @@
         height: 100%;
 
         &.-continent {
-            background-image: url('../../static/images/world/continent.svg');
+            background-image: url('../../static/images/world/continent--green.svg');
         }
 
         &.-state {
-            background-image: url('../../static/images/world/state.svg');
+            background-image: url('../../static/images/world/state--green.svg');
         }
 
         &.-region {
-            background-image: url('../../static/images/world/region.svg');
+            background-image: url('../../static/images/world/region--green.svg');
         }
 
         &.-city {
-            background-image: url('../../static/images/world/city.svg');
+            background-image: url('../../static/images/world/city--green.svg');
         }
 
         &.-spot {
-            background-image: url('../../static/images/world/spot.svg');
+            background-image: url('../../static/images/world/spot--green.svg');
         }
     }
 
     &__text {
         width: 100%;
         font-size: $fs-normal;
-        color: $brand1;
+        color: $c-green-t-dark;
         text-align: center;
         margin: 0;
     }
@@ -140,5 +140,174 @@
             color: $c-green-t-dark;
         }
     }
+
     @keyframes ring {to{transform: rotate(1turn)}}
+
+
+    // Thema
+    &.-blue {
+        #{$self}__image-file {
+    
+            &.-continent {
+                background-image: url('../../static/images/world/continent--blue.svg');
+            }
+    
+            &.-state {
+                background-image: url('../../static/images/world/state--blue.svg');
+            }
+    
+            &.-region {
+                background-image: url('../../static/images/world/region--blue.svg');
+            }
+    
+            &.-city {
+                background-image: url('../../static/images/world/city--blue.svg');
+            }
+    
+            &.-spot {
+                background-image: url('../../static/images/world/spot--blue.svg');
+            }
+        }
+
+        #{$self}__text {
+            color: $c-blue-t-dark;
+        }
+    
+        #{$self}__link {
+    
+            &:hover {
+                color: $c-blue-t-dark;
+            }
+        }
+    
+        #{$self}__link-title {
+            color: $c-blue-t-dark-super;
+        }
+    
+        #{$self}__link-length {
+            color: $c-blue-t-dark;
+        }
+    
+        #{$self}__link-length-number {
+    
+            &.-loader {
+                background: conic-gradient(#0000 10%,$c-blue-icon);
+            }
+    
+            &.-number {
+                color: $c-blue-t-dark;
+            }
+        }
+    }
+
+    &.-gray {
+        #{$self}__image-file {
+    
+            &.-continent {
+                background-image: url('../../static/images/world/continent--gray.svg');
+            }
+    
+            &.-state {
+                background-image: url('../../static/images/world/state--gray.svg');
+            }
+    
+            &.-region {
+                background-image: url('../../static/images/world/region--gray.svg');
+            }
+    
+            &.-city {
+                background-image: url('../../static/images/world/city--gray.svg');
+            }
+    
+            &.-spot {
+                background-image: url('../../static/images/world/spot--gray.svg');
+            }
+        }
+
+        #{$self}__text {
+            color: $c-gray-t-dark;
+        }
+    
+        #{$self}__link {
+    
+            &:hover {
+                color: $c-gray-t-dark;
+            }
+        }
+    
+        #{$self}__link-title {
+            color: $c-gray-t-dark-super;
+        }
+    
+        #{$self}__link-length {
+            color: $c-gray-t-dark;
+        }
+    
+        #{$self}__link-length-number {
+    
+            &.-loader {
+                background: conic-gradient(#0000 10%,$c-gray-icon);
+            }
+    
+            &.-number {
+                color: $c-gray-t-dark;
+            }
+        }
+    }
+
+    &.-green {
+
+        #{$self}__image-file {
+    
+            &.-continent {
+                background-image: url('../../static/images/world/continent--green.svg');
+            }
+    
+            &.-state {
+                background-image: url('../../static/images/world/state--green.svg');
+            }
+    
+            &.-region {
+                background-image: url('../../static/images/world/region--green.svg');
+            }
+    
+            &.-city {
+                background-image: url('../../static/images/world/city--green.svg');
+            }
+    
+            &.-spot {
+                background-image: url('../../static/images/world/spot--green.svg');
+            }
+        }
+
+        #{$self}__text {
+            color: $c-green-t-dark;
+        }
+    
+        #{$self}__link {
+    
+            &:hover {
+                color: $c-green-t-dark;
+            }
+        }
+    
+        #{$self}__link-title {
+            color: $c-green-t-dark-super;
+        }
+    
+        #{$self}__link-length {
+            color: $c-green-t-dark;
+        }
+    
+        #{$self}__link-length-number {
+    
+            &.-loader {
+                background: conic-gradient(#0000 10%,$c-green-icon);
+            }
+    
+            &.-number {
+                color: $c-green-t-dark;
+            }
+        }
+    }
 }

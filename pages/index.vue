@@ -12,8 +12,8 @@
         <!-- SECTION - Top místa -->
         <section class="t-section -p0 mt-4 pb-4 print-section">
             <div class="t-section__inner">
-                <mHeadline title="Nejzajímavější místa" perex="Víte, kam byste se měli vydat na nezapomenutelnou dovolenou? Přinášíme vám seznam nejzajímavějších míst na světě, která musíte vidět. Od malebných vesnic a historických památek až po impozantní přírodní krásy, naše stránky vám pomohou najít nejlepší místa pro vaši další cestování." styleThema=" -world -w640" styleAlign=" -center" styleGap=" mb-2" />
-                <oTopPlace />
+                <mHeadline title="Nejzajímavější místa" perex="Víte, kam byste se měli vydat na nezapomenutelnou dovolenou? Přinášíme vám seznam nejzajímavějších míst na světě, která musíte vidět. Od malebných vesnic a historických památek až po impozantní přírodní krásy, naše stránky vám pomohou najít nejlepší místa pro vaši další cestování." styleThema=" -gray -w640" styleAlign=" -center" styleGap=" mb-2" />
+                <oTopPlace styleThema=" -gray" skeletonThema=" -skeleton-gray" />
             </div>
         </section>
         <!-- SECTION - Top místa END -->
@@ -21,8 +21,8 @@
          <!-- SECTION - Typ místa -->
          <section class="t-section py-4 print-section">
             <div class="t-section__inner">
-                <mHeadline title="Nevíš kam vyrazit?" perex="Pokud toužíš pozkoumat svět a nemáš jasnou představu, kam se vydat, můžeš si vybrat některou z kategorií míst a začít prozkoumávat." styleThema=" -world -w640" styleAlign=" -center" styleGap=" mb-2" />
-                <oWorldType />
+                <mHeadline title="Nevíš kam vyrazit?" perex="Pokud toužíš pozkoumat svět a nemáš jasnou představu, kam se vydat, můžeš si vybrat některou z kategorií míst a začít prozkoumávat." styleThema=" -gray -w640" styleAlign=" -center" styleGap=" mb-2" />
+                <oWorldType styleThema=" -gray" skeletonThema=" -skeleton-gray" />
             </div>
         </section>
         <!-- SECTION - Typ místa END -->
@@ -54,7 +54,7 @@
         <section class="t-section py-4 print-section">
             <div class="t-section__inner">
                 <mHeadline title="Nejbližší události" styleAlign=" -left" />
-                <oEventList />
+                <oEventList styleThema=" -gray" />
             </div>
         </section>
         <!-- SECTION - events END -->

@@ -39,7 +39,7 @@
             @include transition(color, .3s);
             font-size: $fs-icon-30;
             font-family: $ff-icomoon-default;
-            color: $c-gray-icon-dark;
+            color: $c-green-icon-dark;
             line-height: 1;
             content: map-get($icomoon-default, 'search');
         }
