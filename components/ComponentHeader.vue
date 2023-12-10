@@ -16,6 +16,10 @@
                     <mNavMainProfile />
                     <!-- NAV - Main profile END -->
 
+                    <!-- NAV - Icon search -->
+                    <mIconSearch />
+                    <!-- NAV - Icon search END -->
+
                     <!-- NAV - Hamburger -->
                     <mHamburger />
                     <!-- NAV - Hamburger END -->
@@ -27,6 +31,7 @@
 </template>
 
 <script>
+    import mIconSearch from '~/components/molecules/mIconSearch.vue'
     import mLogotype from '~/components/molecules/mLogotype.vue'
     import mNavMain from '~/components/molecules/mNavMain.vue'
     import mNavMainProfile from '~/components/molecules/mNavMainProfile.vue'
@@ -36,6 +41,7 @@
         name: 'ComponentHeaderComponent',
 
         components: {
+            mIconSearch,
             mLogotype,
             mNavMain,
             mNavMainProfile,

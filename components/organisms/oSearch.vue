@@ -6,8 +6,8 @@
         <span class="o-search__condition" v-if="searchQuery.length < 3">Napiš alepoň 3 znaky</span>
         <div class="o-search__result">
             <div :class="'m-search-result' + (styleThema ? styleThema : '') + (styleSize ? styleSize : '')">
-                <ul class="m-search-result__items" v-if="filteredPlaces.length > 0">
-                    <li v-for="placesSearch in filteredPlaces" :key="`${placesSearch.type_place}-${placesSearch.id}`" class="m-search-result__item">
+                <ul class="js_m-search-result__items m-search-result__items" v-if="filteredPlaces.length > 0">
+                    <li v-for="placesSearch in filteredPlaces" :key="`${placesSearch.type_place}-${placesSearch.id}`" class="m-search-result__item" @click="closePopup">
                         <NuxtLink class="m-search-result__link" :to="`/svet/kontinent/${placesSearch.slug}`" v-if="placesSearch.type_place === 'continent'">
                             <span class="m-search-result__name">{{ placesSearch.name }}</span>
                             <span class="m-search-result__type">Kontinent</span>
@@ -87,6 +87,13 @@
                 if (this.searchQuery.length >= 3) {
                     this.filteredPlaces = this.placesContinents.concat(this.placesStates).concat(this.placesCities).concat(this.placesRegions).concat(this.placesSpots).filter(place => place.name.toLowerCase().includes(this.searchQuery.toLowerCase()))
                 }
+            },
+
+            closePopup() {
+                document.querySelector(".js_o-popup-search").classList.remove("open")
+                document.documentElement.classList.remove("no-scroll")
+                document.body.classList.remove("no-scroll")
+                this.searchQuery = ""
             }
         },
 
