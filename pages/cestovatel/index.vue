@@ -5,7 +5,8 @@
             <!-- SECTION - Hero -->
             <section class="t-section -p0 mb-1 mt-2">
                 <div class="t-section__inner">
-                    <oHero :headline="headline"  modifierCSS=" -blue" />
+                    <oHero :headline="headline" :perex="'K cestovatelům na našem cestovatelském portálu se může připojit každý. Takže pokud zatím nemáš účet, stačí se <a href=\'https://www.frytolnacestach.cz/ucet/registrace\'>registrovat</a>, a pokud již účet máš, jednoduše se <a href=\'https://www.frytolnacestach.cz/ucet/prihlaseni\'>přihlásit</a>.'" modifierCSS=" -blue -w600" v-if="account && account.length === 0" />
+                    <oHero :headline="headline" perex="Podívej se na další cestovatele, na místa, která navštívili, a jejich úspěchy." modifierCSS=" -blue -w600" v-if="account && account.length !== 0" />
                 </div>
             </section>
             <!-- SECTION - Hero END -->
@@ -46,6 +47,7 @@
 
         data() {
             return {
+                account: [],
                 headline: "Cestovatelé",
                 users: [],
                 images: [],
@@ -181,6 +183,16 @@
 
         beforeDestroy() {
             this.removeScrollListener()
+        },
+
+        watch: {
+            '$store.state.account': {
+                deep: true,
+                immediate: true,
+                handler() {
+                    this.account = this.$store.state.account
+                }
+            }
         }
     }
 </script>
