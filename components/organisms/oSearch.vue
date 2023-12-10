@@ -90,9 +90,18 @@
             },
 
             closePopup() {
+                // Popup Search
                 document.querySelector(".js_o-popup-search").classList.remove("open")
                 document.documentElement.classList.remove("no-scroll")
                 document.body.classList.remove("no-scroll")
+                // Nav Main
+                var hamburger = document.querySelector(".js_m-hamburger");
+                hamburger.setAttribute("data-hamburger", "close");
+                hamburger.classList.remove("open");
+                document.querySelector(".js_m-nav-main").classList.remove("open");
+                document.documentElement.classList.remove("no-scroll");
+                document.body.classList.remove("no-scroll");
+
                 this.searchQuery = ""
             }
         },
