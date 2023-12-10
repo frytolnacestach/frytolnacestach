@@ -1,4 +1,6 @@
 .o-search {
+    $self: &;
+
     width: 100%;
     margin-top: 0;
 
@@ -27,5 +29,12 @@
         padding-right: 5px;
         font-size: $fs-small-ssss;
         height: 16px;
+    }
+
+    // size
+    &.-full {
+        #{$self}__condition {
+            max-width: 100%;
+        }
     }
 }

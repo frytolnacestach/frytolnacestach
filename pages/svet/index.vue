@@ -1,16 +1,8 @@
 <template>
     <main class="t-main -green -vh100">
 
-        <!-- SECTION - Vyhledávač -->
-        <section class="t-section pt-8 pb-4 hidden-print">
-            <div class="t-section__inner">
-                <oSearch />
-            </div>
-        </section>
-        <!-- SECTION - Vyhledávač END -->
-
         <!-- SECTION - Typ místa -->
-        <section class="t-section py-4 print-section">
+        <section class="t-section pt-8 pb-4 print-section">
             <div class="t-section__inner">
                 <oHero headline="Kam vycestovat?" modifierCSS=" -green" />
                 <mHeadline perex="Nevíš, kam vyrazit na dovolenou nebo za dobrodružstvím? Pokud toužíš pozkoumat svět a nemáš jasnou představu, kam se vydat, můžeš si vybrat některou z kategorií míst a začít prozkoumávat." styleThema=" -world -w640" styleAlign=" -center" styleGap=" mb-2" />
@@ -33,7 +25,6 @@
 <script>
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oHero from '~/components/organisms/oHero.vue'
-    import oSearch from '@/components/organisms/oSearch.vue'
     import oTopPlace from '@/components/organisms/oTopPlace.vue'
     import oWorldType from '@/components/organisms/oWorldType.vue'
 
@@ -43,7 +34,6 @@
         components: {
             mHeadline,
             oHero,
-            oSearch,
             oTopPlace,
             oWorldType
         },

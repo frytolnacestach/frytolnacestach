@@ -1,13 +1,13 @@
 <template>
-    <main class="t-main -gray" role="main">
+    <main class="t-main -gray -vh100" role="main">
         
-        <!-- SECTION - Hero -->
-        <section class="t-section -p0">
+        <!-- SECTION - Vyhledávač -->
+        <section class="t-section pt-8 pb-4 hidden-print">
             <div class="t-section__inner">
-                <oHerobig :headline="headline" />
+                <oSearch styleThema=" -gray"/>
             </div>
         </section>
-        <!-- SECTION - Hero END -->
+        <!-- SECTION - Vyhledávač END -->
 
         <!-- SECTION - Top místa -->
         <section class="t-section -p0 mt-4 pb-4 print-section">
@@ -34,7 +34,7 @@
                     <mHeadline title="Nejnovější článek" styleAlign=" -left" />
                     <oArticleList :posts="post" :images="imagePost" styleThema=" -latest" styleThemaLoading=" -gray" />
                     <div class="flex flex-full flex-ai-end flex-center mt-2">
-                        <aButtonFillFull target="internal" url="/clanky" text="Všechny články" styleThema=" -green" />
+                        <aButtonFillFull target="internal" url="/clanky" text="Všechny články" styleThema=" -gray" />
                     </div>
                     <!-- SECTION - Article list END -->
                 </div>
@@ -43,7 +43,7 @@
                     <mHeadline title="Nejnovější video" styleAlign=" -left" />
                     <oVideoList :videos="video" :images="imageVideo" styleThema=" -latest" styleThemaLoading=" -gray" />
                     <div class="flex flex-full flex-ai-end flex-center mt-2">
-                        <aButtonFillFull target="internal" url="/videa" text="Všechna videa" styleThema=" -green" />
+                        <aButtonFillFull target="internal" url="/videa" text="Všechna videa" styleThema=" -gray" />
                     </div>
                     <!-- SECTION - Video END-->
                 </div>
@@ -66,8 +66,8 @@
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oEventList from '~/components/organisms/oEventList.vue'
-    import oHerobig from '../components/organisms/oHerobig.vue'
     import oPlatform from '../components/organisms/oPlatform.vue'
+    import oSearch from '@/components/organisms/oSearch.vue'
     import oTopPlace from '@/components/organisms/oTopPlace.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oWorldType from '@/components/organisms/oWorldType.vue'
@@ -80,8 +80,8 @@
             mHeadline,
             oArticleList,
             oEventList,
-            oHerobig,
             oPlatform,
+            oSearch,
             oTopPlace,
             oVideoList,
             oWorldType

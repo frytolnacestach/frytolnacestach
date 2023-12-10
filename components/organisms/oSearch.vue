@@ -1,11 +1,11 @@
 <template>
-    <div class="o-search" role="search">
+    <div :class="'o-search' + (styleSize ? styleSize : '')" role="search">
         <div class="o-search__input">
-            <input class="a-input-search -green" type="text" v-model="searchQuery" @input="filterPlaces" placeholder="Které místo tě zajímá?">
+            <input :class="'a-input-search' + (styleThema ? styleThema : '') + (styleSize ? styleSize : '')" type="text" v-model="searchQuery" @input="filterPlaces" placeholder="Které místo tě zajímá?">
         </div>
         <span class="o-search__condition" v-if="searchQuery.length < 3">Napiš alepoň 3 znaky</span>
         <div class="o-search__result">
-            <div class="m-search-result -green">
+            <div :class="'m-search-result' + (styleThema ? styleThema : '') + (styleSize ? styleSize : '')">
                 <ul class="m-search-result__items" v-if="filteredPlaces.length > 0">
                     <li v-for="placesSearch in filteredPlaces" :key="`${placesSearch.type_place}-${placesSearch.id}`" class="m-search-result__item">
                         <NuxtLink class="m-search-result__link" :to="`/svet/kontinent/${placesSearch.slug}`" v-if="placesSearch.type_place === 'continent'">
@@ -43,6 +43,17 @@
 <script>
     export default {
         name: 'OrganismsSearchComponent',
+
+        props: {
+            styleThema: {
+                type: String,
+                required: true
+            },
+            styleSize: {
+                type: String,
+                required: false
+            }
+        },
 
         methods: {
             async searchPlaces() {
