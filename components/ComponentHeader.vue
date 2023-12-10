@@ -12,13 +12,13 @@
                     <mNavMain />
                     <!-- NAV - Main END -->
 
-                    <!-- NAV - Main profile -->
-                    <mNavMainProfile />
-                    <!-- NAV - Main profile END -->
-
                     <!-- NAV - Icon search -->
                     <mIconSearch />
                     <!-- NAV - Icon search END -->
+
+                    <!-- NAV - Main profile -->
+                    <mNavMainProfile />
+                    <!-- NAV - Main profile END -->
 
                     <!-- NAV - Hamburger -->
                     <mHamburger />

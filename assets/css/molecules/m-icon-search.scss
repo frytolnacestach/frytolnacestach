@@ -1,11 +1,12 @@
 .m-icon-search {
     $self: &;
 
-    position: fixed;
+    position: relative;
     width: 40px;
     height: 40px;
     right: 50px;
     top: 5px;
+    margin: 0 10px;
 
     @media only screen and (min-width: $ti) {
         right: 60px;
@@ -18,11 +19,21 @@
         top: inherit
     }
 
+    &:after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 32px;
+        left: -5px;
+        top: 4px;
+        background-color: $c-green-bg-component-dark-super;
+    }
+
     &__icon {
         display: inline-block;
         width: 40px;
         height: 40px;
-        padding: 5px;
+        padding: 8px;
         position: relative;
         cursor: pointer;
     }
@@ -30,14 +41,14 @@
     &__icon-file {
         position: absolute;
         display: block;
-        top: 5px;
-        right: 5px;
-        bottom: 5px;
-        left: 5px;
+        top: 8px;
+        right: 8px;
+        bottom: 8px;
+        left: 8px;
 
         &::after {
             @include transition(color, .3s);
-            font-size: $fs-icon-30;
+            font-size: $fs-icon-24;
             font-family: $ff-icomoon-default;
             color: $c-green-icon-dark;
             line-height: 1;
