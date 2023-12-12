@@ -5,7 +5,7 @@
             <!-- SECTION - Hero event -->
             <section class="t-section py-4">
                 <div class="t-section__inner">
-                    <oHero headline="Události" perex="Události které se ve světě konají." modifierCSS=" -green -w600" />
+                    <oHero headline="Události" perex="Na našem cestovatelském portálu vám přinášíme nejnovější zprávy o zajímavých událostech z České republiky i ze světa. Buďte v obraze o kulturních festivalech, sportovních událostech, uměleckých vystoupeních a dalších akcích, které oživí vaše cestovatelské dobrodružství." modifierCSS=" -green -w600" />
                 </div>
             </section>
             <!-- SECTION - Hero event END -->

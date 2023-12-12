@@ -5,7 +5,7 @@
             <!-- SECTION - Hero elektrické zásuvky -->
             <section class="t-section py-4">
                 <div class="t-section__inner">
-                    <oHero headline="Elektrické zásuvky" perex="Plánujete cestu mimo střední evropu a nevíte jakou redukci na svá elektronická zařízení si pořídit? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w600" />
+                    <oHero headline="Elektrické zásuvky" perex="Plánujete cestu mimo střední Evropu a nevíte, jakou redukci pro svá elektronická zařízení si pořídit? Typy zásuvek a používané normy se dozvíte na cestovatelském portálu Frytol na cestách." modifierCSS=" -green -w600" />
                 </div>
             </section>
             <!-- SECTION - Hero elektrické zásuvky END -->
