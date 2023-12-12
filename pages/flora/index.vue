@@ -5,7 +5,7 @@
             <!-- SECTION - Hero flora -->
             <section class="t-section py-4">
                 <div class="t-section__inner">
-                    <oHero headline="Flóra" perex="Jaké flóra kde roste? A na jakou si dát pozor? To zjistíte na této stránce cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w600" />
+                    <oHero headline="Flóra" perex="Otevři okno do barevného světa flory a objev, jaké rostliny ozdobují naši planetu. S cestovatelským portále Frytol na cestách získáš zajímavé informace a tipy, jak si vychutnat krásy rostlinného života. Připoj se k nám na nezapomenutelnou cestu do světa rozmanité flóry!" modifierCSS=" -green -w600" />
                 </div>
             </section>
             <!-- SECTION - Hero flora END -->
