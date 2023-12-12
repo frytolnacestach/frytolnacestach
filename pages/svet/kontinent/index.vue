@@ -4,7 +4,7 @@
         <!-- SECTION - Hero place type -->
         <section class="t-section py-4">
             <div class="t-section__inner">
-                <oHeroPlaceType styleType=" -continent" title="Kontinenty" perex="Na naší planetě najdete 7 kontinentů. Co takhle je prozkoumat všechny, včetně odlehlých míst jako je Antarktida?" />
+                <oHeroPlaceType styleType=" -continent" title="Kontinenty" perex="Zveme tě na neuvěřitelnou cestu kolem světa, abys prozkoumal všech 7 kontinentů naší planety. Objevuj fascinující kultury, přírodní divy a tajemná místa včetně odlehlé Antarktidy. Připrav se na dobrodružství, které tě zavede do různých koutů světa a otevře ti dveře k nezapomenutelným zážitkům." />
             </div>
         </section>
         <!-- SECTION - Hero place type END -->

@@ -4,7 +4,7 @@
         <!-- SECTION - Hero place type -->
         <section class="t-section py-4">
             <div class="t-section__inner">
-                <oHeroPlaceType styleType=" -spot" :title="headlineFilter" perex="Informace o místech" />
+                <oHeroPlaceType styleType=" -spot" :title="headlineFilter" perex="Vstup do jedinečného světa objevování míst na celém světě. Prozkoumej parky, památky, muzea a architektonické skvosty, které tě vtáhnou do jejich fascinujících příběhů. Každé místo je jako kapitola v otevřené knize dobrodružství, nabízející ti nezapomenutelné zážitky." />
             </div>
         </section>
         <!-- SECTION - Hero place type END -->

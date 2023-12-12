@@ -4,7 +4,7 @@
         <!-- SECTION - Hero place type -->
         <section class="t-section py-4">
             <div class="t-section__inner">
-                <oHeroPlaceType styleType=" -state" :title="headlineFilter" perex="Najdete zde nejen 190 oficiálních států, ale také mnoho ostrovních a městských států, celkem 250 území, která stojí za návštěvu a objevování." />
+                <oHeroPlaceType styleType=" -state" :title="headlineFilter" perex="Zveme tě na neuvěřitelnou cestu k prozkoumání nejen 190 oficiálních států, ale také k objevování poutavých ostrovních a městských území. Celkem 250 unikátních území představuje nekonečné možnosti pro nezapomenutelné zážitky. Připravte se na cestu, která vás zavede do srdce různorodých kultur a malebných koutů, a otevře brány k poznání fascinujících států a území po celém světě." />
             </div>
         </section>
         <!-- SECTION - Hero place type END -->
