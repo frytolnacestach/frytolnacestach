@@ -2,9 +2,9 @@
     <main class="t-main -gray -pt-menu" role="main">
 
         <!-- SECTION - Hero -->
-        <section class="t-section -p0 mb-1 mt-2">
+        <section class="t-section -p0 mt-2 mb-4">
             <div class="t-section__inner">
-                <oHero :headline="headline" modifierCSS=" -gray" />
+                <oHero :headline="headline" perex="Kam se vydat v digitálním vesmíru? Zde naleznete mé odkazy na sociální sítě, kde se dělím o své dobrodružství, myšlenky a zážitky. Připojte se ke mně na této cestě virtuálním světem!" modifierCSS=" -gray -w600" />
             </div>
         </section>
         <!-- SECTION - Hero END -->
