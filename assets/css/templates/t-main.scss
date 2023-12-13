@@ -21,7 +21,11 @@
     }
 
     &.-pt-menu {
-        padding-top: 60px;
+        padding-top: 50px;
+        
+        @media only screen and (min-width: $ti) {
+            padding-top: 60px;
+        }
     }
 
 
