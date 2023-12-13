@@ -30,10 +30,15 @@
 
 
     //size
-    &.-w600 {
+    &.-w640 {
         #{$self}__inner {
             margin: 0 auto;
-            max-width: 600px;
+            max-width: 640px;
+            padding: 0 10px;
+
+            @media only screen and (min-width: $ti) {
+                padding: 0 15px;
+            }
         }
     }
 

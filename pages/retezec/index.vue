@@ -5,7 +5,7 @@
             <!-- SECTION - Hero řetězce -->
             <section class="t-section py-4">
                 <div class="t-section__inner">
-                    <oHero headline="Řetězce" perex="Vstupte do světa obchodních a gastronomických řetězců společně s námi prozkoumejte ty nejvýznamnější a největší, a zjistěte, kde na světě můžete ochutnat i nakupovat jejich unikátní nabídku. Vše, co potřebujete vědět o světě obchodů a gastronomie, najdete na stránkách cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w600" />
+                    <oHero headline="Řetězce" perex="Vstupte do světa obchodních a gastronomických řetězců společně s námi prozkoumejte ty nejvýznamnější a největší, a zjistěte, kde na světě můžete ochutnat i nakupovat jejich unikátní nabídku. Vše, co potřebujete vědět o světě obchodů a gastronomie, najdete na stránkách cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w640" />
                 </div>
             </section>
             <!-- SECTION - Hero řetězce END -->

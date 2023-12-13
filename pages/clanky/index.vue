@@ -4,7 +4,7 @@
         <!-- SECTION - Hero -->
 		<section class="t-section -p0 mt-2 mb-4">
             <div class="t-section__inner">
-                <oHero :headline="headlineFilter" perex="Vítej na našem cestovatelském portálu! Prozkoumej naše články plné tipů a rad o cestování, které ti pomohou objevit nejzajímavější místa na světě. Ponoř se do dobrodružství s našimi autentickými příběhy a praktickými doporučeními, abys mohl/a plánovat své vlastní nezapomenutelné dobrodružství. Užij si každý moment na cestách a objevuj krásy světa s námi!" modifierCSS=" -gray -w600" />
+                <oHero :headline="headlineFilter" perex="Vítej na našem cestovatelském portálu! Prozkoumej naše články plné tipů a rad o cestování, které ti pomohou objevit nejzajímavější místa na světě. Ponoř se do dobrodružství s našimi autentickými příběhy a praktickými doporučeními, abys mohl/a plánovat své vlastní nezapomenutelné dobrodružství. Užij si každý moment na cestách a objevuj krásy světa s námi!" modifierCSS=" -gray -w640" />
             </div>
         </section>
         <!-- SECTION - Hero END -->

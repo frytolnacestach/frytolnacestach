@@ -5,7 +5,7 @@
             <!-- SECTION - Hero fauna -->
             <section class="t-section py-4">
                 <div class="t-section__inner">
-                    <oHero headline="Fauna" perex="Ponoř se do světa fauny a objev, kdo s námi sdílí tento planetární domov. S cestovatelským portále Frytol na cestách získáš poutavé informace a tipy, na co si dávat pozor. Vydej se s námi na nezapomenutelnou cestu do světa divokého života!" modifierCSS=" -green -w600" />
+                    <oHero headline="Fauna" perex="Ponoř se do světa fauny a objev, kdo s námi sdílí tento planetární domov. S cestovatelským portále Frytol na cestách získáš poutavé informace a tipy, na co si dávat pozor. Vydej se s námi na nezapomenutelnou cestu do světa divokého života!" modifierCSS=" -green -w640" />
                 </div>
             </section>
             <!-- SECTION - Hero fauna END -->

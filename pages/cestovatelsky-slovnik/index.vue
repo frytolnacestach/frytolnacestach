@@ -5,7 +5,7 @@
             <!-- SECTION - Hero cestovatelsky slovnik -->
             <section class="t-section py-4">
                 <div class="t-section__inner">
-                    <oHero headline="Cestovatelský slovník" perex="Procházej cestovatelský slovník a rozšiřuj svůj cestovatelský slovníček o unikátní výrazy spojené s cestováním. Nabízíme ti pohled do jazyka cestování, abys lépe porozuměl(a) specifickým termínům a zkratkám." modifierCSS=" -green -w600" />
+                    <oHero headline="Cestovatelský slovník" perex="Procházej cestovatelský slovník a rozšiřuj svůj cestovatelský slovníček o unikátní výrazy spojené s cestováním. Nabízíme ti pohled do jazyka cestování, abys lépe porozuměl(a) specifickým termínům a zkratkám." modifierCSS=" -green -w640" />
                 </div>
             </section>
             <!-- SECTION - Hero cestovatelsky slovnik END -->
