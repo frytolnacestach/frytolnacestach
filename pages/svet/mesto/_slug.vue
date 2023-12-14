@@ -111,9 +111,9 @@
                                         <oWidgetBooking
                                             :landmarkName="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
                                             :address="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
-                                            :latitude="`${ coordinate.latitude }`"
-                                            :longitude="`${ coordinate.longitude }`"
-                                            zoom=13
+                                            :latitude="parseFloat(coordinate.latitude)"
+                                            :longitude="parseFloat(coordinate.longitude)"
+                                            :zoom="13"
                                         />
                                     </div>
                                 </div>
@@ -122,9 +122,9 @@
                                         <oWidgetBooking
                                             :landmarkName="`${ placeState[0].name ? placeState[0].name : '' }`"
                                             :address="`${ placeState[0].name ? placeState[0].name : '' }`"
-                                            :latitude="`${ coordinate.latitude }`"
-                                            :longitude="`${ coordinate.longitude }`"
-                                            zoom=13
+                                            :latitude="parseFloat(coordinate.latitude)"
+                                            :longitude="parseFloat(coordinate.longitude)"
+                                            :zoom="13"
                                         />
                                     </div>
                                 </div>
@@ -157,11 +157,11 @@
                         <!-- SECTION - Account banner - sidebar END -->
 
                         <!-- SECTION - Parking - sidebar -->
-                        <oSidebarParking :items="this.place[0].parking" />
+                        <oSidebarParking :items="this.place[0].parking" v-if="this.place[0].parking && this.place[0].parking.length !== 0" />
                         <!-- SECTION - Parking - sidebar - END -->
 
                         <!-- SECTION - Events - sidebar -->
-                        <oSidebarList :place="this.place[0].id" type="city" />
+                        <oSidebarList :place="place[0].id" type="city" />
                         <!-- SECTION - Events - sidebar - END -->
                     </div>
                     <div class="t-grid__section -aside-ad">

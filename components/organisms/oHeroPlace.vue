@@ -2,7 +2,7 @@
     <div class="o-hero-place">
         <div class="o-hero-place__container">
             <div class="o-hero-place__image loading-image -green">
-                <div v-if="images && images.find(image => image.id === idImageHero)" class="o-hero-place__image-lazyload">
+                <div v-if="images && idImageHero && images.find(image => image.id === idImageHero)" class="o-hero-place__image-lazyload">
                     <img class="o-hero-place__image-file lazyload-file"
                         data-sizes="(max-width: 349px) 330px, (max-width: 374px) 354px, (max-width: 399px) 360px, (max-width: 459px) 420px, (max-width: 575px) 536px, (max-width: 767px) 728px, (max-width: 991px) 952px, (max-width: 1219px) 780px, (max-width: 1399px) 900px, 1248px"
                         :data-srcset="`
@@ -89,7 +89,7 @@
             },
             idImageHero: {
                 type: Number,
-                required: true
+                required: false
             },
             images: {
                 type: Array,
