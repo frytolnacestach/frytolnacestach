@@ -10,10 +10,22 @@
                                 <h4 class="o-sidebar-links__name">
                                     {{ item.name }}
                                 </h4>
-                                <p>{{ item.description }}</p>
-                                <span><strong>Časy:</strong><br>{{ item.pay_time }}</span><br>
-                                <span><strong>Cena:</strong><br>{{ item.price }}</span><br>
-                                <a :href="item.url" :alt="item.name">Odkaz</a>
+                                <p class="o-sidebar-links__description" v-html="item.description"></p>
+                                <span class="o-sidebar-links__content">
+                                    <span class="o-sidebar-links__content-time">
+                                        <strong>Časy:</strong>
+                                        <br>
+                                        <span v-html="item.pay_time"></span>
+                                    </span>
+                                    <span class="o-sidebar-links__content-price">
+                                        <strong>Cena:</strong>
+                                        <br>
+                                        <span v-html="item.price"></span>
+                                    </span>
+                                </span>
+                                <div class="o-sidebar-links__link">
+                                    <a class="o-sidebar-links__link-item" :href="item.url" :alt="item.name">Odkaz</a>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,3 +1,54 @@
 .o-sidebar-links {
-    
+    display: block;
+    width: 100%;
+
+    &__outer {
+        display: block;
+    }
+
+    &__inner {
+        display: block;
+    }
+
+    &__header {
+        color: $c-green-t-dark-super;
+        border-bottom: 2px solid $c-green-bg-component-dark-super;
+        margin-bottom: 3px;
+    }
+
+    &__items {
+        display: block;
+    }
+
+    &__item {
+        padding: 5px;
+    }
+
+    &__name {
+        display: block;
+    }
+
+    &__description {
+        display: block;
+    }
+
+    &__content {
+        display: block;
+    }
+
+    &__content-time {
+        display: block;
+    }
+
+    &__content-price {
+        display: block;
+    }
+
+    &__link {
+        display: block;
+    }
+
+    &__link-item {
+        display: inline-block;
+    }
 }

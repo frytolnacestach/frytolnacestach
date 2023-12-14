@@ -10,8 +10,10 @@
                                 <h4 class="o-sidebar-links__name">
                                     {{ item.name }}
                                 </h4>
-                                <p>{{ item.description }}</p>
-                                <a :href="item.url" :alt="item.name">Odkaz</a>
+                                <p class="o-sidebar-links__description" v-html="item.description"></p>
+                                <div class="o-sidebar-links__link">
+                                    <a class="o-sidebar-links__link-item" :href="item.url" :alt="item.name">Odkaz</a>
+                                </div>
                             </div>
                         </div>
                     </div>
