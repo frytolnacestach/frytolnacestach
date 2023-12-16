@@ -23,7 +23,7 @@
                 <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
                 <oPlatform />
                 <div class="flex flex-center mb-4">
-                    <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -green" />
+                    <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
                 </div>
             </div>
         </section>
