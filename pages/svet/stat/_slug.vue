@@ -92,6 +92,15 @@
                                 </section>
                                 <!-- SECTION - Place teaser END -->
 
+                                <!-- SECTION - Facts place -->
+                                <section class="t-section my-4 py-1 -p0 print-section" v-if="place[0].facts_place && place[0].facts_place.length > 0">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Fakta o státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
+                                        <oFactsPlace :items="place[0].facts_place" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Facts place END -->
+
                                 <!-- SECTION - Neighboring Place list -->
                                 <section class="t-section my-4 py-1 -p0 print-section" v-if="placesStatesNeighboring">
                                     <div class="t-section__inner">
@@ -669,6 +678,7 @@
     import oCoverItemState from '~/components/organisms/oCoverItemState.vue'
     import oCoverNeighboring from '~/components/organisms/oCoverNeighboring.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
+    import oFactsPlace from '~/components/organisms/oFactsPlace.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
@@ -706,6 +716,7 @@
             oCoverItemState,
             oCoverNeighboring,
             oCoverPlaceDetail,
+            oFactsPlace,
             oHeroPlace,
             oHotInfoHero,
             oInformationBlock,
