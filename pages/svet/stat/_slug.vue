@@ -334,7 +334,7 @@
                                 <!-- SECTION - Ceny ubytování -->
                                 <section class="t-section mt-4" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
                                     <div class="t-section__inner">
-                                        <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Jestli vás zajímá cena ubytování ve státě ' + (place[0].name ? place[0].name : '') + '. Kouknete se do záložky ubytování, kde najdete aktuální cenu ubytování na platformě Booking.'" />
+                                        <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Jestli vás zajímá cena ubytování ve státě ' + (place[0].name ? place[0].name : '') + '. Kouknete se do záložky <a href=\'https://www.frytolnacestach.cz/svet/stat/' + place[0].slug + '/ubytovani\'>ubytování</a>, kde najdete aktuální cenu ubytování na platformě Booking.'" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Ceny END -->
