@@ -13,6 +13,11 @@
         display: block;
     }
 
+    &__list-no-item {
+        padding: 0 10px;
+        color: $c-green-t-dark-super;
+    }
+
     &__list-ul {
        display: flex;
        flex-wrap: wrap;

@@ -1,10 +1,10 @@
 <template>
-    <div :class="'o-block-list'">
+    <div class="o-block-list">
         <div class="o-block-list__outer">
             <div class="o-block-list__inner">
                 <div class="o-block-list__list">
-                    <ul class="o-block-list__list-ul">
-                        <li class="o-block-list__list-li print-section" v-for="item in items" v-bind:key="item.name">
+                    <ul class="o-block-list__list-ul" v-if="items.some(item => item.value)">
+                        <li class="o-block-list__list-li print-section" v-for="item in items" v-bind:key="item.name" v-if="item.value">
                             <div class="o-block-list__list-content">
                                 <div class="o-block-list__list-text">
                                     <h3 class="o-block-list__list-h3">{{ item.name }}</h3> 
@@ -14,6 +14,7 @@
                             </div>
                         </li>
                     </ul>
+                    <span class="o-block-list__list-no-item" v-else>Bohužel tu nemáme žádné orientační ceny.</span>
                 </div>
             </div>
         </div>
