@@ -14,7 +14,7 @@
                             </div>
                         </li>
                     </ul>
-                    <span class="o-block-list__list-no-item" v-else>Bohužel tu nemáme žádné orientační ceny.</span>
+                    <oNoneContent text="Bohužel tu není žadný obsah" styleThema=" -green" styleGap=" px-1" v-else />
                 </div>
             </div>
         </div>
@@ -22,8 +22,14 @@
 </template>
 
 <script>
+    import oNoneContent from '~/components/organisms/oNoneContent.vue'
+
     export default {
         name: 'OrganismsoBlockListComponent',
+
+        components: {
+            oNoneContent
+        },
 
         props: {
             items: {
