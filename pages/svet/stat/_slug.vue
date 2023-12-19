@@ -69,7 +69,7 @@
                             <div class="t-grid__section -main">
 
                                 <!-- SECTION - information by ChatGPT -->
-                                <section class="t-section" v-if="place[0].information_chatgpt && !place[0].information_author?.length > 0">
+                                <section class="t-section mt-2" v-if="place[0].information_chatgpt && !place[0].information_author?.length > 0">
                                     <div class="t-section__inner">
                                         <oInformationBlock :title="'O státu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                                     </div>
@@ -273,9 +273,9 @@
                         <div class="t-grid -place-main-with-aside">
                             <div class="t-grid__section -main">
                                 <!-- SECTION - Place teaser spots -->
-                                <oPlaceTeaserSpots :headline="'Jaké místa vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" styleGap=" mt-2 mb-4" />
-                                <oPlaceTeaserRegions :headline="'Jaké regiony vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" styleGap=" mt-2 mb-4" />
-                                <oPlaceTeaserCities :headline="'Jaké města vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" styleGap=" mt-2 mb-4" />
+                                <oPlaceTeaserSpots :headline="'Jaké místa vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" styleGap=" mt-2 mb-4 pt-1" />
+                                <oPlaceTeaserRegions :headline="'Jaké regiony vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" styleGap=" mt-2 mb-4 pt-1" />
+                                <oPlaceTeaserCities :headline="'Jaké města vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" styleGap=" mt-2 mb-4 pt-1" />
                                 <!-- SECTION - Place teaser spots END -->
                             </div>
 
@@ -323,7 +323,7 @@
                             <div class="t-grid__section -main">
 
                                 <!-- SECTION - Ceny -->
-                                <section class="t-section" v-if="place[0].money_prices">
+                                <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].money_prices">
                                     <div class="t-section__inner">
                                         <mHeadline title="Ceny v zemi" perex="Ceny se můžou lišit v rámci sézony, místa a nebo míry a rychlosti inflace. Proto je berte jen jako orientační." styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oBlockList :items="place[0].money_prices" :perexListItemValueSubfix="place[0].currency_code" />
@@ -332,7 +332,7 @@
                                 <!-- SECTION - Ceny END -->
 
                                 <!-- SECTION - Ceny ubytování -->
-                                <section class="t-section mt-4" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
+                                <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
                                     <div class="t-section__inner">
                                         <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Jestli vás zajímá cena ubytování ve státě ' + (place[0].name ? place[0].name : '') + '. Kouknete se do záložky <a href=\'https://www.frytolnacestach.cz/svet/stat/' + place[0].slug + '/ubytovani\'>ubytování</a>, kde najdete aktuální cenu ubytování na platformě Booking.'" />
                                     </div>
@@ -455,7 +455,7 @@
                             <div class="t-grid__section -main">
 
                                 <!-- SECTION - Podmínky vstupu -->
-                                <section class="t-section" v-if="place[0].visitors_entry">
+                                <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].visitors_entry">
                                     <div class="t-section__inner">
                                         <mHeadline title="Podmínky cesty do země" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oBlockList :items="place[0].visitors_entry" />
@@ -505,7 +505,7 @@
                             <div class="t-grid__section -main">
 
                                 <!-- SECTION - Telefoní čísla(emergency) -->
-                                <section class="t-section" v-if="place[0].phone_numbers_emergency">
+                                <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].phone_numbers_emergency">
                                     <div class="t-section__inner">
                                         <mHeadline title="Důležitá telefonní čísla" :perex="'Telefonní předvolba: ' + place[0].phone_prefix" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oBlockList :items="place[0].phone_numbers_emergency" />
@@ -514,7 +514,7 @@
                                 <!-- SECTION - Telefoní čísla(emergency) END -->
 
                                 <!-- SECTION - Organizace -->
-                                <section class="t-section mt-4" v-if="place[0].organization && place[0].organization.length > 0">
+                                <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].organization && place[0].organization.length > 0">
                                     <div class="t-section__inner">
                                         <mHeadline title="Organizace ve kterých se stát nachází" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oOrganizationList :items="this.place[0].organization" />
@@ -579,7 +579,7 @@
                             <div class="t-grid__section -main">
 
                                 <!-- SECTION - Ubytování - information -->
-                                <section class="t-section">
+                                <section class="t-section pt-1 mt-2">
                                     <div class="t-section__inner">
                                         <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Cena za konkrétní ubytování ve státě ' + (place[0].name ? place[0].name : '') + ' se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek.'" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true" />
                                         <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Bohužel o ceně ubytování ve státě ' + (place[0].name ? place[0].name : '') + ' vám zatím moc neporadíme.'" v-else />
