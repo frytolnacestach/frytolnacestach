@@ -745,12 +745,12 @@ export default {
   robots: {
     UserAgent: '*',
     Disallow: '',
-    Sitemap: 'https://frytolnacestach.cz/sitemap-main.xml',
+    Sitemap: 'https://www.frytolnacestach.cz/sitemap-main.xml',
     TxtSitemap: 'static/robots.txt',
   },
 
   env: {
-    baseUrl: process.env.BASE_URL || 'https://frytolnacestach.cz'
+    baseUrl: process.env.BASE_URL || 'https://www.frytolnacestach.cz'
   },
 
   copy: [
