@@ -37,12 +37,21 @@
                     
                     <div class="t-grid__section -content">
                         <!-- SECTION - information by ChatGPT -->
-                        <section class="t-section" v-if="wallSockets[0].description">
+                        <section class="t-section pt-1 mt-2 mb-4" v-if="wallSockets[0].description">
                             <div class="t-section__inner">
                                 <oInformationBlock :title="(wallSockets[0].name ? wallSockets[0].name : '')" :perexWysiwyg="wallSockets[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                             </div>
                         </section>
                         <!-- SECTION - information by ChatGPT END -->
+
+                        <!-- SECTION - Affilate Alza -->
+                        <section class="t-section pt-1 mt-2 mb-4">
+                            <div class="t-section__inner">
+                                <mHeadline title="Tady můžete koupit redukci pro elektrickou zásuvku" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                <oAffilateAlza />
+                            </div>
+                        </section>
+                        <!-- SECTION - Affilate Alza -->
                     </div>
 
 
@@ -64,8 +73,10 @@
 </template>
 
 <script>
+    import mHeadline from '~/components/molecules/mHeadline.vue'
     import mNavBreadcrumbsItem from '~/components/molecules/mNavBreadcrumbsItem.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
+    import oAffilateAlza from '~/components/organisms/oAffilateAlza.vue'
     import oItemStates from '~/components/organisms/oItemStates.vue'
     import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
@@ -74,8 +85,10 @@
         name: 'ElektrickeZasuvkySlugPage',
 
         components: {
+            mHeadline,
             mNavBreadcrumbsItem,
             oAdGoogleSidebar,
+            oAffilateAlza,
             oItemStates,
             oHeroItemDetail,
             oInformationBlock
