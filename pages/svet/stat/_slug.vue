@@ -457,7 +457,7 @@
                                 <!-- SECTION - Podmínky vstupu -->
                                 <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].visitors_entry">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Podmínky cesty do země" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <mHeadline title="Podmínky cesty do země" perex="Pro bezproblémové cestování doporučujeme, i v zemích, kde je občanský průkaz běžně akceptován jako platný cestovní doklad, vzít s sebou cestovní pas. Pokud je uvedeno, že občanský průkaz postačuje, upozorňujeme, že tato pravidla nemusí platit pro děti. V každém případě je vhodné před odjezdem prověřit aktuální informace na webových stránkách ministerstva zahraničí České republiky nebo ideálně na oficiálních stránkách konkrétní destinace. Dále doporučujeme být ostražití v případě cest do zámořských oblastí některých států, kde mohou platit odlišná pravidla." styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oBlockList :items="place[0].visitors_entry" />
                                     </div>
                                 </section>
