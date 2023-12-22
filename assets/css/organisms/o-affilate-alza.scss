@@ -1,0 +1,15 @@
+.o-affilate-alza {
+    display: block;
+
+    &__outer {
+        display: block;
+    }
+
+    &__inner {
+        padding: 0 5px;
+
+        @media only screen and (min-width: $ti) {
+            padding: 0 10px;
+        }
+    }
+}
