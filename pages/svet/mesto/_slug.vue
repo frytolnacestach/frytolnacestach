@@ -108,7 +108,7 @@
                             <div class="t-section__inner">
                                 <div v-if="place[0].coordinates">
                                     <div v-for="coordinate in place[0].coordinates">
-                                        <oWidgetBooking
+                                        <oAffilateBooking
                                             :landmarkName="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
                                             :address="`${ place[0].name ? place[0].name : '' }, ${ placeState[0].name ? placeState[0].name : '' }`"
                                             :latitude="parseFloat(coordinate.latitude)"
@@ -119,7 +119,7 @@
                                 </div>
                                 <div v-else>
                                     <div v-for="coordinate in placeState[0].coordinates">
-                                        <oWidgetBooking
+                                        <oAffilateBooking
                                             :landmarkName="`${ placeState[0].name ? placeState[0].name : '' }`"
                                             :address="`${ placeState[0].name ? placeState[0].name : '' }`"
                                             :latitude="parseFloat(coordinate.latitude)"
@@ -232,6 +232,7 @@
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oAccountBanner from '~/components/organisms/oAccountBanner.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
+    import oAffilateBooking from '~/components/organisms/oAffilateBooking.vue'
     import oAlerts from '~/components/organisms/oAlerts.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
@@ -247,7 +248,6 @@
     import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
-    import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
 
     export default {
         name: 'SvetMestoSlugPage',
@@ -257,6 +257,7 @@
             mHeadline,
             oAccountBanner,
             oAdGoogleSidebar,
+            oAffilateBooking,
             oAlerts,
             oArticleList,
             oCoverPlaceDetail,
@@ -271,8 +272,7 @@
             oSidebarParking,
             oSwitchHero,
             oVideoList,
-            oVisitedButton,
-            oWidgetBooking
+            oVisitedButton
         },
 
         data() {

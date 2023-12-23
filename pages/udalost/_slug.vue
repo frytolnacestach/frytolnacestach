@@ -73,7 +73,7 @@
                         <section class="t-section -px-world py-2 hidden-print" v-if="event[0] && placeCity[0] && event[0].affiliate.find(x => x.name === 'booking').value === true">
                             <div class="t-section__inner">
                                 <div v-for="coordinate in event[0].coordinates">
-                                    <oWidgetBooking 
+                                    <oAffilateBooking 
                                         :landmarkName="`${ placeCity[0].name ? placeCity[0].name : '' }`"
                                         :address="`${ placeCity[0].name ? placeCity[0].name : '' }`"
                                         :latitude=parseFloat(coordinate.latitude)
@@ -126,6 +126,7 @@
     import mNavBreadcrumbsItem from '~/components/molecules/mNavBreadcrumbsItem.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
+    import oAffilateBooking from '~/components/organisms/oAffilateBooking.vue'
     import oDateOfEvent from '~/components/organisms/oDateOfEvent.vue'
     import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
@@ -133,7 +134,6 @@
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oPrices from '~/components/organisms/oPrices.vue'
     import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
-    import oWidgetBooking from '~/components/organisms/oWidgetBooking.vue'
 
     export default {
         name: 'SvetMistoSlugPage',
@@ -142,14 +142,14 @@
             mNavBreadcrumbsItem,
             mHeadline,
             oAdGoogleSidebar,
+            oAffilateBooking,
             oDateOfEvent,
             oHeroItemDetail,
             oInformationBlock,
             oLinks,
             oMapGoogle,
             oPrices,
-            oSwitchHero,
-            oWidgetBooking
+            oSwitchHero
         },
 
         data() {
