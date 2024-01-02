@@ -6,7 +6,7 @@
                 <div class="o-place-teaser-regions__outer">
                     <div class="o-place-teaser-regions__inner">
                         <div class="o-place-teaser-regions__items">
-                            <div class="o-place-teaser-regions__item" v-for="region in regions" :key="region.id">
+                            <div class="o-place-teaser-regions__item" v-for="region in regions" :key="region.id" v-if="region.id !== IDplaceShow && type !== typeShow">
                                 <div class="o-place-teaser-regions__content">
                                     <div class="o-place-teaser-regions__image loading-image -green">
                                         <div v-if="images && images.find(image => image.id === region.id_image_hero)" class="o-place-teaser-regions__image-lazyload">
@@ -99,6 +99,10 @@
                 type: Number,
                 required: true
             },
+            IDplaceShow: {
+                type: Number,
+                required: false
+            },
             headline: {
                 type: String,
                 required: true
@@ -106,6 +110,10 @@
             type: {
                 type: String,
                 required: true
+            },
+            typeShow: {
+                type: String,
+                required: false
             },
             styleGap: {
                 type: String,
