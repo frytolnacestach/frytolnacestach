@@ -64,6 +64,10 @@
                         <!-- SECTION - Review -->
                         <oReviewItem :account="account" :IDplace="place[0].id" type="region" v-if="place[0].id" />
                         <!-- SECTION - Review END -->
+
+                        <!-- SECTION - Place teaser -->
+                        <oPlaceTeaserRegions :headline="'Jaké další regiony vidět ve státě ' + placeState[0].name" :IDplace="placeState[0].id" v-if="placeState[0]" type="state" styleGap=" mt-2 mb-4 pt-1" />
+                        <!-- SECTION - Place teaser END -->
                     </div>
 
 
@@ -152,6 +156,7 @@
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
+    import oPlaceTeaserRegions from '~/components/organisms/oPlaceTeaserRegions.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
     import oSidebarList from '~/components/organisms/oSidebarList.vue'
@@ -170,6 +175,7 @@
             oArticleList,
             oHeroPlace,
             oInformationBlock,
+            oPlaceTeaserRegions,
             oMapGoogle,
             oReviewItem,
             oSidebarList,
