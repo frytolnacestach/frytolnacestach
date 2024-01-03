@@ -24,7 +24,7 @@
                     <i class="o-information-block__info" v-if="perexInfo">{{ perexInfo }}</i>
 
                     <div class="o-information-block__author" v-if="authorName">
-                        <i class="m-author">zdroj. <a class="m-author__link" :href="authorLink" :target="authorTarget" v-if="authorLink">{{ authorName }}</a><span class="m-author__span" v-else>{{ authorName }}</span></i>
+                        <i class="m-author"><a class="m-author__link" :href="authorLink" :target="authorTarget" v-if="authorLink">{{ authorName }}</a><span class="m-author__span" v-else>{{ authorName }}</span></i>
                     </div>
 
                 </div>
