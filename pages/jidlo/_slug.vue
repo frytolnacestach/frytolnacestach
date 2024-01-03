@@ -9,33 +9,20 @@
         </section>
         <!-- SECTION - BREADCRUMBS END -->
 
-        <!-- SECTION - hero + hot info hero -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -food-hero">
-
-                    <!-- SECTION - hero -->
-                    <div class="t-grid__section -hero-food">
-                        <oHeroItemDetail :item="food" :images="imageFood" />
-                    </div>
-                    <!-- SECTION - hero END -->
-
-                    <!-- SECTION - food places -->
-                    <div class="t-grid__section -states">
-                        <oItemStates :items="placesStates" :itemName="food[0].name" text="Kde se jí" />
-                    </div>
-                    <!-- SECTION - food places - END -->
-                </div>
-            </div>
-        </section>
-        <!-- SECTION - hero + hot info - END -->
-
         <!-- SECTION -->
         <section class="t-section -px-world -p0">
             <div class="t-section__inner">
                 <div class="t-grid -world-content-with-ad">
                     
                     <div class="t-grid__section -content">
+                        <!-- SECTION - hero -->
+                        <section class="t-section print-section">
+                            <div class="t-section__inner">
+                                <oHeroItemDetail :item="food" :images="imageFood" />
+                            </div>
+                        </section>
+                        <!-- SECTION - hero END -->
+
                         <!-- SECTION - information by ChatGPT -->
                         <section class="t-section" v-if="food[0].description">
                             <div class="t-section__inner">
@@ -43,6 +30,13 @@
                             </div>
                         </section>
                         <!-- SECTION - information by ChatGPT END -->
+
+                        <!-- SECTION - foods places -->
+                        <div class="t-grid__section -states" v-if="placesStates">
+                            <mHeadline :title="'Jídlo ' + food[0].name + ' se jí v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
+                            <oCoverStates :items="placesStates" :images="imagesStates" text="Kde se používá" />
+                        </div>
+                        <!-- SECTION - foods places - END -->
                     </div>
 
 
@@ -64,9 +58,10 @@
 </template>
 
 <script>
+    import mHeadline from '~/components/molecules/mHeadline.vue'
     import mNavBreadcrumbsItem from '~/components/molecules/mNavBreadcrumbsItem.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oItemStates from '~/components/organisms/oItemStates.vue'
+    import oCoverStates from '~/components/organisms/oCoverStates.vue'
     import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
 
@@ -74,9 +69,10 @@
         name: 'JidloSlugPage',
 
         components: {
+            mHeadline,
             mNavBreadcrumbsItem,
             oAdGoogleSidebar,
-            oItemStates,
+            oCoverStates,
             oHeroItemDetail,
             oInformationBlock,
         },

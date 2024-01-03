@@ -9,34 +9,20 @@
         </section>
         <!-- SECTION - BREADCRUMBS END -->
 
-        <!-- SECTION - hero + hot info hero -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -food-hero">
-
-                    <!-- SECTION - hero -->
-                    <div class="t-grid__section -hero-food">
-                        <oHeroItemDetail :item="fauna" :images="imageFauna" />
-                    </div>
-                    <!-- SECTION - hero END -->
-
-                    <!-- SECTION - fauna places -->
-                    <div class="t-grid__section -states">
-                        <oItemStates :items="placesStates" :itemName="fauna[0].name" text="Kde žije" />
-                    </div>
-                    <!-- SECTION - fauna places - END -->
-                    
-                </div>
-            </div>
-        </section>
-        <!-- SECTION - hero + hot info - END -->
-
         <!-- SECTION -->
         <section class="t-section -px-world -p0">
             <div class="t-section__inner">
                 <div class="t-grid -world-content-with-ad">
                     
                     <div class="t-grid__section -content">
+                        <!-- SECTION - hero -->
+                        <section class="t-section print-section">
+                            <div class="t-section__inner">
+                                <oHeroItemDetail :item="fauna" :images="imageFauna" />
+                            </div>
+                        </section>
+                        <!-- SECTION - hero END -->
+
                         <!-- SECTION - information by ChatGPT -->
                         <section class="t-section" v-if="fauna[0].description">
                             <div class="t-section__inner">
@@ -44,6 +30,13 @@
                             </div>
                         </section>
                         <!-- SECTION - information by ChatGPT END -->
+
+                        <!-- SECTION - fauna places -->
+                        <div class="t-grid__section -states" v-if="placesStates">
+                            <mHeadline :title="'Zvíře ' + fauna[0].name + ' žije v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
+                            <oCoverStates :items="placesStates" :images="imagesStates" />
+                        </div>
+                        <!-- SECTION - fauna places - END -->
                     </div>
 
 
@@ -65,9 +58,10 @@
 </template>
 
 <script>
+    import mHeadline from '~/components/molecules/mHeadline.vue'
     import mNavBreadcrumbsItem from '~/components/molecules/mNavBreadcrumbsItem.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oItemStates from '~/components/organisms/oItemStates.vue'
+    import oCoverStates from '~/components/organisms/oCoverStates.vue'
     import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
 
@@ -75,9 +69,10 @@
         name: 'FaunaSlugPage',
 
         components: {
+            mHeadline,
             mNavBreadcrumbsItem,
             oAdGoogleSidebar,
-            oItemStates,
+            oCoverStates,
             oHeroItemDetail,
             oInformationBlock
         },

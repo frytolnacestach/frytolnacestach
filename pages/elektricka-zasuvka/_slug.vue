@@ -9,33 +9,20 @@
         </section>
         <!-- SECTION - BREADCRUMBS END -->
 
-        <!-- SECTION - hero + hot info hero -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -food-hero">
-
-                    <!-- SECTION - hero -->
-                    <div class="t-grid__section -hero-food">
-                        <oHeroItemDetail :item="wallSockets" :images="imageWallSockets" />
-                    </div>
-                    <!-- SECTION - hero END -->
-
-                    <!-- SECTION - wall-sockets places -->
-                    <div class="t-grid__section -states">
-                        <oItemStates :items="placesStates" :itemName="wallSockets[0].name" text="Kde se používá" />
-                    </div>
-                    <!-- SECTION - wall-sockets places - END -->
-                </div>
-            </div>
-        </section>
-        <!-- SECTION - hero + hot info - END -->
-
         <!-- SECTION -->
         <section class="t-section -px-world -p0">
             <div class="t-section__inner">
                 <div class="t-grid -world-content-with-ad">
                     
                     <div class="t-grid__section -content">
+                        <!-- SECTION - hero -->
+                        <section class="t-section print-section">
+                            <div class="t-section__inner">
+                                <oHeroItemDetail :item="wallSockets" :images="imageWallSockets" />
+                            </div>
+                        </section>
+                        <!-- SECTION - hero END -->
+
                         <!-- SECTION - information by ChatGPT -->
                         <section class="t-section pt-1 mt-2 mb-4" v-if="wallSockets[0].description">
                             <div class="t-section__inner">
@@ -52,6 +39,13 @@
                             </div>
                         </section>
                         <!-- SECTION - Affilate Alza -->
+
+                        <!-- SECTION - wall-sockets places -->
+                        <div class="t-grid__section -states" v-if="placesStates">
+                            <mHeadline :title="'Elektrická zásuvka typu ' + wallSockets[0].label + ' se používá v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
+                            <oCoverStates :items="placesStates" :images="imagesStates" />
+                        </div>
+                        <!-- SECTION - wall-sockets places - END -->
                     </div>
 
 
@@ -77,7 +71,7 @@
     import mNavBreadcrumbsItem from '~/components/molecules/mNavBreadcrumbsItem.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oAffilateAlza from '~/components/organisms/oAffilateAlza.vue'
-    import oItemStates from '~/components/organisms/oItemStates.vue'
+    import oCoverStates from '~/components/organisms/oCoverStates.vue'
     import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
 
@@ -89,7 +83,7 @@
             mNavBreadcrumbsItem,
             oAdGoogleSidebar,
             oAffilateAlza,
-            oItemStates,
+            oCoverStates,
             oHeroItemDetail,
             oInformationBlock
         },
