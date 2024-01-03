@@ -6,7 +6,7 @@
                 <div class="o-place-teaser-spots__outer">
                     <div class="o-place-teaser-spots__inner">
                         <div class="o-place-teaser-spots__items">
-                            <div class="o-place-teaser-spots__item" v-for="spot in spots" :key="spot.id">
+                            <div class="o-place-teaser-spots__item" v-for="spot in spots" :key="spot.id" v-if="spot.id !== IDplaceShow && type !== typeShow">
                                 <div class="o-place-teaser-spots__content">
                                     <div class="o-place-teaser-spots__image loading-image -green">
                                         <div v-if="images && images.find(image => image.id === spot.id_image_hero)" class="o-place-teaser-spots__image-lazyload">
@@ -99,6 +99,10 @@
                 type: Number,
                 required: true
             },
+            IDplaceShow: {
+                type: Number,
+                required: false
+            },
             headline: {
                 type: String,
                 required: true
@@ -106,6 +110,10 @@
             type: {
                 type: String,
                 required: true
+            },
+            typeShow: {
+                type: String,
+                required: false
             },
             styleGap: {
                 type: String,
