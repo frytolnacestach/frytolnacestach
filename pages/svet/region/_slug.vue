@@ -66,7 +66,7 @@
                         <!-- SECTION - Review END -->
 
                         <!-- SECTION - Place teaser -->
-                        <oPlaceTeaserRegions :headline="'Jaké regiony vidět ve státě ' + placeState[0].name" :IDplace="placeState[0].id" :IDplaceShow="place[0].id" v-if="placeState[0]" type="state" typeShow="region" styleGap=" mt-2 mb-4 pt-1" />
+                        <oPlaceTeaserRegions :headline="'Jaké další regiony vidět ve státě ' + placeState[0].name" :IDplace="placeState[0].id" :IDplaceShow="place[0].id" v-if="placeState[0]" type="state" typeShow="region" styleGap=" mt-2 mb-4 pt-1" />
                         <!-- SECTION - Place teaser END -->
                     </div>
 
