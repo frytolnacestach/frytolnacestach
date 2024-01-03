@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/retezec/hooters", (function(a){return {data:[{chain:[{created_at:"2023-12-23T12:32:26.964645+00:00",date_update:a,id_image_cover:a,id_image_hero:a,name:"Hooters",description:"",information:[],slug:"hooters",seo_tags:[],ids_states:[],id:13,updated_at:"2023-12-27T17:05:54.92763+00:00"}],placesStates:a,imageChain:a,imagesStates:a}],fetch:{},mutations:[]}}(null)));
