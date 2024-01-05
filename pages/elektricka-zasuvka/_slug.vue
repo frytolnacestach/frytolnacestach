@@ -41,9 +41,11 @@
                         <!-- SECTION - Affilate Alza -->
 
                         <!-- SECTION - wall-sockets places -->
-                        <div class="t-grid__section -states" v-if="placesStates">
-                            <mHeadline :title="'Elektrická zásuvka typu ' + wallSockets[0].label + ' se používá v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
-                            <oCoverStates :items="placesStates" :images="imagesStates" />
+                        <div class="t-section" v-if="placesStates">
+                            <div class="t-section__inner">
+                                <mHeadline :title="'Elektrická zásuvka typu ' + wallSockets[0].label + ' se používá v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
+                                <oCoverStates :items="placesStates" :images="imagesStates" />
+                            </div>
                         </div>
                         <!-- SECTION - wall-sockets places - END -->
                     </div>

@@ -32,9 +32,11 @@
                         <!-- SECTION - information by ChatGPT END -->
 
                         <!-- SECTION - foods places -->
-                        <div class="t-grid__section -states" v-if="placesStates">
-                            <mHeadline :title="'Jídlo ' + food[0].name + ' se jí v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
-                            <oCoverStates :items="placesStates" :images="imagesStates" text="Kde se používá" />
+                        <div class="t-section" v-if="placesStates">
+                            <div class="t-section__inner">
+                                <mHeadline :title="'Jídlo ' + food[0].name + ' se jí v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
+                                <oCoverStates :items="placesStates" :images="imagesStates" text="Kde se používá" />
+                            </div>
                         </div>
                         <!-- SECTION - foods places - END -->
                     </div>

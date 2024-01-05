@@ -32,9 +32,11 @@
                         <!-- SECTION - information by ChatGPT END -->
 
                         <!-- SECTION - chains places -->
-                        <div class="t-grid__section -states" v-if="placesStates">
-                            <mHeadline :title="'Řetezec ' + chain[0].name + ' se nachází v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
-                            <oCoverStates :items="placesStates" :images="imagesStates" />
+                        <div class="t-section" v-if="placesStates">
+                            <div class="t-section__inner">
+                                <mHeadline :title="'Řetezec ' + chain[0].name + ' se nachází v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
+                                <oCoverStates :items="placesStates" :images="imagesStates" />
+                            </div>
                         </div>
                         <!-- SECTION - chains places - END -->
                     </div>

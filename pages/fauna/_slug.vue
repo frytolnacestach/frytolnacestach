@@ -32,9 +32,11 @@
                         <!-- SECTION - information by ChatGPT END -->
 
                         <!-- SECTION - fauna places -->
-                        <div class="t-grid__section -states" v-if="placesStates">
-                            <mHeadline :title="'Zvíře ' + fauna[0].name + ' žije v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
-                            <oCoverStates :items="placesStates" :images="imagesStates" />
+                        <div class="t-section" v-if="placesStates">
+                            <div class="t-section__inner">
+                                <mHeadline :title="'Zvíře ' + fauna[0].name + ' žije v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
+                                <oCoverStates :items="placesStates" :images="imagesStates" />
+                            </div>
                         </div>
                         <!-- SECTION - fauna places - END -->
                     </div>
