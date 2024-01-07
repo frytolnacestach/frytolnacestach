@@ -1,12 +1,13 @@
 <template>
     <section class="t-section my-2 -p0 hidden-print">
         <div class="t-section__inner">
+
             <!-- SECTION - mHeadline -->
             <mHeadline title="Byl jsi tu? Tak napiš recenzi." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="myReview.length === 0 && numberReviews !== 0 && account && account.length !== 0 && newReview === false && account[0].status === 3"/>
-            <mHeadline title="Byl jsi tu? Tak napiš recenzi." perex="Ale nejdříve se musíš přihlásit ke svému účtu." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="numberReviews !== 0 && account && account.length === 0 && newReview === false" />
+            <mHeadline title="Byl jsi tu? Tak napiš recenzi." :perex="`Ale nejdříve se musíš <a href='/ucet/prihlaseni'>přihlásit</a> ke svému účtu.`" styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="numberReviews !== 0 && account && account.length === 0 && newReview === false" />
             <mHeadline title="Byl jsi tu? Tak napiš recenzi." perex="Ale nejdříve si musíš aktivovat účet." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="numberReviews !== 0 && account && account.length !== 0 && newReview === false && account[0].status === 2" />
             <mHeadline title="Byl jsi tu? Tak napiš recenzi." perex="Ještě nikdo tu nenapsal recenzi, buď první." styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="numberReviews === 0 && account && account.length !== 0 && newReview === false && account[0].status === 3" />
-            <mHeadline title="Byl jsi tu? Tak napiš recenzi." perex="Ale nejdříve se musíš přihlásit ke svému účtu." styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" v-if="numberReviews === 0 && account && account.length === 0 && newReview === false" />
+            <mHeadline title="Byl jsi tu? Tak napiš recenzi." :perex="`Ale nejdříve se musíš <a href='/ucet/prihlaseni'>přihlásit</a> ke svému účtu.`" styleAlign=" -p-left" styleThema=" -world" styleGap=" mb-2" v-if="numberReviews === 0 && account && account.length === 0 && newReview === false" />
             <mHeadline title="Byl jsi tu? Tak napiš recenzi." perex="Ještě nikdo tu nenapsal recenzi, buď první ale nejdříve si aktivuj svůj účet" styleAlign=" -p-left" styleThema=" -world" styleGap="" v-if="numberReviews === 0 && account && account.length !== 0 && newReview === false && account[0].status === 2" />
             <!-- SECTION - mHeadline END -->
 

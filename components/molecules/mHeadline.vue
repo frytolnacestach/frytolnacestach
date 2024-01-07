@@ -10,7 +10,7 @@
                     {{ title }} {{ titleValue ? titleValue : '' }}
                     <aButtonFill :url="url" :text="urlText" styleThema=" -small -green" target="internal" v-if="url" />
                 </h2>
-                <p class="m-headline__perex pt-1" v-if="perex">{{ perex }}</p>
+                <p class="m-headline__perex pt-1" v-if="perex" v-html="perex"></p>
             </div>
         </div>
     </div>
