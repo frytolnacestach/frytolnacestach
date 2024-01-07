@@ -74,7 +74,7 @@
             ogDescription = description
 
             // ogUrl
-            ogUrl = `${process.env.baseUrl}/ucet/zapomenute-heslo`
+            ogUrl = `${process.env.baseUrl}/ucet/obnova-hesla`
 
             // ogType
             ogType = 'website'
