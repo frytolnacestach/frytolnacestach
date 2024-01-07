@@ -1,7 +1,7 @@
 <template>
     <section class="t-component-skeleton">
         <!-- skeleton -->
-        <skeletonoCoverItem styleThema=" -skeleton-green" v-if="items === null && skeleton === true" />
+        <skeletonoCoverTitleItem styleThema=" -skeleton-green" v-if="items === null && skeleton === true" />
         <!-- skeleton END -->
 
         <!-- client -->
@@ -87,13 +87,13 @@
 
 
 <script>
-    import skeletonoCoverItem from '~/components/skeleton/skeletonoCoverItem.vue'
+    import skeletonoCoverTitleItem from '~/components/skeleton/skeletonoCoverTitleItem.vue'
 
     export default {
         name: 'OrganismsoCoverTitleItemComponent',
 
         components: {
-            skeletonoCoverItem
+            skeletonoCoverTitleItem
         },
 
         props: {
