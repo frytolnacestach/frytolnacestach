@@ -18,7 +18,7 @@
                         <!-- SECTION - hero -->
                         <section class="t-section print-section">
                             <div class="t-section__inner">
-                                <oHeroItemDetail :item="wallSockets" :images="imageWallSockets" />
+                                <oHeroItemDetail :item="wallSockets" :images="imageWallSockets" :showTitle=false />
                             </div>
                         </section>
                         <!-- SECTION - hero END -->
@@ -26,7 +26,8 @@
                         <!-- SECTION - information by ChatGPT -->
                         <section class="t-section pt-1 mt-2 mb-4" v-if="wallSockets[0].description">
                             <div class="t-section__inner">
-                                <oInformationBlock :title="(wallSockets[0].name ? wallSockets[0].name : '')" :perexWysiwyg="wallSockets[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
+                                <mHeadline :title="(wallSockets[0].name ? wallSockets[0].name : '')" styleThema=" -world" styleAlign=" -p-left" styleSize="h1"/>
+                                <oInformationBlock :perexWysiwyg="wallSockets[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                             </div>
                         </section>
                         <!-- SECTION - information by ChatGPT END -->

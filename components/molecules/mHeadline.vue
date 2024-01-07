@@ -2,7 +2,11 @@
     <div :class="'m-headline' + (styleThema ? styleThema : '') + (styleAlign ? styleAlign : '') + (styleGap ? styleGap : '')">
         <div class="m-headline__outer">
             <div class="m-headline__inner">
-                <h2 class="m-headline__title" v-if="title">
+                <h1 class="m-headline__title" v-if="title && styleSize === 'h1'">
+                    {{ title }} {{ titleValue ? titleValue : '' }}
+                    <aButtonFill :url="url" :text="urlText" styleThema=" -small -green" target="internal" v-if="url" />
+                </h1>
+                <h2 class="m-headline__title" v-if="title && styleSize === 'h2'">
                     {{ title }} {{ titleValue ? titleValue : '' }}
                     <aButtonFill :url="url" :text="urlText" styleThema=" -small -green" target="internal" v-if="url" />
                 </h2>
@@ -46,6 +50,11 @@
             styleThema: {
                 type: String,
                 required: false
+            },
+            styleSize: {
+                type: String,
+                required: false,
+                default: "h2"
             },
             styleAlign: {
                 type: String,

@@ -63,7 +63,7 @@
                         v-lazy>
                 </div>
                 
-                <div class="o-hero-item-detail__outer">
+                <div class="o-hero-item-detail__outer" v-if="showTitle">
                     <div class="o-hero-item-detail__inner">
                         <h1 class="o-hero-item-detail__headline" v-if="item[0].name">{{ item[0].name }}</h1>
                     </div>
@@ -85,6 +85,11 @@
             images: {
                 type: Array,
                 required: true
+            },
+            showTitle: {
+                type: Boolean,
+                required: false,
+                default: true
             }
         }
     }
