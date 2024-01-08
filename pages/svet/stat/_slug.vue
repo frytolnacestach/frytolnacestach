@@ -124,15 +124,15 @@
 
                                 <!-- SECTION - Značky list -->
                                 <oCoverItemState type="znacka" title="Značky a výrobky ze státu" perex="Zajímavý přehled kvalitních produktů, které vystihují místní charakter a tradici." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
-                                <!-- SECTION - Flora Značky END -->
+                                <!-- SECTION - Značky list END -->
 
-                                <!-- SECTION - Značky list -->
-                                <oCoverItemState type="elektricka-zasuvka" title="Elektrické zásuvky použivané ve státě" perex="Poskytujeme vám informace pro pohodlné připojení a dobíjení vašich zařízení během pobytu, abyste byli připraveni na místní elektrickou infrastrukturu." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
-                                <!-- SECTION - Flora Značky END -->
+                                <!-- SECTION - Elektrické zásuvky list -->
+                                <oCoverTitleItemState type="elektricka-zasuvka" title="Elektrické zásuvky použivané ve státě" perex="Poskytujeme vám informace pro pohodlné připojení a dobíjení vašich zařízení během pobytu, abyste byli připraveni na místní elektrickou infrastrukturu." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
+                                <!-- SECTION - Elektrické zásuvky END -->
 
-                                <!-- SECTION - Značky list -->
+                                <!-- SECTION - Flora list -->
                                 <oCoverItemState type="retezec" title="Řetězce ve státě" perex="Představujeme vám přehled nadnárodních i místních řetězců, abyste mohli plánovat své nákupy a stravování s lehkostí a přizpůsobit je svým preferencím." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
-                                <!-- SECTION - Flora Značky END -->
+                                <!-- SECTION - Flora list END -->
 
                                 <!-- SECTION - Review -->
                                 <oReviewItem :account="account" :IDplace="place[0].id" type="state" v-if="place[0].id" />
@@ -679,6 +679,7 @@
     import oCoverItemState from '~/components/organisms/oCoverItemState.vue'
     import oCoverNeighboring from '~/components/organisms/oCoverNeighboring.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
+    import oCoverTitleItemState from '~/components/organisms/oCoverTitleItemState.vue'
     import oFactsPlace from '~/components/organisms/oFactsPlace.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
@@ -717,6 +718,7 @@
             oCoverItemState,
             oCoverNeighboring,
             oCoverPlaceDetail,
+            oCoverTitleItemState,
             oFactsPlace,
             oHeroPlace,
             oHotInfoHero,
