@@ -99,7 +99,7 @@
                         <!-- SECTION - Date of Event - sidebar - END -->
 
                         <!-- SECTION - links -->
-                        <section class="t-section -px-world my-2 print-section" v-if="event[0].links">
+                        <section class="t-section -px-world my-2 print-section" v-if="event[0].links && event[0].links.length > 0">
                             <div class="t-section__inner">
                                 <oLinks :items="event[0].links" />
                             </div>
