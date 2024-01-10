@@ -1049,7 +1049,7 @@ export default {
             allRoutes.push(`/svet/stat/${v.slug}`);
       
             // State - tabs
-            const tabs = ['co-videt', 'ceny', 'lide', 'cesta', 'kontakty', 'ubytovani', 'videa', 'sousedni-staty'];
+            const tabs = ['co-videt', 'ceny', 'lide', 'cesta', 'kontakty', 'ubytovani', 'videa', 'sousedni-staty', 'elektricke-zasuvky'];
             tabs.forEach(tab => {
               allRoutes.push(`/svet/stat/${v.slug}/${tab}`);
             });
@@ -1266,7 +1266,8 @@ export default {
           'kontakty',
           'ubytovani',
           'videa',
-          'sousedni-staty'
+          'sousedni-staty',
+          'elektricke-zasuvky'
         ];
 
         tabs.forEach((tab) => {
