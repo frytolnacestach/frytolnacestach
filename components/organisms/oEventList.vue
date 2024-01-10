@@ -35,6 +35,10 @@
                         </div>
                         <div class="o-event-list__text">
                             <h4 class="o-event-list__name"><nuxtLink class="o-event-list__name-link" :to="'/udalost/' + event.slug">{{ event.name }}</nuxtLink></h4>
+                            <span class="o-event-list__date" v-if="event.date_start || event.date_end">
+                                <span class="o-event-list__date-start">Začátek události: {{ formatDate(event.date_start) }}</span>
+                                <span class="o-event-list__date-end">Konec události: {{ formatDate(event.date_end) }}</span>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -61,8 +65,15 @@
             }
         },
 
+        methods: {
+            formatDate(date) {
+                const options = { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', timeZoneName: 'short' }
+                return new Date(date).toLocaleDateString('cs', options)
+            }
+        },
+
         async fetch() {
-            this.events = await fetch(`https://api.frytolnacestach.cz/api/events`).then((res) => res.json())
+            this.events = await fetch(`https://api.frytolnacestach.cz/api/events?limit=5&status=nearby`).then((res) => res.json())
 
             const imagesEventsID = this.events.map(event => event.id_image_cover).filter(id => id !== null && id !== '')
             this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesEventsID.join(',')}`).then((res) => res.json())
