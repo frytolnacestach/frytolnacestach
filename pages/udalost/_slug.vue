@@ -53,7 +53,7 @@
                         <!-- SECTION - information END -->
 
                         <!-- SECTION - prices -->
-                        <section class="t-section my-4 print-section" v-if="event[0].prices">
+                        <section class="t-section my-4 print-section" v-if="event[0].prices && event[0].prices.length > 0">
                             <div class="t-section__inner">
                                 <mHeadline title="Cena akce" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                 <oPrices :items="event[0].prices" />
