@@ -724,6 +724,67 @@
                 </section>
                 <!-- SECTION END -->
             </template>
+            <template v-else-if="activeTab === 'elektricke-zasuvky'">
+                <!-- SECTION -->
+                <section class="t-section -p0">
+                    <div class="t-section__inner">
+                        <div class="t-grid -world-ful">
+                            <div class="t-grid__section -content">
+                                <!-- SECTION -->
+                                <section class="t-section -px-world -p0 mb-4">
+                                    <div class="t-section__inner">
+                                        <div class="t-grid -place-main-with-aside">
+                                            <div class="t-grid__section -main">
+                                                <!-- SECTION - Elektrické zásuvky list -->
+                                                <section class="t-section -p0 -px-world my-2">
+                                                    <div class="t-section__inner">
+                                                        <oCoverTitleItemState type="elektricka-zasuvka" title="Elektrické zásuvky použivané ve státě" perex="Poskytujeme vám informace pro pohodlné připojení a dobíjení vašich zařízení během pobytu, abyste byli připraveni na místní elektrickou infrastrukturu." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
+                                                    </div>
+                                                </section>
+                                                <!-- SECTION - Elektrické zásuvky END -->
+                                            </div>
+
+                                            <div class="t-grid__section -aside-place-status">
+                                                <!-- SECTION - Visited button - sidebar -->
+                                                <section class="t-section -px-world my-1">
+                                                    <div class="t-section__inner">
+                                                        <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
+                                                    </div>
+                                                </section>
+                                                <!-- SECTION - Visited button - sidebar - END -->
+                                            </div>
+                                            <div class="t-grid__section -aside-content">
+                                                <!-- SECTION - Account banner - sidebar -->
+                                                <section class="t-section -px-world my-1" v-if="account && account.length === 0">
+                                                    <div class="t-section__inner">
+                                                        <oAccountBanner :account="account" styleThema=" -green" />
+                                                    </div>
+                                                </section>
+                                                <!-- SECTION - Account banner - sidebar END -->
+
+                                                <!-- SECTION - Events - sidebar -->
+                                                <oSidebarList :place="this.place[0].id" type="state" />
+                                                <!-- SECTION - Events - sidebar - END -->
+                                            </div>
+                                            <div class="t-grid__section -aside-ad">
+                                                <!-- SECTION - ad-google - sidebar -->
+                                                <section class="t-section -px-world mt-4 mb-2">
+                                                    <div class="t-section__inner">
+                                                        <oAdGoogleSidebar styleThema=" -green" />
+                                                    </div>
+                                                </section>
+                                                <!-- SECTION - ad-google - sidebar - END -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- SECTION END -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION END -->
+            </template>
         </div>
     </main>
 </template>
@@ -842,6 +903,7 @@
                     { slug: 'ubytovani', label: 'Ubytování', visible: false },
                     { slug: 'videa', label: 'Videa', visible: false },
                     { slug: 'sousedni-staty', label: 'Sousední státy', visible: false },
+                    { slug: 'elektricke-zasuvky', label: 'Elektrické zásuvky', visible: false }
                 ],
                 mNavBreadcrumbsPlaceArray: [
                     {
@@ -1031,6 +1093,7 @@
                 const hasTabHotel = this.place[0].affiliate.find(x => x.name === 'booking').value
                 const hasTabVideos = this.place[0] && (!!this.videos && this.videos.length !== 0)
                 const hasTabNeighboring = this.place[0].ids_neighboring_countries && this.place[0].ids_neighboring_countries.length !== 0
+                const hasTabWallSockets = !!this.place[0]
 
                 const newTabs = [
                     { slug: 'default', label: 'Výchozí', visible: hasTabDefault },
@@ -1041,7 +1104,8 @@
                     { slug: 'kontakty', label: 'Kontakty', visible: hasTabContacts },
                     { slug: 'ubytovani', label: 'Ubytování', visible: hasTabHotel },
                     { slug: 'videa', label: 'Videa', visible: hasTabVideos },
-                    { slug: 'sousedni-staty', label: 'Sousední státy', visible: hasTabNeighboring }
+                    { slug: 'sousedni-staty', label: 'Sousední státy', visible: hasTabNeighboring },
+                    { slug: 'elektricke-zasuvky', label: 'Elektrické zásuvky', visible: hasTabWallSockets }
                 ]
 
                 this.tabs = newTabs
