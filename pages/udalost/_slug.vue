@@ -119,6 +119,25 @@
             </div>
         </section>
         <!-- SECTION END -->
+
+        <div class="t-layout-full" v-if="event[0].id_continent || event[0].id_state || event[0].id_region || event[0].id_city || event[0].id_spot">
+
+            <!-- SECTION - place -->
+            <section class="t-section -p0 pt-2 pb-1 print-section">
+                <div class="t-section__inner">
+                    <mHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
+
+                    <div class="flex mx-1">
+                        <oPlaceBlock :placeID="event[0].id_continent" type="kontinent" v-if="event[0].id_continent" />
+                        <oPlaceBlock :placeID="event[0].id_state" type="stat" v-if="event[0].id_state" />
+                        <oPlaceBlock :placeID="event[0].id_region" type="region" v-if="event[0].id_region" />
+                        <oPlaceBlock :placeID="event[0].id_city" type="mesto" v-if="event[0].id_city" />
+                        <oPlaceBlock :placeID="event[0].id_spot" type="misto" v-if="event[0].id_spot" />
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION - place END -->
+        </div>
     </main>
 </template>
 
@@ -132,6 +151,7 @@
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
     import oLinks from '~/components/organisms/oLinks.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
+    import oPlaceBlock from '~/components/organisms/oPlaceBlock.vue'
     import oPrices from '~/components/organisms/oPrices.vue'
     import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
 
@@ -148,6 +168,7 @@
             oInformationBlock,
             oLinks,
             oMapGoogle,
+            oPlaceBlock,
             oPrices,
             oSwitchHero
         },
