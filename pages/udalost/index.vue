@@ -111,7 +111,7 @@
 
                 //load events
                 const [eventsResponse] = await Promise.all([
-                    this.$axios.get(`https://api.frytolnacestach.cz/api/events?showType=list&page=${this.page}&items=${this.perPage}`)
+                    this.$axios.get(`https://api.frytolnacestach.cz/api/events?status=nearby&showType=list&page=${this.page}&items=${this.perPage}`)
                 ]);
                 const { data: eventsData } = eventsResponse
 
