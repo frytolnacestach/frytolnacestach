@@ -121,7 +121,7 @@
             keywords = (this.chain[0].name ? this.chain[0].name : '') + metaSeoTags + ', Řetězec, plánuj cestu, cestovatelský portál, cestování, svět'
             
             // ogImage
-            ogImage = `${this.chain[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagechain.find(image => image.id === this.chain[0].id_image_hero).source + this.imagechain.find(image => image.id === this.chain[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+            ogImage = `${this.chain[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageChain.find(image => image.id === this.chain[0].id_image_hero).source + this.imageChain.find(image => image.id === this.chain[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
 
             // ogTitle
             ogTitle = title
