@@ -1,5 +1,5 @@
 <template>
-    <div class="o-place-block">
+    <div :class="'o-place-block' + (styleThema ? styleThema : ' -gray')">
         <div class="o-place-block__outer">
             <div class="o-place-block__inner">
                 <div class="o-place-block__content">
@@ -70,7 +70,7 @@
                     <div class="o-place-block__text">
                         <div class="o-place-block__wysiwyg" v-if="place[0].information_chatgpt" v-html="place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, 220)"></div>
                         <div class="o-place-block__button">
-                            <aButtonFillFull target="internal" :url="`/svet/${type}/${place[0].slug}`" text="Číst více" styleThema=" -green" />
+                            <aButtonFillFull target="internal" :url="`/svet/${type}/${place[0].slug}`" text="Číst více" :styleThema="(styleThema ? styleThema : ' -gray')" />
                         </div>
                     </div>
                 </div>
@@ -98,6 +98,10 @@
             type: {
                 type: String,
                 required: true
+            },
+            styleThema: {
+                type: String,
+                required: false
             }
         },
 

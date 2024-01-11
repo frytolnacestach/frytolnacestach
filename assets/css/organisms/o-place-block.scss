@@ -123,4 +123,23 @@
         width: 100%;
         margin-top: auto;
     }
+
+    // Thema
+    &.-blue {
+        #{$self}__content {
+            background-color: $c-blue-bg-component-light-super;
+        }
+    }
+
+    &.-gray {
+        #{$self}__content {
+            background-color: $c-gray-bg-component-light-super;
+        }
+    }
+
+    &.-green {
+        #{$self}__content {
+            background-color: $c-green-bg-component-light-super;
+        }
+    }
 }

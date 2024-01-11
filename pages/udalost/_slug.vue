@@ -125,14 +125,14 @@
             <!-- SECTION - place -->
             <section class="t-section -p0 pt-2 pb-1 print-section">
                 <div class="t-section__inner">
-                    <mHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
+                    <mHeadline title="Více informací o místě" styleThema=" -green" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
 
                     <div class="flex mx-1">
-                        <oPlaceBlock :placeID="event[0].id_continent" type="kontinent" v-if="event[0].id_continent" />
-                        <oPlaceBlock :placeID="event[0].id_state" type="stat" v-if="event[0].id_state" />
-                        <oPlaceBlock :placeID="event[0].id_region" type="region" v-if="event[0].id_region" />
-                        <oPlaceBlock :placeID="event[0].id_city" type="mesto" v-if="event[0].id_city" />
-                        <oPlaceBlock :placeID="event[0].id_spot" type="misto" v-if="event[0].id_spot" />
+                        <oPlaceBlock :placeID="event[0].id_continent" type="kontinent" styleThema=" -green" v-if="event[0].id_continent" />
+                        <oPlaceBlock :placeID="event[0].id_state" type="stat" styleThema=" -green" v-if="event[0].id_state" />
+                        <oPlaceBlock :placeID="event[0].id_region" type="region" styleThema=" -green" v-if="event[0].id_region" />
+                        <oPlaceBlock :placeID="event[0].id_city" type="mesto" styleThema=" -green" v-if="event[0].id_city" />
+                        <oPlaceBlock :placeID="event[0].id_spot" type="misto" styleThema=" -green" v-if="event[0].id_spot" />
                     </div>
                 </div>
             </section>
