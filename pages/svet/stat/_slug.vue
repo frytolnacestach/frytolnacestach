@@ -981,7 +981,29 @@
             },
 
             getPreTitle() {
-                this.preTitle = `${this.activeTabName} ve státě`
+                if (this.activeTab === 'default') {
+                    this.preTitle = `${this.activeTabName}`
+                } else if (this.activeTab === 'co-videt') {
+                    this.preTitle = `${this.activeTabName} ve státě`
+                } else if (this.activeTab === 'ceny') {
+                    this.preTitle = `${this.activeTabName} ve státě`
+                } else if (this.activeTab === 'lide') {
+                    this.preTitle = `Jací jsou ${this.activeTabName} ve státě`
+                } else if (this.activeTab === 'cesta') {
+                    this.preTitle = `${this.activeTabName} do státu`
+                } else if (this.activeTab === 'kontakty') {
+                    this.preTitle = `Důležité ${this.activeTabName} ve státě`
+                } else if (this.activeTab === 'ubytovani') {
+                    this.preTitle = `${this.activeTabName} ve státě`
+                } else if (this.activeTab === 'videa') {
+                    this.preTitle = `${this.activeTabName} ze států`
+                } else if (this.activeTab === 'sousedni-staty') {
+                    this.preTitle = `${this.activeTabName} státu`
+                } else if (this.activeTab === 'elektricke-zasuvky') {
+                    this.preTitle = `${this.activeTabName} použivané ve státě`
+                } else {
+                    this.preTitle = `${this.activeTabName} ve státě`
+                }
             },
 
             handleResize() {
@@ -1131,7 +1153,32 @@
             if (this.$route.params.tab) {
                 const tab = this.tabs.find(tab => tab.slug === this.$route.params.tab)
                 const label = tab.label || ''
-                const tabTitle = `${label} ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
+                let tabTitle = ''
+                
+                if (this.activeTab === 'default') {
+                    tabTitle = `${label} | Cestovatelský portál Frytol na cestách`
+                } else if (this.activeTab === 'co-videt') {
+                    tabTitle = `${label} ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
+                } else if (this.activeTab === 'ceny') {
+                    tabTitle = `${label} ve státě`
+                } else if (this.activeTab === 'lide') {
+                    tabTitle = `Jací jsou ${label} ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
+                } else if (this.activeTab === 'cesta') {
+                    tabTitle = `${label} do státu ${placeName} | Cestovatelský portál Frytol na cestách`
+                } else if (this.activeTab === 'kontakty') {
+                    tabTitle = `Důležité ${label} ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
+                } else if (this.activeTab === 'ubytovani') {
+                    tabTitle = `${label} ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
+                } else if (this.activeTab === 'videa') {
+                    tabTitle = `${label} ze států ${placeName} | Cestovatelský portál Frytol na cestách`
+                } else if (this.activeTab === 'sousedni-staty') {
+                    tabTitle = `${label} státu ${placeName} | Cestovatelský portál Frytol na cestách`
+                } else if (this.activeTab === 'elektricke-zasuvky') {
+                    tabTitle = `${label} použivané ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
+                } else {
+                    tabTitle = `${label} ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
+                }
+
                 title = tabTitle
             }
 
