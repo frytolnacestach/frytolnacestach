@@ -35,7 +35,7 @@
                         <!-- SECTION - Elektrické zásuvky kompotibilita list -->
                         <section class="t-section -p0 -px-world my-2"  v-if="wallSockets[0].ids_compatibility && wallSockets[0].ids_compatibility.length > 0">
                             <div class="t-section__inner">
-                                <oCoverWallSocket title="Kompatibilní elektrické zásuvky" :perex="'Jaké elektrické zásuvky jsou kompatibilní se zásuvkou typu ' + wallSockets[0].label" :ids="wallSockets[0].ids_compatibility" />
+                                <oCoverWallSocket title="Kompatibilní elektrické zásuvky" :perex="'Elektrická zásuvka typu ' + wallSockets[0].label + ' je kompatibilní s temito typy zásuvek.'" :ids="wallSockets[0].ids_compatibility" />
                             </div>
                         </section>
                         <!-- SECTION - Elektrické zásuvky kompotibilita list END -->
@@ -140,7 +140,7 @@
             if (this.wallSockets[0].seo_tags && this.wallSockets[0].seo_tags.length > 0) {
                 metaSeoTags = this.wallSockets[0].seo_tags.map(item => item.tag).join(", ")
             }
-            keywords = (this.wallSockets[0].name ? this.wallSockets[0].name : '') + metaSeoTags + ', Elektrická zásuvka, redukce, zásuvky, plánuj cestu, cestovatelský portál, cestování, svět'
+            keywords = (this.wallSockets[0].name ? this.wallSockets[0].name : '') + metaSeoTags + ', Elektrická zásuvka, kompatibilita, redukce, zásuvky, plánuj cestu, cestovatelský portál, cestování, svět'
             
             // ogImage
             ogImage = `${this.wallSockets[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageWallSockets.find(image => image.id === this.wallSockets[0].id_image_hero).source + this.imageWallSockets.find(image => image.id === this.wallSockets[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
