@@ -32,6 +32,14 @@
                         </section>
                         <!-- SECTION - information by ChatGPT END -->
 
+                        <!-- SECTION - Elektrické zásuvky kompotibilita list -->
+                        <section class="t-section -p0 -px-world my-2"  v-if="wallSockets[0].ids_compatibility && wallSockets[0].ids_compatibility.length > 0">
+                            <div class="t-section__inner">
+                                <oCoverWallSocket title="Kompatibilní elektrické zásuvky" :perex="'Jaké elektrické zásuvky jsou kompatibilní se zásuvkou typu ' + wallSockets[0].label" :ids="wallSockets[0].ids_compatibility" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Elektrické zásuvky kompotibilita list END -->
+
                         <!-- SECTION - Affilate Alza -->
                         <section class="t-section pt-1 mt-2 mb-4">
                             <div class="t-section__inner">
@@ -75,6 +83,7 @@
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oAffilateAlza from '~/components/organisms/oAffilateAlza.vue'
     import oCoverStates from '~/components/organisms/oCoverStates.vue'
+    import oCoverWallSocket from '~/components/organisms/oCoverWallSocket.vue'
     import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
 
@@ -87,6 +96,7 @@
             oAdGoogleSidebar,
             oAffilateAlza,
             oCoverStates,
+            oCoverWallSocket,
             oHeroItemDetail,
             oInformationBlock
         },
