@@ -20,6 +20,13 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
 
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.frytolnacestach\.cz$ [NC]
+  RewriteRule ^svet/mesto/dubai$ https://www.frytolnacestach.cz/svet/mesto/dubaj [R=301,L]
+  RewriteRule ^svet/mesto/dubai(/.*)?$ https://www.frytolnacestach.cz/svet/mesto/dubaj$1 [R=301,L]
+</IfModule>
+
 
 <IfModule mod_expires.c>
   ExpiresActive On
