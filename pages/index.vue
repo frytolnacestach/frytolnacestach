@@ -32,7 +32,7 @@
                 <div class="t-section__col px-1 mb-4 print-section">
                     <!-- SECTION - Article list -->
                     <mHeadline title="Nejnovější článek" styleAlign=" -left" />
-                    <oArticleList :posts="post" :images="imagePost" styleThema=" -latest" styleThemaLoading=" -gray" />
+                    <oArticleListSmall :posts="post" :images="imagePost" styleThemaLoading=" -gray" />
                     <div class="flex flex-full flex-ai-end flex-center mt-2">
                         <aButtonFillFull target="internal" url="/clanky" text="Všechny články" styleThema=" -gray" />
                     </div>
@@ -41,35 +41,35 @@
                 <div class="t-section__col px-1 mb-4 print-section">
                     <!-- SECTION - Video -->
                     <mHeadline title="Nejnovější video" styleAlign=" -left" />
-                    <oVideoList :videos="video" :images="imageVideo" styleThema=" -latest" styleThemaLoading=" -gray" />
+                    <oVideoListSmall :videos="video" :images="imageVideo" styleThemaLoading=" -gray" />
                     <div class="flex flex-full flex-ai-end flex-center mt-2">
                         <aButtonFillFull target="internal" url="/videa" text="Všechna videa" styleThema=" -gray" />
                     </div>
                     <!-- SECTION - Video END-->
                 </div>
+                <div class="t-section__col px-1 mb-4 print-section">
+                    <!-- SECTION - events -->
+                    <mHeadline title="Nejbližší události" styleAlign=" -left" />
+                    <oEventList styleThema=" -gray" />
+                    <div class="flex flex-full flex-ai-end flex-center mt-2">
+                        <aButtonFillFull target="internal" url="/udalosti" text="Všechny události" styleThema=" -gray" />
+                    </div>
+                    <!-- SECTION - events END -->
+                </div>
             </div>
         </section>
-
-        <!-- SECTION - events -->
-        <section class="t-section py-4 print-section">
-            <div class="t-section__inner">
-                <mHeadline title="Nejbližší události" styleAlign=" -left" />
-                <oEventList styleThema=" -gray" />
-            </div>
-        </section>
-        <!-- SECTION - events END -->
     </main>
 </template>
 
 <script>
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oArticleList from '~/components/organisms/oArticleList.vue'
+    import oArticleListSmall from '~/components/organisms/oArticleListSmall.vue'
     import oEventList from '~/components/organisms/oEventList.vue'
     import oPlatform from '../components/organisms/oPlatform.vue'
     import oSearch from '@/components/organisms/oSearch.vue'
     import oTopPlace from '@/components/organisms/oTopPlace.vue'
-    import oVideoList from '~/components/organisms/oVideoList.vue'
+    import oVideoListSmall from '~/components/organisms/oVideoListSmall.vue'
     import oWorldType from '@/components/organisms/oWorldType.vue'
 
     export default {
@@ -78,12 +78,12 @@
         components: {
             aButtonFillFull,
             mHeadline,
-            oArticleList,
+            oArticleListSmall,
             oEventList,
             oPlatform,
             oSearch,
             oTopPlace,
-            oVideoList,
+            oVideoListSmall,
             oWorldType
         },
 
@@ -150,14 +150,14 @@
         async asyncData({ $axios }) {
             // COMPONENT - Post
             // Post
-            const post = await $axios.$get(`https://api.frytolnacestach.cz/api/post-last`)
+            const post = await $axios.$get(`https://api.frytolnacestach.cz/api/posts?limit=5&status=nearby`)
             // Image
             const imagePost = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${post[0].id_image_cover}`)
 
 
             // COMPONENT - Video
             // Video
-            const video = await $axios.$get(`https://api.frytolnacestach.cz/api/video-last/`)
+            const video = await $axios.$get(`https://api.frytolnacestach.cz/api/videos?limit=5&status=nearby`)
             // Image
             const imageVideo = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${video[0].id_image}`)
 

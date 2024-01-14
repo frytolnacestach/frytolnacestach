@@ -12,6 +12,15 @@
         &.-col {
             display: flex;
             flex-wrap: wrap;
+            align-items: flex-start;
+
+            #{$self}__col {
+                width: 100%;
+        
+                @media only screen and (min-width: $md) {
+                    width: 33.333%;
+                }
+            }
         }
     }
 
