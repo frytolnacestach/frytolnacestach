@@ -185,21 +185,6 @@
         }
     }
 
-    &.-latest {
-        #{$self}__item {
-            display: block;
-            width: 100%;
-    
-            @media only screen and (min-width: $sm) {
-                width: 100%;
-            }
-    
-            @media only screen and (min-width: $md) {
-                width: 100%;
-            }
-        }
-    }
-
     &.-p-left {
         #{$self}__items {
             justify-content: flex-start;

@@ -7,7 +7,7 @@
         <!-- client -->
         <client-only v-if="posts !== null && !skeleton">
             <div :class="'o-article-list' + (styleThema ? styleThema : '') + (styleAlign ? styleAlign : '')">
-                <div class="o-article-list-list__outer">
+                <div class="o-article-list__outer">
                     <div class="o-article-list__items">
                         <div v-for="post in posts" :key="post.id" class="o-article-list__item print-section">
                             <div class="o-article-list__item-inner">
