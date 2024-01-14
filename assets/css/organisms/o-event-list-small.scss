@@ -1,4 +1,4 @@
-.o-event-list {
+.o-event-list-small {
     $self: &;
 
     display: block;
@@ -64,7 +64,9 @@
 
     &__text {
         grid-area: text;
-        padding-left: 5px;
+        width: 100%;
+        padding: 9px 5px 15px;
+        background-color: transparent;
     }
 
     &__name {

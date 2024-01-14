@@ -50,7 +50,7 @@
                 <div class="t-section__col px-1 mb-4 print-section">
                     <!-- SECTION - events -->
                     <mHeadline title="Nejbližší události" styleAlign=" -left" />
-                    <oEventList styleThema=" -gray" />
+                    <oEventListSmall styleThema=" -gray" />
                     <div class="flex flex-full flex-ai-end flex-center mt-2">
                         <aButtonFillFull target="internal" url="/udalosti" text="Všechny události" styleThema=" -gray" />
                     </div>
@@ -65,7 +65,7 @@
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oArticleListSmall from '~/components/organisms/oArticleListSmall.vue'
-    import oEventList from '~/components/organisms/oEventList.vue'
+    import oEventListSmall from '~/components/organisms/oEventListSmall.vue'
     import oPlatform from '../components/organisms/oPlatform.vue'
     import oSearch from '@/components/organisms/oSearch.vue'
     import oTopPlace from '@/components/organisms/oTopPlace.vue'
@@ -79,7 +79,7 @@
             aButtonFillFull,
             mHeadline,
             oArticleListSmall,
-            oEventList,
+            oEventListSmall,
             oPlatform,
             oSearch,
             oTopPlace,
