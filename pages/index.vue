@@ -31,7 +31,7 @@
             <div class="t-section__inner -col">
                 <div class="t-section__col px-1 mb-4 print-section">
                     <!-- SECTION - Article list -->
-                    <mHeadline title="Nejnovější článek" styleAlign=" -left" />
+                    <mHeadline title="Nejnovější články" styleAlign=" -left" />
                     <oArticleListSmall :posts="post" :images="imagePost" styleThemaLoading=" -gray" />
                     <div class="flex flex-full flex-ai-end flex-center mt-2">
                         <aButtonFillFull target="internal" url="/clanky" text="Všechny články" styleThema=" -gray" />
@@ -40,7 +40,7 @@
                 </div>
                 <div class="t-section__col px-1 mb-4 print-section">
                     <!-- SECTION - Video -->
-                    <mHeadline title="Nejnovější video" styleAlign=" -left" />
+                    <mHeadline title="Nejnovější videa" styleAlign=" -left" />
                     <oVideoListSmall :videos="video" :images="imageVideo" styleThemaLoading=" -gray" />
                     <div class="flex flex-full flex-ai-end flex-center mt-2">
                         <aButtonFillFull target="internal" url="/videa" text="Všechna videa" styleThema=" -gray" />
