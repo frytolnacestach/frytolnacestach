@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/retezec/in-n-out-burger", (function(a,b){return {data:[{chain:[{created_at:b,date_update:a,id_image_cover:a,id_image_hero:a,name:"In-n-Out Burger",description:"",information:[],slug:"in-n-out-burger",seo_tags:[],ids_states:[],id:24,updated_at:b}],placesStates:a,imageChain:a,imagesStates:a}],fetch:{},mutations:[]}}(null,"2024-01-13T16:30:41.105884+00:00")));

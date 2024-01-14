@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/retezec/kfc", (function(a){return {data:[{chain:[{created_at:"2023-12-23T12:30:48.821162+00:00",date_update:a,id_image_cover:a,id_image_hero:a,name:"KFC",description:"",information:[],slug:"kfc",seo_tags:[],ids_states:[],id:7,updated_at:"2023-12-27T17:05:54.92763+00:00"}],placesStates:a,imageChain:a,imagesStates:a}],fetch:{},mutations:[]}}(null)));
