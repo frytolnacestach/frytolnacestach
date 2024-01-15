@@ -845,7 +845,7 @@ export default {
         component: resolve(__dirname, 'pages/svet/stat/_slug.vue')
       })
       routes.push({
-        name: 'user-follow',
+        name: 'user-visited-place',
         path: '/cestovatel/:slug/navstivena-mista',
         component: resolve(__dirname, 'pages/cestovatel/_slug/navstivena-mista/navstivena-mista-index.vue')
       })
