@@ -899,6 +899,26 @@ export default {
         component: resolve(__dirname, 'pages/svet/stat/_slug/retezce/retezce-index.vue')
       })
       routes.push({
+        name: 'world-stat-fauna',
+        path: '/svet/stat/:slug/fauna',
+        component: resolve(__dirname, 'pages/svet/stat/_slug/fauna/fauna-index.vue')
+      })
+      routes.push({
+        name: 'world-stat-flora',
+        path: '/svet/stat/:slug/flora',
+        component: resolve(__dirname, 'pages/svet/stat/_slug/flora/flora-index.vue')
+      })
+      routes.push({
+        name: 'world-stat-foods',
+        path: '/svet/stat/:slug/jidlo',
+        component: resolve(__dirname, 'pages/svet/stat/_slug/jidlo/jidlo-index.vue')
+      })
+      routes.push({
+        name: 'world-stat-brands',
+        path: '/svet/stat/:slug/vyrobky',
+        component: resolve(__dirname, 'pages/svet/stat/_slug/vyrobky/vyrobky-index.vue')
+      })
+      routes.push({
         name: 'world-stat-neighboring',
         path: '/svet/stat/:slug/sousedni-staty',
         component: resolve(__dirname, 'pages/svet/stat/_slug/sousedni-staty/sousedni-staty-index.vue')
@@ -1098,7 +1118,7 @@ export default {
             allRoutes.push(`/svet/stat/${v.slug}`);
       
             // State - tabs
-            const tabs = ['co-videt', 'ceny', 'lide', 'cesta', 'kontakty', 'ubytovani', 'videa', 'clanky', 'sousedni-staty', 'elektricke-zasuvky', 'retezce'];
+            const tabs = ['co-videt', 'ceny', 'lide', 'cesta', 'kontakty', 'ubytovani', 'videa', 'clanky', 'sousedni-staty', 'elektricke-zasuvky', 'retezce', 'fauna', 'flora', 'jidlo', 'vyrobky'];
             tabs.forEach(tab => {
               allRoutes.push(`/svet/stat/${v.slug}/${tab}`);
             });
@@ -1322,7 +1342,11 @@ export default {
           'clanky',
           'sousedni-staty',
           'elektricke-zasuvky',
-          'retezce'
+          'retezce',
+          'fauna',
+          'flora',
+          'jidlo',
+          'vyrobky'
         ];
 
         tabs.forEach((tab) => {
