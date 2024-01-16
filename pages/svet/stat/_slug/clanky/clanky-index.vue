@@ -62,72 +62,22 @@
 
         <div class="t-main -tab" v-if="place[0]">
             <!-- SECTION -->
-            <section class="t-section -px-world -p0 mb-4">
+            <section class="t-section -p0">
                 <div class="t-section__inner">
-                    <div class="t-grid -place-main-with-aside">
-                        <div class="t-grid__section -main">
-
-                            <!-- SECTION - Telefoní čísla(emergency) -->
-                            <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].phone_numbers_emergency">
+                    <div class="t-grid -world-full">
+                        <div class="t-grid__section -content">
+                            <!-- SECTION - articles -->
+                            <section class="t-section -p0 -px-world my-2" v-if="place[0] && posts.length !== 0">
                                 <div class="t-section__inner">
-                                    <mHeadline title="Důležitá telefonní čísla" :perex="'Telefonní předvolba: ' + place[0].phone_prefix" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                    <oBlockList :items="place[0].phone_numbers_emergency" />
+                                    <mHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                    <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world-tab" styleThemaLoading=" -green" styleAlign=" -p-left" />
+                                    <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingPosts" />
+                                    <div class="flex flex-center my-2" v-if="!isLoadingPosts && !noMorePostsItems">
+                                        <span class="a-button-border -big -green" @click="loadMorePostsItems">Načíst další články</span>
+                                    </div>
                                 </div>
                             </section>
-                            <!-- SECTION - Telefoní čísla(emergency) END -->
-
-                            <!-- SECTION - Organizace -->
-                            <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].organization && place[0].organization.length > 0">
-                                <div class="t-section__inner">
-                                    <mHeadline title="Organizace ve kterých se stát nachází" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                    <oOrganizationList :items="this.place[0].organization" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Organizace END -->
-                        </div>
-
-                        <div class="t-grid__section -aside-place-status">
-                            <!-- SECTION - Visited button - sidebar -->
-                            <section class="t-section -px-world my-1">
-                                <div class="t-section__inner">
-                                    <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Visited button - sidebar - END -->
-                        </div>
-                        <div class="t-grid__section -aside-content">
-                            <!-- SECTION - Account banner - sidebar -->
-                            <section class="t-section -px-world my-1" v-if="account && account.length === 0">
-                                <div class="t-section__inner">
-                                    <oAccountBanner :account="account" styleThema=" -green" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Account banner - sidebar END -->
-
-                            <!-- SECTION - links - sidebar -->
-                            <section class="t-section -px-world" v-if="this.place[0].links && this.place[0].links.length > 0">
-                                <div class="t-section__inner">
-                                    <oSidebarLinks :items="this.place[0].links" headline="Užitečné odkazy" />
-                                </div>
-                            </section>
-                            <!-- SECTION - links - sidebar - END -->
-
-                            <!-- SECTION - apps - sidebar -->
-                            <section class="t-section -px-world" v-if="this.place[0].apps && this.place[0].apps.length > 0">
-                                <div class="t-section__inner">
-                                    <oSidebarLinks :items="this.place[0].apps" headline="Užitečné aplikace" />
-                                </div>
-                            </section>
-                            <!-- SECTION - apps - sidebar - END -->
-                        </div>
-                        <div class="t-grid__section -aside-ad">
-                            <!-- SECTION - ad-google - sidebar -->
-                            <section class="t-section -px-world mt-4 mb-2">
-                                <div class="t-section__inner">
-                                    <oAdGoogleSidebar styleThema=" -green" />
-                                </div>
-                            </section>
-                            <!-- SECTION - ad-google - sidebar - END -->
+                            <!-- SECTION - articles END -->
                         </div>
                     </div>
                 </div>
@@ -220,16 +170,10 @@
                 place: this.place,
                 placeContinent: this.placeContinent,
                 imagePlace: this.imagePlace,
-                activeTab: 'kontakty',
-                activeTabName: 'Kontakty',
+                activeTab: 'clanky',
+                activeTabName: 'Články',
                 isMobile: false,
                 showHero: true,
-                videos: [],
-                imagesVideos: [],
-                isLoadingVideos: false,
-                noMoreVideosItems: false,
-                videosPage: 1,
-                videosPerPage: 9,
                 posts: [],
                 imagesPosts: [],
                 isLoadingPosts: false,
@@ -353,6 +297,50 @@
                 ]
 
                 this.tabs = newTabs
+            },
+
+            async loadPosts() {
+                //start loading
+                this.isLoadingPosts = true
+
+                // Variable
+                let postsResponse
+
+                //load posts
+                postsResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/posts-id-state/${this.place[0].id}?showType=list&page=${this.postsPage}&items=${this.postsPerPage}`)
+                const { data: postsData } = postsResponse
+
+                //load images
+                const imagesPostsIDS = postsData.map(posts => posts.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
+                if (imagesPostsIDS.length > 0) {
+                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
+                    const { data: imagesData } = imagesResponse
+                    this.imagesPosts = this.imagesPosts.concat(imagesData)
+                
+                    // add to postsData to posts
+                    this.posts = this.posts.concat(postsData)
+                } else {
+                    // add to postsData to posts
+                    this.posts = this.posts.concat(postsData)
+                } 
+
+                //no more items?
+                if (postsData.length === 0 || postsData.length < this.postsPerPage) {
+                    this.noMorePostsItems = true
+                }
+
+                //end loading
+                this.isLoadingPosts = false
+            },
+
+            loadMorePostsItems() {
+                //no further loading can occur while loading
+                if (this.isLoadingPosts || this.noMorePostsItems) {
+                    return
+                }
+                // loading more items
+                this.postsPage++
+                this.loadPosts()
             }
         },
 
@@ -375,7 +363,7 @@
             // tab
             const tab = this.tabs.find(tab => tab.slug === this.activeTab)
             const label = tab.label || ''
-            let tabTitle = `Důležité ${label} ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
+            let tabTitle = `${label} ze států ${placeName} | Cestovatelský portál Frytol na cestách`
             title = tabTitle
 
             // description
@@ -460,6 +448,8 @@
         },
 
         mounted() {
+            this.loadPosts()
+
             // Zjistit, zda je rozlišení menší než 992px při načítání stránky
             this.isMobile = window.innerWidth < 992
 
@@ -467,7 +457,7 @@
             window.addEventListener('resize', this.handleResize)
 
             // Pretitle
-            this.preTitle = `Důležité ${this.activeTabName} ve státě`
+            this.preTitle = `${this.activeTabName} ze států`
 
             //Data for mNavBreadcrumbsPlaceArray 
             //continent

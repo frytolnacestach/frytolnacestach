@@ -221,6 +221,7 @@
                     { slug: 'kontakty', label: 'Kontakty', visible: true },
                     { slug: 'ubytovani', label: 'Ubytování', visible: true },
                     { slug: 'videa', label: 'Videa', visible: true },
+                    { slug: 'clanky', label: 'Články', visible: true },
                     { slug: 'sousedni-staty', label: 'Sousední státy', visible: true },
                     { slug: 'elektricke-zasuvky', label: 'Elektrické zásuvky', visible: true },
                     { slug: 'retezce', label: 'Řetězce', visible: true }
@@ -307,6 +308,7 @@
                 const hasTabContacts = this.tabsLoad.tabContact
                 const hasTabHotel = this.tabsLoad.tabHotel
                 const hasTabVideos = this.tabsLoad.tabVideos > 0
+                const hasTabPosts = this.tabsLoad.tabArticles > 0
                 const hasTabNeighboring = this.tabsLoad.tabNeighboring > 0
                 const hasTabWallSockets = this.tabsLoad.tabWallSockets > 0
                 const hasTabChains = this.tabsLoad.tabChains > 0
@@ -320,6 +322,7 @@
                     { slug: 'kontakty', label: 'Kontakty', visible: hasTabContacts },
                     { slug: 'ubytovani', label: 'Ubytování', visible: hasTabHotel },
                     { slug: 'videa', label: 'Videa', visible: hasTabVideos },
+                    { slug: 'clanky', label: 'Články', visible: hasTabPosts },
                     { slug: 'sousedni-staty', label: 'Sousední státy', visible: hasTabNeighboring },
                     { slug: 'elektricke-zasuvky', label: 'Elektrické zásuvky', visible: hasTabWallSockets },
                     { slug: 'retezce', label: 'Řetězce', visible: hasTabChains }

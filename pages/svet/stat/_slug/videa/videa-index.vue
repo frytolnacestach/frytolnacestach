@@ -64,7 +64,7 @@
             <!-- SECTION -->
             <section class="t-section -p0">
                 <div class="t-section__inner">
-                    <div class="t-grid -world-ful">
+                    <div class="t-grid -world-full">
                         <div class="t-grid__section -content">
                             <!-- SECTION - videos -->
                             <section class="t-section -p0 -px-world my-2" v-if="place[0] && videos.length !== 0">
@@ -180,12 +180,6 @@
                 noMoreVideosItems: false,
                 videosPage: 1,
                 videosPerPage: 9,
-                posts: [],
-                imagesPosts: [],
-                isLoadingPosts: false,
-                noMorePostsItems: false,
-                postsPage: 1,
-                postsPerPage: 9,
                 tabs: [
                     { slug: 'default', label: 'state_name', visible: true },
                     { slug: 'co-videt', label: 'Co vidět', visible: true },
@@ -195,6 +189,7 @@
                     { slug: 'kontakty', label: 'Kontakty', visible: true },
                     { slug: 'ubytovani', label: 'Ubytování', visible: true },
                     { slug: 'videa', label: 'Videa', visible: true },
+                    { slug: 'clanky', label: 'Články', visible: true },
                     { slug: 'sousedni-staty', label: 'Sousední státy', visible: true },
                     { slug: 'elektricke-zasuvky', label: 'Elektrické zásuvky', visible: true },
                     { slug: 'retezce', label: 'Řetězce', visible: true }
@@ -281,6 +276,7 @@
                 const hasTabContacts = this.tabsLoad.tabContact
                 const hasTabHotel = this.tabsLoad.tabHotel
                 const hasTabVideos = this.tabsLoad.tabVideos > 0
+                const hasTabPosts = this.tabsLoad.abArticles > 0
                 const hasTabNeighboring = this.tabsLoad.tabNeighboring > 0
                 const hasTabWallSockets = this.tabsLoad.tabWallSockets > 0
                 const hasTabChains = this.tabsLoad.tabChains > 0
@@ -294,6 +290,7 @@
                     { slug: 'kontakty', label: 'Kontakty', visible: hasTabContacts },
                     { slug: 'ubytovani', label: 'Ubytování', visible: hasTabHotel },
                     { slug: 'videa', label: 'Videa', visible: hasTabVideos },
+                    { slug: 'clanky', label: 'Články', visible: hasTabPosts },
                     { slug: 'sousedni-staty', label: 'Sousední státy', visible: hasTabNeighboring },
                     { slug: 'elektricke-zasuvky', label: 'Elektrické zásuvky', visible: hasTabWallSockets },
                     { slug: 'retezce', label: 'Řetězce', visible: hasTabChains }
