@@ -100,39 +100,6 @@
                             </section>
                             <!-- SECTION - Facts place END -->
 
-                            <!-- SECTION - Neighboring Place list -->
-                            <section class="t-section my-4 py-1 -p0 print-section" v-if="placesStatesNeighboring">
-                                <div class="t-section__inner">
-                                    <mHeadline title="Sousední státy státu " :titleValue="place[0].name" perex="Přehled o zemích, které sdílí pevninskou či mostní hranici s touto destinací, představujeme kulturu, zajímavosti a potenciální cestovatelská dobrodružství." styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                    <oCoverNeighboring :items="placesStatesNeighboring" :images="imagesStatesNeighboring" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Neighboring Place list END -->
-                            
-                            <!-- SECTION - Food -->
-                            <oCoverItemState type="jidlo" title="Tradiční jídla ve státě" perex="Ponořte se do bohaté tradice a ochutnejte neodolatelná tradiční jídla, která vám přiblíží autentickou chuť a atmosféru této fascinující destinace." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
-                            <!-- SECTION - Food END -->
-
-                            <!-- SECTION - Fauna list -->
-                            <oCoverItemState type="fauna" title="Nebezpečná Fauna ve státě" perex="Představujeme vám nebezpečná zvířata, která obývají tuto oblast, a poodhalujeme výjimečné vlastnosti a zajímavosti o nich." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
-                            <!-- SECTION - Fauna list END -->
-
-                            <!-- SECTION - Flora list -->
-                            <oCoverItemState type="flora" title="Nebezpečná Flóra ve státě" perex="Přehled o rostlinách, které ukrývají svou sílu a nebezpečí. Objevte tajemství jedinečných rostlinných druhů, které tvoří fascinující a zároveň riskantní součást tamní přírody." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
-                            <!-- SECTION - Flora list END -->
-
-                            <!-- SECTION - Značky list -->
-                            <oCoverItemState type="znacka" title="Značky a výrobky ze státu" perex="Zajímavý přehled kvalitních produktů, které vystihují místní charakter a tradici." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
-                            <!-- SECTION - Značky list END -->
-
-                            <!-- SECTION - Elektrické zásuvky list -->
-                            <oCoverTitleItemState type="elektricka-zasuvka" title="Elektrické zásuvky použivané ve státě" perex="Poskytujeme vám informace pro pohodlné připojení a dobíjení vašich zařízení během pobytu, abyste byli připraveni na místní elektrickou infrastrukturu." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
-                            <!-- SECTION - Elektrické zásuvky END -->
-
-                            <!-- SECTION - Řetezce list -->
-                            <oCoverItemState type="retezec" title="Řetězce ve státě" perex="Představujeme vám přehled nadnárodních i místních řetězců, abyste mohli plánovat své nákupy a stravování s lehkostí a přizpůsobit je svým preferencím." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
-                            <!-- SECTION - Řetezce list END -->
-
                             <!-- SECTION - Review -->
                             <oReviewItem :account="account" :IDplace="place[0].id" type="state" v-if="place[0].id" />
                             <!-- SECTION - Review END -->
@@ -276,10 +243,7 @@
     import oAlerts from '~/components/organisms/oAlerts.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oBlockItem from '~/components/organisms/oBlockItem.vue'
-    import oCoverItemState from '~/components/organisms/oCoverItemState.vue'
-    import oCoverNeighboring from '~/components/organisms/oCoverNeighboring.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
-    import oCoverTitleItemState from '~/components/organisms/oCoverTitleItemState.vue'
     import oFactsPlace from '~/components/organisms/oFactsPlace.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
@@ -306,10 +270,7 @@
             oAlerts,
             oArticleList,
             oBlockItem,
-            oCoverItemState,
-            oCoverNeighboring,
             oCoverPlaceDetail,
-            oCoverTitleItemState,
             oFactsPlace,
             oHeroPlace,
             oHotInfoHero,
