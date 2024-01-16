@@ -52,7 +52,7 @@
                     <mHeadline title="Nejbližší události" styleAlign=" -left" />
                     <oEventListSmall styleThema=" -gray" />
                     <div class="flex flex-full flex-ai-end flex-center mt-2">
-                        <aButtonFillFull target="internal" url="/udalosti" text="Všechny události" styleThema=" -gray" />
+                        <aButtonFillFull target="internal" url="/udalost" text="Všechny události" styleThema=" -gray" />
                     </div>
                     <!-- SECTION - events END -->
                 </div>
