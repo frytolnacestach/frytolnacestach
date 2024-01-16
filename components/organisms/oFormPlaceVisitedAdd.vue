@@ -28,7 +28,7 @@
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
 
     export default {
-        name: 'OrganismsFormPlaceVisitedAddComponent',
+        name: 'OrganismsoFormPlaceVisitedAddComponent',
 
         components: {
             oFlashMessages
