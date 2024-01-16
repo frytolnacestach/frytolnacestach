@@ -212,7 +212,7 @@
                 imagePlace: this.imagePlace,
                 imagesStatesNeighboring: this.imagesStatesNeighboring,
                 activeTab: 'sousedni-staty',
-                activeTabName: 'SOusední státy',
+                activeTabName: 'Sousední státy',
                 isMobile: false,
                 showHero: true,
                 videos: [],
