@@ -276,7 +276,7 @@
                 const hasTabContacts = this.tabsLoad.tabContact
                 const hasTabHotel = this.tabsLoad.tabHotel
                 const hasTabVideos = this.tabsLoad.tabVideos > 0
-                const hasTabPosts = this.tabsLoad.abArticles > 0
+                const hasTabPosts = this.tabsLoad.tabArticles > 0
                 const hasTabNeighboring = this.tabsLoad.tabNeighboring > 0
                 const hasTabWallSockets = this.tabsLoad.tabWallSockets > 0
                 const hasTabChains = this.tabsLoad.tabChains > 0
