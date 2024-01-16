@@ -913,6 +913,11 @@ export default {
         path: '/svet/stat/:slug/videa',
         component: resolve(__dirname, 'pages/svet/stat/_slug/videa/videa-index.vue')
       })
+      routes.push({
+        name: 'world-stat-posts',
+        path: '/svet/stat/:slug/clanky',
+        component: resolve(__dirname, 'pages/svet/stat/_slug/clanky/clanky-index.vue')
+      })
     }
   },
   // Router END
@@ -1093,7 +1098,7 @@ export default {
             allRoutes.push(`/svet/stat/${v.slug}`);
       
             // State - tabs
-            const tabs = ['co-videt', 'ceny', 'lide', 'cesta', 'kontakty', 'ubytovani', 'videa', 'sousedni-staty', 'elektricke-zasuvky', 'retezce'];
+            const tabs = ['co-videt', 'ceny', 'lide', 'cesta', 'kontakty', 'ubytovani', 'videa', 'clanky', 'sousedni-staty', 'elektricke-zasuvky', 'retezce'];
             tabs.forEach(tab => {
               allRoutes.push(`/svet/stat/${v.slug}/${tab}`);
             });
@@ -1314,6 +1319,7 @@ export default {
           'kontakty',
           'ubytovani',
           'videa',
+          'clanky',
           'sousedni-staty',
           'elektricke-zasuvky',
           'retezce'
