@@ -1301,6 +1301,11 @@ export default {
 
       // Places - States
       placesStates.forEach((slug) => {
+        routes.push(`svet/stat/${slug}`)
+      })
+
+      // Places - States - subpages
+      placesStates.forEach((slug) => {
         const tabs = [
           'co-videt',
           'ceny',
