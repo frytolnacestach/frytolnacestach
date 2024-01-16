@@ -1,0 +1,534 @@
+<template>
+    <main class="t-main -green -pt-menu" role="main">
+        <!-- SECTION - BREADCRUMBS -->
+        <section class="t-section -px-world mt-2 -p0">
+            <div class="t-section__inner">
+                <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" />
+            </div>
+        </section>
+        <!-- SECTION - BREADCRUMBS END -->
+
+        <!-- SECTION - Buttons -->
+        <section class="t-section -px-world mt-1 -p0 hidden-print" v-if="isMobile">
+            <div class="t-section__inner">
+                <oSwitchHero :show-hero.sync="showHero" />
+            </div>
+        </section>
+        <!-- SECTION - Buttons END -->
+
+        <!-- SECTION - hero + hot info hero -->
+        <section class="t-section -px-world -p0">
+            <div class="t-section__inner">
+                <div class="t-grid -world-hero">
+
+                    <!-- SECTION - hero -->
+                    <div class="t-grid__section -hero-place" v-show="!isMobile || (isMobile && showHero)">
+                        <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
+                    </div>
+                    <!-- SECTION - hero END -->
+
+                    <!-- SECTION - map -->
+                    <div class="t-grid__section -map" v-show="!isMobile || (isMobile && !showHero)">
+                        <oMapGoogle :place="place" />
+                    </div>
+                    <!-- SECTION - map - END -->
+
+                    <!-- SECTION - hot info -->
+                    <div class="t-grid__section -hot-info-hero">
+                        <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
+                    </div>
+                    <!-- SECTION - hot info - END -->
+
+                </div>
+            </div>
+        </section>
+        <!-- SECTION - hero + hot info - END -->
+
+        <!-- SECTION - Alerts -->
+        <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
+            <div class="t-section__inner">
+                <oAlerts :alerts="place[0].alerts" />
+            </div>
+        </section>
+        <!-- SECTION - Alerts END -->
+    
+        <!-- SECTION - Nav place -->
+        <section class="t-section -px-world-big -p0" v-if="place[0]">
+            <div class="t-section__inner">
+                <mNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
+            </div>
+        </section>
+        <!-- SECTION - Nav place END -->
+
+        <div class="t-main -tab" v-if="place[0]">
+            <!-- SECTION -->
+            <section class="t-section -p0">
+                <div class="t-section__inner">
+                    <div class="t-grid -world-ful">
+                        <div class="t-grid__section -content">
+                            <!-- SECTION -->
+                            <section class="t-section -px-world -p0 mb-4">
+                                <div class="t-section__inner">
+                                    <div class="t-grid -place-main-with-aside">
+                                        <div class="t-grid__section -main">
+                                            <!-- SECTION - Elektrické zásuvky list -->
+                                            <section class="t-section -p0 -px-world my-2">
+                                                <div class="t-section__inner">
+                                                    <oCoverTitleItemState type="elektricka-zasuvka" title="Elektrické zásuvky použivané ve státě" perex="Poskytujeme vám informace pro pohodlné připojení a dobíjení vašich zařízení během pobytu, abyste byli připraveni na místní elektrickou infrastrukturu." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
+                                                </div>
+                                            </section>
+                                            <!-- SECTION - Elektrické zásuvky END -->
+                                        </div>
+
+                                        <div class="t-grid__section -aside-place-status">
+                                            <!-- SECTION - Visited button - sidebar -->
+                                            <section class="t-section -px-world my-1">
+                                                <div class="t-section__inner">
+                                                    <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
+                                                </div>
+                                            </section>
+                                            <!-- SECTION - Visited button - sidebar - END -->
+                                        </div>
+                                        <div class="t-grid__section -aside-content">
+                                            <!-- SECTION - Account banner - sidebar -->
+                                            <section class="t-section -px-world my-1" v-if="account && account.length === 0">
+                                                <div class="t-section__inner">
+                                                    <oAccountBanner :account="account" styleThema=" -green" />
+                                                </div>
+                                            </section>
+                                            <!-- SECTION - Account banner - sidebar END -->
+
+                                            <!-- SECTION - Events - sidebar -->
+                                            <oSidebarList :place="this.place[0].id" type="state" />
+                                            <!-- SECTION - Events - sidebar - END -->
+                                        </div>
+                                        <div class="t-grid__section -aside-ad">
+                                            <!-- SECTION - ad-google - sidebar -->
+                                            <section class="t-section -px-world mt-4 mb-2">
+                                                <div class="t-section__inner">
+                                                    <oAdGoogleSidebar styleThema=" -green" />
+                                                </div>
+                                            </section>
+                                            <!-- SECTION - ad-google - sidebar - END -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- SECTION END -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION END -->
+        </div>
+    </main>
+</template>
+
+<script>
+    import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
+    import mNavPlace from '~/components/molecules/mNavPlace.vue'
+    import mHeadline from '~/components/molecules/mHeadline.vue'
+    import oAccountBanner from '~/components/organisms/oAccountBanner.vue'
+    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
+    import oAffilateBooking from '~/components/organisms/oAffilateBooking.vue'
+    import oAlerts from '~/components/organisms/oAlerts.vue'
+    import oArticleList from '~/components/organisms/oArticleList.vue'
+    import oBlockItem from '~/components/organisms/oBlockItem.vue'
+    import oBlockList from '~/components/organisms/oBlockList.vue'
+    import oCoverItemState from '~/components/organisms/oCoverItemState.vue'
+    import oCoverNeighboring from '~/components/organisms/oCoverNeighboring.vue'
+    import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
+    import oCoverTitleItemState from '~/components/organisms/oCoverTitleItemState.vue'
+    import oFactsPlace from '~/components/organisms/oFactsPlace.vue'
+    import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
+    import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
+    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
+    import oLanguagePhrases from '~/components/organisms/oLanguagePhrases.vue'
+    import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
+    import oChartPie from '@/components/organisms/oChartPie.vue'
+    import oOrganizationList from '~/components/organisms/oOrganizationList.vue'
+    import oPlaceTeaserCities from '~/components/organisms/oPlaceTeaserCities.vue'
+    import oPlaceTeaserRegions from '~/components/organisms/oPlaceTeaserRegions.vue'
+    import oPlaceTeaserSpots from '~/components/organisms/oPlaceTeaserSpots.vue'
+    import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
+    import oReviewItem from '~/components/organisms/oReviewItem.vue'
+    import oSidebarLinks from '~/components/organisms/oSidebarLinks.vue'
+    import oSidebarList from '~/components/organisms/oSidebarList.vue'
+    import oSidebarTime from '~/components/organisms/oSidebarTime.vue'
+    import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
+    import oVideoList from '~/components/organisms/oVideoList.vue'
+    import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
+
+
+    export default {
+        name: 'SvetStatSlugPage',
+
+        components: {
+            mNavBreadcrumbsPlace,
+            mNavPlace,
+            mHeadline,
+            oAccountBanner,
+            oAdGoogleSidebar,
+            oAffilateBooking,
+            oAlerts,
+            oArticleList,
+            oBlockItem,
+            oBlockList,
+            oCoverItemState,
+            oCoverNeighboring,
+            oCoverPlaceDetail,
+            oCoverTitleItemState,
+            oFactsPlace,
+            oHeroPlace,
+            oHotInfoHero,
+            oInformationBlock,
+            oLanguagePhrases,
+            oMapGoogle,
+            oChartPie,
+            oOrganizationList,
+            oPlaceTeaserCities,
+            oPlaceTeaserRegions,
+            oPlaceTeaserSpots,
+            oPlaceTeaser,
+            oReviewItem,
+            oSidebarLinks,
+            oSidebarList,
+            oSidebarTime,
+            oSwitchHero,
+            oVideoList,
+            oVisitedButton
+        },
+
+        data() {
+            return {
+                account: [],
+                preTitle: '',
+                tabsLoad: this.tabsLoad,
+                place: this.place,
+                placeContinent: this.placeContinent,
+                imagePlace: this.imagePlace,
+                activeTab: 'elektricke-zasuvky',
+                activeTabName: 'Elektrické zásuvky',
+                isMobile: false,
+                showHero: true,
+                videos: [],
+                imagesVideos: [],
+                isLoadingVideos: false,
+                noMoreVideosItems: false,
+                videosPage: 1,
+                videosPerPage: 9,
+                posts: [],
+                imagesPosts: [],
+                isLoadingPosts: false,
+                noMorePostsItems: false,
+                postsPage: 1,
+                postsPerPage: 9,
+                tabs: [
+                    { slug: 'default', label: 'state_name', visible: true },
+                    { slug: 'co-videt', label: 'Co vidět', visible: true },
+                    { slug: 'ceny', label: 'Ceny', visible: true },
+                    { slug: 'lide', label: 'Lidé', visible: true },
+                    { slug: 'cesta', label: 'Cesta', visible: true },
+                    { slug: 'kontakty', label: 'Kontakty', visible: true },
+                    { slug: 'ubytovani', label: 'Ubytování', visible: true },
+                    { slug: 'videa', label: 'Videa', visible: true },
+                    { slug: 'sousedni-staty', label: 'Sousední státy', visible: true },
+                    { slug: 'elektricke-zasuvky', label: 'Elektrické zásuvky', visible: true },
+                    { slug: 'retezce', label: 'Řetězce', visible: true }
+                ],
+                mNavBreadcrumbsPlaceArray: [
+                    {
+                        id: 1,
+                        icon: true,
+                        type: "world",
+                        name: "Svět",
+                        url: "/svet",
+                        status: "link"
+                    },
+                    {
+                        id: 2,
+                        icon: true,
+                        type: "continent",
+                        name: "Kontinenty",
+                        url: "/svet/kontinent",
+                        status: "link"
+                    },
+                    {
+                        id: 3,
+                        icon: false,
+                        type: "continent",
+                        name: "Kontinent",
+                        url: "/svet/kontinent",
+                        status: "link"
+                    },
+                    {
+                        id: 4,
+                        icon: true,
+                        type: "state",
+                        name: "Státy",
+                        url: "/svet/stat",
+                        status: "link"
+                    },
+                    {
+                        id: 5,
+                        icon: false,
+                        type: "state",
+                        name: "Stát",
+                        url: "/svet/stat",
+                        status: "span"
+                    }
+                ],
+                oHotInfoHeroArray: [
+                    {
+                        id: 1,
+                        title: "Kontinent",
+                        name: "_NÁZEV KONTINENTU_",
+                        url: `_ODKAZ_`,
+                        type: "string",
+                    },
+                    {
+                        id: 2,
+                        title: "Rozloha",
+                        name: "_ROZLOHA_",
+                        type: "number",
+                        subfix: " km²"
+                    },
+                    {
+                        id: 3,
+                        title: "Populace",
+                        name: "_POPULACE_",
+                        type: "number"
+                    }
+                ]
+            }
+        },
+
+        methods:{
+            handleResize() {
+                // Aktualizovat hodnotu pro "isMobile" při změně velikosti okna
+                this.isMobile = window.innerWidth < 992
+            },
+
+            updatedTabs() {
+                const hasTabDefault = true
+                const hasTabShow = this.tabsLoad.tabWhatToSee
+                const hasTabPrice = this.tabsLoad.tabPrice
+                const hasTabPeople = this.tabsLoad.tabPeople
+                const hasTabTrip = this.tabsLoad.tabTrip
+                const hasTabContacts = this.tabsLoad.tabContact
+                const hasTabHotel = this.tabsLoad.tabHotel
+                const hasTabVideos = this.tabsLoad.tabVideos > 0
+                const hasTabNeighboring = this.tabsLoad.tabNeighboring > 0
+                const hasTabWallSockets = this.tabsLoad.tabWallSockets > 0
+                const hasTabChains = this.tabsLoad.tabChains > 0
+
+                const newTabs = [
+                    { slug: 'default', label: 'Výchozí', visible: hasTabDefault },
+                    { slug: 'co-videt', label: 'Co vidět', visible: hasTabShow },
+                    { slug: 'ceny', label: 'Ceny', visible: hasTabPrice },
+                    { slug: 'lide', label: 'Lidé', visible: hasTabPeople },
+                    { slug: 'cesta', label: 'Cesta', visible: hasTabTrip },
+                    { slug: 'kontakty', label: 'Kontakty', visible: hasTabContacts },
+                    { slug: 'ubytovani', label: 'Ubytování', visible: hasTabHotel },
+                    { slug: 'videa', label: 'Videa', visible: hasTabVideos },
+                    { slug: 'sousedni-staty', label: 'Sousední státy', visible: hasTabNeighboring },
+                    { slug: 'elektricke-zasuvky', label: 'Elektrické zásuvky', visible: hasTabWallSockets },
+                    { slug: 'retezce', label: 'Řetězce', visible: hasTabChains }
+                ]
+
+                this.tabs = newTabs
+            }
+        },
+
+        head() {
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
+
+            // title
+            const placeName = this.place && this.place.length > 0 ? this.place[0].name : 'Stát'
+            const defaultTitle = `${placeName} | Cestovatelský portál Frytol na cestách`
+            title = defaultTitle
+
+            // tab
+            const tab = this.tabs.find(tab => tab.slug === this.activeTab)
+            const label = tab.label || ''
+            let tabTitle = `${label} použivané ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
+            title = tabTitle
+
+            // description
+            description = `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name ? this.place[0].name : 'Stát'}`
+
+            // keywolds
+            let metaSeoTags
+            if (this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
+                metaSeoTags = this.place[0].seo_tags.map(item => item.tag).join(", ")
+            }
+            keywords = (this.place[0].name ? this.place[0].name : '') + metaSeoTags + ', stát, ceny, ubytování, lidé a kultura, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu'
+
+            // ogImage
+            ogImage = `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/svet/stat/${this.place[0].slug}${this.activeTab !== 'default' ? `/${this.activeTab}` : ''}`
+
+            // ogType
+            ogType = 'website'
+
+            // Return
+            return {
+                title,
+                meta: [
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { property: 'og:image', content: ogImage },
+                    { hid: 'og:title', content: ogTitle },
+                    { hid: 'og:description', content: ogDescription },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:type', content: ogType }
+                ]
+            }
+        },
+
+        async asyncData({ $axios, params }) {
+            let success = false
+            let data = null
+
+            while (!success) { 
+                try {
+                    // PAGE - Place state detail
+                    // Place
+                    const place = await $axios.$get(`https://api.frytolnacestach.cz/api/places-state/${params.slug}`)
+                    // Image
+                    const imagePlace = place[0].id_image_hero && place[0].id_image_hero !== 0 ? await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${place[0].id_image_hero}`) : []
+                    // PlaceContinent
+                    const placeContinent = await $axios.$get(`https://api.frytolnacestach.cz/api/places-continent-id/${place[0].id_continent}`)
+
+
+                    // COMPONENT - Tabs
+                    let tabsLoad
+                    if (place[0].id) {
+                        tabsLoad = await $axios.$get(`https://api.frytolnacestach.cz/api/config-world-state-tabs/${place[0].id}`)
+                    }
+
+
+                    data = {
+                        tabsLoad,
+                        place,
+                        imagePlace,
+                        placeContinent
+                    }
+
+
+                    success = true
+                } catch (error) {
+                    console.log(`API ERROR - STÁT DETAIL: ${params.slug}`)
+                    console.error(error)
+
+                    await new Promise(resolve => setTimeout(resolve, 1000))
+                }
+            }
+            return data
+        },
+
+        mounted() {
+            // Zjistit, zda je rozlišení menší než 992px při načítání stránky
+            this.isMobile = window.innerWidth < 992
+
+            // Poslouchat událost změny velikosti okna pro aktualizaci přepínače
+            window.addEventListener('resize', this.handleResize)
+
+            // Pretitle
+            this.preTitle = `${this.activeTabName} použivané ve státě`
+
+            //Data for mNavBreadcrumbsPlaceArray 
+            //continent
+            this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
+                if (item.id === 3) {
+                    item.name = this.placeContinent[0].name
+                    item.url = "/svet/kontinent/" + this.placeContinent[0].slug
+                }
+                return item
+            })
+            //state
+            if(this.activeTab === 'undefined' || this.activeTab === 'default') {
+                this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
+                    if (item.id === 5) {
+                        item.name = this.place[0].name
+                        item.url = "/svet/stat/" + this.place[0].slug
+                        item.status = "span"
+                    }
+                    return item
+                })
+            } else {
+                this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
+                    if (item.id === 5) {
+                        item.name = this.place[0].name
+                        item.url = "/svet/stat/" + this.place[0].slug
+                        item.status = "link"
+                    }
+                    return item
+                })
+            }
+
+            //Data for oHotInfoHero
+            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
+                if (item.id === 1) {
+                    item.name = this.placeContinent[0].name
+                    item.url = `/svet/kontinent/${this.placeContinent[0].slug}`
+                }
+                return item
+            })
+            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
+                if (item.id === 2) {
+                    item.name = this.place[0].area
+                }
+                return item
+            })
+            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
+                if (item.id === 3) {
+                    item.name = this.place[0].population
+                }
+                return item
+            })
+        },
+
+        beforeUnmount() {
+            // Zrušit naslouchání události změny velikosti okna při odstranění komponenty
+            window.removeEventListener('resize', this.handleResize)
+        },
+
+        updated() {
+            window.lazySizes && window.lazySizes.update()
+        },
+
+        watch: {
+            '$store.state.account': {
+                deep: true,
+                immediate: true,
+                handler() {
+                    this.account = this.$store.state.account
+                }
+            },
+
+            tabsLoad: {
+                immediate: true,
+                handler(newVal, oldVal) {
+                    this.updatedTabs()
+                }
+            }
+        }
+    }
+</script>

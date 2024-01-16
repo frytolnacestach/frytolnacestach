@@ -834,17 +834,6 @@ export default {
     middleware: ['removeTrailingSlash'],
     extendRoutes(routes, resolve) {
       routes.push({
-        name: 'stat-slug',
-        path: '/svet/stat/:slug',
-        component: resolve(__dirname, 'pages/svet/stat/_slug.vue'),
-        alias: '/svet/stat/:slug/default'
-      })
-      routes.push({
-        name: 'stat-slug-tab',
-        path: '/svet/stat/:slug/:tab',
-        component: resolve(__dirname, 'pages/svet/stat/_slug.vue')
-      })
-      routes.push({
         name: 'user-visited-place',
         path: '/cestovatel/:slug/navstivena-mista',
         component: resolve(__dirname, 'pages/cestovatel/_slug/navstivena-mista/navstivena-mista-index.vue')
@@ -869,7 +858,62 @@ export default {
         path: '/cestovatel/:slug/sleduji',
         component: resolve(__dirname, 'pages/cestovatel/_slug/sleduji/sleduji-index.vue')
       })
-    },
+      routes.push({
+        name: 'world-stat-slug',
+        path: '/svet/stat/:slug',
+        component: resolve(__dirname, 'pages/svet/stat/_slug.vue')
+      })
+      routes.push({
+        name: 'world-stat-price',
+        path: '/svet/stat/:slug/ceny',
+        component: resolve(__dirname, 'pages/svet/stat/_slug/ceny/ceny-index.vue')
+      })
+      routes.push({
+        name: 'world-stat-trip',
+        path: '/svet/stat/:slug/cesta',
+        component: resolve(__dirname, 'pages/svet/stat/_slug/cesta/cesta-index.vue')
+      })
+      routes.push({
+        name: 'world-stat-what-to-see',
+        path: '/svet/stat/:slug/co-videt',
+        component: resolve(__dirname, 'pages/svet/stat/_slug/co-videt/co-videt-index.vue')
+      })
+      routes.push({
+        name: 'world-stat-wall-sockets',
+        path: '/svet/stat/:slug/elektricke-zasuvky',
+        component: resolve(__dirname, 'pages/svet/stat/_slug/elektricke-zasuvky/elektricke-zasuvky-index.vue')
+      })
+      routes.push({
+        name: 'world-stat-contacts',
+        path: '/svet/stat/:slug/kontakty',
+        component: resolve(__dirname, 'pages/svet/stat/_slug/kontakty/kontakty-index.vue')
+      })
+      routes.push({
+        name: 'world-stat-people',
+        path: '/svet/stat/:slug/lide',
+        component: resolve(__dirname, 'pages/svet/stat/_slug/lide/lide-index.vue')
+      })
+      routes.push({
+        name: 'world-stat-chains',
+        path: '/svet/stat/:slug/retezce',
+        component: resolve(__dirname, 'pages/svet/stat/_slug/retezce/retezce-index.vue')
+      })
+      routes.push({
+        name: 'world-stat-neighboring',
+        path: '/svet/stat/:slug/sousedni-staty',
+        component: resolve(__dirname, 'pages/svet/stat/_slug/sousedni-staty/sousedni-staty-index.vue')
+      })
+      routes.push({
+        name: 'world-stat-hotel',
+        path: '/svet/stat/:slug/ubytovani',
+        component: resolve(__dirname, 'pages/svet/stat/_slug/ubytovani/ubytovani-index.vue')
+      })
+      routes.push({
+        name: 'world-stat-videos',
+        path: '/svet/stat/:slug/videa',
+        component: resolve(__dirname, 'pages/svet/stat/_slug/videa/videa-index.vue')
+      })
+    }
   },
   // Router END
 
@@ -1258,7 +1302,6 @@ export default {
       // Places - States
       placesStates.forEach((slug) => {
         const tabs = [
-          'default',
           'co-videt',
           'ceny',
           'lide',
