@@ -71,15 +71,9 @@
                                 <div class="t-section__inner">
                                     <div class="t-grid -place-main-with-aside">
                                         <div class="t-grid__section -main">
-                                            <!-- SECTION - Sousední státy -->
-                                            <section class="t-section -p0 -px-world my-2">
-                                                <div class="t-section__inner">
-                                                    <mHeadline title="Sousední státy státu " :titleValue="place[0].name" perex="Přehled o zemích, které sdílí pevninskou či mostní hranici s touto destinací, představujeme kulturu, zajímavosti a potenciální cestovatelská dobrodružství." styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" v-if="placesStatesNeighboring" />
-                                                    <mHeadline title="Sousední státy státu " :titleValue="place[0].name" :perex="'Stát ' + place[0].name + ' nemá žádné přímé sousední státy'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" v-else />
-                                                    <oCoverNeighboring :items="placesStatesNeighboring" :images="imagesStatesNeighboring" v-if="placesStatesNeighboring" />
-                                                </div>
-                                            </section>
-                                            <!-- SECTION - Sousední státy END -->
+                                            <!-- SECTION - Značky list -->
+                                            <oCoverItemState type="znacka" title="Značky a výrobky ze státu" perex="Zajímavý přehled kvalitních produktů, které vystihují místní charakter a tradici." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
+                                            <!-- SECTION - Značky list END -->
                                         </div>
 
                                         <div class="t-grid__section -aside-place-status">
@@ -133,7 +127,7 @@
     import oAccountBanner from '~/components/organisms/oAccountBanner.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oAlerts from '~/components/organisms/oAlerts.vue'
-    import oCoverNeighboring from '~/components/organisms/oCoverNeighboring.vue'
+    import oCoverItemState from '~/components/organisms/oCoverItemState.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
@@ -152,7 +146,7 @@
             oAccountBanner,
             oAdGoogleSidebar,
             oAlerts,
-            oCoverNeighboring,
+            oCoverItemState,
             oHeroPlace,
             oHotInfoHero,
             oMapGoogle,
@@ -167,12 +161,10 @@
                 preTitle: '',
                 tabsLoad: this.tabsLoad,
                 place: this.place,
-                placesStatesNeighboring: this.placesStatesNeighboring,
                 placeContinent: this.placeContinent,
                 imagePlace: this.imagePlace,
-                imagesStatesNeighboring: this.imagesStatesNeighboring,
-                activeTab: 'sousedni-staty',
-                activeTabName: 'Sousední státy',
+                activeTab: 'vyrobky',
+                activeTabName: 'Výrobky',
                 isMobile: false,
                 showHero: true,
                 tabs: [
@@ -326,7 +318,7 @@
             // tab
             const tab = this.tabs.find(tab => tab.slug === this.activeTab)
             const label = tab.label || ''
-            let tabTitle = `${label} státu ${placeName} | Cestovatelský portál Frytol na cestách`
+            let tabTitle = `${label} ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
             title = tabTitle
 
             // description
@@ -391,31 +383,10 @@
                     }
 
 
-                    // COMPONENT - Neighboring states
-                    // PlacesStatesNeighboring
-                    let placesStatesNeighboring
-                    if (place[0].ids_neighboring_countries !== null ) {
-                        const idsNeighboringCountries = place[0].ids_neighboring_countries.map(item => item.id)
-                        placesStatesNeighboring = await $axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${idsNeighboringCountries.join(',')}`)
-                    } else {
-                        placesStatesNeighboring = null
-                    }
-                    // Images
-                    let imagesStatesNeighboring
-                    if (placesStatesNeighboring) {
-                        const imagesplaceStatesNeighboringID = placesStatesNeighboring.map(placesStateNeighboring => placesStateNeighboring.id_image_cover).filter(id => id !== null && id !== '')
-                        imagesStatesNeighboring = await $axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesplaceStatesNeighboringID.join(',')}`)
-                    } else {
-                        imagesStatesNeighboring = null
-                    }
-
-
                     data = {
                         tabsLoad,
                         place,
                         imagePlace,
-                        placesStatesNeighboring,
-                        imagesStatesNeighboring,
                         placeContinent
                     }
 
@@ -439,7 +410,7 @@
             window.addEventListener('resize', this.handleResize)
 
             // Pretitle
-            this.preTitle = `${this.activeTabName} státu`
+            this.preTitle = `${this.activeTabName} ve státě`
 
             //Data for mNavBreadcrumbsPlaceArray 
             //continent

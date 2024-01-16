@@ -150,6 +150,10 @@
                     { slug: 'clanky', label: 'Články', visible: true },
                     { slug: 'sousedni-staty', label: 'Sousední státy', visible: true },
                     { slug: 'elektricke-zasuvky', label: 'Elektrické zásuvky', visible: true },
+                    { slug: 'fauna', label: 'Fauna', visible: true },
+                    { slug: 'flora', label: 'Flora', visible: true },
+                    { slug: 'jidlo', label: 'Jídlo', visible: true },
+                    { slug: 'vyrobky', label: 'Výrobky', visible: true },
                     { slug: 'retezce', label: 'Řetězce', visible: true }
                 ],
                 mNavBreadcrumbsPlaceArray: [
@@ -238,6 +242,10 @@
                 const hasTabNeighboring = this.tabsLoad.tabNeighboring > 0
                 const hasTabWallSockets = this.tabsLoad.tabWallSockets > 0
                 const hasTabChains = this.tabsLoad.tabChains > 0
+                const hasTabFauna = this.tabsLoad.tabFauna > 0
+                const hasTabFlora = this.tabsLoad.tabFlora > 0
+                const hasTabFoods = this.tabsLoad.tabFoods > 0
+                const hasTabBrands = this.tabsLoad.tabBrands > 0
 
                 const newTabs = [
                     { slug: 'default', label: 'Výchozí', visible: hasTabDefault },
@@ -251,7 +259,11 @@
                     { slug: 'clanky', label: 'Články', visible: hasTabPosts },
                     { slug: 'sousedni-staty', label: 'Sousední státy', visible: hasTabNeighboring },
                     { slug: 'elektricke-zasuvky', label: 'Elektrické zásuvky', visible: hasTabWallSockets },
-                    { slug: 'retezce', label: 'Řetězce', visible: hasTabChains }
+                    { slug: 'retezce', label: 'Řetězce', visible: hasTabChains },
+                    { slug: 'fauna', label: 'Fauna', visible: hasTabFauna },
+                    { slug: 'flora', label: 'Flora', visible: hasTabFlora },
+                    { slug: 'jidlo', label: 'Jídlo', visible: hasTabFoods },
+                    { slug: 'vyrobky', label: 'Výrobky', visible: hasTabBrands }
                 ]
 
                 this.tabs = newTabs
