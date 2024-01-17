@@ -100,6 +100,15 @@
                             </section>
                             <!-- SECTION - Facts place END -->
 
+                            <!-- SECTION - Directory Subpages -->
+                            <section class="t-section my-4 py-1 -p0 print-section" v-if="tabsLoad">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Co by tě mohlo zajímat o státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
+                                    <oDirectorySubpages :tabs="tabs" :data="tabsLoad" :placeSlug="place[0].slug" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Directory Subpages END -->
+
                             <!-- SECTION - Review -->
                             <oReviewItem :account="account" :IDplace="place[0].id" type="state" v-if="place[0].id" />
                             <!-- SECTION - Review END -->
@@ -244,6 +253,7 @@
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oBlockItem from '~/components/organisms/oBlockItem.vue'
     import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
+    import oDirectorySubpages from '~/components/organisms/oDirectorySubpages.vue'
     import oFactsPlace from '~/components/organisms/oFactsPlace.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
@@ -271,6 +281,7 @@
             oArticleList,
             oBlockItem,
             oCoverPlaceDetail,
+            oDirectorySubpages,
             oFactsPlace,
             oHeroPlace,
             oHotInfoHero,
