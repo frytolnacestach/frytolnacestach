@@ -110,7 +110,7 @@
             title = `${this.flora[0].name ? this.flora[0].name : 'Flóra'} | Cestovatelský portál Frytol na cestách`
 
             // description
-            description = `${this.flora[0].description ? this.flora[0].description.slice(0, this.flora[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.flora[0].name}`
+            description = `${this.flora[0].description ? this.flora[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.flora[0].description.lastIndexOf(' ', 160)) : this.flora[0].name}`
 
             // keywolds
             let metaSeoTags

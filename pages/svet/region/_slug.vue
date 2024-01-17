@@ -417,7 +417,7 @@
             title = `${this.place[0].name ? this.place[0].name : 'Region'} | Cestovatelský portál Frytol na cestách`
 
             // description
-            description = `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].name}` 
+            description = `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name}` 
 
             // keywolds
             let metaSeoTags

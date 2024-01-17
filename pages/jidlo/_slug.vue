@@ -111,7 +111,7 @@
             title = `${this.food[0].name ? this.food[0].name : 'Jídlo'} | Cestovatelský portál Frytol na cestách`
 
             // description
-            description = `${this.food[0].description ? this.food[0].description.slice(0, this.food[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.food[0].name}`
+            description = `${this.food[0].description ? this.food[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.food[0].description.lastIndexOf(' ', 160)) : this.food[0].name}`
 
             // keywolds
             let metaSeoTags

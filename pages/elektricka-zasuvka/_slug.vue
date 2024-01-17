@@ -133,7 +133,7 @@
             title = `${this.wallSockets[0].name ? this.wallSockets[0].name : 'Elektrikcá zásuvka'} | Cestovatelský portál Frytol na cestách`
 
             // description
-            description = `${this.wallSockets[0].description ? this.wallSockets[0].description.slice(0, this.wallSockets[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.wallSockets[0].name}`
+            description = `${this.wallSockets[0].description ? this.wallSockets[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.wallSockets[0].description.lastIndexOf(' ', 160)) : this.wallSockets[0].name}`
 
             // keywolds
             let metaSeoTags

@@ -102,7 +102,7 @@
             title = `${this.travelDictionary[0].name ? this.travelDictionary[0].name : 'Cestovatelský slovník'} | Cestovatelský portál Frytol na cestách`
 
             // description
-            description = `${this.travelDictionary[0].description ? this.travelDictionary[0].description.slice(0, this.travelDictionary[0].description.lastIndexOf(' ', 150)).replace(/<\/?[^>]+(>|$)/g, '') : this.travelDictionary[0].name}`
+            description = `${this.travelDictionary[0].description ? this.travelDictionary[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.travelDictionary[0].description.lastIndexOf(' ', 160)) : this.travelDictionary[0].name}`
 
             // keywolds
             let metaSeoTags
