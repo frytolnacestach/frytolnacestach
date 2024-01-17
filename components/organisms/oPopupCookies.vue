@@ -1,11 +1,11 @@
 <template>
-    <div class="js_o-popup-cookies o-popup-cookies hidden-print" data-nosnippet>
+    <div class="js_o-popup-cookies o-popup-cookies hidden-print" role="dialog" aria-labelledby="cookiesTitle" aria-describedby="cookiesDesc" data-nosnippet>
         <div class="o-popup-cookies__outer">
             <div class="o-popup-cookies__inner">
                 <div class="js_o-popup-cookies__page--welcome o-popup-cookies__page -welcome open">
                     <div class="o-popup-cookies__text">
-                        <h4 class="o-popup-cookies__headline">Tato webová stránka používá cookies</h4>
-                        <p class="o-popup-cookies__perex">Cookies nám pomáhají zlepšovat uživatelskou zkušenost našeho webu. Používáme je k anonymní analýze návštěvnosti a chování na webu, personalizaci obsahu, nebo cílení reklamy. Data o využívání našeho webu můžeme s Vaším souhlasem posílat i do systémů našich partnerů, abychom mohli plně využívat jejich nástroje. Partneři tyto údaje mohou zkombinovat s dalšími informacemi, které jste jim poskytli nebo které získali v důsledku toho, že používáte jejich služby. Více informací najdete v našich <NuxtLink to="/conditions">zásadách ochrany osobních údajů</NuxtLink> a <NuxtLink to="/cookies">zásadách cookies</NuxtLink>.</p>
+                        <h4 class="o-popup-cookies__headline" id="cookiesTitle">Tato webová stránka používá cookies</h4>
+                        <p class="o-popup-cookies__perex" id="cookiesDesc">Cookies nám pomáhají zlepšovat uživatelskou zkušenost našeho webu. Používáme je k anonymní analýze návštěvnosti a chování na webu, personalizaci obsahu, nebo cílení reklamy. Data o využívání našeho webu můžeme s Vaším souhlasem posílat i do systémů našich partnerů, abychom mohli plně využívat jejich nástroje. Partneři tyto údaje mohou zkombinovat s dalšími informacemi, které jste jim poskytli nebo které získali v důsledku toho, že používáte jejich služby. Více informací najdete v našich <NuxtLink to="/conditions">zásadách ochrany osobních údajů</NuxtLink> a <NuxtLink to="/cookies">zásadách cookies</NuxtLink>.</p>
                     </div>
                     <div class="o-popup-cookies__buttons">
                         <a class="js_o-popup-cookies__button--setting o-popup-cookies__button -setting" href="#" rel="nofollow">Upravit preference</a>
