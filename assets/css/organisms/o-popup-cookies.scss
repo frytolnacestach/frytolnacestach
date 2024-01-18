@@ -1,18 +1,17 @@
 .o-popup-cookies {
     width: 100%;
-    max-width: 450px;
+    max-width: 480px;
     background-color: $white;
     position: fixed;
     right: 0;
     bottom: 0;
-    display: none;
     z-index: 50000;
     box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5);
     max-height: 100vh;
     overflow: scroll;
 
     &.open {
-        display: block;
+        visibility: visible !important;
     }
 
     &__outer {
@@ -43,7 +42,8 @@
     }
 
     &__text {
-
+        display: block;
+        width: 100%;
     }
 
     &__headline {
@@ -67,14 +67,20 @@
         background-color: $brand1;
         border: 2px solid $brand1;
         color: $white;
-        padding: 8px 14px;
+        padding: 9px 7px;
         border-radius: 4px;
         text-decoration: none;
         text-transform: uppercase;
         display: inline-block;
         margin: 5px;
         font-weight: 600;
+        font-size: 12px;
         cursor: pointer;
+
+        @media only screen and (min-width: $md) {
+			padding: 8px 14px;
+            font-size: 16px;
+		}
 
         &:hover {
             background-color: $brand2;
@@ -127,11 +133,13 @@
     }
 
     &__form {
-
+        display: block;
+        width: 100%;
     }
 
     &__items {
-
+        display: block;
+        width: 100%;
     }
 
     &__item {
