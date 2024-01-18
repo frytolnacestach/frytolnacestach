@@ -46,6 +46,9 @@ export default {
 
   // PWA
   pwa: {
+    icon: {
+      fileName: 'images/favicons/manifest/icons/icon.png'
+    },
     manifest: {
       lang: 'cs',
       name: 'Frytol na cestách',
