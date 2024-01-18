@@ -5,7 +5,7 @@
                 <ul class="o-facts-place__items">
                     <li class="o-facts-place__item" v-for="item in items" v-bind:key="item.name">
                         <h3 class="o-facts-place__name">{{ item.name }}</h3>
-                        <span class="o-facts-place__value" target="_blank">{{ item.value }}</span>
+                        <span class="o-facts-place__value" target="_blank" rel="noopener">{{ item.value }}</span>
                     </li>
                 </ul>
             </div>

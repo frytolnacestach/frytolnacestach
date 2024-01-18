@@ -28,7 +28,7 @@
                                 </div>
 
                                 <div class="o-box-platform__button">
-                                    <a :class="'a-button-fill-social -social-' + platform.slug" :href="platform.url" target="_blank" :title="platform.name">Přejít na {{ platform.name }}</a>
+                                    <a :class="'a-button-fill-social -social-' + platform.slug" :href="platform.url" target="_blank" rel="noopener" :title="platform.name">Přejít na {{ platform.name }}</a>
                                 </div>
 
                             </div>

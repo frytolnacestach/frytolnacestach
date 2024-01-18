@@ -5,7 +5,7 @@
                 <div class="o-support__items">
                     <div class="o-support__item">
                         <div class="o-support__logo -patreon">
-                            <a class="o-support__logo-file" href="https://www.patreon.com/frytolnacestach" target="_blank"></a>
+                            <a class="o-support__logo-file" href="https://www.patreon.com/frytolnacestach" target="_blank" rel="noopener"></a>
                         </div>
                     </div>
                 </div>

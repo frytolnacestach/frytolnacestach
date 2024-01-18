@@ -29,7 +29,7 @@
                                 <label class="m-input-checkbox__label">
                                     <input class="m-input-checkbox__input" type="checkbox" id="terms" v-model="termsAccepted" required />
                                     <span class="m-input-checkbox__checkbox"></span>
-                                    <span class="m-input-checkbox__text" for="terms">Souhlasím s <NuxtLink to="/conditions-user" target="_blank">Obchodními podmínkami</NuxtLink> (pro uživatelský účet)</span>
+                                    <span class="m-input-checkbox__text" for="terms">Souhlasím s <NuxtLink to="/conditions-user" target="_blank" rel="noopener">Obchodními podmínkami</NuxtLink> (pro uživatelský účet)</span>
                                 </label>
                             </div>
                         </div>

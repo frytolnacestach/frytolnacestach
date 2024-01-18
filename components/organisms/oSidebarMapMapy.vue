@@ -26,10 +26,10 @@
                                 :alt="title"
                                 v-lazy>
                         </div>
-                        <a class="o-sidebar-map-mapy__image-link" :href="url" target="_blank"></a>
+                        <a class="o-sidebar-map-mapy__image-link" :href="url" target="_blank" rel="noopener"></a>
                     </div>
                 </div>
-                <a class="o-sidebar-map-mapy__link" :href="url" target="_blank">zobrazit mapu na mapy.cz</a>
+                <a class="o-sidebar-map-mapy__link" :href="url" target="_blank" rel="noopener">zobrazit mapu na mapy.cz</a>
             </div>
         </div>
     </div>
