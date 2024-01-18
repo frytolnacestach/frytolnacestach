@@ -1,5 +1,5 @@
 <template>
-    <div class="js_o-popup-cookies o-popup-cookies hidden-print" tabindex="-1" role="dialog" aria-labelledby="cookiesTitle" aria-describedby="cookiesDesc">
+    <div class="js_o-popup-cookies o-popup-cookies hidden-print" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="cookiesTitle" aria-describedby="cookiesDesc" data-nosnippet="true">
         <div class="o-popup-cookies__outer">
             <div class="o-popup-cookies__inner">
                 <div class="js_o-popup-cookies__page--welcome o-popup-cookies__page -welcome open">
