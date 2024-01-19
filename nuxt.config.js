@@ -14,12 +14,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Web Frytol na cestách' },
+      { hid: 'description', name: 'description', content: 'Cestovatelský portál Frytol na cestách se zaměřuje na obejvování nových míst, plánování a ukladání cestovatelských zažitků.' },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'msapplication-TileColor', content: '#da532c' },
       { name: 'theme-color', content: '#ffffff' },
       { name: 'author', content: 'Michal Fryč' },
-      { name: 'keywords', content: 'Cestovatelský portál, Frytol na cestách, youtube, cestování, blog' },
+      { name: 'keywords', content: 'Cestovatelský portál, Frytol na cestách, objevuj svět, youtube, cestování, blog' },
       { name: 'robots', content: 'index, follow' },
       { property: 'og:locale', content: 'cs_CZ' }
     ],
@@ -782,7 +782,6 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    // SCSS file in the project
     '@/assets/css/main.scss',
     '@/assets/css/print.scss'
   ],
@@ -807,7 +806,6 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build', 
     '@nuxtjs/eslint-module', 
     '@nuxtjs/tailwindcss',
