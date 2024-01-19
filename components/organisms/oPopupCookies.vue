@@ -64,24 +64,22 @@
         name: 'OrganismsoPopupCookiesComponent',
 
         mounted() {
-            /*list js class for cookies dialog*/
-            //js_cookies-edit
-            //js_o-popup-cookies
-            //js_o-popup-cookies__button--setting
-            //js_o-popup-cookies__button--all
-            //js_o-popup-cookies__button--technical
-            //js_o-popup-cookies__button--select
-            //js_o-popup-cookies__setting--user
-            //js_o-popup-cookies__setting--statistic
-            //js_o-popup-cookies__setting--marketing
-            //js_o-popup-cookies__page--welcome
-            //js_o-popup-cookies__page--setting
+            // Cookies default
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
 
+            if (document.cookie.indexOf("cookiesDialog=1") == -1) {
+                gtag('consent', 'default', {
+                    'functionality_storage': 'granted',
+                    'security_storage': 'granted',
+                    'personalization_storage': 'denied',
+                    'analytics_storage': 'denied',
+                    'ad_storage': 'denied'
+                });
+            }
+            // Cookies default END
 
-
-            //--------------
-            //FUNCTIONS
-
+            // Cookies change
             // Vytvoření cookies
             function cookiesCreate() {
                 var now = new Date();
@@ -113,6 +111,7 @@
 
 
             // Ovládání vlastních cookies
+            // Function
             function cookiesCustom() {
                 var number = 0;
                 var status1 = document.querySelector(".js_o-popup-cookies__setting--user").getAttribute("data-c-user");
@@ -141,11 +140,6 @@
                 }
             }
 
-
-
-            //--------------
-            //INITIALIZATION
-
             //Initialization
             if (document.cookie.indexOf("FNCcookiespersonalization_storage=1") == -1) {
                 document.querySelector(".js_o-popup-cookies__setting--user").setAttribute('data-c-user', 'off');
@@ -170,14 +164,8 @@
                 document.querySelector(".js_o-popup-cookies__setting--marketing").setAttribute('data-c-marketing', 'on');
                 document.querySelector(".js_o-popup-cookies__setting--marketing").classList.add('on');
             }
-
             cookiesDialog();
             cookiesCustom();
-
-
-
-            //--------------
-            //ACTIONS
 
             //Přijímám vše
             document.querySelector(".js_o-popup-cookies__button--all").addEventListener('click', function() {
@@ -363,6 +351,7 @@
             document.querySelector(".js_cookies-edit").addEventListener("click", function() {
                 document.querySelector(".js_o-popup-cookies").classList.add("open");
             });
+            // Cookies change END
         },
     }
 </script>

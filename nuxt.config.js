@@ -36,7 +36,6 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;900&display=swap'}
     ],
     script: [
-      { src: '/js/cookies-default.js', type: 'text/javascript', async: true },
       { src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5217753750259737', async: true, crossorigin: "anonymous"},
       { src: '/js/gtm.js', type: 'text/javascript', async: true, defer: 'defer' }
     ]
