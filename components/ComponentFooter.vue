@@ -14,6 +14,12 @@
             </div>
             <!-- NAV Footer END -->
 
+            <!-- Social icons-->
+            <div class="o-footer__nav">
+                <mSocialIcons />
+            </div>
+            <!-- Social icons END -->
+
             <!-- COPYRIGHT -->
             <div class="o-footer__copyright">
                 <oCopyright />
@@ -26,6 +32,7 @@
 
 <script>
     import mNavFooter from '~/components/molecules/mNavFooter.vue'
+    import mSocialIcons from '~/components/molecules/mSocialIcons.vue'
     import oAnimationFlight from '~/components/organisms/oAnimationFlight.vue'
     import oCopyright from '~/components/organisms/oCopyright.vue'
 
@@ -34,6 +41,7 @@
 
         components: {
             mNavFooter,
+            mSocialIcons,
             oAnimationFlight,
             oCopyright
         }
