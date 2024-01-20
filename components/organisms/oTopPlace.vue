@@ -71,12 +71,12 @@
                                             v-lazy>
                                     </div>
                                 </div>
-                                <h2 class="o-top-place__name">
+                                <h3 class="o-top-place__name">
                                     <span class="o-top-place__name-type">
                                         {{ place.type_place === 'city' ? 'Město' : place.type_place === 'state' ? 'Stát' : place.type_place === 'continent' ? 'Kontinent' : '' }}
                                     </span>
                                     {{ place.name }}
-                                </h2>
+                                </h3>
                                 <NuxtLink class="o-top-place__link" :to="`/svet/${place.type_place === 'continent' ? 'kontinent' : place.type_place === 'state' ? 'stat' : place.type_place === 'city' ? 'mesto' : ''}/${place.slug}`" :aria-label="`Čti více o místě ${place.name}`"></NuxtLink>
                             </div>
                         </div>
