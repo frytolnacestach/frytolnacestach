@@ -85,10 +85,10 @@ p {
 
 a {
 	@include transition(color, .3s);
-	color: $green4;
+	color: $c-green-t-dark;
 
 	&:hover {
-		color: $brand2;
+		color: $c-green-t-dark-super;
 	}
 }
 

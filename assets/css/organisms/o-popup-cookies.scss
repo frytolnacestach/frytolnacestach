@@ -64,8 +64,8 @@
     }
 
     &__button {
-        background-color: $brand1;
-        border: 2px solid $brand1;
+        background-color: $c-green-t-dark;
+        border: 2px solid $c-green-t-dark;
         color: $white;
         padding: 9px 7px;
         border-radius: 4px;
@@ -83,30 +83,30 @@
 		}
 
         &:hover {
-            background-color: $brand2;
-            border: 2px solid $brand2;
+            background-color: $c-green-t-dark;
+            border: 2px solid $c-green-t-dark;
             color: $white;
         }
 
         &.-setting {
             background-color: $white;
-            color: $brand1;
+            color: $c-green-t-dark;
 
             &:hover {
-                background-color: $brand2;
-                border: 2px solid $brand2;
+                background-color: $c-green-t-dark;
+                border: 2px solid $c-green-t-dark;
                 color: $white;
             }
         }
 
         &.-technical {
             background-color: $white;
-            color: $brand1;
+            color: $c-green-t-dark;
             display: none;
 
             &:hover {
-                background-color: $brand2;
-                border: 2px solid $brand2;
+                background-color: $c-green-t-dark;
+                border: 2px solid $c-green-t-dark;
                 color: $white;
             }
 
@@ -117,12 +117,12 @@
 
         &.-select {
             background-color: $white;
-            color: $brand1;
+            color: $c-green-t-dark;
             display: none;
 
             &:hover {
-                background-color: $brand2;
-                border: 2px solid $brand2;
+                background-color: $c-green-t-dark;
+                border: 2px solid $c-green-t-dark;
                 color: $white;
             }
 
@@ -186,7 +186,7 @@
         }
 
         &.on {
-            background-color: $brand2;
+            background-color: $c-green-bg-component-dark;
 
             &::after {
                 left: 30px;
@@ -194,7 +194,7 @@
         }
 
         &.-active {
-            background-color: $gray7;
+            background-color: $c-gray-bg-component-dark;
             cursor: not-allowed;
 
             &::after {
