@@ -43,6 +43,13 @@
 
 
                     <div class="t-grid__section -ad">
+                        <!-- SECTION - sidebar information -->
+                        <section class="t-section -px-world mt-1 mb-2" v-if="chain[0].information && chain[0].information.length > 0">
+                            <div class="t-section__inner">
+                                <oSidebarInformation :items="chain[0].information" />
+                            </div>
+                        </section>
+                        <!-- SECTION - sidebar information - END -->
                         <!-- SECTION - ad-google - sidebar -->
                         <section class="t-section -px-world mt-4 mb-2">
                             <div class="t-section__inner">
@@ -66,6 +73,7 @@
     import oCoverStates from '~/components/organisms/oCoverStates.vue'
     import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
+    import oSidebarInformation from '~/components/organisms/oSidebarInformation.vue'
 
     export default {
         name: 'RetezceSlugPage',
@@ -76,7 +84,8 @@
             oAdGoogleSidebar,
             oCoverStates,
             oHeroItemDetail,
-            oInformationBlock
+            oInformationBlock,
+            oSidebarInformation
         },
 
         data() {
