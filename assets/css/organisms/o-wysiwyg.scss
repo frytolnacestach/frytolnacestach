@@ -67,4 +67,22 @@
             margin-bottom: 0;
         }
     }
+
+    ul {
+        list-style: disc;
+        margin-left: 14px;
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
+
+    ol {
+        list-style: decimal;
+        margin-left: 20px;
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
 }
