@@ -31,6 +31,24 @@
                         </section>
                         <!-- SECTION - information by ChatGPT END -->
 
+                        <!-- SECTION - Ingredients -->
+                        <section class="t-section my-4 py-1" v-if="food[0].ingredients && food[0].ingredients.length > 0">
+                            <div class="t-section__inner">
+                                <mHeadline title="Ingredience" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
+                                <oIngredients :items="food[0].ingredients" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Ingredients END -->
+
+                        <!-- SECTION - Recipe -->
+                        <section class="t-section my-4 py-1" v-if="food[0].recipe && food[0].recipe.length > 0">
+                            <div class="t-section__inner">
+                                <mHeadline title="Recept" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
+                                <oRecipe :items="food[0].recipe" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Recipe END -->
+
                         <!-- SECTION - foods places -->
                         <div class="t-section" v-if="placesStates">
                             <div class="t-section__inner">
@@ -66,6 +84,8 @@
     import oCoverStates from '~/components/organisms/oCoverStates.vue'
     import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
+    import oIngredients from '~/components/organisms/oIngredients.vue'
+    import oRecipe from '~/components/organisms/oRecipe.vue'
 
     export default {
         name: 'JidloSlugPage',
@@ -77,6 +97,8 @@
             oCoverStates,
             oHeroItemDetail,
             oInformationBlock,
+            oIngredients,
+            oRecipe
         },
 
         data() {
