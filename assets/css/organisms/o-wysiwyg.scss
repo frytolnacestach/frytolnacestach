@@ -87,6 +87,14 @@
         }
     }
 
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
     &.-blue {
         h3 {
             color: $c-blue-t-dark;
