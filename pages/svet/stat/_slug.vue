@@ -165,6 +165,22 @@
                                     </div>
                                 </section>
                                 <!-- SECTION - TLD END -->
+
+                                <!-- SECTION - links - sidebar -->
+                                <section class="t-section -px-world" v-if="this.place[0].links && this.place[0].links.length > 0">
+                                    <div class="t-section__inner">
+                                        <oSidebarLinks :items="this.place[0].links" headline="Užitečné odkazy" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - links - sidebar - END -->
+
+                                <!-- SECTION - apps - sidebar -->
+                                <section class="t-section -px-world" v-if="this.place[0].apps && this.place[0].apps.length > 0">
+                                    <div class="t-section__inner">
+                                        <oSidebarLinks :items="this.place[0].apps" headline="Užitečné aplikace" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - apps - sidebar - END -->
                             </section>
 
                             <!-- SECTION - Events - sidebar -->
@@ -261,6 +277,7 @@
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
+    import oSidebarLinks from '~/components/organisms/oSidebarLinks.vue'
     import oSidebarList from '~/components/organisms/oSidebarList.vue'
     import oSidebarTime from '~/components/organisms/oSidebarTime.vue'
     import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
@@ -289,6 +306,7 @@
             oMapGoogle,
             oPlaceTeaser,
             oReviewItem,
+            oSidebarLinks,
             oSidebarList,
             oSidebarTime,
             oSwitchHero,
