@@ -76,6 +76,31 @@
                         </section>
                         <!-- SECTION - information duration END -->
 
+                        <!-- SECTION - Ubytování - information -->
+                        <section class="t-section pt-1 mt-2">
+                            <div class="t-section__inner">
+                                <oInformationBlock :title="'Ubytování v okolí ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Cena za konkrétní ubytování v okolí ' + (place[0].name ? place[0].name : '') + ' se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek.'" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true" />
+                                <oInformationBlock :title="'Ubytování v okolí ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Bohužel s cenou ubytování v okolí ' + (place[0].name ? place[0].name : '') + ' vám zatím moc neporadíme.'" v-else />
+                            </div>
+                        </section>
+                        <!-- SECTION - Ubytování - information END -->
+
+                        <!-- SECTION - Ubytování -->
+                        <section class="t-section -px-world py-2 hidden-print" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
+                            <div class="t-section__inner">
+                                <div v-for="coordinate in place[0].coordinates">
+                                    <oAffilateBooking 
+                                        :landmarkName="`${ place[0].name ? place[0].name : '' }`"
+                                        :address="`${ place[0].name ? place[0].name : '' }`"
+                                        :latitude=parseFloat(coordinate.latitude)
+                                        :longitude= parseFloat(coordinate.longitude)
+                                        :zoom=place[0].zoom[0].booking
+                                    />
+                                </div>
+                            </div>
+                        </section>
+                        <!-- SECTION - Ubytování END -->
+
                         <!-- SECTION - Review -->
                         <oReviewItem :account="account" :IDplace="place[0].id" type="spot" v-if="place[0].id" />
                         <!-- SECTION - Review END -->
@@ -168,6 +193,7 @@
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oAccountBanner from '~/components/organisms/oAccountBanner.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
+    import oAffilateBooking from '~/components/organisms/oAffilateBooking.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
@@ -189,6 +215,7 @@
             mHeadline,
             oAccountBanner,
             oAdGoogleSidebar,
+            oAffilateBooking,
             oArticleList,
             oHeroPlace,
             oHotInfoHero,
