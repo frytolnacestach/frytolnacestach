@@ -99,10 +99,6 @@
                                                 </div>
                                             </section>
                                             <!-- SECTION - Account banner - sidebar END -->
-
-                                            <!-- SECTION - Events - sidebar -->
-                                            <oSidebarList :place="this.place[0].id" type="state" />
-                                            <!-- SECTION - Events - sidebar - END -->
                                         </div>
                                         <div class="t-grid__section -aside-ad">
                                             <!-- SECTION - ad-google - sidebar -->
