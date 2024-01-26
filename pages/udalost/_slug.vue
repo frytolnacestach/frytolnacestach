@@ -28,7 +28,7 @@
                     <!-- SECTION - hero END -->
 
                     <!-- SECTION - map -->
-                    <div class="t-grid__section -map" v-show="!isMobile || (isMobile && !showHero)">
+                    <div :class="'t-grid__section -map' + ((isMobile && showHero) ? ' hidden' : ' visited')">
                         <oMapGoogle :place="event" />
                     </div>
                     <!-- SECTION - map - END -->

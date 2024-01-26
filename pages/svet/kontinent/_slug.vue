@@ -23,13 +23,13 @@
                 <div class="t-grid -world-hero">
 
                     <!-- SECTION - hero -->
-                    <div class="t-grid__section -hero-place" v-show="!isMobile || (isMobile && showHero)">
+                    <div :class="'t-grid__section -hero-place' + ((isMobile && !showHero) ? ' hidden' : ' visited')">
                         <oHeroPlace :title="place[0].name" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
                     </div>
                     <!-- SECTION - hero END -->
 
                     <!-- SECTION - map -->
-                    <div class="t-grid__section -map" v-show="!isMobile || (isMobile && !showHero)">
+                    <div :class="'t-grid__section -map' + ((isMobile && showHero) ? ' hidden' : ' visited')">
                         <oMapGoogle :place="place" />
                     </div>
                     <!-- SECTION - map - END -->

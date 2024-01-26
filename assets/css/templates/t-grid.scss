@@ -32,6 +32,10 @@
 
             &.-map {
                 grid-area: map;
+
+                @media only screen and (max-width: $lgMax) {
+                    display: none;
+                }
             }
 
             &.-hot-info-hero {
