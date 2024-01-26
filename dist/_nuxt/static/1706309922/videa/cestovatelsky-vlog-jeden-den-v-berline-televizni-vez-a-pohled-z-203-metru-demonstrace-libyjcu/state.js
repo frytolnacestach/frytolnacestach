@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1706309922",layout:"default",error:a,state:{account:[]},serverRendered:true,routePath:"\u002Fvidea\u002Fcestovatelsky-vlog-jeden-den-v-berline-televizni-vez-a-pohled-z-203-metru-demonstrace-libyjcu",config:{_app:{basePath:"\u002F",assetsPath:"\u002F_nuxt\u002F",cdnURL:a}}}}(null));
