@@ -92,7 +92,7 @@
                             <!-- SECTION - Account banner - sidebar END -->
 
                             <!-- SECTION - Events - sidebar -->
-                            <oSidebarList :place="this.place[0].id" type="state" />
+                            <oSidebarEvent :place="this.place[0].id" type="state" />
                             <!-- SECTION - Events - sidebar - END -->
                         </div>
                         <div class="t-grid__section -aside-ad">
@@ -141,7 +141,7 @@
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
     import oSidebarLinks from '~/components/organisms/oSidebarLinks.vue'
-    import oSidebarList from '~/components/organisms/oSidebarList.vue'
+    import oSidebarEvent from '~/components/organisms/oSidebarEvent.vue'
     import oSidebarTime from '~/components/organisms/oSidebarTime.vue'
     import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
@@ -180,7 +180,7 @@
             oPlaceTeaser,
             oReviewItem,
             oSidebarLinks,
-            oSidebarList,
+            oSidebarEvent,
             oSidebarTime,
             oSwitchHero,
             oVideoList,

@@ -161,7 +161,7 @@
                         <!-- SECTION - Parking - sidebar - END -->
 
                         <!-- SECTION - Events - sidebar -->
-                        <oSidebarList :place="place[0].id" type="city" />
+                        <oSidebarEvent :place="place[0].id" type="city" />
                         <!-- SECTION - Events - sidebar - END -->
                     </div>
                     <div class="t-grid__section -aside-ad">
@@ -243,7 +243,7 @@
     import oPlaceTeaserSpots from '~/components/organisms/oPlaceTeaserSpots.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
-    import oSidebarList from '~/components/organisms/oSidebarList.vue'
+    import oSidebarEvent from '~/components/organisms/oSidebarEvent.vue'
     import oSidebarParking from '~/components/organisms/oSidebarParking.vue'
     import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
@@ -268,7 +268,7 @@
             oPlaceTeaserSpots,
             oPlaceTeaser,
             oReviewItem,
-            oSidebarList,
+            oSidebarEvent,
             oSidebarParking,
             oSwitchHero,
             oVideoList,

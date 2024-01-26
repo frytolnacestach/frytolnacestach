@@ -1,16 +1,16 @@
 <template>
     <section class="t-section -px-world my-2" v-if="events && events.length > 0">
         <div class="t-section__inner">
-            <div class="o-sidebar-list">
-                <div class="o-sidebar-list__outer">
-                    <div class="o-sidebar-list__inner">
-                        <h3 class="o-sidebar-list__header">Události v lokalitě</h3>
-                        <div class="o-sidebar-list__items">
-                            <div class="o-sidebar-list__item" v-for="event in events" :key="event.id">
-                                <div class="o-sidebar-list__image-container">
-                                    <div class="o-sidebar-list__image loading-image -green">
-                                        <div v-if="images && images.find(image => image.id === event.id_image_hero)" class="o-sidebar-list__image-lazyload">
-                                            <img class="o-sidebar-list__image-file lazyload-file"
+            <div class="o-sidebar-event">
+                <div class="o-sidebar-event__outer">
+                    <div class="o-sidebar-event__inner">
+                        <h3 class="o-sidebar-event__header">Události v lokalitě</h3>
+                        <div class="o-sidebar-event__items">
+                            <div class="o-sidebar-event__item" v-for="event in events" :key="event.id">
+                                <div class="o-sidebar-event__image-container">
+                                    <div class="o-sidebar-event__image loading-image -green">
+                                        <div v-if="images && images.find(image => image.id === event.id_image_hero)" class="o-sidebar-event__image-lazyload">
+                                            <img class="o-sidebar-event__image-file lazyload-file"
                                                 data-sizes="0px"
                                                 :data-srcset="`
                                                     https://image.frytolnacestach.cz/storage/${images.find(image => image.id === event.id_image_cover).source + images.find(image => image.id === event.id_image_cover).name}-100.webp 100w,
@@ -21,8 +21,8 @@
                                                 :preload="true"
                                                 v-lazy>
                                         </div>
-                                        <div v-else class="o-sidebar-list__image-lazyload">
-                                            <img class="o-sidebar-list__image-file lazyload-file"
+                                        <div v-else class="o-sidebar-event__image-lazyload">
+                                            <img class="o-sidebar-event__image-file lazyload-file"
                                                 data-sizes="0px"
                                                 :data-srcset="`
                                                     https://image.frytolnacestach.cz/storage/_default/h-hero-100.webp 100w,
@@ -33,11 +33,15 @@
                                                 :preload="true"
                                                 v-lazy>
                                         </div>
-                                        <nuxtLink class="o-sidebar-list__image-link" :to="'/udalost/' + event.slug"></nuxtLink>
+                                        <nuxtLink class="o-sidebar-event__image-link" :to="'/udalost/' + event.slug"></nuxtLink>
                                     </div>
                                 </div>
-                                <div class="o-sidebar-list__text">
-                                    <h4 class="o-sidebar-list__name"><nuxtLink class="o-sidebar-list__name-link" :to="'/udalost/' + event.slug">{{ event.name }}</nuxtLink></h4>
+                                <div class="o-sidebar-event__text">
+                                    <h4 class="o-sidebar-event__name"><nuxtLink class="o-sidebar-event__name-link" :to="'/udalost/' + event.slug">{{ event.name }}</nuxtLink></h4>
+                                    <span class="o-sidebar-event__date" v-if="event.date_start || event.date_end">
+                                        <span class="o-sidebar-event__date-start">Začátek události: {{ formatDate(event.date_start) }}</span>
+                                        <span class="o-sidebar-event__date-end">Konec události: {{ formatDate(event.date_end) }}</span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +54,7 @@
 
 <script>
     export default {
-        name: 'OrganismsoSidebarListComponent',
+        name: 'OrganismsoSidebarEventComponent',
 
         props: {
             place: {
@@ -67,6 +71,13 @@
             return {
                 events: this.events,
                 images: this.images
+            }
+        },
+
+        methods: {
+            formatDate(date) {
+                const options = { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', timeZoneName: 'short' }
+                return new Date(date).toLocaleDateString('cs', options)
             }
         },
 

@@ -127,7 +127,6 @@
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
-    import oSidebarList from '~/components/organisms/oSidebarList.vue'
     import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
 
@@ -146,7 +145,6 @@
             oHeroPlace,
             oHotInfoHero,
             oMapGoogle,
-            oSidebarList,
             oSwitchHero,
             oVisitedButton
         },

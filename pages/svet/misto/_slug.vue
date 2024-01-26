@@ -130,7 +130,7 @@
                         <!-- SECTION - Account banner - sidebar END -->
 
                         <!-- SECTION - Events - sidebar -->
-                        <oSidebarList :place="this.place[0].id" type="spot" />
+                        <oSidebarEvent :place="this.place[0].id" type="spot" />
                         <!-- SECTION - Events - sidebar - END -->
                     </div>
                     <div class="t-grid__section -aside-ad">
@@ -202,7 +202,7 @@
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oPlaceTeaserSpots from '~/components/organisms/oPlaceTeaserSpots.vue'
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
-    import oSidebarList from '~/components/organisms/oSidebarList.vue'
+    import oSidebarEvent from '~/components/organisms/oSidebarEvent.vue'
     import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
@@ -224,7 +224,7 @@
             oMapGoogle,
             oPlaceTeaserSpots,
             oReviewItem,
-            oSidebarList,
+            oSidebarEvent,
             oSwitchHero,
             oVideoList,
             oVisitedButton

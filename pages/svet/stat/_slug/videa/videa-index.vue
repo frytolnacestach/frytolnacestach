@@ -116,7 +116,6 @@
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
     import oSidebarLinks from '~/components/organisms/oSidebarLinks.vue'
-    import oSidebarList from '~/components/organisms/oSidebarList.vue'
     import oSidebarTime from '~/components/organisms/oSidebarTime.vue'
     import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
@@ -155,7 +154,6 @@
             oPlaceTeaser,
             oReviewItem,
             oSidebarLinks,
-            oSidebarList,
             oSidebarTime,
             oSwitchHero,
             oVideoList,

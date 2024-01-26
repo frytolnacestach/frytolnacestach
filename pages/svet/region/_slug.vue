@@ -115,7 +115,7 @@
                         <!-- SECTION - Account banner - sidebar END -->
 
                         <!-- SECTION - Events - sidebar -->
-                        <oSidebarList :place="this.place[0].id" type="region" />
+                        <oSidebarEvent :place="this.place[0].id" type="region" />
                         <!-- SECTION - Events - sidebar - END -->
                     </div>
                     <div class="t-grid__section -aside-ad">
@@ -185,7 +185,7 @@
     import oPlaceTeaserRegions from '~/components/organisms/oPlaceTeaserRegions.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
-    import oSidebarList from '~/components/organisms/oSidebarList.vue'
+    import oSidebarEvent from '~/components/organisms/oSidebarEvent.vue'
     import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
@@ -205,7 +205,7 @@
             oPlaceTeaserRegions,
             oMapGoogle,
             oReviewItem,
-            oSidebarList,
+            oSidebarEvent,
             oSwitchHero,
             oVideoList,
             oVisitedButton
