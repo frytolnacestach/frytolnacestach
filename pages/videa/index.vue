@@ -22,6 +22,7 @@
             <div class="t-section__inner">
                 <oVideoList :videos="videos" :images="images" styleThemaLoading=" -gray" />
                 <oVideoList :videos="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
+                <oNoneContent text="Bohužel zde nejsou žádné videa" styleThema=" -green" styleGap=" px-1" v-if="videos && videos.length === 0 && !isLoading" />
                 <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                     <span class="a-button-fill -big -gray" @click="loadMoreItems">Načíst další položky</span>
                 </div>
@@ -48,6 +49,7 @@
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oHero from '../../components/organisms/oHero.vue'
     import oFormFilterPlace from '~/components/organisms/oFormFilterPlace.vue'
+    import oNoneContent from '~/components/organisms/oNoneContent.vue'
     import oPlatform from '../../components/organisms/oPlatform.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
 
@@ -59,6 +61,7 @@
             mHeadline,
             oFormFilterPlace,
             oHero,
+            oNoneContent,
             oPlatform,
             oVideoList
         },
@@ -71,7 +74,7 @@
                 filterPlace: '',
                 videos: [],
                 images: [],
-                isLoading: false,
+                isLoading: true,
                 noMoreItems: false,
                 page: 1,
                 perPage: 20

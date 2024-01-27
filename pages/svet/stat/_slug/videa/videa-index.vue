@@ -72,6 +72,7 @@
                                     <mHeadline title="Videa ze státu" :titleValue="place[0].name" :perex="'Podívejte se na fascinující videa ze státu ' + place[0].name + ', která nám poskytují jedinečný pohled na tuto zemi. Prozkoumejte krásy krajiny, pochopte bohatou historii a zažijte každodenní život prostřednictvím těchto videí. Získejte nezapomenutelný pohled na ' + place[0].name + ' prostřednictvím objektivu, který zachycuje nejzajímavější momenty a místa tohoto úžasného státu.'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                     <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world-tab" styleThemaLoading=" -green" styleAlign=" -p-left" />
                                     <oVideoList :videos="null" :images="null" styleThema=" -world" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
+                                    <oNoneContent text="Bohužel zde nejsou žádné videa" styleThema=" -green" styleGap=" px-1" v-if="videos && videos.length === 0 && !isLoadingVideos" />
                                     <div class="flex flex-center my-2" v-if="!isLoadingVideos && !noMoreVideosItems">
                                         <span class="a-button-border -big -green" @click="loadMoreVideosItems">Načíst další videa</span>
                                     </div>
@@ -107,6 +108,7 @@
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
     import oLanguagePhrases from '~/components/organisms/oLanguagePhrases.vue'
+    import oNoneContent from '~/components/organisms/oNoneContent.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oChartPie from '@/components/organisms/oChartPie.vue'
     import oOrganizationList from '~/components/organisms/oOrganizationList.vue'
@@ -145,6 +147,7 @@
             oHotInfoHero,
             oInformationBlock,
             oLanguagePhrases,
+            oNoneContent,
             oMapGoogle,
             oChartPie,
             oOrganizationList,
@@ -174,7 +177,7 @@
                 showHero: true,
                 videos: [],
                 imagesVideos: [],
-                isLoadingVideos: false,
+                isLoadingVideos: true,
                 noMoreVideosItems: false,
                 videosPage: 1,
                 videosPerPage: 9,
