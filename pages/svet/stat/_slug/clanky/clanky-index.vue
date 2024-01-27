@@ -72,6 +72,7 @@
                                     <mHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                     <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world-tab" styleThemaLoading=" -green" styleAlign=" -p-left" />
                                     <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingPosts" />
+                                    <oNoneContent text="Bohužel zde nejsou žádné články" styleThema=" -green" styleGap=" px-1" v-if="posts && posts.length === 0 && !isLoadingPosts" />
                                     <div class="flex flex-center my-2" v-if="!isLoadingPosts && !noMorePostsItems">
                                         <span class="a-button-border -big -green" @click="loadMorePostsItems">Načíst další články</span>
                                     </div>
@@ -97,6 +98,7 @@
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
+    import oNoneContent from '~/components/organisms/oNoneContent.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
@@ -115,6 +117,7 @@
             oArticleList,
             oHeroPlace,
             oHotInfoHero,
+            oNoneContent,
             oMapGoogle,
             oSwitchHero,
             oVisitedButton
@@ -134,7 +137,7 @@
                 showHero: true,
                 posts: [],
                 imagesPosts: [],
-                isLoadingPosts: false,
+                isLoadingPosts: true,
                 noMorePostsItems: false,
                 postsPage: 1,
                 postsPerPage: 9,

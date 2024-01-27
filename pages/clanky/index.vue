@@ -22,6 +22,7 @@
             <div class="t-section__inner">
                 <oArticleList :posts="posts" :images="images" styleThemaLoading=" -gray" />
                 <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
+                <oNoneContent text="Bohužel zde nejsou žádné články" styleThema=" -green" styleGap=" px-1" v-if="posts && posts.length === 0 && !isLoading" />
                 <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                     <span class="a-button-fill -big -gray" @click="loadMoreItems">Načíst další položky</span>
                 </div>
@@ -49,6 +50,7 @@
     import oArticleList from '~/components/organisms/oArticleList.vue'
     import oFormFilterPlace from '~/components/organisms/oFormFilterPlace.vue'
     import oHero from '../../components/organisms/oHero.vue'
+    import oNoneContent from '~/components/organisms/oNoneContent.vue'
     import oPlatform from '../../components/organisms/oPlatform.vue'
 
     export default {
@@ -60,6 +62,7 @@
             oArticleList,
             oFormFilterPlace,
             oHero,
+            oNoneContent,
             oPlatform
         },
 
@@ -71,7 +74,7 @@
                 filterPlace: '',
                 posts: [],
                 images: [],
-                isLoading: false,
+                isLoading: true,
                 noMoreItems: false,
                 page: 1,
                 perPage: 20
