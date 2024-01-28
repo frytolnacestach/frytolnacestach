@@ -145,6 +145,18 @@
                     { hid: 'og:description', content: ogDescription },
                     { hid: 'og:url', content: ogUrl },
                     { hid: 'og:type', content: ogType }
+                ],
+                script: [
+                    {
+                        type: 'application/ld+json',
+                        json: {
+                            "@context": "https://schema.org",
+                            "@type": "Plant",
+                            "name": (this.flora[0].name ? this.flora[0].name : ""),
+                            "description": (this.flora[0].description ? this.flora[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
+                            "image": ((this.imageFlora[0] && this.imageFlora[0].id) ? ("https://image.frytolnacestach.cz/storage/fauna/" + this.imageFlora[0].name + ".webp") : "" )
+                        }
+                    }
                 ]
             }
         },
