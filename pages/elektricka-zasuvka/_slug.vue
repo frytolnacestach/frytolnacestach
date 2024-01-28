@@ -168,6 +168,18 @@
                     { hid: 'og:description', content: ogDescription },
                     { hid: 'og:url', content: ogUrl },
                     { hid: 'og:type', content: ogType }
+                ],
+                script: [
+                    {
+                        type: 'application/ld+json',
+                        json: {
+                            "@context": "https://schema.org",
+                            "@type": "Product",
+                            "name": (this.wallSockets[0].name ? this.wallSockets[0].name : ""),
+                            "description": (this.wallSockets[0].description ? this.wallSockets[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
+                            "image": ((this.imageWallSockets[0] && this.imageWallSockets[0].id) ? ("https://image.frytolnacestach.cz/storage/brands/" + this.imageWallSockets[0].name + ".webp") : "" )
+                        }
+                    }
                 ]
             }
         },
