@@ -1,7 +1,7 @@
 <template>
     <div :class="'o-search' + (styleSize ? styleSize : '')" role="search">
         <div class="o-search__input">
-            <input :class="'a-input-search' + (styleThema ? styleThema : '') + (styleSize ? styleSize : '')" type="text" v-model="searchQuery" @input="filterPlaces" placeholder="Které místo tě zajímá?">
+            <input :class="'js_a-input-search a-input-search' + (styleThema ? styleThema : '') + (styleSize ? styleSize : '')" type="text" v-model="searchQuery" @input="filterPlaces" placeholder="Které místo tě zajímá?">
         </div>
         <span class="o-search__condition" v-if="searchQuery.length < 3">Napiš alepoň 3 znaky</span>
         <div class="o-search__result">
