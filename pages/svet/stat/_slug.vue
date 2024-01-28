@@ -611,7 +611,7 @@
             ogDescription = description
 
             // ogUrl
-            ogUrl = `${process.env.baseUrl}/svet/stat/${this.place[0].slug}${this.activeTab !== 'default' ? `/${this.activeTab}` : ''}`
+            ogUrl = `${process.env.baseUrl}/svet/stat/${this.place[0].slug}`
 
             // ogType
             ogType = 'website'
@@ -626,7 +626,8 @@
                     { hid: 'og:title', content: ogTitle },
                     { hid: 'og:description', content: ogDescription },
                     { hid: 'og:url', content: ogUrl },
-                    { hid: 'og:type', content: ogType }
+                    { hid: 'og:type', content: ogType },
+                    { rel: 'canonical', href: ogUrl }
                 ],
                 script: [
                     {
