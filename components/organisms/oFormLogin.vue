@@ -46,7 +46,9 @@
                 flashMessage: [],
                 email: '',
                 password: '',
-                nickname: ''
+                nickname: '',
+                loginStatus: null,
+                account: []
             }
         },
     
@@ -90,6 +92,36 @@
                         document.cookie = "FNCaccountPasswordHash=" + data.message[0].password + ";" + expires
                         document.cookie = "FNCaccountStatus=" + data.message[0].status + ";" + expires
                         document.cookie = "FNCaccountNickname=" + data.message[0].nickname + ";" + expires
+
+                        // Add to data
+                        const localStorageEmail = localStorage.getItem("accountEmail")
+                        const localStoragePasswordHash = localStorage.getItem("accountPasswordHash")
+                        const localStorageStatus = localStorage.getItem("accountStatus")
+                        const localStorageNickname = localStorage.getItem("accountNickname")
+                        this.loginStatus = 1
+                        this.accountEmail = localStorageEmail
+                        this.accountPasswordHash = localStoragePasswordHash
+                        this.accountStatus = localStorageStatus
+                        this.accountNickname = localStorageNickname
+                        
+                        // Get user data
+                        try {
+                            const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile/${localStorageEmail}`)
+                            if (response.ok) {
+                                this.account = await response.json()
+                            } else {
+                                this.account = []
+                            }
+                        } catch {
+                            this.account = []
+                        }
+
+                        // Emit
+                        this.$emit('accountData', {
+                            loginStatus: 1,
+                            account: this.account
+                        })
+                        this.$store.commit('setAccount', this.account)
 
                         await this.$router.push('/ucet/profil')
                     } else if (response.status === 401) {
