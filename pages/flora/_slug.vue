@@ -154,7 +154,7 @@
                             "@type": "Plant",
                             "name": (this.flora[0].name ? this.flora[0].name : ""),
                             "description": (this.flora[0].description ? this.flora[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
-                            "image": ((this.imageFlora[0] && this.imageFlora[0].id) ? ("https://image.frytolnacestach.cz/storage/fauna/" + this.imageFlora[0].name + ".webp") : "" )
+                            "image": ((this.imageFlora[0] && this.imageFlora[0].id) ? ("https://image.frytolnacestach.cz/storage/flora/" + this.imageFlora[0].name + ".webp") : "" )
                         }
                     }
                 ]
