@@ -563,7 +563,7 @@
                             "@type": "Place",
                             "name": (this.place[0].name ? this.place[0].name : ""),
                             "description": (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : "")),
-                            "image": ((this.imagePlace[0] && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/states/" + this.imagePlace[0].name + ".webp") : "" ),
+                            "image": ((this.imagePlace[0] && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/spots/" + this.imagePlace[0].name + ".webp") : "" ),
                             "elevation": {
                                 "@type": "QuantitativeValue",
                                 "value": (this.place[0].altitude ? this.place[0].altitude : ""),
