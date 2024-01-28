@@ -1,11 +1,16 @@
 RewriteEngine On
 RewriteBase /
 
-RewriteCond %{HTTP_HOST} ^www\.frytolnacestach\.cz$ [NC]
-RewriteRule ^(.*)$ https://frytolnacestach.cz/$1 [R=301,L]
+# Error 404
+ErrorDocument 404 https://www.frytolnacestach.cz/error-404
 
+# Přesměruj non-www na www
+RewriteCond %{HTTP_HOST} !^www\.frytolnacestach\.cz$ [NC]
+RewriteRule ^(.*)$ https://www.frytolnacestach.cz/$1 [R=301,L]
+
+# Přesměruj HTTP na HTTPS
 RewriteCond %{HTTPS} off
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteCond %{HTTP_USER_AGENT} !(BlackBerry)
@@ -26,7 +31,6 @@ RewriteRule . /index.html [L]
   RewriteRule ^svet/mesto/dubai$ https://www.frytolnacestach.cz/svet/mesto/dubaj [R=301,L]
   RewriteRule ^svet/mesto/dubai(/.*)?$ https://www.frytolnacestach.cz/svet/mesto/dubaj$1 [R=301,L]
 </IfModule>
-
 
 <IfModule mod_expires.c>
   ExpiresActive On
