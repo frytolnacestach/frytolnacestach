@@ -168,6 +168,19 @@
                     { hid: 'og:description', content: ogDescription },
                     { hid: 'og:url', content: ogUrl },
                     { hid: 'og:type', content: ogType }
+                ],
+                script: [
+                    {
+                        type: 'application/ld+json',
+                        json: {
+                            "@context": "https://schema.org",
+                            "@type": "Recipe",
+                            "name": (this.food[0].name ? this.food[0].name : ""),
+                            "description": (this.food[0].description ? this.food[0].description : ""),
+                            "recipeIngredient": ((this.food[0].ingredients && this.food[0].ingredients.length > 0) ? this.food[0].ingredients : ""),
+                            "recipeInstructions": ((this.food[0].recipe && this.food[0].recipe.length > 0) ? this.food[0].recipe : "")
+                        }
+                    }
                 ]
             }
         },
