@@ -466,6 +466,27 @@
                     { hid: 'og:description', content: ogDescription },
                     { hid: 'og:url', content: ogUrl },
                     { hid: 'og:type', content: ogType }
+                ],
+                script: [
+                    {
+                        type: 'application/ld+json',
+                        json: {
+                            "@context": "https://schema.org",
+                            "@type": "Place",
+                            "name": (this.place[0].name ? this.place[0].name : ""),
+                            "description": (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : "")),
+                            "image": ((this.imagePlace[0] && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/states/" + this.imagePlace[0].name + ".webp") : "" ),
+                            "area": {
+                                "@type": "QuantitativeValue",
+                                "value": (this.place[0].area ? this.place[0].area : ""),
+                                "comment": "Rozloha v km²"
+                            },
+                            "population": {
+                                "@type": "QuantitativeValue",
+                                "value": (this.place[0].population ? this.place[0].population : "")
+                            }
+                        }
+                    }
                 ]
             }
         },
