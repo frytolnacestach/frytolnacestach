@@ -176,7 +176,7 @@
                             "@context": "https://schema.org",
                             "@type": "Recipe",
                             "name": (this.food[0].name ? this.food[0].name : ""),
-                            "description": (this.food[0].description ? this.food[0].description : ""),
+                            "description": (this.food[0].description ? this.food[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
                             "recipeIngredient": ((this.food[0].ingredients && this.food[0].ingredients.length > 0) ? this.food[0].ingredients : ""),
                             "recipeInstructions": ((this.food[0].recipe && this.food[0].recipe.length > 0) ? this.food[0].recipe : "")
                         }
