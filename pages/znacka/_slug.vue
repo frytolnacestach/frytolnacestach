@@ -146,6 +146,18 @@
                     { hid: 'og:description', content: ogDescription },
                     { hid: 'og:url', content: ogUrl },
                     { hid: 'og:type', content: ogType }
+                ],
+                script: [
+                    {
+                        type: 'application/ld+json',
+                        json: {
+                            "@context": "https://schema.org",
+                            "@type": "Product",
+                            "name": (this.brand[0].name ? this.brand[0].name : ""),
+                            "description": (this.brand[0].description ? this.brand[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
+                            "image": ((this.imageBrand[0] && this.imageBrand[0].id) ? ("https://image.frytolnacestach.cz/storage/brands/" + this.imageBrand[0].name + ".webp") : "" )
+                        }
+                    }
                 ]
             }
         },
