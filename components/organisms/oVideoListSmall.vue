@@ -128,6 +128,34 @@
             }
         },
 
+        head() {
+            // Empty Array
+            if (!this.videos && this.videos === null) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldVideos = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Nejnovější videa",
+                    "itemListElement": this.videos.map((video, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "@id": 'https://frytolnacestach.cz' + `/videa/${video.slug}`,
+                                "name": video.title
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldVideos] }
+        },
+
         watch: {
             videos: {
                 handler(newVal) {
