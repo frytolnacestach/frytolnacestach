@@ -120,6 +120,35 @@
                 type: Number,
                 required: false
             }
+        },
+
+        head() {
+            // Empty Array
+            if (!this.posts && this.posts === null) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldPosts = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Příspěvky",
+                    "itemListElement": this.posts.map((post, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "@id": 'https://frytolnacestach.cz' + `/clanky/${post.slug}`,
+                                "name": post.title,
+                                "perex": post.perex
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldPosts] }
         }
     }
 </script>
