@@ -114,6 +114,31 @@
                 type: Boolean,
                 required: false
             }
+        },
+
+        head() {
+            // Empty Array
+            if (!this.items && this.items === null) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldItems = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Cestovatelé",
+                    "author": this.items.map((user) => {
+                        return {
+                            "@type": "Person",
+                            "name": user.nickname,
+                            "url": 'https://frytolnacestach.cz' + `/cestovatel/${user.slug}`
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldItems] }
         }
     }
 </script>
