@@ -130,6 +130,34 @@
             }
         },
 
+        head() {
+            // Empty Array
+            if (!this.videos && this.videos === null) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldPosts = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Videa",
+                    "itemListElement": this.videos.map((video, index) => {
+                        return {
+                            "@type": "VideoObject",
+                            "position": index + 1,
+                            "name": video.title,
+                            "thumbnailUrl": (this.images && this.images.find(image => image.id === video.id_image)) ? ("https://image.frytolnacestach.cz/storage" + (this.images.find(image => image.id === video.id_image).source + this.images.find(image => image.id === video.id_image).name) + ".webp") : "",
+                            "url": 'https://frytolnacestach.cz' + `/videa/${video.slug}`,
+                            "description": video.perex,
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldPosts] }
+        },
+
         watch: {
             videos: {
                 handler(newVal) {
