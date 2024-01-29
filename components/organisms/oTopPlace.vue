@@ -122,6 +122,34 @@
             }
         },
 
+        head() {
+            // Empty Array
+            if (!this.places && this.places === null) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldPlaces = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Top místa",
+                    "itemListElement": this.places.map((place, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "@id": 'https://frytolnacestach.cz' + `/svet/${place.type_place === 'continent' ? 'kontinent' : place.type_place === 'state' ? 'stat' : place.type_place === 'city' ? 'mesto' : ''}/${place.slug}`,
+                                "name": place.name
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldPlaces] }
+        },
+
         async created() {
             const topPlaces = await axios.get("https://api.frytolnacestach.cz/api/top-places")
             this.topPlaces = topPlaces.data
