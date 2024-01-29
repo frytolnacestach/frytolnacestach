@@ -133,7 +133,7 @@
                 json: {
                     "@context": "https://schema.org",
                     "@type": "ItemList",
-                    "name": "Příspěvky",
+                    "name": "Nejnovější příspěvky",
                     "itemListElement": this.posts.map((post, index) => {
                         return {
                             "@type": "ListItem",
