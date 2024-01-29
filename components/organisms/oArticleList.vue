@@ -122,6 +122,32 @@
                 type: Number,
                 required: false
             }
+        },
+
+        head() {
+            // Empty Array
+            if (!this.posts && this.posts === null) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldPosts = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Články",
+                    "itemListElement": this.posts.map((post, index) => {
+                        return {
+                            "@type": "Article",
+                            "position": index + 1,
+                            "name": post.title,
+                            "url": 'https://frytolnacestach.cz' + `/clanky/${post.slug}`
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldPosts] }
         }
     }
 </script>
