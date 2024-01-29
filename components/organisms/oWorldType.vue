@@ -85,6 +85,30 @@
             }
         },
 
+        head() {
+            // Return
+            const jsonldItems = {
+                    type: 'application/ld+json',
+                    json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Kategorie míst",
+                    "itemListElement": this.items.map((category, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "@id": 'https://frytolnacestach.cz' + category.url,
+                                "name": category.name
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldItems] }
+        },
+
         async fetch() {
             const response = await fetch("https://api.frytolnacestach.cz/api/places-count")
             const data = await response.json()
