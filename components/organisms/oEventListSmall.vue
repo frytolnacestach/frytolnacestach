@@ -65,6 +65,34 @@
             }
         },
 
+        head() {
+            // Empty Array
+            if (!this.events && this.events === null) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldEvents = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Nejbližší události",
+                    "itemListElement": this.events.map((event, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "@id": 'https://frytolnacestach.cz' + '/udalost/' + event.slug,
+                                "name": event.name
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldEvents] }
+        },
+
         methods: {
             formatDate(date) {
                 const options = { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', timeZoneName: 'short' }
