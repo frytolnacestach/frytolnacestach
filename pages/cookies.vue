@@ -54,7 +54,7 @@
             title = 'Zásady Cookies | Cestovatelský portál Frytol na cestách'
 
             // description
-            description = 'Zásady Cookies pro web Frytol na cestách.'
+            description = 'Zásady Cookies pro cestovatelský portál Frytol na cestách.'
 
             // keywolds
             keywords = 'cookies, pravidla, eu'
@@ -86,6 +86,25 @@
                     { hid: 'og:url', content: ogUrl },
                     { hid: 'og:type', content: ogType },
                     { rel: 'canonical', href: ogUrl }
+                ],
+                script: [
+                    {
+                        type: 'application/ld+json',
+                        json: {
+                            "@context": "https://schema.org",
+                            "@type": "WebPage",
+                            "headline": "Zásady Cookies",
+                            "description": description,
+                            "url": "https://www.frytolnacestach.cz/cookies",
+                            "text": this.base[0].conditions_user,
+                            "datePublished": "2024-01-29",
+                            "author": {
+                                "@type": "Organization",
+                                "name": "Frytol na cestách",
+                                "url": "https://www.frytolnacestach.cz/"
+                            }
+                        }
+                    }
                 ]
             }
         },

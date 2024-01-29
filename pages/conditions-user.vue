@@ -54,7 +54,7 @@
             title = 'Obchodní podmínky a zásady ochrany osobních údajů pro uživatelské účty | Cestovatelský portál Frytol na cestách'
 
             // description
-            description = 'Obchodní podmínky a zásady ochrany osobních údajů pro web Frytol na cestách'
+            description = 'Obchodní podmínky a zásady ochrany osobních údajů pro uživatelský účet na cestovatelském portálů Frytol na cestách'
 
             // keywolds
             keywords = 'podmínky, pravdila, eu, cestování, svět'
@@ -86,6 +86,25 @@
                     { hid: 'og:url', content: ogUrl },
                     { hid: 'og:type', content: ogType },
                     { rel: 'canonical', href: ogUrl }
+                ],
+                script: [
+                    {
+                        type: 'application/ld+json',
+                        json: {
+                            "@context": "https://schema.org",
+                            "@type": "WebPage",
+                            "headline": "Obchodní podmínky a zásady ochrany osobních údajů (uživatelský účet)",
+                            "description": description,
+                            "url": "https://www.frytolnacestach.cz/conditions-user",
+                            "text": this.base[0].conditions_user,
+                            "datePublished": "2024-01-29",
+                            "author": {
+                                "@type": "Organization",
+                                "name": "Frytol na cestách",
+                                "url": "https://www.frytolnacestach.cz/"
+                            }
+                        }
+                    }
                 ]
             }
         },
