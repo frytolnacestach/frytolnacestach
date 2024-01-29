@@ -88,8 +88,8 @@
         head() {
             // Return
             const jsonldItems = {
-                    type: 'application/ld+json',
-                    json: {
+                type: 'application/ld+json',
+                json: {
                     "@context": "https://schema.org",
                     "@type": "ItemList",
                     "name": "Kategorie míst",
