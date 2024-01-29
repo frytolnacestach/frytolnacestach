@@ -93,7 +93,7 @@
                         json: {
                             "@context": "https://schema.org",
                             "@type": "WebPage",
-                            "headline": "Obchodní podmínky a zásady ochrany osobních údajů",
+                            "name": "Obchodní podmínky a zásady ochrany osobních údajů",
                             "description": description,
                             "url": "https://www.frytolnacestach.cz/conditions",
                             "text": this.base[0].conditions_user,

@@ -93,7 +93,7 @@
                         json: {
                             "@context": "https://schema.org",
                             "@type": "WebPage",
-                            "headline": "Zásady Cookies",
+                            "name": "Zásady Cookies",
                             "description": description,
                             "url": "https://www.frytolnacestach.cz/cookies",
                             "text": this.base[0].conditions_user,
