@@ -43,8 +43,30 @@
         
         data() {
             return {
-                base: this.base
+                base: []
             }
+        },
+
+        head() {
+            // Empty Array
+            if (!this.base && this.base === null) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldBase = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "http://schema.org",
+                    "@type": "Person",
+                    "name": "Michal Fryč",
+                    "alternateName": "Frytol na cestách",
+                    "url": "https://www.frytolnacestach.cz/cestovatel/frytol-na-cestach",
+                    "image": "https://image.frytolnacestach.cz/storage/main/michal-fryc.webp",
+                    "description": this.base[0].iam
+                }
+            }
+
+            return { script: [jsonldBase] }
         },
 
         async fetch() {
