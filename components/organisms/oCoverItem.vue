@@ -126,7 +126,7 @@
                 json: {
                     "@context": "https://schema.org",
                     "@type": "ItemList",
-                    "name": (this.type === 'foods' ? 'Jídla' : this.type === 'fauna' ? 'Fauna' : this.type === 'flora' ? 'Flora' : this.type === 'brands' ? 'Výrobky' : this.type === 'chains' ? 'Řetězce' : this.type === 'chains' ? 'Řetězce' : ''),
+                    "name": (this.type === 'foods' ? 'Jídla' : this.type === 'fauna' ? 'Fauna' : this.type === 'flora' ? 'Flora' : this.type === 'brands' ? 'Výrobky' : this.type === 'chains' ? 'Řetězce' : ''),
                     "itemListElement": this.items.map((item, index) => {
                         return {
                             "@type": "ListItem",
