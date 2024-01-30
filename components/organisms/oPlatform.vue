@@ -24,8 +24,35 @@
 
         data() {
             return {
-                platforms: this.platforms
+                platforms: []
             }
+        },
+
+        head() {
+            // Empty Array
+            if (!this.platforms && this.platforms === null) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldPlatforms = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Sociální Sítě",
+                    "itemListElement": this.platforms.map((platform, index) => {
+                        return {
+                            "@type": "WebPage",
+                            "position": index + 1,
+                            "name": platform.name,
+                            "url": platform.url,
+                            "description": platform.perex
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldPlatforms] }
         },
 
         async fetch() {
