@@ -629,6 +629,9 @@
                     { hid: 'og:type', content: ogType },
                     { rel: 'canonical', href: ogUrl }
                 ],
+                link: [
+                    { rel: 'canonical', href: ogUrl }
+                ],
                 script: [
                     {
                         type: 'application/ld+json',

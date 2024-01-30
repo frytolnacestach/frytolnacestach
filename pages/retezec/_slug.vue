@@ -154,7 +154,9 @@
                     { hid: 'og:title', content: ogTitle },
                     { hid: 'og:description', content: ogDescription },
                     { hid: 'og:url', content: ogUrl },
-                    { hid: 'og:type', content: ogType },
+                    { hid: 'og:type', content: ogType }
+                ],
+                link: [
                     { rel: 'canonical', href: ogUrl }
                 ],
                 script: [
