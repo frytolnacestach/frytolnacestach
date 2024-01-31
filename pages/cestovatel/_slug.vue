@@ -146,6 +146,23 @@
             // ogType
             ogType = 'website'
 
+            // script
+            let jsonldUser
+            if (this.user && this.user.length > 0) {
+                jsonldUser = {
+                    type: 'application/ld+json',
+                    json: {
+                        "@context": "https://schema.org",
+                        "@type": "Person",
+                        "name": ((this.user[0].surname ? this.user[0].surname: "") + " " + (this.user[0].lastname ? this.user[0].lastname: "")),
+                        "alternateName": (this.user[0].nickname ? this.user[0].nickname: ""),
+                        "url": 'https://frytolnacestach.cz' + `/cestovatel/${this.user[0].slug}`
+                    }
+                }
+            } else {
+                jsonldUser = []
+            }
+
             // Return
             return {
                 title,
@@ -158,6 +175,7 @@
                     { hid: 'og:url', content: ogUrl },
                     { hid: 'og:type', content: ogType }
                 ],
+                script: [jsonldUser],
                 link: [
                     { rel: 'canonical', href: ogUrl }
                 ]
