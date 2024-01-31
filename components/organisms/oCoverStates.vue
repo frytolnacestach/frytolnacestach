@@ -88,6 +88,34 @@
                 type: Array,
                 required: true
             }
+        },
+
+        head() {
+            // Empty Array
+            if (!this.items && this.items === null) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldItems = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Státy výskytu",
+                    "itemListElement": this.items.map((item, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "@id": 'https://frytolnacestach.cz' + `/svet/stat/${item.slug}`,
+                                "name": item.name
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldItems] }
         }
     }
 </script>
