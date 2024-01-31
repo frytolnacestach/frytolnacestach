@@ -4,7 +4,7 @@
         <!-- SECTION - Hero video -->
         <section class="t-section -p0">
             <div class="t-section__inner">
-                <oHeroVideo :image="imageVideo" :title="video[0].title" />
+                <oHeroVideo :image="imageVideo" :title="video[0].title" v-if="video[0].title" />
             </div>
         </section>
         <!-- SECTION - Hero video END -->
@@ -46,7 +46,7 @@
             <div class="t-col2__sidebar my-2">
 
                 <!-- SECTION - author - sidebar -->
-                <section class="t-section -px-world mb-2 -p0">
+                <section class="t-section -px-world mb-2 -p0" v-if="video[0].id_user">
                     <div class="t-section__inner">
                         <oAuthorSidebar :author="video[0].id_user"/>
                     </div>
@@ -112,7 +112,7 @@
 
         data() {
             return {
-                video: this.video
+                video: []
             }
         },
 
@@ -155,6 +155,24 @@
             // ogType
             ogType = 'website'
 
+            // Empty Array
+            let jsonldVideo
+            if (this.video && this.video.length > 0) {
+                jsonldVideo = {
+                    type: 'application/ld+json',
+                    json: {
+                        "@context": "https://schema.org",
+                        "@type": "VideoObject",
+                        "name": (this.video[0].title ? this.video[0].title : ""),
+                        "thumbnailUrl": (this.imageVideo && this.imageVideo.find(image => image.id === this.video[0].id_image)) ? ("https://image.frytolnacestach.cz/storage" + (this.imageVideo.find(image => image.id === this.video[0].id_image).source + this.imageVideo.find(image => image.id === this.video[0].id_image).name) + ".webp") : "",
+                        "url": 'https://frytolnacestach.cz' + `/videa/${this.video.slug}`,
+                        "description": (this.video[0].perex ? this.video[0].perex : ""),
+                    }
+                }
+            } else {
+                jsonldVideo = []
+            }
+
             // Return
             return {
                 title,
@@ -167,6 +185,7 @@
                     { hid: 'og:url', content: ogUrl },
                     { hid: 'og:type', content: ogType }
                 ],
+                script: [jsonldVideo],
                 link: [
                     { rel: 'canonical', href: ogUrl }
                 ]
