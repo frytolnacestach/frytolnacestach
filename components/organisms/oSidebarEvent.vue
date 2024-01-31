@@ -69,9 +69,37 @@
 
         data() {
             return {
-                events: this.events,
-                images: this.images
+                events: [],
+                images: []
             }
+        },
+
+        head() {
+            // Empty Array
+            if (!this.events && this.events === null) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldEvents = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Události v lokalitě",
+                    "itemListElement": this.events.map((event, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "@id": 'https://frytolnacestach.cz' + '/udalost/' + event.slug,
+                                "name": event.name
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldEvents] }
         },
 
         methods: {
