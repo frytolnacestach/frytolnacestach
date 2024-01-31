@@ -277,7 +277,7 @@
                         "@type": "Article",
                         "name": (this.post[0].title ? this.post[0].title : ""),
                         "image": (this.imagePostHero && this.imagePostHero.find(image => image.id === this.post[0].id_image_hero)) ? ("https://image.frytolnacestach.cz/storage" + (this.imagePostHero.find(image => image.id === this.post[0].id_image_hero).source + this.imagePostHero.find(image => image.id === this.post[0].id_image_hero).name) + ".webp") : "",
-                        "url": 'https://frytolnacestach.cz' + `/videa/${this.post[0].slug}`,
+                        "url": 'https://frytolnacestach.cz' + `/clanky/${this.post[0].slug}`,
                         "description": (this.post[0].text_author ? this.post[0].text_author.replace(/<\/?[^>]+(>|$)/g, '') : ""),
                     }
                 }
