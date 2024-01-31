@@ -155,7 +155,7 @@
             // ogType
             ogType = 'website'
 
-            // scripts
+            // script
             let jsonldVideo
             if (this.video && this.video.length > 0) {
                 jsonldVideo = {
