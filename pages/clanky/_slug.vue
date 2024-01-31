@@ -223,7 +223,7 @@
 
         data() {
             return {
-                post: this.post,
+                post: [],
                 videos: []
             }
         },
@@ -267,6 +267,24 @@
             // ogType
             ogType = 'website'
 
+            // script
+            let jsonldPost
+            if (this.post && this.post.length > 0 && this.imagePostHero !== null) {
+                jsonldPost = {
+                    type: 'application/ld+json',
+                    json: {
+                        "@context": "https://schema.org",
+                        "@type": "Article",
+                        "name": (this.post[0].title ? this.post[0].title : ""),
+                        "image": (this.imagePostHero && this.imagePostHero.find(image => image.id === this.post[0].id_image_hero)) ? ("https://image.frytolnacestach.cz/storage" + (this.imagePostHero.find(image => image.id === this.post[0].id_image_hero).source + this.imagePostHero.find(image => image.id === this.post[0].id_image_hero).name) + ".webp") : "",
+                        "url": 'https://frytolnacestach.cz' + `/videa/${this.post[0].slug}`,
+                        "description": (this.post[0].text_author ? this.post[0].text_author.replace(/<\/?[^>]+(>|$)/g, '') : ""),
+                    }
+                }
+            } else {
+                jsonldPost = []
+            }
+
             // Return
             return {
                 title,
@@ -279,6 +297,7 @@
                     { hid: 'og:url', content: ogUrl },
                     { hid: 'og:type', content: ogType }
                 ],
+                script: [jsonldPost],
                 link: [
                     { rel: 'canonical', href: ogUrl }
                 ]
