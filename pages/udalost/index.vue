@@ -98,6 +98,24 @@
                 ],
                 link: [
                     { rel: 'canonical', href: ogUrl }
+                ],
+                script: [
+                    {
+                        type: 'application/ld+json',
+                        json: {
+                            "@context": "https://schema.org",
+                            "@type": "WebPage",
+                            "name": title,
+                            "description": description,
+                            "url": ogUrl,
+                            "datePublished": "2024-01-31",
+                            "author": {
+                                "@type": "Organization",
+                                "name": "Frytol na cestách",
+                                "url": "https://www.frytolnacestach.cz/"
+                            }
+                        }
+                    }
                 ]
             }
         },
