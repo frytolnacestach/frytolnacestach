@@ -74,7 +74,7 @@
 
         data() {
             return {
-                fauna: this.fauna,
+                travelDictionary: [],
                 imageTravelDictionary: this.imageTravelDictionary,
                 mNavBreadcrumbsTravelDictionaryArray: [
                     {
@@ -126,6 +126,24 @@
             // ogType
             ogType = 'website'
 
+            // script
+            let jsonldTravelDictionary
+            if (this.travelDictionary && this.travelDictionary.length > 0 && this.imageTravelDictionary !== null) {
+                jsonldTravelDictionary = {
+                    type: 'application/ld+json',
+                    json: {
+                        "@context": "https://schema.org",
+                        "@type": "Article",
+                        "name": (this.travelDictionary[0].name ? this.travelDictionary[0].name : ""),
+                        "image": (this.imageTravelDictionary && this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero)) ? ("https://image.frytolnacestach.cz/storage" + (this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).source + this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).name) + ".webp") : "",
+                        "url": 'https://frytolnacestach.cz' + `/cestovatelsky-slovnik/${this.travelDictionary[0].slug}`,
+                        "description": (this.travelDictionary[0].description ? this.travelDictionary[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
+                    }
+                }
+            } else {
+                jsonldTravelDictionary = []
+            }
+
             // Return
             return {
                 title,
@@ -138,6 +156,7 @@
                     { hid: 'og:url', content: ogUrl },
                     { hid: 'og:type', content: ogType }
                 ],
+                script: [jsonldTravelDictionary],
                 link: [
                     { rel: 'canonical', href: ogUrl }
                 ]
