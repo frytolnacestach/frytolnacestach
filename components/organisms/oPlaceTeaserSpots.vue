@@ -123,9 +123,38 @@
 
         data() {
             return {
-                spots: this.spots,
-                images: this.images
+                spots: [],
+                images: []
             }
+        },
+
+        head() {
+            // Empty Array
+            if (!this.spots && this.spots.length === 0) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldPlaces = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Jaké místa vidět",
+                    "itemListElement": this.spots.map((spot, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "@id": 'https://frytolnacestach.cz' + `/svet/misto/${spot.slug}`,
+                                "name": spot.name,
+                                "image": ((this.images && this.images.length > 0) ? (`https://image.frytolnacestach.cz/storage${this.images.find(image => image.id === spot.id_image_cover).source + this.images.find(image => image.id === spot.id_image_cover).name}.webp`) : "" ),
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldPlaces] }
         },
 
         async fetch() {

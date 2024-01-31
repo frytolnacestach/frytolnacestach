@@ -115,9 +115,38 @@
 
         data() {
             return {
-                cities: this.cities,
-                images: this.images
+                cities: [],
+                images: []
             }
+        },
+
+        head() {
+            // Empty Array
+            if (!this.cities && this.cities.length === 0) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldPlaces = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Jaké města vidět",
+                    "itemListElement": this.cities.map((city, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "@id": 'https://frytolnacestach.cz' + `/svet/mesto/${city.slug}`,
+                                "name": city.name,
+                                "image": ((this.images && this.images.length > 0) ? (`https://image.frytolnacestach.cz/storage${this.images.find(image => image.id === city.id_image_cover).source + this.images.find(image => image.id === city.id_image_cover).name}.webp`) : "" ),
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldPlaces] }
         },
 
         async fetch() {

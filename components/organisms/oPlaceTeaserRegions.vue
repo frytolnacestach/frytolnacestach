@@ -123,9 +123,38 @@
 
         data() {
             return {
-                regions: this.regions,
-                images: this.images
+                regions: [],
+                images: []
             }
+        },
+
+        head() {
+            // Empty Array
+            if (!this.regions && this.regions.length === 0) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldPlaces = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Jaké regiony vidět",
+                    "itemListElement": this.regions.map((region, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "@id": 'https://frytolnacestach.cz' + `/svet/region/${region.slug}`,
+                                "name": region.name,
+                                "image": ((this.images && this.images.length > 0) ? (`https://image.frytolnacestach.cz/storage${this.images.find(image => image.id === region.id_image_cover).source + this.images.find(image => image.id === region.id_image_cover).name}.webp`) : "" ),
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldPlaces] }
         },
 
         async fetch() {
