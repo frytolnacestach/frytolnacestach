@@ -14,15 +14,42 @@
 </template>
 
 <script>
-export default {
-    name: 'OrganismsoFactsPlaceComponent',
+    export default {
+        name: 'OrganismsoFactsPlaceComponent',
 
-    props: {
-        items: {
-            type: Array,
-            required: true
+        props: {
+            items: {
+                type: Array,
+                required: true
+            }
+        },
+
+        head() {
+            // Empty Array
+            if (!this.items && this.items.length === 0) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldItems = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Fakta",
+                    "itemListElement": this.items.map((item, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "name": item.name,
+                                "perex": item.value
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldItems] }
         }
     }
-
-}
 </script>
