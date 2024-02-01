@@ -126,7 +126,7 @@
                 json: {
                     "@context": "https://schema.org",
                     "@type": "ItemList",
-                    "name": (this.type === 'foods' ? 'Jídla' : this.type === 'fauna' ? 'Fauna' : this.type === 'flora' ? 'Flora' : this.type === 'brands' ? 'Výrobky' : this.type === 'chains' ? 'Řetězce' : this.type === 'travel_dictionaries' ? 'Cestovatelský slovník' : this.type === 'events' ? 'Události' : ''),
+                    "name": (this.type === 'jidlo' ? 'Jídla' : this.type === 'fauna' ? 'Fauna' : this.type === 'flora' ? 'Flora' : this.type === 'znacka' ? 'Výrobky' : this.type === 'retezec' ? 'Řetězce' : this.type === 'cestovatelsky-slovnik' ? 'Cestovatelský slovník' : this.type === 'udalost' ? 'Události' : ''),
                     "itemListElement": this.items.map((item, index) => {
                         return {
                             "@type": "ListItem",
