@@ -132,7 +132,7 @@
                             "@type": "ListItem",
                             "position": index + 1,
                             "item": {
-                                "@id": 'https://frytolnacestach.cz' + `/svet/${this.type}/${item.slug}`,
+                                "@id": 'https://frytolnacestach.cz' + `/elektricka-zasuvka/${item.slug}`,
                                 "name": item.name
                             }
                         }
