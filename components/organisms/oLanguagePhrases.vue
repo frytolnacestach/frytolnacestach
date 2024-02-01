@@ -37,6 +37,34 @@
                 type: Object,
                 required: true
             }
+        },
+
+        head() {
+            // Empty Array
+            if (!this.data && this.data.length === 0) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldData = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Základní jazykové fráze",
+                    "itemListElement": this.data.map((itemData, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "name": itemData.czech,
+                                "perex": (itemData.foreign_original + (itemData.foreign_latin ? ( "(" + itemData.foreign_latin + ")") : "" ))
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldData] }
         }
     }
 </script>
