@@ -36,6 +36,35 @@
                 type: String,
                 required: true
             }
-        }
+        },
+
+        head() {
+            // Empty Array
+            if (!this.items && this.items === null) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldItems = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Externí odkazy",
+                    "itemListElement": this.items.map((item, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "name": item.name,
+                                "perex": item.description,
+                                "url": item.url
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldItems] }
+        },
     }
 </script>
