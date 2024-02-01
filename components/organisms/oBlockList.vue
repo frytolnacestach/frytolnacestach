@@ -42,6 +42,33 @@
             }
         },
 
+        head() {
+            // Empty Array
+            if (!this.items && this.items === null) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldItems = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "itemListElement": this.items.map((item, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "name": item.name,
+                                "perex": item.value
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldItems] }
+        },
+
         methods:{
             formatDate(date) {
                 const [month, year] = date.split('-')
