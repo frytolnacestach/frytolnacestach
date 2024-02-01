@@ -120,6 +120,34 @@
             }
         },
 
+        head() {
+            // Empty Array
+            if (!this.items && this.items === null) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldItems = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": (this.type === 'jidlo' ? 'Jídla' : this.type === 'fauna' ? 'Fauna' : this.type === 'flora' ? 'Flora' : this.type === 'znacka' ? 'Výrobky' : this.type === 'retezec' ? 'Řetězce' : this.type === 'cestovatelsky-slovnik' ? 'Cestovatelský slovník' : this.type === 'udalost' ? 'Události' : ''),
+                    "itemListElement": this.items.map((item, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "@id": 'https://frytolnacestach.cz' + `/${this.type}/${item.slug}`,
+                                "name": item.name
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldItems] }
+        },
+
         async mounted() {
             let success = false
             let data = null
