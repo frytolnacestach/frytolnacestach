@@ -102,6 +102,34 @@
             }
         },
 
+        head() {
+            // Empty Array
+            if (!this.places && this.places === null) {
+                return { script: [] };
+            }
+            // Return
+            const jsonldPlaces = {
+                type: 'application/ld+json',
+                json: {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": (this.type === 'kontinent' ? 'Kontinenty' : this.type === 'stat' ? 'Státy' : this.type === 'mesto' ? 'Města' : this.type === 'region' ? 'Regiony' : this.type === 'misto' ? 'Místa' : ''),
+                    "itemListElement": this.places.map((place, index) => {
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "@id": 'https://frytolnacestach.cz' + `/svet/${this.type}/${place.slug}`,
+                                "name": place.name
+                            }
+                        }
+                    })
+                }
+            }
+
+            return { script: [jsonldPlaces] }
+        },
+
         computed: {
             filteredPlaces() {
                 if (this.importance === "biggest") {
