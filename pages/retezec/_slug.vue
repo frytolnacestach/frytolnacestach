@@ -165,9 +165,9 @@
                         json: {
                             "@context": "https://schema.org",
                             "@type": "LocalBusiness",
-                            "name": (this.chain[0].name ? this.chain[0].name : ""),
-                            "description": (this.chain[0].description ? this.chain[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
-                            "image": ((this.imageChain[0] && this.imageChain[0].id) ? ("https://image.frytolnacestach.cz/storage/chains/" + this.imageChain[0].name + ".webp") : "" )
+                            "name": ((this.chain && this.chain.length > 0 && this.chain[0].name) ? this.chain[0].name : ""),
+                            "description": ((this.chain && this.chain.length > 0 && this.chain[0].description) ? this.chain[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
+                            "image": ((this.imageChain && this.imageChain.length > 0 && this.imageChain[0] && this.imageChain[0].id) ? ("https://image.frytolnacestach.cz/storage/chains/" + this.imageChain[0].name + ".webp") : "" )
                         }
                     }
                 ]

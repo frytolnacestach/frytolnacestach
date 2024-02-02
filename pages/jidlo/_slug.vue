@@ -103,8 +103,8 @@
 
         data() {
             return {
-                food: this.food,
-                imageFood: this.imageFood,
+                food: [],
+                imageFood: [],
                 placesStates: this.placesStates,
                 imagesStates: this.imagesStates,
                 mNavBreadcrumbsFoodArray: [
@@ -178,11 +178,11 @@
                         json: {
                             "@context": "https://schema.org",
                             "@type": "Recipe",
-                            "name": (this.food[0].name ? this.food[0].name : ""),
-                            "description": (this.food[0].description ? this.food[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
-                            "image": ((this.imageFood[0] && this.imageFood[0].id) ? ("https://image.frytolnacestach.cz/storage/foods/" + this.imageFood[0].name + ".webp") : "" ),
-                            "recipeIngredient": ((this.food[0].ingredients && this.food[0].ingredients.length > 0) ? this.food[0].ingredients : ""),
-                            "recipeInstructions": ((this.food[0].recipe && this.food[0].recipe.length > 0) ? this.food[0].recipe : "")
+                            "name": ((this.food && this.food.length > 0 && this.food[0].name) ? this.food[0].name : ""),
+                            "description": ((this.food && this.food.length > 0 && this.food[0].description) ? this.food[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
+                            "image": ((this.imageFood && this.food.length > 0 && this.imageFood[0].id) ? ("https://image.frytolnacestach.cz/storage/foods/" + this.imageFood[0].name + ".webp") : "" ),
+                            "recipeIngredient": ((this.food && this.food.length > 0 && this.food[0].ingredients && this.food[0].ingredients.length > 0) ? this.food[0].ingredients : ""),
+                            "recipeInstructions": ((this.food && this.food.length > 0 && this.food[0].recipe && this.food[0].recipe.length > 0) ? this.food[0].recipe : "")
                         }
                     }
                 ]

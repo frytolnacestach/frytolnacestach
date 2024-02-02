@@ -156,9 +156,9 @@
                         json: {
                             "@context": "https://schema.org",
                             "@type": "Product",
-                            "name": (this.brand[0].name ? this.brand[0].name : ""),
-                            "description": (this.brand[0].description ? this.brand[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
-                            "image": ((this.imageBrand[0] && this.imageBrand[0].id) ? ("https://image.frytolnacestach.cz/storage/brands/" + this.imageBrand[0].name + ".webp") : "" )
+                            "name": ((this.brand && this.brand.length > 0 && this.brand[0].name) ? this.brand[0].name : ""),
+                            "description": ((this.brand && this.brand.length > 0 && this.brand[0].description) ? this.brand[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
+                            "image": ((this.imageBrand && this.imageBrand.length > 0 && this.imageBrand[0] && this.imageBrand[0].id) ? ("https://image.frytolnacestach.cz/storage/brands/" + this.imageBrand[0].name + ".webp") : "" )
                         }
                     }
                 ]

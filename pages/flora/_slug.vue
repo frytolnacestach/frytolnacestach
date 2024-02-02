@@ -155,9 +155,9 @@
                         json: {
                             "@context": "https://schema.org",
                             "@type": "Plant",
-                            "name": (this.flora[0].name ? this.flora[0].name : ""),
-                            "description": (this.flora[0].description ? this.flora[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
-                            "image": ((this.imageFlora[0] && this.imageFlora[0].id) ? ("https://image.frytolnacestach.cz/storage/flora/" + this.imageFlora[0].name + ".webp") : "" )
+                            "name": ((this.flora && this.flora.length > 0 && this.flora[0].name) ? this.flora[0].name : ""),
+                            "description": ((this.flora && this.flora.length > 0 && this.flora[0].description) ? this.flora[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
+                            "image": ((this.imageFlora && this.imageFlora.length > 0 && this.imageFlora[0] && this.imageFlora[0].id) ? ("https://image.frytolnacestach.cz/storage/flora/" + this.imageFlora[0].name + ".webp") : "" )
                         }
                     }
                 ]
