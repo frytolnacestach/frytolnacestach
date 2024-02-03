@@ -142,11 +142,11 @@
                     { hid: 'title', name: 'title', content: title },
                     { hid: 'description', name: 'description', content: description },
                     { name: 'keywords', content: keywords },
-                    { property: 'og:image', content: ogImage },
+                    { hid: 'og:type', content: ogType },
+                    { hid: 'og:url', content: ogUrl },
                     { hid: 'og:title', content: ogTitle },
                     { hid: 'og:description', content: ogDescription },
-                    { hid: 'og:url', content: ogUrl },
-                    { hid: 'og:type', content: ogType }
+                    { property: 'og:image', content: ogImage }
                 ],
                 link: [
                     { rel: 'canonical', href: ogUrl }
