@@ -289,6 +289,7 @@
             return {
                 title,
                 meta: [
+                    { hid: 'title', name: 'title', content: title },
                     { hid: 'description', name: 'description', content: description },
                     { name: 'keywords', content: keywords },
                     { property: 'og:image', content: ogImage },
