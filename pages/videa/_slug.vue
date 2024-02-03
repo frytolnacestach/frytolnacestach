@@ -167,6 +167,7 @@
                         "thumbnailUrl": (this.imageVideo && this.imageVideo.find(image => image.id === this.video[0].id_image)) ? ("https://image.frytolnacestach.cz/storage" + (this.imageVideo.find(image => image.id === this.video[0].id_image).source + this.imageVideo.find(image => image.id === this.video[0].id_image).name) + ".webp") : "",
                         "url": 'https://frytolnacestach.cz' + `/videa/${this.video[0].slug}`,
                         "description": (this.video[0].perex ? this.video[0].perex.replace(/<\/?[^>]+(>|$)/g, '') : ""),
+                        "uploadDate": (this.video[0].created_at ? this.video[0].created_at : ""),
                     }
                 }
             } else {
