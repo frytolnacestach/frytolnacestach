@@ -434,9 +434,9 @@
             description = `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name}`
 
             // keywolds
-            let metaSeoTags
+            let metaSeoTags = ""
             if (this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
-                metaSeoTags = this.place[0].seo_tags.map(item => item.tag).join(", ")
+                metaSeoTags = ", " + this.place[0].seo_tags.map(item => item.tag).join(", ")
             }
             keywords = (this.place[0].name ? this.place[0].name : '') + metaSeoTags + ', kontinent, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
             

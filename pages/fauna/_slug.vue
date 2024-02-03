@@ -114,9 +114,9 @@
             description = `${this.fauna[0].description ? this.fauna[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.fauna[0].description.lastIndexOf(' ', 160)) : this.fauna[0].name}`
 
             // keywolds
-            let metaSeoTags
+            let metaSeoTags = ""
             if (this.fauna[0].seo_tags && this.fauna[0].seo_tags.length > 0) {
-                metaSeoTags = this.fauna[0].seo_tags.map(item => item.tag).join(", ")
+                metaSeoTags = ", " + this.fauna[0].seo_tags.map(item => item.tag).join(", ")
             }
             keywords = (this.fauna[0].name ? this.fauna[0].name : '') + metaSeoTags + ', Fauna, Živočichové, informace o živočichách, plánuj cestu, cestovatelský portál, cestování, svět'
             

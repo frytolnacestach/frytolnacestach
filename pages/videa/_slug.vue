@@ -134,9 +134,9 @@
             description = `${this.video[0].perex ? this.video[0].perex.slice(0, this.video[0].perex.lastIndexOf(' ', 150)) : this.video[0].title ? this.video[0].title : 'Video'}`
 
             // keywolds
-            let metaSeoTags
+            let metaSeoTags = ""
             if (this.video[0].seo_tags && this.video[0].seo_tags.length > 0) {
-                metaSeoTags = this.video[0].seo_tags.map(item => item.tag).join(", ")
+                metaSeoTags = ", " + this.video[0].seo_tags.map(item => item.tag).join(", ")
             }
             keywords = (this.video[0].title ? this.video[0].title : '') + metaSeoTags + ', cestovatelské video, cestování, svět, cetovatelský portál'
             

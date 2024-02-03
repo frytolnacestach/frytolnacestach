@@ -113,9 +113,9 @@
             description = `${this.flora[0].description ? this.flora[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.flora[0].description.lastIndexOf(' ', 160)) : this.flora[0].name}`
 
             // keywolds
-            let metaSeoTags
+            let metaSeoTags = ""
             if (this.flora[0].seo_tags && this.flora[0].seo_tags.length > 0) {
-                metaSeoTags = this.flora[0].seo_tags.map(item => item.tag).join(", ")
+                metaSeoTags = ", " + this.flora[0].seo_tags.map(item => item.tag).join(", ")
             }
             keywords = (this.flora[0].name ? this.flora[0].name : '') + metaSeoTags + ', Flóra, Rostoucí flóra, informace o rostlinách, plánuj cestu, cestovatelský portál, cestování, svět'
             

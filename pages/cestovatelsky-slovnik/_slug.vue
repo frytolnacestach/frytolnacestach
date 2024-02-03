@@ -105,9 +105,9 @@
             description = `${this.travelDictionary[0].description ? this.travelDictionary[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.travelDictionary[0].description.lastIndexOf(' ', 160)) : this.travelDictionary[0].name}`
 
             // keywolds
-            let metaSeoTags
+            let metaSeoTags = ""
             if (this.travelDictionary[0].seo_tags && this.travelDictionary[0].seo_tags.length > 0) {
-                metaSeoTags = this.travelDictionary[0].seo_tags.map(item => item.tag).join(", ")
+                metaSeoTags = ", " + this.travelDictionary[0].seo_tags.map(item => item.tag).join(", ")
             }
             keywords = (this.travelDictionary[0].name ? this.travelDictionary[0].name : '') + metaSeoTags + ', Cestovatelský slovník, co je to ' + this.travelDictionary[0].name + ', travel hacky, plánuj cestu, cestovatelský portál, cestování, svět'
             

@@ -123,9 +123,9 @@
             description = `${this.chain[0].description ? this.chain[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.chain[0].description.lastIndexOf(' ', 160)) : this.chain[0].name}`
 
             // keywolds
-            let metaSeoTags
+            let metaSeoTags = ""
             if (this.chain[0].seo_tags && this.chain[0].seo_tags.length > 0) {
-                metaSeoTags = this.chain[0].seo_tags.map(item => item.tag).join(", ")
+                metaSeoTags = ", " + this.chain[0].seo_tags.map(item => item.tag).join(", ")
             }
             keywords = (this.chain[0].name ? this.chain[0].name : '') + metaSeoTags + ', Řetězec, plánuj cestu, cestovatelský portál, cestování, svět'
             

@@ -209,9 +209,9 @@
             description = `${this.event[0].description ? this.event[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.event[0].description.lastIndexOf(' ', 160)) : this.event[0].name}`
 
             // keywolds
-            let metaSeoTags
+            let metaSeoTags = ""
             if (this.event[0].seo_tags && this.event[0].seo_tags.length > 0) {
-                this.event[0].seo_tags.map(item => item.tag).join(", ")
+                metaSeoTags = ", " + this.event[0].seo_tags.map(item => item.tag).join(", ")
             }
             keywords = (this.event[0].name ? this.event[0].name : '') + metaSeoTags + ', událost, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
             

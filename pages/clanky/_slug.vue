@@ -246,9 +246,9 @@
             description = `${this.post[0].textOpener ? this.post[0].textOpener.slice(0, this.post[0].textOpener.lastIndexOf(' ', 150)) : this.post[0].title ? this.post[0].title : 'Článek'}`
 
             // keywolds
-            let metaSeoTags
+            let metaSeoTags = ""
             if (this.post[0].seo_tags && this.post[0].seo_tags.length > 0) {
-                metaSeoTags = this.post[0].seo_tags.map(item => item.tag).join(", ")
+                metaSeoTags = ", " + this.post[0].seo_tags.map(item => item.tag).join(", ")
             }
             keywords = (this.post[0].title ? this.post[0].title : '') + metaSeoTags + ', článek, cestování, svět, rady, cestovatelský portál'
             

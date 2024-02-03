@@ -136,9 +136,9 @@
             description = `${this.wallSockets[0].description ? this.wallSockets[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.wallSockets[0].description.lastIndexOf(' ', 160)) : this.wallSockets[0].name}`
 
             // keywolds
-            let metaSeoTags
+            let metaSeoTags = ""
             if (this.wallSockets[0].seo_tags && this.wallSockets[0].seo_tags.length > 0) {
-                metaSeoTags = this.wallSockets[0].seo_tags.map(item => item.tag).join(", ")
+                metaSeoTags = ", " + this.wallSockets[0].seo_tags.map(item => item.tag).join(", ")
             }
             keywords = (this.wallSockets[0].name ? this.wallSockets[0].name : '') + metaSeoTags + ', Elektrická zásuvka, kompatibilita, redukce, zásuvky, plánuj cestu, cestovatelský portál, cestování, svět'
             

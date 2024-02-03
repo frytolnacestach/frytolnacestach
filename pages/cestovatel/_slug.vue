@@ -125,9 +125,9 @@
             description = `Profil cestovatele ${this.staticUser[0].nickname} na cestovatelském portálu Frytol na cestách`
 
             // keywolds
-            let metaSeoTags
+            let metaSeoTags = ""
             if (this.staticUser[0].seo_tags && this.staticUser[0].seo_tags.length > 0) {
-                metaSeoTags = this.staticUser[0].seo_tags.map(item => item.tag).join(", ")
+                metaSeoTags = ", " + this.staticUser[0].seo_tags.map(item => item.tag).join(", ")
             }
             keywords = `${this.staticUser[0].nickname + metaSeoTags + ', cestovatel, uživatel, cestování, svět, rady, cestovatelský portál'}`
             

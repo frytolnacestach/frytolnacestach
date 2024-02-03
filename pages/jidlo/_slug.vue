@@ -136,9 +136,9 @@
             description = `${this.food[0].description ? this.food[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.food[0].description.lastIndexOf(' ', 160)) : this.food[0].name}`
 
             // keywolds
-            let metaSeoTags
+            let metaSeoTags = ""
             if (this.food[0].seo_tags && this.food[0].seo_tags.length > 0) {
-                metaSeoTags = this.food[0].seo_tags.map(item => item.tag).join(", ")
+                metaSeoTags = ", " + this.food[0].seo_tags.map(item => item.tag).join(", ")
             }
             keywords = (this.food[0].name ? this.food[0].name : '') + metaSeoTags + ', Jídla, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět'
             
