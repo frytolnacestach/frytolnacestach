@@ -355,7 +355,11 @@
                     { hid: 'og:url', content: ogUrl },
                     { hid: 'og:title', content: ogTitle },
                     { hid: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage }
+                    { property: 'og:image', content: ogImage },
+                    { name: 'twitter:title', content: ogTitle },
+                    { name: 'twitter:description', content: ogDescription },
+                    { name: 'twitter:image', content: ogImage },
+                    { name: 'twitter:url', content: ogUrl }
                 ],
                 link: [
                     { rel: 'canonical', href: ogUrl }

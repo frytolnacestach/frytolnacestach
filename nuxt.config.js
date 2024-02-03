@@ -21,7 +21,10 @@ export default {
       { name: 'author', content: 'Michal Fryč' },
       { name: 'keywords', content: 'Cestovatelský portál, Frytol na cestách, objevuj svět, youtube, cestování, blog' },
       { name: 'robots', content: 'index, follow' },
-      { property: 'og:locale', content: 'cs_CZ' }
+      { property: 'og:locale', content: 'cs_CZ' },
+      { property: 'og:site_name', content: 'Cestovatelský portál Frytol na cestách' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:site', content: '@frytolnacestach' }
     ],
     link: [
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/favicons/apple-touch-icon.png' },
