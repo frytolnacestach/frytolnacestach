@@ -158,7 +158,7 @@
                 placeContinent: this.placeContinent,
                 imagePlace: this.imagePlace,
                 activeTab: 'jidlo',
-                activeTabName: 'Řetězce',
+                activeTabName: 'Jídlo',
                 isMobile: false,
                 showHero: true,
                 tabs: [
