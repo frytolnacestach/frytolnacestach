@@ -77,3 +77,5 @@ _____________________________________________________________________
 <big>**[PROBS](docs/probs.md)**</big>
 
 <big>**[IMAGES](docs/images.md)**</big>
+
+<big>**[STATUS_ROLE](docs/status-role.md)**</big>
