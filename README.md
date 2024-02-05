@@ -78,4 +78,6 @@ _____________________________________________________________________
 
 <big>**[IMAGES](docs/images.md)**</big>
 
+<big>**[STATUS](docs/status.md)**</big>
+
 <big>**[STATUS_ROLE](docs/status-role.md)**</big>
