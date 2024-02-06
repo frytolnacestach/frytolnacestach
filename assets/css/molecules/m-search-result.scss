@@ -20,7 +20,7 @@
         position: relative;
         width: 100%;
 
-        &:after {
+        &::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -28,6 +28,12 @@
             right: 0;
             height: 1px;
             background-color: $c-gray-bg-component-dark;
+        }
+
+        &:last-of-type {
+            &::after {
+                display: none;
+            }
         }
     }
 
