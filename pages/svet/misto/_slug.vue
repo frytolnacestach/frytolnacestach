@@ -76,6 +76,14 @@
                         </section>
                         <!-- SECTION - information duration END -->
 
+                        <!-- SECTION - Place teaser -->
+                        <section class="t-section my-2 -p0 print-section" v-if="imagePlaceCity && imagePlaceCity.length > 0">
+                            <div class="t-section__inner">
+                                <oPlaceTeaser :headline="'Místo ' + place[0].name + ' patří k městu ' + placeCity[0].name" :place="placeCity" :image="imagePlaceCity" type="mesto" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Place teaser END -->
+
                         <!-- SECTION - Ubytování - information -->
                         <section class="t-section pt-1 mt-2">
                             <div class="t-section__inner">
@@ -200,6 +208,7 @@
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
     import oInformationBox from '~/components/organisms/oInformationBox.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
+    import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oPlaceTeaserSpots from '~/components/organisms/oPlaceTeaserSpots.vue'
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
     import oSidebarEvent from '~/components/organisms/oSidebarEvent.vue'
@@ -222,6 +231,7 @@
             oInformationBlock,
             oInformationBox,
             oMapGoogle,
+            oPlaceTeaser,
             oPlaceTeaserSpots,
             oReviewItem,
             oSidebarEvent,
@@ -237,6 +247,7 @@
                 placeContinent: this.placeContinent,
                 placeState: this.placeState,
                 placeCity: this.placeCity,
+                imagePlaceCity: this.imagePlaceCity,
                 isMobile: false,
                 showHero: true,
                 videos: [],
@@ -596,6 +607,11 @@
                     const imagePlace = place[0].id_image_hero && place[0].id_image_hero !== 0 ? await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${place[0].id_image_hero}`) : []
                     // PlaceCity
                     const placeCity = await $axios.$get(`https://api.frytolnacestach.cz/api/places-city-id/${place[0].id_city}`)
+                    // Images
+                    let imagePlaceCity = null
+                    if (place[0].id_city !== null && placeCity && placeCity[0].id_image_cover !== null ) {
+                        imagePlaceCity = await $axios.$get(`https://api.frytolnacestach.cz/api/image-id/${placeCity[0].id_image_cover}`)
+                    }
                     // PlaceState
                     const placeState = await $axios.$get(`https://api.frytolnacestach.cz/api/places-state-id/${place[0].id_state}`)
                     // PlaceContinent
@@ -606,6 +622,7 @@
                         place,
                         imagePlace,
                         placeCity,
+                        imagePlaceCity,
                         placeState,
                         placeContinent
                     }
