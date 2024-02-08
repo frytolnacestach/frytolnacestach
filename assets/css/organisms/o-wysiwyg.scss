@@ -40,7 +40,6 @@
     }
 
     h3 {
-        font-size: $fs-normal-l;
         margin-bottom: 10px;
         margin-top: 35px;
         letter-spacing: .1px;
@@ -56,8 +55,9 @@
     }
 
     h4 {
+        font-size: $fs-normal-sss;
         margin-bottom: 10px;
-        margin-top: 30px;
+        margin-top: 20px;
         letter-spacing: .1px;
 
         &:first-child {
@@ -103,16 +103,28 @@
         h3 {
             color: $c-blue-t-dark;
         }
+
+        h4 {
+            color: $c-blue-t-dark;
+        }
     }
 
     &.-gray {
         h3 {
             color: $c-gray-t-dark;
         }
+
+        h4 {
+            color: $c-gray-t-dark;
+        }
     }
 
     &.-green {
         h3 {
+            color: $c-green-t-dark;
+        }
+
+        h4 {
             color: $c-green-t-dark;
         }
     }
