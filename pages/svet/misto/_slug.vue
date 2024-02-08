@@ -77,7 +77,7 @@
                         <!-- SECTION - information duration END -->
 
                         <!-- SECTION - Place teaser -->
-                        <section class="t-section my-2 -p0 print-section" v-if="imagePlaceCity && imagePlaceCity.length > 0">
+                        <section class="t-section my-2 -p0 print-section" v-if="placeCity && placeCity.length > 0">
                             <div class="t-section__inner">
                                 <oPlaceTeaser :headline="'Místo ' + place[0].name + ' patří k městu ' + placeCity[0].name" :place="placeCity" :image="imagePlaceCity" type="mesto" />
                             </div>
