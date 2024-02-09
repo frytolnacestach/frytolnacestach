@@ -101,7 +101,7 @@
                             <!-- SECTION - Facts place END -->
 
                             <!-- SECTION - Directory Subpages -->
-                            <section class="t-section my-4 py-1 -p0 print-section" v-if="tabsLoad">
+                            <section class="t-section my-4 py-1 -p0 hidden-print" v-if="tabsLoad">
                                 <div class="t-section__inner">
                                     <mHeadline title="Co by tě mohlo zajímat o státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
                                     <oDirectorySubpages :tabs="tabs" :data="tabsLoad" :placeSlug="place[0].slug" />
