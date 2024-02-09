@@ -20,7 +20,7 @@
         <!-- SECTION - Place list -->
         <section class="t-section -p0">
             <div class="t-section__inner">
-                <oCoverPlace :places="placesSpots" :images="images" type="misto" />
+                <oCoverPlace :places="placesSpots" :placesParent="placesParent" :showPrename="true" :images="images" type="misto" />
                 <oCoverPlace :places="null" :images="null" type="misto" :skeleton=true v-if="isLoading" />
                 <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                     <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
@@ -54,6 +54,7 @@
                 filterPlaceName: '',
                 images: [],
                 placesSpots: [],
+                placesParent: [],
                 isLoading: false,
                 noMoreItems: false,
                 page: 1,
@@ -161,6 +162,16 @@
                 }
                 const { data: placesData } = placesResponse
 
+                //load places parent
+                let placesParentIDS = placesData.map(placeSpot => placeSpot.id_state).filter(id => id !== undefined && id !== null && id !== '')
+                placesParentIDS = [...new Set(placesParentIDS)]
+                const [placesParentResponse] = await Promise.all([
+                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${placesParentIDS.join(',')}`)
+                ])
+                const { data: placesParentData } = placesParentResponse
+
+                this.placesParent = this.placesParent.concat(placesParentData)
+
                 //load images
                 const imagesPlacesSpotsIDS = placesData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
                 if (imagesPlacesSpotsIDS.length > 0) {
@@ -249,6 +260,7 @@
                 this.filterPlaceName = newValue.name
                 this.images = []
                 this.placesSpots = []
+                this.placesParent = []
                 this.isLoading = false
                 this.noMoreItems = false
                 this.page = 1
