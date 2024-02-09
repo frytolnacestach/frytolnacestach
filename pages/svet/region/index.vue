@@ -20,7 +20,7 @@
         <!-- SECTION - Place list -->
         <section class="t-section -p0">
             <div class="t-section__inner">
-                <oCoverPlace :places="placesRegions" :images="images" type="region" />
+                <oCoverPlace :places="placesRegions" :placesParent="placesParent" :showPrename="true" :images="images" type="region" />
                 <oCoverPlace :places="null" :images="null" type="region" :skeleton=true v-if="isLoading" />
                 <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                     <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
@@ -54,6 +54,7 @@
                 filterPlaceName: '',
                 images: [],
                 placesRegions: [],
+                placesParent: [],
                 isLoading: false,
                 noMoreItems: false,
                 page: 1,
@@ -163,6 +164,16 @@
                 }
                 const { data: placesData } = placesResponse
 
+                //load places parent
+                let placesParentIDS = placesData.map(placeRegion => placeRegion.id_state).filter(id => id !== undefined && id !== null && id !== '')
+                placesParentIDS = [...new Set(placesParentIDS)]
+                const [placesParentResponse] = await Promise.all([
+                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${placesParentIDS.join(',')}`)
+                ])
+                const { data: placesParentData } = placesParentResponse
+
+                this.placesParent = this.placesParent.concat(placesParentData)
+
                 //load images
                 const imagesPlacesRegionsIDS = placesData.map(placeRegion => placeRegion.id_image_cover).filter(id => id !== undefined && id !== null && id !== '');
                 if (imagesPlacesRegionsIDS.length > 0) {
@@ -249,8 +260,9 @@
             filterUpdate(newValue) {
                 this.filterPlace = newValue.id
                 this.filterPlaceName = newValue.name
-                this.images = [],
-                this.placesRegions = [],
+                this.images = []
+                this.placesRegions = []
+                this.placesParent = []
                 this.isLoading = false
                 this.noMoreItems = false
                 this.page = 1
