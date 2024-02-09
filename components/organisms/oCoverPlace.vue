@@ -72,7 +72,7 @@
                                     </div>
                                 </div>
                                 <div class="o-cover-place__text">
-                                    <span class="o-cover-place__prename -state" v-if="showPrename && type==='mesto'">{{ getPrename(place.id_state) }}</span>
+                                    <span class="o-cover-place__prename -state" v-if="showPrename && type==='region' || showPrename && type==='mesto' || showPrename && type==='misto'">{{ getPrename(place.id_state) }}</span>
                                     <h2 class="o-cover-place__name">
                                         {{ place.name }}
                                     </h2>
