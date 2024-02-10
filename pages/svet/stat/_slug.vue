@@ -143,9 +143,9 @@
 
                             <section class="t-section-print">
                                 <!-- SECTION - Měna -->
-                                <section class="t-section -px-world my-1" v-if="place[0].currency_name">
+                                <section class="t-section -px-world my-1" v-if="place[0].currency[0].name !== null">
                                     <div class="t-section__inner">
-                                        <oBlockItem title="Měna" :subtitle="place[0].currency_name" :perexWysiwyg="place[0].currency_code ? place[0].currency_code : ''" styleThema=" -bg-world" />
+                                        <oBlockItem title="Měna" :subtitle="place[0].currency[0].name" :perexWysiwyg="place[0].currency[0].code !== null ? place[0].currency[0].code : ''" styleThema=" -bg-world" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Měna END -->

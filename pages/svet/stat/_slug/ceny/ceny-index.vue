@@ -71,7 +71,7 @@
                             <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].money_prices">
                                 <div class="t-section__inner">
                                     <mHeadline title="Ceny v zemi" perex="Ceny se můžou lišit v rámci sézony, místa a nebo míry a rychlosti inflace. Proto je berte jen jako orientační." styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                    <oBlockList :items="place[0].money_prices" :perexListItemValueSubfix="place[0].currency_code" />
+                                    <oBlockList :items="place[0].money_prices" :perexListItemValueSubfix="place[0].currency[0].code" />
                                 </div>
                             </section>
                             <!-- SECTION - Ceny END -->
@@ -106,9 +106,9 @@
 
                             <section class="t-section-print">
                                 <!-- SECTION - Měna -->
-                                <section class="t-section -px-world my-1" v-if="place[0].currency_name">
+                                <section class="t-section -px-world my-1" v-if="place[0].currency[0].name !== null">
                                     <div class="t-section__inner">
-                                        <oBlockItem title="Měna" :subtitle="place[0].currency_name" :perexWysiwyg="place[0].currency_code ? place[0].currency_code : ''" styleThema=" -bg-world" />
+                                        <oBlockItem title="Měna" :subtitle="place[0].currency[0].name" :perexWysiwyg="place[0].currency[0].code !== null ? place[0].currency[0].code : ''" styleThema=" -bg-world" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Měna END -->
