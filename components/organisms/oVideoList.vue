@@ -144,13 +144,12 @@
                     "name": "Videa",
                     "itemListElement": this.videos.map((video, index) => {
                         return {
-                            "@type": "VideoObject",
+                            "@type": "ListItem",
                             "position": index + 1,
-                            "name": video.title,
-                            "thumbnailUrl": (this.images && this.images.find(image => image.id === video.id_image)) ? ("https://image.frytolnacestach.cz/storage" + (this.images.find(image => image.id === video.id_image).source + this.images.find(image => image.id === video.id_image).name) + ".webp") : "",
-                            "url": 'https://frytolnacestach.cz' + `/videa/${video.slug}`,
-                            "description": video.perex,
-                            "uploadDate": video.created_at
+                            "item": {
+                                "@id": 'https://frytolnacestach.cz' + `/videa/${video.slug}`,
+                                "name": video.title,
+                            }
                         }
                     })
                 }
