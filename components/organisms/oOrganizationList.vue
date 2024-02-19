@@ -13,7 +13,7 @@
                                             <p class="o-organization-list__list-p" v-if="item.description">{{ item.description }}</p>
                                             <a class="o-organization-list__list-a" :href="item.url" :alt="item.name" v-if="item.url">Odkaz</a>
                                         </div>
-                                        <span class="o-organization-list__list-info">Vstup: {{ formatDate(item.date_update) }}</span>
+                                        <span class="o-organization-list__list-info">Vstup: {{ item.date_add_to_organization }}</span>
                                     </div>
                                 </li>
                             </ul>
@@ -37,15 +37,6 @@
             headline: {
                 type: String,
                 required: true
-            }
-        },
-
-        methods:{
-            formatDate(date) {
-                const [year, month, day] = date.split('-')
-                const formattedDate = new Date(`${year}-${month}-${day}`)
-                const options = { day: 'numeric', month: 'long', year: 'numeric' }
-                return formattedDate.toLocaleDateString('cs', options)
             }
         }
     }
