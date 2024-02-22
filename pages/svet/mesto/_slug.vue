@@ -82,6 +82,14 @@
                         </section>
                         <!-- SECTION - information by Author END -->
 
+                        <!-- SECTION - ad-google - wysiwyg -->
+                        <section class="t-section  my-2 -p0 print-section">
+                            <div class="t-section__inner">
+                                <oAdGoogleWysiwyg styleThema=" -green" />
+                            </div>
+                        </section>
+                        <!-- SECTION - ad-google - wysiwyg - END -->
+
                         <!-- SECTION - Place teaser -->
                         <section class="t-section my-2 -p0">
                             <div class="t-section__inner">
@@ -232,6 +240,7 @@
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oAccountBanner from '~/components/organisms/oAccountBanner.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
+    import oAdGoogleWysiwyg from '~/components/organisms/oAdGoogleWysiwyg.vue'
     import oAffilateBooking from '~/components/organisms/oAffilateBooking.vue'
     import oAlerts from '~/components/organisms/oAlerts.vue'
     import oArticleList from '~/components/organisms/oArticleList.vue'
@@ -257,6 +266,7 @@
             mHeadline,
             oAccountBanner,
             oAdGoogleSidebar,
+            oAdGoogleWysiwyg,
             oAffilateBooking,
             oAlerts,
             oArticleList,
