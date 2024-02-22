@@ -1,4 +1,4 @@
-.o-ad-google-sidebar {
+.o-ad-google-wysiwyg {
     $self: &;
 
     width: auto;
@@ -25,10 +25,10 @@
         max-width: 100%;
         height: auto;
         display: block;
-    
-        @media only screen and (min-width: $lg) {
-            max-width: 300px;
-            height: 600px;
+        padding: 0 5px;
+
+        @media only screen and (min-width: $ti) {
+            padding: 0 10px;
         }
     }
 
