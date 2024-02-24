@@ -147,7 +147,7 @@
                             "item": {
                                 "@id": 'https://frytolnacestach.cz' + `/svet/misto/${spot.slug}`,
                                 "name": spot.name,
-                                "image": ((this.images && this.images.length > 0) ? (`https://image.frytolnacestach.cz/storage${this.images.find(image => image.id === spot.id_image_cover).source + this.images.find(image => image.id === spot.id_image_cover).name}.webp`) : "" ),
+                                "image": ((this.images && this.images.length > 0 && this.images.find(image => image.id === spot.id_image_cover)) ? (`https://image.frytolnacestach.cz/storage${this.images.find(image => image.id === spot.id_image_cover).source + this.images.find(image => image.id === spot.id_image_cover).name}.webp`) : "" ),
                             }
                         }
                     })

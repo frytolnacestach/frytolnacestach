@@ -6,7 +6,7 @@
                 <div class="o-place-teaser-cities__outer">
                     <div class="o-place-teaser-cities__inner">
                         <div class="o-place-teaser-cities__items">
-                            <div class="o-place-teaser-cities__item" v-for="city in cities" :key="city.id">
+                            <div class="o-place-teaser-cities__item" v-for="city in cities" :key="city.id" v-if="city.id !== IDplaceShow && type !== typeShow">
                                 <div class="o-place-teaser-cities__content">
                                     <div class="o-place-teaser-cities__image loading-image -green">
                                         <div v-if="images && images.find(image => image.id === city.id_image_hero)" class="o-place-teaser-cities__image-lazyload">
@@ -99,6 +99,10 @@
                 type: Number,
                 required: true
             },
+            IDplaceShow: {
+                type: Number,
+                required: false
+            },
             headline: {
                 type: String,
                 required: true
@@ -106,6 +110,10 @@
             type: {
                 type: String,
                 required: true
+            },
+            typeShow: {
+                type: String,
+                required: false
             },
             styleGap: {
                 type: String,
@@ -139,7 +147,7 @@
                             "item": {
                                 "@id": 'https://frytolnacestach.cz' + `/svet/mesto/${city.slug}`,
                                 "name": city.name,
-                                "image": ((this.images && this.images.length > 0) ? (`https://image.frytolnacestach.cz/storage${this.images.find(image => image.id === city.id_image_cover).source + this.images.find(image => image.id === city.id_image_cover).name}.webp`) : "" ),
+                                "image": ((this.images && this.images.length > 0 && this.images.find(image => image.id === city.id_image_cover)) ? (`https://image.frytolnacestach.cz/storage${this.images.find(image => image.id === city.id_image_cover).source + this.images.find(image => image.id === city.id_image_cover).name}.webp`) : "" ),
                             }
                         }
                     })

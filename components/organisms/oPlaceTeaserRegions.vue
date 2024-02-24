@@ -147,7 +147,7 @@
                             "item": {
                                 "@id": 'https://frytolnacestach.cz' + `/svet/region/${region.slug}`,
                                 "name": region.name,
-                                "image": ((this.images && this.images.length > 0) ? (`https://image.frytolnacestach.cz/storage${this.images.find(image => image.id === region.id_image_cover).source + this.images.find(image => image.id === region.id_image_cover).name}.webp`) : "" ),
+                                "image": ((this.images && this.images.length > 0 && this.images.find(image => image.id === region.id_image_cover)) ? (`https://image.frytolnacestach.cz/storage${this.images.find(image => image.id === region.id_image_cover).source + this.images.find(image => image.id === region.id_image_cover).name}.webp`) : "" ),
                             }
                         }
                     })
