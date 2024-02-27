@@ -69,6 +69,14 @@
                         </section>
                         <!-- SECTION - ad-google - wysiwyg - END -->
 
+                        <!-- SECTION - Account banner big - sidebar -->
+                        <section class="t-section -px-world my-1" v-if="account && account.length === 0">
+                            <div class="t-section__inner">
+                                <oAccountBannerBig :account="account" />
+                            </div>
+                        </section>
+                        <!-- SECTION - Account banner big - sidebar END -->
+
                         <!-- SECTION - Place teaser -->
                         <section class="t-section my-2 -p0 print-section" v-if="placeState && placeState.length > 0">
                             <div class="t-section__inner">
@@ -122,14 +130,6 @@
                         <!-- SECTION - Visited button - sidebar - END -->
                     </div>
                     <div class="t-grid__section -aside-content">
-                        <!-- SECTION - Account banner - sidebar -->
-                        <section class="t-section -px-world my-1" v-if="account && account.length === 0">
-                            <div class="t-section__inner">
-                                <oAccountBanner :account="account" styleThema=" -green" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Account banner - sidebar END -->
-
                         <!-- SECTION - Events - sidebar -->
                         <oSidebarEvent :place="this.place[0].id" type="region" />
                         <!-- SECTION - Events - sidebar - END -->
@@ -192,7 +192,7 @@
 <script>
     import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oAccountBanner from '~/components/organisms/oAccountBanner.vue'
+    import oAccountBannerBig from '~/components/organisms/oAccountBannerBig.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oAdGoogleWysiwyg from '~/components/organisms/oAdGoogleWysiwyg.vue'
     import oAffilateBooking from '~/components/organisms/oAffilateBooking.vue'
@@ -214,7 +214,7 @@
         components: {
             mNavBreadcrumbsPlace,
             mHeadline,
-            oAccountBanner,
+            oAccountBannerBig,
             oAdGoogleSidebar,
             oAdGoogleWysiwyg,
             oAffilateBooking,
