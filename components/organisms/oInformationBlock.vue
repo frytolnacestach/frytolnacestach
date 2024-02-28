@@ -24,7 +24,20 @@
                     <i class="o-information-block__info" v-if="perexInfo">{{ perexInfo }}</i>
 
                     <div class="o-information-block__author" v-if="authorName">
-                        <i class="m-author"><a class="m-author__link" :href="authorLink" :target="authorTarget" v-if="authorLink">{{ authorName }}</a><span class="m-author__span" v-else>{{ authorName }}</span></i>
+                        <i class="m-author">
+                            <a class="m-author__link" :href="authorLink" :target="authorTarget" v-if="authorLink">{{ authorName }}</a>
+                            <span class="m-author__span" v-else>{{ authorName }}</span>
+                        </i>
+                    </div>
+
+                    <div class="o-information-block__author" v-if="authorID">
+                        <i class="m-author">
+                            <nuxtLink class="m-author__link" :to="`/cestovatel/${user[0].slug}`" v-if="user[0]">
+                                {{ user[0].surname ? (user[0].surname + ' ') : '' }}
+                                {{ user[0].lastname ? (user[0].lastname + ' ') : '' }}
+                                {{ user[0].nickname ? ('(' + user[0].nickname + ')'): '' }}
+                            </nuxtLink>
+                        </i>
                     </div>
 
                 </div>
@@ -77,7 +90,41 @@
             authorTarget: {
                 type: String,
                 required: false
+            },
+            authorID: {
+                type: Number,
+                required: false
             }
+        },
+
+        data() {
+            return {
+                user: []
+            }
+        },
+
+        async mounted() {
+            let success = false
+            let data = null
+
+            if (this.authorID) {
+                while (!success) {
+                    try {
+                        const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-id/${this.authorID}`)
+
+                        data = { user }
+
+                        success = true
+                    } catch (error) {
+                        console.log(`API ERROR - AUTHOR`)
+                        console.error(error)
+
+                        await new Promise(resolve => setTimeout(resolve, 1000))
+                    }
+                }
+
+                Object.assign(this, data)
+        }
         },
 
         methods:{

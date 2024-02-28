@@ -56,7 +56,7 @@
                         <!-- SECTION - information by Author -->
                         <section class="t-section" v-if="place[0].information_author?.length > 0">
                             <div class="t-section__inner">
-                                <oInformationBlock :title="'O regionu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_author[0].text" authorName="Michal Fryč (frytolnacestach)" authorLink="https://www.frytolnacestach.cz/cestovatel/frytol-na-cestach" styleThema=" -green" />
+                                <oInformationBlock :title="'O regionu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_author[0].text" :authorID="place[0].information_author[0].author_create" styleThema=" -green" />
                             </div>
                         </section>
                         <!-- SECTION - information by Author END -->
