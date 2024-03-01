@@ -1,3 +1,114 @@
 .m-input-radio {
+    $self: &;
+
+    position: relative;
+    display: inline-block;
     
+    &__label {
+        display: flex;
+        margin-bottom: 10px;
+
+        &:hover {
+            #{$self}__radio {
+                border-color: $c-gray-bg-component-dark;
+            }
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+        &:active + #{$self}__radio {
+            border-color: $red;
+        }
+
+        &:checked + #{$self}__radio::after {
+            content: "";
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            right: 3px;
+            bottom: 3px;
+            width: auto;
+            height: auto;
+            background-color: $c-gray-bg-component-dark-super;
+            border-radius: 9px;
+        }
+    }
+
+    &__radio {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+        border: 1px solid $c-gray-bg-component-light;
+        border-radius: 12px;
+        background-color: $c-gray-bg-component-light-super;
+    }
+
+    &__text {
+        display: block;
+    }
+
+
+    // color
+    // blue
+    &.-blue {
+        #{$self}__label {
+            &:hover {
+                #{$self}__radio {
+                    border-color: $c-blue-bg-component-dark;
+                }
+            }
+        }
+
+        #{$self}__input {
+            &:checked + #{$self}__radio::after {
+                background-color: $c-blue-bg-component-dark-super;
+            }
+        }
+
+        #{$self}__radio {
+            border: 1px solid $c-blue-bg-component-light;
+            background-color: $c-blue-bg-component-light-super;
+        }
+
+        #{$self}__text {
+            color: $c-blue-t-dark-super;
+        }
+    }
+
+    // green
+    &.-green {
+        #{$self}__label {
+            &:hover {
+                #{$self}__radio {
+                    border-color: $c-green-bg-component-dark;
+                }
+            }
+        }
+
+        #{$self}__input {
+            &:checked + #{$self}__radio::after {
+                background-color: $c-green-bg-component-dark-super;
+            }
+        }
+
+        #{$self}__radio {
+            border: 1px solid $c-green-bg-component-light;
+            background-color: $c-green-bg-component-light-super;
+        }
+
+        #{$self}__text {
+            color: $c-green-t-dark-super;
+        }
+    }
 }
