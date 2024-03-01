@@ -13,7 +13,7 @@
                             <div class="o-user-urls__item" v-for="url in urls" :key="url.url">
                                 <div class="o-user-urls__content">
                                     <a :class="'o-user-urls__link' + (' -' + (url.url.match(/(?:https?:\/\/)?(?:www\.)?([^\/]+)\//) ? url.url.match(/(?:https?:\/\/)?(?:www\.)?([^\/]+)\//)[1].replace(/\.\w+$/, '') : ''))" :href="url.url" :title="url.url">
-                                        <span class="o-user-urls__link-text">{{ (url.url.match(/\/([^\/]+)$/)) ? url.url.match(/\/([^\/]+)$/)[1] : url.url }}</span>
+                                        <span class="o-user-urls__link-text">{{ (url.url.match(/\/([^\/]+)\/?$/)) ? url.url.match(/\/([^\/]+)\/?$/)[1] : url.url.replace(/^(https?:\/\/)?(?:www\.)?/, '').replace(/\/$/, '') }}</span>
                                     </a>
                                 </div>
                             </div>
