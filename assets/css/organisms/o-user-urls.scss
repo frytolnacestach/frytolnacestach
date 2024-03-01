@@ -10,44 +10,147 @@
     }
 
     &__outer {
+        width: 100%;
+    }
+
+    &__inner {
+        display: inline-block;
+        width: 100%;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        width: auto;
+        min-width: 100%;
+        margin: 0 -8px;
+    }
+
+    &__item {
+        width: 50%;
+        padding: 8px;
+        line-height: 20px;
+        text-align: center;
+
+        @media only screen and (min-width: $sm) {
+            width: 33.333%;
+        }
+
+        @media only screen and (min-width: $lg) {
+            width: 20%;
+        }
+    }
+
+    &__content {
+        padding: 10px;
         background-color: $c-blue-bg-component-light;
         border-radius: $br-2;
-        width: 100%;
 
         @media only screen and (min-width: $lg) {
             border-radius: $br-4;
         }
     }
 
-    &__inner {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 9px 12px;
-
-        @media only screen and (min-width: $sm) {
-            padding: 15px 10px;
-        }
-
-        @media only screen and (min-width: $lg) {
-            padding: 20px 10px;
-        }
-    }
-
-    &__items {
-        width: 100%;
-    }
-
-    &__item {
-        padding: 5px;
-        line-height: 20px;
-    }
-
     &__link {
+        position: relative;
+        display: flex;
+        justify-content: center;
         color: $c-blue-t-dark;
-        word-wrap: break-word;
+        padding-top: 100px;
+        line-height: 20px;
+        text-align: center;
+
+        &::after {
+            content: map-get($icomoon-default, 'user');
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            top: 0;
+            font-size: $fs-icon-60;
+            line-height: 1;
+            font-family: $ff-icomoon-default;
+            color: $c-blue-icon-dark;
+        }
 
         &:hover {
             color: $c-blue-t-dark-super;
         }
+
+        &.-youtube {
+            &::after {
+                content: map-get($icomoon-social, 'youtube');
+                font-family: $ff-icomoon-social;
+            }
+        }
+
+        &.-instagram {
+            &::after {
+                content: map-get($icomoon-social, 'instagram');
+                font-family: $ff-icomoon-social;
+            }
+        }
+
+        &.-facebook {
+            &::after {
+                content: map-get($icomoon-social, 'facebook');
+                font-family: $ff-icomoon-social;
+            }
+        }
+
+        &.-tiktok {
+            &::after {
+                content: map-get($icomoon-social, 'tiktok');
+                font-family: $ff-icomoon-social;
+            }
+        }
+
+        &.-twitter {
+            &::after {
+                content: map-get($icomoon-social, 'twitter');
+                font-family: $ff-icomoon-social;
+            }
+        }
+
+        &.-twitch {
+            &::after {
+                content: map-get($icomoon-social, 'twitch');
+                font-family: $ff-icomoon-social;
+            }
+        }
+
+        &.-reddit {
+            &::after {
+                content: map-get($icomoon-social, 'reddit');
+                font-family: $ff-icomoon-social;
+            }
+        }
+
+        &.-pinterest {
+            &::after {
+                content: map-get($icomoon-social, 'pinterest');
+                font-family: $ff-icomoon-social;
+            }
+        }
+
+        &.-discord {
+            &::after {
+                content: map-get($icomoon-social, 'discord');
+                font-family: $ff-icomoon-social;
+            }
+        }
+
+        &.-patreon {
+            &::after {
+                content: map-get($icomoon-social, 'patreon');
+                font-family: $ff-icomoon-social;
+            }
+        }
+    }
+
+    &__link-text {
+        width: 100%;
+        font-size: $fs-small;
+        word-wrap: break-word;
     }
 }
