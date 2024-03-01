@@ -35,6 +35,29 @@
                                 </div>
 
                                 <div class="o-form-profile__group">
+                                    <label class="o-form-profile__label -strong">Podoba jména u obsahu:</label>
+                                    <div class="o-form-profile__item -flex">
+                                        <div class="m-input-radio -blue">
+                                            <label class="m-input-radio__label">
+                                                <input class="m-input-radio__input" type="radio" id="agreement_mail" value="1" v-model="settingAuthorName" />
+                                                <span class="m-input-radio__radio"></span>
+                                                <span class="m-input-radio__text" for="agreement_mail">{{ surname }} {{ lastname }} ({{ nickname }})</span>
+                                            </label>
+                                            <label class="m-input-radio__label">
+                                                <input class="m-input-radio__input" type="radio" id="agreement_mail" value="2" v-model="settingAuthorName" />
+                                                <span class="m-input-radio__radio"></span>
+                                                <span class="m-input-radio__text" for="agreement_mail">{{ surname }} {{ lastname }}</span>
+                                            </label>
+                                            <label class="m-input-radio__label">
+                                                <input class="m-input-radio__input" type="radio" id="agreement_mail" value="3" v-model="settingAuthorName" />
+                                                <span class="m-input-radio__radio"></span>
+                                                <span class="m-input-radio__text" for="agreement_mail">{{ nickname }}</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="o-form-profile__group">
                                     <label class="o-form-profile__label -strong">Odkazy:</label>
                                     <div class="o-form-profile__item -flex" v-for="(item, index) in urls" :key="index" v-if="urls">
                                         <input class="a-input -blue" type="text" v-model="urls[index].url" />
@@ -126,6 +149,7 @@
                 surname: '',
                 lastname: '',
                 agreementMail: '',
+                settingAuthorName: null,
                 urls: [
                     {
                         url: ""
@@ -147,11 +171,13 @@
                         if (response.ok) {
                             this.profile = await response.json()
 
+                            this.nickname = this.profile[0].nickname
                             this.surname = this.profile[0].surname
                             this.lastname = this.profile[0].lastname
                             this.urls = this.profile[0].urls
                             this.seo_tags = this.profile[0].seo_tags
                             this.agreementMail = this.profile[0].agreement_mail
+                            this.settingAuthorName = this.profile[0].setting_author_name
                             this.skeleton = false
                         } else {
                             this.flashMessage.push({
@@ -191,7 +217,8 @@
                                 'lastname': this.lastname,
                                 'agreement_mail': this.agreementMail,
                                 'urls': this.urls,
-                                'seo_tags': this.seo_tags
+                                'seo_tags': this.seo_tags,
+                                'setting_author_name': this.settingAuthorName
                             })
                         })
 
