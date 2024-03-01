@@ -185,7 +185,7 @@
                             "@type": "Recipe",
                             "name": ((this.food && this.food.length > 0 && this.food[0].name) ? this.food[0].name : ""),
                             "description": ((this.food && this.food.length > 0 && this.food[0].description) ? this.food[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
-                            "image": ((this.imageFood && this.food.length > 0 && this.imageFood[0].id) ? ("https://image.frytolnacestach.cz/storage/foods/" + this.imageFood[0].name + ".webp") : "" ),
+                            "image": ((this.imageFood && this.food.length > 0 && this.imageFood[0].id) ? ("https://image.frytolnacestach.cz/storage/foods/" + this.imageFood[0].name + ".webp") : "https://image.frytolnacestach.cz/storage/_default/hero.webp" ),
                             "recipeIngredient": ((this.food && this.food.length > 0 && this.food[0].ingredients && this.food[0].ingredients.length > 0) ? this.food[0].ingredients : ""),
                             "recipeInstructions": ((this.food && this.food.length > 0 && this.food[0].recipe && this.food[0].recipe.length > 0) ? this.food[0].recipe : "")
                         }
