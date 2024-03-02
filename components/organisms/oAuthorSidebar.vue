@@ -3,7 +3,13 @@
         <div class="o-author-sidebar__outer">
             <div class="o-author-sidebar__inner">
                 <h4 class="o-author-sidebar__headline">Autor</h4> 
-                <NuxtLink :to="`/cestovatel/${user[0].slug}`" class="o-author-sidebar__name" v-if="user[0]">{{ user[0].nickname }}</NuxtLink>
+                <NuxtLink :to="`/cestovatel/${user[0].slug}`" class="o-author-sidebar__name" v-if="user[0]">
+                    {{ user[0].surname && (user[0].setting_author_name === 1 || user[0].setting_author_name === 2) ? (user[0].surname + ' ') : '' }}
+                    {{ user[0].lastname && (user[0].setting_author_name === 1 || user[0].setting_author_name === 2) ? (user[0].lastname + ' ') : '' }}
+                    <br v-if="user[0].setting_author_name === 1">
+                    {{ user[0].nickname && user[0].setting_author_name === 1 ? ('(' + user[0].nickname + ')') : '' }}
+                    {{ user[0].nickname && user[0].setting_author_name === 3 ? user[0].nickname : '' }}
+                </NuxtLink>
             </div>
         </div>
     </div>
