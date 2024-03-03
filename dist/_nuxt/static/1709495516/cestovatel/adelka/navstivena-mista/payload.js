@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/cestovatel/adelka/navstivena-mista", (function(a,b){return {data:[{staticUser:[{id:b,email:"adelinka114@seznam.cz",nickname:"Adelka",slug:"adelka",surname:a,lastname:a,status:b,urls:a,seo_tags:a,setting_author_name:1}]}],fetch:{},mutations:[]}}(null,3)));

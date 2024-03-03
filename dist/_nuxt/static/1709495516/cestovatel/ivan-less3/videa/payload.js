@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/cestovatel/ivan-less3/videa", {data:[{staticUser:[{id:16,email:"janhavlicek.96@seznam.cz",nickname:"Ivan \u003C3",slug:"ivan-less3",surname:"Jan",lastname:"Havlíček",status:3,urls:[{url:"https:\u002F\u002Fwww.youtube.com\u002Fwatch?v=Yfcjtr5nmsc&t=5s&ab_channel=George7Production"}],seo_tags:null,setting_author_name:1}]}],fetch:{},mutations:[]});

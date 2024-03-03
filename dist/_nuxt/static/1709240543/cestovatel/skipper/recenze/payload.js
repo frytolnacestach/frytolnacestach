@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/cestovatel/skipper/recenze", (function(a){return {data:[{staticUser:[{id:23,email:"linfan@seznam.cz",nickname:"Skipper",slug:"skipper",surname:a,lastname:a,status:3,urls:a,seo_tags:a}]}],fetch:{},mutations:[]}}(null)));
