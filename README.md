@@ -81,3 +81,5 @@ _____________________________________________________________________
 <big>**[STATUS](docs/database/users/status.md)**</big>
 
 <big>**[STATUS_ROLE](docs/database/users/status-role.md)**</big>
+
+<big>**[SETTING_STATUS_PUBLIC](docs/database/places/setting-status-public.md)**</big>
