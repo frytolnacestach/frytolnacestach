@@ -110,7 +110,7 @@
         },
 
         async fetch() {
-            const response = await fetch("https://api.frytolnacestach.cz/api/places-count")
+            const response = await fetch("https://api.frytolnacestach.cz/api/config-places-count")
             const data = await response.json()
 
             const countObj = {
