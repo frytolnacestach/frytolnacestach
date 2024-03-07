@@ -75,7 +75,7 @@
                         <section class="t-section -padding-x -p0 pb-4 print-section">
                             <div class="t-section__inner">
                                 <mHeadline title="Místa které jsem navštívil" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesSpotsID" type="misto" account="other" />
+                                <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesSpotsID" type="misto" typeAccount="other" />
                             </div>
                         </section>
                         <!-- SECTION - Visited place category END -->
