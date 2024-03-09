@@ -25,12 +25,12 @@
 
     &.-blue {
         &::after {
-            color: $c-blue-icon;
+            color: $c-blue-icon-light;
         }
 
         &:hover {
             &::after {
-                color: $c-blue-icon-light;
+                color: $c-blue-icon;
             }
         }
     }
