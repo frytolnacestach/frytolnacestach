@@ -259,19 +259,11 @@
                             "name": (this.event[0].name ? this.event[0].name : ""),
                             "startDate": (this.event[0].date_start ? this.event[0].date_start : ""),
                             "endDate": (this.event[0].date_end ? this.event[0].date_end : ""),
-                            /*"location": {
+                            "location": {
                                 "@type": "Place",
-                                "name": "Místo Konání",
-                                "address": {
-                                    "@type": "PostalAddress",
-                                    "streetAddress": "Ulice 123",
-                                    "addressLocality": "Město",
-                                    "postalCode": "12345",
-                                    "addressCountry": "Česká republika"
-                                }
-                            },*/
+                                "name": (this.placeCity[0].name ? this.placeCity[0].name : "")
+                            },
                             "description": (this.event[0].description ? this.event[0].description : ""),
-                            //"url": "https://www.udalost.cz",
                             "image": ((this.image[0] && this.image[0].id) ? ("https://image.frytolnacestach.cz/storage/events/" + this.image[0].name + ".webp") : "" )
                         }
                     }
