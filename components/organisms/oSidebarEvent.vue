@@ -33,7 +33,7 @@
                                                 :preload="true"
                                                 v-lazy>
                                         </div>
-                                        <nuxtLink class="o-sidebar-event__image-link" :to="'/udalost/' + event.slug"></nuxtLink>
+                                        <nuxtLink class="o-sidebar-event__image-link" :to="'/udalost/' + event.slug" :aria-label="`Přejít na událost ${event.name}`"></nuxtLink>
                                     </div>
                                 </div>
                                 <div class="o-sidebar-event__text">
