@@ -64,6 +64,7 @@
         }
 
         &.-icon {
+            display: flex;
             position: relative;
             width: $fs-icon-24;
             height: $fs-icon-24;
