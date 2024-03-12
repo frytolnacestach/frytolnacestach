@@ -1,5 +1,157 @@
 .loading-image {
-    background: $c-gray-loading-bg;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0%;
+        animation: loadingImageGray 1s linear infinite alternate;
+    }
+
+    // Images
+    &.-blue {
+        &::before {
+            animation: loadingImageBlue 1s linear infinite alternate;
+        }
+    }
+
+    &.-green {
+        &::before {
+            animation: loadingImageGreen 1s linear infinite alternate;
+        }
+    }
+
+    &.-gray {
+        &::before {
+            animation: loadingImageGray 1s linear infinite alternate;
+        }
+    }
+
+    // Skeletons
+    &.-skeleton-blue {
+        &::before {
+            animation: loadingImageBlueSkeleton 1s linear infinite alternate;
+        }
+    }
+
+    &.-skeleton-green {
+        &::before {
+            animation: loadingImageGreenSkeleton 1s linear infinite alternate;
+        }
+    }
+
+    &.-skeleton-gray {
+        &::before {
+            animation: loadingImageGraySkeleton 1s linear infinite alternate;
+        }
+    }
+
+    // Skeletons dark
+    &.-skeleton-dark-blue {
+        &::before {
+            animation: loadingImageBlueSkeletonDark 1s linear infinite alternate;
+        }
+    }
+
+    &.-skeleton-dark-green {
+        &::before {
+            animation: loadingImageGreenSkeletonDark 1s linear infinite alternate;
+        }
+    }
+
+    &.-skeleton-dark-gray {
+        &::before {
+            animation: loadingImageGraySkeletonDark 1s linear infinite alternate;
+        }
+    }
+
+    @keyframes loadingImageBlue {
+        0% {
+            background-color: $c-blue-loading-1;
+        }
+        100% {
+            background-color: $c-blue-loading-2;
+        }
+    }
+
+    @keyframes loadingImageGreen {
+        0% {
+            background-color: $c-green-loading-1;
+        }
+        100% {
+            background-color: $c-green-loading-2;
+        }
+    }
+
+    @keyframes loadingImageGray {
+        0% {
+            background-color: $c-gray-loading-1;
+        }
+        100% {
+            background-color: $c-gray-loading-2;
+        }
+    }
+
+    @keyframes loadingImageBlueSkeleton {
+        0% {
+            background-color: $c-blue-skeleton-loading-1;
+        }
+        100% {
+            background-color: $c-blue-skeleton-loading-2;
+        }
+    }
+
+    @keyframes loadingImageGreenSkeleton {
+        0% {
+            background-color: $c-green-skeleton-loading-1;
+        }
+        100% {
+            background-color: $c-green-skeleton-loading-2;
+        }
+    }
+
+    @keyframes loadingImageGraySkeleton {
+        0% {
+            background-color: $c-gray-skeleton-loading-1;
+        }
+        100% {
+            background-color: $c-gray-skeleton-loading-2;
+        }
+    }
+
+    @keyframes loadingImageBlueSkeletonDark {
+        0% {
+            background-color: $c-blue-skeleton-dark-loading-1;
+        }
+        100% {
+            background-color: $c-blue-skeleton-dark-loading-2;
+        }
+    }
+
+    @keyframes loadingImageGreenSkeletonDark {
+        0% {
+            background-color: $c-green-skeleton-dark-loading-1;
+        }
+        100% {
+            background-color: $c-green-skeleton-dark-loading-2;
+        }
+    }
+
+    @keyframes loadingImageGraySkeletonDark {
+        0% {
+            background-color: $c-gray-skeleton-dark-loading-1;
+        }
+        100% {
+            background-color: $c-gray-skeleton-dark-loading-2;
+        }
+    }
+
+    /*background: $c-gray-loading-bg;
 
     &::before {
         content: '';
@@ -116,5 +268,5 @@
             right: -300%;
             left: 0%;
         }
-    }
+    }*/
 }
