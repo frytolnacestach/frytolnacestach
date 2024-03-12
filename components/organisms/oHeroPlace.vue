@@ -29,9 +29,7 @@
                             `"
                         :src="`https://image.frytolnacestach.cz/storage${images.find(image => image.id === idImageHero).source + images.find(image => image.id === idImageHero).name}.webp`"
                         :alt="title ? title : 'Úvodní obrázek'"
-                        fetchpriority="high"
-                        >
-
+                        fetchpriority="high">
                 </div>
                 <div v-else class="o-hero-place__image-lazyload">
                     <img class="o-hero-place__image-file"
@@ -60,8 +58,7 @@
                             `"
                         :src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
                         :alt="title ? title : 'Úvodní obrázek'"
-                        fetchpriority="high"
-                        >
+                        fetchpriority="high">
                 </div>
                 
                 <div class="o-hero-place__outer">
