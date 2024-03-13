@@ -34,18 +34,24 @@
 
     // Skeletons
     &.-skeleton-blue {
+        position: relative;
+
         &::before {
             animation: loadingImageBlueSkeleton 1s linear infinite alternate;
         }
     }
 
     &.-skeleton-green {
+        position: relative;
+
         &::before {
             animation: loadingImageGreenSkeleton 1s linear infinite alternate;
         }
     }
 
     &.-skeleton-gray {
+        position: relative;
+
         &::before {
             animation: loadingImageGraySkeleton 1s linear infinite alternate;
         }
@@ -53,18 +59,24 @@
 
     // Skeletons dark
     &.-skeleton-dark-blue {
+        position: relative;
+
         &::before {
             animation: loadingImageBlueSkeletonDark 1s linear infinite alternate;
         }
     }
 
     &.-skeleton-dark-green {
+        position: relative;
+
         &::before {
             animation: loadingImageGreenSkeletonDark 1s linear infinite alternate;
         }
     }
 
     &.-skeleton-dark-gray {
+        position: relative;
+        
         &::before {
             animation: loadingImageGraySkeletonDark 1s linear infinite alternate;
         }
