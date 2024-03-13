@@ -53,16 +53,26 @@
         },
 
         methods:{
-            adsenseAddLoad(){
+            adsenseAddLoad() {
                 let inlineScript   = document.createElement("script")
                 inlineScript.type  = "text/javascript"
                 inlineScript.text  = '(adsbygoogle = window.adsbygoogle || []).push({});'
                 document.getElementsByTagName('body')[0].appendChild(inlineScript)
+            },
+
+            adsenseTitle() {
+                let elementIframe = document.querySelector('.o-ad-google-sidebar iframe')
+                if (elementIframe) {
+                    elementIframe.setAttribute('title', 'Reklama')
+                } else {
+                    setTimeout(this.adsenseTitle, 100)
+                }
             }
         },
 
         mounted() {
             this.adsenseAddLoad()
+            this.adsenseTitle()
         }
     }
 </script>
