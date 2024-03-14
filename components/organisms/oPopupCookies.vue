@@ -33,7 +33,7 @@
 
                             <div class="o-popup-cookies__item">
                                 <div class="o-popup-cookies__header">
-                                    <h5 class="o-popup-cookies__type">Statistické <br><i class="o-popup-cookies__type-name">(analytics_storage)</i></h5>
+                                    <h5 class="o-popup-cookies__type">Statistické <br><i class="o-popup-cookies__type-name">(AD_PERSONALIZATION)</i></h5>
                                     <span class="js_o-popup-cookies__setting--statistic o-popup-cookies__setting" data-c-statistic="off"></span>
                                 </div>
                                 <p class="o-popup-cookies__why">Statistické cookies nám pomáhají pochopit, jak uživatelé používají náš web. Sbírají anonymní data, které pak můžeme analyzovat.</p>
@@ -41,7 +41,7 @@
 
                             <div class="o-popup-cookies__item">
                                 <div class="o-popup-cookies__header">
-                                    <h5 class="o-popup-cookies__type">Marketingové <br><i class="o-popup-cookies__type-name">(ad_storage)</i></h5>
+                                    <h5 class="o-popup-cookies__type">Marketingové <br><i class="o-popup-cookies__type-name">(AD_USER_DATA)</i></h5>
                                     <span class="js_o-popup-cookies__setting--marketing o-popup-cookies__setting"  data-c-marketing="off"></span>
                                 </div>
                                 <p class="o-popup-cookies__why">Marketingové cookies používáme pro zobrazování a vyhodnocování reklamy na základě aktivity na webu. Cílem je zobrazit relevantní reklamy pro naše návštěvníky (bez toho, abychom znali skutečnou identitu uživatelů).</p>
@@ -73,8 +73,8 @@
                     'functionality_storage': 'granted',
                     'security_storage': 'granted',
                     'personalization_storage': 'denied',
-                    'analytics_storage': 'denied',
-                    'ad_storage': 'denied'
+                    'AD_PERSONALIZATION': 'denied',
+                    'AD_USER_DATA': 'denied'
                 });
             }
             // Cookies default END
@@ -149,7 +149,7 @@
                 document.querySelector(".js_o-popup-cookies__setting--user").classList.add('on');
             }
 
-            if (document.cookie.indexOf("FNCcookiesanalytics_storage=1") == -1) {
+            if (document.cookie.indexOf("FNCcookiesAD_PERSONALIZATION=1") == -1) {
                 document.querySelector(".js_o-popup-cookies__setting--statistic").setAttribute('data-c-statistic', 'off');
                 document.querySelector(".js_o-popup-cookies__setting--statistic").classList.add('off');
             } else {
@@ -157,7 +157,7 @@
                 document.querySelector(".js_o-popup-cookies__setting--statistic").classList.add('on');
             }
 
-            if (document.cookie.indexOf("FNCcookiesad_storage=1") == -1) {
+            if (document.cookie.indexOf("FNCcookiesAD_USER_DATA=1") == -1) {
                 document.querySelector(".js_o-popup-cookies__setting--marketing").setAttribute('data-c-marketing', 'off');
                 document.querySelector(".js_o-popup-cookies__setting--marketing").classList.add('off');
             } else {
@@ -191,12 +191,12 @@
                     'functionality_storage': 'granted',
                     'security_storage': 'granted',
                     'personalization_storage': 'granted',
-                    'analytics_storage': 'granted',
-                    'ad_storage': 'granted'
+                    'AD_PERSONALIZATION': 'granted',
+                    'AD_USER_DATA': 'granted'
                 });
                 cookiesCreateType("personalization_storage");
-                cookiesCreateType("analytics_storage");
-                cookiesCreateType("ad_storage");
+                cookiesCreateType("AD_PERSONALIZATION");
+                cookiesCreateType("AD_USER_DATA");
 
                 cookiesCreate();
             });
@@ -225,12 +225,12 @@
                     'functionality_storage': 'granted',
                     'security_storage': 'granted',
                     'personalization_storage': 'granted',
-                    'analytics_storage': 'granted',
-                    'ad_storage': 'granted'
+                    'AD_PERSONALIZATION': 'granted',
+                    'AD_USER_DATA': 'granted'
                 });
                 cookiesCreateType("personalization_storage");
-                cookiesCreateType("analytics_storage");
-                cookiesCreateType("ad_storage");
+                cookiesCreateType("AD_PERSONALIZATION");
+                cookiesCreateType("AD_USER_DATA");
 
                 cookiesCreate();
             });
@@ -256,8 +256,8 @@
                     'functionality_storage': 'granted',
                     'security_storage': 'granted',
                     'personalization_storage': 'denied',
-                    'analytics_storage': 'denied',
-                    'ad_storage': 'denied'
+                    'AD_PERSONALIZATION': 'denied',
+                    'AD_USER_DATA': 'denied'
                 });
 
                 cookiesCreate();
@@ -306,16 +306,16 @@
                     this.setAttribute("data-c-statistic", "on");
                     this.classList.add("on");
                     gtag('consent', 'update', {
-                        'analytics_storage': 'granted'
+                        'AD_PERSONALIZATION': 'granted'
                     });
-                    cookiesCreateType("analytics_storage");
+                    cookiesCreateType("AD_PERSONALIZATION");
                 } else {
                     this.setAttribute("data-c-statistic", "off");
                     this.classList.remove("on");
                     gtag('consent', 'update', {
-                        'analytics_storage': 'denied'
+                        'AD_PERSONALIZATION': 'denied'
                     });
-                    cookiesDeleteType("analytics_storage");
+                    cookiesDeleteType("AD_PERSONALIZATION");
                 }
 
                 cookiesCustom();
@@ -331,16 +331,16 @@
                     this.setAttribute("data-c-marketing", "on");
                     this.classList.add("on");
                     gtag("consent", "update", {
-                        "ad_storage": "granted"
+                        "AD_USER_DATA": "granted"
                     });
-                    cookiesCreateType("ad_storage");
+                    cookiesCreateType("AD_USER_DATA");
                 } else {
                     this.setAttribute("data-c-marketing", "off");
                     this.classList.remove("on");
                     gtag("consent", "update", {
-                        "ad_storage": "denied"
+                        "AD_USER_DATA": "denied"
                     });
-                    cookiesDeleteType("ad_storage");
+                    cookiesDeleteType("AD_USER_DATA");
                 }
 
                 cookiesCustom();
