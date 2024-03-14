@@ -1,10 +1,10 @@
 .skeleton-o-top-place {
     $self: &;
 
-    margin: -5px 5px 5px 5px;
+    margin: 5px;
 
     @media only screen and (min-width: $sm) {
-        margin: -10px 10px 10px;
+        margin: 10px;
     }
 
     &__outer {
