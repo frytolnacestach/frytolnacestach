@@ -1189,6 +1189,11 @@ export default {
   // Generate
   generate: {
     devtool: 'source-map',
+    extend(config, { isClient, isDev }) {
+      if (isDev && isClient) {
+        config.devtool = 'source-map';
+      }
+    },
     async routes() {
       // APIs
       const [
@@ -1401,5 +1406,5 @@ export default {
         config.devtool = 'source-map';
       }
     }
-  },
+  }
 }
