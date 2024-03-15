@@ -1188,11 +1188,9 @@ export default {
 
   // Generate
   generate: {
-    devtool: 'source-map',
-    extend(config, { isClient, isDev }) {
-      if (isDev && isClient) {
-        config.devtool = 'source-map';
-      }
+    sourcemap: {
+      server: true,
+      client: true 
     },
     async routes() {
       // APIs
@@ -1401,10 +1399,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extend(config, { isClient, isDev }) {
-      if (isDev && isClient) {
-        config.devtool = 'source-map';
-      }
+    sourcemap: {
+      server: true,
+      client: true 
     }
   }
 }
