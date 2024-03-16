@@ -10,7 +10,7 @@
         <!-- SECTION - BREADCRUMBS END -->
 
         <!-- SECTION - Buttons -->
-        <section class="t-section -px-world mt-1 -p0 hidden-print" v-if="isMobile">
+        <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
             <div class="t-section__inner">
                 <oSwitchHero :show-hero.sync="showHero" />
             </div>
@@ -23,13 +23,13 @@
                 <div class="t-grid -world-hero">
 
                     <!-- SECTION - hero -->
-                    <div :class="'t-grid__section -hero-place' + ((isMobile && !showHero) ? ' hidden' : ' visited')">
+                    <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
                         <oHeroPlace :title="place[0].name" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
                     </div>
                     <!-- SECTION - hero END -->
 
                     <!-- SECTION - map -->
-                    <div :class="'t-grid__section -map' + ((isMobile && showHero) ? ' hidden' : ' visited')">
+                    <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
                         <oMapGoogle :place="place" />
                     </div>
                     <!-- SECTION - map - END -->
@@ -238,7 +238,6 @@
                 placeContinent: this.placeContinent,
                 placeState: this.placeState,
                 imagePlaceState: this.imagePlaceState,
-                isMobile: false,
                 showHero: true,
                 videos: [],
                 imagesVideos: [],
@@ -314,11 +313,6 @@
         },
 
         methods:{
-            handleResize() {
-                // Aktualizovat hodnotu pro "isMobile" při změně velikosti okna
-                this.isMobile = window.innerWidth < 992
-            },
-
             async loadPosts() {
                 //start loading
                 this.isLoadingPosts = true
@@ -412,12 +406,6 @@
             this.loadVideos()
             this.loadPosts()
 
-            // Zjistit, zda je rozlišení menší než 992px při načítání stránky
-            this.isMobile = window.innerWidth < 992
-
-            // Poslouchat událost změny velikosti okna pro aktualizaci přepínače
-            window.addEventListener('resize', this.handleResize)
-
             //Data for mNavBreadcrumbsPlaceArray 
             //continent
             this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
@@ -443,11 +431,6 @@
                 }
                 return item
             })
-        },
-
-        beforeUnmount() {
-            // Zrušit naslouchání události změny velikosti okna při odstranění komponenty
-            window.removeEventListener('resize', this.handleResize)
         },
 
         head() {
@@ -591,10 +574,6 @@
             }
 
             return data
-        },
-
-        updated() {
-            window.lazySizes && window.lazySizes.update()
         },
 
         watch: {

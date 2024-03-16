@@ -9,7 +9,7 @@
         <!-- SECTION - BREADCRUMBS END -->
 
         <!-- SECTION - Buttons -->
-        <section class="t-section -px-world mt-1 -p0" v-if="isMobile">
+        <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
             <div class="t-section__inner">
                 <oSwitchHero :show-hero.sync="showHero" />
             </div>
@@ -22,13 +22,13 @@
                 <div class="t-grid -world-hero">
 
                     <!-- SECTION - hero -->
-                    <div class="t-grid__section -hero-food" v-show="!isMobile || (isMobile && showHero)">
+                    <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
                         <oHeroItemDetail :item="event" :images="image" />
                     </div>
                     <!-- SECTION - hero END -->
 
                     <!-- SECTION - map -->
-                    <div :class="'t-grid__section -map' + ((isMobile && showHero) ? ' hidden' : ' visited')">
+                    <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
                         <oMapGoogle :place="event" />
                     </div>
                     <!-- SECTION - map - END -->
@@ -156,7 +156,7 @@
     import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
 
     export default {
-        name: 'SvetMistoSlugPage',
+        name: 'UdalostSlugPage',
 
         components: {
             mNavBreadcrumbsItem,
@@ -178,7 +178,6 @@
                 event: this.event,
                 image: this.image,
                 placeCity: this.placeCity,
-                isMobile: false,
                 showHero: true,
                 mNavBreadcrumbsEventArray: [
                     {
@@ -261,7 +260,7 @@
                             "endDate": (this.event[0].date_end ? this.event[0].date_end : ""),
                             "location": {
                                 "@type": "Place",
-                                "name": (this.placeCity[0].name ? this.placeCity[0].name : "")
+                                "name": (this.placeCity[0] ? (this.placeCity[0].name ? this.placeCity[0].name : "") : '')
                             },
                             "description": (this.event[0].description ? this.event[0].description : ""),
                             "image": ((this.image[0] && this.image[0].id) ? ("https://image.frytolnacestach.cz/storage/events/" + this.image[0].name + ".webp") : "" )
@@ -269,26 +268,6 @@
                     }
                 ]
             }
-        },
-
-        methods:{
-            handleResize() {
-                // Aktualizovat hodnotu pro "isMobile" při změně velikosti okna
-                this.isMobile = window.innerWidth < 992
-            }
-        },
-
-        mounted() {
-            // Zjistit, zda je rozlišení menší než 992px při načítání stránky
-            this.isMobile = window.innerWidth < 992
-
-            // Poslouchat událost změny velikosti okna pro aktualizaci přepínače
-            window.addEventListener('resize', this.handleResize)
-        },
-
-        beforeUnmount() {
-            // Zrušit naslouchání události změny velikosti okna při odstranění komponenty
-            window.removeEventListener('resize', this.handleResize)
         },
 
         async asyncData({ $axios, params }) {
@@ -323,10 +302,6 @@
             }
 
             return data
-        },
-
-        updated() {
-            window.lazySizes && window.lazySizes.update()
         }
     }
 </script>

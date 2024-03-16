@@ -9,7 +9,7 @@
         <!-- SECTION - BREADCRUMBS END -->
 
         <!-- SECTION - Buttons -->
-        <section class="t-section -px-world mt-1 -p0 hidden-print" v-if="isMobile">
+        <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
             <div class="t-section__inner">
                 <oSwitchHero :show-hero.sync="showHero" />
             </div>
@@ -22,13 +22,13 @@
                 <div class="t-grid -world-hero">
 
                     <!-- SECTION - hero -->
-                    <div :class="'t-grid__section -hero-place' + ((isMobile && !showHero) ? ' hidden' : ' visited')">
+                    <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
                         <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
                     </div>
                     <!-- SECTION - hero END -->
 
                     <!-- SECTION - map -->
-                    <div :class="'t-grid__section -map' + ((isMobile && showHero) ? ' hidden' : ' visited')">
+                    <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
                         <oMapGoogle :place="place" />
                     </div>
                     <!-- SECTION - map - END -->
