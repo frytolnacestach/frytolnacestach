@@ -14,7 +14,7 @@
                                 <div class="o-achievements__content">
                                     <div class="o-achievements__medal"></div>
                                     <div class="o-achievements__text">
-                                        <h2 class="o-achievements__name">{{ item.name }}</h2>
+                                        <h3 class="o-achievements__name">{{ item.name }}</h3>
                                         <p class="o-achievements__description" v-if="item.description">{{ item.description }}</p>
                                     </div>
                                     <div class="o-achievements__progress">

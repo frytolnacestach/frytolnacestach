@@ -31,6 +31,7 @@
         height: 40px;
         max-width: 100%;
         border-radius: $br-1;
+        border: 0;
 
         @media only screen and (min-width: $ti) {
             border-radius: $br-2;
