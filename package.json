@@ -32,7 +32,6 @@
     "@nuxtjs/eslint-module": "^4.0.2",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/svg": "^0.4.0",
-    "@nuxtjs/tailwindcss": "^6.6.5",
     "html-webpack-plugin": "^4.5.2",
     "sass": "^1.55.0",
     "sass-loader": "^10.3.1"
