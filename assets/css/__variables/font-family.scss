@@ -1,4 +1,4 @@
-//Icomoon
+// Icomoon Default
 @font-face {
 	font-family: 'icomoon-default';
 	src:url('../../static/fonts/icomoon/default/icomoon.eot?ver=2.0');
@@ -11,6 +11,7 @@
 }
 $ff-icomoon-default: 'icomoon-default';
 
+// Icomoon Social
 @font-face {
 	font-family: 'icomoon-social';
 	src:url('../../static/fonts/icomoon/social/icomoon.eot?ver=1.0');
@@ -23,8 +24,6 @@ $ff-icomoon-default: 'icomoon-default';
 }
 $ff-icomoon-social: 'icomoon-social';
 
-
-//Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
-
+// Google Fonts
+// @note Loading font in head @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
 $ff1: 'Montserrat', sans-serif;
