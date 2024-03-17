@@ -35,9 +35,15 @@
                         </div>
                         <div class="o-event-list-small__text">
                             <h3 class="o-event-list-small__name"><nuxtLink class="o-event-list-small__name-link" :to="'/udalost/' + event.slug">{{ event.name }}</nuxtLink></h3>
-                            <span class="o-event-list-small__date" v-if="event.date_start || event.date_end">
-                                <span class="o-event-list-small__date-start">Začátek události: {{ formatDate(event.date_start) }}</span>
-                                <span class="o-event-list-small__date-end">Konec události: {{ formatDate(event.date_end) }}</span>
+                            <span class="o-event-list-small__dates" v-if="event.date_start || event.date_end">
+                                <span class="o-event-list-small__date">
+                                    <span class="o-event-list-small__date-text">Začátek události </span>
+                                    <span class="o-event-list-small__date-value">{{ formatDate(event.date_start) }}</span>
+                                </span>
+                                <span class="o-event-list-small__date">
+                                    <span class="o-event-list-small__date-text">Konec události </span>
+                                    <span class="o-event-list-small__date-value">{{ formatDate(event.date_end) }}</span>
+                                </span>
                             </span>
                         </div>
                     </div>
