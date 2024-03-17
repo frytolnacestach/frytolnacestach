@@ -10,7 +10,7 @@
     }
 
     &__header {
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 
     &__items {
@@ -66,7 +66,7 @@
     &__text {
         grid-area: text;
         width: 100%;
-        padding: 9px 5px 15px;
+        padding: 0 5px 15px 10px;
         background-color: transparent;
     }
 
@@ -74,16 +74,28 @@
         font-weight: 700;
     }
 
-    &__date {
+    &__dates {
         display: flex;
         flex-wrap: wrap;
     }
 
-    &__date-start {
+    &__date {
         width: 100%;
+        margin-bottom: 4px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
 
-    &__date-end {
+    &__date-text {
         width: 100%;
+        font-weight: 600;
+        font-size: $fs-small-sss;
+    }
+
+    &__date-value {
+        display: block;
+        font-weight: 300;
     }
 }

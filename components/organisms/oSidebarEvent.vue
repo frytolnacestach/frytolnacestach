@@ -38,9 +38,15 @@
                                 </div>
                                 <div class="o-sidebar-event__text">
                                     <h4 class="o-sidebar-event__name"><nuxtLink class="o-sidebar-event__name-link" :to="'/udalost/' + event.slug">{{ event.name }}</nuxtLink></h4>
-                                    <span class="o-sidebar-event__date" v-if="event.date_start || event.date_end">
-                                        <span class="o-sidebar-event__date-start">Začátek události: {{ formatDate(event.date_start) }}</span>
-                                        <span class="o-sidebar-event__date-end">Konec události: {{ formatDate(event.date_end) }}</span>
+                                    <span class="o-sidebar-event__dates" v-if="event.date_start || event.date_end">
+                                        <span class="o-sidebar-event__date">
+                                            <span class="o-sidebar-event__date-text">Začátek události </span>
+                                            <span class="o-sidebar-event__date-value">{{ formatDate(event.date_start) }}</span>
+                                        </span>
+                                        <span class="o-sidebar-event__date">
+                                            <span class="o-sidebar-event__date-text">Konec události </span>
+                                            <span class="o-sidebar-event__date-value">{{ formatDate(event.date_end) }}</span>
+                                        </span>
                                     </span>
                                 </div>
                             </div>
