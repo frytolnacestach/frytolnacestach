@@ -37,7 +37,7 @@
 
         &:after {
             content: '›';
-            color: $green5;
+            color: $c-green-t-dark-super;
             position: absolute;
             right: 3px;
             line-height: 22px;
@@ -58,20 +58,20 @@
     }
 
     &__link {
-        color: $green5;
+        color: $c-green-t-dark-super;
         line-height: 22px;
         font-size: $fs-normal-sss;
         text-decoration: none;
 
         &:hover {
-            color: $green3;
+            color: $c-green-t-dark;
         }
     }
 
     &__span {
-        color: $green3;
+        color: $c-green-t-dark;
         line-height: 22px;
-        font-size: $fs-small-l;
+        font-size: $fs-small-ssss;
         text-decoration: none;
     }
 }

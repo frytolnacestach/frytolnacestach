@@ -787,8 +787,7 @@
                 this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
                     if (item.id === 5) {
                         item.name = this.place[0].name
-                        item.url = "/svet/stat/" + this.place[0].slug
-                        item.status = "link"
+                        item.status = "span"
                     }
                     return item
                 })
