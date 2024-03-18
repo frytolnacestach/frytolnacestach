@@ -56,12 +56,24 @@
             }
         },
 
+        methods:{
+            iframeTitle() {
+                let elementIframe = document.querySelector('.o-affilate-booking iframe')
+                if (elementIframe) {
+                    elementIframe.setAttribute('title', 'Booking')
+                } else {
+                    setTimeout(this.iframeTitle, 100)
+                }
+            }
+        },
+
         mounted() {
             const script = document.createElement('script')
             script.type = 'text/javascript'
             script.async = true
             script.src = '//cf.bstatic.com/static/affiliate_base/js/flexiproduct.js'
             document.body.appendChild(script)
+            this.iframeTitle()
         }
     }
 </script>
