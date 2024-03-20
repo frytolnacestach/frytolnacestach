@@ -20,7 +20,7 @@
         <!-- SECTION - Articles -->
         <section class="t-section -p0 py-1 px-2 print-section">
             <div class="t-section__inner">
-                <oArticleList :posts="posts" :images="images" styleThemaLoading=" -gray" />
+                <oArticleList :posts="posts" :images="images" styleThemaLoading=" -gray" styleSizeHeadline="h2" />
                 <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
                 <oNoneContent text="Bohužel zde nejsou žádné články" styleThema=" -green" styleGap=" px-1" v-if="posts && posts.length === 0 && !isLoading" />
                 <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">

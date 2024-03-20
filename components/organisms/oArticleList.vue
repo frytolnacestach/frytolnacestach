@@ -62,7 +62,10 @@
                                 </div>
 
                                 <div class="o-article-list__text">
-                                    <h3 class="o-article-list__title" v-if="post.title">
+                                    <h2 class="o-article-list__title" v-if="post.title && styleSizeHeadline === 'h2'">
+                                        <NuxtLink class="o-article-list__title-link" :to="`/clanky/${post.slug}`">{{ post.title }}</NuxtLink>
+                                    </h2>
+                                    <h3 class="o-article-list__title" v-if="post.title && styleSizeHeadline !== 'h2'">
                                         <NuxtLink class="o-article-list__title-link" :to="`/clanky/${post.slug}`">{{ post.title }}</NuxtLink>
                                     </h3>
                                     <p class="o-article-list__perex" v-if="post.perex">
@@ -107,6 +110,10 @@
                 required: false
             },
             styleAlign: {
+                type: String,
+                required: false
+            },
+            styleSizeHeadline: {
                 type: String,
                 required: false
             },
