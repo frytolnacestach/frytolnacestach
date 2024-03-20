@@ -144,7 +144,6 @@
     import oSidebarEvent from '~/components/organisms/oSidebarEvent.vue'
     import oSidebarTime from '~/components/organisms/oSidebarTime.vue'
     import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
-    import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
 
 
@@ -183,7 +182,6 @@
             oSidebarEvent,
             oSidebarTime,
             oSwitchHero,
-            oVideoList,
             oVisitedButton
         },
 

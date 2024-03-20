@@ -61,7 +61,10 @@
                                     <NuxtLink class="o-video-list__image-link" :to="`/videa/${video.slug}`" :aria-label="`Koukni se na video ${video.title}`" v-if="video.slug"></NuxtLink>
                                 </div>
                                 <div class="o-video-list__text">
-                                    <h3 class="o-video-list__title" v-if="video.title">
+                                    <h2 class="o-video-list__title" v-if="video.title && styleSizeHeadline === 'h2'">
+                                        <NuxtLink class="o-video-list__title-link" :to="`/videa/${video.slug}`">{{ video.title }}</NuxtLink>
+                                    </h2>
+                                    <h3 class="o-video-list__title" v-if="video.title && styleSizeHeadline !== 'h2'">
                                         <NuxtLink class="o-video-list__title-link" :to="`/videa/${video.slug}`">{{ video.title }}</NuxtLink>
                                     </h3>
                                 </div>
@@ -107,6 +110,10 @@
                 required: false
             },
             styleAlign: {
+                type: String,
+                required: false
+            },
+            styleSizeHeadline: {
                 type: String,
                 required: false
             },
