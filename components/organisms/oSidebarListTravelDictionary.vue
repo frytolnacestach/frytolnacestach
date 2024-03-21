@@ -33,7 +33,7 @@
                                                 :preload="true"
                                                 v-lazy>
                                         </div>
-                                        <nuxtLink class="o-sidebar-list-travel-dictionary__image-link" :to="'/cestovatelsky-slovnik/' + event.slug"></nuxtLink>
+                                        <nuxtLink class="o-sidebar-list-travel-dictionary__image-link" :to="'/cestovatelsky-slovnik/' + event.slug" :aria-label="`Čti více o události ${event.name}`"></nuxtLink>
                                     </div>
                                 </div>
                                 <div class="o-sidebar-list-travel-dictionary__text">
