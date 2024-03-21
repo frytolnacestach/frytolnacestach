@@ -50,7 +50,7 @@
                                 :alt="title"
                                 v-lazy>
                         </div>
-                        <a class="o-map-mapy__image-link" :href="url" target="_blank" rel="noopener"></a>
+                        <a class="o-map-mapy__image-link" :href="url" target="_blank" rel="noopener" :aria-label="`Zobrazit mapu`"></a>
                     </div>
                 </div>
                 <a class="o-map-mapy__link" :href="url" target="_blank" rel="noopener">zobrazit mapu na mapy.cz</a>
