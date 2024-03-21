@@ -65,7 +65,7 @@
                         <div class="o-place-block__filter">
                             <span class="o-place-block__name">{{ place[0].name }}</span>
                         </div>
-                        <NuxtLink class="o-place-block__image-link" :to="`/svet/${type}/${place[0].slug}`"></NuxtLink>
+                        <NuxtLink class="o-place-block__image-link" :to="`/svet/${type}/${place[0].slug}`" :aria-label="`Čti více o místě ${place[0].name}`"></NuxtLink>
                     </div>
                     <div class="o-place-block__text">
                         <div class="o-place-block__wysiwyg" v-if="place[0].information_chatgpt" v-html="place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, 220)"></div>
