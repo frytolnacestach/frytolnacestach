@@ -1,3 +1,5 @@
+//import manifest from './config/manifest.js'
+
 const axios = require('axios')
 
 export default {
@@ -54,6 +56,7 @@ export default {
     icon: {
       fileName: 'images/favicons/manifest/icons/icon.png'
     },
+    // manifest: manifest TODO: Import separate file for manifest
     manifest: {
       lang: 'cs',
       name: 'Frytol na cestách',
