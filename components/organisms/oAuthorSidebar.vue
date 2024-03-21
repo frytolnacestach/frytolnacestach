@@ -2,7 +2,7 @@
     <div class="o-author-sidebar">
         <div class="o-author-sidebar__outer">
             <div class="o-author-sidebar__inner">
-                <h4 class="o-author-sidebar__headline">Autor</h4> 
+                <h2 class="o-author-sidebar__headline">Autor</h2> 
                 <NuxtLink :to="`/cestovatel/${user[0].slug}`" class="o-author-sidebar__name" v-if="user[0]">
                     {{ user[0].surname && (user[0].setting_author_name === 1 || user[0].setting_author_name === 2) ? (user[0].surname + ' ') : '' }}
                     {{ user[0].lastname && (user[0].setting_author_name === 1 || user[0].setting_author_name === 2) ? (user[0].lastname + ' ') : '' }}
