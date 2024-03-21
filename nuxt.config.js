@@ -760,7 +760,8 @@ export default {
   },
 
   env: {
-    baseUrl: process.env.BASE_URL || 'https://www.frytolnacestach.cz'
+    baseUrl: process.env.BASE_URL || 'https://www.frytolnacestach.cz',
+    envGoogleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY || ''
   },
 
   copy: [
