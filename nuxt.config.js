@@ -1,12 +1,10 @@
-//import manifest from './config/manifest.js'
+// @future import manifest from './config/manifest.js'
 
 const axios = require('axios')
 
 export default {
-  // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     htmlAttrs: {
       lang: 'cs',
@@ -56,7 +54,7 @@ export default {
     icon: {
       fileName: 'images/favicons/manifest/icons/icon.png'
     },
-    // manifest: manifest TODO: Import separate file for manifest
+    // @future Import separate file for manifest (manifest: manifest)
     manifest: {
       lang: 'cs',
       name: 'Frytol na cestách',
@@ -65,682 +63,684 @@ export default {
       display: 'standalone',
       background_color: '#edf1f4',
       theme_color: '#246e70',
-      icons: [{
-        src: "/images/favicons/manifest/icons/windows11/SmallTile.scale-100.png",
-        sizes: "71x71",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/SmallTile.scale-125.png",
-        sizes: "89x89",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/SmallTile.scale-150.png",
-        sizes: "107x107",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/SmallTile.scale-200.png",
-        sizes: "142x142",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/SmallTile.scale-400.png",
-        sizes: "284x284",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square150x150Logo.scale-100.png",
-        sizes: "150x150",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square150x150Logo.scale-125.png",
-        sizes: "188x188",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square150x150Logo.scale-150.png",
-        sizes: "225x225",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square150x150Logo.scale-200.png",
-        sizes: "300x300",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square150x150Logo.scale-400.png",
-        sizes: "600x600",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Wide310x150Logo.scale-100.png",
-        sizes: "310x150",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Wide310x150Logo.scale-125.png",
-        sizes: "388x188",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Wide310x150Logo.scale-150.png",
-        sizes: "465x225",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Wide310x150Logo.scale-200.png",
-        sizes: "620x300",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Wide310x150Logo.scale-400.png",
-        sizes: "1240x600",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/LargeTile.scale-100.png",
-        sizes: "310x310",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/LargeTile.scale-125.png",
-        sizes: "388x388",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/LargeTile.scale-150.png",
-        sizes: "465x465",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/LargeTile.scale-200.png",
-        sizes: "620x620",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/LargeTile.scale-400.png",
-        sizes: "1240x1240",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.scale-100.png",
-        sizes: "44x44",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.scale-125.png",
-        sizes: "55x55",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.scale-150.png",
-        sizes: "66x66",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.scale-200.png",
-        sizes: "88x88",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.scale-400.png",
-        sizes: "176x176",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/StoreLogo.scale-100.png",
-        sizes: "50x50",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/StoreLogo.scale-125.png",
-        sizes: "63x63",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/StoreLogo.scale-150.png",
-        sizes: "75x75",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/StoreLogo.scale-200.png",
-        sizes: "100x100",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/StoreLogo.scale-400.png",
-        sizes: "200x200",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/SplashScreen.scale-100.png",
-        sizes: "620x300",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/SplashScreen.scale-125.png",
-        sizes: "775x375",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/SplashScreen.scale-150.png",
-        sizes: "930x450",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/SplashScreen.scale-200.png",
-        sizes: "1240x600",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/SplashScreen.scale-400.png",
-        sizes: "2480x1200",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-16.png",
-        sizes: "16x16",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-20.png",
-        sizes: "20x20",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-24.png",
-        sizes: "24x24",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-30.png",
-        sizes: "30x30",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-32.png",
-        sizes: "32x32",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-36.png",
-        sizes: "36x36",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-40.png",
-        sizes: "40x40",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-44.png",
-        sizes: "44x44",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-48.png",
-        sizes: "48x48",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-60.png",
-        sizes: "60x60",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-64.png",
-        sizes: "64x64",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-72.png",
-        sizes: "72x72",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-80.png",
-        sizes: "80x80",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-96.png",
-        sizes: "96x96",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-256.png",
-        sizes: "256x256",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-16.png",
-        sizes: "16x16",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-20.png",
-        sizes: "20x20",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-24.png",
-        sizes: "24x24",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-30.png",
-        sizes: "30x30",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-32.png",
-        sizes: "32x32",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-36.png",
-        sizes: "36x36",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-40.png",
-        sizes: "40x40",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-44.png",
-        sizes: "44x44",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-48.png",
-        sizes: "48x48",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-60.png",
-        sizes: "60x60",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-64.png",
-        sizes: "64x64",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-72.png",
-        sizes: "72x72",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-80.png",
-        sizes: "80x80",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-96.png",
-        sizes: "96x96",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-256.png",
-        sizes: "256x256",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-16.png",
-        sizes: "16x16",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-20.png",
-        sizes: "20x20",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-24.png",
-        sizes: "24x24",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-30.png",
-        sizes: "30x30",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-32.png",
-        sizes: "32x32",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-36.png",
-        sizes: "36x36",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-40.png",
-        sizes: "40x40",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-44.png",
-        sizes: "44x44",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-48.png",
-        sizes: "48x48",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-60.png",
-        sizes: "60x60",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-64.png",
-        sizes: "64x64",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-72.png",
-        sizes: "72x72",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-80.png",
-        sizes: "80x80",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-96.png",
-        sizes: "96x96",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-256.png",
-        sizes: "256x256",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/android/android-launchericon-512-512.png",
-        sizes: "512x512",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/android/android-launchericon-192-192.png",
-        sizes: "192x192",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/android/android-launchericon-144-144.png",
-        sizes: "144x144",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/android/android-launchericon-96-96.png",
-        sizes: "96x96",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/android/android-launchericon-72-72.png",
-        sizes: "72x72",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/android/android-launchericon-48-48.png",
-        sizes: "48x48",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/16.png",
-        sizes: "16x16",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/20.png",
-        sizes: "20x20",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/29.png",
-        sizes: "29x29",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/32.png",
-        sizes: "32x32",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/40.png",
-        sizes: "40x40",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/50.png",
-        sizes: "50x50",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/57.png",
-        sizes: "57x57",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/58.png",
-        sizes: "58x58",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/60.png",
-        sizes: "60x60",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/64.png",
-        sizes: "64x64",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/72.png",
-        sizes: "72x72",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/76.png",
-        sizes: "76x76",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/80.png",
-        sizes: "80x80",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/87.png",
-        sizes: "87x87",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/100.png",
-        sizes: "100x100",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/114.png",
-        sizes: "114x114",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/120.png",
-        sizes: "120x120",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/128.png",
-        sizes: "128x128",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/144.png",
-        sizes: "144x144",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/152.png",
-        sizes: "152x152",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/167.png",
-        sizes: "167x167",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/180.png",
-        sizes: "180x180",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/192.png",
-        sizes: "192x192",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/256.png",
-        sizes: "256x256",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/512.png",
-        sizes: "512x512",
-        type: "image/png",
-        purpose: "any maskable"
-      },
-      {
-        src: "/images/favicons/manifest/icons/ios/1024.png",
-        sizes: "1024x1024",
-        type: "image/png",
-        purpose: "any maskable"
-      }],
+      icons: [
+        {
+          src: "/images/favicons/manifest/icons/windows11/SmallTile.scale-100.png",
+          sizes: "71x71",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/SmallTile.scale-125.png",
+          sizes: "89x89",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/SmallTile.scale-150.png",
+          sizes: "107x107",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/SmallTile.scale-200.png",
+          sizes: "142x142",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/SmallTile.scale-400.png",
+          sizes: "284x284",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square150x150Logo.scale-100.png",
+          sizes: "150x150",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square150x150Logo.scale-125.png",
+          sizes: "188x188",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square150x150Logo.scale-150.png",
+          sizes: "225x225",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square150x150Logo.scale-200.png",
+          sizes: "300x300",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square150x150Logo.scale-400.png",
+          sizes: "600x600",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Wide310x150Logo.scale-100.png",
+          sizes: "310x150",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Wide310x150Logo.scale-125.png",
+          sizes: "388x188",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Wide310x150Logo.scale-150.png",
+          sizes: "465x225",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Wide310x150Logo.scale-200.png",
+          sizes: "620x300",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Wide310x150Logo.scale-400.png",
+          sizes: "1240x600",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/LargeTile.scale-100.png",
+          sizes: "310x310",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/LargeTile.scale-125.png",
+          sizes: "388x388",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/LargeTile.scale-150.png",
+          sizes: "465x465",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/LargeTile.scale-200.png",
+          sizes: "620x620",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/LargeTile.scale-400.png",
+          sizes: "1240x1240",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.scale-100.png",
+          sizes: "44x44",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.scale-125.png",
+          sizes: "55x55",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.scale-150.png",
+          sizes: "66x66",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.scale-200.png",
+          sizes: "88x88",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.scale-400.png",
+          sizes: "176x176",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/StoreLogo.scale-100.png",
+          sizes: "50x50",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/StoreLogo.scale-125.png",
+          sizes: "63x63",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/StoreLogo.scale-150.png",
+          sizes: "75x75",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/StoreLogo.scale-200.png",
+          sizes: "100x100",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/StoreLogo.scale-400.png",
+          sizes: "200x200",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/SplashScreen.scale-100.png",
+          sizes: "620x300",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/SplashScreen.scale-125.png",
+          sizes: "775x375",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/SplashScreen.scale-150.png",
+          sizes: "930x450",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/SplashScreen.scale-200.png",
+          sizes: "1240x600",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/SplashScreen.scale-400.png",
+          sizes: "2480x1200",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-16.png",
+          sizes: "16x16",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-20.png",
+          sizes: "20x20",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-24.png",
+          sizes: "24x24",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-30.png",
+          sizes: "30x30",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-32.png",
+          sizes: "32x32",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-36.png",
+          sizes: "36x36",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-40.png",
+          sizes: "40x40",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-44.png",
+          sizes: "44x44",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-48.png",
+          sizes: "48x48",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-60.png",
+          sizes: "60x60",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-64.png",
+          sizes: "64x64",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-72.png",
+          sizes: "72x72",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-80.png",
+          sizes: "80x80",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-96.png",
+          sizes: "96x96",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.targetsize-256.png",
+          sizes: "256x256",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-16.png",
+          sizes: "16x16",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-20.png",
+          sizes: "20x20",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-24.png",
+          sizes: "24x24",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-30.png",
+          sizes: "30x30",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-32.png",
+          sizes: "32x32",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-36.png",
+          sizes: "36x36",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-40.png",
+          sizes: "40x40",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-44.png",
+          sizes: "44x44",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-48.png",
+          sizes: "48x48",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-60.png",
+          sizes: "60x60",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-64.png",
+          sizes: "64x64",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-72.png",
+          sizes: "72x72",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-80.png",
+          sizes: "80x80",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-96.png",
+          sizes: "96x96",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-unplated_targetsize-256.png",
+          sizes: "256x256",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-16.png",
+          sizes: "16x16",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-20.png",
+          sizes: "20x20",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-24.png",
+          sizes: "24x24",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-30.png",
+          sizes: "30x30",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-32.png",
+          sizes: "32x32",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-36.png",
+          sizes: "36x36",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-40.png",
+          sizes: "40x40",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-44.png",
+          sizes: "44x44",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-48.png",
+          sizes: "48x48",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-60.png",
+          sizes: "60x60",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-64.png",
+          sizes: "64x64",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-72.png",
+          sizes: "72x72",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-80.png",
+          sizes: "80x80",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-96.png",
+          sizes: "96x96",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/windows11/Square44x44Logo.altform-lightunplated_targetsize-256.png",
+          sizes: "256x256",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/android/android-launchericon-512-512.png",
+          sizes: "512x512",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/android/android-launchericon-192-192.png",
+          sizes: "192x192",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/android/android-launchericon-144-144.png",
+          sizes: "144x144",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/android/android-launchericon-96-96.png",
+          sizes: "96x96",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/android/android-launchericon-72-72.png",
+          sizes: "72x72",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/android/android-launchericon-48-48.png",
+          sizes: "48x48",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/16.png",
+          sizes: "16x16",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/20.png",
+          sizes: "20x20",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/29.png",
+          sizes: "29x29",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/32.png",
+          sizes: "32x32",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/40.png",
+          sizes: "40x40",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/50.png",
+          sizes: "50x50",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/57.png",
+          sizes: "57x57",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/58.png",
+          sizes: "58x58",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/60.png",
+          sizes: "60x60",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/64.png",
+          sizes: "64x64",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/72.png",
+          sizes: "72x72",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/76.png",
+          sizes: "76x76",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/80.png",
+          sizes: "80x80",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/87.png",
+          sizes: "87x87",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/100.png",
+          sizes: "100x100",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/114.png",
+          sizes: "114x114",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/120.png",
+          sizes: "120x120",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/128.png",
+          sizes: "128x128",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/144.png",
+          sizes: "144x144",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/152.png",
+          sizes: "152x152",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/167.png",
+          sizes: "167x167",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/180.png",
+          sizes: "180x180",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/192.png",
+          sizes: "192x192",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/256.png",
+          sizes: "256x256",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/512.png",
+          sizes: "512x512",
+          type: "image/png",
+          purpose: "any maskable"
+        },
+        {
+          src: "/images/favicons/manifest/icons/ios/1024.png",
+          sizes: "1024x1024",
+          type: "image/png",
+          purpose: "any maskable"
+        }
+      ],
       workbox: {
         importScripts: [
           'service-worker.js'
-        ],
+        ]
       }
     }
   },
@@ -748,7 +748,7 @@ export default {
 
   render: {
     static: {
-      maxAge: 60 * 60 * 24 * 120 * 1000 // 120 dní
+      maxAge: 60 * 60 * 24 * 120 * 1000 // @note 120 dní
     }
   },
 
@@ -791,13 +791,11 @@ export default {
     }
   ],
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/css/main.scss',
     '@/assets/css/print.scss'
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/axios.js',
     { src: '~/plugins/vue2-google-maps', ssr: false },
@@ -811,17 +809,15 @@ export default {
     loadedClass: 'loaded',
     appendClass: 'lazyload-wrapper'
   },
+  // Lazyload END
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxt/typescript-build', 
     '@nuxtjs/eslint-module'
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
@@ -1403,11 +1399,12 @@ export default {
   },
   // Generate END
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  // Build
   build: {
     sourcemap: {
       server: true,
       client: true 
     }
   }
+  // Build END
 }

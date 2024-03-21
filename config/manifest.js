@@ -1,3 +1,4 @@
+// future Use in nuxt.config.js
 const manifest = {
   lang: "cs",
   name: "Frytol na cestách",
