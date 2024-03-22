@@ -4,7 +4,7 @@
             <div class="o-hot-info__inner">
                 <div class="o-hot-info__items">
                     <div class="o-hot-info__item" v-for="location in locations" v-bind:key="location.type">
-                        <h4 class="o-hot-info__title">{{ location.type }}</h4>
+                        <span class="o-hot-info__title">{{ location.type }}</span>
                         <span class="o-hot-info__value">{{ location.name }}</span>
                     </div>
                 </div>
