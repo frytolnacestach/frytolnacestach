@@ -103,10 +103,7 @@
 
     &__nickname {
         display: block;
-
-        @media only screen and (min-width: $lg) {
-            margin-top: 10px;
-        }
+        margin-top: 10px;
     }
 
     &__nickname-link {
