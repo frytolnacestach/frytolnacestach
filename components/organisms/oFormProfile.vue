@@ -38,15 +38,19 @@
                                     <label class="o-form-profile__label -strong">Podoba jména u obsahu:</label>
                                     <div class="o-form-profile__item -flex">
                                         <div class="m-input-radio -blue">
-                                            <label class="m-input-radio__label">
-                                                <input class="m-input-radio__input" type="radio" id="agreement_mail" value="1" v-model="settingAuthorName" />
+                                            <label class="m-input-radio__label" :class="{ '-disabled': !surname || !lastname }">
+                                                <input class="m-input-radio__input" type="radio" id="agreement_mail" value="1" :disabled="!surname || !lastname" v-model="settingAuthorName" />
                                                 <span class="m-input-radio__radio"></span>
-                                                <span class="m-input-radio__text" for="agreement_mail">{{ surname }} {{ lastname }} ({{ nickname }})</span>
+                                                <span class="m-input-radio__text" for="agreement_mail">
+                                                    {{ surname ? surname : "Jméno" }} {{ lastname ? lastname : "Přijmení" }} ({{ nickname }}){{(surname && lastname) ? "" : " - Nejdříve je nutné vyplniť jméno i příjmené" }}
+                                                </span>
                                             </label>
-                                            <label class="m-input-radio__label">
-                                                <input class="m-input-radio__input" type="radio" id="agreement_mail" value="2" v-model="settingAuthorName" />
+                                            <label class="m-input-radio__label" :class="{ '-disabled': !surname || !lastname }">
+                                                <input class="m-input-radio__input" type="radio" id="agreement_mail" value="2" :disabled="!surname || !lastname" v-model="settingAuthorName" />
                                                 <span class="m-input-radio__radio"></span>
-                                                <span class="m-input-radio__text" for="agreement_mail">{{ surname }} {{ lastname }}</span>
+                                                <span class="m-input-radio__text -disable" for="agreement_mail">
+                                                    {{ surname ? surname : "Jméno" }} {{ lastname ? lastname : "Přijmení" }}{{(surname && lastname) ? "" : " - Nejdříve je nutné vyplniť jméno i příjmené" }}
+                                                </span>
                                             </label>
                                             <label class="m-input-radio__label">
                                                 <input class="m-input-radio__input" type="radio" id="agreement_mail" value="3" v-model="settingAuthorName" />
@@ -164,6 +168,12 @@
         },
     
         methods: {
+            changeName() {
+                if ((!this.surname || !this.lastname) && (this.settingAuthorName === 1 || this.settingAuthorName === 2)) {
+                    this.settingAuthorName = 3
+                }
+            },
+
             async fetchProfile() {
                 if (this.account && this.account.length !== 0) {
                     try {
@@ -297,6 +307,12 @@
             account: {
                 handler: 'fetchProfile',
                 immediate: true
+            },
+            surname(newValue, oldValue) {
+                this.changeName()
+            },
+            lastname(newValue, oldValue) {
+                this.changeName()
             }
         }
     }
