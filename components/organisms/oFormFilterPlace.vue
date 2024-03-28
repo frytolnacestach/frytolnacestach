@@ -1,5 +1,5 @@
 <template>
-    <div :class="'o-form-filter-place' + (styleThema ? styleThema : '')" role="filter">
+    <div :class="'o-form-filter-place' + (styleThema ? styleThema : '')">
         <div class="o-form-filter-place__outer">
             <div class="o-form-filter-place__inner">
                 <div class="o-form-filter-place__form">
