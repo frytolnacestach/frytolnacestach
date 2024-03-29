@@ -4,7 +4,7 @@
         <!-- SECTION - Hero -->
         <section class="t-section -p0 mb-1 mt-2">
             <div class="t-section__inner">
-                <oHero :headline="headline" modifierCSS=" -gray" />
+                <oHero :headline="headline" modifierCSS=" -gray" classCSS=" mt-2" />
             </div>
         </section>
         <!-- SECTION - Hero END -->

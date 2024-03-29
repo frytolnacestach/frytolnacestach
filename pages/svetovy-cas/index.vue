@@ -4,7 +4,7 @@
         <!-- SECTION - Hero -->
 		<section class="t-section py-4 print-section">
             <div class="t-section__inner">
-                <oHero :headline="headline" perex="Připravte se na světové dobrodružství přesně podle svého rytmu! Náš cestovatelský portál vám přináší aktuální čas a časový posun v různých zemích, abyste byli vždycky v synchronizaci s časem." modifierCSS=" -green -w640"/>
+                <oHero :headline="headline" perex="Připravte se na světové dobrodružství přesně podle svého rytmu! Náš cestovatelský portál vám přináší aktuální čas a časový posun v různých zemích, abyste byli vždycky v synchronizaci s časem." modifierCSS=" -green -w640" classCSS=" mt-2"/>
             </div>
         </section>
         <!-- SECTION - Hero END -->

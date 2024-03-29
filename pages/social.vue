@@ -4,7 +4,7 @@
         <!-- SECTION - Hero -->
         <section class="t-section -p0 mt-2 mb-4">
             <div class="t-section__inner">
-                <oHero :headline="headline" perex="Kam se vydat v digitálním vesmíru? Zde naleznete mé odkazy na sociální sítě, kde se dělím o své dobrodružství, myšlenky a zážitky. Připojte se ke mně na této cestě virtuálním světem!" modifierCSS=" -gray -w640" />
+                <oHero :headline="headline" perex="Kam se vydat v digitálním vesmíru? Zde naleznete mé odkazy na sociální sítě, kde se dělím o své dobrodružství, myšlenky a zážitky. Připojte se ke mně na této cestě virtuálním světem!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
             </div>
         </section>
         <!-- SECTION - Hero END -->
