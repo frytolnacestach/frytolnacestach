@@ -83,13 +83,13 @@
                                                                         <NuxtLink class="o-review-item-list__name-link" :to="`/cestovatel/${users.find(user => user.id === review.id_user).slug}`" :aria-label="`Přejít na profil uživatele ${users.find(user => user.id === review.id_user).nickname}`">{{ users.find(user => user.id === review.id_user).nickname }}</NuxtLink>
                                                                     </h3>
                                                                     <div class="o-form-review-item__item -notmargin">
-                                                                        <textarea class="a-textarea -green2" name="text" v-model="text" placeholder="Text recenze"></textarea>
+                                                                        <textarea class="a-textarea -green2" name="text" v-model="text" placeholder="Podělte se o pocity z tohoto místa."></textarea>
                                                                     </div>
                                                                 </div>
                                                                 <div class="o-form-review-item__buttons">
                                                                     <div class="o-form-review-item__button mt-1">
                                                                         <div class="m-button -green" :class="{'-notactive': selectRating === null}">
-                                                                            <button class="m-button__input" :disabled="selectRating === null ? true : false" type="submit">Uložit úpravy</button>
+                                                                            <button class="m-button__input" :disabled="selectRating === null ? true : false" type="submit">UPRAVIT</button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
