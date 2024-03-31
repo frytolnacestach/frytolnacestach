@@ -4,7 +4,7 @@
             <div class="o-popup-cookies__inner">
                 <div class="js_o-popup-cookies__page--welcome o-popup-cookies__page -welcome open">
                     <div class="o-popup-cookies__text">
-                        <h4 class="o-popup-cookies__headline" id="cookiesTitle">Tato webová stránka používá cookies</h4>
+                        <span class="o-popup-cookies__headline" id="cookiesTitle">Tato webová stránka používá cookies</span>
                         <p class="o-popup-cookies__perex" id="cookiesDesc">Cookies nám pomáhají zlepšovat uživatelskou zkušenost našeho webu. Používáme je k anonymní analýze návštěvnosti a chování na webu, personalizaci obsahu, nebo cílení reklamy. Data o využívání našeho webu můžeme s Vaším souhlasem posílat i do systémů našich partnerů, abychom mohli plně využívat jejich nástroje. Partneři tyto údaje mohou zkombinovat s dalšími informacemi, které jste jim poskytli nebo které získali v důsledku toho, že používáte jejich služby. Více informací najdete v našich <NuxtLink to="/conditions">zásadách ochrany osobních údajů</NuxtLink> a <NuxtLink to="/cookies">zásadách cookies</NuxtLink>.</p>
                     </div>
                     <div class="o-popup-cookies__buttons">
@@ -17,7 +17,7 @@
                         <div class="o-popup-cookies__items">
                             <div class="o-popup-cookies__item">
                                 <div class="o-popup-cookies__header">
-                                    <h5 class="o-popup-cookies__type">Nezbytné <br><i class="o-popup-cookies__type-name">(functionality_storage, security_storage)</i></h5>
+                                    <span class="o-popup-cookies__type">Nezbytné <br><i class="o-popup-cookies__type-name">(functionality_storage, security_storage)</i></span>
                                     <span class="o-popup-cookies__setting -active"></span>
                                 </div>
                                 <p class="o-popup-cookies__why">Nezbytné cookies pomáhají, aby byla webová stránka použitelná tak, že umožní základní funkce jako navigace stránky nebo zobrazení správného obsahu. Webová stránka nemůže správně fungovat bez těchto cookies.</p>
@@ -25,7 +25,7 @@
 
                             <div class="o-popup-cookies__item">
                                 <div class="o-popup-cookies__header">
-                                    <h5 class="o-popup-cookies__type">Preferenční <br><i class="o-popup-cookies__type-name">(personalization_storage)</i></h5>
+                                    <span class="o-popup-cookies__type">Preferenční <br><i class="o-popup-cookies__type-name">(personalization_storage)</i></span>
                                     <span class="js_o-popup-cookies__setting--user o-popup-cookies__setting" data-c-user="off"></span>
                                 </div>
                                 <p class="o-popup-cookies__why">Preferenční cookies umožňují, aby si webová stránka zapamatovala informace, které mění, jak se webová stránka chová nebo jak vypadá. Je to například preferovaný jazyk nebo region, kde se nacházíte.</p>
@@ -33,7 +33,7 @@
 
                             <div class="o-popup-cookies__item">
                                 <div class="o-popup-cookies__header">
-                                    <h5 class="o-popup-cookies__type">Statistické <br><i class="o-popup-cookies__type-name">(AD_PERSONALIZATION)</i></h5>
+                                    <span class="o-popup-cookies__type">Statistické <br><i class="o-popup-cookies__type-name">(AD_PERSONALIZATION)</i></span>
                                     <span class="js_o-popup-cookies__setting--statistic o-popup-cookies__setting" data-c-statistic="off"></span>
                                 </div>
                                 <p class="o-popup-cookies__why">Statistické cookies nám pomáhají pochopit, jak uživatelé používají náš web. Sbírají anonymní data, které pak můžeme analyzovat.</p>
@@ -41,7 +41,7 @@
 
                             <div class="o-popup-cookies__item">
                                 <div class="o-popup-cookies__header">
-                                    <h5 class="o-popup-cookies__type">Marketingové <br><i class="o-popup-cookies__type-name">(AD_USER_DATA)</i></h5>
+                                    <span class="o-popup-cookies__type">Marketingové <br><i class="o-popup-cookies__type-name">(AD_USER_DATA)</i></span>
                                     <span class="js_o-popup-cookies__setting--marketing o-popup-cookies__setting"  data-c-marketing="off"></span>
                                 </div>
                                 <p class="o-popup-cookies__why">Marketingové cookies používáme pro zobrazování a vyhodnocování reklamy na základě aktivity na webu. Cílem je zobrazit relevantní reklamy pro naše návštěvníky (bez toho, abychom znali skutečnou identitu uživatelů).</p>

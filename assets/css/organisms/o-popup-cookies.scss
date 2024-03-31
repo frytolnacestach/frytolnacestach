@@ -49,9 +49,14 @@
     &__headline {
         font-size: $fs-normal-ll;
         margin: 0 0 15px 0;
+        font-weight: 600;
     }
 
     &__perex {
+        font-size: 15px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+
         a {
             font-weight: 600;
         }
@@ -155,6 +160,7 @@
     &__type {
         font-size: $fs-normal;
         margin: 0 0 5px 0;
+        font-weight: 600;
     }
 
     &__type-name {
@@ -205,5 +211,6 @@
 
     &__why {
         margin: 10px 0 0 0;
+        font-size: 15px;
     }                  
 }
