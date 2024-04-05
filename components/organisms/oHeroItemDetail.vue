@@ -4,7 +4,7 @@
             <div class="o-hero-item-detail__image loading-image -green">
                 <div v-if="images && images.find(image => image.id === item[0].id_image_hero)" class="o-hero-item-detail__image-lazyload">
                     <img class="o-hero-item-detail__image-file"
-                    sizes="(max-width: 349px) 344px, (max-width: 374px) 354px, (max-width: 399px) 360px, (max-width: 459px) 430px, (max-width: 575px) 556px, (max-width: 767px) 728px, (max-width: 991px) 952px, (max-width: 1219px) 780px, (max-width: 1399px) 900px, 1248px"
+                        sizes="(max-width: 349px) 344px, (max-width: 374px) 354px, (max-width: 399px) 360px, (max-width: 459px) 430px, (max-width: 575px) 556px, (max-width: 767px) 728px, (max-width: 991px) 952px, (max-width: 1219px) 780px, (max-width: 1399px) 900px, 1248px"
                         :srcset="`
                             https://image.frytolnacestach.cz/storage${images.find(image => image.id === item[0].id_image_hero).source + 's-' + images.find(image => image.id === item[0].id_image_hero).name}-344.webp 344w,
                             https://image.frytolnacestach.cz/storage${images.find(image => image.id === item[0].id_image_hero).source + 's-' + images.find(image => image.id === item[0].id_image_hero).name}-360.webp 354w,
@@ -56,7 +56,7 @@
                             https://image.frytolnacestach.cz/storage/_default/h-no-image-1800-2x.webp 1800w,
                             https://image.frytolnacestach.cz/storage/_default/h-no-image-2496-2x.webp 2496w
                         `"
-                        :src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
+                        :src="`https://image.frytolnacestach.cz/storage/_default/no-image.webp`"
                         :alt="item[0].name ? item[0].name : 'Úvodní obrázek'"
                         fetchpriority="high">
                 </div>

@@ -56,7 +56,7 @@
                             https://image.frytolnacestach.cz/storage/_default/h-no-image-1800-2x.webp 1800w,
                             https://image.frytolnacestach.cz/storage/_default/h-no-image-2496-2x.webp 2496w
                         `"
-                        :src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
+                        :src="`https://image.frytolnacestach.cz/storage/_default/no-image.webp`"
                         :alt="title ? title : 'Úvodní obrázek'"
                         fetchpriority="high">
                 </div>
