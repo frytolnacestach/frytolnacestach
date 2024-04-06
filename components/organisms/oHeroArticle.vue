@@ -55,7 +55,7 @@
                         https://image.frytolnacestach.cz/storage/h-no-image-2720-2x.webp 2720w,
                         https://image.frytolnacestach.cz/storage/h-no-image-3760-2x.webp 3760w
                     `"
-                    :src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
+                    :src="`https://image.frytolnacestach.cz/storage/_default/no-image.webp`"
                     :alt="post[0].title"
                     fetchpriority="high">
             </div>
