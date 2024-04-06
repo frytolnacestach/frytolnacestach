@@ -27,7 +27,7 @@
                                                             https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-80-2x.webp 80w,
                                                             https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-100-2x.webp 100w,
                                                             https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-140-2x.webp 140w
-                                                            `"
+                                                        `"
                                                         :data-src="`https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}.webp`"
                                                         :alt="places.find(place => place.id === review.id_place && place.type_place === review.type).name"
                                                         v-lazy>
@@ -36,14 +36,14 @@
                                                     <img class="o-review-item-list-user__image-file lazyload-file"
                                                         data-sizes="(max-width: 374px) 40px, (max-width: 575px) 50px, 70px"
                                                         :data-srcset="`
-                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-40.webp 40w,
-                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-50.webp 50w,
-                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-70.webp 70w,
-                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-80-2x.webp 80w,
-                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-100-2x.webp 100w,
-                                                            https://image.frytolnacestach.cz/storage/_default/s-hero-140-2x.webp 140w
-                                                            `"
-                                                        :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
+                                                            https://image.frytolnacestach.cz/storage/_default/s-no-image-40.webp 40w,
+                                                            https://image.frytolnacestach.cz/storage/_default/s-no-image-50.webp 50w,
+                                                            https://image.frytolnacestach.cz/storage/_default/s-no-image-70.webp 70w,
+                                                            https://image.frytolnacestach.cz/storage/_default/s-no-image-80-2x.webp 80w,
+                                                            https://image.frytolnacestach.cz/storage/_default/s-no-image-100-2x.webp 100w,
+                                                            https://image.frytolnacestach.cz/storage/_default/s-no-image-140-2x.webp 140w
+                                                        `"
+                                                        :data-src="`https://image.frytolnacestach.cz/storage/_default/no-image.webp`"
                                                         :alt="places.find(place => place.id === review.id_place && place.type_place === review.type).name"
                                                         v-lazy>
                                                 </div>

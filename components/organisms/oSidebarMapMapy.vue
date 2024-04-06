@@ -10,7 +10,7 @@
                                 :data-srcset="`
                                     https://image.frytolnacestach.cz/storage/${images.find(image => image.id === idImageMap).source + 'h-' + images.find(image => image.id === idImageMap).name}-320.webp 320w,
                                     https://image.frytolnacestach.cz/storage/${images.find(image => image.id === idImageMap).source + 'h-' + images.find(image => image.id === idImageMap).name}-640-2x.webp 640w,
-                                    `"
+                                `"
                                 :data-src="`https://image.frytolnacestach.cz/storage/${images.find(image => image.id === idImageMap).source + images.find(image => image.id === idImageMap).name}.webp`"
                                 :alt="title"
                                 v-lazy>
@@ -19,10 +19,10 @@
                             <img class="o-sidebar-map-mapy__image-file lazyload-file"
                                 data-sizes="320px"
                                 :data-srcset="`
-                                    https://image.frytolnacestach.cz/storage/_default/h-hero-320.webp 320w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-hero-640-2x.webp 640w
-                                    `"
-                                :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
+                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-320.webp 320w,
+                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-640-2x.webp 640w
+                                `"
+                                :data-src="`https://image.frytolnacestach.cz/storage/_default/no-image.webp`"
                                 :alt="title"
                                 v-lazy>
                         </div>

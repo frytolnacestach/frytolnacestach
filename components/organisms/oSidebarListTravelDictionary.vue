@@ -15,7 +15,7 @@
                                                 :data-srcset="`
                                                     https://image.frytolnacestach.cz/storage/${images.find(image => image.id === event.id_image_cover).source + images.find(image => image.id === event.id_image_cover).name}-100.webp 100w,
                                                     https://image.frytolnacestach.cz/storage/${images.find(image => image.id === event.id_image_cover).source + images.find(image => image.id === event.id_image_cover).name}-200-2x.webp 200w,
-                                                    `"
+                                                `"
                                                 :data-src="`https://image.frytolnacestach.cz/storage/${images.find(image => image.id === event.id_image_cover).source + images.find(image => image.id === event.id_image_cover).name}.webp`"
                                                 :alt="event.name ? event.name : 'Úvodní obrázek'"
                                                 :preload="true"
@@ -25,10 +25,10 @@
                                             <img class="o-sidebar-list-travel-dictionary__image-file lazyload-file"
                                                 data-sizes="0px"
                                                 :data-srcset="`
-                                                    https://image.frytolnacestach.cz/storage/_default/h-hero-100.webp 100w,
-                                                    https://image.frytolnacestach.cz/storage/_default/h-hero-200-2x.webp 200w
-                                                    `"
-                                                :data-src="`https://image.frytolnacestach.cz/storage/_default/hero.webp`"
+                                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-100.webp 100w,
+                                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-200-2x.webp 200w
+                                                `"
+                                                :data-src="`https://image.frytolnacestach.cz/storage/_default/no-image.webp`"
                                                 :alt="event.name ? event.name : 'Úvodní obrázek'"
                                                 :preload="true"
                                                 v-lazy>
