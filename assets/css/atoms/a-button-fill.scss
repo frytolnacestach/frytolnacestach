@@ -50,6 +50,17 @@
         }
     }
 
+    &.-blue-inverse {
+        background-color: $c-blue-bg-component-dark;
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $c-blue-bg-component-dark-super;
+            color: $white;
+        }
+    }
+
     &.-gray {
         background-color: $c-gray-bg-component-dark-super;
         color: $white;
@@ -72,10 +83,27 @@
         }
     }
 
+    &.-green-inverse {
+        background-color: $c-green-bg-component-dark;
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $c-green-bg-component-dark-super;
+            color: $white;
+        }
+    }
+
     
     // MODIFY - Sizes
     &.-small {
         padding: 4px 8px;
+        border-radius: 5px;
+        font-size: $fs-small;
+    }
+
+    &.-medium {
+        padding: 7px 12px;
         border-radius: 5px;
         font-size: $fs-small;
     }
