@@ -70,6 +70,11 @@
             }
         },
 
+        async asyncData() {
+            await new Promise(resolve => setTimeout(resolve, 500))
+            return {}
+        },
+
         mounted() {
             this.adsenseAddLoad()
             this.adsenseTitle()
