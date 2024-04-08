@@ -67,12 +67,22 @@
                 } else {
                     setTimeout(this.adsenseTitle, 100)
                 }
+            },
+
+            checkAdStatus() {
+                let adElement = document.querySelector('.o-ad-google-sidebar .adsbygoogle');
+                if (adElement && adElement.dataset.adStatus === "unfilled") {
+                    this.adsenseAddLoad();
+                } else {
+                    setTimeout(this.checkAdStatus, 500);
+                }
             }
         },
 
         mounted() {
             this.adsenseAddLoad()
             this.adsenseTitle()
+            this.checkAdStatus()
         }
     }
 </script>
