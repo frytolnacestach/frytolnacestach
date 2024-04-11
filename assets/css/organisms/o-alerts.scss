@@ -78,6 +78,11 @@
         font-weight: 700;
     }
 
+    &__text {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
     &__dates {
         margin-top: 5px;
         font-size: $fs-small-sss;
