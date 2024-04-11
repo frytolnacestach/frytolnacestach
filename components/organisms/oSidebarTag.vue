@@ -4,7 +4,7 @@
             <div class="o-sidebar-tag__inner">
                 <div class="o-sidebar-tag__items">
                     <div class="o-sidebar-tag__item" v-for="tag in tags" v-bind:key="tag.name">
-                        <a class="o-sidebar-tag__link">{{ tag.name }}</a>
+                        <nuxtLink class="o-sidebar-tag__link" :to="`/clanky?filterTag=${tag.name}`">{{ tag.name }}</nuxtLink>
                     </div>
                 </div>
             </div>
