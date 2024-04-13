@@ -71,6 +71,7 @@
                 headline: "Články",
                 headlineFilter: 'Články',
                 filterPlaceName: '',
+                filterTag: '',
                 filterPlace: '',
                 posts: [],
                 images: [],
@@ -162,6 +163,7 @@
         },
 
         async mounted() {
+            this.filterTag = this.$route.query.filterTag
             await this.loadPosts()
             this.addScrollListener()
         },
@@ -177,6 +179,8 @@
                 //load posts
                 if (this.filterPlace !== null) {
                     postsResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/posts?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
+                } else if (this.filterTag) {
+                    postsResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/posts?showType=list&filterTag=${this.filterTag}&page=${this.page}&items=${this.perPage}`)
                 } else {
                     postsResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/posts?showType=list&page=${this.page}&items=${this.perPage}`)
                 }
@@ -236,6 +240,12 @@
             updateHeadline() {
                 if (this.filterPlaceName) {
                     this.headlineFilter = this.headline + ' o státu ' + this.filterPlaceName
+                } else {
+                    this.headlineFilter = this.headline
+                }
+
+                if (this.filterTag) {
+                    this.headlineFilter = this.headline + ' s tagem ' + this.filterTag
                 } else {
                     this.headlineFilter = this.headline
                 }
