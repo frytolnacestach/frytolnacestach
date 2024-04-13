@@ -112,6 +112,8 @@
     }
 
     &__wysiwyg {
+        display: block;
+        width: 100%;
         padding: 15px 15px 20px;
         color: $c-green-t-dark;
 
