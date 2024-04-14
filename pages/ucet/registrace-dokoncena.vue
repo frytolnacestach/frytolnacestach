@@ -1,25 +1,25 @@
 <template>
     <main class="t-main -blue -pt-menu" role="main">
-        
-        <!-- SECTION - Hero -->
-		<section class="t-section -p0 pt-2 pb-1">
-            <div class="t-section__inner">
-                <oHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
-            </div>
-        </section>
-        <!-- SECTION - Hero END -->
+        <div class="t-main__content">
+            <!-- SECTION - Hero -->
+            <section class="t-section -p0 pt-2 pb-1">
+                <div class="t-section__inner">
+                    <oHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
+                </div>
+            </section>
+            <!-- SECTION - Hero END -->
 
-        <!-- SECTION - Text -->
-		<section class="t-section pt-2 pb-1">
-            <div class="t-section__inner">
-                <p class="flex flex-center">
-                    Veše registrace byla úspěšná. Teď se&nbsp;<nuxtLink to="/ucet/prihlaseni">přihlašte</nuxtLink>&nbsp;a následně aktivujte účet.
-                </p>
-            </div>
-        </section>
+            <!-- SECTION - Text -->
+            <section class="t-section pt-2 pb-1">
+                <div class="t-section__inner">
+                    <p class="flex flex-center">
+                        Veše registrace byla úspěšná. Teď se&nbsp;<nuxtLink to="/ucet/prihlaseni">přihlašte</nuxtLink>&nbsp;a následně aktivujte účet.
+                    </p>
+                </div>
+            </section>
 
-        <!-- SECTION - Text END -->
-
+            <!-- SECTION - Text END -->
+        </div>
     </main>
 </template>
 

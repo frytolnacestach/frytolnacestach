@@ -1,22 +1,22 @@
 <template>
     <main class="t-main -gray -pt-menu" role="main">
+        <div class="t-main__content">
+            <!-- SECTION - Hero -->
+            <section class="t-section -p0 mb-1 mt-2">
+                <div class="t-section__inner">
+                    <oHero :headline="headline" modifierCSS=" -gray" classCSS=" mt-2" />
+                </div>
+            </section>
+            <!-- SECTION - Hero END -->
 
-        <!-- SECTION - Hero -->
-        <section class="t-section -p0 mb-1 mt-2">
-            <div class="t-section__inner">
-                <oHero :headline="headline" modifierCSS=" -gray" classCSS=" mt-2" />
-            </div>
-        </section>
-        <!-- SECTION - Hero END -->
-
-        <!-- SECTION - Wysiwyg -->
-        <section class="t-section -wysiwyg py-4">
-            <div class="t-section__inner">
-                <oWysiwyg :text="base[0].cookies" />
-            </div>
-        </section>
-        <!-- SECTION - Wysiwyg END -->
-
+            <!-- SECTION - Wysiwyg -->
+            <section class="t-section -wysiwyg py-4">
+                <div class="t-section__inner">
+                    <oWysiwyg :text="base[0].cookies" />
+                </div>
+            </section>
+            <!-- SECTION - Wysiwyg END -->
+        </div>
     </main>
 </template>
 

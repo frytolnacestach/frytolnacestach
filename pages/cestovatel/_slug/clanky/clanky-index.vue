@@ -1,58 +1,59 @@
 <template>
     <main class="t-main -blue -pt-menu" role="main">
+        <div class="t-main__content">
+            <!-- SECTION -->
+            <section class="t-section -padding-x -padding-y -p0 mb-4">
+                <div class="t-section__inner">
+                    <div class="t-col2">
+                        <div class="t-col2__sidebar mb-2 print-section">
+                            <!-- SECTION - user headline - account -->
+                            <section class="t-section -padding-x -p0">
+                                <div class="t-section__inner">
+                                    <mUserHeader :user="staticUser" @update="menuUserUpdate" v-if="user[0]" />
+                                    <mUserHeader :user="null" :skeleton=true v-if="!user[0]" />
+                                </div>
+                            </section>
+                            <!-- SECTION - user headline - account END -->
 
-        <!-- SECTION -->
-        <section class="t-section -padding-x -padding-y -p0 mb-4">
-            <div class="t-section__inner">
-                <div class="t-col2">
-                    <div class="t-col2__sidebar mb-2 print-section">
-                        <!-- SECTION - user headline - account -->
-                        <section class="t-section -padding-x -p0">
-                            <div class="t-section__inner">
-                                <mUserHeader :user="staticUser" @update="menuUserUpdate" v-if="user[0]" />
-                                <mUserHeader :user="null" :skeleton=true v-if="!user[0]" />
-                            </div>
-                        </section>
-                        <!-- SECTION - user headline - account END -->
+                            <!-- SECTION - nav - account -->
+                            <section class="t-section -padding-x -p0">
+                                <div class="t-section__inner">
+                                    <mNavUser :statusOpen="mNavUserOpen" />
+                                </div>
+                            </section>
+                            <!-- SECTION - nav - account END -->
 
-                        <!-- SECTION - nav - account -->
-                        <section class="t-section -padding-x -p0">
-                            <div class="t-section__inner">
-                                <mNavUser :statusOpen="mNavUserOpen" />
-                            </div>
-                        </section>
-                        <!-- SECTION - nav - account END -->
+                            <!-- SECTION - ad-google - sidebar -->
+                            <!--
+                            <section class="t-section -px-world mt-4 mb-2">
+                                <div class="t-section__inner">
+                                    <oAdGoogleSidebar />
+                                </div>
+                            </section>
+                            -->
+                            <!-- SECTION - ad-google - sidebar - END -->
+                        </div>
 
-                        <!-- SECTION - ad-google - sidebar -->
-                        <!--
-                        <section class="t-section -px-world mt-4 mb-2">
-                            <div class="t-section__inner">
-                                <oAdGoogleSidebar />
-                            </div>
-                        </section>
-                        -->
-                        <!-- SECTION - ad-google - sidebar - END -->
-                    </div>
-
-                    <div class="t-col2__content mb-2">
-                        <!-- SECTION -  -->
-                        <section class="t-section -padding-x -p0 print-section">
-                            <div class="t-section__inner">
-                                <mHeadline title="Články" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oArticleListUser :posts="posts" :images="images" :skeleton="skeleton" v-if="posts && posts !== null" />
-                                <client-only v-if="(posts.length === 0 || posts === null) && !skeleton">
-                                    <p>
-                                        Cestovatel zatím nepřidal žádný článek.
-                                    </p>
-                                </client-only>
-                            </div>
-                        </section>
-                        <!-- SECTION - END -->
+                        <div class="t-col2__content mb-2">
+                            <!-- SECTION -  -->
+                            <section class="t-section -padding-x -p0 print-section">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Články" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                    <oArticleListUser :posts="posts" :images="images" :skeleton="skeleton" v-if="posts && posts !== null" />
+                                    <client-only v-if="(posts.length === 0 || posts === null) && !skeleton">
+                                        <p>
+                                            Cestovatel zatím nepřidal žádný článek.
+                                        </p>
+                                    </client-only>
+                                </div>
+                            </section>
+                            <!-- SECTION - END -->
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- SECTION END -->
+            </section>
+            <!-- SECTION END -->
+        </div>
     </main>
 </template>
 

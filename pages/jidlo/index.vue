@@ -1,28 +1,28 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
-        <section class="t-section print-section">
-            <!-- SECTION - Hero food -->
-            <section class="t-section py-4">
-                <div class="t-section__inner">
-                    <oHero headline="Jídla" perex="Objevuj různorodá a chutná jídla, která můžeš ochutnat po celém světě. Kdekoliv se ocitneš, můžeš se těšit na unikátní kulinářské zážitky a objevovat místní lahůdky. S naším průvodcem po světě gastronomie na stránkách cestovatelského portálu Frytol na cestách. Budeš mít přehled o tom, kde se co jí." modifierCSS=" -green -w640" classCSS=" mt-2" />
-                </div>
-            </section>
-            <!-- SECTION - Hero food END -->
-
-            <!-- SECTION - cestovatelsky slovnik list -->
-            <section class="t-section -p0">
-                <div class="t-section__inner">
-                    <oCoverItem :items="foods" :images="images" type="jidlo" />
-                    <oCoverItem :items="null" :images="null" type="jidlo" :skeleton=true v-if="isLoading" />
-                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+        <div class="t-main__content">
+            <section class="t-section print-section">
+                <!-- SECTION - Hero food -->
+                <section class="t-section py-4">
+                    <div class="t-section__inner">
+                        <oHero headline="Jídla" perex="Objevuj různorodá a chutná jídla, která můžeš ochutnat po celém světě. Kdekoliv se ocitneš, můžeš se těšit na unikátní kulinářské zážitky a objevovat místní lahůdky. S naším průvodcem po světě gastronomie na stránkách cestovatelského portálu Frytol na cestách. Budeš mít přehled o tom, kde se co jí." modifierCSS=" -green -w640" classCSS=" mt-2" />
                     </div>
-                </div>
-            </section>
-            <!-- SECTION - cestovatelsky slovnik list END -->
-        </section>
+                </section>
+                <!-- SECTION - Hero food END -->
 
+                <!-- SECTION - cestovatelsky slovnik list -->
+                <section class="t-section -p0">
+                    <div class="t-section__inner">
+                        <oCoverItem :items="foods" :images="images" type="jidlo" />
+                        <oCoverItem :items="null" :images="null" type="jidlo" :skeleton=true v-if="isLoading" />
+                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                            <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - cestovatelsky slovnik list END -->
+            </section>
+        </div>
     </main>
 </template>
 

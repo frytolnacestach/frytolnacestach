@@ -1,46 +1,47 @@
 <template>
     <main class="t-main -gray -pt-menu" role="main">
-
-        <!-- SECTION - Hero -->
-		<section class="t-section -p0 mt-2 mb-4">
-            <div class="t-section__inner">
-                <oHero :headline="headlineFilter" perex="Vítej na našem cestovatelském portálu! Podívej se na naše videa plná dobrodružství a inspirace k cestování. Objevuj spolu s námi nejzajímavější místa na světě prostřednictvím autentických příběhů a praktických tipů. Připrav se na vlastní nezapomenutelné dobrodružství díky našim videím plným vzrušujících zážitků. Užívej si každý moment na cestách a objevuj krásy světa s námi!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
-            </div>
-        </section>
-        <!-- SECTION - Hero END -->
-
-        <!-- SECTION - Filter -->
-        <section class="t-section -p0 hidden-print">
-            <div class="t-section__inner">
-                <oFormFilterPlace styleThema=" -gray" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
-            </div>
-        </section>
-        <!-- SECTION - Filter END -->
-
-        <!-- SECTION - videos -->
-        <section class="t-section -p0 py-1 px-2 print-section">
-            <div class="t-section__inner">
-                <oVideoList :videos="videos" :images="images" styleThemaLoading=" -gray" styleSizeHeadline="h2" />
-                <oVideoList :videos="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
-                <oNoneContent text="Bohužel zde nejsou žádné videa" styleThema=" -green" styleGap=" px-1" v-if="videos && videos.length === 0 && !isLoading" />
-                <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                    <span class="a-button-fill -big -gray" @click="loadMoreItems">Načíst další položky</span>
+        <div class="t-main__content">
+            <!-- SECTION - Hero -->
+            <section class="t-section -p0 mt-2 mb-4">
+                <div class="t-section__inner">
+                    <oHero :headline="headlineFilter" perex="Vítej na našem cestovatelském portálu! Podívej se na naše videa plná dobrodružství a inspirace k cestování. Objevuj spolu s námi nejzajímavější místa na světě prostřednictvím autentických příběhů a praktických tipů. Připrav se na vlastní nezapomenutelné dobrodružství díky našim videím plným vzrušujících zážitků. Užívej si každý moment na cestách a objevuj krásy světa s námi!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION - videos END -->
+            </section>
+            <!-- SECTION - Hero END -->
 
-        <!-- SECTION - Platforms -->
-        <section class="t-section -p0 py-1 mt-2 px-2 print-section">
-            <div class="t-section__inner">
-                <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
-                <oPlatform />
-                <div class="flex flex-center mb-4">
-                    <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
+            <!-- SECTION - Filter -->
+            <section class="t-section -p0 hidden-print">
+                <div class="t-section__inner">
+                    <oFormFilterPlace styleThema=" -gray" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION - Platforms END -->
+            </section>
+            <!-- SECTION - Filter END -->
+
+            <!-- SECTION - videos -->
+            <section class="t-section -p0 py-1 px-2 print-section">
+                <div class="t-section__inner">
+                    <oVideoList :videos="videos" :images="images" styleThemaLoading=" -gray" styleSizeHeadline="h2" />
+                    <oVideoList :videos="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
+                    <oNoneContent text="Bohužel zde nejsou žádné videa" styleThema=" -green" styleGap=" px-1" v-if="videos && videos.length === 0 && !isLoading" />
+                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                        <span class="a-button-fill -big -gray" @click="loadMoreItems">Načíst další položky</span>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION - videos END -->
+
+            <!-- SECTION - Platforms -->
+            <section class="t-section -p0 py-1 mt-2 px-2 print-section">
+                <div class="t-section__inner">
+                    <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
+                    <oPlatform />
+                    <div class="flex flex-center mb-4">
+                        <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION - Platforms END -->
+        </div>
     </main>
 </template>
 

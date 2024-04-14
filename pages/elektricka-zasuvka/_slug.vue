@@ -1,79 +1,80 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
-        <!-- SECTION - BREADCRUMBS -->
-        <section class="t-section -px-world mt-2 -p0">
-            <div class="t-section__inner">
-                <mNavBreadcrumbsItem :links="mNavBreadcrumbsWallSocketsArray" :item="wallSockets[0]" />
-            </div>
-        </section>
-        <!-- SECTION - BREADCRUMBS END -->
-
-        <!-- SECTION -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -world-content-with-ad">
-                    
-                    <div class="t-grid__section -content">
-                        <!-- SECTION - hero -->
-                        <section class="t-section print-section">
-                            <div class="t-section__inner">
-                                <oHeroItemDetail :item="wallSockets" :images="imageWallSockets" :showTitle=false />
-                            </div>
-                        </section>
-                        <!-- SECTION - hero END -->
-
-                        <!-- SECTION - information by ChatGPT -->
-                        <section class="t-section pt-1 mt-2 mb-4" v-if="wallSockets[0].description">
-                            <div class="t-section__inner">
-                                <mHeadline :title="(wallSockets[0].name ? wallSockets[0].name : '')" styleThema=" -world" styleAlign=" -p-left" styleSize="h1"/>
-                                <oInformationBlock :perexWysiwyg="wallSockets[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
-                            </div>
-                        </section>
-                        <!-- SECTION - information by ChatGPT END -->
-
-                        <!-- SECTION - Elektrické zásuvky kompotibilita list -->
-                        <section class="t-section -p0 -px-world my-2"  v-if="wallSockets[0].ids_compatibility && wallSockets[0].ids_compatibility.length > 0">
-                            <div class="t-section__inner">
-                                <oCoverWallSocket title="Kompatibilní elektrické zásuvky" :perex="'Elektrická zásuvka typu ' + wallSockets[0].label + ' je kompatibilní s temito typy zásuvek.'" :ids="wallSockets[0].ids_compatibility" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Elektrické zásuvky kompotibilita list END -->
-
-                        <!-- SECTION - Affilate Alza -->
-                        <section class="t-section pt-1 mt-2 mb-4">
-                            <div class="t-section__inner">
-                                <mHeadline title="Tady můžete koupit redukci pro elektrickou zásuvku" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                <oAffilateAlza />
-                            </div>
-                        </section>
-                        <!-- SECTION - Affilate Alza -->
-
-                        <!-- SECTION - wall-sockets places -->
-                        <div class="t-section" v-if="placesStates">
-                            <div class="t-section__inner">
-                                <mHeadline :title="'Elektrická zásuvka typu ' + wallSockets[0].label + ' se používá v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
-                                <oCoverStates :items="placesStates" :images="imagesStates" />
-                            </div>
-                        </div>
-                        <!-- SECTION - wall-sockets places - END -->
-                    </div>
-
-
-                    <div class="t-grid__section -ad">
-                        <!-- SECTION - ad-google - sidebar -->
-                        <section class="t-section -px-world mt-4 mb-2">
-                            <div class="t-section__inner">
-                                <oAdGoogleSidebar styleThema=" -green" />
-                            </div>
-                        </section>
-                        <!-- SECTION - ad-google - sidebar - END -->
-                    </div>
-
+        <div class="t-main__content">
+            <!-- SECTION - BREADCRUMBS -->
+            <section class="t-section -px-world mt-2 -p0">
+                <div class="t-section__inner">
+                    <mNavBreadcrumbsItem :links="mNavBreadcrumbsWallSocketsArray" :item="wallSockets[0]" />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION END -->
+            </section>
+            <!-- SECTION - BREADCRUMBS END -->
+
+            <!-- SECTION -->
+            <section class="t-section -px-world -p0">
+                <div class="t-section__inner">
+                    <div class="t-grid -world-content-with-ad">
+                        
+                        <div class="t-grid__section -content">
+                            <!-- SECTION - hero -->
+                            <section class="t-section print-section">
+                                <div class="t-section__inner">
+                                    <oHeroItemDetail :item="wallSockets" :images="imageWallSockets" :showTitle=false />
+                                </div>
+                            </section>
+                            <!-- SECTION - hero END -->
+
+                            <!-- SECTION - information by ChatGPT -->
+                            <section class="t-section pt-1 mt-2 mb-4" v-if="wallSockets[0].description">
+                                <div class="t-section__inner">
+                                    <mHeadline :title="(wallSockets[0].name ? wallSockets[0].name : '')" styleThema=" -world" styleAlign=" -p-left" styleSize="h1"/>
+                                    <oInformationBlock :perexWysiwyg="wallSockets[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
+                                </div>
+                            </section>
+                            <!-- SECTION - information by ChatGPT END -->
+
+                            <!-- SECTION - Elektrické zásuvky kompotibilita list -->
+                            <section class="t-section -p0 -px-world my-2"  v-if="wallSockets[0].ids_compatibility && wallSockets[0].ids_compatibility.length > 0">
+                                <div class="t-section__inner">
+                                    <oCoverWallSocket title="Kompatibilní elektrické zásuvky" :perex="'Elektrická zásuvka typu ' + wallSockets[0].label + ' je kompatibilní s temito typy zásuvek.'" :ids="wallSockets[0].ids_compatibility" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Elektrické zásuvky kompotibilita list END -->
+
+                            <!-- SECTION - Affilate Alza -->
+                            <section class="t-section pt-1 mt-2 mb-4">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Tady můžete koupit redukci pro elektrickou zásuvku" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                    <oAffilateAlza />
+                                </div>
+                            </section>
+                            <!-- SECTION - Affilate Alza -->
+
+                            <!-- SECTION - wall-sockets places -->
+                            <div class="t-section" v-if="placesStates">
+                                <div class="t-section__inner">
+                                    <mHeadline :title="'Elektrická zásuvka typu ' + wallSockets[0].label + ' se používá v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
+                                    <oCoverStates :items="placesStates" :images="imagesStates" />
+                                </div>
+                            </div>
+                            <!-- SECTION - wall-sockets places - END -->
+                        </div>
+
+
+                        <div class="t-grid__section -ad">
+                            <!-- SECTION - ad-google - sidebar -->
+                            <section class="t-section -px-world mt-4 mb-2">
+                                <div class="t-section__inner">
+                                    <oAdGoogleSidebar styleThema=" -green" />
+                                </div>
+                            </section>
+                            <!-- SECTION - ad-google - sidebar - END -->
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION END -->
+        </div>
     </main>
 </template>
 

@@ -1,28 +1,28 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
-        <section class="t-section print-section">
-            <!-- SECTION - Hero flora -->
-            <section class="t-section py-4">
-                <div class="t-section__inner">
-                    <oHero headline="Flóra" perex="Otevři okno do barevného světa flory a objev, jaké rostliny ozdobují naši planetu. S cestovatelským portále Frytol na cestách získáš zajímavé informace a tipy, jak si vychutnat krásy rostlinného života. Připoj se k nám na nezapomenutelnou cestu do světa rozmanité flóry!" modifierCSS=" -green -w640" classCSS=" mt-2" />
-                </div>
-            </section>
-            <!-- SECTION - Hero flora END -->
-
-            <!-- SECTION - cestovatelsky slovnik list -->
-            <section class="t-section -p0">
-                <div class="t-section__inner">
-                    <oCoverItem :items="floras" :images="images" type="flora" />
-                    <oCoverItem :items="null" :images="null" type="flora" :skeleton=true v-if="isLoading" />
-                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+        <div class="t-main__content">
+            <section class="t-section print-section">
+                <!-- SECTION - Hero flora -->
+                <section class="t-section py-4">
+                    <div class="t-section__inner">
+                        <oHero headline="Flóra" perex="Otevři okno do barevného světa flory a objev, jaké rostliny ozdobují naši planetu. S cestovatelským portále Frytol na cestách získáš zajímavé informace a tipy, jak si vychutnat krásy rostlinného života. Připoj se k nám na nezapomenutelnou cestu do světa rozmanité flóry!" modifierCSS=" -green -w640" classCSS=" mt-2" />
                     </div>
-                </div>
-            </section>
-            <!-- SECTION - cestovatelsky slovnik list END -->
-        </section>
+                </section>
+                <!-- SECTION - Hero flora END -->
 
+                <!-- SECTION - cestovatelsky slovnik list -->
+                <section class="t-section -p0">
+                    <div class="t-section__inner">
+                        <oCoverItem :items="floras" :images="images" type="flora" />
+                        <oCoverItem :items="null" :images="null" type="flora" :skeleton=true v-if="isLoading" />
+                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                            <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - cestovatelsky slovnik list END -->
+            </section>
+        </div>
     </main>
 </template>
 

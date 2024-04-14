@@ -1,63 +1,64 @@
 <template>
     <main class="t-main -gray -vh100" role="main">
-        
-        <!-- SECTION - Vyhledávač -->
-        <section class="t-section pt-8 pb-4 hidden-print">
-            <div class="t-section__inner">
-                <oSearch styleThema=" -gray"/>
-            </div>
-        </section>
-        <!-- SECTION - Vyhledávač END -->
+        <div class="t-main__content">
+            <!-- SECTION - Vyhledávač -->
+            <section class="t-section pt-8 pb-4 hidden-print">
+                <div class="t-section__inner">
+                    <oSearch styleThema=" -gray"/>
+                </div>
+            </section>
+            <!-- SECTION - Vyhledávač END -->
 
-        <!-- SECTION - Top místa -->
-        <section class="t-section -p0 mt-4 pb-4 print-section">
-            <div class="t-section__inner">
-                <mHeadline title="Nejzajímavější místa" perex="Víte, kam byste se měli vydat na nezapomenutelnou dovolenou? Přinášíme vám seznam nejzajímavějších míst na světě, která musíte vidět. Od malebných vesnic a historických památek až po impozantní přírodní krásy, naše stránky vám pomohou najít nejlepší místa pro vaši další cestování." styleThema=" -gray -w640" styleAlign=" -center" styleGap=" mb-2" styleSize="h1" />
-                <oTopPlace styleThema=" -gray" skeletonThema=" -skeleton-gray" />
-            </div>
-        </section>
-        <!-- SECTION - Top místa END -->
-        
-         <!-- SECTION - Typ místa -->
-         <section class="t-section py-4 print-section">
-            <div class="t-section__inner">
-                <mHeadline title="Nevíš kam vyrazit?" perex="Pokud toužíš pozkoumat svět a nemáš jasnou představu, kam se vydat, můžeš si vybrat některou z kategorií míst a začít prozkoumávat." styleThema=" -gray -w640" styleAlign=" -center" styleGap=" mb-2" />
-                <oWorldType styleThema=" -gray" skeletonThema=" -skeleton-gray" />
-            </div>
-        </section>
-        <!-- SECTION - Typ místa END -->
+            <!-- SECTION - Top místa -->
+            <section class="t-section -p0 mt-4 pb-4 print-section">
+                <div class="t-section__inner">
+                    <mHeadline title="Nejzajímavější místa" perex="Víte, kam byste se měli vydat na nezapomenutelnou dovolenou? Přinášíme vám seznam nejzajímavějších míst na světě, která musíte vidět. Od malebných vesnic a historických památek až po impozantní přírodní krásy, naše stránky vám pomohou najít nejlepší místa pro vaši další cestování." styleThema=" -gray -w640" styleAlign=" -center" styleGap=" mb-2" styleSize="h1" />
+                    <oTopPlace styleThema=" -gray" skeletonThema=" -skeleton-gray" />
+                </div>
+            </section>
+            <!-- SECTION - Top místa END -->
+            
+            <!-- SECTION - Typ místa -->
+            <section class="t-section py-4 print-section">
+                <div class="t-section__inner">
+                    <mHeadline title="Nevíš kam vyrazit?" perex="Pokud toužíš pozkoumat svět a nemáš jasnou představu, kam se vydat, můžeš si vybrat některou z kategorií míst a začít prozkoumávat." styleThema=" -gray -w640" styleAlign=" -center" styleGap=" mb-2" />
+                    <oWorldType styleThema=" -gray" skeletonThema=" -skeleton-gray" />
+                </div>
+            </section>
+            <!-- SECTION - Typ místa END -->
 
-        <section class="t-section -p0 px-1">
-            <div class="t-section__inner -col">
-                <div class="t-section__col px-1 mb-4 print-section">
-                    <!-- SECTION - Article list -->
-                    <mHeadline title="Nejnovější články" styleAlign=" -left" />
-                    <oArticleListSmall :posts="post" :images="imagePost" styleThemaLoading=" -gray" />
-                    <div class="flex flex-full flex-ai-end flex-center mt-2">
-                        <aButtonFillFull target="internal" url="/clanky" text="Všechny články" styleThema=" -gray" />
+            <section class="t-section -p0 px-1">
+                <div class="t-section__inner -col">
+                    <div class="t-section__col px-1 mb-4 print-section">
+                        <!-- SECTION - Article list -->
+                        <mHeadline title="Nejnovější články" styleAlign=" -left" />
+                        <oArticleListSmall :posts="post" :images="imagePost" styleThemaLoading=" -gray" />
+                        <div class="flex flex-full flex-ai-end flex-center mt-2">
+                            <aButtonFillFull target="internal" url="/clanky" text="Všechny články" styleThema=" -gray" />
+                        </div>
+                        <!-- SECTION - Article list END -->
                     </div>
-                    <!-- SECTION - Article list END -->
-                </div>
-                <div class="t-section__col px-1 mb-4 print-section">
-                    <!-- SECTION - Video -->
-                    <mHeadline title="Nejnovější videa" styleAlign=" -left" />
-                    <oVideoListSmall :videos="video" :images="imageVideo" styleThemaLoading=" -gray" />
-                    <div class="flex flex-full flex-ai-end flex-center mt-2">
-                        <aButtonFillFull target="internal" url="/videa" text="Všechna videa" styleThema=" -gray" />
+                    <div class="t-section__col px-1 mb-4 print-section">
+                        <!-- SECTION - Video -->
+                        <mHeadline title="Nejnovější videa" styleAlign=" -left" />
+                        <oVideoListSmall :videos="video" :images="imageVideo" styleThemaLoading=" -gray" />
+                        <div class="flex flex-full flex-ai-end flex-center mt-2">
+                            <aButtonFillFull target="internal" url="/videa" text="Všechna videa" styleThema=" -gray" />
+                        </div>
+                        <!-- SECTION - Video END-->
                     </div>
-                    <!-- SECTION - Video END-->
-                </div>
-                <div class="t-section__col px-1 mb-4 print-section">
-                    <!-- SECTION - events -->
-                    <mHeadline title="Nejbližší události" styleAlign=" -left" />
-                    <oEventListSmall styleThema=" -gray" />
-                    <div class="flex flex-full flex-ai-end flex-center mt-2">
-                        <aButtonFillFull target="internal" url="/udalost" text="Všechny události" styleThema=" -gray" />
+                    <div class="t-section__col px-1 mb-4 print-section">
+                        <!-- SECTION - events -->
+                        <mHeadline title="Nejbližší události" styleAlign=" -left" />
+                        <oEventListSmall styleThema=" -gray" />
+                        <div class="flex flex-full flex-ai-end flex-center mt-2">
+                            <aButtonFillFull target="internal" url="/udalost" text="Všechny události" styleThema=" -gray" />
+                        </div>
+                        <!-- SECTION - events END -->
                     </div>
-                    <!-- SECTION - events END -->
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 </template>
 

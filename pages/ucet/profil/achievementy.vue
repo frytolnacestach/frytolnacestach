@@ -1,45 +1,45 @@
 <template>
     <main class="t-main -blue -pt-menu" role="main">
+        <div class="t-main__content">
+            <!-- SECTION -->
+            <section class="t-section -padding-x -padding-y -p0 mb-4">
+                <div class="t-section__inner">
+                    <div class="t-grid -account">
+                        
+                        <div class="t-grid__section -nav">
+                            <!-- SECTION - account headline - account -->
+                            <section class="t-section -padding-x -p0">
+                                <div class="t-section__inner">
+                                    <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                </div>
+                            </section>
+                            <!-- SECTION - nav - account END -->
 
-        <!-- SECTION -->
-        <section class="t-section -padding-x -padding-y -p0 mb-4">
-            <div class="t-section__inner">
-                <div class="t-grid -account">
-                    
-                    <div class="t-grid__section -nav">
-                        <!-- SECTION - account headline - account -->
-                        <section class="t-section -padding-x -p0">
-                            <div class="t-section__inner">
-                                <mAccountHeader :account="account" @update="menuAccountUpdate" />
-                            </div>
-                        </section>
-                        <!-- SECTION - nav - account END -->
+                            <!-- SECTION - nav - account -->
+                            <section class="t-section -padding-x -p0">
+                                <div class="t-section__inner">
+                                    <mNavAccount :statusOpen="mNavAccountOpen" />
+                                </div>
+                            </section>
+                            <!-- SECTION - nav - account END -->
+                        </div>
 
-                        <!-- SECTION - nav - account -->
-                        <section class="t-section -padding-x -p0">
-                            <div class="t-section__inner">
-                                <mNavAccount :statusOpen="mNavAccountOpen" />
-                            </div>
-                        </section>
-                        <!-- SECTION - nav - account END -->
+                        <div class="t-grid__section -content">
+                            <!-- SECTION - Achievements -->
+                            <section class="t-section -padding-x -p0 pb-4">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Achievementy" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                    <oAchievements :account="account" type="account" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Achievements END -->
+                        </div>
+
                     </div>
-
-                    <div class="t-grid__section -content">
-                        <!-- SECTION - Achievements -->
-                        <section class="t-section -padding-x -p0 pb-4">
-                            <div class="t-section__inner">
-                                <mHeadline title="Achievementy" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oAchievements :account="account" type="account" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Achievements END -->
-                    </div>
-
                 </div>
-            </div>
-        </section>
-        <!-- SECTION END -->
-
+            </section>
+            <!-- SECTION END -->
+        </div>
     </main>
 </template>
 

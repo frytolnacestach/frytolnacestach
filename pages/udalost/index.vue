@@ -1,28 +1,28 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
-        <section class="t-section print-section">
-            <!-- SECTION - Hero event -->
-            <section class="t-section py-4">
-                <div class="t-section__inner">
-                    <oHero headline="Události" perex="Na našem cestovatelském portálu vám přinášíme nejnovější zprávy o zajímavých událostech z České republiky i ze světa. Buďte v obraze o kulturních festivalech, sportovních událostech, uměleckých vystoupeních a dalších akcích, které oživí vaše cestovatelské dobrodružství." modifierCSS=" -green -w640" classCSS=" mt-2" />
-                </div>
-            </section>
-            <!-- SECTION - Hero event END -->
-
-            <!-- SECTION - cestovatelsky slovnik list -->
-            <section class="t-section -p0">
-                <div class="t-section__inner">
-                    <oCoverItem :items="events" :images="images" type="udalost" />
-                    <oCoverItem :items="null" :images="null" type="udalost" :skeleton=true v-if="isLoading" />
-                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+        <div class="t-main__content">
+            <section class="t-section print-section">
+                <!-- SECTION - Hero event -->
+                <section class="t-section py-4">
+                    <div class="t-section__inner">
+                        <oHero headline="Události" perex="Na našem cestovatelském portálu vám přinášíme nejnovější zprávy o zajímavých událostech z České republiky i ze světa. Buďte v obraze o kulturních festivalech, sportovních událostech, uměleckých vystoupeních a dalších akcích, které oživí vaše cestovatelské dobrodružství." modifierCSS=" -green -w640" classCSS=" mt-2" />
                     </div>
-                </div>
-            </section>
-            <!-- SECTION - cestovatelsky slovnik list END -->
-        </section>
+                </section>
+                <!-- SECTION - Hero event END -->
 
+                <!-- SECTION - cestovatelsky slovnik list -->
+                <section class="t-section -p0">
+                    <div class="t-section__inner">
+                        <oCoverItem :items="events" :images="images" type="udalost" />
+                        <oCoverItem :items="null" :images="null" type="udalost" :skeleton=true v-if="isLoading" />
+                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                            <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - cestovatelsky slovnik list END -->
+            </section>
+        </div>
     </main>
 </template>
 

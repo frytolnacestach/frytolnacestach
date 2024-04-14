@@ -1,14 +1,14 @@
 <template>
 	<main class="t-main -bg-person -pt-menu">
-		
-		<!-- SECTION - Hero -->
-		<section class="t-section -p0 mb-1 mt-2">
-            <div class="t-section__inner">
-                <oError404 :headline="headline" :perex="perex" />
-            </div>
-        </section>
-        <!-- SECTION - Hero END -->
-		
+		<div class="t-main__content">
+			<!-- SECTION - Hero -->
+			<section class="t-section -p0 mb-1 mt-2">
+				<div class="t-section__inner">
+					<oError404 :headline="headline" :perex="perex" />
+				</div>
+			</section>
+			<!-- SECTION - Hero END -->
+		</div>
 	</main>
 </template>
 

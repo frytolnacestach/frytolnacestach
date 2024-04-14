@@ -15,9 +15,16 @@
 
     &__items {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
+        width: 100%;
         min-width: auto;
         padding: 0 13px;
+
+        @media (pointer:coarse) and (max-width: $lgMax) {
+            flex-wrap: inherit;
+            width: auto;
+        }
     }
 
     &__item {
@@ -43,8 +50,8 @@
         }
 
         @media only screen and (min-width: $lg) {
-            width: 15.2vw;
-            padding-bottom: 22.8vw;
+            width: 20%;
+            padding-bottom: calc(150% * 0.2);
         }
 
         &:hover {

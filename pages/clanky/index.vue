@@ -1,46 +1,47 @@
 <template>
     <main class="t-main -gray -pt-menu" role="main">
-       
-        <!-- SECTION - Hero -->
-		<section class="t-section -p0 mt-2 mb-4">
-            <div class="t-section__inner">
-                <oHero :headline="headlineFilter" perex="Vítej na našem cestovatelském portálu! Prozkoumej naše články plné tipů a rad o cestování, které ti pomohou objevit nejzajímavější místa na světě. Ponoř se do dobrodružství s našimi autentickými příběhy a praktickými doporučeními, abys mohl/a plánovat své vlastní nezapomenutelné dobrodružství. Užij si každý moment na cestách a objevuj krásy světa s námi!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
-            </div>
-        </section>
-        <!-- SECTION - Hero END -->
-
-        <!-- SECTION - Filter -->
-        <section class="t-section -p0 hidden-print">
-            <div class="t-section__inner">
-                <oFormFilterPlace styleThema=" -gray" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
-            </div>
-        </section>
-        <!-- SECTION - Filter END -->
-
-        <!-- SECTION - Articles -->
-        <section class="t-section -p0 py-1 px-2 print-section">
-            <div class="t-section__inner">
-                <oArticleList :posts="posts" :images="images" styleThemaLoading=" -gray" styleSizeHeadline="h2" />
-                <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
-                <oNoneContent text="Bohužel zde nejsou žádné články" styleThema=" -green" styleGap=" px-1" v-if="posts && posts.length === 0 && !isLoading" />
-                <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                    <span class="a-button-fill -big -gray" @click="loadMoreItems">Načíst další položky</span>
+        <div class="t-main__content">
+            <!-- SECTION - Hero -->
+            <section class="t-section -p0 mt-2 mb-4">
+                <div class="t-section__inner">
+                    <oHero :headline="headlineFilter" perex="Vítej na našem cestovatelském portálu! Prozkoumej naše články plné tipů a rad o cestování, které ti pomohou objevit nejzajímavější místa na světě. Ponoř se do dobrodružství s našimi autentickými příběhy a praktickými doporučeními, abys mohl/a plánovat své vlastní nezapomenutelné dobrodružství. Užij si každý moment na cestách a objevuj krásy světa s námi!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION - Articles END -->
+            </section>
+            <!-- SECTION - Hero END -->
 
-        <!-- SECTION - Platforms -->
-        <section class="t-section -p0 py-1 mt-2 px-2 print-section">
-            <div class="t-section__inner">
-                <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
-                <oPlatform />
-                <div class="flex flex-center mb-4">
-                    <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
+            <!-- SECTION - Filter -->
+            <section class="t-section -p0 hidden-print">
+                <div class="t-section__inner">
+                    <oFormFilterPlace styleThema=" -gray" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION - Platforms END -->
+            </section>
+            <!-- SECTION - Filter END -->
+
+            <!-- SECTION - Articles -->
+            <section class="t-section -p0 py-1 px-2 print-section">
+                <div class="t-section__inner">
+                    <oArticleList :posts="posts" :images="images" styleThemaLoading=" -gray" styleSizeHeadline="h2" />
+                    <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
+                    <oNoneContent text="Bohužel zde nejsou žádné články" styleThema=" -green" styleGap=" px-1" v-if="posts && posts.length === 0 && !isLoading" />
+                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                        <span class="a-button-fill -big -gray" @click="loadMoreItems">Načíst další položky</span>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION - Articles END -->
+
+            <!-- SECTION - Platforms -->
+            <section class="t-section -p0 py-1 mt-2 px-2 print-section">
+                <div class="t-section__inner">
+                    <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
+                    <oPlatform />
+                    <div class="flex flex-center mb-4">
+                        <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION - Platforms END -->
+        </div>
     </main>
 </template>
 

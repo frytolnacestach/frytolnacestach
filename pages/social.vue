@@ -1,22 +1,22 @@
 <template>
     <main class="t-main -gray -pt-menu" role="main">
+        <div class="t-main__content">
+            <!-- SECTION - Hero -->
+            <section class="t-section -p0 mt-2 mb-4">
+                <div class="t-section__inner">
+                    <oHero :headline="headline" perex="Kam se vydat v digitálním vesmíru? Zde naleznete mé odkazy na sociální sítě, kde se dělím o své dobrodružství, myšlenky a zážitky. Připojte se ke mně na této cestě virtuálním světem!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
+                </div>
+            </section>
+            <!-- SECTION - Hero END -->
 
-        <!-- SECTION - Hero -->
-        <section class="t-section -p0 mt-2 mb-4">
-            <div class="t-section__inner">
-                <oHero :headline="headline" perex="Kam se vydat v digitálním vesmíru? Zde naleznete mé odkazy na sociální sítě, kde se dělím o své dobrodružství, myšlenky a zážitky. Připojte se ke mně na této cestě virtuálním světem!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
-            </div>
-        </section>
-        <!-- SECTION - Hero END -->
-
-        <!-- SECTION - Box platform -->
-        <section class="t-section -p0 mt-1 mb-2 px-2">
-            <div class="t-section__inner">
-                <oBoxPlatform />
-            </div>
-        </section>
-        <!-- SECTION - Box platform END -->
-
+            <!-- SECTION - Box platform -->
+            <section class="t-section -p0 mt-1 mb-2 px-2">
+                <div class="t-section__inner">
+                    <oBoxPlatform />
+                </div>
+            </section>
+            <!-- SECTION - Box platform END -->
+        </div>
     </main>
 </template>
 

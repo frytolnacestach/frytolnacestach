@@ -1,191 +1,192 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
-        <!-- SECTION - BREADCRUMBS -->
-        <section class="t-section -px-world mt-2 -p0">
-            <div class="t-section__inner">
-                <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" />
-            </div>
-        </section>
-        <!-- SECTION - BREADCRUMBS END -->
-
-        <!-- SECTION - Buttons -->
-        <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
-            <div class="t-section__inner">
-                <oSwitchHero :show-hero.sync="showHero" />
-            </div>
-        </section>
-        <!-- SECTION - Buttons END -->
-
-        <!-- SECTION - hero + hot info hero -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -world-hero">
-
-                    <!-- SECTION - hero -->
-                    <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
-                        <oHeroPlace :title="place[0].name" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
-                    </div>
-                    <!-- SECTION - hero END -->
-
-                    <!-- SECTION - map -->
-                    <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
-                        <oMapGoogle :place="place" />
-                    </div>
-                    <!-- SECTION - map - END -->
-
+        <div class="t-main__content">
+            <!-- SECTION - BREADCRUMBS -->
+            <section class="t-section -px-world mt-2 -p0">
+                <div class="t-section__inner">
+                    <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION - hero + hot info - END -->
+            </section>
+            <!-- SECTION - BREADCRUMBS END -->
 
-        <!-- SECTION -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -place-main-with-aside">
-                    
-                    <div class="t-grid__section -main">
-                        <!-- SECTION - information by ChatGPT -->
-                        <section class="t-section mt-2 mb-4" v-if="place[0].information_chatgpt && !place[0].information_author?.length > 0">
-                            <div class="t-section__inner">
-                                <oInformationBlock :title="'O regionu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" styleThema=" -green" />
-                            </div>
-                        </section>
-                        <!-- SECTION - information by ChatGPT END -->
-
-                        <!-- SECTION - information by Author -->
-                        <section class="t-section" v-if="place[0].information_author?.length > 0">
-                            <div class="t-section__inner">
-                                <oInformationBlock :title="'O regionu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_author[0].text" :authorID="place[0].information_author[0].author_create" styleThema=" -green" />
-                            </div>
-                        </section>
-                        <!-- SECTION - information by Author END -->
-
-                        <!-- SECTION - ad-google - wysiwyg -->
-                        <section class="t-section  my-2 -p0 print-section">
-                            <div class="t-section__inner">
-                                <oAdGoogleWysiwyg styleThema=" -green" />
-                            </div>
-                        </section>
-                        <!-- SECTION - ad-google - wysiwyg - END -->
-
-                        <!-- SECTION - Account banner big - sidebar -->
-                        <section class="t-section -px-world my-1" v-if="account && account.length === 0">
-                            <div class="t-section__inner">
-                                <oAccountBannerBig :account="account" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Account banner big - sidebar END -->
-
-                        <!-- SECTION - Place teaser -->
-                        <section class="t-section my-2 -p0 print-section" v-if="placeState && placeState.length > 0">
-                            <div class="t-section__inner">
-                                <oPlaceTeaser :headline="'Region ' + place[0].name + ' se nachází ve státě ' + placeState[0].name" :place="placeState" :image="imagePlaceState" type="stat" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Place teaser END -->
-
-                        <!-- SECTION - Ubytování - information -->
-                        <section class="t-section pt-1 mt-2">
-                            <div class="t-section__inner">
-                                <oInformationBlock :title="'Ubytování v regionu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Cena za konkrétní ubytování v regionu ' + (place[0].name ? place[0].name : '') + ' se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek.'" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true" />
-                                <oInformationBlock :title="'Ubytování v regionu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Bohužel s cenou ubytování v regionu ' + (place[0].name ? place[0].name : '') + ' vám zatím moc neporadíme.'" v-else />
-                            </div>
-                        </section>
-                        <!-- SECTION - Ubytování - information END -->
-
-                        <!-- SECTION - Ubytování -->
-                        <section class="t-section -px-world py-2 hidden-print" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
-                            <div class="t-section__inner">
-                                <div v-for="coordinate in place[0].coordinates">
-                                    <oAffilateBooking 
-                                        :landmarkName="`${ place[0].name ? place[0].name : '' }`"
-                                        :address="`${ place[0].name ? place[0].name : '' }`"
-                                        :latitude=parseFloat(coordinate.latitude)
-                                        :longitude= parseFloat(coordinate.longitude)
-                                        :zoom=place[0].zoom[0].booking
-                                    />
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - Ubytování END -->
-
-                        <!-- SECTION - Review -->
-                        <oReviewItem :account="account" :IDplace="place[0].id" type="region" v-if="place[0].id" />
-                        <!-- SECTION - Review END -->
-
-                        <!-- SECTION - Place teaser -->
-                        <oPlaceTeaserRegions :headline="'Jaké další regiony vidět ve státě ' + placeState[0].name" :IDplace="placeState[0].id" :IDplaceShow="place[0].id" v-if="placeState[0]" type="state" typeShow="region" styleGap=" mt-2 mb-4 pt-1" />
-                        <!-- SECTION - Place teaser END -->
-                    </div>
-
-
-                    <div class="t-grid__section -aside-place-status">
-                        <!-- SECTION - Visited button - sidebar -->
-                        <section class="t-section -px-world my-1">
-                            <div class="t-section__inner">
-                                <oVisitedButton :account="account" :place="this.place[0].id" placeType="region" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Visited button - sidebar - END -->
-                    </div>
-                    <div class="t-grid__section -aside-content">
-                        <!-- SECTION - Events - sidebar -->
-                        <oSidebarEvent :place="this.place[0].id" type="region" />
-                        <!-- SECTION - Events - sidebar - END -->
-                    </div>
-                    <div class="t-grid__section -aside-ad">
-                        <!-- SECTION - ad-google - sidebar -->
-                        <section class="t-section -px-world mt-4 mb-2">
-                            <div class="t-section__inner">
-                                <oAdGoogleSidebar styleThema=" -green" />
-                            </div>
-                        </section>
-                        <!-- SECTION - ad-google - sidebar - END -->
-                    </div>
-
+            <!-- SECTION - Buttons -->
+            <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
+                <div class="t-section__inner">
+                    <oSwitchHero :show-hero.sync="showHero" />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION END -->
+            </section>
+            <!-- SECTION - Buttons END -->
 
-        <!-- SECTION Videos and Articles -->
-        <section class="t-section -p0 hidden-print">
-            <div class="t-section__inner">
-                <div class="t-grid -world-ful">
-                    <div class="t-grid__section -content">
+            <!-- SECTION - hero + hot info hero -->
+            <section class="t-section -px-world -p0">
+                <div class="t-section__inner">
+                    <div class="t-grid -world-hero">
 
-                        <!-- SECTION - videos -->
-                        <section class="t-section -p0 -bg-green py-4" v-if="place[0] && videos.length !== 0">
-                            <div class="t-section__inner">
-                                <mHeadline title="Videa z regionu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                                <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
-                                <oVideoList :videos="null" :images="null" styleThema=" -world" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
-                                <div class="flex flex-center my-2" v-if="!isLoadingVideos && !noMoreVideosItems">
-                                    <span class="a-button-border -big -green" @click="loadMoreVideosItems">Načíst další videa</span>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - videos END -->
+                        <!-- SECTION - hero -->
+                        <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
+                            <oHeroPlace :title="place[0].name" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
+                        </div>
+                        <!-- SECTION - hero END -->
 
-                        <!-- SECTION - articles -->
-                        <section class="t-section -p0 -bg-green py-4" v-if="place[0] && posts.length !== 0">
-                            <div class="t-section__inner">
-                                <mHeadline title="Články z regionu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                                <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
-                                <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingPosts" />
-                                <div class="flex flex-center my-2" v-if="!isLoadingPosts && !noMorePostsItems">
-                                    <span class="a-button-border -big -green" @click="loadMorePostsItems">Načíst další články</span>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - articles END -->
+                        <!-- SECTION - map -->
+                        <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
+                            <oMapGoogle :place="place" />
+                        </div>
+                        <!-- SECTION - map - END -->
 
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- SECTION Videos and Articles END -->
+            </section>
+            <!-- SECTION - hero + hot info - END -->
+
+            <!-- SECTION -->
+            <section class="t-section -px-world -p0">
+                <div class="t-section__inner">
+                    <div class="t-grid -place-main-with-aside">
+                        
+                        <div class="t-grid__section -main">
+                            <!-- SECTION - information by ChatGPT -->
+                            <section class="t-section mt-2 mb-4" v-if="place[0].information_chatgpt && !place[0].information_author?.length > 0">
+                                <div class="t-section__inner">
+                                    <oInformationBlock :title="'O regionu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" styleThema=" -green" />
+                                </div>
+                            </section>
+                            <!-- SECTION - information by ChatGPT END -->
+
+                            <!-- SECTION - information by Author -->
+                            <section class="t-section" v-if="place[0].information_author?.length > 0">
+                                <div class="t-section__inner">
+                                    <oInformationBlock :title="'O regionu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_author[0].text" :authorID="place[0].information_author[0].author_create" styleThema=" -green" />
+                                </div>
+                            </section>
+                            <!-- SECTION - information by Author END -->
+
+                            <!-- SECTION - ad-google - wysiwyg -->
+                            <section class="t-section  my-2 -p0 print-section">
+                                <div class="t-section__inner">
+                                    <oAdGoogleWysiwyg styleThema=" -green" />
+                                </div>
+                            </section>
+                            <!-- SECTION - ad-google - wysiwyg - END -->
+
+                            <!-- SECTION - Account banner big - sidebar -->
+                            <section class="t-section -px-world my-1" v-if="account && account.length === 0">
+                                <div class="t-section__inner">
+                                    <oAccountBannerBig :account="account" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Account banner big - sidebar END -->
+
+                            <!-- SECTION - Place teaser -->
+                            <section class="t-section my-2 -p0 print-section" v-if="placeState && placeState.length > 0">
+                                <div class="t-section__inner">
+                                    <oPlaceTeaser :headline="'Region ' + place[0].name + ' se nachází ve státě ' + placeState[0].name" :place="placeState" :image="imagePlaceState" type="stat" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Place teaser END -->
+
+                            <!-- SECTION - Ubytování - information -->
+                            <section class="t-section pt-1 mt-2">
+                                <div class="t-section__inner">
+                                    <oInformationBlock :title="'Ubytování v regionu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Cena za konkrétní ubytování v regionu ' + (place[0].name ? place[0].name : '') + ' se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek.'" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true" />
+                                    <oInformationBlock :title="'Ubytování v regionu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Bohužel s cenou ubytování v regionu ' + (place[0].name ? place[0].name : '') + ' vám zatím moc neporadíme.'" v-else />
+                                </div>
+                            </section>
+                            <!-- SECTION - Ubytování - information END -->
+
+                            <!-- SECTION - Ubytování -->
+                            <section class="t-section -px-world py-2 hidden-print" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
+                                <div class="t-section__inner">
+                                    <div v-for="coordinate in place[0].coordinates">
+                                        <oAffilateBooking 
+                                            :landmarkName="`${ place[0].name ? place[0].name : '' }`"
+                                            :address="`${ place[0].name ? place[0].name : '' }`"
+                                            :latitude=parseFloat(coordinate.latitude)
+                                            :longitude= parseFloat(coordinate.longitude)
+                                            :zoom=place[0].zoom[0].booking
+                                        />
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- SECTION - Ubytování END -->
+
+                            <!-- SECTION - Review -->
+                            <oReviewItem :account="account" :IDplace="place[0].id" type="region" v-if="place[0].id" />
+                            <!-- SECTION - Review END -->
+
+                            <!-- SECTION - Place teaser -->
+                            <oPlaceTeaserRegions :headline="'Jaké další regiony vidět ve státě ' + placeState[0].name" :IDplace="placeState[0].id" :IDplaceShow="place[0].id" v-if="placeState[0]" type="state" typeShow="region" styleGap=" mt-2 mb-4 pt-1" />
+                            <!-- SECTION - Place teaser END -->
+                        </div>
+
+
+                        <div class="t-grid__section -aside-place-status">
+                            <!-- SECTION - Visited button - sidebar -->
+                            <section class="t-section -px-world my-1">
+                                <div class="t-section__inner">
+                                    <oVisitedButton :account="account" :place="this.place[0].id" placeType="region" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Visited button - sidebar - END -->
+                        </div>
+                        <div class="t-grid__section -aside-content">
+                            <!-- SECTION - Events - sidebar -->
+                            <oSidebarEvent :place="this.place[0].id" type="region" />
+                            <!-- SECTION - Events - sidebar - END -->
+                        </div>
+                        <div class="t-grid__section -aside-ad">
+                            <!-- SECTION - ad-google - sidebar -->
+                            <section class="t-section -px-world mt-4 mb-2">
+                                <div class="t-section__inner">
+                                    <oAdGoogleSidebar styleThema=" -green" />
+                                </div>
+                            </section>
+                            <!-- SECTION - ad-google - sidebar - END -->
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION END -->
+
+            <!-- SECTION Videos and Articles -->
+            <section class="t-section -p0 hidden-print">
+                <div class="t-section__inner">
+                    <div class="t-grid -world-ful">
+                        <div class="t-grid__section -content">
+
+                            <!-- SECTION - videos -->
+                            <section class="t-section -p0 -bg-green py-4" v-if="place[0] && videos.length !== 0">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Videa z regionu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                    <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
+                                    <oVideoList :videos="null" :images="null" styleThema=" -world" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
+                                    <div class="flex flex-center my-2" v-if="!isLoadingVideos && !noMoreVideosItems">
+                                        <span class="a-button-border -big -green" @click="loadMoreVideosItems">Načíst další videa</span>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- SECTION - videos END -->
+
+                            <!-- SECTION - articles -->
+                            <section class="t-section -p0 -bg-green py-4" v-if="place[0] && posts.length !== 0">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Články z regionu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                    <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
+                                    <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingPosts" />
+                                    <div class="flex flex-center my-2" v-if="!isLoadingPosts && !noMorePostsItems">
+                                        <span class="a-button-border -big -green" @click="loadMorePostsItems">Načíst další články</span>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- SECTION - articles END -->
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION Videos and Articles END -->
+        </div>
     </main>
 </template>
 

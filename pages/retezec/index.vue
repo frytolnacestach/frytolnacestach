@@ -1,28 +1,28 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
-        <section class="t-section print-section">
-            <!-- SECTION - Hero řetězce -->
-            <section class="t-section py-4">
-                <div class="t-section__inner">
-                    <oHero headline="Řetězce" perex="Vstupte do světa obchodních a gastronomických řetězců společně s námi prozkoumejte ty nejvýznamnější a největší, a zjistěte, kde na světě můžete ochutnat i nakupovat jejich unikátní nabídku. Vše, co potřebujete vědět o světě obchodů a gastronomie, najdete na stránkách cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w640" classCSS=" mt-2" />
-                </div>
-            </section>
-            <!-- SECTION - Hero řetězce END -->
-
-            <!-- SECTION - řetězce list -->
-            <section class="t-section -p0">
-                <div class="t-section__inner">
-                    <oCoverItem :items="chains" :images="images" type="retezec" />
-                    <oCoverItem :items="null" :images="null" type="chains" :skeleton=true v-if="isLoading" />
-                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+        <div class="t-main__content">
+            <section class="t-section print-section">
+                <!-- SECTION - Hero řetězce -->
+                <section class="t-section py-4">
+                    <div class="t-section__inner">
+                        <oHero headline="Řetězce" perex="Vstupte do světa obchodních a gastronomických řetězců společně s námi prozkoumejte ty nejvýznamnější a největší, a zjistěte, kde na světě můžete ochutnat i nakupovat jejich unikátní nabídku. Vše, co potřebujete vědět o světě obchodů a gastronomie, najdete na stránkách cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w640" classCSS=" mt-2" />
                     </div>
-                </div>
-            </section>
-            <!-- SECTION - řetězce END -->
-        </section>
+                </section>
+                <!-- SECTION - Hero řetězce END -->
 
+                <!-- SECTION - řetězce list -->
+                <section class="t-section -p0">
+                    <div class="t-section__inner">
+                        <oCoverItem :items="chains" :images="images" type="retezec" />
+                        <oCoverItem :items="null" :images="null" type="chains" :skeleton=true v-if="isLoading" />
+                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                            <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - řetězce END -->
+            </section>
+        </div>
     </main>
 </template>
 

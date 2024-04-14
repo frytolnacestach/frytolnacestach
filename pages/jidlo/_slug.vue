@@ -1,79 +1,80 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
-        <!-- SECTION - BREADCRUMBS -->
-        <section class="t-section -px-world mt-2 -p0">
-            <div class="t-section__inner">
-                <mNavBreadcrumbsItem :links="mNavBreadcrumbsFoodArray" :item="food[0]" />
-            </div>
-        </section>
-        <!-- SECTION - BREADCRUMBS END -->
-
-        <!-- SECTION -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -world-content-with-ad">
-                    
-                    <div class="t-grid__section -content">
-                        <!-- SECTION - hero -->
-                        <section class="t-section print-section">
-                            <div class="t-section__inner">
-                                <oHeroItemDetail :item="food" :images="imageFood" />
-                            </div>
-                        </section>
-                        <!-- SECTION - hero END -->
-
-                        <!-- SECTION - information by ChatGPT -->
-                        <section class="t-section" v-if="food[0].description">
-                            <div class="t-section__inner">
-                                <oInformationBlock :title="(food[0].name ? food[0].name : '')" :perexWysiwyg="food[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
-                            </div>
-                        </section>
-                        <!-- SECTION - information by ChatGPT END -->
-
-                        <!-- SECTION - Ingredients -->
-                        <section class="t-section my-4 py-1" v-if="food[0].ingredients && food[0].ingredients.length > 0">
-                            <div class="t-section__inner">
-                                <mHeadline title="Ingredience" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
-                                <oIngredients :items="food[0].ingredients" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Ingredients END -->
-
-                        <!-- SECTION - Recipe -->
-                        <section class="t-section my-4 py-1" v-if="food[0].recipe && food[0].recipe.length > 0">
-                            <div class="t-section__inner">
-                                <mHeadline title="Recept" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
-                                <oRecipe :items="food[0].recipe" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Recipe END -->
-
-                        <!-- SECTION - foods places -->
-                        <div class="t-section" v-if="placesStates">
-                            <div class="t-section__inner">
-                                <mHeadline :title="'Jídlo ' + food[0].name + ' se jí v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
-                                <oCoverStates :items="placesStates" :images="imagesStates" text="Kde se používá" />
-                            </div>
-                        </div>
-                        <!-- SECTION - foods places - END -->
-                    </div>
-
-
-                    <div class="t-grid__section -ad">
-                        <!-- SECTION - ad-google - sidebar -->
-                        <section class="t-section -px-world mt-4 mb-2">
-                            <div class="t-section__inner">
-                                <oAdGoogleSidebar styleThema=" -green" />
-                            </div>
-                        </section>
-                        <!-- SECTION - ad-google - sidebar - END -->
-                    </div>
-
+        <div class="t-main__content">
+            <!-- SECTION - BREADCRUMBS -->
+            <section class="t-section -px-world mt-2 -p0">
+                <div class="t-section__inner">
+                    <mNavBreadcrumbsItem :links="mNavBreadcrumbsFoodArray" :item="food[0]" />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION END -->
+            </section>
+            <!-- SECTION - BREADCRUMBS END -->
+
+            <!-- SECTION -->
+            <section class="t-section -px-world -p0">
+                <div class="t-section__inner">
+                    <div class="t-grid -world-content-with-ad">
+                        
+                        <div class="t-grid__section -content">
+                            <!-- SECTION - hero -->
+                            <section class="t-section print-section">
+                                <div class="t-section__inner">
+                                    <oHeroItemDetail :item="food" :images="imageFood" />
+                                </div>
+                            </section>
+                            <!-- SECTION - hero END -->
+
+                            <!-- SECTION - information by ChatGPT -->
+                            <section class="t-section" v-if="food[0].description">
+                                <div class="t-section__inner">
+                                    <oInformationBlock :title="(food[0].name ? food[0].name : '')" :perexWysiwyg="food[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
+                                </div>
+                            </section>
+                            <!-- SECTION - information by ChatGPT END -->
+
+                            <!-- SECTION - Ingredients -->
+                            <section class="t-section my-4 py-1" v-if="food[0].ingredients && food[0].ingredients.length > 0">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Ingredience" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
+                                    <oIngredients :items="food[0].ingredients" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Ingredients END -->
+
+                            <!-- SECTION - Recipe -->
+                            <section class="t-section my-4 py-1" v-if="food[0].recipe && food[0].recipe.length > 0">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Recept" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
+                                    <oRecipe :items="food[0].recipe" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Recipe END -->
+
+                            <!-- SECTION - foods places -->
+                            <div class="t-section" v-if="placesStates">
+                                <div class="t-section__inner">
+                                    <mHeadline :title="'Jídlo ' + food[0].name + ' se jí v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
+                                    <oCoverStates :items="placesStates" :images="imagesStates" text="Kde se používá" />
+                                </div>
+                            </div>
+                            <!-- SECTION - foods places - END -->
+                        </div>
+
+
+                        <div class="t-grid__section -ad">
+                            <!-- SECTION - ad-google - sidebar -->
+                            <section class="t-section -px-world mt-4 mb-2">
+                                <div class="t-section__inner">
+                                    <oAdGoogleSidebar styleThema=" -green" />
+                                </div>
+                            </section>
+                            <!-- SECTION - ad-google - sidebar - END -->
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION END -->
+        </div>
     </main>
 </template>
 

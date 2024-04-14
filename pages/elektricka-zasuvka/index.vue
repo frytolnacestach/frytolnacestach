@@ -1,28 +1,28 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
-        <section class="t-section print-section">
-            <!-- SECTION - Hero elektrické zásuvky -->
-            <section class="t-section py-4">
-                <div class="t-section__inner">
-                    <oHero headline="Elektrické zásuvky" perex="Plánujete cestu mimo střední Evropu a nevíte, jakou redukci pro svá elektronická zařízení si pořídit? Typy zásuvek a používané normy se dozvíte na cestovatelském portálu Frytol na cestách." modifierCSS=" -green -w640" classCSS=" mt-2" />
-                </div>
-            </section>
-            <!-- SECTION - Hero elektrické zásuvky END -->
-
-            <!-- SECTION - elektrické zásuvky list -->
-            <section class="t-section -p0">
-                <div class="t-section__inner">
-                    <oCoverTitleItem :items="wallSockets" :images="images" type="elektricka-zasuvka" />
-                    <oCoverTitleItem :items="null" :images="null" type="wall-sockets" :skeleton=true v-if="isLoading" />
-                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+        <div class="t-main__content">
+            <section class="t-section print-section">
+                <!-- SECTION - Hero elektrické zásuvky -->
+                <section class="t-section py-4">
+                    <div class="t-section__inner">
+                        <oHero headline="Elektrické zásuvky" perex="Plánujete cestu mimo střední Evropu a nevíte, jakou redukci pro svá elektronická zařízení si pořídit? Typy zásuvek a používané normy se dozvíte na cestovatelském portálu Frytol na cestách." modifierCSS=" -green -w640" classCSS=" mt-2" />
                     </div>
-                </div>
-            </section>
-            <!-- SECTION - elektrické zásuvky list END -->
-        </section>
+                </section>
+                <!-- SECTION - Hero elektrické zásuvky END -->
 
+                <!-- SECTION - elektrické zásuvky list -->
+                <section class="t-section -p0">
+                    <div class="t-section__inner">
+                        <oCoverTitleItem :items="wallSockets" :images="images" type="elektricka-zasuvka" />
+                        <oCoverTitleItem :items="null" :images="null" type="wall-sockets" :skeleton=true v-if="isLoading" />
+                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                            <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - elektrické zásuvky list END -->
+            </section>
+        </div>
     </main>
 </template>
 

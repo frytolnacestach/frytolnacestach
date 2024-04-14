@@ -1,26 +1,26 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
-        <!-- SECTION - Hero place type -->
-        <section class="t-section py-4">
-            <div class="t-section__inner">
-                <oHeroPlaceType styleType=" -continent" title="Kontinenty" perex="Zveme tě na neuvěřitelnou cestu kolem světa, abys prozkoumal všech 7 kontinentů naší planety. Objevuj fascinující kultury, přírodní divy a tajemná místa včetně odlehlé Antarktidy. Připrav se na dobrodružství, které tě zavede do různých koutů světa a otevře ti dveře k nezapomenutelným zážitkům." />
-            </div>
-        </section>
-        <!-- SECTION - Hero place type END -->
-
-        <!-- SECTION - Place list -->
-        <section class="t-section -p0">
-            <div class="t-section__inner">
-                <oCoverPlace :places="placesContinents" :images="images" type="kontinent" />
-                <oCoverPlace :places="null" :images="null" type="kontinent" :skeleton=true v-if="isLoading" />
-                <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                    <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+        <div class="t-main__content">
+            <!-- SECTION - Hero place type -->
+            <section class="t-section py-4">
+                <div class="t-section__inner">
+                    <oHeroPlaceType styleType=" -continent" title="Kontinenty" perex="Zveme tě na neuvěřitelnou cestu kolem světa, abys prozkoumal všech 7 kontinentů naší planety. Objevuj fascinující kultury, přírodní divy a tajemná místa včetně odlehlé Antarktidy. Připrav se na dobrodružství, které tě zavede do různých koutů světa a otevře ti dveře k nezapomenutelným zážitkům." />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION - Place list END -->
+            </section>
+            <!-- SECTION - Hero place type END -->
 
+            <!-- SECTION - Place list -->
+            <section class="t-section -p0">
+                <div class="t-section__inner">
+                    <oCoverPlace :places="placesContinents" :images="images" type="kontinent" />
+                    <oCoverPlace :places="null" :images="null" type="kontinent" :skeleton=true v-if="isLoading" />
+                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION - Place list END -->
+        </div>
     </main>
 </template>
 

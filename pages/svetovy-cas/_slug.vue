@@ -1,90 +1,92 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-        <!-- SECTION - BREADCRUMBS -->
-        <section class="t-section -px-world mt-2 -p0">
-            <div class="t-section__inner">
-                <mNavBreadcrumbsItem :links="mNavBreadcrumbsWorldTimwArray" :item="place[0]" />
-            </div>
-        </section>
-        <!-- SECTION - BREADCRUMBS END -->
-
-        <!-- SECTION - Buttons -->
-        <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
-            <div class="t-section__inner">
-                <oSwitchHero :show-hero.sync="showHero" />
-            </div>
-        </section>
-        <!-- SECTION - Buttons END -->
-
-        <!-- SECTION - hero + hot info hero -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -world-hero">
-
-                    <!-- SECTION - hero -->
-                    <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
-                        <oHeroPlace :title="place[0].name" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
-                    </div>
-                    <!-- SECTION - hero END -->
-
-                    <!-- SECTION - map -->
-                    <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
-                        <oMapGoogle :place="place" />
-                    </div>
-                    <!-- SECTION - map - END -->
-
+        <div class="t-main__content">
+            <!-- SECTION - BREADCRUMBS -->
+            <section class="t-section -px-world mt-2 -p0">
+                <div class="t-section__inner">
+                    <mNavBreadcrumbsItem :links="mNavBreadcrumbsWorldTimwArray" :item="place[0]" />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION - hero + hot info - END -->
+            </section>
+            <!-- SECTION - BREADCRUMBS END -->
 
-        <!-- SECTION - Alerts -->
-        <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
-            <div class="t-section__inner">
-                <oAlerts :alerts="place[0].alerts" />
-            </div>
-        </section>
-        <!-- SECTION - Alerts END -->
-    
+            <!-- SECTION - Buttons -->
+            <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
+                <div class="t-section__inner">
+                    <oSwitchHero :show-hero.sync="showHero" />
+                </div>
+            </section>
+            <!-- SECTION - Buttons END -->
 
-        <div class="t-main -tab" v-if="place[0]">
-            <!-- SECTION -->
+            <!-- SECTION - hero + hot info hero -->
             <section class="t-section -px-world -p0">
                 <div class="t-section__inner">
-                    <div class="t-grid -world-content-with-ad">
-                        <div class="t-grid__section -content">
+                    <div class="t-grid -world-hero">
 
-                            <!-- SECTION - time -->
-                            <section class="t-section -px-world mt-4">
-                                <div class="t-section__inner">
-                                    <oTime :mpz="this.place[0].mpz" />
-                                </div>
-                            </section>
-                            <!-- SECTION - time - END -->
-
-                            <!-- SECTION - Place teaser -->
-                            <section class="t-section my-2 -p0">
-                                <div class="t-section__inner">
-                                    <oPlaceTeaser :headline="'Více informací o státě ' + place[0].name" :place="place" :image="imagePlace" type="stat" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Place teaser END -->
-                    
+                        <!-- SECTION - hero -->
+                        <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
+                            <oHeroPlace :title="place[0].name" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
                         </div>
+                        <!-- SECTION - hero END -->
 
-                        <div class="t-grid__section -ad">
-                            <!-- SECTION - ad-google - sidebar -->
-                            <section class="t-section -px-world mt-4 mb-2">
-                                <div class="t-section__inner">
-                                    <oAdGoogleSidebar styleThema=" -green" />
-                                </div>
-                            </section>
-                            <!-- SECTION - ad-google - sidebar - END -->
+                        <!-- SECTION - map -->
+                        <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
+                            <oMapGoogle :place="place" />
                         </div>
+                        <!-- SECTION - map - END -->
+
                     </div>
                 </div>
             </section>
-            <!-- SECTION END -->
+            <!-- SECTION - hero + hot info - END -->
+
+            <!-- SECTION - Alerts -->
+            <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
+                <div class="t-section__inner">
+                    <oAlerts :alerts="place[0].alerts" />
+                </div>
+            </section>
+            <!-- SECTION - Alerts END -->
+        
+
+            <div class="t-main -tab" v-if="place[0]">
+                <!-- SECTION -->
+                <section class="t-section -px-world -p0">
+                    <div class="t-section__inner">
+                        <div class="t-grid -world-content-with-ad">
+                            <div class="t-grid__section -content">
+
+                                <!-- SECTION - time -->
+                                <section class="t-section -px-world mt-4">
+                                    <div class="t-section__inner">
+                                        <oTime :mpz="this.place[0].mpz" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - time - END -->
+
+                                <!-- SECTION - Place teaser -->
+                                <section class="t-section my-2 -p0">
+                                    <div class="t-section__inner">
+                                        <oPlaceTeaser :headline="'Více informací o státě ' + place[0].name" :place="place" :image="imagePlace" type="stat" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Place teaser END -->
+                        
+                            </div>
+
+                            <div class="t-grid__section -ad">
+                                <!-- SECTION - ad-google - sidebar -->
+                                <section class="t-section -px-world mt-4 mb-2">
+                                    <div class="t-section__inner">
+                                        <oAdGoogleSidebar styleThema=" -green" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - ad-google - sidebar - END -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION END -->
+            </div>
         </div>
     </main>
 </template>

@@ -1,33 +1,34 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
-        <!-- SECTION - Hero -->
-		<section class="t-section py-4 print-section">
-            <div class="t-section__inner">
-                <oHero :headline="headline" perex="Připravte se na světové dobrodružství přesně podle svého rytmu! Náš cestovatelský portál vám přináší aktuální čas a časový posun v různých zemích, abyste byli vždycky v synchronizaci s časem." modifierCSS=" -green -w640" classCSS=" mt-2"/>
-            </div>
-        </section>
-        <!-- SECTION - Hero END -->
-
-        <!-- SECTION - Filter -->
-        <section class="t-section -p0 hidden-print">
-            <div class="t-section__inner">
-                <oFormFilterPlace styleThema=" -green" typePlaceFilterName="Vybrat kontinent" typePlaceFilter="continents" @update="filterUpdate" />
-            </div>
-        </section>
-        <!-- SECTION - Filter END -->
-
-        <!-- SECTION - Time Place list -->
-        <section class="t-section -p0 print-section">
-            <div class="t-section__inner">
-                <oTimePlace :places="placesStates" :images="images" type="stat" />
-                <oTimePlace :places="null" :images="null" type="stat" :skeleton=true v-if="isLoading" />
-                <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                    <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+        <div class="t-main__content">
+            <!-- SECTION - Hero -->
+            <section class="t-section py-4 print-section">
+                <div class="t-section__inner">
+                    <oHero :headline="headline" perex="Připravte se na světové dobrodružství přesně podle svého rytmu! Náš cestovatelský portál vám přináší aktuální čas a časový posun v různých zemích, abyste byli vždycky v synchronizaci s časem." modifierCSS=" -green -w640" classCSS=" mt-2"/>
                 </div>
-            </div>
-        </section>
-        <!-- SECTION - Time Place list END -->
+            </section>
+            <!-- SECTION - Hero END -->
+
+            <!-- SECTION - Filter -->
+            <section class="t-section -p0 hidden-print">
+                <div class="t-section__inner">
+                    <oFormFilterPlace styleThema=" -green" typePlaceFilterName="Vybrat kontinent" typePlaceFilter="continents" @update="filterUpdate" />
+                </div>
+            </section>
+            <!-- SECTION - Filter END -->
+
+            <!-- SECTION - Time Place list -->
+            <section class="t-section -p0 print-section">
+                <div class="t-section__inner">
+                    <oTimePlace :places="placesStates" :images="images" type="stat" />
+                    <oTimePlace :places="null" :images="null" type="stat" :skeleton=true v-if="isLoading" />
+                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION - Time Place list END -->
+        </div>
     </main>
 </template>
 

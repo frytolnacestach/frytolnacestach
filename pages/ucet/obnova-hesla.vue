@@ -1,22 +1,22 @@
 <template>
     <main class="t-main -blue -pt-menu" role="main">
-        
-        <!-- SECTION - Hero -->
-		<section class="t-section -p0 pt-2 pb-1">
-            <div class="t-section__inner">
-                <oHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
-            </div>
-        </section>
-        <!-- SECTION - Hero END -->
-        
-        <!-- SECTION - Form Password lost new -->
-		<section class="t-section -p0 pt-2 pb-1">
-            <div class="t-section__inner">
-                <oFormPasswordLostNew />
-            </div>
-        </section>
-        <!-- SECTION - Form Password new lost END -->
-
+        <div class="t-main__content">
+            <!-- SECTION - Hero -->
+            <section class="t-section -p0 pt-2 pb-1">
+                <div class="t-section__inner">
+                    <oHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
+                </div>
+            </section>
+            <!-- SECTION - Hero END -->
+            
+            <!-- SECTION - Form Password lost new -->
+            <section class="t-section -p0 pt-2 pb-1">
+                <div class="t-section__inner">
+                    <oFormPasswordLostNew />
+                </div>
+            </section>
+            <!-- SECTION - Form Password new lost END -->
+        </div>
     </main>
 </template>
 

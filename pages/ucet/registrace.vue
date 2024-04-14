@@ -1,22 +1,22 @@
 <template>
     <main class="t-main -blue -pt-menu" role="main">
-        
-        <!-- SECTION - Hero -->
-		<section class="t-section -p0 pt-2 pb-1">
-            <div class="t-section__inner">
-                <oHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
-            </div>
-        </section>
-        <!-- SECTION - Hero END -->
+        <div class="t-main__content">
+            <!-- SECTION - Hero -->
+            <section class="t-section -p0 pt-2 pb-1">
+                <div class="t-section__inner">
+                    <oHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
+                </div>
+            </section>
+            <!-- SECTION - Hero END -->
 
-        <!-- SECTION - Form Registration -->
-		<section class="t-section -p0 pt-2 pb-1">
-            <div class="t-section__inner">
-                <oFormRegistration />
-            </div>
-        </section>
-        <!-- SECTION - Form Registration END -->
-
+            <!-- SECTION - Form Registration -->
+            <section class="t-section -p0 pt-2 pb-1">
+                <div class="t-section__inner">
+                    <oFormRegistration />
+                </div>
+            </section>
+            <!-- SECTION - Form Registration END -->
+        </div>
     </main>
 </template>
 

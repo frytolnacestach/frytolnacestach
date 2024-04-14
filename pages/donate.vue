@@ -1,32 +1,33 @@
 <template>
     <main class="t-main -gray -pt-menu" role="main">
-
-        <!-- SECTION - Hero -->
-        <section class="t-section -p0 mb-1 mt-2">
-            <div class="t-section__inner">
-                <oHero :headline="headline" modifierCSS=" -gray" classCSS=" mt-2" />
-            </div>
-        </section>
-        <!-- SECTION - Hero END -->
-
-        <section class="t-section -p0 my-1 px-2">
-            <div class="t-section__inner">
-                <oDonate />
-                <oSupport />
-            </div>
-        </section>
-
-        <!-- SECTION - Platforms -->
-        <section class="t-section -p0 py-1 mt-2 px-2">
-            <div class="t-section__inner">
-                <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
-                <oPlatform />
-                <div class="flex flex-center mb-4">
-                    <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
+        <div class="t-main__content">
+            <!-- SECTION - Hero -->
+            <section class="t-section -p0 mb-1 mt-2">
+                <div class="t-section__inner">
+                    <oHero :headline="headline" modifierCSS=" -gray" classCSS=" mt-2" />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION - Platforms END -->
+            </section>
+            <!-- SECTION - Hero END -->
+
+            <section class="t-section -p0 my-1 px-2">
+                <div class="t-section__inner">
+                    <oDonate />
+                    <oSupport />
+                </div>
+            </section>
+
+            <!-- SECTION - Platforms -->
+            <section class="t-section -p0 py-1 mt-2 px-2">
+                <div class="t-section__inner">
+                    <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
+                    <oPlatform />
+                    <div class="flex flex-center mb-4">
+                        <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION - Platforms END -->
+        </div>
     </main>
 </template>
 

@@ -7,7 +7,7 @@
         display: inline-grid;
     }
 
-    //world/slug - > hero + map + hot-info-hero
+    // Hero for places - world/slug - > hero + map + hot-info-hero
     &.-world-hero {
         grid-template-areas: 
             "hero-place"
@@ -20,14 +20,15 @@
             grid-template-areas: 
                 "hero-place map"
                 "hot-info-hero hot-info-hero";
-            grid-template-columns: auto 33.333%;
-            grid-template-rows: auto, auto;
+            grid-template-columns: 8fr 4fr;
+            grid-template-rows: auto auto;
         }
 
         #{$self}__section {
 
             &.-hero-place {
                 grid-area: hero-place;
+                aspect-ratio: 2 / 1;
             }
 
             &.-map {
@@ -39,34 +40,6 @@
             }
         }
     }
-
-    //food/slug - > hero + state
-    &.-food-hero {
-        grid-template-areas: 
-            "hero-food"
-            "states";
-        grid-template-columns: 100%;
-        grid-template-rows: auto auto;
-
-        @media only screen and (min-width: $lg) {
-            grid-template-areas: 
-                "hero-food states";
-            grid-template-columns: auto 33.333%;
-            grid-template-rows: auto;
-        }
-
-        #{$self}__section {
-
-            &.-hero-food {
-                grid-area: hero-food;
-            }
-
-            &.-states {
-                grid-area: states;
-            }
-        }
-    }
-
 
     //world/slug - > tab - content with add
     &.-world-content-with-ad {

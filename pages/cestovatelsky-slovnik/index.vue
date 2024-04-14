@@ -1,28 +1,28 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
-        <section class="t-section print-section">
-            <!-- SECTION - Hero cestovatelsky slovnik -->
-            <section class="t-section py-4">
-                <div class="t-section__inner">
-                    <oHero headline="Cestovatelský slovník" perex="Procházej cestovatelský slovník a rozšiřuj svůj cestovatelský slovníček o unikátní výrazy spojené s cestováním. Nabízíme ti pohled do jazyka cestování, abys lépe porozuměl(a) specifickým termínům a zkratkám." modifierCSS=" -green -w640" classCSS=" mt-2" />
-                </div>
-            </section>
-            <!-- SECTION - Hero cestovatelsky slovnik END -->
-
-            <!-- SECTION - cestovatelsky slovnik list -->
-            <section class="t-section -p0">
-                <div class="t-section__inner">
-                    <oCoverItem :items="travelDictionaries" :images="images" type="cestovatelsky-slovnik" />
-                    <oCoverItem :items="null" :images="null" type="cestovatelsky-slovnik" :skeleton=true v-if="isLoading" />
-                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+        <div class="t-main__content">
+            <section class="t-section print-section">
+                <!-- SECTION - Hero cestovatelsky slovnik -->
+                <section class="t-section py-4">
+                    <div class="t-section__inner">
+                        <oHero headline="Cestovatelský slovník" perex="Procházej cestovatelský slovník a rozšiřuj svůj cestovatelský slovníček o unikátní výrazy spojené s cestováním. Nabízíme ti pohled do jazyka cestování, abys lépe porozuměl(a) specifickým termínům a zkratkám." modifierCSS=" -green -w640" classCSS=" mt-2" />
                     </div>
-                </div>
-            </section>
-            <!-- SECTION - cestovatelsky slovnik list END -->
-        </section>
+                </section>
+                <!-- SECTION - Hero cestovatelsky slovnik END -->
 
+                <!-- SECTION - cestovatelsky slovnik list -->
+                <section class="t-section -p0">
+                    <div class="t-section__inner">
+                        <oCoverItem :items="travelDictionaries" :images="images" type="cestovatelsky-slovnik" />
+                        <oCoverItem :items="null" :images="null" type="cestovatelsky-slovnik" :skeleton=true v-if="isLoading" />
+                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                            <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - cestovatelsky slovnik list END -->
+            </section>
+        </div>
     </main>
 </template>
 

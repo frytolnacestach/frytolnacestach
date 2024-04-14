@@ -1,166 +1,167 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
-        <!-- SECTION - BREADCRUMBS -->
-        <section class="t-section -px-world mt-2 -p0">
-            <div class="t-section__inner">
-                <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" />
-            </div>
-        </section>
-        <!-- SECTION - BREADCRUMBS END -->
-
-        <!-- SECTION - Buttons -->
-        <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
-            <div class="t-section__inner">
-                <oSwitchHero :show-hero.sync="showHero" />
-            </div>
-        </section>
-        <!-- SECTION - Buttons END -->
-
-        <!-- SECTION - hero + hot info hero -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -world-hero">
-
-                    <!-- SECTION - hero -->
-                    <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
-                        <oHeroPlace :title="place[0].name" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
-                    </div>
-                    <!-- SECTION - hero END -->
-
-                    <!-- SECTION - map -->
-                    <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
-                        <oMapGoogle :place="place" />
-                    </div>
-                    <!-- SECTION - map - END -->
-
-                    <!-- SECTION - hot info -->
-                    <div class="t-grid__section -hot-info-hero">
-                        <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col4"/>
-                    </div>
-                    <!-- SECTION - hot info - END -->
-
+        <div class="t-main__content">
+            <!-- SECTION - BREADCRUMBS -->
+            <section class="t-section -px-world mt-2 -p0">
+                <div class="t-section__inner">
+                    <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION - hero + hot info - END -->
+            </section>
+            <!-- SECTION - BREADCRUMBS END -->
 
-        <!-- SECTION -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -place-main-with-aside">
-                    
-                    <div class="t-grid__section -main">
-                        <!-- SECTION - information by ChatGPT -->
-                        <section class="t-section mt-2 mb-4" v-if="place[0].information_chatgpt && !place[0].information_author?.length > 0">
-                            <div class="t-section__inner">
-                                <oInformationBlock :title="'O kontinentu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" styleThema=" -green" />
-                            </div>
-                        </section>
-                        <!-- SECTION - information by ChatGPT END -->
-
-                        <!-- SECTION - information by Author -->
-                        <section class="t-section" v-if="place[0].information_author?.length > 0">
-                            <div class="t-section__inner">
-                                <oInformationBlock :title="'O kontinentu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_author[0].text" :authorID="place[0].information_author[0].author_create" styleThema=" -green" />
-                            </div>
-                        </section>
-                        <!-- SECTION - information by Author END -->
-
-                        <!-- SECTION - ad-google - wysiwyg -->
-                        <section class="t-section  my-2 -p0 print-section">
-                            <div class="t-section__inner">
-                                <oAdGoogleWysiwyg styleThema=" -green" />
-                            </div>
-                        </section>
-                        <!-- SECTION - ad-google - wysiwyg - END -->
-
-                        <!-- SECTION - Account banner big - sidebar -->
-                        <section class="t-section -px-world my-1" v-if="account && account.length === 0">
-                            <div class="t-section__inner">
-                                <oAccountBannerBig :account="account" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Account banner big - sidebar END -->
-
-                        <!-- SECTION - Review -->
-                        <oReviewItem :account="account" :IDplace="place[0].id" type="continent" v-if="place[0].id" />
-                        <!-- SECTION - Review END -->
-                    </div>
-
-
-                    <div class="t-grid__section -aside-place-status">
-                        <!-- SECTION - Visited button - sidebar -->
-                        <section class="t-section -px-world my-1">
-                            <div class="t-section__inner">
-                                <oVisitedButton :account="account" :place="this.place[0].id" placeType="continent" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Visited button - sidebar - END -->
-                    </div>
-                    <div class="t-grid__section -aside-content">
-                    </div>
-                    <div class="t-grid__section -aside-ad">
-                        <!-- SECTION - ad-google - sidebar -->
-                        <section class="t-section -px-world mt-4 mb-2">
-                            <div class="t-section__inner">
-                                <oAdGoogleSidebar styleThema=" -green" />
-                            </div>
-                        </section>
-                        <!-- SECTION - ad-google - sidebar - END -->
-                    </div>
-
+            <!-- SECTION - Buttons -->
+            <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
+                <div class="t-section__inner">
+                    <oSwitchHero :show-hero.sync="showHero" />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION END -->
+            </section>
+            <!-- SECTION - Buttons END -->
 
-        <!-- SECTION States, Videos and Articles -->
-        <section class="t-section -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -world-ful">
-                    <div class="t-grid__section -content">
+            <!-- SECTION - hero + hot info hero -->
+            <section class="t-section -px-world -p0">
+                <div class="t-section__inner">
+                    <div class="t-grid -world-hero">
 
-                        <!-- SECTION - státy -->
-                        <section class="t-section -p0 -py4 -px-world-big -h-scroll">
-                            <div class="t-section__inner">
-                                <mHeadline title="Všechny státy na kontinentu" :titleValue="place[0].name" styleAlign=" -left" styleThema=" -world" styleGap=" -px-0 mb-2" />
-                                <oCoverPlaceDetail :places="placesStates" :images="imagesStates" type="stat" />
-                            </div>
-                        </section>
-                        <!-- SECTION - státy - END -->
+                        <!-- SECTION - hero -->
+                        <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
+                            <oHeroPlace :title="place[0].name" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
+                        </div>
+                        <!-- SECTION - hero END -->
 
-                        <!-- SECTION - videos -->
-                        <section class="t-section -p0 -bg-green py-4 hidden-print" v-if="place[0] && videos.length !== 0">
-                            <div class="t-section__inner">
-                                <mHeadline title="Videa z kontinentu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                                <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
-                                <oVideoList :videos="null" :images="null" styleThema=" -world" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
-                                <div class="flex flex-center my-2" v-if="!isLoadingVideos && !noMoreVideosItems">
-                                    <span class="a-button-border -big -green" @click="loadMoreVideosItems">Načíst další videa</span>
+                        <!-- SECTION - map -->
+                        <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
+                            <oMapGoogle :place="place" />
+                        </div>
+                        <!-- SECTION - map - END -->
+
+                        <!-- SECTION - hot info -->
+                        <div class="t-grid__section -hot-info-hero">
+                            <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col4"/>
+                        </div>
+                        <!-- SECTION - hot info - END -->
+
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION - hero + hot info - END -->
+
+            <!-- SECTION -->
+            <section class="t-section -px-world -p0">
+                <div class="t-section__inner">
+                    <div class="t-grid -place-main-with-aside">
+                        
+                        <div class="t-grid__section -main">
+                            <!-- SECTION - information by ChatGPT -->
+                            <section class="t-section mt-2 mb-4" v-if="place[0].information_chatgpt && !place[0].information_author?.length > 0">
+                                <div class="t-section__inner">
+                                    <oInformationBlock :title="'O kontinentu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" styleThema=" -green" />
                                 </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - videos END -->
+                            </section>
+                            <!-- SECTION - information by ChatGPT END -->
 
-                        <!-- SECTION - articles -->
-                        <section class="t-section -p0 -bg-green py-4 hidden-print" v-if="place[0] && posts.length !== 0">
-                            <div class="t-section__inner">
-                                <mHeadline title="Články z kontinetu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                                <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
-                                <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingPosts" />
-                                <div class="flex flex-center my-2" v-if="!isLoadingPosts && !noMorePostsItems">
-                                    <span class="a-button-border -big -green" @click="loadMorePostsItems">Načíst další články</span>
+                            <!-- SECTION - information by Author -->
+                            <section class="t-section" v-if="place[0].information_author?.length > 0">
+                                <div class="t-section__inner">
+                                    <oInformationBlock :title="'O kontinentu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_author[0].text" :authorID="place[0].information_author[0].author_create" styleThema=" -green" />
                                 </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - articles END -->
+                            </section>
+                            <!-- SECTION - information by Author END -->
+
+                            <!-- SECTION - ad-google - wysiwyg -->
+                            <section class="t-section  my-2 -p0 print-section">
+                                <div class="t-section__inner">
+                                    <oAdGoogleWysiwyg styleThema=" -green" />
+                                </div>
+                            </section>
+                            <!-- SECTION - ad-google - wysiwyg - END -->
+
+                            <!-- SECTION - Account banner big - sidebar -->
+                            <section class="t-section -px-world my-1" v-if="account && account.length === 0">
+                                <div class="t-section__inner">
+                                    <oAccountBannerBig :account="account" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Account banner big - sidebar END -->
+
+                            <!-- SECTION - Review -->
+                            <oReviewItem :account="account" :IDplace="place[0].id" type="continent" v-if="place[0].id" />
+                            <!-- SECTION - Review END -->
+                        </div>
+
+
+                        <div class="t-grid__section -aside-place-status">
+                            <!-- SECTION - Visited button - sidebar -->
+                            <section class="t-section -px-world my-1">
+                                <div class="t-section__inner">
+                                    <oVisitedButton :account="account" :place="this.place[0].id" placeType="continent" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Visited button - sidebar - END -->
+                        </div>
+                        <div class="t-grid__section -aside-content">
+                        </div>
+                        <div class="t-grid__section -aside-ad">
+                            <!-- SECTION - ad-google - sidebar -->
+                            <section class="t-section -px-world mt-4 mb-2">
+                                <div class="t-section__inner">
+                                    <oAdGoogleSidebar styleThema=" -green" />
+                                </div>
+                            </section>
+                            <!-- SECTION - ad-google - sidebar - END -->
+                        </div>
 
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- SECTION States, Videos and Articles END -->
+            </section>
+            <!-- SECTION END -->
+
+            <!-- SECTION States, Videos and Articles -->
+            <section class="t-section -p0">
+                <div class="t-section__inner">
+                    <div class="t-grid -world-ful">
+                        <div class="t-grid__section -content">
+
+                            <!-- SECTION - státy -->
+                            <section class="t-section -p0 -py4 -px-world-big -h-scroll">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Všechny státy na kontinentu" :titleValue="place[0].name" styleAlign=" -left" styleThema=" -world" styleGap=" -px-0 mb-2" />
+                                    <oCoverPlaceDetail :places="placesStates" :images="imagesStates" type="stat" />
+                                </div>
+                            </section>
+                            <!-- SECTION - státy - END -->
+
+                            <!-- SECTION - videos -->
+                            <section class="t-section -p0 -bg-green py-4 hidden-print" v-if="place[0] && videos.length !== 0">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Videa z kontinentu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                    <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
+                                    <oVideoList :videos="null" :images="null" styleThema=" -world" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
+                                    <div class="flex flex-center my-2" v-if="!isLoadingVideos && !noMoreVideosItems">
+                                        <span class="a-button-border -big -green" @click="loadMoreVideosItems">Načíst další videa</span>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- SECTION - videos END -->
+
+                            <!-- SECTION - articles -->
+                            <section class="t-section -p0 -bg-green py-4 hidden-print" v-if="place[0] && posts.length !== 0">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Články z kontinetu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                    <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
+                                    <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingPosts" />
+                                    <div class="flex flex-center my-2" v-if="!isLoadingPosts && !noMorePostsItems">
+                                        <span class="a-button-border -big -green" @click="loadMorePostsItems">Načíst další články</span>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- SECTION - articles END -->
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION States, Videos and Articles END -->
+        </div>
     </main>
 </template>
 

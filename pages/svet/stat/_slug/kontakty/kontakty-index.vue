@@ -1,138 +1,140 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-        <!-- SECTION - BREADCRUMBS -->
-        <section class="t-section -px-world mt-2 -p0">
-            <div class="t-section__inner">
-                <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" />
-            </div>
-        </section>
-        <!-- SECTION - BREADCRUMBS END -->
-
-        <!-- SECTION - Buttons -->
-        <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
-            <div class="t-section__inner">
-                <oSwitchHero :show-hero.sync="showHero" />
-            </div>
-        </section>
-        <!-- SECTION - Buttons END -->
-
-        <!-- SECTION - hero + hot info hero -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -world-hero">
-
-                    <!-- SECTION - hero -->
-                    <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
-                        <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
-                    </div>
-                    <!-- SECTION - hero END -->
-
-                    <!-- SECTION - map -->
-                    <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
-                        <oMapGoogle :place="place" />
-                    </div>
-                    <!-- SECTION - map - END -->
-
-                    <!-- SECTION - hot info -->
-                    <div class="t-grid__section -hot-info-hero">
-                        <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
-                    </div>
-                    <!-- SECTION - hot info - END -->
-
-                </div>
-            </div>
-        </section>
-        <!-- SECTION - hero + hot info - END -->
-
-        <!-- SECTION - Alerts -->
-        <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
-            <div class="t-section__inner">
-                <oAlerts :alerts="place[0].alerts" />
-            </div>
-        </section>
-        <!-- SECTION - Alerts END -->
-    
-        <!-- SECTION - Nav place -->
-        <section class="t-section -px-world-big -p0" v-if="place[0]">
-            <div class="t-section__inner">
-                <mNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
-            </div>
-        </section>
-        <!-- SECTION - Nav place END -->
-
-        <div class="t-main -tab" v-if="place[0]">
-            <!-- SECTION -->
-            <section class="t-section -px-world -p0 mb-4">
+        <div class="t-main__content">
+            <!-- SECTION - BREADCRUMBS -->
+            <section class="t-section -px-world mt-2 -p0">
                 <div class="t-section__inner">
-                    <div class="t-grid -place-main-with-aside">
-                        <div class="t-grid__section -main">
+                    <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" />
+                </div>
+            </section>
+            <!-- SECTION - BREADCRUMBS END -->
 
-                            <!-- SECTION - Telefoní čísla(emergency) -->
-                            <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].phone_numbers_emergency">
-                                <div class="t-section__inner">
-                                    <mHeadline title="Důležitá telefonní čísla" :perex="'Telefonní předvolba: ' + place[0].phone_prefix" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                    <oBlockList :items="place[0].phone_numbers_emergency" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Telefoní čísla(emergency) END -->
+            <!-- SECTION - Buttons -->
+            <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
+                <div class="t-section__inner">
+                    <oSwitchHero :show-hero.sync="showHero" />
+                </div>
+            </section>
+            <!-- SECTION - Buttons END -->
 
-                            <!-- SECTION - Organizace -->
-                            <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].organization && place[0].organization.length > 0">
-                                <div class="t-section__inner">
-                                    <mHeadline title="Organizace ve kterých se stát nachází" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                    <oOrganizationList :items="this.place[0].organization" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Organizace END -->
+            <!-- SECTION - hero + hot info hero -->
+            <section class="t-section -px-world -p0">
+                <div class="t-section__inner">
+                    <div class="t-grid -world-hero">
+
+                        <!-- SECTION - hero -->
+                        <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
+                            <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
                         </div>
+                        <!-- SECTION - hero END -->
 
-                        <div class="t-grid__section -aside-place-status">
-                            <!-- SECTION - Visited button - sidebar -->
-                            <section class="t-section -px-world my-1">
-                                <div class="t-section__inner">
-                                    <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Visited button - sidebar - END -->
+                        <!-- SECTION - map -->
+                        <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
+                            <oMapGoogle :place="place" />
                         </div>
-                        <div class="t-grid__section -aside-content">
-                            <!-- SECTION - Account banner - sidebar -->
-                            <section class="t-section -px-world my-1" v-if="account && account.length === 0">
-                                <div class="t-section__inner">
-                                    <oAccountBanner :account="account" styleThema=" -green" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Account banner - sidebar END -->
+                        <!-- SECTION - map - END -->
 
-                            <!-- SECTION - links - sidebar -->
-                            <section class="t-section -px-world" v-if="this.place[0].links && this.place[0].links.length > 0">
-                                <div class="t-section__inner">
-                                    <oSidebarLinks :items="this.place[0].links" headline="Užitečné odkazy" />
-                                </div>
-                            </section>
-                            <!-- SECTION - links - sidebar - END -->
+                        <!-- SECTION - hot info -->
+                        <div class="t-grid__section -hot-info-hero">
+                            <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
+                        </div>
+                        <!-- SECTION - hot info - END -->
 
-                            <!-- SECTION - apps - sidebar -->
-                            <section class="t-section -px-world" v-if="this.place[0].apps && this.place[0].apps.length > 0">
-                                <div class="t-section__inner">
-                                    <oSidebarLinks :items="this.place[0].apps" headline="Užitečné aplikace" />
-                                </div>
-                            </section>
-                            <!-- SECTION - apps - sidebar - END -->
-                        </div>
-                        <div class="t-grid__section -aside-ad">
-                            <!-- SECTION - ad-google - sidebar -->
-                            <section class="t-section -px-world mt-4 mb-2">
-                                <div class="t-section__inner">
-                                    <oAdGoogleSidebar styleThema=" -green" />
-                                </div>
-                            </section>
-                            <!-- SECTION - ad-google - sidebar - END -->
-                        </div>
                     </div>
                 </div>
             </section>
-            <!-- SECTION END -->
+            <!-- SECTION - hero + hot info - END -->
+
+            <!-- SECTION - Alerts -->
+            <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
+                <div class="t-section__inner">
+                    <oAlerts :alerts="place[0].alerts" />
+                </div>
+            </section>
+            <!-- SECTION - Alerts END -->
+        
+            <!-- SECTION - Nav place -->
+            <section class="t-section -px-world-big -p0" v-if="place[0]">
+                <div class="t-section__inner">
+                    <mNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
+                </div>
+            </section>
+            <!-- SECTION - Nav place END -->
+
+            <div class="t-main -tab" v-if="place[0]">
+                <!-- SECTION -->
+                <section class="t-section -px-world -p0 mb-4">
+                    <div class="t-section__inner">
+                        <div class="t-grid -place-main-with-aside">
+                            <div class="t-grid__section -main">
+
+                                <!-- SECTION - Telefoní čísla(emergency) -->
+                                <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].phone_numbers_emergency">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Důležitá telefonní čísla" :perex="'Telefonní předvolba: ' + place[0].phone_prefix" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oBlockList :items="place[0].phone_numbers_emergency" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Telefoní čísla(emergency) END -->
+
+                                <!-- SECTION - Organizace -->
+                                <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].organization && place[0].organization.length > 0">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Organizace ve kterých se stát nachází" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oOrganizationList :items="this.place[0].organization" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Organizace END -->
+                            </div>
+
+                            <div class="t-grid__section -aside-place-status">
+                                <!-- SECTION - Visited button - sidebar -->
+                                <section class="t-section -px-world my-1">
+                                    <div class="t-section__inner">
+                                        <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Visited button - sidebar - END -->
+                            </div>
+                            <div class="t-grid__section -aside-content">
+                                <!-- SECTION - Account banner - sidebar -->
+                                <section class="t-section -px-world my-1" v-if="account && account.length === 0">
+                                    <div class="t-section__inner">
+                                        <oAccountBanner :account="account" styleThema=" -green" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Account banner - sidebar END -->
+
+                                <!-- SECTION - links - sidebar -->
+                                <section class="t-section -px-world" v-if="this.place[0].links && this.place[0].links.length > 0">
+                                    <div class="t-section__inner">
+                                        <oSidebarLinks :items="this.place[0].links" headline="Užitečné odkazy" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - links - sidebar - END -->
+
+                                <!-- SECTION - apps - sidebar -->
+                                <section class="t-section -px-world" v-if="this.place[0].apps && this.place[0].apps.length > 0">
+                                    <div class="t-section__inner">
+                                        <oSidebarLinks :items="this.place[0].apps" headline="Užitečné aplikace" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - apps - sidebar - END -->
+                            </div>
+                            <div class="t-grid__section -aside-ad">
+                                <!-- SECTION - ad-google - sidebar -->
+                                <section class="t-section -px-world mt-4 mb-2">
+                                    <div class="t-section__inner">
+                                        <oAdGoogleSidebar styleThema=" -green" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - ad-google - sidebar - END -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION END -->
+            </div>
         </div>
     </main>
 </template>

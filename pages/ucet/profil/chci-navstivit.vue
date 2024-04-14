@@ -1,81 +1,81 @@
 <template>
     <main class="t-main -blue -pt-menu" role="main">
+        <div class="t-main__content">
+            <!-- SECTION -->
+            <section class="t-section -padding-x -padding-y -p0 mb-4">
+                <div class="t-section__inner">
+                    <div class="t-grid -account">
+                        
+                        <div class="t-grid__section -nav">
+                            <!-- SECTION - account headline - account -->
+                            <section class="t-section -padding-x -p0">
+                                <div class="t-section__inner">
+                                    <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                </div>
+                            </section>
+                            <!-- SECTION - nav - account END -->
 
-        <!-- SECTION -->
-        <section class="t-section -padding-x -padding-y -p0 mb-4">
-            <div class="t-section__inner">
-                <div class="t-grid -account">
-                    
-                    <div class="t-grid__section -nav">
-                        <!-- SECTION - account headline - account -->
-                        <section class="t-section -padding-x -p0">
-                            <div class="t-section__inner">
-                                <mAccountHeader :account="account" @update="menuAccountUpdate" />
-                            </div>
-                        </section>
-                        <!-- SECTION - nav - account END -->
+                            <!-- SECTION - nav - account -->
+                            <section class="t-section -padding-x -p0">
+                                <div class="t-section__inner">
+                                    <mNavAccount :statusOpen="mNavAccountOpen" />
+                                </div>
+                            </section>
+                            <!-- SECTION - nav - account END -->
+                        </div>
 
-                        <!-- SECTION - nav - account -->
-                        <section class="t-section -padding-x -p0">
-                            <div class="t-section__inner">
-                                <mNavAccount :statusOpen="mNavAccountOpen" />
-                            </div>
-                        </section>
-                        <!-- SECTION - nav - account END -->
+                        <div class="t-grid__section -content">
+                            <!-- SECTION - Visited place category -->
+                            <section class="t-section -padding-x -p0 pb-4 print-section">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Kontinety které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                    <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesContinentsID" type="kontinent" typeAccount="login" :status="2" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Visited place category END -->
+
+                            <!-- SECTION - Visited place category -->
+                            <section class="t-section -padding-x -p0 pb-4 print-section">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Státy které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                    <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesStatesID" type="stat" typeAccount="login" :status="2" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Visited place category END -->
+
+                            <!-- SECTION - Visited place category -->
+                            <section class="t-section -padding-x -p0 pb-4 print-section">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Města které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                    <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesCitiesID" type="mesto" typeAccount="login" :status="2" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Visited place category END -->
+
+                            <!-- SECTION - Visited place category -->
+                            <section class="t-section -padding-x -p0 pb-4 print-section">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Regiony které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                    <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesRegionsID" type="region" typeAccount="login" :status="2" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Visited place category END -->
+
+                            <!-- SECTION - Visited place category -->
+                            <section class="t-section -padding-x -p0 pb-4 print-section">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Místa které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                    <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesSpotsID" type="misto" typeAccount="login" :status="2" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Visited place category END -->
+                        </div>
+
                     </div>
-
-                    <div class="t-grid__section -content">
-                        <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4 print-section">
-                            <div class="t-section__inner">
-                                <mHeadline title="Kontinety které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesContinentsID" type="kontinent" typeAccount="login" :status="2" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Visited place category END -->
-
-                        <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4 print-section">
-                            <div class="t-section__inner">
-                                <mHeadline title="Státy které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesStatesID" type="stat" typeAccount="login" :status="2" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Visited place category END -->
-
-                        <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4 print-section">
-                            <div class="t-section__inner">
-                                <mHeadline title="Města které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesCitiesID" type="mesto" typeAccount="login" :status="2" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Visited place category END -->
-
-                        <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4 print-section">
-                            <div class="t-section__inner">
-                                <mHeadline title="Regiony které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesRegionsID" type="region" typeAccount="login" :status="2" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Visited place category END -->
-
-                        <!-- SECTION - Visited place category -->
-                        <section class="t-section -padding-x -p0 pb-4 print-section">
-                            <div class="t-section__inner">
-                                <mHeadline title="Místa které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesSpotsID" type="misto" typeAccount="login" :status="2" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Visited place category END -->
-                    </div>
-
                 </div>
-            </div>
-        </section>
-        <!-- SECTION END -->
-
+            </section>
+            <!-- SECTION END -->
+        </div>
     </main>
 </template>
 

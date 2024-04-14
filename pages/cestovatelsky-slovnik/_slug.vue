@@ -1,56 +1,57 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
-        <!-- SECTION - BREADCRUMBS -->
-        <section class="t-section -px-world mt-2 -p0 print-section">
-            <div class="t-section__inner">
-                <mNavBreadcrumbsItem :links="mNavBreadcrumbsTravelDictionaryArray" :item="travelDictionary[0]" />
-            </div>
-        </section>
-        <!-- SECTION - BREADCRUMBS END -->
-
-        <!-- SECTION -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -world-content-with-ad">
-                    
-                    <div class="t-grid__section -content">
-                        <!-- SECTION - hero -->
-                        <section class="t-section print-section">
-                            <div class="t-section__inner">
-                                <oHeroItemDetail :item="travelDictionary" :images="imageTravelDictionary" />
-                            </div>
-                        </section>
-                        <!-- SECTION - hero END -->
-
-                        <!-- SECTION - information by ChatGPT -->
-                        <section class="t-section print-section" v-if="travelDictionary[0].description">
-                            <div class="t-section__inner">
-                                <oInformationBlock :title="'Co je ' + (travelDictionary[0].name ? travelDictionary[0].name : '') + '?'" :perexWysiwyg="travelDictionary[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
-                            </div>
-                        </section>
-                        <!-- SECTION - information by ChatGPT END -->
-                    </div>
-
-
-                    <div class="t-grid__section -ad">
-                        <!-- SECTION - Events - sidebar -->
-                        <oSidebarListTravelDictionary :IDTravelDictionary="this.travelDictionary[0].id" />
-                        <!-- SECTION - Events - sidebar - END -->
-
-                        <!-- SECTION - ad-google - sidebar -->
-                        <section class="t-section -px-world mt-4 mb-2">
-                            <div class="t-section__inner">
-                                <oAdGoogleSidebar styleThema=" -green" />
-                            </div>
-                        </section>
-                        <!-- SECTION - ad-google - sidebar - END -->
-                    </div>
-
+        <div class="t-main__content">
+            <!-- SECTION - BREADCRUMBS -->
+            <section class="t-section -px-world mt-2 -p0 print-section">
+                <div class="t-section__inner">
+                    <mNavBreadcrumbsItem :links="mNavBreadcrumbsTravelDictionaryArray" :item="travelDictionary[0]" />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION END -->
+            </section>
+            <!-- SECTION - BREADCRUMBS END -->
+
+            <!-- SECTION -->
+            <section class="t-section -px-world -p0">
+                <div class="t-section__inner">
+                    <div class="t-grid -world-content-with-ad">
+                        
+                        <div class="t-grid__section -content">
+                            <!-- SECTION - hero -->
+                            <section class="t-section print-section">
+                                <div class="t-section__inner">
+                                    <oHeroItemDetail :item="travelDictionary" :images="imageTravelDictionary" />
+                                </div>
+                            </section>
+                            <!-- SECTION - hero END -->
+
+                            <!-- SECTION - information by ChatGPT -->
+                            <section class="t-section print-section" v-if="travelDictionary[0].description">
+                                <div class="t-section__inner">
+                                    <oInformationBlock :title="'Co je ' + (travelDictionary[0].name ? travelDictionary[0].name : '') + '?'" :perexWysiwyg="travelDictionary[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
+                                </div>
+                            </section>
+                            <!-- SECTION - information by ChatGPT END -->
+                        </div>
+
+
+                        <div class="t-grid__section -ad">
+                            <!-- SECTION - Events - sidebar -->
+                            <oSidebarListTravelDictionary :IDTravelDictionary="this.travelDictionary[0].id" />
+                            <!-- SECTION - Events - sidebar - END -->
+
+                            <!-- SECTION - ad-google - sidebar -->
+                            <section class="t-section -px-world mt-4 mb-2">
+                                <div class="t-section__inner">
+                                    <oAdGoogleSidebar styleThema=" -green" />
+                                </div>
+                            </section>
+                            <!-- SECTION - ad-google - sidebar - END -->
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION END -->
+        </div>
     </main>
 </template>
 

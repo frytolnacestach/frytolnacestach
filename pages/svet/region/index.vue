@@ -1,34 +1,34 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
-        <!-- SECTION - Hero place type -->
-        <section class="t-section py-4">
-            <div class="t-section__inner">
-                <oHeroPlaceType styleType=" -region" :title="headlineFilter" perex="Prozkoumejte bohatství regionů, která naše planeta nabízí, a ponořte se do rozmanitosti politických i přírodních oblastí. Od malebných koutů s historickým odkazem po dobrodružství ve fascinujících krajinách. Každý region má svůj unikátní příběh, který vypráví o místní kultuře, tradicích a kráse. Zveme vás k objevování těchto fascinujících destinací a k prožívání nezapomenutelných okamžiků, které vám poskytnou pohled do srdce každého regionu." />
-            </div>
-        </section>
-        <!-- SECTION - Hero place type END -->
-
-        <!-- SECTION - Filter -->
-        <section class="t-section -p0 hidden-print">
-            <div class="t-section__inner">
-                <oFormFilterPlace styleThema=" -green" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
-            </div>
-        </section>
-        <!-- SECTION - Filter END -->
-
-        <!-- SECTION - Place list -->
-        <section class="t-section -p0">
-            <div class="t-section__inner">
-                <oCoverPlace :places="placesRegions" :placesParent="placesParent" :showPrename="true" :images="images" type="region" />
-                <oCoverPlace :places="null" :images="null" type="region" :skeleton=true v-if="isLoading" />
-                <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                    <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+        <div class="t-main__content">
+            <!-- SECTION - Hero place type -->
+            <section class="t-section py-4">
+                <div class="t-section__inner">
+                    <oHeroPlaceType styleType=" -region" :title="headlineFilter" perex="Prozkoumejte bohatství regionů, která naše planeta nabízí, a ponořte se do rozmanitosti politických i přírodních oblastí. Od malebných koutů s historickým odkazem po dobrodružství ve fascinujících krajinách. Každý region má svůj unikátní příběh, který vypráví o místní kultuře, tradicích a kráse. Zveme vás k objevování těchto fascinujících destinací a k prožívání nezapomenutelných okamžiků, které vám poskytnou pohled do srdce každého regionu." />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION - Place list END -->
+            </section>
+            <!-- SECTION - Hero place type END -->
 
+            <!-- SECTION - Filter -->
+            <section class="t-section -p0 hidden-print">
+                <div class="t-section__inner">
+                    <oFormFilterPlace styleThema=" -green" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
+                </div>
+            </section>
+            <!-- SECTION - Filter END -->
+
+            <!-- SECTION - Place list -->
+            <section class="t-section -p0">
+                <div class="t-section__inner">
+                    <oCoverPlace :places="placesRegions" :placesParent="placesParent" :showPrename="true" :images="images" type="region" />
+                    <oCoverPlace :places="null" :images="null" type="region" :skeleton=true v-if="isLoading" />
+                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION - Place list END -->
+        </div>
     </main>
 </template>
 

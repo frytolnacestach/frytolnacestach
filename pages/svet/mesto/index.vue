@@ -1,34 +1,34 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-
-        <!-- SECTION - Hero place type -->
-        <section class="t-section py-4">
-            <div class="t-section__inner">
-                <oHeroPlaceType styleType=" -city" :title="headlineFilter" perex="Města, jsou místem, kde se setkávají historie, kultura a moderní doba. Na naší planetě, je podle velmi nepřesných zdrojů více než tři a půl milionu obcí, na našem cestovatelském portálu jich najdeš přibližně 2500 měst, z nichž každé má svůj unikátní příběh a kouzlo." />
-            </div>
-        </section>
-        <!-- SECTION - Hero place type END -->
-
-        <!-- SECTION - Filter -->
-        <section class="t-section -p0 hidden-print">
-            <div class="t-section__inner">
-                <oFormFilterPlace styleThema=" -green" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
-            </div>
-        </section>
-        <!-- SECTION - Filter END -->
-
-        <!-- SECTION - Place list -->
-        <section class="t-section -bg-world -p0">
-            <div class="t-section__inner">
-                <oCoverPlace :places="placesCities" :placesParent="placesParent" :showPrename="true" :images="images" type="mesto" />
-                <oCoverPlace :places="null" :images="null" type="mesto" :skeleton=true v-if="isLoading" />
-                <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                    <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+        <div class="t-main__content">
+            <!-- SECTION - Hero place type -->
+            <section class="t-section py-4">
+                <div class="t-section__inner">
+                    <oHeroPlaceType styleType=" -city" :title="headlineFilter" perex="Města, jsou místem, kde se setkávají historie, kultura a moderní doba. Na naší planetě, je podle velmi nepřesných zdrojů více než tři a půl milionu obcí, na našem cestovatelském portálu jich najdeš přibližně 2500 měst, z nichž každé má svůj unikátní příběh a kouzlo." />
                 </div>
-            </div>
-        </section>
-        <!-- SECTION - Place list END -->
+            </section>
+            <!-- SECTION - Hero place type END -->
 
+            <!-- SECTION - Filter -->
+            <section class="t-section -p0 hidden-print">
+                <div class="t-section__inner">
+                    <oFormFilterPlace styleThema=" -green" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
+                </div>
+            </section>
+            <!-- SECTION - Filter END -->
+
+            <!-- SECTION - Place list -->
+            <section class="t-section -bg-world -p0">
+                <div class="t-section__inner">
+                    <oCoverPlace :places="placesCities" :placesParent="placesParent" :showPrename="true" :images="images" type="mesto" />
+                    <oCoverPlace :places="null" :images="null" type="mesto" :skeleton=true v-if="isLoading" />
+                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION - Place list END -->
+        </div>
     </main>
 </template>
 

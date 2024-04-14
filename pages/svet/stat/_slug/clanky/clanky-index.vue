@@ -1,89 +1,91 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-        <!-- SECTION - BREADCRUMBS -->
-        <section class="t-section -px-world mt-2 -p0">
-            <div class="t-section__inner">
-                <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" />
-            </div>
-        </section>
-        <!-- SECTION - BREADCRUMBS END -->
-
-        <!-- SECTION - Buttons -->
-        <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
-            <div class="t-section__inner">
-                <oSwitchHero :show-hero.sync="showHero" />
-            </div>
-        </section>
-        <!-- SECTION - Buttons END -->
-
-        <!-- SECTION - hero + hot info hero -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -world-hero">
-
-                    <!-- SECTION - hero -->
-                    <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
-                        <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
-                    </div>
-                    <!-- SECTION - hero END -->
-
-                    <!-- SECTION - map -->
-                    <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
-                        <oMapGoogle :place="place" />
-                    </div>
-                    <!-- SECTION - map - END -->
-
-                    <!-- SECTION - hot info -->
-                    <div class="t-grid__section -hot-info-hero">
-                        <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
-                    </div>
-                    <!-- SECTION - hot info - END -->
-
-                </div>
-            </div>
-        </section>
-        <!-- SECTION - hero + hot info - END -->
-
-        <!-- SECTION - Alerts -->
-        <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
-            <div class="t-section__inner">
-                <oAlerts :alerts="place[0].alerts" />
-            </div>
-        </section>
-        <!-- SECTION - Alerts END -->
-    
-        <!-- SECTION - Nav place -->
-        <section class="t-section -px-world-big -p0" v-if="place[0]">
-            <div class="t-section__inner">
-                <mNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
-            </div>
-        </section>
-        <!-- SECTION - Nav place END -->
-
-        <div class="t-main -tab" v-if="place[0]">
-            <!-- SECTION -->
-            <section class="t-section -p0">
+        <div class="t-main__content">
+            <!-- SECTION - BREADCRUMBS -->
+            <section class="t-section -px-world mt-2 -p0">
                 <div class="t-section__inner">
-                    <div class="t-grid -world-full">
-                        <div class="t-grid__section -content">
-                            <!-- SECTION - articles -->
-                            <section class="t-section -p0 -px-world my-2" v-if="place[0] && posts.length !== 0">
-                                <div class="t-section__inner">
-                                    <mHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                    <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world-tab" styleThemaLoading=" -green" styleAlign=" -p-left" />
-                                    <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingPosts" />
-                                    <oNoneContent text="Bohužel zde nejsou žádné články" styleThema=" -green" styleGap=" px-1" v-if="posts && posts.length === 0 && !isLoadingPosts" />
-                                    <div class="flex flex-center my-2" v-if="!isLoadingPosts && !noMorePostsItems">
-                                        <span class="a-button-border -big -green" @click="loadMorePostsItems">Načíst další články</span>
-                                    </div>
-                                </div>
-                            </section>
-                            <!-- SECTION - articles END -->
+                    <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" />
+                </div>
+            </section>
+            <!-- SECTION - BREADCRUMBS END -->
+
+            <!-- SECTION - Buttons -->
+            <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
+                <div class="t-section__inner">
+                    <oSwitchHero :show-hero.sync="showHero" />
+                </div>
+            </section>
+            <!-- SECTION - Buttons END -->
+
+            <!-- SECTION - hero + hot info hero -->
+            <section class="t-section -px-world -p0">
+                <div class="t-section__inner">
+                    <div class="t-grid -world-hero">
+
+                        <!-- SECTION - hero -->
+                        <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
+                            <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
                         </div>
+                        <!-- SECTION - hero END -->
+
+                        <!-- SECTION - map -->
+                        <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
+                            <oMapGoogle :place="place" />
+                        </div>
+                        <!-- SECTION - map - END -->
+
+                        <!-- SECTION - hot info -->
+                        <div class="t-grid__section -hot-info-hero">
+                            <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
+                        </div>
+                        <!-- SECTION - hot info - END -->
+
                     </div>
                 </div>
             </section>
-            <!-- SECTION END -->
+            <!-- SECTION - hero + hot info - END -->
+
+            <!-- SECTION - Alerts -->
+            <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
+                <div class="t-section__inner">
+                    <oAlerts :alerts="place[0].alerts" />
+                </div>
+            </section>
+            <!-- SECTION - Alerts END -->
+        
+            <!-- SECTION - Nav place -->
+            <section class="t-section -px-world-big -p0" v-if="place[0]">
+                <div class="t-section__inner">
+                    <mNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
+                </div>
+            </section>
+            <!-- SECTION - Nav place END -->
+
+            <div class="t-main -tab" v-if="place[0]">
+                <!-- SECTION -->
+                <section class="t-section -p0">
+                    <div class="t-section__inner">
+                        <div class="t-grid -world-full">
+                            <div class="t-grid__section -content">
+                                <!-- SECTION - articles -->
+                                <section class="t-section -p0 -px-world my-2" v-if="place[0] && posts.length !== 0">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world-tab" styleThemaLoading=" -green" styleAlign=" -p-left" />
+                                        <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingPosts" />
+                                        <oNoneContent text="Bohužel zde nejsou žádné články" styleThema=" -green" styleGap=" px-1" v-if="posts && posts.length === 0 && !isLoadingPosts" />
+                                        <div class="flex flex-center my-2" v-if="!isLoadingPosts && !noMorePostsItems">
+                                            <span class="a-button-border -big -green" @click="loadMorePostsItems">Načíst další články</span>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- SECTION - articles END -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION END -->
+            </div>
         </div>
     </main>
 </template>

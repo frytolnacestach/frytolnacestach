@@ -1,132 +1,134 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-        <!-- SECTION - BREADCRUMBS -->
-        <section class="t-section -px-world mt-2 -p0">
-            <div class="t-section__inner">
-                <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" />
-            </div>
-        </section>
-        <!-- SECTION - BREADCRUMBS END -->
-
-        <!-- SECTION - Buttons -->
-        <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
-            <div class="t-section__inner">
-                <oSwitchHero :show-hero.sync="showHero" />
-            </div>
-        </section>
-        <!-- SECTION - Buttons END -->
-
-        <!-- SECTION - hero + hot info hero -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -world-hero">
-
-                    <!-- SECTION - hero -->
-                    <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
-                        <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
-                    </div>
-                    <!-- SECTION - hero END -->
-
-                    <!-- SECTION - map -->
-                    <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
-                        <oMapGoogle :place="place" />
-                    </div>
-                    <!-- SECTION - map - END -->
-
-                    <!-- SECTION - hot info -->
-                    <div class="t-grid__section -hot-info-hero">
-                        <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
-                    </div>
-                    <!-- SECTION - hot info - END -->
-
-                </div>
-            </div>
-        </section>
-        <!-- SECTION - hero + hot info - END -->
-
-        <!-- SECTION - Alerts -->
-        <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
-            <div class="t-section__inner">
-                <oAlerts :alerts="place[0].alerts" />
-            </div>
-        </section>
-        <!-- SECTION - Alerts END -->
-    
-        <!-- SECTION - Nav place -->
-        <section class="t-section -px-world-big -p0" v-if="place[0]">
-            <div class="t-section__inner">
-                <mNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
-            </div>
-        </section>
-        <!-- SECTION - Nav place END -->
-
-        <div class="t-main -tab" v-if="place[0]">
-            <!-- SECTION -->
-            <section class="t-section -px-world -p0 mb-4">
+        <div class="t-main__content">
+            <!-- SECTION - BREADCRUMBS -->
+            <section class="t-section -px-world mt-2 -p0">
                 <div class="t-section__inner">
-                    <div class="t-grid -place-main-with-aside">
-                        <div class="t-grid__section -main">
+                    <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" />
+                </div>
+            </section>
+            <!-- SECTION - BREADCRUMBS END -->
 
-                            <!-- SECTION - Ceny -->
-                            <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].money_prices">
-                                <div class="t-section__inner">
-                                    <mHeadline title="Ceny v zemi" perex="Ceny se můžou lišit v rámci sézony, místa a nebo míry a rychlosti inflace. Proto je berte jen jako orientační." styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                    <oBlockList :items="place[0].money_prices" :perexListItemValueSubfix="place[0].currency[0].code" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Ceny END -->
+            <!-- SECTION - Buttons -->
+            <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
+                <div class="t-section__inner">
+                    <oSwitchHero :show-hero.sync="showHero" />
+                </div>
+            </section>
+            <!-- SECTION - Buttons END -->
 
-                            <!-- SECTION - Ceny ubytování -->
-                            <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
-                                <div class="t-section__inner">
-                                    <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Jestli vás zajímá cena ubytování ve státě ' + (place[0].name ? place[0].name : '') + '. Kouknete se do záložky <a href=\'https://www.frytolnacestach.cz/svet/stat/' + place[0].slug + '/ubytovani\'>ubytování</a>, kde najdete aktuální cenu ubytování na platformě Booking.'" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Ceny END -->
+            <!-- SECTION - hero + hot info hero -->
+            <section class="t-section -px-world -p0">
+                <div class="t-section__inner">
+                    <div class="t-grid -world-hero">
 
+                        <!-- SECTION - hero -->
+                        <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
+                            <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
                         </div>
+                        <!-- SECTION - hero END -->
 
-                        <div class="t-grid__section -aside-place-status">
-                            <!-- SECTION - Visited button - sidebar -->
-                            <section class="t-section -px-world my-1">
-                                <div class="t-section__inner">
-                                    <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Visited button - sidebar - END -->
+                        <!-- SECTION - map -->
+                        <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
+                            <oMapGoogle :place="place" />
                         </div>
-                        <div class="t-grid__section -aside-content">
-                            <!-- SECTION - Account banner - sidebar -->
-                            <section class="t-section -px-world my-1" v-if="account && account.length === 0">
-                                <div class="t-section__inner">
-                                    <oAccountBanner :account="account" styleThema=" -green" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Account banner - sidebar END -->
+                        <!-- SECTION - map - END -->
 
-                            <section class="t-section-print">
-                                <!-- SECTION - Měna -->
-                                <section class="t-section -px-world my-1" v-if="place[0].currency[0].name !== null">
-                                    <div class="t-section__inner">
-                                        <oBlockItem title="Měna" :subtitle="place[0].currency[0].name" :perexWysiwyg="place[0].currency[0].code !== null ? place[0].currency[0].code : ''" styleThema=" -bg-world" />
-                                    </div>
-                                </section>
-                                <!-- SECTION - Měna END -->
-                            </section>
+                        <!-- SECTION - hot info -->
+                        <div class="t-grid__section -hot-info-hero">
+                            <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
                         </div>
-                        <div class="t-grid__section -aside-ad">
-                            <!-- SECTION - ad-google - sidebar -->
-                            <section class="t-section -px-world mt-4 mb-2">
-                                <div class="t-section__inner">
-                                    <oAdGoogleSidebar styleThema=" -green" />
-                                </div>
-                            </section>
-                            <!-- SECTION - ad-google - sidebar - END -->
-                        </div>
+                        <!-- SECTION - hot info - END -->
+
                     </div>
                 </div>
             </section>
-            <!-- SECTION END -->
+            <!-- SECTION - hero + hot info - END -->
+
+            <!-- SECTION - Alerts -->
+            <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
+                <div class="t-section__inner">
+                    <oAlerts :alerts="place[0].alerts" />
+                </div>
+            </section>
+            <!-- SECTION - Alerts END -->
+        
+            <!-- SECTION - Nav place -->
+            <section class="t-section -px-world-big -p0" v-if="place[0]">
+                <div class="t-section__inner">
+                    <mNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
+                </div>
+            </section>
+            <!-- SECTION - Nav place END -->
+
+            <div class="t-main -tab" v-if="place[0]">
+                <!-- SECTION -->
+                <section class="t-section -px-world -p0 mb-4">
+                    <div class="t-section__inner">
+                        <div class="t-grid -place-main-with-aside">
+                            <div class="t-grid__section -main">
+
+                                <!-- SECTION - Ceny -->
+                                <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].money_prices">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Ceny v zemi" perex="Ceny se můžou lišit v rámci sézony, místa a nebo míry a rychlosti inflace. Proto je berte jen jako orientační." styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <oBlockList :items="place[0].money_prices" :perexListItemValueSubfix="place[0].currency[0].code" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Ceny END -->
+
+                                <!-- SECTION - Ceny ubytování -->
+                                <section class="t-section pt-1 mt-2 mb-4" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
+                                    <div class="t-section__inner">
+                                        <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Jestli vás zajímá cena ubytování ve státě ' + (place[0].name ? place[0].name : '') + '. Kouknete se do záložky <a href=\'https://www.frytolnacestach.cz/svet/stat/' + place[0].slug + '/ubytovani\'>ubytování</a>, kde najdete aktuální cenu ubytování na platformě Booking.'" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Ceny END -->
+
+                            </div>
+
+                            <div class="t-grid__section -aside-place-status">
+                                <!-- SECTION - Visited button - sidebar -->
+                                <section class="t-section -px-world my-1">
+                                    <div class="t-section__inner">
+                                        <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Visited button - sidebar - END -->
+                            </div>
+                            <div class="t-grid__section -aside-content">
+                                <!-- SECTION - Account banner - sidebar -->
+                                <section class="t-section -px-world my-1" v-if="account && account.length === 0">
+                                    <div class="t-section__inner">
+                                        <oAccountBanner :account="account" styleThema=" -green" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Account banner - sidebar END -->
+
+                                <section class="t-section-print">
+                                    <!-- SECTION - Měna -->
+                                    <section class="t-section -px-world my-1" v-if="place[0].currency[0].name !== null">
+                                        <div class="t-section__inner">
+                                            <oBlockItem title="Měna" :subtitle="place[0].currency[0].name" :perexWysiwyg="place[0].currency[0].code !== null ? place[0].currency[0].code : ''" styleThema=" -bg-world" />
+                                        </div>
+                                    </section>
+                                    <!-- SECTION - Měna END -->
+                                </section>
+                            </div>
+                            <div class="t-grid__section -aside-ad">
+                                <!-- SECTION - ad-google - sidebar -->
+                                <section class="t-section -px-world mt-4 mb-2">
+                                    <div class="t-section__inner">
+                                        <oAdGoogleSidebar styleThema=" -green" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - ad-google - sidebar - END -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION END -->
+            </div>
         </div>
     </main>
 </template>

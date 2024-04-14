@@ -1,142 +1,144 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
-        <!-- SECTION - BREADCRUMBS -->
-        <section class="t-section -px-world mt-2 -p0">
-            <div class="t-section__inner">
-                <mNavBreadcrumbsItem :links="mNavBreadcrumbsEventArray" :item="event[0]" />
-            </div>
-        </section>
-        <!-- SECTION - BREADCRUMBS END -->
-
-        <!-- SECTION - Buttons -->
-        <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
-            <div class="t-section__inner">
-                <oSwitchHero :show-hero.sync="showHero" />
-            </div>
-        </section>
-        <!-- SECTION - Buttons END -->
-
-        <!-- SECTION - hero + hot info hero -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -world-hero">
-
-                    <!-- SECTION - hero -->
-                    <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
-                        <oHeroItemDetail :item="event" :images="image" />
-                    </div>
-                    <!-- SECTION - hero END -->
-
-                    <!-- SECTION - map -->
-                    <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
-                        <oMapGoogle :place="event" />
-                    </div>
-                    <!-- SECTION - map - END -->
-
-                </div>
-            </div>
-        </section>
-        <!-- SECTION - hero + hot info - END -->
-
-        <!-- SECTION -->
-        <section class="t-section -px-world -p0">
-            <div class="t-section__inner">
-                <div class="t-grid -world-content-with-ad">
-                    
-                    <div class="t-grid__section -content mb-4">
-                        <!-- SECTION - information -->
-                        <section class="t-section" v-if="event[0].description">
-                            <div class="t-section__inner">
-                                <oInformationBlock :title="'O události ' + (event[0].name ? event[0].name : '')" :perexWysiwyg="event[0].description" authorName="Michal Fryč (frytolnacestach)" authorLink="https://www.frytolnacestach.cz/cestovatel/frytol-na-cestach" authorTarget="_blank" />
-                            </div>
-                        </section>
-                        <!-- SECTION - information END -->
-
-                        <!-- SECTION - prices -->
-                        <section class="t-section my-4 print-section" v-if="event[0].prices && event[0].prices.length > 0">
-                            <div class="t-section__inner">
-                                <mHeadline title="Cena akce" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                <oPrices :items="event[0].prices" />
-                            </div>
-                        </section>
-                        <!-- SECTION - prices END -->
-
-                        <!-- SECTION - Ubytování - information -->
-                        <section class="t-section print-section">
-                            <div class="t-section__inner">
-                                <oInformationBlock :title="'Ubytování blízko události ' + (event[0].name ? event[0].name : '')" perexWysiwyg="Cena za konkrétní ubytování se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek." v-if="event[0].affiliate.find(x => x.name === 'booking').value === true" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Ubytování - information END -->
-
-                        <!-- SECTION - Ubytování -->
-                        <section class="t-section -px-world py-2 hidden-print" v-if="event[0] && placeCity[0] && event[0].affiliate.find(x => x.name === 'booking').value === true">
-                            <div class="t-section__inner">
-                                <div v-for="coordinate in event[0].coordinates">
-                                    <oAffilateBooking 
-                                        :landmarkName="`${ placeCity[0].name ? placeCity[0].name : '' }`"
-                                        :address="`${ placeCity[0].name ? placeCity[0].name : '' }`"
-                                        :latitude=parseFloat(coordinate.latitude)
-                                        :longitude=parseFloat(coordinate.longitude)
-                                        :zoom=event[0].zoom[0].booking
-                                        :dateStart=event[0].date_start
-                                        :dateEnd=event[0].date_end
-                                    />
-                                </div>
-                            </div>
-                        </section>
-                        <!-- SECTION - Ubytování END -->
-                    </div>
-
-
-                    <div class="t-grid__section -ad">
-                        <!-- SECTION - Date of Event - sidebar -->
-                        <section class="t-section -px-world my-2 print-section" v-if="event[0].date_start || event[0].date_end">
-                            <div class="t-section__inner">
-                                <oDateOfEvent :dateStart="event[0].date_start" :dateEnd="event[0].date_end" />
-                            </div>
-                        </section>
-                        <!-- SECTION - Date of Event - sidebar - END -->
-
-                        <!-- SECTION - links -->
-                        <section class="t-section -px-world my-2 print-section" v-if="event[0].links && event[0].links.length > 0">
-                            <div class="t-section__inner">
-                                <oLinks :items="event[0].links" />
-                            </div>
-                        </section>
-                        <!-- SECTION - links END -->
-
-                        <!-- SECTION - ad-google - sidebar -->
-                        <section class="t-section -px-world mt-4 mb-2">
-                            <div class="t-section__inner">
-                                <oAdGoogleSidebar styleThema=" -green" />
-                            </div>
-                        </section>
-                        <!-- SECTION - ad-google - sidebar - END -->
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <!-- SECTION END -->
-
-        <div class="t-layout-full" v-if="event[0].id_continent || event[0].id_state || event[0].id_region || event[0].id_city || event[0].id_spot">
-
-            <!-- SECTION - place -->
-            <section class="t-section -p0 pt-2 pb-1 print-section">
+        <div class="t-main__content">
+            <!-- SECTION - BREADCRUMBS -->
+            <section class="t-section -px-world mt-2 -p0">
                 <div class="t-section__inner">
-                    <mHeadline title="Více informací o místě" styleThema=" -green" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
+                    <mNavBreadcrumbsItem :links="mNavBreadcrumbsEventArray" :item="event[0]" />
+                </div>
+            </section>
+            <!-- SECTION - BREADCRUMBS END -->
 
-                    <div class="flex mx-1">
-                        <oPlaceBlock :placeID="event[0].id_continent" type="kontinent" styleThema=" -green" v-if="event[0].id_continent" />
-                        <oPlaceBlock :placeID="event[0].id_state" type="stat" styleThema=" -green" v-if="event[0].id_state" />
-                        <oPlaceBlock :placeID="event[0].id_region" type="region" styleThema=" -green" v-if="event[0].id_region" />
-                        <oPlaceBlock :placeID="event[0].id_city" type="mesto" styleThema=" -green" v-if="event[0].id_city" />
-                        <oPlaceBlock :placeID="event[0].id_spot" type="misto" styleThema=" -green" v-if="event[0].id_spot" />
+            <!-- SECTION - Buttons -->
+            <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
+                <div class="t-section__inner">
+                    <oSwitchHero :show-hero.sync="showHero" />
+                </div>
+            </section>
+            <!-- SECTION - Buttons END -->
+
+            <!-- SECTION - hero + hot info hero -->
+            <section class="t-section -px-world -p0">
+                <div class="t-section__inner">
+                    <div class="t-grid -world-hero">
+
+                        <!-- SECTION - hero -->
+                        <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
+                            <oHeroItemDetail :item="event" :images="image" />
+                        </div>
+                        <!-- SECTION - hero END -->
+
+                        <!-- SECTION - map -->
+                        <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
+                            <oMapGoogle :place="event" />
+                        </div>
+                        <!-- SECTION - map - END -->
+
                     </div>
                 </div>
             </section>
-            <!-- SECTION - place END -->
+            <!-- SECTION - hero + hot info - END -->
+
+            <!-- SECTION -->
+            <section class="t-section -px-world -p0">
+                <div class="t-section__inner">
+                    <div class="t-grid -world-content-with-ad">
+                        
+                        <div class="t-grid__section -content mb-4">
+                            <!-- SECTION - information -->
+                            <section class="t-section" v-if="event[0].description">
+                                <div class="t-section__inner">
+                                    <oInformationBlock :title="'O události ' + (event[0].name ? event[0].name : '')" :perexWysiwyg="event[0].description" authorName="Michal Fryč (frytolnacestach)" authorLink="https://www.frytolnacestach.cz/cestovatel/frytol-na-cestach" authorTarget="_blank" />
+                                </div>
+                            </section>
+                            <!-- SECTION - information END -->
+
+                            <!-- SECTION - prices -->
+                            <section class="t-section my-4 print-section" v-if="event[0].prices && event[0].prices.length > 0">
+                                <div class="t-section__inner">
+                                    <mHeadline title="Cena akce" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                    <oPrices :items="event[0].prices" />
+                                </div>
+                            </section>
+                            <!-- SECTION - prices END -->
+
+                            <!-- SECTION - Ubytování - information -->
+                            <section class="t-section print-section">
+                                <div class="t-section__inner">
+                                    <oInformationBlock :title="'Ubytování blízko události ' + (event[0].name ? event[0].name : '')" perexWysiwyg="Cena za konkrétní ubytování se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek." v-if="event[0].affiliate.find(x => x.name === 'booking').value === true" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Ubytování - information END -->
+
+                            <!-- SECTION - Ubytování -->
+                            <section class="t-section -px-world py-2 hidden-print" v-if="event[0] && placeCity[0] && event[0].affiliate.find(x => x.name === 'booking').value === true">
+                                <div class="t-section__inner">
+                                    <div v-for="coordinate in event[0].coordinates">
+                                        <oAffilateBooking 
+                                            :landmarkName="`${ placeCity[0].name ? placeCity[0].name : '' }`"
+                                            :address="`${ placeCity[0].name ? placeCity[0].name : '' }`"
+                                            :latitude=parseFloat(coordinate.latitude)
+                                            :longitude=parseFloat(coordinate.longitude)
+                                            :zoom=event[0].zoom[0].booking
+                                            :dateStart=event[0].date_start
+                                            :dateEnd=event[0].date_end
+                                        />
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- SECTION - Ubytování END -->
+                        </div>
+
+
+                        <div class="t-grid__section -ad">
+                            <!-- SECTION - Date of Event - sidebar -->
+                            <section class="t-section -px-world my-2 print-section" v-if="event[0].date_start || event[0].date_end">
+                                <div class="t-section__inner">
+                                    <oDateOfEvent :dateStart="event[0].date_start" :dateEnd="event[0].date_end" />
+                                </div>
+                            </section>
+                            <!-- SECTION - Date of Event - sidebar - END -->
+
+                            <!-- SECTION - links -->
+                            <section class="t-section -px-world my-2 print-section" v-if="event[0].links && event[0].links.length > 0">
+                                <div class="t-section__inner">
+                                    <oLinks :items="event[0].links" />
+                                </div>
+                            </section>
+                            <!-- SECTION - links END -->
+
+                            <!-- SECTION - ad-google - sidebar -->
+                            <section class="t-section -px-world mt-4 mb-2">
+                                <div class="t-section__inner">
+                                    <oAdGoogleSidebar styleThema=" -green" />
+                                </div>
+                            </section>
+                            <!-- SECTION - ad-google - sidebar - END -->
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION END -->
+
+            <div class="t-layout-full" v-if="event[0].id_continent || event[0].id_state || event[0].id_region || event[0].id_city || event[0].id_spot">
+
+                <!-- SECTION - place -->
+                <section class="t-section -p0 pt-2 pb-1 print-section">
+                    <div class="t-section__inner">
+                        <mHeadline title="Více informací o místě" styleThema=" -green" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
+
+                        <div class="flex mx-1">
+                            <oPlaceBlock :placeID="event[0].id_continent" type="kontinent" styleThema=" -green" v-if="event[0].id_continent" />
+                            <oPlaceBlock :placeID="event[0].id_state" type="stat" styleThema=" -green" v-if="event[0].id_state" />
+                            <oPlaceBlock :placeID="event[0].id_region" type="region" styleThema=" -green" v-if="event[0].id_region" />
+                            <oPlaceBlock :placeID="event[0].id_city" type="mesto" styleThema=" -green" v-if="event[0].id_city" />
+                            <oPlaceBlock :placeID="event[0].id_spot" type="misto" styleThema=" -green" v-if="event[0].id_spot" />
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - place END -->
+            </div>
         </div>
     </main>
 </template>

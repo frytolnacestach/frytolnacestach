@@ -1,29 +1,29 @@
 <template>
     <main class="t-main -blue -pt-menu" role="main">
-       
-        <section class="t-section print-section">
-            <!-- SECTION - Hero -->
-            <section class="t-section -p0 mb-1 mt-2">
-                <div class="t-section__inner">
-                    <oHero :headline="headline" :perex="'K cestovatelům na našem cestovatelském portálu se může připojit každý. Takže pokud zatím nemáš účet, stačí se <a href=\'https://www.frytolnacestach.cz/ucet/registrace\'>registrovat</a>, a pokud již účet máš, jednoduše se <a href=\'https://www.frytolnacestach.cz/ucet/prihlaseni\'>přihlásit</a>.'" modifierCSS=" -blue -w640" classCSS=" mt-2" v-if="account && account.length === 0" />
-                    <oHero :headline="headline" perex="Podívej se na další cestovatele, na místa, která navštívili, a jejich úspěchy." modifierCSS=" -blue -w640" classCSS=" mt-2" v-if="account && account.length !== 0" />
-                </div>
-            </section>
-            <!-- SECTION - Hero END -->
-
-            <!-- SECTION - Articles -->
-            <section class="t-section -p0">
-                <div class="t-section__inner">
-                    <oUserList :items="users" :images="images" />
-                    <oUserList :items="null" :images="null" :skeleton=true v-if="isLoading" />
-                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                        <span class="a-button-fill -big -blue" @click="loadMoreItems">Načíst další položky</span>
+        <div class="t-main__content">
+            <section class="t-section print-section">
+                <!-- SECTION - Hero -->
+                <section class="t-section -p0 mb-1 mt-2">
+                    <div class="t-section__inner">
+                        <oHero :headline="headline" :perex="'K cestovatelům na našem cestovatelském portálu se může připojit každý. Takže pokud zatím nemáš účet, stačí se <a href=\'https://www.frytolnacestach.cz/ucet/registrace\'>registrovat</a>, a pokud již účet máš, jednoduše se <a href=\'https://www.frytolnacestach.cz/ucet/prihlaseni\'>přihlásit</a>.'" modifierCSS=" -blue -w640" classCSS=" mt-2" v-if="account && account.length === 0" />
+                        <oHero :headline="headline" perex="Podívej se na další cestovatele, na místa, která navštívili, a jejich úspěchy." modifierCSS=" -blue -w640" classCSS=" mt-2" v-if="account && account.length !== 0" />
                     </div>
-                </div>
-            </section>
-            <!-- SECTION - Articles END -->
-        </section>
+                </section>
+                <!-- SECTION - Hero END -->
 
+                <!-- SECTION - Articles -->
+                <section class="t-section -p0">
+                    <div class="t-section__inner">
+                        <oUserList :items="users" :images="images" />
+                        <oUserList :items="null" :images="null" :skeleton=true v-if="isLoading" />
+                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                            <span class="a-button-fill -big -blue" @click="loadMoreItems">Načíst další položky</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - Articles END -->
+            </section>
+        </div>
     </main>
 </template>
 
