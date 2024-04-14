@@ -44,18 +44,26 @@
     //world/slug - > tab - content with add
     &.-world-content-with-ad {
         grid-template-areas: 
-        "content"
-        "ad";
+            "hero"
+            "content"
+            "ad";
         grid-template-columns: 100%;
         grid-template-rows: auto auto;
 
         @media only screen and (min-width: $lg) {
-            grid-template-areas: "content ad";
+            grid-template-areas: 
+            "hero ad"
+            "content ad";
             grid-template-columns: auto 320px;
             grid-template-rows: auto;
         }
 
         #{$self}__section {
+
+            &.-hero {
+                grid-area: hero;
+                aspect-ratio: 2 / 1;
+            }
 
             &.-content {
                 grid-area: content;
@@ -72,10 +80,10 @@
     // Grid for detail place
     &.-place-main-with-aside {
         grid-template-areas: 
-        "aside-place-status"
-        "main"
-        "aside-content"
-        "aside-ad";
+            "aside-place-status"
+            "main"
+            "aside-content"
+            "aside-ad";
         grid-template-columns: 100%;
         grid-template-rows: auto auto auto auto;
 
@@ -115,8 +123,7 @@
 
     //world/slug - > fullwith
     &.-world-full {
-        grid-template-areas: 
-        "content";
+        grid-template-areas: "content";
         grid-template-columns: 100%;
         grid-template-rows: auto;
 
@@ -137,9 +144,9 @@
     //world/slug - > o-information
     &.-world-information-adjacent {
         grid-template-areas: 
-        "block"
-        "block"
-        "block";
+            "block"
+            "block"
+            "block";
         grid-template-columns: 100%;
         grid-template-rows: auto auto auto;
 
@@ -161,8 +168,8 @@
     //ucet/profil - > nav with content
     &.-account {
         grid-template-areas: 
-        "nav"
-        "content";
+            "nav"
+            "content";
         grid-template-columns: 100%;
         grid-template-rows: auto auto;
 

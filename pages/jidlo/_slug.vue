@@ -13,16 +13,13 @@
             <section class="t-section -px-world -p0">
                 <div class="t-section__inner">
                     <div class="t-grid -world-content-with-ad">
-                        
-                        <div class="t-grid__section -content">
+                        <div class="t-grid__section -hero">
                             <!-- SECTION - hero -->
-                            <section class="t-section print-section">
-                                <div class="t-section__inner">
-                                    <oHeroItemDetail :item="food" :images="imageFood" />
-                                </div>
-                            </section>
+                            <oHeroItemDetail :item="food" :images="imageFood" />
                             <!-- SECTION - hero END -->
+                        </div>
 
+                        <div class="t-grid__section -content">
                             <!-- SECTION - information by ChatGPT -->
                             <section class="t-section" v-if="food[0].description">
                                 <div class="t-section__inner">

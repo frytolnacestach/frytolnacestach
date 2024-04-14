@@ -14,15 +14,13 @@
                 <div class="t-section__inner">
                     <div class="t-grid -world-content-with-ad">
                         
-                        <div class="t-grid__section -content">
+                        <div class="t-grid__section -hero">
                             <!-- SECTION - hero -->
-                            <section class="t-section print-section">
-                                <div class="t-section__inner">
-                                    <oHeroItemDetail :item="wallSockets" :images="imageWallSockets" :showTitle=false />
-                                </div>
-                            </section>
+                            <oHeroItemDetail :item="wallSockets" :images="imageWallSockets" :showTitle=false />
                             <!-- SECTION - hero END -->
+                        </div>
 
+                        <div class="t-grid__section -content">
                             <!-- SECTION - information by ChatGPT -->
                             <section class="t-section pt-1 mt-2 mb-4" v-if="wallSockets[0].description">
                                 <div class="t-section__inner">

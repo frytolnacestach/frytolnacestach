@@ -5,11 +5,7 @@
     height: 90vw;
 
     @media only screen and (min-width: $sm) {
-        height: 45vw;
-    }
-
-    @media only screen and (min-width: $lg) {
-        height: 32vw;
+        height: 100%;
     }
 
     &__container {

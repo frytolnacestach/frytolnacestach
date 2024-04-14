@@ -14,15 +14,13 @@
                 <div class="t-section__inner">
                     <div class="t-grid -world-content-with-ad">
                         
-                        <div class="t-grid__section -content">
+                        <div class="t-grid__section -hero">
                             <!-- SECTION - hero -->
-                            <section class="t-section print-section">
-                                <div class="t-section__inner">
-                                    <oHeroItemDetail :item="travelDictionary" :images="imageTravelDictionary" />
-                                </div>
-                            </section>
+                            <oHeroItemDetail :item="travelDictionary" :images="imageTravelDictionary" />
                             <!-- SECTION - hero END -->
+                        </div>
 
+                        <div class="t-grid__section -content">
                             <!-- SECTION - information by ChatGPT -->
                             <section class="t-section print-section" v-if="travelDictionary[0].description">
                                 <div class="t-section__inner">
