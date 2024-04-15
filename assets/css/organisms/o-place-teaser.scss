@@ -92,11 +92,13 @@
     }
 
     &__text {
-        width: 100%;
-        background-color: $c-green-bg-component-light-super;
-        border-radius: $br-2;
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 10px;
+        background-color: $c-green-bg-component-light-super;
+        border-radius: $br-2;
 
         @media only screen and (min-width: $ti) {
             border-radius: $br-4;
@@ -108,13 +110,13 @@
         font-size: $fs-large-s;
         font-weight: 600;
         z-index: 2;
-        padding: 10px 15px 0;
+        padding: 10px 20px 0;
     }
 
     &__wysiwyg {
         display: block;
         width: 100%;
-        padding: 15px 15px 20px;
+        padding: 12px 20px 20px;
         color: $c-green-t-dark;
 
         p {
