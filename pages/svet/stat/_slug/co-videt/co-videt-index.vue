@@ -67,11 +67,11 @@
                     <div class="t-section__inner">
                         <div class="t-grid -place-main-with-aside">
                             <div class="t-grid__section -main">
-                                <!-- SECTION - Place teaser spots -->
-                                <oPlaceTeaserSpots :headline="'Jaké místa vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" styleGap=" mt-2 mb-4 pt-1" />
-                                <oPlaceTeaserRegions :headline="'Jaké regiony vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" styleGap=" mt-2 mb-4 pt-1" />
-                                <oPlaceTeaserCities :headline="'Jaké města vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="state" styleGap=" mt-2 mb-4 pt-1" />
-                                <!-- SECTION - Place teaser spots END -->
+                                <!-- SECTION - Place teaser list -->
+                                <oPlaceTeaserList :headline="'Jaké místa vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="spots" typePage="state" styleGap=" mt-2 mb-4 pt-1" />
+                                <oPlaceTeaserList :headline="'Jaké regiony vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="regions" typePage="state" styleGap=" mt-2 mb-4 pt-1" />
+                                <oPlaceTeaserList :headline="'Jaké města vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="cities" typePage="state" styleGap=" mt-2 mb-4 pt-1" />
+                                <!-- SECTION - Place teaser list END -->
                             </div>
 
                             <div class="t-grid__section -aside-place-status">
@@ -137,10 +137,7 @@
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oChartPie from '@/components/organisms/oChartPie.vue'
     import oOrganizationList from '~/components/organisms/oOrganizationList.vue'
-    import oPlaceTeaserCities from '~/components/organisms/oPlaceTeaserCities.vue'
-    import oPlaceTeaserRegions from '~/components/organisms/oPlaceTeaserRegions.vue'
-    import oPlaceTeaserSpots from '~/components/organisms/oPlaceTeaserSpots.vue'
-    import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
+    import oPlaceTeaserList from '~/components/organisms/oPlaceTeaserList.vue'
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
     import oSidebarLinks from '~/components/organisms/oSidebarLinks.vue'
     import oSidebarEvent from '~/components/organisms/oSidebarEvent.vue'
@@ -175,10 +172,7 @@
             oMapGoogle,
             oChartPie,
             oOrganizationList,
-            oPlaceTeaserCities,
-            oPlaceTeaserRegions,
-            oPlaceTeaserSpots,
-            oPlaceTeaser,
+            oPlaceTeaserList,
             oReviewItem,
             oSidebarLinks,
             oSidebarEvent,

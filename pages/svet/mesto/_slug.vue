@@ -107,9 +107,9 @@
                             </section>
                             <!-- SECTION - Place teaser END -->
 
-                            <!-- SECTION - Place teaser spots -->
-                            <oPlaceTeaserSpots :headline="'Co vidět ve městě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="city" styleGap=" my-4" />
-                            <!-- SECTION - Place teaser spots END -->
+                            <!-- SECTION - Place teaser list -->
+                            <oPlaceTeaserList :headline="'Co vidět ve městě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="spots" typePage="city" styleGap=" my-4" />
+                            <!-- SECTION - Place teaser list END -->
 
                             <!-- SECTION - Ubytování - information -->
                             <section class="t-section pb-2">
@@ -251,7 +251,7 @@
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
     import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
-    import oPlaceTeaserSpots from '~/components/organisms/oPlaceTeaserSpots.vue'
+    import oPlaceTeaserList from '~/components/organisms/oPlaceTeaserList.vue'
     import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
     import oSidebarEvent from '~/components/organisms/oSidebarEvent.vue'
@@ -277,7 +277,7 @@
             oHotInfoHero,
             oInformationBlock,
             oMapGoogle,
-            oPlaceTeaserSpots,
+            oPlaceTeaserList,
             oPlaceTeaser,
             oReviewItem,
             oSidebarEvent,

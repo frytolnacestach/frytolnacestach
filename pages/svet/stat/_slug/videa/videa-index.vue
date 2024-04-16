@@ -114,10 +114,6 @@
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
     import oChartPie from '@/components/organisms/oChartPie.vue'
     import oOrganizationList from '~/components/organisms/oOrganizationList.vue'
-    import oPlaceTeaserCities from '~/components/organisms/oPlaceTeaserCities.vue'
-    import oPlaceTeaserRegions from '~/components/organisms/oPlaceTeaserRegions.vue'
-    import oPlaceTeaserSpots from '~/components/organisms/oPlaceTeaserSpots.vue'
-    import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
     import oReviewItem from '~/components/organisms/oReviewItem.vue'
     import oSidebarLinks from '~/components/organisms/oSidebarLinks.vue'
     import oSidebarTime from '~/components/organisms/oSidebarTime.vue'
@@ -153,10 +149,6 @@
             oMapGoogle,
             oChartPie,
             oOrganizationList,
-            oPlaceTeaserCities,
-            oPlaceTeaserRegions,
-            oPlaceTeaserSpots,
-            oPlaceTeaser,
             oReviewItem,
             oSidebarLinks,
             oSidebarTime,
