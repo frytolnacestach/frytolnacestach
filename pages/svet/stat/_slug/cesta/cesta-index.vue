@@ -122,7 +122,6 @@
     import oAccountBanner from '~/components/organisms/oAccountBanner.vue'
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oAlerts from '~/components/organisms/oAlerts.vue'
-    import oBlockItem from '~/components/organisms/oBlockItem.vue'
     import oBlockList from '~/components/organisms/oBlockList.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
@@ -142,7 +141,6 @@
             oAccountBanner,
             oAdGoogleSidebar,
             oAlerts,
-            oBlockItem,
             oBlockList,
             oHeroPlace,
             oHotInfoHero,

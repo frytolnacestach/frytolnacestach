@@ -98,25 +98,10 @@
     import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
     import oAffilateBooking from '~/components/organisms/oAffilateBooking.vue'
     import oAlerts from '~/components/organisms/oAlerts.vue'
-    import oArticleList from '~/components/organisms/oArticleList.vue'
-    import oBlockItem from '~/components/organisms/oBlockItem.vue'
-    import oBlockList from '~/components/organisms/oBlockList.vue'
-    import oCoverItemState from '~/components/organisms/oCoverItemState.vue'
-    import oCoverNeighboring from '~/components/organisms/oCoverNeighboring.vue'
-    import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
-    import oCoverTitleItemState from '~/components/organisms/oCoverTitleItemState.vue'
-    import oFactsPlace from '~/components/organisms/oFactsPlace.vue'
     import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
     import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
-    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
-    import oLanguagePhrases from '~/components/organisms/oLanguagePhrases.vue'
     import oNoneContent from '~/components/organisms/oNoneContent.vue'
     import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
-    import oChartPie from '@/components/organisms/oChartPie.vue'
-    import oOrganizationList from '~/components/organisms/oOrganizationList.vue'
-    import oReviewItem from '~/components/organisms/oReviewItem.vue'
-    import oSidebarLinks from '~/components/organisms/oSidebarLinks.vue'
-    import oSidebarTime from '~/components/organisms/oSidebarTime.vue'
     import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
     import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
@@ -133,25 +118,10 @@
             oAdGoogleSidebar,
             oAffilateBooking,
             oAlerts,
-            oArticleList,
-            oBlockItem,
-            oBlockList,
-            oCoverItemState,
-            oCoverNeighboring,
-            oCoverPlaceDetail,
-            oCoverTitleItemState,
-            oFactsPlace,
             oHeroPlace,
             oHotInfoHero,
-            oInformationBlock,
-            oLanguagePhrases,
             oNoneContent,
             oMapGoogle,
-            oChartPie,
-            oOrganizationList,
-            oReviewItem,
-            oSidebarLinks,
-            oSidebarTime,
             oSwitchHero,
             oVideoList,
             oVisitedButton
