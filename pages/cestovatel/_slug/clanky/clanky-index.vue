@@ -22,16 +22,6 @@
                                 </div>
                             </section>
                             <!-- SECTION - nav - account END -->
-
-                            <!-- SECTION - ad-google - sidebar -->
-                            <!--
-                            <section class="t-section -px-world mt-4 mb-2">
-                                <div class="t-section__inner">
-                                    <oAdGoogleSidebar />
-                                </div>
-                            </section>
-                            -->
-                            <!-- SECTION - ad-google - sidebar - END -->
                         </div>
 
                         <div class="t-col2__content mb-2">
