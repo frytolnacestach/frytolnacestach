@@ -1,8 +1,8 @@
 <template>
     <img :class="(cssClassComponent + '__image-file') + ' lazyload-file'"
-        :sizes="generateSizes()"
-        :srcset="generateSrcSet() + ',' + generateSrcSet('2x')"
-        :src="'https://image.frytolnacestach.cz/storage' + imageSource + imageName + '.webp'"
+        :data-sizes="generateSizes()"
+        :data-srcset="generateSrcSet() + ',' + generateSrcSet('2x')"
+        :data-src="'https://image.frytolnacestach.cz/storage' + imageSource + imageName + '.webp'"
         :alt="author"
         v-lazy
         v-if="lazy"
