@@ -1,10 +1,19 @@
 <template>
-    <img :class="(cssClassComponent + '__image-file') + (lazy ? ' lazyload-file' :'')"
+    <img :class="(cssClassComponent + '__image-file') + ' lazyload-file'"
         :sizes="generateSizes()"
         :srcset="generateSrcSet() + ',' + generateSrcSet('2x')"
         :src="'https://image.frytolnacestach.cz/storage' + imageSource + imageName + '.webp'"
         :alt="author"
-        v-bind="lazy ? 'v-lazy' : { 'fetchpriority': 'high' }"
+        v-lazy
+        v-if="lazy"
+    >
+    <img :class="cssClassComponent + '__image-file'"
+        :sizes="generateSizes()"
+        :srcset="generateSrcSet() + ',' + generateSrcSet('2x')"
+        :src="'https://image.frytolnacestach.cz/storage' + imageSource + imageName + '.webp'"
+        :alt="author"
+        fetchpriority="high"
+        v-else-if="!lazy"
     >
 </template>
 
