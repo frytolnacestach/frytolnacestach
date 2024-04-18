@@ -13,62 +13,27 @@
                             <div class="o-cover-place-visited__content">
                                 <div class="o-cover-place-visited__image loading-image -blue">
                                     <div v-if="images && images.find(image => image.id === place.id_image_cover)" class="o-cover-place-visited__image-lazyload">
-                                        <img class="o-cover-place-visited__image-file lazyload-file"
-                                            data-sizes="(max-width: 349px) 160px, (max-width: 374px) 172px, (max-width: 399px) 176px, (max-width: 459px) 206px, (max-width: 575px) 264px, (max-width: 767px) 236px, (max-width: 991px) 232px, (max-width: 1219px) 164px, (max-width: 1399px) 200px, 304px"
-                                            :data-srcset="`
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-166.webp 160w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-186.webp 172w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-186.webp 176w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-210.webp 206w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-274.webp 264w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-240.webp 236w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-240.webp 232w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-166.webp 164w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-210.webp 200w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-306.webp 304w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-332-2x.webp 320w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-372-2x.webp 344w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-372-2x.webp 352w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-420-2x.webp 412w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-548-2x.webp 528w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-480-2x.webp 472w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-480-2x.webp 464w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-332-2x.webp 328w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-420-2x.webp 400w,
-                                                https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + 's-' + images.find(image => image.id === place.id_image_cover).name}-612-2x.webp 608w
-                                            `"
-                                            :data-src="`https://image.frytolnacestach.cz/storage/${images.find(image => image.id === place.id_image_cover).source + images.find(image => image.id === place.id_image_cover).name}.webp`"
-                                            :alt="place.name"
-                                            v-lazy>
+                                        <aImage 
+                                            :alt="place.name ? place.name : 'Úvodní obrázek'" 
+                                            :author="images.find(image => image.id === place.id_image_cover).author"
+                                            :lazy=true
+                                            :imageSource="images.find(image => image.id === place.id_image_cover).source"
+                                            :imageName="images.find(image => image.id === place.id_image_cover).name"
+                                            :sizes=imageSizes
+                                            :srcSet=imageSizesMedia
+                                            cssClassComponent="o-cover-title-item"
+                                        />
                                     </div>
                                     <div v-else class="o-cover-place-visited__image-lazyload">
-                                        <img class="o-cover-place-visited__image-file lazyload-file"
-                                            data-sizes="(max-width: 349px) 160px, (max-width: 374px) 172px, (max-width: 399px) 176px, (max-width: 459px) 206px, (max-width: 575px) 264px, (max-width: 767px) 236px, (max-width: 991px) 232px, (max-width: 1219px) 164px, (max-width: 1399px) 200px, 304px"
-                                            :data-srcset="`
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-166.webp 160w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-186.webp 172w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-186.webp 176w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-210.webp 206w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-274.webp 264w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-240.webp 236w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-240.webp 232w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-166.webp 164w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-210.webp 200w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-306.webp 304w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-332-2x.webp 320w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-372-2x.webp 344w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-372-2x.webp 352w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-420-2x.webp 412w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-548-2x.webp 528w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-480-2x.webp 472w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-480-2x.webp 464w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-332-2x.webp 328w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-420-2x.webp 400w,
-                                                https://image.frytolnacestach.cz/storage/_default/s-no-image-612-2x.webp 608w
-                                            `"
-                                            :data-src="`https://image.frytolnacestach.cz/storage/_default/no-image.webp`"
-                                            :alt="place.name"
-                                            v-lazy>
+                                        <aImage 
+                                            :alt="place.name ? place.name : 'Úvodní obrázek'" 
+                                            :lazy=true
+                                            imageSource="/storage/_default/"
+                                            imageName="no-image"
+                                            :sizes=imageSizes
+                                            :srcSet=imageSizesMedia
+                                            cssClassComponent="o-cover-title-item"
+                                        />
                                     </div>
                                 </div>
                                 <h2 class="o-cover-place-visited__name">
@@ -100,6 +65,7 @@
 
 <script>
     import skeletonoCoverPlaceVisited from '~/components/skeleton/skeletonoCoverPlaceVisited.vue'
+    import aImage from '~/components/atoms/aImage.vue'
     import mButtonPlaceAdd from '~/components/molecules/mButtonPlaceAdd.vue'
     import mButtonPlaceAddVisited from '~/components/molecules/mButtonPlaceAddVisited.vue'
     import mButtonPlaceRemove from '~/components/molecules/mButtonPlaceRemove.vue'
@@ -110,6 +76,7 @@
 
         components: {
             skeletonoCoverPlaceVisited,
+            aImage,
             mButtonPlaceAdd,
             mButtonPlaceAddVisited,
             mButtonPlaceRemove,
@@ -151,7 +118,102 @@
                 showPlaceForm: false,
                 newPlaceID: null,
                 removePlaceID: null,
-                skeleton: true
+                skeleton: true,
+                imageSizesMedia: [
+                    {
+                        "mediaQueriesWidth": 349,
+                        "elementWidth": 160
+                    },
+                    {
+                        "mediaQueriesWidth": 374,
+                        "elementWidth": 172
+                    },
+                    {
+                        "mediaQueriesWidth": 399,
+                        "elementWidth": 176
+                    },
+                    {
+                        "mediaQueriesWidth": 459,
+                        "elementWidth": 206
+                    },
+                    {
+                        "mediaQueriesWidth": 575,
+                        "elementWidth": 264
+                    },
+                    {
+                        "mediaQueriesWidth": 767,
+                        "elementWidth": 236
+                    },
+                    {
+                        "mediaQueriesWidth": 991,
+                        "elementWidth": 232
+                    },
+                    {
+                        "mediaQueriesWidth": 1219,
+                        "elementWidth": 164
+                    },
+                    {
+                        "mediaQueriesWidth": 1399,
+                        "elementWidth": 200
+                    },
+                    {
+                        "mediaQueriesWidth": null,
+                        "elementWidth": 304
+                    }
+                ],
+                imageSizes: [
+                    {
+                        "elementWidth": 160,
+                        "imageWidth": 166,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 172,
+                        "imageWidth": 186,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 176,
+                        "imageWidth": 186,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 206,
+                        "imageWidth": 210,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 264,
+                        "imageWidth": 274,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 236,
+                        "imageWidth": 240,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 232,
+                        "imageWidth": 240,
+                        "orientation": "s-"
+                    },
+
+                    {
+                        "elementWidth": 164,
+                        "imageWidth": 166,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 200,
+                        "imageWidth": 210,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 304,
+                        "imageWidth": 306,
+                        "orientation": "s-"
+                    }
+                ]
             }
         },
 
