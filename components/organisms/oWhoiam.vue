@@ -4,27 +4,15 @@
             <div class="o-whoiam__inner">
                 <div class="o-whoiam__image loading-image -gray">
                     <div class="o-whoiam__image-lazyload">
-                        <img class="o-whoiam__image-file lazyload-file"
-                            data-sizes="(max-width: 349px) 320px, (max-width: 374px) 344px, (max-width: 399px) 370px, (max-width: 459px) 430px, (max-width: 575px) 546px, (max-width: 767px) 738px, (max-width: 991px) 962px, 320px"
-                            :data-srcset="`
-                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-320.webp 320w,
-                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-344.webp 344w,
-                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-370.webp 370w,
-                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-430.webp 430w,
-                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-556.webp 546w,
-                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-738.webp 738w,
-                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-962.webp 962w,
-                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-640-2x.webp 640w,
-                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-688-2x.webp 688w,
-                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-740-2x.webp 740w,
-                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-860-2x.webp 860w,
-                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-1112-2x.webp 1092w,
-                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-1476-2x.webp 1476w,
-                                https://image.frytolnacestach.cz/storage/main/s-michal-fryc-1924-2x.webp 1924w
-                                `"
-                            :data-src="`https://image.frytolnacestach.cz/storage/main/michal-fryc.webp`"
-                            alt="Michal Fryč"
-                            v-lazy>
+                        <aImage 
+                            alt="Michal Fryč" 
+                            :lazy=true
+                            imageSource="/storage/main/"
+                            imageName="michal-fryc"
+                            :sizes=imageSizes
+                            :srcSet=imageSizesMedia
+                            cssClassComponent="o-whoiam"
+                        />
                     </div>
                 </div>
                 <div class="o-whoiam__text">
@@ -38,12 +26,89 @@
 </template>
 
 <script>
+    import aImage from '~/components/atoms/aImage.vue'
+
     export default {
         name: 'OrganismsoWhoiamComponent',
+
+        components: {
+            aImage
+        },
         
         data() {
             return {
-                base: []
+                base: [],
+                imageSizesMedia: [
+                    {
+                        "mediaQueriesWidth": 349,
+                        "elementWidth": 320
+                    },
+                    {
+                        "mediaQueriesWidth": 374,
+                        "elementWidth": 344
+                    },
+                    {
+                        "mediaQueriesWidth": 399,
+                        "elementWidth": 370
+                    },
+                    {
+                        "mediaQueriesWidth": 459,
+                        "elementWidth": 430
+                    },
+                    {
+                        "mediaQueriesWidth": 575,
+                        "elementWidth": 546
+                    },
+                    {
+                        "mediaQueriesWidth": 767,
+                        "elementWidth": 738
+                    },
+                    {
+                        "mediaQueriesWidth": 991,
+                        "elementWidth": 962
+                    },
+                    {
+                        "mediaQueriesWidth": null,
+                        "elementWidth": 320
+                    }
+                ],
+                imageSizes: [
+                    {
+                        "elementWidth": 320,
+                        "imageWidth": 320,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 344,
+                        "imageWidth": 344,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 370,
+                        "imageWidth": 370,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 430,
+                        "imageWidth": 430,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 546,
+                        "imageWidth": 546,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 738,
+                        "imageWidth": 738,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 962,
+                        "imageWidth": 962,
+                        "orientation": "s-"
+                    }
+                ]
             }
         },
 
