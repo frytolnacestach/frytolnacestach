@@ -7,7 +7,7 @@
                         <aImage 
                             alt="Michal Fryč" 
                             :lazy=true
-                            imageSource="/storage/main/"
+                            imageSource="/main/"
                             imageName="michal-fryc"
                             :sizes=imageSizes
                             :srcSet=imageSizesMedia
