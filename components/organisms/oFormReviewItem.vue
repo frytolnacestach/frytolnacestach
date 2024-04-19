@@ -52,19 +52,15 @@
                                     <div class="o-review-item-list__content">
                                         <div class="o-review-item-list__image loading-image -green">
                                             <div class="o-review-item-list__image-lazyload">
-                                                <img class="o-review-item-list__image-file lazyload-file"
-                                                    data-sizes="(max-width: 374px) 40px, (max-width: 575px) 50px, 70px"
-                                                    :data-srcset="`
-                                                        https://image.frytolnacestach.cz/storage/_default/s-no-image-40.webp 40w,
-                                                        https://image.frytolnacestach.cz/storage/_default/s-no-image-50.webp 50w,
-                                                        https://image.frytolnacestach.cz/storage/_default/s-no-image-70.webp 70w,
-                                                        https://image.frytolnacestach.cz/storage/_default/s-no-image-80-2x.webp 80w,
-                                                        https://image.frytolnacestach.cz/storage/_default/s-no-image-100-2x.webp 100w,
-                                                        https://image.frytolnacestach.cz/storage/_default/s-no-image-140-2x.webp 140w
-                                                    `"
-                                                    :data-src="`https://image.frytolnacestach.cz/storage/_default/no-image.webp`"
-                                                    :alt="account[0].nickname"
-                                                    v-lazy>
+                                                <aImage 
+                                                    :alt="account[0].nickname ? account[0].nickname : 'úživatel'" 
+                                                    :lazy=true
+                                                    imageSource="/storage/_default/"
+                                                    imageName="no-image"
+                                                    :sizes=imageSizes
+                                                    :srcSet=imageSizesMedia
+                                                    cssClassComponent="o-review-item-list"
+                                                />
                                             </div>
                                             <NuxtLink class="o-review-item-list__image-link" :to="`/cestovatel/${account[0].slug}`" :aria-label="`Přejít na profil uživatele ${account[0].nickname}`"></NuxtLink>
                                         </div>
@@ -142,12 +138,14 @@
 </template>
 
 <script>
+    import aImage from '~/components/atoms/aImage.vue'
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
 
     export default {
         name: 'OrganismsoFormReviewItemComponent',
 
         components: {
+            aImage,
             oFlashMessages
         },
 
@@ -178,7 +176,38 @@
                 showEditForm: false,
                 showReview: true,
                 selectRating: null,
-                text: ''
+                text: '',
+                imageSizesMedia: [
+                    {
+                        "mediaQueriesWidth": 374,
+                        "elementWidth": 40
+                    },
+                    {
+                        "mediaQueriesWidth": 575,
+                        "elementWidth": 50
+                    },
+                    {
+                        "mediaQueriesWidth": null,
+                        "elementWidth": 70
+                    }
+                ],
+                imageSizes: [
+                    {
+                        "elementWidth": 40,
+                        "imageWidth": 40,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 50,
+                        "imageWidth": 50,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 70,
+                        "imageWidth": 70,
+                        "orientation": "s-"
+                    }
+                ]
             }
         },
 
