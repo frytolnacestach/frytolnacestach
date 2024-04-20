@@ -173,7 +173,6 @@
                         "imageWidth": 230,
                         "orientation": "s-"
                     },
-
                     {
                         "elementWidth": 224,
                         "imageWidth": 230,
