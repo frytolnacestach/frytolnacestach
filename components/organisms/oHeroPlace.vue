@@ -18,7 +18,7 @@
                     <aImage 
                         :alt="title ? title : 'Úvodní obrázek'" 
                         :lazy=false
-                        imageSource="/storage/_default/"
+                        imageSource="/_default/"
                         imageName="no-image"
                         :sizes=imageSizes
                         :srcSet=imageSizesMedia

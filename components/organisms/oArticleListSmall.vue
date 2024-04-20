@@ -27,7 +27,7 @@
                                     <aImage 
                                         :alt="post.title ? post.title : 'Obrázek článku'" 
                                         :lazy=true
-                                        imageSource="/storage/_default/"
+                                        imageSource="/_default/"
                                         imageName="no-image"
                                         :sizes=imageSizes
                                         :srcSet=imageSizesMedia

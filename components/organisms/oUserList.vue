@@ -30,7 +30,7 @@
                                             <aImage 
                                                 :alt="item.nickname ? item.nickname : 'Úživatel'" 
                                                 :lazy=true
-                                                imageSource="/storage/_default/"
+                                                imageSource="/_default/"
                                                 imageName="no-image"
                                                 :sizes=imageSizes
                                                 :srcSet=imageSizesMedia

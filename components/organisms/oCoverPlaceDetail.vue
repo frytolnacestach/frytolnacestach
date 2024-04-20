@@ -23,7 +23,7 @@
                                     <aImage 
                                         :alt="place.name ? place.name : 'Úvodní obrázek'" 
                                         :lazy=true
-                                        imageSource="/storage/_default/"
+                                        imageSource="/_default/"
                                         imageName="no-image"
                                         :sizes=imageSizes
                                         :srcSet=imageSizesMedia

@@ -55,7 +55,7 @@
                                                 <aImage 
                                                     :alt="account[0].nickname ? account[0].nickname : 'úživatel'" 
                                                     :lazy=true
-                                                    imageSource="/storage/_default/"
+                                                    imageSource="/_default/"
                                                     imageName="no-image"
                                                     :sizes=imageSizes
                                                     :srcSet=imageSizesMedia

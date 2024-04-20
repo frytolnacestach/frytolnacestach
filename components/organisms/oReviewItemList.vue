@@ -19,7 +19,7 @@
                                                     <aImage 
                                                         :alt="users.find(user => user.id === review.id_user).nickname ? users.find(user => user.id === review.id_user).nickname : 'úživatel'" 
                                                         :lazy=true
-                                                        imageSource="/storage/_default/"
+                                                        imageSource="/_default/"
                                                         imageName="no-image"
                                                         :sizes=imageSizes
                                                         :srcSet=imageSizesMedia

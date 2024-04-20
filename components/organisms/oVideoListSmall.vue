@@ -27,7 +27,7 @@
                                     <aImage 
                                         :alt="video.title ? video.title : 'Obrázek videa'" 
                                         :lazy=true
-                                        imageSource="/storage/_default/"
+                                        imageSource="/_default/"
                                         imageName="no-image"
                                         :sizes=imageSizes
                                         :srcSet=imageSizesMedia
