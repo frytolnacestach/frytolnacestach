@@ -10,28 +10,27 @@
                                 <div class="o-sidebar-list-travel-dictionary__image-container">
                                     <div class="o-sidebar-list-travel-dictionary__image loading-image -green">
                                         <div v-if="images && images.find(image => image.id === event.id_image_hero)" class="o-sidebar-list-travel-dictionary__image-lazyload">
-                                            <img class="o-sidebar-list-travel-dictionary__image-file lazyload-file"
-                                                data-sizes="0px"
-                                                :data-srcset="`
-                                                    https://image.frytolnacestach.cz/storage/${images.find(image => image.id === event.id_image_cover).source + images.find(image => image.id === event.id_image_cover).name}-100.webp 100w,
-                                                    https://image.frytolnacestach.cz/storage/${images.find(image => image.id === event.id_image_cover).source + images.find(image => image.id === event.id_image_cover).name}-200-2x.webp 200w,
-                                                `"
-                                                :data-src="`https://image.frytolnacestach.cz/storage/${images.find(image => image.id === event.id_image_cover).source + images.find(image => image.id === event.id_image_cover).name}.webp`"
-                                                :alt="event.name ? event.name : 'Úvodní obrázek'"
-                                                :preload="true"
-                                                v-lazy>
+                                            <aImage 
+                                                :alt="event.name ? event.name : 'Úvodní obrázek'" 
+                                                :author="images.find(image => image.id === event.id_image_cover).author"
+                                                :lazy=true
+                                                :imageSource="images.find(image => image.id === event.id_image_cover).source"
+                                                :imageName="images.find(image => image.id === event.id_image_cover).name"
+                                                :sizes=imageSizes
+                                                :srcSet=imageSizesMedia
+                                                cssClassComponent="o-sidebar-list-travel-dictionary"
+                                            />
                                         </div>
                                         <div v-else class="o-sidebar-list-travel-dictionary__image-lazyload">
-                                            <img class="o-sidebar-list-travel-dictionary__image-file lazyload-file"
-                                                data-sizes="0px"
-                                                :data-srcset="`
-                                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-100.webp 100w,
-                                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-200-2x.webp 200w
-                                                `"
-                                                :data-src="`https://image.frytolnacestach.cz/storage/_default/no-image.webp`"
-                                                :alt="event.name ? event.name : 'Úvodní obrázek'"
-                                                :preload="true"
-                                                v-lazy>
+                                            <aImage 
+                                                :alt="event.name ? event.name : 'Úvodní obrázek'" 
+                                                :lazy=true
+                                                imageSource="/_default/"
+                                                imageName="no-image"
+                                                :sizes=imageSizes
+                                                :srcSet=imageSizesMedia
+                                                cssClassComponent="o-sidebar-list-travel-dictionary"
+                                            />
                                         </div>
                                         <nuxtLink class="o-sidebar-list-travel-dictionary__image-link" :to="'/cestovatelsky-slovnik/' + event.slug" :aria-label="`Čti více o události ${event.name}`"></nuxtLink>
                                     </div>
@@ -49,8 +48,14 @@
 </template>
 
 <script>
+    import aImage from '~/components/atoms/aImage.vue'
+
     export default {
         name: 'OrganismsoSidebarListTravelDictionaryComponent',
+
+        components: {
+            aImage
+        },
 
         props: {
             IDTravelDictionary: {
@@ -63,7 +68,20 @@
             return {
                 travelDictionaries: [],
                 images: [],
-                isLoading: false
+                isLoading: false,
+                imageSizesMedia: [
+                    {
+                        "mediaQueriesWidth": null,
+                        "elementWidth": 0
+                    }
+                ],
+                imageSizes: [
+                    {
+                        "elementWidth": 100,
+                        "imageWidth": 100,
+                        "orientation": "s-"
+                    }
+                ]
             }
         },
 
