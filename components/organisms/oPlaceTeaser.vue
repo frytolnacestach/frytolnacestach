@@ -5,62 +5,27 @@
                 <div class="o-place-teaser__content">
                     <div class="o-place-teaser__image loading-image -green">
                         <div v-if="image && image.length > 0" class="o-place-teaser__image-lazyload">
-                            <img class="o-place-teaser__image-file lazyload-file"
-                                data-sizes="(max-width: 349px) 330px, (max-width: 374px) 354px, (max-width: 399px) 354px, (max-width: 459px) 420px, (max-width: 575px) 536px, (max-width: 767px) 728px, (max-width: 991px) 286px, (max-width: 1219px) 258px, (max-width: 1399px) 312px, 468px"
-                                :data-srcset="`
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-334.webp 330w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-360.webp 354w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-360.webp 360w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-420.webp 420w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-536.webp 536w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-728.webp 728w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-286.webp 286w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-258.webp 258w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-312.webp 312w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-468.webp 468w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-668-2x.webp 660w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-720-2x.webp 708w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-720-2x.webp 720w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-840-2x.webp 840w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-1072-2x.webp 1072w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-1456-2x.webp 1456w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-572-2x.webp 572w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-516-2x.webp 516w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-614-2x.webp 624w,
-                                    https://image.frytolnacestach.cz/storage/${image[0].source + 'h-' + image[0].name}-936-2x.webp 936w
-                                `"
-                                :data-src="`https://image.frytolnacestach.cz/storage/${image[0].source + image[0].name}.webp`"
-                                :alt="place[0].name"
-                                v-lazy>
+                            <aImage 
+                                :alt="place[0].name ? place[0].name : 'Místo'"  
+                                :author="image[0].author"
+                                :lazy=true
+                                :imageSource="image[0].source"
+                                :imageName="image[0].name"
+                                :sizes=imageSizes
+                                :srcSet=imageSizesMedia
+                                cssClassComponent="o-place-teaser"
+                            />
                         </div>
                         <div v-else class="o-place-teaser__image-lazyload">
-                            <img class="o-place-teaser__image-file lazyload-file"
-                                data-sizes="(max-width: 349px) 330px, (max-width: 374px) 354px, (max-width: 399px) 354px, (max-width: 459px) 420px, (max-width: 575px) 536px, (max-width: 767px) 728px, (max-width: 991px) 286px, (max-width: 1219px) 258px, (max-width: 1399px) 312px, 468px"
-                                :data-srcset="`
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-334.webp 330w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-360.webp 354w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-360.webp 360w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-420.webp 420w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-536.webp 536w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-728.webp 728w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-286.webp 286w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-258.webp 258w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-312.webp 312w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-468.webp 468w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-668-2x.webp 660w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-720-2x.webp 708w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-720-2x.webp 720w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-840-2x.webp 840w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-1072-2x.webp 1072w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-1456-2x.webp 1456w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-572-2x.webp 572w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-516-2x.webp 516w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-614-2x.webp 624w,
-                                    https://image.frytolnacestach.cz/storage/_default/h-no-image-936-2x.webp 936w
-                                `"
-                                :data-src="`https://image.frytolnacestach.cz/storage/_default/no-image.webp`"
-                                :alt="place[0].name"
-                                v-lazy>
+                            <aImage 
+                                :alt="place[0].name ? place[0].name : 'Místo'"  
+                                :lazy=true
+                                imageSource="/_default/"
+                                imageName="no-image"
+                                :sizes=imageSizes
+                                :srcSet=imageSizesMedia
+                                cssClassComponent="o-place-teaser"
+                            />
                         </div>
                     </div>
                     <div class="o-place-teaser__text">
@@ -79,12 +44,14 @@
 
 <script>
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
+    import aImage from '~/components/atoms/aImage.vue'
 
     export default {
         name: 'OrganismsoPlaceTeaserComponent',
 
         components: {
-            aButtonFillFull
+            aButtonFillFull,
+            aImage
         },
 
         props: {
@@ -103,6 +70,106 @@
             headline: {
                 type: String,
                 required: true
+            }
+        },
+
+        data() {
+            return {
+                imageSizesMedia: [
+                    {
+                        "mediaQueriesWidth": 349,
+                        "elementWidth": 330
+                    },
+                    {
+                        "mediaQueriesWidth": 374,
+                        "elementWidth": 354
+                    },
+                    {
+                        "mediaQueriesWidth": 399,
+                        "elementWidth": 354
+                    },
+                    {
+                        "mediaQueriesWidth": 459,
+                        "elementWidth": 420
+                    },
+                    {
+                        "mediaQueriesWidth": 575,
+                        "elementWidth": 536
+                    },
+                    {
+                        "mediaQueriesWidth": 767,
+                        "elementWidth": 728
+                    },
+                    {
+                        "mediaQueriesWidth": 991,
+                        "elementWidth": 286
+                    },
+                    {
+                        "mediaQueriesWidth": 1219,
+                        "elementWidth": 258
+                    },
+                    {
+                        "mediaQueriesWidth": 1399,
+                        "elementWidth": 312
+                    },
+                    {
+                        "mediaQueriesWidth": null,
+                        "elementWidth": 468
+                    }
+                ],
+                imageSizes: [
+                    {
+                        "elementWidth": 330,
+                        "imageWidth": 334,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 354,
+                        "imageWidth": 360,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 360,
+                        "imageWidth": 360,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 420,
+                        "imageWidth": 420,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 536,
+                        "imageWidth": 536,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 728,
+                        "imageWidth": 728,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 286,
+                        "imageWidth": 286,
+                        "orientation": "h-"
+                    },
+
+                    {
+                        "elementWidth": 258,
+                        "imageWidth": 268,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 312,
+                        "imageWidth": 312,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 468,
+                        "imageWidth": 468,
+                        "orientation": "h-"
+                    }
+                ]
             }
         }
     }
