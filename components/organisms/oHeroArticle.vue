@@ -154,7 +154,7 @@
                     }
                 ]
             }
-        }
+        },
 
         methods:{
             formatDate(date) {
