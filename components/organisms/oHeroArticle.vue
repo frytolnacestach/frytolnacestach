@@ -2,62 +2,27 @@
     <div class="o-hero-article">
         <div class="o-hero-article__image loading-image -gray">
             <div v-if="images && images.find(image => image.id === post[0].id_image_hero)" class="o-hero-article__image-lazyload">
-                <img class="o-hero-article__image-file"
-                    sizes="(max-width: 349px) 230px, (max-width: 374px) 340px, (max-width: 399px) 360px, (max-width: 459px) 420px, (max-width: 575px) 536px, (max-width: 767px) 728px, (max-width: 1019px) 980px, (max-width: 1219px) 1180px, (max-width: 1399px) 1360px, 1880px"
-                    :srcset="`
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-230.webp 230w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-248.webp 248w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-146.webp 146w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-170.webp 170w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-216.webp 216w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-310.webp 310w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-206.webp 206w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-172.webp 172w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-200.webp 200w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-278.webp 278w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-460-2x.webp 460w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-680-2x.webp 680w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-720-2x.webp 720w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-840-2x.webp 840w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-1072-2x.webp 1072w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-1456-2x.webp 1456w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-1960-2x.webp 1960w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-2360-2x.webp 2360w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-2720-2x.webp 2720w,
-                        https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + 'h-' + images.find(image => image.id === post[0].id_image_cover).name}-3760-2x.webp 3760w
-                    `"
-                    :data-src="`https://image.frytolnacestach.cz/storage${images.find(image => image.id === post[0].id_image_cover).source + images.find(image => image.id === post[0].id_image_cover).name}.webp`"
-                    :alt="post[0].title"
-                    fetchpriority="high">
+                <aImage 
+                    :alt="post[0].title ? post[0].title : 'Úvodní obrázek'" 
+                    :author="images.find(image => image.id === post[0].id_image_cover).author"
+                    :lazy=true
+                    :imageSource="images.find(image => image.id === post[0].id_image_cover).source"
+                    :imageName="images.find(image => image.id === post[0].id_image_cover).name"
+                    :sizes=imageSizes
+                    :srcSet=imageSizesMedia
+                    cssClassComponent="o-hero-article"
+                />
             </div>
             <div v-else class="o-hero-article__image-lazyload">
-                <img class="o-hero-article__image-file"
-                    sizes="(max-width: 349px) 230px, (max-width: 374px) 340px, (max-width: 399px) 360px, (max-width: 459px) 420px, (max-width: 575px) 536px, (max-width: 767px) 728px, (max-width: 1019px) 980px, (max-width: 1219px) 1180px, (max-width: 1399px) 1360px, 1880px"
-                    :srcset="`
-                        https://image.frytolnacestach.cz/storage/h-no-image-230.webp 230w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-340.webp 340w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-360.webp 360w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-420.webp 420w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-536.webp 536w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-728.webp 728w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-980.webp 980w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-1180.webp 1180w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-1360.webp 1360w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-1880.webp 1880w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-460-2x.webp 460w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-680-2x.webp 680w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-720-2x.webp 720w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-840-2x.webp 840w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-1072-2x.webp 1072w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-1456-2x.webp 1456w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-1960-2x.webp 1960w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-2360-2x.webp 2360w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-2720-2x.webp 2720w,
-                        https://image.frytolnacestach.cz/storage/h-no-image-3760-2x.webp 3760w
-                    `"
-                    :src="`https://image.frytolnacestach.cz/storage/_default/no-image.webp`"
-                    :alt="post[0].title"
-                    fetchpriority="high">
+                <aImage 
+                    :alt="post[0].title ? post[0].title : 'Úvodní obrázek'" 
+                    :lazy=true
+                    imageSource="/_default/"
+                    imageName="no-image"
+                    :sizes=imageSizes
+                    :srcSet=imageSizesMedia
+                    cssClassComponent="o-hero-article"
+                />
             </div>
 
             <div class="o-hero-article__outer">
@@ -72,8 +37,14 @@
 </template>
 
 <script>
+    import aImage from '~/components/atoms/aImage.vue'
+
     export default {
         name: 'OrganismsoHeroArticleComponent',
+
+        components: {
+            aImage
+        },
 
         props: {
             post: {
@@ -85,6 +56,105 @@
                 required: true
             }
         },
+
+        data() {
+            return {
+                imageSizesMedia: [
+                    {
+                        "mediaQueriesWidth": 349,
+                        "elementWidth": 230
+                    },
+                    {
+                        "mediaQueriesWidth": 374,
+                        "elementWidth": 340
+                    },
+                    {
+                        "mediaQueriesWidth": 399,
+                        "elementWidth": 360
+                    },
+                    {
+                        "mediaQueriesWidth": 459,
+                        "elementWidth": 420
+                    },
+                    {
+                        "mediaQueriesWidth": 575,
+                        "elementWidth": 536
+                    },
+                    {
+                        "mediaQueriesWidth": 767,
+                        "elementWidth": 728
+                    },
+                    {
+                        "mediaQueriesWidth": 1019,
+                        "elementWidth": 980
+                    },
+                    {
+                        "mediaQueriesWidth": 1219,
+                        "elementWidth": 1180
+                    },
+                    {
+                        "mediaQueriesWidth": 1399,
+                        "elementWidth": 1360
+                    },
+                    {
+                        "mediaQueriesWidth": null,
+                        "elementWidth": 1880
+                    }
+                ],
+                imageSizes: [
+                    {
+                        "elementWidth": 230,
+                        "imageWidth": 230,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 340,
+                        "imageWidth": 340,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 360,
+                        "imageWidth": 360,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 420,
+                        "imageWidth": 420,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 536,
+                        "imageWidth": 536,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 728,
+                        "imageWidth": 728,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 980,
+                        "imageWidth": 980,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 1180,
+                        "imageWidth": 1180,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 1360,
+                        "imageWidth": 1360,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 1880,
+                        "imageWidth": 1880,
+                        "orientation": "h-"
+                    }
+                ]
+            }
+        }
 
         methods:{
             formatDate(date) {
