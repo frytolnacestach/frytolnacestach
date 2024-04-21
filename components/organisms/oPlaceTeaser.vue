@@ -153,7 +153,6 @@
                         "imageWidth": 286,
                         "orientation": "h-"
                     },
-
                     {
                         "elementWidth": 258,
                         "imageWidth": 268,

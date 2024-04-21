@@ -104,7 +104,6 @@
                         "mediaQueriesWidth": 992,
                         "elementWidth": 206
                     },
-
                     {
                         "mediaQueriesWidth": 1219,
                         "elementWidth": 172
@@ -124,7 +123,6 @@
                         "imageWidth": 354,
                         "orientation": "v-"
                     },
-
                     {
                         "elementWidth": 248,
                         "imageWidth": 380,
