@@ -18,34 +18,27 @@
                                         <div class="o-review-item-list-account__content">
                                             <div class="o-review-item-list-account__image loading-image -blue">
                                                 <div class="o-review-item-list-account__image-lazyload" v-if="images && images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place ))">
-                                                    <img class="o-review-item-list-account__image-file lazyload-file"
-                                                        data-sizes="(max-width: 374px) 40px, (max-width: 575px) 50px, 70px"
-                                                        :data-srcset="`
-                                                            https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-40.webp 40w,
-                                                            https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-50.webp 50w,
-                                                            https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-70.webp 70w,
-                                                            https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-80-2x.webp 80w,
-                                                            https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-100-2x.webp 100w,
-                                                            https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + 's-' + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}-140-2x.webp 140w
-                                                        `"
-                                                        :data-src="`https://image.frytolnacestach.cz/storage${images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source + images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name}.webp`"
-                                                        :alt="places.find(place => place.id === review.id_place && place.type_place === review.type).name"
-                                                        v-lazy>
+                                                    <aImage 
+                                                        :alt="places.find(place => place.id === review.id_place && place.type_place === review.type).name ? places.find(place => place.id === review.id_place && place.type_place === review.type).name : 'Místo'"  
+                                                        :author="images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).author"
+                                                        :lazy=true
+                                                        :imageSource="images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).source"
+                                                        :imageName="images.find( image => places.find(place => place.slug === image.name && place.type_place === image.type && place.type_place === review.type && place.id === review.id_place )).name"
+                                                        :sizes=imageSizes
+                                                        :srcSet=imageSizesMedia
+                                                        cssClassComponent="o-review-item-list-account"
+                                                    />
                                                 </div>
                                                 <div class="o-review-item-list-account__image-lazyload" v-else >
-                                                    <img class="o-review-item-list-account__image-file lazyload-file"
-                                                        data-sizes="(max-width: 374px) 40px, (max-width: 575px) 50px, 70px"
-                                                        :data-srcset="`
-                                                            https://image.frytolnacestach.cz/storage/_default/s-no-image-40.webp 40w,
-                                                            https://image.frytolnacestach.cz/storage/_default/s-no-image-50.webp 50w,
-                                                            https://image.frytolnacestach.cz/storage/_default/s-no-image-70.webp 70w,
-                                                            https://image.frytolnacestach.cz/storage/_default/s-no-image-80-2x.webp 80w,
-                                                            https://image.frytolnacestach.cz/storage/_default/s-no-image-100-2x.webp 100w,
-                                                            https://image.frytolnacestach.cz/storage/_default/s-no-image-140-2x.webp 140w
-                                                        `"
-                                                        :data-src="`https://image.frytolnacestach.cz/storage/_default/no-image.webp`"
-                                                        :alt="places.find(place => place.id === review.id_place && place.type_place === review.type).name"
-                                                        v-lazy>
+                                                    <aImage 
+                                                        :alt="places.find(place => place.id === review.id_place && place.type_place === review.type).name ? places.find(place => place.id === review.id_place && place.type_place === review.type).name : 'Místo'"  
+                                                        :lazy=true
+                                                        imageSource="/_default/"
+                                                        imageName="no-image"
+                                                        :sizes=imageSizes
+                                                        :srcSet=imageSizesMedia
+                                                        cssClassComponent="o-review-item-list-account"
+                                                    />
                                                 </div>
                                                 <NuxtLink class="o-review-item-list-account__image-link" :to="`/${mapType(review.type)}/${places.find(place => place.id === review.id_place && place.type_place === review.type).slug}`" :aria-label="`Přejít na místo ${places.find(place => place.id === review.id_place && place.type_place === review.type).name}`"></NuxtLink>
                                             </div>
@@ -84,6 +77,7 @@
 
 <script>
     import skeletonoReviewItemList from '~/components/skeleton/skeletonoReviewItemList.vue'
+    import aImage from '~/components/atoms/aImage.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
 
     export default {
@@ -91,6 +85,7 @@
 
         components: {
             skeletonoReviewItemList,
+            aImage,
             mHeadline
         },
 
@@ -115,7 +110,38 @@
                 placesRegions: this.placesRegions,
                 imagesPlacesRegions: this.imagesPlacesRegions,
                 placesSpots: this.placesSpots,
-                imagesPlacesSpots: this.imagesPlacesSpots
+                imagesPlacesSpots: this.imagesPlacesSpots,
+                imageSizesMedia: [
+                    {
+                        "mediaQueriesWidth": 374,
+                        "elementWidth": 40
+                    },
+                    {
+                        "mediaQueriesWidth": 575,
+                        "elementWidth": 50
+                    },
+                    {
+                        "mediaQueriesWidth": null,
+                        "elementWidth": 70
+                    }
+                ],
+                imageSizes: [
+                    {
+                        "elementWidth": 40,
+                        "imageWidth": 40,
+                        "orientation": "s-"
+                    },
+                    {
+                        "elementWidth": 50,
+                        "imageWidth": 50,
+                        "orientation": "h-"
+                    },
+                    {
+                        "elementWidth": 70,
+                        "imageWidth": 70,
+                        "orientation": "h-"
+                    }
+                ]
             }
         },
 
