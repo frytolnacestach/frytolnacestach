@@ -2,6 +2,7 @@
     <main class="t-main -green -pt-menu" role="main">
         <div class="t-main__content">
             <section class="t-section print-section">
+
                 <!-- SECTION - Hero fauna -->
                 <section class="t-section py-4">
                     <div class="t-section__inner">
@@ -10,7 +11,7 @@
                 </section>
                 <!-- SECTION - Hero fauna END -->
 
-                <!-- SECTION - cestovatelsky slovnik list -->
+                <!-- SECTION - Fauna list -->
                 <section class="t-section -p0">
                     <div class="t-section__inner">
                         <oCoverItem :items="faunas" :images="images" type="fauna" />
@@ -20,7 +21,8 @@
                         </div>
                     </div>
                 </section>
-                <!-- SECTION - cestovatelsky slovnik list END -->
+                <!-- SECTION - Fauna list END -->
+
             </section>
         </div>
     </main>

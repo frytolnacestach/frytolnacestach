@@ -2,6 +2,7 @@
     <main class="t-main -green -pt-menu" role="main">
         <div class="t-main__content">
             <section class="t-section print-section">
+                
                 <!-- SECTION - Hero event -->
                 <section class="t-section py-4">
                     <div class="t-section__inner">
@@ -10,7 +11,7 @@
                 </section>
                 <!-- SECTION - Hero event END -->
 
-                <!-- SECTION - cestovatelsky slovnik list -->
+                <!-- SECTION - Události list -->
                 <section class="t-section -p0">
                     <div class="t-section__inner">
                         <oCoverItem :items="events" :images="images" type="udalost" />
@@ -20,7 +21,8 @@
                         </div>
                     </div>
                 </section>
-                <!-- SECTION - cestovatelsky slovnik list END -->
+                <!-- SECTION - Události list END -->
+                
             </section>
         </div>
     </main>

@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -gray -pt-menu" role="main">
         <div class="t-main__content">
+
             <!-- SECTION - Hero -->
             <section class="t-section -p0 mt-2 mb-4">
                 <div class="t-section__inner">
@@ -17,7 +18,7 @@
             </section>
             <!-- SECTION - Filter END -->
 
-            <!-- SECTION - Articles -->
+            <!-- SECTION - ArticlesList -->
             <section class="t-section -p0 py-1 px-2 print-section">
                 <div class="t-section__inner">
                     <oArticleList :posts="posts" :images="images" styleThemaLoading=" -gray" styleSizeHeadline="h2" />
@@ -28,7 +29,7 @@
                     </div>
                 </div>
             </section>
-            <!-- SECTION - Articles END -->
+            <!-- SECTION - ArticlesList END -->
 
             <!-- SECTION - Platforms -->
             <section class="t-section -p0 py-1 mt-2 px-2 print-section">
@@ -41,6 +42,7 @@
                 </div>
             </section>
             <!-- SECTION - Platforms END -->
+
         </div>
     </main>
 </template>

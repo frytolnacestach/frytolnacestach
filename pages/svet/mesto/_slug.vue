@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
         <div class="t-main__content">
+
             <!-- SECTION - BREADCRUMBS -->
             <section class="t-section -px-world mt-2 -p0">
                 <div class="t-section__inner">
@@ -17,7 +18,6 @@
             </section>
             <!-- SECTION - Buttons END -->
             
-            <!-- SECTION - hero + hot info hero -->
             <section class="t-section -px-world -p0">
                 <div class="t-section__inner">
                     <div class="t-grid -world-hero">
@@ -43,7 +43,6 @@
                     </div>
                 </div>
             </section>
-            <!-- SECTION - hero + hot info - END -->
 
             <!-- SECTION - Alerts -->
             <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
@@ -61,12 +60,11 @@
             </section>
             <!-- SECTION - Alerts END -->
 
-            <!-- SECTION -->
             <section class="t-section -px-world -p0">
                 <div class="t-section__inner">
                     <div class="t-grid -place-main-with-aside">
-                        
                         <div class="t-grid__section -main">
+
                             <!-- SECTION - information by ChatGPT -->
                             <section class="t-section mt-2 mb-4" v-if="place[0].information_chatgpt && !place[0].information_author?.length > 0">
                                 <div class="t-section__inner">
@@ -154,8 +152,8 @@
                             <!-- SECTION - Review END -->
                     
                         </div>
-
                         <div class="t-grid__section -aside-place-status">
+
                             <!-- SECTION - Visited button - sidebar -->
                             <section class="t-section -px-world my-1">
                                 <div class="t-section__inner">
@@ -163,8 +161,10 @@
                                 </div>
                             </section>
                             <!-- SECTION - Visited button - sidebar - END -->
+
                         </div>
                         <div class="t-grid__section -aside-content">
+
                             <!-- SECTION - Parking - sidebar -->
                             <oSidebarParking :items="this.place[0].parking" v-if="this.place[0].parking && this.place[0].parking.length !== 0" />
                             <!-- SECTION - Parking - sidebar - END -->
@@ -172,8 +172,10 @@
                             <!-- SECTION - Events - sidebar -->
                             <oSidebarEvent :place="place[0].id" type="city" />
                             <!-- SECTION - Events - sidebar - END -->
+
                         </div>
                         <div class="t-grid__section -aside-ad">
+
                             <!-- SECTION - ad-google - sidebar -->
                             <section class="t-section -px-world mt-4 mb-2">
                                 <div class="t-section__inner">
@@ -181,13 +183,12 @@
                                 </div>
                             </section>
                             <!-- SECTION - ad-google - sidebar - END -->
+
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- SECTION END -->
 
-            <!-- SECTION Videos, All cities and Articles -->
             <section class="t-section -p0">
                 <div class="t-section__inner">
                     <div class="t-grid -world-ful">
@@ -232,7 +233,6 @@
                     </div>
                 </div>
             </section>
-            <!-- SECTION Videos, All cities and Articles END -->
         </div>
     </main>
 </template>

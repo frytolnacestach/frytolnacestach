@@ -1,11 +1,11 @@
 <template>
     <main class="t-main -blue -pt-menu" role="main">
         <div class="t-main__content">
-            <!-- SECTION -->
             <section class="t-section -padding-x -padding-y -p0 mb-4">
                 <div class="t-section__inner">
                     <div class="t-col2">
                         <div class="t-col2__sidebar mb-2 print-section">
+                            
                             <!-- SECTION - user headline - account -->
                             <section class="t-section -padding-x -p0">
                                 <div class="t-section__inner">
@@ -22,10 +22,11 @@
                                 </div>
                             </section>
                             <!-- SECTION - nav - account END -->
-                        </div>
 
+                        </div>
                         <div class="t-col2__content mb-2">
-                            <!-- SECTION -  -->
+
+                            <!-- SECTION - ArticleList -->
                             <section class="t-section -padding-x -p0 print-section">
                                 <div class="t-section__inner">
                                     <mHeadline title="Články" styleThema=" -account -blue" styleAlign="" styleGap="" />
@@ -37,12 +38,12 @@
                                     </client-only>
                                 </div>
                             </section>
-                            <!-- SECTION - END -->
+                            <!-- SECTION - ArticleList - END -->
+
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- SECTION END -->
         </div>
     </main>
 </template>

@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
         <div class="t-main__content">
+
             <!-- SECTION - BREADCRUMBS -->
             <section class="t-section -px-world mt-2 -p0">
                 <div class="t-section__inner">
@@ -17,7 +18,6 @@
             </section>
             <!-- SECTION - Buttons END -->
 
-            <!-- SECTION - hero + hot info hero -->
             <section class="t-section -px-world -p0">
                 <div class="t-section__inner">
                     <div class="t-grid -world-hero">
@@ -43,7 +43,6 @@
                     </div>
                 </div>
             </section>
-            <!-- SECTION - hero + hot info - END -->
 
             <!-- SECTION - Alerts -->
             <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
@@ -62,22 +61,22 @@
             <!-- SECTION - Nav place END -->
 
             <div class="t-main -tab" v-if="place[0]">
-                <!-- SECTION -->
                 <section class="t-section -p0">
                     <div class="t-section__inner">
                         <div class="t-grid -world-ful">
                             <div class="t-grid__section -content">
-                                <!-- SECTION -->
                                 <section class="t-section -px-world -p0 mb-4">
                                     <div class="t-section__inner">
                                         <div class="t-grid -place-main-with-aside">
                                             <div class="t-grid__section -main">
+
                                                 <!-- SECTION - Značky list -->
                                                 <oCoverItemState type="znacka" title="Značky a výrobky ze státu" perex="Zajímavý přehled kvalitních produktů, které vystihují místní charakter a tradici." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
                                                 <!-- SECTION - Značky list END -->
-                                            </div>
 
+                                            </div>
                                             <div class="t-grid__section -aside-place-status">
+
                                                 <!-- SECTION - Visited button - sidebar -->
                                                 <section class="t-section -px-world my-1">
                                                     <div class="t-section__inner">
@@ -85,8 +84,10 @@
                                                     </div>
                                                 </section>
                                                 <!-- SECTION - Visited button - sidebar - END -->
+
                                             </div>
                                             <div class="t-grid__section -aside-content">
+
                                                 <!-- SECTION - Account banner - sidebar -->
                                                 <section class="t-section -px-world my-1" v-if="account && account.length === 0">
                                                     <div class="t-section__inner">
@@ -94,8 +95,10 @@
                                                     </div>
                                                 </section>
                                                 <!-- SECTION - Account banner - sidebar END -->
+
                                             </div>
                                             <div class="t-grid__section -aside-ad">
+
                                                 <!-- SECTION - ad-google - sidebar -->
                                                 <section class="t-section -px-world mt-4 mb-2">
                                                     <div class="t-section__inner">
@@ -103,16 +106,15 @@
                                                     </div>
                                                 </section>
                                                 <!-- SECTION - ad-google - sidebar - END -->
+
                                             </div>
                                         </div>
                                     </div>
                                 </section>
-                                <!-- SECTION END -->
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- SECTION END -->
             </div>
         </div>
     </main>

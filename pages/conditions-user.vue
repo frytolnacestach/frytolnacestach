@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -gray -pt-menu" role="main">
         <div class="t-main__content">
+            
             <!-- SECTION - Hero -->
             <section class="t-section -p0 mb-1 mt-2">
                 <div class="t-section__inner">
@@ -16,6 +17,7 @@
                 </div>
             </section>
             <!-- SECTION - Wysiwyg END -->
+            
         </div>
     </main>
 </template>

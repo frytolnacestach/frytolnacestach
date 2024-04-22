@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -gray -pt-menu" role="main">
         <div class="t-main__content">
+            
             <!-- SECTION - Hero -->
             <section class="t-section -p0 mb-1 mt-2">
                 <div class="t-section__inner">
@@ -9,12 +10,14 @@
             </section>
             <!-- SECTION - Hero END -->
 
+            <!-- SECTION - Donate -->
             <section class="t-section -p0 my-1 px-2">
                 <div class="t-section__inner">
                     <oDonate />
                     <oSupport />
                 </div>
             </section>
+            <!-- SECTION - Donate END -->
 
             <!-- SECTION - Platforms -->
             <section class="t-section -p0 py-1 mt-2 px-2">
@@ -27,6 +30,7 @@
                 </div>
             </section>
             <!-- SECTION - Platforms END -->
+            
         </div>
     </main>
 </template>

@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
         <div class="t-main__content">
+
             <!-- SECTION - BREADCRUMBS -->
             <section class="t-section -px-world mt-2 -p0">
                 <div class="t-section__inner">
@@ -17,7 +18,6 @@
             </section>
             <!-- SECTION - Buttons END -->
 
-            <!-- SECTION - hero + hot info hero -->
             <section class="t-section -px-world -p0">
                 <div class="t-section__inner">
                     <div class="t-grid -world-hero">
@@ -37,7 +37,6 @@
                     </div>
                 </div>
             </section>
-            <!-- SECTION - hero + hot info - END -->
 
             <!-- SECTION - Alerts -->
             <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
@@ -46,10 +45,8 @@
                 </div>
             </section>
             <!-- SECTION - Alerts END -->
-        
 
             <div class="t-main -tab" v-if="place[0]">
-                <!-- SECTION -->
                 <section class="t-section -px-world -p0">
                     <div class="t-section__inner">
                         <div class="t-grid -world-content-with-ad">
@@ -72,8 +69,8 @@
                                 <!-- SECTION - Place teaser END -->
                         
                             </div>
-
                             <div class="t-grid__section -ad">
+
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world mt-4 mb-2">
                                     <div class="t-section__inner">
@@ -81,11 +78,11 @@
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
+
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- SECTION END -->
             </div>
         </div>
     </main>

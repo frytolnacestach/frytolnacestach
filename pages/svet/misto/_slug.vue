@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
         <div class="t-main__content">
+
             <!-- SECTION - BREADCRUMBS -->
             <section class="t-section -px-world mt-2 -p0">
                 <div class="t-section__inner">
@@ -17,8 +18,6 @@
             </section>
             <!-- SECTION - Buttons END -->
 
-
-            <!-- SECTION - hero + hot info hero -->
             <section class="t-section -px-world -p0">
                 <div class="t-section__inner">
                     <div class="t-grid -world-hero">
@@ -44,14 +43,12 @@
                     </div>
                 </div>
             </section>
-            <!-- SECTION - hero + hot info - END -->
 
-            <!-- SECTION -->
             <section class="t-section -px-world -p0">
                 <div class="t-section__inner">
                     <div class="t-grid -place-main-with-aside">
-                        
                         <div class="t-grid__section -main">
+
                             <!-- SECTION - information by ChatGPT -->
                             <section class="t-section mt-2 mb-4" v-if="place[0].information_chatgpt && !place[0].information_author?.length > 0">
                                 <div class="t-section__inner">
@@ -132,10 +129,10 @@
                             <!-- SECTION - Place teaser list -->
                             <oPlaceTeaserList :headline="'Jaké další místa vidět ve státě ' + placeState[0].name" :IDplace="placeState[0].id" :IDplaceShow="place[0].id" v-if="placeState[0]" type="spots" typePage="state" typeShow="spot" styleGap=" mt-2 mb-4 pt-1" />
                             <!-- SECTION - Place teaser list END -->
+
                         </div>
-
-
                         <div class="t-grid__section -aside-place-status">
+
                             <!-- SECTION - Visited button - sidebar -->
                             <section class="t-section -px-world my-1">
                                 <div class="t-section__inner">
@@ -143,13 +140,17 @@
                                 </div>
                             </section>
                             <!-- SECTION - Visited button - sidebar - END -->
+
                         </div>
                         <div class="t-grid__section -aside-content">
+
                             <!-- SECTION - Events - sidebar -->
                             <oSidebarEvent :place="this.place[0].id" type="spot" />
                             <!-- SECTION - Events - sidebar - END -->
+
                         </div>
                         <div class="t-grid__section -aside-ad">
+
                             <!-- SECTION - ad-google - sidebar -->
                             <section class="t-section -px-world mt-4 mb-2">
                                 <div class="t-section__inner">
@@ -157,21 +158,19 @@
                                 </div>
                             </section>
                             <!-- SECTION - ad-google - sidebar - END -->
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </section>
-            <!-- SECTION END -->
 
-            <!-- SECTION Videos and Articles -->
             <section class="t-section -p0 hidden-print">
                 <div class="t-section__inner">
                     <div class="t-grid -world-ful">
                         <div class="t-grid__section -content">
 
-                        <!-- SECTION - videos -->
-                        <section class="t-section -p0 -bg-green py-4" v-if="place[0] && videos.length !== 0">
+                            <!-- SECTION - videos -->
+                            <section class="t-section -p0 -bg-green py-4" v-if="place[0] && videos.length !== 0">
                                 <div class="t-section__inner">
                                     <mHeadline title="Videa z místa" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                     <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
@@ -200,7 +199,6 @@
                     </div>
                 </div>
             </section>
-            <!-- SECTION Videos and Articles end -->
         </div>
     </main>
 </template>

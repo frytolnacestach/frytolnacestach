@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
         <div class="t-main__content">
+
             <!-- SECTION - Hero place type -->
             <section class="t-section py-4">
                 <div class="t-section__inner">
@@ -20,6 +21,7 @@
                 </div>
             </section>
             <!-- SECTION - Place list END -->
+            
         </div>
     </main>
 </template>

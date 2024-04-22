@@ -2,6 +2,7 @@
     <main class="t-main -blue -pt-menu" role="main">
         <div class="t-main__content">
             <section class="t-section print-section">
+
                 <!-- SECTION - Hero -->
                 <section class="t-section -p0 mb-1 mt-2">
                     <div class="t-section__inner">
@@ -11,7 +12,7 @@
                 </section>
                 <!-- SECTION - Hero END -->
 
-                <!-- SECTION - Articles -->
+                <!-- SECTION - UserList -->
                 <section class="t-section -p0">
                     <div class="t-section__inner">
                         <oUserList :items="users" :images="images" />
@@ -21,7 +22,8 @@
                         </div>
                     </div>
                 </section>
-                <!-- SECTION - Articles END -->
+                <!-- SECTION - UserList END -->
+                
             </section>
         </div>
     </main>

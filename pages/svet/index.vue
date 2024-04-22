@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -green -vh100">
         <div class="t-main__content">
+
             <!-- SECTION - Typ místa -->
             <section class="t-section pt-8 pb-4 print-section">
                 <div class="t-section__inner">
@@ -19,6 +20,7 @@
                 </div>
             </section>
             <!-- SECTION - Top místa END -->
+            
         </div>
     </main>
 </template>

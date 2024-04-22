@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
         <div class="t-main__content">
+
             <!-- SECTION - BREADCRUMBS -->
             <section class="t-section -px-world mt-2 -p0">
                 <div class="t-section__inner">
@@ -17,7 +18,6 @@
             </section>
             <!-- SECTION - Buttons END -->
 
-            <!-- SECTION - hero + hot info hero -->
             <section class="t-section -px-world -p0">
                 <div class="t-section__inner">
                     <div class="t-grid -world-hero">
@@ -43,7 +43,6 @@
                     </div>
                 </div>
             </section>
-            <!-- SECTION - hero + hot info - END -->
 
             <!-- SECTION - Alerts -->
             <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
@@ -62,11 +61,11 @@
             <!-- SECTION - Nav place END -->
 
             <div class="t-main -tab" v-if="place[0]">
-                <!-- SECTION -->
                 <section class="t-section -p0">
                     <div class="t-section__inner">
                         <div class="t-grid -world-full">
                             <div class="t-grid__section -content">
+
                                 <!-- SECTION - articles -->
                                 <section class="t-section -p0 -px-world my-2" v-if="place[0] && posts.length !== 0">
                                     <div class="t-section__inner">
@@ -80,11 +79,11 @@
                                     </div>
                                 </section>
                                 <!-- SECTION - articles END -->
+
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- SECTION END -->
             </div>
         </div>
     </main>

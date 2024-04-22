@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
         <div class="t-main__content">
+
             <!-- SECTION - BREADCRUMBS -->
             <section class="t-section -px-world mt-2 -p0">
                 <div class="t-section__inner">
@@ -17,7 +18,6 @@
             </section>
             <!-- SECTION - Buttons END -->
 
-            <!-- SECTION - hero + hot info hero -->
             <section class="t-section -px-world -p0">
                 <div class="t-section__inner">
                     <div class="t-grid -world-hero">
@@ -43,7 +43,6 @@
                     </div>
                 </div>
             </section>
-            <!-- SECTION - hero + hot info - END -->
 
             <!-- SECTION - Alerts -->
             <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
@@ -62,7 +61,6 @@
             <!-- SECTION - Nav place END -->
 
             <div class="t-main -tab" v-if="place[0]">
-                <!-- SECTION -->
                 <section class="t-section -px-world -p0 mb-4">
                     <div class="t-section__inner">
                         <div class="t-grid -place-main-with-aside">
@@ -94,8 +92,8 @@
                                 <!-- SECTION - Ubytování END -->
 
                             </div>
-
                             <div class="t-grid__section -aside-place-status">
+
                                 <!-- SECTION - Visited button - sidebar -->
                                 <section class="t-section -px-world my-1">
                                     <div class="t-section__inner">
@@ -103,8 +101,10 @@
                                     </div>
                                 </section>
                                 <!-- SECTION - Visited button - sidebar - END -->
+
                             </div>
                             <div class="t-grid__section -aside-content">
+
                                 <!-- SECTION - Account banner - sidebar -->
                                 <section class="t-section -px-world my-1" v-if="account && account.length === 0">
                                     <div class="t-section__inner">
@@ -112,8 +112,10 @@
                                     </div>
                                 </section>
                                 <!-- SECTION - Account banner - sidebar END -->
+
                             </div>
                             <div class="t-grid__section -aside-ad">
+
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world mt-4 mb-2">
                                     <div class="t-section__inner">
@@ -121,11 +123,11 @@
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
+
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- SECTION END -->
             </div>
         </div>
     </main>

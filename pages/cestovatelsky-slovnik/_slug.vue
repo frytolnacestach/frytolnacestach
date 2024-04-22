@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
         <div class="t-main__content">
+
             <!-- SECTION - BREADCRUMBS -->
             <section class="t-section -px-world mt-2 -p0 print-section">
                 <div class="t-section__inner">
@@ -9,18 +10,18 @@
             </section>
             <!-- SECTION - BREADCRUMBS END -->
 
-            <!-- SECTION -->
             <section class="t-section -px-world -p0">
                 <div class="t-section__inner">
                     <div class="t-grid -world-content-with-ad">
-                        
                         <div class="t-grid__section -hero">
+
                             <!-- SECTION - hero -->
                             <oHeroItemDetail :item="travelDictionary" :images="imageTravelDictionary" />
                             <!-- SECTION - hero END -->
-                        </div>
 
+                        </div>
                         <div class="t-grid__section -content">
+
                             <!-- SECTION - information by ChatGPT -->
                             <section class="t-section print-section" v-if="travelDictionary[0].description">
                                 <div class="t-section__inner">
@@ -28,10 +29,10 @@
                                 </div>
                             </section>
                             <!-- SECTION - information by ChatGPT END -->
+
                         </div>
-
-
                         <div class="t-grid__section -ad">
+
                             <!-- SECTION - Events - sidebar -->
                             <oSidebarListTravelDictionary :IDTravelDictionary="this.travelDictionary[0].id" />
                             <!-- SECTION - Events - sidebar - END -->
@@ -43,12 +44,11 @@
                                 </div>
                             </section>
                             <!-- SECTION - ad-google - sidebar - END -->
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </section>
-            <!-- SECTION END -->
         </div>
     </main>
 </template>

@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
         <div class="t-main__content">
+            
             <!-- SECTION - BREADCRUMBS -->
             <section class="t-section -px-world mt-2 -p0">
                 <div class="t-section__inner">
@@ -17,7 +18,6 @@
             </section>
             <!-- SECTION - Buttons END -->
 
-            <!-- SECTION - hero + hot info hero -->
             <section class="t-section -px-world -p0">
                 <div class="t-section__inner">
                     <div class="t-grid -world-hero">
@@ -37,14 +37,11 @@
                     </div>
                 </div>
             </section>
-            <!-- SECTION - hero + hot info - END -->
-
-            <!-- SECTION -->
             <section class="t-section -px-world -p0">
                 <div class="t-section__inner">
                     <div class="t-grid -world-content-with-ad">
-                        
                         <div class="t-grid__section -content mb-4">
+
                             <!-- SECTION - information -->
                             <section class="t-section" v-if="event[0].description">
                                 <div class="t-section__inner">
@@ -87,10 +84,10 @@
                                 </div>
                             </section>
                             <!-- SECTION - Ubytování END -->
+
                         </div>
-
-
                         <div class="t-grid__section -ad">
+                            
                             <!-- SECTION - Date of Event - sidebar -->
                             <section class="t-section -px-world my-2 print-section" v-if="event[0].date_start || event[0].date_end">
                                 <div class="t-section__inner">
@@ -114,20 +111,17 @@
                                 </div>
                             </section>
                             <!-- SECTION - ad-google - sidebar - END -->
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </section>
-            <!-- SECTION END -->
-
             <div class="t-layout-full" v-if="event[0].id_continent || event[0].id_state || event[0].id_region || event[0].id_city || event[0].id_spot">
 
                 <!-- SECTION - place -->
                 <section class="t-section -p0 pt-2 pb-1 print-section">
                     <div class="t-section__inner">
                         <mHeadline title="Více informací o místě" styleThema=" -green" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
-
                         <div class="flex mx-1">
                             <oPlaceBlock :placeID="event[0].id_continent" type="kontinent" styleThema=" -green" v-if="event[0].id_continent" />
                             <oPlaceBlock :placeID="event[0].id_state" type="stat" styleThema=" -green" v-if="event[0].id_state" />
@@ -138,6 +132,7 @@
                     </div>
                 </section>
                 <!-- SECTION - place END -->
+
             </div>
         </div>
     </main>

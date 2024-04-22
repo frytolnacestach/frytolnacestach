@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -gray -pt-menu" role="main">
         <div class="t-main__content">
+
             <!-- SECTION - Hero article -->
             <section class="t-section -p0">
                 <div class="t-section__inner">
@@ -109,7 +110,6 @@
                     <!-- SECTION - Update information END -->
 
                 </div>
-
                 <div class="t-col2__sidebar my-2">
 
                     <!-- SECTION - author - sidebar -->
@@ -143,16 +143,15 @@
                         </div>
                     </section>
                     <!-- SECTION - ad-google - sidebar - END -->
+
                 </div>
             </div>
-
             <div class="t-layout-full" v-if="post[0].id_continent || post[0].id_state || post[0].id_region || post[0].id_city || post[0].id_spot">
 
                 <!-- SECTION - place -->
                 <section class="t-section -p0 pt-2 pb-1 print-section">
                     <div class="t-section__inner">
                         <mHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
-
                         <div class="flex mx-1">
                             <oPlaceBlock :placeID="post[0].id_continent" type="kontinent" v-if="post[0].id_continent" />
                             <oPlaceBlock :placeID="post[0].id_state" type="stat" v-if="post[0].id_state" />
@@ -172,6 +171,7 @@
                     </div>
                 </section>
                 <!-- SECTION - videos END -->
+                
             </div>
         </div>
     </main>

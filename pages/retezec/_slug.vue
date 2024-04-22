@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -green -pt-menu" role="main">
         <div class="t-main__content">
+
             <!-- SECTION - BREADCRUMBS -->
             <section class="t-section -px-world mt-2 -p0">
                 <div class="t-section__inner">
@@ -9,18 +10,18 @@
             </section>
             <!-- SECTION - BREADCRUMBS END -->
 
-            <!-- SECTION -->
             <section class="t-section -px-world -p0">
                 <div class="t-section__inner">
                     <div class="t-grid -world-content-with-ad">
-                        
                         <div class="t-grid__section -hero">
+
                             <!-- SECTION - hero -->
                             <oHeroItemDetail :item="chain" :images="imageChain" />
                             <!-- SECTION - hero END -->
-                        </div>
 
+                        </div>
                         <div class="t-grid__section -content">
+
                             <!-- SECTION - information by ChatGPT -->
                             <section class="t-section" v-if="chain[0].description">
                                 <div class="t-section__inner">
@@ -37,10 +38,10 @@
                                 </div>
                             </div>
                             <!-- SECTION - chains places - END -->
+
                         </div>
-
-
                         <div class="t-grid__section -ad">
+
                             <!-- SECTION - sidebar information -->
                             <section class="t-section -px-world mt-1 mb-2" v-if="chain[0].information && chain[0].information.length > 0">
                                 <div class="t-section__inner">
@@ -48,6 +49,7 @@
                                 </div>
                             </section>
                             <!-- SECTION - sidebar information - END -->
+
                             <!-- SECTION - ad-google - sidebar -->
                             <section class="t-section -px-world mt-4 mb-2">
                                 <div class="t-section__inner">
@@ -55,12 +57,11 @@
                                 </div>
                             </section>
                             <!-- SECTION - ad-google - sidebar - END -->
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </section>
-            <!-- SECTION END -->
         </div>
     </main>
 </template>

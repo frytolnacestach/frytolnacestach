@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -gray -vh100" role="main">
         <div class="t-main__content">
+
             <!-- SECTION - Vyhledávač -->
             <section class="t-section pt-8 pb-4 hidden-print">
                 <div class="t-section__inner">
@@ -29,33 +30,37 @@
 
             <section class="t-section -p0 px-1">
                 <div class="t-section__inner -col">
+                    
+                    <!-- SECTION - Article list -->
                     <div class="t-section__col px-1 mb-4 print-section">
-                        <!-- SECTION - Article list -->
                         <mHeadline title="Nejnovější články" styleAlign=" -left" />
                         <oArticleListSmall :posts="post" :images="imagePost" styleThemaLoading=" -gray" />
                         <div class="flex flex-full flex-ai-end flex-center mt-2">
                             <aButtonFillFull target="internal" url="/clanky" text="Všechny články" styleThema=" -gray" />
                         </div>
-                        <!-- SECTION - Article list END -->
                     </div>
+                    <!-- SECTION - Article list END -->
+
+                    <!-- SECTION - Video -->
                     <div class="t-section__col px-1 mb-4 print-section">
-                        <!-- SECTION - Video -->
                         <mHeadline title="Nejnovější videa" styleAlign=" -left" />
                         <oVideoListSmall :videos="video" :images="imageVideo" styleThemaLoading=" -gray" />
                         <div class="flex flex-full flex-ai-end flex-center mt-2">
                             <aButtonFillFull target="internal" url="/videa" text="Všechna videa" styleThema=" -gray" />
                         </div>
-                        <!-- SECTION - Video END-->
                     </div>
+                    <!-- SECTION - Video END-->
+
+                    <!-- SECTION - events -->
                     <div class="t-section__col px-1 mb-4 print-section">
-                        <!-- SECTION - events -->
                         <mHeadline title="Nejbližší události" styleAlign=" -left" />
                         <oEventListSmall styleThema=" -gray" />
                         <div class="flex flex-full flex-ai-end flex-center mt-2">
                             <aButtonFillFull target="internal" url="/udalost" text="Všechny události" styleThema=" -gray" />
                         </div>
-                        <!-- SECTION - events END -->
                     </div>
+                    <!-- SECTION - events END -->
+                    
                 </div>
             </section>
         </div>

@@ -1,6 +1,7 @@
 <template>
     <main class="t-main -gray -pt-menu" role="main">
         <div class="t-main__content">
+            
             <!-- SECTION - Hero video -->
             <section class="t-section -p0">
                 <div class="t-section__inner">
@@ -15,7 +16,6 @@
                     <!-- SECTION - perex -->
                     <section class="t-section py-2" v-if="video[0].perex">
                         <div class="t-section__inner">
-
                             <div class="o-information-block">
                                 <div class="o-information-block__outer">
                                     <div class="o-information-block__inner">
@@ -28,7 +28,6 @@
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
                     </section>
                     <!-- SECTION - perex END -->
@@ -42,7 +41,6 @@
                     <!-- SECTION - youtube END -->
 
                 </div>
-
                 <div class="t-col2__sidebar my-2">
 
                     <!-- SECTION - author - sidebar -->
@@ -62,16 +60,13 @@
                     <!-- SECTION - ad-google - sidebar - END -->
                     
                 </div>
-
             </div>
-
             <div class="t-layout-full" v-if="video[0].id_continent || video[0].id_state || video[0].id_region || video[0].id_city || video[0].id_spot">
 
                 <!-- SECTION - place -->
                 <section class="t-section -p0 pt-2 pb-1 print-section">
                     <div class="t-section__inner">
                         <mHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
-
                         <div class="flex mx-1">
                             <oPlaceBlock :placeID="video[0].id_continent" type="kontinent" v-if="video[0].id_continent" />
                             <oPlaceBlock :placeID="video[0].id_state" type="stat" v-if="video[0].id_state" />
