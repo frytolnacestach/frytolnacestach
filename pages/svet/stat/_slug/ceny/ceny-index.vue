@@ -329,7 +329,7 @@
             // tab
             const tab = this.tabs.find(tab => tab.slug === this.activeTab)
             const label = tab.label || ''
-            let tabTitle = `${label} ve státě`
+            let tabTitle = `${label} ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
             title = tabTitle
 
             // description
