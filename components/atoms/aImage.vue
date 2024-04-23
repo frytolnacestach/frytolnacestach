@@ -3,7 +3,7 @@
         :data-sizes="generateSizes()"
         :data-srcset="generateSrcSet() + ',' + generateSrcSet('2x')"
         :data-src="'https://image.frytolnacestach.cz/storage' + imageSource + imageName + '.webp'"
-        :alt="author"
+        :alt="alt ? alt : 'Výchozí obrázek'"
         v-lazy
         v-if="lazy"
     >
@@ -11,7 +11,7 @@
         :sizes="generateSizes()"
         :srcset="generateSrcSet() + ',' + generateSrcSet('2x')"
         :src="'https://image.frytolnacestach.cz/storage' + imageSource + imageName + '.webp'"
-        :alt="author"
+        :alt="alt ? alt : 'Výchozí obrázek'"
         fetchpriority="high"
         v-else-if="!lazy"
     >
