@@ -14,11 +14,11 @@
                                 <div class="o-cover-place__image loading-image -green">
                                     <div v-if="images && images.find(image => image.id === place.id_image_cover)" class="o-cover-place__image-lazyload">
                                         <aImage 
-                                            :alt="item.name ? item.name : 'Úvodní obrázek'" 
-                                            :author="images.find(image => image.id === item.id_image_cover).author"
+                                            :alt="place.name ? place.name : 'Úvodní obrázek'" 
+                                            :author="images.find(image => image.id === place.id_image_cover).author"
                                             :lazy=true
-                                            :imageSource="images.find(image => image.id === item.id_image_cover).source"
-                                            :imageName="images.find(image => image.id === item.id_image_cover).name"
+                                            :imageSource="images.find(image => image.id === place.id_image_cover).source"
+                                            :imageName="images.find(image => image.id === place.id_image_cover).name"
                                             :sizes=imageSizes
                                             :srcSet=imageSizesMedia
                                             cssClassComponent="o-cover-place"
@@ -26,7 +26,7 @@
                                     </div>
                                     <div v-else class="o-cover-place__image-lazyload">
                                         <aImage 
-                                            :alt="item.name ? item.name : 'Úvodní obrázek'" 
+                                            :alt="place.name ? place.name : 'Úvodní obrázek'" 
                                             :lazy=true
                                             imageSource="/_default/"
                                             imageName="no-image"
