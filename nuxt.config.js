@@ -776,8 +776,8 @@ export default {
       toType: 'file'
     },
     {
-      from: 'static/seznam-wmt-7a9jTJETrjtBnGcMOa5dKSZ1K9yvwfMY.txt',
-      to: 'seznam-wmt-7a9jTJETrjtBnGcMOa5dKSZ1K9yvwfMY.txt',
+      from: 'static/seznam-wmt-CZiSUftkY5j3UAZhi6O0ZSGO7jhCc5cH.txtt',
+      to: 'seznam-wmt-CZiSUftkY5j3UAZhi6O0ZSGO7jhCc5cH.txtt',
       toType: 'file'
     },
     {
