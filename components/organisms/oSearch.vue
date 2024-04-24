@@ -5,44 +5,20 @@
         </div>
         <span class="o-search__condition" v-if="searchQuery.length < 3">Napiš alepoň 3 znaky</span>
         <div class="o-search__result">
-            <div :class="'m-search-result' + (styleThema ? styleThema : '') + (styleSize ? styleSize : '')">
-                <ul class="js_m-search-result__items m-search-result__items" v-if="filteredPlaces.length > 0">
-                    <li v-for="placesSearch in filteredPlaces" :key="`${placesSearch.type_place}-${placesSearch.id}`" class="m-search-result__item" @click="closePopup">
-                        <NuxtLink class="m-search-result__link" :to="`/svet/kontinent/${placesSearch.slug}`" v-if="placesSearch.type_place === 'continent'">
-                            <span class="m-search-result__name">{{ placesSearch.name }}</span>
-                            <span class="m-search-result__type">Kontinent</span>
-                        </NuxtLink>
-
-                        <NuxtLink class="m-search-result__link" :to="`/svet/stat/${placesSearch.slug}`" v-if="placesSearch.type_place === 'state'">
-                            <span class="m-search-result__name">{{ placesSearch.name }}</span>
-                            <span class="m-search-result__type">Stát</span>
-                        </NuxtLink>
-
-                        <NuxtLink class="m-search-result__link" :to="`/svet/region/${placesSearch.slug}`" v-if="placesSearch.type_place === 'region'">
-                            <span class="m-search-result__name">{{ placesSearch.name }}</span>
-                            <span class="m-search-result__type">Region</span>
-                        </NuxtLink>
-
-                        <NuxtLink class="m-search-result__link" :to="`/svet/mesto/${placesSearch.slug}`" v-if="placesSearch.type_place === 'city'">
-                            <span class="m-search-result__name">{{ placesSearch.name }}</span>
-                            <span class="m-search-result__type">Město</span>
-                        </NuxtLink>
-
-                        <NuxtLink class="m-search-result__link" :to="`/svet/misto/${placesSearch.slug}`" v-if="placesSearch.type_place === 'spot'">
-                            <span class="m-search-result__name">{{ placesSearch.name }}</span>
-                            <span class="m-search-result__type">Místo</span>
-                        </NuxtLink>
-                    </li>
-                </ul>
-                <span class="m-search-result__no-result" v-if="searchQuery.length >= 3 & filteredPlaces.length === 0">Tak tohle tu bohužel nenajdeš.. :/ <i>(zkus to ještě jednou)</i></span>
-            </div>
+            <mSearchResult :styleThema="(styleThema ? styleThema : '')" :styleSize="(styleSize ? styleSize : '')" :result="filteredPlaces" :query="searchQuery" />
         </div>
     </div>
 </template>
 
 <script>
+    import mSearchResult from '~/components/molecules/mSearchResult.vue'
+
     export default {
-        name: 'OrganismsSearchComponent',
+        name: 'OrganismsoSearchComponent',
+
+        components: {
+            mSearchResult
+        },
 
         props: {
             styleThema: {
@@ -87,22 +63,6 @@
                 if (this.searchQuery.length >= 3) {
                     this.filteredPlaces = this.placesContinents.concat(this.placesStates).concat(this.placesCities).concat(this.placesRegions).concat(this.placesSpots).filter(place => place.name.toLowerCase().includes(this.searchQuery.toLowerCase()))
                 }
-            },
-
-            closePopup() {
-                // Popup Search
-                document.querySelector(".js_o-popup-search").classList.remove("open")
-                document.documentElement.classList.remove("no-scroll")
-                document.body.classList.remove("no-scroll")
-                // Nav Main
-                var hamburger = document.querySelector(".js_m-hamburger");
-                hamburger.setAttribute("data-hamburger", "close");
-                hamburger.classList.remove("open");
-                document.querySelector(".js_m-nav-main").classList.remove("open");
-                document.documentElement.classList.remove("no-scroll");
-                document.body.classList.remove("no-scroll");
-
-                this.searchQuery = ""
             }
         },
 
