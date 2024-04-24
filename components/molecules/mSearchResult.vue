@@ -69,8 +69,8 @@
                 document.documentElement.classList.remove("no-scroll");
                 document.body.classList.remove("no-scroll");
 
-                this.searchQuery = ""
+                this.$emit('select', true);
             }
-        },
+        }
     }
 </script>

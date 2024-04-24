@@ -5,7 +5,7 @@
         </div>
         <span class="o-search__condition" v-if="searchQuery.length < 3">Napiš alepoň 3 znaky</span>
         <div class="o-search__result">
-            <mSearchResult :styleThema="(styleThema ? styleThema : '')" :styleSize="(styleSize ? styleSize : '')" :result="filteredPlaces" :query="searchQuery" />
+            <mSearchResult :styleThema="(styleThema ? styleThema : '')" :styleSize="(styleSize ? styleSize : '')" :result="filteredPlaces" :query="searchQuery" @select="handleSelect" />
         </div>
     </div>
 </template>
@@ -62,6 +62,12 @@
                 }
                 if (this.searchQuery.length >= 3) {
                     this.filteredPlaces = this.placesContinents.concat(this.placesStates).concat(this.placesCities).concat(this.placesRegions).concat(this.placesSpots).filter(place => place.name.toLowerCase().includes(this.searchQuery.toLowerCase()))
+                }
+            },
+
+            handleSelect(select) {
+                if (select === true) {
+                    this.searchQuery = ""
                 }
             }
         },
