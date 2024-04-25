@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-end-all">
+    <div class="o-switch-hero flex flex-end-all">
         <span v-if="!showHero" @click="toggleHero" class="a-button-pure-icon -cover">Obrázek</span>
         <span v-else @click="toggleHero" class="a-button-pure-icon -map">Mapa</span>
     </div>
