@@ -15,8 +15,8 @@
                         <div class="m-user-header__text">
                             <span class="m-user-header__nickname">{{ user[0].nickname }}</span>
                         </div>
-                        <div class="m-account-header__nav" :class="{'-open': parentVariable}" @click="updateParentVariable()">
-                            <span class="m-account-header__nav-icon"></span>
+                        <div class="m-user-header__nav" :class="{'-open': parentVariable}" @click="updateParentVariable()">
+                            <span class="m-user-header__nav-icon"></span>
                         </div>
                     </div>
                 </div>
