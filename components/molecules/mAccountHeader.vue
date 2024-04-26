@@ -1,10 +1,11 @@
 <template>
     <section class="t-component-skeleton">
-        <!-- skeleton -->
+        
+        <!-- SHOW - skeleton -->
         <skeletonmAccountHeader styleThema=" -skeleton-dark-blue" v-if="!account || account.length === 0" />
-        <!-- skeleton END -->
+        <!-- SHOW - skeleton END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="account && account.length !== 0">
             <div class="m-account-header">
                 <div class="m-account-header__outer">
@@ -23,7 +24,8 @@
                 </div>
             </div>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+
     </section>
 </template>
 

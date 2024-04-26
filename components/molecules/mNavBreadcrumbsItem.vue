@@ -7,7 +7,6 @@
                         <NuxtLink class="m-nav-breadcrumbs-item__link" :to="item.url" v-if="item.status === 'link'">{{ item.name }}</NuxtLink>
                         <span class="m-nav-breadcrumbs-item__span" v-else-if="item.status === 'span'">{{ item.name }}</span>
                     </li>
-
                     <li class="m-nav-breadcrumbs-item__item" v-if="item">
                         <span class="m-nav-breadcrumbs-item__span">{{ item.name }}</span>
                     </li>

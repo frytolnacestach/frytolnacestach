@@ -11,7 +11,6 @@
                             {{ item.icon ? '' : item.name }}
                         </span>
                     </li>
-
                     <li class="m-nav-breadcrumbs-place__item" v-if="tab !== '' && tab !== undefined && tab !== 'default'">
                         <span class="m-nav-breadcrumbs-place__span">{{ tabName }}</span>
                     </li>

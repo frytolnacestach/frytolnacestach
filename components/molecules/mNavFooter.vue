@@ -1,6 +1,7 @@
 <template>
     <nav class="m-nav-footer">
         <div class="m-nav-footer__outer">
+            
             <div class="m-nav-footer__inner">
                 <span class="m-nav-footer__headline">Co dělám</span>
                 <ul class="m-nav-footer__items">
@@ -105,6 +106,7 @@
                     </li>
                 </ul>
             </div>
+            
         </div>
     </nav> 
 </template>

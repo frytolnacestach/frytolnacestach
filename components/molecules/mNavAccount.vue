@@ -58,17 +58,17 @@
 
         methods: {
             logout() {
-                //Nastavení localStorage
+                // Set localStorage
                 localStorage.setItem("accountEmail","undefined")
                 localStorage.setItem("accountPasswordHash","undefined")
                 localStorage.setItem("accountStatus","undefined")
                 localStorage.setItem("accountNickname","undefined")
-                //Delete cookies
+                // Delete cookies
                 document.cookie = "FNCaccountEmail=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
                 document.cookie = "FNCaccountPasswordHash=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
                 document.cookie = "FNCaccountStatus=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
                 document.cookie = "FNCaccountNickname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-                //router
+                // Router
                 this.$router.push('/ucet/prihlaseni')
             }
         }

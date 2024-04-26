@@ -1,10 +1,11 @@
 <template>
     <section class="t-component-skeleton">
-        <!-- skeleton -->
+        
+        <!-- SHOW - skeleton -->
         <skeletonmUserHeader styleThema=" -skeleton-dark-blue" v-if="user === null && skeleton === true" />
-        <!-- skeleton END -->
+        <!-- SHOW - skeleton END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="user !== null && skeleton !== true">
             <div class="m-user-header">
                 <div class="m-user-header__outer">
@@ -22,7 +23,8 @@
                 </div>
             </div>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+
     </section>
 </template>
 

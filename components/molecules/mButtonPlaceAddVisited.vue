@@ -39,7 +39,9 @@
             async deleteVisited(placeID) {
                 try {
                     this.placeID = placeID
+
                     try {
+                        // API - POST
                         const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-edit`, {
                             headers: {
                                 "Content-Type": "application/json",
@@ -99,6 +101,7 @@
                         })
                         throw err
                     }
+                    
                 } catch (err) {
                     this.flashMessage.push({
                         date: new Date().getTime(),

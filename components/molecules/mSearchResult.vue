@@ -6,22 +6,18 @@
                     <span class="m-search-result__name">{{ placesSearch.name }}</span>
                     <span class="m-search-result__type">Kontinent</span>
                 </NuxtLink>
-
                 <NuxtLink class="m-search-result__link" :to="`/svet/stat/${placesSearch.slug}`" v-if="placesSearch.type_place === 'state'">
                     <span class="m-search-result__name">{{ placesSearch.name }}</span>
                     <span class="m-search-result__type">Stát</span>
                 </NuxtLink>
-
                 <NuxtLink class="m-search-result__link" :to="`/svet/region/${placesSearch.slug}`" v-if="placesSearch.type_place === 'region'">
                     <span class="m-search-result__name">{{ placesSearch.name }}</span>
                     <span class="m-search-result__type">Region</span>
                 </NuxtLink>
-
                 <NuxtLink class="m-search-result__link" :to="`/svet/mesto/${placesSearch.slug}`" v-if="placesSearch.type_place === 'city'">
                     <span class="m-search-result__name">{{ placesSearch.name }}</span>
                     <span class="m-search-result__type">Město</span>
                 </NuxtLink>
-
                 <NuxtLink class="m-search-result__link" :to="`/svet/misto/${placesSearch.slug}`" v-if="placesSearch.type_place === 'spot'">
                     <span class="m-search-result__name">{{ placesSearch.name }}</span>
                     <span class="m-search-result__type">Místo</span>
@@ -57,12 +53,14 @@
 
         methods: {
             closePopup() {
+                const hamburger = document.querySelector(".js_m-hamburger");
+
                 // Popup Search
                 document.querySelector(".js_o-popup-search").classList.remove("open")
                 document.documentElement.classList.remove("no-scroll")
                 document.body.classList.remove("no-scroll")
+                
                 // Nav Main
-                var hamburger = document.querySelector(".js_m-hamburger");
                 hamburger.setAttribute("data-hamburger", "close");
                 hamburger.classList.remove("open");
                 document.querySelector(".js_m-nav-main").classList.remove("open");
