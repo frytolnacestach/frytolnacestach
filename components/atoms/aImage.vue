@@ -61,22 +61,22 @@
                 if (type === "2x") {
                     return this.sizes.map(size => {
                         return `https://image.frytolnacestach.cz/storage/${this.imageSource + size.orientation + this.imageName}-${size.imageWidth*2}-2x.webp ${size.elementWidth*2}w`
-                    }).join(', ');
+                    }).join(', ')
                 } else {
                     return this.sizes.map(size => {
                         return `https://image.frytolnacestach.cz/storage/${this.imageSource + size.orientation + this.imageName}-${size.imageWidth}.webp ${size.elementWidth}w`
-                    }).join(', ');
+                    }).join(', ')
                 }
             },
 
             generateSizes() {
                 return this.srcSet.map((size, index) => {
                     if ( size.mediaQueriesWidth === null ) {
-                        return `${size.elementWidth}px`;
+                        return `${size.elementWidth}px`
                     } else {
-                        return `(max-width: ${size.mediaQueriesWidth}px) ${size.elementWidth}px`;
+                        return `(max-width: ${size.mediaQueriesWidth}px) ${size.elementWidth}px`
                     }
-                }).join(', ');
+                }).join(', ')
             }
         }
     }
