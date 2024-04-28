@@ -2,16 +2,18 @@
     <div class="t-components">
         <!-- Print -->
         <ComponentPrintFront />
-        <!-- END Print -->
+        <!-- Print END -->
+
         <!-- Login -->
         <ComponentLogin @accountData="handleAccountData" />
-        <!-- END Login -->
+        <!-- Login END -->
+
         <!-- Frontend -->
         <ComponentHeader />
         <Nuxt />
         <ComponentFooter />
         <ComponentPopupCookies />
-        <!-- END Frontend -->
+        <!-- Frontend END -->
     </div>
 </template>
 
