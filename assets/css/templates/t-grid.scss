@@ -33,6 +33,11 @@
 
             &.-map {
                 grid-area: map;
+                aspect-ratio: 2 / 1;
+
+                @media only screen and (min-width: $lg) {
+                    aspect-ratio: inherit;
+                }
             }
 
             &.-hot-info-hero {
