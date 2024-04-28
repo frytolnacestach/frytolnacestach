@@ -1,7 +1,7 @@
 <template>
     <!-- Print Front -->
     <oPrintFront />
-    <!-- LOGOTYPE END -->
+    <!-- Print Front END -->
 </template>
 
 <script>

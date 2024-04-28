@@ -1,8 +1,3 @@
-<!--
-    loginStatus
-    0 - Uživatel není přihlášen
-    1 - Uživatel je přihlášen
--->
 <template></template>
 <script>
     export default {
