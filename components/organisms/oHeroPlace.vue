@@ -25,7 +25,6 @@
                         cssClassComponent="o-hero-place"
                     />
                 </div>
-                
                 <div class="o-hero-place__outer">
                     <div class="o-hero-place__inner">
                         <h1 class="o-hero-place__headline" v-if="title">{{ preTitle ? preTitle + ' ' + title : title }}</h1>

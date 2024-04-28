@@ -26,6 +26,7 @@
             <!-- SECTION - Review -->
             <oReviewItemList :IDplace="IDplace" :reviews="reviews" :type="type" :account="account" v-if="account && reviews.length !== 0" />
             <!-- SECTION - Review END -->
+
         </div>
     </section>
 </template>
@@ -76,12 +77,14 @@
 
             while (!success) {
                 try {
-                    // Reviews
+                    // API - GET - Reviews
                     const reviews = await this.$axios.$get(`https://api.frytolnacestach.cz/api/reviews-id-place?id_place=${this.IDplace}&type=${this.type}`)
                     this.numberReviews = reviews.length
 
+                    // DATA
                     data = { reviews }
 
+                    // FINAL
                     success = true
                 } catch (error) {
                     console.log(`API ERROR - MOJE UŽIVATELKÁ RECENZE`)
@@ -97,13 +100,14 @@
         methods: {
             async fetchMyReview() {
                 try {
-                    // My reviews
                     let myReview = []
 
+                    // API - GET - Reviews
                     if (process.client) {
                         myReview = await this.$axios.$get(`https://api.frytolnacestach.cz/api/reviews-id-place?id_place=${this.IDplace}&id_user=${this.account[0].id}&type=${this.type}`)
                     }
 
+                    // FINAL
                     this.myReview = myReview
                 } catch (error) {
                     console.log(`API ERROR - UŽIVATELKÉ RECENZE`)

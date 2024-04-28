@@ -24,7 +24,6 @@
                     cssClassComponent="o-hero-video"
                 />
             </div>
-
             <div class="o-hero-video__outer">
                 <div class="o-hero-video__inner">
                     <h1 class="o-hero-video__headline">{{ title }}</h1>

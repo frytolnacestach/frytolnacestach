@@ -1,10 +1,11 @@
 <template>
     <section class="t-component-skeleton">
-        <!-- skeleton -->
+        
+        <!-- SHOW - skeleton -->
         <skeletonoTopPlace :styleThema="(skeletonThema ? skeletonThema : ' -skeleton-gray')" v-if="places === null || images === null" />
-        <!-- skeleton END -->
+        <!-- SHOW - skeleton END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="places !== null && images !== null">
             <div class="o-top-place">
                 <div class="o-top-place__outer">
@@ -49,7 +50,8 @@
                 </div>
             </div>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+
     </section>
 </template>
 
@@ -212,39 +214,37 @@
         },
 
         async created() {
+            // API - GET - TopPlaces
             const topPlaces = await axios.get("https://api.frytolnacestach.cz/api/top-places")
             this.topPlaces = topPlaces.data
-
+            // API - GET - Continents
             const topPlacesIDcontinents = this.topPlaces
                 .filter(place => place.type === 'continent' && place.id_place !== null && place.id_place !== '')
                 .map(place => place.id_place)
-
+            const placesContinents = await axios.get(`https://api.frytolnacestach.cz/api/places-continents-array?id=${topPlacesIDcontinents.join(',')}`)
+            // API - GET - States
             const topPlacesIDstates = this.topPlaces
                 .filter(place => place.type === 'state' && place.id_place !== null && place.id_place !== '')
                 .map(place => place.id_place)
-
+            const placesStates = await axios.get(`https://api.frytolnacestach.cz/api/places-states-array?id=${topPlacesIDstates.join(',')}`)
+            // API - GET - Cities
             const topPlacesIDcities = this.topPlaces
                 .filter(place => place.type === 'city' && place.id_place !== null && place.id_place !== '')
                 .map(place => place.id_place)
-
-            const placesContinents = await axios.get(`https://api.frytolnacestach.cz/api/places-continents-array?id=${topPlacesIDcontinents.join(',')}`)
-            this.placesContinents = placesContinents.data
-
-            const placesStates = await axios.get(`https://api.frytolnacestach.cz/api/places-states-array?id=${topPlacesIDstates.join(',')}`)
-            this.placesStates = placesStates.data
-
             const placesCities = await axios.get(`https://api.frytolnacestach.cz/api/places-cities-array?id=${topPlacesIDcities.join(',')}`)
-            this.placesCities = placesCities.data
+            // API - GET - Images
+            const imagesPlaceID = places.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
+            const images = await axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlaceID.join(',')}`)
 
+            // DATA
+            this.placesStates = placesStates.data
+            this.placesContinents = placesContinents.data
+            this.placesCities = placesCities.data
             const places = this.placesContinents.concat(
                 this.placesStates,
                 this.placesCities
             )
             this.places = places
-
-            const imagesPlaceID = places.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
-
-            const images = await axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlaceID.join(',')}`)
             this.images = images.data
         }
     }

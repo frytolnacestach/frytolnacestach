@@ -1,10 +1,10 @@
 <template>
     <section class="t-component-skeleton">
-        <!-- skeleton -->
+        <!-- SHOW - skeleton -->
         <skeletonoTimePlace styleThema=" -skeleton-green" v-if="places === null && skeleton === true" />
-        <!-- skeleton END -->
+        <!-- SHOW - skeleton END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="places !== null && skeleton !== true">
             <div class="o-time-place">
                 <div class="o-time-place__outer">
@@ -46,7 +46,8 @@
                 </div>
             </div>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+        
     </section>
 </template>
 

@@ -1,10 +1,11 @@
 <template>
     <section class="t-component-skeleton hidden-print">
-        <!-- skeleton -->
+        
+        <!-- SHOW - skeleton -->
         <skeletonoVisitedButton styleThema=" -skeleton-green" v-if="skeleton === true" />
-        <!-- skeleton END -->
+        <!-- SHOW - skeleton END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="skeleton === false">
             <div class="o-visited-button">
                 <!-- SECTION - FlashMassages -->
@@ -25,7 +26,8 @@
                 </div>
             </div>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+
     </section>
 </template>
 
@@ -68,6 +70,7 @@
             async visited() {
                 if (this.account && this.account.length !== 0) {
                     try {
+                        // API - GET - UserViditedPlace
                         const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place?email=${encodeURIComponent(this.account[0].email)}&password_hash=${encodeURIComponent(this.account[0].password)}&id_place=${encodeURIComponent(this.place)}&type=${this.placeType}`, {
                             headers: {
                                 "Content-Type": "application/json",
@@ -109,6 +112,7 @@
                         this.status = newStatus
 
                         try {
+                            // API - POST
                             const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-edit`, {
                                 headers: {
                                     "Content-Type": "application/json",

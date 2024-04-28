@@ -179,17 +179,17 @@
 
             while (!success) {
                 try {
-                    // Načtení kompatibilních elektrických zásuvek
+                    // API - GET - Wall sockets
                     const idsID = this.ids.map(id => id.id).filter(id => id !== null && id !== '')
                     const items = this.ids ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/wall-sockets-id?id=${idsID.join(',')}&showType=list`) : []
-
-                    // Načtení informací o obrázcích pro items
+                    // API - GET - Images
                     const imagesItemsID = items.map(item => item.id_image_cover).filter(id => id !== null && id !== '')
                     const images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesItemsID.join(',')}`)
 
+                    // DATA
                     data = { items, images }
 
-
+                    // FINAL
                     success = true
                 } catch (error) {
                     console.log(`API ERROR - VYPIS oCoverWallSocket`)

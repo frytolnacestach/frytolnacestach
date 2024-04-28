@@ -1,10 +1,11 @@
 <template>
     <section class="t-component-skeleton">
-        <!-- skeleton -->
+        
+        <!-- SHOW - skeleton -->
         <skeletonoCoverItem styleThema=" -skeleton-green" v-if="items === null && skeleton === true" />
-        <!-- skeleton END -->
+        <!-- SHOW - skeleton END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="items !== null && skeleton !== true">
             <div class="o-cover-item">
                 <div class="o-cover-item__outer">
@@ -46,7 +47,8 @@
                 </div>
             </div>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+        
     </section>
 </template>
 
@@ -59,8 +61,8 @@
         name: 'OrganismsoCoverItemComponent',
 
         components: {
-            aImage,
-            skeletonoCoverItem
+            skeletonoCoverItem,
+            aImage
         },
 
         props: {

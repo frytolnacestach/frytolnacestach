@@ -38,10 +38,13 @@
 
             while (!success) {
                 try {
+                    // API - GET - user
                     const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-id/${this.author}`)
 
+                    // DATA
                     data = { user }
 
+                    // FINAL
                     success = true
                 } catch (error) {
                     console.log(`API ERROR - O AUTHOR SIDEBAR`)

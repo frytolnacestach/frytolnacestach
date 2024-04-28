@@ -3,17 +3,14 @@
         <div class="o-chart-pie__outher">
             <div class="o-chart-pie__inner">
                 <h2 class="o-chart-pie__headline">{{ title }}</h2>
-
                 <ul :class="'pieID legend hidden ' + chartID">
                     <li v-for="(item, index) in data" :key="index">
                         <em>{{ item.name }}</em>
                         <span>{{ typeof item.value === 'string' && item.value.includes('%') ? item.value.replace('%', '').replace(/\s/g, '').replace(',', '.') : item.value }}</span>
                     </li>
                 </ul>
-                
                 <div class="o-chart-pie__container">
                     <div :class="'o-chart-pie__pie pieID pie ' + chartID"></div>
-
                     <div class="o-chart-pie__legend">
                         <ul class="o-chart-pie__legend-items">
                             <li class="o-chart-pie__legend-item" v-for="(item, index) in data" :key="index" :style="{ borderColor: getColor(index) }">
@@ -130,6 +127,7 @@
             iterateSlices(sliceSize, pieElement, offset, dataCount, sliceCount, color) {
                 const sliceID = this.chartID + "-s" + dataCount + "-" + sliceCount
                 const maxSize = 179
+                
                 if (sliceSize <= maxSize) {
                     this.addSlice(sliceSize, pieElement, offset, sliceID, color)
                 } else {

@@ -58,38 +58,40 @@
 
         methods: {
             async loadPlaces() {
-                // Variable
                 let placesResponse
                 
-                // COMPONENT - oFormFilterPlace
+                // API - GET - ITEMS
                 if (this.typePlaceFilter === "continents") {
-                    // continents
+                    // API - GET - Continents
                     placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-continents?showType=filter`)
-                    const { data: placesData } = placesResponse
-                    this.filterPlaces = placesData
                 } else if (this.typePlaceFilter === "states") {
-                    // states
+                    // API - GET - States
                     placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=filter`)
-                    const { data: placesData } = placesResponse
-                    this.filterPlaces = placesData
                 }
+
+                // DATA
+                const { data: placesData } = placesResponse
+                this.filterPlaces = placesData
                 this.updateParentVariable(this.filterSelect)
             },
 
             handleFilterSelectChange() {
                 const selectedPlaceId = this.filterSelect
+                
                 // Set URL query
                 if (this.typePlaceFilter === "continents") {
                     this.$router.replace({ query: { filterIDcontinent: selectedPlaceId } })
                 } else if (this.typePlaceFilter === "states") {
                     this.$router.replace({ query: { filterIDstate: selectedPlaceId } })
                 }
+
                 // Update in parent
                 this.updateParentVariable(selectedPlaceId)
             },
 
             updateParentVariable(id) {
                 const selectedFilterPlace = this.filterPlaces.find(place => place.id === id)
+                
                 if (selectedFilterPlace) {
                     this.$emit('update', { id, name: selectedFilterPlace.name })
                 } else {

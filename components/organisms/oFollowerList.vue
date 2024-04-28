@@ -1,10 +1,11 @@
 <template>
     <section class="t-component-skeleton">
-        <!-- skeleton -->
+        
+        <!-- SHOW - skeleton -->
         <skeletonoFollowerList styleThema=" -skeleton-blue" v-if="skeleton" />
-        <!-- skeleton END -->
+        <!-- SHOW - skeleton END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="!skeleton">
             <div class="o-follower-list">
                 <div class="o-follower-list__outer">
@@ -53,9 +54,9 @@
                 </div>
             </div>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="users.length === 0 && !skeleton">
             <p v-if="type==='account'">
                 Zatím nikoho nesleduješ
@@ -64,7 +65,8 @@
                 Cestovatel zatím nikoho nesleduje.
             </p>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+
     </section>
 </template>
 
@@ -203,29 +205,29 @@
                     if (this.type === "account") {
                         if (this.account && this.account.length !== 0) {
                             if (process.client) {
-                                // Followers
+                                // API - GET - Followers
                                 this.followers = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-followers-id-user?id_user=${this.account[0].id}`)
-
+                                // API - GET - User
                                 if (this.followers && this.followers.length !== 0) {
-                                    // Users
                                     const usersFollowersIDS = this.followers.map(follower => follower.id_follower).filter(id => id !== null && id !== '')
                                     this.users = await this.$axios.$get(`https://api.frytolnacestach.cz/api/users-ids?id=${usersFollowersIDS.join(',')}`)
                                 }
 
+                                // FINAL
                                 this.skeleton = false
                             }
                         }
                     } else {
                         if (process.client) {
-                            // Followers
+                            // API - GET - Followers
                             this.followers = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-followers-id-user?id_user=${this.idUser}`)
-
+                            // API - GET - User
                             if (this.followers && this.followers.length !== 0) {
-                                // Users
                                 const usersFollowersIDS = this.followers.map(follower => follower.id_follower).filter(id => id !== null && id !== '')
                                 this.users = await this.$axios.$get(`https://api.frytolnacestach.cz/api/users-ids?id=${usersFollowersIDS.join(',')}`)
                             }
 
+                            // FINAL
                             this.skeleton = false
                         }
                     }

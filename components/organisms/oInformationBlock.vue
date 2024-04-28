@@ -2,15 +2,10 @@
     <div :class="'o-information-block' + (styleThema ? styleThema : '')">
         <div class="o-information-block__outer">
             <div class="o-information-block__inner">
-
                 <h2 class="o-information-block__title" :class="{ '-m0': subtitle }" v-if="title">{{ title }}</h2>
-
                 <span class="o-information-block__title-info" v-if="subtitle">{{ subtitle}}</span>
-
                 <div class="o-information-block__perex">
-
                     <div :class="'o-information-block__wysiwyg o-wysiwyg' + (styleThema ? styleThema : '')" v-html="perexWysiwyg" v-if="perexWysiwyg"></div>
-
                     <div class="o-information-block__list" v-if="perexList">
                         <ul class="o-information-block__list-ul">
                             <li class="o-information-block__list-li" v-for="item in perexList" v-bind:key="item.name">
@@ -20,16 +15,13 @@
                             </li>
                         </ul>
                     </div>
-
                     <i class="o-information-block__info" v-if="perexInfo">{{ perexInfo }}</i>
-
                     <div class="o-information-block__author" v-if="authorName">
                         <i class="m-author">
                             <a class="m-author__link" :href="authorLink" :target="authorTarget" v-if="authorLink">{{ authorName }}</a>
                             <span class="m-author__span" v-else>{{ authorName }}</span>
                         </i>
                     </div>
-
                     <div class="o-information-block__author" v-if="authorID">
                         <i class="m-author">
                             <nuxtLink class="m-author__link" :to="`/cestovatel/${user[0].slug}`" v-if="user[0]">
@@ -40,7 +32,6 @@
                             </nuxtLink>
                         </i>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -111,10 +102,13 @@
             if (this.authorID) {
                 while (!success) {
                     try {
+                        // API - GET - User
                         const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-id/${this.authorID}`)
 
+                        // DATA
                         data = { user }
 
+                        // FINAL
                         success = true
                     } catch (error) {
                         console.log(`API ERROR - AUTHOR`)
@@ -125,7 +119,7 @@
                 }
 
                 Object.assign(this, data)
-        }
+            }
         },
 
         methods:{

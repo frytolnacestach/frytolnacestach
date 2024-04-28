@@ -55,6 +55,7 @@
         methods: {  
             async login() {
                 try {
+                    // API - POST
                     const response = await fetch(`https://api.frytolnacestach.cz/api/user-login`, {
                         headers: {
                             "Content-Type": "application/json",
@@ -104,15 +105,18 @@
                         this.accountStatus = localStorageStatus
                         this.accountNickname = localStorageNickname
                         
-                        // Get user data
                         try {
+                            // API - GET - User
                             const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile/${localStorageEmail}`)
+
+                            // DATA
                             if (response.ok) {
                                 this.account = await response.json()
                             } else {
                                 this.account = []
                             }
                         } catch {
+                            // DATA
                             this.account = []
                         }
 

@@ -2,11 +2,12 @@
     <section class="t-section my-2 -p0" v-if="reviews && reviews.length > 0">
         <div class="t-section__inner">            
             <section class="t-component-skeleton">
-                <!-- skeleton -->
+                
+                <!-- SHOW - skeleton -->
                 <skeletonoReviewItemList styleThema=" -skeleton-green" v-if="reviews === null" />
-                <!-- skeleton END -->
+                <!-- SHOW - skeleton END -->
 
-                <!-- client -->
+                <!-- SHOW - client -->
                 <client-only v-if="reviews !== null">
                     <div class="o-review-item-list">
                         <div class="o-review-item-list__outer">
@@ -102,7 +103,8 @@
                         </div>
                     </div>
                 </client-only>
-                <!-- client END -->
+                <!-- SHOW - client END -->
+
             </section>
         </div>
     </section>
@@ -193,6 +195,7 @@
         methods: {
             async editReview() {
                 try {
+                    // API - POST
                     const response = await fetch(`https://api.frytolnacestach.cz/api/review-edit`, {
                         headers: {
                             "Content-Type": "application/json",
@@ -291,16 +294,16 @@
 
             while (!success) {
                 try {
-                    // Users
+                    // API - GET - User
                     const usersReviewsIDS = this.reviews.map(review => review.id_user).filter(id => id !== null && id !== '')
                     const users = await this.$axios.$get(`https://api.frytolnacestach.cz/api/users-ids?id=${usersReviewsIDS.join(',')}`)
 
-
+                    // DATA
                     data = {
                         users
                     }
 
-                    
+                    // FINAL
                     success = true
                 } catch (error) {
                     console.log(`API ERROR - UŽIVATELSKÉ RECENZE`)

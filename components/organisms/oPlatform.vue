@@ -3,7 +3,6 @@
         <div class="o-platform__outer">
             <div class="o-platform__inner">
                 <div class="o-platform__items">
-
                     <div class="o-platform__item" v-for="platform in platforms" :key="platform.id">
                         <div class="o-platform__item-content">
                             <div class="o-platform__icon">
@@ -11,7 +10,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -56,6 +54,7 @@
         },
 
         async fetch() {
+            // API - GET - Platforms
             this.platforms = await fetch("https://api.frytolnacestach.cz/api/platforms").then((res) => res.json())
         }
     }

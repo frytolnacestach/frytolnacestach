@@ -86,23 +86,23 @@
         },
 
         async fetch() {
-            //start loading
+            // START
             this.isLoading = true
 
-            //load travelDictionaries
+            // API - GET - Travel Dictionaries
             const [travelDictionariesResponse] = await Promise.all([
                 this.$axios.get(`https://api.frytolnacestach.cz/api/travel-dictionaries-random?showType=list&actualID=${this.IDTravelDictionary}&quantity=5`)
 
             ])
+            // DATA
             const { data: travelDictionariesData } = travelDictionariesResponse
-
-            //load images
+            
+            // API - GET - Images
             const imagesTravelDictionariesIDS  = travelDictionariesData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
             if (imagesTravelDictionariesIDS .length > 0) {
                 const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesTravelDictionariesIDS .join(',')}`)
                 const { data: imagesData } = imagesResponse
                 this.images = this.images.concat(imagesData)
-            
                 // add to placecesData to travelDictionaries
                 this.travelDictionaries = this.travelDictionaries.concat(travelDictionariesData)
             } else {
@@ -110,7 +110,7 @@
                 this.travelDictionaries = this.travelDictionaries.concat(travelDictionariesData)
             } 
 
-            //end loading
+            // FINAL
             this.isLoading = false
         }
     }

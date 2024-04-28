@@ -55,6 +55,7 @@
             async passwordLostNew() {
                 if (this.passwordCheck) {
                     try {
+                        // API - POST
                         const response = await fetch(`https://api.frytolnacestach.cz/api/user-password-lost-new`, {
                             headers: {
                                 "Content-Type": "application/json",

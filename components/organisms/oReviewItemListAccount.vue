@@ -2,13 +2,13 @@
     <section class="t-section -p0">
         <div class="t-section__inner">
             <mHeadline title="Napsané recenze" styleThema=" -account -blue" styleAlign="" styleGap="" />
-            
             <section class="t-component-skeleton">
-                <!-- skeleton -->
+                
+                <!-- SHOW - skeleton -->
                 <skeletonoReviewItemList styleThema=" -skeleton-blue" v-if="reviews === null" />
-                <!-- skeleton END -->
+                <!-- SHOW - skeleton END -->
 
-                <!-- client -->
+                <!-- SHOW - client -->
                 <client-only v-if="reviews !== null">
                     <div class="o-review-item-list-account" v-if="reviews && reviews.length > 0 && places && places.length > 0">
                         <div class="o-review-item-list-account__outer">
@@ -69,7 +69,8 @@
                         Zatím tu nemáš žádnou recenzi. Co takhle projít <nuxt-link to="/svet">svět</nuxt-link> a recenzovat místo co si navštívil?
                     </p>
                 </client-only>
-                <!-- client END -->
+                <!-- SHOW - client END -->
+
             </section>
         </div>
     </section>
@@ -167,37 +168,41 @@
 
             while (!success) {
                 try {
-                    // Reviews
+                    // API - GET - User
                     const reviews = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-review?id_user=${this.account[0].id}`)
-
+                    // API - GET - Data ready
                     const placesContinentsID = reviews.filter(review => review.type === 'continent').map(review => review.id_place) || []
                     const placesStatesID = reviews.filter(review => review.type === 'state').map(review => review.id_place) || []
                     const placesCitiesID = reviews.filter(review => review.type === 'city').map(review => review.id_place) || []
                     const placesRegionsID = reviews.filter(review => review.type === 'region').map(review => review.id_place) || []
                     const placesSpotsID = reviews.filter(review => review.type === 'spot').map(review => review.id_place) || []
-
-
+                    // API - GET - Continents
                     const placesContinents = placesContinentsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents-array?showType=list&id=${placesContinentsID.join(',')}`) : []
+                    // API - GET - Images
                     const imagesPlacesContinentsID = placesContinents.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesPlacesContinents = imagesPlacesContinentsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesContinentsID.join(',')}`) : []
-
+                    // API - GET - States
                     const placesStates = placesStatesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${placesStatesID.join(',')}`) : []
+                    // API - GET - Images
                     const imagesPlacesStatesID = placesStates.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesPlacesStates = imagesPlacesStatesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`) : []
-
+                    // API - GET - Cities
                     const placesCities = placesCitiesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-array?showType=list&id=${placesCitiesID.join(',')}`) : []
+                    // API - GET - Images
                     const imagesPlacesCitiesID = placesCities.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesPlacesCities = imagesPlacesCitiesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesID.join(',')}`) : []
-
+                    // API - GET - Regions
                     const placesRegions = placesRegionsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions-array?showType=list&id=${placesRegionsID.join(',')}`) : []
+                    // API - GET - Images
                     const imagesPlacesRegionsID = placesRegions.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesPlacesRegions = imagesPlacesRegionsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesRegionsID.join(',')}`) : []
-
+                    // API - GET - Spots
                     const placesSpots = placesSpotsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots-array?showType=list&id=${placesSpotsID.join(',')}`) : []
+                    // API - GET - Images
                     const imagesPlacesSpotsID = placesSpots.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
                     const imagesPlacesSpots = imagesPlacesSpotsID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesSpotsID.join(',')}`) : []
 
-
+                    // DATA
                     const places = [
                         ...placesContinents,
                         ...placesStates,
@@ -212,7 +217,6 @@
                         ...imagesPlacesRegions,
                         ...imagesPlacesSpots
                     ]
-
                     data = {
                         reviews,
                         places,
@@ -229,7 +233,7 @@
                         imagesPlacesSpots
                     }
 
-                    
+                    // FINAL
                     success = true
                 } catch (error) {
                     console.log(`API ERROR - MOJE HODNOCENÍ`)

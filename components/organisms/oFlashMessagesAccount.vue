@@ -56,6 +56,7 @@
 
             async mailActivation() {
                 try {
+                    // API - POST
                     const response = await fetch(`https://api.frytolnacestach.cz/api/user-activation-email`, {
                         headers: {
                             "Content-Type": "application/json",

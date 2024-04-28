@@ -110,23 +110,23 @@
         },
 
         async fetch() {
+            // API - GET - ConfigPlacesCount
             const response = await fetch("https://api.frytolnacestach.cz/api/config-places-count")
+            
+            // DATA
             const data = await response.json()
-
             const countObj = {
                 places_cities: data.places_cities,
                 places_continents: data.places_continents,
                 places_regions: data.places_regions,
                 places_spots: data.places_spots,
                 places_states: data.places_states
-            };
-
+            }
             this.items[0].length = countObj.places_continents
             this.items[1].length = countObj.places_states
             this.items[2].length = countObj.places_regions
             this.items[3].length = countObj.places_cities
             this.items[4].length = countObj.places_spots
-
             this.count = [countObj]
         }
     }

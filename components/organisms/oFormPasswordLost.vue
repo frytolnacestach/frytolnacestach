@@ -48,6 +48,7 @@
         methods: {  
             async passwordLost() {
                 try {
+                    // API - POST
                     const response = await fetch(`https://api.frytolnacestach.cz/api/user-password-lost`, {
                         headers: {
                             "Content-Type": "application/json",

@@ -217,33 +217,34 @@
                 try {
                     let items = []
 
+                    // API - GET - ITEMS
                     if ( this.type === "jidlo" ) {
-                        // Načtení jídla z místa
+                        // API - GET - Foods
                         items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/foods-id-state/${this.placeStateID}?showType=list`) : []
                     } else if ( this.type === "fauna" ) {
-                        // Načtení fauny z místa
+                        // API - GET - Faunas
                         items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/faunas-id-state/${this.placeStateID}?showType=list`) : []
                     } else if ( this.type === "flora" ) {
-                        // Načtení flory z místa
+                        // API - GET - Floras
                         items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/floras-id-state/${this.placeStateID}?showType=list`) : []
                     } else if ( this.type === "znacka" ) {
-                        // Načtení značek z místa
+                        // API - GET - Brands
                         items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/brands-id-state/${this.placeStateID}?showType=list`) : []
                     } else if ( this.type === "elektricka-zasuvka" ) {
-                        // Načtení elektrických zásuvek z místa
+                        // API - GET - Wall sockets
                         items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/wall-sockets-id-state/${this.placeStateID}?showType=list`) : []
                     } else if ( this.type === "retezec" ) {
-                        // Načtení řetěscům z místa
+                        // API - GET - Chains
                         items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/chains-id-state/${this.placeStateID}?showType=list`) : []
                     }
-
-                    // Načtení informací o obrázcích pro items
+                    // API - GET - Images
                     const imagesItemsID = items.map(item => item.id_image_cover).filter(id => id !== null && id !== '')
                     const images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesItemsID.join(',')}`)
 
+                    // DATA
                     data = { items, images }
 
-
+                    // FINAL
                     success = true
                 } catch (error) {
                     console.log(`API ERROR - VYPIS oCoverTitleItemState`)

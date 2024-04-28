@@ -67,6 +67,7 @@
                     this.email = this.account[0].email
 
                     try {
+                        // API - POST
                         const response = await fetch(`https://api.frytolnacestach.cz/api/user-password-change`, {
                             headers: {
                                 "Content-Type": "application/json",

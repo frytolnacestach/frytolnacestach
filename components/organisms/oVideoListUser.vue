@@ -1,10 +1,11 @@
 <template>
     <section class="t-component-skeleton">
-        <!-- skeleton -->
+        
+        <!-- SHOW - skeleton -->
         <skeletonoVideoListUser :styleThema="(skeletonThema ? skeletonThema : '')" :skeletonNumber="skeletonNumber" v-if="filteredVideos && filteredVideos.length === 0 && skeleton" />
-        <!-- skeleton END -->
+        <!-- SHOW - skeleton END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="filteredVideos !== null && videos !== null && !skeleton">
             <div class="o-video-list-user">
                 <div class="o-video-list-user__outer">
@@ -48,7 +49,8 @@
                 </div>
             </div>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+        
     </section>
 </template>
 

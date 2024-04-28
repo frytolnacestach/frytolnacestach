@@ -5,7 +5,6 @@
                 <div class="o-cover-place-detail__items">
                     <div v-for="place in filteredPlaces" :key="place.id" class="o-cover-place-detail__item">
                         <div class="o-cover-place-detail__content">
-
                             <div class="o-cover-place-detail__image loading-image -green">
                                 <div v-if="images && images.find(image => image.id === place.id_image_cover)" class="o-cover-place-detail__image-lazyload">
                                     <aImage 
@@ -31,7 +30,6 @@
                                     />
                                 </div>
                             </div>
-
                             <h3 class="o-cover-place-detail__name" v-if="place.name">
                                 {{ place.name }}
                             </h3>

@@ -134,6 +134,7 @@
         },
 
         async fetch() {
+            // API - GET - Events
             if(this.type === "state") {
                 this.events = await fetch(`https://api.frytolnacestach.cz/api/events-id-state/${this.place}`).then((res) => res.json())
             } else if (this.type === "region") {
@@ -143,7 +144,7 @@
             } else if (this.type === "spot") {
                 this.events = await fetch(`https://api.frytolnacestach.cz/api/events-id-spot/${this.place}`).then((res) => res.json())
             }
-
+            // API - GET - Images
             const imagesEventsID = this.events.map(event => event.id_image_cover).filter(id => id !== null && id !== '')
             this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesEventsID.join(',')}`).then((res) => res.json())
         }

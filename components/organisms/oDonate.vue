@@ -27,6 +27,7 @@
         },
 
         async fetch() {
+            // API - GET - Base
             this.base = await fetch("https://api.frytolnacestach.cz/api/base").then((res) => res.json())
         }
     }

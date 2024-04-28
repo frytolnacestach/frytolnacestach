@@ -1,10 +1,11 @@
 <template>
     <section class="t-component-skeleton">
-        <!-- skeleton -->
+        
+        <!-- SHOW - skeleton -->
         <skeletonoArticleListUser styleThema=" -skeleton-blue" v-if="posts && posts.length === 0 && skeleton" />
-        <!-- skeleton END -->
+        <!-- SHOW - skeleton END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="posts !== null">
             <div :class="'o-article-list-user' + (styleThema ? styleThema : '') + (styleAlign ? styleAlign : '')">
                 <div class="o-article-list-user-list__outer">
@@ -37,7 +38,6 @@
                                     </div>
                                     <NuxtLink class="o-article-list-user__image-link" :to="`/clanky/${post.slug}`" :aria-label="`Přečti si článek ${post.title}`" v-if="post.slug"></NuxtLink>
                                 </div>
-
                                 <div class="o-article-list-user__text">
                                     <h3 class="o-article-list-user__title" v-if="post.title">
                                         <NuxtLink class="o-article-list-user__title-link" :to="`/clanky/${post.slug}`">{{ post.title }}</NuxtLink>
@@ -52,7 +52,8 @@
                 </div>
             </div>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+
     </section>
 </template>
 

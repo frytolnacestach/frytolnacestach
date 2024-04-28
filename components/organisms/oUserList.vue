@@ -1,10 +1,11 @@
 <template>
     <section class="t-component-skeleton">
-        <!-- skeleton -->
+        
+        <!-- SHOW - skeleton -->
         <skeletonoUserList styleThema=" -skeleton-blue" v-if="items === null && skeleton === true" />
-        <!-- skeleton END -->
+        <!-- SHOW - skeleton END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="items !== null && items.length !== 0 && skeleton !== true">
             <div class="o-user-list">
                 <div class="o-user-list__outer">
@@ -51,7 +52,8 @@
                 </div>
             </div>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+        
     </section>
 </template>
 

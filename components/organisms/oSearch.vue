@@ -34,6 +34,7 @@
         methods: {
             async searchPlaces() {
                 try {
+                    // API - GET - Items
                     const [placesContinents, placesStates, placesRegions, placesCities, placesSpots] = await Promise.all([
                         this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents?showType=search&search=${this.searchQuery}`),
                         this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states?showType=search&search=${this.searchQuery}`),
@@ -42,12 +43,12 @@
                         this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots?showType=search&search=${this.searchQuery}`)
                     ])
                     
+                    // DATA
                     this.placesContinents = placesContinents
                     this.placesRegions = placesRegions
                     this.placesStates = placesStates
                     this.placesCities = placesCities
                     this.placesSpots = placesSpots
-
                     this.filterPlaces()
                 } catch (error) {
                     console.error(error)

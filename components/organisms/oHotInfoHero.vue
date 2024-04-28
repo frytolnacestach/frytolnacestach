@@ -6,7 +6,6 @@
                     <div class="o-hot-info-hero__item" :class="item.url ? '-link' : ''" v-for="item in data" :key="item.id" v-if="item.url !== '_ODKAZ_'">
                         <div class="o-hot-info-hero__container">
                             <div class="o-hot-info-hero__content">
-                                
                                 <NuxtLink class="o-hot-info-hero__link" :to="item.url" v-if="item.url">
                                     <div class="o-hot-info-hero__text">
                                         <span class="o-hot-info-hero__title">{{ item.title }}</span>
@@ -20,7 +19,6 @@
                                         </span>
                                     </div>
                                 </NuxtLink>
-
                                 <div class="o-hot-info-hero__text" v-if="!item.url">
                                     <span class="o-hot-info-hero__title">{{ item.title }}</span>
                                     <span class="o-hot-info-hero__value" v-if="item.type === 'number'">
@@ -32,7 +30,6 @@
                                         <span class="o-hot-info-hero__value-subfix">{{ item.subfix }}</span>
                                     </span>
                                 </div>
-
                             </div>
                         </div>
                     </div>

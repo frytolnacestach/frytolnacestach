@@ -1,10 +1,11 @@
 <template>
     <section class="t-component-skeleton">
-        <!-- skeleton -->
+        
+        <!-- SHOW - skeleton -->
         <skeletonoCoverTitleItem styleThema=" -skeleton-green" v-if="items === null && skeleton === true" />
-        <!-- skeleton END -->
+        <!-- SHOW - skeleton END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="items !== null && skeleton !== true">
             <div class="o-cover-title-item">
                 <div class="o-cover-title-item__outer">
@@ -46,7 +47,8 @@
                 </div>
             </div>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+        
     </section>
 </template>
 

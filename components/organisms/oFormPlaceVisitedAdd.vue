@@ -1,8 +1,10 @@
 <template>
     <div class="o-form-place-visited-add" role="search">
+        
         <!-- SECTION - FlashMassages -->
         <oFlashMessages :dataMessages="flashMessage" />
         <!-- SECTION - FlashMassages END -->
+
         <div class="o-form-place-visited-add__input">
             <input class="a-input-search -blue" type="text" v-model="searchQuery" @input="filterPlaces" :placeholder="status === 1 ? 'Který ' + placeTypeName + ' si navštívil(a)?' : status === 2 ? 'Který ' + placeTypeName + ' chceš navštívit' : ''">
         </div>
@@ -21,6 +23,7 @@
                 <span class="m-search-result__no-result" v-if="searchQuery.length >= 3 & filteredPlaces.length === 0">Tak tohle tu bohužel nenajdeš.. :/ <i>(zkus to ještě jednou)</i></span>
             </div>
         </div>
+
     </div>
 </template>
 
@@ -94,6 +97,7 @@
                         })
                     } else {
                         try {
+                            // API - POST
                             const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-edit`, {
                                 headers: {
                                     "Content-Type": "application/json",
@@ -176,18 +180,25 @@
 
             async searchPlaces() {
                 try {
+                    // API - GET - Items
                     if (this.placeTypeApp === "continent") {
+                        // API - GET - Continents
                         this.places = await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents?showType=search&search=${this.searchQuery}`)
                     } else if (this.placeTypeApp === "state") {
+                        // API - GET - States
                         this.places = await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states?showType=search&search=${this.searchQuery}`)
                     } else if (this.placeTypeApp === "region") {
+                        // API - GET - Regions
                         this.places = await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions?showType=search&search=${this.searchQuery}`)
                     } else if (this.placeTypeApp === "city") {
+                        // API - GET - Cities
                         this.places = await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities?showType=search&search=${this.searchQuery}`)
                     } else if (this.placeTypeApp === "spot") {
+                        // API - GET - Spots
                         this.places = await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots?showType=search&search=${this.searchQuery}`)
                     }
 
+                    // DATA
                     this.filterPlaces()
                 } catch (error) {
                     console.error(error)

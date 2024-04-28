@@ -1,10 +1,11 @@
 <template>
     <section class="t-component-skeleton">
-        <!-- skeleton -->
+        
+        <!-- SHOW - skeleton -->
         <skeletonoFollowerButton styleThema=" -skeleton-blue" v-if="skeleton === true" />
-        <!-- skeleton END -->
+        <!-- SHOW - skeleton END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="skeleton === false">
             <div class="o-follower-button">
                 <!-- SECTION - FlashMassages -->
@@ -22,7 +23,8 @@
                 </div>
             </div>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+
     </section>
 </template>
 
@@ -62,6 +64,7 @@
             async follower() {
                 if (this.account && this.account.length !== 0) {
                     try {
+                        // API - GET - Follower
                         const response = await fetch(`https://api.frytolnacestach.cz/api/user-follower-id-follower?email=${encodeURIComponent(this.account[0].email)}&password_hash=${encodeURIComponent(this.account[0].password)}&id_follower=${encodeURIComponent(this.user)}`, {
                             headers: {
                                 "Content-Type": "application/json",
@@ -103,6 +106,7 @@
                         this.status = newStatus
 
                         try {
+                            // API - POST
                             const response = await fetch(`https://api.frytolnacestach.cz/api/user-follower-edit`, {
                                 headers: {
                                     "Content-Type": "application/json",

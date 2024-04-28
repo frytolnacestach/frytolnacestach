@@ -269,22 +269,27 @@
         },
 
         async fetch() {
+            // API - GET - ITEMS
             if (this.type === "spots") {
                 if(this.typePage === "city") {
+                    // API - GET - Spots
                     this.items = await fetch(`https://api.frytolnacestach.cz/api/places-spots-id-city/${this.IDplace}`).then((res) => res.json())
                 } else if(this.typePage === "state") {
+                    // API - GET - Spots
                     this.items = await fetch(`https://api.frytolnacestach.cz/api/places-spots-id-state/${this.IDplace}`).then((res) => res.json())
                 }
             } else if (this.type === "regions") {
                 if(this.typePage === "state") {
+                    // API - GET - Regions
                     this.items = await fetch(`https://api.frytolnacestach.cz/api/places-regions-id-state/${this.IDplace}`).then((res) => res.json())
                 }
             } else if (this.type === "cities") {
                 if(this.typePage === "state") {
+                    // API - GET - Cities
                     this.items = await fetch(`https://api.frytolnacestach.cz/api/places-cities-id-state/${this.IDplace}`).then((res) => res.json())
                 }
             }
-
+            // API - GET - Images
             const imagesCitiesID = this.items.map(item => item.id_image_cover).filter(id => id !== null && id !== '')
             this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesCitiesID.join(',')}`).then((res) => res.json())
         }

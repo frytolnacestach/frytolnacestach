@@ -1,10 +1,11 @@
 <template>
     <section class="t-component-skeleton">
-        <!-- skeleton -->
+        
+        <!-- SHOW - skeleton -->
         <skeletonoFormProfile styleThema=" -skeleton-blue" v-if="skeleton" />
-        <!-- skeleton END -->
+        <!-- SHOW - skeleton END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="!skeleton">
             <div class="o-form-profile">
                 <div class="o-form-profile__outer">
@@ -119,7 +120,8 @@
                 </div>
             </div>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+
     </section>
 </template>
   
@@ -177,6 +179,7 @@
             async fetchProfile() {
                 if (this.account && this.account.length !== 0) {
                     try {
+                        // API - GET - user
                         const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile/${this.account[0].email}`)
                         if (response.ok) {
                             this.profile = await response.json()
@@ -214,6 +217,7 @@
             async editProfile() {
                 if (this.account && this.account.length !== 0) {
                     try {
+                        // API - POST
                         const response = await fetch(`https://api.frytolnacestach.cz/api/user-profile-edit/${this.account[0].email}`, {
                             headers: {
                                 "Content-Type": "application/json",

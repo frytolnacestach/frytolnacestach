@@ -24,7 +24,6 @@
                     cssClassComponent="o-hero-article"
                 />
             </div>
-
             <div class="o-hero-article__outer">
                 <div class="o-hero-article__inner">
                     <h1 class="o-hero-article__headline" v-if="post[0].title">{{ post[0].title }}</h1>

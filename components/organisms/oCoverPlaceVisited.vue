@@ -1,10 +1,11 @@
 <template>
     <section class="t-component-skeleton">
-        <!-- skeleton -->
+        
+        <!-- SHOW - skeleton -->
         <skeletonoCoverPlaceVisited styleThema=" -skeleton-blue" v-if="skeleton" />
         <!-- skeleton END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="places !== null && places.length !== 0 && !skeleton">
             <div class="o-cover-place-visited">
                 <div class="o-cover-place-visited__outer">
@@ -57,7 +58,8 @@
                 Nemáš tu žádné místo. Co takhle projít <nuxt-link to="/svet">svět</nuxt-link> a přidat sem místa?
             </p>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+
         <mButtonPlaceAdd type="first" v-if="typeAccount === 'login' && places && Array.isArray(places) && places.length === 0 && !skeleton" @add-place-clicked="showAddPlaceForm" />
         <oFormPlaceVisitedAdd :account="account" :status="status" :type="type" :visitedPlace="places" v-if="showPlaceForm && typeAccount === 'login'" @add-place="showAddNewPlaceForm" />
     </section>
@@ -239,23 +241,32 @@
                 try {
                     let places = []
 
+                    // API - GET - ITEMS
                     if (this.type === "kontinent") {
+                        // API - GET - Continents
                         places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents-array?showType=list&id=${this.placesID.join(',')}`) : []
                     } else if (this.type === "stat") {
+                        // API - GET - States
                         places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${this.placesID.join(',')}`) : []
                     } else if (this.type === "mesto") {
+                        // API - GET - Cities
                         places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-array?showType=list&id=${this.placesID.join(',')}`) : []
                     } else if (this.type === "region") {
+                        // API - GET - Regions
                         places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions-array?showType=list&id=${this.placesID.join(',')}`) : []
                     } else if (this.type === "misto") {
+                        // API - GET - Spots
                         places = this.placesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots-array?showType=list&id=${this.placesID.join(',')}`) : []
                     }
-
+                    // API - GET - Images
                     const imagesPlacesID = places.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
                     const images = imagesPlacesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesID.join(',')}`) : []
 
+                    // DATA
                     this.places = places
                     this.images = images
+
+                    // FINAL
                     this.skeleton = false
                 } catch (error) {
                     console.log(`API ERROR - VYPIS NAVŠTÍVIL JSEM/CHCI NAVŠTÍVIT`)
@@ -267,21 +278,28 @@
                 try {
                     let newPlace = []
 
+                    // API - GET - ITEMS
                     if (this.type === "kontinent") {
+                        // API - GET - Continents
                         newPlace = this.newPlaceID !== null ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents-array?showType=list&id=${this.newPlaceID}`) : []
                     } else if (this.type === "stat") {
+                        // API - GET - States
                         newPlace = this.newPlaceID !== null ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${this.newPlaceID}`) : []
                     } else if (this.type === "mesto") {
+                        // API - GET - Cities
                         newPlace = this.newPlaceID !== null ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities-array?showType=list&id=${this.newPlaceID}`) : []
                     } else if (this.type === "region") {
+                        // API - GET - Regions
                         newPlace = this.newPlaceID !== null ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions-array?showType=list&id=${this.newPlaceID}`) : []
                     } else if (this.type === "misto") {
+                        // API - GET - Spots
                         newPlace = this.newPlaceID !== null ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots-array?showType=list&id=${this.newPlaceID}`) : []
                     }
-
+                    // API - GET - Images
                     const imagesPlacesID = newPlace.map(place => place.id_image_cover).filter(id => id !== null && id !== '')
                     const newImage = imagesPlacesID.length > 0 ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesID.join(',')}`) : []
 
+                    // DATA
                     this.places = [...this.places, ...newPlace]
                     this.images = [...this.images, ...newImage]
                 } catch (error) {
@@ -291,7 +309,7 @@
             },
 
             async removePlace() {
-                // Inxec položky k vymazání
+                // Inxex položky k vymazání
                 const indexToRemove = this.places.findIndex(place => place.id === this.removePlaceID)
 
                 // Vymazaní položky z pole

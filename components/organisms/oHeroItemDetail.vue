@@ -25,7 +25,6 @@
                         cssClassComponent="o-hero-item-detail"
                     />
                 </div>
-                
                 <div class="o-hero-item-detail__outer" v-if="showTitle">
                     <div class="o-hero-item-detail__inner">
                         <h1 class="o-hero-item-detail__headline" v-if="item[0].name">{{ item[0].name }}</h1>

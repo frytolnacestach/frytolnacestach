@@ -124,6 +124,7 @@
                                                 </div>
                                             </div>
                                             <!-- FORM END -->
+
                                         </div>
                                     </div>
                                 </div>
@@ -214,6 +215,7 @@
         methods: {
             async addReview() {
                 try {
+                    // API - POST
                     const response = await fetch(`https://api.frytolnacestach.cz/api/review-create`, {
                         headers: {
                             "Content-Type": "application/json",
@@ -294,6 +296,7 @@
 
             async editReview() {
                 try {
+                    // API - POST
                     const response = await fetch(`https://api.frytolnacestach.cz/api/review-edit`, {
                         headers: {
                             "Content-Type": "application/json",

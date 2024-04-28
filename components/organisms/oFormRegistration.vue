@@ -52,6 +52,7 @@
                     </div>
                 </form>
                 <!-- SECTION - Form END -->
+
             </div>
         </div>
     </div>
@@ -104,6 +105,7 @@ export default {
   
         async createForm() {
             try {
+                // API - GET - User
                 const response = await fetch(`https://api.frytolnacestach.cz/api/user-registration`, {
                     headers: {
                         "Content-Type": "application/json",

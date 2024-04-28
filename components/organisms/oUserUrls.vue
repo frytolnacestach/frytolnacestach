@@ -1,10 +1,10 @@
 <template>
     <section class="t-component-skeleton">
-        <!-- skeleton -->
+        <!-- SHOW - skeleton -->
         <!--<skeletonoUserUrls styleThema=" -skeleton-blue" v-if="urls === null" />-->
-        <!-- skeleton END -->
+        <!-- SHOW - skeleton END -->
 
-        <!-- client -->
+        <!-- SHOW - client -->
         <client-only v-if="urls !== null">
             <div class="o-user-urls">
                 <div class="o-user-urls__outer">
@@ -25,7 +25,8 @@
         <client-only v-if="urls === null || urls.length === 0">
             Cestovatel nemá vyplňěné žádné odkazy.
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+        
     </section>
 </template>
 

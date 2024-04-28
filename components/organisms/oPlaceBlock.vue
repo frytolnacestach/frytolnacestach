@@ -202,21 +202,24 @@
         },
 
         async fetch() {
-            // Place
+            // API - GET - ITEMS
             if (this.type === "kontinent") {
+                // API - GET - Continents
                 this.place = await fetch(`https://api.frytolnacestach.cz/api/places-continent-id/${this.placeID}`).then((res) => res.json())
             } else if (this.type === "stat") {
+                // API - GET - Stats
                 this.place = await fetch(`https://api.frytolnacestach.cz/api/places-state-id/${this.placeID}`).then((res) => res.json())
             } else if (this.type === "region") {
+                // API - GET - Regions
                 this.place = await fetch(`https://api.frytolnacestach.cz/api/places-region-id/${this.placeID}`).then((res) => res.json())
             } else if (this.type === "mesto") {
+                // API - GET - Continents
                 this.place = await fetch(`https://api.frytolnacestach.cz/api/places-city-id/${this.placeID}`).then((res) => res.json())
             } else if (this.type === "misto") {
+                // API - GET - Spots
                 this.place = await fetch(`https://api.frytolnacestach.cz/api/places-spot-id/${this.placeID}`).then((res) => res.json())
             }
-
-
-            // Image
+            // API - GET - Image
             if (this.place) {
                 this.image = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.place[0].id_image_hero}`).then((res) => res.json())
             }

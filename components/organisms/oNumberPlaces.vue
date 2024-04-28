@@ -1,10 +1,11 @@
 <template>
     <section class="t-component-skeleton">
-        <!-- skeleton -->
-        <skeletonoNumberPlaces styleThema=" -skeleton-blue" v-if="skeleton" />
-        <!-- skeleton END -->
         
-        <!-- client -->
+        <!-- SHOW - skeleton -->
+        <skeletonoNumberPlaces styleThema=" -skeleton-blue" v-if="skeleton" />
+        <!-- SHOW - skeleton END -->
+        
+        <!-- SHOW - client -->
         <client-only v-if="numberPlaces[0] && !skeleton">
             <div class="o-number-places">
                 <div class="o-number-places__outer">
@@ -45,7 +46,8 @@
                 </div>
             </div>
         </client-only>
-        <!-- client END -->
+        <!-- SHOW - client END -->
+
     </section>
 </template>
 
@@ -77,11 +79,12 @@
             async fetchData() {
                 if (this.account && this.account.length !== 0) {
                     try {
+                        // API - GET - UserAchievements
                         if (process.client) {
-                            // numberPlaces
                             this.numberPlaces = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${this.account[0].id}`)
                         }
 
+                        // FINAL
                         this.skeleton = false
                     } catch (error) {
                         console.log(`API ERROR - POČET NAVŠTÍVENÝCH MÍST`)
