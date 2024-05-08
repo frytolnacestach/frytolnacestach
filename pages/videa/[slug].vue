@@ -1,0 +1,219 @@
+<template>
+    <NuxtLayout name="default">
+        <main class="t-main -gray -pt-menu" role="main">
+            <div class="t-main__content">
+                
+                <!-- SECTION - Hero video -->
+                <section class="t-section -p0">
+                    <div class="t-section__inner">
+                        <oHeroVideo :image="imageVideo" :title="video[0].title" v-if="video && video.length > 0 && video[0].title" />
+                    </div>
+                </section>
+                <!-- SECTION - Hero video END -->
+
+                <div class="t-col2">
+                    <div class="t-col2__content mb-2">
+
+                        <!-- SECTION - perex -->
+                        <section class="t-section py-2" v-if="video && video.length > 0 && video[0].perex">
+                            <div class="t-section__inner">
+                                <div class="o-information-block">
+                                    <div class="o-information-block__outer">
+                                        <div class="o-information-block__inner">
+                                            <div class="o-information-block__perex">
+                                                <div class="o-information-block_wysiwyg" v-html="video[0].perex"></div>
+                                                <div class="o-information-block__author">
+                                                    <mAuthor :author="video[0].id_user" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- SECTION - perex END -->
+
+                        <!-- SECTION - youtube -->
+                        <section class="t-section py-2 hidden-print" v-if="video && video.length > 0 && video[0].url">
+                            <div class="t-section__inner">
+                                <oYoutube :url="video[0].url" />
+                            </div>
+                        </section>
+                        <!-- SECTION - youtube END -->
+
+                    </div>
+                    <div class="t-col2__sidebar my-2">
+
+                        <!-- SECTION - author - sidebar -->
+                        <section class="t-section -px-world mb-2 -p0" v-if="video && video.length > 0 && video[0].id_user">
+                            <div class="t-section__inner">
+                                <oAuthorSidebar :author="video[0].id_user"/>
+                            </div>
+                        </section>
+                        <!-- SECTION - author - sidebar - END -->
+
+                        <!-- SECTION - ad-google - sidebar -->
+                        <section class="t-section -px-world mt-4 mb-2">
+                            <div class="t-section__inner">
+                                <oAdGoogleSidebar styleThema=" -gray" />
+                            </div>
+                        </section>
+                        <!-- SECTION - ad-google - sidebar - END -->
+                        
+                    </div>
+                </div>
+                <div class="t-layout-full" v-if="(video && video.length > 0 && video[0].id_continent) || (video && video.length > 0 && video[0].id_state) || (video && video.length > 0 && video[0].id_region) || (video && video.length > 0 && video[0].id_city) || (video && video.length > 0 && video[0].id_spot)">
+
+                    <!-- SECTION - place -->
+                    <section class="t-section -p0 pt-2 pb-1 print-section">
+                        <div class="t-section__inner">
+                            <mHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
+                            <div class="flex mx-1">
+                                <oPlaceBlock :placeID="video[0].id_continent" type="kontinent" v-if="video[0].id_continent" />
+                                <oPlaceBlock :placeID="video[0].id_state" type="stat" v-if="video[0].id_state" />
+                                <oPlaceBlock :placeID="video[0].id_region" type="region" v-if="video[0].id_region" />
+                                <oPlaceBlock :placeID="video[0].id_city" type="mesto" v-if="video[0].id_city" />
+                                <oPlaceBlock :placeID="video[0].id_spot" type="misto" v-if="video[0].id_spot" />
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - place END -->
+
+                </div>
+            </div>
+        </main>
+    </NuxtLayout>
+</template>
+
+<script>
+    import mAuthor from '~/components/molecules/mAuthor.vue'
+    import mHeadline from '~/components/molecules/mHeadline.vue'
+    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
+    import oAuthorSidebar from '~/components/organisms/oAuthorSidebar.vue'
+    import oHeroVideo from '~/components/organisms/oHeroVideo.vue'
+    import oPlaceBlock from '~/components/organisms/oPlaceBlock.vue'
+    import oYoutube from '~/components/organisms/oYoutube.vue'
+
+    export default defineComponent({
+        name: 'VideaSlugPage',
+
+        components: {
+            mAuthor,
+            mHeadline,
+            oAdGoogleSidebar,
+            oAuthorSidebar,
+            oHeroVideo,
+            oPlaceBlock,
+            oYoutube
+        },
+
+        data() {
+            return {
+                video: []
+            }
+        },
+
+        head() {
+            // Variables
+            let title
+            let description
+            let keywords
+            let ogImage
+            let ogTitle
+            let ogDescription
+            let ogUrl
+            let ogType
+
+            // title
+            title = `${this.video[0].title} | Cestovatelský portál Frytol na cestách`
+
+            // description
+            description = `${this.video[0].perex ? this.video[0].perex.slice(0, this.video[0].perex.lastIndexOf(' ', 150)) : this.video[0].title ? this.video[0].title : 'Video'}`
+
+            // keywolds
+            let metaSeoTags = ""
+            if (this.video[0].seo_tags && this.video[0].seo_tags.length > 0) {
+                metaSeoTags = ", " + this.video[0].seo_tags.map(item => item.tag).join(", ")
+            }
+            keywords = (this.video[0].title ? this.video[0].title : '') + metaSeoTags + ', cestovatelské video, cestování, svět, cetovatelský portál'
+            
+            // ogImage
+            ogImage = `${this.video[0].id_image ? 'https://image.frytolnacestach.cz/storage' + this.imageVideo[0].source + this.imageVideo[0].name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+
+            // ogTitle
+            ogTitle = title
+
+            // ogDescription
+            ogDescription = description
+
+            // ogUrl
+            ogUrl = `${process.env.baseUrl}/videa/${this.video[0].slug}`
+
+            // ogType
+            ogType = 'website'
+
+            // script
+            let jsonldVideo
+            if (this.video && this.video.length > 0) {
+                jsonldVideo = {
+                    type: 'application/ld+json',
+                    json: {
+                        "@context": "https://schema.org",
+                        "@type": "VideoObject",
+                        "name": (this.video[0].title ? this.video[0].title : ""),
+                        "thumbnailUrl": (this.imageVideo && this.imageVideo.find(image => image.id === this.video[0].id_image)) ? ("https://image.frytolnacestach.cz/storage" + (this.imageVideo.find(image => image.id === this.video[0].id_image).source + this.imageVideo.find(image => image.id === this.video[0].id_image).name) + ".webp") : "",
+                        "embedUrl": (this.video[0].url ? this.video[0].url : ""),
+                        "url": 'https://frytolnacestach.cz' + `/videa/${this.video[0].slug}`,
+                        "description": (this.video[0].perex ? this.video[0].perex.replace(/<\/?[^>]+(>|$)/g, '') : ""),
+                        "uploadDate": (this.video[0].created_at ? this.video[0].created_at : ""),
+                    }
+                }
+            } else {
+                jsonldVideo = []
+            }
+
+            // Return
+            return {
+                title,
+                meta: [
+                    { hid: 'title', name: 'title', content: title },
+                    { hid: 'description', name: 'description', content: description },
+                    { name: 'keywords', content: keywords },
+                    { hid: 'og:type', content: ogType },
+                    { hid: 'og:url', content: ogUrl },
+                    { hid: 'og:title', content: ogTitle },
+                    { hid: 'og:description', content: ogDescription },
+                    { property: 'og:image', content: ogImage },
+                    { name: 'twitter:title', content: ogTitle },
+                    { name: 'twitter:description', content: ogDescription },
+                    { name: 'twitter:image', content: ogImage },
+                    { name: 'twitter:url', content: ogUrl }
+                ],
+                script: [jsonldVideo],
+                link: [
+                    { rel: 'canonical', href: ogUrl }
+                ]
+            }
+        },
+
+        methods: {
+            async fetchData() {
+                const route = useRoute()
+
+                // PAGE - Video detail
+                // Video
+                const responseVideo = await fetch(`https://api.frytolnacestach.cz/api/video/${route.params.slug}`)
+                this.video = await responseVideo.json() || []
+                // Image
+                if (this.video && this.video.length > 0) {
+                    const responseImageVideo = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.video[0].id_image}`)
+                    this.imageVideo = await responseImageVideo.json() || []
+                }
+            }
+        },
+
+        mounted() {
+            this.fetchData()
+        }
+    })
+</script>

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoNoneContentComponent',
 
         props: {
@@ -26,5 +26,5 @@
                 required: false
             }
         }
-    }
+    })
 </script>

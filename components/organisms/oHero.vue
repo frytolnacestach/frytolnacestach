@@ -10,7 +10,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoHeroComponent',
 
         props: {
@@ -33,5 +33,5 @@
                 required: false
             }
         }
-    }
+    })
 </script>

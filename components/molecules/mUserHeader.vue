@@ -31,7 +31,7 @@
 <script>
     import skeletonmUserHeader from '~/components/skeleton/skeletonmUserHeader.vue'
 
-    export default {
+    export default defineComponent({
         name: 'MoleculesmUserHeaderComponent',
 
         components: {
@@ -62,5 +62,5 @@
                 this.$emit('update', newValue)
             }
         }
-    }
+    })
 </script>

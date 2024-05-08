@@ -29,7 +29,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoLanguagePhrasesComponent',
 
         props: {
@@ -66,5 +66,5 @@
 
             return { script: [jsonldData] }
         }
-    }
+    })
 </script>

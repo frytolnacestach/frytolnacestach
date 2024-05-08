@@ -49,7 +49,7 @@
     import aImage from '~/components/atoms/aImage.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoCoverWallSocketComponent',
 
         components: {
@@ -173,33 +173,23 @@
             }
         },
 
-        async mounted() {
-            let success = false
-            let data = null
-
-            while (!success) {
-                try {
-                    // API - GET - Wall sockets
-                    const idsID = this.ids.map(id => id.id).filter(id => id !== null && id !== '')
-                    const items = this.ids ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/wall-sockets-id?id=${idsID.join(',')}&showType=list`) : []
-                    // API - GET - Images
-                    const imagesItemsID = items.map(item => item.id_image_cover).filter(id => id !== null && id !== '')
-                    const images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesItemsID.join(',')}`)
-
-                    // DATA
-                    data = { items, images }
-
-                    // FINAL
-                    success = true
-                } catch (error) {
-                    console.log(`API ERROR - VYPIS oCoverWallSocket`)
-                    console.error(error)
-
-                    await new Promise(resolve => setTimeout(resolve, 1000))
-                }
+        async fetchData() {
+            // API - GET - Wall sockets
+            const idsID = this.ids.map(id => id.id).filter(id => id !== null && id !== '')
+            if (this.ids && this.ids.length > 0) {
+                const responseItems = await fetch(`https://api.frytolnacestach.cz/api/wall-sockets-id?id=${idsID.join(',')}&showType=list`)
+                this.items = await responseItems.json() || []
             }
+            // API - GET - Images
+            if (this.items && this.items.length > 0) {
+                const imagesItemsID = items.map(item => item.id_image_cover).filter(id => id !== null && id !== '')
+                const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesItemsID.join(',')}`)
+                this.images = await responseImages.json() || []
+            }
+        },
 
-            Object.assign(this, data)
+        mounted() {
+            this.fetchData()
         }
-    }
+    })
 </script>

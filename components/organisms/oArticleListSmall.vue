@@ -59,7 +59,7 @@
     import skeletonoArticleList from '~/components/skeleton/skeletonoArticleList.vue'
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoArticleListSmallComponent',
 
         components: {
@@ -214,5 +214,5 @@
 
             return { script: [jsonldPosts] }
         }
-    }
+    })
 </script>

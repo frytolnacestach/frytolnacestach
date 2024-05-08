@@ -1,32 +1,34 @@
 <template>
-    <main class="t-main -blue -pt-menu" role="main">
-        <div class="t-main__content">
-            <section class="t-section print-section">
+    <NuxtLayout name="default">
+        <main class="t-main -blue -pt-menu" role="main">
+            <div class="t-main__content">
+                <section class="t-section print-section">
 
-                <!-- SECTION - Hero -->
-                <section class="t-section -p0 mb-1 mt-2">
-                    <div class="t-section__inner">
-                        <oHero :headline="headline" :perex="'K cestovatelům na našem cestovatelském portálu se může připojit každý. Takže pokud zatím nemáš účet, stačí se <a href=\'https://www.frytolnacestach.cz/ucet/registrace\'>registrovat</a>, a pokud již účet máš, jednoduše se <a href=\'https://www.frytolnacestach.cz/ucet/prihlaseni\'>přihlásit</a>.'" modifierCSS=" -blue -w640" classCSS=" mt-2" v-if="account && account.length === 0" />
-                        <oHero :headline="headline" perex="Podívej se na další cestovatele, na místa, která navštívili, a jejich úspěchy." modifierCSS=" -blue -w640" classCSS=" mt-2" v-if="account && account.length !== 0" />
-                    </div>
-                </section>
-                <!-- SECTION - Hero END -->
-
-                <!-- SECTION - UserList -->
-                <section class="t-section -p0">
-                    <div class="t-section__inner">
-                        <oUserList :items="users" :images="images" />
-                        <oUserList :items="null" :images="null" :skeleton=true v-if="isLoading" />
-                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                            <span class="a-button-fill -big -blue" @click="loadMoreItems">Načíst další položky</span>
+                    <!-- SECTION - Hero -->
+                    <section class="t-section -p0 mb-1 mt-2">
+                        <div class="t-section__inner">
+                            <oHero :headline="headline" :perex="'K cestovatelům na našem cestovatelském portálu se může připojit každý. Takže pokud zatím nemáš účet, stačí se <a href=\'https://www.frytolnacestach.cz/ucet/registrace\'>registrovat</a>, a pokud již účet máš, jednoduše se <a href=\'https://www.frytolnacestach.cz/ucet/prihlaseni\'>přihlásit</a>.'" modifierCSS=" -blue -w640" classCSS=" mt-2" v-if="account && account.length === 0" />
+                            <oHero :headline="headline" perex="Podívej se na další cestovatele, na místa, která navštívili, a jejich úspěchy." modifierCSS=" -blue -w640" classCSS=" mt-2" v-if="account && account.length !== 0" />
                         </div>
-                    </div>
+                    </section>
+                    <!-- SECTION - Hero END -->
+
+                    <!-- SECTION - UserList -->
+                    <section class="t-section -p0">
+                        <div class="t-section__inner">
+                            <oUserList :items="users" :images="images" v-if="users && users.length > 0" />
+                            <oUserList :items="[]" :images="[]" :skeleton=true v-if="isLoading" />
+                            <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                                <span class="a-button-fill -big -blue" @click="loadMoreItems">Načíst další položky</span>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - UserList END -->
+                    
                 </section>
-                <!-- SECTION - UserList END -->
-                
-            </section>
-        </div>
-    </main>
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
@@ -36,7 +38,7 @@
     import oHero from '../../components/organisms/oHero.vue'
     import oPlatform from '../../components/organisms/oPlatform.vue'
 
-    export default {
+    export default defineComponent({
         name: 'CestovateleIndexPage',
 
         components: {
@@ -49,7 +51,7 @@
 
         data() {
             return {
-                account: [],
+                account: useAccountData().accountData,
                 headline: "Cestovatelé",
                 users: [],
                 images: [],
@@ -138,24 +140,14 @@
             }
         },
 
-        async mounted() {
-            await this.loadUsers()
-            this.addScrollListener()
-        },
-
         methods:{
             async loadUsers() {
                 //start loading
                 this.isLoading = true
 
-                // Variable
-                let usersResponse
-
                 //load users
-                usersResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/users?showType=list&page=${this.page}&items=${this.perPage}`)
-                const { data: usersData } = usersResponse
-
-                // add to placecesData to users
+                const responseUsers = await fetch(`https://api.frytolnacestach.cz/api/users?showType=list&page=${this.page}&items=${this.perPage}`)
+                const usersData = await responseUsers.json() || []
                 this.users = this.users.concat(usersData)
      
                 //no more items?
@@ -209,18 +201,13 @@
             },
         },
 
-        beforeDestroy() {
-            this.removeScrollListener()
+        mounted() {
+            this.loadUsers()
+            this.addScrollListener()
         },
 
-        watch: {
-            '$store.state.account': {
-                deep: true,
-                immediate: true,
-                handler() {
-                    this.account = this.$store.state.account
-                }
-            }
+        beforeDestroy() {
+            this.removeScrollListener()
         }
-    }
+    })
 </script>

@@ -1,38 +1,40 @@
 <template>
-    <main class="t-main -green -pt-menu" role="main">
-        <div class="t-main__content">
-            <section class="t-section print-section">
+    <NuxtLayout name="default">
+        <main class="t-main -green -pt-menu" role="main">
+            <div class="t-main__content">
+                <section class="t-section print-section">
 
-                <!-- SECTION - Hero cestovatelsky slovnik -->
-                <section class="t-section py-4">
-                    <div class="t-section__inner">
-                        <oHero headline="Cestovatelský slovník" perex="Procházej cestovatelský slovník a rozšiřuj svůj cestovatelský slovníček o unikátní výrazy spojené s cestováním. Nabízíme ti pohled do jazyka cestování, abys lépe porozuměl(a) specifickým termínům a zkratkám." modifierCSS=" -green -w640" classCSS=" mt-2" />
-                    </div>
-                </section>
-                <!-- SECTION - Hero cestovatelsky slovnik END -->
-
-                <!-- SECTION - cestovatelsky slovnik list -->
-                <section class="t-section -p0">
-                    <div class="t-section__inner">
-                        <oCoverItem :items="travelDictionaries" :images="images" type="cestovatelsky-slovnik" />
-                        <oCoverItem :items="null" :images="null" type="cestovatelsky-slovnik" :skeleton=true v-if="isLoading" />
-                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                            <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                    <!-- SECTION - Hero cestovatelsky slovnik -->
+                    <section class="t-section py-4">
+                        <div class="t-section__inner">
+                            <oHero headline="Cestovatelský slovník" perex="Procházej cestovatelský slovník a rozšiřuj svůj cestovatelský slovníček o unikátní výrazy spojené s cestováním. Nabízíme ti pohled do jazyka cestování, abys lépe porozuměl(a) specifickým termínům a zkratkám." modifierCSS=" -green -w640" classCSS=" mt-2" />
                         </div>
-                    </div>
+                    </section>
+                    <!-- SECTION - Hero cestovatelsky slovnik END -->
+
+                    <!-- SECTION - cestovatelsky slovnik list -->
+                    <section class="t-section -p0">
+                        <div class="t-section__inner">
+                            <oCoverItem :items="travelDictionaries" :images="images" type="cestovatelsky-slovnik" v-if="travelDictionaries && travelDictionaries.length > 0"/>
+                            <oCoverItem :items="[]" :images="[]" type="cestovatelsky-slovnik" :skeleton=true v-if="isLoading" />
+                            <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                                <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - cestovatelsky slovnik list END -->
+                    
                 </section>
-                <!-- SECTION - cestovatelsky slovnik list END -->
-                
-            </section>
-        </div>
-    </main>
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
     import oCoverItem from '~/components/organisms/oCoverItem.vue'
     import oHero from '~/components/organisms/oHero.vue'
 
-    export default {
+    export default defineComponent({
         name: 'CestovatelskySlovnikIndexPage',
 
         components: {
@@ -127,35 +129,23 @@
             }
         },
 
-        async mounted() {
-            await this.loadItems()
-            this.addScrollListener()
-        },
-
-        methods:{
+        methods: {
             async loadItems() {
                 //start loading
                 this.isLoading = true;
 
                 //load travelDictionaries
-                const [travelDictionariesResponse] = await Promise.all([
-                    this.$axios.get(`https://api.frytolnacestach.cz/api/travel-dictionaries?showType=list&page=${this.page}&items=${this.perPage}`)
-                ]);
-                const { data: travelDictionariesData } = travelDictionariesResponse;
+                const responseTravelDictionaries = await fetch(`https://api.frytolnacestach.cz/api/travel-dictionaries?showType=list&page=${this.page}&items=${this.perPage}`)
+                const travelDictionariesData = await responseTravelDictionaries.json() || []
+                this.travelDictionaries = this.travelDictionaries.concat(travelDictionariesData)
 
                 //load images
                 const imagesTravelDictionariesIDS  = travelDictionariesData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
-                if (imagesTravelDictionariesIDS .length > 0) {
-                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesTravelDictionariesIDS .join(',')}`)
-                    const { data: imagesData } = imagesResponse
+                if (imagesTravelDictionariesIDS.length > 0) {
+                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesTravelDictionariesIDS.join(',')}`)
+                    const imagesData = await responseImages.json() || []
                     this.images = this.images.concat(imagesData)
-                
-                    // add to placecesData to travelDictionaries
-                    this.travelDictionaries = this.travelDictionaries.concat(travelDictionariesData)
-                } else {
-                    // add to placecesData to travelDictionaries
-                    this.travelDictionaries = this.travelDictionaries.concat(travelDictionariesData)
-                } 
+                }
 
                 //no more items?
                 if (travelDictionariesData.length === 0 || travelDictionariesData.length < this.perPage) {
@@ -208,8 +198,13 @@
             }
         },
 
+        mounted() {
+            this.loadItems()
+            this.addScrollListener()
+        },
+
         beforeDestroy() {
             this.removeScrollListener()
         }
-    }
+    })
 </script>

@@ -60,7 +60,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoPopupCookiesComponent',
 
         mounted() {
@@ -351,5 +351,5 @@
             })
             // Cookies change END
         }
-    }
+    })
 </script>

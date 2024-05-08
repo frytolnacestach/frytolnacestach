@@ -2,11 +2,11 @@
     <section class="t-component-skeleton">
         
         <!-- SHOW - skeleton -->
-        <skeletonoCoverItem styleThema=" -skeleton-green" v-if="items === null && skeleton === true" />
+        <skeletonoCoverItem styleThema=" -skeleton-green" v-if="items === [] && skeleton === true" />
         <!-- SHOW - skeleton END -->
 
         <!-- SHOW - client -->
-        <client-only v-if="items !== null && skeleton !== true">
+        <client-only v-if="items !== [] && skeleton !== true">
             <div class="o-cover-item">
                 <div class="o-cover-item__outer">
                     <div class="o-cover-item__items">
@@ -57,7 +57,7 @@
     import skeletonoCoverItem from '~/components/skeleton/skeletonoCoverItem.vue'
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoCoverItemComponent',
 
         components: {
@@ -210,5 +210,5 @@
 
             return { script: [jsonldItems] }
         }
-    }
+    })
 </script>

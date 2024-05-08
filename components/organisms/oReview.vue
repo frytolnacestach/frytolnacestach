@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoReviewComponent',
 
         props: {
@@ -26,5 +26,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

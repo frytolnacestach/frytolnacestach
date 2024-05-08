@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'MoleculesmNavPlaceComponent',
 
         props: {
@@ -35,5 +35,5 @@
                 required: false
             }
         }
-    }
+    })
 </script>

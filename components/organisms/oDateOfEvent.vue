@@ -10,7 +10,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoDateOfEventComponent',
 
         props: {
@@ -30,5 +30,5 @@
                 return new Date(date).toLocaleDateString('cs', options)
             }
         }
-    }
+    })
 </script>

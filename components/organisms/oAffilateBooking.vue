@@ -22,7 +22,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoAffilateBookingComponent',
 
         props: {
@@ -56,7 +56,7 @@
             }
         },
 
-        methods:{
+        methods: {
             iframeTitle() {
                 let elementIframe = document.querySelector('.o-affilate-booking iframe')
                 if (elementIframe) {
@@ -75,5 +75,5 @@
             document.body.appendChild(script)
             this.iframeTitle()
         }
-    }
+    })
 </script>

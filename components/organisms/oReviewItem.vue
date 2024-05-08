@@ -36,7 +36,7 @@
     import oFormReviewItem from '~/components/organisms/oFormReviewItem.vue'
     import oReviewItemList from '~/components/organisms/oReviewItemList.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoReviewItemComponent',
 
         components: {
@@ -71,48 +71,33 @@
             }
         },
 
-        async mounted() {
-            let success = false
-            let data = null
-
-            while (!success) {
-                try {
-                    // API - GET - Reviews
-                    const reviews = await this.$axios.$get(`https://api.frytolnacestach.cz/api/reviews-id-place?id_place=${this.IDplace}&type=${this.type}`)
-                    this.numberReviews = reviews.length
-
-                    // DATA
-                    data = { reviews }
-
-                    // FINAL
-                    success = true
-                } catch (error) {
-                    console.log(`API ERROR - MOJE UŽIVATELKÁ RECENZE`)
-                    console.error(error)
-
-                    await new Promise(resolve => setTimeout(resolve, 1000))
-                }
-            }
-
-            Object.assign(this, data)
+        mounted() {
+            this.fetchData()
         },
 
         methods: {
-            async fetchMyReview() {
-                try {
-                    let myReview = []
-
+            async fetchData() {
+                if (this.authorID) {
                     // API - GET - Reviews
-                    if (process.client) {
-                        myReview = await this.$axios.$get(`https://api.frytolnacestach.cz/api/reviews-id-place?id_place=${this.IDplace}&id_user=${this.account[0].id}&type=${this.type}`)
-                    }
+                    const responseReviews =await fetch(`https://api.frytolnacestach.cz/api/reviews-id-place?id_place=${this.IDplace}&type=${this.type}`)
 
-                    // FINAL
-                    this.myReview = myReview
-                } catch (error) {
-                    console.log(`API ERROR - UŽIVATELKÉ RECENZE`)
-                    console.error(error)
+                    // DATA
+                    this.reviews = await responseReviews.json()
+                    this.numberReviews = reviews.length
                 }
+            },
+
+            async fetchMyReview() {
+                let myReview = []
+
+                // API - GET - Reviews
+                if (process.client) {
+                    responseMyReview = await fetch(`https://api.frytolnacestach.cz/api/reviews-id-place?id_place=${this.IDplace}&id_user=${this.account[0].id}&type=${this.type}`)
+                    myReview = await responseMyReview.json()
+                }
+
+                // FINAL
+                this.myReview = myReview
             },
 
             addReviewUpdate(newValue) {
@@ -132,5 +117,5 @@
             }
         }
 
-    }
+    })
 </script>

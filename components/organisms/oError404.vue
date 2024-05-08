@@ -17,7 +17,7 @@
 <script>
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoError404Component',
 
         components: {
@@ -34,5 +34,5 @@
                 required: false
             }
         }
-    }
+    })
 </script>

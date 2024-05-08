@@ -39,7 +39,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoInformationBlockComponent',
 
         props: {
@@ -95,40 +95,27 @@
             }
         },
 
-        async mounted() {
-            let success = false
-            let data = null
+        methods: {
+            async fetchData() {
+                if (this.authorID) {
+                    // API - GET - User
+                    const responseUser = await fetch(`https://api.frytolnacestach.cz/api/user-id/${this.authorID}`)
 
-            if (this.authorID) {
-                while (!success) {
-                    try {
-                        // API - GET - User
-                        const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-id/${this.authorID}`)
-
-                        // DATA
-                        data = { user }
-
-                        // FINAL
-                        success = true
-                    } catch (error) {
-                        console.log(`API ERROR - AUTHOR`)
-                        console.error(error)
-
-                        await new Promise(resolve => setTimeout(resolve, 1000))
-                    }
+                    // DATA
+                    this.user = await responseUser.json()
                 }
+            },
 
-                Object.assign(this, data)
-            }
-        },
-
-        methods:{
             formatDate(date) {
                 const [month, year] = date.split('-')
                 const formattedDate = new Date(`${year}-${month}-01`)
                 const options = { month: 'long', year: 'numeric' }
                 return formattedDate.toLocaleDateString('cs', options)
             }
+        },
+
+        mounted() {
+            this.fetchData()
         }
-    }
+    })
 </script>

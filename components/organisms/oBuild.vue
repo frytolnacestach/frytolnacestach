@@ -11,7 +11,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoBuildComponent'
-    }
+    })
 </script>

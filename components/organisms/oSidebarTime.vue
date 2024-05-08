@@ -17,7 +17,7 @@
     import 'moment/locale/cs'
     moment.locale('cs')
   
-    export default {
+    export default defineComponent({
         name: 'OrganismsoSidebarTimeComponent',
 
         props: {
@@ -342,5 +342,5 @@
                 this.czechDate = moment().tz('Europe/Prague').format('DD.MMMM YYYY')
             }
         }
-    }
+    })
 </script>

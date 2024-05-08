@@ -1,5 +1,5 @@
 <template>
-    <div class="m-button-place-add-visited hidden-print" @click="deleteVisited(placeID)">
+    <div class="m-button-place-add-visited hidden-print" @click="deleteVisited">
         <aTooltip text="Už jsem navštívil" />
     </div>
 </template>
@@ -7,7 +7,7 @@
 <script>
     import aTooltip from '@/components/atoms/aTooltip.vue'
 
-    export default {
+    export default defineComponent({
         name: 'MoleculesmButtonPlaceAddVisitedComponent',
 
         components: {
@@ -38,77 +38,65 @@
         methods: {
             async deleteVisited(placeID) {
                 try {
-                    this.placeID = placeID
-
-                    try {
-                        // API - POST
-                        const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-edit`, {
-                            headers: {
-                                "Content-Type": "application/json",
-                                "Access-Control-Allow-Origin": "http://localhost:3000",
-                                "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
-                                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH"
-                            },
-                            method: 'POST',
-                            body: JSON.stringify({
-                                'email': this.account[0].email,
-                                'password_hash': this.account[0].password,
-                                'id_place': this.placeID, 
-                                'type': this.placeType,
-                                'status': 1
-                            })
+                    // API - POST
+                    const response = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-edit`, {
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Access-Control-Allow-Origin": "http://localhost:3000",
+                            "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
+                            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH"
+                        },
+                        method: 'POST',
+                        body: JSON.stringify({
+                            'email': this.account[0].email,
+                            'password_hash': this.account[0].password,
+                            'id_place': this.placeID, 
+                            'type': this.placeType,
+                            'status': 1
                         })
+                    })
 
-                        if (response.ok) {
-                            if (response.status === 201) {
-                                this.flashMessage.push({
-                                    date: new Date().getTime(),
-                                    duration: 5000,
-                                    status: "success",
-                                    message: "Místo bylo přidáno mezi navštívené"
-                                })
-                                this.searchQuery = ''
-                                this.emitRemoveNewPlaceEvent(this.placeID)
-                            } else if (response.status === 200) {
-                                this.flashMessage.push({
-                                    date: new Date().getTime(),
-                                    duration: 5000,
-                                    status: "success",
-                                    message: "Záznam odebrán"
-                                })
-                            }
-                        } else if (response.status === 404) {
+                    if (response.ok) {
+                        if (response.status === 201) {
                             this.flashMessage.push({
                                 date: new Date().getTime(),
                                 duration: 5000,
-                                status: "error",
-                                message: "Vypadá to, že nejsi přihlášen ke svému účtu."
+                                status: "success",
+                                message: "Místo bylo přidáno mezi navštívené"
                             })
-                        } else {
+                            this.searchQuery = ''
+                            this.emitRemoveNewPlaceEvent(this.placeID)
+                        } else if (response.status === 200) {
                             this.flashMessage.push({
                                 date: new Date().getTime(),
                                 duration: 5000,
-                                status: "error",
-                                message: "Chyba při komunikaci s API"
+                                status: "success",
+                                message: "Záznam odebrán"
                             })
                         }
-                    } catch (err) {
+                    } else if (response.status === 404) {
                         this.flashMessage.push({
                             date: new Date().getTime(),
                             duration: 5000,
                             status: "error",
-                            message: "Chyba připojení k API"
+                            message: "Vypadá to, že nejsi přihlášen ke svému účtu."
                         })
-                        throw err
+                    } else {
+                        this.flashMessage.push({
+                            date: new Date().getTime(),
+                            duration: 5000,
+                            status: "error",
+                            message: "Chyba při komunikaci s API"
+                        })
                     }
-                    
                 } catch (err) {
                     this.flashMessage.push({
                         date: new Date().getTime(),
                         duration: 5000,
                         status: "error",
-                        message: "Nastala chyba"
+                        message: "Chyba připojení k API"
                     })
+                    throw err
                 }
             },
 
@@ -116,5 +104,5 @@
                 this.$emit('remove-place', placeID)
             }
         }
-    }
+    })
 </script>

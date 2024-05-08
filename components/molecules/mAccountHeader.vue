@@ -32,7 +32,7 @@
 <script>
     import skeletonmAccountHeader from '~/components/skeleton/skeletonmAccountHeader.vue'
 
-    export default {
+    export default defineComponent({
         name: 'MoleculesmAccountHeaderComponent',
 
         components: {
@@ -59,5 +59,5 @@
                 this.$emit('update', newValue)
             }
         }
-    }
+    })
 </script>

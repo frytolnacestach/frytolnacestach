@@ -13,7 +13,7 @@
 <script>
     import mSearchResult from '~/components/molecules/mSearchResult.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoSearchComponent',
 
         components: {
@@ -35,13 +35,18 @@
             async searchPlaces() {
                 try {
                     // API - GET - Items
-                    const [placesContinents, placesStates, placesRegions, placesCities, placesSpots] = await Promise.all([
-                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents?showType=search&search=${this.searchQuery}`),
-                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states?showType=search&search=${this.searchQuery}`),
-                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions?showType=search&search=${this.searchQuery}`),
-                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities?showType=search&search=${this.searchQuery}`),
-                        this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots?showType=search&search=${this.searchQuery}`)
-                    ])
+                    const urls = [
+                        `https://api.frytolnacestach.cz/api/places-continents?showType=search&search=${this.searchQuery}`,
+                        `https://api.frytolnacestach.cz/api/places-states?showType=search&search=${this.searchQuery}`,
+                        `https://api.frytolnacestach.cz/api/places-regions?showType=search&search=${this.searchQuery}`,
+                        `https://api.frytolnacestach.cz/api/places-cities?showType=search&search=${this.searchQuery}`,
+                        `https://api.frytolnacestach.cz/api/places-spots?showType=search&search=${this.searchQuery}`
+                    ];
+
+                    const responses = await Promise.all(urls.map(url => fetch(url)));
+                    const jsonResponses = await Promise.all(responses.map(response => response.json()));
+
+                    const [placesContinents, placesStates, placesRegions, placesCities, placesSpots] = jsonResponses;
                     
                     // DATA
                     this.placesContinents = placesContinents
@@ -114,5 +119,5 @@
                 }
             }
         }
-    }
+    })
 </script>

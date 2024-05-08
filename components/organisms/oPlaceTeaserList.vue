@@ -59,7 +59,7 @@
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoPlaceTeaserListComponent',
 
         components: {
@@ -293,5 +293,5 @@
             const imagesCitiesID = this.items.map(item => item.id_image_cover).filter(id => id !== null && id !== '')
             this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesCitiesID.join(',')}`).then((res) => res.json())
         }
-    }
+    })
 </script>

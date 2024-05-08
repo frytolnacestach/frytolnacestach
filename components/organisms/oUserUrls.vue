@@ -5,7 +5,7 @@
         <!-- SHOW - skeleton END -->
 
         <!-- SHOW - client -->
-        <client-only v-if="urls !== null">
+        <client-only v-if="urls && urls.length > 0">
             <div class="o-user-urls">
                 <div class="o-user-urls__outer">
                     <div class="o-user-urls__inner">
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </client-only>
-        <client-only v-if="urls === null || urls.length === 0">
+        <client-only v-if="urls && urls.length === 0">
             Cestovatel nemá vyplňěné žádné odkazy.
         </client-only>
         <!-- SHOW - client END -->
@@ -33,7 +33,7 @@
 <script>
     import skeletonoUserUrls from '~/components/skeleton/skeletonoUserUrls.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoUserUrlsComponent',
 
         components: {
@@ -46,5 +46,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

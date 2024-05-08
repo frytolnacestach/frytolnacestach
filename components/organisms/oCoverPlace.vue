@@ -59,7 +59,7 @@
     import skeletonoCoverPlace from '~/components/skeleton/skeletonoCoverPlace.vue'
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoCoverPlaceComponent',
 
         components: {
@@ -97,7 +97,6 @@
         data() {
             return {
                 items: null,
-                images: null,
                 imageSizesMedia: [
                     {
                         "mediaQueriesWidth": 349,
@@ -238,5 +237,5 @@
                 return ''
             }
         }
-    }
+    })
 </script>

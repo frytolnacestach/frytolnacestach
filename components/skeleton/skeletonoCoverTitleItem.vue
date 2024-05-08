@@ -17,7 +17,7 @@
 
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'SkeletonoCoverTitleItemComponent',
 
         props: {
@@ -26,5 +26,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

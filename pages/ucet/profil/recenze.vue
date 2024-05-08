@@ -1,44 +1,46 @@
 <template>
-    <main class="t-main -blue -pt-menu" role="main">
-        <div class="t-main__content">
-            <section class="t-section -padding-x -padding-y -p0 mb-4">
-                <div class="t-section__inner">
-                    <div class="t-grid -account">
-                        <div class="t-grid__section -nav">
+    <NuxtLayout name="default">
+        <main class="t-main -blue -pt-menu" role="main">
+            <div class="t-main__content">
+                <section class="t-section -padding-x -padding-y -p0 mb-4">
+                    <div class="t-section__inner">
+                        <div class="t-grid -account">
+                            <div class="t-grid__section -nav">
 
-                            <!-- SECTION - account headline - account -->
-                            <section class="t-section -padding-x -p0">
-                                <div class="t-section__inner">
-                                    <mAccountHeader :account="account" @update="menuAccountUpdate" />
-                                </div>
-                            </section>
-                            <!-- SECTION - nav - account END -->
+                                <!-- SECTION - account headline - account -->
+                                <section class="t-section -padding-x -p0">
+                                    <div class="t-section__inner">
+                                        <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - nav - account END -->
 
-                            <!-- SECTION - nav - account -->
-                            <section class="t-section -padding-x -p0">
-                                <div class="t-section__inner">
-                                    <mNavAccount :statusOpen="mNavAccountOpen" />
-                                </div>
-                            </section>
-                            <!-- SECTION - nav - account END -->
+                                <!-- SECTION - nav - account -->
+                                <section class="t-section -padding-x -p0">
+                                    <div class="t-section__inner">
+                                        <mNavAccount :statusOpen="mNavAccountOpen" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - nav - account END -->
 
-                        </div>
-                        <div class="t-grid__section -content">
+                            </div>
+                            <div class="t-grid__section -content">
 
-                            <!-- SECTION - Recenze -->
-                            <section class="t-section -padding-x -p0 pb-4">
-                                <div class="t-section__inner">
-                                    <oReviewItemListAccount :account="account" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Recenze END -->
+                                <!-- SECTION - Recenze -->
+                                <section class="t-section -padding-x -p0 pb-4">
+                                    <div class="t-section__inner">
+                                        <oReviewItemListAccount :account="account" v-if="account && account.length > 0" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Recenze END -->
 
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
-    </main>
+                </section>
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
@@ -50,7 +52,7 @@
     import oReviewItemListAccount from '~/components/organisms/oReviewItemListAccount.vue'
 
 
-    export default {
+    export default defineComponent({
         name: 'UcetRecenzePage',
 
         components: {
@@ -62,11 +64,10 @@
 
         data() {
             return {
-                account: [],
+                account: useAccountData().accountData,
                 mNavAccountOpen: false,
                 email: null,
                 passwordHash: null,
-                account: ''
             }
         },
 
@@ -136,16 +137,6 @@
             menuAccountUpdate(newValue) {
                 this.mNavAccountOpen = newValue
             }
-        },
-
-        watch: {
-            '$store.state.account': {
-                deep: true,
-                immediate: true,
-                handler() {
-                    this.account = this.$store.state.account
-                }
-            }
         }
-    }
+    })
 </script>

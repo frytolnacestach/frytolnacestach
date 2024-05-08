@@ -1,32 +1,34 @@
 <template>
-    <main class="t-main -gray -pt-menu" role="main">
-        <div class="t-main__content">
-            
-            <!-- SECTION - Hero -->
-            <section class="t-section -p0 mb-1 mt-2">
-                <div class="t-section__inner">
-                    <oHero :headline="headline" modifierCSS=" -gray" classCSS=" mt-2" />
-                </div>
-            </section>
-            <!-- SECTION - Hero END -->
+    <NuxtLayout name="default">
+        <main class="t-main -gray -pt-menu" role="main">
+            <div class="t-main__content">
+                
+                <!-- SECTION - Hero -->
+                <section class="t-section -p0 mb-1 mt-2">
+                    <div class="t-section__inner">
+                        <oHero :headline="headline" modifierCSS=" -gray" classCSS=" mt-2" />
+                    </div>
+                </section>
+                <!-- SECTION - Hero END -->
 
-            <!-- SECTION - Wysiwyg -->
-            <section class="t-section -wysiwyg py-4">
-                <div class="t-section__inner">
-                    <oWysiwyg :text="base[0].conditions" />
-                </div>
-            </section>
-            <!-- SECTION - Wysiwyg END -->
+                <!-- SECTION - Wysiwyg -->
+                <section class="t-section -wysiwyg py-4" v-if="base && base.length > 0">
+                    <div class="t-section__inner">
+                        <oWysiwyg :text="base[0].conditions" />
+                    </div>
+                </section>
+                <!-- SECTION - Wysiwyg END -->
 
-        </div>
-    </main>
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
     import oHero from '../components/organisms/oHero.vue'
     import oWysiwyg from '~/components/organisms/oWysiwyg.vue'
 
-    export default {
+    export default defineComponent({
         name: 'ConditionsPage',
 
         components: {
@@ -39,6 +41,19 @@
                 headline: "Obchodní podmínky a zásady ochrany osobních údajů",
                 base: this.base
             }
+        },
+
+        methods: {
+            async fetchData() {
+                // API - GET - Platforms
+                const responseBase = await fetch("https://api.frytolnacestach.cz/api/base")
+                this.base = await responseBase.json()
+            }
+        },
+
+        mounted() {
+            // GET Data
+            this.fetchData()
         },
 
         head() {
@@ -116,10 +131,6 @@
                     }
                 ]
             }
-        },
-
-        async fetch() {
-            this.base = await fetch("https://api.frytolnacestach.cz/api/base").then((res) => res.json())
         }
-    }
+    })
 </script>

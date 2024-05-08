@@ -6,7 +6,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoSwitchHeroComponent',
 
         data() {
@@ -21,5 +21,5 @@
                 this.$emit('update:showHero', this.showHero)
             }
         }
-    }
+    })
 </script>

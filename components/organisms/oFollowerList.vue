@@ -74,7 +74,7 @@
     import skeletonoFollowerList from '~/components/skeleton/skeletonoFollowerList.vue'
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoFollowerListComponent',
 
         components: {
@@ -201,41 +201,38 @@
 
         methods: {
             async fetchData() {
-                try {
-                    if (this.type === "account") {
-                        if (this.account && this.account.length !== 0) {
-                            if (process.client) {
-                                // API - GET - Followers
-                                this.followers = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-followers-id-user?id_user=${this.account[0].id}`)
-                                // API - GET - User
-                                if (this.followers && this.followers.length !== 0) {
-                                    const usersFollowersIDS = this.followers.map(follower => follower.id_follower).filter(id => id !== null && id !== '')
-                                    this.users = await this.$axios.$get(`https://api.frytolnacestach.cz/api/users-ids?id=${usersFollowersIDS.join(',')}`)
-                                }
-
-                                // FINAL
-                                this.skeleton = false
-                            }
-                        }
-                    } else {
+                if (this.type === "account") {
+                    if (this.account && this.account.length !== 0) {
                         if (process.client) {
                             // API - GET - Followers
-                            this.followers = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-followers-id-user?id_user=${this.idUser}`)
+                            const responseFollowers = await fetch(`https://api.frytolnacestach.cz/api/user-followers-id-user?id_user=${this.account[0].id}`)
+                            this.followers = await responseFollowers.json()
                             // API - GET - User
                             if (this.followers && this.followers.length !== 0) {
                                 const usersFollowersIDS = this.followers.map(follower => follower.id_follower).filter(id => id !== null && id !== '')
-                                this.users = await this.$axios.$get(`https://api.frytolnacestach.cz/api/users-ids?id=${usersFollowersIDS.join(',')}`)
+                                const responseUsers = await fetch(`https://api.frytolnacestach.cz/api/users-ids?id=${usersFollowersIDS.join(',')}`)
+                                this.users = await responseUsers.json()
                             }
 
                             // FINAL
                             this.skeleton = false
                         }
                     }
-                } catch (error) {
-                    console.log(`API ERROR - SLEDUJI`)
-                    console.error(error)
+                } else {
+                    if (process.client) {
+                        // API - GET - Followers
+                        const responseFollowers = await fetch(`https://api.frytolnacestach.cz/api/user-followers-id-user?id_user=${this.idUser}`)
+                        this.followers = await responseFollowers.json()
+                        // API - GET - User
+                        if (this.followers && this.followers.length !== 0) {
+                            const usersFollowersIDS = this.followers.map(follower => follower.id_follower).filter(id => id !== null && id !== '')
+                            const responseUsers = await fetch(`https://api.frytolnacestach.cz/api/users-ids?id=${usersFollowersIDS.join(',')}`)
+                            this.users = await responseUsers.json()
+                        }
 
-                    await new Promise(resolve => setTimeout(resolve, 1000))
+                        // FINAL
+                        this.skeleton = false
+                    }
                 }
             }
         },
@@ -246,5 +243,5 @@
                 immediate: true
             }
         }
-    }
+    })
 </script>

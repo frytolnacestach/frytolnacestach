@@ -33,7 +33,7 @@
 <script>
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
     
-    export default {
+    export default defineComponent({
         name: 'OrganismsoFormPasswordLostNewComponent',
     
         components: {
@@ -139,5 +139,5 @@
                 this.passwordCheck = this.passwordNew === this.passwordNewCheck
             }
         }
-    }
+    })
 </script>

@@ -14,11 +14,11 @@
 <script>
     import oSearch from '@/components/organisms/oSearch.vue'
 
-    export default {
+    export default defineComponent({
         name: 'MoleculesoPopupSearchComponent',
 
         components: {
             oSearch
         }
-    }
+    })
 </script>

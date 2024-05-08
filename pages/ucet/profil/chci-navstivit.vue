@@ -1,81 +1,83 @@
 <template>
-    <main class="t-main -blue -pt-menu" role="main">
-        <div class="t-main__content">
-            <section class="t-section -padding-x -padding-y -p0 mb-4">
-                <div class="t-section__inner">
-                    <div class="t-grid -account">
-                        <div class="t-grid__section -nav">
+    <NuxtLayout name="default">
+        <main class="t-main -blue -pt-menu" role="main">
+            <div class="t-main__content">
+                <section class="t-section -padding-x -padding-y -p0 mb-4">
+                    <div class="t-section__inner">
+                        <div class="t-grid -account">
+                            <div class="t-grid__section -nav">
 
-                            <!-- SECTION - account headline - account -->
-                            <section class="t-section -padding-x -p0">
-                                <div class="t-section__inner">
-                                    <mAccountHeader :account="account" @update="menuAccountUpdate" />
-                                </div>
-                            </section>
-                            <!-- SECTION - nav - account END -->
+                                <!-- SECTION - account headline - account -->
+                                <section class="t-section -padding-x -p0">
+                                    <div class="t-section__inner">
+                                        <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - nav - account END -->
 
-                            <!-- SECTION - nav - account -->
-                            <section class="t-section -padding-x -p0">
-                                <div class="t-section__inner">
-                                    <mNavAccount :statusOpen="mNavAccountOpen" />
-                                </div>
-                            </section>
-                            <!-- SECTION - nav - account END -->
+                                <!-- SECTION - nav - account -->
+                                <section class="t-section -padding-x -p0">
+                                    <div class="t-section__inner">
+                                        <mNavAccount :statusOpen="mNavAccountOpen" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - nav - account END -->
 
-                        </div>
-                        <div class="t-grid__section -content">
+                            </div>
+                            <div class="t-grid__section -content">
 
-                            <!-- SECTION - Visited place category -->
-                            <section class="t-section -padding-x -p0 pb-4 print-section">
-                                <div class="t-section__inner">
-                                    <mHeadline title="Kontinety které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                    <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesContinentsID" type="kontinent" typeAccount="login" :status="2" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Visited place category END -->
+                                <!-- SECTION - Visited place category -->
+                                <section class="t-section -padding-x -p0 pb-4 print-section">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Kontinety které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesContinentsID" type="kontinent" typeAccount="login" :status="2" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Visited place category END -->
 
-                            <!-- SECTION - Visited place category -->
-                            <section class="t-section -padding-x -p0 pb-4 print-section">
-                                <div class="t-section__inner">
-                                    <mHeadline title="Státy které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                    <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesStatesID" type="stat" typeAccount="login" :status="2" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Visited place category END -->
+                                <!-- SECTION - Visited place category -->
+                                <section class="t-section -padding-x -p0 pb-4 print-section">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Státy které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesStatesID" type="stat" typeAccount="login" :status="2" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Visited place category END -->
 
-                            <!-- SECTION - Visited place category -->
-                            <section class="t-section -padding-x -p0 pb-4 print-section">
-                                <div class="t-section__inner">
-                                    <mHeadline title="Města které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                    <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesCitiesID" type="mesto" typeAccount="login" :status="2" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Visited place category END -->
+                                <!-- SECTION - Visited place category -->
+                                <section class="t-section -padding-x -p0 pb-4 print-section">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Města které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesCitiesID" type="mesto" typeAccount="login" :status="2" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Visited place category END -->
 
-                            <!-- SECTION - Visited place category -->
-                            <section class="t-section -padding-x -p0 pb-4 print-section">
-                                <div class="t-section__inner">
-                                    <mHeadline title="Regiony které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                    <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesRegionsID" type="region" typeAccount="login" :status="2" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Visited place category END -->
+                                <!-- SECTION - Visited place category -->
+                                <section class="t-section -padding-x -p0 pb-4 print-section">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Regiony které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesRegionsID" type="region" typeAccount="login" :status="2" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Visited place category END -->
 
-                            <!-- SECTION - Visited place category -->
-                            <section class="t-section -padding-x -p0 pb-4 print-section">
-                                <div class="t-section__inner">
-                                    <mHeadline title="Místa které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                    <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesSpotsID" type="misto" typeAccount="login" :status="2" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Visited place category END -->
+                                <!-- SECTION - Visited place category -->
+                                <section class="t-section -padding-x -p0 pb-4 print-section">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Místa které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesSpotsID" type="misto" typeAccount="login" :status="2" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Visited place category END -->
 
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
-    </main>
+                </section>
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
@@ -86,7 +88,7 @@
     import mNavAccount from '~/components/molecules/mNavAccount.vue'
     import oCoverPlaceVisited from '~/components/organisms/oCoverPlaceVisited.vue'
 
-    export default {
+    export default defineComponent({
         name: 'UcetChciNavstivitPage',
         
         components: {
@@ -98,7 +100,7 @@
 
         data() {
             return {
-                account: [],
+                account: useAccountData().accountData,
                 mNavAccountOpen: false,
                 placesContinentsID: [],
                 placesStatesID: [],
@@ -173,26 +175,20 @@
 
         methods: {
             async fetchData() {
-                try {
-                    if (this.account && this.account.length !== 0) {
-                        if (process.client) {
-                            // COMPONENT - oCoverPlaceVisited
-                            // PlacesID
-                            this.placesID = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${this.account[0].id}&status=2`)
-                            this.placesContinentsID = this.placesID.filter(place => place.type === 'continent').map(place => place.id_place) || []
-                            this.placesStatesID = this.placesID.filter(place => place.type === 'state').map(place => place.id_place) || []
-                            this.placesCitiesID = this.placesID.filter(place => place.type === 'city').map(place => place.id_place) || []
-                            this.placesRegionsID = this.placesID.filter(place => place.type === 'region').map(place => place.id_place) || []
-                            this.placesSpotsID = this.placesID.filter(place => place.type === 'spot').map(place => place.id_place) || []
+                if (this.account && this.account.length !== 0) {
+                    if (process.client) {
+                        // COMPONENT - oCoverPlaceVisited
+                        // PlacesID
+                        const responsePlacesID = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${this.account[0].id}&status=2`)
+                        this.placesID = await responsePlacesID.json()
+                        this.placesContinentsID = this.placesID.filter(place => place.type === 'continent').map(place => place.id_place) || []
+                        this.placesStatesID = this.placesID.filter(place => place.type === 'state').map(place => place.id_place) || []
+                        this.placesCitiesID = this.placesID.filter(place => place.type === 'city').map(place => place.id_place) || []
+                        this.placesRegionsID = this.placesID.filter(place => place.type === 'region').map(place => place.id_place) || []
+                        this.placesSpotsID = this.placesID.filter(place => place.type === 'spot').map(place => place.id_place) || []
 
-                            this.skeleton = false
-                        }
+                        this.skeleton = false
                     }
-                } catch (error) {
-                    console.log(`API ERROR - MOJE ČLÁNKY`)
-                    console.error(error)
-
-                    await new Promise(resolve => setTimeout(resolve, 1000))
                 }
             },
 
@@ -206,15 +202,7 @@
             account: {
                 handler: 'fetchData',
                 immediate: true
-            },
-
-            '$store.state.account': {
-                deep: true,
-                immediate: true,
-                handler() {
-                    this.account = this.$store.state.account
-                }
             }
         }
-    }
+    })
 </script>

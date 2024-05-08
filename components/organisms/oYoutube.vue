@@ -11,7 +11,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoYoutubeComponent',
 
         props: {
@@ -21,11 +21,11 @@
             }
         },
 
-        methods:{
+        methods: {
             getSlugURL(url) {
                 url = url.replace("https://youtu.be/", "").replace("https://youtube.com/shorts/", "")
                 return url.replace(" ", "")
             }
         }
-    }
+    })
 </script>

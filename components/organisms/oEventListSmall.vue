@@ -55,7 +55,7 @@
 <script>
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoEventListSmallComponent',
 
         components: {
@@ -83,7 +83,7 @@
                     {
                         "elementWidth": 100,
                         "imageWidth": 100,
-                        "orientation": "s-"
+                        "orientation": "h-"
                     }
                 ]
             }
@@ -117,19 +117,28 @@
             return { script: [jsonldEvents] }
         },
 
+        mounted() {
+            this.fetchData()
+        },
+
         methods: {
             formatDate(date) {
                 const options = { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', timeZoneName: 'short' }
                 return new Date(date).toLocaleDateString('cs', options)
-            }
-        },
+            },
 
-        async fetch() {
-            // API - GET - Events
-            this.events = await fetch(`https://api.frytolnacestach.cz/api/events?limit=5&status=nearby`).then((res) => res.json())
-            // API - GET - Images
-            const imagesEventsID = this.events.map(event => event.id_image_cover).filter(id => id !== null && id !== '')
-            this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesEventsID.join(',')}`).then((res) => res.json())
+            async fetchData() {
+                // API - GET - Events
+                const responseEvents = await fetch(`https://api.frytolnacestach.cz/api/events?limit=5&status=nearby`)
+                this.events = await responseEvents.json()
+                
+                if(this.events && this.events.length > 0){
+                    // API - GET - Images
+                    const imagesEventsID = this.events.map(event => event.id_image_cover).filter(id => id !== null && id !== '')
+                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesEventsID.join(',')}`)
+                    this.images = await responseImages.json()
+                }
+            }
         }
-    }
+    })
 </script>

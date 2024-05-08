@@ -20,7 +20,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoAlertComponent',
         
         props: {
@@ -30,11 +30,11 @@
             }
         },
 
-        methods:{
+        methods: {
             formatDate(date) {
                 const options = { year: 'numeric', month: 'long', day: 'numeric' }
                 return new Date(date).toLocaleDateString('cs', options)
             }
         }
-    }
+    })
 </script>

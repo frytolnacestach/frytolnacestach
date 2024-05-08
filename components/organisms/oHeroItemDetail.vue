@@ -38,7 +38,7 @@
 <script>
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoHeroItemComponent',
 
         components: {
@@ -159,5 +159,5 @@
                 ]
             }
         }
-    }
+    })
 </script>

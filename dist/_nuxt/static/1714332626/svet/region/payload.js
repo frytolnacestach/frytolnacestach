@@ -1,1 +1,0 @@
-__NUXT_JSONP__("svet/region", {data:[{}],fetch:{},mutations:[]});

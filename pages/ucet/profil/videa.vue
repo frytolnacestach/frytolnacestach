@@ -1,50 +1,52 @@
 <template>
-    <main class="t-main -blue -pt-menu" role="main">
-        <div class="t-main__content">
-            <section class="t-section -padding-x -padding-y -p0 mb-4">
-                <div class="t-section__inner">
-                    <div class="t-grid -account">
-                        <div class="t-grid__section -nav">
+    <NuxtLayout name="default">
+        <main class="t-main -blue -pt-menu" role="main">
+            <div class="t-main__content">
+                <section class="t-section -padding-x -padding-y -p0 mb-4">
+                    <div class="t-section__inner">
+                        <div class="t-grid -account">
+                            <div class="t-grid__section -nav">
 
-                            <!-- SECTION - account headline - account -->
-                            <section class="t-section -padding-x -p0">
-                                <div class="t-section__inner">
-                                    <mAccountHeader :account="account" @update="menuAccountUpdate" />
-                                </div>
-                            </section>
-                            <!-- SECTION - nav - account END -->
+                                <!-- SECTION - account headline - account -->
+                                <section class="t-section -padding-x -p0">
+                                    <div class="t-section__inner">
+                                        <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - nav - account END -->
 
-                            <!-- SECTION - nav - account -->
-                            <section class="t-section -padding-x -p0">
-                                <div class="t-section__inner">
-                                    <mNavAccount :statusOpen="mNavAccountOpen" />
-                                </div>
-                            </section>
-                            <!-- SECTION - nav - account END -->
+                                <!-- SECTION - nav - account -->
+                                <section class="t-section -padding-x -p0">
+                                    <div class="t-section__inner">
+                                        <mNavAccount :statusOpen="mNavAccountOpen" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - nav - account END -->
 
-                        </div>
-                        <div class="t-grid__section -content">
+                            </div>
+                            <div class="t-grid__section -content">
 
-                            <!-- SECTION - VideoList -->
-                            <section class="t-section -padding-x -p0 pb-4">
-                                <div class="t-section__inner">
-                                    <mHeadline title="Videa" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                    <oVideoListUser :videos="videos" :images="images" skeletonThema=" -skeleton-blue" :skeleton="skeleton" v-if="videos && videos !== null" />
-                                    <client-only v-if="(videos.length === 0 || videos === null) && !skeleton">
-                                        <p>
-                                            Zatím si nepřidal žádné video.
-                                        </p>
-                                    </client-only>
-                                </div>
-                            </section>
-                            <!-- SECTION - VideoList END -->
+                                <!-- SECTION - VideoList -->
+                                <section class="t-section -padding-x -p0 pb-4">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Videa" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <oVideoListUser :videos="videos" :images="images" skeletonThema=" -skeleton-blue" :skeleton="skeleton" />
+                                        <client-only v-if="videos && (videos.length === 0 || videos === null) && !skeleton">
+                                            <p>
+                                                Zatím si nepřidal žádné video.
+                                            </p>
+                                        </client-only>
+                                    </div>
+                                </section>
+                                <!-- SECTION - VideoList END -->
 
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
-    </main>
+                </section>
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
@@ -55,7 +57,7 @@
     import mNavAccount from '~/components/molecules/mNavAccount.vue'
     import oVideoListUser from '~/components/organisms/oVideoListUser.vue'
 
-    export default {
+    export default defineComponent({
         name: 'UcetVideaPage',
         
         components: {
@@ -67,7 +69,7 @@
 
         data() {
             return {
-                account: [],
+                account: useAccountData().accountData,
                 mNavAccountOpen: false,
                 videos: [],
                 images: [],
@@ -139,24 +141,23 @@
 
         methods: {
             async fetchData() {
-                try {
-                    if (this.account && this.account.length !== 0) {
-                        if (process.client) {
-                            // COMPONENT - oVideoListUser
-                            // Videos
-                            this.videos = await this.$axios.$get(`https://api.frytolnacestach.cz/api/videos-id-user/${this.account[0].id}`)
-                            // Images
-                            this.imagesVideosIDS = this.videos.map(video => video.id_image).filter(id => id !== null && id !== '')
-                            this.images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${this.imagesVideosIDS.join(',')}`)
-
-                            this.skeleton = false
+                if (this.account && this.account.length !== 0) {
+                    if (process.client) {
+                        // COMPONENT - oVideoListUser
+                        // Videos
+                        const responseVideos = await fetch(`https://api.frytolnacestach.cz/api/videos-id-user/${this.account[0].id}`)
+                        this.videos = await responseVideos.json()
+                        // Images
+                        if (this.videos && this.videos.length > 0) {
+                            const imagesVideosIDS = this.videos.map(video => video.id_image).filter(id => id !== null && id !== '')
+                            if (imagesVideosIDS && imagesVideosIDS.length > 0) {
+                                const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
+                                this.images = await responseImages.json()
+                            }
                         }
-                    }
-                } catch (error) {
-                    console.log(`API ERROR - MOJE VIDEA`)
-                    console.error(error)
 
-                    await new Promise(resolve => setTimeout(resolve, 1000))
+                        this.skeleton = false
+                    }
                 }
             },
 
@@ -169,15 +170,7 @@
             account: {
                 handler: 'fetchData',
                 immediate: true
-            },
-
-            '$store.state.account': {
-                deep: true,
-                immediate: true,
-                handler() {
-                    this.account = this.$store.state.account
-                }
             }
         }
-    }
+    })
 </script>

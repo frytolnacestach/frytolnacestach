@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/svet/kontinent", {data:[{}],fetch:{},mutations:[]});

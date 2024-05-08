@@ -36,7 +36,7 @@
     import oAnimationFlight from '~/components/organisms/oAnimationFlight.vue'
     import oCopyright from '~/components/organisms/oCopyright.vue'
 
-    export default {
+    export default defineComponent({
         name: 'ComponentFooterComponent',
 
         components: {
@@ -45,5 +45,5 @@
             oAnimationFlight,
             oCopyright
         }
-    }
+    })
 </script>

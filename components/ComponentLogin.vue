@@ -1,12 +1,13 @@
 <template></template>
 <script>
-    export default {
+    export default defineComponent({
         name: 'ComponentLoginComponent',
 
         data() {
             return {
                 loginStatus: null,
-                account: []
+                account: [],
+                accountData: useAccountData().accountData
             }
         },
 
@@ -74,7 +75,7 @@
                             loginStatus: 1,
                             account: this.account
                         })
-                        this.$store.commit('setAccount', this.account)
+                        useAccountData().setAccountData(this.account)
 
                     } else if (response.status === 401) {
                         console.log("[USER] Nesprávné přihlašovací údaje")
@@ -95,7 +96,7 @@
                             loginStatus: 0,
                             account: this.account
                         })
-                        this.$store.commit('setAccount', this.account)
+                        useAccountData().setAccountData(this.account)
                     } else if (response.status === 404) {
                         console.log("[USER] Uživatel nenalezen")
                         // Nastavení localStorage
@@ -115,7 +116,7 @@
                             loginStatus: 0,
                             account: this.account
                         })
-                        this.$store.commit('setAccount', this.account)
+                        useAccountData().setAccountData(this.account)
                     } else {
                         console.log("[USER] Chyba při komunikaci s API")
                         // Nastavení localStorage
@@ -135,7 +136,7 @@
                             loginStatus: 0,
                             account: this.account
                         })
-                        this.$store.commit('setAccount', this.account)
+                        useAccountData().setAccountData(this.account)
                     }
                 } else {
                     console.log("[USER] Uživatel není přihlášen")
@@ -156,9 +157,9 @@
                         loginStatus: 0,
                         account: this.account
                     })
-                    this.$store.commit('setAccount', this.account)
+                    useAccountData().setAccountData(this.account)
                 }
             }
         }
-    }
+    })
 </script>

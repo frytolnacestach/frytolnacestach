@@ -17,7 +17,7 @@
 </template>
 
 <script>
-   export default {
+   export default defineComponent({
         name: 'MoleculesmNavBreadcrumbsFoodComponent',
 
         props: {
@@ -30,5 +30,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

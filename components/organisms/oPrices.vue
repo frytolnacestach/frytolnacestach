@@ -17,7 +17,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoPricesComponent',
 
         props: {
@@ -26,5 +26,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

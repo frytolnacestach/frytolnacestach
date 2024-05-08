@@ -7,11 +7,11 @@
 <script>
     import oPopupCookies from '~/components/organisms/oPopupCookies.vue'
 
-    export default {
+    export default defineComponent({
         name: 'ComponentPopupCookiesComponent',
 
         components: {
             oPopupCookies
         }
-    }
+    })
 </script>

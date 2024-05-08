@@ -16,7 +16,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoSidebarInformationComponent',
 
         props: {
@@ -25,5 +25,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

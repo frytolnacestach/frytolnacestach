@@ -46,7 +46,7 @@
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoPlaceTeaserComponent',
 
         components: {
@@ -171,5 +171,5 @@
                 ]
             }
         }
-    }
+    })
 </script>

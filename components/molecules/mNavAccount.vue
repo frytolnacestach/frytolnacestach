@@ -46,7 +46,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'MoleculesmNavAccountComponent',
 
         props: {
@@ -72,5 +72,5 @@
                 this.$router.push('/ucet/prihlaseni')
             }
         }
-    }
+    })
 </script>

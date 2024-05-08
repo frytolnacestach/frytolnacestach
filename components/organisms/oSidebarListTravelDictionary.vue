@@ -50,7 +50,7 @@
 <script>
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoSidebarListTravelDictionaryComponent',
 
         components: {
@@ -85,33 +85,31 @@
             }
         },
 
-        async fetch() {
-            // START
-            this.isLoading = true
+        methods: {
+            async fetchData() {
+                // START
+                this.isLoading = true
 
-            // API - GET - Travel Dictionaries
-            const [travelDictionariesResponse] = await Promise.all([
-                this.$axios.get(`https://api.frytolnacestach.cz/api/travel-dictionaries-random?showType=list&actualID=${this.IDTravelDictionary}&quantity=5`)
-
-            ])
-            // DATA
-            const { data: travelDictionariesData } = travelDictionariesResponse
-            
-            // API - GET - Images
-            const imagesTravelDictionariesIDS  = travelDictionariesData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
-            if (imagesTravelDictionariesIDS .length > 0) {
-                const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesTravelDictionariesIDS .join(',')}`)
-                const { data: imagesData } = imagesResponse
-                this.images = this.images.concat(imagesData)
-                // add to placecesData to travelDictionaries
+                // API - GET - Travel Dictionaries
+                const responseTravelDictionaries = await fetch(`https://api.frytolnacestach.cz/api/travel-dictionaries-random?showType=list&actualID=${this.IDTravelDictionary}&quantity=5`)
+                const travelDictionariesData = await responseTravelDictionaries.json() || []
                 this.travelDictionaries = this.travelDictionaries.concat(travelDictionariesData)
-            } else {
-                // add to placecesData to travelDictionaries
-                this.travelDictionaries = this.travelDictionaries.concat(travelDictionariesData)
-            } 
+                
+                // API - GET - Images
+                const imagesTravelDictionariesIDS  = this.travelDictionaries.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
+                if (imagesTravelDictionariesIDS.length > 0) {
+                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesTravelDictionariesIDS .join(',')}`)
+                    const imagesData = await responseImages.json() || []
+                    this.images = this.images.concat(imagesData)
+                }
 
-            // FINAL
-            this.isLoading = false
+                // FINAL
+                this.isLoading = false
+            }
+        },
+
+        mounted() {
+            this.fetchData()
         }
-    }
+    })
 </script>

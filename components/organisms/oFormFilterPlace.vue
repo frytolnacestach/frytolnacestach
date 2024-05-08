@@ -16,7 +16,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsFormFilterPlaceComponent',
 
         props: {
@@ -58,19 +58,19 @@
 
         methods: {
             async loadPlaces() {
-                let placesResponse
+                let responsePlaces
                 
                 // API - GET - ITEMS
                 if (this.typePlaceFilter === "continents") {
                     // API - GET - Continents
-                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-continents?showType=filter`)
+                    responsePlaces = await fetch(`https://api.frytolnacestach.cz/api/places-continents?showType=filter`)
                 } else if (this.typePlaceFilter === "states") {
                     // API - GET - States
-                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=filter`)
+                    responsePlaces = await fetch(`https://api.frytolnacestach.cz/api/places-states?showType=filter`)
                 }
 
                 // DATA
-                const { data: placesData } = placesResponse
+                const placesData = await responsePlaces.json()
                 this.filterPlaces = placesData
                 this.updateParentVariable(this.filterSelect)
             },
@@ -99,5 +99,5 @@
                 }
             }
         }
-    }
+    })
 </script>

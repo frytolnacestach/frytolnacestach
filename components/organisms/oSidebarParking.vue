@@ -36,7 +36,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoSidebarLinkComponent',
 
         props: {
@@ -45,5 +45,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

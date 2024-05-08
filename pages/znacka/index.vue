@@ -1,38 +1,40 @@
 <template>
-    <main class="t-main -green -pt-menu" role="main">
-        <div class="t-main__content">
-            <section class="t-section print-section">
-                
-                <!-- SECTION - Hero značky -->
-                <section class="t-section py-4">
-                    <div class="t-section__inner">
-                        <oHero headline="Značky" perex="Na stránce cestovatelského portálu Frytol na cestách se ponoř do světa výrobků, které ovládly náč svět. Prozkoumej, kde se skrývají ty nejžádanější produkty, které si našly cestu daleko za hranice. Zjistíš, co se kde vyrábí a co zaujalo svět. Připrav se na objevování fascinujících značek a výrobků, které utvořily mapu globálního vkusu a kvality." modifierCSS=" -green -w640" classCSS=" mt-2" />
-                    </div>
-                </section>
-                <!-- SECTION - Hero značky END -->
-
-                <!-- SECTION - cestovatelsky slovnik list -->
-                <section class="t-section -p0">
-                    <div class="t-section__inner">
-                        <oCoverItem :items="brands" :images="images" type="znacka" />
-                        <oCoverItem :items="null" :images="null" type="znacka" :skeleton=true v-if="isLoading" />
-                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                            <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+    <NuxtLayout name="default">
+        <main class="t-main -green -pt-menu" role="main">
+            <div class="t-main__content">
+                <section class="t-section print-section">
+                    
+                    <!-- SECTION - Hero značky -->
+                    <section class="t-section py-4">
+                        <div class="t-section__inner">
+                            <oHero headline="Značky" perex="Na stránce cestovatelského portálu Frytol na cestách se ponoř do světa výrobků, které ovládly náč svět. Prozkoumej, kde se skrývají ty nejžádanější produkty, které si našly cestu daleko za hranice. Zjistíš, co se kde vyrábí a co zaujalo svět. Připrav se na objevování fascinujících značek a výrobků, které utvořily mapu globálního vkusu a kvality." modifierCSS=" -green -w640" classCSS=" mt-2" />
                         </div>
-                    </div>
-                </section>
-                <!-- SECTION - cestovatelsky slovnik list END -->
+                    </section>
+                    <!-- SECTION - Hero značky END -->
 
-            </section>
-        </div>
-    </main>
+                    <!-- SECTION - cestovatelsky slovnik list -->
+                    <section class="t-section -p0">
+                        <div class="t-section__inner">
+                            <oCoverItem :items="brands" :images="images" type="znacka" v-if="brands && brands.length > 0" />
+                            <oCoverItem :items="[]" :images="[]" type="znacka" :skeleton=true v-if="isLoading" />
+                            <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                                <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - cestovatelsky slovnik list END -->
+
+                </section>
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
     import oCoverItem from '~/components/organisms/oCoverItem.vue'
     import oHero from '~/components/organisms/oHero.vue'
 
-    export default {
+    export default defineComponent({
         name: 'ZnackaIndexPage',
 
         components: {
@@ -127,35 +129,23 @@
             }
         },
 
-        async mounted() {
-            await this.loadItems()
-            this.addScrollListener()
-        },
-
-        methods:{
+        methods: {
             async loadItems() {
                 //start loading
                 this.isLoading = true
 
                 //load brands
-                const [brandsResponse] = await Promise.all([
-                    this.$axios.get(`https://api.frytolnacestach.cz/api/brands?showType=list&page=${this.page}&items=${this.perPage}`)
-                ]);
-                const { data: brandsData } = brandsResponse
+                const responseBrands = await fetch(`https://api.frytolnacestach.cz/api/brands?showType=list&page=${this.page}&items=${this.perPage}`)
+                const brandsData = await responseBrands.json() || []
+                this.brands = this.brands.concat(brandsData)
 
                 //load images
                 const imagesBrandsIDS = brandsData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
                 if (imagesBrandsIDS.length > 0) {
-                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesBrandsIDS.join(',')}`)
-                    const { data: imagesData } = imagesResponse
+                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesBrandsIDS.join(',')}`)
+                    const imagesData = await responseImages.json() || []
                     this.images = this.images.concat(imagesData)
-                
-                    // add to placecesData to brands
-                    this.brands = this.brands.concat(brandsData)
-                } else {
-                    // add to placecesData to brands
-                    this.brands = this.brands.concat(brandsData)
-                } 
+                }
 
                 //no more items?
                 if (brandsData.length === 0 || brandsData.length < this.perPage) {
@@ -208,8 +198,13 @@
             }
         },
 
+        mounted() {
+            this.loadItems()
+            this.addScrollListener()
+        },
+
         beforeDestroy() {
             this.removeScrollListener()
         }
-    }
+    })
 </script>

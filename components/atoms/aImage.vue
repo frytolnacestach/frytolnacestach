@@ -1,10 +1,10 @@
 <template>
-    <img :class="(cssClassComponent + '__image-file') + ' lazyload-file'"
-        :data-sizes="generateSizes()"
-        :data-srcset="generateSrcSet() + ',' + generateSrcSet('2x')"
-        :data-src="'https://image.frytolnacestach.cz/storage' + imageSource + imageName + '.webp'"
+    <img :class="(cssClassComponent + '__image-file')"
+        :sizes="generateSizes()"
+        :srcset="generateSrcSet() + ',' + generateSrcSet('2x')"
+        :src="'https://image.frytolnacestach.cz/storage' + imageSource + imageName + '.webp'"
         :alt="alt ? alt : 'Výchozí obrázek'"
-        v-lazy
+        loading="lazy"
         v-if="lazy"
     >
     <img :class="cssClassComponent + '__image-file'"
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'AtomsaImageComponent',
         
         props: {
@@ -79,5 +79,5 @@
                 }).join(', ')
             }
         }
-    }
+    })
 </script>

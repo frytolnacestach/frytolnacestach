@@ -15,7 +15,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoWikiComponent',
 
         props: {
@@ -28,5 +28,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

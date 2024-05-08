@@ -15,7 +15,7 @@
                         />
                     </div>
                 </div>
-                <div class="o-whoiam__text">
+                <div class="o-whoiam__text" v-if="base && base.length > 0">
                     <div class="o-whoiam__perex">
                         {{ base[0].iam }}
                     </div>
@@ -28,7 +28,7 @@
 <script>
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoWhoiamComponent',
 
         components: {
@@ -37,7 +37,7 @@
         
         data() {
             return {
-                base: [],
+                base: this.base,
                 imageSizesMedia: [
                     {
                         "mediaQueriesWidth": 349,
@@ -134,9 +134,17 @@
             return { script: [jsonldBase] }
         },
 
-        async fetch() {
-            // API - GET - Base
-            this.base = await fetch("https://api.frytolnacestach.cz/api/base").then((res) => res.json())
+        methods: {
+            async fetchData() {
+                // API - GET - Platforms
+                const responseBase = await fetch("https://api.frytolnacestach.cz/api/base")
+                this.base = await responseBase.json()
+            }
+        },
+
+        mounted() {
+            // GET Data
+            this.fetchData()
         }
-    }
+    })
 </script>

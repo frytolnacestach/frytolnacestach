@@ -1,24 +1,22 @@
 <template>
-    <div class="t-components">
-        <!-- Print -->
-        <ComponentPrintFront />
-        <!-- Print END -->
+    <!-- Print -->
+    <ComponentPrintFront />
+    <!-- Print END -->
 
-        <!-- Login -->
-        <ComponentLogin @accountData="handleAccountData" />
-        <!-- Login END -->
+    <!-- Login -->
+    <ComponentLogin @accountData="handleAccountData" />
+    <!-- Login END -->
 
-        <!-- Frontend -->
-        <ComponentHeader />
-        <Nuxt />
-        <ComponentFooter />
-        <ComponentPopupCookies />
-        <!-- Frontend END -->
-    </div>
+    <!-- Frontend -->
+    <ComponentHeader />
+    <slot />
+    <ComponentFooter />
+    <ComponentPopupCookies />
+    <!-- Frontend END -->
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'DefaultLayout',
 
         data() {
@@ -34,5 +32,5 @@
                 this.account = data.account
             }
         }
-    }
+    })
 </script>

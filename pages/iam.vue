@@ -1,37 +1,39 @@
 <template>
-    <main class="t-main -gray -pt-menu" role="main">
-        <div class="t-main__content">
-            
-            <!-- SECTION - Hero -->
-            <section class="t-section -p0 pt-2 pb-1">
-                <div class="t-section__inner">
-                    <oHero :headline="headline" modifierCSS=" -gray" classCSS=" mt-2" />
-                </div>
-            </section>
-            <!-- SECTION - Hero END -->
-
-            <!-- SECTION - Whoiam -->
-            <section class="t-section -p0 py-1">
-                <div class="t-section__inner">
-                    <oWhoiam />
-                </div>
-            </section>
-            <!-- SECTION - Whoiam END -->
-
-            <!-- SECTION - Platforms -->
-            <section class="t-section -p0 py-1 mt-2 px-2">
-                <div class="t-section__inner">
-                    <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
-                    <oPlatform />
-                    <div class="flex flex-center mb-4">
-                        <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
+    <NuxtLayout name="default">
+        <main class="t-main -gray -pt-menu" role="main">
+            <div class="t-main__content">
+                
+                <!-- SECTION - Hero -->
+                <section class="t-section -p0 pt-2 pb-1">
+                    <div class="t-section__inner">
+                        <oHero :headline="headline" modifierCSS=" -gray" classCSS=" mt-2" />
                     </div>
-                </div>
-            </section>
-            <!-- SECTION - Platforms END -->
+                </section>
+                <!-- SECTION - Hero END -->
 
-        </div>
-    </main>
+                <!-- SECTION - Whoiam -->
+                <section class="t-section -p0 py-1">
+                    <div class="t-section__inner">
+                        <oWhoiam />
+                    </div>
+                </section>
+                <!-- SECTION - Whoiam END -->
+
+                <!-- SECTION - Platforms -->
+                <section class="t-section -p0 py-1 mt-2 px-2">
+                    <div class="t-section__inner">
+                        <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
+                        <oPlatform />
+                        <div class="flex flex-center mb-4">
+                            <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - Platforms END -->
+
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
@@ -41,7 +43,7 @@
     import oPlatform from '../components/organisms/oPlatform.vue'
     import oWhoiam from '../components/organisms/oWhoiam.vue'
 
-    export default {
+    export default defineComponent({
         name: 'IamPage',
 
         components: {
@@ -133,5 +135,5 @@
                 ]
             }
         }
-    }
+    })
 </script>

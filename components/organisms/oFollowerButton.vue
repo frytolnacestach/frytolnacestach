@@ -32,7 +32,7 @@
     import skeletonoFollowerButton from '~/components/skeleton/skeletonoFollowerButton.vue'
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoFollowerButtonComponent',
 
         components: {
@@ -188,5 +188,5 @@
         mounted() {
             this.follower()
         }
-    }
+    })
 </script>

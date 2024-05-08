@@ -17,7 +17,7 @@
 <script>
 	import oError404 from '../components/organisms/oError404.vue'
 
-	export default {
+	export default defineComponent({
 		name: 'ErrorLayout',
 
 		layout: 'empty',
@@ -46,7 +46,7 @@
 				title
 			}
 		}
-	}
+	})
 </script>
 
 <style scoped>

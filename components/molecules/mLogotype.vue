@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'MoleculesmLogotypeComponent'
-    }
+    })
 </script>

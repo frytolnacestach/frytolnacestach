@@ -1,38 +1,40 @@
 <template>
-    <main class="t-main -green -pt-menu" role="main">
-        <div class="t-main__content">
-            <section class="t-section print-section">
+    <NuxtLayout name="default">
+        <main class="t-main -green -pt-menu" role="main">
+            <div class="t-main__content">
+                <section class="t-section print-section">
 
-                <!-- SECTION - Hero řetězce -->
-                <section class="t-section py-4">
-                    <div class="t-section__inner">
-                        <oHero headline="Řetězce" perex="Vstupte do světa obchodních a gastronomických řetězců společně s námi prozkoumejte ty nejvýznamnější a největší, a zjistěte, kde na světě můžete ochutnat i nakupovat jejich unikátní nabídku. Vše, co potřebujete vědět o světě obchodů a gastronomie, najdete na stránkách cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w640" classCSS=" mt-2" />
-                    </div>
-                </section>
-                <!-- SECTION - Hero řetězce END -->
-
-                <!-- SECTION - řetězce list -->
-                <section class="t-section -p0">
-                    <div class="t-section__inner">
-                        <oCoverItem :items="chains" :images="images" type="retezec" />
-                        <oCoverItem :items="null" :images="null" type="chains" :skeleton=true v-if="isLoading" />
-                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                            <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                    <!-- SECTION - Hero řetězce -->
+                    <section class="t-section py-4">
+                        <div class="t-section__inner">
+                            <oHero headline="Řetězce" perex="Vstupte do světa obchodních a gastronomických řetězců společně s námi prozkoumejte ty nejvýznamnější a největší, a zjistěte, kde na světě můžete ochutnat i nakupovat jejich unikátní nabídku. Vše, co potřebujete vědět o světě obchodů a gastronomie, najdete na stránkách cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w640" classCSS=" mt-2" />
                         </div>
-                    </div>
+                    </section>
+                    <!-- SECTION - Hero řetězce END -->
+
+                    <!-- SECTION - řetězce list -->
+                    <section class="t-section -p0">
+                        <div class="t-section__inner">
+                            <oCoverItem :items="chains" :images="images" type="retezec" v-if="chains && chains.length > 0" />
+                            <oCoverItem :items="[]" :images="[]" type="chains" :skeleton=true v-if="isLoading" />
+                            <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                                <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - řetězce END -->
+                    
                 </section>
-                <!-- SECTION - řetězce END -->
-                
-            </section>
-        </div>
-    </main>
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
     import oCoverItem from '~/components/organisms/oCoverItem.vue'
     import oHero from '~/components/organisms/oHero.vue'
 
-    export default {
+    export default defineComponent({
         name: 'RetezceIndexPage',
 
         components: {
@@ -127,35 +129,23 @@
             }
         },
 
-        async mounted() {
-            await this.loadItems()
-            this.addScrollListener()
-        },
-
-        methods:{
+        methods: {
             async loadItems() {
                 //start loading
                 this.isLoading = true
 
                 //load chains
-                const [chainsResponse] = await Promise.all([
-                    this.$axios.get(`https://api.frytolnacestach.cz/api/chains?showType=list&page=${this.page}&items=${this.perPage}`)
-                ]);
-                const { data: chainsData } = chainsResponse
+                const responseChains = await fetch(`https://api.frytolnacestach.cz/api/chains?showType=list&page=${this.page}&items=${this.perPage}`)
+                const chainsData = await responseChains.json() || []
+                this.chains = this.chains.concat(chainsData)
 
                 //load images
                 const imagesChainsIDS = chainsData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
                 if (imagesChainsIDS.length > 0) {
-                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesChainsIDS.join(',')}`)
-                    const { data: imagesData } = imagesResponse
+                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesChainsIDS.join(',')}`)
+                    const imagesData = await responseImages.json() || []
                     this.images = this.images.concat(imagesData)
-                
-                    // add to placecesData to chains
-                    this.chains = this.chains.concat(chainsData)
-                } else {
-                    // add to placecesData to chains
-                    this.chains = this.chains.concat(chainsData)
-                } 
+                }
 
                 //no more items?
                 if (chainsData.length === 0 || chainsData.length < this.perPage) {
@@ -208,8 +198,13 @@
             }
         },
 
+        mounted() {
+            this.loadItems()
+            this.addScrollListener()
+        },
+
         beforeDestroy() {
             this.removeScrollListener()
         }
-    }
+    })
 </script>

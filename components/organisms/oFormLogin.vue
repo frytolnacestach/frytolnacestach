@@ -34,7 +34,7 @@
 <script>
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
     
-    export default {
+    export default defineComponent({
         name: 'OrganismsoFormLoginComponent',
     
         components: {
@@ -48,7 +48,8 @@
                 password: '',
                 nickname: '',
                 loginStatus: null,
-                account: []
+                account: [],
+                accountData: useAccountData().accountData
             }
         },
     
@@ -125,7 +126,7 @@
                             loginStatus: 1,
                             account: this.account
                         })
-                        this.$store.commit('setAccount', this.account)
+                        useAccountData().setAccountData(this.account)
 
                         await this.$router.push('/ucet/profil')
                     } else if (response.status === 401) {
@@ -161,5 +162,5 @@
                 }
             }
         }
-    }
+    })
 </script>

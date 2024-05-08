@@ -1,38 +1,40 @@
 <template>
-    <main class="t-main -green -pt-menu" role="main">
-        <div class="t-main__content">
-            <section class="t-section print-section">
+    <NuxtLayout name="default">
+        <main class="t-main -green -pt-menu" role="main">
+            <div class="t-main__content">
+                <section class="t-section print-section">
 
-                <!-- SECTION - Hero fauna -->
-                <section class="t-section py-4">
-                    <div class="t-section__inner">
-                        <oHero headline="Fauna" perex="Ponoř se do světa fauny a objev, kdo s námi sdílí tento planetární domov. S cestovatelským portále Frytol na cestách získáš poutavé informace a tipy, na co si dávat pozor. Vydej se s námi na nezapomenutelnou cestu do světa divokého života!" modifierCSS=" -green -w640" classCSS=" mt-2" />
-                    </div>
-                </section>
-                <!-- SECTION - Hero fauna END -->
-
-                <!-- SECTION - Fauna list -->
-                <section class="t-section -p0">
-                    <div class="t-section__inner">
-                        <oCoverItem :items="faunas" :images="images" type="fauna" />
-                        <oCoverItem :items="null" :images="null" type="fauna" :skeleton=true v-if="isLoading" />
-                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                            <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                    <!-- SECTION - Hero fauna -->
+                    <section class="t-section py-4">
+                        <div class="t-section__inner">
+                            <oHero headline="Fauna" perex="Ponoř se do světa fauny a objev, kdo s námi sdílí tento planetární domov. S cestovatelským portále Frytol na cestách získáš poutavé informace a tipy, na co si dávat pozor. Vydej se s námi na nezapomenutelnou cestu do světa divokého života!" modifierCSS=" -green -w640" classCSS=" mt-2" />
                         </div>
-                    </div>
-                </section>
-                <!-- SECTION - Fauna list END -->
+                    </section>
+                    <!-- SECTION - Hero fauna END -->
 
-            </section>
-        </div>
-    </main>
+                    <!-- SECTION - Fauna list -->
+                    <section class="t-section -p0">
+                        <div class="t-section__inner">
+                            <oCoverItem :items="faunas" :images="images" type="fauna" v-if="faunas && faunas.length > 0" />
+                            <oCoverItem :items="[]" :images="[]" type="fauna" :skeleton=true v-if="isLoading" />
+                            <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                                <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - Fauna list END -->
+
+                </section>
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
     import oCoverItem from '~/components/organisms/oCoverItem.vue'
     import oHero from '~/components/organisms/oHero.vue'
 
-    export default {
+    export default defineComponent({
         name: 'FaunaIndexPage',
 
         components: {
@@ -127,34 +129,22 @@
             }
         },
 
-        async mounted() {
-            await this.loadItems()
-            this.addScrollListener()
-        },
-
-        methods:{
+        methods: {
             async loadItems() {
                 //start loading
                 this.isLoading = true
 
                 //load faunas
-                const [faunasResponse] = await Promise.all([
-                    this.$axios.get(`https://api.frytolnacestach.cz/api/faunas?showType=list&page=${this.page}&items=${this.perPage}`)
-                ])
-                const { data: faunasData } = faunasResponse
+                const responseFaunas = await fetch(`https://api.frytolnacestach.cz/api/faunas?showType=list&page=${this.page}&items=${this.perPage}`)
+                const faunasData = await responseFaunas.json() || []
+                this.faunas = this.faunas.concat(faunasData)
 
                 //load images
                 const imagesFaunasIDS = faunasData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
                 if (imagesFaunasIDS.length > 0) {
-                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFaunasIDS.join(',')}`)
-                    const { data: imagesData } = imagesResponse
+                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFaunasIDS.join(',')}`)
+                    const imagesData = await responseImages.json() || []
                     this.images = this.images.concat(imagesData)
-                
-                    // add to placecesData to faunas
-                    this.faunas = this.faunas.concat(faunasData)
-                } else {
-                    // add to placecesData to faunas
-                    this.faunas = this.faunas.concat(faunasData)
                 } 
 
                 //no more items?
@@ -208,8 +198,13 @@
             }
         },
 
+        mounted() {
+            this.loadItems()
+            this.addScrollListener()
+        },
+
         beforeDestroy() {
             this.removeScrollListener()
         }
-    }
+    })
 </script>

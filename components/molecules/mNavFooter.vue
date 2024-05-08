@@ -112,7 +112,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'MoleculesmNavFootewComponent'
-    }
+    })
 </script>

@@ -56,7 +56,7 @@
     import skeletonoVideoList from '~/components/skeleton/skeletonoVideoList.vue'
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoVideoListSmallComponent',
 
         components: {
@@ -239,5 +239,5 @@
                 }
             }
         }
-    }
+    })
 </script>

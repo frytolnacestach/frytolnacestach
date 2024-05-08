@@ -10,7 +10,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsmAutorComponent',
 
         props: {
@@ -26,29 +26,18 @@
             }
         },
 
-        async mounted() {
-            let success = false
-            let data = null
-
-            while (!success) {
-                try {
+        methods: {
+            async fetchData() {
+                if (this.author !== null) {
                     // API - GET
-                    const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-id/${this.author}`)
-                    
-                    // DATA
-                    data = { user }
-
-                    // FINAL
-                    success = true
-                } catch (error) {
-                    console.log(`API ERROR - M AUTHOR`)
-                    console.error(error)
-
-                    await new Promise(resolve => setTimeout(resolve, 1000))
+                    const responseUser = await fetch(`https://api.frytolnacestach.cz/api/user-id/${this.author}`)
+                    this.user = await responseUser.json() || []
                 }
             }
+        },
 
-            Object.assign(this, data)
+        mounted() {
+            this.fetchData()
         }
-    }
+    })
 </script>

@@ -1,38 +1,40 @@
 <template>
-    <main class="t-main -green -pt-menu" role="main">
-        <div class="t-main__content">
-            <section class="t-section print-section">
+    <NuxtLayout name="default">
+        <main class="t-main -green -pt-menu" role="main">
+            <div class="t-main__content">
+                <section class="t-section print-section">
 
-                <!-- SECTION - Hero flora -->
-                <section class="t-section py-4">
-                    <div class="t-section__inner">
-                        <oHero headline="Flóra" perex="Otevři okno do barevného světa flory a objev, jaké rostliny ozdobují naši planetu. S cestovatelským portále Frytol na cestách získáš zajímavé informace a tipy, jak si vychutnat krásy rostlinného života. Připoj se k nám na nezapomenutelnou cestu do světa rozmanité flóry!" modifierCSS=" -green -w640" classCSS=" mt-2" />
-                    </div>
-                </section>
-                <!-- SECTION - Hero flora END -->
-
-                <!-- SECTION - Flora list -->
-                <section class="t-section -p0">
-                    <div class="t-section__inner">
-                        <oCoverItem :items="floras" :images="images" type="flora" />
-                        <oCoverItem :items="null" :images="null" type="flora" :skeleton=true v-if="isLoading" />
-                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                            <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                    <!-- SECTION - Hero flora -->
+                    <section class="t-section py-4">
+                        <div class="t-section__inner">
+                            <oHero headline="Flóra" perex="Otevři okno do barevného světa flory a objev, jaké rostliny ozdobují naši planetu. S cestovatelským portále Frytol na cestách získáš zajímavé informace a tipy, jak si vychutnat krásy rostlinného života. Připoj se k nám na nezapomenutelnou cestu do světa rozmanité flóry!" modifierCSS=" -green -w640" classCSS=" mt-2" />
                         </div>
-                    </div>
-                </section>
-                <!-- SECTION - Flora list END -->
+                    </section>
+                    <!-- SECTION - Hero flora END -->
 
-            </section>
-        </div>
-    </main>
+                    <!-- SECTION - Flora list -->
+                    <section class="t-section -p0">
+                        <div class="t-section__inner">
+                            <oCoverItem :items="floras" :images="images" type="flora" v-if="floras && floras.length > 0" />
+                            <oCoverItem :items="[]" :images="[]" type="flora" :skeleton=true v-if="isLoading" />
+                            <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                                <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - Flora list END -->
+
+                </section>
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
     import oCoverItem from '~/components/organisms/oCoverItem.vue'
     import oHero from '~/components/organisms/oHero.vue'
 
-    export default {
+    export default defineComponent({
         name: 'FloraIndexPage',
 
         components: {
@@ -127,35 +129,23 @@
             }
         },
 
-        async mounted() {
-            await this.loadItems()
-            this.addScrollListener()
-        },
-
-        methods:{
+        methods: {
             async loadItems() {
                 //start loading
                 this.isLoading = true
 
                 //load floras
-                const [florasResponse] = await Promise.all([
-                    this.$axios.get(`https://api.frytolnacestach.cz/api/floras?showType=list&page=${this.page}&items=${this.perPage}`)
-                ])
-                const { data: florasData } = florasResponse
+                const responseFloras = await fetch(`https://api.frytolnacestach.cz/api/floras?showType=list&page=${this.page}&items=${this.perPage}`)
+                const florasData = await responseFloras.json() || []
+                this.floras = this.floras.concat(florasData)
 
                 //load images
                 const imagesFlorasIDS = florasData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
                 if (imagesFlorasIDS.length > 0) {
-                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFlorasIDS.join(',')}`)
-                    const { data: imagesData } = imagesResponse
+                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFlorasIDS.join(',')}`)
+                    const imagesData = await responseImages.json() || []
                     this.images = this.images.concat(imagesData)
-                
-                    // add to placecesData to floras
-                    this.floras = this.floras.concat(florasData)
-                } else {
-                    // add to placecesData to floras
-                    this.floras = this.floras.concat(florasData)
-                } 
+                }
 
                 //no more items?
                 if (florasData.length === 0 || florasData.length < this.perPage) {
@@ -208,8 +198,13 @@
             },
         },
 
+        mounted() {
+            this.loadItems()
+            this.addScrollListener()
+        },
+
         beforeDestroy() {
             this.removeScrollListener()
         }
-    }
+    })
 </script>

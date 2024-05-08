@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'AtomsaTooltipComponent',
         
         props: {
@@ -12,5 +12,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

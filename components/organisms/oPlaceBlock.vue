@@ -49,7 +49,7 @@
     import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoPlaceBlockComponent',
 
         components: {
@@ -224,5 +224,5 @@
                 this.image = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.place[0].id_image_hero}`).then((res) => res.json())
             }
         }
-    }
+    })
 </script>

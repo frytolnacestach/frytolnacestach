@@ -27,7 +27,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoPrintFrontComponent',
 
         data() {
@@ -87,5 +87,5 @@
                 }
             }
         }
-    }
+    })
 </script>

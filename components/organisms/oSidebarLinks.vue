@@ -24,7 +24,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoSidebarLinkComponent',
 
         props: {
@@ -66,5 +66,5 @@
 
             return { script: [jsonldItems] }
         },
-    }
+    })
 </script>

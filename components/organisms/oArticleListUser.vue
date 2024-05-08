@@ -6,7 +6,7 @@
         <!-- SHOW - skeleton END -->
 
         <!-- SHOW - client -->
-        <client-only v-if="posts !== null">
+        <client-only v-if="posts !== null && !skeleton">
             <div :class="'o-article-list-user' + (styleThema ? styleThema : '') + (styleAlign ? styleAlign : '')">
                 <div class="o-article-list-user-list__outer">
                     <div class="o-article-list-user__items">
@@ -61,7 +61,7 @@
     import skeletonoArticleListUser from '~/components/skeleton/skeletonoArticleListUser.vue'
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoArticleListComponent',
 
         components: {
@@ -175,5 +175,5 @@
                 ]
             }
         }
-    }
+    })
 </script>

@@ -142,7 +142,7 @@
     import aImage from '~/components/atoms/aImage.vue'
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoFormReviewItemComponent',
 
         components: {
@@ -389,5 +389,5 @@
                 this.$emit('update', newValue)
             }
         }
-    }
+    })
 </script>

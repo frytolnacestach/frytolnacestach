@@ -16,7 +16,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoAutorSidebarComponent',
 
         props: {
@@ -32,29 +32,18 @@
             }
         },
 
-        async mounted() {
-            let success = false
-            let data = null
-
-            while (!success) {
-                try {
-                    // API - GET - user
-                    const user = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-id/${this.author}`)
-
-                    // DATA
-                    data = { user }
-
-                    // FINAL
-                    success = true
-                } catch (error) {
-                    console.log(`API ERROR - O AUTHOR SIDEBAR`)
-                    console.error(error)
-
-                    await new Promise(resolve => setTimeout(resolve, 1000))
+        methods: {
+            async fetchData() {
+                if (this.author !== null) {
+                    // API - GET
+                    const responseUser = await fetch(`https://api.frytolnacestach.cz/api/user-id/${this.author}`)
+                    this.user = await responseUser.json() || []
                 }
             }
+        },
 
-            Object.assign(this, data)
+        mounted() {
+            this.fetchData()
         }
-    }
+    })
 </script>

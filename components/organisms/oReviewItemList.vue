@@ -115,7 +115,7 @@
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
     import skeletonoReviewItemList from '~/components/skeleton/skeletonoReviewItemList.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoReviewItemListComponent',
 
         components: {
@@ -193,6 +193,13 @@
         },
 
         methods: {
+            async fetchData() {
+                // API - GET - User
+                const usersReviewsIDS = this.reviews.map(review => review.id_user).filter(id => id !== null && id !== '')
+                const responseUsers = await fetch(`https://api.frytolnacestach.cz/api/users-ids?id=${usersReviewsIDS.join(',')}`)
+                this.users = await responseUsers.json() || []
+            },
+
             async editReview() {
                 try {
                     // API - POST
@@ -288,32 +295,8 @@
             }
         },
 
-        async mounted() {
-            let success = false
-            let data = null
-
-            while (!success) {
-                try {
-                    // API - GET - User
-                    const usersReviewsIDS = this.reviews.map(review => review.id_user).filter(id => id !== null && id !== '')
-                    const users = await this.$axios.$get(`https://api.frytolnacestach.cz/api/users-ids?id=${usersReviewsIDS.join(',')}`)
-
-                    // DATA
-                    data = {
-                        users
-                    }
-
-                    // FINAL
-                    success = true
-                } catch (error) {
-                    console.log(`API ERROR - UŽIVATELSKÉ RECENZE`)
-                    console.error(error)
-
-                    await new Promise(resolve => setTimeout(resolve, 1000))
-                }
-            }
-
-            Object.assign(this, data)
+        mounted() {
+            this.fetchData()
         }
-    }
+    })
 </script>

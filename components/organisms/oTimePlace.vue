@@ -55,7 +55,7 @@
     import skeletonoTimePlace from '~/components/skeleton/skeletonoTimePlace.vue'
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoTimePlaceComponent',
 
         components: {
@@ -208,5 +208,5 @@
 
             return { script: [jsonldPlaces] }
         }
-    }
+    })
 </script>

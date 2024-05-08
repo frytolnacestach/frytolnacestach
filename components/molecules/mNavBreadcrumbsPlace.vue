@@ -21,16 +21,12 @@
 </template>
 
 <script>
-   export default {
+   export default defineComponent({
         name: 'MoleculesmNavBreadcrumbsPlaceComponent',
 
         props: {
             links: {
                 type: Array,
-                required: true
-            },
-            place: {
-                type: Object,
                 required: true
             },
             tab: {
@@ -42,5 +38,5 @@
                 required: false
             }
         }
-    }
+    })
 </script>

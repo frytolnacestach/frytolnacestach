@@ -39,7 +39,7 @@
 <script>
     import skeletonoAchievements from '~/components/skeleton/skeletonoAchievements.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoAchievementsListComponent',
 
         components: {
@@ -244,33 +244,28 @@
             },
 
             async fetchData() {
-                try {
-                    if (this.type === "account") {
-                        if (this.account && this.account.length !== 0) {
-                            if (process.client) {
-                                // API - GET - Achievements
-                                this.achievements = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${this.account[0].id}`)
-                                this.achievementsList = this.createAchievementsList(this.achievements)
-
-                                // Final
-                                this.skeleton = false
-                            }
-                        }
-                    } else {
+                if (this.type === "account") {
+                    if (this.account && this.account.length !== 0) {
                         if (process.client) {
                             // API - GET - Achievements
-                            this.achievements = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${this.idUser}`)
+                            const responseAchievements = await fetch(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${this.account[0].id}`)
+                            this.achievements = await responseAchievements.json()
                             this.achievementsList = this.createAchievementsList(this.achievements)
 
                             // Final
                             this.skeleton = false
                         }
                     }
-                } catch (error) {
-                    console.log(`API ERROR - ACHIEMENTY`)
-                    console.error(error)
+                } else {
+                    if (process.client) {
+                        // API - GET - Achievements
+                        const responseAchievements = await fetch(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${this.idUser}`)
+                        this.achievements = await responseAchievements.json()
+                        this.achievementsList = this.createAchievementsList(this.achievements)
 
-                    await new Promise(resolve => setTimeout(resolve, 1000))
+                        // Final
+                        this.skeleton = false
+                    }
                 }
             }
         },
@@ -281,5 +276,5 @@
                 immediate: true
             }
         }
-    }
+    })
 </script>

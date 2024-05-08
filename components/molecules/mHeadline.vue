@@ -19,7 +19,7 @@
 <script>
     import aButtonFill from '~/components/atoms/aButtonFill.vue'
 
-    export default {
+    export default defineComponent({
         name: 'MoleculesmHeadlineComponent',
         
         components: {
@@ -65,5 +65,5 @@
                 required: false
             }
         }
-    }
+    })
 </script>

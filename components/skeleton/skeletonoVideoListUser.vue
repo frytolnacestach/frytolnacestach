@@ -16,7 +16,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'SkeletonoVideoListUserComponent',
 
         props: {
@@ -25,5 +25,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

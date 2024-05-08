@@ -13,63 +13,63 @@
 </template>
   
 <script>
-export default {
-    name: 'OrganismsoFlashMessagesComponent',
-  
-    props: {
-        dataMessages: {
-            type: Array,
-            required: true
-        }
-    },
-  
-    data() {
-        return {
-            messages: []
-        }
-    },
-
-    methods: {
-        updateMessageVisibility(index, visibility) {
-            this.$set(this.messages[index], 'visibility', visibility);
+    export default defineComponent({
+        name: 'OrganismsoFlashMessagesComponent',
+    
+        props: {
+            dataMessages: {
+                type: Array,
+                required: true
+            }
         },
-    },
-  
-    watch: {
-        dataMessages: {
-            handler(newData) {
-                this.messages = newData.map((item) => ({
-                    ...item,
-                    visibility: 'visible',
-                }))
+    
+        data() {
+            return {
+                messages: []
+            }
+        },
 
-                this.messages.forEach((item, index) => {
-                    if (item.date) {
-                        const currentTime = new Date().getTime();
-                        const expirationTime = new Date(item.date).getTime() + item.duration
+        methods: {
+            updateMessageVisibility(index, visibility) {
+                this.$set(this.messages[index], 'visibility', visibility);
+            },
+        },
+    
+        watch: {
+            dataMessages: {
+                handler(newData) {
+                    this.messages = newData.map((item) => ({
+                        ...item,
+                        visibility: 'visible',
+                    }))
 
-                        const timeout = expirationTime - currentTime
+                    this.messages.forEach((item, index) => {
+                        if (item.date) {
+                            const currentTime = new Date().getTime();
+                            const expirationTime = new Date(item.date).getTime() + item.duration
 
-                        if (timeout > 0) {
-                            setTimeout(() => {
+                            const timeout = expirationTime - currentTime
+
+                            if (timeout > 0) {
+                                setTimeout(() => {
+                                    this.updateMessageVisibility(index, 'hidden')
+                                }, timeout);
+                            } else {
                                 this.updateMessageVisibility(index, 'hidden')
-                            }, timeout);
-                        } else {
-                            this.updateMessageVisibility(index, 'hidden')
+                            }
                         }
-                    }
-                })
+                    })
+                },
+                immediate: true
             },
-            immediate: true
-        },
 
-        messages: {
-            handler(newMessage) {
-                console.log('Změna message:', newMessage)
-            },
-            deep: true
+            messages: {
+                handler(newMessage) {
+                    console.log('Změna message:', newMessage)
+                },
+                deep: true
+            }
         }
-    }
-}
+    })
 </script>
   

@@ -1,25 +1,27 @@
 <template>
-    <main class="t-main -blue -pt-menu" role="main">
-        <div class="t-main__content">
+    <NuxtLayout name="default">
+        <main class="t-main -blue -pt-menu" role="main">
+            <div class="t-main__content">
 
-            <!-- SECTION - Hero -->
-            <section class="t-section -p0 pt-2 pb-1">
-                <div class="t-section__inner">
-                    <oHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
-                </div>
-            </section>
-            <!-- SECTION - Hero END -->
+                <!-- SECTION - Hero -->
+                <section class="t-section -p0 pt-2 pb-1">
+                    <div class="t-section__inner">
+                        <oHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
+                    </div>
+                </section>
+                <!-- SECTION - Hero END -->
 
-            <!-- SECTION - Form Login -->
-            <section class="t-section -p0 pt-2 pb-1">
-                <div class="t-section__inner">
-                    <oFormLogin />
-                </div>
-            </section>
-            <!-- SECTION - Form Login END -->
+                <!-- SECTION - Form Login -->
+                <section class="t-section -p0 pt-2 pb-1">
+                    <div class="t-section__inner">
+                        <oFormLogin />
+                    </div>
+                </section>
+                <!-- SECTION - Form Login END -->
 
-        </div>
-    </main>
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
@@ -30,7 +32,7 @@
     import oHero from '~/components/organisms/oHero.vue'
     import oFormLogin from '~/components/organisms/oFormLogin.vue'
 
-    export default {
+    export default defineComponent({
         name: 'UcetPrihlaseniPage',
         
         components: {
@@ -107,5 +109,5 @@
         mounted() {
             loginCheckLogin(this.$router)
         }
-    }
+    })
 </script>

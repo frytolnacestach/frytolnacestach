@@ -37,7 +37,7 @@
     import mNavMainProfile from '~/components/molecules/mNavMainProfile.vue'
     import mHamburger from '~/components/molecules/mHamburger.vue'
 
-    export default {
+    export default defineComponent({
         name: 'ComponentHeaderComponent',
 
         components: {
@@ -47,5 +47,5 @@
             mNavMainProfile,
             mHamburger
         }
-    }
+    })
 </script>

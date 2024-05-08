@@ -61,7 +61,7 @@
     import skeletonoUserList from '~/components/skeleton/skeletonoUserList.vue'
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoUserListComponent',
 
         components: {
@@ -207,5 +207,5 @@
 
             return { script: [jsonldItems] }
         }
-    }
+    })
 </script>

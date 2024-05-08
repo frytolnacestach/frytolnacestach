@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/ucet/registrace-dokoncena", {data:[{}],fetch:{},mutations:[]});

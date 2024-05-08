@@ -1,37 +1,39 @@
 <template>
-    <main class="t-main -green -pt-menu" role="main">
-        <div class="t-main__content">
+    <NuxtLayout name="default">
+        <main class="t-main -green -pt-menu" role="main">
+            <div class="t-main__content">
 
-            <!-- SECTION - Hero place type -->
-            <section class="t-section py-4">
-                <div class="t-section__inner">
-                    <oHeroPlaceType styleType=" -spot" :title="headlineFilter" perex="Vstup do jedinečného světa objevování míst na celém světě. Prozkoumej parky, památky, muzea a architektonické skvosty, které tě vtáhnou do jejich fascinujících příběhů. Každé místo je jako kapitola v otevřené knize dobrodružství, nabízející ti nezapomenutelné zážitky." />
-                </div>
-            </section>
-            <!-- SECTION - Hero place type END -->
-
-            <!-- SECTION - Filter -->
-            <section class="t-section -p0 hidden-print">
-                <div class="t-section__inner">
-                    <oFormFilterPlace styleThema=" -green" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
-                </div>
-            </section>
-            <!-- SECTION - Filter END -->
-
-            <!-- SECTION - Place list -->
-            <section class="t-section -p0">
-                <div class="t-section__inner">
-                    <oCoverPlace :places="placesSpots" :placesParent="placesParent" :showPrename="true" :images="images" type="misto" />
-                    <oCoverPlace :places="null" :images="null" type="misto" :skeleton=true v-if="isLoading" />
-                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                <!-- SECTION - Hero place type -->
+                <section class="t-section py-4">
+                    <div class="t-section__inner">
+                        <oHeroPlaceType styleType=" -spot" :title="headlineFilter" perex="Vstup do jedinečného světa objevování míst na celém světě. Prozkoumej parky, památky, muzea a architektonické skvosty, které tě vtáhnou do jejich fascinujících příběhů. Každé místo je jako kapitola v otevřené knize dobrodružství, nabízející ti nezapomenutelné zážitky." />
                     </div>
-                </div>
-            </section>
-            <!-- SECTION - Place list END -->
-            
-        </div>
-    </main>
+                </section>
+                <!-- SECTION - Hero place type END -->
+
+                <!-- SECTION - Filter -->
+                <section class="t-section -p0 hidden-print">
+                    <div class="t-section__inner">
+                        <oFormFilterPlace styleThema=" -green" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
+                    </div>
+                </section>
+                <!-- SECTION - Filter END -->
+
+                <!-- SECTION - Place list -->
+                <section class="t-section -p0">
+                    <div class="t-section__inner">
+                        <oCoverPlace :places="placesSpots" :placesParent="placesParent" :showPrename="true" :images="images" type="misto" />
+                        <oCoverPlace :places="null" :images="null" type="misto" :skeleton=true v-if="isLoading" />
+                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                            <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - Place list END -->
+                
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
@@ -39,7 +41,7 @@
     import oFormFilterPlace from '~/components/organisms/oFormFilterPlace.vue'
     import oHeroPlaceType from '~/components/organisms/oHeroPlaceType.vue'
 
-    export default {
+    export default defineComponent({
         name: 'SvetMistoIndexPage',
 
         components: {
@@ -148,37 +150,36 @@
             this.addScrollListener()
         },
 
-        methods:{
+        methods: {
             async loadPlaces(reset) {
                 //start loading
                 this.isLoading = true
 
                 // Variable
-                let placesResponse
+                let responsePlaces
 
                 //load places
                 if (this.filterPlace !== null) {
-                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-spots?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
+                    responsePlaces = await fetch(`https://api.frytolnacestach.cz/api/places-spots?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
                 } else {
-                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-spots?showType=list&page=${this.page}&items=${this.perPage}`)
+                    responsePlaces = await fetch(`https://api.frytolnacestach.cz/api/places-spots?showType=list&page=${this.page}&items=${this.perPage}`)
                 }
-                const { data: placesData } = placesResponse
+                const placesData = await responsePlaces.json()
 
                 //load places parent
                 let placesParentIDS = placesData.map(placeSpot => placeSpot.id_state).filter(id => id !== undefined && id !== null && id !== '')
                 placesParentIDS = [...new Set(placesParentIDS)]
                 const [placesParentResponse] = await Promise.all([
-                    this.$axios.get(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${placesParentIDS.join(',')}`)
+                await fetch(`https://api.frytolnacestach.cz/api/places-states-array?showType=list&id=${placesParentIDS.join(',')}`)
                 ])
-                const { data: placesParentData } = placesParentResponse
-
+                const placesParentData = await placesParentResponse.json()
                 this.placesParent = this.placesParent.concat(placesParentData)
 
                 //load images
                 const imagesPlacesSpotsIDS = placesData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
                 if (imagesPlacesSpotsIDS.length > 0) {
-                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesSpotsIDS.join(',')}`)
-                    const { data: imagesData } = imagesResponse
+                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesSpotsIDS.join(',')}`)
+                    const imagesData = await responseImages.json()
                     this.images = this.images.concat(imagesData)
                 
                     // add to placecesData to placesSpots
@@ -275,5 +276,5 @@
         beforeDestroy() {
             this.removeScrollListener()
         }
-    }
+    })
 </script>

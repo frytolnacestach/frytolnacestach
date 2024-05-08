@@ -49,7 +49,7 @@
     import aImage from '~/components/atoms/aImage.vue'
     import mHeadline from '~/components/molecules/mHeadline.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoCoverTitleItemStateComponent',
 
         components: {
@@ -209,52 +209,48 @@
             return { script: [jsonldItems] }
         },
 
-        async mounted() {
-            let success = false
-            let data = null
-
-            while (!success) {
-                try {
-                    let items = []
-
-                    // API - GET - ITEMS
+        methods: {
+            async fetchData() {
+                // API - GET - ITEMS
+                if (this.placeStateID && this.placeStateID.length > 0) {
                     if ( this.type === "jidlo" ) {
                         // API - GET - Foods
-                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/foods-id-state/${this.placeStateID}?showType=list`) : []
+                        this.items = await fetch(`https://api.frytolnacestach.cz/api/foods-id-state/${this.placeStateID}?showType=list`)
+                        this.items = await responseItems.json() || []
                     } else if ( this.type === "fauna" ) {
                         // API - GET - Faunas
-                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/faunas-id-state/${this.placeStateID}?showType=list`) : []
+                        this.items = await fetch(`https://api.frytolnacestach.cz/api/faunas-id-state/${this.placeStateID}?showType=list`)
+                        this.items = await responseItems.json() || []
                     } else if ( this.type === "flora" ) {
                         // API - GET - Floras
-                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/floras-id-state/${this.placeStateID}?showType=list`) : []
+                        this.items = await fetch(`https://api.frytolnacestach.cz/api/floras-id-state/${this.placeStateID}?showType=list`)
+                        this.items = await responseItems.json() || []
                     } else if ( this.type === "znacka" ) {
                         // API - GET - Brands
-                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/brands-id-state/${this.placeStateID}?showType=list`) : []
+                        this.items = await fetch(`https://api.frytolnacestach.cz/api/brands-id-state/${this.placeStateID}?showType=list`)
+                        this.items = await responseItems.json() || []
                     } else if ( this.type === "elektricka-zasuvka" ) {
                         // API - GET - Wall sockets
-                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/wall-sockets-id-state/${this.placeStateID}?showType=list`) : []
+                        this.items = await fetch(`https://api.frytolnacestach.cz/api/wall-sockets-id-state/${this.placeStateID}?showType=list`)
+                        this.items = await responseItems.json() || []
                     } else if ( this.type === "retezec" ) {
                         // API - GET - Chains
-                        items = this.placeStateID ? await this.$axios.$get(`https://api.frytolnacestach.cz/api/chains-id-state/${this.placeStateID}?showType=list`) : []
+                        this.items = await fetch(`https://api.frytolnacestach.cz/api/chains-id-state/${this.placeStateID}?showType=list`)
+                        this.items = await responseItems.json() || []
                     }
-                    // API - GET - Images
+                }
+            
+                // API - GET - Images
+                if (this.items && this.items.length > 0) {
                     const imagesItemsID = items.map(item => item.id_image_cover).filter(id => id !== null && id !== '')
-                    const images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesItemsID.join(',')}`)
-
-                    // DATA
-                    data = { items, images }
-
-                    // FINAL
-                    success = true
-                } catch (error) {
-                    console.log(`API ERROR - VYPIS oCoverTitleItemState`)
-                    console.error(error)
-
-                    await new Promise(resolve => setTimeout(resolve, 1000))
+                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesItemsID.join(',')}`)
+                    this.images = await responseImages.json() || []
                 }
             }
+        },
 
-            Object.assign(this, data)
+        mounted() {
+            this.fetchData()
         }
-    }
+    })
 </script>

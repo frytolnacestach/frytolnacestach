@@ -1,5 +1,5 @@
 <template>
-    <div class="o-box-platform">
+    <div class="o-box-platform" v-if="platforms && platforms.length > 0">
         <div class="o-box-platform__outer">
             <div class="o-box-platform__inner">
                 <div class="o-box-platform__items">
@@ -32,12 +32,12 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoBoxPlatformComponent',
 
         data() {
             return {
-                platforms: []
+                platforms: this.platforms
             }
         },
 
@@ -68,9 +68,17 @@
             return { script: [jsonldPlatforms] }
         },
 
-        async fetch() {
-            // API - GET - Platforms
-            this.platforms = await fetch("https://api.frytolnacestach.cz/api/platforms").then((res) => res.json())
+        methods: {
+            async fetchData() {
+                // API - GET - Platforms
+                const responsePlatforms = await fetch("https://api.frytolnacestach.cz/api/platforms")
+                this.platforms = await responsePlatforms.json()
+            }
+        },
+
+        mounted() {
+            // GET Data
+            this.fetchData()
         }
-    }
+    })
 </script>

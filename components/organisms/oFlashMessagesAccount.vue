@@ -24,7 +24,7 @@
 <script>
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoFlashMessagesAccountComponent',
 
         components: {
@@ -104,5 +104,5 @@
                 }
             }
         }
-    }
+    })
 </script>

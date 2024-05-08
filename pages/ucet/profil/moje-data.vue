@@ -1,44 +1,46 @@
 <template>
-    <main class="t-main -blue -pt-menu" role="main">
-        <div class="t-main__content">
-            <section class="t-section -padding-x -padding-y -p0 mb-4">
-                <div class="t-section__inner">
-                    <div class="t-grid -account">
-                        <div class="t-grid__section -nav">
-                            
-                            <!-- SECTION - account headline - account -->
-                            <section class="t-section -padding-x -p0">
-                                <div class="t-section__inner">
-                                    <mAccountHeader :account="account" @update="menuAccountUpdate" />
-                                </div>
-                            </section>
-                            <!-- SECTION - nav - account END -->
+    <NuxtLayout name="default">
+        <main class="t-main -blue -pt-menu" role="main">
+            <div class="t-main__content">
+                <section class="t-section -padding-x -padding-y -p0 mb-4">
+                    <div class="t-section__inner">
+                        <div class="t-grid -account">
+                            <div class="t-grid__section -nav">
+                                
+                                <!-- SECTION - account headline - account -->
+                                <section class="t-section -padding-x -p0">
+                                    <div class="t-section__inner">
+                                        <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - nav - account END -->
 
-                            <!-- SECTION - nav - account -->
-                            <section class="t-section -padding-x -p0">
-                                <div class="t-section__inner">
-                                    <mNavAccount :statusOpen="mNavAccountOpen" />
-                                </div>
-                            </section>
-                            <!-- SECTION - nav - account END -->
+                                <!-- SECTION - nav - account -->
+                                <section class="t-section -padding-x -p0">
+                                    <div class="t-section__inner">
+                                        <mNavAccount :statusOpen="mNavAccountOpen" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - nav - account END -->
 
-                        </div>
-                        <div class="t-grid__section -content">
-                            
-                            <!-- SECTION - Headline -->
-                            <section class="t-section -padding-x -p0">
-                                <div class="t-section__inner">
-                                    <mHeadline title="Moje data" perex="Pro zaslání uživatelský dat nás prosím kontaktujte na admin@frytolnacestach.cz. Za nedlouho vám tyto data budeme poskytovat automaticky." styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                </div>
-                            </section>
-                            <!-- SECTION - Headline END -->
+                            </div>
+                            <div class="t-grid__section -content">
+                                
+                                <!-- SECTION - Headline -->
+                                <section class="t-section -padding-x -p0">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Moje data" perex="Pro zaslání uživatelský dat nás prosím kontaktujte na admin@frytolnacestach.cz. Za nedlouho vám tyto data budeme poskytovat automaticky." styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Headline END -->
 
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
-    </main>
+                </section>
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
@@ -48,7 +50,7 @@
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import mNavAccount from '~/components/molecules/mNavAccount.vue'
 
-    export default {
+    export default defineComponent({
         name: 'UcetMojeDataPage',
         
         components: {
@@ -59,7 +61,7 @@
 
         data() {
             return {
-                account: [],
+                account: useAccountData().accountData,
                 mNavAccountOpen: false
             }
         },
@@ -130,16 +132,6 @@
             menuAccountUpdate(newValue) {
                 this.mNavAccountOpen = newValue
             }
-        },
-
-        watch: {
-            '$store.state.account': {
-                deep: true,
-                immediate: true,
-                handler() {
-                    this.account = this.$store.state.account
-                }
-            }
         }
-    }
+    })
 </script>

@@ -35,7 +35,7 @@
     import skeletonoVisitedButton from '~/components/skeleton/skeletonoVisitedButton.vue'
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoVisitedButtonComponent',
 
         components: {
@@ -202,5 +202,5 @@
                 immediate: true
             }
         }
-    }
+    })
 </script>

@@ -60,7 +60,7 @@
 <script>
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoSidebarEventComponent',
 
         components: {
@@ -148,5 +148,5 @@
             const imagesEventsID = this.events.map(event => event.id_image_cover).filter(id => id !== null && id !== '')
             this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesEventsID.join(',')}`).then((res) => res.json())
         }
-    }
+    })
 </script>

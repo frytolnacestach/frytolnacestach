@@ -1,36 +1,38 @@
 <template>
-    <main class="t-main -green -pt-menu" role="main">
-        <div class="t-main__content">
+    <NuxtLayout name="default">
+        <main class="t-main -green -pt-menu" role="main">
+            <div class="t-main__content">
 
-            <!-- SECTION - Hero place type -->
-            <section class="t-section py-4">
-                <div class="t-section__inner">
-                    <oHeroPlaceType styleType=" -continent" title="Kontinenty" perex="Zveme tě na neuvěřitelnou cestu kolem světa, abys prozkoumal všech 7 kontinentů naší planety. Objevuj fascinující kultury, přírodní divy a tajemná místa včetně odlehlé Antarktidy. Připrav se na dobrodružství, které tě zavede do různých koutů světa a otevře ti dveře k nezapomenutelným zážitkům." />
-                </div>
-            </section>
-            <!-- SECTION - Hero place type END -->
-
-            <!-- SECTION - Place list -->
-            <section class="t-section -p0">
-                <div class="t-section__inner">
-                    <oCoverPlace :places="placesContinents" :images="images" type="kontinent" />
-                    <oCoverPlace :places="null" :images="null" type="kontinent" :skeleton=true v-if="isLoading" />
-                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                <!-- SECTION - Hero place type -->
+                <section class="t-section py-4">
+                    <div class="t-section__inner">
+                        <oHeroPlaceType styleType=" -continent" title="Kontinenty" perex="Zveme tě na neuvěřitelnou cestu kolem světa, abys prozkoumal všech 7 kontinentů naší planety. Objevuj fascinující kultury, přírodní divy a tajemná místa včetně odlehlé Antarktidy. Připrav se na dobrodružství, které tě zavede do různých koutů světa a otevře ti dveře k nezapomenutelným zážitkům." />
                     </div>
-                </div>
-            </section>
-            <!-- SECTION - Place list END -->
-            
-        </div>
-    </main>
+                </section>
+                <!-- SECTION - Hero place type END -->
+
+                <!-- SECTION - Place list -->
+                <section class="t-section -p0">
+                    <div class="t-section__inner">
+                        <oCoverPlace :places="placesContinents" :images="images" type="kontinent" />
+                        <oCoverPlace :places="null" :images="null" type="kontinent" :skeleton=true v-if="isLoading" />
+                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                            <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - Place list END -->
+                
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
     import oCoverPlace from '~/components/organisms/oCoverPlace.vue'
     import oHeroPlaceType from '~/components/organisms/oHeroPlaceType.vue'
 
-    export default {
+    export default defineComponent({
         name: 'SvetKontinentIndexPage',
 
         components: {
@@ -130,23 +132,23 @@
             this.addScrollListener()
         },
 
-        methods:{
+        methods: {
             async loadPlaces() {
                 //start loading
                 this.isLoading = true
 
                 // Variable
-                let placesResponse
+                let responsePlaces
 
                 //load places
-                placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-continents?showType=list&page=${this.page}&items=${this.perPage}`)
-                const { data: placesData } = placesResponse
+                responsePlaces = await fetch(`https://api.frytolnacestach.cz/api/places-continents?showType=list&page=${this.page}&items=${this.perPage}`)
+                const placesData = await responsePlaces.json()
 
                 //load images
                 const imagesPlacesContinentsIDS = placesData.map(placeContinent => placeContinent.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
                 if (imagesPlacesContinentsIDS.length > 0) {
-                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesContinentsIDS.join(',')}`)
-                    const { data: imagesData } = imagesResponse
+                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesContinentsIDS.join(',')}`)
+                    const imagesData = await responseImages.json()
                     this.images = this.images.concat(imagesData)
                 
                     // add to placecesData to placesContinent
@@ -210,5 +212,5 @@
         beforeDestroy() {
             this.removeScrollListener()
         }
-    }
+    })
 </script>

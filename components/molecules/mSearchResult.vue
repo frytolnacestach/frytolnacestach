@@ -29,7 +29,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'ModulesmSearchResult',
 
         props: {
@@ -70,5 +70,5 @@
                 this.$emit('select', true);
             }
         }
-    }
+    })
 </script>

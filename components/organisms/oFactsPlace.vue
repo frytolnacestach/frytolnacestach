@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoFactsPlaceComponent',
 
         props: {
@@ -51,5 +51,5 @@
 
             return { script: [jsonldItems] }
         }
-    }
+    })
 </script>

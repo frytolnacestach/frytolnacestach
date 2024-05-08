@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'MoleculesmHamburgerComponent',
 
         mounted() {
@@ -52,5 +52,5 @@
                 })
             }
         }
-    }
+    })
 </script>

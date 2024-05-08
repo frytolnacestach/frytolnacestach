@@ -1,38 +1,40 @@
 <template>
-    <main class="t-main -green -pt-menu" role="main">
-        <div class="t-main__content">
-            <section class="t-section print-section">
+    <NuxtLayout name="default">
+        <main class="t-main -green -pt-menu" role="main">
+            <div class="t-main__content">
+                <section class="t-section print-section">
 
-                <!-- SECTION - Hero food -->
-                <section class="t-section py-4">
-                    <div class="t-section__inner">
-                        <oHero headline="Jídla" perex="Objevuj různorodá a chutná jídla, která můžeš ochutnat po celém světě. Kdekoliv se ocitneš, můžeš se těšit na unikátní kulinářské zážitky a objevovat místní lahůdky. S naším průvodcem po světě gastronomie na stránkách cestovatelského portálu Frytol na cestách. Budeš mít přehled o tom, kde se co jí." modifierCSS=" -green -w640" classCSS=" mt-2" />
-                    </div>
-                </section>
-                <!-- SECTION - Hero food END -->
-
-                <!-- SECTION - cestovatelsky slovnik list -->
-                <section class="t-section -p0">
-                    <div class="t-section__inner">
-                        <oCoverItem :items="foods" :images="images" type="jidlo" />
-                        <oCoverItem :items="null" :images="null" type="jidlo" :skeleton=true v-if="isLoading" />
-                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                            <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                    <!-- SECTION - Hero food -->
+                    <section class="t-section py-4">
+                        <div class="t-section__inner">
+                            <oHero headline="Jídla" perex="Objevuj různorodá a chutná jídla, která můžeš ochutnat po celém světě. Kdekoliv se ocitneš, můžeš se těšit na unikátní kulinářské zážitky a objevovat místní lahůdky. S naším průvodcem po světě gastronomie na stránkách cestovatelského portálu Frytol na cestách. Budeš mít přehled o tom, kde se co jí." modifierCSS=" -green -w640" classCSS=" mt-2" />
                         </div>
-                    </div>
+                    </section>
+                    <!-- SECTION - Hero food END -->
+
+                    <!-- SECTION - cestovatelsky slovnik list -->
+                    <section class="t-section -p0">
+                        <div class="t-section__inner">
+                            <oCoverItem :items="foods" :images="images" type="jidlo" v-if="foods && foods.length > 0" />
+                            <oCoverItem :items="[]" :images="[]" type="jidlo" :skeleton=true v-if="isLoading" />
+                            <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                                <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION - cestovatelsky slovnik list END -->
+                    
                 </section>
-                <!-- SECTION - cestovatelsky slovnik list END -->
-                
-            </section>
-        </div>
-    </main>
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
     import oCoverItem from '~/components/organisms/oCoverItem.vue'
     import oHero from '~/components/organisms/oHero.vue'
 
-    export default {
+    export default defineComponent({
         name: 'JidloIndexPage',
 
         components: {
@@ -127,35 +129,23 @@
             }
         },
 
-        async mounted() {
-            await this.loadItems()
-            this.addScrollListener()
-        },
-
-        methods:{
+        methods: {
             async loadItems() {
                 //start loading
                 this.isLoading = true
 
                 //load foods
-                const [foodsResponse] = await Promise.all([
-                    this.$axios.get(`https://api.frytolnacestach.cz/api/foods?showType=list&page=${this.page}&items=${this.perPage}`)
-                ])
-                const { data: foodsData } = foodsResponse
+                const responseFoods = await fetch(`https://api.frytolnacestach.cz/api/foods?showType=list&page=${this.page}&items=${this.perPage}`)
+                const foodsData = await responseFoods.json() || []
+                this.foods = this.foods.concat(foodsData)
 
                 //load images
                 const imagesFoodsIDS = foodsData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
                 if (imagesFoodsIDS.length > 0) {
-                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFoodsIDS.join(',')}`)
-                    const { data: imagesData } = imagesResponse
+                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesFoodsIDS.join(',')}`)
+                    const imagesData = await responseImages.json() || []
                     this.images = this.images.concat(imagesData)
-                
-                    // add to placecesData to foods
-                    this.foods = this.foods.concat(foodsData)
-                } else {
-                    // add to placecesData to foods
-                    this.foods = this.foods.concat(foodsData)
-                } 
+                }
 
                 //no more items?
                 if (foodsData.length === 0 || foodsData.length < this.perPage) {
@@ -208,8 +198,13 @@
             }
         },
 
+        mounted() {
+            this.loadItems()
+            this.addScrollListener()
+        },
+        
         beforeDestroy() {
             this.removeScrollListener()
         }
-    }
+    })
 </script>

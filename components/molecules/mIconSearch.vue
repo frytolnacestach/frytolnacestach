@@ -10,7 +10,7 @@
 <script>
     import oPopupSearch from '@/components/organisms/oPopupSearch.vue'
 
-    export default {
+    export default defineComponent({
         name: 'MoleculesmIconSearchComponent',
 
         components: {
@@ -41,5 +41,5 @@
                 })
             }
         }
-    }
+    })
 </script>

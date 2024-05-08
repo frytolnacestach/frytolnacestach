@@ -3,7 +3,7 @@
         <div class="o-hot-info-hero__outer">
             <div class="o-hot-info-hero__inner">
                 <div class="o-hot-info-hero__items">
-                    <div class="o-hot-info-hero__item" :class="item.url ? '-link' : ''" v-for="item in data" :key="item.id" v-if="item.url !== '_ODKAZ_'">
+                    <div class="o-hot-info-hero__item" :class="item.url ? '-link' : ''" v-for="item in data" :key="item.id">
                         <div class="o-hot-info-hero__container">
                             <div class="o-hot-info-hero__content">
                                 <NuxtLink class="o-hot-info-hero__link" :to="item.url" v-if="item.url">
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoHotInfoHeroComponent',
 
         props: {
@@ -53,5 +53,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

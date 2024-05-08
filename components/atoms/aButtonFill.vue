@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'AtomsaButtonFillComponent',
         
         props: {
@@ -30,5 +30,5 @@
                 required: false
             }
         }
-    }
+    })
 </script>

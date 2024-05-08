@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/znacka", {data:[{}],fetch:{},mutations:[]});

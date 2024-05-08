@@ -12,12 +12,12 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'MoleculesmNavMainProfileComponent',
 
         data() {
             return {
-                account: []
+                account: useAccountData().accountData
             }
         },
         
@@ -29,16 +29,6 @@
                 }
                 return nickname
             }
-        },
-
-        watch: {
-            '$store.state.account': {
-                deep: true,
-                immediate: true,
-                handler() {
-                    this.account = this.$store.state.account
-                }
-            }
         }
-    }
+    })
 </script>

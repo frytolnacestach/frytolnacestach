@@ -7,11 +7,11 @@
 <script>
     import oPrintFront from '~/components/organisms/oPrintFront.vue'
 
-    export default {
+    export default defineComponent({
         name: 'ComponentPrintFrontComponent',
 
         components: {
             oPrintFront
         }
-    }
+    })
 </script>

@@ -130,7 +130,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoDirectorySubpagesComponent',
 
         props: {
@@ -147,5 +147,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

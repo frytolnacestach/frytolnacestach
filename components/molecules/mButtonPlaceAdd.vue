@@ -10,7 +10,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'MoleculesmButtonPlaceAddComponent',
         
         props: {
@@ -25,5 +25,5 @@
                 this.$emit('add-place-clicked')
             }
         }
-    }
+    })
 </script>

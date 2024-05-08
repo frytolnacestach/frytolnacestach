@@ -17,7 +17,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoAdGoogleWysiwygComponent',
 
         props: {
@@ -42,7 +42,7 @@
             }
         },
 
-        methods:{
+        methods: {
             adsenseAddLoad() {
                 let inlineScript   = document.createElement("script")
                 inlineScript.type  = "text/javascript"
@@ -74,5 +74,5 @@
             this.adsenseTitle()
             this.checkAdStatus()
         }
-    }
+    })
 </script>

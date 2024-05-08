@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/cestovatelsky-slovnik", {data:[{}],fetch:{},mutations:[]});

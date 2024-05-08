@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/ucet/heslo-obnoveno", {data:[{}],fetch:{},mutations:[]});

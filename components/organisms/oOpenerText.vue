@@ -7,7 +7,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoOpenerTextComponent',
 
         props: {
@@ -16,5 +16,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

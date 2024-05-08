@@ -11,7 +11,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoHeroPlaceTypeComponent',
 
         props: {
@@ -28,5 +28,5 @@
                 required: false
             }
         }
-    }
+    })
 </script>

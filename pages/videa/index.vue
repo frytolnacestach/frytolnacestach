@@ -1,48 +1,50 @@
 <template>
-    <main class="t-main -gray -pt-menu" role="main">
-        <div class="t-main__content">
-            <!-- SECTION - Hero -->
-            <section class="t-section -p0 mt-2 mb-4">
-                <div class="t-section__inner">
-                    <oHero :headline="headlineFilter" perex="Vítej na našem cestovatelském portálu! Podívej se na naše videa plná dobrodružství a inspirace k cestování. Objevuj spolu s námi nejzajímavější místa na světě prostřednictvím autentických příběhů a praktických tipů. Připrav se na vlastní nezapomenutelné dobrodružství díky našim videím plným vzrušujících zážitků. Užívej si každý moment na cestách a objevuj krásy světa s námi!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
-                </div>
-            </section>
-            <!-- SECTION - Hero END -->
-
-            <!-- SECTION - Filter -->
-            <section class="t-section -p0 hidden-print">
-                <div class="t-section__inner">
-                    <oFormFilterPlace styleThema=" -gray" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
-                </div>
-            </section>
-            <!-- SECTION - Filter END -->
-
-            <!-- SECTION - videos -->
-            <section class="t-section -p0 py-1 px-2 print-section">
-                <div class="t-section__inner">
-                    <oVideoList :videos="videos" :images="images" styleThemaLoading=" -gray" styleSizeHeadline="h2" />
-                    <oVideoList :videos="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
-                    <oNoneContent text="Bohužel zde nejsou žádné videa" styleThema=" -green" styleGap=" px-1" v-if="videos && videos.length === 0 && !isLoading" />
-                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                        <span class="a-button-fill -big -gray" @click="loadMoreItems">Načíst další položky</span>
+    <NuxtLayout name="default">
+        <main class="t-main -gray -pt-menu" role="main">
+            <div class="t-main__content">
+                <!-- SECTION - Hero -->
+                <section class="t-section -p0 mt-2 mb-4">
+                    <div class="t-section__inner">
+                        <oHero :headline="headlineFilter" perex="Vítej na našem cestovatelském portálu! Podívej se na naše videa plná dobrodružství a inspirace k cestování. Objevuj spolu s námi nejzajímavější místa na světě prostřednictvím autentických příběhů a praktických tipů. Připrav se na vlastní nezapomenutelné dobrodružství díky našim videím plným vzrušujících zážitků. Užívej si každý moment na cestách a objevuj krásy světa s námi!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
                     </div>
-                </div>
-            </section>
-            <!-- SECTION - videos END -->
+                </section>
+                <!-- SECTION - Hero END -->
 
-            <!-- SECTION - Platforms -->
-            <section class="t-section -p0 py-1 mt-2 px-2 print-section">
-                <div class="t-section__inner">
-                    <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
-                    <oPlatform />
-                    <div class="flex flex-center mb-4">
-                        <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
+                <!-- SECTION - Filter -->
+                <section class="t-section -p0 hidden-print">
+                    <div class="t-section__inner">
+                        <oFormFilterPlace styleThema=" -gray" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
                     </div>
-                </div>
-            </section>
-            <!-- SECTION - Platforms END -->
-        </div>
-    </main>
+                </section>
+                <!-- SECTION - Filter END -->
+
+                <!-- SECTION - videos -->
+                <section class="t-section -p0 py-1 px-2 print-section">
+                    <div class="t-section__inner">
+                        <oVideoList :videos="videos" :images="images" styleThemaLoading=" -gray" styleSizeHeadline="h2" />
+                        <oVideoList :videos="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
+                        <oNoneContent text="Bohužel zde nejsou žádné videa" styleThema=" -green" styleGap=" px-1" v-if="videos && videos.length === 0 && !isLoading" />
+                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                            <span class="a-button-fill -big -gray" @click="loadMoreItems">Načíst další položky</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - videos END -->
+
+                <!-- SECTION - Platforms -->
+                <section class="t-section -p0 py-1 mt-2 px-2 print-section">
+                    <div class="t-section__inner">
+                        <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
+                        <oPlatform />
+                        <div class="flex flex-center mb-4">
+                            <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - Platforms END -->
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
@@ -54,7 +56,7 @@
     import oPlatform from '../../components/organisms/oPlatform.vue'
     import oVideoList from '~/components/organisms/oVideoList.vue'
 
-    export default {
+    export default defineComponent({
         name: 'VideaIndexPage',
 
         components: {
@@ -162,35 +164,28 @@
             window.lazySizes && window.lazySizes.update()
         },
 
-        async mounted() {
-            const filterIDstate = this.$route.query.filterIDstate
-            if (!filterIDstate) {
-                await this.loadVideos()
-            }
-            this.addScrollListener()
-        },
-
-        methods:{
+        methods: {
             async loadVideos(reset) {
                 //start loading
                 this.isLoading = true
 
                 // Variable
-                let videosResponse
+                let repsonseVideos
 
                 //load videos
                 if (this.filterPlace !== null) {
-                    videosResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/videos?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
+                    repsonseVideos = await fetch(`https://api.frytolnacestach.cz/api/videos?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
                 } else {
-                    videosResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/videos?showType=list&page=${this.page}&items=${this.perPage}`)
+                    repsonseVideos = await fetch(`https://api.frytolnacestach.cz/api/videos?showType=list&page=${this.page}&items=${this.perPage}`)
                 }
-                const { data: videosData } = videosResponse
+                const videosData = await repsonseVideos.json() || []
+                this.videos = this.videos.concat(videosData)
 
                 //load images
                 const imagesVideosIDS = videosData.map(videos => videos.id_image).filter(id => id !== undefined && id !== null && id !== '')
                 if (imagesVideosIDS.length > 0) {
-                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
-                    const { data: imagesData } = imagesResponse
+                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
+                    const imagesData = await responseImages.json() || []
                     this.images = this.images.concat(imagesData)
                 
                     // add to videosData to videos
@@ -283,8 +278,17 @@
             }
         },
 
+        mounted() {
+            const route = useRoute()
+            const filterIDstate = route.query.filterIDstate
+            if (!filterIDstate) {
+                this.loadVideos()
+            }
+            this.addScrollListener()
+        },
+
         beforeDestroy() {
             this.removeScrollListener()
         }
-    }
+    })
 </script>

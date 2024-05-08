@@ -57,7 +57,7 @@
     import skeletonoCoverTitleItem from '~/components/skeleton/skeletonoCoverTitleItem.vue'
     import aImage from '~/components/atoms/aImage.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoCoverTitleItemComponent',
 
         components: {
@@ -210,5 +210,5 @@
 
             return { script: [jsonldItems] }
         }
-    }
+    })
 </script>

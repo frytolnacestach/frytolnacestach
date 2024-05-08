@@ -25,7 +25,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'SkeletonoFormProfileComponent',
 
         props: {
@@ -34,5 +34,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

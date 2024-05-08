@@ -16,7 +16,7 @@
 <script>
     import aButtonFill from '~/components/atoms/aButtonFill.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoAccountBanneComponent',
 
         components: {
@@ -40,5 +40,5 @@
                 perex: "Založ si účet a otevři dveře k nezapomenutelným dobrodružstvím. Získej výhody jako označování svých cest, sbírání cestovatelských úspěchů a psaní recenzí. Staň se součástí naší cestovatelské komunity."
             }
         }
-    }
+    })
 </script>

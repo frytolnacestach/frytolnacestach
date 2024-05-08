@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/ucet/profil/zmena-hesla", {data:[{}],fetch:{},mutations:[]});

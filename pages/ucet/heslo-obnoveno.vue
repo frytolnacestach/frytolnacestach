@@ -1,25 +1,27 @@
 <template>
-    <main class="t-main -blue -pt-menu" role="main">
-        <div class="t-main__content">
+    <NuxtLayout name="default">
+        <main class="t-main -blue -pt-menu" role="main">
+            <div class="t-main__content">
 
-            <!-- SECTION - Hero -->
-            <section class="t-section -p0 pt-2 pb-1">
-                <div class="t-section__inner">
-                    <oHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
-                </div>
-            </section>
-            <!-- SECTION - Hero END -->
-            
-            <!-- SECTION - Button -->
-            <section class="t-section -p0 pt-2 pb-1">
-                <div class="t-section__inner flex flex-center">
-                    <aButtonFillFull target="internal" url="/ucet/profil" text="Zpět do profilu" styleThema=" -blue" styleSize=" -w400" styleFont=" -bold" />
-                </div>
-            </section>
-            <!-- SECTION - Button END -->
+                <!-- SECTION - Hero -->
+                <section class="t-section -p0 pt-2 pb-1">
+                    <div class="t-section__inner">
+                        <oHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
+                    </div>
+                </section>
+                <!-- SECTION - Hero END -->
+                
+                <!-- SECTION - Button -->
+                <section class="t-section -p0 pt-2 pb-1">
+                    <div class="t-section__inner flex flex-center">
+                        <aButtonFillFull target="internal" url="/ucet/profil" text="Zpět do profilu" styleThema=" -blue" styleSize=" -w400" styleFont=" -bold" />
+                    </div>
+                </section>
+                <!-- SECTION - Button END -->
 
-        </div>
-    </main>
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
@@ -29,7 +31,7 @@
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import oHero from '~/components/organisms/oHero.vue'
 
-    export default {
+    export default defineComponent({
         name: 'UcetHesloObnovenoPage',
         
         components: {
@@ -105,5 +107,5 @@
         mounted() {
             loginCheckLogout(this.$router)
         }
-    }
+    })
 </script>

@@ -1,50 +1,52 @@
 <template>
-    <main class="t-main -gray -pt-menu" role="main">
-        <div class="t-main__content">
+    <NuxtLayout name="default">
+        <main class="t-main -gray -pt-menu" role="main">
+            <div class="t-main__content">
 
-            <!-- SECTION - Hero -->
-            <section class="t-section -p0 mt-2 mb-4">
-                <div class="t-section__inner">
-                    <oHero :headline="headlineFilter" perex="Vítej na našem cestovatelském portálu! Prozkoumej naše články plné tipů a rad o cestování, které ti pomohou objevit nejzajímavější místa na světě. Ponoř se do dobrodružství s našimi autentickými příběhy a praktickými doporučeními, abys mohl/a plánovat své vlastní nezapomenutelné dobrodružství. Užij si každý moment na cestách a objevuj krásy světa s námi!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
-                </div>
-            </section>
-            <!-- SECTION - Hero END -->
-
-            <!-- SECTION - Filter -->
-            <section class="t-section -p0 hidden-print">
-                <div class="t-section__inner">
-                    <oFormFilterPlace styleThema=" -gray" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
-                </div>
-            </section>
-            <!-- SECTION - Filter END -->
-
-            <!-- SECTION - ArticlesList -->
-            <section class="t-section -p0 py-1 px-2 print-section">
-                <div class="t-section__inner">
-                    <oArticleList :posts="posts" :images="images" styleThemaLoading=" -gray" styleSizeHeadline="h2" />
-                    <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
-                    <oNoneContent text="Bohužel zde nejsou žádné články" styleThema=" -green" styleGap=" px-1" v-if="posts && posts.length === 0 && !isLoading" />
-                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                        <span class="a-button-fill -big -gray" @click="loadMoreItems">Načíst další položky</span>
+                <!-- SECTION - Hero -->
+                <section class="t-section -p0 mt-2 mb-4">
+                    <div class="t-section__inner">
+                        <oHero :headline="headlineFilter" perex="Vítej na našem cestovatelském portálu! Prozkoumej naše články plné tipů a rad o cestování, které ti pomohou objevit nejzajímavější místa na světě. Ponoř se do dobrodružství s našimi autentickými příběhy a praktickými doporučeními, abys mohl/a plánovat své vlastní nezapomenutelné dobrodružství. Užij si každý moment na cestách a objevuj krásy světa s námi!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
                     </div>
-                </div>
-            </section>
-            <!-- SECTION - ArticlesList END -->
+                </section>
+                <!-- SECTION - Hero END -->
 
-            <!-- SECTION - Platforms -->
-            <section class="t-section -p0 py-1 mt-2 px-2 print-section">
-                <div class="t-section__inner">
-                    <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
-                    <oPlatform />
-                    <div class="flex flex-center mb-4">
-                        <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
+                <!-- SECTION - Filter -->
+                <section class="t-section -p0 hidden-print">
+                    <div class="t-section__inner">
+                        <oFormFilterPlace styleThema=" -gray" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
                     </div>
-                </div>
-            </section>
-            <!-- SECTION - Platforms END -->
+                </section>
+                <!-- SECTION - Filter END -->
 
-        </div>
-    </main>
+                <!-- SECTION - ArticlesList -->
+                <section class="t-section -p0 py-1 px-2 print-section">
+                    <div class="t-section__inner">
+                        <oArticleList :posts="posts" :images="images" styleThemaLoading=" -gray" styleSizeHeadline="h2" />
+                        <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
+                        <oNoneContent text="Bohužel zde nejsou žádné články" styleThema=" -green" styleGap=" px-1" v-if="posts && posts.length === 0 && !isLoading" />
+                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                            <span class="a-button-fill -big -gray" @click="loadMoreItems">Načíst další položky</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - ArticlesList END -->
+
+                <!-- SECTION - Platforms -->
+                <section class="t-section -p0 py-1 mt-2 px-2 print-section">
+                    <div class="t-section__inner">
+                        <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
+                        <oPlatform />
+                        <div class="flex flex-center mb-4">
+                            <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - Platforms END -->
+
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
@@ -56,7 +58,7 @@
     import oNoneContent from '~/components/organisms/oNoneContent.vue'
     import oPlatform from '../../components/organisms/oPlatform.vue'
 
-    export default {
+    export default defineComponent({
         name: 'ClankyIndexPage',
 
         components: {
@@ -165,35 +167,30 @@
             window.lazySizes && window.lazySizes.update()
         },
 
-        async mounted() {
-            this.filterTag = this.$route.query.filterTag
-            await this.loadPosts()
-            this.addScrollListener()
-        },
-
-        methods:{
+        methods: {
             async loadPosts(reset) {
                 //start loading
                 this.isLoading = true
 
                 // Variable
-                let postsResponse
+                let responsePosts
 
                 //load posts
                 if (this.filterPlace !== null) {
-                    postsResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/posts?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
+                    responsePosts = await fetch(`https://api.frytolnacestach.cz/api/posts?showType=list&idState=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
                 } else if (this.filterTag) {
-                    postsResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/posts?showType=list&filterTag=${this.filterTag}&page=${this.page}&items=${this.perPage}`)
+                    responsePosts = await fetch(`https://api.frytolnacestach.cz/api/posts?showType=list&filterTag=${this.filterTag}&page=${this.page}&items=${this.perPage}`)
                 } else {
-                    postsResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/posts?showType=list&page=${this.page}&items=${this.perPage}`)
+                    responsePosts = await fetch(`https://api.frytolnacestach.cz/api/posts?showType=list&page=${this.page}&items=${this.perPage}`)
                 }
-                const { data: postsData } = postsResponse
+                const postsData = await responsePosts.json() || []
+                this.posts = this.posts.concat(postsData)
 
                 //load images
                 const imagesPostsIDS = postsData.map(posts => posts.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
                 if (imagesPostsIDS.length > 0) {
-                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
-                    const { data: imagesData } = imagesResponse
+                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
+                    const imagesData = await responseImages.json() || []
                     this.images = this.images.concat(imagesData)
                 
                     // add to postsData to posts
@@ -292,8 +289,15 @@
             }
         },
 
+        mounted() {
+            const route = useRoute()
+            this.filterTag = route.query.filterTag
+            this.loadPosts()
+            this.addScrollListener()
+        },
+
         beforeDestroy() {
             this.removeScrollListener()
         }
-    }
+    })
 </script>

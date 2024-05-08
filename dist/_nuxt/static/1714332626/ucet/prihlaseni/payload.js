@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/ucet/prihlaseni", {data:[{}],fetch:{},mutations:[]});

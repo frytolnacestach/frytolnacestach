@@ -30,7 +30,7 @@
 <script>
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoFormPlaceVisitedAddComponent',
 
         components: {
@@ -179,30 +179,31 @@
             },
 
             async searchPlaces() {
-                try {
-                    // API - GET - Items
-                    if (this.placeTypeApp === "continent") {
-                        // API - GET - Continents
-                        this.places = await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-continents?showType=search&search=${this.searchQuery}`)
-                    } else if (this.placeTypeApp === "state") {
-                        // API - GET - States
-                        this.places = await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-states?showType=search&search=${this.searchQuery}`)
-                    } else if (this.placeTypeApp === "region") {
-                        // API - GET - Regions
-                        this.places = await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-regions?showType=search&search=${this.searchQuery}`)
-                    } else if (this.placeTypeApp === "city") {
-                        // API - GET - Cities
-                        this.places = await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-cities?showType=search&search=${this.searchQuery}`)
-                    } else if (this.placeTypeApp === "spot") {
-                        // API - GET - Spots
-                        this.places = await this.$axios.$get(`https://api.frytolnacestach.cz/api/places-spots?showType=search&search=${this.searchQuery}`)
-                    }
-
-                    // DATA
-                    this.filterPlaces()
-                } catch (error) {
-                    console.error(error)
+                // API - GET - Items
+                if (this.placeTypeApp === "continent") {
+                    // API - GET - Continents
+                    const responsePlaces = await fetch(`https://api.frytolnacestach.cz/api/places-continents?showType=search&search=${this.searchQuery}`)
+                    this.places = await responsePlaces.json() || []
+                } else if (this.placeTypeApp === "state") {
+                    // API - GET - States
+                    const responsePlaces = await fetch(`https://api.frytolnacestach.cz/api/places-states?showType=search&search=${this.searchQuery}`)
+                    this.places = await responsePlaces.json() || []
+                } else if (this.placeTypeApp === "region") {
+                    // API - GET - Regions
+                    const responsePlaces = await fetch(`https://api.frytolnacestach.cz/api/places-regions?showType=search&search=${this.searchQuery}`)
+                    this.places = await responsePlaces.json() || []
+                } else if (this.placeTypeApp === "city") {
+                    // API - GET - Cities
+                    const responsePlaces = await fetch(`https://api.frytolnacestach.cz/api/places-cities?showType=search&search=${this.searchQuery}`)
+                    this.places = await responsePlaces.json() || []
+                } else if (this.placeTypeApp === "spot") {
+                    // API - GET - Spots
+                    const responsePlaces = await fetch(`https://api.frytolnacestach.cz/api/places-spots?showType=search&search=${this.searchQuery}`)
+                    this.places = await responsePlaces.json() || []
                 }
+
+                // DATA
+                this.filterPlaces()
             },
 
             filterPlaces() {
@@ -255,5 +256,5 @@
                 }
             }
         }
-    }
+    })
 </script>

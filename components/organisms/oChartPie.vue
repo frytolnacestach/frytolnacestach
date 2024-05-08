@@ -26,7 +26,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoChartPieComponent',
 
         props: {
@@ -171,5 +171,5 @@
                 return this.color[index % this.color.length]
             }
         }
-    }
+    })
 </script>

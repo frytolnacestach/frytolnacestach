@@ -54,7 +54,7 @@
 <script>
     import skeletonoNumberPlaces from '~/components/skeleton/skeletonoNumberPlaces.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoNumberPlacesComponent',
 
         components: {
@@ -78,20 +78,14 @@
         methods: {
             async fetchData() {
                 if (this.account && this.account.length !== 0) {
-                    try {
-                        // API - GET - UserAchievements
-                        if (process.client) {
-                            this.numberPlaces = await this.$axios.$get(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${this.account[0].id}`)
-                        }
-
-                        // FINAL
-                        this.skeleton = false
-                    } catch (error) {
-                        console.log(`API ERROR - POČET NAVŠTÍVENÝCH MÍST`)
-                        console.error(error)
-
-                        await new Promise(resolve => setTimeout(resolve, 1000))
+                    // API - GET - UserAchievements
+                    if (process.client) {
+                        const responseNumberPlaces = await fetch(`https://api.frytolnacestach.cz/api/user-achievements?id_user=${this.account[0].id}`)
+                        this.numberPlaces = await responseNumberPlaces.json()
                     }
+
+                    // FINAL
+                    this.skeleton = false
                 }
             }
         },
@@ -102,5 +96,5 @@
                 immediate: true
             }
         }
-    }
+    })
 </script>

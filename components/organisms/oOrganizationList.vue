@@ -26,7 +26,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoOrganizationListComponent',
 
         props: {
@@ -39,5 +39,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

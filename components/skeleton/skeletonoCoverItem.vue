@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'SkeletonoCoverItemComponent',
 
         props: {
@@ -22,5 +22,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

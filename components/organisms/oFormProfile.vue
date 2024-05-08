@@ -129,7 +129,7 @@
     import skeletonoFormProfile from '~/components/skeleton/skeletonoFormProfile.vue'
     import oFlashMessages from '@/components/organisms/oFlashMessages.vue'
     
-    export default {
+    export default defineComponent({
         name: 'OrganismsoFormProfileComponent',
     
         components: {
@@ -319,5 +319,5 @@
                 this.changeName()
             }
         }
-    }
+    })
 </script>

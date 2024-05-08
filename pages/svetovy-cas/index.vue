@@ -1,37 +1,39 @@
 <template>
-    <main class="t-main -green -pt-menu" role="main">
-        <div class="t-main__content">
+    <NuxtLayout name="default">
+        <main class="t-main -green -pt-menu" role="main">
+            <div class="t-main__content">
 
-            <!-- SECTION - Hero -->
-            <section class="t-section py-4 print-section">
-                <div class="t-section__inner">
-                    <oHero :headline="headline" perex="Připravte se na světové dobrodružství přesně podle svého rytmu! Náš cestovatelský portál vám přináší aktuální čas a časový posun v různých zemích, abyste byli vždycky v synchronizaci s časem." modifierCSS=" -green -w640" classCSS=" mt-2"/>
-                </div>
-            </section>
-            <!-- SECTION - Hero END -->
-
-            <!-- SECTION - Filter -->
-            <section class="t-section -p0 hidden-print">
-                <div class="t-section__inner">
-                    <oFormFilterPlace styleThema=" -green" typePlaceFilterName="Vybrat kontinent" typePlaceFilter="continents" @update="filterUpdate" />
-                </div>
-            </section>
-            <!-- SECTION - Filter END -->
-
-            <!-- SECTION - Time Place list -->
-            <section class="t-section -p0 print-section">
-                <div class="t-section__inner">
-                    <oTimePlace :places="placesStates" :images="images" type="stat" />
-                    <oTimePlace :places="null" :images="null" type="stat" :skeleton=true v-if="isLoading" />
-                    <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
-                        <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                <!-- SECTION - Hero -->
+                <section class="t-section py-4 print-section">
+                    <div class="t-section__inner">
+                        <oHero :headline="headline" perex="Připravte se na světové dobrodružství přesně podle svého rytmu! Náš cestovatelský portál vám přináší aktuální čas a časový posun v různých zemích, abyste byli vždycky v synchronizaci s časem." modifierCSS=" -green -w640" classCSS=" mt-2"/>
                     </div>
-                </div>
-            </section>
-            <!-- SECTION - Time Place list END -->
+                </section>
+                <!-- SECTION - Hero END -->
 
-        </div>
-    </main>
+                <!-- SECTION - Filter -->
+                <section class="t-section -p0 hidden-print">
+                    <div class="t-section__inner">
+                        <oFormFilterPlace styleThema=" -green" typePlaceFilterName="Vybrat kontinent" typePlaceFilter="continents" @update="filterUpdate" />
+                    </div>
+                </section>
+                <!-- SECTION - Filter END -->
+
+                <!-- SECTION - Time Place list -->
+                <section class="t-section -p0 print-section">
+                    <div class="t-section__inner">
+                        <oTimePlace :places="placesStates" :images="images" type="stat" />
+                        <oTimePlace :places="null" :images="null" type="stat" :skeleton=true v-if="isLoading" />
+                        <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
+                            <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION - Time Place list END -->
+
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
@@ -39,7 +41,7 @@
     import oHero from '../../components/organisms/oHero.vue'
     import oTimePlace from '~/components/organisms/oTimePlace.vue'
 
-    export default {
+    export default defineComponent({
         name: 'SvetovyCasIndexPage',
 
         components: {
@@ -136,14 +138,6 @@
                 ]
             }
         },
-        
-        async mounted() {
-            const filterIDstate = this.$route.query.filterIDcontinent
-            if (!filterIDstate) {
-                await this.loadPlaces()
-            }
-            this.addScrollListener()
-        },
 
         methods: {
             async loadPlaces(reset) {
@@ -151,38 +145,28 @@
                 this.isLoading = true
 
                 // Variable
-                let placesResponse
+                let responsePlaces
 
                 //load places
                 if (this.filterPlace !== null) {
-                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=list&idContinent=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
+                    responsePlaces = await fetch(`https://api.frytolnacestach.cz/api/places-states?showType=list&idContinent=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
                 } else {
-                    placesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/places-states?showType=list&page=${this.page}&items=${this.perPage}`)
+                    responsePlaces = await fetch(`https://api.frytolnacestach.cz/api/places-states?showType=list&page=${this.page}&items=${this.perPage}`)
                 }
-                const { data: placesData } = placesResponse
+                const placesData = await responsePlaces.json()
+                if (reset) {
+                    // Reset Arrays after change filter
+                    this.placesStates = placesData
+                } else {
+                    this.placesStates = this.placesStates.concat(placesData)
+                }
 
                 //load images
                 const imagesPlacesStatesIDS = placesData.map(placeState => placeState.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
                 if (imagesPlacesStatesIDS.length > 0) {
-                    const imagesResponse = await this.$axios.get(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesIDS.join(',')}`)
-                    const { data: imagesData } = imagesResponse
+                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesIDS.join(',')}`)
+                    const imagesData = await responseImages.json()
                     this.images = this.images.concat(imagesData)
-
-                    // add to placecesData to placesStates
-                    if (reset) {
-                        // Reset Arrays after change filter
-                        this.placesStates = placesData
-                    } else {
-                        this.placesStates = this.placesStates.concat(placesData)
-                    }
-                } else {
-                    // add to placecesData to placesStates
-                    if (reset) {
-                        // Reset Arrays after change filter
-                        this.placesStates = placesData
-                    } else {
-                        this.placesStates = this.placesStates.concat(placesData)
-                    }
                 }
 
                 //no more items?
@@ -248,8 +232,16 @@
             }
         },
 
+        mounted() {
+            const filterIDstate = this.$route.query.filterIDcontinent
+            if (!filterIDstate) {
+                this.loadPlaces()
+            }
+            this.addScrollListener()
+        },
+
         beforeDestroy() {
             this.removeScrollListener()
         }
-    }
+    })
 </script>

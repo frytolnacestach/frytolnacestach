@@ -42,7 +42,7 @@
         }
     }
 
-    .vue-map-container {
+    &__container {
         position: absolute;
         display: contents;
         height: 100%;
@@ -52,7 +52,7 @@
         }
     }
 
-    .vue-map {
+    &__map {
         border-radius: $br-2;
         width: 100%;
         height: 100%;

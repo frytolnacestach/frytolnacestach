@@ -24,7 +24,7 @@
 <script>
     import oNoneContent from '~/components/organisms/oNoneContent.vue'
 
-    export default {
+    export default defineComponent({
         name: 'OrganismsoBlockListComponent',
 
         components: {
@@ -69,7 +69,7 @@
             return { script: [jsonldItems] }
         },
 
-        methods:{
+        methods: {
             formatDate(date) {
                 const [month, year] = date.split('-')
                 const formattedDate = new Date(`${year}-${month}-01`)
@@ -77,5 +77,5 @@
                 return formattedDate.toLocaleDateString('cs', options)
             }
         }
-    }
+    })
 </script>

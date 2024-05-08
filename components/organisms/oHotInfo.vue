@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    export default {
+    export default defineComponent({
         name: 'OrganismsoHotInfoComponent',
 
         props: {
@@ -23,5 +23,5 @@
                 required: true
             }
         }
-    }
+    })
 </script>

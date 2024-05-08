@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/cestovatel/frytolnacestach-test/sleduji", (function(a,b){return {data:[{staticUser:[{id:29,email:"frytolnacestach@tempr.email",nickname:b,slug:b,surname:a,lastname:a,status:3,urls:a,seo_tags:a,setting_author_name:1}]}],fetch:{},mutations:[]}}(null,"frytolnacestach-test")));

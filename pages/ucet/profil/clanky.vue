@@ -1,50 +1,52 @@
 <template>
-    <main class="t-main -blue -pt-menu" role="main">
-        <div class="t-main__content">
-            <section class="t-section -padding-x -padding-y -p0 mb-4">
-                <div class="t-section__inner">
-                    <div class="t-grid -account">
-                        <div class="t-grid__section -nav">
+    <NuxtLayout name="default">
+        <main class="t-main -blue -pt-menu" role="main">
+            <div class="t-main__content">
+                <section class="t-section -padding-x -padding-y -p0 mb-4">
+                    <div class="t-section__inner">
+                        <div class="t-grid -account">
+                            <div class="t-grid__section -nav">
 
-                            <!-- SECTION - account headline - account -->
-                            <section class="t-section -padding-x -p0">
-                                <div class="t-section__inner">
-                                    <mAccountHeader :account="account" @update="menuAccountUpdate" />
-                                </div>
-                            </section>
-                            <!-- SECTION - nav - account END -->
+                                <!-- SECTION - account headline - account -->
+                                <section class="t-section -padding-x -p0">
+                                    <div class="t-section__inner">
+                                        <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - nav - account END -->
 
-                            <!-- SECTION - nav - account -->
-                            <section class="t-section -padding-x -p0">
-                                <div class="t-section__inner">
-                                    <mNavAccount :statusOpen="mNavAccountOpen" />
-                                </div>
-                            </section>
-                            <!-- SECTION - nav - account END -->
+                                <!-- SECTION - nav - account -->
+                                <section class="t-section -padding-x -p0">
+                                    <div class="t-section__inner">
+                                        <mNavAccount :statusOpen="mNavAccountOpen" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - nav - account END -->
 
-                        </div>
-                        <div class="t-grid__section -content">
+                            </div>
+                            <div class="t-grid__section -content">
 
-                            <!-- SECTION - Články list -->
-                            <section class="t-section -padding-x -p0 pb-4">
-                                <div class="t-section__inner">
-                                    <mHeadline title="Články" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                    <oArticleListUser :posts="posts" :images="images" :skeleton="skeleton" v-if="posts && posts !== null" />
-                                    <client-only v-if="(posts.length === 0 || posts === null) && !skeleton">
-                                        <p>
-                                            Zatím si nepřidal žádný článek
-                                        </p>
-                                    </client-only>
-                                </div>
-                            </section>
-                            <!-- SECTION - Články list END -->
+                                <!-- SECTION - Články list -->
+                                <section class="t-section -padding-x -p0 pb-4">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Články" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <oArticleListUser :posts="posts" :images="images" :skeleton="skeleton" />
+                                        <client-only v-if="posts && (posts.length === 0 || posts === null) && !skeleton">
+                                            <p>
+                                                Zatím si nepřidal žádný článek
+                                            </p>
+                                        </client-only>
+                                    </div>
+                                </section>
+                                <!-- SECTION - Články list END -->
 
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
-    </main>
+                </section>
+            </div>
+        </main>
+    </NuxtLayout>
 </template>
 
 <script>
@@ -55,7 +57,7 @@
     import mNavAccount from '~/components/molecules/mNavAccount.vue'
     import oArticleListUser from '~/components/organisms/oArticleListUser.vue'
 
-    export default {
+    export default defineComponent({
         name: 'UcetClankyPage',
         
         components: {
@@ -67,10 +69,10 @@
 
         data() {
             return {
-                account: [],
+                account: useAccountData().accountData,
                 mNavAccountOpen: false,
-                posts: [],
-                images: [],
+                posts: this.posts,
+                images: this.images,
                 skeleton: true
             }
         },
@@ -139,24 +141,23 @@
 
         methods: {
             async fetchData() {
-                try {
-                    if (this.account && this.account.length !== 0) {
-                        if (process.client) {
-                            // COMPONENT - oArticleListUser
-                            // Posts
-                            this.posts = await this.$axios.$get(`https://api.frytolnacestach.cz/api/posts-id-user/${this.account[0].id}`)
-                            // Images
-                            this.imagesPostsIDS = this.posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
-                            this.images = await this.$axios.$get(`https://api.frytolnacestach.cz/api/images-array?id=${this.imagesPostsIDS.join(',')}`)
-
-                            this.skeleton = false
+                if (this.account && this.account.length !== 0) {
+                    if (process.client) {
+                        // COMPONENT - oArticleListUser
+                        // Posts
+                        const responsePosts = await fetch(`https://api.frytolnacestach.cz/api/posts-id-user/${this.account[0].id}`)
+                        this.posts = await responsePosts.json()
+                        // Images
+                        if (this.posts && this.posts.length > 0) {
+                            const imagesPostsIDS = this.posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
+                            if (imagesPostsIDS && imagesPostsIDS.length > 0) {
+                                const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
+                                this.images = await responseImages.json()
+                            }
                         }
-                    }
-                } catch (error) {
-                    console.log(`API ERROR - MOJE ČLÁNKY`)
-                    console.error(error)
 
-                    await new Promise(resolve => setTimeout(resolve, 1000))
+                        this.skeleton = false
+                    }
                 }
             },
 
@@ -170,15 +171,7 @@
             account: {
                 handler: 'fetchData',
                 immediate: true
-            },
-            
-            '$store.state.account': {
-                deep: true,
-                immediate: true,
-                handler() {
-                    this.account = this.$store.state.account
-                }
             }
         }
-    }
+    })
 </script>
