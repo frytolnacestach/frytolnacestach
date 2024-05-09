@@ -82,37 +82,37 @@
 
             &.-world {
                 &::after {
-                    background-image: url('../../static/images/world/world.svg');
+                    background-image: url('../../public/images/world/world.svg');
                 }
             }
 
             &.-continent {
                 &::after {
-                    background-image: url('../../static/images/world/continent.svg');
+                    background-image: url('../../public/images/world/continent.svg');
                 }
             }
 
             &.-state {
                 &::after {
-                    background-image: url('../../static/images/world/state.svg');
+                    background-image: url('../../public/images/world/state.svg');
                 }
             }
 
             &.-region {
                 &::after {
-                    background-image: url('../../static/images/world/region.svg');
+                    background-image: url('../../public/images/world/region.svg');
                 }
             }
 
             &.-city {
                 &::after {
-                    background-image: url('../../static/images/world/city.svg');
+                    background-image: url('../../public/images/world/city.svg');
                 }
             }
 
             &.-spot {
                 &::after {
-                    background-image: url('../../static/images/world/spot.svg');
+                    background-image: url('../../public/images/world/spot.svg');
                 }
             }
         }

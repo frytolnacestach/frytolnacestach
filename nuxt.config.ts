@@ -56,16 +56,17 @@ export default defineNuxtConfig({
     '@/assets/css/print.scss'
   ],
 
+  modules: [
+    '@vite-pwa/nuxt'
+  ],
+
   // PWA
   pwa: {
-    icon: {
-      fileName: 'images/favicons/manifest/icons/icon.png'
-    },
-    // @future Import separate file for manifest (manifest: manifest)
     manifest: {
       lang: 'cs',
-      name: 'Frytol na cestách',
+      name: 'Cestovatelský portál Frytol na cestách',
       short_name: 'Frytol na cestách',
+      description: 'Cestovatelský portál Frytol na cestách vám ukáže celý svět. Objevuj místa o kterých si ani nevěděl(a) a nebo ty co by si chtěl(a) navštívit.',
       start_url: '/',
       display: 'standalone',
       background_color: '#edf1f4',
@@ -744,15 +745,17 @@ export default defineNuxtConfig({
           purpose: "any maskable"
         }
       ],
-      workbox: {
-        importScripts: [
-          'service-worker.js'
-        ]
-      }
+    },
+    workbox: {
+      navigateFallback: '/'
+    },
+    devOptions: {
+      enabled: true,
+      type: 'module'
     }
   },
   // PWA END
-
+/*
   render: {
     static: {
       maxAge: 60 * 60 * 24 * 120 * 1000 // @note 120 dní
@@ -763,7 +766,7 @@ export default defineNuxtConfig({
     UserAgent: '*',
     Disallow: '',
     Sitemap: 'https://www.frytolnacestach.cz/sitemap-main.xml',
-    TxtSitemap: 'static/robots.txt',
+    TxtSitemap: 'public/robots.txt',
   },
 
   env: {
@@ -773,27 +776,27 @@ export default defineNuxtConfig({
 
   copy: [
     {
-      from: 'static/robots.txt',
-      to: 'static/robots.txt',
+      from: 'public/robots.txt',
+      to: 'public/robots.txt',
       toType: 'file'
     },
     {
-      from: 'static/ads.txt',
+      from: 'public/ads.txt',
       to: 'ads.txt',
       toType: 'file'
     },
     {
-      from: 'static/seznam-wmt-CZiSUftkY5j3UAZhi6O0ZSGO7jhCc5cH.txt',
+      from: 'public/seznam-wmt-CZiSUftkY5j3UAZhi6O0ZSGO7jhCc5cH.txt',
       to: 'seznam-wmt-CZiSUftkY5j3UAZhi6O0ZSGO7jhCc5cH.txt',
       toType: 'file'
     },
     {
-      from: 'static/BingSiteAuth.xml',
+      from: 'public/BingSiteAuth.xml',
       to: 'BingSiteAuth.xml',
       toType: 'file'
     },
     {
-      from: 'static/vercel.json',
+      from: 'public/vercel.json',
       to: 'vercel.json',
       toType: 'file'
     }
@@ -1379,5 +1382,5 @@ export default defineNuxtConfig({
 
   devtools: {
     enabled: true
-  }
+  }*/
 })

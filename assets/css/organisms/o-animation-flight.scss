@@ -33,17 +33,17 @@
         background-position: left bottom;
         
         &.-first {
-            background-image: url('../../static/images/_base/mountains-1.svg');
+            background-image: url('../../public/images/_base/mountains-1.svg');
             animation: mountains 70s linear infinite;
         }
 
         &.-second {
-            background-image: url('../../static/images/_base/mountains-2.svg');
+            background-image: url('../../public/images/_base/mountains-2.svg');
             animation: mountains 83s linear infinite;
         }
 
         &.-third {
-            background-image: url('../../static/images/_base/mountains-3.svg');
+            background-image: url('../../public/images/_base/mountains-3.svg');
             animation: mountains 100s linear infinite;
         }
     }
@@ -58,7 +58,7 @@
         width: 200%;
         background-size: contain;
         background-repeat: no-repeat;
-        background-image: url('../../static/images/_base/aircraft.svg');
+        background-image: url('../../public/images/_base/aircraft.svg');
 
         &.-first {
             background-position: left bottom;
