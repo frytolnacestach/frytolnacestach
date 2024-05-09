@@ -61,7 +61,7 @@
                 </section>
                 <!-- SECTION - Nav place END -->
 
-                <div class="t-main -tab" v-if="place && place.length > 0">
+                <div class="t-main -tab">
                     <section class="t-section -p0">
                         <div class="t-section__inner">
                             <div class="t-grid -world-ful">
@@ -74,7 +74,7 @@
                                                     <!-- SECTION - Řetezce list -->
                                                     <section class="t-section -p0 -px-world my-2">
                                                         <div class="t-section__inner">
-                                                            <oCoverItemState type="retezec" title="Řetězce ve státě" perex="Představujeme vám přehled nadnárodních i místních řetězců, abyste mohli plánovat své nákupy a stravování s lehkostí a přizpůsobit je svým preferencím." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place[0].id" />
+                                                            <oCoverItemState type="retezec" title="Řetězce ve státě" perex="Představujeme vám přehled nadnárodních i místních řetězců, abyste mohli plánovat své nákupy a stravování s lehkostí a přizpůsobit je svým preferencím." :placeStateName="place[0].name" :placeStateID="place[0].id" v-if="place && place.length > 0" />
                                                         </div>
                                                     </section>
                                                     <!-- SECTION - Řetezce list END -->
@@ -85,7 +85,7 @@
                                                     <!-- SECTION - Visited button - sidebar -->
                                                     <section class="t-section -px-world my-1">
                                                         <div class="t-section__inner">
-                                                            <oVisitedButton :account="account" :place="place[0].id" placeType="state" />
+                                                            <oVisitedButton :account="account" :place="place[0].id" placeType="state" v-if="place && place.length > 0" />
                                                         </div>
                                                     </section>
                                                     <!-- SECTION - Visited button - sidebar - END -->
@@ -357,12 +357,12 @@
                 const responsePlace = await fetch(`https://api.frytolnacestach.cz/api/places-state/${route.params.slug}`)
                 this.place = await responsePlace.json()
                 // Image
-                if (this.place[0].id_image_hero && this.place[0].id_image_hero !== 0) {
+                if (this.place && this.place.length > 0 && this.place[0].id_image_hero && this.place[0].id_image_hero !== 0) {
                     const responseImagePlace = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.place[0].id_image_hero}`)
                     this.imagePlace = await responseImagePlace.json()
                 }
                 // PlaceContinent
-                const placeContinent = await fetch(`https://api.frytolnacestach.cz/api/places-continent-id/${this.place[0].id_continent}`)
+                const responsePlaceContinent = await fetch(`https://api.frytolnacestach.cz/api/places-continent-id/${this.place[0].id_continent}`)
                 this.placeContinent = await responsePlaceContinent.json()
 
                 // COMPONENT - Tabs

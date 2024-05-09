@@ -22,7 +22,9 @@
     }
 
     &__item {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         width: 50%;
         text-align: center;
         padding: 13px 5px;
@@ -41,6 +43,8 @@
     }
 
     &__title {
+        display: block;
+        width: 100%;
         font-weight: 700;
         font-size: $fs-normal-sss;
         margin: 0 0 5px 0;

@@ -68,9 +68,9 @@
                                 <div class="t-grid__section -main">
 
                                     <!-- SECTION - Place teaser list -->
-                                    <oPlaceTeaserList :headline="'Jaké místa vidět ve státě ' + place[0].name" :IDplace="place[0].id" type="spots" typePage="state" styleGap=" mt-2 mb-4 pt-1" />
-                                    <oPlaceTeaserList :headline="'Jaké regiony vidět ve státě ' + place[0].name" :IDplace="place[0].id" type="regions" typePage="state" styleGap=" mt-2 mb-4 pt-1" />
-                                    <oPlaceTeaserList :headline="'Jaké města vidět ve státě ' + place[0].name" :IDplace="place[0].id" type="cities" typePage="state" styleGap=" mt-2 mb-4 pt-1" />
+                                    <oPlaceTeaserList :headline="'Jaké místa vidět ve státě ' + place[0].name" :IDplace="place[0].id" :IDplaceShow="place[0].id" type="spots" typePage="state" typeShow="spots" styleGap=" mt-2 mb-4 pt-1" />
+                                    <oPlaceTeaserList :headline="'Jaké regiony vidět ve státě ' + place[0].name" :IDplace="place[0].id" :IDplaceShow="place[0].id" type="regions" typePage="state" typeShow="regions" styleGap=" mt-2 mb-4 pt-1" />
+                                    <oPlaceTeaserList :headline="'Jaké města vidět ve státě ' + place[0].name" :IDplace="place[0].id" :IDplaceShow="place[0].id" type="cities" typePage="state" typeShow="cities" styleGap=" mt-2 mb-4 pt-1" />
                                     <!-- SECTION - Place teaser list END -->
 
                                 </div>
@@ -358,7 +358,7 @@
                     this.imagePlace = await responseImagePlace.json()
                 }
                 // PlaceContinent
-                const placeContinent = await fetch(`https://api.frytolnacestach.cz/api/places-continent-id/${this.place[0].id_continent}`)
+                const responsePlaceContinent = await fetch(`https://api.frytolnacestach.cz/api/places-continent-id/${this.place[0].id_continent}`)
                 this.placeContinent = await responsePlaceContinent.json()
 
                 // COMPONENT - Tabs

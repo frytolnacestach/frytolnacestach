@@ -599,7 +599,7 @@
                 }
 
                 //load images
-                if (this.posts && this.posts.legth > 0) {
+                if (this.posts && this.posts.length > 0) {
                     const imagesPostsIDS = postsData.map(posts => posts.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
                     if (imagesPostsIDS.length > 0) {
                         const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)

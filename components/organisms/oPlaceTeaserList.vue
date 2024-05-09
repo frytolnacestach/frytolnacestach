@@ -6,7 +6,7 @@
                 <div class="o-place-teaser-list__outer">
                     <div class="o-place-teaser-list__inner">
                         <div class="o-place-teaser-list__items">
-                            <div class="o-place-teaser-list__item" v-for="item in items" :key="item.id" v-if="item.id !== IDplaceShow && typePage !== typeShow">
+                            <div class="o-place-teaser-list__item" v-for="item in filteredItems" :key="item.name">
                                 <div class="o-place-teaser-list__content">
                                     <div class="o-place-teaser-list__image loading-image -green">
                                         <div v-if="images && images.find(image => image.id === item.id_image_hero)" class="o-place-teaser-list__image-lazyload">
@@ -199,7 +199,7 @@
             if (!this.items && this.items.length === 0) {
                 return { script: [] };
             }
-            const jsonldPlaces = {}
+            let jsonldPlaces = {}
             if (this.type === "state") {
                 // Return
                 jsonldPlaces = {
@@ -268,30 +268,50 @@
             return { script: [jsonldPlaces] }
         },
 
-        async fetch() {
-            // API - GET - ITEMS
-            if (this.type === "spots") {
-                if(this.typePage === "city") {
-                    // API - GET - Spots
-                    this.items = await fetch(`https://api.frytolnacestach.cz/api/places-spots-id-city/${this.IDplace}`).then((res) => res.json())
-                } else if(this.typePage === "state") {
-                    // API - GET - Spots
-                    this.items = await fetch(`https://api.frytolnacestach.cz/api/places-spots-id-state/${this.IDplace}`).then((res) => res.json())
+        methods: {
+            async fetchData() {
+                // API - GET - ITEMS
+                if (this.type === "spots") {
+                    if(this.typePage === "city") {
+                        // API - GET - Spots
+                        const responseItems = await fetch(`https://api.frytolnacestach.cz/api/places-spots-id-city/${this.IDplace}`)
+                        this.items = await responseItems.json()
+                    } else if(this.typePage === "state") {
+                        // API - GET - Spots
+                        const responseItems = await fetch(`https://api.frytolnacestach.cz/api/places-spots-id-state/${this.IDplace}`)
+                        this.items = await responseItems.json()
+                    }
+                } else if (this.type === "regions") {
+                    if(this.typePage === "state") {
+                        // API - GET - Regions
+                        const responseItems = await fetch(`https://api.frytolnacestach.cz/api/places-regions-id-state/${this.IDplace}`)
+                        this.items = await responseItems.json()
+                    }
+                } else if (this.type === "cities") {
+                    if(this.typePage === "state") {
+                        // API - GET - Cities
+                        const responseItems = await fetch(`https://api.frytolnacestach.cz/api/places-cities-id-state/${this.IDplace}`)
+                        this.items = await responseItems.json()
+                    }
                 }
-            } else if (this.type === "regions") {
-                if(this.typePage === "state") {
-                    // API - GET - Regions
-                    this.items = await fetch(`https://api.frytolnacestach.cz/api/places-regions-id-state/${this.IDplace}`).then((res) => res.json())
-                }
-            } else if (this.type === "cities") {
-                if(this.typePage === "state") {
-                    // API - GET - Cities
-                    this.items = await fetch(`https://api.frytolnacestach.cz/api/places-cities-id-state/${this.IDplace}`).then((res) => res.json())
+                // API - GET - Images
+                if (this.items && this.items.length > 0) {
+                    const imagesCitiesID = this.items.map(item => item.id_image_cover).filter(id => id !== null && id !== '')
+                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesCitiesID.join(',')}`)
+                    this.images = await responseImages.json()
                 }
             }
-            // API - GET - Images
-            const imagesCitiesID = this.items.map(item => item.id_image_cover).filter(id => id !== null && id !== '')
-            this.images = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesCitiesID.join(',')}`).then((res) => res.json())
+        },
+
+        computed: {
+            filteredItems() {
+                return this.items.filter(item => item.id !== this.IDplaceShow && this.typePage !== this.typeShow);
+            }
+        },
+
+        mounted() {
+            // GET Data
+            this.fetchData()
         }
     })
 </script>

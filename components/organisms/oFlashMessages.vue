@@ -1,7 +1,7 @@
 <template>
     <div class="o-flash-messages" v-if="messages && messages.length > 0">
         <div class="o-flash-messages__items">
-            <div :class="'o-flash-messages__item' + (item.status ? (' -' + item.status) : '')" v-for="(item, index) in messages" :key="index" v-if="item.visibility !== 'hidden'">
+            <div :class="'o-flash-messages__item' + (item.status ? (' -' + item.status) : '')" v-for="(item, index) in filteredMessages" :key="index" >
                 <div class="o-flash-messages__outer">
                     <div class="o-flash-messages__inner">
                         <span class="o-flash-messages__text" v-html="item.message"></span>
@@ -33,6 +33,12 @@
             updateMessageVisibility(index, visibility) {
                 this.$set(this.messages[index], 'visibility', visibility);
             },
+        },
+
+        computed: {
+            filteredMessages() {
+                return this.messages.filter(item => item.visibility !== 'hidden');
+            }
         },
     
         watch: {

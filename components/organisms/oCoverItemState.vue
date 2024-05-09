@@ -1,5 +1,5 @@
 <template>
-    <section class="t-section my-4 py-1 -p0 print-section" v-if="items !== null && items.length > 0">
+    <section class="t-section my-4 py-1 -p0 print-section" v-if="items && items.length > 0">
         <div class="t-section__inner">
             <mHeadline :title="title + ' '" :titleValue="placeStateName" :perex="perex" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
             <div class="o-cover-item-state">
@@ -82,8 +82,8 @@
 
         data() {
             return {
-                items: null,
-                images: null,
+                items: [],
+                images: [],
                 imageSizesMedia: [
                     {
                         "mediaQueriesWidth": 349,
@@ -212,38 +212,40 @@
         methods: {
             async fetchData() {
                 // API - GET - ITEMS
-                if (this.placeStateID && this.placeStateID.length > 0) {
+                if (this.placeStateID) {
                     if ( this.type === "jidlo" ) {
                         // API - GET - Foods
-                        const items = await fetch(`https://api.frytolnacestach.cz/api/foods-id-state/${this.placeStateID}?showType=list`)
+                        const responseItems = await fetch(`https://api.frytolnacestach.cz/api/foods-id-state/${this.placeStateID}?showType=list`)
                         this.items = await responseItems.json() || []
                     } else if ( this.type === "fauna" ) {
                         // API - GET - Faunas
-                        const items = await fetch(`https://api.frytolnacestach.cz/api/faunas-id-state/${this.placeStateID}?showType=list`)
+                        const responseItems = await fetch(`https://api.frytolnacestach.cz/api/faunas-id-state/${this.placeStateID}?showType=list`)
                         this.items = await responseItems.json() || []
                     } else if ( this.type === "flora" ) {
                         // API - GET - Floras
-                        const items = await fetch(`https://api.frytolnacestach.cz/api/floras-id-state/${this.placeStateID}?showType=list`)
+                        const responseItems = await fetch(`https://api.frytolnacestach.cz/api/floras-id-state/${this.placeStateID}?showType=list`)
                         this.items = await responseItems.json() || []
                     } else if ( this.type === "znacka" ) {
                         // API - GET - Brands
-                        const items = await fetch(`https://api.frytolnacestach.cz/api/brands-id-state/${this.placeStateID}?showType=list`)
+                        const responseItems = await fetch(`https://api.frytolnacestach.cz/api/brands-id-state/${this.placeStateID}?showType=list`)
                         this.items = await responseItems.json() || []
                     } else if ( this.type === "elektricka-zasuvka" ) {
                         // API - GET - Wall sockets
-                        const items = await fetch(`https://api.frytolnacestach.cz/api/wall-sockets-id-state/${this.placeStateID}?showType=list`)
+                        const responseItems = await fetch(`https://api.frytolnacestach.cz/api/wall-sockets-id-state/${this.placeStateID}?showType=list`)
                         this.items = await responseItems.json() || []
                     } else if ( this.type === "retezec" ) {
                         // API - GET - Chains
-                        const items = await fetch(`https://api.frytolnacestach.cz/api/chains-id-state/${this.placeStateID}?showType=list`)
+                        const responseItems = await fetch(`https://api.frytolnacestach.cz/api/chains-id-state/${this.placeStateID}?showType=list`)
                         this.items = await responseItems.json() || []
                     }
                 }
                 // API - GET - Images
                 if (this.items && this.items.length > 0) {
-                    const imagesItemsID = items.map(item => item.id_image_cover).filter(id => id !== null && id !== '')
-                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesItemsID.join(',')}`)
-                    this.images = await responseImages.json() || []
+                    const imagesItemsID = this.items.map(item => item.id_image_cover).filter(id => id !== null && id !== '')
+                    if (imagesItemsID && imagesItemsID.length > 0) {
+                        const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesItemsID.join(',')}`)
+                        this.images = await responseImages.json() || []
+                    }
                 }
             }
         },

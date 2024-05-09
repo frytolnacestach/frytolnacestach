@@ -373,7 +373,7 @@
                     this.imagePlace = await responseImagePlace.json()
                 }
                 // PlaceContinent
-                const placeContinent = await fetch(`https://api.frytolnacestach.cz/api/places-continent-id/${this.place[0].id_continent}`)
+                const responsePlaceContinent = await fetch(`https://api.frytolnacestach.cz/api/places-continent-id/${this.place[0].id_continent}`)
                 this.placeContinent = await responsePlaceContinent.json()
 
                 // COMPONENT - Tabs

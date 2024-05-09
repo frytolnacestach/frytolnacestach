@@ -94,7 +94,7 @@
                                 <!-- SECTION - Ubytování - information END -->
 
                                 <!-- SECTION - Ubytování -->
-                                <section class="t-section -px-world py-2 hidden-print" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
+                                <section class="t-section -px-world py-2 hidden-print" v-if="place && place.length > 0 && place[0].affiliate.find(x => x.name === 'booking').value === true">
                                     <div class="t-section__inner">
                                         <div v-for="coordinate in place[0].coordinates">
                                             <oAffilateBooking 
@@ -110,11 +110,11 @@
                                 <!-- SECTION - Ubytování END -->
 
                                 <!-- SECTION - Review -->
-                                <oReviewItem :account="account" :IDplace="place[0].id" type="region" v-if="place[0].id" />
+                                <oReviewItem :account="account" :IDplace="place[0].id" type="region" v-if="place && place.length > 0" />
                                 <!-- SECTION - Review END -->
 
                                 <!-- SECTION - Place list -->
-                                <oPlaceTeaserList :headline="'Jaké další regiony vidět ve státě ' + placeState[0].name" :IDplace="placeState[0].id" :IDplaceShow="place[0].id" v-if="placeState[0]" type="regions" typePage="state" typeShow="region" styleGap=" mt-2 mb-4 pt-1" />
+                                <oPlaceTeaserList :headline="'Jaké další regiony vidět ve státě ' + placeState[0].name" :IDplace="placeState[0].id" :IDplaceShow="place[0].id" type="regions" typePage="state" typeShow="region" styleGap=" mt-2 mb-4 pt-1" v-if="placeState && placeState.length > 0" />
                                 <!-- SECTION - Place teaser END -->
 
                             </div>
@@ -123,7 +123,7 @@
                                 <!-- SECTION - Visited button - sidebar -->
                                 <section class="t-section -px-world my-1">
                                     <div class="t-section__inner">
-                                        <oVisitedButton :account="account" :place="this.place[0].id" placeType="region" />
+                                        <oVisitedButton :account="account" :place="place[0].id" placeType="region" v-if="place && place.length > 0" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Visited button - sidebar - END -->
@@ -132,7 +132,7 @@
                             <div class="t-grid__section -aside-content">
 
                                 <!-- SECTION - Events - sidebar -->
-                                <oSidebarEvent :place="this.place[0].id" type="region" />
+                                <oSidebarEvent :place="this.place[0].id" type="region" v-if="place && place.length > 0" />
                                 <!-- SECTION - Events - sidebar - END -->
 
                             </div>
@@ -157,7 +157,7 @@
                             <div class="t-grid__section -content">
 
                                 <!-- SECTION - videos -->
-                                <section class="t-section -p0 -bg-green py-4" v-if="place[0] && videos.length !== 0">
+                                <section class="t-section -p0 -bg-green py-4" v-if="place && place.length > 0 && videos && videos.length !== 0">
                                     <div class="t-section__inner">
                                         <mHeadline title="Videa z regionu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
@@ -170,7 +170,7 @@
                                 <!-- SECTION - videos END -->
 
                                 <!-- SECTION - articles -->
-                                <section class="t-section -p0 -bg-green py-4" v-if="place[0] && posts.length !== 0">
+                                <section class="t-section -p0 -bg-green py-4" v-if="place && place.length > 0 && posts && posts.length !== 0">
                                     <div class="t-section__inner">
                                         <mHeadline title="Články z regionu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
                                         <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />

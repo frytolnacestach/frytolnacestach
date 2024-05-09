@@ -72,6 +72,13 @@ yarn preview
 bun run preview
 ```
 
+Generate the application for production:
+
+```bash
+# npm
+npx nuxi generate
+```
+
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
 _____________________________________________________________________
