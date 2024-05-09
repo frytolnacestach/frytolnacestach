@@ -755,7 +755,7 @@ export default defineNuxtConfig({
     }
   },
   // PWA END
-/*
+
   render: {
     static: {
       maxAge: 60 * 60 * 24 * 120 * 1000 // @note 120 dní
@@ -808,29 +808,34 @@ export default defineNuxtConfig({
     middleware: ['removeTrailingSlash'],
     extendRoutes(routes, resolve) {
       routes.push({
+        name: 'user',
+        path: '/cestovatel/:slug',
+        component: resolve(__dirname, 'pages/cestovatel/[slug].vue')
+      })
+      routes.push({
         name: 'user-visited-place',
         path: '/cestovatel/:slug/navstivena-mista',
-        component: resolve(__dirname, 'pages/cestovatel/[slug]/navstivena-mista/index.vue')
+        component: resolve(__dirname, 'pages/cestovatel/[slug]/navstivena-mista.vue')
       })
       routes.push({
         name: 'user-review',
         path: '/cestovatel/:slug/recenze',
-        component: resolve(__dirname, 'pages/cestovatel/[slug]/recenze/index.vue')
+        component: resolve(__dirname, 'pages/cestovatel/[slug]/recenze.vue')
       })
       routes.push({
         name: 'user-video',
         path: '/cestovatel/:slug/videa',
-        component: resolve(__dirname, 'pages/cestovatel/[slug]/videa/index.vue')
+        component: resolve(__dirname, 'pages/cestovatel/[slug]/videa.vue')
       })
       routes.push({
         name: 'user-post',
         path: '/cestovatel/:slug/clanky',
-        component: resolve(__dirname, 'pages/cestovatel/[slug]/clanky/index.vue')
+        component: resolve(__dirname, 'pages/cestovatel/[slug]/clanky.vue')
       })
       routes.push({
         name: 'user-follow',
         path: '/cestovatel/:slug/sleduji',
-        component: resolve(__dirname, 'pages/cestovatel/[slug]/sleduji/index.vue')
+        component: resolve(__dirname, 'pages/cestovatel/[slug]/sleduji.vue')
       })
       routes.push({
         name: 'world-stat-slug',
@@ -840,82 +845,82 @@ export default defineNuxtConfig({
       routes.push({
         name: 'world-stat-price',
         path: '/svet/stat/:slug/ceny',
-        component: resolve(__dirname, 'pages/svet/stat/[slug]/ceny/index.vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/ceny.vue')
       })
       routes.push({
         name: 'world-stat-trip',
         path: '/svet/stat/:slug/cesta',
-        component: resolve(__dirname, 'pages/svet/stat/[slug]/cesta/index.vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/cesta.vue')
       })
       routes.push({
         name: 'world-stat-what-to-see',
         path: '/svet/stat/:slug/co-videt',
-        component: resolve(__dirname, 'pages/svet/stat/[slug]/co-videt/index.vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/co-videt.vue')
       })
       routes.push({
         name: 'world-stat-wall-sockets',
         path: '/svet/stat/:slug/elektricke-zasuvky',
-        component: resolve(__dirname, 'pages/svet/stat/[slug]/elektricke-zasuvky/index.vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/elektricke-zasuvky.vue')
       })
       routes.push({
         name: 'world-stat-contacts',
         path: '/svet/stat/:slug/kontakty',
-        component: resolve(__dirname, 'pages/svet/stat/[slug]/kontakty/index.vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/kontakty.vue')
       })
       routes.push({
         name: 'world-stat-people',
         path: '/svet/stat/:slug/lide',
-        component: resolve(__dirname, 'pages/svet/stat/[slug]/lide/index.vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/lide.vue')
       })
       routes.push({
         name: 'world-stat-chains',
         path: '/svet/stat/:slug/retezce',
-        component: resolve(__dirname, 'pages/svet/stat/[slug]/retezce/index.vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/retezce.vue')
       })
       routes.push({
         name: 'world-stat-fauna',
         path: '/svet/stat/:slug/fauna',
-        component: resolve(__dirname, 'pages/svet/stat/[slug]/fauna/index.vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/fauna.vue')
       })
       routes.push({
         name: 'world-stat-flora',
         path: '/svet/stat/:slug/flora',
-        component: resolve(__dirname, 'pages/svet/stat/[slug]/flora/index.vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/flora.vue')
       })
       routes.push({
         name: 'world-stat-foods',
         path: '/svet/stat/:slug/jidlo',
-        component: resolve(__dirname, 'pages/svet/stat/[slug]/jidlo/index.vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/jidlo.vue')
       })
       routes.push({
         name: 'world-stat-brands',
         path: '/svet/stat/:slug/vyrobky',
-        component: resolve(__dirname, 'pages/svet/stat/[slug]/vyrobky/index.vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/vyrobky.vue')
       })
       routes.push({
         name: 'world-stat-neighboring',
         path: '/svet/stat/:slug/sousedni-staty',
-        component: resolve(__dirname, 'pages/svet/stat/[slug]/sousedni-staty/index.vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/sousedni-staty.vue')
       })
       routes.push({
         name: 'world-stat-hotel',
         path: '/svet/stat/:slug/ubytovani',
-        component: resolve(__dirname, 'pages/svet/stat/[slug]/ubytovani/index.vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/ubytovani.vue')
       })
       routes.push({
         name: 'world-stat-videos',
         path: '/svet/stat/:slug/videa',
-        component: resolve(__dirname, 'pages/svet/stat/[slug]/videa/index.vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/videa.vue')
       })
       routes.push({
         name: 'world-stat-posts',
         path: '/svet/stat/:slug/clanky',
-        component: resolve(__dirname, 'pages/svet/stat/[slug]/clanky/index.vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/clanky.vue')
       })
     }
   },
   // Router END
-
+/*
   // Generate XML
   sitemap: {
     hostname: process.env.BASE_URL,

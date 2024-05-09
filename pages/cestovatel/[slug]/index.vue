@@ -10,11 +10,19 @@
                                 <!-- SECTION - user headline - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mUserHeader :user="staticUser" @update="menuUserUpdate" v-if="user && user.length > 0" />
-                                        <mUserHeader :user="[]" :skeleton=true v-if="user && user.length > 0" />
+                                        <mUserHeader :user="user" @update="menuUserUpdate" v-if="user && user.length > 0" />
+                                        <mUserHeader :user="[]" :skeleton=true v-if="user && user.length === 0" />
                                     </div>
                                 </section>
                                 <!-- SECTION - user headline - account END -->
+
+                                <!-- SECTION - Follower button - sidebar -->
+                                <section class="t-section -px-world">
+                                    <div class="t-section__inner">
+                                        <oFollowerButton :account="account" :user="user[0].id" v-if="user && user.length > 0 && account && account.length > 0 && user[0].email !== account[0].email" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Follower button - sidebar - END -->
 
                                 <!-- SECTION - nav - account -->
                                 <section class="t-section -padding-x -p0">
@@ -27,15 +35,24 @@
                             </div>
                             <div class="t-col2__content mb-2">
 
-                                <!-- SECTION - FollowerList -->
-                                <section class="t-section -padding-x -p0 print-section" v-if="user && user.length > 0">
+                                <!-- SECTION - user urls - account -->
+                                <section class="t-section -padding-x -p0 mb-4 print-section" v-if="user && user.length > 0">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Sleduji" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oFollowerList type="user" :idUser="user[0].id" />
+                                        <mHeadline title="Tady mě najdeš" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <oUserUrls :urls="user[0].urls" />
                                     </div>
                                 </section>
-                                <!-- SECTION - FollowerList - END -->
-                                
+                                <!-- SECTION - user urls - account END -->
+
+                                <!-- SECTION - Achievements -->
+                                <section class="t-section -padding-x -p0 pb-4 print-section">
+                                    <div class="t-section__inner">
+                                        <mHeadline title="Moje úspěchy" styleThema=" -user -blue" styleAlign="" styleGap="" />
+                                        <oAchievements type="user" :idUser="user[0].id" v-if="user && user.length > 0" />
+                                    </div>
+                                </section>
+                                <!-- SECTION - Achievements END -->
+
                             </div>
                         </div>
                     </div>
@@ -49,22 +66,27 @@
     import mHeadline from '~/components/molecules/mHeadline.vue'
     import mUserHeader from '~/components/molecules/mUserHeader.vue'
     import mNavUser from '~/components/molecules/mNavUser.vue'
-    import oFollowerList from '~/components/organisms/oFollowerList.vue'
+    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
+    import oAchievements from '~/components/organisms/oAchievements.vue'
+    import oFollowerButton from '~/components/organisms/oFollowerButton.vue'
     import oUserUrls from '~/components/organisms/oUserUrls.vue'
 
     export default defineComponent({
-        name: 'CestovateleSledujiSlugPage',
+        name: 'CestovatelSlugPage',
 
         components: {
             mHeadline,
             mUserHeader,
             mNavUser,
-            oFollowerList,
+            oAdGoogleSidebar,
+            oAchievements,
+            oFollowerButton,
             oUserUrls
         },
 
         data() {
             return {
+                account: useAccountData().accountData,
                 user: [],
                 mNavUserOpen: false
             }
@@ -81,14 +103,19 @@
             let ogUrl
             let ogType
 
+
             // title
-            title = `Koho ${(this.user && this.user.length > 0) ? this.user[0].nickname : 'Uživatel'} sleduje | Frytol na cestách`
+            title = `${(this.user && this.user.length > 0) ? this.user[0].nickname : 'Uživatel'} | Frytol na cestách`
 
             // description
             description = `Profil cestovatele ${(this.user && this.user.length > 0) ? this.user[0].nickname : 'Uživatel'} na cestovatelském portálu Frytol na cestách`
 
             // keywolds
-            keywords = `${(this.user && this.user.length > 0) ? this.user[0].nickname : 'Uživatel' + ', sleduji, cestovatel, uživatel, cestování, svět, rady, cestovatelský portál'}`
+            let metaSeoTags = ""
+            if (this.user && this.user.length > 0 && this.user[0].seo_tags && this.user[0].seo_tags.length > 0) {
+                metaSeoTags = ", " + this.user[0].seo_tags.map(item => item.tag).join(", ")
+            }
+            keywords = `${(this.user && this.user.length > 0) ? this.user[0].nickname : 'Uživatel' + metaSeoTags + ', cestovatel, uživatel, cestování, svět, rady, cestovatelský portál'}`
             
             // ogImage
             ogImage = 'https://image.frytolnacestach.cz/storage/main/og-default.png'
@@ -100,7 +127,7 @@
             ogDescription = description
 
             // ogUrl
-            ogUrl = `${process.env.baseUrl}/cestovatel/${(this.user && this.user.length > 0) ? this.user[0].slug : 'slug'}/sleduji`
+            ogUrl = `${process.env.baseUrl}/cestovatel/${(this.user && this.user.length > 0) ? this.user[0].slug : 'slug'}`
 
             // ogType
             ogType = 'website'
@@ -156,7 +183,11 @@
                 // API
                 const responseUser = await fetch(`https://api.frytolnacestach.cz/api/user/${route.params.slug}`)
                 this.user = await responseUser.json() || []
-            }
+            },
+        },
+
+        mounted() {
+            this.fetchData()
         }
     })
 </script>
