@@ -920,7 +920,7 @@ export default defineNuxtConfig({
     }
   },
   // Router END
-/*
+
   // Generate XML
   sitemap: {
     hostname: process.env.BASE_URL,
@@ -1387,5 +1387,5 @@ export default defineNuxtConfig({
 
   devtools: {
     enabled: true
-  }*/
+  }
 })

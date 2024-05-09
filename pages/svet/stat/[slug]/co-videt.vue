@@ -6,7 +6,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" />
+                        <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" v-if="place && place.length > 0"/>
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -25,13 +25,13 @@
 
                             <!-- SECTION - hero -->
                             <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
-                                <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
+                                <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place && place.length > 0" />
                             </div>
                             <!-- SECTION - hero END -->
 
                             <!-- SECTION - map -->
                             <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
-                                <oMapGoogle :place="place" />
+                                <oMapGoogle :place="place" v-if="place && place.length > 0 && (place[0].coordinates.length > 0 && place[0].zoom.length > 0)" />
                             </div>
                             <!-- SECTION - map - END -->
 
@@ -46,7 +46,7 @@
                 </section>
 
                 <!-- SECTION - Alerts -->
-                <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
+                <section class="t-section -px-world-big -p0" v-if="place && place.length > 0 && place[0].alerts">
                     <div class="t-section__inner">
                         <oAlerts :alerts="place[0].alerts" />
                     </div>
@@ -54,23 +54,23 @@
                 <!-- SECTION - Alerts END -->
             
                 <!-- SECTION - Nav place -->
-                <section class="t-section -px-world-big -p0" v-if="place[0]">
+                <section class="t-section -px-world-big -p0" v-if="place && place.length > 0">
                     <div class="t-section__inner">
                         <mNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
                     </div>
                 </section>
                 <!-- SECTION - Nav place END -->
 
-                <div class="t-main -tab" v-if="place[0]">
+                <div class="t-main -tab" v-if="place && place.length > 0">
                     <section class="t-section -px-world -p0 mb-4">
                         <div class="t-section__inner">
                             <div class="t-grid -place-main-with-aside">
                                 <div class="t-grid__section -main">
 
                                     <!-- SECTION - Place teaser list -->
-                                    <oPlaceTeaserList :headline="'Jaké místa vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="spots" typePage="state" styleGap=" mt-2 mb-4 pt-1" />
-                                    <oPlaceTeaserList :headline="'Jaké regiony vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="regions" typePage="state" styleGap=" mt-2 mb-4 pt-1" />
-                                    <oPlaceTeaserList :headline="'Jaké města vidět ve státě ' + place[0].name" :IDplace="place[0].id" v-if="place[0]" type="cities" typePage="state" styleGap=" mt-2 mb-4 pt-1" />
+                                    <oPlaceTeaserList :headline="'Jaké místa vidět ve státě ' + place[0].name" :IDplace="place[0].id" type="spots" typePage="state" styleGap=" mt-2 mb-4 pt-1" />
+                                    <oPlaceTeaserList :headline="'Jaké regiony vidět ve státě ' + place[0].name" :IDplace="place[0].id" type="regions" typePage="state" styleGap=" mt-2 mb-4 pt-1" />
+                                    <oPlaceTeaserList :headline="'Jaké města vidět ve státě ' + place[0].name" :IDplace="place[0].id" type="cities" typePage="state" styleGap=" mt-2 mb-4 pt-1" />
                                     <!-- SECTION - Place teaser list END -->
 
                                 </div>
@@ -79,7 +79,7 @@
                                     <!-- SECTION - Visited button - sidebar -->
                                     <section class="t-section -px-world my-1">
                                         <div class="t-section__inner">
-                                            <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
+                                            <oVisitedButton :account="account" :place="place[0].id" placeType="state" />
                                         </div>
                                     </section>
                                     <!-- SECTION - Visited button - sidebar - END -->
@@ -96,7 +96,7 @@
                                     <!-- SECTION - Account banner - sidebar END -->
 
                                     <!-- SECTION - Events - sidebar -->
-                                    <oSidebarEvent :place="this.place[0].id" type="state" />
+                                    <oSidebarEvent :place="place[0].id" type="state" />
                                     <!-- SECTION - Events - sidebar - END -->
 
                                 </div>
@@ -375,57 +375,6 @@
 
             // Pretitle
             this.preTitle = `${this.activeTabName} ve státě`
-
-            //Data for mNavBreadcrumbsPlaceArray 
-            //continent
-            this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
-                if (item.id === 3) {
-                    item.name = this.placeContinent[0].name
-                    item.url = "/svet/kontinent/" + this.placeContinent[0].slug
-                }
-                return item
-            })
-            //state
-            if(this.activeTab === 'undefined' || this.activeTab === 'default') {
-                this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
-                    if (item.id === 5) {
-                        item.name = this.place[0].name
-                        item.url = "/svet/stat/" + this.place[0].slug
-                        item.status = "span"
-                    }
-                    return item
-                })
-            } else {
-                this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
-                    if (item.id === 5) {
-                        item.name = this.place[0].name
-                        item.url = "/svet/stat/" + this.place[0].slug
-                        item.status = "link"
-                    }
-                    return item
-                })
-            }
-
-            //Data for oHotInfoHero
-            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-                if (item.id === 1) {
-                    item.name = this.placeContinent[0].name
-                    item.url = `/svet/kontinent/${this.placeContinent[0].slug}`
-                }
-                return item
-            })
-            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-                if (item.id === 2) {
-                    item.name = this.place[0].area
-                }
-                return item
-            })
-            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-                if (item.id === 3) {
-                    item.name = this.place[0].population
-                }
-                return item
-            })
         },
 
         watch: {
@@ -435,6 +384,40 @@
                     this.tabs = updatedTabs(newVal)
                 }
             },
+
+            placeContinent: {
+                handler(newValue) {
+                    if (newValue && newValue.length > 0) {
+                        this.mNavBreadcrumbsPlaceArray[2].name = newValue[0].name
+                        this.mNavBreadcrumbsPlaceArray[2].url = ("/svet/kontinent/" + newValue[0].slug)
+                        this.oHotInfoHeroArray[0].name = newValue[0].name
+                        this.oHotInfoHeroArray[0].url = ("/svet/kontinent/" + newValue[0].slug)
+                    } else {
+                        this.mNavBreadcrumbsPlaceArray[2].name = "Kontinent"
+                        this.mNavBreadcrumbsPlaceArray[2].url = "/svet/kontinent"
+                        this.oHotInfoHeroArray[0].name = "_Kontinent_"
+                        this.oHotInfoHeroArray[0].url = "/svet/kontinent"
+                    }
+                },
+                deep: true
+            },
+
+            place: {
+                handler(newValue) {
+                    if (newValue && newValue.length > 0) {
+                        this.mNavBreadcrumbsPlaceArray[4].name = newValue[0].name
+                        this.mNavBreadcrumbsPlaceArray[4].url = ("/svet/stat/" + newValue[0].slug)
+                        this.oHotInfoHeroArray[1].name = newValue[0].area
+                        this.oHotInfoHeroArray[2].name = newValue[0].population
+                    } else {
+                        this.mNavBreadcrumbsPlaceArray[4].name = "Stát"
+                        this.mNavBreadcrumbsPlaceArray[4].url = "/svet/stat"
+                        this.oHotInfoHeroArray[1].name = "_Rozloha_"
+                        this.oHotInfoHeroArray[1].name = "_Populace_"
+                    }
+                },
+                deep: true
+            }
         }
     })
 </script>

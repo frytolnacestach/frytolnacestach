@@ -695,55 +695,39 @@
                 }
             },
 
-            //Data for mNavBreadcrumbsPlaceArray 
-            //continent
-            /*this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
-                if (item.id === 3) {
-                    item.name = this.placeContinent[0].name
-                    item.url = "/svet/kontinent/" + this.placeContinent[0].slug
-                }
-                return item
-            })*/
-            //state
-            /*if(this.activeTab === 'undefined' || this.activeTab === 'default') {
-                this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
-                    if (item.id === 5) {
-                        item.name = this.place[0].name
-                        item.url = "/svet/stat/" + this.place[0].slug
-                        item.status = "span"
+            placeContinent: {
+                handler(newValue) {
+                    if (newValue && newValue.length > 0) {
+                        this.mNavBreadcrumbsPlaceArray[2].name = newValue[0].name
+                        this.mNavBreadcrumbsPlaceArray[2].url = ("/svet/kontinent/" + newValue[0].slug)
+                        this.oHotInfoHeroArray[0].name = newValue[0].name
+                        this.oHotInfoHeroArray[0].url = ("/svet/kontinent/" + newValue[0].slug)
+                    } else {
+                        this.mNavBreadcrumbsPlaceArray[2].name = "Kontinent"
+                        this.mNavBreadcrumbsPlaceArray[2].url = "/svet/kontinent"
+                        this.oHotInfoHeroArray[0].name = "_Kontinent_"
+                        this.oHotInfoHeroArray[0].url = "/svet/kontinent"
                     }
-                    return item
-                })
-            } else {
-                this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
-                    if (item.id === 5) {
-                        item.name = this.place[0].name
-                        item.status = "span"
-                    }
-                    return item
-                })
-            }*/
+                },
+                deep: true
+            },
 
-            //Data for oHotInfoHero
-            /*this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-                if (item.id === 1) {
-                    item.name = this.placeContinent[0].name
-                    item.url = `/svet/kontinent/${this.placeContinent[0].slug}`
-                }
-                return item
-            })
-            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-                if (item.id === 2) {
-                    item.name = this.place[0].area
-                }
-                return item
-            })
-            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-                if (item.id === 3) {
-                    item.name = this.place[0].population
-                }
-                return item
-            })*/
+            place: {
+                handler(newValue) {
+                    if (newValue && newValue.length > 0) {
+                        this.mNavBreadcrumbsPlaceArray[4].name = newValue[0].name
+                        this.mNavBreadcrumbsPlaceArray[4].url = ("/svet/stat/" + newValue[0].slug)
+                        this.oHotInfoHeroArray[1].name = newValue[0].area
+                        this.oHotInfoHeroArray[2].name = newValue[0].population
+                    } else {
+                        this.mNavBreadcrumbsPlaceArray[4].name = "Stát"
+                        this.mNavBreadcrumbsPlaceArray[4].url = "/svet/stat"
+                        this.oHotInfoHeroArray[1].name = "_Rozloha_"
+                        this.oHotInfoHeroArray[1].name = "_Populace_"
+                    }
+                },
+                deep: true
+            }
         }
     })
 </script>
