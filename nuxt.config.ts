@@ -60,6 +60,10 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt'
   ],
 
+  serverMiddleware: [
+    '~/middleware/trailingSlash'
+  ],
+
   // PWA
   pwa: {
     manifest: {
@@ -747,7 +751,10 @@ export default defineNuxtConfig({
       ],
     },
     workbox: {
-      navigateFallback: '/'
+      navigateFallback: '/',
+      importScripts: [
+        'service-worker.js'
+      ]
     },
     devOptions: {
       enabled: true,
@@ -810,7 +817,7 @@ export default defineNuxtConfig({
       routes.push({
         name: 'user',
         path: '/cestovatel/:slug',
-        component: resolve(__dirname, 'pages/cestovatel/[slug].vue')
+        component: resolve(__dirname, 'pages/cestovatel/[slug]/index.vue')
       })
       routes.push({
         name: 'user-visited-place',
@@ -840,7 +847,7 @@ export default defineNuxtConfig({
       routes.push({
         name: 'world-stat-slug',
         path: '/svet/stat/:slug',
-        component: resolve(__dirname, 'pages/svet/stat/[slug].vue')
+        component: resolve(__dirname, 'pages/svet/stat/[slug]/index.vue')
       })
       routes.push({
         name: 'world-stat-price',

@@ -97,10 +97,10 @@
 
         data() {
             return {
-                post: this.post,
-                imagePost: this.imagePost,
-                video: this.video,
-                imageVideo: this.imageVideo,
+                post: [],
+                imagePost: [],
+                video: [],
+                imageVideo: [],
                 headline: 'Frytol na cestách'
             }
         },

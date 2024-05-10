@@ -10,7 +10,7 @@
                                 <!-- SECTION - user headline - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mUserHeader :user="staticUser" @update="menuUserUpdate" v-if="user && user.length > 0" />
+                                        <mUserHeader :user="user" @update="menuUserUpdate" v-if="user && user.length > 0" />
                                         <mUserHeader :user="[]" :skeleton=true v-if="user && user.length > 0" />
                                     </div>
                                 </section>
