@@ -6,7 +6,7 @@
         <!-- SHOW - skeleton END -->
 
         <!-- SHOW - client -->
-        <client-only v-if="posts !== null && !skeleton">
+        <client-only v-if="posts && posts.length > 0 && !skeleton">
             <div :class="'o-article-list-user' + (styleThema ? styleThema : '') + (styleAlign ? styleAlign : '')">
                 <div class="o-article-list-user-list__outer">
                     <div class="o-article-list-user__items">

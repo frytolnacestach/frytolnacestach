@@ -9,7 +9,7 @@
                 <!-- SHOW - skeleton END -->
 
                 <!-- SHOW - client -->
-                <client-only v-if="reviews !== null">
+                <client-only v-if="reviews && reviews.length > 0">
                     <div class="o-review-item-list-user" v-if="reviews && reviews.length > 0 && places && places.length > 0">
                         <div class="o-review-item-list-user__outer">
                             <div class="o-review-item-list-user__inner">
@@ -99,7 +99,7 @@
 
         data() {
             return {
-                reviews: null,
+                reviews: [],
                 places: [],
                 images: [],
                 placesContinents: this.placesContinents,
@@ -135,12 +135,12 @@
                     {
                         "elementWidth": 50,
                         "imageWidth": 50,
-                        "orientation": "h-"
+                        "orientation": "s-"
                     },
                     {
                         "elementWidth": 70,
                         "imageWidth": 70,
-                        "orientation": "h-"
+                        "orientation": "s-"
                     }
                 ]
             }
@@ -148,7 +148,7 @@
 
         methods: {
             async fetchData() {
-                if (this.account && this.account.length > 0) {
+                if (this.user && this.user.length > 0) {
                     // API - GET - User
                     const responseReviews = await fetch(`https://api.frytolnacestach.cz/api/reviews-id-user?id_user=${this.user[0].id}`)
                     this.reviews = await responseReviews.json()
@@ -230,7 +230,6 @@
                     this.imagesPlacesContinents = this.imagesPlacesContinents || [];
                     this.placesStates = this.placesStates || [];
                     this.imagesPlacesStates = this.imagesPlacesStates || [];
-
 
                     // DATA
                     this.places = [

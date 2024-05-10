@@ -149,26 +149,35 @@
             },
 
             async fetchDataVideos() {
-                // COMPONENT - oVideoListUser
-                // Videos
-                const videos = await fetch(`https://api.frytolnacestach.cz/api/videos-id-user/${this.user[0].id}`)
-                this.videos = await responseVideos.json() || []
-                // Images
-                const imagesVideosIDS = videos.map(video => video.id_image).filter(id => id !== null && id !== '')
-                const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
-                this.images = await responseImages.json() || []
+                if (this.user && this.user.length > 0) {
+                    // COMPONENT - oVideoListUser
+                    // Videos
+                    const responseVideos = await fetch(`https://api.frytolnacestach.cz/api/videos-id-user/${this.user[0].id}`)
+                    this.videos = await responseVideos.json() || []
+                    // Images
+                    if (this.videos && this.videos.length > 0) {
+                        const imagesVideosIDS = this.videos.map(video => video.id_image).filter(id => id !== null && id !== '')
+                        if (imagesVideosIDS && imagesVideosIDS.length > 0) {
+                            const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
+                            this.images = await responseImages.json() || []
+                        }
+                    }
 
-                this.skeleton = false
+                    this.skeleton = false
+                }
             }
         },
 
         mounted() {
             this.fetchData()
-            this.$nextTick(async () => {
-                if (process.client) {
+        },
+
+        watch: {
+            user: {
+                handler(newValue) {
                     this.fetchDataVideos()
                 }
-            })
+            }
         }
     })
 </script>

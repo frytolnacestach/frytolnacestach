@@ -58,7 +58,7 @@
     import oArticleListUser from '~/components/organisms/oArticleListUser.vue'
 
     export default defineComponent({
-        name: 'CestovateleVideaSlugPage',
+        name: 'CestovateleClankySlugPage',
 
         components: {
             mHeadline,
@@ -149,26 +149,35 @@
             },
 
             async fetchDataPosts() {
-                // COMPONENT - oArticleListUser
-                // Posts
-                const responsePosts = await fetch(`https://api.frytolnacestach.cz/api/posts-id-user/${this.user[0].id}`)
-                this.posts = await responsePosts.json() || []
-                // Images
-                const imagesPostsIDS = posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
-                const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
-                this.images = await responseImages.json() || []
+                if (this.user && this.user.length > 0) {
+                    // COMPONENT - oArticleListUser
+                    // Posts
+                    const responsePosts = await fetch(`https://api.frytolnacestach.cz/api/posts-id-user/${this.user[0].id}`)
+                    this.posts = await responsePosts.json() || []
+                    // Images
+                    if (this.posts && this.posts.length > 0) {
+                        const imagesPostsIDS = this.posts.map(post => post.id_image_cover).filter(id => id !== null && id !== '')
+                        if (imagesPostsIDS && imagesPostsIDS.length > 0) {
+                            const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
+                            this.images = await responseImages.json() || []
+                        }
+                    }
 
-                this.skeleton = false
+                    this.skeleton = false
+                }
             }
         },
 
         mounted() {
             this.fetchData()
-            this.$nextTick(async () => {
-                if (process.client) {
+        },
+
+        watch: {
+            user: {
+                handler(newValue) {
                     this.fetchDataPosts()
                 }
-            })
+            }
         }
     })
 </script>
