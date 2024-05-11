@@ -1,8 +1,160 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config'
 
+let routes = []
+
+// Get slug for all pages with slug
+const getPostRoutes = async () => {
+  const placesStatesSubpages = [
+    'co-videt',
+    'ceny',
+    'lide',
+    'cesta',
+    'kontakty',
+    'ubytovani',
+    'videa',
+    'clanky',
+    'sousedni-staty',
+    'elektricke-zasuvky',
+    'retezce',
+    'fauna',
+    'flora',
+    'jidlo',
+    'vyrobky'
+  ]
+
+  const usersSubpages = [
+    'navstivena-mista',
+    'recenze',
+    'clanky',
+    'videa',
+    'sleduji'
+  ]
+
+  try {
+    // APIs
+    const responsePosts = await fetch('https://api.frytolnacestach.cz/api/posts')
+    const responseVideos = await fetch('https://api.frytolnacestach.cz/api/videos')
+    const responseFoods = await fetch('https://api.frytolnacestach.cz/api/foods')
+    const responseFaunas = await fetch('https://api.frytolnacestach.cz/api/faunas')
+    const responseFloras = await fetch('https://api.frytolnacestach.cz/api/floras')
+    const responseBrands = await fetch('https://api.frytolnacestach.cz/api/brands')
+    const responseChains = await fetch('https://api.frytolnacestach.cz/api/chains')
+    const responseWallSockets = await fetch('https://api.frytolnacestach.cz/api/wall-sockets')
+    const responseTravelDictionaries = await fetch('https://api.frytolnacestach.cz/api/travel-dictionaries')
+    const responseEvents = await fetch('https://api.frytolnacestach.cz/api/events')
+    const responseUsers = await fetch('https://api.frytolnacestach.cz/api/users')
+    const responsePlacesStates = await fetch('https://api.frytolnacestach.cz/api/places-states')
+    const responsePlacesContinents = await fetch('https://api.frytolnacestach.cz/api/places-continents')
+    const responsePlacesRegions = await fetch('https://api.frytolnacestach.cz/api/places-regions')
+    const responsePlacesCities1 = await fetch('https://api.frytolnacestach.cz/api/places-cities?start=1&end=999')
+    const responsePlacesCities2 = await fetch('https://api.frytolnacestach.cz/api/places-cities?start=1000&end=1999')
+    const responsePlacesCities3 = await fetch('https://api.frytolnacestach.cz/api/places-cities?start=2000&end=2999')
+    const responsePlacesSpots = await fetch('https://api.frytolnacestach.cz/api/places-spots')
+
+    // JSON
+    const postData = await responsePosts.json()
+    const videoData = await responseVideos.json()
+    const foodsData = await responseFoods.json()
+    const faunasData = await responseFaunas.json()
+    const florasData = await responseFloras.json()
+    const brandsData = await responseBrands.json()
+    const chainsData = await responseChains.json()
+    const wallSocketsData = await responseWallSockets.json()
+    const travelDictionariesData = await responseTravelDictionaries.json()
+    const eventsData = await responseEvents.json()
+    const usersData = await responseUsers.json()
+    const placesStatesData = await responsePlacesStates.json()
+    const placesContinentsData = await responsePlacesContinents.json()
+    const placesRegionsData = await responsePlacesRegions.json()
+    const placesCities1Data = await responsePlacesCities1.json()
+    const placesCities2Data = await responsePlacesCities2.json()
+    const placesCities3Data = await responsePlacesCities3.json()
+    const placesSpotsData = await responsePlacesSpots.json()
+
+    // Connection
+    const placesCitiesData = [
+      ...placesCities1Data,
+      ...placesCities2Data,
+      ...placesCities3Data
+    ]
+
+    // MAP
+    const postRoutes = postData.map((post) => `/clanky/${post.slug}`)
+    const videoRoutes = videoData.map((video) => `/videa/${video.slug}`)
+    const foodRoutes = foodsData.map((food) => `/jidlo/${food.slug}`)
+    const faunaRoutes = faunasData.map((fauna) => `/fauna/${fauna.slug}`)
+    const floraRoutes = florasData.map((flora) => `/flora/${flora.slug}`)
+    const brandRoutes = brandsData.map((brand) => `/znacka/${brand.slug}`)
+    const chainRoutes = chainsData.map((chain) => `/retezec/${chain.slug}`)
+    const wallSocketRoutes = wallSocketsData.map((wallSocket) => `/elektricka-zasuvka/${wallSocket.slug}`)
+    const travelDictionaryRoutes = travelDictionariesData.map((travelDictionary) => `/cestovatelsky-slovnik/${travelDictionary.slug}`)
+    const eventRoutes = eventsData.map((event) => `/udalost/${event.slug}`)
+    const userRoutes = usersData.map((user) => `/cestovatel/${user.slug}`)
+    const placesStatesRoutes = placesStatesData.map((placeState) => `/svet/stat/${placeState.slug}`)
+    const placesContinentsRoutes = placesContinentsData.map((placeContinent) => `/svet/kontinent/${placeContinent.slug}`)
+    const placesRegionsRoutes = placesRegionsData.map((placeRegion) => `/svet/region/${placeRegion.slug}`)
+    const placesCitiesRoutes = placesCitiesData.map((placeCity) => `/svet/mesto/${placeCity.slug}`)
+    const placesSpotsRoutes = placesSpotsData.map((placeSpot) => `/svet/misto/${placeSpot.slug}`)
+    // MAP - Subpages
+    const placesStatesSubpagesRoutes = placesStatesData.flatMap((placeState) => {
+      return placesStatesSubpages.map((subpage) => `/svet/stat/${placeState.slug}/${subpage}`)
+    })
+    const userSubpagesRoutes = usersData.flatMap((user) => {
+      return usersSubpages.map((subpage) => `/cestovatel/${user.slug}/${subpage}`)
+    });
+    // MAP - use same datas for other pages
+    const worldTimeRoutes = placesStatesData.map((placeState) => `/svet/svetovy-cas/${placeState.slug}`)
+    const filterPlacesContinentsStatesRoutes = placesContinentsData.map((placeContinent) => `/svet/stat?filterIDcontinent=${placeContinent.id}`)
+    const filterPlacesStatesRegionsRoutes = placesStatesData.map((placeState) => `/svet/region?filterIDstate=${placeState.id}`)
+    const filterPlacesStatesCitiesRoutes = placesStatesData.map((placeState) => `/svet/mesto?filterIDstate=${placeState.id}`)
+    const filterPlacesStatesSpotsRoutes = placesStatesData.map((placeState) => `/svet/misto?filterIDstate=${placeState.id}`)
+    const filterPlacesStatesPostsRoutes = placesContinentsData.map((placeContinent) => `/clanky?filterIDstate=${placeContinent.id}`)
+    const filterPlacesStatesVideosRoutes = placesContinentsData.map((placeContinent) => `/videa?filterIDstate=${placeContinent.id}`)
+
+    // Create allRoutes
+    const allRoutes = [
+      ...postRoutes,
+      ...videoRoutes,
+      ...foodRoutes,
+      ...faunaRoutes,
+      ...floraRoutes,
+      ...brandRoutes,
+      ...chainRoutes,
+      ...wallSocketRoutes,
+      ...travelDictionaryRoutes,
+      ...eventRoutes,
+      ...userRoutes,
+      ...placesStatesRoutes,
+      ...placesContinentsRoutes,
+      ...placesRegionsRoutes,
+      ...placesCitiesRoutes,
+      ...placesSpotsRoutes,
+      ...placesStatesSubpagesRoutes,
+      ...userSubpagesRoutes,
+      ...worldTimeRoutes,
+      ...filterPlacesContinentsStatesRoutes,
+      ...filterPlacesStatesRegionsRoutes,
+      ...filterPlacesStatesCitiesRoutes,
+      ...filterPlacesStatesSpotsRoutes,
+      ...filterPlacesStatesPostsRoutes,
+      ...filterPlacesStatesVideosRoutes
+    ]
+
+    return allRoutes
+  } catch (error) {
+    return []
+  }
+};
+
 export default defineNuxtConfig({
   target: 'static',
+  ssr: false,
+
+  site: {
+    url: 'https://www.frytolnacestach.cz',
+    trailingSlash: false
+  },
   
   app: {
     head: {
@@ -57,7 +209,8 @@ export default defineNuxtConfig({
   ],
 
   modules: [
-    '@vite-pwa/nuxt'
+    '@vite-pwa/nuxt', 
+    "@nuxtjs/sitemap"
   ],
 
   serverMiddleware: [
@@ -772,7 +925,7 @@ export default defineNuxtConfig({
   robots: {
     UserAgent: '*',
     Disallow: '',
-    Sitemap: 'https://www.frytolnacestach.cz/sitemap-main.xml',
+    Sitemap: 'https://www.frytolnacestach.cz/sitemap.xml',
     TxtSitemap: 'public/robots.txt',
   },
 
@@ -931,9 +1084,7 @@ export default defineNuxtConfig({
   // Generate XML
   sitemap: {
     hostname: process.env.BASE_URL,
-    exclude: [
-      '/styleguide'
-    ],
+    exclude: [],
     sitemaps: [
       {
         path: '/sitemap-base.xml',
@@ -1172,8 +1323,24 @@ export default defineNuxtConfig({
   },
   // Generate XML END
 
+  // Generate Hooks
+  hooks: {
+    async 'nitro:config'(nitroConfig) {
+      const slugs = await getPostRoutes()
+      nitroConfig.prerender.routes.push(...slugs)
+    }
+  },
+  // Generate Hooks END
+
   // Generate
   generate: {
+    sourcemap: {
+      server: true,
+      client: true 
+    },
+    routes: routes
+  },
+  /*generate: {
     sourcemap: {
       server: true,
       client: true 
@@ -1201,52 +1368,52 @@ export default defineNuxtConfig({
         placesCitiesData3, 
         placesSpotsData
       ] = await Promise.all([
-        fetch('https://api.frytolnacestach.cz/api/posts'),
-        fetch('https://api.frytolnacestach.cz/api/videos'),
-        fetch('https://api.frytolnacestach.cz/api/foods'),
-        fetch('https://api.frytolnacestach.cz/api/faunas'),
-        fetch('https://api.frytolnacestach.cz/api/floras'),
-        fetch('https://api.frytolnacestach.cz/api/brands'),
-        fetch('https://api.frytolnacestach.cz/api/chains'),
-        fetch('https://api.frytolnacestach.cz/api/wall-sockets'),
-        fetch('https://api.frytolnacestach.cz/api/travel-dictionaries'),
-        fetch('https://api.frytolnacestach.cz/api/events'),
-        fetch('https://api.frytolnacestach.cz/api/users'),
-        fetch('https://api.frytolnacestach.cz/api/places-states'),
-        fetch('https://api.frytolnacestach.cz/api/places-continents'),
-        fetch('https://api.frytolnacestach.cz/api/places-states'),
-        fetch('https://api.frytolnacestach.cz/api/places-regions'),
-        fetch('https://api.frytolnacestach.cz/api/places-cities?start=1&end=999'),
-        fetch('https://api.frytolnacestach.cz/api/places-cities?start=1000&end=1999'),
-        fetch('https://api.frytolnacestach.cz/api/places-cities?start=2000&end=2999'),
-        fetch('https://api.frytolnacestach.cz/api/places-spots')
+        fetch('https://api.frytolnacestach.cz/api/posts').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/videos').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/foods').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/faunas').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/floras').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/brands').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/chains').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/wall-sockets').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/travel-dictionaries').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/events').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/users').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/places-states').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/places-continents').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/places-states').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/places-regions').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/places-cities?start=1&end=999').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/places-cities?start=1000&end=1999').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/places-cities?start=2000&end=2999').then((res) => res.json()),
+        fetch('https://api.frytolnacestach.cz/api/places-spots').then((res) => res.json())
       ]);
 
       //MAPs
-      const posts = postsData.data.map((item) => item.slug)
-      const videos = videosData.data.map((item) => item.slug)
-      const foods = foodsData.data.map((item) => item.slug)
-      const faunas = faunasData.data.map((item) => item.slug)
-      const floras = florasData.data.map((item) => item.slug)
-      const brands = brandsData.data.map((item) => item.slug)
-      const chains = chainsData.data.map((item) => item.slug)
-      const wallSockets = wallSocketsData.data.map((item) => item.slug)
-      const travelDictionaries = travelDictionariesData.data.map((item) => item.slug)
-      const events = eventsData.data.map((item) => item.slug)
-      const users = usersData.data.map((item) => item.slug)
-      const worldTime = worldTimeData.data.map((item) => item.slug)
-      const placesContinents = placesContinentsData.data.map((item) => item.slug)
-      const placesStates = placesStatesData.data.map((item) => item.slug)
-      const placesRegions = placesRegionsData.data.map((item) => item.slug)
-      const placesCities1 = placesCitiesData1.data.map((item) => item.slug)
-      const placesCities2 = placesCitiesData2.data.map((item) => item.slug)
-      const placesCities3 = placesCitiesData3.data.map((item) => item.slug)
-      const placesSpots = placesSpotsData.data.map((item) => item.slug)
-      const placesContinentsID = placesContinentsData.data.map((item) => item.id)
-      const placesStatesID = placesStatesData.data.map((item) => item.id)
+      const posts = postsData.map((item) => item.slug)
+      const videos = videosData.map((item) => item.slug)
+      const foods = foodsData.map((item) => item.slug)
+      const faunas = faunasData.map((item) => item.slug)
+      const floras = florasData.map((item) => item.slug)
+      const brands = brandsData.map((item) => item.slug)
+      const chains = chainsData.map((item) => item.slug)
+      const wallSockets = wallSocketsData.map((item) => item.slug)
+      const travelDictionaries = travelDictionariesData.map((item) => item.slug)
+      const events = eventsData.map((item) => item.slug)
+      const users = usersData.map((item) => item.slug)
+      const worldTime = worldTimeData.map((item) => item.slug)
+      const placesContinents = placesContinentsData.map((item) => item.slug)
+      const placesStates = placesStatesData.map((item) => item.slug)
+      const placesRegions = placesRegionsData.map((item) => item.slug)
+      const placesCities1 = placesCitiesData1.map((item) => item.slug)
+      const placesCities2 = placesCitiesData2.map((item) => item.slug)
+      const placesCities3 = placesCitiesData3.map((item) => item.slug)
+      const placesSpots = placesSpotsData.map((item) => item.slug)
+      const placesContinentsID = placesContinentsData.map((item) => item.id)
+      const placesStatesID = placesStatesData.map((item) => item.id)
 
       // Const
-      const routes = []
+      let routes = []
 
       // Posts
       posts.forEach((slug) => {
@@ -1380,7 +1547,7 @@ export default defineNuxtConfig({
 
       return routes
     }
-  },
+  },*/
   // Generate END
 
   // Build
