@@ -925,7 +925,7 @@ export default defineNuxtConfig({
   robots: {
     UserAgent: '*',
     Disallow: '',
-    Sitemap: 'https://www.frytolnacestach.cz/sitemap.xml',
+    Sitemap: 'https://www.frytolnacestach.cz/sitemap_index.xml',
     TxtSitemap: 'public/robots.txt',
   },
 
@@ -1085,10 +1085,9 @@ export default defineNuxtConfig({
   sitemap: {
     hostname: process.env.BASE_URL,
     exclude: [],
-    sitemaps: [
-      {
-        path: '/sitemap-base.xml',
-        routes: [
+    sitemaps: {
+      base: {
+        include: [
           '/',
           '/clanky',
           '/videa',
@@ -1139,112 +1138,98 @@ export default defineNuxtConfig({
           '/svet/misto/**', '/svet/misto/.*', '/svet/misto\\?.*',
         ]
       },
-      {
-        path: '/sitemap-posts.xml',
+      posts: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/posts?showType=xml')
           return data.map(v => `/clanky/${v.slug}`)
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-videos.xml',
+      videos: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/videos?showType=xml')
           return data.map(v => `/videa/${v.slug}`)
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-foods.xml',
+      foods: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/foods?showType=xml')
           return data.map(v => `/jidlo/${v.slug}`)
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-fauna.xml',
+      fauna: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/faunas?showType=xml')
           return data.map(v => `/fauna/${v.slug}`)
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-flora.xml',
+      flora: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/floras?showType=xml')
           return data.map(v => `/flora/${v.slug}`)
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-brands.xml',
+      brands: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/brands?showType=xml')
           return data.map(v => `/znacka/${v.slug}`)
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-travel-dictionary.xml',
+      travel_dictionary: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/travel-dictionaries?showType=xml')
           return data.map(v => `/cestovatelsky-slovnik/${v.slug}`)
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-chains.xml',
+      chains: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/chains?showType=xml')
           return data.map(v => `/retezec/${v.slug}`)
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-wall-sockets.xml',
+      wall_sockets: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/wall-sockets?showType=xml')
           return data.map(v => `/elektricka-zasuvka/${v.slug}`)
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-events.xml',
+      events: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/events?showType=xml')
           return data.map(v => `/udalost/${v.slug}`)
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-users.xml',
+      users: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/users?showType=xml')
           return data.map(v => `/cestovatel/${v.slug}`)
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-world-time.xml',
+      world_time: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/places-states?showType=xml')
           return data.map(v => `/svetovy-cas/${v.slug}`)
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-places-continets.xml',
+      places_continets: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/places-continents?showType=xml')
           return data.map(v => `/svet/kontinent/${v.slug}`)
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-places-stats.xml',
+      places_stats: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/places-states?showType=xml');
           
@@ -1265,17 +1250,14 @@ export default defineNuxtConfig({
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-places-regions.xml',
+      places_regions: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/places-regions?showType=xml')
           return data.map(v => `/svet/region/${v.slug}`)
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-places-cities.xml',
-
+      places_cities: {
         routes: async () => {
           const routes = []
       
@@ -1292,16 +1274,14 @@ export default defineNuxtConfig({
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-places-spots.xml',
+      places_spots: {
         routes: async () => {
           let { data } = await fetch('https://api.frytolnacestach.cz/api/places-spots?showType=xml')
           return data.map(v => `/svet/misto/${v.slug}`)
         },
         exclude: ['/**']
       },
-      {
-        path: '/sitemap-filter.xml',
+      filters: {
         routes: async () => {
           const continentsResponse = await fetch('https://api.frytolnacestach.cz/api/places-continents?showType=xml')
           const statesResponse = await fetch('https://api.frytolnacestach.cz/api/places-states?showType=xml')
@@ -1319,7 +1299,7 @@ export default defineNuxtConfig({
         },
         exclude: ['/**']
       }
-    ]
+    }
   },
   // Generate XML END
 

@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://frytolnacestach.cz/sitemap.xml
+Sitemap: https://frytolnacestach.cz/sitemap_index.xml
