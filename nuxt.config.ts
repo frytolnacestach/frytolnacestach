@@ -1,9 +1,26 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config'
 
-let routes = []
+let routesAll
+let routesPosts
+let routesVideos
+let routesFoods
+let routesFauna
+let routesFlora
+let routesBrands
+let routesChains
+let routesWallSockets
+let routesTravelDictionary
+let routesEvents
+let routesUsers
+let routesPlacesStates
+let routesPlacesContinents
+let routesPlacesRegions
+let routesPlacesCities
+let routesPlacesSpots
+let routesWorldTimes
+let routesFilters
 
-// Get slug for all pages with slug
 const getPostRoutes = async () => {
   const placesStatesSubpages = [
     'co-videt',
@@ -112,8 +129,8 @@ const getPostRoutes = async () => {
     const filterPlacesStatesPostsRoutes = placesContinentsData.map((placeContinent) => `/clanky?filterIDstate=${placeContinent.id}`)
     const filterPlacesStatesVideosRoutes = placesContinentsData.map((placeContinent) => `/videa?filterIDstate=${placeContinent.id}`)
 
-    // Create allRoutes
-    const allRoutes = [
+    // Create routesAll
+    routesAll = [
       ...postRoutes,
       ...videoRoutes,
       ...foodRoutes,
@@ -141,19 +158,84 @@ const getPostRoutes = async () => {
       ...filterPlacesStatesVideosRoutes
     ]
 
-    return allRoutes
+    // Create other routes
+    routesPosts = [
+      ...postRoutes
+    ]
+    routesVideos = [
+      ...videoRoutes
+    ]
+    routesFoods = [
+      ...foodRoutes
+    ]
+    routesFauna = [
+      ...faunaRoutes
+    ]
+    routesFlora = [
+      ...floraRoutes
+    ]
+    routesBrands = [
+      ...brandRoutes
+    ]
+    routesChains = [
+      ...chainRoutes
+    ]
+    routesWallSockets = [
+      ...wallSocketRoutes
+    ]
+    routesTravelDictionary = [
+      ...travelDictionaryRoutes
+    ]
+    routesEvents = [
+      ...eventRoutes
+    ]
+    routesUsers = [
+      ...userRoutes,
+      ...userSubpagesRoutes
+    ]
+    routesPlacesStates = [
+      ...placesStatesRoutes,
+      ...placesStatesSubpagesRoutes
+    ]
+    routesPlacesContinents = [
+      ...placesContinentsRoutes
+    ]
+    routesPlacesRegions = [
+      ...placesRegionsRoutes
+    ]
+    routesPlacesCities = [
+      ...placesCitiesRoutes
+    ]
+    routesPlacesSpots = [
+      ...placesSpotsRoutes
+    ]
+    routesWorldTimes = [
+      ...worldTimeRoutes
+    ]
+    routesFilters = [
+      ...filterPlacesContinentsStatesRoutes,
+      ...filterPlacesStatesRegionsRoutes,
+      ...filterPlacesStatesCitiesRoutes,
+      ...filterPlacesStatesSpotsRoutes,
+      ...filterPlacesStatesPostsRoutes,
+      ...filterPlacesStatesVideosRoutes
+    ]
+
+    return {
+      allRoutes: routesAll,
+      postRoutes: routesPosts
+    }
   } catch (error) {
     return []
   }
-};
+}
 
 export default defineNuxtConfig({
   target: 'static',
   ssr: false,
 
   site: {
-    url: 'https://www.frytolnacestach.cz',
-    trailingSlash: false
+    url: 'https://frytolnacestach.cz'
   },
   
   app: {
@@ -1083,10 +1165,9 @@ export default defineNuxtConfig({
 
   // Generate XML
   sitemap: {
-    hostname: process.env.BASE_URL,
-    exclude: [],
     sitemaps: {
       base: {
+        includeAppSources: true,
         include: [
           '/',
           '/clanky',
@@ -1119,186 +1200,121 @@ export default defineNuxtConfig({
           '/ucet/zapomenute-heslo'
         ],
         exclude: [
-          '/videa/**', '/videa/.*', '/videa\\?.*', 
-          '/clanky/**', '/clanky/.*', '/clanky\\?.*', 
-          '/cestovatel/**', '/cestovatel/.*', '/cestovatel\\?.*',
-          '/cestovatelsky-slovnik/**', '/cestovatelsky-slovnik/.*', '/cestovatelsky-slovnik\\?.*',
-          '/udalost/**', '/udalost/.*', '/udalost\\?.*',
-          '/svetovy-cas/**', '/svetovy-cas/.*', '/svetovy-cas\\?.*',
-          '/jidlo/**', '/jidlo/.*', '/jidlo\\?.*',
-          '/fauna/**', '/fauna/.*', '/fauna\\?.*',
-          '/flora/**', '/flora/.*', '/flora\\?.*',
-          '/znacka/**', '/znacka/.*', '/znacka\\?.*',
-          '/retezec/**', '/retezec/.*', '/retezec\\?.*',
-          '/elektricka-zasuvka/**', '/elektricka-zasuvka/.*', '/elektricka-zasuvka\\?.*',
-          '/svet/kontinent/**', '/svet/kontinent/.*', '/svet/kontinent\\?.*',
-          '/svet/stat/**', '/svet/stat/.*', '/svet/stat\\?.*',
-          '/svet/region/**', '/svet/region/.*', '/svet/region\\?.*',
-          '/svet/mesto/**', '/svet/mesto/.*', '/svet/mesto\\?.*',
-          '/svet/misto/**', '/svet/misto/.*', '/svet/misto\\?.*',
+          '/videa/.*', '/videa\\?.*', 
+          '/clanky/.*', '/clanky\\?.*', 
+          '/cestovatel/.*', '/cestovatel\\?.*',
+          '/cestovatelsky-slovnik/.*', '/cestovatelsky-slovnik\\?.*',
+          '/udalost/.*', '/udalost\\?.*',
+          '/svetovy-cas/.*', '/svetovy-cas\\?.*',
+          '/jidlo/.*', '/jidlo\\?.*',
+          '/fauna/.*', '/fauna\\?.*',
+          '/flora/.*', '/flora\\?.*',
+          '/znacka/.*', '/znacka\\?.*',
+          '/retezec/.*', '/retezec\\?.*',
+          '/elektricka-zasuvka/.*', '/elektricka-zasuvka\\?.*',
+          '/svet/kontinent/.*', '/svet/kontinent\\?.*',
+          '/svet/stat/.*', '/svet/stat\\?.*',
+          '/svet/region/.*', '/svet/region\\?.*',
+          '/svet/mesto/.*', '/svet/mesto\\?.*',
+          '/svet/misto/.*', '/svet/misto\\?.*',
         ]
       },
       posts: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/posts?showType=xml')
-          return data.map(v => `/clanky/${v.slug}`)
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/clanky/**'],
+        exclude: ['/clanky']
       },
       videos: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/videos?showType=xml')
-          return data.map(v => `/videa/${v.slug}`)
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/videa/**'],
+        exclude: ['/videa']
       },
       foods: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/foods?showType=xml')
-          return data.map(v => `/jidlo/${v.slug}`)
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/jidlo/**'],
+        exclude: ['/jidlo']
       },
       fauna: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/faunas?showType=xml')
-          return data.map(v => `/fauna/${v.slug}`)
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/fauna/**'],
+        exclude: ['/fauna']
       },
       flora: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/floras?showType=xml')
-          return data.map(v => `/flora/${v.slug}`)
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/flora/**'],
+        exclude: ['/flora']
       },
       brands: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/brands?showType=xml')
-          return data.map(v => `/znacka/${v.slug}`)
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/znacka/**'],
+        exclude: ['/znacka']
       },
       travel_dictionary: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/travel-dictionaries?showType=xml')
-          return data.map(v => `/cestovatelsky-slovnik/${v.slug}`)
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/cestovatelsky-slovnik/**'],
+        exclude: ['/cestovatelsky-slovnik']
       },
       chains: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/chains?showType=xml')
-          return data.map(v => `/retezec/${v.slug}`)
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/retezec/**'],
+        exclude: ['/retezec']
       },
       wall_sockets: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/wall-sockets?showType=xml')
-          return data.map(v => `/elektricka-zasuvka/${v.slug}`)
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/elektricka-zasuvka/**'],
+        exclude: ['/elektricka-zasuvka']
       },
       events: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/events?showType=xml')
-          return data.map(v => `/udalost/${v.slug}`)
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/udalost/**'],
+        exclude: ['/udalost']
       },
       users: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/users?showType=xml')
-          return data.map(v => `/cestovatel/${v.slug}`)
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/cestovatel/**'],
+        exclude: ['/cestovatel']
       },
       world_time: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/places-states?showType=xml')
-          return data.map(v => `/svetovy-cas/${v.slug}`)
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/svetovy-cas/**'],
+        exclude: ['/svetovy-cas']
       },
       places_continets: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/places-continents?showType=xml')
-          return data.map(v => `/svet/kontinent/${v.slug}`)
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/svet/kontinent/**'],
+        exclude: ['/svet/kontinent']
       },
       places_stats: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/places-states?showType=xml');
-          
-          let allRoutes = [];
-      
-          data.forEach(v => {
-            // State - base
-            allRoutes.push(`/svet/stat/${v.slug}`);
-      
-            // State - tabs
-            const tabs = ['co-videt', 'ceny', 'lide', 'cesta', 'kontakty', 'ubytovani', 'videa', 'clanky', 'sousedni-staty', 'elektricke-zasuvky', 'retezce', 'fauna', 'flora', 'jidlo', 'vyrobky'];
-            tabs.forEach(tab => {
-              allRoutes.push(`/svet/stat/${v.slug}/${tab}`);
-            });
-          });
-      
-          return allRoutes;
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/svet/stat/**'],
+        exclude: ['/svet/stat']
       },
       places_regions: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/places-regions?showType=xml')
-          return data.map(v => `/svet/region/${v.slug}`)
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/svet/region/**'],
+        exclude: ['/svet/region']
       },
       places_cities: {
-        routes: async () => {
-          const routes = []
-      
-          // Add routes for the ranges 1-999, 1000-1999, and 2000-2999
-          for (let i = 1; i <= 3; i++) {
-            const start = (i - 1) * 1000 + 1
-            const end = i * 1000
-            const { data } = await fetch(`https://api.frytolnacestach.cz/api/places-cities?showType=xml&start=${start}&end=${end}`)
-            const rangeRoutes = data.map(v => `/svet/mesto/${v.slug}`)
-            routes.push(...rangeRoutes)
-          }
-      
-          return routes
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/svet/mesto/**'],
+        exclude: ['/svet/mesto']
       },
       places_spots: {
-        routes: async () => {
-          let { data } = await fetch('https://api.frytolnacestach.cz/api/places-spots?showType=xml')
-          return data.map(v => `/svet/misto/${v.slug}`)
-        },
-        exclude: ['/**']
+        includeAppSources: true,
+        include: ['/svet/misto/**'],
+        exclude: ['/svet/misto']
       },
+      /*TODO: Generování stránek pro filtery by toto melo vyresit.
       filters: {
-        routes: async () => {
-          const continentsResponse = await fetch('https://api.frytolnacestach.cz/api/places-continents?showType=xml')
-          const statesResponse = await fetch('https://api.frytolnacestach.cz/api/places-states?showType=xml')
-
-          const continentRoutes = continentsResponse.data.map(v => `/svet/stat?filterIDcontinent=${v.id}`)
-          const stateRoutes = [
-            ...statesResponse.data.map(v => `/svet/region?filterIDstate=${v.id}`),
-            ...statesResponse.data.map(v => `/svet/mesto?filterIDstate=${v.id}`),
-            ...statesResponse.data.map(v => `/svet/misto?filterIDstate=${v.id}`),
-            ...statesResponse.data.map(v => `/clanky?filterIDstate=${v.id}`),
-            ...statesResponse.data.map(v => `/videa?filterIDstate=${v.id}`)
-          ]
-
-          return [...continentRoutes, ...stateRoutes];
-        },
-        exclude: ['/**']
-      }
+        includeAppSources: true,
+        include: [
+          '/svet/region?filterIDstate=*',
+          '/svet/mesto?filterIDstate=*',
+          '/svet/misto?filterIDstate=*',
+          '/clanky?filterIDstate=*',
+          '/videa?filterIDstate=*'
+        ]
+      }*/
     }
   },
   // Generate XML END
@@ -1306,28 +1322,20 @@ export default defineNuxtConfig({
   // Generate Hooks
   hooks: {
     async 'nitro:config'(nitroConfig) {
-      const slugs = await getPostRoutes()
-      nitroConfig.prerender.routes.push(...slugs)
+      const { allRoutes } = await getPostRoutes()
+      nitroConfig.prerender.routes.push(...allRoutes)
     }
   },
   // Generate Hooks END
 
   // Generate
   generate: {
-    sourcemap: {
-      server: true,
-      client: true 
-    },
-    routes: routes
+    routes: routesAll
   },
   // Generate END
 
   // Build
   build: {
-    sourcemap: {
-      server: true,
-      client: true 
-    }
   },
   // Build END
 
