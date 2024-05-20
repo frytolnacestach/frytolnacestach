@@ -292,7 +292,8 @@ export default defineNuxtConfig({
 
   modules: [
     '@vite-pwa/nuxt', 
-    "@nuxtjs/sitemap"
+    '@nuxtjs/sitemap',
+    'nuxt-jsonld'
   ],
 
   serverMiddleware: [
