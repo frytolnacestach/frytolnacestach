@@ -48,6 +48,10 @@
                 // API - GET - Platforms
                 const responseBase = await fetch("https://api.frytolnacestach.cz/api/base")
                 this.base = await responseBase.json()
+
+                if (this.base && this.base.length > 0) {
+                    this.headScript.text = ((this.base[0].conditions_user) ? this.base[0].conditions_user : "")
+                }
             }
         },
 
@@ -56,80 +60,57 @@
             this.fetchData()
         },
 
-        head() {
-            // Variables
-            let title
-            let description
-            let keywords
-            let ogImage
-            let ogTitle
-            let ogDescription
-            let ogUrl
-            let ogType
+        setup() {
+            let headMeta = reactive({
+                title: 'Obchodní podmínky a zásady ochrany osobních údajů | Cestovatelský portál Frytol na cestách',
+                description: 'Obchodní podmínky a zásady ochrany osobních údajů na cestovatelském portálů Frytol na cestách.',
+                keywords: 'podmínky, pravdila, eu, cestování, svět',
+                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+                ogTitle: 'Obchodní podmínky a zásady ochrany osobních údajů | Cestovatelský portál Frytol na cestách',
+                ogDescription: 'Obchodní podmínky a zásady ochrany osobních údajů na cestovatelském portálů Frytol na cestách.',
+                ogUrl: `https://www.frytolnacestach.cz/conditions`,
+                ogType: 'website',
+            })
 
-            // title
-            title = 'Obchodní podmínky a zásady ochrany osobních údajů | Cestovatelský portál Frytol na cestách'
+            let headLink = ref([
+                { rel: 'canonical', href: headMeta.ogUrl }
+            ])
 
-            // description
-            description = 'Obchodní podmínky a zásady ochrany osobních údajů na cestovatelském portálů Frytol na cestách'
+            let headScript = reactive({
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "Obchodní podmínky a zásady ochrany osobních údajů",
+                "description": headMeta.description,
+                "url": "https://www.frytolnacestach.cz/conditions",
+                "text": "Text stránky",
+                "datePublished": "2024-01-29",
+                "author": {
+                    "@type": "Organization",
+                    "name": "Frytol na cestách",
+                    "url": "https://www.frytolnacestach.cz/"
+                }
+            })
 
-            // keywolds
-            keywords = 'podmínky, pravdila, eu, cestování, svět'
-            
-            // ogImage
-            ogImage = 'https://image.frytolnacestach.cz/storage/main/og-default.png'
-
-            // ogTitle
-            ogTitle = title
-
-            // ogDescription
-            ogDescription = description
-
-            // ogUrl
-            ogUrl = `${process.env.baseUrl}/conditions`
-
-            // ogType
-            ogType = 'website'
-
-            // Return
-            return {
-                title,
+            useHead({
+                title: headMeta.title,
                 meta: [
-                    { hid: 'title', name: 'title', content: title },
-                    { hid: 'description', name: 'description', content: description },
-                    { name: 'keywords', content: keywords },
-                    { hid: 'og:type', content: ogType },
-                    { hid: 'og:url', content: ogUrl },
-                    { hid: 'og:title', content: ogTitle },
-                    { hid: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { name: 'twitter:title', content: ogTitle },
-                    { name: 'twitter:description', content: ogDescription },
-                    { name: 'twitter:image', content: ogImage },
-                    { name: 'twitter:url', content: ogUrl }
+                    { name: 'description', content: headMeta.description },
+                    { name: 'keywords', content: headMeta.keywords },
+                    { property: 'og:image', content: headMeta.ogImage },
+                    { property: 'og:title', content: headMeta.ogTitle },
+                    { property: 'og:description', content: headMeta.ogDescription },
+                    { property: 'og:url', content: headMeta.ogUrl },
+                    { property: 'og:type', content: headMeta.ogType }
                 ],
-                link: [
-                    { rel: 'canonical', href: ogUrl }
-                ],
-                script: [
-                    {
-                        type: 'application/ld+json',
-                        json: {
-                            "@context": "https://schema.org",
-                            "@type": "WebPage",
-                            "name": "Obchodní podmínky a zásady ochrany osobních údajů",
-                            "description": description,
-                            "url": "https://www.frytolnacestach.cz/conditions",
-                            "text": this.base[0].conditions_user,
-                            "datePublished": "2024-01-29",
-                            "author": {
-                                "@type": "Organization",
-                                "name": "Frytol na cestách",
-                                "url": "https://www.frytolnacestach.cz/"
-                            }
-                        }
-                    }
-                ]
+                link: headLink
+            })
+
+            useJsonld(() => headScript)
+
+            return {
+                headMeta,
+                headLink,
+                headScript
             }
         }
     })

@@ -61,7 +61,7 @@
                 ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
                 ogTitle: 'Tradiční jídla ve světě | Cestovatelský portál Frytol na cestách',
                 ogDescription: 'Jaké jídla se jedí ve světe. Na které kde narazíte a co si kde dát? To zjistíte na této stránce cestovatelského portálu Frytol na cestách.',
-                ogUrl: `${process.env.baseUrl}/jidlo`,
+                ogUrl: `https://www.frytolnacestach.cz/jidlo`,
                 ogType: 'website',
             })
 

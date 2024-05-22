@@ -114,61 +114,56 @@
             }
         },
 
-        head() {
-            // Variables
-            let title
-            let description
-            let keywords
-            let ogImage
-            let ogTitle
-            let ogDescription
-            let ogUrl
-            let ogType
+        setup() {
+            let headMeta = reactive({
+                title: 'TITLE',
+                description: 'DESCRIPTION',
+                keywords: 'KEYWORDS',
+                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+                ogTitle: 'TITLE',
+                ogDescription: 'DESCRIPTION',
+                ogUrl: `https://www.frytolnacestach.cz/cestovatel`,
+                ogType: 'website',
+            })
 
-            // title
-            title = `Navštívená místa uživatelem ${(this.user && this.user.length > 0) ? this.user[0].nickname : 'Uživatel'} | Frytol na cestách`
+            let headLink = ref([
+                { rel: 'canonical', href: headMeta.ogUrl }
+            ])
 
-            // description
-            description = `Profil cestovatele ${(this.user && this.user.length > 0) ? this.user[0].nickname : 'Uživatel'} na cestovatelském portálu Frytol na cestách`
+            let headScript = reactive({
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": headMeta.title,
+                "description": headMeta.description,
+                "url": headMeta.ogUrl,
+                "datePublished": "2024-01-31",
+                "author": {
+                    "@type": "Organization",
+                    "name": "Frytol na cestách",
+                    "url": "https://www.frytolnacestach.cz/"
+                }
+            })
 
-            // keywolds
-            keywords = `${(this.user && this.user.length > 0) ? this.user[0].nickname : 'Uživatel' + ', navštívená místa, cestovatel, uživatel, cestování, svět, rady, cestovatelský portál'}`
-            
-            // ogImage
-            ogImage = 'https://image.frytolnacestach.cz/storage/main/og-default.png'
-
-            // ogTitle
-            ogTitle = title
-
-            // ogDescription
-            ogDescription = description
-
-            // ogUrl
-            ogUrl = `${process.env.baseUrl}/cestovatel/${(this.user && this.user.length > 0) ? this.user[0].slug : 'slug'}/navstivena-mista`
-
-            // ogType
-            ogType = 'website'
-
-            // Return
-            return {
-                title,
+            useHead({
+                title: headMeta.title,
                 meta: [
-                    { hid: 'title', name: 'title', content: title },
-                    { hid: 'description', name: 'description', content: description },
-                    { name: 'keywords', content: keywords },
-                    { hid: 'og:type', content: ogType },
-                    { hid: 'og:url', content: ogUrl },
-                    { hid: 'og:title', content: ogTitle },
-                    { hid: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { name: 'twitter:title', content: ogTitle },
-                    { name: 'twitter:description', content: ogDescription },
-                    { name: 'twitter:image', content: ogImage },
-                    { name: 'twitter:url', content: ogUrl }
+                    { name: 'description', content: headMeta.description },
+                    { name: 'keywords', content: headMeta.keywords },
+                    { property: 'og:image', content: headMeta.ogImage },
+                    { property: 'og:title', content: headMeta.ogTitle },
+                    { property: 'og:description', content: headMeta.ogDescription },
+                    { property: 'og:url', content: headMeta.ogUrl },
+                    { property: 'og:type', content: headMeta.ogType }
                 ],
-                link: [
-                    { rel: 'canonical', href: ogUrl }
-                ]
+                link: headLink
+            })
+
+            useJsonld(() => headScript)
+
+            return {
+                headMeta,
+                headLink,
+                headScript
             }
         },
 
@@ -182,6 +177,17 @@
                 // API
                 const responseUser = await fetch(`https://api.frytolnacestach.cz/api/user/${route.params.slug}`)
                 this.user = await responseUser.json() || []
+
+                if (this.user && this.user.length > 0) {
+                    // Meta
+                    this.headMeta.title = `Navštívená místa uživatelem ${this.user[0].nickname} | Frytol na cestách`
+                    this.headMeta.description = `Profil cestovatele ${this.user[0].nickname} na cestovatelském portálu Frytol na cestách`
+                    this.headMeta.keywords = `${this.user[0].nickname + ', navštívená místa, cestovatel, uživatel, cestování, svět, rady, cestovatelský portál'}`
+                    this.headMeta.ogTitle = `Navštívená místa uživatelem ${this.user[0].nickname} | Frytol na cestách`
+                    this.headMeta.ogDescription = `Profil cestovatele ${this.user[0].nickname} na cestovatelském portálu Frytol na cestách`
+                    this.headMeta.ogUrl = `https://frytolnacestach.cz/cestovatel/${this.user[0].slug}/navstivena-mista`
+                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
+                }
             },
 
             async fetchDataPlaces() {

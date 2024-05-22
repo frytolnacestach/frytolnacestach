@@ -1014,6 +1014,7 @@ export default defineNuxtConfig({
 
   env: {
     baseUrl: process.env.BASE_URL || 'https://www.frytolnacestach.cz',
+    baseUrlProduction: process.env.BASE_URL_PRODUCTION || 'https://www.frytolnacestach.cz',
     envGoogleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY || ''
   },
 

@@ -53,79 +53,56 @@
             }
         },
 
-        head() {
-            // Variables
-            let title
-            let description
-            let keywords
-            let ogImage
-            let ogTitle
-            let ogDescription
-            let ogUrl
-            let ogType
+        setup() {
+            let headMeta = reactive({
+                title: 'Události | Cestovatelský portál Frytol na cestách',
+                description: 'Události které se ve světě konají.',
+                keywords: 'udalosti, svetove eventy, plánuj cestu, cestovatelský portál, cestování, svět',
+                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+                ogTitle: 'Události | Cestovatelský portál Frytol na cestách',
+                ogDescription: 'Události které se ve světě konají.',
+                ogUrl: `https://www.frytolnacestach.cz/udalost`,
+                ogType: 'website',
+            })
 
-            // title
-            title = 'Události | Cestovatelský portál Frytol na cestách'
+            let headLink = ref([
+                { rel: 'canonical', href: headMeta.ogUrl }
+            ])
 
-            // description
-            description = 'Události které se ve světě konají.'
+            let headScript = reactive({
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": headMeta.title,
+                "description": headMeta.description,
+                "url": headMeta.ogUrl,
+                "datePublished": "2024-01-31",
+                "author": {
+                    "@type": "Organization",
+                    "name": "Frytol na cestách",
+                    "url": "https://www.frytolnacestach.cz/"
+                }
+            })
 
-            // keywolds
-            keywords = 'udalosti, svetove eventy, plánuj cestu, cestovatelský portál, cestování, svět'
-            
-            // ogImage
-            ogImage = 'https://image.frytolnacestach.cz/storage/main/og-default.png'
-
-            // ogTitle
-            ogTitle = title
-
-            // ogDescription
-            ogDescription = description
-
-            // ogUrl
-            ogUrl = `${process.env.baseUrl}/udalost`
-
-            // ogType
-            ogType = 'website'
-
-            // Return
-            return {
-                title,
+            useHead({
+                title: headMeta.title,
                 meta: [
-                    { hid: 'title', name: 'title', content: title },
-                    { hid: 'description', name: 'description', content: description },
-                    { name: 'keywords', content: keywords },
-                    { hid: 'og:type', content: ogType },
-                    { hid: 'og:url', content: ogUrl },
-                    { hid: 'og:title', content: ogTitle },
-                    { hid: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { name: 'twitter:title', content: ogTitle },
-                    { name: 'twitter:description', content: ogDescription },
-                    { name: 'twitter:image', content: ogImage },
-                    { name: 'twitter:url', content: ogUrl }
+                    { name: 'description', content: headMeta.description },
+                    { name: 'keywords', content: headMeta.keywords },
+                    { property: 'og:image', content: headMeta.ogImage },
+                    { property: 'og:title', content: headMeta.ogTitle },
+                    { property: 'og:description', content: headMeta.ogDescription },
+                    { property: 'og:url', content: headMeta.ogUrl },
+                    { property: 'og:type', content: headMeta.ogType }
                 ],
-                link: [
-                    { rel: 'canonical', href: ogUrl }
-                ],
-                script: [
-                    {
-                        type: 'application/ld+json',
-                        json: {
-                            "@context": "https://schema.org",
-                            "@type": "WebPage",
-                            "name": title,
-                            "description": description,
-                            "url": ogUrl,
-                            "datePublished": "2024-01-31",
-                            "author": {
-                                "@type": "Organization",
-                                "name": "Frytol na cestách",
-                                "url": "https://www.frytolnacestach.cz/"
-                            }
-                        }
-                    }
-                ]
+                link: headLink
+            })
+
+            useJsonld(() => headScript)
+
+            return {
+                headMeta,
+                headLink,
+                headScript
             }
         },
 
