@@ -113,86 +113,55 @@
             }
         },
 
-        head() {
-            // Variables
-            let title
-            let description
-            let keywords
-            let ogImage
-            let ogTitle
-            let ogDescription
-            let ogUrl
-            let ogType
+        setup() {
+            let headMeta = reactive({
+                title: 'Detail jídla | Cestovatelský portál Frytol na cestách',
+                description: 'Popis detailu jídla',
+                keywords: 'Jídlo, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět',
+                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+                ogTitle: 'Detail jídla | Cestovatelský portál Frytol na cestách',
+                ogDescription: 'Popis detailu jídla',
+                ogUrl: `https://www.frytolnacestach.cz/jidlo/slug`,
+                ogType: 'website',
+            })
 
-            // title
-            title = `${this.video[0].title} | Cestovatelský portál Frytol na cestách`
+            let headLink = ref([
+                { rel: 'canonical', href: headMeta.ogUrl }
+            ])
 
-            // description
-            description = `${this.video[0].perex ? this.video[0].perex.slice(0, this.video[0].perex.lastIndexOf(' ', 150)) : this.video[0].title ? this.video[0].title : 'Video'}`
+            let headScript = reactive({
+                "@context": "https://schema.org",
+                "@type": "VideoObject",
+                "name": "",
+                "thumbnailUrl": "",
+                "embedUrl": "",
+                "url": "",
+                "description": "",
+                "uploadDate": ""
+            })
 
-            // keywolds
-            let metaSeoTags = ""
-            if (this.video[0].seo_tags && this.video[0].seo_tags.length > 0) {
-                metaSeoTags = ", " + this.video[0].seo_tags.map(item => item.tag).join(", ")
-            }
-            keywords = (this.video[0].title ? this.video[0].title : '') + metaSeoTags + ', cestovatelské video, cestování, svět, cetovatelský portál'
-            
-            // ogImage
-            ogImage = `${this.video[0].id_image ? 'https://image.frytolnacestach.cz/storage' + this.imageVideo[0].source + this.imageVideo[0].name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+            watch(headMeta, (newMeta) => {
+                useHead({
+                    title: headMeta.title,
+                    meta: [
+                        { name: 'description', content: headMeta.description },
+                        { name: 'keywords', content: headMeta.keywords },
+                        { property: 'og:image', content: headMeta.ogImage },
+                        { property: 'og:title', content: headMeta.ogTitle },
+                        { property: 'og:description', content: headMeta.ogDescription },
+                        { property: 'og:url', content: headMeta.ogUrl },
+                        { property: 'og:type', content: headMeta.ogType }
+                    ],
+                    link: headLink
+                })
+            }, { deep: true })
 
-            // ogTitle
-            ogTitle = title
+            useJsonld(() => headScript)
 
-            // ogDescription
-            ogDescription = description
-
-            // ogUrl
-            ogUrl = `${process.env.baseUrl}/videa/${this.video[0].slug}`
-
-            // ogType
-            ogType = 'website'
-
-            // script
-            let jsonldVideo
-            if (this.video && this.video.length > 0) {
-                jsonldVideo = {
-                    type: 'application/ld+json',
-                    json: {
-                        "@context": "https://schema.org",
-                        "@type": "VideoObject",
-                        "name": (this.video[0].title ? this.video[0].title : ""),
-                        "thumbnailUrl": (this.imageVideo && this.imageVideo.find(image => image.id === this.video[0].id_image)) ? ("https://image.frytolnacestach.cz/storage" + (this.imageVideo.find(image => image.id === this.video[0].id_image).source + this.imageVideo.find(image => image.id === this.video[0].id_image).name) + ".webp") : "",
-                        "embedUrl": (this.video[0].url ? this.video[0].url : ""),
-                        "url": 'https://frytolnacestach.cz' + `/videa/${this.video[0].slug}`,
-                        "description": (this.video[0].perex ? this.video[0].perex.replace(/<\/?[^>]+(>|$)/g, '') : ""),
-                        "uploadDate": (this.video[0].created_at ? this.video[0].created_at : ""),
-                    }
-                }
-            } else {
-                jsonldVideo = []
-            }
-
-            // Return
             return {
-                title,
-                meta: [
-                    { hid: 'title', name: 'title', content: title },
-                    { hid: 'description', name: 'description', content: description },
-                    { name: 'keywords', content: keywords },
-                    { hid: 'og:type', content: ogType },
-                    { hid: 'og:url', content: ogUrl },
-                    { hid: 'og:title', content: ogTitle },
-                    { hid: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { name: 'twitter:title', content: ogTitle },
-                    { name: 'twitter:description', content: ogDescription },
-                    { name: 'twitter:image', content: ogImage },
-                    { name: 'twitter:url', content: ogUrl }
-                ],
-                script: [jsonldVideo],
-                link: [
-                    { rel: 'canonical', href: ogUrl }
-                ]
+                headMeta,
+                headLink,
+                headScript
             }
         },
 
@@ -208,6 +177,31 @@
                 if (this.video && this.video.length > 0) {
                     const responseImageVideo = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.video[0].id_image}`)
                     this.imageVideo = await responseImageVideo.json() || []
+                }
+
+                // HEAD
+                if (this.video && this.video.length > 0) {
+                    // Meta
+                    this.headMeta.title = `${this.video[0].title} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.description = `${this.video[0].perex ? this.video[0].perex.slice(0, this.video[0].perex.lastIndexOf(' ', 150)) : this.video[0].title ? this.video[0].title : 'Video'}`
+                    if (this.video[0].seo_tags && this.video[0].seo_tags.length > 0) {
+                        const metaSeoTags = ", " + this.video[0].seo_tags.map(item => item.tag).join(", ")
+                        this.headMeta.keywords = (this.video[0].title ? this.video[0].title : '') + metaSeoTags + ', cestovatelské video, cestování, svět, cetovatelský portál'
+                    } else {
+                        this.headMeta.keywords = (this.video[0].title ? this.video[0].title : '') + ', cestovatelské video, cestování, svět, cetovatelský portál'
+                    }
+                    this.headMeta.ogImage = `${this.video[0].id_image ? 'https://image.frytolnacestach.cz/storage' + this.imageVideo[0].source + this.imageVideo[0].name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+                    this.headMeta.ogTitle = `${this.video[0].title} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.ogDescription = `${this.video[0].perex ? this.video[0].perex.slice(0, this.video[0].perex.lastIndexOf(' ', 150)) : this.video[0].title ? this.video[0].title : 'Video'}`
+                    this.headMeta.ogUrl = `https://www.frytolnacestach.cz/videa/${this.video[0].slug}`
+                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
+                    // Script
+                    this.headScript.name = (this.video[0].title ? this.video[0].title : "")
+                    this.headScript.description = (this.video[0].perex ? this.video[0].perex.replace(/<\/?[^>]+(>|$)/g, '') : "")
+                    this.headScript.thumbnailUrl = ((this.imageVideo && this.imageVideo.find(image => image.id === this.video[0].id_image)) ? ("https://image.frytolnacestach.cz/storage" + (this.imageVideo.find(image => image.id === this.video[0].id_image).source + this.imageVideo.find(image => image.id === this.video[0].id_image).name) + ".webp") : "")
+                    this.headScript.embedUrl = (this.video[0].url ? this.video[0].url : "")
+                    this.headScript.url = 'https://frytolnacestach.cz' + `/videa/${this.video[0].slug}`
+                    this.headScript.uploadDate = (this.video[0].created_at ? this.video[0].created_at : "")
                 }
             }
         },

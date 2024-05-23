@@ -274,7 +274,7 @@
             ogDescription = description
 
             // ogUrl
-            ogUrl = `${process.env.baseUrl}/svet/stat/${this.place[0].slug}${this.activeTab !== 'default' ? `/${this.activeTab}` : ''}`
+            ogUrl = `https://www.frytolnacestach.cz/svet/stat/${this.place[0].slug}${this.activeTab !== 'default' ? `/${this.activeTab}` : ''}`
 
             // ogType
             ogType = 'website'

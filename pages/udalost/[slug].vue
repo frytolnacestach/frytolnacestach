@@ -189,83 +189,58 @@
             }
         },
 
-        head() {
-            // Variables
-            let title
-            let description
-            let keywords
-            let ogImage
-            let ogTitle
-            let ogDescription
-            let ogUrl
-            let ogType
+        setup() {
+            let headMeta = reactive({
+                title: 'Detail jídla | Cestovatelský portál Frytol na cestách',
+                description: 'Popis detailu jídla',
+                keywords: 'Jídlo, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět',
+                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+                ogTitle: 'Detail jídla | Cestovatelský portál Frytol na cestách',
+                ogDescription: 'Popis detailu jídla',
+                ogUrl: `https://www.frytolnacestach.cz/jidlo/slug`,
+                ogType: 'website',
+            })
 
-            // title
-            title = `${(this.event && this.event.length > 0 && this.event[0].name) ? this.event[0].name : 'Region'} | Cestovatelský portál Frytol na cestách`
+            let headLink = ref([
+                { rel: 'canonical', href: headMeta.ogUrl }
+            ])
 
-            // description
-            description = `${(this.event && this.event.length > 0 && this.event[0].description) ? this.event[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.event[0].description.lastIndexOf(' ', 160)) : this.event[0].name}`
+            let headScript = reactive({
+                "@context": "http://schema.org",
+                "@type": "Event",
+                "name": "",
+                "startDate": "",
+                "endDate": "",
+                "location": {
+                    "@type": "Place",
+                    "name": ""
+                },
+                "description": "",
+                "image": ""
+            })
 
-            // keywolds
-            let metaSeoTags = ""
-            if (this.event && this.event.length > 0 && this.event[0].seo_tags && this.event[0].seo_tags.length > 0) {
-                metaSeoTags = ", " + this.event[0].seo_tags.map(item => item.tag).join(", ")
-            }
-            keywords = ((this.event && this.event.length > 0 && this.event[0].name) ? this.event[0].name : '') + metaSeoTags + ', událost, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
-            
-            // ogImage
-            ogImage = `${(this.event && this.event.length > 0 && this.event[0].id_image_hero) ? 'https://image.frytolnacestach.cz/storage/' + this.image.find(image => image.id === this.event[0].id_image_hero).source + this.image.find(image => image.id === this.event[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+            watch(headMeta, (newMeta) => {
+                useHead({
+                    title: headMeta.title,
+                    meta: [
+                        { name: 'description', content: headMeta.description },
+                        { name: 'keywords', content: headMeta.keywords },
+                        { property: 'og:image', content: headMeta.ogImage },
+                        { property: 'og:title', content: headMeta.ogTitle },
+                        { property: 'og:description', content: headMeta.ogDescription },
+                        { property: 'og:url', content: headMeta.ogUrl },
+                        { property: 'og:type', content: headMeta.ogType }
+                    ],
+                    link: headLink
+                })
+            }, { deep: true })
 
-            // ogTitle
-            ogTitle = title
+            useJsonld(() => headScript)
 
-            // ogDescription
-            ogDescription = description
-
-            // ogUrl
-            ogUrl = `${process.env.baseUrl}/udalost/${(this.event && this.event.length > 0 && this.event[0].slug) ? this.event[0].slug : 'slug_event'}`
-
-            // ogType
-            ogType = 'website'
-
-            // Return
             return {
-                title,
-                meta: [
-                    { hid: 'title', name: 'title', content: title },
-                    { hid: 'description', name: 'description', content: description },
-                    { name: 'keywords', content: keywords },
-                    { hid: 'og:type', content: ogType },
-                    { hid: 'og:url', content: ogUrl },
-                    { hid: 'og:title', content: ogTitle },
-                    { hid: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { name: 'twitter:title', content: ogTitle },
-                    { name: 'twitter:description', content: ogDescription },
-                    { name: 'twitter:image', content: ogImage },
-                    { name: 'twitter:url', content: ogUrl }
-                ],
-                link: [
-                    { rel: 'canonical', href: ogUrl }
-                ],
-                script: [
-                    {
-                        type: 'application/ld+json',
-                        json: {
-                            "@context": "http://schema.org",
-                            "@type": "Event",
-                            "name": ((this.event && this.event.length > 0 && this.event[0].name) ? this.event[0].name : ""),
-                            "startDate": ((this.event && this.event.length > 0 && this.event[0].date_start) ? this.event[0].date_start : ""),
-                            "endDate": ((this.event && this.event.length > 0 && this.event[0].date_end) ? this.event[0].date_end : ""),
-                            "location": {
-                                "@type": "Place",
-                                "name": ((this.placeCity && this.placeCity[0]) ? (this.placeCity[0].name ? this.placeCity[0].name : "") : '')
-                            },
-                            "description": ((this.event && this.event.length > 0 && this.event[0].description) ? this.event[0].description : ""),
-                            "image": ((this.image && this.image[0] && this.image[0].id) ? ("https://image.frytolnacestach.cz/storage/events/" + this.image[0].name + ".webp") : "" )
-                        }
-                    }
-                ]
+                headMeta,
+                headLink,
+                headScript
             }
         },
 
@@ -278,14 +253,39 @@
                 const responseEvent = await fetch(`https://api.frytolnacestach.cz/api/event/${route.params.slug}`)
                 this.event = await responseEvent.json() || []
                 // Image
-                if (this.event[0].id_image_hero && this.event[0].id_image_hero !== 0) {
+                if (this.event && this.event.length > 0 && this.event[0].id_image_hero && this.event[0].id_image_hero !== 0) {
                     const responseImage = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.event[0].id_image_hero}`)
                     this.image = await responseImage.json() || []
                 }
                 // PlaceCity
-                if (this.event[0].id_city && this.event[0].id_city !== 0) {
+                if (this.event && this.event.length > 0 && this.event[0].id_city && this.event[0].id_city !== 0) {
                     const responsePlaceCity = await fetch(`https://api.frytolnacestach.cz/api/places-city-id/${this.event[0].id_city}`)
                     this.placeCity = await responsePlaceCity.json() || []
+                }
+
+                // HEAD
+                if (this.event && this.event.length > 0) {
+                    // Meta
+                    this.headMeta.title = `${(this.event[0].name) ? this.event[0].name : 'Region'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.description = `${(this.event[0].description) ? this.event[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.event[0].description.lastIndexOf(' ', 160)) : this.event[0].name}`
+                    if (this.event[0].seo_tags && this.event[0].seo_tags.length > 0) {
+                        const metaSeoTags = ", " + this.event[0].seo_tags.map(item => item.tag).join(", ")
+                        this.headMeta.keywords = ((this.event[0].name) ? this.event[0].name : '') + metaSeoTags + ', událost, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
+                    } else {
+                        this.headMeta.keywords = ((this.event[0].name) ? this.event[0].name : '') + ', událost, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
+                    }
+                    this.headMeta.ogImage = `${(this.event[0].id_image_hero) ? 'https://image.frytolnacestach.cz/storage/' + this.image.find(image => image.id === this.event[0].id_image_hero).source + this.image.find(image => image.id === this.event[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+                    this.headMeta.ogTitle = `${(this.event[0].name) ? this.event[0].name : 'Region'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.ogDescription = `${(this.event[0].description) ? this.event[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.event[0].description.lastIndexOf(' ', 160)) : this.event[0].name}`
+                    this.headMeta.ogUrl = `https://www.frytolnacestach.cz/udalost/${(this.event[0].slug) ? this.event[0].slug : 'slug_event'}`
+                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
+                    // Script
+                    this.headScript.name = (this.event[0].name ? this.event[0].name : "")
+                    this.headScript.description = (this.event[0].description ? this.event[0].description : "")
+                    this.headScript.image = ((this.image && this.image[0] && this.image[0].id) ? ("https://image.frytolnacestach.cz/storage/events/" + this.image[0].name + ".webp") : "")
+                    this.headScript.startDate = (this.event[0].date_start ? this.event[0].date_start : "")
+                    this.headScript.endDate = (this.event[0].date_end ? this.event[0].date_end : "")
+                    this.headScript.location.name = ((this.placeCity && this.placeCity[0]) ? (this.placeCity[0].name ? this.placeCity[0].name : "") : "")
                 }
             }
         },

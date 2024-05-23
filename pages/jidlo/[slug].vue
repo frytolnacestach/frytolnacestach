@@ -1,3 +1,4 @@
+
 <template>
     <NuxtLayout name="default">
         <main class="t-main -green -pt-menu" role="main">
@@ -88,7 +89,7 @@
     import oIngredients from '~/components/organisms/oIngredients.vue'
     import oRecipe from '~/components/organisms/oRecipe.vue'
 
-    export default defineComponent({
+    export default {
         name: 'JidloSlugPage',
 
         components: {
@@ -119,79 +120,54 @@
             }
         },
 
-        head() {
-            // Variables
-            let title
-            let description
-            let keywords
-            let ogImage
-            let ogTitle
-            let ogDescription
-            let ogUrl
-            let ogType
+        setup() {
+            let headMeta = reactive({
+                title: 'Detail jídla | Cestovatelský portál Frytol na cestách',
+                description: 'Popis detailu jídla',
+                keywords: 'Jídlo, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět',
+                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+                ogTitle: 'Detail jídla | Cestovatelský portál Frytol na cestách',
+                ogDescription: 'Popis detailu jídla',
+                ogUrl: `https://www.frytolnacestach.cz/jidlo/slug`,
+                ogType: 'website',
+            })
 
-            // title
-            title = `${this.food[0].name ? this.food[0].name : 'Jídlo'} | Cestovatelský portál Frytol na cestách`
+            let headLink = ref([
+                { rel: 'canonical', href: headMeta.ogUrl }
+            ])
 
-            // description
-            description = `${this.food[0].description ? this.food[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.food[0].description.lastIndexOf(' ', 160)) : this.food[0].name}`
+            let headScript = reactive({
+                "@context": "https://schema.org",
+                "@type": "Recipe",
+                "name": headMeta.title,
+                "description": headMeta.description,
+                "image": "https://image.frytolnacestach.cz/storage/main/og-default.png",
+                "recipeIngredient": [],
+                "recipeInstructions": []
+            })
 
-            // keywolds
-            let metaSeoTags = ""
-            if (this.food[0].seo_tags && this.food[0].seo_tags.length > 0) {
-                metaSeoTags = ", " + this.food[0].seo_tags.map(item => item.tag).join(", ")
-            }
-            keywords = (this.food[0].name ? this.food[0].name : '') + metaSeoTags + ', Jídla, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět'
-            
-            // ogImage
-            ogImage = `${this.food[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageFood.find(image => image.id === this.food[0].id_image_hero).source + this.imageFood.find(image => image.id === this.food[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+            watch(headMeta, (newMeta) => {
+                useHead({
+                    title: headMeta.title,
+                    meta: [
+                        { name: 'description', content: headMeta.description },
+                        { name: 'keywords', content: headMeta.keywords },
+                        { property: 'og:image', content: headMeta.ogImage },
+                        { property: 'og:title', content: headMeta.ogTitle },
+                        { property: 'og:description', content: headMeta.ogDescription },
+                        { property: 'og:url', content: headMeta.ogUrl },
+                        { property: 'og:type', content: headMeta.ogType }
+                    ],
+                    link: headLink
+                })
+            }, { deep: true })
 
-            // ogTitle
-            ogTitle = title
+            useJsonld(() => headScript)
 
-            // ogDescription
-            ogDescription = description
-
-            // ogUrl
-            ogUrl = `${process.env.baseUrl}/jidlo/${this.food[0].slug}`
-
-            // ogType
-            ogType = 'website'
-
-            // Return
             return {
-                title,
-                meta: [
-                    { hid: 'title', name: 'title', content: title },
-                    { hid: 'description', name: 'description', content: description },
-                    { name: 'keywords', content: keywords },
-                    { hid: 'og:type', content: ogType },
-                    { hid: 'og:url', content: ogUrl },
-                    { hid: 'og:title', content: ogTitle },
-                    { hid: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { name: 'twitter:title', content: ogTitle },
-                    { name: 'twitter:description', content: ogDescription },
-                    { name: 'twitter:image', content: ogImage },
-                    { name: 'twitter:url', content: ogUrl }
-                ],
-                link: [
-                    { rel: 'canonical', href: ogUrl }
-                ],
-                script: [
-                    {
-                        type: 'application/ld+json',
-                        json: {
-                            "@context": "https://schema.org",
-                            "@type": "Recipe",
-                            "name": ((this.food && this.food.length > 0 && this.food[0].name) ? this.food[0].name : ""),
-                            "description": ((this.food && this.food.length > 0 && this.food[0].description) ? this.food[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
-                            "image": ((this.imageFood && this.food.length > 0 && this.imageFood[0].id) ? ("https://image.frytolnacestach.cz/storage/foods/" + this.imageFood[0].name + ".webp") : "https://image.frytolnacestach.cz/storage/main/og-default.png" ),
-                            "recipeIngredient": ((this.food && this.food.length > 0 && this.food[0].ingredients && this.food[0].ingredients.length > 0) ? this.food[0].ingredients : ""),
-                            "recipeInstructions": ((this.food && this.food.length > 0 && this.food[0].recipe && this.food[0].recipe.length > 0) ? this.food[0].recipe : "")
-                        }
-                    }
-                ]
+                headMeta,
+                headLink,
+                headScript
             }
         },
 
@@ -220,11 +196,35 @@
                     const responseImagesStates = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
                     this.imagesStates = await responseImagesStates.json() || []
                 }
+
+                // HEAD
+                if (this.food && this.food.length > 0) {
+                    // Meta
+                    this.headMeta.title = `${this.food[0].name ? this.food[0].name : 'Jídlo'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.description = `${this.food[0].description ? this.food[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.food[0].description.lastIndexOf(' ', 160)) : this.food[0].name}`
+                    if (this.food[0].seo_tags && this.food[0].seo_tags.length > 0) {
+                        const metaSeoTags = ", " + this.food[0].seo_tags.map(item => item.tag).join(", ")
+                        this.headMeta.keywords = (this.food[0].name ? this.food[0].name : '') + metaSeoTags + ', Jídla, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět'
+                    } else {
+                        this.headMeta.keywords = (this.food[0].name ? this.food[0].name : '') + ', Jídla, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět'
+                    }
+                    this.headMeta.ogImage = `${this.food[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageFood.find(image => image.id === this.food[0].id_image_hero).source + this.imageFood.find(image => image.id === this.food[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+                    this.headMeta.ogTitle = `${this.food[0].name ? this.food[0].name : 'Jídlo'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.ogDescription = `${this.food[0].description ? this.food[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.food[0].description.lastIndexOf(' ', 160)) : this.food[0].name}`
+                    this.headMeta.ogUrl = `https://www.frytolnacestach.cz/jidlo/${this.food[0].slug}`
+                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
+                    // Script
+                    this.headScript.name = ((this.food[0].name) ? this.food[0].name : "")
+                    this.headScript.description = ((this.food[0].description) ? this.food[0].description.replace(/<\/?[^>]+(>|$)/g, '') : "")
+                    this.headScript.image = ((this.imageFood[0].id) ? ("https://image.frytolnacestach.cz/storage/foods/" + this.imageFood[0].name + ".webp") : "https://image.frytolnacestach.cz/storage/main/og-default.png" )
+                    this.headScript.recipeIngredient = ((this.food[0].ingredients && this.food[0].ingredients.length > 0) ? this.food[0].ingredients : "")
+                    this.headScript.recipeInstructions = ((this.food[0].recipe && this.food[0].recipe.length > 0) ? this.food[0].recipe : "")
+                }
             }
         },
 
         mounted() {
             this.fetchData()
         }
-    })
+    }
 </script>

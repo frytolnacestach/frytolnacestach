@@ -96,7 +96,7 @@
             ogDescription = description
 
             // ogUrl
-            ogUrl = `${process.env.baseUrl}/svet/mesto`
+            ogUrl = `https://www.frytolnacestach.cz/svet/mesto`
 
             // ogType
             ogType = 'website'

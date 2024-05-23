@@ -88,84 +88,53 @@
             }
         },
 
-        head() {
-            // Variables
-            let title
-            let description
-            let keywords
-            let ogImage
-            let ogTitle
-            let ogDescription
-            let ogUrl
-            let ogType
+        setup() {
+            let headMeta = reactive({
+                title: 'Detail cestovatelského slovníku | Cestovatelský portál Frytol na cestách',
+                description: 'Popis detailu cestovatelského slovníku',
+                keywords: 'cestovatelský slovník, co je to, travel hacky, plánuj cestu, cestovatelský portál, cestování, svět',
+                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+                ogTitle: 'Detail cestovatelského slovníku | Cestovatelský portál Frytol na cestách',
+                ogDescription: 'Popis detailu cestovatelského slovníku',
+                ogUrl: `https://www.frytolnacestach.cz/cestovatelsky-slovnik/slug`,
+                ogType: 'website',
+            })
 
-            // title
-            title = `${this.travelDictionary[0].name ? this.travelDictionary[0].name : 'Cestovatelský slovník'} | Cestovatelský portál Frytol na cestách`
+            let headLink = ref([
+                { rel: 'canonical', href: headMeta.ogUrl }
+            ])
 
-            // description
-            description = `${this.travelDictionary[0].description ? this.travelDictionary[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.travelDictionary[0].description.lastIndexOf(' ', 160)) : this.travelDictionary[0].name}`
+            let headScript = reactive({
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "name": "Název",
+                "image": "Obrázek",
+                "url": "URL",
+                "description": "Popis"
+            })
 
-            // keywolds
-            let metaSeoTags = ""
-            if (this.travelDictionary[0].seo_tags && this.travelDictionary[0].seo_tags.length > 0) {
-                metaSeoTags = ", " + this.travelDictionary[0].seo_tags.map(item => item.tag).join(", ")
-            }
-            keywords = (this.travelDictionary[0].name ? this.travelDictionary[0].name : '') + metaSeoTags + ', Cestovatelský slovník, co je to ' + this.travelDictionary[0].name + ', travel hacky, plánuj cestu, cestovatelský portál, cestování, svět'
-            
-            // ogImage
-            ogImage = `${this.travelDictionary[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).source + this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+            watch(headMeta, (newMeta) => {
+                useHead({
+                    title: headMeta.title,
+                    meta: [
+                        { name: 'description', content: headMeta.description },
+                        { name: 'keywords', content: headMeta.keywords },
+                        { property: 'og:image', content: headMeta.ogImage },
+                        { property: 'og:title', content: headMeta.ogTitle },
+                        { property: 'og:description', content: headMeta.ogDescription },
+                        { property: 'og:url', content: headMeta.ogUrl },
+                        { property: 'og:type', content: headMeta.ogType }
+                    ],
+                    link: headLink
+                })
+            }, { deep: true })
 
-            // ogTitle
-            ogTitle = title
+            useJsonld(() => headScript)
 
-            // ogDescription
-            ogDescription = description
-
-            // ogUrl
-            ogUrl = `${process.env.baseUrl}/cestovatelsky-slovnik/${this.travelDictionary[0].slug}`
-
-            // ogType
-            ogType = 'website'
-
-            // script
-            let jsonldTravelDictionary
-            if (this.travelDictionary && this.travelDictionary.length > 0 && this.imageTravelDictionary !== null) {
-                jsonldTravelDictionary = {
-                    type: 'application/ld+json',
-                    json: {
-                        "@context": "https://schema.org",
-                        "@type": "Article",
-                        "name": (this.travelDictionary[0].name ? this.travelDictionary[0].name : ""),
-                        "image": (this.imageTravelDictionary && this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero)) ? ("https://image.frytolnacestach.cz/storage" + (this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).source + this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).name) + ".webp") : "",
-                        "url": 'https://frytolnacestach.cz' + `/cestovatelsky-slovnik/${this.travelDictionary[0].slug}`,
-                        "description": (this.travelDictionary[0].description ? this.travelDictionary[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
-                    }
-                }
-            } else {
-                jsonldTravelDictionary = []
-            }
-
-            // Return
             return {
-                title,
-                meta: [
-                    { hid: 'title', name: 'title', content: title },
-                    { hid: 'description', name: 'description', content: description },
-                    { name: 'keywords', content: keywords },
-                    { hid: 'og:type', content: ogType },
-                    { hid: 'og:url', content: ogUrl },
-                    { hid: 'og:title', content: ogTitle },
-                    { hid: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { name: 'twitter:title', content: ogTitle },
-                    { name: 'twitter:description', content: ogDescription },
-                    { name: 'twitter:image', content: ogImage },
-                    { name: 'twitter:url', content: ogUrl }
-                ],
-                script: [jsonldTravelDictionary],
-                link: [
-                    { rel: 'canonical', href: ogUrl }
-                ]
+                headMeta,
+                headLink,
+                headScript
             }
         },
 
@@ -178,8 +147,33 @@
                 const responseTravelDictionary = await fetch(`https://api.frytolnacestach.cz/api/travel-dictionary/${route.params.slug}`)
                 this.travelDictionary = await responseTravelDictionary.json() || []
                 // Images
-                const responseImageTravelDictionary = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.travelDictionary[0].id_image_hero}`)
-                this.imageTravelDictionary = await responseImageTravelDictionary.json() || []
+                if (this.travelDictionary && this.travelDictionary.length > 0) {
+                    const responseImageTravelDictionary = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.travelDictionary[0].id_image_hero}`)
+                    this.imageTravelDictionary = await responseImageTravelDictionary.json() || []
+                }
+
+                // HEAD
+                if (this.travelDictionary && this.travelDictionary.length > 0) {
+                    // Meta
+                    this.headMeta.title = `${this.travelDictionary[0].name ? this.travelDictionary[0].name : 'Cestovatelský slovník'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.description = `${this.travelDictionary[0].description ? this.travelDictionary[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.travelDictionary[0].description.lastIndexOf(' ', 160)) : this.travelDictionary[0].name}`
+                    if (this.travelDictionary[0].seo_tags && this.travelDictionary[0].seo_tags.length > 0) {
+                        const metaSeoTags = ", " + this.travelDictionary[0].seo_tags.map(item => item.tag).join(", ")
+                        this.headMeta.keywords = (this.travelDictionary[0].name ? this.travelDictionary[0].name : '') + metaSeoTags + ', Cestovatelský slovník, co je to ' + this.travelDictionary[0].name + ', travel hacky, plánuj cestu, cestovatelský portál, cestování, svět'
+                    } else {
+                        this.headMeta.keywords = (this.travelDictionary[0].name ? this.travelDictionary[0].name : '') + ', Cestovatelský slovník, co je to ' + this.travelDictionary[0].name + ', travel hacky, plánuj cestu, cestovatelský portál, cestování, svět'
+                    }
+                    this.headMeta.ogImage = `${this.travelDictionary[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).source + this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+                    this.headMeta.ogTitle = `${this.travelDictionary[0].name ? this.travelDictionary[0].name : 'Cestovatelský slovník'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.ogDescription = `${this.travelDictionary[0].description ? this.travelDictionary[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.travelDictionary[0].description.lastIndexOf(' ', 160)) : this.travelDictionary[0].name}`
+                    this.headMeta.ogUrl = `https://www.frytolnacestach.cz/cestovatelsky-slovnik/${this.travelDictionary[0].slug}`
+                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
+                    // Script
+                    this.headScript.name = (this.travelDictionary[0].name ? this.travelDictionary[0].name : "")
+                    this.headScript.description = (this.travelDictionary[0].description ? this.travelDictionary[0].description.replace(/<\/?[^>]+(>|$)/g, '') : "")
+                    this.headScript.image = ((this.imageTravelDictionary && this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero)) ? ("https://image.frytolnacestach.cz/storage" + (this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).source + this.imageTravelDictionary.find(image => image.id === this.travelDictionary[0].id_image_hero).name) + ".webp") : "")
+                    this.headScript.url = ('https://frytolnacestach.cz' + `/cestovatelsky-slovnik/${this.travelDictionary[0].slug}`)
+                }
             }
         },
 

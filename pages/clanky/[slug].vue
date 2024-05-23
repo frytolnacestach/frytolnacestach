@@ -230,84 +230,53 @@
             }
         },
 
-        head() {
-            // Variables
-            let title
-            let description
-            let keywords
-            let ogImage
-            let ogTitle
-            let ogDescription
-            let ogUrl
-            let ogType
+        setup() {
+            let headMeta = reactive({
+                title: 'Detail jídla | Cestovatelský portál Frytol na cestách',
+                description: 'Popis detailu jídla',
+                keywords: 'Jídlo, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět',
+                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+                ogTitle: 'Detail jídla | Cestovatelský portál Frytol na cestách',
+                ogDescription: 'Popis detailu jídla',
+                ogUrl: `https://www.frytolnacestach.cz/jidlo/slug`,
+                ogType: 'website',
+            })
 
-            // title
-            title = `${this.post[0].title} | Cestovatelský portál Frytol na cestách`
+            let headLink = ref([
+                { rel: 'canonical', href: headMeta.ogUrl }
+            ])
 
-            // description
-            description = `${this.post[0].textOpener ? this.post[0].textOpener.slice(0, this.post[0].textOpener.lastIndexOf(' ', 150)) : this.post[0].title ? this.post[0].title : 'Článek'}`
+            let headScript = reactive({
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "name": "",
+                "image": "",
+                "url": "",
+                "description": "",
+            })
 
-            // keywolds
-            let metaSeoTags = ""
-            if (this.post[0].seo_tags && this.post[0].seo_tags.length > 0) {
-                metaSeoTags = ", " + this.post[0].seo_tags.map(item => item.tag).join(", ")
-            }
-            keywords = (this.post[0].title ? this.post[0].title : '') + metaSeoTags + ', článek, cestování, svět, rady, cestovatelský portál'
-            
-            // ogImage
-            ogImage = this.imagePostOg && this.imagePostOg.find(image => image.id === this.post[0].id_image_og) ? 'https://image.frytolnacestach.cz/storage' + this.imagePostOg.find(image => image.id === this.post[0].id_image_og).source + this.imagePostOg.find(image => image.id === this.post[0].id_image_og).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'
+            watch(headMeta, (newMeta) => {
+                useHead({
+                    title: headMeta.title,
+                    meta: [
+                        { name: 'description', content: headMeta.description },
+                        { name: 'keywords', content: headMeta.keywords },
+                        { property: 'og:image', content: headMeta.ogImage },
+                        { property: 'og:title', content: headMeta.ogTitle },
+                        { property: 'og:description', content: headMeta.ogDescription },
+                        { property: 'og:url', content: headMeta.ogUrl },
+                        { property: 'og:type', content: headMeta.ogType }
+                    ],
+                    link: headLink
+                })
+            }, { deep: true })
 
-            // ogTitle
-            ogTitle = title
+            useJsonld(() => headScript)
 
-            // ogDescription
-            ogDescription = description
-
-            // ogUrl
-            ogUrl = `${process.env.baseUrl}/clanky/${this.post[0].slug}`
-
-            // ogType
-            ogType = 'website'
-
-            // script
-            let jsonldPost
-            if (this.post && this.post.length > 0 && this.imagePostHero !== null) {
-                jsonldPost = {
-                    type: 'application/ld+json',
-                    json: {
-                        "@context": "https://schema.org",
-                        "@type": "Article",
-                        "name": (this.post[0].title ? this.post[0].title : ""),
-                        "image": (this.imagePostHero && this.imagePostHero.find(image => image.id === this.post[0].id_image_hero)) ? ("https://image.frytolnacestach.cz/storage" + (this.imagePostHero.find(image => image.id === this.post[0].id_image_hero).source + this.imagePostHero.find(image => image.id === this.post[0].id_image_hero).name) + ".webp") : "",
-                        "url": 'https://frytolnacestach.cz' + `/clanky/${this.post[0].slug}`,
-                        "description": (this.post[0].text_author ? this.post[0].text_author.replace(/<\/?[^>]+(>|$)/g, '') : ""),
-                    }
-                }
-            } else {
-                jsonldPost = []
-            }
-
-            // Return
             return {
-                title,
-                meta: [
-                    { hid: 'title', name: 'title', content: title },
-                    { hid: 'description', name: 'description', content: description },
-                    { name: 'keywords', content: keywords },
-                    { hid: 'og:type', content: ogType },
-                    { hid: 'og:url', content: ogUrl },
-                    { hid: 'og:title', content: ogTitle },
-                    { hid: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { name: 'twitter:title', content: ogTitle },
-                    { name: 'twitter:description', content: ogDescription },
-                    { name: 'twitter:image', content: ogImage },
-                    { name: 'twitter:url', content: ogUrl }
-                ],
-                script: [jsonldPost],
-                link: [
-                    { rel: 'canonical', href: ogUrl }
-                ]
+                headMeta,
+                headLink,
+                headScript
             }
         },
 
@@ -348,6 +317,29 @@
                         responseImagesVideos = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosID.join(',')}`)
                         this.imagesVideos = await responseImagesVideos.json() || []
                     }
+                }
+
+                // HEAD
+                if (this.post && this.post.length > 0) {
+                    // Meta
+                    this.headMeta.title = `${this.post[0].title} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.description = `${this.post[0].textOpener ? this.post[0].textOpener.slice(0, this.post[0].textOpener.lastIndexOf(' ', 150)) : this.post[0].title ? this.post[0].title : 'Článek'}`
+                    if (this.post[0].seo_tags && this.post[0].seo_tags.length > 0) {
+                        const metaSeoTags = ", " + this.post[0].seo_tags.map(item => item.tag).join(", ")
+                        this.headMeta.keywords = (this.post[0].title ? this.post[0].title : '') + metaSeoTags + ', článek, cestování, svět, rady, cestovatelský portál'
+                    } else {
+                        this.headMeta.keywords = (this.post[0].title ? this.post[0].title : '') + ', článek, cestování, svět, rady, cestovatelský portál'
+                    }
+                    this.headMeta.ogImage = this.imagePostOg && this.imagePostOg.find(image => image.id === this.post[0].id_image_og) ? 'https://image.frytolnacestach.cz/storage' + this.imagePostOg.find(image => image.id === this.post[0].id_image_og).source + this.imagePostOg.find(image => image.id === this.post[0].id_image_og).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'
+                    this.headMeta.ogTitle = `${this.post[0].title} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.ogDescription = `${this.post[0].textOpener ? this.post[0].textOpener.slice(0, this.post[0].textOpener.lastIndexOf(' ', 150)) : this.post[0].title ? this.post[0].title : 'Článek'}`
+                    this.headMeta.ogUrl = `https://www.frytolnacestach.cz/clanky/${this.post[0].slug}`
+                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
+                    // Script
+                    this.headScript.name = (this.post[0].title ? this.post[0].title : "")
+                    this.headScript.description = (this.post[0].text_author ? this.post[0].text_author.replace(/<\/?[^>]+(>|$)/g, '') : "")
+                    this.headScript.url = 'https://frytolnacestach.cz' + `/clanky/${this.post[0].slug}`
+                    this.headScript.image = ((this.imagePostHero && this.imagePostHero.find(image => image.id === this.post[0].id_image_hero)) ? ("https://image.frytolnacestach.cz/storage" + (this.imagePostHero.find(image => image.id === this.post[0].id_image_hero).source + this.imagePostHero.find(image => image.id === this.post[0].id_image_hero).name) + ".webp") : "")
                 }
             }
         },

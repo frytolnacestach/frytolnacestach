@@ -159,88 +159,61 @@
             }
         },
 
-        head() {
-            // Variables
-            let title
-            let description
-            let keywords
-            let ogImage
-            let ogTitle
-            let ogDescription
-            let ogUrl
-            let ogType
+        setup() {
+            let headMeta = reactive({
+                title: 'Detail jídla | Cestovatelský portál Frytol na cestách',
+                description: 'Popis detailu jídla',
+                keywords: 'Jídlo, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět',
+                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+                ogTitle: 'Detail jídla | Cestovatelský portál Frytol na cestách',
+                ogDescription: 'Popis detailu jídla',
+                ogUrl: `https://www.frytolnacestach.cz/jidlo/slug`,
+                ogType: 'website',
+            })
 
-            // title
-            const placeName = (this.place && this.place.length > 0) ? this.place[0].name : 'Stát'
-            const defaultTitle = `Jaký je čas ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
-            title = defaultTitle
+            let headLink = ref([
+                { rel: 'canonical', href: headMeta.ogUrl }
+            ])
 
-            // description
-            description = `${(this.place && this.place.length > 0 && this.place[0].information_chatgpt) ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Stát'}`
+            let headScript = reactive({
+                "@context": "https://schema.org",
+                "@type": "Place",
+                "name": "",
+                "description": "",
+                "image": "",
+                "area": {
+                    "@type": "QuantitativeValue",
+                    "value": "",
+                    "comment": "Rozloha v km²"
+                },
+                "population": {
+                    "@type": "QuantitativeValue",
+                    "value": ""
+                }
+            })
 
-            // keywolds
-            let metaSeoTags = ""
-            if (this.place && this.place.length > 0 && this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
-                metaSeoTags = ", " + this.place[0].seo_tags.map(item => item.tag).join(", ")
-            }
-            keywords = ((this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : '') + metaSeoTags + ', stát, čas, informace, časové pásma, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu' 
-            
-            // ogImage
-            ogImage = `${(this.place && this.place.length > 0 && this.place[0].id_image_hero) ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+            watch(headMeta, (newMeta) => {
+                useHead({
+                    title: headMeta.title,
+                    meta: [
+                        { name: 'description', content: headMeta.description },
+                        { name: 'keywords', content: headMeta.keywords },
+                        { property: 'og:image', content: headMeta.ogImage },
+                        { property: 'og:title', content: headMeta.ogTitle },
+                        { property: 'og:description', content: headMeta.ogDescription },
+                        { property: 'og:url', content: headMeta.ogUrl },
+                        { property: 'og:type', content: headMeta.ogType }
+                    ],
+                    link: headLink
+                })
+            }, { deep: true })
 
-            // ogTitle
-            ogTitle = title
+            useJsonld(() => headScript)
 
-            // ogDescription
-            ogDescription = description
-
-            // ogUrl
-            ogUrl = `${process.env.baseUrl}/svetovy-cas/${(this.place && this.place.length > 0 && this.place[0].slug) ? this.place[0].slug : "slug_svetovy-cas"}`
-
-            // ogType
-            ogType = 'website'
-
-            // Return
             return {
-                title,
-                meta: [
-                    { hid: 'title', name: 'title', content: title },
-                    { hid: 'description', name: 'description', content: description },
-                    { name: 'keywords', content: keywords },
-                    { hid: 'og:type', content: ogType },
-                    { hid: 'og:url', content: ogUrl },
-                    { hid: 'og:title', content: ogTitle },
-                    { hid: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { name: 'twitter:title', content: ogTitle },
-                    { name: 'twitter:description', content: ogDescription },
-                    { name: 'twitter:image', content: ogImage },
-                    { name: 'twitter:url', content: ogUrl }
-                ],
-                link: [
-                    { rel: 'canonical', href: ogUrl }
-                ],
-                script: [
-                    {
-                        type: 'application/ld+json',
-                        json: {
-                            "@context": "https://schema.org",
-                            "@type": "Place",
-                            "name": ((this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : ""),
-                            "description": ((this.place && this.place.length > 0 && this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : "")),
-                            "image": ((this.imagePlace && this.imagePlace.length > 0  && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/states/" + this.imagePlace[0].name + ".webp") : "" ),
-                            "area": {
-                                "@type": "QuantitativeValue",
-                                "value": ((this.place && this.place.length > 0 && this.place[0].area) ? this.place[0].area : ""),
-                                "comment": "Rozloha v km²"
-                            },
-                            "population": {
-                                "@type": "QuantitativeValue",
-                                "value": ((this.place && this.place.length > 0 && this.place[0].population) ? this.place[0].population : "")
-                            }
-                        }
-                    }
-                ]
+                headMeta,
+                headLink,
+                headScript
             }
         },
 
@@ -261,6 +234,30 @@
                 if (this.place && this.place.length > 0) {
                     const responsePlaceContinent = await fetch(`https://api.frytolnacestach.cz/api/places-continent-id/${this.place[0].id_continent}`)
                     this.placeContinent = await responsePlaceContinent.json() || []
+                }
+
+                // HEAD
+                if (this.place && this.place.length > 0) {
+                    // Meta
+                    this.headMeta.title = `Jaký je čas ve státě ${(this.place && this.place.length > 0) ? this.place[0].name : 'Stát'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.description = `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Stát'}`
+                    if (this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
+                        const metaSeoTags = ", " + this.place[0].seo_tags.map(item => item.tag).join(", ")
+                        this.headMeta.keywords = (this.place[0].name ? this.place[0].name : '') + metaSeoTags + ', stát, čas, informace, časové pásma, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu' 
+                    } else {
+                        this.headMeta.keywords = (this.place[0].name ? this.place[0].name : '') + ', stát, čas, informace, časové pásma, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu' 
+                    }
+                    this.headMeta.ogImage = `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+                    this.headMeta.ogTitle = `Jaký je čas ve státě ${(this.place && this.place.length > 0) ? this.place[0].name : 'Stát'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.ogDescription = `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Stát'}`
+                    this.headMeta.ogUrl = `https://www.frytolnacestach.cz/svetovy-cas/${(this.place && this.place.length > 0 && this.place[0].slug) ? this.place[0].slug : "slug_svetovy-cas"}`
+                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
+                    // Script
+                    this.headScript.name = (this.place[0].name ? this.place[0].name : "")
+                    this.headScript.description = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : ""))
+                    this.headScript.image = ((this.imagePlace && this.imagePlace.length > 0  && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/states/" + this.imagePlace[0].name + ".webp") : "")
+                    this.headScript.area.value = (this.place[0].area ? this.place[0].area : "")
+                    this.headScript.population.value = (this.place[0].population ? this.place[0].population : "")
                 }
             }
         },

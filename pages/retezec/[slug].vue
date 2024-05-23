@@ -107,77 +107,52 @@
             }
         },
 
-        head() {
-            // Variables
-            let title
-            let description
-            let keywords
-            let ogImage
-            let ogTitle
-            let ogDescription
-            let ogUrl
-            let ogType
+        setup() {
+            let headMeta = reactive({
+                title: 'Detail jídla | Cestovatelský portál Frytol na cestách',
+                description: 'Popis detailu jídla',
+                keywords: 'Jídlo, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět',
+                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+                ogTitle: 'Detail jídla | Cestovatelský portál Frytol na cestách',
+                ogDescription: 'Popis detailu jídla',
+                ogUrl: `https://www.frytolnacestach.cz/jidlo/slug`,
+                ogType: 'website',
+            })
 
-            // title
-            title = `${(this.chain && this.chain.length > 0 && this.chain[0].name) ? this.chain[0].name : 'Řetězec'} | Cestovatelský portál Frytol na cestách`
+            let headLink = ref([
+                { rel: 'canonical', href: headMeta.ogUrl }
+            ])
 
-            // description
-            description = `${(this.chain && this.chain.length > 0 && this.chain[0].description) ? this.chain[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.chain[0].description.lastIndexOf(' ', 160)) : this.chain[0].name}`
+            let headScript = reactive({
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "",
+                "description": "",
+                "image": ""
+            })
 
-            // keywolds
-            let metaSeoTags = ""
-            if (this.chain && this.chain.length > 0 && this.chain[0].seo_tags && this.chain[0].seo_tags.length > 0) {
-                metaSeoTags = ", " + this.chain[0].seo_tags.map(item => item.tag).join(", ")
-            }
-            keywords = ((this.chain && this.chain.length > 0 && this.chain[0].name) ? this.chain[0].name : '') + metaSeoTags + ', Řetězec, plánuj cestu, cestovatelský portál, cestování, svět'
-            
-            // ogImage
-            ogImage = `${(this.chain && this.chain.length > 0 && this.chain[0].id_image_hero) ? 'https://image.frytolnacestach.cz/storage/' + this.imageChain.find(image => image.id === this.chain[0].id_image_hero).source + this.imageChain.find(image => image.id === this.chain[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+            watch(headMeta, (newMeta) => {
+                useHead({
+                    title: headMeta.title,
+                    meta: [
+                        { name: 'description', content: headMeta.description },
+                        { name: 'keywords', content: headMeta.keywords },
+                        { property: 'og:image', content: headMeta.ogImage },
+                        { property: 'og:title', content: headMeta.ogTitle },
+                        { property: 'og:description', content: headMeta.ogDescription },
+                        { property: 'og:url', content: headMeta.ogUrl },
+                        { property: 'og:type', content: headMeta.ogType }
+                    ],
+                    link: headLink
+                })
+            }, { deep: true })
 
-            // ogTitle
-            ogTitle = title
+            useJsonld(() => headScript)
 
-            // ogDescription
-            ogDescription = description
-
-            // ogUrl
-            ogUrl = `${process.env.baseUrl}/retezec/${this.chain[0].slug}`
-
-            // ogType
-            ogType = 'website'
-
-            // Return
             return {
-                title,
-                meta: [
-                    { hid: 'title', name: 'title', content: title },
-                    { hid: 'description', name: 'description', content: description },
-                    { name: 'keywords', content: keywords },
-                    { hid: 'og:type', content: ogType },
-                    { hid: 'og:url', content: ogUrl },
-                    { hid: 'og:title', content: ogTitle },
-                    { hid: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { name: 'twitter:title', content: ogTitle },
-                    { name: 'twitter:description', content: ogDescription },
-                    { name: 'twitter:image', content: ogImage },
-                    { name: 'twitter:url', content: ogUrl }
-                ],
-                link: [
-                    { rel: 'canonical', href: ogUrl }
-                ],
-                script: [
-                    {
-                        type: 'application/ld+json',
-                        json: {
-                            "@context": "https://schema.org",
-                            "@type": "LocalBusiness",
-                            "name": ((this.chain && this.chain.length > 0 && this.chain[0].name) ? this.chain[0].name : ""),
-                            "description": ((this.chain && this.chain.length > 0 && this.chain[0].description) ? this.chain[0].description.replace(/<\/?[^>]+(>|$)/g, '') : ""),
-                            "image": ((this.imageChain && this.imageChain.length > 0 && this.imageChain[0] && this.imageChain[0].id) ? ("https://image.frytolnacestach.cz/storage/chains/" + this.imageChain[0].name + ".webp") : "" )
-                        }
-                    }
-                ]
+                headMeta,
+                headLink,
+                headScript
             }
         },
 
@@ -223,6 +198,28 @@
                     } else {
                         this.imagesStates = null
                     }
+                }
+
+                // HEAD
+                if (this.chain && this.chain.length > 0) {
+                    // Meta
+                    this.headMeta.title = `${this.chain[0].name ? this.chain[0].name : 'Řetězec'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.description = `${this.chain[0].description ? this.chain[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.chain[0].description.lastIndexOf(' ', 160)) : this.chain[0].name}`
+                    if (this.chain[0].seo_tags && this.chain[0].seo_tags.length > 0) {
+                        const metaSeoTags = ", " + this.chain[0].seo_tags.map(item => item.tag).join(", ")
+                        this.headMeta.keywords = (this.chain[0].name ? this.chain[0].name : '') + metaSeoTags + ', Řetězec, plánuj cestu, cestovatelský portál, cestování, svět'
+                    } else {
+                        this.headMeta.keywords = (this.chain[0].name ? this.chain[0].name : '') + ', Řetězec, plánuj cestu, cestovatelský portál, cestování, svět'
+                    }
+                    this.headMeta.ogImage = `${this.chain[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageChain.find(image => image.id === this.chain[0].id_image_hero).source + this.imageChain.find(image => image.id === this.chain[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+                    this.headMeta.ogTitle = `${this.chain[0].name ? this.chain[0].name : 'Řetězec'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.ogDescription = `${this.chain[0].description ? this.chain[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.chain[0].description.lastIndexOf(' ', 160)) : this.chain[0].name}`
+                    this.headMeta.ogUrl = `https://www.frytolnacestach.cz/retezec/${this.chain[0].slug}`
+                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
+                    // Script
+                    this.headScript.name = (this.chain[0].name ? this.chain[0].name : "")
+                    this.headScript.description = (this.chain[0].description ? this.chain[0].description.replace(/<\/?[^>]+(>|$)/g, '') : "")
+                    this.headScript.image = ((this.imageChain && this.imageChain.length > 0 && this.imageChain[0] && this.imageChain[0].id) ? ("https://image.frytolnacestach.cz/storage/chains/" + this.imageChain[0].name + ".webp") : "")
                 }
             }
         },
