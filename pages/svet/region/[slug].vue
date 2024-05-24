@@ -319,6 +319,74 @@
             }
         },
 
+        setup() {
+            let headMeta = reactive({
+                title: '',
+                description: '',
+                keywords: '',
+                ogImage: '',
+                ogTitle: '',
+                ogDescription: '',
+                ogUrl: '',
+                ogType: 'website',
+            })
+
+            let headLink = ref([
+                { rel: 'canonical', href: headMeta.ogUrl }
+            ])
+
+            let headScript = reactive({
+                "@context": "https://schema.org",
+                "@type": "Place",
+                "name": ((this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : ""),
+                "description": ((this.place && this.place.length > 0 && this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : "")),
+                "image": ((this.place && this.place.length > 0 && this.imagePlace && imagePlace.length > 0 && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/regions/" + this.imagePlace[0].name + ".webp") : "" )
+            })
+
+            useHead({
+                title: headMeta.title,
+                meta: [
+                    { name: 'description', content: headMeta.description },
+                    { name: 'keywords', content: headMeta.keywords },
+                    { property: 'og:image', content: headMeta.ogImage },
+                    { property: 'og:title', content: headMeta.ogTitle },
+                    { property: 'og:description', content: headMeta.ogDescription },
+                    { property: 'og:url', content: headMeta.ogUrl },
+                    { property: 'og:type', content: headMeta.ogType }
+                ],
+                link: headLink
+            })
+
+            useJsonld(() => headScript)
+
+            return {
+                headMeta,
+                headLink,
+                headScript
+            }
+        },
+
+        head() {
+            // title
+            title = `${(this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : 'Region'} | Cestovatelský portál Frytol na cestách`
+
+            // description
+            description = (this.place && this.place.length > 0 && this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Region'
+
+            // keywolds
+            let metaSeoTags = ""
+            if (this.place && this.place.length > 0 && this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
+                metaSeoTags = ", " + this.place[0].seo_tags.map(item => item.tag).join(", ")
+            }
+            keywords = ((this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : '') + metaSeoTags + ', region, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
+            
+            // ogImage
+            ogImage = `${(this.place && this.place.length > 0 && this.place[0].id_image_hero) ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+
+            // ogUrl
+            ogUrl = `https://www.frytolnacestach.cz/svet/region/${this.place[0].slug}`
+        },
+
         methods: {
             async fetchData() {
                 const route = useRoute()
@@ -444,80 +512,6 @@
             if (this.place && this.place.length > 0) {
                 this.loadVideos()
                 this.loadPosts()
-            }
-        },
-
-        head() {
-            // Variables
-            let title
-            let description
-            let keywords
-            let ogImage
-            let ogTitle
-            let ogDescription
-            let ogUrl
-            let ogType
-            
-            // title
-            title = `${(this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : 'Region'} | Cestovatelský portál Frytol na cestách`
-
-            // description
-            description = (this.place && this.place.length > 0 && this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Region'
-
-            // keywolds
-            let metaSeoTags = ""
-            if (this.place && this.place.length > 0 && this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
-                metaSeoTags = ", " + this.place[0].seo_tags.map(item => item.tag).join(", ")
-            }
-            keywords = ((this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : '') + metaSeoTags + ', region, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
-            
-            // ogImage
-            ogImage = `${(this.place && this.place.length > 0 && this.place[0].id_image_hero) ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
-
-            // ogTitle
-            ogTitle = title
-
-            // ogDescription
-            ogDescription = description
-
-            // ogUrl
-            ogUrl = (this.place && this.place.length > 0) ? `${process.env.baseUrl}/svet/region/${this.place[0].slug}` : `${process.env.baseUrl}`
-
-            // ogType
-            ogType = 'website'
-
-            // Return
-            return {
-                title,
-                meta: [
-                    { hid: 'title', name: 'title', content: title },
-                    { hid: 'description', name: 'description', content: description },
-                    { name: 'keywords', content: keywords },
-                    { hid: 'og:type', content: ogType },
-                    { hid: 'og:url', content: ogUrl },
-                    { hid: 'og:title', content: ogTitle },
-                    { hid: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { name: 'twitter:title', content: ogTitle },
-                    { name: 'twitter:description', content: ogDescription },
-                    { name: 'twitter:image', content: ogImage },
-                    { name: 'twitter:url', content: ogUrl }
-                ],
-                link: [
-                    { rel: 'canonical', href: ogUrl }
-                ],
-                script: [
-                    {
-                        type: 'application/ld+json',
-                        json: {
-                            "@context": "https://schema.org",
-                            "@type": "Place",
-                            "name": ((this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : ""),
-                            "description": ((this.place && this.place.length > 0 && this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : "")),
-                            "image": ((this.place && this.place.length > 0 && this.imagePlace && imagePlace.length > 0 && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/regions/" + this.imagePlace[0].name + ".webp") : "" )
-                        }
-                    }
-                ]
             }
         },
 
