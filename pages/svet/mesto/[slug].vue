@@ -425,17 +425,17 @@
             let headScript = reactive({
                 "@context": "https://schema.org",
                 "@type": "Place",
-                "name": ((this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : ""),
-                "description": ((this.place && this.place.length > 0 && this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : "")),
-                "image": ((this.place && this.place.length > 0 && this.imagePlace && imagePlace.length > 0 && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/cities/" + this.imagePlace[0].name + ".webp") : "" ),
+                "name": "",
+                "description": "",
+                "image": "",
                 "area": {
                     "@type": "QuantitativeValue",
-                    "value": ((this.place && this.place.length > 0 && this.place[0].area) ? this.place[0].area : ""),
+                    "value": "",
                     "comment": "Rozloha v km²"
                 },
                 "population": {
                     "@type": "QuantitativeValue",
-                    "value": ((this.place && this.place.length > 0 && this.place[0].population) ? this.place[0].population : "")
+                    "value": ""
                 }
             })
 
@@ -462,28 +462,6 @@
             }
         },
 
-        head() {
-            // title
-            title = `${(this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : 'Město'} | Cestovatelský portál Frytol na cestách`
-
-            // description
-            description = (this.place && this.place.length > 0 && this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Město'
-            //description = `${this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Město'}`
-
-            // keywolds
-            let metaSeoTags = ""
-            if (this.place && this.place.length > 0 && this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
-                metaSeoTags = ", " + this.place[0].seo_tags.map(item => item.tag).join(", ")
-            }
-            keywords = ((this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : '') + metaSeoTags + ', město, cestování, svět, cestovatelský portál, jaké další města tu jsou, plánování cesty, dovolená, pravidla, kultura, ceny'
-            
-            // ogImage
-            ogImage = `${(this.place && this.place.length > 0 && this.place[0].id_image_hero) ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
-
-            // ogUrl
-            ogUrl = `https://www.frytolnacestach.cz/svet/mesto/${this.place[0].slug}`
-        },
-
         methods: {
             async fetchData() {
                 const route = useRoute()
@@ -503,7 +481,6 @@
                     this.placeState = await responsePlaceState.json()
                 }
                 // Images
-                let imageState = null
                 if (this.place && this.place.length > 0 && this.place[0].id_state !== null && this.placeState[0] && this.placeState[0].id_image_cover !== null ) {
                     const responseImagePlaceState = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.placeState[0].id_image_cover}`)
                     this.imageState = await responseImagePlaceState.json()
@@ -524,6 +501,30 @@
                 if (this.place && this.place.length > 0 && imagesPlacesCitiesID  !== nulll ) {
                     const responseImagePlaceCity = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesID.join(',')}`)
                     this.imagePlaceCity = await responseImagePlaceCity.json()
+                }
+
+                // HEAD
+                if (this.place && this.place.length > 0) {
+                    // Meta
+                    this.headMeta.title = `${(this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : 'Město'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.description = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Město')
+                    if (this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
+                        const metaSeoTags = ", " + this.place[0].seo_tags.map(item => item.tag).join(", ")
+                        this.headMeta.keywords = (this.place[0].name ? this.place[0].name : '') + metaSeoTags + ', město, cestování, svět, cestovatelský portál, jaké další města tu jsou, plánování cesty, dovolená, pravidla, kultura, ceny'
+                    } else {
+                        this.headMeta.keywords = (this.place[0].name ? this.place[0].name : '') + ', město, cestování, svět, cestovatelský portál, jaké další města tu jsou, plánování cesty, dovolená, pravidla, kultura, ceny'
+                    }
+                    this.headMeta.ogImage = `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+                    this.headMeta.ogTitle = `${(this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : 'Město'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.ogDescription = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Město')
+                    this.headMeta.ogUrl = `https://www.frytolnacestach.cz/svet/mesto/${this.place[0].slug}`
+                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
+                    // Script
+                    this.headScript.name = (this.place[0].name ? this.place[0].name : "")
+                    this.headScript.description = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : ""))
+                    this.headScript.image = ((this.imagePlace && imagePlace.length > 0 && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/cities/" + this.imagePlace[0].name + ".webp") : "" )
+                    this.headScript.area.value = (this.place[0].area ? this.place[0].area : "")
+                    this.headScript.population.value = (this.place[0].population ? this.place[0].population : "")
                 }
             },
 
@@ -578,7 +579,7 @@
                 if (this.videosData[0]) {
                     const imagesVideosIDS = videosData.map(videos => videos.id_image).filter(id => id !== undefined && id !== null && id !== '')
                     if (imagesVideosIDS.length > 0) {
-                        const imagesResponse = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
+                        const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
                         const imagesData = await responseImages.json()
                         this.imagesVideos = this.imagesVideos.concat(imagesData)
                     }

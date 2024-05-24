@@ -99,7 +99,7 @@
                                 <!-- SECTION - Place teaser END -->
 
                                 <!-- SECTION - Ubytování - information -->
-                                <section class="t-section pt-1 mt-2">
+                                <section class="t-section pt-1 mt-2" v-if="place && place.length > 0">
                                     <div class="t-section__inner">
                                         <oInformationBlock :title="'Ubytování v okolí ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Cena za konkrétní ubytování v okolí ' + (place[0].name ? place[0].name : '') + ' se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek.'" v-if="place && place.length > 0 && place[0].affiliate.find(x => x.name === 'booking').value === true" />
                                         <oInformationBlock :title="'Ubytování v okolí ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Bohužel s cenou ubytování v okolí ' + (place[0].name ? place[0].name : '') + ' vám zatím moc neporadíme.'" v-else-if="place && place.length > 0 && place[0].affiliate.find(x => x.name === 'booking').value === false" />
@@ -389,12 +389,12 @@
             let headScript = reactive({
                 "@context": "https://schema.org",
                 "@type": "Place",
-                "name": ((this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : ""),
-                "description": ((this.place && this.place.length > 0 && this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : "")),
-                "image": ((this.place && this.place.length > 0 && this.imagePlace && imagePlace.length > 0 && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/spots/" + this.imagePlace[0].name + ".webp") : "" ),
+                "name": "",
+                "description": "",
+                "image": "",
                 "elevation": {
                     "@type": "QuantitativeValue",
-                    "value": ((this.place && this.place.length > 0 && this.place[0].altitude) ? this.place[0].altitude : ""),
+                    "value": "",
                     "unitCode": "MTR"
                 }
             })
@@ -422,27 +422,6 @@
             }
         },
 
-        head() {
-            // title
-            title = `${(this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : 'Místo'} | Cestovatelský portál Frytol na cestách`
-
-            // description
-            description = (this.place && this.place.length > 0 && this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : (this.place && this.place.length > 0 && this.place[0].information_chatgpt) ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : (this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : 'Místo'
-
-            // keywolds
-            let metaSeoTags = ""
-            if (this.place && this.place.length > 0 && this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
-                metaSeoTags = ", " + this.place[0].seo_tags.map(item => item.tag).join(", ")
-            }
-            keywords = ((this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : '') + metaSeoTags + ', místo, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
-            
-            // ogImage
-            ogImage = `${(this.place && this.place.length > 0 && this.place[0].id_image_hero) ? ('https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg') : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
-
-            // ogUrl
-            ogUrl = `https://www.frytolnacestach.cz/svet/misto/${this.place[0].slug}`
-        },
-
         methods: {
             async fetchData() {
                 const route = useRoute()
@@ -462,7 +441,6 @@
                     this.placeCity = await responsePlaceCity.json()
                 }
                 // Images
-                let imagePlaceCity = null
                 if (this.place && this.place.length > 0 && this.place[0].id_city !== null && this.placeCity[0] && this.placeCity[0].id_image_cover !== null ) {
                     const responseImagePlaceCity = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.placeCity[0].id_image_cover}`)
                     this.imagePlaceCity = await responseImagePlaceCity.json()
@@ -476,6 +454,29 @@
                 if (this.place && this.place.length > 0) {
                     const responsePlaceContinent = await fetch(`https://api.frytolnacestach.cz/api/places-continent-id/${this.placeState[0].id_continent}`)
                     this.placeContinent = await responsePlaceContinent.json()
+                }
+
+                // HEAD
+                if (this.place && this.place.length > 0) {
+                    // Meta
+                    this.headMeta.title = `${this.place[0].name ? this.place[0].name : 'Místo'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.description = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : (this.place && this.place.length > 0 && this.place[0].information_chatgpt) ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : (this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : 'Místo')
+                    if (this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
+                        const metaSeoTags = ", " + this.place[0].seo_tags.map(item => item.tag).join(", ")
+                        this.headMeta.keywords = (this.place[0].name ? this.place[0].name : '') + metaSeoTags + ', místo, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
+                    } else {
+                        this.headMeta.keywords = (this.place[0].name ? this.place[0].name : '') + ', místo, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
+                    }
+                    this.headMeta.ogImage = `${this.place[0].id_image_hero ? ('https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg') : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+                    this.headMeta.ogTitle = `${this.place[0].name ? this.place[0].name : 'Místo'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.ogDescription = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : (this.place && this.place.length > 0 && this.place[0].information_chatgpt) ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : (this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : 'Místo')
+                    this.headMeta.ogUrl = `https://www.frytolnacestach.cz/svet/misto/${this.place[0].slug}`
+                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
+                    // Script
+                    this.headScript.name = (this.place[0].name ? this.place[0].name : "")
+                    this.headScript.description = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : ""))
+                    this.headScript.image = ((this.imagePlace && imagePlace.length > 0 && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/spots/" + this.imagePlace[0].name + ".webp") : "" )
+                    this.headScript.elevation.value = (this.place[0].altitude ? this.place[0].altitude : "")
                 }
             },
 

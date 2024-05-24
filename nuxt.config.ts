@@ -232,7 +232,7 @@ const getPostRoutes = async () => {
 
 export default defineNuxtConfig({
   target: 'static',
-  ssr: false,
+  ssr: true,
 
   site: {
     url: 'https://frytolnacestach.cz'

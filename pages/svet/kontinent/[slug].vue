@@ -303,17 +303,17 @@
             let headScript = reactive({
                 "@context": "https://schema.org",
                 "@type": "Place",
-                "name": ((this.place && this.place.length > 0 && this.place[0].name) ? this.place[0].name : ""),
-                "description": ((this.place && this.place.length > 0 && this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : "")),
-                "image": ((this.place && this.place.length > 0 && this.imagePlace && imagePlace.length > 0 && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/continents/" + this.imagePlace[0].name + ".webp") : "" ),
+                "name": "",
+                "description": "",
+                "image": "",
                 "area": {
                     "@type": "QuantitativeValue",
-                    "value": ((this.place && this.place.length > 0 && this.place[0].area) ? this.place[0].area : ""),
+                    "value": "",
                     "comment": "Rozloha v km²"
                 },
                 "population": {
                     "@type": "QuantitativeValue",
-                    "value": ((this.place && this.place.length > 0 && this.place[0].population) ? this.place[0].population : "")
+                    "value": ""
                 }
             })
 
@@ -340,27 +340,6 @@
             }
         },
 
-        head() {
-            // title
-            title = `${this.place[0].name ? this.place[0].name : 'Kontinent'} | Cestovatelský portál Frytol na cestách`
-
-            // description
-            description = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Kontinent')
-
-            // keywolds
-            let metaSeoTags = ""
-            if (this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
-                metaSeoTags = ", " + this.place[0].seo_tags.map(item => item.tag).join(", ")
-            }
-            keywords = ((this.place[0].name) ? this.place[0].name : '') + metaSeoTags + ', kontinent, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
-            
-            // ogImage
-            ogImage = `${(this.place[0].id_image_hero) ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
-
-            // ogUrl
-            ogUrl = `https://www.frytolnacestach.cz/svet/kontinent/${this.place[0].slug}`
-        },
-
         methods: {
             async fetchData() {
                 const route = useRoute()
@@ -383,6 +362,30 @@
                 if (this.place && this.place.length > 0 && this.place[0].id_state !== null && this.placeState[0] && this.placeState[0].id_image_cover !== null ) {
                     const responseImageState = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.placeState[0].id_image_cover}`)
                     this.imageState = await responseImageState.json()
+                }
+
+                // HEAD
+                if (this.place && this.place.length > 0) {
+                    // Meta
+                    this.headMeta.title = `${this.place[0].name ? this.place[0].name : 'Kontinent'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.description = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Kontinent')
+                    if (this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
+                        const metaSeoTags = ", " + this.place[0].seo_tags.map(item => item.tag).join(", ")
+                        this.headMeta.keywords = ((this.place[0].name) ? this.place[0].name : '') + metaSeoTags + ', kontinent, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
+                    } else {
+                        this.headMeta.keywords = ((this.place[0].name) ? this.place[0].name : '') + ', kontinent, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
+                    }
+                    this.headMeta.ogImage = `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+                    this.headMeta.ogTitle = `${this.place[0].name ? this.place[0].name : 'Kontinent'} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.ogDescription = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Kontinent')
+                    this.headMeta.ogUrl = `https://www.frytolnacestach.cz/svet/kontinent/${this.place[0].slug}`
+                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
+                    // Script
+                    this.headScript.name = (this.place[0].name ? this.place[0].name : "")
+                    this.headScript.description = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : ""))
+                    this.headScript.image = ((imagePlace.length > 0 && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/continents/" + this.imagePlace[0].name + ".webp") : "" )
+                    this.headScript.area.value = (this.place[0].area ? this.place[0].area : "")
+                    this.headScript.population.value = (this.place[0].population ? this.place[0].population : "")
                 }
             },
 
