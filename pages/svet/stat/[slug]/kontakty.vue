@@ -363,7 +363,7 @@
                     const tab = this.tabs.find(tab => tab.slug === this.activeTab)
                     const tabLabel = tab.label || ''
                     // Meta
-                    this.headMeta.title = `Důležité ${tabLabel} ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.title = `Důležité ${tabLabel} ve státě ${this.place[0].name} | Cestovatelský portál Frytol na cestách`
                     this.headMeta.description = ((this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Stát')
                     if (this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
                         const metaSeoTags = ", " + this.place[0].seo_tags.map(item => item.tag).join(", ")
@@ -372,7 +372,7 @@
                         this.headMeta.keywords = (this.place[0].name ? this.place[0].name : '') + ', stát, ceny, ubytování, lidé a kultura, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu'
                     }
                     this.headMeta.ogImage = `${(this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png')}`
-                    this.headMeta.ogTitle = `Důležité ${tabLabel} ve státě ${placeName} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.ogTitle = `Důležité ${tabLabel} ve státě ${this.place[0].name} | Cestovatelský portál Frytol na cestách`
                     this.headMeta.ogDescription = ((this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Stát')
                     this.headMeta.ogUrl = `https://www.frytolnacestach.cz/svet/stat/${this.place[0].slug}${this.activeTab !== 'default' ? `/${this.activeTab}` : ''}`
                     this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]

@@ -6,7 +6,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" />
+                        <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" v-if="place && place.length > 0" />
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -25,13 +25,13 @@
 
                             <!-- SECTION - hero -->
                             <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
-                                <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place[0]" />
+                                <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place && place.length > 0" />
                             </div>
                             <!-- SECTION - hero END -->
 
                             <!-- SECTION - map -->
                             <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
-                                <oMapGoogle :place="place" />
+                                <oMapGoogle :place="place" v-if="place && place.length > 0" />
                             </div>
                             <!-- SECTION - map - END -->
 
@@ -46,7 +46,7 @@
                 </section>
 
                 <!-- SECTION - Alerts -->
-                <section class="t-section -px-world-big -p0" v-if="place[0].alerts">
+                <section class="t-section -px-world-big -p0" v-if="place && place.length > 0 && place[0].alerts">
                     <div class="t-section__inner">
                         <oAlerts :alerts="place[0].alerts" />
                     </div>
@@ -54,21 +54,21 @@
                 <!-- SECTION - Alerts END -->
             
                 <!-- SECTION - Nav place -->
-                <section class="t-section -px-world-big -p0" v-if="place[0]">
+                <section class="t-section -px-world-big -p0" v-if="place && place.length > 0">
                     <div class="t-section__inner">
                         <mNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
                     </div>
                 </section>
                 <!-- SECTION - Nav place END -->
 
-                <div class="t-main -tab" v-if="place[0]">
+                <div class="t-main -tab">
                     <section class="t-section -p0">
                         <div class="t-section__inner">
                             <div class="t-grid -world-full">
                                 <div class="t-grid__section -content">
 
                                     <!-- SECTION - articles -->
-                                    <section class="t-section -p0 -px-world my-2" v-if="place[0] && posts.length !== 0">
+                                    <section class="t-section -p0 -px-world my-2" v-if="place && place.length > 0">
                                         <div class="t-section__inner">
                                             <mHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
                                             <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world-tab" styleThemaLoading=" -green" styleAlign=" -p-left" />
@@ -300,7 +300,7 @@
                     this.imagePlace = await responseImagePlace.json()
                 }
                 // PlaceContinent
-                const placeContinent = await fetch(`https://api.frytolnacestach.cz/api/places-continent-id/${this.place[0].id_continent}`)
+                const responsePlaceContinent = await fetch(`https://api.frytolnacestach.cz/api/places-continent-id/${this.place[0].id_continent}`)
                 this.placeContinent = await responsePlaceContinent.json()
 
                 // COMPONENT - Tabs
@@ -314,7 +314,7 @@
                     const tab = this.tabs.find(tab => tab.slug === this.activeTab)
                     const tabLabel = tab.label || ''
                     // Meta
-                    this.headMeta.title = `${tabLabel} ze států ${placeName} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.title = `${tabLabel} ze států ${this.place[0].name} | Cestovatelský portál Frytol na cestách`
                     this.headMeta.description = ((this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Stát')
                     if (this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
                         const metaSeoTags = ", " + this.place[0].seo_tags.map(item => item.tag).join(", ")
@@ -323,7 +323,7 @@
                         this.headMeta.keywords = (this.place[0].name ? this.place[0].name : '') + ', stát, ceny, ubytování, lidé a kultura, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu'
                     }
                     this.headMeta.ogImage = `${(this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png')}`
-                    this.headMeta.ogTitle = `${tabLabel} ze států ${placeName} | Cestovatelský portál Frytol na cestách`
+                    this.headMeta.ogTitle = `${tabLabel} ze států ${this.place[0].name} | Cestovatelský portál Frytol na cestách`
                     this.headMeta.ogDescription = ((this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Stát')
                     this.headMeta.ogUrl = `https://www.frytolnacestach.cz/svet/stat/${this.place[0].slug}${this.activeTab !== 'default' ? `/${this.activeTab}` : ''}`
                     this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
@@ -341,11 +341,9 @@
                 this.isLoadingPosts = true
 
                 //load posts
-                if (this.place && this.place.length > 0) {
-                    const responsePosts = await fetch(`https://api.frytolnacestach.cz/api/posts-id-state/${this.place[0].id}?showType=list&page=${this.postsPage}&items=${this.postsPerPage}`)
-                    const postsData = await responsePosts.json()
-                    this.posts = this.posts.concat(postsData)
-                }
+                const responsePosts = await fetch(`https://api.frytolnacestach.cz/api/posts-id-state/${this.place[0].id}?showType=list&page=${this.postsPage}&items=${this.postsPerPage}`)
+                const postsData = await responsePosts.json()
+                this.posts = this.posts.concat(postsData)
 
                 //load images
                 if (this.posts && this.posts.length > 0) {
@@ -380,61 +378,13 @@
         mounted() {
             // GET Data
             this.fetchData()
-            this.loadPosts()
+
+            if (this.place && this.place.length > 0) {
+                this.loadPosts()
+            }
 
             // Pretitle
             this.preTitle = `${this.activeTabName} ze států`
-
-            //Data for mNavBreadcrumbsPlaceArray 
-            //continent
-            this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
-                if (item.id === 3) {
-                    item.name = this.placeContinent[0].name
-                    item.url = "/svet/kontinent/" + this.placeContinent[0].slug
-                }
-                return item
-            })
-            //state
-            if(this.activeTab === 'undefined' || this.activeTab === 'default') {
-                this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
-                    if (item.id === 5) {
-                        item.name = this.place[0].name
-                        item.url = "/svet/stat/" + this.place[0].slug
-                        item.status = "span"
-                    }
-                    return item
-                })
-            } else {
-                this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
-                    if (item.id === 5) {
-                        item.name = this.place[0].name
-                        item.url = "/svet/stat/" + this.place[0].slug
-                        item.status = "link"
-                    }
-                    return item
-                })
-            }
-
-            //Data for oHotInfoHero
-            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-                if (item.id === 1) {
-                    item.name = this.placeContinent[0].name
-                    item.url = `/svet/kontinent/${this.placeContinent[0].slug}`
-                }
-                return item
-            })
-            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-                if (item.id === 2) {
-                    item.name = this.place[0].area
-                }
-                return item
-            })
-            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-                if (item.id === 3) {
-                    item.name = this.place[0].population
-                }
-                return item
-            })
         },
 
         watch: {
@@ -444,6 +394,40 @@
                     this.tabs = updatedTabs(newVal)
                 }
             },
+
+            placeContinent: {
+                handler(newValue) {
+                    if (newValue && newValue.length > 0) {
+                        this.mNavBreadcrumbsPlaceArray[2].name = newValue[0].name
+                        this.mNavBreadcrumbsPlaceArray[2].url = ("/svet/kontinent/" + newValue[0].slug)
+                        this.oHotInfoHeroArray[0].name = newValue[0].name
+                        this.oHotInfoHeroArray[0].url = ("/svet/kontinent/" + newValue[0].slug)
+                    } else {
+                        this.mNavBreadcrumbsPlaceArray[2].name = "Kontinent"
+                        this.mNavBreadcrumbsPlaceArray[2].url = "/svet/kontinent"
+                        this.oHotInfoHeroArray[0].name = "_Kontinent_"
+                        this.oHotInfoHeroArray[0].url = "/svet/kontinent"
+                    }
+                },
+                deep: true
+            },
+
+            place: {
+                handler(newValue) {
+                    if (newValue && newValue.length > 0) {
+                        this.mNavBreadcrumbsPlaceArray[4].name = newValue[0].name
+                        this.mNavBreadcrumbsPlaceArray[4].url = ("/svet/stat/" + newValue[0].slug)
+                        this.oHotInfoHeroArray[1].name = newValue[0].area
+                        this.oHotInfoHeroArray[2].name = newValue[0].population
+                    } else {
+                        this.mNavBreadcrumbsPlaceArray[4].name = "Stát"
+                        this.mNavBreadcrumbsPlaceArray[4].url = "/svet/stat"
+                        this.oHotInfoHeroArray[1].name = "_Rozloha_"
+                        this.oHotInfoHeroArray[1].name = "_Populace_"
+                    }
+                },
+                deep: true
+            }
         }
     })
 </script>

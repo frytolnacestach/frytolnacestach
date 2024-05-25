@@ -4,7 +4,7 @@
             <div class="t-main__content">
 
                 <!-- SECTION - BREADCRUMBS -->
-                <section class="t-section -px-world mt-2 -p0 print-section">
+                <section class="t-section -px-world mt-2 -p0 print-section" v-if="travelDictionary && travelDictionary.length > 0">
                     <div class="t-section__inner">
                         <mNavBreadcrumbsItem :links="mNavBreadcrumbsTravelDictionaryArray" :item="travelDictionary[0]" />
                     </div>
@@ -17,14 +17,14 @@
                             <div class="t-grid__section -hero">
 
                                 <!-- SECTION - hero -->
-                                <oHeroItemDetail :item="travelDictionary" :images="imageTravelDictionary" />
+                                <oHeroItemDetail :item="travelDictionary" :images="imageTravelDictionary" v-if="travelDictionary && travelDictionary.length > 0" />
                                 <!-- SECTION - hero END -->
 
                             </div>
                             <div class="t-grid__section -content">
 
                                 <!-- SECTION - information by ChatGPT -->
-                                <section class="t-section print-section" v-if="travelDictionary[0].description">
+                                <section class="t-section print-section" v-if="travelDictionary && travelDictionary.length > 0 && travelDictionary[0].description">
                                     <div class="t-section__inner">
                                         <oInformationBlock :title="'Co je ' + (travelDictionary[0].name ? travelDictionary[0].name : '') + '?'" :perexWysiwyg="travelDictionary[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                                     </div>
@@ -35,7 +35,7 @@
                             <div class="t-grid__section -ad">
 
                                 <!-- SECTION - Events - sidebar -->
-                                <oSidebarListTravelDictionary :IDTravelDictionary="this.travelDictionary[0].id" />
+                                <oSidebarListTravelDictionary :IDTravelDictionary="travelDictionary[0].id" v-if="travelDictionary && travelDictionary.length > 0" />
                                 <!-- SECTION - Events - sidebar - END -->
 
                                 <!-- SECTION - ad-google - sidebar -->

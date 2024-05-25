@@ -61,7 +61,7 @@
                                 <!-- SECTION - prices END -->
 
                                 <!-- SECTION - Ubytování - information -->
-                                <section class="t-section print-section" v-if="this.event && this.event.length > 0 && event[0].affiliate.find(x => x.name === 'booking').value === true">
+                                <section class="t-section print-section" v-if="event && event.length > 0 && event[0].affiliate.find(x => x.name === 'booking').value === true">
                                     <div class="t-section__inner">
                                         <oInformationBlock :title="'Ubytování blízko události ' + (event[0].name ? event[0].name : '')" perexWysiwyg="Cena za konkrétní ubytování se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek." />
                                     </div>
@@ -120,7 +120,7 @@
                 <div class="t-layout-full" v-if="(event && event.length > 0 && event[0].id_continent) || (event && event.length > 0 && event[0].id_state) || (event && event.length > 0 && event[0].id_region) || (event && event.length > 0 && event[0].id_city) || (event && event.length > 0 && event[0].id_spot)">
 
                     <!-- SECTION - place -->
-                    <section class="t-section -p0 pt-2 pb-1 print-section">
+                    <section class="t-section -p0 pt-2 pb-1 print-section" v-if="event && event.length > 0">
                         <div class="t-section__inner">
                             <mHeadline title="Více informací o místě" styleThema=" -green" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
                             <div class="flex mx-1">
