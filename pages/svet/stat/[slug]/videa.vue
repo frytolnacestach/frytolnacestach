@@ -336,6 +336,10 @@
                     this.headScript.area.value = (this.place[0].area ? this.place[0].area : "")
                     this.headScript.population.value = (this.place[0].population ? this.place[0].population : "")
                 }
+
+                if (this.place && this.place.length > 0) {
+                    this.loadVideos()
+                }
             },
 
             async loadVideos() {
@@ -348,7 +352,7 @@
                 this.videos = this.videos.concat(videosData)
 
                 //load images
-                if (this.videosData && this.videosData.length > 0) {
+                if (videosData && videosData.length > 0) {
                     const imagesVideosIDS = videosData.map(videos => videos.id_image).filter(id => id !== undefined && id !== null && id !== '')
                     if (imagesVideosIDS.length > 0) {
                         const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
@@ -380,10 +384,6 @@
         mounted() {
             // GET Data
             this.fetchData()
-
-            if (this.place && this.place.length > 0) {
-                this.loadVideos()
-            }
 
             // Pretitle
             this.preTitle = `${this.activeTabName} ze států`

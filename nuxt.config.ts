@@ -121,7 +121,7 @@ const getPostRoutes = async () => {
       return usersSubpages.map((subpage) => `/cestovatel/${user.slug}/${subpage}`)
     })
     // MAP - use same datas for other pages
-    const worldTimeRoutes = placesStatesData.map((placeState) => `/svet/svetovy-cas/${placeState.slug}`)
+    const worldTimeRoutes = placesStatesData.map((placeState) => `/svetovy-cas/${placeState.slug}`)
     const filterPlacesContinentsStatesRoutes = placesContinentsData.map((placeContinent) => `/svet/stat?filterIDcontinent=${placeContinent.id}`)
     const filterPlacesStatesRegionsRoutes = placesStatesData.map((placeState) => `/svet/region?filterIDstate=${placeState.id}`)
     const filterPlacesStatesCitiesRoutes = placesStatesData.map((placeState) => `/svet/mesto?filterIDstate=${placeState.id}`)

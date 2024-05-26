@@ -226,7 +226,8 @@
         data() {
             return {
                 post: [],
-                videos: []
+                videos: [],
+                imagesVideos: []
             }
         },
 
@@ -291,30 +292,25 @@
                 // Image
                 if (this.post && this.post.length > 0) {
                     // PostHero
-                    let responseImagePostHero
-                    responseImagePostHero = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.post[0].id_image_hero}`)
+                    const responseImagePostHero = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.post[0].id_image_hero}`)
                     this.imagePostHero = await responseImagePostHero.json() || []
                     // PostMap
-                    let responseImagePostMap
-                    responseImagePostMap = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.post[0].id_image_map}`)
+                    const responseImagePostMap = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.post[0].id_image_map}`)
                     this.imagePostMap = await responseImagePostMap.json() || []
                     // PostOg
-                    let responseImagePostOg
-                    responseImagePostOg = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.post[0].id_image_og}`)
+                    const responseImagePostOg = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.post[0].id_image_og}`)
                     this.imagePostOg = await responseImagePostOg.json() || []
                 }
 
                 // COMPONENT - oVideoList
                 if (this.post && this.post.length > 0) {
                     // Videos
-                    let responseVideos
-                    responseVideos = await fetch(`https://api.frytolnacestach.cz/api/videos-id-city/${this.post[0].id_city}`)
+                    const responseVideos = await fetch(`https://api.frytolnacestach.cz/api/videos-id-city/${this.post[0].id_city}`)
                     this.videos = await responseVideos.json() || []
                     // Images
-                    let responseImagesVideos
-                    if (this.videos && this.video.length > 0) {
-                        const imagesVideosID = videos.map(video => video.id_image).filter(id => id !== null && id !== '');
-                        responseImagesVideos = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosID.join(',')}`)
+                    if (this.videos && this.videos.length > 0) {
+                        const imagesVideosID = this.videos.map(video => video.id_image).filter(id => id !== null && id !== '');
+                        const responseImagesVideos = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosID.join(',')}`)
                         this.imagesVideos = await responseImagesVideos.json() || []
                     }
                 }

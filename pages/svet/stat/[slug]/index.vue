@@ -344,10 +344,10 @@
                 imagesCities: this.imagesCities,
                 placeCityMain: this.placeCityMain,
                 imageCityMain: this.imageCityMain,
-                videos: this.videos,
-                imagesVideos: this.imagesVideos,
-                posts: this.posts,
-                imagesPosts: this.imagesPosts,
+                videos: [],
+                imagesVideos: [],
+                posts: [],
+                imagesPosts: [],
                 // Loading videos
                 videosPage: 1,
                 videosPerPage: 9,
@@ -576,6 +576,11 @@
                     this.headScript.area.value = (this.place[0].area ? this.place[0].area : "")
                     this.headScript.population.value = (this.place[0].population ? this.place[0].population : "")
                 }
+
+                if (this.place && this.place.length > 0) {
+                    this.loadVideos()
+                    this.loadPosts()
+                }
             },
 
             async loadPosts() {
@@ -583,14 +588,12 @@
                 this.isLoadingPosts = true
 
                 //load posts
-                if (this.place && this.place.length > 0) {
-                    const responsePosts = await fetch(`https://api.frytolnacestach.cz/api/posts-id-state/${this.place[0].id}?showType=list&page=${this.postsPage}&items=${this.postsPerPage}`)
-                    const postsData = await responsePosts.json()
-                    this.posts = this.posts.concat(postsData)
-                }
+                const responsePosts = await fetch(`https://api.frytolnacestach.cz/api/posts-id-state/${this.place[0].id}?showType=list&page=${this.postsPage}&items=${this.postsPerPage}`)
+                const postsData = await responsePosts.json()
+                this.posts = this.posts.concat(postsData)
 
                 //load images
-                if (this.posts && this.posts.length > 0) {
+                if (postsData && postsData.length > 0) {
                     const imagesPostsIDS = postsData.map(posts => posts.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
                     if (imagesPostsIDS.length > 0) {
                         const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
@@ -613,14 +616,12 @@
                 this.isLoadingVideos = true
 
                 //load videos
-                if (this.place && this.place.length > 0) {
-                    const responseVideo = await fetch(`https://api.frytolnacestach.cz/api/videos-id-state/${this.place[0].id}?showType=list&page=${this.videosPage}&items=${this.videosPerPage}`)
-                    const videosData = await responseVideo.json()
-                    this.videos = this.videos.concat(videosData)
-                }
+                const responseVideo = await fetch(`https://api.frytolnacestach.cz/api/videos-id-state/${this.place[0].id}?showType=list&page=${this.videosPage}&items=${this.videosPerPage}`)
+                const videosData = await responseVideo.json()
+                this.videos = this.videos.concat(videosData)
 
                 //load images
-                if (this.videosData && this.videosData.length > 0) {
+                if (videosData && videosData.length > 0) {
                     const imagesVideosIDS = videosData.map(videos => videos.id_image).filter(id => id !== undefined && id !== null && id !== '')
                     if (imagesVideosIDS.length > 0) {
                         const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
@@ -668,11 +669,6 @@
         mounted() {
             // GET Data
             this.fetchData()
-
-            if (this.place && this.place.length > 0) {
-                this.loadVideos()
-                this.loadPosts()
-            }
 
             // Pretitle
             this.preTitle = `${this.activeTabName}`

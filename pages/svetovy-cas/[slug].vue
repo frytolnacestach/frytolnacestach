@@ -105,13 +105,14 @@
 
 
     export default defineComponent({
-        name: 'SvetStatSlugPage',
+        name: 'SvetovyCasSlugPage',
 
         components: {
             mNavBreadcrumbsItem,
             mNavPlace,
             mHeadline,
             oAdGoogleSidebar,
+            oAlerts,
             oHeroPlace,
             oHotInfoHero,
             oMapGoogle,
@@ -132,28 +133,6 @@
                         name: "Světový čas",
                         url: "/svetovy-cas",
                         status: "link"
-                    }
-                ],
-                oHotInfoHeroArray: [
-                    {
-                        id: 1,
-                        title: "Kontinent",
-                        name: "_NÁZEV KONTINENTU_",
-                        url: `_ODKAZ_`,
-                        type: "string",
-                    },
-                    {
-                        id: 2,
-                        title: "Rozloha",
-                        name: "_ROZLOHA_",
-                        type: "number",
-                        subfix: " km²"
-                    },
-                    {
-                        id: 3,
-                        title: "Populace",
-                        name: "_POPULACE_",
-                        type: "number"
                     }
                 ]
             }
@@ -223,7 +202,7 @@
 
                 // PAGE - Place state detail
                 // Place
-                const responsePlace = await fetch(`https://api.frytolnacestach.cz/api/places-state/${params.slug}`)
+                const responsePlace = await fetch(`https://api.frytolnacestach.cz/api/places-state/${route.params.slug}`)
                 this.place = await responsePlace.json() || []
                 // Image
                 if (this.place && this.place.length > 0 && this.place[0].id_image_hero && this.place[0].id_image_hero !== 0) {
@@ -264,30 +243,6 @@
 
         mounted() {
             this.fetchData()
-
-            this.activeTab = this.$route.params.tab || 'default'
-
-            //Data for oHotInfoHero
-            /*TODO
-            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-                if (item.id === 1) {
-                    item.name = this.placeContinent[0].name
-                    item.url = `/svet/kontinent/${this.placeContinent[0].slug}`
-                }
-                return item;
-            })
-            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-                if (item.id === 2) {
-                    item.name = this.place[0].area
-                }
-                return item;
-            })
-            this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-                if (item.id === 3) {
-                    item.name = this.place[0].population
-                }
-                return item
-            })*/
         }
     })
 </script>

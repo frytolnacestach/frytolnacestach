@@ -1,10 +1,10 @@
 <template>
-    <div :class="'o-place-block' + (styleThema ? styleThema : ' -gray')">
+    <div :class="'o-place-block' + (styleThema ? styleThema : ' -gray')" v-if="place && place.length > 0">
         <div class="o-place-block__outer">
             <div class="o-place-block__inner">
                 <div class="o-place-block__content">
                     <div class="o-place-block__image loading-image -gray">
-                        <div v-if="image" class="o-place-block__image-lazyload">
+                        <div v-if="image && image.length > 0" class="o-place-block__image-lazyload">
                             <aImage 
                                 :alt="place[0].name ? place[0].name : 'Místo'"  
                                 :author="image[0].author"
@@ -201,28 +201,40 @@
             return { script: [jsonldPlaces] }
         },
 
-        async fetch() {
-            // API - GET - ITEMS
-            if (this.type === "kontinent") {
-                // API - GET - Continents
-                this.place = await fetch(`https://api.frytolnacestach.cz/api/places-continent-id/${this.placeID}`).then((res) => res.json())
-            } else if (this.type === "stat") {
-                // API - GET - Stats
-                this.place = await fetch(`https://api.frytolnacestach.cz/api/places-state-id/${this.placeID}`).then((res) => res.json())
-            } else if (this.type === "region") {
-                // API - GET - Regions
-                this.place = await fetch(`https://api.frytolnacestach.cz/api/places-region-id/${this.placeID}`).then((res) => res.json())
-            } else if (this.type === "mesto") {
-                // API - GET - Continents
-                this.place = await fetch(`https://api.frytolnacestach.cz/api/places-city-id/${this.placeID}`).then((res) => res.json())
-            } else if (this.type === "misto") {
-                // API - GET - Spots
-                this.place = await fetch(`https://api.frytolnacestach.cz/api/places-spot-id/${this.placeID}`).then((res) => res.json())
+        methods: {
+            async fetchData() {
+                // API - GET - ITEMS
+                if (this.type === "kontinent") {
+                    // API - GET - Continents
+                    const responsePlace = await fetch(`https://api.frytolnacestach.cz/api/places-continent-id/${this.placeID}`)
+                    this.place = await responsePlace.json() || []
+                } else if (this.type === "stat") {
+                    // API - GET - Stats
+                    const responsePlace = await fetch(`https://api.frytolnacestach.cz/api/places-state-id/${this.placeID}`)
+                    this.place = await responsePlace.json() || []
+                } else if (this.type === "region") {
+                    // API - GET - Regions
+                    const responsePlace = await fetch(`https://api.frytolnacestach.cz/api/places-region-id/${this.placeID}`)
+                    this.place = await responsePlace.json() || []
+                } else if (this.type === "mesto") {
+                    // API - GET - Continents
+                    const responsePlace = await fetch(`https://api.frytolnacestach.cz/api/places-city-id/${this.placeID}`)
+                    this.place = await responsePlace.json() || []
+                } else if (this.type === "misto") {
+                    // API - GET - Spots
+                    const responsePlace = await fetch(`https://api.frytolnacestach.cz/api/places-spot-id/${this.placeID}`)
+                    this.place = await responsePlace.json() || []
+                }
+                // API - GET - Image
+                if (this.place && this.place.length > 0) {
+                    const responseImage = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.place[0].id_image_hero}`)
+                    this.image = await responseImage.json() || []
+                }
             }
-            // API - GET - Image
-            if (this.place) {
-                this.image = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.place[0].id_image_hero}`).then((res) => res.json())
-            }
+        },
+
+        mounted() {
+            this.fetchData()
         }
     })
 </script>
