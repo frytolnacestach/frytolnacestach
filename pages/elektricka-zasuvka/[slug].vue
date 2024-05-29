@@ -104,10 +104,6 @@
 
         data() {
             return {
-                wallSockets: this.wallSockets,
-                imageWallSockets: this.imageWallSockets,
-                placesStates: this.placesStates,
-                imagesStates: this.imagesStates,
                 mNavBreadcrumbsWallSocketsArray: [
                     {
                         id: 1,
@@ -119,15 +115,22 @@
             }
         },
 
-        setup() {
+        async setup() {
+            const route = useRoute()
+            // DATA
+            const wallSockets = ref([])
+            const imageWallSockets = ref([])
+            const placesStates = ref([])
+            const imagesStates = ref([])
+
             let headMeta = reactive({
-                title: 'Detail jídla | Cestovatelský portál Frytol na cestách',
-                description: 'Popis detailu jídla',
-                keywords: 'Jídlo, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět',
+                title: 'Detail elektrická zásuvka | Cestovatelský portál Frytol na cestách',
+                description: 'Popis elektrické zásuvky',
+                keywords: 'Elektrická zásuvka, kompatibilita, redukce, zásuvky, plánuj cestu, cestovatelský portál, cestování, svět',
                 ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
-                ogTitle: 'Detail jídla | Cestovatelský portál Frytol na cestách',
-                ogDescription: 'Popis detailu jídla',
-                ogUrl: `https://www.frytolnacestach.cz/jidlo/slug`,
+                ogTitle: 'Detail elektrické zásuvky | Cestovatelský portál Frytol na cestách',
+                ogDescription: 'Popis elektrické zásuvky',
+                ogUrl: `https://www.frytolnacestach.cz/elektricka-zasuvka/slug`,
                 ogType: 'website',
             })
 
@@ -143,6 +146,73 @@
                 "image": ""
             })
 
+            useJsonld(() => headScript)
+     
+            // API - PAGE - elektricka-zasuvka/slug
+            await useAsyncData('dataAPI', async () => {
+                // API - WallSocket
+                const wallSocketsResponse = await $fetch(`https://api.frytolnacestach.cz/api/wall-socket/${route.params.slug}`)
+                const wallSocketsData = JSON.parse(wallSocketsResponse)
+                wallSockets.value = wallSocketsData || []
+
+                if (wallSockets.value && wallSockets.value.length > 0) {
+                    // API - Image wallSocket
+                    const imageWallSocketsResponse = await $fetch(`https://api.frytolnacestach.cz/api/image-id/${wallSockets.value[0].id_image_hero}`)
+                    const imageWallSocketsData = JSON.parse(imageWallSocketsResponse)
+                    imageWallSockets.value = imageWallSocketsData || []
+
+                    // API - States
+                    let idsStates
+                    if (wallSockets.value[0].ids_states && Array.isArray(wallSockets.value[0].ids_states) && wallSockets.value[0].ids_states.length !== 0) {
+                        idsStates = wallSockets.value[0].ids_states.map(state => state.id)
+                    } else {
+                        idsStates = null
+                    }
+                    if (idsStates) {
+                        const placesStatesResponse = await $fetch(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsStates.join(',')}`)
+                        const placesStatesData = JSON.parse(placesStatesResponse)
+                        placesStates.value = placesStatesData || []
+                    } else {
+                        placesStates.value = null
+                    }
+
+                    // API - Image states
+                    if (placesStates.value) {
+                        let imagesPlacesStatesID
+                        imagesPlacesStatesID = placesStates.value.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
+
+                        if (imagesPlacesStatesID) {
+                            const imagesStatesResponse = await $fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
+                            const imagesStatesData = JSON.parse(imagesStatesResponse)
+                            imagesStates.value = imagesStatesData || []
+                        }
+                    }
+                }
+
+                // HEAD
+                if (wallSockets.value && wallSockets.value.length > 0) {
+                    // Meta
+                    headMeta.title = `${wallSockets.value[0].name ? wallSockets.value[0].name : 'Elektrikcá zásuvka'} | Cestovatelský portál Frytol na cestách`
+                    headMeta.description = `${wallSockets.value[0].description ? wallSockets.value[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, wallSockets.value[0].description.lastIndexOf(' ', 160)) : wallSockets.value[0].name}`
+                    if (wallSockets.value[0].seo_tags && wallSockets.value[0].seo_tags.length > 0) {
+                        const metaSeoTags = ", " + wallSockets.value[0].seo_tags.map(item => item.tag).join(", ")
+                        headMeta.keywords = (wallSockets.value[0].name ? wallSockets.value[0].name : '') + metaSeoTags + ', Elektrická zásuvka, kompatibilita, redukce, zásuvky, plánuj cestu, cestovatelský portál, cestování, svět'
+                    } else {
+                        headMeta.keywords = (wallSockets.value[0].name ? wallSockets.value[0].name : '') + ', Elektrická zásuvka, kompatibilita, redukce, zásuvky, plánuj cestu, cestovatelský portál, cestování, svět'
+                    }
+                    headMeta.ogImage = `${wallSockets.value[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + imageWallSockets.value.find(image => image.id === wallSockets.value[0].id_image_hero).source + imageWallSockets.value.find(image => image.id === wallSockets.value[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+                    headMeta.ogTitle = `${wallSockets.value[0].name ? wallSockets.value[0].name : 'Elektrikcá zásuvka'} | Cestovatelský portál Frytol na cestách`
+                    headMeta.ogDescription = `${wallSockets.value[0].description ? wallSockets.value[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, wallSockets.value[0].description.lastIndexOf(' ', 160)) : wallSockets.value[0].name}`
+                    headMeta.ogUrl = `https://www.frytolnacestach.cz/elektricka-zasuvka/${wallSockets.value[0].slug}`
+                    headLink = [{ rel: 'canonical', href: headMeta.ogUrl }]
+                    // Script
+                    headScript.name = (wallSockets.value[0].name ? wallSockets.value[0].name : "")
+                    headScript.description = (wallSockets.value[0].description ? wallSockets.value[0].description.replace(/<\/?[^>]+(>|$)/g, '') : "")
+                    headScript.image = ((imageWallSockets.value[0] && imageWallSockets.value[0].id) ? ("https://image.frytolnacestach.cz/storage/brands/" + imageWallSockets.value[0].name + ".webp") : "")
+                }
+            })
+
+            // WATCH
             watch(headMeta, (newMeta) => {
                 useHead({
                     title: headMeta.title,
@@ -159,85 +229,16 @@
                 })
             }, { deep: true })
 
-            useJsonld(() => headScript)
-
+            // RETURN
             return {
+                wallSockets,
+                imageWallSockets,
+                placesStates,
+                imagesStates,
                 headMeta,
                 headLink,
                 headScript
             }
-        },
-
-        methods: {
-            async fetchData() {
-                const route = useRoute()
-
-                // PAGE - wall-sockets detail
-                // wall-sockets
-                const responseWallSockets = await fetch(`https://api.frytolnacestach.cz/api/wall-socket/${route.params.slug}`)
-                this.wallSockets = await responseWallSockets.json() || []
-                // Image
-                if (this.wallSockets && this.wallSockets.length > 0) {
-                    const responseImageWallSockets = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.wallSockets[0].id_image_hero}`)
-                    this.imageWallSockets = await responseImageWallSockets.json() || []
-                }
-
-                // COMPONENT - Places states
-                if (this.wallSockets && this.wallSockets.length > 0) {
-                    // States
-                    let idsStates
-                    if (this.wallSockets[0].ids_states && Array.isArray(this.wallSockets[0].ids_states) && this.wallSockets[0].ids_states.length !== 0) {
-                        idsStates = this.wallSockets[0].ids_states.map(state => state.id)
-                    } else {
-                        idsStates = null
-                    }
-                    let responsePlacesStates
-                    if (idsStates) {
-                        responsePlacesStates = await fetch(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsStates.join(',')}`)
-                        this.placesStates = await responsePlacesStates.json() || []
-                    } else {
-                        this.placesStates = null
-                    }
-                    // Images
-                    let imagesPlacesStatesID
-                    if (placesStates) {
-                        imagesPlacesStatesID = this.placesStates.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
-                    }
-                    let responseImagesStates
-                    if ( imagesPlacesStatesID) {
-                        responseImagesStates = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
-                        this.imagesStates = await responseImagesStates.json() || []
-                    } else {
-                        this.imagesStates = null
-                    }
-                }
-
-                // HEAD
-                if (this.wallSockets && this.wallSockets.length > 0) {
-                    // Meta
-                    this.headMeta.title = `${this.wallSockets[0].name ? this.wallSockets[0].name : 'Elektrikcá zásuvka'} | Cestovatelský portál Frytol na cestách`
-                    this.headMeta.description = `${this.wallSockets[0].description ? this.wallSockets[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.wallSockets[0].description.lastIndexOf(' ', 160)) : this.wallSockets[0].name}`
-                    if (this.wallSockets[0].seo_tags && this.wallSockets[0].seo_tags.length > 0) {
-                        const metaSeoTags = ", " + this.wallSockets[0].seo_tags.map(item => item.tag).join(", ")
-                        this.headMeta.keywords = (this.wallSockets[0].name ? this.wallSockets[0].name : '') + metaSeoTags + ', Elektrická zásuvka, kompatibilita, redukce, zásuvky, plánuj cestu, cestovatelský portál, cestování, svět'
-                    } else {
-                        this.headMeta.keywords = (this.wallSockets[0].name ? this.wallSockets[0].name : '') + ', Elektrická zásuvka, kompatibilita, redukce, zásuvky, plánuj cestu, cestovatelský portál, cestování, svět'
-                    }
-                    this.headMeta.ogImage = `${this.wallSockets[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageWallSockets.find(image => image.id === this.wallSockets[0].id_image_hero).source + this.imageWallSockets.find(image => image.id === this.wallSockets[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
-                    this.headMeta.ogTitle = `${this.wallSockets[0].name ? this.wallSockets[0].name : 'Elektrikcá zásuvka'} | Cestovatelský portál Frytol na cestách`
-                    this.headMeta.ogDescription = `${this.wallSockets[0].description ? this.wallSockets[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.wallSockets[0].description.lastIndexOf(' ', 160)) : this.wallSockets[0].name}`
-                    this.headMeta.ogUrl = `https://www.frytolnacestach.cz/elektricka-zasuvka/${this.wallSockets[0].slug}`
-                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
-                    // Script
-                    this.headScript.name = (this.wallSockets[0].name ? this.wallSockets[0].name : "")
-                    this.headScript.description = (this.wallSockets[0].description ? this.wallSockets[0].description.replace(/<\/?[^>]+(>|$)/g, '') : "")
-                    this.headScript.image = ((this.imageWallSockets[0] && this.imageWallSockets[0].id) ? ("https://image.frytolnacestach.cz/storage/brands/" + this.imageWallSockets[0].name + ".webp") : "")
-                }
-            }
-        },
-
-        mounted() {
-            this.fetchData()
         }
     })
 </script>
