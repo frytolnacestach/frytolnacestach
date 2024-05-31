@@ -6,16 +6,16 @@
                     <div class="o-sidebar-list-travel-dictionary__inner">
                         <h3 class="o-sidebar-list-travel-dictionary__header">Další výrazy</h3>
                         <div class="o-sidebar-list-travel-dictionary__items">
-                            <div class="o-sidebar-list-travel-dictionary__item" v-for="event in travelDictionaries" :key="event.id">
+                            <div class="o-sidebar-list-travel-dictionary__item" v-for="travelDictionary in travelDictionaries" :key="travelDictionary.id">
                                 <div class="o-sidebar-list-travel-dictionary__image-container">
                                     <div class="o-sidebar-list-travel-dictionary__image loading-image -green">
-                                        <div v-if="images && images.find(image => image.id === event.id_image_hero)" class="o-sidebar-list-travel-dictionary__image-lazyload">
+                                        <div v-if="images && images.find(image => image.id === travelDictionary.id_image_hero)" class="o-sidebar-list-travel-dictionary__image-lazyload">
                                             <AtomsImage 
-                                                :alt="event.name ? event.name : 'Úvodní obrázek'" 
-                                                :author="images.find(image => image.id === event.id_image_cover).author"
+                                                :alt="travelDictionary.name ? travelDictionary.name : 'Úvodní obrázek'" 
+                                                :author="images.find(image => image.id === travelDictionary.id_image_cover).author"
                                                 :lazy=true
-                                                :imageSource="images.find(image => image.id === event.id_image_cover).source"
-                                                :imageName="images.find(image => image.id === event.id_image_cover).name"
+                                                :imageSource="images.find(image => image.id === travelDictionary.id_image_cover).source"
+                                                :imageName="images.find(image => image.id === travelDictionary.id_image_cover).name"
                                                 :sizes=imageSizes
                                                 :srcSet=imageSizesMedia
                                                 cssClassComponent="o-sidebar-list-travel-dictionary"
@@ -23,7 +23,7 @@
                                         </div>
                                         <div v-else class="o-sidebar-list-travel-dictionary__image-lazyload">
                                             <AtomsImage 
-                                                :alt="event.name ? event.name : 'Úvodní obrázek'" 
+                                                :alt="travelDictionary.name ? travelDictionary.name : 'Úvodní obrázek'" 
                                                 :lazy=true
                                                 imageSource="/_default/"
                                                 imageName="no-image"
@@ -32,11 +32,13 @@
                                                 cssClassComponent="o-sidebar-list-travel-dictionary"
                                             />
                                         </div>
-                                        <nuxtLink class="o-sidebar-list-travel-dictionary__image-link" :to="'/cestovatelsky-slovnik/' + event.slug" :aria-label="`Čti více o události ${event.name}`"></nuxtLink>
+                                        <nuxtLink class="o-sidebar-list-travel-dictionary__image-link" :to="'/cestovatelsky-slovnik/' + travelDictionary.slug" :aria-label="`Čti více o události ${travelDictionary.name}`"></nuxtLink>
                                     </div>
                                 </div>
                                 <div class="o-sidebar-list-travel-dictionary__text">
-                                    <h4 class="o-sidebar-list-travel-dictionary__name"><nuxtLink class="o-sidebar-list-travel-dictionary__name-link" :to="'/cestovatelsky-slovnik/' + event.slug">{{ event.name }}</nuxtLink></h4>
+                                    <h4 class="o-sidebar-list-travel-dictionary__name">
+                                        <nuxtLink class="o-sidebar-list-travel-dictionary__name-link" :to="'/cestovatelsky-slovnik/' + travelDictionary.slug">{{ travelDictionary.name }}</nuxtLink>
+                                    </h4>
                                 </div>
                             </div>
                         </div>
@@ -50,6 +52,7 @@
 <script>
     export default defineComponent({
         name: 'OrganismsoSidebarListTravelDictionaryComponent',
+
 
         props: {
             IDTravelDictionary: {
