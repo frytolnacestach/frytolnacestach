@@ -35,7 +35,7 @@
     let isLoading = false
     let noMoreItems = false
     let page = 1
-    let perPage = 10   
+    let perPage = 20   
     // DATA API
     const wallSockets = ref([])
     const imageWallSockets = ref([]) 
@@ -85,17 +85,17 @@
     // META - Head - JSONld
     useJsonld(() => headJsonld)
 
-    // API - PAGE - elektricka-zasuvka/index
+    // LOAD DATA
     const loadData = async () => {
         isLoading = true
 
-        // API - WallSockets
+        // WallSockets
         const wallSocketsResponse = await $fetch(`https://api.frytolnacestach.cz/api/wall-sockets?showType=list&page=${page}&items=${perPage}`)
         const wallSocketsData = JSON.parse(wallSocketsResponse) || []
         wallSockets.value = wallSockets.value.concat(wallSocketsData)
 
         if (wallSockets.value && wallSockets.value.length > 0) {
-            // API - Image wallSockets
+            // Image (wallSockets)
             const imagesWallSocketsIDS = wallSocketsData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
             if (imagesWallSocketsIDS.length > 0) {
                 const imageWallSocketsResponse = await $fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesWallSocketsIDS.join(',')}`)
@@ -104,7 +104,6 @@
             }
         }
 
-        // Check if there are no more items
         if (wallSocketsData.length === 0 || wallSocketsData.length < perPage) {
             noMoreItems = true
         }
@@ -112,6 +111,15 @@
         isLoading = false
     }
     await useAsyncData('dataAPI', () => loadData())
+
+    // OTHER
+    const loadMoreItems = () => {
+        if (isLoading || noMoreItems) {
+            return
+        }
+        page++
+        loadData()
+    }
 
     const handleScroll = () => {
         if (isLoading || noMoreItems) {

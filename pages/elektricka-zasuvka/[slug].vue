@@ -135,27 +135,26 @@
     // META - Head - JSONld
     useJsonld(() => headJsonld)
 
-    // API - PAGE - elektricka-zasuvka/slug
+    // LOAD DATA
     const loadData = async () => {
-        // API - WallSocket
+        // WallSocket
         const wallSocketsResponse = await $fetch(`https://api.frytolnacestach.cz/api/wall-socket/${route.params.slug}`)
         const wallSocketsData = JSON.parse(wallSocketsResponse)
         wallSockets.value = wallSocketsData || []
 
         if (wallSockets.value && wallSockets.value.length > 0) {
-            // API - Image wallSocket
+            // Image (wallSocket)
             const imageWallSocketsResponse = await $fetch(`https://api.frytolnacestach.cz/api/image-id/${wallSockets.value[0].id_image_hero}`)
             const imageWallSocketsData = JSON.parse(imageWallSocketsResponse)
             imageWallSockets.value = imageWallSocketsData || []
 
-            // API - States - map
+            // States
             let idsStates
             if (wallSockets.value[0].ids_states && Array.isArray(wallSockets.value[0].ids_states) && wallSockets.value[0].ids_states.length !== 0) {
                 idsStates = wallSockets.value[0].ids_states.map(state => state.id)
             } else {
                 idsStates = null
             }
-            // API - States
             if (idsStates) {
                 const placesStatesResponse = await $fetch(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsStates.join(',')}`)
                 const placesStatesData = JSON.parse(placesStatesResponse)
@@ -164,7 +163,7 @@
                 placesStates.value = null
             }
 
-            // API - Image states
+            // Image (states)
             if (placesStates.value) {
                 let imagesPlacesStatesID
                 imagesPlacesStatesID = placesStates.value.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
