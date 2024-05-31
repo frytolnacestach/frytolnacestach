@@ -7,7 +7,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsItem :links="mNavBreadcrumbsFoodArray" :item="food[0]" v-if="food && food.length > 0" />
+                        <MoleculesNavBreadcrumbsItem :links="mNavBreadcrumbsFoodArray" :item="food[0]" v-if="food && food.length > 0" />
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -18,7 +18,7 @@
                             <div class="t-grid__section -hero">
 
                                 <!-- SECTION - hero -->
-                                <oHeroItemDetail :item="food" :images="imageFood" v-if="food && food.length > 0" />
+                                <OrganismsHeroItemDetail :item="food" :images="imageFood" v-if="food && food.length > 0" />
                                 <!-- SECTION - hero END -->
 
                             </div>
@@ -27,7 +27,7 @@
                                 <!-- SECTION - information by ChatGPT -->
                                 <section class="t-section" v-if="food && food.length > 0 && food[0].description">
                                     <div class="t-section__inner">
-                                        <oInformationBlock :title="(food[0].name ? food[0].name : '')" :perexWysiwyg="food[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
+                                        <OrganismsInformationBlock :title="(food[0].name ? food[0].name : '')" :perexWysiwyg="food[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                                     </div>
                                 </section>
                                 <!-- SECTION - information by ChatGPT END -->
@@ -35,8 +35,8 @@
                                 <!-- SECTION - Ingredients -->
                                 <section class="t-section my-4 py-1" v-if="food && food.length > 0 && food[0].ingredients && food[0].ingredients.length > 0">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Ingredience" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
-                                        <oIngredients :items="food[0].ingredients" />
+                                        <MoleculesHeadline title="Ingredience" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
+                                        <OrganismsIngredients :items="food[0].ingredients" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Ingredients END -->
@@ -44,8 +44,8 @@
                                 <!-- SECTION - Recipe -->
                                 <section class="t-section my-4 py-1" v-if="food && food.length > 0 && food[0].recipe && food[0].recipe.length > 0">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Recept" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
-                                        <oRecipe :items="food[0].recipe" />
+                                        <MoleculesHeadline title="Recept" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
+                                        <OrganismsRecipe :items="food[0].recipe" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Recipe END -->
@@ -53,8 +53,8 @@
                                 <!-- SECTION - foods places -->
                                 <div class="t-section" v-if="food && food.length > 0 && placesStates && placesStates.length > 0">
                                     <div class="t-section__inner">
-                                        <mHeadline :title="'Jídlo ' + food[0].name + ' se jí v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
-                                        <oCoverStates :items="placesStates" :images="imagesStates" text="Kde se používá" />
+                                        <MoleculesHeadline :title="'Jídlo ' + food[0].name + ' se jí v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
+                                        <OrganismsCoverStates :items="placesStates" :images="imagesStates" text="Kde se používá" />
                                     </div>
                                 </div>
                                 <!-- SECTION - foods places - END -->
@@ -65,7 +65,7 @@
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world mt-4 mb-2">
                                     <div class="t-section__inner">
-                                        <oAdGoogleSidebar styleThema=" -green" />
+                                        <OrganismsAdGoogleSidebar styleThema=" -green" />
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
@@ -80,28 +80,8 @@
 </template>
 
 <script>
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mNavBreadcrumbsItem from '~/components/molecules/mNavBreadcrumbsItem.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oCoverStates from '~/components/organisms/oCoverStates.vue'
-    import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
-    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
-    import oIngredients from '~/components/organisms/oIngredients.vue'
-    import oRecipe from '~/components/organisms/oRecipe.vue'
-
     export default {
         name: 'JidloSlugPage',
-
-        components: {
-            mHeadline,
-            mNavBreadcrumbsItem,
-            oAdGoogleSidebar,
-            oCoverStates,
-            oHeroItemDetail,
-            oInformationBlock,
-            oIngredients,
-            oRecipe
-        },
 
         data() {
             return {

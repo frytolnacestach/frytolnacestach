@@ -6,7 +6,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :tab="activeTab" :tabName="activeTabName" />
+                        <MoleculesNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :tab="activeTab" :tabName="activeTabName" />
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Buttons -->
                 <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
                     <div class="t-section__inner">
-                        <oSwitchHero :show-hero.sync="showHero" />
+                        <OrganismsSwitchHero :show-hero.sync="showHero" />
                     </div>
                 </section>
                 <!-- SECTION - Buttons END -->
@@ -25,19 +25,19 @@
 
                             <!-- SECTION - hero -->
                             <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
-                                <oHeroPlace :title="place[0].name" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place && place.length > 0" />
+                                <OrganismsHeroPlace :title="place[0].name" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place && place.length > 0" />
                             </div>
                             <!-- SECTION - hero END -->
 
                             <!-- SECTION - map -->
                             <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
-                                <oMapGoogle :place="place" v-if="place && place.length > 0 && (place[0].coordinates.length > 0 && place[0].zoom.length > 0)" />
+                                <OrganismsMapGoogle :place="place" v-if="place && place.length > 0 && (place[0].coordinates.length > 0 && place[0].zoom.length > 0)" />
                             </div>
                             <!-- SECTION - map - END -->
 
                             <!-- SECTION - hot info -->
                             <div class="t-grid__section -hot-info-hero">
-                                <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3" v-if="place && place.length > 0" />
+                                <OrganismsHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3" v-if="place && place.length > 0" />
                             </div>
                             <!-- SECTION - hot info - END -->
 
@@ -48,7 +48,7 @@
                 <!-- SECTION - Alerts -->
                 <section class="t-section -px-world-big -p0" v-if="place && place.length > 0 && place[0].alerts">
                     <div class="t-section__inner">
-                        <oAlerts :alerts="place[0].alerts" />
+                        <OrganismsAlerts :alerts="place[0].alerts" />
                     </div>
                 </section>
                 <!-- SECTION - Alerts END -->
@@ -56,7 +56,7 @@
                 <!-- SECTION - Nav place -->
                 <section class="t-section -px-world-big -p0" v-if="place && place.length > 0">
                     <div class="t-section__inner">
-                        <mNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
+                        <MoleculesNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
                     </div>
                 </section>
                 <!-- SECTION - Nav place END -->
@@ -70,7 +70,7 @@
                                     <!-- SECTION - information by ChatGPT -->
                                     <section class="t-section mt-2 mb-4" v-if="place && place.length > 0 && place[0].information_chatgpt && !place[0].information_author?.length > 0">
                                         <div class="t-section__inner">
-                                            <oInformationBlock :title="'O státu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" styleThema=" -green" />
+                                            <OrganismsInformationBlock :title="'O státu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" styleThema=" -green" />
                                         </div>
                                     </section>
                                     <!-- SECTION - information by ChatGPT END -->
@@ -78,7 +78,7 @@
                                     <!-- SECTION - information by Author -->
                                     <section class="t-section mt-2 mb-4" v-if="place && place.length > 0 && place[0].information_author?.length > 0">
                                         <div class="t-section__inner">
-                                            <oInformationBlock :title="'O státu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_author[0].text" :authorID="place[0].information_author[0].author_create" styleThema=" -green" />
+                                            <OrganismsInformationBlock :title="'O státu ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_author[0].text" :authorID="place[0].information_author[0].author_create" styleThema=" -green" />
                                         </div>
                                     </section>
                                     <!-- SECTION - information by Author END -->
@@ -86,7 +86,7 @@
                                     <!-- SECTION - ad-google - wysiwyg -->
                                     <section class="t-section  my-2 -p0 print-section">
                                         <div class="t-section__inner">
-                                            <oAdGoogleWysiwyg styleThema=" -green" />
+                                            <OrganismsAdGoogleWysiwyg styleThema=" -green" />
                                         </div>
                                     </section>
                                     <!-- SECTION - ad-google - wysiwyg - END -->
@@ -94,7 +94,7 @@
                                     <!-- SECTION - Account banner big - sidebar -->
                                     <section class="t-section -px-world my-1" v-if="account && account.length === 0">
                                         <div class="t-section__inner">
-                                            <oAccountBannerBig :account="account" />
+                                            <OrganismsAccountBannerBig :account="account" />
                                         </div>
                                     </section>
                                     <!-- SECTION - Account banner big - sidebar END -->
@@ -102,7 +102,7 @@
                                     <!-- SECTION - Place teaser -->
                                     <section class="t-section my-2 -p0 print-section" v-if="place && place.length > 0 && place[0].id_city_main && placeCityMain && placeCityMain.length > 0">
                                         <div class="t-section__inner">
-                                            <oPlaceTeaser :headline="'Hlavním městem ve státě ' + place[0].name + ' je ' + placeCityMain[0].name" :place="placeCityMain" :image="imageCityMain" type="mesto" />
+                                            <OrganismsPlaceTeaser :headline="'Hlavním městem ve státě ' + place[0].name + ' je ' + placeCityMain[0].name" :place="placeCityMain" :image="imageCityMain" type="mesto" />
                                         </div>
                                     </section>
                                     <!-- SECTION - Place teaser END -->
@@ -110,8 +110,8 @@
                                     <!-- SECTION - Facts place -->
                                     <section class="t-section my-4 py-1 -p0 print-section" v-if="place && place.length > 0 && place[0].facts_place && place[0].facts_place.length > 0">
                                         <div class="t-section__inner">
-                                            <mHeadline title="Fakta o státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
-                                            <oFactsPlace :items="place[0].facts_place" />
+                                            <MoleculesHeadline title="Fakta o státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
+                                            <OrganismsFactsPlace :items="place[0].facts_place" />
                                         </div>
                                     </section>
                                     <!-- SECTION - Facts place END -->
@@ -119,14 +119,14 @@
                                     <!-- SECTION - Directory Subpages -->
                                     <section class="t-section my-4 py-1 -p0 hidden-print" v-if="tabsLoad && tabsLoad.length > 0">
                                         <div class="t-section__inner">
-                                            <mHeadline title="Co by tě mohlo zajímat o státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
-                                            <oDirectorySubpages :tabs="tabs" :data="tabsLoad" :placeSlug="place[0].slug" />
+                                            <MoleculesHeadline title="Co by tě mohlo zajímat o státě " :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-1" />
+                                            <OrganismsDirectorySubpages :tabs="tabs" :data="tabsLoad" :placeSlug="place[0].slug" />
                                         </div>
                                     </section>
                                     <!-- SECTION - Directory Subpages END -->
 
                                     <!-- SECTION - Review -->
-                                    <oReviewItem :account="account" :IDplace="place[0].id" type="state" v-if="place && place.length > 0 && place[0].id && account && account.length > 0" />
+                                    <OrganismsReviewItem :account="account" :IDplace="place[0].id" type="state" v-if="place && place.length > 0 && place[0].id && account && account.length > 0" />
                                     <!-- SECTION - Review END -->
                             
                                 </div>
@@ -135,7 +135,7 @@
                                     <!-- SECTION - Visited button - sidebar -->
                                     <section class="t-section -px-world my-1">
                                         <div class="t-section__inner">
-                                            <oVisitedButton :account="account" :place="this.place[0].id" placeType="state" v-if="place && place.length > 0 && place[0].id && account && account.length > 0" />
+                                            <OrganismsVisitedButton :account="account" :place="this.place[0].id" placeType="state" v-if="place && place.length > 0 && place[0].id && account && account.length > 0" />
                                         </div>
                                     </section>
                                     <!-- SECTION - Visited button - sidebar - END -->
@@ -146,7 +146,7 @@
                                     <!-- SECTION - time - sidebar -->
                                     <section class="t-section -px-world my-1">
                                         <div class="t-section__inner">
-                                            <oSidebarTime :mpz="place[0].mpz" v-if="place && place.length > 0 && place[0].mpz" />
+                                            <OrganismsSidebarTime :mpz="place[0].mpz" v-if="place && place.length > 0 && place[0].mpz" />
                                         </div>
                                     </section>
                                     <!-- SECTION - time - sidebar - END -->
@@ -156,7 +156,7 @@
                                         <!-- SECTION - Měna -->
                                         <section class="t-section -px-world my-1" v-if="place && place.length > 0 && place[0].currency[0].name !== null">
                                             <div class="t-section__inner">
-                                                <oBlockItem title="Měna" :subtitle="place[0].currency[0].name" :perexWysiwyg="place[0].currency[0].code !== null ? place[0].currency[0].code : ''" styleThema=" -bg-world" />
+                                                <OrganismsBlockItem title="Měna" :subtitle="place[0].currency[0].name" :perexWysiwyg="place[0].currency[0].code !== null ? place[0].currency[0].code : ''" styleThema=" -bg-world" />
                                             </div>
                                         </section>
                                         <!-- SECTION - Měna END -->
@@ -164,7 +164,7 @@
                                         <!-- SECTION - MPZ -->
                                         <section class="t-section -px-world my-1" v-if="place && place.length > 0 && place[0].mpz">
                                             <div class="t-section__inner">
-                                                <oBlockItem title="MPZ" subtitle="Mezinárodní poznávací značka" :perexWysiwyg="place[0].mpz" styleThema=" -bg-world" />
+                                                <OrganismsBlockItem title="MPZ" subtitle="Mezinárodní poznávací značka" :perexWysiwyg="place[0].mpz" styleThema=" -bg-world" />
                                             </div>
                                         </section>
                                         <!-- SECTION - MPZ END -->
@@ -172,7 +172,7 @@
                                         <!-- SECTION - TLD -->
                                         <section class="t-section -px-world my-1" v-if="place && place.length > 0 && place[0].tld">
                                             <div class="t-section__inner">
-                                                <oBlockItem title="TLD" subtitle="Národní internetová doména" :perexWysiwyg="place[0].tld" styleThema=" -bg-world" />
+                                                <OrganismsBlockItem title="TLD" subtitle="Národní internetová doména" :perexWysiwyg="place[0].tld" styleThema=" -bg-world" />
                                             </div>
                                         </section>
                                         <!-- SECTION - TLD END -->
@@ -180,7 +180,7 @@
                                         <!-- SECTION - links - sidebar -->
                                         <section class="t-section -px-world" v-if="place && place.length > 0 && place[0].links && place[0].links.length > 0">
                                             <div class="t-section__inner">
-                                                <oSidebarLinks :items="this.place[0].links" headline="Užitečné odkazy" />
+                                                <OrganismsSidebarLinks :items="this.place[0].links" headline="Užitečné odkazy" />
                                             </div>
                                         </section>
                                         <!-- SECTION - links - sidebar - END -->
@@ -188,7 +188,7 @@
                                         <!-- SECTION - apps - sidebar -->
                                         <section class="t-section -px-world" v-if="place && place.length > 0 && place[0].apps && place[0].apps.length > 0">
                                             <div class="t-section__inner">
-                                                <oSidebarLinks :items="place[0].apps" headline="Užitečné aplikace" />
+                                                <OrganismsSidebarLinks :items="place[0].apps" headline="Užitečné aplikace" />
                                             </div>
                                         </section>
                                         <!-- SECTION - apps - sidebar - END -->
@@ -196,7 +196,7 @@
                                     </section>
 
                                     <!-- SECTION - Events - sidebar -->
-                                    <oSidebarEvent :place="place[0].id" type="state" v-if="place && place.length > 0" />
+                                    <OrganismsSidebarEvent :place="place[0].id" type="state" v-if="place && place.length > 0" />
                                     <!-- SECTION - Events - sidebar - END -->
 
                                 </div>
@@ -205,7 +205,7 @@
                                     <!-- SECTION - ad-google - sidebar -->
                                     <section class="t-section -px-world mt-4 mb-2">
                                         <div class="t-section__inner">
-                                            <oAdGoogleSidebar styleThema=" -green" />
+                                            <OrganismsAdGoogleSidebar styleThema=" -green" />
                                         </div>
                                     </section>
                                     <!-- SECTION - ad-google - sidebar - END -->
@@ -223,8 +223,8 @@
                                     <!-- SECTION - města - Biggest -->
                                     <section class="t-section -p0 -py4 -px-world-big -h-scroll print-section" v-if="place && place.length > 0 && placeCities && placeCities.length > 0">
                                         <div class="t-section__inner">
-                                            <mHeadline title="Největší města ve státě" :titleValue="place[0].name" styleAlign=" -left" styleThema=" -world" styleGap=" -px-0 mb-2" />
-                                            <oCoverPlaceDetail :places="placesCities" :images="imagesCities" type="mesto" importance="biggest" />
+                                            <MoleculesHeadline title="Největší města ve státě" :titleValue="place[0].name" styleAlign=" -left" styleThema=" -world" styleGap=" -px-0 mb-2" />
+                                            <OrganismsCoverPlaceDetail :places="placesCities" :images="imagesCities" type="mesto" importance="biggest" />
                                         </div>
                                     </section>
                                     <!-- SECTION - města - Biggest - END -->
@@ -232,9 +232,9 @@
                                     <!-- SECTION - videos -->
                                     <section class="t-section -p0 -bg-green py-4 hidden-print" v-if="place && place.length > 0 && videos && videos.length > 0">
                                         <div class="t-section__inner">
-                                            <mHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                                            <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
-                                            <oVideoList :videos="null" :images="null" styleThema=" -world" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
+                                            <MoleculesHeadline title="Videa ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                            <OrganismsVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
+                                            <OrganismsVideoList :videos="null" :images="null" styleThema=" -world" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
                                             <div class="flex flex-center my-2" v-if="!isLoadingVideos && !noMoreVideosItems">
                                                 <span class="a-button-border -big -green" @click="loadMoreVideosItems">Načíst další videa</span>
                                             </div>
@@ -245,8 +245,8 @@
                                     <!-- SECTION - města - menší -->
                                     <section class="t-section -p0 -py4 -px-world-big -h-scroll print-section" v-if="place && place.length > 0 && placesCities && placesCities.length > 0 && hasCitiesToShow">
                                         <div class="t-section__inner">
-                                            <mHeadline title="Další města a obce ve státě" :titleValue="place[0].name" styleAlign=" -left" styleThema=" -world" styleGap=" -px-0 mb-2" />
-                                            <oCoverPlaceDetail :places="placesCities" :images="imagesCities" type="mesto" :importance=null />
+                                            <MoleculesHeadline title="Další města a obce ve státě" :titleValue="place[0].name" styleAlign=" -left" styleThema=" -world" styleGap=" -px-0 mb-2" />
+                                            <OrganismsCoverPlaceDetail :places="placesCities" :images="imagesCities" type="mesto" :importance=null />
                                         </div>
                                     </section>
                                     <!-- SECTION - města - menší - END -->
@@ -254,9 +254,9 @@
                                     <!-- SECTION - articles -->
                                     <section class="t-section -p0 -bg-green py-4 hidden-print" v-if="place && place.length > 0 && posts && posts.length !== 0">
                                         <div class="t-section__inner">
-                                            <mHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                                            <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
-                                            <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingPosts" />
+                                            <MoleculesHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                            <OrganismsArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
+                                            <OrganismsArticleList :posts="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingPosts" />
                                             <div class="flex flex-center my-2" v-if="!isLoadingPosts && !noMorePostsItems">
                                                 <span class="a-button-border -big -green" @click="loadMorePostsItems">Načíst další články</span>
                                             </div>
@@ -277,61 +277,9 @@
 <script>
     // Utils
     import { updatedTabs } from '~/utils/tabsPlacesState.js'
-    // Components
-    import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
-    import mNavPlace from '~/components/molecules/mNavPlace.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oAccountBannerBig from '~/components/organisms/oAccountBannerBig.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oAdGoogleWysiwyg from '~/components/organisms/oAdGoogleWysiwyg.vue'
-    import oAlerts from '~/components/organisms/oAlerts.vue'
-    import oArticleList from '~/components/organisms/oArticleList.vue'
-    import oBlockItem from '~/components/organisms/oBlockItem.vue'
-    import oCoverPlaceDetail from '~/components/organisms/oCoverPlaceDetail.vue'
-    import oDirectorySubpages from '~/components/organisms/oDirectorySubpages.vue'
-    import oFactsPlace from '~/components/organisms/oFactsPlace.vue'
-    import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
-    import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
-    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
-    import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
-    import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
-    import oReviewItem from '~/components/organisms/oReviewItem.vue'
-    import oSidebarLinks from '~/components/organisms/oSidebarLinks.vue'
-    import oSidebarEvent from '~/components/organisms/oSidebarEvent.vue'
-    import oSidebarTime from '~/components/organisms/oSidebarTime.vue'
-    import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
-    import oVideoList from '~/components/organisms/oVideoList.vue'
-    import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
 
     export default defineComponent({
         name: 'SvetStatSlugPage',
-
-        components: {
-            mNavBreadcrumbsPlace,
-            mNavPlace,
-            mHeadline,
-            oAccountBannerBig,
-            oAdGoogleSidebar,
-            oAdGoogleWysiwyg,
-            oAlerts,
-            oArticleList,
-            oBlockItem,
-            oCoverPlaceDetail,
-            oDirectorySubpages,
-            oFactsPlace,
-            oHeroPlace,
-            oHotInfoHero,
-            oInformationBlock,
-            oMapGoogle,
-            oPlaceTeaser,
-            oReviewItem,
-            oSidebarLinks,
-            oSidebarEvent,
-            oSidebarTime,
-            oSwitchHero,
-            oVideoList,
-            oVisitedButton
-        },
 
         data() {
             return {

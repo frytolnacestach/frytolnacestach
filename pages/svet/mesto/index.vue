@@ -6,7 +6,7 @@
                 <!-- SECTION - Hero place type -->
                 <section class="t-section py-4">
                     <div class="t-section__inner">
-                        <oHeroPlaceType styleType=" -city" :title="headlineFilter" perex="Města, jsou místem, kde se setkávají historie, kultura a moderní doba. Na naší planetě, je podle velmi nepřesných zdrojů více než tři a půl milionu obcí, na našem cestovatelském portálu jich najdeš přibližně 2500 měst, z nichž každé má svůj unikátní příběh a kouzlo." />
+                        <OrganismsHeroPlaceType styleType=" -city" :title="headlineFilter" perex="Města, jsou místem, kde se setkávají historie, kultura a moderní doba. Na naší planetě, je podle velmi nepřesných zdrojů více než tři a půl milionu obcí, na našem cestovatelském portálu jich najdeš přibližně 2500 měst, z nichž každé má svůj unikátní příběh a kouzlo." />
                     </div>
                 </section>
                 <!-- SECTION - Hero place type END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Filter -->
                 <section class="t-section -p0 hidden-print">
                     <div class="t-section__inner">
-                        <oFormFilterPlace styleThema=" -green" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
+                        <OrganismsFormFilterPlace styleThema=" -green" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
                     </div>
                 </section>
                 <!-- SECTION - Filter END -->
@@ -22,8 +22,8 @@
                 <!-- SECTION - Place list -->
                 <section class="t-section -bg-world -p0">
                     <div class="t-section__inner">
-                        <oCoverPlace :places="placesCities" :placesParent="placesParent" :showPrename="true" :images="images" type="mesto" />
-                        <oCoverPlace :places="null" :images="null" type="mesto" :skeleton=true v-if="isLoading" />
+                        <OrganismsCoverPlace :places="placesCities" :placesParent="placesParent" :showPrename="true" :images="images" type="mesto" />
+                        <OrganismsCoverPlace :places="null" :images="null" type="mesto" :skeleton=true v-if="isLoading" />
                         <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                             <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
                         </div>
@@ -37,18 +37,8 @@
 </template>
 
 <script>
-    import oCoverPlace from '~/components/organisms/oCoverPlace.vue'
-    import oFormFilterPlace from '~/components/organisms/oFormFilterPlace.vue'
-    import oHeroPlaceType from '~/components/organisms/oHeroPlaceType.vue'
-
     export default defineComponent({
         name: 'SvetMestoIndexPage',
-
-        components: {
-            oCoverPlace,
-            oFormFilterPlace,
-            oHeroPlaceType
-        },
 
         data() {
             return {

@@ -7,7 +7,7 @@
                     <!-- SECTION - Hero food -->
                     <section class="t-section py-4">
                         <div class="t-section__inner">
-                            <oHero headline="Jídla" perex="Objevuj různorodá a chutná jídla, která můžeš ochutnat po celém světě. Kdekoliv se ocitneš, můžeš se těšit na unikátní kulinářské zážitky a objevovat místní lahůdky. S naším průvodcem po světě gastronomie na stránkách cestovatelského portálu Frytol na cestách. Budeš mít přehled o tom, kde se co jí." modifierCSS=" -green -w640" classCSS=" mt-2" />
+                            <OrganismsHero headline="Jídla" perex="Objevuj různorodá a chutná jídla, která můžeš ochutnat po celém světě. Kdekoliv se ocitneš, můžeš se těšit na unikátní kulinářské zážitky a objevovat místní lahůdky. S naším průvodcem po světě gastronomie na stránkách cestovatelského portálu Frytol na cestách. Budeš mít přehled o tom, kde se co jí." modifierCSS=" -green -w640" classCSS=" mt-2" />
                         </div>
                     </section>
                     <!-- SECTION - Hero food END -->
@@ -15,8 +15,8 @@
                     <!-- SECTION - cestovatelsky slovnik list -->
                     <section class="t-section -p0">
                         <div class="t-section__inner">
-                            <oCoverItem :items="foods" :images="images" type="jidlo" v-if="foods && foods.length > 0" />
-                            <oCoverItem :items="[]" :images="[]" type="jidlo" :skeleton=true v-if="isLoading" />
+                            <OrganismsCoverItem :items="foods" :images="images" type="jidlo" v-if="foods && foods.length > 0" />
+                            <OrganismsCoverItem :items="[]" :images="[]" type="jidlo" :skeleton=true v-if="isLoading" />
                             <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                                 <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
                             </div>
@@ -31,16 +31,8 @@
 </template>
 
 <script>
-    import oCoverItem from '~/components/organisms/oCoverItem.vue'
-    import oHero from '~/components/organisms/oHero.vue'
-
     export default {
         name: 'JidloIndexPage',
-
-        components: {
-            oCoverItem,
-            oHero
-        },
 
         data() {
             return {

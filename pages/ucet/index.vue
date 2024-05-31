@@ -6,7 +6,7 @@
                 <!-- SECTION - Hero -->
                 <section class="t-section -p0 pt-2 pb-1">
                     <div class="t-section__inner">
-                        <oHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
+                        <OrganismsHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
                     </div>
                 </section>
                 <!-- SECTION - Hero END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Signpost -->
                 <section class="t-section -p0 pt-2 pb-1">
                     <div class="t-section__inner">
-                        <oSignpost />
+                        <OrganismsSignpost />
                     </div>
                 </section>
                 <!-- SECTION - Signpost END -->
@@ -27,20 +27,8 @@
 <script>
     import { loginCheckLogin } from '~/utils/loginCheckLogin.js'
 
-    import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oHero from '~/components/organisms/oHero.vue'
-    import oSignpost from '~/components/organisms/oSignpost.vue'
-
     export default defineComponent({
         name: 'UcetIndexPage',
-        
-        components: {
-            aButtonFillFull,
-            mHeadline,
-            oHero,
-            oSignpost
-        },
 
         data() {
             return {

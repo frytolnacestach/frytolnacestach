@@ -7,7 +7,7 @@
                     <!-- SECTION - Hero značky -->
                     <section class="t-section py-4">
                         <div class="t-section__inner">
-                            <oHero headline="Značky" perex="Na stránce cestovatelského portálu Frytol na cestách se ponoř do světa výrobků, které ovládly náč svět. Prozkoumej, kde se skrývají ty nejžádanější produkty, které si našly cestu daleko za hranice. Zjistíš, co se kde vyrábí a co zaujalo svět. Připrav se na objevování fascinujících značek a výrobků, které utvořily mapu globálního vkusu a kvality." modifierCSS=" -green -w640" classCSS=" mt-2" />
+                            <OrganismsHero headline="Značky" perex="Na stránce cestovatelského portálu Frytol na cestách se ponoř do světa výrobků, které ovládly náč svět. Prozkoumej, kde se skrývají ty nejžádanější produkty, které si našly cestu daleko za hranice. Zjistíš, co se kde vyrábí a co zaujalo svět. Připrav se na objevování fascinujících značek a výrobků, které utvořily mapu globálního vkusu a kvality." modifierCSS=" -green -w640" classCSS=" mt-2" />
                         </div>
                     </section>
                     <!-- SECTION - Hero značky END -->
@@ -15,8 +15,8 @@
                     <!-- SECTION - cestovatelsky slovnik list -->
                     <section class="t-section -p0">
                         <div class="t-section__inner">
-                            <oCoverItem :items="brands" :images="images" type="znacka" v-if="brands && brands.length > 0" />
-                            <oCoverItem :items="[]" :images="[]" type="znacka" :skeleton=true v-if="isLoading" />
+                            <OrganismsCoverItem :items="brands" :images="images" type="znacka" v-if="brands && brands.length > 0" />
+                            <OrganismsCoverItem :items="[]" :images="[]" type="znacka" :skeleton=true v-if="isLoading" />
                             <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                                 <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
                             </div>
@@ -31,16 +31,8 @@
 </template>
 
 <script>
-    import oCoverItem from '~/components/organisms/oCoverItem.vue'
-    import oHero from '~/components/organisms/oHero.vue'
-
     export default defineComponent({
         name: 'ZnackaIndexPage',
-
-        components: {
-            oCoverItem,
-            oHero
-        },
 
         data() {
             return {

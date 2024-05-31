@@ -10,7 +10,7 @@
                                 <!-- SECTION - account headline - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                        <MoleculesAccountHeader :account="account" @update="menuAccountUpdate" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -18,7 +18,7 @@
                                 <!-- SECTION - nav - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mNavAccount :statusOpen="mNavAccountOpen" />
+                                        <MoleculesNavAccount :statusOpen="mNavAccountOpen" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -29,8 +29,8 @@
                                 <!-- SECTION - Články list -->
                                 <section class="t-section -padding-x -p0 pb-4">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Články" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oArticleListUser :posts="posts" :images="images" :skeleton="skeleton" />
+                                        <MoleculesHeadline title="Články" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <OrganismsArticleListUser :posts="posts" :images="images" :skeleton="skeleton" />
                                         <client-only v-if="posts && (posts.length === 0 || posts === null) && !skeleton">
                                             <p>
                                                 Zatím si nepřidal žádný článek
@@ -52,20 +52,8 @@
 <script>
     import { loginCheckLogout } from '~/utils/loginCheckLogout.js'
 
-    import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mNavAccount from '~/components/molecules/mNavAccount.vue'
-    import oArticleListUser from '~/components/organisms/oArticleListUser.vue'
-
     export default defineComponent({
         name: 'UcetClankyPage',
-        
-        components: {
-            mAccountHeader,
-            mHeadline,
-            mNavAccount,
-            oArticleListUser
-        },
 
         data() {
             return {

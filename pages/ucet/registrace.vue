@@ -6,7 +6,7 @@
                 <!-- SECTION - Hero -->
                 <section class="t-section -p0 pt-2 pb-1">
                     <div class="t-section__inner">
-                        <oHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
+                        <OrganismsHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
                     </div>
                 </section>
                 <!-- SECTION - Hero END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Form Registration -->
                 <section class="t-section -p0 pt-2 pb-1">
                     <div class="t-section__inner">
-                        <oFormRegistration />
+                        <OrganismsFormRegistration />
                     </div>
                 </section>
                 <!-- SECTION - Form Registration END -->
@@ -27,20 +27,8 @@
 <script>
     import { loginCheckLogin } from '~/utils/loginCheckLogin.js'
 
-    import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oHero from '~/components/organisms/oHero.vue'
-    import oFormRegistration from '~/components/organisms/oFormRegistration.vue'
-
     export default defineComponent({
         name: 'UcetRegistracePage',
-        
-        components: {
-            aButtonFillFull,
-            mHeadline,
-            oHero,
-            oFormRegistration
-        },
 
         data() {
             return {

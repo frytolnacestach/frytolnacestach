@@ -6,7 +6,7 @@
                 <!-- SECTION - Hero place type -->
                 <section class="t-section py-4">
                     <div class="t-section__inner">
-                        <oHeroPlaceType styleType=" -continent" title="Kontinenty" perex="Zveme tě na neuvěřitelnou cestu kolem světa, abys prozkoumal všech 7 kontinentů naší planety. Objevuj fascinující kultury, přírodní divy a tajemná místa včetně odlehlé Antarktidy. Připrav se na dobrodružství, které tě zavede do různých koutů světa a otevře ti dveře k nezapomenutelným zážitkům." />
+                        <OrganismsHeroPlaceType styleType=" -continent" title="Kontinenty" perex="Zveme tě na neuvěřitelnou cestu kolem světa, abys prozkoumal všech 7 kontinentů naší planety. Objevuj fascinující kultury, přírodní divy a tajemná místa včetně odlehlé Antarktidy. Připrav se na dobrodružství, které tě zavede do různých koutů světa a otevře ti dveře k nezapomenutelným zážitkům." />
                     </div>
                 </section>
                 <!-- SECTION - Hero place type END -->
@@ -14,8 +14,8 @@
                 <!-- SECTION - Place list -->
                 <section class="t-section -p0">
                     <div class="t-section__inner">
-                        <oCoverPlace :places="placesContinents" :images="images" type="kontinent" />
-                        <oCoverPlace :places="null" :images="null" type="kontinent" :skeleton=true v-if="isLoading" />
+                        <OrganismsCoverPlace :places="placesContinents" :images="images" type="kontinent" />
+                        <OrganismsCoverPlace :places="null" :images="null" type="kontinent" :skeleton=true v-if="isLoading" />
                         <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                             <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
                         </div>
@@ -29,16 +29,8 @@
 </template>
 
 <script>
-    import oCoverPlace from '~/components/organisms/oCoverPlace.vue'
-    import oHeroPlaceType from '~/components/organisms/oHeroPlaceType.vue'
-
     export default defineComponent({
         name: 'SvetKontinentIndexPage',
-
-        components: {
-            oCoverPlace,
-            oHeroPlaceType
-        },
 
         data() {
             return {

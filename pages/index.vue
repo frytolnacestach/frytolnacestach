@@ -6,7 +6,7 @@
                 <!-- SECTION - Vyhledávač -->
                 <section class="t-section pt-8 pb-4 hidden-print">
                     <div class="t-section__inner">
-                        <oSearch styleThema=" -gray"/>
+                        <OrganismsSearch styleThema=" -gray"/>
                     </div>
                 </section>
                 <!-- SECTION - Vyhledávač END -->
@@ -14,8 +14,8 @@
                 <!-- SECTION - Top místa -->
                 <section class="t-section -p0 mt-4 pb-4 print-section">
                     <div class="t-section__inner">
-                        <mHeadline title="Nejzajímavější místa" perex="Víte, kam byste se měli vydat na nezapomenutelnou dovolenou? Přinášíme vám seznam nejzajímavějších míst na světě, která musíte vidět. Od malebných vesnic a historických památek až po impozantní přírodní krásy, naše stránky vám pomohou najít nejlepší místa pro vaši další cestování." styleThema=" -gray -w640" styleAlign=" -center" styleGap=" mb-2" styleSize="h1" />
-                        <oTopPlace styleThema=" -gray" skeletonThema=" -skeleton-gray" />
+                        <MoleculesHeadline title="Nejzajímavější místa" perex="Víte, kam byste se měli vydat na nezapomenutelnou dovolenou? Přinášíme vám seznam nejzajímavějších míst na světě, která musíte vidět. Od malebných vesnic a historických památek až po impozantní přírodní krásy, naše stránky vám pomohou najít nejlepší místa pro vaši další cestování." styleThema=" -gray -w640" styleAlign=" -center" styleGap=" mb-2" styleSize="h1" />
+                        <OrganismsTopPlace styleThema=" -gray" skeletonThema=" -skeleton-gray" />
                     </div>
                 </section>
                 <!-- SECTION - Top místa END -->
@@ -23,8 +23,8 @@
                 <!-- SECTION - Typ místa -->
                 <section class="t-section py-4 print-section">
                     <div class="t-section__inner">
-                        <mHeadline title="Nevíš kam vyrazit?" perex="Pokud toužíš pozkoumat svět a nemáš jasnou představu, kam se vydat, můžeš si vybrat některou z kategorií míst a začít prozkoumávat." styleThema=" -gray -w640" styleAlign=" -center" styleGap=" mb-2" />
-                        <oWorldType styleThema=" -gray" skeletonThema=" -skeleton-gray" />
+                        <MoleculesHeadline title="Nevíš kam vyrazit?" perex="Pokud toužíš pozkoumat svět a nemáš jasnou představu, kam se vydat, můžeš si vybrat některou z kategorií míst a začít prozkoumávat." styleThema=" -gray -w640" styleAlign=" -center" styleGap=" mb-2" />
+                        <OrganismsWorldType styleThema=" -gray" skeletonThema=" -skeleton-gray" />
                     </div>
                 </section>
                 <!-- SECTION - Typ místa END -->
@@ -34,30 +34,30 @@
                         
                         <!-- SECTION - Article list -->
                         <div class="t-section__col px-1 mb-4 print-section">
-                            <mHeadline title="Nejnovější články" styleAlign=" -left" />
-                            <oArticleListSmall :posts="post" :images="imagePost" styleThemaLoading=" -gray" />
+                            <MoleculesHeadline title="Nejnovější články" styleAlign=" -left" />
+                            <OrganismsArticleListSmall :posts="post" :images="imagePost" styleThemaLoading=" -gray" />
                             <div class="flex flex-full flex-ai-end flex-center mt-2">
-                                <aButtonFillFull target="internal" url="/clanky" text="Všechny články" styleThema=" -gray" />
+                                <AtomsButtonFillFull target="internal" url="/clanky" text="Všechny články" styleThema=" -gray" />
                             </div>
                         </div>
                         <!-- SECTION - Article list END -->
 
                         <!-- SECTION - Video -->
                         <div class="t-section__col px-1 mb-4 print-section">
-                            <mHeadline title="Nejnovější videa" styleAlign=" -left" />
-                            <oVideoListSmall :videos="video" :images="imageVideo" styleThemaLoading=" -gray" />
+                            <MoleculesHeadline title="Nejnovější videa" styleAlign=" -left" />
+                            <OrganismsVideoListSmall :videos="video" :images="imageVideo" styleThemaLoading=" -gray" />
                             <div class="flex flex-full flex-ai-end flex-center mt-2">
-                                <aButtonFillFull target="internal" url="/videa" text="Všechna videa" styleThema=" -gray" />
+                                <AtomsButtonFillFull target="internal" url="/videa" text="Všechna videa" styleThema=" -gray" />
                             </div>
                         </div>
                         <!-- SECTION - Video END-->
 
                         <!-- SECTION - events -->
                         <div class="t-section__col px-1 mb-4 print-section">
-                            <mHeadline title="Nejbližší události" styleAlign=" -left" />
-                            <oEventListSmall styleThema=" -gray" />
+                            <MoleculesHeadline title="Nejbližší události" styleAlign=" -left" />
+                            <OrganismsEventListSmall styleThema=" -gray" />
                             <div class="flex flex-full flex-ai-end flex-center mt-2">
-                                <aButtonFillFull target="internal" url="/udalost" text="Všechny události" styleThema=" -gray" />
+                                <AtomsButtonFillFull target="internal" url="/udalost" text="Všechny události" styleThema=" -gray" />
                             </div>
                         </div>
                         <!-- SECTION - events END -->
@@ -70,30 +70,8 @@
 </template>
 
 <script>
-    import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oArticleListSmall from '~/components/organisms/oArticleListSmall.vue'
-    import oEventListSmall from '~/components/organisms/oEventListSmall.vue'
-    import oPlatform from '../components/organisms/oPlatform.vue'
-    import oSearch from '@/components/organisms/oSearch.vue'
-    import oTopPlace from '@/components/organisms/oTopPlace.vue'
-    import oVideoListSmall from '~/components/organisms/oVideoListSmall.vue'
-    import oWorldType from '@/components/organisms/oWorldType.vue'
-
     export default defineComponent({
         name: 'IndexPage',
-        
-        components: {
-            aButtonFillFull,
-            mHeadline,
-            oArticleListSmall,
-            oEventListSmall,
-            oPlatform,
-            oSearch,
-            oTopPlace,
-            oVideoListSmall,
-            oWorldType
-        },
 
         data() {
             return {

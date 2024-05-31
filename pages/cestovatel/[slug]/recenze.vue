@@ -10,8 +10,8 @@
                                 <!-- SECTION - user headline - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mUserHeader :user="user" @update="menuUserUpdate" v-if="user && user.length > 0" />
-                                        <mUserHeader :user="[]" :skeleton=true v-if="user && user.length > 0" />
+                                        <MoleculesUserHeader :user="user" @update="menuUserUpdate" v-if="user && user.length > 0" />
+                                        <MoleculesUserHeader :user="[]" :skeleton=true v-if="user && user.length > 0" />
                                     </div>
                                 </section>
                                 <!-- SECTION - user headline - account END -->
@@ -19,7 +19,7 @@
                                 <!-- SECTION - nav - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mNavUser :statusOpen="mNavUserOpen" />
+                                        <MoleculesNavUser :statusOpen="mNavUserOpen" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -30,7 +30,7 @@
                                 <!-- SECTION - Recenze -->
                                 <section class="t-section -padding-x -p0 pb-4 print-section">
                                     <div class="t-section__inner">
-                                        <oReviewItemListUser :user="user" v-if="user && user.length > 0" />
+                                        <OrganismsReviewItemListUser :user="user" v-if="user && user.length > 0" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Recenze END -->
@@ -45,24 +45,8 @@
 </template>
 
 <script>
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mUserHeader from '~/components/molecules/mUserHeader.vue'
-    import mNavUser from '~/components/molecules/mNavUser.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oReviewItemListUser from '~/components/organisms/oReviewItemListUser.vue'
-    import oUserUrls from '~/components/organisms/oUserUrls.vue'
-
     export default defineComponent({
         name: 'CestovatelRecenzeSlugPage',
-
-        components: {
-            mHeadline,
-            mUserHeader,
-            mNavUser,
-            oAdGoogleSidebar,
-            oReviewItemListUser,
-            oUserUrls
-        },
 
         data() {
             return {

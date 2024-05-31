@@ -6,7 +6,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" v-if="place && place.length > 0" />
+                        <MoleculesNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" v-if="place && place.length > 0" />
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Buttons -->
                 <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
                     <div class="t-section__inner">
-                        <oSwitchHero :show-hero.sync="showHero" />
+                        <OrganismsSwitchHero :show-hero.sync="showHero" />
                     </div>
                 </section>
                 <!-- SECTION - Buttons END -->
@@ -25,19 +25,19 @@
 
                             <!-- SECTION - hero -->
                             <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
-                                <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place && place.length > 0" />
+                                <OrganismsHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place && place.length > 0" />
                             </div>
                             <!-- SECTION - hero END -->
 
                             <!-- SECTION - map -->
                             <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
-                                <oMapGoogle :place="place" v-if="place && place.length > 0 && (place[0].coordinates.length > 0 && place[0].zoom.length > 0)" />
+                                <OrganismsMapGoogle :place="place" v-if="place && place.length > 0 && (place[0].coordinates.length > 0 && place[0].zoom.length > 0)" />
                             </div>
                             <!-- SECTION - map - END -->
 
                             <!-- SECTION - hot info -->
                             <div class="t-grid__section -hot-info-hero">
-                                <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
+                                <OrganismsHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
                             </div>
                             <!-- SECTION - hot info - END -->
 
@@ -48,7 +48,7 @@
                 <!-- SECTION - Alerts -->
                 <section class="t-section -px-world-big -p0" v-if="place && place.length > 0 && place[0].alerts">
                     <div class="t-section__inner">
-                        <oAlerts :alerts="place[0].alerts" />
+                        <OrganismsAlerts :alerts="place[0].alerts" />
                     </div>
                 </section>
                 <!-- SECTION - Alerts END -->
@@ -56,7 +56,7 @@
                 <!-- SECTION - Nav place -->
                 <section class="t-section -px-world-big -p0" v-if="place && place.length > 0">
                     <div class="t-section__inner">
-                        <mNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
+                        <MoleculesNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
                     </div>
                 </section>
                 <!-- SECTION - Nav place END -->
@@ -70,10 +70,10 @@
                                     <!-- SECTION - videos -->
                                     <section class="t-section -p0 -px-world my-2" v-if="place && place.length > 0">
                                         <div class="t-section__inner">
-                                            <mHeadline title="Videa ze státu" :titleValue="place[0].name" :perex="'Podívejte se na fascinující videa ze státu ' + place[0].name + ', která nám poskytují jedinečný pohled na tuto zemi. Prozkoumejte krásy krajiny, pochopte bohatou historii a zažijte každodenní život prostřednictvím těchto videí. Získejte nezapomenutelný pohled na ' + place[0].name + ' prostřednictvím objektivu, který zachycuje nejzajímavější momenty a místa tohoto úžasného státu.'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                            <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world-tab" styleThemaLoading=" -green" styleAlign=" -p-left" />
-                                            <oVideoList :videos="null" :images="null" styleThema=" -world" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
-                                            <oNoneContent text="Bohužel zde nejsou žádné videa" styleThema=" -green" styleGap=" px-1" v-if="videos && videos.length === 0 && !isLoadingVideos" />
+                                            <MoleculesHeadline title="Videa ze státu" :titleValue="place[0].name" :perex="'Podívejte se na fascinující videa ze státu ' + place[0].name + ', která nám poskytují jedinečný pohled na tuto zemi. Prozkoumejte krásy krajiny, pochopte bohatou historii a zažijte každodenní život prostřednictvím těchto videí. Získejte nezapomenutelný pohled na ' + place[0].name + ' prostřednictvím objektivu, který zachycuje nejzajímavější momenty a místa tohoto úžasného státu.'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                            <OrganismsVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world-tab" styleThemaLoading=" -green" styleAlign=" -p-left" />
+                                            <OrganismsVideoList :videos="null" :images="null" styleThema=" -world" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
+                                            <OrganismsNoneContent text="Bohužel zde nejsou žádné videa" styleThema=" -green" styleGap=" px-1" v-if="videos && videos.length === 0 && !isLoadingVideos" />
                                             <div class="flex flex-center my-2" v-if="!isLoadingVideos && !noMoreVideosItems">
                                                 <span class="a-button-border -big -green" @click="loadMoreVideosItems">Načíst další videa</span>
                                             </div>
@@ -94,41 +94,9 @@
 <script>
     // Utils
     import { updatedTabs } from '~/utils/tabsPlacesState.js'
-    // Components
-    import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
-    import mNavPlace from '~/components/molecules/mNavPlace.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oAccountBanner from '~/components/organisms/oAccountBanner.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oAffilateBooking from '~/components/organisms/oAffilateBooking.vue'
-    import oAlerts from '~/components/organisms/oAlerts.vue'
-    import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
-    import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
-    import oNoneContent from '~/components/organisms/oNoneContent.vue'
-    import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
-    import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
-    import oVideoList from '~/components/organisms/oVideoList.vue'
-    import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
 
     export default defineComponent({
         name: 'SvetStatSlugPage',
-
-        components: {
-            mNavBreadcrumbsPlace,
-            mNavPlace,
-            mHeadline,
-            oAccountBanner,
-            oAdGoogleSidebar,
-            oAffilateBooking,
-            oAlerts,
-            oHeroPlace,
-            oHotInfoHero,
-            oNoneContent,
-            oMapGoogle,
-            oSwitchHero,
-            oVideoList,
-            oVisitedButton
-        },
 
         data() {
             return {

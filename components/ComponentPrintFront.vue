@@ -1,17 +1,11 @@
 <template>
     <!-- Print Front -->
-    <oPrintFront />
+    <OrganismsPrintFront />
     <!-- Print Front END -->
 </template>
 
 <script>
-    import oPrintFront from '~/components/organisms/oPrintFront.vue'
-
     export default defineComponent({
-        name: 'ComponentPrintFrontComponent',
-
-        components: {
-            oPrintFront
-        }
+        name: 'ComponentPrintFrontComponent'
     })
 </script>

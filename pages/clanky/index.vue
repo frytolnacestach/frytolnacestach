@@ -6,7 +6,7 @@
                 <!-- SECTION - Hero -->
                 <section class="t-section -p0 mt-2 mb-4">
                     <div class="t-section__inner">
-                        <oHero :headline="headlineFilter" perex="Vítej na našem cestovatelském portálu! Prozkoumej naše články plné tipů a rad o cestování, které ti pomohou objevit nejzajímavější místa na světě. Ponoř se do dobrodružství s našimi autentickými příběhy a praktickými doporučeními, abys mohl/a plánovat své vlastní nezapomenutelné dobrodružství. Užij si každý moment na cestách a objevuj krásy světa s námi!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
+                        <OrganismsHero :headline="headlineFilter" perex="Vítej na našem cestovatelském portálu! Prozkoumej naše články plné tipů a rad o cestování, které ti pomohou objevit nejzajímavější místa na světě. Ponoř se do dobrodružství s našimi autentickými příběhy a praktickými doporučeními, abys mohl/a plánovat své vlastní nezapomenutelné dobrodružství. Užij si každý moment na cestách a objevuj krásy světa s námi!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
                     </div>
                 </section>
                 <!-- SECTION - Hero END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Filter -->
                 <section class="t-section -p0 hidden-print">
                     <div class="t-section__inner">
-                        <oFormFilterPlace styleThema=" -gray" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
+                        <OrganismsFormFilterPlace styleThema=" -gray" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
                     </div>
                 </section>
                 <!-- SECTION - Filter END -->
@@ -22,9 +22,9 @@
                 <!-- SECTION - ArticlesList -->
                 <section class="t-section -p0 py-1 px-2 print-section">
                     <div class="t-section__inner">
-                        <oArticleList :posts="posts" :images="images" styleThemaLoading=" -gray" styleSizeHeadline="h2" />
-                        <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
-                        <oNoneContent text="Bohužel zde nejsou žádné články" styleThema=" -green" styleGap=" px-1" v-if="posts && posts.length === 0 && !isLoading" />
+                        <OrganismsArticleList :posts="posts" :images="images" styleThemaLoading=" -gray" styleSizeHeadline="h2" />
+                        <OrganismsArticleList :posts="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
+                        <OrganismsNoneContent text="Bohužel zde nejsou žádné články" styleThema=" -green" styleGap=" px-1" v-if="posts && posts.length === 0 && !isLoading" />
                         <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                             <span class="a-button-fill -big -gray" @click="loadMoreItems">Načíst další položky</span>
                         </div>
@@ -35,10 +35,10 @@
                 <!-- SECTION - Platforms -->
                 <section class="t-section -p0 py-1 mt-2 px-2 print-section">
                     <div class="t-section__inner">
-                        <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
-                        <oPlatform />
+                        <MoleculesHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
+                        <OrganismsPlatform />
                         <div class="flex flex-center mb-4">
-                            <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
+                            <AtomsButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
                         </div>
                     </div>
                 </section>
@@ -50,26 +50,8 @@
 </template>
 
 <script>
-    import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oArticleList from '~/components/organisms/oArticleList.vue'
-    import oFormFilterPlace from '~/components/organisms/oFormFilterPlace.vue'
-    import oHero from '../../components/organisms/oHero.vue'
-    import oNoneContent from '~/components/organisms/oNoneContent.vue'
-    import oPlatform from '../../components/organisms/oPlatform.vue'
-
     export default defineComponent({
         name: 'ClankyIndexPage',
-
-        components: {
-            aButtonFillFull,
-            mHeadline,
-            oArticleList,
-            oFormFilterPlace,
-            oHero,
-            oNoneContent,
-            oPlatform
-        },
 
         data() {
             return {

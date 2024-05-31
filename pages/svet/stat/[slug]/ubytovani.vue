@@ -6,7 +6,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" v-if="place && place.length > 0" />
+                        <MoleculesNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" v-if="place && place.length > 0" />
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Buttons -->
                 <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
                     <div class="t-section__inner">
-                        <oSwitchHero :show-hero.sync="showHero" />
+                        <OrganismsSwitchHero :show-hero.sync="showHero" />
                     </div>
                 </section>
                 <!-- SECTION - Buttons END -->
@@ -25,19 +25,19 @@
 
                             <!-- SECTION - hero -->
                             <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
-                                <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place && place.length > 0" />
+                                <OrganismsHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place && place.length > 0" />
                             </div>
                             <!-- SECTION - hero END -->
 
                             <!-- SECTION - map -->
                             <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
-                                <oMapGoogle :place="place" v-if="place && place.length > 0 && (place[0].coordinates.length > 0 && place[0].zoom.length > 0)" />
+                                <OrganismsMapGoogle :place="place" v-if="place && place.length > 0 && (place[0].coordinates.length > 0 && place[0].zoom.length > 0)" />
                             </div>
                             <!-- SECTION - map - END -->
 
                             <!-- SECTION - hot info -->
                             <div class="t-grid__section -hot-info-hero">
-                                <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
+                                <OrganismsHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
                             </div>
                             <!-- SECTION - hot info - END -->
 
@@ -48,7 +48,7 @@
                 <!-- SECTION - Alerts -->
                 <section class="t-section -px-world-big -p0" v-if="place && place.length > 0 && place[0].alerts">
                     <div class="t-section__inner">
-                        <oAlerts :alerts="place[0].alerts" />
+                        <OrganismsAlerts :alerts="place[0].alerts" />
                     </div>
                 </section>
                 <!-- SECTION - Alerts END -->
@@ -56,7 +56,7 @@
                 <!-- SECTION - Nav place -->
                 <section class="t-section -px-world-big -p0" v-if="place && place.length > 0">
                     <div class="t-section__inner">
-                        <mNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
+                        <MoleculesNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
                     </div>
                 </section>
                 <!-- SECTION - Nav place END -->
@@ -70,8 +70,8 @@
                                     <!-- SECTION - Ubytování - information -->
                                     <section class="t-section pt-1 mt-2">
                                         <div class="t-section__inner">
-                                            <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Cena za konkrétní ubytování ve státě ' + (place[0].name ? place[0].name : '') + ' se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek.'" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true" />
-                                            <oInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Bohužel o ceně ubytování ve státě ' + (place[0].name ? place[0].name : '') + ' vám zatím moc neporadíme.'" v-else />
+                                            <OrganismsInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Cena za konkrétní ubytování ve státě ' + (place[0].name ? place[0].name : '') + ' se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek.'" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true" />
+                                            <OrganismsInformationBlock :title="'Ubytování ve státě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Bohužel o ceně ubytování ve státě ' + (place[0].name ? place[0].name : '') + ' vám zatím moc neporadíme.'" v-else />
                                         </div>
                                     </section>
                                     <!-- SECTION - Ubytování - information END -->
@@ -80,7 +80,7 @@
                                     <section class="t-section -px-world py-2 hidden-print" v-if="place[0].affiliate.find(x => x.name === 'booking').value === true">
                                         <div class="t-section__inner">
                                             <div v-for="coordinate in place[0].coordinates">
-                                                <oAffilateBooking 
+                                                <OrganismsAffilateBooking 
                                                     :landmarkName="`${ place[0].name ? place[0].name : '' }`"
                                                     :address="`${ place[0].name ? place[0].name : '' }`"
                                                     :latitude=parseFloat(coordinate.latitude)
@@ -98,7 +98,7 @@
                                     <!-- SECTION - Visited button - sidebar -->
                                     <section class="t-section -px-world my-1">
                                         <div class="t-section__inner">
-                                            <oVisitedButton :account="account" :place="place[0].id" placeType="state" />
+                                            <OrganismsVisitedButton :account="account" :place="place[0].id" placeType="state" />
                                         </div>
                                     </section>
                                     <!-- SECTION - Visited button - sidebar - END -->
@@ -109,7 +109,7 @@
                                     <!-- SECTION - Account banner - sidebar -->
                                     <section class="t-section -px-world my-1" v-if="account && account.length === 0">
                                         <div class="t-section__inner">
-                                            <oAccountBanner :account="account" styleThema=" -green" />
+                                            <OrganismsAccountBanner :account="account" styleThema=" -green" />
                                         </div>
                                     </section>
                                     <!-- SECTION - Account banner - sidebar END -->
@@ -120,7 +120,7 @@
                                     <!-- SECTION - ad-google - sidebar -->
                                     <section class="t-section -px-world mt-4 mb-2">
                                         <div class="t-section__inner">
-                                            <oAdGoogleSidebar styleThema=" -green" />
+                                            <OrganismsAdGoogleSidebar styleThema=" -green" />
                                         </div>
                                     </section>
                                     <!-- SECTION - ad-google - sidebar - END -->
@@ -138,39 +138,9 @@
 <script>
     // Utils
     import { updatedTabs } from '~/utils/tabsPlacesState.js'
-    // Components
-    import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
-    import mNavPlace from '~/components/molecules/mNavPlace.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oAccountBanner from '~/components/organisms/oAccountBanner.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oAffilateBooking from '~/components/organisms/oAffilateBooking.vue'
-    import oAlerts from '~/components/organisms/oAlerts.vue'
-    import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
-    import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
-    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
-    import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
-    import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
-    import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
 
     export default defineComponent({
         name: 'SvetStatSlugPage',
-
-        components: {
-            mNavBreadcrumbsPlace,
-            mNavPlace,
-            mHeadline,
-            oAccountBanner,
-            oAdGoogleSidebar,
-            oAffilateBooking,
-            oAlerts,
-            oHeroPlace,
-            oHotInfoHero,
-            oInformationBlock,
-            oMapGoogle,
-            oSwitchHero,
-            oVisitedButton
-        },
 
         data() {
             return {

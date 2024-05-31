@@ -6,7 +6,7 @@
                 <!-- SECTION - Hero -->
                 <section class="t-section -p0 mb-1 mt-2">
                     <div class="t-section__inner">
-                        <oHero :headline="headline" modifierCSS=" -gray" classCSS=" mt-2" />
+                        <OrganismsHero :headline="headline" modifierCSS=" -gray" classCSS=" mt-2" />
                     </div>
                 </section>
                 <!-- SECTION - Hero END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Wysiwyg -->
                 <section class="t-section -wysiwyg py-4" v-if="base && base.length > 0">
                     <div class="t-section__inner">
-                        <oWysiwyg :text="base[0].cookies" />
+                        <OrganismsWysiwyg :text="base[0].cookies" />
                     </div>
                 </section>
                 <!-- SECTION - Wysiwyg END -->
@@ -25,16 +25,8 @@
 </template>
 
 <script>
-    import oHero from '../components/organisms/oHero.vue'
-    import oWysiwyg from '~/components/organisms/oWysiwyg.vue'
-
     export default defineComponent({
-        name: 'ConditionsPage',
-
-        components: {
-            oHero,
-            oWysiwyg
-        },
+        name: 'CookiesPage',
 
         data() {
             return {

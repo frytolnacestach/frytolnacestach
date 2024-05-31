@@ -10,8 +10,8 @@
                                 <!-- SECTION - user headline - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mUserHeader :user="user" @update="menuUserUpdate" v-if="user && user.length > 0" />
-                                        <mUserHeader :user="[]" :skeleton=true v-if="user && user.length === 0" />
+                                        <MoleculesUserHeader :user="user" @update="menuUserUpdate" v-if="user && user.length > 0" />
+                                        <MoleculesUserHeader :user="[]" :skeleton=true v-if="user && user.length === 0" />
                                     </div>
                                 </section>
                                 <!-- SECTION - user headline - account END -->
@@ -19,7 +19,7 @@
                                 <!-- SECTION - Follower button - sidebar -->
                                 <section class="t-section -px-world">
                                     <div class="t-section__inner">
-                                        <oFollowerButton :account="account" :user="user[0].id" v-if="user && user.length > 0 && account && account.length > 0 && user[0].email !== account[0].email" />
+                                        <OrganismsFollowerButton :account="account" :user="user[0].id" v-if="user && user.length > 0 && account && account.length > 0 && user[0].email !== account[0].email" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Follower button - sidebar - END -->
@@ -27,7 +27,7 @@
                                 <!-- SECTION - nav - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mNavUser :statusOpen="mNavUserOpen" />
+                                        <MoleculesNavUser :statusOpen="mNavUserOpen" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -38,8 +38,8 @@
                                 <!-- SECTION - user urls - account -->
                                 <section class="t-section -padding-x -p0 mb-4 print-section" v-if="user && user.length > 0">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Tady mě najdeš" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oUserUrls :urls="user[0].urls" />
+                                        <MoleculesHeadline title="Tady mě najdeš" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <OrganismsUserUrls :urls="user[0].urls" />
                                     </div>
                                 </section>
                                 <!-- SECTION - user urls - account END -->
@@ -47,8 +47,8 @@
                                 <!-- SECTION - Achievements -->
                                 <section class="t-section -padding-x -p0 pb-4 print-section">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Moje úspěchy" styleThema=" -user -blue" styleAlign="" styleGap="" />
-                                        <oAchievements type="user" :idUser="user[0].id" v-if="user && user.length > 0" />
+                                        <MoleculesHeadline title="Moje úspěchy" styleThema=" -user -blue" styleAlign="" styleGap="" />
+                                        <OrganismsAchievements type="user" :idUser="user[0].id" v-if="user && user.length > 0" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Achievements END -->
@@ -63,26 +63,8 @@
 </template>
 
 <script>
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mUserHeader from '~/components/molecules/mUserHeader.vue'
-    import mNavUser from '~/components/molecules/mNavUser.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oAchievements from '~/components/organisms/oAchievements.vue'
-    import oFollowerButton from '~/components/organisms/oFollowerButton.vue'
-    import oUserUrls from '~/components/organisms/oUserUrls.vue'
-
     export default defineComponent({
         name: 'CestovatelSlugPage',
-
-        components: {
-            mHeadline,
-            mUserHeader,
-            mNavUser,
-            oAdGoogleSidebar,
-            oAchievements,
-            oFollowerButton,
-            oUserUrls
-        },
 
         data() {
             return {

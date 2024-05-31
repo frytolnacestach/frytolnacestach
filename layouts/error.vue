@@ -5,7 +5,7 @@
 			<!-- SECTION - Hero -->
 			<section class="t-section -p0 mb-1 mt-2">
 				<div class="t-section__inner">
-					<oError404 :headline="headline" :perex="perex" />
+					<OrganismsError404 :headline="headline" :perex="perex" />
 				</div>
 			</section>
 			<!-- SECTION - Hero END -->
@@ -15,16 +15,10 @@
 </template>
 
 <script>
-	import oError404 from '../components/organisms/oError404.vue'
-
 	export default defineComponent({
 		name: 'ErrorLayout',
-
+		
 		layout: 'empty',
-
-		components: {
-			oError404
-		},
 
 		props: {
 			error: {

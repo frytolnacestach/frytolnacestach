@@ -10,8 +10,8 @@
                                 <!-- SECTION - user headline - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mUserHeader :user="user" @update="menuUserUpdate" v-if="user && user.length > 0" />
-                                        <mUserHeader :user="[]" :skeleton=true v-if="user && user.length > 0" />
+                                        <MoleculesUserHeader :user="user" @update="menuUserUpdate" v-if="user && user.length > 0" />
+                                        <MoleculesUserHeader :user="[]" :skeleton=true v-if="user && user.length > 0" />
                                     </div>
                                 </section>
                                 <!-- SECTION - user headline - account END -->
@@ -19,7 +19,7 @@
                                 <!-- SECTION - nav - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mNavUser :statusOpen="mNavUserOpen" />
+                                        <MoleculesNavUser :statusOpen="mNavUserOpen" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -30,8 +30,8 @@
                                 <!-- SECTION - VideoList -->
                                 <section class="t-section -padding-x -p0 print-section">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Videa" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oVideoListUser :videos="videos" :images="images" skeletonThema=" -skeleton-blue" :skeleton="skeleton" v-if="videos && videos.length > 0" />
+                                        <MoleculesHeadline title="Videa" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <OrganismsVideoListUser :videos="videos" :images="images" skeletonThema=" -skeleton-blue" :skeleton="skeleton" v-if="videos && videos.length > 0" />
                                         <client-only v-if="videos.length === 0 && !skeleton">
                                             <p>
                                                 Cestovatel zatím nepřidal žádné video.
@@ -51,22 +51,8 @@
 </template>
 
 <script>
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mUserHeader from '~/components/molecules/mUserHeader.vue'
-    import mNavUser from '~/components/molecules/mNavUser.vue'
-    import oUserUrls from '~/components/organisms/oUserUrls.vue'
-    import oVideoListUser from '~/components/organisms/oVideoListUser.vue'
-
     export default defineComponent({
         name: 'CestovateleVideaSlugPage',
-
-        components: {
-            mHeadline,
-            mUserHeader,
-            mNavUser,
-            oUserUrls,
-            oVideoListUser
-        },
 
         data() {
             return {

@@ -10,7 +10,7 @@
                                 <!-- SECTION - account headline - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                        <MoleculesAccountHeader :account="account" @update="menuAccountUpdate" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -18,7 +18,7 @@
                                 <!-- SECTION - nav - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mNavAccount :statusOpen="mNavAccountOpen" />
+                                        <MoleculesNavAccount :statusOpen="mNavAccountOpen" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -29,8 +29,8 @@
                                 <!-- SECTION - Form - profile -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Změna hesla" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oFormPasswordChange :account="account" />
+                                        <MoleculesHeadline title="Změna hesla" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <OrganismsFormPasswordChange :account="account" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Form - profile END -->
@@ -47,20 +47,8 @@
 <script>
     import { loginCheckLogout } from '~/utils/loginCheckLogout.js'
 
-    import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mNavAccount from '~/components/molecules/mNavAccount.vue'
-    import oFormPasswordChange from '~/components/organisms/oFormPasswordChange.vue'
-
     export default defineComponent({
         name: 'UcetZmenaHeslaPage',
-        
-        components: {
-            mAccountHeader,
-            mHeadline,
-            mNavAccount,
-            oFormPasswordChange
-        },
 
         data() {
             return {

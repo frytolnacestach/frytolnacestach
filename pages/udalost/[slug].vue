@@ -6,7 +6,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsItem :links="mNavBreadcrumbsEventArray" :item="event[0]" v-if="event && event.length > 0" />
+                        <MoleculesNavBreadcrumbsItem :links="mNavBreadcrumbsEventArray" :item="event[0]" v-if="event && event.length > 0" />
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Buttons -->
                 <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
                     <div class="t-section__inner">
-                        <oSwitchHero :show-hero.sync="showHero" />
+                        <OrganismsSwitchHero :show-hero.sync="showHero" />
                     </div>
                 </section>
                 <!-- SECTION - Buttons END -->
@@ -25,13 +25,13 @@
 
                             <!-- SECTION - hero -->
                             <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')" v-if="event && event.length > 0">
-                                <oHeroItemDetail :item="event" :images="image" />
+                                <OrganismsHeroItemDetail :item="event" :images="image" />
                             </div>
                             <!-- SECTION - hero END -->
 
                             <!-- SECTION - map -->
                             <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')" v-if="event && event.length > 0">
-                                <oMapGoogle :place="event" />
+                                <OrganismsMapGoogle :place="event" />
                             </div>
                             <!-- SECTION - map - END -->
 
@@ -46,7 +46,7 @@
                                 <!-- SECTION - information -->
                                 <section class="t-section" v-if="event && event.length > 0 && event[0].description">
                                     <div class="t-section__inner">
-                                        <oInformationBlock :title="'O události ' + (event[0].name ? event[0].name : '')" :perexWysiwyg="event[0].description" authorName="Michal Fryč (frytolnacestach)" authorLink="https://www.frytolnacestach.cz/cestovatel/frytol-na-cestach" authorTarget="_blank" />
+                                        <OrganismsInformationBlock :title="'O události ' + (event[0].name ? event[0].name : '')" :perexWysiwyg="event[0].description" authorName="Michal Fryč (frytolnacestach)" authorLink="https://www.frytolnacestach.cz/cestovatel/frytol-na-cestach" authorTarget="_blank" />
                                     </div>
                                 </section>
                                 <!-- SECTION - information END -->
@@ -54,8 +54,8 @@
                                 <!-- SECTION - prices -->
                                 <section class="t-section my-4 print-section" v-if="event && event.length > 0 && event[0].prices && event[0].prices.length > 0">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Cena akce" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oPrices :items="event[0].prices" />
+                                        <MoleculesHeadline title="Cena akce" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <OrganismsPrices :items="event[0].prices" />
                                     </div>
                                 </section>
                                 <!-- SECTION - prices END -->
@@ -63,7 +63,7 @@
                                 <!-- SECTION - Ubytování - information -->
                                 <section class="t-section print-section" v-if="event && event.length > 0 && event[0].affiliate.find(x => x.name === 'booking').value === true">
                                     <div class="t-section__inner">
-                                        <oInformationBlock :title="'Ubytování blízko události ' + (event[0].name ? event[0].name : '')" perexWysiwyg="Cena za konkrétní ubytování se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek." />
+                                        <OrganismsInformationBlock :title="'Ubytování blízko události ' + (event[0].name ? event[0].name : '')" perexWysiwyg="Cena za konkrétní ubytování se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek." />
                                     </div>
                                 </section>
                                 <!-- SECTION - Ubytování - information END -->
@@ -72,7 +72,7 @@
                                 <section class="t-section -px-world py-2 hidden-print" v-if="event && event.length > 0 && placeCity && placeCity.length > 0 && event[0].affiliate.find(x => x.name === 'booking').value === true">
                                     <div class="t-section__inner">
                                         <div v-for="coordinate in event[0].coordinates">
-                                            <oAffilateBooking 
+                                            <OrganismsAffilateBooking 
                                                 :landmarkName="`${ placeCity[0].name ? placeCity[0].name : '' }`"
                                                 :address="`${ placeCity[0].name ? placeCity[0].name : '' }`"
                                                 :latitude=parseFloat(coordinate.latitude)
@@ -92,7 +92,7 @@
                                 <!-- SECTION - Date of Event - sidebar -->
                                 <section class="t-section -px-world my-2 print-section" v-if="(event && event.length > 0 && event[0].date_start) || (event && event.length > 0 && event[0].date_end)">
                                     <div class="t-section__inner">
-                                        <oDateOfEvent :dateStart="event[0].date_start" :dateEnd="event[0].date_end" />
+                                        <OrganismsDateOfEvent :dateStart="event[0].date_start" :dateEnd="event[0].date_end" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Date of Event - sidebar - END -->
@@ -100,7 +100,7 @@
                                 <!-- SECTION - links -->
                                 <section class="t-section -px-world my-2 print-section" v-if="event && event.length > 0 && event[0].links && event[0].links.length > 0">
                                     <div class="t-section__inner">
-                                        <oLinks :items="event[0].links" />
+                                        <OrganismsLinks :items="event[0].links" />
                                     </div>
                                 </section>
                                 <!-- SECTION - links END -->
@@ -108,7 +108,7 @@
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world mt-4 mb-2">
                                     <div class="t-section__inner">
-                                        <oAdGoogleSidebar styleThema=" -green" />
+                                        <OrganismsAdGoogleSidebar styleThema=" -green" />
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
@@ -122,13 +122,13 @@
                     <!-- SECTION - place -->
                     <section class="t-section -p0 pt-2 pb-1 print-section" v-if="event && event.length > 0">
                         <div class="t-section__inner">
-                            <mHeadline title="Více informací o místě" styleThema=" -green" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
+                            <MoleculesHeadline title="Více informací o místě" styleThema=" -green" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
                             <div class="flex mx-1">
-                                <oPlaceBlock :placeID="event[0].id_continent" type="kontinent" styleThema=" -green" v-if="event[0].id_continent" />
-                                <oPlaceBlock :placeID="event[0].id_state" type="stat" styleThema=" -green" v-if="event[0].id_state" />
-                                <oPlaceBlock :placeID="event[0].id_region" type="region" styleThema=" -green" v-if="event[0].id_region" />
-                                <oPlaceBlock :placeID="event[0].id_city" type="mesto" styleThema=" -green" v-if="event[0].id_city" />
-                                <oPlaceBlock :placeID="event[0].id_spot" type="misto" styleThema=" -green" v-if="event[0].id_spot" />
+                                <OrganismsPlaceBlock :placeID="event[0].id_continent" type="kontinent" styleThema=" -green" v-if="event[0].id_continent" />
+                                <OrganismsPlaceBlock :placeID="event[0].id_state" type="stat" styleThema=" -green" v-if="event[0].id_state" />
+                                <OrganismsPlaceBlock :placeID="event[0].id_region" type="region" styleThema=" -green" v-if="event[0].id_region" />
+                                <OrganismsPlaceBlock :placeID="event[0].id_city" type="mesto" styleThema=" -green" v-if="event[0].id_city" />
+                                <OrganismsPlaceBlock :placeID="event[0].id_spot" type="misto" styleThema=" -green" v-if="event[0].id_spot" />
                             </div>
                         </div>
                     </section>
@@ -141,36 +141,8 @@
 </template>
 
 <script>
-    import mNavBreadcrumbsItem from '~/components/molecules/mNavBreadcrumbsItem.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oAffilateBooking from '~/components/organisms/oAffilateBooking.vue'
-    import oDateOfEvent from '~/components/organisms/oDateOfEvent.vue'
-    import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
-    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
-    import oLinks from '~/components/organisms/oLinks.vue'
-    import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
-    import oPlaceBlock from '~/components/organisms/oPlaceBlock.vue'
-    import oPrices from '~/components/organisms/oPrices.vue'
-    import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
-
     export default defineComponent({
         name: 'UdalostSlugPage',
-
-        components: {
-            mNavBreadcrumbsItem,
-            mHeadline,
-            oAdGoogleSidebar,
-            oAffilateBooking,
-            oDateOfEvent,
-            oHeroItemDetail,
-            oInformationBlock,
-            oLinks,
-            oMapGoogle,
-            oPlaceBlock,
-            oPrices,
-            oSwitchHero
-        },
 
         data() {
             return {

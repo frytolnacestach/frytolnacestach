@@ -6,9 +6,9 @@
                 <!-- SECTION - Typ místa -->
                 <section class="t-section pt-8 pb-4 print-section">
                     <div class="t-section__inner">
-                        <oHero headline="Kam vycestovat?" modifierCSS=" -green" classCSS=" mt-2" />
-                        <mHeadline perex="Nevíš, kam vyrazit na dovolenou nebo za dobrodružstvím? Pokud toužíš pozkoumat svět a nemáš jasnou představu, kam se vydat, můžeš si vybrat některou z kategorií míst a začít prozkoumávat." styleThema=" -world -w640" styleAlign=" -center" styleGap=" mb-2" />
-                        <oWorldType styleThema=" -green" skeletonThema=" -skeleton-green" />
+                        <OrganismsHero headline="Kam vycestovat?" modifierCSS=" -green" classCSS=" mt-2" />
+                        <MoleculesHeadline perex="Nevíš, kam vyrazit na dovolenou nebo za dobrodružstvím? Pokud toužíš pozkoumat svět a nemáš jasnou představu, kam se vydat, můžeš si vybrat některou z kategorií míst a začít prozkoumávat." styleThema=" -world -w640" styleAlign=" -center" styleGap=" mb-2" />
+                        <OrganismsWorldType styleThema=" -green" skeletonThema=" -skeleton-green" />
                     </div>
                 </section>
                 <!-- SECTION - Typ místa END -->
@@ -16,8 +16,8 @@
                 <!-- SECTION - Top místa -->
                 <section class="t-section -p0 pb-4 print-section">
                     <div class="t-section__inner">
-                        <mHeadline title="Nejzajímavější místa" perex="Víte, kam byste se měli vydat na nezapomenutelnou dovolenou? Přinášíme vám seznam nejzajímavějších míst na světě, která musíte vidět. Od malebných vesnic a historických památek až po impozantní přírodní krásy, naše stránky vám pomohou najít nejlepší místa pro vaši další cestování." styleThema=" -world -w640" styleAlign=" -center" styleGap=" mb-2" />
-                        <oTopPlace styleThema=" -green" skeletonThema=" -skeleton-green" />
+                        <MoleculesHeadline title="Nejzajímavější místa" perex="Víte, kam byste se měli vydat na nezapomenutelnou dovolenou? Přinášíme vám seznam nejzajímavějších míst na světě, která musíte vidět. Od malebných vesnic a historických památek až po impozantní přírodní krásy, naše stránky vám pomohou najít nejlepší místa pro vaši další cestování." styleThema=" -world -w640" styleAlign=" -center" styleGap=" mb-2" />
+                        <OrganismsTopPlace styleThema=" -green" skeletonThema=" -skeleton-green" />
                     </div>
                 </section>
                 <!-- SECTION - Top místa END -->
@@ -28,20 +28,8 @@
 </template>
 
 <script>
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oHero from '~/components/organisms/oHero.vue'
-    import oTopPlace from '@/components/organisms/oTopPlace.vue'
-    import oWorldType from '@/components/organisms/oWorldType.vue'
-
     export default defineComponent({
         name: 'SvetIndexPage',
-
-        components: {
-            mHeadline,
-            oHero,
-            oTopPlace,
-            oWorldType
-        },
 
         setup() {
             let headMeta = reactive({

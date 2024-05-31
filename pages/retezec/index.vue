@@ -7,7 +7,7 @@
                     <!-- SECTION - Hero řetězce -->
                     <section class="t-section py-4">
                         <div class="t-section__inner">
-                            <oHero headline="Řetězce" perex="Vstupte do světa obchodních a gastronomických řetězců společně s námi prozkoumejte ty nejvýznamnější a největší, a zjistěte, kde na světě můžete ochutnat i nakupovat jejich unikátní nabídku. Vše, co potřebujete vědět o světě obchodů a gastronomie, najdete na stránkách cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w640" classCSS=" mt-2" />
+                            <OrganismsHero headline="Řetězce" perex="Vstupte do světa obchodních a gastronomických řetězců společně s námi prozkoumejte ty nejvýznamnější a největší, a zjistěte, kde na světě můžete ochutnat i nakupovat jejich unikátní nabídku. Vše, co potřebujete vědět o světě obchodů a gastronomie, najdete na stránkách cestovatelského portálu Frytol na cestách." modifierCSS=" -green -w640" classCSS=" mt-2" />
                         </div>
                     </section>
                     <!-- SECTION - Hero řetězce END -->
@@ -15,8 +15,8 @@
                     <!-- SECTION - řetězce list -->
                     <section class="t-section -p0">
                         <div class="t-section__inner">
-                            <oCoverItem :items="chains" :images="images" type="retezec" v-if="chains && chains.length > 0" />
-                            <oCoverItem :items="[]" :images="[]" type="chains" :skeleton=true v-if="isLoading" />
+                            <OrganismsCoverItem :items="chains" :images="images" type="retezec" v-if="chains && chains.length > 0" />
+                            <OrganismsCoverItem :items="[]" :images="[]" type="chains" :skeleton=true v-if="isLoading" />
                             <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                                 <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
                             </div>
@@ -31,16 +31,8 @@
 </template>
 
 <script>
-    import oCoverItem from '~/components/organisms/oCoverItem.vue'
-    import oHero from '~/components/organisms/oHero.vue'
-
     export default defineComponent({
         name: 'RetezceIndexPage',
-
-        components: {
-            oCoverItem,
-            oHero
-        },
 
         data() {
             return {

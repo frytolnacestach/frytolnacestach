@@ -5,23 +5,23 @@
                 <div class="o-header__inner">
 
                     <!-- LOGOTYPE -->
-                    <mLogotype />
+                    <MoleculesLogotype />
                     <!-- LOGOTYPE END -->
 
                     <!-- NAV - Main -->
-                    <mNavMain />
+                    <MoleculesNavMain />
                     <!-- NAV - Main END -->
 
                     <!-- NAV - Icon search -->
-                    <mIconSearch />
+                    <MoleculesIconSearch />
                     <!-- NAV - Icon search END -->
 
                     <!-- NAV - Main profile -->
-                    <mNavMainProfile />
+                    <MoleculesNavMainProfile />
                     <!-- NAV - Main profile END -->
 
                     <!-- NAV - Hamburger -->
-                    <mHamburger />
+                    <MoleculesHamburger />
                     <!-- NAV - Hamburger END -->
 
                 </div>
@@ -31,21 +31,7 @@
 </template>
 
 <script>
-    import mIconSearch from '~/components/molecules/mIconSearch.vue'
-    import mLogotype from '~/components/molecules/mLogotype.vue'
-    import mNavMain from '~/components/molecules/mNavMain.vue'
-    import mNavMainProfile from '~/components/molecules/mNavMainProfile.vue'
-    import mHamburger from '~/components/molecules/mHamburger.vue'
-
     export default defineComponent({
-        name: 'ComponentHeaderComponent',
-
-        components: {
-            mIconSearch,
-            mLogotype,
-            mNavMain,
-            mNavMainProfile,
-            mHamburger
-        }
+        name: 'ComponentHeaderComponent'
     })
 </script>

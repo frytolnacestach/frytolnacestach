@@ -10,8 +10,8 @@
                                 <!-- SECTION - user headline - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mUserHeader :user="user" @update="menuUserUpdate" v-if="user && user.length > 0" />
-                                        <mUserHeader :user="[]" :skeleton=true v-if="user && user.length > 0" />
+                                        <MoleculesUserHeader :user="user" @update="menuUserUpdate" v-if="user && user.length > 0" />
+                                        <MoleculesUserHeader :user="[]" :skeleton=true v-if="user && user.length > 0" />
                                     </div>
                                 </section>
                                 <!-- SECTION - user headline - account END -->
@@ -19,7 +19,7 @@
                                 <!-- SECTION - nav - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mNavUser :statusOpen="mNavUserOpen" />
+                                        <MoleculesNavUser :statusOpen="mNavUserOpen" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -30,8 +30,8 @@
                                 <!-- SECTION - FollowerList -->
                                 <section class="t-section -padding-x -p0 print-section" v-if="user && user.length > 0">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Sleduji" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oFollowerList type="user" :idUser="user[0].id" />
+                                        <MoleculesHeadline title="Sleduji" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <OrganismsFollowerList type="user" :idUser="user[0].id" />
                                     </div>
                                 </section>
                                 <!-- SECTION - FollowerList - END -->
@@ -46,22 +46,8 @@
 </template>
 
 <script>
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mUserHeader from '~/components/molecules/mUserHeader.vue'
-    import mNavUser from '~/components/molecules/mNavUser.vue'
-    import oFollowerList from '~/components/organisms/oFollowerList.vue'
-    import oUserUrls from '~/components/organisms/oUserUrls.vue'
-
     export default defineComponent({
         name: 'CestovateleSledujiSlugPage',
-
-        components: {
-            mHeadline,
-            mUserHeader,
-            mNavUser,
-            oFollowerList,
-            oUserUrls
-        },
 
         data() {
             return {

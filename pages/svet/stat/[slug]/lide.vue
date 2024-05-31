@@ -6,7 +6,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" v-if="place && place.length > 0" />
+                        <MoleculesNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" v-if="place && place.length > 0" />
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Buttons -->
                 <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
                     <div class="t-section__inner">
-                        <oSwitchHero :show-hero.sync="showHero" />
+                        <OrganismsSwitchHero :show-hero.sync="showHero" />
                     </div>
                 </section>
                 <!-- SECTION - Buttons END -->
@@ -25,19 +25,19 @@
 
                             <!-- SECTION - hero -->
                             <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
-                                <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place && place.length > 0" />
+                                <OrganismsHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place && place.length > 0" />
                             </div>
                             <!-- SECTION - hero END -->
 
                             <!-- SECTION - map -->
                             <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
-                                <oMapGoogle :place="place" v-if="place && place.length > 0 && (place[0].coordinates.length > 0 && place[0].zoom.length > 0)" />
+                                <OrganismsMapGoogle :place="place" v-if="place && place.length > 0 && (place[0].coordinates.length > 0 && place[0].zoom.length > 0)" />
                             </div>
                             <!-- SECTION - map - END -->
 
                             <!-- SECTION - hot info -->
                             <div class="t-grid__section -hot-info-hero">
-                                <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
+                                <OrganismsHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
                             </div>
                             <!-- SECTION - hot info - END -->
 
@@ -48,7 +48,7 @@
                 <!-- SECTION - Alerts -->
                 <section class="t-section -px-world-big -p0" v-if="place && place.length > 0 && place[0].alerts">
                     <div class="t-section__inner">
-                        <oAlerts :alerts="place[0].alerts" />
+                        <OrganismsAlerts :alerts="place[0].alerts" />
                     </div>
                 </section>
                 <!-- SECTION - Alerts END -->
@@ -56,7 +56,7 @@
                 <!-- SECTION - Nav place -->
                 <section class="t-section -px-world-big -p0" v-if="place && place.length > 0">
                     <div class="t-section__inner">
-                        <mNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
+                        <MoleculesNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
                     </div>
                 </section>
                 <!-- SECTION - Nav place END -->
@@ -70,7 +70,7 @@
                                     <!-- SECTION - Lidé náboženství -->
                                     <section class="t-section -px-world -p0" v-if="place[0].people_religion">
                                         <div class="t-section__inner">
-                                            <oChartPie :data="place[0].people_religion" title="Náboženství" chartID="chart-nabozenstvi" />
+                                            <OrganismsChartPie :data="place[0].people_religion" title="Náboženství" chartID="chart-nabozenstvi" />
                                         </div>
                                     </section>
                                     <!-- SECTION - Lidé náboženství END -->
@@ -78,7 +78,7 @@
                                     <!-- SECTION - Lidé národnost -->
                                     <section class="t-section -px-world -p0" v-if="place[0].people_nationality">
                                         <div class="t-section__inner">
-                                            <oChartPie :data="place[0].people_nationality" title="Národnosti" chartID="chart-narodnosti" />
+                                            <OrganismsChartPie :data="place[0].people_nationality" title="Národnosti" chartID="chart-narodnosti" />
                                         </div>
                                     </section>
                                     <!-- SECTION - Lidé národnost END -->
@@ -86,7 +86,7 @@
                                     <!-- SECTION - Jazykové fráze -->
                                     <section class="t-section -px-world -p0" v-if="place[0].language_phrases && place[0].language_phrases.length > 0">
                                         <div class="t-section__inner">
-                                            <oLanguagePhrases :data="place[0].language_phrases" />
+                                            <OrganismsLanguagePhrases :data="place[0].language_phrases" />
                                         </div>
                                     </section>
                                     <!-- SECTION - Jazykové fráze END -->
@@ -97,7 +97,7 @@
                                     <!-- SECTION - Visited button - sidebar -->
                                     <section class="t-section -px-world my-1">
                                         <div class="t-section__inner">
-                                            <oVisitedButton :account="account" :place="place[0].id" placeType="state" />
+                                            <OrganismsVisitedButton :account="account" :place="place[0].id" placeType="state" />
                                         </div>
                                     </section>
                                     <!-- SECTION - Visited button - sidebar - END -->
@@ -108,7 +108,7 @@
                                     <!-- SECTION - Account banner - sidebar -->
                                     <section class="t-section -px-world my-1" v-if="account && account.length === 0">
                                         <div class="t-section__inner">
-                                            <oAccountBanner :account="account" styleThema=" -green" />
+                                            <OrganismsAccountBanner :account="account" styleThema=" -green" />
                                         </div>
                                     </section>
                                     <!-- SECTION - Account banner - sidebar END -->
@@ -119,7 +119,7 @@
                                     <!-- SECTION - ad-google - sidebar -->
                                     <section class="t-section -px-world mt-4 mb-2">
                                         <div class="t-section__inner">
-                                            <oAdGoogleSidebar styleThema=" -green" />
+                                            <OrganismsAdGoogleSidebar styleThema=" -green" />
                                         </div>
                                     </section>
                                     <!-- SECTION - ad-google - sidebar - END -->
@@ -137,39 +137,9 @@
 <script>
     // Utils
     import { updatedTabs } from '~/utils/tabsPlacesState.js'
-    // Components
-    import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
-    import mNavPlace from '~/components/molecules/mNavPlace.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oAccountBanner from '~/components/organisms/oAccountBanner.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oAlerts from '~/components/organisms/oAlerts.vue'
-    import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
-    import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
-    import oLanguagePhrases from '~/components/organisms/oLanguagePhrases.vue'
-    import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
-    import oChartPie from '@/components/organisms/oChartPie.vue'
-    import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
-    import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
 
     export default defineComponent({
         name: 'SvetStatSlugPage',
-
-        components: {
-            mNavBreadcrumbsPlace,
-            mNavPlace,
-            mHeadline,
-            oAccountBanner,
-            oAdGoogleSidebar,
-            oAlerts,
-            oHeroPlace,
-            oHotInfoHero,
-            oLanguagePhrases,
-            oMapGoogle,
-            oChartPie,
-            oSwitchHero,
-            oVisitedButton
-        },
 
         data() {
             return {

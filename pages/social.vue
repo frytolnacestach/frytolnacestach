@@ -6,7 +6,7 @@
                 <!-- SECTION - Hero -->
                 <section class="t-section -p0 mt-2 mb-4">
                     <div class="t-section__inner">
-                        <oHero :headline="headline" perex="Kam se vydat v digitálním vesmíru? Zde naleznete mé odkazy na sociální sítě, kde se dělím o své dobrodružství, myšlenky a zážitky. Připojte se ke mně na této cestě virtuálním světem!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
+                        <OrganismsHero :headline="headline" perex="Kam se vydat v digitálním vesmíru? Zde naleznete mé odkazy na sociální sítě, kde se dělím o své dobrodružství, myšlenky a zážitky. Připojte se ke mně na této cestě virtuálním světem!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
                     </div>
                 </section>
                 <!-- SECTION - Hero END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Box platform -->
                 <section class="t-section -p0 mt-1 mb-2 px-2">
                     <div class="t-section__inner">
-                        <oBoxPlatform />
+                        <OrganismsBoxPlatform />
                     </div>
                 </section>
                 <!-- SECTION - Box platform END -->
@@ -25,16 +25,8 @@
 </template>
 
 <script>
-    import oBoxPlatform from '../components/organisms/oBoxPlatform.vue'
-    import oHero from '../components/organisms/oHero.vue'
-
     export default defineComponent({
         name: 'SocialPage',
-        
-        components: {
-            oHero,
-            oBoxPlatform
-        },
 
         data() {
             return {

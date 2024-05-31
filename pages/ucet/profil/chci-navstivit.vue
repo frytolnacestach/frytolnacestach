@@ -10,7 +10,7 @@
                                 <!-- SECTION - account headline - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                        <MoleculesAccountHeader :account="account" @update="menuAccountUpdate" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -18,7 +18,7 @@
                                 <!-- SECTION - nav - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mNavAccount :statusOpen="mNavAccountOpen" />
+                                        <MoleculesNavAccount :statusOpen="mNavAccountOpen" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -29,8 +29,8 @@
                                 <!-- SECTION - Visited place category -->
                                 <section class="t-section -padding-x -p0 pb-4 print-section">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Kontinety které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesContinentsID" type="kontinent" typeAccount="login" :status="2" />
+                                        <MoleculesHeadline title="Kontinety které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <OrganismsCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesContinentsID" type="kontinent" typeAccount="login" :status="2" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Visited place category END -->
@@ -38,8 +38,8 @@
                                 <!-- SECTION - Visited place category -->
                                 <section class="t-section -padding-x -p0 pb-4 print-section">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Státy které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesStatesID" type="stat" typeAccount="login" :status="2" />
+                                        <MoleculesHeadline title="Státy které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <OrganismsCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesStatesID" type="stat" typeAccount="login" :status="2" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Visited place category END -->
@@ -47,8 +47,8 @@
                                 <!-- SECTION - Visited place category -->
                                 <section class="t-section -padding-x -p0 pb-4 print-section">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Města které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesCitiesID" type="mesto" typeAccount="login" :status="2" />
+                                        <MoleculesHeadline title="Města které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <OrganismsCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesCitiesID" type="mesto" typeAccount="login" :status="2" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Visited place category END -->
@@ -56,8 +56,8 @@
                                 <!-- SECTION - Visited place category -->
                                 <section class="t-section -padding-x -p0 pb-4 print-section">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Regiony které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesRegionsID" type="region" typeAccount="login" :status="2" />
+                                        <MoleculesHeadline title="Regiony které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <OrganismsCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesRegionsID" type="region" typeAccount="login" :status="2" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Visited place category END -->
@@ -65,8 +65,8 @@
                                 <!-- SECTION - Visited place category -->
                                 <section class="t-section -padding-x -p0 pb-4 print-section">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Místa které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesSpotsID" type="misto" typeAccount="login" :status="2" />
+                                        <MoleculesHeadline title="Místa které chci navštívit" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <OrganismsCoverPlaceVisited :skeletonProbs="skeleton" :account="account" :placesID="placesSpotsID" type="misto" typeAccount="login" :status="2" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Visited place category END -->
@@ -83,20 +83,8 @@
 <script>
     import { loginCheckLogout } from '~/utils/loginCheckLogout.js'
 
-    import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mNavAccount from '~/components/molecules/mNavAccount.vue'
-    import oCoverPlaceVisited from '~/components/organisms/oCoverPlaceVisited.vue'
-
     export default defineComponent({
         name: 'UcetChciNavstivitPage',
-        
-        components: {
-            mAccountHeader,
-            mHeadline,
-            mNavAccount,
-            oCoverPlaceVisited
-        },
 
         data() {
             return {

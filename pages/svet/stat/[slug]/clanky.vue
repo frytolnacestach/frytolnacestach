@@ -6,7 +6,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" v-if="place && place.length > 0" />
+                        <MoleculesNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" :place="place[0]" :tab="activeTab" :tabName="activeTabName" v-if="place && place.length > 0" />
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Buttons -->
                 <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
                     <div class="t-section__inner">
-                        <oSwitchHero :show-hero.sync="showHero" />
+                        <OrganismsSwitchHero :show-hero.sync="showHero" />
                     </div>
                 </section>
                 <!-- SECTION - Buttons END -->
@@ -25,19 +25,19 @@
 
                             <!-- SECTION - hero -->
                             <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
-                                <oHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place && place.length > 0" />
+                                <OrganismsHeroPlace :title="place[0].name" :preTitle="preTitle" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place && place.length > 0" />
                             </div>
                             <!-- SECTION - hero END -->
 
                             <!-- SECTION - map -->
                             <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
-                                <oMapGoogle :place="place" v-if="place && place.length > 0" />
+                                <OrganismsMapGoogle :place="place" v-if="place && place.length > 0" />
                             </div>
                             <!-- SECTION - map - END -->
 
                             <!-- SECTION - hot info -->
                             <div class="t-grid__section -hot-info-hero">
-                                <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
+                                <OrganismsHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col3"/>
                             </div>
                             <!-- SECTION - hot info - END -->
 
@@ -48,7 +48,7 @@
                 <!-- SECTION - Alerts -->
                 <section class="t-section -px-world-big -p0" v-if="place && place.length > 0 && place[0].alerts">
                     <div class="t-section__inner">
-                        <oAlerts :alerts="place[0].alerts" />
+                        <OrganismsAlerts :alerts="place[0].alerts" />
                     </div>
                 </section>
                 <!-- SECTION - Alerts END -->
@@ -56,7 +56,7 @@
                 <!-- SECTION - Nav place -->
                 <section class="t-section -px-world-big -p0" v-if="place && place.length > 0">
                     <div class="t-section__inner">
-                        <mNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
+                        <MoleculesNavPlace :tabs="tabs" :activeTab="activeTab" :place="place[0]" />
                     </div>
                 </section>
                 <!-- SECTION - Nav place END -->
@@ -70,10 +70,10 @@
                                     <!-- SECTION - articles -->
                                     <section class="t-section -p0 -px-world my-2" v-if="place && place.length > 0">
                                         <div class="t-section__inner">
-                                            <mHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
-                                            <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world-tab" styleThemaLoading=" -green" styleAlign=" -p-left" />
-                                            <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingPosts" />
-                                            <oNoneContent text="Bohužel zde nejsou žádné články" styleThema=" -green" styleGap=" px-1" v-if="posts && posts.length === 0 && !isLoadingPosts" />
+                                            <MoleculesHeadline title="Články ze státu" :titleValue="place[0].name" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2" />
+                                            <OrganismsArticleList :posts="posts" :images="imagesPosts" styleThema=" -world-tab" styleThemaLoading=" -green" styleAlign=" -p-left" />
+                                            <OrganismsArticleList :posts="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingPosts" />
+                                            <OrganismsNoneContent text="Bohužel zde nejsou žádné články" styleThema=" -green" styleGap=" px-1" v-if="posts && posts.length === 0 && !isLoadingPosts" />
                                             <div class="flex flex-center my-2" v-if="!isLoadingPosts && !noMorePostsItems">
                                                 <span class="a-button-border -big -green" @click="loadMorePostsItems">Načíst další články</span>
                                             </div>
@@ -94,39 +94,9 @@
 <script>
     // Utils
     import { updatedTabs } from '~/utils/tabsPlacesState.js'
-    // Components
-    import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
-    import mNavPlace from '~/components/molecules/mNavPlace.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oAccountBanner from '~/components/organisms/oAccountBanner.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oAlerts from '~/components/organisms/oAlerts.vue'
-    import oArticleList from '~/components/organisms/oArticleList.vue'
-    import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
-    import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
-    import oNoneContent from '~/components/organisms/oNoneContent.vue'
-    import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
-    import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
-    import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
 
     export default defineComponent({
         name: 'SvetStatSlugPage',
-
-        components: {
-            mNavBreadcrumbsPlace,
-            mNavPlace,
-            mHeadline,
-            oAccountBanner,
-            oAdGoogleSidebar,
-            oAlerts,
-            oArticleList,
-            oHeroPlace,
-            oHotInfoHero,
-            oNoneContent,
-            oMapGoogle,
-            oSwitchHero,
-            oVisitedButton
-        },
 
         data() {
             return {

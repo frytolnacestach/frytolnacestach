@@ -6,7 +6,7 @@
                 <!-- SECTION - Hero -->
                 <section class="t-section -p0 pt-2 pb-1">
                     <div class="t-section__inner">
-                        <oHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
+                        <OrganismsHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
                     </div>
                 </section>
                 <!-- SECTION - Hero END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Form Login -->
                 <section class="t-section -p0 pt-2 pb-1">
                     <div class="t-section__inner">
-                        <oFormLogin />
+                        <OrganismsFormLogin />
                     </div>
                 </section>
                 <!-- SECTION - Form Login END -->
@@ -27,20 +27,8 @@
 <script>
     import { loginCheckLogin } from '~/utils/loginCheckLogin.js'
 
-    import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oHero from '~/components/organisms/oHero.vue'
-    import oFormLogin from '~/components/organisms/oFormLogin.vue'
-
     export default defineComponent({
         name: 'UcetPrihlaseniPage',
-        
-        components: {
-            aButtonFillFull,
-            mHeadline,
-            oHero,
-            oFormLogin
-        },
 
         data() {
             return {

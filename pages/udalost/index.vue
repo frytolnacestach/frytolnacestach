@@ -7,7 +7,7 @@
                     <!-- SECTION - Hero event -->
                     <section class="t-section py-4">
                         <div class="t-section__inner">
-                            <oHero headline="Události" perex="Na našem cestovatelském portálu vám přinášíme nejnovější zprávy o zajímavých událostech z České republiky i ze světa. Buďte v obraze o kulturních festivalech, sportovních událostech, uměleckých vystoupeních a dalších akcích, které oživí vaše cestovatelské dobrodružství." modifierCSS=" -green -w640" classCSS=" mt-2" />
+                            <OrganismsHero headline="Události" perex="Na našem cestovatelském portálu vám přinášíme nejnovější zprávy o zajímavých událostech z České republiky i ze světa. Buďte v obraze o kulturních festivalech, sportovních událostech, uměleckých vystoupeních a dalších akcích, které oživí vaše cestovatelské dobrodružství." modifierCSS=" -green -w640" classCSS=" mt-2" />
                         </div>
                     </section>
                     <!-- SECTION - Hero event END -->
@@ -15,8 +15,8 @@
                     <!-- SECTION - Události list -->
                     <section class="t-section -p0">
                         <div class="t-section__inner">
-                            <oCoverItem :items="events" :images="images" type="udalost" />
-                            <oCoverItem :items="null" :images="null" type="udalost" :skeleton=true v-if="isLoading" />
+                            <OrganismsCoverItem :items="events" :images="images" type="udalost" />
+                            <OrganismsCoverItem :items="null" :images="null" type="udalost" :skeleton=true v-if="isLoading" />
                             <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                                 <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
                             </div>
@@ -31,16 +31,8 @@
 </template>
 
 <script>
-    import oCoverItem from '~/components/organisms/oCoverItem.vue'
-    import oHero from '~/components/organisms/oHero.vue'
-
     export default defineComponent({
         name: 'udalostIndexPage',
-
-        components: {
-            oCoverItem,
-            oHero
-        },
 
         data() {
             return {

@@ -10,7 +10,7 @@
                                 <!-- SECTION - account headline - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                        <MoleculesAccountHeader :account="account" @update="menuAccountUpdate" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -18,7 +18,7 @@
                                 <!-- SECTION - nav - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mNavAccount :statusOpen="mNavAccountOpen" />
+                                        <MoleculesNavAccount :statusOpen="mNavAccountOpen" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -29,7 +29,7 @@
                                 <!-- SECTION - Headline -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Moje data" perex="Pro zaslání uživatelský dat nás prosím kontaktujte na admin@frytolnacestach.cz. Za nedlouho vám tyto data budeme poskytovat automaticky." styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <MoleculesHeadline title="Moje data" perex="Pro zaslání uživatelský dat nás prosím kontaktujte na admin@frytolnacestach.cz. Za nedlouho vám tyto data budeme poskytovat automaticky." styleThema=" -account -blue" styleAlign="" styleGap="" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Headline END -->
@@ -46,18 +46,8 @@
 <script>
     import { loginCheckLogout } from '~/utils/loginCheckLogout.js';
 
-    import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mNavAccount from '~/components/molecules/mNavAccount.vue'
-
     export default defineComponent({
         name: 'UcetMojeDataPage',
-        
-        components: {
-            mAccountHeader,
-            mHeadline,
-            mNavAccount
-        },
 
         data() {
             return {

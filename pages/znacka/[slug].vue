@@ -6,7 +6,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsItem :links="mNavBreadcrumbsBrandArray" :item="brand[0]" v-if="brand && brand.length > 0" />
+                        <MoleculesNavBreadcrumbsItem :links="mNavBreadcrumbsBrandArray" :item="brand[0]" v-if="brand && brand.length > 0" />
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -17,7 +17,7 @@
                             <div class="t-grid__section -hero">
                                 
                                 <!-- SECTION - hero -->
-                                <oHeroItemDetail :item="brand" :images="imageBrand" v-if="brand && brand.length > 0" />
+                                <OrganismsHeroItemDetail :item="brand" :images="imageBrand" v-if="brand && brand.length > 0" />
                                 <!-- SECTION - hero END -->
 
                             </div>
@@ -26,7 +26,7 @@
                                 <!-- SECTION - information by ChatGPT -->
                                 <section class="t-section" v-if="brand && brand.length > 0 && brand[0].description">
                                     <div class="t-section__inner">
-                                        <oInformationBlock :title="(brand[0].name ? brand[0].name : '')" :perexWysiwyg="brand[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
+                                        <OrganismsInformationBlock :title="(brand[0].name ? brand[0].name : '')" :perexWysiwyg="brand[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                                     </div>
                                 </section>
                                 <!-- SECTION - information by ChatGPT END -->
@@ -34,8 +34,8 @@
                                 <!-- SECTION - brands places -->
                                 <div class="t-section" v-if="brand && brand.length > 0 && placesStates && placesStates.length > 0">
                                     <div class="t-section__inner">
-                                        <mHeadline :title="'Výrobek ' + brand[0].name + ' se vyrábí v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
-                                        <oCoverStates :items="placesStates" :images="imagesStates" />
+                                        <MoleculesHeadline :title="'Výrobek ' + brand[0].name + ' se vyrábí v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
+                                        <OrganismsCoverStates :items="placesStates" :images="imagesStates" />
                                     </div>
                                 </div>
                                 <!-- SECTION - brands places - END -->
@@ -46,7 +46,7 @@
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world mt-4 mb-2">
                                     <div class="t-section__inner">
-                                        <oAdGoogleSidebar styleThema=" -green" />
+                                        <OrganismsAdGoogleSidebar styleThema=" -green" />
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
@@ -61,24 +61,8 @@
 </template>
 
 <script>
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mNavBreadcrumbsItem from '~/components/molecules/mNavBreadcrumbsItem.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oCoverStates from '~/components/organisms/oCoverStates.vue'
-    import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
-    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
-
     export default defineComponent({
         name: 'brandSlugPage',
-
-        components: {
-            mHeadline,
-            mNavBreadcrumbsItem,
-            oAdGoogleSidebar,
-            oCoverStates,
-            oHeroItemDetail,
-            oInformationBlock
-        },
 
         data() {
             return {

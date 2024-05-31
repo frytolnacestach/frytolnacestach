@@ -7,8 +7,8 @@
                     <!-- SECTION - Hero -->
                     <section class="t-section -p0 mb-1 mt-2">
                         <div class="t-section__inner">
-                            <oHero :headline="headline" :perex="'K cestovatelům na našem cestovatelském portálu se může připojit každý. Takže pokud zatím nemáš účet, stačí se <a href=\'https://www.frytolnacestach.cz/ucet/registrace\'>registrovat</a>, a pokud již účet máš, jednoduše se <a href=\'https://www.frytolnacestach.cz/ucet/prihlaseni\'>přihlásit</a>.'" modifierCSS=" -blue -w640" classCSS=" mt-2" v-if="account && account.length === 0" />
-                            <oHero :headline="headline" perex="Podívej se na další cestovatele, na místa, která navštívili, a jejich úspěchy." modifierCSS=" -blue -w640" classCSS=" mt-2" v-if="account && account.length !== 0" />
+                            <OrganismsHero :headline="headline" :perex="'K cestovatelům na našem cestovatelském portálu se může připojit každý. Takže pokud zatím nemáš účet, stačí se <a href=\'https://www.frytolnacestach.cz/ucet/registrace\'>registrovat</a>, a pokud již účet máš, jednoduše se <a href=\'https://www.frytolnacestach.cz/ucet/prihlaseni\'>přihlásit</a>.'" modifierCSS=" -blue -w640" classCSS=" mt-2" v-if="account && account.length === 0" />
+                            <OrganismsHero :headline="headline" perex="Podívej se na další cestovatele, na místa, která navštívili, a jejich úspěchy." modifierCSS=" -blue -w640" classCSS=" mt-2" v-if="account && account.length !== 0" />
                         </div>
                     </section>
                     <!-- SECTION - Hero END -->
@@ -16,8 +16,8 @@
                     <!-- SECTION - UserList -->
                     <section class="t-section -p0">
                         <div class="t-section__inner">
-                            <oUserList :items="users" :images="images" v-if="users && users.length > 0" />
-                            <oUserList :items="[]" :images="[]" :skeleton=true v-if="isLoading" />
+                            <OrganismsUserList :items="users" :images="images" v-if="users && users.length > 0" />
+                            <OrganismsUserList :items="[]" :images="[]" :skeleton=true v-if="isLoading" />
                             <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                                 <span class="a-button-fill -big -blue" @click="loadMoreItems">Načíst další položky</span>
                             </div>
@@ -32,22 +32,8 @@
 </template>
 
 <script>
-    import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oUserList from '~/components/organisms/oUserList.vue'
-    import oHero from '../../components/organisms/oHero.vue'
-    import oPlatform from '../../components/organisms/oPlatform.vue'
-
     export default defineComponent({
         name: 'CestovateleIndexPage',
-
-        components: {
-            aButtonFillFull,
-            mHeadline,
-            oUserList,
-            oHero,
-            oPlatform
-        },
 
         data() {
             return {

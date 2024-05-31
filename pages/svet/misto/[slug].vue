@@ -6,7 +6,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" />
+                        <MoleculesNavBreadcrumbsPlace :links="mNavBreadcrumbsPlaceArray" />
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Buttons -->
                 <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
                     <div class="t-section__inner">
-                        <oSwitchHero :show-hero.sync="showHero" />
+                        <OrganismsSwitchHero :show-hero.sync="showHero" />
                     </div>
                 </section>
                 <!-- SECTION - Buttons END -->
@@ -25,19 +25,19 @@
 
                             <!-- SECTION - hero -->
                             <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')">
-                                <oHeroPlace :title="place[0].name" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place && place.length > 0" />
+                                <OrganismsHeroPlace :title="place[0].name" :idImageHero="place[0].id_image_hero" :images="imagePlace" v-if="place && place.length > 0" />
                             </div>
                             <!-- SECTION - hero END -->
 
                             <!-- SECTION - map -->
                             <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')">
-                                <oMapGoogle :place="place" v-if="place && place.length > 0 && (place[0].coordinates.length > 0 && place[0].zoom.length > 0)" />
+                                <OrganismsMapGoogle :place="place" v-if="place && place.length > 0 && (place[0].coordinates.length > 0 && place[0].zoom.length > 0)" />
                             </div>
                             <!-- SECTION - map - END -->
 
                             <!-- SECTION - hot info -->
                             <div class="t-grid__section -hot-info-hero">
-                                <oHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col2" v-if="place && place.length > 0" />
+                                <OrganismsHotInfoHero :data="oHotInfoHeroArray" styleCol=" -col2" v-if="place && place.length > 0" />
                             </div>
                             <!-- SECTION - hot info - END -->
 
@@ -53,7 +53,7 @@
                                 <!-- SECTION - information by ChatGPT -->
                                 <section class="t-section mt-2 mb-4" v-if="place && place.length > 0 && place[0].information_chatgpt && !place[0].information_author?.length > 0">
                                     <div class="t-section__inner">
-                                        <oInformationBlock :title="'O místě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" styleThema=" -green" />
+                                        <OrganismsInformationBlock :title="'O místě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_chatgpt" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" styleThema=" -green" />
                                     </div>
                                 </section>
                                 <!-- SECTION - information by ChatGPT END -->
@@ -61,7 +61,7 @@
                                 <!-- SECTION - information by Author -->
                                 <section class="t-section mt-2 mb-4" v-if="place && place.length > 0 && place[0].information_author?.length > 0">
                                     <div class="t-section__inner">
-                                        <oInformationBlock :title="'O místě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_author[0].text" :authorID="place[0].information_author[0].author_create" styleThema=" -green" />
+                                        <OrganismsInformationBlock :title="'O místě ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="place[0].information_author[0].text" :authorID="place[0].information_author[0].author_create" styleThema=" -green" />
                                     </div>
                                 </section>
                                 <!-- SECTION - information by Author END -->
@@ -69,7 +69,7 @@
                                 <!-- SECTION - ad-google - wysiwyg -->
                                 <section class="t-section  my-2 -p0 print-section">
                                     <div class="t-section__inner">
-                                        <oAdGoogleWysiwyg styleThema=" -green" />
+                                        <OrganismsAdGoogleWysiwyg styleThema=" -green" />
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - wysiwyg - END -->
@@ -77,7 +77,7 @@
                                 <!-- SECTION - Account banner big - sidebar -->
                                 <section class="t-section -px-world my-1" v-if="account && account.length === 0">
                                     <div class="t-section__inner">
-                                        <oAccountBannerBig :account="account" />
+                                        <OrganismsAccountBannerBig :account="account" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Account banner big - sidebar END -->
@@ -85,7 +85,7 @@
                                 <!-- SECTION - information duration -->
                                 <section class="t-section" v-if="place && place.length > 0 && place[0].information_duration?.length > 0 && place[0].information_duration !== null">
                                     <div class="t-section__inner">
-                                        <oInformationBox :data="place[0].information_duration" />
+                                        <OrganismsInformationBox :data="place[0].information_duration" />
                                     </div>
                                 </section>
                                 <!-- SECTION - information duration END -->
@@ -93,7 +93,7 @@
                                 <!-- SECTION - Place teaser -->
                                 <section class="t-section my-2 -p0 print-section" v-if="place && place.length > 0 && placeCity && placeCity.length > 0">
                                     <div class="t-section__inner">
-                                        <oPlaceTeaser :headline="'Místo ' + place[0].name + ' patří k městu ' + placeCity[0].name" :place="placeCity" :image="imagePlaceCity" type="mesto" />
+                                        <OrganismsPlaceTeaser :headline="'Místo ' + place[0].name + ' patří k městu ' + placeCity[0].name" :place="placeCity" :image="imagePlaceCity" type="mesto" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Place teaser END -->
@@ -101,8 +101,8 @@
                                 <!-- SECTION - Ubytování - information -->
                                 <section class="t-section pt-1 mt-2" v-if="place && place.length > 0">
                                     <div class="t-section__inner">
-                                        <oInformationBlock :title="'Ubytování v okolí ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Cena za konkrétní ubytování v okolí ' + (place[0].name ? place[0].name : '') + ' se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek.'" v-if="place && place.length > 0 && place[0].affiliate.find(x => x.name === 'booking').value === true" />
-                                        <oInformationBlock :title="'Ubytování v okolí ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Bohužel s cenou ubytování v okolí ' + (place[0].name ? place[0].name : '') + ' vám zatím moc neporadíme.'" v-else-if="place && place.length > 0 && place[0].affiliate.find(x => x.name === 'booking').value === false" />
+                                        <OrganismsInformationBlock :title="'Ubytování v okolí ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Cena za konkrétní ubytování v okolí ' + (place[0].name ? place[0].name : '') + ' se může lišit v závislosti na vzdálenosti termínu, délce pobytu a počtu ubytovaných osob. Zde uvedené ceny jsou aktuální na dnešní noc a platí pro dvě osoby. Prostřednictvím služby Booking.com je zajištěno sprostředkování ubytování. Je však třeba poznamenat, že ceny se mohou měnit v závislosti na aktuální poptávce a nabídce. V případě zájmu o rezervaci je tedy vhodné sledovat vývoj cen a včas zajistit své ubytování za nejvýhodnějších podmínek.'" v-if="place && place.length > 0 && place[0].affiliate.find(x => x.name === 'booking').value === true" />
+                                        <OrganismsInformationBlock :title="'Ubytování v okolí ' + (place[0].name ? place[0].name : '')" :perexWysiwyg="'Bohužel s cenou ubytování v okolí ' + (place[0].name ? place[0].name : '') + ' vám zatím moc neporadíme.'" v-else-if="place && place.length > 0 && place[0].affiliate.find(x => x.name === 'booking').value === false" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Ubytování - information END -->
@@ -111,7 +111,7 @@
                                 <section class="t-section -px-world py-2 hidden-print" v-if="place && place.length > 0 && place[0].affiliate.find(x => x.name === 'booking').value === true">
                                     <div class="t-section__inner">
                                         <div v-for="coordinate in place[0].coordinates">
-                                            <oAffilateBooking 
+                                            <OrganismsAffilateBooking 
                                                 :landmarkName="`${ place[0].name ? place[0].name : '' }`"
                                                 :address="`${ place[0].name ? place[0].name : '' }`"
                                                 :latitude=parseFloat(coordinate.latitude)
@@ -124,11 +124,11 @@
                                 <!-- SECTION - Ubytování END -->
 
                                 <!-- SECTION - Review -->
-                                <oReviewItem :account="account" :IDplace="place[0].id" type="spot" v-if="place && place.length > 0 && place[0].id" />
+                                <OrganismsReviewItem :account="account" :IDplace="place[0].id" type="spot" v-if="place && place.length > 0 && place[0].id" />
                                 <!-- SECTION - Review END -->
 
                                 <!-- SECTION - Place teaser list -->
-                                <oPlaceTeaserList :headline="'Jaké další místa vidět ve státě ' + placeState[0].name" :IDplace="placeState[0].id" :IDplaceShow="place[0].id" type="spots" typePage="state" typeShow="spot" styleGap=" mt-2 mb-4 pt-1" v-if="place && place.length > 0 && placeState && placeState.length > 0" />
+                                <OrganismsPlaceTeaserList :headline="'Jaké další místa vidět ve státě ' + placeState[0].name" :IDplace="placeState[0].id" :IDplaceShow="place[0].id" type="spots" typePage="state" typeShow="spot" styleGap=" mt-2 mb-4 pt-1" v-if="place && place.length > 0 && placeState && placeState.length > 0" />
                                 <!-- SECTION - Place teaser list END -->
 
                             </div>
@@ -137,7 +137,7 @@
                                 <!-- SECTION - Visited button - sidebar -->
                                 <section class="t-section -px-world my-1">
                                     <div class="t-section__inner">
-                                        <oVisitedButton :account="account" :place="place[0].id" placeType="spot" v-if="place && place.length > 0 && place[0].id" />
+                                        <OrganismsVisitedButton :account="account" :place="place[0].id" placeType="spot" v-if="place && place.length > 0 && place[0].id" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Visited button - sidebar - END -->
@@ -146,7 +146,7 @@
                             <div class="t-grid__section -aside-content">
 
                                 <!-- SECTION - Events - sidebar -->
-                                <oSidebarEvent :place="this.place[0].id" type="spot" v-if="place && place.length > 0 && place[0].id" />
+                                <OrganismsSidebarEvent :place="this.place[0].id" type="spot" v-if="place && place.length > 0 && place[0].id" />
                                 <!-- SECTION - Events - sidebar - END -->
 
                             </div>
@@ -155,7 +155,7 @@
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world mt-4 mb-2">
                                     <div class="t-section__inner">
-                                        <oAdGoogleSidebar styleThema=" -green" />
+                                        <OrganismsAdGoogleSidebar styleThema=" -green" />
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
@@ -173,9 +173,9 @@
                                 <!-- SECTION - videos -->
                                 <section class="t-section -p0 -bg-green py-4" v-if="place && place.length > 0 && videos && videos.length !== 0">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Videa z místa" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
-                                        <oVideoList :videos="null" :images="null" styleThema=" -world" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
+                                        <MoleculesHeadline title="Videa z místa" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <OrganismsVideoList :videos="videos" :images="imagesVideos" type="travel" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
+                                        <OrganismsVideoList :videos="null" :images="null" styleThema=" -world" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingVideos" />
                                         <div class="flex flex-center my-2" v-if="!isLoadingVideos && !noMoreVideosItems">
                                             <span class="a-button-border -big -green" @click="loadMoreVideosItems">Načíst další videa</span>
                                         </div>
@@ -186,9 +186,9 @@
                                 <!-- SECTION - articles -->
                                 <section class="t-section -p0 -bg-green py-4" v-if="place && place.length > 0 && posts && posts.length !== 0">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Články z místa" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
-                                        <oArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
-                                        <oArticleList :posts="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingPosts" />
+                                        <MoleculesHeadline title="Články z místa" :titleValue="place[0].name" styleThema=" -world-dark" styleAlign=" -p-left" styleGap=" mb-2" />
+                                        <OrganismsArticleList :posts="posts" :images="imagesPosts" styleThema=" -world" styleThemaLoading=" -green" styleAlign=" -p-left" />
+                                        <OrganismsArticleList :posts="null" :images="null" skeletonThema=" -skeleton-green" skeletonNumber="3" :skeleton=true v-if="isLoadingPosts" />
                                         <div class="flex flex-center my-2" v-if="!isLoadingPosts && !noMorePostsItems">
                                             <span class="a-button-border -big -green" @click="loadMorePostsItems">Načíst další články</span>
                                         </div>
@@ -206,50 +206,8 @@
 </template>
 
 <script>
-    import mNavBreadcrumbsPlace from '~/components/molecules/mNavBreadcrumbsPlace.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oAccountBannerBig from '~/components/organisms/oAccountBannerBig.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oAdGoogleWysiwyg from '~/components/organisms/oAdGoogleWysiwyg.vue'
-    import oAffilateBooking from '~/components/organisms/oAffilateBooking.vue'
-    import oArticleList from '~/components/organisms/oArticleList.vue'
-    import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
-    import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
-    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
-    import oInformationBox from '~/components/organisms/oInformationBox.vue'
-    import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
-    import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
-    import oPlaceTeaserList from '~/components/organisms/oPlaceTeaserList.vue'
-    import oReviewItem from '~/components/organisms/oReviewItem.vue'
-    import oSidebarEvent from '~/components/organisms/oSidebarEvent.vue'
-    import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
-    import oVideoList from '~/components/organisms/oVideoList.vue'
-    import oVisitedButton from '~/components/organisms/oVisitedButton.vue'
-
     export default defineComponent({
         name: 'SvetMistoSlugPage',
-
-        components: {
-            mNavBreadcrumbsPlace,
-            mHeadline,
-            oAccountBannerBig,
-            oAdGoogleSidebar,
-            oAdGoogleWysiwyg,
-            oAffilateBooking,
-            oArticleList,
-            oHeroPlace,
-            oHotInfoHero,
-            oInformationBlock,
-            oInformationBox,
-            oMapGoogle,
-            oPlaceTeaser,
-            oPlaceTeaserList,
-            oReviewItem,
-            oSidebarEvent,
-            oSwitchHero,
-            oVideoList,
-            oVisitedButton
-        },
 
         data() {
             return {

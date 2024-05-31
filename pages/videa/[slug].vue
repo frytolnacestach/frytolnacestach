@@ -6,7 +6,7 @@
                 <!-- SECTION - Hero video -->
                 <section class="t-section -p0">
                     <div class="t-section__inner">
-                        <oHeroVideo :image="imageVideo" :title="video[0].title" v-if="video && video.length > 0 && video[0].title" />
+                        <OrganismsHeroVideo :image="imageVideo" :title="video[0].title" v-if="video && video.length > 0 && video[0].title" />
                     </div>
                 </section>
                 <!-- SECTION - Hero video END -->
@@ -23,7 +23,7 @@
                                             <div class="o-information-block__perex">
                                                 <div class="o-information-block_wysiwyg" v-html="video[0].perex"></div>
                                                 <div class="o-information-block__author">
-                                                    <mAuthor :author="video[0].id_user" />
+                                                    <MoleculesAuthor :author="video[0].id_user" />
                                                 </div>
                                             </div>
                                         </div>
@@ -36,7 +36,7 @@
                         <!-- SECTION - youtube -->
                         <section class="t-section py-2 hidden-print" v-if="video && video.length > 0 && video[0].url">
                             <div class="t-section__inner">
-                                <oYoutube :url="video[0].url" />
+                                <OrganismsYoutube :url="video[0].url" />
                             </div>
                         </section>
                         <!-- SECTION - youtube END -->
@@ -47,7 +47,7 @@
                         <!-- SECTION - author - sidebar -->
                         <section class="t-section -px-world mb-2 -p0" v-if="video && video.length > 0 && video[0].id_user">
                             <div class="t-section__inner">
-                                <oAuthorSidebar :author="video[0].id_user"/>
+                                <OrganismsAuthorSidebar :author="video[0].id_user"/>
                             </div>
                         </section>
                         <!-- SECTION - author - sidebar - END -->
@@ -55,7 +55,7 @@
                         <!-- SECTION - ad-google - sidebar -->
                         <section class="t-section -px-world mt-4 mb-2">
                             <div class="t-section__inner">
-                                <oAdGoogleSidebar styleThema=" -gray" />
+                                <OrganismsAdGoogleSidebar styleThema=" -gray" />
                             </div>
                         </section>
                         <!-- SECTION - ad-google - sidebar - END -->
@@ -67,13 +67,13 @@
                     <!-- SECTION - place -->
                     <section class="t-section -p0 pt-2 pb-1 print-section">
                         <div class="t-section__inner">
-                            <mHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
+                            <MoleculesHeadline title="Více informací o místě" styleAlign=" -p-left" styleGap=" mx-2 mb-2" />
                             <div class="flex mx-1">
-                                <oPlaceBlock :placeID="video[0].id_continent" type="kontinent" v-if="video[0].id_continent" />
-                                <oPlaceBlock :placeID="video[0].id_state" type="stat" v-if="video[0].id_state" />
-                                <oPlaceBlock :placeID="video[0].id_region" type="region" v-if="video[0].id_region" />
-                                <oPlaceBlock :placeID="video[0].id_city" type="mesto" v-if="video[0].id_city" />
-                                <oPlaceBlock :placeID="video[0].id_spot" type="misto" v-if="video[0].id_spot" />
+                                <OrganismsPlaceBlock :placeID="video[0].id_continent" type="kontinent" v-if="video[0].id_continent" />
+                                <OrganismsPlaceBlock :placeID="video[0].id_state" type="stat" v-if="video[0].id_state" />
+                                <OrganismsPlaceBlock :placeID="video[0].id_region" type="region" v-if="video[0].id_region" />
+                                <OrganismsPlaceBlock :placeID="video[0].id_city" type="mesto" v-if="video[0].id_city" />
+                                <OrganismsPlaceBlock :placeID="video[0].id_spot" type="misto" v-if="video[0].id_spot" />
                             </div>
                         </div>
                     </section>
@@ -86,26 +86,8 @@
 </template>
 
 <script>
-    import mAuthor from '~/components/molecules/mAuthor.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oAuthorSidebar from '~/components/organisms/oAuthorSidebar.vue'
-    import oHeroVideo from '~/components/organisms/oHeroVideo.vue'
-    import oPlaceBlock from '~/components/organisms/oPlaceBlock.vue'
-    import oYoutube from '~/components/organisms/oYoutube.vue'
-
     export default defineComponent({
         name: 'VideaSlugPage',
-
-        components: {
-            mAuthor,
-            mHeadline,
-            oAdGoogleSidebar,
-            oAuthorSidebar,
-            oHeroVideo,
-            oPlaceBlock,
-            oYoutube
-        },
 
         data() {
             return {

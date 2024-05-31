@@ -10,7 +10,7 @@
                                 <!-- SECTION - account headline - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                        <MoleculesAccountHeader :account="account" @update="menuAccountUpdate" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -18,7 +18,7 @@
                                 <!-- SECTION - nav - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mNavAccount :statusOpen="mNavAccountOpen" />
+                                        <MoleculesNavAccount :statusOpen="mNavAccountOpen" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -29,8 +29,8 @@
                                 <!-- SECTION - Achievements -->
                                 <section class="t-section -padding-x -p0 pb-4">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Achievementy" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oAchievements :account="account" type="account" v-if="account && account.length > 0" />
+                                        <MoleculesHeadline title="Achievementy" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <OrganismsAchievements :account="account" type="account" v-if="account && account.length > 0" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Achievements END -->
@@ -47,20 +47,8 @@
 <script>
     import { loginCheckLogout } from '~/utils/loginCheckLogout.js'
 
-    import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mNavAccount from '~/components/molecules/mNavAccount.vue'
-    import oAchievements from '~/components/organisms/oAchievements.vue'
-
     export default defineComponent({
         name: 'UcetAchievementyPage',
-        
-        components: {
-            mAccountHeader,
-            mHeadline,
-            mNavAccount,
-            oAchievements
-        },
 
         data() {
             return {

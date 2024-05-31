@@ -5,7 +5,7 @@
                 <!-- SECTION - Hero -->
                 <section class="t-section -p0 mt-2 mb-4">
                     <div class="t-section__inner">
-                        <oHero :headline="headlineFilter" perex="Vítej na našem cestovatelském portálu! Podívej se na naše videa plná dobrodružství a inspirace k cestování. Objevuj spolu s námi nejzajímavější místa na světě prostřednictvím autentických příběhů a praktických tipů. Připrav se na vlastní nezapomenutelné dobrodružství díky našim videím plným vzrušujících zážitků. Užívej si každý moment na cestách a objevuj krásy světa s námi!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
+                        <OrganismsHero :headline="headlineFilter" perex="Vítej na našem cestovatelském portálu! Podívej se na naše videa plná dobrodružství a inspirace k cestování. Objevuj spolu s námi nejzajímavější místa na světě prostřednictvím autentických příběhů a praktických tipů. Připrav se na vlastní nezapomenutelné dobrodružství díky našim videím plným vzrušujících zážitků. Užívej si každý moment na cestách a objevuj krásy světa s námi!" modifierCSS=" -gray -w640" classCSS=" mt-2" />
                     </div>
                 </section>
                 <!-- SECTION - Hero END -->
@@ -13,7 +13,7 @@
                 <!-- SECTION - Filter -->
                 <section class="t-section -p0 hidden-print">
                     <div class="t-section__inner">
-                        <oFormFilterPlace styleThema=" -gray" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
+                        <OrganismsFormFilterPlace styleThema=" -gray" typePlaceFilterName="Vybrat stát" typePlaceFilter="states" @update="filterUpdate" />
                     </div>
                 </section>
                 <!-- SECTION - Filter END -->
@@ -21,9 +21,9 @@
                 <!-- SECTION - videos -->
                 <section class="t-section -p0 py-1 px-2 print-section">
                     <div class="t-section__inner">
-                        <oVideoList :videos="videos" :images="images" styleThemaLoading=" -gray" styleSizeHeadline="h2" />
-                        <oVideoList :videos="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
-                        <oNoneContent text="Bohužel zde nejsou žádné videa" styleThema=" -green" styleGap=" px-1" v-if="videos && videos.length === 0 && !isLoading" />
+                        <OrganismsVideoList :videos="videos" :images="images" styleThemaLoading=" -gray" styleSizeHeadline="h2" />
+                        <OrganismsVideoList :videos="null" :images="null" skeletonThema=" -skeleton-gray" skeletonNumber="9" :skeleton=true v-if="isLoading" />
+                        <OrganismsNoneContent text="Bohužel zde nejsou žádné videa" styleThema=" -green" styleGap=" px-1" v-if="videos && videos.length === 0 && !isLoading" />
                         <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                             <span class="a-button-fill -big -gray" @click="loadMoreItems">Načíst další položky</span>
                         </div>
@@ -34,10 +34,10 @@
                 <!-- SECTION - Platforms -->
                 <section class="t-section -p0 py-1 mt-2 px-2 print-section">
                     <div class="t-section__inner">
-                        <mHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
-                        <oPlatform />
+                        <MoleculesHeadline title="Platformy kde jsem" styleAlign=" -left" styleGap="mb-1" />
+                        <OrganismsPlatform />
                         <div class="flex flex-center mb-4">
-                            <aButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
+                            <AtomsButtonFillFull target="internal" url="/social" text="Více informací o platformách" styleThema=" -gray" />
                         </div>
                     </div>
                 </section>
@@ -48,26 +48,8 @@
 </template>
 
 <script>
-    import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oHero from '../../components/organisms/oHero.vue'
-    import oFormFilterPlace from '~/components/organisms/oFormFilterPlace.vue'
-    import oNoneContent from '~/components/organisms/oNoneContent.vue'
-    import oPlatform from '../../components/organisms/oPlatform.vue'
-    import oVideoList from '~/components/organisms/oVideoList.vue'
-
     export default defineComponent({
         name: 'VideaIndexPage',
-
-        components: {
-            aButtonFillFull,
-            mHeadline,
-            oFormFilterPlace,
-            oHero,
-            oNoneContent,
-            oPlatform,
-            oVideoList
-        },
 
         data() {
             return {

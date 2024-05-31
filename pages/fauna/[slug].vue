@@ -6,7 +6,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsItem :links="mNavBreadcrumbsFaunaArray" :item="fauna[0]" v-if="fauna && fauna.length > 0" />
+                        <MoleculesNavBreadcrumbsItem :links="mNavBreadcrumbsFaunaArray" :item="fauna[0]" v-if="fauna && fauna.length > 0" />
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -17,7 +17,7 @@
                             <div class="t-grid__section -hero">
 
                                 <!-- SECTION - hero -->
-                                <oHeroItemDetail :item="fauna" :images="imageFauna" v-if="fauna && fauna.length > 0" />
+                                <OrganismsHeroItemDetail :item="fauna" :images="imageFauna" v-if="fauna && fauna.length > 0" />
                                 <!-- SECTION - hero END -->
 
                             </div>
@@ -26,7 +26,7 @@
                                 <!-- SECTION - information by ChatGPT -->
                                 <section class="t-section" v-if="fauna && fauna.length > 0 && fauna[0].description">
                                     <div class="t-section__inner">
-                                        <oInformationBlock :title="(fauna[0].name ? fauna[0].name : '')" :perexWysiwyg="fauna[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
+                                        <OrganismsInformationBlock :title="(fauna[0].name ? fauna[0].name : '')" :perexWysiwyg="fauna[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                                     </div>
                                 </section>
                                 <!-- SECTION - information by ChatGPT END -->
@@ -34,8 +34,8 @@
                                 <!-- SECTION - fauna places -->
                                 <div class="t-section" v-if="fauna && fauna.length > 0 && placesStates && placesStates.length > 0">
                                     <div class="t-section__inner">
-                                        <mHeadline :title="'Zvíře ' + fauna[0].name + ' žije v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
-                                        <oCoverStates :items="placesStates" :images="imagesStates" />
+                                        <MoleculesHeadline :title="'Zvíře ' + fauna[0].name + ' žije v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
+                                        <OrganismsCoverStates :items="placesStates" :images="imagesStates" />
                                     </div>
                                 </div>
                                 <!-- SECTION - fauna places - END -->
@@ -46,7 +46,7 @@
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world mt-4 mb-2">
                                     <div class="t-section__inner">
-                                        <oAdGoogleSidebar styleThema=" -green" />
+                                        <OrganismsAdGoogleSidebar styleThema=" -green" />
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
@@ -61,24 +61,8 @@
 </template>
 
 <script>
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mNavBreadcrumbsItem from '~/components/molecules/mNavBreadcrumbsItem.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oCoverStates from '~/components/organisms/oCoverStates.vue'
-    import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
-    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
-
     export default defineComponent({
         name: 'FaunaSlugPage',
-
-        components: {
-            mHeadline,
-            mNavBreadcrumbsItem,
-            oAdGoogleSidebar,
-            oCoverStates,
-            oHeroItemDetail,
-            oInformationBlock
-        },
 
         data() {
             return {

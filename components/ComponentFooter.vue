@@ -4,25 +4,25 @@
 
             <!-- ANIMATION Flight -->
             <div class="o-footer__animation">
-                <oAnimationFlight />
+                <OrganismsAnimationFlight />
             </div>
             <!-- ANIMATION Flight END-->
 
             <!-- NAV Footer -->
             <div class="o-footer__nav">
-                <mNavFooter />
+                <MoleculesNavFooter />
             </div>
             <!-- NAV Footer END -->
 
             <!-- Social icons-->
             <div class="o-footer__nav">
-                <mSocialIcons />
+                <MoleculesSocialIcons />
             </div>
             <!-- Social icons END -->
 
             <!-- COPYRIGHT -->
             <div class="o-footer__copyright">
-                <oCopyright />
+                <OrganismsCopyright />
             </div>
             <!-- COPYRIGHT END -->
 
@@ -31,19 +31,7 @@
 </template>
 
 <script>
-    import mNavFooter from '~/components/molecules/mNavFooter.vue'
-    import mSocialIcons from '~/components/molecules/mSocialIcons.vue'
-    import oAnimationFlight from '~/components/organisms/oAnimationFlight.vue'
-    import oCopyright from '~/components/organisms/oCopyright.vue'
-
     export default defineComponent({
-        name: 'ComponentFooterComponent',
-
-        components: {
-            mNavFooter,
-            mSocialIcons,
-            oAnimationFlight,
-            oCopyright
-        }
+        name: 'ComponentFooterComponent'
     })
 </script>

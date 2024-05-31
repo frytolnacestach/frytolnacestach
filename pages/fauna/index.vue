@@ -7,7 +7,7 @@
                     <!-- SECTION - Hero fauna -->
                     <section class="t-section py-4">
                         <div class="t-section__inner">
-                            <oHero headline="Fauna" perex="Ponoř se do světa fauny a objev, kdo s námi sdílí tento planetární domov. S cestovatelským portále Frytol na cestách získáš poutavé informace a tipy, na co si dávat pozor. Vydej se s námi na nezapomenutelnou cestu do světa divokého života!" modifierCSS=" -green -w640" classCSS=" mt-2" />
+                            <OrganismsHero headline="Fauna" perex="Ponoř se do světa fauny a objev, kdo s námi sdílí tento planetární domov. S cestovatelským portále Frytol na cestách získáš poutavé informace a tipy, na co si dávat pozor. Vydej se s námi na nezapomenutelnou cestu do světa divokého života!" modifierCSS=" -green -w640" classCSS=" mt-2" />
                         </div>
                     </section>
                     <!-- SECTION - Hero fauna END -->
@@ -15,8 +15,8 @@
                     <!-- SECTION - Fauna list -->
                     <section class="t-section -p0">
                         <div class="t-section__inner">
-                            <oCoverItem :items="faunas" :images="images" type="fauna" v-if="faunas && faunas.length > 0" />
-                            <oCoverItem :items="[]" :images="[]" type="fauna" :skeleton=true v-if="isLoading" />
+                            <OrganismsCoverItem :items="faunas" :images="images" type="fauna" v-if="faunas && faunas.length > 0" />
+                            <OrganismsCoverItem :items="[]" :images="[]" type="fauna" :skeleton=true v-if="isLoading" />
                             <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                                 <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
                             </div>
@@ -31,16 +31,8 @@
 </template>
 
 <script>
-    import oCoverItem from '~/components/organisms/oCoverItem.vue'
-    import oHero from '~/components/organisms/oHero.vue'
-
     export default defineComponent({
         name: 'FaunaIndexPage',
-
-        components: {
-            oCoverItem,
-            oHero
-        },
 
         data() {
             return {

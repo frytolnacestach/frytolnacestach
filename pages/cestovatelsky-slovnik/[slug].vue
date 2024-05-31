@@ -6,7 +6,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0 print-section" v-if="travelDictionary && travelDictionary.length > 0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsItem :links="mNavBreadcrumbsTravelDictionaryArray" :item="travelDictionary[0]" />
+                        <MoleculesNavBreadcrumbsItem :links="mNavBreadcrumbsTravelDictionaryArray" :item="travelDictionary[0]" />
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -17,7 +17,7 @@
                             <div class="t-grid__section -hero">
 
                                 <!-- SECTION - hero -->
-                                <oHeroItemDetail :item="travelDictionary" :images="imageTravelDictionary" v-if="travelDictionary && travelDictionary.length > 0" />
+                                <OrganismsHeroItemDetail :item="travelDictionary" :images="imageTravelDictionary" v-if="travelDictionary && travelDictionary.length > 0" />
                                 <!-- SECTION - hero END -->
 
                             </div>
@@ -26,7 +26,7 @@
                                 <!-- SECTION - information by ChatGPT -->
                                 <section class="t-section print-section" v-if="travelDictionary && travelDictionary.length > 0 && travelDictionary[0].description">
                                     <div class="t-section__inner">
-                                        <oInformationBlock :title="'Co je ' + (travelDictionary[0].name ? travelDictionary[0].name : '') + '?'" :perexWysiwyg="travelDictionary[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
+                                        <OrganismsInformationBlock :title="'Co je ' + (travelDictionary[0].name ? travelDictionary[0].name : '') + '?'" :perexWysiwyg="travelDictionary[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                                     </div>
                                 </section>
                                 <!-- SECTION - information by ChatGPT END -->
@@ -35,13 +35,13 @@
                             <div class="t-grid__section -ad">
 
                                 <!-- SECTION - Events - sidebar -->
-                                <oSidebarListTravelDictionary :IDTravelDictionary="travelDictionary[0].id" v-if="travelDictionary && travelDictionary.length > 0" />
+                                <OrganismsSidebarListTravelDictionary :IDTravelDictionary="travelDictionary[0].id" v-if="travelDictionary && travelDictionary.length > 0" />
                                 <!-- SECTION - Events - sidebar - END -->
 
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world mt-4 mb-2">
                                     <div class="t-section__inner">
-                                        <oAdGoogleSidebar styleThema=" -green" />
+                                        <OrganismsAdGoogleSidebar styleThema=" -green" />
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
@@ -56,22 +56,8 @@
 </template>
 
 <script>
-    import mNavBreadcrumbsItem from '~/components/molecules/mNavBreadcrumbsItem.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
-    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
-    import oSidebarListTravelDictionary from '~/components/organisms/oSidebarListTravelDictionary.vue'
-
     export default defineComponent({
         name: 'CestovatelskySlovnikSlugPage',
-
-        components: {
-            mNavBreadcrumbsItem,
-            oAdGoogleSidebar,
-            oHeroItemDetail,
-            oInformationBlock,
-            oSidebarListTravelDictionary
-        },
 
         data() {
             return {

@@ -6,7 +6,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsItem :links="mNavBreadcrumbschainArray" :item="chain[0]" v-if="chain && chain.length > 0" />
+                        <MoleculesNavBreadcrumbsItem :links="mNavBreadcrumbschainArray" :item="chain[0]" v-if="chain && chain.length > 0" />
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -17,7 +17,7 @@
                             <div class="t-grid__section -hero">
 
                                 <!-- SECTION - hero -->
-                                <oHeroItemDetail :item="chain" :images="imageChain" v-if="chain && chain.length > 0"/>
+                                <OrganismsHeroItemDetail :item="chain" :images="imageChain" v-if="chain && chain.length > 0"/>
                                 <!-- SECTION - hero END -->
 
                             </div>
@@ -26,7 +26,7 @@
                                 <!-- SECTION - information by ChatGPT -->
                                 <section class="t-section" v-if="chain && chain.length > 0 && chain[0].description">
                                     <div class="t-section__inner">
-                                        <oInformationBlock :title="(chain[0].name ? chain[0].name : '')" :perexWysiwyg="chain[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
+                                        <OrganismsInformationBlock :title="(chain[0].name ? chain[0].name : '')" :perexWysiwyg="chain[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                                     </div>
                                 </section>
                                 <!-- SECTION - information by ChatGPT END -->
@@ -34,8 +34,8 @@
                                 <!-- SECTION - chains places -->
                                 <div class="t-section" v-if="chain && chain.length > 0 && placesStates && placesStates.length > 0">
                                     <div class="t-section__inner">
-                                        <mHeadline :title="'Řetezec ' + chain[0].name + ' se nachází v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
-                                        <oCoverStates :items="placesStates" :images="imagesStates" />
+                                        <MoleculesHeadline :title="'Řetezec ' + chain[0].name + ' se nachází v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
+                                        <OrganismsCoverStates :items="placesStates" :images="imagesStates" />
                                     </div>
                                 </div>
                                 <!-- SECTION - chains places - END -->
@@ -46,7 +46,7 @@
                                 <!-- SECTION - sidebar information -->
                                 <section class="t-section -px-world mt-1 mb-2" v-if="chain && chain.length > 0 && chain[0].information && chain[0].information.length > 0">
                                     <div class="t-section__inner">
-                                        <oSidebarInformation :items="chain[0].information" />
+                                        <OrganismsSidebarInformation :items="chain[0].information" />
                                     </div>
                                 </section>
                                 <!-- SECTION - sidebar information - END -->
@@ -54,7 +54,7 @@
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world mt-4 mb-2">
                                     <div class="t-section__inner">
-                                        <oAdGoogleSidebar styleThema=" -green" />
+                                        <OrganismsAdGoogleSidebar styleThema=" -green" />
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
@@ -69,26 +69,8 @@
 </template>
 
 <script>
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mNavBreadcrumbsItem from '~/components/molecules/mNavBreadcrumbsItem.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oCoverStates from '~/components/organisms/oCoverStates.vue'
-    import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
-    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
-    import oSidebarInformation from '~/components/organisms/oSidebarInformation.vue'
-
     export default defineComponent({
         name: 'RetezceSlugPage',
-
-        components: {
-            mHeadline,
-            mNavBreadcrumbsItem,
-            oAdGoogleSidebar,
-            oCoverStates,
-            oHeroItemDetail,
-            oInformationBlock,
-            oSidebarInformation
-        },
 
         data() {
             return {

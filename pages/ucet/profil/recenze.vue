@@ -10,7 +10,7 @@
                                 <!-- SECTION - account headline - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                        <MoleculesAccountHeader :account="account" @update="menuAccountUpdate" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -18,7 +18,7 @@
                                 <!-- SECTION - nav - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mNavAccount :statusOpen="mNavAccountOpen" />
+                                        <MoleculesNavAccount :statusOpen="mNavAccountOpen" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -29,7 +29,7 @@
                                 <!-- SECTION - Recenze -->
                                 <section class="t-section -padding-x -p0 pb-4">
                                     <div class="t-section__inner">
-                                        <oReviewItemListAccount :account="account" v-if="account && account.length > 0" />
+                                        <OrganismsReviewItemListAccount :account="account" v-if="account && account.length > 0" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Recenze END -->
@@ -46,21 +46,8 @@
 <script>
     import { loginCheckLogout } from '~/utils/loginCheckLogout.js'
 
-    import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mNavAccount from '~/components/molecules/mNavAccount.vue'
-    import oReviewItemListAccount from '~/components/organisms/oReviewItemListAccount.vue'
-
-
     export default defineComponent({
         name: 'UcetRecenzePage',
-
-        components: {
-            mAccountHeader,
-            mHeadline,
-            mNavAccount,
-            oReviewItemListAccount
-        },
 
         data() {
             return {

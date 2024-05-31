@@ -6,7 +6,7 @@
                 <!-- SECTION - Hero -->
                 <section class="t-section -p0 pt-2 pb-1">
                     <div class="t-section__inner">
-                        <oHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
+                        <OrganismsHero :headline="headline" modifierCSS=" -blue" classCSS=" mt-2" />
                     </div>
                 </section>
                 <!-- SECTION - Hero END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - FlashMassages -->
                 <section class="t-section pt-2 pb-1">
                     <div class="t-section__inner">
-                        <oFlashMessages :dataMessages="flashMessage" />
+                        <OrganismsFlashMessages :dataMessages="flashMessage" />
                     </div>
                 </section>
                 <!-- SECTION - FlashMassages END -->
@@ -27,20 +27,8 @@
 <script>
     import { loginCheckLogoutInfo } from '~/utils/loginCheckLogoutInfo.js'
 
-    import aButtonFillFull from '~/components/atoms/aButtonFillFull.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oFlashMessages from '~/components/organisms/oFlashMessages.vue'
-    import oHero from '~/components/organisms/oHero.vue'
-
     export default defineComponent({
         name: 'UcetAktivacePage',
-        
-        components: {
-            aButtonFillFull,
-            mHeadline,
-            oFlashMessages,
-            oHero
-        },
 
         data() {
             return {

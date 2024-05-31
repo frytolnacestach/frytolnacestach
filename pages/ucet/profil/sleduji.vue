@@ -10,7 +10,7 @@
                                 <!-- SECTION - account headline - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                        <MoleculesAccountHeader :account="account" @update="menuAccountUpdate" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -18,7 +18,7 @@
                                 <!-- SECTION - nav - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mNavAccount :statusOpen="mNavAccountOpen" />
+                                        <MoleculesNavAccount :statusOpen="mNavAccountOpen" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -29,8 +29,8 @@
                                 <!-- SECTION - Follower list -->
                                 <section class="t-section -padding-x -p0 pb-4">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Sleduji" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oFollowerList :account="account" type="account" />
+                                        <MoleculesHeadline title="Sleduji" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <OrganismsFollowerList :account="account" type="account" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Follower list END -->
@@ -47,20 +47,8 @@
 <script>
     import { loginCheckLogout } from '~/utils/loginCheckLogout.js'
 
-    import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mNavAccount from '~/components/molecules/mNavAccount.vue'
-    import oFollowerList from '~/components/organisms/oFollowerList.vue'
-
     export default defineComponent({
         name: 'UcetSledujiPage',
-        
-        components: {
-            mAccountHeader,
-            mHeadline,
-            mNavAccount,
-            oFollowerList
-        },
 
         data() {
             return {

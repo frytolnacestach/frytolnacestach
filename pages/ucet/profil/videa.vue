@@ -10,7 +10,7 @@
                                 <!-- SECTION - account headline - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                        <MoleculesAccountHeader :account="account" @update="menuAccountUpdate" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -18,7 +18,7 @@
                                 <!-- SECTION - nav - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mNavAccount :statusOpen="mNavAccountOpen" />
+                                        <MoleculesNavAccount :statusOpen="mNavAccountOpen" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -29,8 +29,8 @@
                                 <!-- SECTION - VideoList -->
                                 <section class="t-section -padding-x -p0 pb-4">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Videa" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oVideoListUser :videos="videos" :images="images" skeletonThema=" -skeleton-blue" :skeleton="skeleton" />
+                                        <MoleculesHeadline title="Videa" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <OrganismsVideoListUser :videos="videos" :images="images" skeletonThema=" -skeleton-blue" :skeleton="skeleton" />
                                         <client-only v-if="videos && (videos.length === 0 || videos === null) && !skeleton">
                                             <p>
                                                 Zatím si nepřidal žádné video.
@@ -52,20 +52,8 @@
 <script>
     import { loginCheckLogout } from '~/utils/loginCheckLogout.js'
 
-    import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mNavAccount from '~/components/molecules/mNavAccount.vue'
-    import oVideoListUser from '~/components/organisms/oVideoListUser.vue'
-
     export default defineComponent({
         name: 'UcetVideaPage',
-        
-        components: {
-            mAccountHeader,
-            mHeadline,
-            mNavAccount,
-            oVideoListUser
-        },
 
         data() {
             return {

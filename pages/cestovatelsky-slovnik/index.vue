@@ -7,7 +7,7 @@
                     <!-- SECTION - Hero cestovatelsky slovnik -->
                     <section class="t-section py-4">
                         <div class="t-section__inner">
-                            <oHero headline="Cestovatelský slovník" perex="Procházej cestovatelský slovník a rozšiřuj svůj cestovatelský slovníček o unikátní výrazy spojené s cestováním. Nabízíme ti pohled do jazyka cestování, abys lépe porozuměl(a) specifickým termínům a zkratkám." modifierCSS=" -green -w640" classCSS=" mt-2" />
+                            <OrganismsHero headline="Cestovatelský slovník" perex="Procházej cestovatelský slovník a rozšiřuj svůj cestovatelský slovníček o unikátní výrazy spojené s cestováním. Nabízíme ti pohled do jazyka cestování, abys lépe porozuměl(a) specifickým termínům a zkratkám." modifierCSS=" -green -w640" classCSS=" mt-2" />
                         </div>
                     </section>
                     <!-- SECTION - Hero cestovatelsky slovnik END -->
@@ -15,8 +15,8 @@
                     <!-- SECTION - cestovatelsky slovnik list -->
                     <section class="t-section -p0">
                         <div class="t-section__inner">
-                            <oCoverItem :items="travelDictionaries" :images="images" type="cestovatelsky-slovnik" v-if="travelDictionaries && travelDictionaries.length > 0"/>
-                            <oCoverItem :items="[]" :images="[]" type="cestovatelsky-slovnik" :skeleton=true v-if="isLoading" />
+                            <OrganismsCoverItem :items="travelDictionaries" :images="images" type="cestovatelsky-slovnik" v-if="travelDictionaries && travelDictionaries.length > 0"/>
+                            <OrganismsCoverItem :items="[]" :images="[]" type="cestovatelsky-slovnik" :skeleton=true v-if="isLoading" />
                             <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                                 <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
                             </div>
@@ -31,16 +31,8 @@
 </template>
 
 <script>
-    import oCoverItem from '~/components/organisms/oCoverItem.vue'
-    import oHero from '~/components/organisms/oHero.vue'
-
     export default defineComponent({
         name: 'CestovatelskySlovnikIndexPage',
-
-        components: {
-            oCoverItem,
-            oHero
-        },
 
         data() {
             return {

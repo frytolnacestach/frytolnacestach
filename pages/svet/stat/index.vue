@@ -6,7 +6,7 @@
                 <!-- SECTION - Hero place type -->
                 <section class="t-section py-4">
                     <div class="t-section__inner">
-                        <oHeroPlaceType styleType=" -state" :title="headlineFilter" perex="Zveme tě na neuvěřitelnou cestu k prozkoumání nejen 190 oficiálních států, ale také k objevování poutavých ostrovních a městských území. Celkem 250 unikátních území představuje nekonečné možnosti pro nezapomenutelné zážitky. Připravte se na cestu, která vás zavede do srdce různorodých kultur a malebných koutů, a otevře brány k poznání fascinujících států a území po celém světě." />
+                        <OrganismsHeroPlaceType styleType=" -state" :title="headlineFilter" perex="Zveme tě na neuvěřitelnou cestu k prozkoumání nejen 190 oficiálních států, ale také k objevování poutavých ostrovních a městských území. Celkem 250 unikátních území představuje nekonečné možnosti pro nezapomenutelné zážitky. Připravte se na cestu, která vás zavede do srdce různorodých kultur a malebných koutů, a otevře brány k poznání fascinujících států a území po celém světě." />
                     </div>
                 </section>
                 <!-- SECTION - Hero place type END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Filter -->
                 <section class="t-section -p0 hidden-print">
                     <div class="t-section__inner">
-                        <oFormFilterPlace styleThema=" -green" typePlaceFilterName="Vybrat kontinent" typePlaceFilter="continents" @update="filterUpdate" />
+                        <OrganismsFormFilterPlace styleThema=" -green" typePlaceFilterName="Vybrat kontinent" typePlaceFilter="continents" @update="filterUpdate" />
                     </div>
                 </section>
                 <!-- SECTION - Filter END -->
@@ -22,8 +22,8 @@
                 <!-- SECTION - Place list -->
                 <section class="t-section -p0">
                     <div class="t-section__inner">
-                        <oCoverPlace :places="placesStates" :images="images" type="stat" />
-                        <oCoverPlace :places="null" :images="null" type="stat" :skeleton=true v-if="isLoading" />
+                        <OrganismsCoverPlace :places="placesStates" :images="images" type="stat" />
+                        <OrganismsCoverPlace :places="null" :images="null" type="stat" :skeleton=true v-if="isLoading" />
                         <div class="flex flex-center my-4" v-if="!isLoading && !noMoreItems">
                             <span class="a-button-fill -big -green" @click="loadMoreItems">Načíst další položky</span>
                         </div>
@@ -37,18 +37,8 @@
 </template>
 
 <script>
-    import oCoverPlace from '~/components/organisms/oCoverPlace.vue'
-    import oFormFilterPlace from '~/components/organisms/oFormFilterPlace.vue'
-    import oHeroPlaceType from '~/components/organisms/oHeroPlaceType.vue'
-
     export default defineComponent({
         name: 'SvetStatIndexPage',
-
-        components: {
-            oCoverPlace,
-            oFormFilterPlace,
-            oHeroPlaceType
-        },
 
         data() {
             return {

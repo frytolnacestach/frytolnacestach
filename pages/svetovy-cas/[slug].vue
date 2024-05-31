@@ -6,7 +6,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0" v-if="place && place.length > 0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsItem :links="mNavBreadcrumbsWorldTimwArray" :item="place[0]" />
+                        <MoleculesNavBreadcrumbsItem :links="mNavBreadcrumbsWorldTimwArray" :item="place[0]" />
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -14,7 +14,7 @@
                 <!-- SECTION - Buttons -->
                 <section class="t-section -px-world mt-1 -p0 hidden-print hidden-desktop">
                     <div class="t-section__inner">
-                        <oSwitchHero :show-hero.sync="showHero" />
+                        <OrganismsSwitchHero :show-hero.sync="showHero" />
                     </div>
                 </section>
                 <!-- SECTION - Buttons END -->
@@ -25,13 +25,13 @@
 
                             <!-- SECTION - hero -->
                             <div :class="'t-grid__section -hero-place' + (!showHero ? ' hidden-mobile' : '')" v-if="place && place.length > 0">
-                                <oHeroPlace :title="place[0].name" :idImageHero="place[0].id_image_hero" :images="imagePlace" />
+                                <OrganismsHeroPlace :title="place[0].name" :idImageHero="place[0].id_image_hero" :images="imagePlace" />
                             </div>
                             <!-- SECTION - hero END -->
 
                             <!-- SECTION - map -->
                             <div :class="'t-grid__section -map' + (showHero ? ' hidden-mobile' : '')" v-if="place && place.length > 0">
-                                <oMapGoogle :place="place" />
+                                <OrganismsMapGoogle :place="place" />
                             </div>
                             <!-- SECTION - map - END -->
 
@@ -42,7 +42,7 @@
                 <!-- SECTION - Alerts -->
                 <section class="t-section -px-world-big -p0" v-if="place && place.length > 0 && place[0].alerts">
                     <div class="t-section__inner">
-                        <oAlerts :alerts="place[0].alerts" />
+                        <OrganismsAlerts :alerts="place[0].alerts" />
                     </div>
                 </section>
                 <!-- SECTION - Alerts END -->
@@ -56,7 +56,7 @@
                                     <!-- SECTION - time -->
                                     <section class="t-section -px-world mt-4" v-if="place && place.length > 0">
                                         <div class="t-section__inner">
-                                            <oTime :mpz="place[0].mpz" />
+                                            <OrganismsTime :mpz="place[0].mpz" />
                                         </div>
                                     </section>
                                     <!-- SECTION - time - END -->
@@ -64,7 +64,7 @@
                                     <!-- SECTION - Place teaser -->
                                     <section class="t-section my-2 -p0" v-if="place && place.length > 0">
                                         <div class="t-section__inner">
-                                            <oPlaceTeaser :headline="'Více informací o státě ' + place[0].name" :place="place" :image="imagePlace" type="stat" />
+                                            <OrganismsPlaceTeaser :headline="'Více informací o státě ' + place[0].name" :place="place" :image="imagePlace" type="stat" />
                                         </div>
                                     </section>
                                     <!-- SECTION - Place teaser END -->
@@ -75,7 +75,7 @@
                                     <!-- SECTION - ad-google - sidebar -->
                                     <section class="t-section -px-world mt-4 mb-2">
                                         <div class="t-section__inner">
-                                            <oAdGoogleSidebar styleThema=" -green" />
+                                            <OrganismsAdGoogleSidebar styleThema=" -green" />
                                         </div>
                                     </section>
                                     <!-- SECTION - ad-google - sidebar - END -->
@@ -91,35 +91,8 @@
 </template>
 
 <script>
-    import mNavBreadcrumbsItem from '~/components/molecules/mNavBreadcrumbsItem.vue'
-    import mNavPlace from '~/components/molecules/mNavPlace.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oAlerts from '~/components/organisms/oAlerts.vue'
-    import oHeroPlace from '~/components/organisms/oHeroPlace.vue'
-    import oHotInfoHero from '~/components/organisms/oHotInfoHero.vue'
-    import oMapGoogle from '~/components/organisms/oMapGoogle.vue'
-    import oPlaceTeaser from '~/components/organisms/oPlaceTeaser.vue'
-    import oSwitchHero from '~/components/organisms/oSwitchHero.vue'
-    import oTime from '~/components/organisms/oTime.vue'
-
-
     export default defineComponent({
         name: 'SvetovyCasSlugPage',
-
-        components: {
-            mNavBreadcrumbsItem,
-            mNavPlace,
-            mHeadline,
-            oAdGoogleSidebar,
-            oAlerts,
-            oHeroPlace,
-            oHotInfoHero,
-            oMapGoogle,
-            oPlaceTeaser,
-            oSwitchHero,
-            oTime
-        },
 
         data() {
             return {

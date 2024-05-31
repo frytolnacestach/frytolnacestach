@@ -4,7 +4,7 @@
             <div class="t-main__content">
 
                 <!-- SECTION - FlashMassagesAccount -->
-                <oFlashMessagesAccount :account="account" />
+                <OrganismsFlashMessagesAccount :account="account" />
                 <!-- SECTION - FlashMassagesAccount END -->
 
                 <section class="t-section -padding-x -padding-y -p0 mb-4">
@@ -15,7 +15,7 @@
                                 <!-- SECTION - account headline - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mAccountHeader :account="account" @update="menuAccountUpdate" />
+                                        <MoleculesAccountHeader :account="account" @update="menuAccountUpdate" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -23,7 +23,7 @@
                                 <!-- SECTION - nav - account -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mNavAccount :statusOpen="mNavAccountOpen" />
+                                        <MoleculesNavAccount :statusOpen="mNavAccountOpen" />
                                     </div>
                                 </section>
                                 <!-- SECTION - nav - account END -->
@@ -34,8 +34,8 @@
                                 <!-- SECTION - Number places -->
                                 <section class="t-section -padding-x -p0 mb-2">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Počet navštívených míst" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oNumberPlaces :account="account" />
+                                        <MoleculesHeadline title="Počet navštívených míst" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <OrganismsNumberPlaces :account="account" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Number places END -->
@@ -43,8 +43,8 @@
                                 <!-- SECTION - Form - profile -->
                                 <section class="t-section -padding-x -p0">
                                     <div class="t-section__inner">
-                                        <mHeadline title="Základní informace" styleThema=" -account -blue" styleAlign="" styleGap="" />
-                                        <oFormProfile :account="account" />
+                                        <MoleculesHeadline title="Základní informace" styleThema=" -account -blue" styleAlign="" styleGap="" />
+                                        <OrganismsFormProfile :account="account" />
                                     </div>
                                 </section>
                                 <!-- SECTION - Form - profile END -->
@@ -61,24 +61,8 @@
 <script>
     import { loginCheckLogout } from '~/utils/loginCheckLogout.js'
 
-    import mAccountHeader from '~/components/molecules/mAccountHeader.vue'
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mNavAccount from '~/components/molecules/mNavAccount.vue'
-    import oFlashMessagesAccount from '~/components/organisms/oFlashMessagesAccount.vue'
-    import oFormProfile from '~/components/organisms/oFormProfile.vue'
-    import oNumberPlaces from '~/components/organisms/oNumberPlaces.vue'
-
     export default defineComponent({
         name: 'UcetProfilPage',
-        
-        components: {
-            mAccountHeader,
-            mHeadline,
-            mNavAccount,
-            oFlashMessagesAccount,
-            oFormProfile,
-            oNumberPlaces
-        },
 
         data() {
             return {

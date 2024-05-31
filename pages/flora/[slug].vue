@@ -6,7 +6,7 @@
                 <!-- SECTION - BREADCRUMBS -->
                 <section class="t-section -px-world mt-2 -p0">
                     <div class="t-section__inner">
-                        <mNavBreadcrumbsItem :links="mNavBreadcrumbsFloraArray" :item="flora[0]" v-if="flora && flora.length > 0" />
+                        <MoleculesNavBreadcrumbsItem :links="mNavBreadcrumbsFloraArray" :item="flora[0]" v-if="flora && flora.length > 0" />
                     </div>
                 </section>
                 <!-- SECTION - BREADCRUMBS END -->
@@ -17,7 +17,7 @@
                             <div class="t-grid__section -hero">
 
                                 <!-- SECTION - hero -->
-                                <oHeroItemDetail :item="flora" :images="imageFlora" v-if="flora && flora.length > 0" />
+                                <OrganismsHeroItemDetail :item="flora" :images="imageFlora" v-if="flora && flora.length > 0" />
                                 <!-- SECTION - hero END -->
 
                             </div>
@@ -26,7 +26,7 @@
                                 <!-- SECTION - information by ChatGPT -->
                                 <section class="t-section" v-if="flora && flora.length > 0 && flora[0].description">
                                     <div class="t-section__inner">
-                                        <oInformationBlock :title="(flora[0].name ? flora[0].name : '')" :perexWysiwyg="flora[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
+                                        <OrganismsInformationBlock :title="(flora[0].name ? flora[0].name : '')" :perexWysiwyg="flora[0].description" authorName="ChatGPT" authorLink="https://chat.openai.com/chat" authorTarget="_blank" />
                                     </div>
                                 </section>
                                 <!-- SECTION - information by ChatGPT END -->
@@ -34,8 +34,8 @@
                                 <!-- SECTION - flora places -->
                                 <div class="t-section" v-if="flora && flora.length > 0 && placesStates && placesStates.length > 0">
                                     <div class="t-section__inner">
-                                        <mHeadline :title="'Rostlina ' + flora[0].name + ' roste v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
-                                        <oCoverStates :items="placesStates" :images="imagesStates" />
+                                        <MoleculesHeadline :title="'Rostlina ' + flora[0].name + ' roste v techto státech'" styleThema=" -world" styleAlign=" -p-left" styleGap=" mb-2 mt-4" />
+                                        <OrganismsCoverStates :items="placesStates" :images="imagesStates" />
                                     </div>
                                 </div>
                                 <!-- SECTION - flora places - END -->
@@ -46,7 +46,7 @@
                                 <!-- SECTION - ad-google - sidebar -->
                                 <section class="t-section -px-world mt-4 mb-2">
                                     <div class="t-section__inner">
-                                        <oAdGoogleSidebar styleThema=" -green" />
+                                        <OrganismsAdGoogleSidebar styleThema=" -green" />
                                     </div>
                                 </section>
                                 <!-- SECTION - ad-google - sidebar - END -->
@@ -61,24 +61,8 @@
 </template>
 
 <script>
-    import mHeadline from '~/components/molecules/mHeadline.vue'
-    import mNavBreadcrumbsItem from '~/components/molecules/mNavBreadcrumbsItem.vue'
-    import oAdGoogleSidebar from '~/components/organisms/oAdGoogleSidebar.vue'
-    import oCoverStates from '~/components/organisms/oCoverStates.vue'
-    import oHeroItemDetail from '~/components/organisms/oHeroItemDetail.vue'
-    import oInformationBlock from '~/components/organisms/oInformationBlock.vue'
-
     export default defineComponent({
         name: 'FloraSlugPage',
-
-        components: {
-            mHeadline,
-            mNavBreadcrumbsItem,
-            oAdGoogleSidebar,
-            oCoverStates,
-            oHeroItemDetail,
-            oInformationBlock
-        },
 
         data() {
             return {
