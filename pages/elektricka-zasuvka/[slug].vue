@@ -136,7 +136,7 @@
     useJsonld(() => headJsonld)
 
     // API - PAGE - elektricka-zasuvka/slug
-    await useAsyncData('dataAPI', async () => {
+    const loadData = async () => {
         // API - WallSocket
         const wallSocketsResponse = await $fetch(`https://api.frytolnacestach.cz/api/wall-socket/${route.params.slug}`)
         const wallSocketsData = JSON.parse(wallSocketsResponse)
@@ -195,7 +195,8 @@
             headJsonld.description = (wallSockets.value[0].description ? wallSockets.value[0].description.replace(/<\/?[^>]+(>|$)/g, '') : "")
             headJsonld.image = ((imageWallSockets.value[0] && imageWallSockets.value[0].id) ? ("https://image.frytolnacestach.cz/storage/brands/" + imageWallSockets.value[0].name + ".webp") : "")
         }               
-    })
+    }
+    await useAsyncData('dataAPI', () => loadData())
 
     // WATCH
     watchEffect(() => {
