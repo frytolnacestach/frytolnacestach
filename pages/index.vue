@@ -69,99 +69,83 @@
     </NuxtLayout>
 </template>
 
-<script>
-    export default defineComponent({
-        name: 'IndexPage',
-
-        data() {
-            return {
-                post: [],
-                imagePost: [],
-                video: [],
-                imageVideo: [],
-                headline: 'Frytol na cestách'
-            }
-        },
-
-        setup() {
-            let headMeta = reactive({
-                title: 'Cestovatelský portál Frytol na cestách',
-                description: 'Cestuj chytře a naplánuj si svojí cestu na cestovatelské portálu Frytol na cestách. Založ si účet a ukaž přátelům kde všude jsi byl/a.',
-                keywords: 'Cestovatelský portál, cestování chytře, plánuj, úvod, cestování, svět',
-                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
-                ogTitle: 'Cestovatelský portál Frytol na cestách',
-                ogDescription: 'Cestuj chytře a naplánuj si svojí cestu na cestovatelské portálu Frytol na cestách. Založ si účet a ukaž přátelům kde všude jsi byl/a.',
-                ogUrl: `https://www.frytolnacestach.cz`,
-                ogType: 'website',
-            })
-
-            let headLink = ref([
-                { rel: 'canonical', href: headMeta.ogUrl }
-            ])
-
-            let headScript = reactive({
-                "@context": "https://schema.org",
-                "@type": "WebPage",
-                "name": headMeta.title,
-                "description": headMeta.description,
-                "url": headMeta.ogUrl,
-                "datePublished": "2024-01-31",
-                "author": {
-                    "@type": "Organization",
-                    "name": "Frytol na cestách",
-                    "url": "https://www.frytolnacestach.cz/"
-                }
-            })
-
-            useHead({
-                title: headMeta.title,
-                meta: [
-                    { name: 'description', content: headMeta.description },
-                    { name: 'keywords', content: headMeta.keywords },
-                    { property: 'og:image', content: headMeta.ogImage },
-                    { property: 'og:title', content: headMeta.ogTitle },
-                    { property: 'og:description', content: headMeta.ogDescription },
-                    { property: 'og:url', content: headMeta.ogUrl },
-                    { property: 'og:type', content: headMeta.ogType }
-                ],
-                link: headLink
-            })
-
-            useJsonld(() => headScript)
-
-            return {
-                headMeta,
-                headLink,
-                headScript
-            }
-        },
-
-        mounted() {
-            this.fetchData()
-        },
-
-        methods: {
-            async fetchData() {
-                // COMPONENT - Post
-                // Post
-                const responsePost = await fetch(`https://api.frytolnacestach.cz/api/posts?limit=5&status=nearby`)
-                this.post = await responsePost.json()
-                // Image
-                if(this.post && this.post.length > 0){
-                    const responseImagePost = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.post[0].id_image_cover}`)
-                    this.imagePost = await responseImagePost.json()
-                }
-
-                // COMPONENT - Video
-                // Video
-                const responseVideo = await fetch(`https://api.frytolnacestach.cz/api/videos?limit=5&status=nearby`)
-                this.video = await responseVideo.json()
-                // Image
-                if(this.video && this.video.length > 0){
-                    const responseImageVideo = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.video[0].id_image}`)
-                    this.imageVideo = await responseImageVideo.json()
-                }
-            }
+<script setup>
+    // DATA API
+    const post = ref([])
+    const imagePost = ref([]) 
+    const video = ref([])
+    const imageVideo = ref([]) 
+    // DATA Meta - head
+    let headMeta = reactive({
+        title: 'Cestovatelský portál Frytol na cestách',
+        description: 'Cestuj chytře a naplánuj si svojí cestu na cestovatelské portálu Frytol na cestách. Založ si účet a ukaž přátelům kde všude jsi byl/a.',
+        keywords: 'Cestovatelský portál, cestování chytře, plánuj, úvod, cestování, svět',
+        ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+        ogTitle: 'Cestovatelský portál Frytol na cestách',
+        ogDescription: 'Cestuj chytře a naplánuj si svojí cestu na cestovatelské portálu Frytol na cestách. Založ si účet a ukaž přátelům kde všude jsi byl/a.',
+        ogUrl: `https://www.frytolnacestach.cz`,
+        ogType: 'website',
+    })
+    let headLink = ref([
+        { rel: 'canonical', href: headMeta.ogUrl }
+    ])
+    // DATA Meta - JSONld
+    let headJsonld = reactive({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": headMeta.title,
+        "description": headMeta.description,
+        "url": headMeta.ogUrl,
+        "datePublished": "2024-01-31",
+        "author": {
+            "@type": "Organization",
+            "name": "Frytol na cestách",
+            "url": "https://www.frytolnacestach.cz/"
         }
     })
+
+    // META - Head
+    useHead({
+        title: headMeta.title,
+        meta: [
+            { name: 'description', content: headMeta.description },
+            { name: 'keywords', content: headMeta.keywords },
+            { property: 'og:image', content: headMeta.ogImage },
+            { property: 'og:title', content: headMeta.ogTitle },
+            { property: 'og:description', content: headMeta.ogDescription },
+            { property: 'og:url', content: headMeta.ogUrl },
+            { property: 'og:type', content: headMeta.ogType }
+        ],
+        link: headLink
+    })
+    // META - Head - JSONld
+    useJsonld(() => headJsonld)
+
+    // LOAD DATA
+    const loadData = async () => {
+        // Post
+        const postResponse = await $fetch(`https://api.frytolnacestach.cz/api/posts?limit=5&status=nearby`)
+        const postData = JSON.parse(postResponse)
+        post.value = postData || []
+        
+        // Image (post)
+        if (post.value && post.value.length > 0){
+            const imagePostResponse = await $fetch(`https://api.frytolnacestach.cz/api/image-id/${post.value[0].id_image_cover}`)
+            const imagePostData = JSON.parse(imagePostResponse)
+            imagePost.value = imagePostData || []
+        }
+
+        // Video
+        const videoResponse = await $fetch(`https://api.frytolnacestach.cz/api/videos?limit=5&status=nearby`)
+        const videoData = JSON.parse(videoResponse)
+        video.value = videoData || []
+        
+        // Image (video)
+        if (video.value && video.value.length > 0){
+            const imageVideoResponse = await $fetch(`https://api.frytolnacestach.cz/api/image-id/${video.value[0].id_image}`)
+            const imageVideoData = JSON.parse(imageVideoResponse)
+            imageVideo.value = imageVideoData || []
+        }
+    }
+    await useAsyncData('dataAPI', () => loadData())
 </script>

@@ -24,67 +24,52 @@
     </NuxtLayout>
 </template>
 
-<script>
-    export default defineComponent({
-        name: 'SocialPage',
-
-        data() {
-            return {
-                headline: "Kde mě najdete"
-            }
-        },
-
-        setup() {
-            let headMeta = reactive({
-                title: 'Kde mě najdeš | Cestovatelský portál Frytol na cestách',
-                description: 'Sociální sítě a platformy kde najdete Frytola na cestách.',
-                keywords: 'sociální sítě, cestovatelská videa, cestování, svět',
-                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
-                ogTitle: 'Kde mě najdeš | Cestovatelský portál Frytol na cestách',
-                ogDescription: 'Sociální sítě a platformy kde najdete Frytola na cestách.',
-                ogUrl: `https://www.frytolnacestach.cz/social`,
-                ogType: 'website',
-            })
-
-            let headLink = ref([
-                { rel: 'canonical', href: headMeta.ogUrl }
-            ])
-
-            let headScript = reactive({
-                "@context": "https://schema.org",
-                "@type": "WebPage",
-                "name": headMeta.title,
-                "description": headMeta.description,
-                "url": headMeta.ogUrl,
-                "datePublished": "2024-01-31",
-                "author": {
-                    "@type": "Organization",
-                    "name": "Frytol na cestách",
-                    "url": "https://www.frytolnacestach.cz/"
-                }
-            })
-
-            useHead({
-                title: headMeta.title,
-                meta: [
-                    { name: 'description', content: headMeta.description },
-                    { name: 'keywords', content: headMeta.keywords },
-                    { property: 'og:image', content: headMeta.ogImage },
-                    { property: 'og:title', content: headMeta.ogTitle },
-                    { property: 'og:description', content: headMeta.ogDescription },
-                    { property: 'og:url', content: headMeta.ogUrl },
-                    { property: 'og:type', content: headMeta.ogType }
-                ],
-                link: headLink
-            })
-
-            useJsonld(() => headScript)
-
-            return {
-                headMeta,
-                headLink,
-                headScript
-            }
+<script setup>
+    // DATA
+    let headline = "Kde mě najdete"
+    // DATA Meta - head
+    let headMeta = reactive({
+        title: 'Kde mě najdeš | Cestovatelský portál Frytol na cestách',
+        description: 'Sociální sítě a platformy kde najdete Frytola na cestách.',
+        keywords: 'sociální sítě, cestovatelská videa, cestování, svět',
+        ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+        ogTitle: 'Kde mě najdeš | Cestovatelský portál Frytol na cestách',
+        ogDescription: 'Sociální sítě a platformy kde najdete Frytola na cestách.',
+        ogUrl: `https://www.frytolnacestach.cz/social`,
+        ogType: 'website',
+    })
+    let headLink = ref([
+        { rel: 'canonical', href: headMeta.ogUrl }
+    ])
+    // DATA Meta - JSONld
+    let headJsonld = reactive({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": headMeta.title,
+        "description": headMeta.description,
+        "url": headMeta.ogUrl,
+        "datePublished": "2024-01-31",
+        "author": {
+            "@type": "Organization",
+            "name": "Frytol na cestách",
+            "url": "https://www.frytolnacestach.cz/"
         }
     })
+
+    // META - Head
+    useHead({
+        title: headMeta.title,
+        meta: [
+            { name: 'description', content: headMeta.description },
+            { name: 'keywords', content: headMeta.keywords },
+            { property: 'og:image', content: headMeta.ogImage },
+            { property: 'og:title', content: headMeta.ogTitle },
+            { property: 'og:description', content: headMeta.ogDescription },
+            { property: 'og:url', content: headMeta.ogUrl },
+            { property: 'og:type', content: headMeta.ogType }
+        ],
+        link: headLink
+    })
+    // META - Head - JSONld
+    useJsonld(() => headJsonld)
 </script>
