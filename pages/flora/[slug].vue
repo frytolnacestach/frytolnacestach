@@ -60,128 +60,140 @@
     </NuxtLayout>
 </template>
 
-<script>
-    export default defineComponent({
-        name: 'FloraSlugPage',
-
-        data() {
-            return {
-                flora: this.flora,
-                imageFlora: this.imageFlora,
-                placesStates: this.placesStates,
-                imagesStates: this.imagesStates,
-                mNavBreadcrumbsFloraArray: [
-                    {
-                        id: 1,
-                        name: "Flóra",
-                        url: "/flora",
-                        status: "link"
-                    }
-                ]
-            }
-        },
-
-        setup() {
-            let headMeta = reactive({
-                title: 'Detail jídla | Cestovatelský portál Frytol na cestách',
-                description: 'Popis detailu jídla',
-                keywords: 'Jídlo, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět',
-                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
-                ogTitle: 'Detail jídla | Cestovatelský portál Frytol na cestách',
-                ogDescription: 'Popis detailu jídla',
-                ogUrl: `https://www.frytolnacestach.cz/jidlo/slug`,
-                ogType: 'website',
-            })
-
-            let headLink = ref([
-                { rel: 'canonical', href: headMeta.ogUrl }
-            ])
-
-            let headScript = reactive({
-                "@context": "https://schema.org",
-                "@type": "Plant",
-                "name": "Název",
-                "description": "Popis",
-                "image": "Obrázek"
-            })
-
-            watch(headMeta, (newMeta) => {
-                useHead({
-                    title: headMeta.title,
-                    meta: [
-                        { name: 'description', content: headMeta.description },
-                        { name: 'keywords', content: headMeta.keywords },
-                        { property: 'og:image', content: headMeta.ogImage },
-                        { property: 'og:title', content: headMeta.ogTitle },
-                        { property: 'og:description', content: headMeta.ogDescription },
-                        { property: 'og:url', content: headMeta.ogUrl },
-                        { property: 'og:type', content: headMeta.ogType }
-                    ],
-                    link: headLink
-                })
-            }, { deep: true })
-
-            useJsonld(() => headScript)
-
-            return {
-                headMeta,
-                headLink,
-                headScript
-            }
-        },
-
-        methods: {
-            async fetchData() {
-                const route = useRoute()
-
-                // PAGE - Flora detail
-                // Flora
-                const responseFlora = await fetch(`https://api.frytolnacestach.cz/api/flora/${route.params.slug}`)
-                this.flora = await responseFlora.json() || []
-                // Image
-                if (this.flora && this.flora.length > 0) {
-                    const responseImageFlora = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.flora[0].id_image_hero}`)
-                    this.imageFlora = await responseImageFlora.json() || []
-                }
-
-                // COMPONENT - Places states
-                if (this.flora && this.flora.length > 0) {
-                    // PlacesStates
-                    const idsStates = this.flora[0].ids_states.map(state => state.id)
-                    const responsePlacesStates = await fetch(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsStates.join(',')}`)
-                    this.placesStates = await responsePlacesState.json() || []
-                    // Images
-                    const imagesPlacesStatesID = this.placesStates.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
-                    const responseImagesStates = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
-                    this.imagesStates = await responseImagesStates.json() || []
-                }
-
-                // HEAD
-                if (this.flora && this.flora.length > 0) {
-                    // Meta
-                    this.headMeta.title = `${this.flora[0].name ? this.flora[0].name : 'Flóra'} | Cestovatelský portál Frytol na cestách`
-                    this.headMeta.description = `${this.flora[0].description ? this.flora[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.flora[0].description.lastIndexOf(' ', 160)) : this.flora[0].name}`
-                    if (this.flora[0].seo_tags && this.flora[0].seo_tags.length > 0) {
-                        const metaSeoTags = ", " + this.flora[0].seo_tags.map(item => item.tag).join(", ")
-                        this.headMeta.keywords = (this.flora[0].name ? this.flora[0].name : '') + metaSeoTags + ', Flóra, Rostoucí flóra, informace o rostlinách, plánuj cestu, cestovatelský portál, cestování, svět'
-                    } else {
-                        this.headMeta.keywords = (this.flora[0].name ? this.flora[0].name : '') + ', Flóra, Rostoucí flóra, informace o rostlinách, plánuj cestu, cestovatelský portál, cestování, svět'
-                    }
-                    this.headMeta.ogImage = `${this.flora[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageFlora.find(image => image.id === this.flora[0].id_image_hero).source + this.imageFlora.find(image => image.id === this.flora[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
-                    this.headMeta.ogTitle = `${this.flora[0].name ? this.flora[0].name : 'Flóra'} | Cestovatelský portál Frytol na cestách`
-                    this.headMeta.ogDescription = `${this.flora[0].description ? this.flora[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.flora[0].description.lastIndexOf(' ', 160)) : this.flora[0].name}`
-                    this.headMeta.ogUrl = `https://www.frytolnacestach.cz/flora/${this.flora[0].slug}`
-                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
-                    // Script
-                    this.headScript.name = ((this.flora && this.flora.length > 0 && this.flora[0].name) ? this.flora[0].name : "")
-                    this.headScript.description = ((this.flora && this.flora.length > 0 && this.flora[0].description) ? this.flora[0].description.replace(/<\/?[^>]+(>|$)/g, '') : "")
-                    this.headScript.image = ((this.imageFlora && this.imageFlora.length > 0 && this.imageFlora[0] && this.imageFlora[0].id) ? ("https://image.frytolnacestach.cz/storage/flora/" + this.imageFlora[0].name + ".webp") : "")
-                }
-            }
-        },
-
-        mounted() {
-            this.fetchData()
+<script setup>
+    const route = useRoute()
+    
+    // DATA
+    const mNavBreadcrumbsFloraArray = [
+        {
+            id: 1,
+            name: "Flóra",
+            url: "/flora",
+            status: "link"
         }
+    ]   
+    // DATA API
+    const flora = ref([])
+    const imageFlora = ref([])
+    const placesStates = ref([])
+    const imagesStates = ref([])   
+    // DATA Meta - head
+    let headMeta = reactive({
+        title: 'Detail jídla | Cestovatelský portál Frytol na cestách',
+        description: 'Popis detailu jídla',
+        keywords: 'Jídlo, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět',
+        ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+        ogTitle: 'Detail jídla | Cestovatelský portál Frytol na cestách',
+        ogDescription: 'Popis detailu jídla',
+        ogUrl: `https://www.frytolnacestach.cz/jidlo/slug`,
+        ogType: 'website',
+    })
+    let headLink = ref([
+        { rel: 'canonical', href: headMeta.ogUrl }
+    ])
+    // DATA Meta - JSONld
+    let headJsonld = reactive({
+        "@context": "https://schema.org",
+        "@type": "Plant",
+        "name": "Název",
+        "description": "Popis",
+        "image": "Obrázek"
+    })
+
+    // META - Head
+    useHead({
+        title: headMeta.title,
+        meta: [
+            { name: 'description', content: headMeta.description },
+            { name: 'keywords', content: headMeta.keywords },
+            { property: 'og:image', content: headMeta.ogImage },
+            { property: 'og:title', content: headMeta.ogTitle },
+            { property: 'og:description', content: headMeta.ogDescription },
+            { property: 'og:url', content: headMeta.ogUrl },
+            { property: 'og:type', content: headMeta.ogType }
+        ],
+        link: headLink
+    })
+    // META - Head - JSONld
+    useJsonld(() => headJsonld)
+
+    // LOAD DATA
+    const loadData = async () => {
+        // WallSocket
+        const floraResponse = await $fetch(`https://api.frytolnacestach.cz/api/flora/${route.params.slug}`)
+        const floraData = JSON.parse(floraResponse)
+        flora.value = floraData || []
+
+        if (flora.value && flora.value.length > 0) {
+            // Image (wallSocket)
+            const imageFloraResponse = await $fetch(`https://api.frytolnacestach.cz/api/image-id/${flora.value[0].id_image_hero}`)
+            const imageFloraData = JSON.parse(imageFloraResponse)
+            imageFlora.value = imageFloraData || []
+
+            // States
+            let idsStates
+            if (flora.value[0].ids_states && Array.isArray(flora.value[0].ids_states) && flora.value[0].ids_states.length !== 0) {
+                idsStates = flora.value[0].ids_states.map(state => state.id)
+            } else {
+                idsStates = null
+            }
+            if (idsStates) {
+                const placesStatesResponse = await $fetch(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsStates.join(',')}`)
+                const placesStatesData = JSON.parse(placesStatesResponse)
+                placesStates.value = placesStatesData || []
+            } else {
+                placesStates.value = null
+            }
+
+            // Image (states)
+            if (placesStates.value) {
+                let imagesPlacesStatesID
+                imagesPlacesStatesID = placesStates.value.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
+
+                if (imagesPlacesStatesID) {
+                    const imagesStatesResponse = await $fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
+                    const imagesStatesData = JSON.parse(imagesStatesResponse)
+                    imagesStates.value = imagesStatesData || []
+                }
+            }
+
+            // META - head
+            headMeta.title = `${flora.value[0].name ? flora.value[0].name : 'Flóra'} | Cestovatelský portál Frytol na cestách`
+            headMeta.description = `${flora.value[0].description ? flora.value[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, flora.value[0].description.lastIndexOf(' ', 160)) : flora.value[0].name}`
+            if (flora.value[0].seo_tags && flora.value[0].seo_tags.length > 0) {
+                const metaSeoTags = ", " + flora.value[0].seo_tags.map(item => item.tag).join(", ")
+                headMeta.keywords = (flora.value[0].name ? flora.value[0].name : '') + metaSeoTags + ', Flóra, Rostoucí flóra, informace o rostlinách, plánuj cestu, cestovatelský portál, cestování, svět'
+            } else {
+                headMeta.keywords = (flora.value[0].name ? flora.value[0].name : '') + ', Flóra, Rostoucí flóra, informace o rostlinách, plánuj cestu, cestovatelský portál, cestování, svět'
+            }
+            headMeta.ogImage = `${(flora.value[0].id_image_hero && imageFlora.value.find(image => image.id === flora.value[0].id_image_hero)) ? 'https://image.frytolnacestach.cz/storage/' + imageFlora.value.find(image => image.id === flora.value[0].id_image_hero).source + imageFlora.value.find(image => image.id === flora.value[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+            headMeta.ogTitle = `${flora.value[0].name ? flora.value[0].name : 'Flóra'} | Cestovatelský portál Frytol na cestách`
+            headMeta.ogDescription = `${flora.value[0].description ? flora.value[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, flora.value[0].description.lastIndexOf(' ', 160)) : flora.value[0].name}`
+            headMeta.ogUrl = `https://www.frytolnacestach.cz/flora/${flora.value[0].slug}`
+            headLink = [{ rel: 'canonical', href: headMeta.ogUrl }]
+            // META - head - JSONld
+            headJsonld.name = (flora.value[0].name ? flora.value[0].name : "")
+            headJsonld.description = (flora.value[0].description ? flora.value[0].description.replace(/<\/?[^>]+(>|$)/g, '') : "")
+            headJsonld.image = ((imageFlora.value[0] && imageFlora.value[0].id) ? ("https://image.frytolnacestach.cz/storage/flora/" + imageFlora.value[0].name + ".webp") : "")
+        }               
+    }
+    await useAsyncData('dataAPI', () => loadData())
+
+    // WATCH
+    watchEffect(() => {
+        useHead({
+            title: headMeta.title,
+            meta: [
+                { name: 'description', content: headMeta.description },
+                { name: 'keywords', content: headMeta.keywords },
+                { property: 'og:image', content: headMeta.ogImage },
+                { property: 'og:title', content: headMeta.ogTitle },
+                { property: 'og:description', content: headMeta.ogDescription },
+                { property: 'og:url', content: headMeta.ogUrl },
+                { property: 'og:type', content: headMeta.ogType }
+            ],
+            link: headLink
+        })
+        useJsonld(() => headJsonld)
     })
 </script>
