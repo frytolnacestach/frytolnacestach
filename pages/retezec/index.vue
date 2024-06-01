@@ -146,27 +146,3 @@
         window.removeEventListener('scroll', handleScroll)
     })
 </script>
-
-<script>
-    export default defineComponent({
-        methods: {
-            async loadItems() {
-                //start loading
-                this.isLoading = true
-
-                //load chains
-                const responseChains = await fetch(`https://api.frytolnacestach.cz/api/chains?showType=list&page=${this.page}&items=${this.perPage}`)
-                const chainsData = await responseChains.json() || []
-                this.chains = this.chains.concat(chainsData)
-
-                //load images
-                const imagesChainsIDS = chainsData.map(placeSpot => placeSpot.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
-                if (imagesChainsIDS.length > 0) {
-                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesChainsIDS.join(',')}`)
-                    const imagesData = await responseImages.json() || []
-                    this.images = this.images.concat(imagesData)
-                }
-            },
-        }
-    })
-</script>
