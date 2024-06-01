@@ -68,75 +68,146 @@
     </NuxtLayout>
 </template>
 
+<script setup>
+    const route = useRoute()
+    
+    // DATA
+    const mNavBreadcrumbschainArray = [
+        {
+            id: 1,
+            name: "Řetězec",
+            url: "/retezec",
+            status: "link"
+        }
+    ]   
+    // DATA API
+    const chain = ref([])
+    const imageChain = ref([])
+    const placesStates = ref([])
+    const imagesStates = ref([])   
+    // DATA Meta - head
+    let headMeta = reactive({
+        title: 'Detail řetězce | Cestovatelský portál Frytol na cestách',
+        description: 'Popis detailu řetezce',
+        keywords: 'řetězec, plánuj cestu, cestovatelský portál, cestování, svět',
+        ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+        ogTitle: 'Detail řetězce | Cestovatelský portál Frytol na cestách',
+        ogDescription: 'Popis detailu řetezce',
+        ogUrl: `https://www.frytolnacestach.cz/jidlo/slug`,
+        ogType: 'website',
+    })
+    let headLink = ref([
+        { rel: 'canonical', href: headMeta.ogUrl }
+    ])
+    // DATA Meta - JSONld
+    let headJsonld = reactive({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "",
+        "description": "",
+        "image": ""
+    })
+
+    // META - Head
+    useHead({
+        title: headMeta.title,
+        meta: [
+            { name: 'description', content: headMeta.description },
+            { name: 'keywords', content: headMeta.keywords },
+            { property: 'og:image', content: headMeta.ogImage },
+            { property: 'og:title', content: headMeta.ogTitle },
+            { property: 'og:description', content: headMeta.ogDescription },
+            { property: 'og:url', content: headMeta.ogUrl },
+            { property: 'og:type', content: headMeta.ogType }
+        ],
+        link: headLink
+    })
+    // META - Head - JSONld
+    useJsonld(() => headJsonld)
+
+    // LOAD DATA
+    const loadData = async () => {
+        // Chain
+        const chainResponse = await $fetch(`https://api.frytolnacestach.cz/api/chain/${route.params.slug}`)
+        const chainData = JSON.parse(chainResponse)
+        chain.value = chainData || []
+
+        if (chain.value && chain.value.length > 0) {
+            // Image (chain)
+            const imageChainResponse = await $fetch(`https://api.frytolnacestach.cz/api/image-id/${chain.value[0].id_image_hero}`)
+            const imageChainData = JSON.parse(imageChainResponse)
+            imageChain.value = imageChainData || []
+
+            // States
+            let idsStates
+            if (chain.value[0].ids_states && Array.isArray(chain.value[0].ids_states) && chain.value[0].ids_states.length !== 0) {
+                idsStates = chain.value[0].ids_states.map(state => state.id)
+            } else {
+                idsStates = null
+            }
+            if (idsStates) {
+                const placesStatesResponse = await $fetch(`https://api.frytolnacestach.cz/api/places-states-array?id=${idsStates.join(',')}`)
+                const placesStatesData = JSON.parse(placesStatesResponse)
+                placesStates.value = placesStatesData || []
+            } else {
+                placesStates.value = null
+            }
+
+            // Image (states)
+            if (placesStates.value) {
+                let imagesPlacesStatesID
+                imagesPlacesStatesID = placesStates.value.map(placeState => placeState.id_image_cover).filter(id => id !== null && id !== '')
+
+                if (imagesPlacesStatesID) {
+                    const imagesStatesResponse = await $fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
+                    const imagesStatesData = JSON.parse(imagesStatesResponse)
+                    imagesStates.value = imagesStatesData || []
+                }
+            }
+
+            // META - head
+            headMeta.title = `${chain.value[0].name ? chain.value[0].name : 'Řetězec'} | Cestovatelský portál Frytol na cestách`
+            headMeta.description = `${chain.value[0].description ? chain.value[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, chain.value[0].description.lastIndexOf(' ', 160)) : chain.value[0].name}`
+            if (chain.value[0].seo_tags && chain.value[0].seo_tags.length > 0) {
+                const metaSeoTags = ", " + chain.value[0].seo_tags.map(item => item.tag).join(", ")
+                headMeta.keywords = (chain.value[0].name ? chain.value[0].name : '') + metaSeoTags + ', Řetězec, plánuj cestu, cestovatelský portál, cestování, svět'
+            } else {
+                headMeta.keywords = (chain.value[0].name ? chain.value[0].name : '') + ', Řetězec, plánuj cestu, cestovatelský portál, cestování, svět'
+            }
+            headMeta.ogImage = `${(chain.value[0].id_image_hero && imageChain.value.find(image => image.id === chain.value[0].id_image_hero)) ? 'https://image.frytolnacestach.cz/storage/' + imageChain.value.find(image => image.id === chain.value[0].id_image_hero).source + imageChain.value.find(image => image.id === chain.value[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+            headMeta.ogTitle = `${chain.value[0].name ? chain.value[0].name : 'Řetězec'} | Cestovatelský portál Frytol na cestách`
+            headMeta.ogDescription = `${chain.value[0].description ? chain.value[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, chain.value[0].description.lastIndexOf(' ', 160)) : chain.value[0].name}`
+            headMeta.ogUrl = `https://www.frytolnacestach.cz/retezec/${chain.value[0].slug}`
+            headLink = [{ rel: 'canonical', href: headMeta.ogUrl }]
+            // META - head - JSONld
+            headJsonld.name = (chain.value[0].name ? chain.value[0].name : "")
+            headJsonld.description = (chain.value[0].description ? chain.value[0].description.replace(/<\/?[^>]+(>|$)/g, '') : "")
+            headJsonld.image = ((imageChain.value[0] && imageChain.value[0].id) ? ("https://image.frytolnacestach.cz/storage/chains/" + imageChain.value[0].name + ".webp") : "")
+        }               
+    }
+    await useAsyncData('dataAPI', () => loadData())
+
+    // WATCH
+    watchEffect(() => {
+        useHead({
+            title: headMeta.title,
+            meta: [
+                { name: 'description', content: headMeta.description },
+                { name: 'keywords', content: headMeta.keywords },
+                { property: 'og:image', content: headMeta.ogImage },
+                { property: 'og:title', content: headMeta.ogTitle },
+                { property: 'og:description', content: headMeta.ogDescription },
+                { property: 'og:url', content: headMeta.ogUrl },
+                { property: 'og:type', content: headMeta.ogType }
+            ],
+            link: headLink
+        })
+        useJsonld(() => headJsonld)
+    })
+</script>
+
 <script>
     export default defineComponent({
-        name: 'RetezceSlugPage',
-
-        data() {
-            return {
-                chain: this.chain,
-                imageChain: this.imageChain,
-                placesStates: this.placesStates,
-                imagesStates: this.imagesStates,
-                mNavBreadcrumbschainArray: [
-                    {
-                        id: 1,
-                        name: "Řetězec",
-                        url: "/retezec",
-                        status: "link"
-                    }
-                ]
-            }
-        },
-
-        setup() {
-            let headMeta = reactive({
-                title: 'Detail jídla | Cestovatelský portál Frytol na cestách',
-                description: 'Popis detailu jídla',
-                keywords: 'Jídlo, Tradiční jídlo, informace o jídle, plánuj cestu, cestovatelský portál, cestování, svět',
-                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
-                ogTitle: 'Detail jídla | Cestovatelský portál Frytol na cestách',
-                ogDescription: 'Popis detailu jídla',
-                ogUrl: `https://www.frytolnacestach.cz/jidlo/slug`,
-                ogType: 'website',
-            })
-
-            let headLink = ref([
-                { rel: 'canonical', href: headMeta.ogUrl }
-            ])
-
-            let headScript = reactive({
-                "@context": "https://schema.org",
-                "@type": "LocalBusiness",
-                "name": "",
-                "description": "",
-                "image": ""
-            })
-
-            watch(headMeta, (newMeta) => {
-                useHead({
-                    title: headMeta.title,
-                    meta: [
-                        { name: 'description', content: headMeta.description },
-                        { name: 'keywords', content: headMeta.keywords },
-                        { property: 'og:image', content: headMeta.ogImage },
-                        { property: 'og:title', content: headMeta.ogTitle },
-                        { property: 'og:description', content: headMeta.ogDescription },
-                        { property: 'og:url', content: headMeta.ogUrl },
-                        { property: 'og:type', content: headMeta.ogType }
-                    ],
-                    link: headLink
-                })
-            }, { deep: true })
-
-            useJsonld(() => headScript)
-
-            return {
-                headMeta,
-                headLink,
-                headScript
-            }
-        },
 
         methods: {
             async fetchData() {
@@ -181,33 +252,9 @@
                         this.imagesStates = null
                     }
                 }
-
-                // HEAD
-                if (this.chain && this.chain.length > 0) {
-                    // Meta
-                    this.headMeta.title = `${this.chain[0].name ? this.chain[0].name : 'Řetězec'} | Cestovatelský portál Frytol na cestách`
-                    this.headMeta.description = `${this.chain[0].description ? this.chain[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.chain[0].description.lastIndexOf(' ', 160)) : this.chain[0].name}`
-                    if (this.chain[0].seo_tags && this.chain[0].seo_tags.length > 0) {
-                        const metaSeoTags = ", " + this.chain[0].seo_tags.map(item => item.tag).join(", ")
-                        this.headMeta.keywords = (this.chain[0].name ? this.chain[0].name : '') + metaSeoTags + ', Řetězec, plánuj cestu, cestovatelský portál, cestování, svět'
-                    } else {
-                        this.headMeta.keywords = (this.chain[0].name ? this.chain[0].name : '') + ', Řetězec, plánuj cestu, cestovatelský portál, cestování, svět'
-                    }
-                    this.headMeta.ogImage = `${this.chain[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imageChain.find(image => image.id === this.chain[0].id_image_hero).source + this.imageChain.find(image => image.id === this.chain[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
-                    this.headMeta.ogTitle = `${this.chain[0].name ? this.chain[0].name : 'Řetězec'} | Cestovatelský portál Frytol na cestách`
-                    this.headMeta.ogDescription = `${this.chain[0].description ? this.chain[0].description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.chain[0].description.lastIndexOf(' ', 160)) : this.chain[0].name}`
-                    this.headMeta.ogUrl = `https://www.frytolnacestach.cz/retezec/${this.chain[0].slug}`
-                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
-                    // Script
-                    this.headScript.name = (this.chain[0].name ? this.chain[0].name : "")
-                    this.headScript.description = (this.chain[0].description ? this.chain[0].description.replace(/<\/?[^>]+(>|$)/g, '') : "")
-                    this.headScript.image = ((this.imageChain && this.imageChain.length > 0 && this.imageChain[0] && this.imageChain[0].id) ? ("https://image.frytolnacestach.cz/storage/chains/" + this.imageChain[0].name + ".webp") : "")
-                }
             }
         },
 
-        mounted() {
-            this.fetchData()
-        }
+
     })
 </script>
