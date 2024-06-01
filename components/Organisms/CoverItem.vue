@@ -2,11 +2,11 @@
     <section class="t-component-skeleton">
         
         <!-- SHOW - skeleton -->
-        <SkeletonOrganismsCoverItem styleThema=" -skeleton-green" v-if="items.length === 0 && skeleton === true" />
+        <SkeletonOrganismsCoverItem styleThema=" -skeleton-green" v-if="items && items.length === 0 && skeleton === true" />
         <!-- SHOW - skeleton END -->
 
         <!-- SHOW - client -->
-        <client-only v-if="items.length > 0 && skeleton !== true">
+        <client-only v-if="items && items.length > 0 && skeleton !== true">
             <div class="o-cover-item">
                 <div class="o-cover-item__outer">
                     <div class="o-cover-item__items">
