@@ -72,7 +72,7 @@
                 { rel: 'canonical', href: headMeta.ogUrl }
             ])
 
-            let headScript = reactive({
+            let headJsonld = reactive({
                 "@context": "https://schema.org",
                 "@type": "WebPage",
                 "name": headMeta.title,
@@ -100,12 +100,12 @@
                 link: headLink
             })
 
-            useJsonld(() => headScript)
+            useJsonld(() => headJsonld)
 
             return {
                 headMeta,
                 headLink,
-                headScript
+                headJsonld
             }
         },
 

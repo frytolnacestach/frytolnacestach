@@ -162,12 +162,12 @@
             headMeta.ogUrl = `https://www.frytolnacestach.cz/videa/${video.value[0].slug}`
             headLink = [{ rel: 'canonical', href: headMeta.ogUrl }]
             // Script
-            headScript.name = (video.value[0].title ? video.value[0].title : '')
-            headScript.description = (video.value[0].perex ? video.value[0].perex.replace(/<\/?[^>]+(>|$)/g, '') : "")
-            headScript.thumbnailUrl = (imageVideo.value && imageVideo.value.length > 0 && imageVideo.value[0].id && video.value[0].id_image) ? 'https://image.frytolnacestach.cz/storage' + imageVideo.value.find(image => image.id === video.value[0].id_image).source + imageVideo.value.find(image => image.id === video.value[0].id_image).name + '.webp' : ''
-            headScript.embedUrl = (video.value[0].url ? video.value[0].url : '')
-            headScript.url = 'https://frytolnacestach.cz' + `/videa/${video.value[0].slug}`
-            headScript.uploadDate = (video.value[0].created_at ? video.value[0].created_at : '')
+            headJsonld.name = (video.value[0].title ? video.value[0].title : '')
+            headJsonld.description = (video.value[0].perex ? video.value[0].perex.replace(/<\/?[^>]+(>|$)/g, '') : "")
+            headJsonld.thumbnailUrl = (imageVideo.value && imageVideo.value.length > 0 && imageVideo.value[0].id && video.value[0].id_image) ? 'https://image.frytolnacestach.cz/storage' + imageVideo.value.find(image => image.id === video.value[0].id_image).source + imageVideo.value.find(image => image.id === video.value[0].id_image).name + '.webp' : ''
+            headJsonld.embedUrl = (video.value[0].url ? video.value[0].url : '')
+            headJsonld.url = 'https://frytolnacestach.cz' + `/videa/${video.value[0].slug}`
+            headJsonld.uploadDate = (video.value[0].created_at ? video.value[0].created_at : '')
         }               
     }
     await useAsyncData('dataAPI', () => loadData())

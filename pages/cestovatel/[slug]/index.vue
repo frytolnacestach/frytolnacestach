@@ -62,100 +62,103 @@
     </NuxtLayout>
 </template>
 
-<script>
-    export default defineComponent({
-        name: 'CestovatelSlugPage',
+<script setup>
+    const route = useRoute()
 
-        data() {
-            return {
-                account: useAccountData().accountData,
-                user: [],
-                mNavUserOpen: false
+    // DATA
+    let account = useAccountData().accountData
+    let mNavUserOpen = ref(false)
+    // DATA API
+    const user = ref([])
+    // DATA Meta - head
+    let headMeta = reactive({
+        title: 'TITLE',
+        description: 'DESCRIPTION',
+        keywords: 'KEYWORDS',
+        ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+        ogTitle: 'TITLE',
+        ogDescription: 'DESCRIPTION',
+        ogUrl: `https://www.frytolnacestach.cz/cestovatel`,
+        ogType: 'website',
+    })
+    let headLink = ref([
+        { rel: 'canonical', href: headMeta.ogUrl }
+    ])
+    // DATA Meta - JSONld
+    let headJsonld = reactive({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "JMÉNO A PŘÍJMENÍ",
+        "alternateName": "PREZDÍVKA",
+        "url": "ODKAZ"
+    })
+
+    // META - Head
+    useHead({
+        title: headMeta.title,
+        meta: [
+            { name: 'description', content: headMeta.description },
+            { name: 'keywords', content: headMeta.keywords },
+            { property: 'og:image', content: headMeta.ogImage },
+            { property: 'og:title', content: headMeta.ogTitle },
+            { property: 'og:description', content: headMeta.ogDescription },
+            { property: 'og:url', content: headMeta.ogUrl },
+            { property: 'og:type', content: headMeta.ogType }
+        ],
+        link: headLink
+    })
+    // META - Head - JSONld
+    useJsonld(() => headJsonld)
+
+    // LOAD DATA
+    const loadData = async () => {
+        // Users
+        const userResponse = await $fetch(`https://api.frytolnacestach.cz/api/user/${route.params.slug}`)
+        const userData = JSON.parse(userResponse) || []
+        user.value = userData
+
+        if (user.value && user.value.length > 0) {
+            // Meta
+            headMeta.title = `Cestovatel ${user.value[0].nickname} | Frytol na cestách`
+            headMeta.description = `Profil cestovatele ${user.value[0].nickname} na cestovatelském portálu Frytol na cestách`
+            if (user.value[0].seo_tags && user.value[0].seo_tags.length > 0) {
+                const metaSeoTags = ", " + user.value[0].seo_tags.map(item => item.tag).join(", ")
+                headMeta.keywords = `${user.value[0].nickname + metaSeoTags + ', cestovatel, uživatel, cestování, svět, rady, cestovatelský portál'}`
+            } else {
+                headMeta.keywords = `${user.value[0].nickname + ', cestovatel, uživatel, cestování, svět, rady, cestovatelský portál'}`
             }
-        },
-
-        setup() {
-            let headMeta = reactive({
-                title: 'TITLE',
-                description: 'DESCRIPTION',
-                keywords: 'KEYWORDS',
-                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
-                ogTitle: 'TITLE',
-                ogDescription: 'DESCRIPTION',
-                ogUrl: `https://www.frytolnacestach.cz/cestovatel`,
-                ogType: 'website',
-            })
-
-            let headLink = ref([
-                { rel: 'canonical', href: headMeta.ogUrl }
-            ])
-
-            let headScript = reactive({
-                "@context": "https://schema.org",
-                "@type": "Person",
-                "name": "JMÉNO A PŘÍJMENÍ",
-                "alternateName": "PREZDÍVKA",
-                "url": "ODKAZ"
-            })
-
-            useHead({
-                title: headMeta.title,
-                meta: [
-                    { name: 'description', content: headMeta.description },
-                    { name: 'keywords', content: headMeta.keywords },
-                    { property: 'og:image', content: headMeta.ogImage },
-                    { property: 'og:title', content: headMeta.ogTitle },
-                    { property: 'og:description', content: headMeta.ogDescription },
-                    { property: 'og:url', content: headMeta.ogUrl },
-                    { property: 'og:type', content: headMeta.ogType }
-                ],
-                link: headLink
-            })
-
-            useJsonld(() => headScript)
-
-            return {
-                headMeta,
-                headLink,
-                headScript
-            }
-        },
-
-        methods: {
-            menuUserUpdate(newValue) {
-                this.mNavUserOpen = newValue
-            },
-
-            async fetchData() {
-                const route = useRoute()
-                // API
-                const responseUser = await fetch(`https://api.frytolnacestach.cz/api/user/${route.params.slug}`)
-                this.user = await responseUser.json() || []
-
-                if (this.user && this.user.length > 0) {
-                    // Meta
-                    this.headMeta.title = `${this.user[0].nickname} | Frytol na cestách`
-                    this.headMeta.description = `Profil cestovatele ${this.user[0].nickname} na cestovatelském portálu Frytol na cestách`
-                    if (this.user[0].seo_tags && this.user[0].seo_tags.length > 0) {
-                        const metaSeoTags = ", " + this.user[0].seo_tags.map(item => item.tag).join(", ")
-                        this.headMeta.keywords = `${this.user[0].nickname + metaSeoTags + ', cestovatel, uživatel, cestování, svět, rady, cestovatelský portál'}`
-                    } else {
-                        this.headMeta.keywords = `${this.user[0].nickname + ', cestovatel, uživatel, cestování, svět, rady, cestovatelský portál'}`
-                    }
-                    this.headMeta.ogTitle = `${this.user[0].nickname} | Frytol na cestách`
-                    this.headMeta.ogDescription = `Profil cestovatele ${this.user[0].nickname} na cestovatelském portálu Frytol na cestách`
-                    this.headMeta.ogUrl = `https://frytolnacestach.cz/cestovatel/${this.user[0].slug}`
-                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
-                    // Script
-                    this.headScript.name = ((this.user[0].surname ? this.user[0].surname: "") + " " + (this.user[0].lastname ? this.user[0].lastname: ""))
-                    this.headScript.alternateName = (this.user[0].nickname ? this.user[0].nickname: "")
-                    this.headScript.url = ('https://frytolnacestach.cz' + `/cestovatel/${this.user[0].slug}`)
-                }
-            }
-        },
-
-        mounted() {
-            this.fetchData()
+            headMeta.ogTitle = `${user.value[0].nickname} | Frytol na cestách`
+            headMeta.ogDescription = `Profil cestovatele ${user.value[0].nickname} na cestovatelském portálu Frytol na cestách`
+            headMeta.ogUrl = `https://frytolnacestach.cz/cestovatel/${user.value[0].slug}`
+            headLink = [{ rel: 'canonical', href: headMeta.ogUrl }]
+            // Script
+            headJsonld.name = `${(user.value[0].surname ? user.value[0].surname : "")} ${(user.value[0].lastname ? user.value[0].lastname : "")}`
+            headJsonld.alternateName = (user.value[0].nickname ? user.value[0].nickname : "")
+            headJsonld.url = `https://frytolnacestach.cz/cestovatel/${user.value[0].slug}`
         }
+    }
+    await useAsyncData('dataAPI', () => loadData())
+
+    // Metoda pro aktualizaci menu
+    function menuUserUpdate(newValue) {
+        mNavUserOpen.value = newValue
+    }
+
+    // WATCH
+    watchEffect(() => {
+        useHead({
+            title: headMeta.title,
+            meta: [
+                { name: 'description', content: headMeta.description },
+                { name: 'keywords', content: headMeta.keywords },
+                { property: 'og:image', content: headMeta.ogImage },
+                { property: 'og:title', content: headMeta.ogTitle },
+                { property: 'og:description', content: headMeta.ogDescription },
+                { property: 'og:url', content: headMeta.ogUrl },
+                { property: 'og:type', content: headMeta.ogType }
+            ],
+            link: headLink
+        })
+        useJsonld(() => headJsonld)
     })
 </script>

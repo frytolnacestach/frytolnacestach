@@ -266,7 +266,7 @@
                 { rel: 'canonical', href: headMeta.ogUrl }
             ])
 
-            let headScript = reactive({
+            let headJsonld = reactive({
                 "@context": "https://schema.org",
                 "@type": "Place",
                 "name": "",
@@ -297,12 +297,12 @@
                 link: headLink
             })
 
-            useJsonld(() => headScript)
+            useJsonld(() => headJsonld)
 
             return {
                 headMeta,
                 headLink,
-                headScript
+                headJsonld
             }
         },
 
@@ -347,11 +347,11 @@
                     this.headMeta.ogUrl = `https://www.frytolnacestach.cz/svet/kontinent/${this.place[0].slug}`
                     this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
                     // Script
-                    this.headScript.name = (this.place[0].name ? this.place[0].name : "")
-                    this.headScript.description = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : ""))
-                    this.headScript.image = ((imagePlace.length > 0 && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/continents/" + this.imagePlace[0].name + ".webp") : "" )
-                    this.headScript.area.value = (this.place[0].area ? this.place[0].area : "")
-                    this.headScript.population.value = (this.place[0].population ? this.place[0].population : "")
+                    this.headJsonld.name = (this.place[0].name ? this.place[0].name : "")
+                    this.headJsonld.description = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : ""))
+                    this.headJsonld.image = ((imagePlace.length > 0 && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/continents/" + this.imagePlace[0].name + ".webp") : "" )
+                    this.headJsonld.area.value = (this.place[0].area ? this.place[0].area : "")
+                    this.headJsonld.population.value = (this.place[0].population ? this.place[0].population : "")
                 }
             },
 

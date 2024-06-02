@@ -280,10 +280,10 @@
             headMeta.ogUrl = `https://www.frytolnacestach.cz/clanky/${post.value[0].slug}`
             headLink = [{ rel: 'canonical', href: headMeta.ogUrl }]
             // Script
-            headScript.name = (post.value[0].title ? post.value[0].title : "")
-            headScript.description = (post.value[0].text_author ? post.value[0].text_author.replace(/<\/?[^>]+(>|$)/g, '') : "")
-            headScript.url = 'https://frytolnacestach.cz' + `/clanky/${post.value[0].slug}`
-            headScript.image = (imagePostHero.value[0] && imagePostHero.value.find(image => image.id === post.value[0].id_image_hero)) ? 'https://image.frytolnacestach.cz/storage' + imagePostHero.value.find(image => image.id === post.value[0].id_image_hero).source + imagePostHero.value.find(image => image.id === post.value[0].id_image_hero).name + '.webp' : ''
+            headJsonld.name = (post.value[0].title ? post.value[0].title : "")
+            headJsonld.description = (post.value[0].text_author ? post.value[0].text_author.replace(/<\/?[^>]+(>|$)/g, '') : "")
+            headJsonld.url = 'https://frytolnacestach.cz' + `/clanky/${post.value[0].slug}`
+            headJsonld.image = (imagePostHero.value[0] && imagePostHero.value.find(image => image.id === post.value[0].id_image_hero)) ? 'https://image.frytolnacestach.cz/storage' + imagePostHero.value.find(image => image.id === post.value[0].id_image_hero).source + imagePostHero.value.find(image => image.id === post.value[0].id_image_hero).name + '.webp' : ''
         }               
     }
     await useAsyncData('dataAPI', () => loadData())

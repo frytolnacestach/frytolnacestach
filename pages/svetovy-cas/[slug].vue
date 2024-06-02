@@ -191,11 +191,11 @@
             headMeta.ogUrl = `https://www.frytolnacestach.cz/svetovy-cas/${(place.value && place.value.length > 0 && place.value[0].slug) ? place.value[0].slug : "slug_svetovy-cas"}`
             headLink = [{ rel: 'canonical', href: headMeta.ogUrl }]
             // Script
-            headScript.name = (place.value[0].name ? place.value[0].name : "")
-            headScript.description = (place.value[0].information_author?.length > 0 ? place.value[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (place.value[0].information_chatgpt ? place.value[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : ""))
-            headScript.image = ((imagePlace.value[0] && imagePlace.value.length > 0 && imagePlace.value[0].id) ? ("https://image.frytolnacestach.cz/storage/world/states/" + imagePlace.value[0].name + ".webp") : "")
-            headScript.area.value = (place.value[0].area ? place.value[0].area : "")
-            headScript.population.value = (place.value[0].population ? place.value[0].population : "")
+            headJsonld.name = (place.value[0].name ? place.value[0].name : "")
+            headJsonld.description = (place.value[0].information_author?.length > 0 ? place.value[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (place.value[0].information_chatgpt ? place.value[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : ""))
+            headJsonld.image = ((imagePlace.value[0] && imagePlace.value.length > 0 && imagePlace.value[0].id) ? ("https://image.frytolnacestach.cz/storage/world/states/" + imagePlace.value[0].name + ".webp") : "")
+            headJsonld.area.value = (place.value[0].area ? place.value[0].area : "")
+            headJsonld.population.value = (place.value[0].population ? place.value[0].population : "")
         }               
     }
     await useAsyncData('dataAPI', () => loadData())

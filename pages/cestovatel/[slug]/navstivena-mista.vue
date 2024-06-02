@@ -81,122 +81,112 @@
     </NuxtLayout>
 </template>
 
-<script>
-    export default defineComponent({
-        name: 'CestovatelNavstivenaMistaSlugPage',
+<script setup>
+    const route = useRoute()
 
-        data() {
-            return {
-                user: [],
-                placesContinentsID: [],
-                placesStatesID: [],
-                placesCitiesID: [],
-                placesRegionsID: [],
-                placesSpotsID: [],
-                mNavUserOpen: false,
-                skeleton: true
-            }
-        },
+    // DATA
+    let account = useAccountData().accountData
+    let mNavUserOpen = ref(false)
+    let skeleton = true
+    // DATA API
+    const user = ref([])
+    const placesID = ref([])
+    const placesContinentsID = ref([])
+    const placesStatesID = ref([])
+    const placesCitiesID = ref([])
+    const placesRegionsID = ref([])
+    const placesSpotsID = ref([])
+    // DATA Meta - head
+    let headMeta = reactive({
+        title: 'TITLE',
+        description: 'DESCRIPTION',
+        keywords: 'KEYWORDS',
+        ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+        ogTitle: 'TITLE',
+        ogDescription: 'DESCRIPTION',
+        ogUrl: `https://www.frytolnacestach.cz/cestovatel`,
+        ogType: 'website',
+    })
+    let headLink = ref([
+        { rel: 'canonical', href: headMeta.ogUrl }
+    ])
+    // DATA Meta - JSONld
+    let headJsonld = reactive({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "JMÉNO A PŘÍJMENÍ",
+        "alternateName": "PREZDÍVKA",
+        "url": "ODKAZ"
+    })
 
-        setup() {
-            let headMeta = reactive({
-                title: 'TITLE',
-                description: 'DESCRIPTION',
-                keywords: 'KEYWORDS',
-                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
-                ogTitle: 'TITLE',
-                ogDescription: 'DESCRIPTION',
-                ogUrl: `https://www.frytolnacestach.cz/cestovatel`,
-                ogType: 'website',
-            })
+    // META - Head
+    useHead({
+        title: headMeta.title,
+        meta: [
+            { name: 'description', content: headMeta.description },
+            { name: 'keywords', content: headMeta.keywords },
+            { property: 'og:image', content: headMeta.ogImage },
+            { property: 'og:title', content: headMeta.ogTitle },
+            { property: 'og:description', content: headMeta.ogDescription },
+            { property: 'og:url', content: headMeta.ogUrl },
+            { property: 'og:type', content: headMeta.ogType }
+        ],
+        link: headLink
+    })
+    // META - Head - JSONld
+    useJsonld(() => headJsonld)
 
-            let headLink = ref([
-                { rel: 'canonical', href: headMeta.ogUrl }
-            ])
+    // LOAD DATA
+    const loadData = async () => {
+        // Users
+        const userResponse = await $fetch(`https://api.frytolnacestach.cz/api/user/${route.params.slug}`)
+        const userData = JSON.parse(userResponse) || []
+        user.value = userData
 
-            let headScript = reactive({
-                "@context": "https://schema.org",
-                "@type": "WebPage",
-                "name": headMeta.title,
-                "description": headMeta.description,
-                "url": headMeta.ogUrl,
-                "datePublished": "2024-01-31",
-                "author": {
-                    "@type": "Organization",
-                    "name": "Frytol na cestách",
-                    "url": "https://www.frytolnacestach.cz/"
-                }
-            })
+        if (user.value && user.value.length > 0) {
+            // PlacesID
+            const placesIDResponse = await $fetch(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${user.value[0].id}&status=1`)
+            placesID.value = JSON.parse(placesIDResponse) || []
+            placesContinentsID.value = placesID.value.filter(place => place.type === 'continent').map(place => place.id_place) || []
+            placesStatesID.value = placesID.value.filter(place => place.type === 'state').map(place => place.id_place) || []
+            placesCitiesID.value = placesID.value.filter(place => place.type === 'city').map(place => place.id_place) || []
+            placesRegionsID.value = placesID.value.filter(place => place.type === 'region').map(place => place.id_place) || []
+            placesSpotsID.value = placesID.value.filter(place => place.type === 'spot').map(place => place.id_place) || []
 
-            useHead({
-                title: headMeta.title,
-                meta: [
-                    { name: 'description', content: headMeta.description },
-                    { name: 'keywords', content: headMeta.keywords },
-                    { property: 'og:image', content: headMeta.ogImage },
-                    { property: 'og:title', content: headMeta.ogTitle },
-                    { property: 'og:description', content: headMeta.ogDescription },
-                    { property: 'og:url', content: headMeta.ogUrl },
-                    { property: 'og:type', content: headMeta.ogType }
-                ],
-                link: headLink
-            })
+            skeleton = false
 
-            useJsonld(() => headScript)
-
-            return {
-                headMeta,
-                headLink,
-                headScript
-            }
-        },
-
-        methods: {
-            menuUserUpdate(newValue) {
-                this.mNavUserOpen = newValue
-            },
-
-            async fetchData() {
-                const route = useRoute()
-                // API
-                const responseUser = await fetch(`https://api.frytolnacestach.cz/api/user/${route.params.slug}`)
-                this.user = await responseUser.json() || []
-
-                if (this.user && this.user.length > 0) {
-                    // Meta
-                    this.headMeta.title = `Navštívená místa uživatelem ${this.user[0].nickname} | Frytol na cestách`
-                    this.headMeta.description = `Profil cestovatele ${this.user[0].nickname} na cestovatelském portálu Frytol na cestách`
-                    this.headMeta.keywords = `${this.user[0].nickname + ', navštívená místa, cestovatel, uživatel, cestování, svět, rady, cestovatelský portál'}`
-                    this.headMeta.ogTitle = `Navštívená místa uživatelem ${this.user[0].nickname} | Frytol na cestách`
-                    this.headMeta.ogDescription = `Profil cestovatele ${this.user[0].nickname} na cestovatelském portálu Frytol na cestách`
-                    this.headMeta.ogUrl = `https://frytolnacestach.cz/cestovatel/${this.user[0].slug}/navstivena-mista`
-                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
-                }
-            },
-
-            async fetchDataPlaces() {
-                // COMPONENT - oCoverPlaceVisited
-                // PlacesID
-                const placesID = await fetch(`https://api.frytolnacestach.cz/api/user-visited-place-id-user?id_user=${this.user[0].id}&status=1`)
-                this.placesID = await responsePlacesID.json() || []
-                this.placesContinentsID = this.placesID.filter(place => place.type === 'continent').map(place => place.id_place) || []
-                this.placesStatesID = this.placesID.filter(place => place.type === 'state').map(place => place.id_place) || []
-                this.placesCitiesID = this.placesID.filter(place => place.type === 'city').map(place => place.id_place) || []
-                this.placesRegionsID = this.placesID.filter(place => place.type === 'region').map(place => place.id_place) || []
-                this.placesSpotsID = this.placesID.filter(place => place.type === 'spot').map(place => place.id_place) || []
-
-                // END LOADING
-                this.skeleton = false
-            }
-        },
-
-        mounted() {
-            this.fetchData()
-            this.$nextTick(async () => {
-                if (process.client) {
-                    this.fetchDataPlaces()
-                }
-            })
+            // Meta
+            headMeta.title = `Navštívená místa uživatelem ${user.value[0].nickname} | Frytol na cestách`
+            headMeta.description = `Profil cestovatele ${user.value[0].nickname} na cestovatelském portálu Frytol na cestách`
+            headMeta.keywords = `${user.value[0].nickname + ', navštívená místa, cestovatel, uživatel, cestování, svět, rady, cestovatelský portál'}`
+            headMeta.ogTitle = `Navštívená místa uživatelem ${user.value[0].nickname} | Frytol na cestách`
+            headMeta.ogDescription = `Profil cestovatele ${user.value[0].nickname} na cestovatelském portálu Frytol na cestách`
+            headMeta.ogUrl = `https://frytolnacestach.cz/cestovatel/${user.value[0].slug}/navstivena-mista`
+            headLink = [{ rel: 'canonical', href: headMeta.ogUrl }]
         }
+    }
+    await useAsyncData('dataAPI', () => loadData())
+
+    // Metoda pro aktualizaci menu
+    function menuUserUpdate(newValue) {
+        mNavUserOpen.value = newValue
+    }
+
+    // WATCH
+    watchEffect(() => {
+        useHead({
+            title: headMeta.title,
+            meta: [
+                { name: 'description', content: headMeta.description },
+                { name: 'keywords', content: headMeta.keywords },
+                { property: 'og:image', content: headMeta.ogImage },
+                { property: 'og:title', content: headMeta.ogTitle },
+                { property: 'og:description', content: headMeta.ogDescription },
+                { property: 'og:url', content: headMeta.ogUrl },
+                { property: 'og:type', content: headMeta.ogType }
+            ],
+            link: headLink
+        })
+        useJsonld(() => headJsonld)
     })
 </script>
