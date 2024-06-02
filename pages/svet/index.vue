@@ -27,61 +27,50 @@
     </NuxtLayout>
 </template>
 
-<script>
-    export default defineComponent({
-        name: 'SvetIndexPage',
-
-        setup() {
-            let headMeta = reactive({
-                title: 'Svět | Cestovatelský portál Frytol na cestách',
-                description: 'Oběvuj svět a jeho místá na cestovatelské portálu Frytol na cestách. Naplánuj si dovolenou podle svých potřeb a zjisti co tě čeká.',
-                keywords: 'Naplánuj si dobolenou, cestuj, chytře, státy, města, cestování, svět',
-                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
-                ogTitle: 'Svět | Cestovatelský portál Frytol na cestách',
-                ogDescription: 'Oběvuj svět a jeho místá na cestovatelské portálu Frytol na cestách. Naplánuj si dovolenou podle svých potřeb a zjisti co tě čeká.',
-                ogUrl: `https://www.frytolnacestach.cz/svet`,
-                ogType: 'website',
-            })
-
-            let headLink = ref([
-                { rel: 'canonical', href: headMeta.ogUrl }
-            ])
-
-            let headJsonld = reactive({
-                "@context": "https://schema.org",
-                "@type": "WebPage",
-                "name": headMeta.title,
-                "description": headMeta.description,
-                "url": headMeta.ogUrl,
-                "datePublished": "2024-01-31",
-                "author": {
-                    "@type": "Organization",
-                    "name": "Frytol na cestách",
-                    "url": "https://www.frytolnacestach.cz/"
-                }
-            })
-
-            useHead({
-                title: headMeta.title,
-                meta: [
-                    { name: 'description', content: headMeta.description },
-                    { name: 'keywords', content: headMeta.keywords },
-                    { property: 'og:image', content: headMeta.ogImage },
-                    { property: 'og:title', content: headMeta.ogTitle },
-                    { property: 'og:description', content: headMeta.ogDescription },
-                    { property: 'og:url', content: headMeta.ogUrl },
-                    { property: 'og:type', content: headMeta.ogType }
-                ],
-                link: headLink
-            })
-
-            useJsonld(() => headJsonld)
-
-            return {
-                headMeta,
-                headLink,
-                headJsonld
-            }
+<script setup>
+    // DATA Meta - head
+    let headMeta = reactive({
+        title: 'Svět | Cestovatelský portál Frytol na cestách',
+        description: 'Oběvuj svět a jeho místá na cestovatelské portálu Frytol na cestách. Naplánuj si dovolenou podle svých potřeb a zjisti co tě čeká.',
+        keywords: 'Naplánuj si dobolenou, cestuj, chytře, státy, města, cestování, svět',
+        ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+        ogTitle: 'Svět | Cestovatelský portál Frytol na cestách',
+        ogDescription: 'Oběvuj svět a jeho místá na cestovatelské portálu Frytol na cestách. Naplánuj si dovolenou podle svých potřeb a zjisti co tě čeká.',
+        ogUrl: `https://www.frytolnacestach.cz/svet`,
+        ogType: 'website',
+    })
+    let headLink = ref([
+        { rel: 'canonical', href: headMeta.ogUrl }
+    ])
+    // DATA Meta - JSONld
+    let headJsonld = reactive({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": headMeta.title,
+        "description": headMeta.description,
+        "url": headMeta.ogUrl,
+        "datePublished": "2024-01-31",
+        "author": {
+            "@type": "Organization",
+            "name": "Frytol na cestách",
+            "url": "https://www.frytolnacestach.cz/"
         }
     })
+
+    // META - Head
+    useHead({
+        title: headMeta.title,
+        meta: [
+            { name: 'description', content: headMeta.description },
+            { name: 'keywords', content: headMeta.keywords },
+            { property: 'og:image', content: headMeta.ogImage },
+            { property: 'og:title', content: headMeta.ogTitle },
+            { property: 'og:description', content: headMeta.ogDescription },
+            { property: 'og:url', content: headMeta.ogUrl },
+            { property: 'og:type', content: headMeta.ogType }
+        ],
+        link: headLink
+    })
+    // META - Head - JSONld
+    useJsonld(() => headJsonld)
 </script>
