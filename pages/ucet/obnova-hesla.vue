@@ -24,73 +24,60 @@
     </NuxtLayout>
 </template>
 
-<script>
+<script setup>
     import { loginCheckLogin } from '~/utils/loginCheckLogin.js'
 
-    export default defineComponent({
-        name: 'UcetObnovaHeslaPage',
-
-        data() {
-            return {
-                headline: 'Obnova hesla'
-            }
-        },
-
-        setup() {
-            let headMeta = reactive({
-                title: 'ZAPOMENUTÉ HESLO | Cestovatelský portál Frytol na cestách',
-                description: 'Zapomenuté Heslo k účtu na cetovatelském portálu Frytol na cestách.',
-                keywords: 'Cestovatelský portál, zapomenuté heslo, cestování, svět',
-                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
-                ogTitle: 'ZAPOMENUTÉ HESLO | Cestovatelský portál Frytol na cestách',
-                ogDescription: 'Zapomenuté Heslo k účtu na cetovatelském portálu Frytol na cestách.',
-                ogUrl: `https://www.frytolnacestach.cz/ucet/obnova-hesla`,
-                ogType: 'website',
-            })
-
-            let headLink = ref([
-                { rel: 'canonical', href: headMeta.ogUrl }
-            ])
-
-            let headScript = reactive({
-                "@context": "https://schema.org",
-                "@type": "WebPage",
-                "name": headMeta.title,
-                "description": headMeta.description,
-                "url": headMeta.ogUrl,
-                "datePublished": "2024-01-31",
-                "author": {
-                    "@type": "Organization",
-                    "name": "Frytol na cestách",
-                    "url": "https://www.frytolnacestach.cz/"
-                }
-            })
-
-            useHead({
-                title: headMeta.title,
-                meta: [
-                    { name: 'description', content: headMeta.description },
-                    { name: 'keywords', content: headMeta.keywords },
-                    { property: 'og:image', content: headMeta.ogImage },
-                    { property: 'og:title', content: headMeta.ogTitle },
-                    { property: 'og:description', content: headMeta.ogDescription },
-                    { property: 'og:url', content: headMeta.ogUrl },
-                    { property: 'og:type', content: headMeta.ogType }
-                ],
-                link: headLink
-            })
-
-            useJsonld(() => headScript)
-
-            return {
-                headMeta,
-                headLink,
-                headScript
-            }
-        },
-
-        mounted() {
-            loginCheckLogin(this.$router)
+    // DATA
+    let headline = "Obnovení heslo"
+    // DATA Meta - head
+    let headMeta = reactive({
+        title: 'OBNOVENÍ HESLA | Cestovatelský portál Frytol na cestách',
+        description: 'Obnovení hesla k účtu na cetovatelském portálu Frytol na cestách.',
+        keywords: 'Cestovatelský portál, obnovení hesla, cestování, svět',
+        ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+        ogTitle: 'OBNOVENÍ HESLA | Cestovatelský portál Frytol na cestách',
+        ogDescription: 'Obnovení hesla k účtu na cetovatelském portálu Frytol na cestách.',
+        ogUrl: `https://www.frytolnacestach.cz/ucet/obnova-hesla`,
+        ogType: 'website',
+    })
+    let headLink = ref([
+        { rel: 'canonical', href: headMeta.ogUrl }
+    ])
+    // DATA Meta - JSONld
+    let headJsonld = reactive({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": headMeta.title,
+        "description": headMeta.description,
+        "url": headMeta.ogUrl,
+        "datePublished": "2024-01-31",
+        "author": {
+            "@type": "Organization",
+            "name": "Frytol na cestách",
+            "url": "https://www.frytolnacestach.cz/"
         }
+    })
+
+    // META - Head
+    useHead({
+        title: headMeta.title,
+        meta: [
+            { name: 'description', content: headMeta.description },
+            { name: 'keywords', content: headMeta.keywords },
+            { property: 'og:image', content: headMeta.ogImage },
+            { property: 'og:title', content: headMeta.ogTitle },
+            { property: 'og:description', content: headMeta.ogDescription },
+            { property: 'og:url', content: headMeta.ogUrl },
+            { property: 'og:type', content: headMeta.ogType }
+        ],
+        link: headLink
+    })
+    // META - Head - JSONld
+    useJsonld(() => headJsonld)
+
+    // Mounted hook
+    const router = useRouter()
+    onMounted(() => {
+        loginCheckLogin(router)
     })
 </script>
