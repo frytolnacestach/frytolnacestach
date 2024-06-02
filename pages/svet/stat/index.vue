@@ -36,206 +36,165 @@
     </NuxtLayout>
 </template>
 
-<script>
-    export default defineComponent({
-        name: 'SvetStatIndexPage',
+<script setup>
+    const route = useRoute()
 
-        data() {
-            return {
-                headline: 'Státy',
-                headlineFilter: 'Státy',
-                filterPlace: '',
-                filterPlaceName: '',
-                images: [],
-                placesStates: [],
-                isLoading: false,
-                noMoreItems: false,
-                page: 1,
-                perPage: 20
-            }
-        },
-
-        setup() {
-            let headMeta = reactive({
-                title: 'Státy | Cestovatelský portál Frytol na cestách',
-                description: 'Objevuj všechny státy světa na cestovatelské portálu Frytolem na cestách. Naplánuj si ideální cestu.',
-                keywords: 'státy, ostrovy, území, plánuj cestu, cestovatelský portál, cestování, svět',
-                ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
-                ogTitle: 'Státy | Cestovatelský portál Frytol na cestách',
-                ogDescription: 'Objevuj všechny státy světa na cestovatelské portálu Frytolem na cestách. Naplánuj si ideální cestu.',
-                ogUrl: `https://www.frytolnacestach.cz/svet/stat`,
-                ogType: 'website',
-            })
-
-            let headLink = ref([
-                { rel: 'canonical', href: headMeta.ogUrl }
-            ])
-
-            let headJsonld = reactive({
-                "@context": "https://schema.org",
-                "@type": "WebPage",
-                "name": headMeta.title,
-                "description": headMeta.description,
-                "url": headMeta.ogUrl,
-                "datePublished": "2024-01-31",
-                "author": {
-                    "@type": "Organization",
-                    "name": "Frytol na cestách",
-                    "url": "https://www.frytolnacestach.cz/"
-                }
-            })
-
-            useHead({
-                title: headMeta.title,
-                meta: [
-                    { name: 'description', content: headMeta.description },
-                    { name: 'keywords', content: headMeta.keywords },
-                    { property: 'og:image', content: headMeta.ogImage },
-                    { property: 'og:title', content: headMeta.ogTitle },
-                    { property: 'og:description', content: headMeta.ogDescription },
-                    { property: 'og:url', content: headMeta.ogUrl },
-                    { property: 'og:type', content: headMeta.ogType }
-                ],
-                link: headLink
-            })
-
-            useJsonld(() => headJsonld)
-
-            return {
-                headMeta,
-                headLink,
-                headJsonld
-            }
-        },
-
-        head() {
-            // title
-            title = `${this.headlineFilter} | Cestovatelský portál Frytol na cestách`
-        },
-        
-        async mounted() {
-            const filterIDcontinent = this.$route.query.filterIDcontinent
-            if (!filterIDcontinent) {
-                await this.loadPlaces()
-            }
-            this.addScrollListener()
-        },
-
-        methods: {
-            async loadPlaces(reset) {
-                //start loading
-                this.isLoading = true
-
-                // Variable
-                let responsePlaces
-
-                //load places
-                if (this.filterPlace !== null) {
-                    responsePlaces = await fetch(`https://api.frytolnacestach.cz/api/places-states?showType=list&idContinent=${this.filterPlace}&page=${this.page}&items=${this.perPage}`)
-                } else {
-                    responsePlaces = await fetch(`https://api.frytolnacestach.cz/api/places-states?showType=list&page=${this.page}&items=${this.perPage}`)
-                }
-                const placesData = await responsePlaces.json()
-
-                //load images
-                const imagesPlacesStatesIDS = placesData.map(placeState => placeState.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
-                if (imagesPlacesStatesIDS.length > 0) {
-                    const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesIDS.join(',')}`)
-                    const imagesData = await responseImages.json()
-                    this.images = this.images.concat(imagesData)
-
-                    // add to placecesData to placesStates
-                    if (reset) {
-                        // Reset Arrays after change filter
-                        this.placesStates = placesData
-                    } else {
-                        this.placesStates = this.placesStates.concat(placesData)
-                    }
-                } else {
-                    // add to placecesData to placesStates
-                    if (reset) {
-                        // Reset Arrays after change filter
-                        this.placesStates = placesData
-                    } else {
-                        this.placesStates = this.placesStates.concat(placesData)
-                    }
-                }
-
-                //no more items?
-                if (placesData.length === 0 || placesData.length < this.perPage) {
-                    this.noMoreItems = true
-                }
-
-                //end loading
-                this.isLoading = false
-            },
-
-            addScrollListener() {
-                window.addEventListener('scroll', this.handleScroll)
-            },
-
-            removeScrollListener() {
-                window.removeEventListener('scroll', this.handleScroll)
-            },
-
-            loadMoreItems() {
-                //no further loading can occur while loading
-                if (this.isLoading || this.noMoreItems) {
-                    return;
-                }
-                // loading more items
-                this.page++
-                this.loadPlaces()
-            },
-
-            updateHeadline() {
-                if (this.filterPlaceName) {
-                    this.headlineFilter = this.headline + ' kontinentu ' + this.filterPlaceName
-                } else {
-                    this.headlineFilter = this.headline
-                }
-            },
-
-            handleScroll() {
-                //no further loading can occur while loading
-                if (this.isLoading || this.noMoreItems) {
-                    return;
-                }
-
-                // Document for scroll point
-                const windowHeight = window.innerHeight
-                const documentHeight = document.documentElement.scrollHeight
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-
-                // Footer height
-                const tFooterElement = document.querySelector('.t-footer')
-                const tFooterHeight = tFooterElement.offsetHeight
-
-                // Point for loading
-                if (scrollTop + windowHeight >= documentHeight - tFooterHeight) {
-                    // loading more items
-                    this.page++
-                    this.loadPlaces()
-                }
-            },
-
-            // filter set update
-            filterUpdate(newValue) {
-                this.filterPlace = newValue.id
-                this.filterPlaceName = newValue.name
-                this.images = []
-                this.placesStates = []
-                this.isLoading = false
-                this.noMoreItems = false
-                this.page = 1
-                this.perPage = 20
-                this.loadPlaces(true)
-                this.updateHeadline()
-            }
-        },
-
-        beforeDestroy() {
-            this.removeScrollListener()
+    // DATA
+    let headline = "Státy"
+    let headlineFilter = 'Státy'
+    let filterPlaceName = ''
+    let filterPlace = ''
+    let isLoading = false
+    let noMoreItems = false
+    let page = 1
+    let perPage = 20   
+    // DATA API
+    const placesStates = ref([])
+    const images = ref([]) 
+    // DATA Meta - head
+    let headMeta = reactive({
+        title: 'Státy | Cestovatelský portál Frytol na cestách',
+        description: 'Objevuj všechny státy světa na cestovatelské portálu Frytolem na cestách. Naplánuj si ideální cestu.',
+        keywords: 'státy, ostrovy, území, plánuj cestu, cestovatelský portál, cestování, svět',
+        ogImage: 'https://image.frytolnacestach.cz/storage/main/og-default.png',
+        ogTitle: 'Státy | Cestovatelský portál Frytol na cestách',
+        ogDescription: 'Objevuj všechny státy světa na cestovatelské portálu Frytolem na cestách. Naplánuj si ideální cestu.',
+        ogUrl: `https://www.frytolnacestach.cz/svet/stat`,
+        ogType: 'website',
+    })
+    let headLink = ref([
+        { rel: 'canonical', href: headMeta.ogUrl }
+    ])
+    // DATA Meta - JSONld
+    let headJsonld = reactive({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": headMeta.title,
+        "description": headMeta.description,
+        "url": headMeta.ogUrl,
+        "datePublished": "2024-01-31",
+        "author": {
+            "@type": "Organization",
+            "name": "Frytol na cestách",
+            "url": "https://www.frytolnacestach.cz/"
         }
+    })
+
+    // META - Head
+    useHead({
+        title: headMeta.title,
+        meta: [
+            { name: 'description', content: headMeta.description },
+            { name: 'keywords', content: headMeta.keywords },
+            { property: 'og:image', content: headMeta.ogImage },
+            { property: 'og:title', content: headMeta.ogTitle },
+            { property: 'og:description', content: headMeta.ogDescription },
+            { property: 'og:url', content: headMeta.ogUrl },
+            { property: 'og:type', content: headMeta.ogType }
+        ],
+        link: headLink
+    })
+    // META - Head - JSONld
+    useJsonld(() => headJsonld)
+
+    // LOAD DATA
+    const loadData = async (reset) => {
+        isLoading = true
+
+        // PlacesStates
+        let placesStatesResponse
+        if (filterPlace !== null) {
+            placesStatesResponse = await $fetch(`https://api.frytolnacestach.cz/api/places-states?showType=list&idContinent=${filterPlace}&page=${page}&items=${perPage}`)
+        } else {
+            placesStatesResponse = await $fetch(`https://api.frytolnacestach.cz/api/places-states?showType=list&page=${page}&items=${perPage}`)
+        }
+        const placesStatesData = JSON.parse(placesStatesResponse) || []
+
+        if (reset) {
+            placesStates.value = placesStatesData
+        } else {
+            placesStates.value = placesStates.value.concat(placesStatesData)
+        }
+
+        // Images (placesStates)
+        const imagesPlacesStatesIDS = placesStatesData.map(placeState => placeState.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
+        if (imagesPlacesStatesIDS.length > 0) {
+            const responseImages = await $fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesIDS.join(',')}`)
+            const imagesData = JSON.parse(responseImages) || []
+            images.value = images.value.concat(imagesData)
+        }
+
+        // HEAD
+        if (placesStates.value && placesStates.value.length > 0) {
+            // Meta
+            headMeta.title = `${headlineFilter} | Cestovatelský portál Frytol na cestách`
+        }
+
+        if (placesStatesData.length === 0 || placesStatesData.length < perPage) {
+            noMoreItems = true
+        }
+
+        isLoading = false
+    }
+    await useAsyncData('dataAPI', () => loadData())
+
+    // OTHER
+    const loadMoreItems = () => {
+        if (isLoading || noMoreItems) {
+            return
+        }
+        page++
+        loadData()
+    }
+
+    const handleScroll = () => {
+        if (isLoading || noMoreItems) {
+            return
+        }
+
+        const windowHeight = window.innerHeight
+        const documentHeight = document.documentElement.scrollHeight
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        const tFooterElement = document.querySelector('.t-footer')
+        const tFooterHeight = tFooterElement ? tFooterElement.offsetHeight : 0
+
+        if (scrollTop + windowHeight >= documentHeight - tFooterHeight) {
+            page++
+            loadData()
+        }
+    }
+
+    const updateHeadline = () => {
+        if (filterPlaceName) {
+            headlineFilter = headline + ' kontinentu ' + filterPlaceName
+        } else {
+            headlineFilter = headline
+        }
+    }
+
+    const filterUpdate = (newValue) => {
+        filterPlace = newValue.id
+        filterPlaceName = newValue.name
+        placesStates.value = []
+        images.value = []
+        isLoading = false
+        noMoreItems = false
+        page = 1
+        perPage = 20
+        loadData(true)
+        updateHeadline()
+    }
+
+    onMounted(() => {
+        const filterIDstate = route.query.filterIDcontinent
+        if (!filterIDstate) {
+            loadData()
+        }
+
+        window.addEventListener('scroll', handleScroll)
+    })
+
+    onBeforeUnmount(() => {
+        window.removeEventListener('scroll', handleScroll)
     })
 </script>
