@@ -29,13 +29,6 @@
 
     export default defineComponent({
         name: 'UcetZepomenuteHesloPage',
-        
-        components: {
-            aButtonFillFull,
-            mHeadline,
-            oFormPasswordLost,
-            oHero
-        },
 
         data() {
             return {
