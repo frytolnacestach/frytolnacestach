@@ -35,7 +35,11 @@
                             <div class="t-grid__section -ad">
 
                                 <!-- SECTION - TravelDictionary - sidebar -->
-                                <OrganismsSidebarListTravelDictionary :IDTravelDictionary="travelDictionary[0].id" v-if="travelDictionary && travelDictionary.length > 0" />
+                                <section class="t-section -px-world mb-2">
+                                    <div class="t-section__inner">
+                                        <OrganismsSidebarListTravelDictionary :IDTravelDictionary="travelDictionary[0].id" v-if="travelDictionary && travelDictionary.length > 0" />
+                                    </div>
+                                </section>
                                 <!-- SECTION - TravelDictionary - sidebar - END -->
 
                                 <!-- SECTION - ad-google - sidebar -->

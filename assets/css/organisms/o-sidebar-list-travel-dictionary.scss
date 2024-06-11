@@ -28,14 +28,13 @@
     &__image-container {
         grid-area: image;
         position: relative;
-        height: 50px;
     }
 
     &__image {
-        position: absolute;
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
+        // @FUTURE: overflow: hidden;
+        // @FUTURE: width: 100px;
+        // @FUTURE: min-height: 100px;
+        // @FUTURE: position: relative;
         border-radius: $br-1;
     }
 

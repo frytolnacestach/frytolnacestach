@@ -69,14 +69,14 @@
                 imageSizesMedia: [
                     {
                         "mediaQueriesWidth": null,
-                        "elementWidth": 0
+                        "elementWidth": 100
                     }
                 ],
                 imageSizes: [
                     {
                         "elementWidth": 100,
                         "imageWidth": 100,
-                        "orientation": "s-"
+                        "orientation": "h-"
                     }
                 ]
             }
