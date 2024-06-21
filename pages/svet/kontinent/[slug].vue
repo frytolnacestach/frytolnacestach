@@ -164,328 +164,298 @@
     </NuxtLayout>
 </template>
 
-<script>
-    export default defineComponent({
-        name: 'SvetKontinentSlugPage',
+<script setup>
+    const route = useRoute()
 
-        data() {
-            return {
-                account: useAccountData().accountData,
-                // Data from API
-                place:this.place,
-                imagePlace: this.imagePlace,
-                placesStates: this.placesStates,
-                imagesStates: this.imagesStates,
-                videos: this.videos,
-                imagesVideos: this.imagesVideos,
-                posts: this.posts,
-                imagesPosts: this.imagesPosts,
-                // Loading videos
-                videosPage: 1,
-                videosPerPage: 9,
-                isLoadingVideos: false,
-                noMoreVideosItems: false,
-                // Loading posts
-                postsPage: 1,
-                postsPerPage: 9,
-                isLoadingPosts: false,
-                noMorePostsItems: false,
-                // Other
-                showHero: true,
-                mNavBreadcrumbsPlaceArray: [
-                    {
-                        id: 1,
-                        icon: true,
-                        type: "world",
-                        name: "Svět",
-                        url: "/svet",
-                        status: "link"
-                    },
-                    {
-                        id: 2,
-                        icon: true,
-                        type: "continent",
-                        name: "Kontinenty",
-                        url: "/svet/kontinent",
-                        status: "link"
-                    },
-                    {
-                        id: 3,
-                        icon: false,
-                        type: "continent",
-                        name: (this.place && this.place.length > 0) ? this.place[0].name : "Kontinent",
-                        url: (this.place && this.place.length > 0) ? ("/svet/kontinent/" + this.place[0].slug) : "/svet/kontinent",
-                        status: "span"
-                    }
-                ],
-                oHotInfoHeroArray: [
-                    {
-                        id: 1,
-                        title: "POČET STÁTŮ",
-                        name: "_POČET STÁTŮ_",
-                        url: `_ODKAZ_`,
-                        type: "number",
-                    },
-                    {
-                        id: 2,
-                        title: "Rozloha",
-                        name: "_ROZLOHA_",
-                        type: "number",
-                        subfix: "km²"
-                    },
-                    {
-                        id: 3,
-                        title: "Počet obyvatel",
-                        name: "_POČET OBYVATEL_",
-                        type: "number"
-                    },
-                    {
-                        id: 4,
-                        title: "Hustota obyvatel",
-                        name: "_HUSTOTA OBYVATEL_",
-                        type: "number",
-                        subfix: "/km²"
-                    }
-                ]
-            }
+    // DATA
+    let account = useAccountData().accountData
+    let isLoadingVideos = false
+    let noMoreVideosItems = false
+    let videosPage = 1
+    let videosPerPage = 20
+    let isLoadingPosts = false
+    let noMorePostsItems = false
+    let postsPage = 1
+    let postsPerPage = 20
+    let showHero = true
+    // DATA API
+    const place = ref([])
+    const imagePlace = ref([])
+    const placesStates = ref([])
+    const imagesStates = ref([])
+    const videos = ref([])
+    const imagesVideos = ref([])
+    const posts = ref([])
+    const imagesPosts = ref([])
+    let mNavBreadcrumbsPlaceArray = [
+        {
+            id: 1,
+            icon: true,
+            type: "world",
+            name: "Svět",
+            url: "/svet",
+            status: "link"
         },
-
-        setup() {
-            let headMeta = reactive({
-                title: '',
-                description: '',
-                keywords: '',
-                ogImage: '',
-                ogTitle: '',
-                ogDescription: '',
-                ogUrl: '',
-                ogType: 'website',
-            })
-
-            let headLink = ref([
-                { rel: 'canonical', href: headMeta.ogUrl }
-            ])
-
-            let headJsonld = reactive({
-                "@context": "https://schema.org",
-                "@type": "Place",
-                "name": "",
-                "description": "",
-                "image": "",
-                "area": {
-                    "@type": "QuantitativeValue",
-                    "value": "",
-                    "comment": "Rozloha v km²"
-                },
-                "population": {
-                    "@type": "QuantitativeValue",
-                    "value": ""
-                }
-            })
-
-            useHead({
-                title: headMeta.title,
-                meta: [
-                    { name: 'description', content: headMeta.description },
-                    { name: 'keywords', content: headMeta.keywords },
-                    { property: 'og:image', content: headMeta.ogImage },
-                    { property: 'og:title', content: headMeta.ogTitle },
-                    { property: 'og:description', content: headMeta.ogDescription },
-                    { property: 'og:url', content: headMeta.ogUrl },
-                    { property: 'og:type', content: headMeta.ogType }
-                ],
-                link: headLink
-            })
-
-            useJsonld(() => headJsonld)
-
-            return {
-                headMeta,
-                headLink,
-                headJsonld
-            }
+        {
+            id: 2,
+            icon: true,
+            type: "continent",
+            name: "Kontinenty",
+            url: "/svet/kontinent",
+            status: "link"
         },
-
-        methods: {
-            async fetchData() {
-                const route = useRoute()
-
-                // PAGE - Spot detail
-                // Place
-                const responsePlace = await fetch(`https://api.frytolnacestach.cz/api/places-continent/${route.params.slug}`)
-                this.place = await responsePlace.json()
-                // Image
-                if (this.place && this.place.length > 0) {
-                    const responseImagePlace = this.place[0].id_image_hero && this.place[0].id_image_hero !== 0 ? await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.place[0].id_image_hero}`) : []
-                    this.imagePlace = await responseImagePlace.json()
-                }
-                // PlaceState
-                if (this.place && this.place.length > 0) {
-                    const responsePlaceState = await fetch(`https://api.frytolnacestach.cz/api/places-state-id/${this.place[0].id_state}`)
-                    this.placeState = await responsePlaceState.json()
-                }
-                // Images
-                if (this.place && this.place.length > 0 && this.place[0].id_state !== null && this.placeState[0] && this.placeState[0].id_image_cover !== null ) {
-                    const responseImageState = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.placeState[0].id_image_cover}`)
-                    this.imageState = await responseImageState.json()
-                }
-
-                // HEAD
-                if (this.place && this.place.length > 0) {
-                    // Meta
-                    this.headMeta.title = `${this.place[0].name ? this.place[0].name : 'Kontinent'} | Cestovatelský portál Frytol na cestách`
-                    this.headMeta.description = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Kontinent')
-                    if (this.place[0].seo_tags && this.place[0].seo_tags.length > 0) {
-                        const metaSeoTags = ", " + this.place[0].seo_tags.map(item => item.tag).join(", ")
-                        this.headMeta.keywords = ((this.place[0].name) ? this.place[0].name : '') + metaSeoTags + ', kontinent, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
-                    } else {
-                        this.headMeta.keywords = ((this.place[0].name) ? this.place[0].name : '') + ', kontinent, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
-                    }
-                    this.headMeta.ogImage = `${this.place[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
-                    this.headMeta.ogTitle = `${this.place[0].name ? this.place[0].name : 'Kontinent'} | Cestovatelský portál Frytol na cestách`
-                    this.headMeta.ogDescription = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Kontinent')
-                    this.headMeta.ogUrl = `https://www.frytolnacestach.cz/svet/kontinent/${this.place[0].slug}`
-                    this.headLink = [{ rel: 'canonical', href: this.headMeta.ogUrl }]
-                    // Script
-                    this.headJsonld.name = (this.place[0].name ? this.place[0].name : "")
-                    this.headJsonld.description = (this.place[0].information_author?.length > 0 ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : ""))
-                    this.headJsonld.image = ((imagePlace.length > 0 && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/continents/" + this.imagePlace[0].name + ".webp") : "" )
-                    this.headJsonld.area.value = (this.place[0].area ? this.place[0].area : "")
-                    this.headJsonld.population.value = (this.place[0].population ? this.place[0].population : "")
-                }
-            },
-
-            async loadPosts() {
-                //start loading
-                this.isLoadingPosts = true
-
-                // Variable
-                let postsResponse
-
-                //load posts
-                if (this.place && this.place.length > 0) {
-                    const responsePosts = await fetch(`https://api.frytolnacestach.cz/api/posts-id-continent/${this.place[0].id}?showType=list&page=${this.postsPage}&items=${this.postsPerPage}`)
-                    this.postsData = await responsePosts.json()
-                }
-
-                //load images
-                if (this.postsData[0]) {
-                    const imagesPostsIDS = postsData.map(posts => posts.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
-                    if (imagesPostsIDS.length > 0) {
-                        const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
-                        const imagesData = await responseImages.json()
-                        this.imagesPosts = this.imagesPosts.concat(imagesData)
-                    }
-                    // add to postsData to posts
-                    this.posts = this.posts.concat(postsData)
-                }
-
-                //no more items?
-                if (postsData.length === 0 || postsData.length < this.postsPerPage) {
-                    this.noMorePostsItems = true
-                }
-
-                //end loading
-                this.isLoadingPosts = false
-            },
-
-            async loadVideos() {
-                //start loading
-                this.isLoadingVideos = true
-
-                //load videos
-                if (this.place && this.place.length > 0) {
-                    const responseVideo = await fetch(`https://api.frytolnacestach.cz/api/videos-id-continent/${this.place[0].id}?showType=list&page=${this.videosPage}&items=${this.videosPerPage}`)
-                    this.videosData = await responseVideo.json()
-                }
-
-                //load images
-                if (this.videosData[0]) {
-                    const imagesVideosIDS = videosData.map(videos => videos.id_image).filter(id => id !== undefined && id !== null && id !== '')
-                    if (imagesVideosIDS.length > 0) {
-                        const responseImages = await fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
-                        const imagesData = await responseImages.json()
-                        this.imagesVideos = this.imagesVideos.concat(imagesData)
-                    }
-                    // add to videosData to videos
-                    this.videos = this.videos.concat(videosData)
-                }
-
-                //no more items?
-                if (videosData.length === 0 || videosData.length < this.videosPerPage) {
-                    this.noMoreVideosItems = true
-                }
-
-                //end loading
-                this.isLoadingVideos = false
-            },
-
-            loadMoreVideosItems() {
-                //no further loading can occur while loading
-                if (this.isLoadingVideos || this.noMoreVideosItems) {
-                    return
-                }
-                // loading more items
-                this.videosPage++
-                this.loadVideos()
-            },
-
-            loadMorePostsItems() {
-                //no further loading can occur while loading
-                if (this.isLoadingPosts || this.noMorePostsItems) {
-                    return
-                }
-                // loading more items
-                this.postsPage++
-                this.loadPosts()
-            }
+        {
+            id: 3,
+            icon: false,
+            type: "continent",
+            name: "Kontinent",
+            status: "span"
+        }
+    ]
+    let oHotInfoHeroArray = [
+        {
+            id: 1,
+            title: "POČET STÁTŮ",
+            name: "_POČET STÁTŮ_",
+            url: `_ODKAZ_`,
+            type: "number",
         },
-
-        mounted() {
-            // GET Data
-            this.fetchData()
-
-            if (this.place && this.place.length > 0) {
-                this.loadVideos()
-                this.loadPosts()
-            }
+        {
+            id: 2,
+            title: "Rozloha",
+            name: "_ROZLOHA_",
+            type: "number",
+            subfix: "km²"
         },
+        {
+            id: 3,
+            title: "Počet obyvatel",
+            name: "_POČET OBYVATEL_",
+            type: "number"
+        },
+        {
+            id: 4,
+            title: "Hustota obyvatel",
+            name: "_HUSTOTA OBYVATEL_",
+            type: "number",
+            subfix: "/km²"
+        }
+    ]
+    // DATA Meta - head
+    let headMeta = reactive({
+        title: '',
+        description: '',
+        keywords: '',
+        ogImage: '',
+        ogTitle: '',
+        ogDescription: '',
+        ogUrl: '',
+        ogType: 'website',
+    })
+    let headLink = ref([
+        { rel: 'canonical', href: headMeta.ogUrl }
+    ])
+    // DATA Meta - JSONld
+    let headJsonld = reactive({
+        "@context": "https://schema.org",
+        "@type": "Place",
+        "name": "",
+        "description": "",
+        "image": "",
+        "area": {
+            "@type": "QuantitativeValue",
+            "value": "",
+            "comment": "Rozloha v km²"
+        },
+        "population": {
+            "@type": "QuantitativeValue",
+            "value": ""
+        }
+    })
 
-        //Data for mNavBreadcrumbsPlaceArray 
-        //continent
-        /*this.mNavBreadcrumbsPlaceArray = this.mNavBreadcrumbsPlaceArray.map(item => {
-            if (item.id === 3) {
-                item.name = this.place[0].name
-                item.url = "/svet/kontinent/" + this.place[0].slug
-            }
-            return item
-        })*/
+    // META - Head
+    useHead({
+        title: headMeta.title,
+        meta: [
+            { name: 'description', content: headMeta.description },
+            { name: 'keywords', content: headMeta.keywords },
+            { property: 'og:image', content: headMeta.ogImage },
+            { property: 'og:title', content: headMeta.ogTitle },
+            { property: 'og:description', content: headMeta.ogDescription },
+            { property: 'og:url', content: headMeta.ogUrl },
+            { property: 'og:type', content: headMeta.ogType }
+        ],
+        link: headLink
+    })
+    // META - Head - JSONld
+    useJsonld(() => headJsonld)
 
-        //Data for oHotInfoHero
-        /*this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-            if (item.id === 1) {
-                item.name = this.place[0].number_states
-                item.url = `/svet/stat?filterIDcontinent=${this.place[0].id}`
+    // LOAD DATA
+    const loadData = async () => {
+        // PAGE - Continent detail
+        // Place
+        const placeResponse = await $fetch(`https://api.frytolnacestach.cz/api/places-continent/${route.params.slug}`)
+        const placeData = JSON.parse(placeResponse) || []
+        place.value = placeData
+        // Image
+        if (place.value && place.value.length > 0 && place.value[0].id_image_hero && place.value[0].id_image_hero !== 0) {
+            const imagePlaceResponse = await $fetch(`https://api.frytolnacestach.cz/api/image-id/${place.value[0].id_image_hero}`)
+            const imagePlaceData = JSON.parse(imagePlaceResponse) || []
+            imagePlace.value = imagePlaceData
+        }
+        
+        if (place.value && place.value.length > 0) {
+            // placesStates
+            const placesStatesResponse = await $fetch(`https://api.frytolnacestach.cz/api/places-states-continent/${place.value[0].id}?showType=list`)
+            const placesStatesData = JSON.parse(placesStatesResponse) || []
+            placesStates.value = placesStates.value.concat(placesStatesData)
+
+            // Images
+            if (placesStatesData && placesStatesData.length > 0) {
+                const imagesPlacesStatesID = placesStatesData.map(placesState => placesState.id_image_cover).filter(id => id !== null && id !== '')
+                if (imagesPlacesStatesID) {
+                    const imagesStatesResponse = await $fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesStatesID.join(',')}`)
+                    const imagesStatesData = JSON.parse(imagesStatesResponse) || []
+                    imagesStates.value = imagesStates.value.concat(imagesStatesData)
+                }
             }
-            return item
+        }
+
+        // HEAD
+        if (place.value && place.value.length > 0) {
+            // Meta
+            headMeta.title = `${place.value[0].name ? place.value[0].name : 'Kontinent'} | Cestovatelský portál Frytol na cestách`
+            headMeta.description = (place.value[0].information_author?.length > 0 ? place.value[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, place.value[0].information_author[0].text.lastIndexOf(' ', 160)) : place.value[0].information_chatgpt ? place.value[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, place.value[0].information_chatgpt.lastIndexOf(' ', 160)) : place.value[0].name ? place.value[0].name : 'Kontinent')
+            if (place.value[0].seo_tags && place.value[0].seo_tags.length > 0) {
+                const metaSeoTags = ", " + place.value[0].seo_tags.map(item => item.tag).join(", ")
+                headMeta.keywords = ((place.value[0].name) ? place.value[0].name : '') + metaSeoTags + ', kontinent, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
+            } else {
+                headMeta.keywords = ((place.value[0].name) ? place.value[0].name : '') + ', kontinent, cestování, svět, cestovatelský portál, jaké státy tu jsou, plánování cesty, dovolená'
+            }
+            headMeta.ogImage = `${place.value[0].id_image_hero ? 'https://image.frytolnacestach.cz/storage/' + imagePlace.find(image => image.id === place.value[0].id_image_hero).source + imagePlace.find(image => image.id === place.value[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+            headMeta.ogTitle = `${place.value[0].name ? place.value[0].name : 'Kontinent'} | Cestovatelský portál Frytol na cestách`
+            headMeta.ogDescription = (place.value[0].information_author?.length > 0 ? place.value[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, place.value[0].information_author[0].text.lastIndexOf(' ', 160)) : place.value[0].information_chatgpt ? place.value[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, place.value[0].information_chatgpt.lastIndexOf(' ', 160)) : place.value[0].name ? place.value[0].name : 'Kontinent')
+            headMeta.ogUrl = `https://www.frytolnacestach.cz/svet/kontinent/${place.value[0].slug}`
+            headLink = [{ rel: 'canonical', href: headMeta.ogUrl }]
+            // Script
+            headJsonld.name = (place.value[0].name ? place.value[0].name : "")
+            headJsonld.description = (place.value[0].information_author?.length > 0 ? place.value[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (place.value[0].information_chatgpt ? place.value[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : ""))
+            headJsonld.image = ((imagePlace.length > 0 && imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/continents/" + imagePlace[0].name + ".webp") : "" )
+            headJsonld.area.value = (place.value[0].area ? place.value[0].area : "")
+            headJsonld.population.value = (place.value[0].population ? place.value[0].population : "")
+        }
+    }
+    await useAsyncData('dataAPI', () => loadData())
+
+    // LOAD DATA - Posts
+    const loadPosts = async () => {
+        //start loading
+        isLoadingPosts = true
+
+        //load posts
+        if (place.value && place.value.length > 0) {
+            const postsResponse = await $fetch(`https://api.frytolnacestach.cz/api/posts-id-continent/${place.value[0].id}?showType=list&page=${postsPage}&items=${postsPerPage}`)
+            const postsData = JSON.parse(postsResponse) || []
+            posts.value = posts.value.concat(postsData)
+
+            //end loading
+            isLoadingPosts = false
+
+            //load images
+            if (postsData && postsData.length > 0) {
+                const imagesPostsIDS = postsData.map(posts => posts.id_image_cover).filter(id => id !== undefined && id !== null && id !== '')
+                if (imagesPostsIDS.length > 0) {
+                    const imagesPostsResponse = await $fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPostsIDS.join(',')}`)
+                    const imagesPostsData = JSON.parse(imagesPostsResponse) || []
+                    imagesPosts.value = imagesPosts.value.concat(imagesPostsData)
+                }
+            }
+
+            //no more items?
+            if (postsData.length === 0 || postsData.length < postsPerPage) {
+                noMorePostsItems = true
+            }
+        }
+    }
+    await useAsyncData('dataAPI', () => loadPosts())
+
+    // LOAD DATA - Videos
+    const loadVideos = async () => {
+        //start loading
+        isLoadingVideos = true
+
+        //load videos
+        if (place.value && place.value.length > 0) {
+            const videosResponse = await $fetch(`https://api.frytolnacestach.cz/api/videos-id-continent/${place.value[0].id}?showType=list&page=${videosPage}&items=${videosPerPage}`)
+            const videosData = JSON.parse(videosResponse) || []
+            videos.value = videos.value.concat(videosData)
+
+            //end loading
+            isLoadingVideos = false
+
+            //load images
+            if (videosData && videosData.length > 0) {
+                const imagesVideosIDS = videosData.map(videos => videos.id_image).filter(id => id !== undefined && id !== null && id !== '')
+                if (imagesVideosIDS.length > 0) {
+                    const imagesVideosResponse = await $fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesVideosIDS.join(',')}`)
+                    const imagesVideosData = JSON.parse(imagesVideosResponse) || []
+                    imagesVideos.value = imagesVideos.value.concat(imagesVideosData)
+                }
+            }
+
+            //no more items?
+            if (videosData.length === 0 || videosData.length < videosPerPage) {
+                noMoreVideosItems = true
+            }
+        }
+    }
+    await useAsyncData('dataAPI', () => loadVideos())
+
+    // OTHER
+    const loadMoreVideosItems = () => {
+        if (isLoadingVideos || noMoreVideosItems) {
+            return
+        }
+        videosPage++
+        loadVideos()
+    }
+
+    const loadMorePostsItems = () => {
+        if (isLoadingVideos || noMoreVideosItems) {
+            return
+        }
+        postsPage++
+        loadPosts()
+    }
+
+    // WATCH
+    watchEffect(() => {
+        useHead({
+            title: headMeta.title,
+            meta: [
+                { name: 'description', content: headMeta.description },
+                { name: 'keywords', content: headMeta.keywords },
+                { property: 'og:image', content: headMeta.ogImage },
+                { property: 'og:title', content: headMeta.ogTitle },
+                { property: 'og:description', content: headMeta.ogDescription },
+                { property: 'og:url', content: headMeta.ogUrl },
+                { property: 'og:type', content: headMeta.ogType }
+            ],
+            link: headLink
         })
-        this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-            if (item.id === 2) {
-                item.name = this.place[0].area
-            }
-            return item
-        })
-        this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-            if (item.id === 3) {
-                item.name = this.place[0].population
-            }
-            return item
-        })
-        this.oHotInfoHeroArray = this.oHotInfoHeroArray.map(item => {
-            if (item.id === 4) {
-                item.name = this.place[0].population_density
-            }
-            return item
-        })*/
+        useJsonld(() => headJsonld)
+    })
+
+    watch(place, (newValue, oldValue) => {
+        if (newValue && newValue.length > 0) {
+            mNavBreadcrumbsPlaceArray[2].name = newValue[0].name
+            oHotInfoHeroArray[0].name = newValue[0].number_states
+            oHotInfoHeroArray[0].url = `/svet/stat?filterIDcontinent=${newValue[0].id}`
+            oHotInfoHeroArray[1].name = newValue[0].area
+            oHotInfoHeroArray[2].name = newValue[0].population
+            oHotInfoHeroArray[3].name = newValue[0].population_density
+            loadVideos()
+            loadPosts()
+        }
     })
 </script>
