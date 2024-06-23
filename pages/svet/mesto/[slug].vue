@@ -443,7 +443,7 @@
 
             // Images
             const imagesPlacesCitiesID = placesCities.value.map(placeCity => placeCity.id_image_cover).filter(id => id !== null && id !== '')
-            if (this.place && this.place.length > 0 && imagesPlacesCitiesID  !== nulll ) {
+            if (imagesPlacesCitiesID !== null) {
                 const imagesCitiesResponse = await $fetch(`https://api.frytolnacestach.cz/api/images-array?id=${imagesPlacesCitiesID.join(',')}`)
                 const imagesCitiesData = JSON.parse(imagesCitiesResponse) || []
                 imagesCities.value = imagesCitiesData
