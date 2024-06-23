@@ -402,7 +402,7 @@
 
     // LOAD DATA
     const loadData = async () => {
-        // PAGE - Continent detail
+        // PAGE - City detail
         // Place
         const placeResponse = await $fetch(`https://api.frytolnacestach.cz/api/places-city/${route.params.slug}`)
         const placeData = JSON.parse(placeResponse) || []

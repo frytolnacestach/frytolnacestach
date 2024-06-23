@@ -367,7 +367,7 @@
 
     // LOAD DATA
     const loadData = async () => {
-        // PAGE - Continent detail
+        // PAGE - Spot detail
         // Place
         const placeResponse = await $fetch(`https://api.frytolnacestach.cz/api/places-spot/${route.params.slug}`)
         const placeData = JSON.parse(placeResponse) || []
