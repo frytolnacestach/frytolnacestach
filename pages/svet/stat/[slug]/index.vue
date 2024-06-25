@@ -135,7 +135,7 @@
                                     <!-- SECTION - Visited button - sidebar -->
                                     <section class="t-section -px-world my-1">
                                         <div class="t-section__inner">
-                                            <OrganismsVisitedButton :account="account" :place="this.place[0].id" placeType="state" v-if="place && place.length > 0 && place[0].id && account && account.length > 0" />
+                                            <OrganismsVisitedButton :account="account" :place="place[0].id" placeType="state" v-if="place && place.length > 0 && place[0].id && account && account.length > 0" />
                                         </div>
                                     </section>
                                     <!-- SECTION - Visited button - sidebar - END -->
@@ -180,7 +180,7 @@
                                         <!-- SECTION - links - sidebar -->
                                         <section class="t-section -px-world" v-if="place && place.length > 0 && place[0].links && place[0].links.length > 0">
                                             <div class="t-section__inner">
-                                                <OrganismsSidebarLinks :items="this.place[0].links" headline="Užitečné odkazy" />
+                                                <OrganismsSidebarLinks :items="place[0].links" headline="Užitečné odkazy" />
                                             </div>
                                         </section>
                                         <!-- SECTION - links - sidebar - END -->
@@ -532,7 +532,7 @@
 
         //load posts
         if (place.value && place.value.length > 0) {
-            const postsResponse = await $fetch(`https://api.frytolnacestach.cz/api/posts-id-city/${place.value[0].id}?showType=list&page=${postsPage}&items=${postsPerPage}`)
+            const postsResponse = await $fetch(`https://api.frytolnacestach.cz/api/posts-id-state/${place.value[0].id}?showType=list&page=${postsPage}&items=${postsPerPage}`)
             const postsData = JSON.parse(postsResponse) || []
             posts.value = posts.value.concat(postsData)
 
@@ -564,7 +564,7 @@
 
         //load videos
         if (place.value && place.value.length > 0) {
-            const videosResponse = await $fetch(`https://api.frytolnacestach.cz/api/videos-id-city/${place.value[0].id}?showType=list&page=${videosPage}&items=${videosPerPage}`)
+            const videosResponse = await $fetch(`https://api.frytolnacestach.cz/api/videos-id-state/${place.value[0].id}?showType=list&page=${videosPage}&items=${videosPerPage}`)
             const videosData = JSON.parse(videosResponse) || []
             videos.value = videos.value.concat(videosData)
 
