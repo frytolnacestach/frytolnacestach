@@ -85,7 +85,7 @@
                                                     <!-- SECTION - Visited button - sidebar -->
                                                     <section class="t-section -px-world my-1">
                                                         <div class="t-section__inner">
-                                                            <OrganismsVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
+                                                            <OrganismsVisitedButton :account="account" :place="place[0].id" placeType="state" />
                                                         </div>
                                                     </section>
                                                     <!-- SECTION - Visited button - sidebar - END -->
