@@ -117,13 +117,13 @@
 
     // LOAD DATA
     const loadData = async () => {
-        // WallSocket
+        // TravelDictionaries
         const travelDictionaryResponse = await $fetch(`https://api.frytolnacestach.cz/api/travel-dictionary/${route.params.slug}`)
         const travelDictionaryData = JSON.parse(travelDictionaryResponse)
         travelDictionary.value = travelDictionaryData || []
 
         if (travelDictionary.value && travelDictionary.value.length > 0) {
-            // Image (wallSocket)
+            // Image
             const imageTravelDictionaryResponse = await $fetch(`https://api.frytolnacestach.cz/api/image-id/${travelDictionary.value[0].id_image_hero}`)
             const imageTravelDictionaryData = JSON.parse(imageTravelDictionaryResponse)
             imageTravelDictionary.value = imageTravelDictionaryData || []
@@ -167,25 +167,5 @@
             link: headLink
         })
         useJsonld(() => headJsonld)
-    })
-</script>
-
-<script>
-    export default defineComponent({
-        methods: {
-            async fetchData() {
-                const route = useRoute()
-
-                // PAGE - TravelDictionaries detail
-                // TravelDictionaries
-                const responseTravelDictionary = await fetch(`https://api.frytolnacestach.cz/api/travel-dictionary/${route.params.slug}`)
-                this.travelDictionary = await responseTravelDictionary.json() || []
-                // Images
-                if (this.travelDictionary && this.travelDictionary.length > 0) {
-                    const responseImageTravelDictionary = await fetch(`https://api.frytolnacestach.cz/api/image-id/${this.travelDictionary[0].id_image_hero}`)
-                    this.imageTravelDictionary = await responseImageTravelDictionary.json() || []
-                }
-            }
-        },
     })
 </script>
