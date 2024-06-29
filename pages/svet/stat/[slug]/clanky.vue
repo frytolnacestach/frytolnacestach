@@ -336,7 +336,7 @@
     await useAsyncData('dataAPI', () => loadPosts())
 
     const loadMorePostsItems = () => {
-        if (isLoadingVideos || noMoreVideosItems) {
+        if (isLoadingPosts || noMorePostsItems) {
             return
         }
         postsPage++
