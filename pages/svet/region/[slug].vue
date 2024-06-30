@@ -445,7 +445,7 @@
     }
 
     const loadMorePostsItems = () => {
-        if (isLoadingVideos || noMoreVideosItems) {
+        if (isLoadingPosts || noMorePostsItems) {
             return
         }
         postsPage++

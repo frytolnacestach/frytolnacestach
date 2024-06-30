@@ -27,8 +27,13 @@
 <script setup>
     import { loginCheckLogoutInfo } from '~/utils/loginCheckLogoutInfo.js'
 
+    const route = useRoute()
+
     // DATA
     let headline = "Aktivace účtu"
+    const email = ref(null)
+    const codeActivation = ref(null)
+    const flashMessage = ref([])
     // DATA Meta - head
     let headMeta = reactive({
         title: 'AKTIVACE ÚČTU | Cestovatelský portál Frytol na cestách',
@@ -75,9 +80,71 @@
     // META - Head - JSONld
     useJsonld(() => headJsonld)
 
+    const activation = async () => {
+        const response = await $fetch(`https://api.frytolnacestach.cz/api/user-activation`, {
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "http://localhost:3000",
+                "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
+                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH"
+            },
+            method: 'POST',
+            body: JSON.stringify({
+                'email': email.value,
+                'code_activation': codeActivation.value
+            })
+        })
+
+        if (response.status === 200) {
+            flashMessage.value.push({
+                date: new Date().getTime(),
+                duration: 5000,
+                status: "success",
+                message: "Aktivace vašeho účtu proběhla v pořádku"
+            })
+            localStorage.setItem("status", 3)
+        } else if (response.status === 404) {
+            flashMessage.value.push({
+                date: new Date().getTime(),
+                duration: 5000,
+                status: "error",
+                message: "Aktivace neproběhla v pořádku. Nebyl nalezen odpovídající záznam. Buď již aktivace proběhla nebo účet neexistuje."
+            })
+        } else {
+            flashMessage.value.push({
+                date: new Date().getTime(),
+                duration: 5000,
+                status: "error",
+                message: "Chyba při komunikaci s API"
+            })
+        }
+    }
+
     // Mounted hook
     const router = useRouter()
     onMounted(() => {
         loginCheckLogoutInfo(router)
+            .then((isLoggedIn) => {
+                if (isLoggedIn) {
+                    email.value = router.currentRoute.value.query.email || null
+                    codeActivation.value = router.currentRoute.value.query.activation_code || null
+                    activation()
+                } else {
+                    flashMessage.value.push({
+                        date: new Date().getTime(),
+                        duration: 5000,
+                        status: "error",
+                        message: `Musíte se přihlásit, abyste mohli aktivovat účet. <br><a href="/ucet/prihlaseni">Přihlásit se</a>`
+                    })
+                }
+            })
+            .catch((error) => {
+                flashMessage.value.push({
+                    date: new Date().getTime(),
+                    duration: 5000,
+                    status: "error",
+                    message: "Chyba při ověřování přihlášení"
+                })
+            })
     })
 </script>
