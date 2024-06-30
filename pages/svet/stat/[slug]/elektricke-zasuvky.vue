@@ -307,7 +307,6 @@
         if (place.value && place.value.length > 0) {
             const tab = tabs.find(tab => tab.slug === activeTab)
             const tabLabel = tab ? tab.label || '' : ''
-
             // Meta
             headMeta.title = `${tabLabel} použivané ve státě ${place.value[0].name || 'Stát'} | Cestovatelský portál Frytol na cestách`
             headMeta.description = ((place.value[0].information_author?.length > 0) ? place.value[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, place.value[0].information_author[0].text.lastIndexOf(' ', 160)) : (place.value[0].information_chatgpt ? place.value[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, place.value[0].information_chatgpt.lastIndexOf(' ', 160)) : (place.value[0].name || 'Stát')))
@@ -317,7 +316,6 @@
             headMeta.ogDescription = ((place.value[0].information_author?.length > 0) ? place.value[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, place.value[0].information_author[0].text.lastIndexOf(' ', 160)) : (place.value[0].information_chatgpt ? place.value[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, place.value[0].information_chatgpt.lastIndexOf(' ', 160)) : (place.value[0].name || 'Stát')))
             headMeta.ogUrl = `https://www.frytolnacestach.cz/svet/stat/${place.value[0].slug}${activeTab !== 'default' ? `/${activeTab}` : ''}`
             headLink = [{ rel: 'canonical', href: headMeta.ogUrl }]
-
             // Script
             headJsonld.name = place.value[0].name || ''
             headJsonld.description = ((place.value[0].information_author?.length > 0) ? place.value[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : (place.value[0].information_chatgpt ? place.value[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : ''))
