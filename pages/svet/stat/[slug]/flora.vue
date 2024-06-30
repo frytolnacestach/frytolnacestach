@@ -81,7 +81,7 @@
                                                     <!-- SECTION - Visited button - sidebar -->
                                                     <section class="t-section -px-world my-1">
                                                         <div class="t-section__inner">
-                                                            <OrganismsVisitedButton :account="account" :place="this.place[0].id" placeType="state" />
+                                                            <OrganismsVisitedButton :account="account" :place="place[0].id" placeType="state" />
                                                         </div>
                                                     </section>
                                                     <!-- SECTION - Visited button - sidebar - END -->
@@ -301,25 +301,23 @@
 
         // HEAD
         if (place.value && place.value.length > 0) {
-            const tab = this.tabs.find(tab => tab.slug === this.activeTab)
+            const tab = tabs.find(tab => tab.slug === activeTab)
             const tabLabel = tab ? tab.label || '' : ''
-
             // Meta
-            headMeta.title = `${tabLabel} ve státě ${(this.place[0].name ? this.place[0].name : 'Stát')} | Cestovatelský portál Frytol na cestách`
-            headMeta.description = ((this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Stát')
-            headMeta.keywords = (this.place[0].seo_tags && this.place[0].seo_tags.length > 0) ? (this.place[0].name ? this.place[0].name : '') + ", " + this.place[0].seo_tags.map(item => item.tag).join(", ") + ', stát, flora, rostlinstvo, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu' : (this.place[0].name ? this.place[0].name : '') + ', stát, flora, rostlinstvo, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu'
-            headMeta.ogImage = `${(this.place[0].id_image_hero && this.imagePlace.find(image => image.id === this.place[0].id_image_hero) && this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source) ? 'https://image.frytolnacestach.cz/storage/' + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).source + this.imagePlace.find(image => image.id === this.place[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
-            headMeta.ogTitle = `${tabLabel} ve státě ${(this.place[0].name ? this.place[0].name : 'Stát')} | Cestovatelský portál Frytol na cestách`
-            headMeta.ogDescription = ((this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_author[0].text.lastIndexOf(' ', 160)) : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, this.place[0].information_chatgpt.lastIndexOf(' ', 160)) : this.place[0].name ? this.place[0].name : 'Stát')
-            headMeta.ogUrl = `https://www.frytolnacestach.cz/svet/stat/${this.place[0].slug}${this.activeTab !== 'default' ? `/${this.activeTab}` : ''}`
+            headMeta.title = `${tabLabel} ve státě ${place.value[0].name ? place.value[0].name : 'Stát'} | Cestovatelský portál Frytol na cestách`
+            headMeta.description = ((place.value[0].information_author?.length > 0) ? place.value[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, place.value[0].information_author[0].text.lastIndexOf(' ', 160)) : place.value[0].information_chatgpt ? place.value[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, place.value[0].information_chatgpt.lastIndexOf(' ', 160)) : place.value[0].name ? place.value[0].name : 'Stát')
+            headMeta.keywords = (place.value[0].seo_tags && place.value[0].seo_tags.length > 0) ? (place.value[0].name ? place.value[0].name : '') + ", " + place.value[0].seo_tags.map(item => item.tag).join(", ") + ', stát, flora, rostlinstvo, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu' : (place.value[0].name ? place.value[0].name : '') + ', stát, flora, rostlinstvo, cestování, svět, cestovatelský portál, která města tu jsou, plánování cesty, dovolená, pravidla cesty, o státu'
+            headMeta.ogImage = `${(place.value[0].id_image_hero && imagePlace.value.find(image => image.id === place.value[0].id_image_hero) && imagePlace.value.find(image => image.id === place.value[0].id_image_hero).source) ? 'https://image.frytolnacestach.cz/storage/' + imagePlace.value.find(image => image.id === place.value[0].id_image_hero).source + imagePlace.value.find(image => image.id === place.value[0].id_image_hero).name + '.jpg' : 'https://image.frytolnacestach.cz/storage/main/og-default.png'}`
+            headMeta.ogTitle = `${tabLabel} ve státě ${place.value[0].name ? place.value[0].name : 'Stát'} | Cestovatelský portál Frytol na cestách`
+            headMeta.ogDescription = ((place.value[0].information_author?.length > 0) ? place.value[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '').slice(0, place.value[0].information_author[0].text.lastIndexOf(' ', 160)) : place.value[0].information_chatgpt ? place.value[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '').slice(0, place.value[0].information_chatgpt.lastIndexOf(' ', 160)) : place.value[0].name ? place.value[0].name : 'Stát')
+            headMeta.ogUrl = `https://www.frytolnacestach.cz/svet/stat/${place.value[0].slug}${activeTab !== 'default' ? `/${activeTab}` : ''}`
             headLink = [{ rel: 'canonical', href: headMeta.ogUrl }]
-
             // Script
-            headJsonld.name = (this.place[0].name ? this.place[0].name : "")
-            headJsonld.description = ((this.place[0].information_author?.length > 0) ? this.place[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : this.place[0].information_chatgpt ? this.place[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : "")
-            headJsonld.image = ((this.imagePlace && this.imagePlace.length > 0 && this.imagePlace[0].id) ? ("https://image.frytolnacestach.cz/storage/world/states/" + this.imagePlace[0].name + ".webp") : "")
-            headJsonld.area.value = (this.place[0].area ? this.place[0].area : "")
-            headJsonld.population.value = (this.place[0].population ? this.place[0].population : "")
+            headJsonld.name = place.value[0].name ? place.value[0].name : ''
+            headJsonld.description = ((place.value[0].information_author?.length > 0) ? place.value[0].information_author[0].text.replace(/<\/?[^>]+(>|$)/g, '') : place.value[0].information_chatgpt ? place.value[0].information_chatgpt.replace(/<\/?[^>]+(>|$)/g, '') : '')
+            headJsonld.image = ((imagePlace.value && imagePlace.value.length > 0 && imagePlace.value[0].id) ? (`https://image.frytolnacestach.cz/storage/world/states/${imagePlace.value[0].name}.webp`) : '')
+            headJsonld.area.value = place.value[0].area ? place.value[0].area : ''
+            headJsonld.population.value = place.value[0].population ? place.value[0].population : ''
         }
 
         // SET PAGE
