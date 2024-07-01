@@ -1,9 +1,9 @@
 <template>
-    <div :class="'o-information-box'">
+    <div class="o-information-box">
         <div class="o-information-box__outer">
             <div class="o-information-box__inner">
-                <h2 class="o-information-box__title" v-if="data[0].headline.title">{{ data[0].headline.title }}</h2>
-                <p class="o-information-box__perex" v-if="data[0].headline.perex">{{ data[0].headline.perex }}</p>
+                <h2 class="o-information-box__title" v-if="data[0]?.headline?.title">{{ data[0].headline.title }}</h2>
+                <p class="o-information-box__perex" v-if="data[0]?.headline?.perex">{{ data[0].headline.perex }}</p>
                 <div class="o-information-box__items">
                     <div class="o-information-box__item" v-for="item in data[0].times" v-bind:key="item.name">
                         <h4 class="o-information-box__name">{{ item.name }}<span class="o-information-box__name-sub"> {{ item.subname }}</span></h4>
