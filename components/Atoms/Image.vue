@@ -60,11 +60,11 @@
             generateSrcSet(type) {
                 if (type === "2x") {
                     return this.sizes.map(size => {
-                        return `https://image.frytolnacestach.cz/storage/${this.imageSource + size.orientation + this.imageName}-${size.imageWidth*2}-2x.webp ${size.elementWidth*2}w`
+                        return `https://image.frytolnacestach.cz/storage${this.imageSource + size.orientation + this.imageName}-${size.imageWidth*2}-2x.webp ${size.elementWidth*2}w`
                     }).join(', ')
                 } else {
                     return this.sizes.map(size => {
-                        return `https://image.frytolnacestach.cz/storage/${this.imageSource + size.orientation + this.imageName}-${size.imageWidth}.webp ${size.elementWidth}w`
+                        return `https://image.frytolnacestach.cz/storage${this.imageSource + size.orientation + this.imageName}-${size.imageWidth}.webp ${size.elementWidth}w`
                     }).join(', ')
                 }
             },
